@@ -1,0 +1,166 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Air Intl Regression" parallel="tests" thread-count="50">
+
+	<listeners>
+			<listener class-name="org.uncommons.reportng.HTMLReporter" />
+			 <listener class-name="commonServices.RemoveDuplicateResults"/>
+			<listener class-name="commonServices.RetryListener"/> 
+	</listeners>
+
+	<!--  <groups>
+	      <run>
+	        <include name="Smoke Test"/>
+	      </run>
+	</groups>  -->
+	
+	
+		<!-- <suite-files>
+			<suite-file path="FailedInternational.xml"></suite-file>
+		</suite-files> -->   
+		
+ 	 
+	  <test name="Intl Search Cases" parallel="classes">
+		<classes>
+	    	<class name="testScriptsIndia.AirIntl_OW_Serach_Results"/> 
+	    	<class name="testScriptsIndia.AirIntl_RT_Search_Results"/> 
+	      	<class name="testScriptsIndia.ArIntl_MC_Serach_Results"/> 
+	      	<class name="testScriptsIndia.AirIntl_OW_SameDay_Search_Results"/> 
+	      	<class name="testScriptsIndia.AirIntl_OW_BusinessClass_Search"/>  
+	      	<class name="testScriptsIndia.AirIntl_OW_Loading_BaggageInfo"/>
+		 	<class name="testScriptsIndia.AirIntl_SRP_PriceCheck_GDS"/>  
+		 	<class name="testScriptsIndia.AirIntl_NearBy_Airport"/>    
+		 	<class name="testScriptsIndia.AirIntl_AirArabia_Traveller_Details_Check"/>
+	 	</classes> 
+	</test>   
+  
+
+	 <test name="Intl CustomSearch" parallel="classes">    	
+		<classes>
+			 <class name="testScriptsIndia.AirIntl_OW_AirArabiaSearch"/> 
+			<class name="testScriptsIndia.AirIntl_OW_FlyDubaiSearch"/>   
+		</classes> 
+	</test>
+
+
+<test name="Intl Coupon Booking Cases" parallel="classes">
+		 <classes>
+	    <class name="testScriptsIndia.AirCom_Intl_RT_Coupon_Booking"/>   
+	    	<class name="testScriptsIndia.AirCom_Intl_OW_Coupon_Booking"/>   
+		</classes> 
+	</test>
+	 
+
+	<test name="Intl Functional Cases" parallel="classes">
+		<classes>
+		 <class name="testScriptsIndia.AirCom_Intl_gds_Insurance_Booking_with_Convinience_Check"/> 
+	   		<class name="testScriptsIndia.AirCom_Int_OW_LCC_CC_Booking"/>   
+	   		<class name="testScriptsIndia.AirCom_Intl_gds_Insurance_Booking"/> 
+	   		<class name="testScriptsIndia.AirCom_Intl_RT_GDS_MultPax_Booking"/>
+			<class name="testScriptsIndia.AirIntl_MC_Booking"/>  
+			<class name="testScriptsIndia.AirIntl_OW_Sync_Booking"/>  			
+			<class name="testScriptsIndia.AirIntl_TransitVisa_Booking"/> 
+			<class name="testScriptsIndia.AirIntl_AddBaggage_Booking"/> 
+			<class name="testScriptsIndia.AirIntl_AirAsia_Baggage_Meal_Booking"/> 
+			<class name="testScriptsIndia.AirIntl_Baggage_Itinerary_Info_Link_Check"/> 
+			<class name="testScriptsIndia.AitIntl_OW_AddBaggage_Indigo_Booking"/> 
+			<class name="testScriptsIndia.AirIntl_Multi_Itinerary_Booking"/>  
+			<class name="testScriptsIndia.AirIntl_NearbyAirportWarning_Check"/> 
+			<class name="testScriptsIndia.AirIntl_AirAsia_International_CC_DC_FraudCheck"/>
+			 <class name="testScriptsIndia.AirIntl_AIE_Connector_OW_MPax_Booking"/>
+		<class name="testScriptsIndia.AirIntl_AIE_Connector_RT_MPax_Booking"/>   
+	 	</classes>  	
+	</test>  
+ 	
+
+ 	<test name="WL - AMEX" parallel="classes">
+		<classes>
+			<class name="testScriptsAmexWhiteLabel.AirDom_OW_AmexWhiteLabel_Booking"/>  
+			<class name="testScriptsAmexWhiteLabel.AirDom_RT_AmexWhiteLabel_CouponBooking"/> 
+			<class name="testScriptsAmexWhiteLabel.Air_OW_AmexWhiteLabel_MinAmountChargeCheck"/> 
+			<class name="testScriptsAmexWhiteLabel.Air_RT_AmexWhiteLabel_MinAmountChargeCheck"/>
+			<class name="testScriptsAmexWhiteLabel.AirDom_OW_AmexWhiteLabel_NonAmexCardCheck"/> 
+		</classes>  
+	</test> 
+ 	
+
+	  <test name="WL - FlightXp" parallel="classes">
+		<classes>
+			<class name="testScriptsFlightXP.FlightXP_OW"/>  
+			<class name="testScriptsMobile.MobileFlightxp"/>
+		</classes>	
+	</test>  
+  	 
+ 
+ 	
+
+	
+
+
+
+
+
+
+
+	
+
+ 	<!-- <test name="REMOVED CASES" > 
+ 	<test name="Package BOOKING" preserve-order="true" parallel="classes">
+		<classes>
+    		 
+    		 <class name="testScriptsPackage.B2CPackageDomFlexiDates"/>
+    		
+	 	</classes>
+	</test> 
+ 	<test name="WL - EXPEDIA" preserve-order="true" parallel="classes">
+  		 <classes> 
+       		<class name="testScriptsExpedia.Expedia_Air_OW_Dom"/>
+       		<class name="testScriptsExpedia.Expedia_Air_RT_DOM_Search"/>
+       		<class name="testScriptsExpedia.Expedia_Air_OW_Intl_Search"/>
+       		<class name="testScriptsExpedia.Expedia_Air_RT_Intl_Search"/>       		
+       		<class name="testScriptsExpedia.Expedia_Air_OW_Dom_withGST"/>
+      	</classes> 
+	</test>
+ 	
+		<classes>
+	  		<class name="testScriptsIndia.AirIntl_TigerAirways_NB_Retry"/>
+  			<class name="testScriptsIndia.AirCom_Intl_OW_PriceLockandConfirm_Booking"/> 
+  			<class name="testScriptsIndia.AirCom_MC_Intl_1pax_Booking"/>  
+		</classes>
+	</test>
+
+	<test name="Data Validation" preserve-order="true" parallel="classes">
+		<classes>
+    		 <class name="testScriptsIndia.AirIntl_GDS_DataValidation"/> 
+    		 <class name="testScriptsIndia.Air_Intl_Lcc_DataValidation"/>
+      	</classes>
+	</test> 
+	
+	Moved to platform team
+	<test name="Payment Cases" parallel="classes">
+		<classes>
+			<class name="testScriptsPayments.AirDom_OW_GDS_NB_Retry_CCBooking" /> 
+			<class name="testScriptsPayments.AirDom_OW_Full_CTWallet_Booking" />  
+			<class name="testScriptsPayments.AirCom_OW_Full_GiftVoucher_Booking" /> 
+			<class name="testScriptsPayments.AirCom_Dom_AmexCard_Booking" />   
+			<class name="testScriptsPayments.AirCom_OW_MIGS_Expressway_Saved_Card_Booking" />	
+			<class name="testScriptsPayments.AirDom_OW_DebitCard_Booking" />
+			<class name="testScriptsPayments.AirDom_OW_Booking_With_EMI" />
+			<class name="testScriptsPayments.B2CAirCheckPaymentOptions" />	
+			<class name="testScriptsPayments.AirCom_OW_PaytmWalletPageLoad" />
+			<class name="testScriptsPayments.AirDom_OW_LCC_PayUWalletPageLoad" /> 
+			<class name="testScriptsPayments.AirDom_OW_MasterPassRetry" />
+			<class name="testScriptsPayments.B2CAirWalletCashbackFeatureCheck" />
+			<class name="testScriptsPayments.AirDom_OW_CTWalletCashbackCouponBooking"/> 
+			<class name="testScriptsPayments.AirDom_OW_PhonePe_Retry"/>
+			<class name="testScriptsIndia.AirDom_OW_GDS_PartialWallet_CC_Booking" />
+			<class name="testScriptsIndia.AirCom_OW_partial_GiftVoucher_and_Wallet_Booking" />
+			<class name="testScriptsMiddleEastAir.MEAir_SubDomain_SA_OW_Payment_PayFort_Visa3D"/>
+ 			<class name="testScriptsMiddleEastAir.MEAir_SubDomain_SA_RT_Payment_PayFort_MasterCard2D"/>
+ 		</classes> 
+	</test>    
+	
+	
+	
+ 	-->
+
+</suite>

@@ -1,0 +1,24 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Locals Dsktp Events" thread-count="1" parallel="classes" verbose="3" preserve-order="true">
+
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="commonServices.RemoveDuplicateResults"/>
+</listeners>
+ 
+
+
+<test name="Locals Dsktp Events Cases" preserve-order="true" parallel="true">
+
+    <classes>
+      <class name="com.cleartrip.local.desktop.events.Carousal"/>
+      <class name="com.cleartrip.local.desktop.events.JioRetry"/>
+      <class name="com.cleartrip.local.desktop.events.MeraFreeBooking"/>
+      <class name="com.cleartrip.local.desktop.events.MeraPaidBooking"/>
+      <class name="com.cleartrip.local.desktop.events.ProductEditorial"/>
+      
+    </classes>
+</test>
+
+ 
+</suite> 

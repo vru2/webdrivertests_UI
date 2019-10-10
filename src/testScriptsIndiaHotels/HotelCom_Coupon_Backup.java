@@ -1,0 +1,43 @@
+// Framework - Cleartrip Automation
+// Author - Kiran Kumar
+
+package testScriptsIndiaHotels;
+
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import domainServices.IndiaHotels;
+
+	public class HotelCom_Coupon_Backup extends IndiaHotels{
+	public RemoteWebDriver driver;
+	
+  @Test 
+  public void HotelCom_CouponBackup() throws Exception {
+ 	   driver.manage().deleteAllCookies(); 
+ 	   hotelCom_DetailsPage(driver, "com", getHotelID(), 25, ""); 	   
+ 	   //hotelCom_AddCookie(driver);
+	   hotelCom_ItineraryPage(driver, "BACKUP");
+	   hotelCom_LoginPage(driver, "SignIN", "");
+	   hotelCom_TravelerPage(driver);
+	}
+
+  @BeforeClass
+  public void setUp() throws Exception {
+	driver=(RemoteWebDriver) getDriver(driver);
+  }
+
+  @AfterMethod (alwaysRun = true)
+	public void afterMethod(ITestResult _result) throws Exception {
+		afterMethod(driver, _result);
+	}
+  
+  @AfterClass
+  public void tearDown() throws Exception {
+	  browserClose(driver);	  
+  }
+
+}

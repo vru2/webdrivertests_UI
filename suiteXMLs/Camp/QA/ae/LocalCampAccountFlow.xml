@@ -1,0 +1,22 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Accounts AE" thread-count="6">
+
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+	</listeners>
+	
+	
+	
+	<test name="AccountFlow domain AE">
+
+		<parameter name="domain" value="ae"></parameter>
+
+		<classes>
+					<class name="com.cleartrip.local.camp.accountflow.AccountFlowVerificationCM"><parameter name="user" value="CM"></parameter></class>
+					<class name="com.cleartrip.local.camp.accountflow.AccountFlowVerificationESP"><parameter name="user" value="ESP"></parameter></class>
+					<class name="com.cleartrip.local.camp.accountflow.AccountFlowVerificationSCM"><parameter name="user" value="SCM"></parameter></class>
+					<class name="com.cleartrip.local.camp.accountflow.AccountFlowVerificationSA"><parameter name="user" value="SA"></parameter></class>
+		</classes>
+
+	</test>
+</suite> 

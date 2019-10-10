@@ -1,0 +1,210 @@
+<html>
+<head>
+<title>TestNG:  Whatsapp</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Whatsapp</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>8/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Mon Oct 07 11:57:01 IST 2019</td>
+</tr>
+<tr><td>Total time:</td><td>9 seconds (9776 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.cleartrip.platform.whatsappService.WhatsappCheckContacts.checkContacts()'><b>checkContacts</b><br>Test class: com.cleartrip.platform.whatsappService.WhatsappCheckContacts<br/>
+<a href="#Output-71401317" onClick='toggleBox("Output-71401317", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-71401317" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-71401317">
+Service URL : http://whatsappapi.cltp.com:9001/r3/whatsapp/checkContacts<br/>
+Test case passed<br/>
+{"contacts":[{"input":"96639","status":"invalid"},{"input":"9663949690","status":"valid","wa_id":"919663949690"}],"meta":{"api_status":"stable","version":"2.25.2"}}<br/>
+Status code == 200<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>com.cleartrip.platform.whatsappService.WhatsappCheckContacts@16267862</td></tr>
+<tr>
+<td title='com.cleartrip.platform.whatsappService.WhatsappUserMessage.message()'><b>message</b><br>Test class: com.cleartrip.platform.whatsappService.WhatsappUserMessage<br/>
+<a href="#Output-86439486" onClick='toggleBox("Output-86439486", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-86439486" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-86439486">
+Service URL : http://whatsappapi.cltp.com:9001/r3/whatsapp/message<br/>
+Test case passed<br/>
+{"messageId":"07102019-afd0424e-59a9-4b3c-83bb-20eef85d351f","status":"success"}<br/>
+Status code == 202<br/>
+Message Id == 07102019-afd0424e-59a9-4b3c-83bb-20eef85d351f<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>com.cleartrip.platform.whatsappService.WhatsappUserMessage@71248c21</td></tr>
+<tr>
+<td title='com.cleartrip.platform.whatsappService.WhatsappOptinFlow.message()'><b>message</b><br>Test class: com.cleartrip.platform.whatsappService.WhatsappOptinFlow<br/>
+<a href="#Output-672054577" onClick='toggleBox("Output-672054577", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-672054577" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-672054577">
+Service URL : http://whatsappapi.cltp.com:9001/r3/whatsapp/optin<br/>
+Test case passed<br/>
+{"requestId":"45176fb6-acb4-461c-a691-a55528f866a4","mobileNumber":"9663949690","isOptedin":true,"isValidWhatsappNumber":true,"optInTimeStamp":"2018-11-27T09:26:33Z","optOutTimeStamp":null,"whatsappUsername":"919663949690","countryCode":null,"errormessage":"User already opted in"}<br/>
+Status code == 200<br/>
+requestId == 45176fb6-acb4-461c-a691-a55528f866a4<br/>
+isOptedin == true<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>com.cleartrip.platform.whatsappService.WhatsappOptinFlow@442675e1</td></tr>
+<tr>
+<td title='com.cleartrip.platform.whatsappService.WhatsappMultilanguageSupport.message()'><b>message</b><br>Test class: com.cleartrip.platform.whatsappService.WhatsappMultilanguageSupport<br/>
+<a href="#Output-1228474497" onClick='toggleBox("Output-1228474497", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1228474497" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1228474497">
+Service URL : http://whatsappapi.cltp.com:9001/r3/whatsapp/message<br/>
+Test case passed<br/>
+{"messageId":"07102019-2484105c-bfb6-45a1-839d-0bd7e37faebd","status":"success"}<br/>
+Status code == 202<br/>
+Message Id == 07102019-2484105c-bfb6-45a1-839d-0bd7e37faebd<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>com.cleartrip.platform.whatsappService.WhatsappMultilanguageSupport@6166e06f</td></tr>
+<tr>
+<td title='com.cleartrip.platform.whatsappService.WhatsappOptinFlowStatus.message()'><b>message</b><br>Test class: com.cleartrip.platform.whatsappService.WhatsappOptinFlowStatus<br/>
+<a href="#Output-1762309251" onClick='toggleBox("Output-1762309251", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1762309251" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1762309251">
+Service URL : http://whatsappapi.cltp.com:9001/r3/whatsapp/optinStatus<br/>
+Test case passed<br/>
+{"requestId":"45176fb6-acb4-461c-a691-a55528f866a4","mobileNumber":"9663949690","isOptedin":true,"isValidWhatsappNumber":true,"optInTimeStamp":"2018-11-27T09:26:33Z","optOutTimeStamp":null,"whatsappUsername":"919663949690","countryCode":"91","errormessage":null}<br/>
+Status code == 200<br/>
+requestId == 45176fb6-acb4-461c-a691-a55528f866a4<br/>
+isOptedin == true<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>com.cleartrip.platform.whatsappService.WhatsappOptinFlowStatus@49e202ad</td></tr>
+<tr>
+<td title='com.cleartrip.platform.whatsappService.WhatsappUserMessageWithAttachment.message()'><b>message</b><br>Test class: com.cleartrip.platform.whatsappService.WhatsappUserMessageWithAttachment<br/>
+<a href="#Output-1905316640" onClick='toggleBox("Output-1905316640", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1905316640" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1905316640">
+Service URL : http://whatsappapi.cltp.com:9001/r3/whatsapp/message<br/>
+Test case passed<br/>
+{"messageId":"07102019-29099d14-f6b2-4192-9aac-8db66eea4f69","status":"success"}<br/>
+Status code == 202<br/>
+Message Id == 07102019-29099d14-f6b2-4192-9aac-8db66eea4f69<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>com.cleartrip.platform.whatsappService.WhatsappUserMessageWithAttachment@1c72da34</td></tr>
+<tr>
+<td title='com.cleartrip.platform.whatsappService.WhatsappWebhookMessage.message()'><b>message</b><br>Test class: com.cleartrip.platform.whatsappService.WhatsappWebhookMessage<br/>
+<a href="#Output-1953031714" onClick='toggleBox("Output-1953031714", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1953031714" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1953031714">
+Service URL : https://qa2whatsapp.cleartrip.com/whatsapp/webhook/messages/cleartrip<br/>
+Test case passed<br/>
+{"messageId":"07102019-82096ce4-97ef-4f3a-a2b6-57e106a034d2"}<br/>
+Status code == 200<br/>
+messageId == 07102019-82096ce4-97ef-4f3a-a2b6-57e106a034d2<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>com.cleartrip.platform.whatsappService.WhatsappWebhookMessage@6b0c2d26</td></tr>
+<tr>
+<td title='com.cleartrip.platform.whatsappService.WhatsappDeliveryFeedback.message()'><b>message</b><br>Test class: com.cleartrip.platform.whatsappService.WhatsappDeliveryFeedback<br/>
+<a href="#Output-780784301" onClick='toggleBox("Output-780784301", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-780784301" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-780784301">
+Service URL : http://whatsappapi.cltp.com:9001/r3/whatsapp/message<br/>
+Test case passed<br/>
+{"messageId":"07102019-63343f9d-dc43-4a84-92e7-86df49f84d01","status":"success"}<br/>
+Status code == 202<br/>
+Message Id == 07102019-63343f9d-dc43-4a84-92e7-86df49f84d01<br/>
+Test case passed<br/>
+Status code ==  200<br/>
+</div>
+</td>
+<td></td>
+<td>9</td>
+<td>com.cleartrip.platform.whatsappService.WhatsappDeliveryFeedback@453da22c</td></tr>
+</table><p>
+</body>
+</html>

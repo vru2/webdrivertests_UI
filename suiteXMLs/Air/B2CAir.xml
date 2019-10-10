@@ -1,0 +1,419 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="B2C Air Regression" parallel="tests" thread-count="3">
+
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+</listeners>
+
+  <!-- <test name="Indigo Meals combination Cases" preserve-order="true" parallel="true">
+    <classes>
+   
+<class name="testScriptsIndia.AirDom_Indigo_OW_MultiPAX_Indigo_Flight_Booking_WithMeals"/> 
+         <class name="testScriptsIndia.AirDom_Indigo_OW_SinglePAX_Indigo_Flight_Booking_WithOutMeals"/>
+      <class name="testScriptsIndia.AirDom_Indigo_OW_StopOver_MultiPAX_Indigo_Flight_Booking_WithMeals"/> 
+      <class name="testScriptsIndia.AirDom_Indigo_OW_StopOver_SinglePAX_Indigo_Flight_Booking_WithOutMeals"/>
+      <class name="testScriptsIndia.AirDom_Indigo_OW_Via_MultiPAX_Indigo_Flight_Booking_WithMeals"/> 
+       <class name="testScriptsIndia.AirDom_Indigo_OW_Via_SinglePAX_Indigo_Flight_Booking_WithOutMeals"/>
+      
+     <class name="testScriptsIndia.AirDom_Indigo_RT_MultiPAX_Indigo_Flight_Booking_WithMeals"/>
+      
+      <class name="testScriptsIndia.AirDom_Indigo_RT_StopOver_MultiPAX_Indigo_Flight_Booking_WithMeals"/>
+      <class name="testScriptsIndia.AirDom_Indigo_RT_Via_MultiPAX_Indigo_Flight_Booking_WithMeals"/>
+     
+      
+       
+   </classes>
+</test>
+
+
+   
+  
+ <test name="Payment Cases" preserve-order="true" parallel="true">
+ <classes>
+ 
+   	<class name="testScriptsExpedia.Expedia_Air_OW_Dom"/> 
+	<class name="testScriptsIndia.AirCom_FlexiPay_OW_2ndPayRetry_Booking"/> 
+    <class name="testScriptsIndia.AirDom_OW_Full_CTWallet_Booking"/> 
+    <class name="testScriptsIndia.AirIntl_OW_GDS_NB_Retry_CCBooking"/> 
+    <class name="testScriptsIndia.AirDom_OW_LCC_PayUWallet_Booking"/>
+    <class name="testScriptsIndia.AirDom_OW_MasterPassRetry_PayUWallet_Booking"/>
+    <class name="testScriptsIndia.AirDom_OW_GDS_NB_Retry_CCBooking"/>  
+    <class name="testScriptsIndia.AirCom_Dom_Amex_StoredCard_Booking"/> 
+      
+      <class name="testScriptsIndia.AirCom_OW_Full_GiftVoucher_Booking"/>
+       <class name="testScriptsIndia.AirDom_FlexiPay_RT_1stPayRetry_MultiPax_Booking"/>  
+    <class name="testScriptsIndia.AirCom_Dom_Migs_StoredCard_Booking"/> 
+    <class name="testScriptsIndia.AirDom_OW_GDS_PayUWalletRetry_CC_Booking"/>
+      
+      <class name="testScriptsIndia.AirCom_Dom_AmexCard_Booking"/>
+      <class name="testScriptsIndia.AirDom_Unsigned_MC_NB_Retry_Amex_Booking"/> 
+      <class name="testScriptsIndia.AirCom_OW_AMEX_Expressway_Saved_Card_Booking"/>
+      <class name="testScriptsIndia.AirCom_OW_MIGS_Expressway_Saved_Card_Booking"/>
+      <class name="testScriptsIndia.AirCom_Unsigned_MC_NB_Retry_Booking"/> 
+       
+   </classes>
+</test>  -->
+ 
+  
+ <!-- <test name="CustomSearch" preserve-order="true" parallel="true">
+    <classes>
+	<class name="testScriptsIndia.AirDom_OW_FlyDuabaiSearch"/> 
+		<class name="testScriptsIndia.AirDom_OW_AirArabiaSearch"/>
+		   
+    </classes>
+</test>-->
+ 
+  <!-- <test name="Dom Add Meals Cases" preserve-order="true" parallel="true">
+    <classes>
+	<class name="testScriptsIndia.AirDom_RT_GoAir_AddMeal_Booking"/> 
+		<class name="testScriptsIndia.AirDom_RT_GoAir_MultiPax_AddMealToReturnFlight"/>
+		   <class name="testScriptsIndia.AirDom_RT_IndiGo_MultiPax_AddMealToReturnFlight"/>  
+	<class name="testScriptsIndia.AirDom_RT_IndiGo_AddMeal_Booking"/>
+		<class name="testScriptsIndia.AirDom_OW_GoAir_AddMeal_Booking"/>
+<class name="testScriptsIndia.AirDom_OW_IndiGo_AddMeal_Booking"/> 
+    </classes>
+</test>   -->
+  
+ 
+ 
+   <!-- <test name="Dom_SeatSelection_Cases" preserve-order="true"  parallel="true">
+    <classes>
+      
+ <class name="testScriptsIndia.AirDom_RT_ReturnSeatSelection_SG_Booking"/>
+  <class name="testScriptsIndia.AirDom_RT_SeatSelectionToBothSectors_SG_Booking"/> 
+      
+      <class name="testScriptsIndia.AirDom_RT_OnwardSeatSelection_SG_Booking"/>
+ <class name="testScriptsIndia.AirDom_OW_SeatSelection_SG_Booking"/> 
+     <class name="testScriptsIndia.AirDom_OW_SeatSelection_IndiGo_Booking"/>   
+    <class name="testScriptsIndia.AirDom_RT_OnwardSeatSelection_IndiGo_Booking"/>  
+      
+       <class name="testScriptsIndia.AirDom_RT_ReturnSeatSelection_IndiGo_Booking"/> 
+      <class name="testScriptsIndia.AirDom_RT_SeatSelectionToBothSectors_IndiGo_Booking"/>  
+    </classes>
+</test> 
+  -->
+ <!-- <test name="DOM Functional Cases" preserve-order="true" parallel="true">
+    <classes>
+      
+     <class name="testScriptsIndia.AirDom_SplRT_GDS_Booking"/> 
+      <class name="testScriptsIndia.AirCom_Dom_MultiPax_Combo_Bookings"/>
+      
+      
+      <class name="testScriptsIndia.AirDom_OW_StopOver_GDS_Flight_Booking"/> 
+      
+	  
+ <class name="testScriptsIndia.AirDom_OW_StopOver_LCC_Flight_Booking"/>
+      <class name="testScriptsIndia.AirDom_OW_VIA_Flight_LCC_Booking"/>
+    <class name="testScriptsIndia.AirDom_OW_VIA_Flight_GDS_Booking"/>
+      <class name="testScriptsIndia.AirDom_SplRT_LCC_Booking"/> 
+      
+      <class name="testScriptsIndia.AirDom_OW_Step2SignIn_CC_Booking"/>
+     
+      <class name="testScriptsIndia.AirCom_Dom_lcc_Insurance_Booking"/>
+       <class name="testScriptsIndia.AirCom_Dom_GDSAirline_Vistara_Booking"/> 
+       <class name="testScriptsIndia.AirDom_OW_SRP_ModifySearch"/> 
+      <class name="testScriptsIndia.SpecialRoundTripRateChecker"/> 
+       <class name="testScriptsIndia.AirDom_RT_SameDay_Search_Results"/>  
+      
+       <class name="testScriptsIndia.AirIntl_OW_SameDay_Search_Results"/> 
+      
+     </classes>
+</test>  
+ --> 
+
+<!--  <test name="DOM and INTL Coupon Booking Cases" preserve-order="true" parallel="true">
+    <classes>
+     	
+ 	 <class name="testScriptsIndia.AirDom_OW_BookFlow_Coupon_Validation"/> 
+       <class name="testScriptsIndia.AirCom_Intl_RT_Coupon_Booking"/>  
+     	  <class name="testScriptsIndia.AirDom_OW_Expressway_Coupon_Validation"/> 
+      <class name="testScriptsIndia.AirDom_RT_Coupon_Booking"/> 
+     	
+     	 <class name="testScriptsIndia.AirDom_OW_Expressway_Coupon_MigsCard_Booking"/>
+   	  <class name="testScriptsIndia.AirDom_RT_BookFlow_Coupon_Validation"/>  
+      	<class name="testScriptsIndia.AirDom_OW_Coupon_Booking"/> 
+      	<class name="testScriptsIndia.AirDom_RT_Expressway_Coupon_AmexCard_Booking"/> 
+     	
+    	<class name="testScriptsIndia.AirCom_Intl_OW_Coupon_Booking"/>
+		
+	</classes>
+</test>   -->
+
+<!--  <test name="Intl Functional Cases" preserve-order="true" parallel="true">
+	<classes>
+	 <class name="testScriptsIndia.AirCom_Int_OW_LCC_CC_Booking"/> 
+		<class name="testScriptsIndia.AirCom_MC_Intl_1pax_Booking"/> 
+		<class name="testScriptsIndia.AirCom_Intl_OW_PriceLockandConfirm_Booking"/>
+		
+		<class name="testScriptsIndia.AirCom_Intl_RT_GDS_MultPax_Booking"/>
+		 <class name="testScriptsIndia.AirCom_Intl_gds_Insurance_Booking"/> 
+		
+	</classes>	
+</test> -->
+  
+  <!-- <test name="Dom Add Baggage Cases" preserve-order="true" parallel="true">
+    <classes>
+		<class name="testScriptsIndia.AirCom_Dom_OW_SpiceJet_AddBaggage_Booking"/>
+		<class name="testScriptsIndia.AirDom_RT_SG_OnwardWithBaggae_ReturnWithoutBaggage_Booking"/>
+		<class name="testScriptsIndia.AirDom_RT_SG_OnwardandReturn_WithoutBaggage_WithMultiPax_Booking"/>
+		<class name="testScriptsIndia.AirDom_RT_SG_OnwardandReturn_WithoutBaggage_Booking"/>
+		<class name="testScriptsIndia.AirDom_RT_SG_OnwardWithBaggae_ReturnWithoutBaggage_Booking"/> 
+		<class name="testScriptsIndia.AirDom_RT_SG_OnwardWithoutBaggae_ReturnWithBaggage_Booking"/>
+	</classes>
+</test> 
+
+ 	<test name="Dom and Intl Search Cases" preserve-order="true" parallel="true">
+	<classes>
+  
+ <class name="testScriptsIndia.AirDom_OW_Search_Results"/>
+      <class name="testScriptsIndia.AirDom_RT_Search_Results"/>
+      
+      <class name="testScriptsIndia.AirIntl_RT_Search_Results"/>
+      <class name="testScriptsIndia.ArIntl_MC_Serach_Results"/>
+     <class name="testScriptsIndia.AirDom_OW_SameDay_Search_Results"/>
+	 <class name="testScriptsIndia.AirIntl_OW_Serach_Results"/>
+</classes>
+</test> -->
+
+<test name="Package TestCases" preserve-order="true" parallel="true">
+<classes>
+  
+	 	<class name="testScriptsPackage.B2CPackageDomPaymentRetry"/>
+      	<class name="testScriptsPackage.B2CPackageDomFlexiDates"/>
+        <class name="testScriptsPackage.B2CPackageIntl"/>
+      
+</classes>
+</test>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+<!-- <test name="AddBaggage - Dom_OW_SpiceJet_AddBaggage_Booking" preserve-order="true">
+    <classes>
+      <class name="testScriptsIndia.AirCom_Dom_OW_SpiceJet_AddBaggage_Booking"/>
+    </classes>
+</test> 
+
+<test name="AddBaggage - AirDom_RT_SG_OnwardandReturn_WithoutBaggage_MultiPax_AddBaggageToReturnFlight" preserve-order="true">
+    <classes>
+      <class name="testScriptsIndia.AirDom_RT_SG_OnwardandReturn_WithoutBaggage_WithMultiPax_AddBaggageToReturnFlight_Booking"/>
+    </classes>
+</test> 
+
+<test name="AddBaggage - AirDom_RT_SG_OnwardandReturn_WithoutBaggage_AddBaggage_Booking" preserve-order="true">
+    <classes>
+      <class name="testScriptsIndia.AirDom_RT_SG_OnwardandReturn_WithoutBaggage_AddBaggage_Booking"/>
+    </classes>
+</test> 
+
+<test name="AddBaggage - AirDom_RT_SG_OnwardWithBaggae_ReturnWithoutBaggage_Booking" preserve-order="true">
+    <classes>
+      <class name="testScriptsIndia.AirDom_RT_SG_OnwardWithBaggae_ReturnWithoutBaggage_Booking"/>
+    </classes>
+</test> 
+
+<test name="AddBaggage - AirDom_RT_SG_OnwardWithoutBaggae_ReturnWithBaggage_Booking" preserve-order="true">
+    <classes>
+      <class name="testScriptsIndia.AirDom_RT_SG_OnwardWithoutBaggae_ReturnWithBaggage_Booking"/>
+    </classes>
+</test> 
+ -->
+
+<!-- <test name="Expedia_Air_OW_Dom" preserve-order="true">
+    <classes>
+      <class name="testScriptsExpedia.Expedia_Air_OW_Dom"/>
+    </classes>
+</test>
+ -->
+
+
+
+<!-- 
+<test name="IntlHold-PriceLockandConfirm Booking" preserve-order="true">
+    <classes>
+      <class name="testScriptsIndia.AirCom_Intl_OW_PriceLockandConfirm_Booking"/>
+    </classes>
+</test>
+
+<test name="DOM and INTL Coupon Bookings" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsIndia.AirDom_OW_Coupon_Booking"/>
+      <class name="testScriptsIndia.AirDom_RT_Coupon_Booking"/>
+      <class name="testScriptsIndia.AirCom_Intl_OW_Coupon_Booking"/>
+      <class name="testScriptsIndia.AirCom_Intl_RT_Coupon_Booking"/>
+    </classes>
+</test>
+ -->
+
+
+<!-- 
+<test name="DOM Insurance Booking" preserve-order="true">
+    <classes>
+      <class name="testScriptsIndia.AirCom_Dom_lcc_Insurance_Booking"/>
+    </classes>
+</test>
+
+<test name="Intl Insurance Booking" preserve-order="true">
+    <classes>
+      <class name="testScriptsIndia.AirCom_Intl_gds_Insurance_Booking"/>
+    </classes>
+</test> 
+
+ 
+<test name="ModifySearch - AirDom_OW_SRP_ModifySearch" preserve-order="true">
+    <classes>
+      <class name="testScriptsIndia.AirDom_OW_SRP_ModifySearch"/>
+    </classes>
+</test> 
+ -->
+
+
+
+<!-- 
+<test name="FlexyPay -FlexiPay_RT_1stPayRetry_MultiPax_Booking" preserve-order="true">
+    <classes>
+      <class name="testScriptsIndia.AirDom_FlexiPay_RT_1stPayRetry_MultiPax_Booking"/>
+    </classes>
+</test> 
+
+
+<test name="FlexyPay -FlexiPay_OW_2ndPayRetry_Booking" preserve-order="true">
+    <classes>
+      <class name="testScriptsIndia.AirCom_FlexiPay_OW_2ndPayRetry_Booking"/>
+    </classes>
+</test> 
+ -->
+ 
+
+
+
+
+
+
+
+
+
+
+<!-- <test name="AddMealsToReturnFlight_GoAir - Dom_RT_GoAir_MultiPax_AddMealToReturnFlight" preserve-order="true">
+    <classes>
+      <class name="testScriptsIndia.AirDom_RT_GoAir_MultiPax_AddMealToReturnFlight"/>
+    </classes>
+</test> 
+
+ -->
+ <!--  
+<test name="AddMealsToReturnFlight_IndiGo- Dom_RT_IndiGo_MultiPax_AddMealToReturnFlight" preserve-order="true">
+    <classes>
+      <class name="testScriptsIndia.AirDom_RT_IndiGo_MultiPax_AddMealToReturnFlight"/>
+    </classes>
+</test> 
+
+
+<test name="AddMeals_RT_IndiGo- Dom_RT_IndiGo_AddMeal_Booking" preserve-order="true">
+    <classes>
+      <class name="testScriptsIndia.AirDom_RT_IndiGo_AddMeal_Booking"/>
+    </classes>
+</test> 
+ --> 
+<!-- <test name="AddMeals_RT_GoAir- Dom_RT_GoAir_AddMeal_Booking" preserve-order="true">
+    <classes>
+      <class name="testScriptsIndia.AirDom_RT_GoAir_AddMeal_Booking"/>
+    </classes>
+</test> 
+
+
+<test name="AddMeals_GoAir- Dom_OW_GoAir_AddMeal_Booking" preserve-order="true">
+    <classes>
+      <class name="testScriptsIndia.AirDom_OW_GoAir_AddMeal_Booking"/>
+    </classes>
+</test> 
+
+<test name="AddMeals_IndiGo- AirDom_OW_IndiGo_AddMeal_Booking" preserve-order="true">
+    <classes>
+      <class name="testScriptsIndia.AirDom_OW_IndiGo_AddMeal_Booking"/>
+    </classes>
+</test> 
+ -->
+<!-- 
+<test name="SplRT_LCC_Booking - AirDom_RT_SplRT_Booking" preserve-order="true">
+    <classes>
+      <class name="testScriptsIndia.AirDom_RT_SplRT_LCC_Booking"/>
+    </classes>
+</test> 
+
+ -->
+<!-- <test name="Dom OW StopOver LCC Flight Booking" preserve-order="true">
+    <classes>
+      <class name="testScriptsIndia.AirDom_OW_StopOver_LCC_Flight_Booking"/>
+    </classes>
+</test>
+ 
+
+<test name="Dom OW StopOver GDS Flight Booking" preserve-order="true">
+    <classes>
+      <class name="testScriptsIndia.AirDom_OW_StopOver_GDS_Flight_Booking"/>
+    </classes>
+</test>
+
+<test name="Dom SplRT LCC Booking" preserve-order="true">
+    <classes>
+      <class name="testScriptsIndia.AirDom_SplRT_LCC_Booking"/>
+    </classes>
+</test>
+
+<test name="Dom SplRT GDS Booking" preserve-order="true">
+    <classes>
+      <class name="testScriptsIndia.AirDom_SplRT_GDS_Booking"/>
+    </classes>
+</test>
+
+<test name="Dom OW Strp2SignIn Booking" preserve-order="true">
+    <classes>
+      <class name="testScriptsIndia.AirDom_OW_Step2SignIn_CC_Booking"/>
+    </classes>
+</test>
+
+<test name="Dom OW VIA LCC Flight Booking" preserve-order="true">
+    <classes>
+      <class name="testScriptsIndia.AirDom_OW_VIA_Flight_LCC_Booking"/>
+    </classes>
+</test>
+-->
+
+<!-- 
+<test name="Dom OW VIA GDS Flight Booking" preserve-order="true">
+    <classes>
+      <class name="testScriptsIndia.AirDom_OW_VIA_Flight_GDS_Booking"/>
+    </classes>
+</test>
+
+<test name="Dom Multi Pax Combo Bookings" preserve-order="true">
+    <classes>
+      <class name="testScriptsIndia.AirCom_Dom_MultiPax_Combo_Bookings"/>
+    </classes>
+</test>
+ -->
+
+
+</suite> 

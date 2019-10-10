@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
+<head>
+  <title>Test Results Report - WhatsApp</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="description" content="TestNG unit test results." />
+  <link href="reportng.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="reportng.js"></script>
+</head>
+<body>
+<h1>WhatsApp</h1>
+<p>
+  Test duration: 7.511s
+</p>
+
+
+
+
+
+  <table class="resultsTable">
+    <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">com.cleartrip.platform.whatsappService.WhatsappCheckContacts</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  checkContacts
+      </td>
+  <td class="duration">
+    0.358s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Service URL : http://whatsappapi.cltp.com:9001/r3/whatsapp/checkContacts<br />
+                                Test case passed<br />
+                                {&quot;contacts&quot;:[{&quot;input&quot;:&quot;980111&quot;,&quot;status&quot;:&quot;invalid&quot;},{&quot;input&quot;:&quot;9807771450&quot;,&quot;status&quot;:&quot;valid&quot;,&quot;wa_id&quot;:&quot;919807771450&quot;}],&quot;meta&quot;:{&quot;api_status&quot;:&quot;stable&quot;,&quot;version&quot;:&quot;2.21.4&quot;}}<br />
+                                Status code == 200<br />
+                  </div>
+    
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">com.cleartrip.platform.whatsappService.WhatsappDeliveryFeedback</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  message
+      </td>
+  <td class="duration">
+    6.158s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Service URL : http://whatsappapi.cltp.com:9001/r3/whatsapp/message<br />
+                                Test case passed<br />
+                                {&quot;messageId&quot;:&quot;46a91328-8f7b-4678-8cfd-385533db3999&quot;,&quot;status&quot;:&quot;success&quot;}<br />
+                                Status code == 202<br />
+                                Message Id == 46a91328-8f7b-4678-8cfd-385533db3999<br />
+                                Test case passed<br />
+                                {&quot;hsm&quot;:{&quot;delivered&quot;:&quot;10/01/2019 09:47:38&quot;,&quot;sent&quot;:&quot;10/01/2019 09:47:37&quot;}}<br />
+                                Status code ==&nbsp; 200<br />
+                                Delivered: null<br />
+                                delivered time for requested message is :: {&quot;hsm&quot;:{&quot;delivered&quot;:&quot;10/01/2019 09:47:38&quot;,&quot;sent&quot;:&quot;10/01/2019 09:47:37&quot;}}<br />
+                  </div>
+    
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">com.cleartrip.platform.whatsappService.WhatsappMultilanguageSupport</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  message
+      </td>
+  <td class="duration">
+    0.060s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Service URL : http://whatsappapi.cltp.com:9001/r3/whatsapp/message<br />
+                                Test case passed<br />
+                                {&quot;messageId&quot;:&quot;759fa8d2-b0e8-4f0e-bb9a-77e2dd41e443&quot;,&quot;status&quot;:&quot;success&quot;}<br />
+                                Status code == 202<br />
+                                Message Id == 759fa8d2-b0e8-4f0e-bb9a-77e2dd41e443<br />
+                  </div>
+    
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">com.cleartrip.platform.whatsappService.WhatsappOptinFlow</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  message
+      </td>
+  <td class="duration">
+    0.052s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Service URL : http://whatsappapi.cltp.com:9001/r3/whatsapp/optin<br />
+                                Test case passed<br />
+                                {&quot;requestId&quot;:&quot;45176fb6-acb4-461c-a691-a55528f866a4&quot;,&quot;mobileNumber&quot;:&quot;9663949690&quot;,&quot;isOptedin&quot;:true,&quot;isValidWhatsappNumber&quot;:true,&quot;optInTimeStamp&quot;:&quot;2018-11-27T09:26:33Z&quot;,&quot;optOutTimeStamp&quot;:null,&quot;whatsappUsername&quot;:&quot;919663949690&quot;,&quot;countryCode&quot;:null,&quot;errormessage&quot;:&quot;User already opted in&quot;}<br />
+                                Status code == 200<br />
+                                requestId == 45176fb6-acb4-461c-a691-a55528f866a4<br />
+                                isOptedin == true<br />
+                  </div>
+    
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">com.cleartrip.platform.whatsappService.WhatsappOptinFlowStatus</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  message
+      </td>
+  <td class="duration">
+    0.278s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Service URL : http://whatsappapi.cltp.com:9001/r3/whatsapp/optinStatus<br />
+                                Test case passed<br />
+                                {&quot;requestId&quot;:&quot;45176fb6-acb4-461c-a691-a55528f866a4&quot;,&quot;mobileNumber&quot;:&quot;9663949690&quot;,&quot;isOptedin&quot;:true,&quot;isValidWhatsappNumber&quot;:true,&quot;optInTimeStamp&quot;:&quot;2018-11-27T09:26:33Z&quot;,&quot;optOutTimeStamp&quot;:null,&quot;whatsappUsername&quot;:&quot;919663949690&quot;,&quot;countryCode&quot;:&quot;91&quot;,&quot;errormessage&quot;:null}<br />
+                                Status code == 200<br />
+                                requestId == 45176fb6-acb4-461c-a691-a55528f866a4<br />
+                                isOptedin == true<br />
+                  </div>
+    
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">com.cleartrip.platform.whatsappService.WhatsappUserMessage</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  message
+      </td>
+  <td class="duration">
+    0.347s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Service URL : http://whatsappapi.cltp.com:9001/r3/whatsapp/message<br />
+                                Test case passed<br />
+                                {&quot;messageId&quot;:&quot;501e1c21-8762-4a61-a990-17638d8b369c&quot;,&quot;status&quot;:&quot;success&quot;}<br />
+                                Status code == 202<br />
+                                Message Id == 501e1c21-8762-4a61-a990-17638d8b369c<br />
+                  </div>
+    
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">com.cleartrip.platform.whatsappService.WhatsappUserMessageWithAttachment</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  message
+      </td>
+  <td class="duration">
+    0.045s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Service URL : http://whatsappapi.cltp.com:9001/r3/whatsapp/message<br />
+                                Test case passed<br />
+                                {&quot;messageId&quot;:&quot;1a76b5c1-eb6d-4047-ba07-a1666a8e6319&quot;,&quot;status&quot;:&quot;success&quot;}<br />
+                                Status code == 202<br />
+                                Message Id == 1a76b5c1-eb6d-4047-ba07-a1666a8e6319<br />
+                  </div>
+    
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">com.cleartrip.platform.whatsappService.WhatsappWebhookMessage</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  message
+      </td>
+  <td class="duration">
+    0.213s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Service URL : https://qa2whatsapp.cleartrip.com/whatsapp/webhook/messages/cleartrip<br />
+                                Test case passed<br />
+                                {&quot;messageId&quot;:&quot;1efb24c7-ed3c-45e6-b63d-8f61f0d26a64&quot;}<br />
+                                Status code == 200<br />
+                                messageId == 1efb24c7-ed3c-45e6-b63d-8f61f0d26a64<br />
+                  </div>
+    
+
+      </td>
+</tr>
+      </table>
+  
+</body>
+</html>

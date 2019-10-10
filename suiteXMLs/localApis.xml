@@ -1,0 +1,29 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="LocalApis" parallel="tests" thread-count="1">
+
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<!-- <listener class-name="commonServices.RemoveDuplicateResults"/>
+		<listener class-name="commonServices.RetryListener"/> -->
+</listeners>
+
+
+	<test name="Local - ThingsToDo Apis SanityCheck" preserve-order="true">
+    	<classes>
+     		<class name="Locals_APIs.ttd_v1_api"/>
+   		</classes>
+  	</test>
+  	
+	<test name="Local - FoodnDrinks Apis SanityCheck" preserve-order="true">
+    	<classes>
+     		<class name="Locals_APIs.fnb_v1_api"/>
+   		</classes>
+  	</test>
+  	
+  	<test name="Local - Fitternity Apis SanityCheck" preserve-order="true">
+    	<classes>
+     		<class name="Locals_APIs.fitness_thirdparty_v1_api"/>
+   		</classes>
+  	</test>
+  	
+  </suite> 

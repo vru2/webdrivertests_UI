@@ -1,0 +1,29 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Locals Dsktp FNB" thread-count="1" parallel="classes" verbose="3" preserve-order="true">
+
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+</listeners>
+ 
+
+<test name="Locals Dsktp FNB Cases" preserve-order="true">
+
+    <classes>
+	  <class name="com.cleartrip.local.desktop.fnb.GstSigned"/>
+	    <class name="com.cleartrip.local.desktop.fnb.Adult"/>
+	  	<class name="com.cleartrip.local.desktop.fnb.AdultChild"/>
+	  	<class name="com.cleartrip.local.desktop.fnb.AEAbudhabi"/>
+	  	<class name="com.cleartrip.local.desktop.fnb.CancellationHQ"/>
+	  	<class name="com.cleartrip.local.desktop.fnb.CaraousalAdult"/>
+	  	<class name="com.cleartrip.local.desktop.fnb.Couple"/>
+	  	<class name="com.cleartrip.local.desktop.fnb.FreechargeRetry"/>
+	  	<class name="com.cleartrip.local.desktop.fnb.Group"/>
+	  	<class name="com.cleartrip.local.desktop.fnb.ProductEditorial"/>
+	  	<class name="com.cleartrip.local.desktop.fnb.SEOYouMightAlsoLike"/>
+	  	<class name="com.cleartrip.local.desktop.fnb.SEONearYou"/>
+	  	<class name="com.cleartrip.local.desktop.fnb.SEODetailPage"/>
+
+    </classes>
+</test> 
+ 
+</suite> 

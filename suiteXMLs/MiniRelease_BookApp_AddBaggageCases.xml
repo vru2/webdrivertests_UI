@@ -1,0 +1,42 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Mini Release BookApp Add baggage Cases" parallel="tests" thread-count="50">
+
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		 <listener class-name="commonServices.RemoveDuplicateResults" />
+		<listener class-name="commonServices.RetryListener" />  
+	</listeners>
+
+	
+
+
+ <test name="Air Add Baggage Cases" preserve-order="true" parallel="classes">
+		<classes>
+			<class name="testScriptsIndia.AirCom_Dom_OW_SpiceJet_AddBaggage_Booking" />
+			<class name="testScriptsIndia.AirDom_RT_SpiceJet_AddBaggage_Booking" /> 
+			<class name="testScriptsIndia.AirDom_OW_IndiGo_AddBaggage_Booking" />
+			<class name="testScriptsIndia.AirDom_RT_IndiGo_AddBaggage_Booking" /> 
+			
+			<class name="testScriptsIndia.AirIntl_AddBaggage_Booking"/> 
+			<class name="testScriptsIndia.AirIntl_AirAsia_Baggage_Meal_Booking"/> 
+			<class name="testScriptsIndia.AirIntl_Baggage_Itinerary_Info_Link_Check"/> 
+			<class name="testScriptsIndia.AitIntl_OW_AddBaggage_Indigo_Booking"/> 
+			
+			<class name="testScriptsMiddleEastAir.MEAir_Intl_AirArabia_OW_BundledFare_WithoutBaggage"/>
+	   		<class name="testScriptsMiddleEastAir.MEAir_Intl_AirArabia_RT_BundledFare_With_Baggage"/>
+	   		<class name="testScriptsMiddleEastAir.MEAir_Intl_OW_TravelFusion_BaggageInfo_Check_and_Booking"/> 
+		</classes> 
+</test>   
+		
+
+  
+  
+  
+  
+  
+  
+ 
+  
+  
+ 
+</suite>

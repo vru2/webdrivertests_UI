@@ -1,0 +1,91 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Air Payment" parallel="tests"	thread-count="20">
+
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="commonServices.RemoveDuplicateResults" />
+		<listener class-name="commonServices.RetryListener" />
+	</listeners>
+	
+	<test name="Amex Card" >
+		<classes>
+			<class name="testScriptsPayments.AirCom_Dom_AmexCard_Booking" />
+		</classes>
+	</test>	
+	
+	<test name="NB Retry">
+		<classes>
+			<class	name="testScriptsPayments.AirDom_OW_GDS_NB_Retry_CCBooking" />
+		</classes>
+	</test>
+	
+	<test name="PhonePe" >
+		<classes>
+			<class name="testScriptsPayments.AirDom_OW_PhonePe_Retry" />
+		</classes>
+	</test>
+	
+	<test name="Expressway Stored Card" >
+		<classes>
+			<class	name="testScriptsPayments.AirCom_OW_MIGS_Expressway_Saved_Card_Booking" />
+		</classes>
+	</test>
+		
+	<test name="Debit Card" >
+		<classes>
+			<class name="testScriptsPayments.AirDom_OW_DebitCard_Booking" />
+		</classes>
+	</test>	
+	
+	<test name="Payment Options" >
+		<classes>
+			<class name="testScriptsPayments.B2CAirCheckPaymentOptions" />
+		</classes>
+	</test>
+	
+	<test name="Gift Voucher">
+		<classes>
+			<class	name="testScriptsPayments.AirCom_OW_Full_GiftVoucher_Booking" />
+			</classes>
+	</test>
+	
+	  <test name="ME-AIR" preserve-order="true" parallel="true">
+		<classes>
+			<class	name="testScriptsPayments.MEAir_Dom_Migs_StoredCard_Booking" />
+			<class	name="testScriptsPayments.MEAir_Intl_OW_PayByCash_ALAnsari_Booking" />
+			<class name="testScriptsPayments.MEAir_Dom_OW_Expressway_Migs_Booking" />
+			<class name="testScriptsPayments.MEAir_Dom_Unsigned_MC_CC_Booking" />
+		</classes>
+	</test>  
+	
+	<test name="Wallet" preserve-order="true" parallel="true">
+		<classes>
+			<class	name="testScriptsPayments.AirDom_OW_Full_CTWallet_Booking" />
+			<class	name="testScriptsIndia.AirDom_OW_GDS_PartialWallet_CC_Booking" />
+			<class name="testScriptsIndia.AirCom_OW_partial_GiftVoucher_and_Wallet_Booking" />
+			<!-- <class name="testScriptsPayments.AirCom_OW_PaytmWalletPageLoad" /> -->
+			<class	name="testScriptsPayments.AirDom_OW_LCC_PayUWalletPageLoad" /> 		
+			<class	name="testScriptsPayments.B2CAirWalletCashbackFeatureCheck" />
+			<class	name="testScriptsPayments.AirDom_OW_CTWalletCashbackCouponBooking" />
+		</classes>
+	</test>
+		
+	<test name="SA" preserve-order="true" parallel="true">
+		<classes>
+			<class	name="testScriptsMiddleEastAir.MEAir_SubDomain_SA_OW_Payment_PayFort_Visa3D" />
+			<class	name="testScriptsMiddleEastAir.MEAir_SubDomain_SA_RT_Payment_PayFort_MasterCard2D" /> 
+		</classes>
+	</test>
+		
+	<!--  
+	<test name="New Payment Cases">
+		<classes>
+			<class	name="testScriptsPayments.Verify_MADACardType" />
+			<class	name="testScriptsPayments.Verify_MPGS_GW" />
+			<class	name="testScriptsPayments.AirDom_OW_CheckOut_PG" />
+			<class	name="testScriptsPayments.AirCom_OW_AirtelWalletPageLoad" />			
+		</classes>
+	</test>
+	-->
+
+</suite>

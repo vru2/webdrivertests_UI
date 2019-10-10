@@ -1,0 +1,109 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Platform Services API" parallel="tests" thread-count="2">
+
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="commonServices.RemoveDuplicateResults"/>
+		<listener class-name="commonServices.RetryListener"/>
+</listeners>
+
+	<test name="TripService Get Calls"  parallel="true">
+		<classes>
+			<class name="com.cleartrip.platform.tripServices.TS_GET_Trips" />
+			<class name="com.cleartrip.platform.tripServices.TS_Get_TripDetails_CommValue" />
+			<class name="com.cleartrip.platform.tripServices.TS_GET_Company_Bookstat" />
+			<class name="com.cleartrip.platform.tripServices.TS_GET_Finance_AIR" />
+			<class name="com.cleartrip.platform.tripServices.TS_GET_Finance_HOTEL" />
+			<class name="com.cleartrip.platform.tripServices.TS_GET_Finance_LOCAL" />
+			<class name="com.cleartrip.platform.tripServices.TS_GET_FinanceAllTrips_Air" />
+			<class name="com.cleartrip.platform.tripServices.TS_GET_FinanceAllTrips_Hotel" />
+			<class name="com.cleartrip.platform.tripServices.TS_GET_FinanceAllTrips_Local" />
+			<class name="com.cleartrip.platform.tripServices.TS_GET_Tripscount_Personid" />
+			<class name="com.cleartrip.platform.tripServices.TS_POST_GetAllTrips" />
+			<class name="com.cleartrip.platform.tripServices.TS_Post_UpcomingTrips" />
+			<class name="com.cleartrip.platform.tripServices.TS_GET_Trips_ItineraryId" />
+			<class name="com.cleartrip.platform.tripServices.TS_Finance_Scrapers" />
+			<class name="com.cleartrip.platform.tripServices.TS_GET_SUPPLIER" />
+			<class name="com.cleartrip.platform.tripServices.TS_GET_TripcountbyPNR" />	
+			<class name="com.cleartrip.platform.tripServices.TS_GET_CancelledInsurance" />	
+			<class name="com.cleartrip.platform.tripServices.TS_GraphQL"/>
+			<class name="com.cleartrip.platform.tripServices.TS_TripQuery"/>
+			<class name="com.cleartrip.platform.tripServices.TS_GET_Trips_API_Versioning"/>
+			<class name="com.cleartrip.platform.tripServices.TS_GET_Air_Refunded"/>
+			<class name="com.cleartrip.platform.tripServices.TS_GET_CorpTripCount"/>
+			<class name="com.cleartrip.platform.tripServices.TS_GET_CorpTripList"/>
+		</classes>
+	</test>
+
+	<test name="TripService Logbooking">
+		<classes>
+			<class name="com.cleartrip.platform.tripServices.TS_LogBooking_Air" />
+			<class name="com.cleartrip.platform.tripServices.TS_LogBooking_Hotel" /> 
+			<class name="com.cleartrip.platform.tripServices.TS_LogBooking_Local" />
+			<class name="com.cleartrip.platform.tripServices.TS_LogBooking_Trains" />
+		</classes>
+	</test>
+	
+	<test name="TripService Updatebooking" >
+		<classes>
+			<class name="com.cleartrip.platform.tripServices.TS_UpdateBooking_Air" />
+			<class name="com.cleartrip.platform.tripServices.TS_UpdateBooking_Hotel" />
+			<class name="com.cleartrip.platform.tripServices.TS_UpdateBooking_Local" />
+			<class name="com.cleartrip.platform.tripServices.TS_UpdateBooking_Trains" />
+		    <class name="com.cleartrip.platform.tripServices.TS_Update_Air_Module" />
+		    <class name="com.cleartrip.platform.tripServices.TS_PUT_Trips" />
+		    <class name="com.cleartrip.platform.tripServices.TS_POST_EmailByTxnId" />
+		    <class name="com.cleartrip.platform.tripServices.TS_Invoice_Generation_Air" />
+		    <class name="com.cleartrip.platform.tripServices.TS_Invoice_Generation_Hotel" />
+		    <class name="com.cleartrip.platform.tripServices.TS_Invoice_Generation_Local" />
+		    
+		</classes>
+	</test>
+	
+	
+	<test name="MobileFraud MFilter Call"  parallel="true">
+		<classes>
+			<class name="com.cleartrip.platform.tripServices.TS_MF_MFilter" />
+		</classes>
+	</test>
+	
+	
+	<test name="SMS"  >
+		<classes>
+		<class name="com.cleartrip.platform.smsservice.DomesticSMS"/> 
+		</classes>
+	</test>	
+	
+	<test name="Whatsapp"  parallel="true">
+		<classes>		
+		      <class name="com.cleartrip.platform.whatsappService.WhatsappCheckContacts"/>
+		      <class name="com.cleartrip.platform.whatsappService.WhatsappDeliveryFeedback"/> 
+		      <class name="com.cleartrip.platform.whatsappService.WhatsappUserMessage"/> 
+		      <class name="com.cleartrip.platform.whatsappService.WhatsappOptinFlow"/>
+		       <class name="com.cleartrip.platform.whatsappService.WhatsappMultilanguageSupport"/> 
+		      <class name="com.cleartrip.platform.whatsappService.WhatsappOptinFlowStatus"/>
+		      <class name="com.cleartrip.platform.whatsappService.WhatsappUserMessageWithAttachment"/>
+		      <class name="com.cleartrip.platform.whatsappService.WhatsappWebhookMessage"/>
+		</classes>
+	</test>
+	
+	<test name="Email"  parallel="true">
+		<classes>
+		      <class name="com.cleartrip.platform.email.Email_Template_true"/>
+		      <class name="com.cleartrip.platform.email.EmailPost"/>
+		      <class name="com.cleartrip.platform.email.EmailSpamScore"/>
+		      <class name="com.cleartrip.platform.email.EmailwithAttachments"/>
+		       <class name="com.cleartrip.platform.email.GeneratePDF"/>
+		        <class name="com.cleartrip.platform.email.GeneratePKPass"/>
+		</classes>
+	</test>
+	
+	<!-- <test name="Chat"  parallel="true">
+		<classes>
+		      <class name="com.cleartrip.platform.supportchatapi.SupportcreateChatAPI"/>
+		      <class name="com.cleartrip.platform.supportchatapi.SupportGatewaycreateChatAPI"/>
+		</classes>
+	</test> -->
+
+</suite> 
+	

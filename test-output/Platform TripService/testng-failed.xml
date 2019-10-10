@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Platform TripService]" parallel="tests" allow-return-values="true">
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="commonServices.RemoveDuplicateResults"/>
+    <listener class-name="commonServices.RetryListener"/>
+  </listeners>
+  <test name="TripService(failed)" parallel="tests">
+    <classes>
+      <class name="com.cleartrip.platform.tripservice.TripservicePutcall_Hotel">
+        <methods>
+          <include name="Tripservicehotelpostcall"/>
+          <include name="Tripservicehotelputcall"/>
+        </methods>
+      </class> <!-- com.cleartrip.platform.tripservice.TripservicePutcall_Hotel -->
+      <class name="com.cleartrip.platform.tripservice.TripservcePutcall_Air">
+        <methods>
+          <include name="Tripserviceairputcall"/>
+          <include name="Tripservicehotelputcall"/>
+        </methods>
+      </class> <!-- com.cleartrip.platform.tripservice.TripservcePutcall_Air -->
+      <class name="com.cleartrip.platform.tripservice.TripservicePostcall_Hotel">
+        <methods>
+          <include name="Tripservicehotelpostcall"/>
+        </methods>
+      </class> <!-- com.cleartrip.platform.tripservice.TripservicePostcall_Hotel -->
+      <class name="com.cleartrip.platform.tripservice.GetCallforTripservice">
+        <methods>
+          <include name="Getcallfortripservice"/>
+        </methods>
+      </class> <!-- com.cleartrip.platform.tripservice.GetCallforTripservice -->
+      <class name="com.cleartrip.platform.tripservice.TripservicePostcall_AIR">
+        <methods>
+          <include name="TripserviceAirpostcall"/>
+        </methods>
+      </class> <!-- com.cleartrip.platform.tripservice.TripservicePostcall_AIR -->
+      <class name="com.cleartrip.platform.tripservice.TripserviceTripsPostcall">
+        <methods>
+          <include name="Tripservicepostcall"/>
+        </methods>
+      </class> <!-- com.cleartrip.platform.tripservice.TripserviceTripsPostcall -->
+    </classes>
+  </test> <!-- TripService(failed) -->
+</suite> <!-- Failed suite [Platform TripService] -->

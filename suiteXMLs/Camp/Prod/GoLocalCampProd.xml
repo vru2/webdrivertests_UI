@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Go Camp" preserve-order="false" verbose="3">
+
+
+	<suite-files>
+
+		<suite-file path="suiteXMLs/Camp/Prod/LocalCampOthersProd.xml"></suite-file>
+	</suite-files>
+
+
+
+	<parameter name="env" value="prod"></parameter>
+	<parameter name="domain" value="ae"></parameter>
+	<parameter name="browser" value="chrome"></parameter>
+
+	<suite-files>
+
+		<suite-file path="suiteXMLs/Camp/Prod/LocalCampOthersProd.xml"></suite-file>
+	</suite-files>
+
+</suite> 

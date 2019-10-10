@@ -1,0 +1,140 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Agency Air Prod" parallel="tests" thread-count="70" preserve-order="true">
+
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" /> 
+</listeners> 
+
+<!-- <groups>
+      <run>
+        <include name="Smoke Tests"/>
+      </run>
+</groups>
+ -->
+<test name="Air : PAX" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsAgency.AgencyAir_PAX_111"/>
+      <class name="testScriptsAgency.AgencyAir_PAX_200"/>
+      <class name="testScriptsAgency.AgencyAir_PAX_210"/>
+    </classes>
+</test>
+
+<test name="Air : Payment" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsAgency.AgencyAir_Payment_CC"/>
+      <class name="testScriptsAgency.AgencyAir_Payment_DC"/>
+      <class name="testScriptsAgency.AgencyAir_Payment_ITZ"/>
+      <class name="testScriptsAgency.AgencyAir_Payment_CTPay"/>
+    </classes>
+</test>
+
+<test name="Air : Insurance" preserve-order="true">
+    <classes>
+      <class name="testScriptsAgency.AgencyAir_Insurance"/>
+    </classes>
+</test>
+
+ <test name="Air : ConvenienceFee" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsAgency.AgencyAir_ConvenienceFee_CC"/>
+      <class name="testScriptsAgency.AgencyAir_ConvenienceFee_NB"/>
+    </classes>
+</test>
+
+<test name="Air : Dom MultiCity" preserve-order="true">
+    <classes>
+      <class name="testScriptsAgency.AgencyAir_Dom_MuitiCity"/>
+    </classes>
+</test>
+
+<test name="Air : Dom Special RT" preserve-order="true">
+    <classes>
+      <class name="testScriptsAgency.AgencyAir_Dom_Spl_RT"/>
+    </classes>
+</test>
+
+ <test name="Air : Int MultiCity" preserve-order="true">
+    <classes>
+      <class name="testScriptsAgency.AgencyAir_Int_MuitiCity"/>
+    </classes>
+</test>
+
+  <test name="Air : Int RT" preserve-order="true">
+    <classes>
+      <class name="testScriptsAgency.AgencyAir_Int_RT"/>
+    </classes>
+</test>
+
+<test name="Air : Hold Scenarios" preserve-order="true"  parallel="true" >
+    <classes>
+      <class name="testScriptsAgency.AgencyAir_Int_Hold_Confirm"/>
+      <class name="testScriptsAgency.AgencyAir_Int_Hold_Release"/>
+    </classes>
+</test>
+
+<test name="Air : Netbank Retry" preserve-order="true">
+    <classes>
+      <class name="testScriptsAgency.AgencyAir_Dom_OneWay_Netbanking_Retry"/>
+    </classes>
+</test>
+
+<test name="Air : OntheGo MarkUP" preserve-order="true">
+    <classes>
+      <class name="testScriptsAgency.AgencyAir_Dom_OnTheGo_Markup"/>
+    </classes>
+</test>
+ 
+<test name="Air : Data Validation" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsAgency.AgencyAir_DataValidation_Dom_OneWay_GDS"/>
+      <class name="testScriptsAgency.AgencyAir_DataValidation_Dom_OneWay_LCC"/>
+      <class name="testScriptsAgency.AgencyAir_DataValidation_Int_OneWay_GDS"/>
+      <class name="testScriptsAgency.AgencyAir_DataValidation_Int_OneWay_LCC"/>
+    </classes>
+</test>
+
+ <test name="Admin Scenarios" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsAgency.Agency_Add_Task"/>
+      <class name="testScriptsAgency.Agency_Adding_Travellers"/>
+      <class name="testScriptsAgency.Agency_Adding_Users"/>
+      <class name="testScriptsAgency.Agency_Currency_Dropdown_Link"/>
+      <class name="testScriptsAgency.Agency_More_Links"/>
+      <class name="testScriptsAgency.Agency_Message_LinkVerify"/>
+      <class name="testScriptsAgency.Agency_My_Profile_Links_Verify"/>
+      <class name="testScriptsAgency.Agency_Settings_Links_verify"/>
+    </classes>
+</test>
+
+<test name="SRP and Intinerary Scenarios" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsAgency.Agency_SRP_CommissionTab"/>
+      <class name="testScriptsAgency.Agency_SRP_Itinerary_PhoneNo"/>
+      <class name="testScriptsAgency.Agency_SRP_MiniRules"/>   
+      <class name="testScriptsAgency.Agency_SRP_ModifySearch"/>   
+      <class name="testScriptsAgency.Agency_SRP_SendQuotation"/>
+      <class name="testScriptsAgency.Agency_SRP_Stops"/>
+      <class name="testScriptsAgency.Agency_SRP_TravelClass"/>
+      <class name="testScriptsAgency.Agency_Itinerary_BookingPolicy"/>
+      <class name="testScriptsAgency.Agency_Itinerary_FareRule"/>
+    </classes>
+</test>
+
+<test name="Miscellaneous Scenarios" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsAgency.Agency_Misc_CT_Accepted_DebitCards"/>
+      <class name="testScriptsAgency.Agency_Misc_Edit_TravelerName"/>
+       <class name="testScriptsAgency.Agency_Misc_PaymentTypes_and_Logos"/>
+       <class name="testScriptsAgency.Agency_Misc_Pricing_ConvFee_and_Insurance"/>
+       <class name="testScriptsAgency.Agency_Footer_Links"/>       
+      <class name="testScriptsAgency.Agency_CopyRight"/>
+    </classes>
+</test>
+
+<test name="Deposit Account Scenarios" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsAgency.Agency_Misc_DepositAccount_Instructions"/>
+    </classes>
+</test>
+ 
+</suite> 

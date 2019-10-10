@@ -1,0 +1,101 @@
+<html>
+<head>
+<title>TestNG:  WALLET PAY</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>WALLET PAY</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Mon Mar 25 17:19:46 IST 2019</td>
+</tr>
+<tr><td>Total time:</td><td>218 seconds (218754 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='testScriptsTrains.Pax_4A_Sleeper_AmazonPay.B2cTrains_Pax_4A_Sleeper()'><b>B2cTrains_Pax_4A_Sleeper</b><br>Test class: testScriptsTrains.Pax_4A_Sleeper_AmazonPay<br>Parameters: SBC, MAS, Sleeper (SL), 10, General, Same, Kaveri Express, 4, 0, 0, 0, WALLETS, B2C Trains HomePage SignIn General Booking with Adult=1, Your Booking is confirmed, Cancel<br/>
+<a href="#Output-1312091176" onClick='toggleBox("Output-1312091176", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1312091176" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1312091176">
+Train Searched for SBC to : MAS for Date : 10<br/>
+<p>https://qa2.cleartrip.com/trains/results?from_station=SBC&to_station=MAS&class=SL&date=10-4-2019&adults=4&children=0&male_seniors=0&female_seniors=0</p><br/>
+6<br/>
+Chennai Express<br/>
+Selected train Chennai Express is not matching with Kaveri Express<br/>
+Kaveri Express<br/>
+Selected train Kaveri Express is matching with Kaveri Express<br/>
+Proceeding from bookstep 1<br/>
+https://qa2.cleartrip.com/trains/itinerary/4e5f607031220137f20e7a163e9fe348/info<br/>
+Proceeding from bookstep 1<br/>
+https://qa2.cleartrip.com/trains/itinerary/4e5f607031220137f20e7a163e9fe348/info<br/>
+</div>
+</td>
+<td></td>
+<td>212</td>
+<td>testScriptsTrains.Pax_4A_Sleeper_AmazonPay@7364985f</td></tr>
+</table><p>
+</body>
+</html>

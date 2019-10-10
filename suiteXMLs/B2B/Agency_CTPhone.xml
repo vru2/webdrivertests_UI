@@ -1,0 +1,63 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CTPhone Agency" parallel="tests" thread-count="50" preserve-order="true" >
+
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" /> 
+</listeners>
+<!-- 
+<groups>
+      <run>
+        <include name="Smoke Tests"/>
+      </run>
+</groups>
+ -->
+
+<test name="CTPhone Air : OntheGo MarkUP" preserve-order="true">
+    <classes>
+      <class name="testScriptsAgencyCTPhoneBookings.CTPhoneAir_Dom_OnTheGo_Markup"/>
+    </classes>
+</test>
+
+<test name="CTPhone Air : OntheGo Discount" preserve-order="true">
+    <classes>
+      <class name="testScriptsAgencyCTPhoneBookings.CTPhoneAir_Dom_OnTheGo_Discount"/>
+    </classes>
+</test>
+
+<test name="CTPhone Hotel : IVR" preserve-order="true">
+    <classes>
+      <class name="testScriptsAgencyCTPhoneBookings.CTPhoneHotel_IVR"/>
+    </classes>
+</test>
+
+<test name="CTPhone Hotel : Tech Process" preserve-order="true">
+    <classes>
+      <class name="testScriptsAgencyCTPhoneBookings.CTPhoneHotel_TechProcess"/>
+    </classes>
+</test>
+
+<test name="CTPhone Hotel : OntheGo MarkUP" preserve-order="true">
+    <classes>
+      <class name="testScriptsAgencyCTPhoneBookings.CTPhoneHotel_OnTheGo_Markup"/>
+    </classes>
+</test>
+
+<test name="CTPhone Hotel : OntheGo Discount" preserve-order="true">
+    <classes>
+      <class name="testScriptsAgencyCTPhoneBookings.CTPhoneHotel_OnTheGo_Discount"/>
+    </classes>
+</test>
+ 
+<test name="CTPhone Air : Payment IVR" preserve-order="true">
+    <classes>
+      <class name="testScriptsAgencyCTPhoneBookings.CTPhoneAir_IVR"/>
+    </classes>
+</test>
+
+<test name="CTPhone Air : Payment Tech Process" preserve-order="true">
+    <classes>
+      <class name="testScriptsAgencyCTPhoneBookings.CTPhoneAir_Tech_Process"/>
+    </classes>
+</test>
+
+</suite> 

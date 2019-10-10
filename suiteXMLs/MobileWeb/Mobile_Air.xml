@@ -1,0 +1,85 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Air" parallel="tests" thread-count="20">
+
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<!-- <listener class-name="commonServices.RemoveDuplicateResults"/>
+		<listener class-name="commonServices.RetryListener"/> -->
+</listeners>
+ 
+    <test name="Dom Oneway GDS" parallel="true">
+    	<classes>
+      		<class name="testScriptsMobile.MobileCom_Air_Dom_OW"/>
+    	</classes>
+  	</test> 
+  	
+	<test name="Dom RT" parallel="true">
+    	<classes>
+      		<class name="testScriptsMobile.MobileCom_Air_Dom_RT"/>
+    	</classes>
+	</test>
+	
+	<test name="Dom Expressway" parallel="true">
+    	<classes>
+      		<class name="testScriptsMobile.MobileCom_Air_Dom_Expressway"/>
+    	</classes>
+  	</test>
+  	
+	<test name="Dom Oneway LCC with Coupon" parallel="true">
+    	<classes>
+      		<class name="testScriptsMobile.MobileCom_Air_Dom_OW_Coupon"/>
+    	</classes>
+ 	</test>   
+ 	
+ 	<test name="Dom Sign In OW" parallel="true">
+    	<classes>
+      		<class name="testScriptsMobile.MobileCom_Air_Dom_Signin_OW"/>
+    	</classes>
+	</test>  
+
+	<test name="Intl GST" parallel="true">
+		<classes>
+      		<class name="testScriptsMobile.Mobile_Intl_OW_GST"/>
+     	</classes>
+	</test> 
+ 
+ 	<test name="Expressway  GST" parallel="true">
+    	<classes>
+      		<class name="testScriptsMobile.Mobile_Air_Dom_Expressway_GST"/>
+    	</classes>
+  	</test> 
+  
+   	<test name="Intl OW" parallel="true">
+    	<classes>
+      		<class name="testScriptsMobile.MobileCom_Air_Intl_Ow"/>
+    	</classes>
+  	</test> 
+
+	<test name="Intl RT" parallel="true">
+    	<classes>
+      		<class name="testScriptsMobile.MobileCom_Air_Intl_RT"/>
+    	</classes>
+  	</test>  
+  
+ 	<test name="Dom Cancellation" parallel="true">
+    	<classes>
+      		<class name="testScriptsMobile.MobileCom_Dom_Cancellation"/>
+    	</classes>
+	</test>   
+   
+ 	<test name="Price Check Dom Oneway" parallel="true">
+    	<classes>
+    		<class name="testScriptsMobile.MobileCom_Air_Dom_OW_PriceCheck"/>
+    	</classes>
+  	</test>  
+  	
+
+   	<test name="PG verification" parallel="true">
+    	<classes>
+      		<class name="testScriptsMobile.Mobile_Dom_OW_NBRetry_PGCheck"/>
+       		<class name="testScriptsMobile.Mobile_Dom_OW_PGCheck"/>
+    	</classes>
+  	</test>  
+  
+   
+  </suite> 

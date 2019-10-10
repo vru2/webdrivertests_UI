@@ -1,0 +1,39 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Locals Dsktp TTD" thread-count="3" parallel="classes"
+	verbose="3" preserve-order="true">
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="commonServices.RemoveDuplicateResults" />
+	</listeners>
+	
+	<test name="Locals Desktop TTD cases">
+		<classes>
+		
+		 	<class name="com.cleartrip.local.desktop.ttd.AdultTimeSlot" />
+			<class name="com.cleartrip.local.desktop.ttd.AdultTimeSlotUnavailable" />
+			<class name="com.cleartrip.local.desktop.ttd.CancellationHQ" />
+			<class name="com.cleartrip.local.desktop.ttd.CarousalCC" />
+			<class name="com.cleartrip.local.desktop.ttd.FullWallet" />
+			<class name="com.cleartrip.local.desktop.ttd.GroupAbuDhabi" />
+			<class name="com.cleartrip.local.desktop.ttd.GroupUnscheduledCC" />
+			<class name="com.cleartrip.local.desktop.ttd.LoginKidsUnscheduledNBretryCC" />
+			<class name="com.cleartrip.local.desktop.ttd.PaytmWalletRetry" />
+			<class name="com.cleartrip.local.desktop.ttd.ProdEditorial" />
+			<class name="com.cleartrip.local.desktop.ttd.ScheduledAdultAE" />
+			<class name="com.cleartrip.local.desktop.ttd.ScheduledAdultChildAmex" />
+			<class name="com.cleartrip.local.desktop.ttd.GstUnsigned" />
+			<class name="com.cleartrip.local.desktop.ttd.GV" />
+			<class name="com.cleartrip.local.desktop.ttd.SEOYouMightAlsoLike" />
+			<class name="com.cleartrip.local.desktop.ttd.SEONearYou" />
+			<class name="com.cleartrip.local.desktop.ttd.SEODetailPage" />
+			<class name="com.cleartrip.local.desktop.ttd.VatExclusiveBooking" />
+			<class name="com.cleartrip.local.desktop.ttd.VatInclusiveBooking" />
+		    <class name="com.cleartrip.local.desktop.ttd.KlookWithAdditionalInfo" />
+			<class name="com.cleartrip.local.desktop.ttd.KlookWithAdditionalInfoList" />
+		    <class name="com.cleartrip.local.desktop.ttd.Musement" />
+		    <class name="com.cleartrip.local.desktop.ttd.Klook" />
+		    
+		    
+		</classes>
+	</test>
+</suite>

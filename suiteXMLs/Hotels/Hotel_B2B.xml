@@ -1,0 +1,88 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Agency and Corp" parallel="tests" thread-count="70" preserve-order="true">
+
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />		
+</listeners>
+
+<test name="Agency" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsAgency.AgencyHotel_Coupon"/>
+      <class name="testScriptsAgency.AgencyHotel_PAX_120_CC"/>
+      <class name="testScriptsAgency.AgencyHotel_PAX_131_DA"/>
+      <class name="testScriptsAgency.AgencyHotel_PAX_220_DC"/>
+ 	  <class name="testScriptsAgency.AgencyHotel_PAX_MultiRoomNight"/>
+      <class name="testScriptsAgency.AgencyHotel_Payment_CTPay"/>
+      <class name="testScriptsAgency.AgencyHotel_OnTheGo_Markup"/>
+      <class name="testScriptsAgency.AgencyHotel_Cancellation_HQ"/>
+      <class name="testScriptsAgency.AgencyHotel_Cancellation_Accounts"/> 
+      <class name="testScriptsAgency.AgencyHotel_Intl"/>
+ 	  <class name="testScriptsAgency.AgencyHotel_NetBanking_Retry"/>
+ 	  <class name="testScriptsAgency.AgencyHotel_HQTrips_LinkVerify"/>
+  	  <class name="testScriptsAgency.AgencyHotel_TripDetails_Account"/>
+ 	  <class name="testScriptsAgency.AgencyHotel_SRP_MapView"/>
+      <class name="testScriptsAgency.AgencyHotel_Dom_RateType3"/>
+      <class name="testScriptsAgency.AgencyHotel_Spl_Rates"/>
+      <class name="testScriptsAgency.AgencyHotel_Pkg_Rates"/>
+      <class name="testScriptsAgency.AgencyHotel_GST"/>
+      <class name="testScriptsAgency.AgencyHotel_DetailsPageBook"/>      
+      <class name="testScriptsAgency.AgencyHotel_DetailsPage_BackButton"/>    
+      <class name="testScriptsAgency.AgencyHotel_DetailsPage_CancellationPolicy"/>      
+    </classes>
+</test>
+
+<test name="CTPhone" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsAgencyCTPhoneBookings.CTPhoneHotel_IVR"/>
+      <class name="testScriptsAgencyCTPhoneBookings.CTPhoneHotel_TechProcess"/>
+      <class name="testScriptsAgencyCTPhoneBookings.CTPhoneHotel_OnTheGo_Markup"/>
+      <class name="testScriptsAgencyCTPhoneBookings.CTPhoneHotel_OnTheGo_Discount"/>
+      <class name="testScriptsAgencyCTPhoneBookings.CTPhoneHotel_Payment_CTPay"/>
+      <class name="testScriptsAgencyCTPhoneBookings.CTPhoneHotel_DetailsPage_BackButton"/>
+    </classes>
+</test>
+
+<test name="Corp.Com" preserve-order="true" parallel="true">
+    <classes>
+       <class name="testScriptsCorporate.HotelCorp_PAX_Payment_CC_120"/>
+       <class name="testScriptsCorporate.HotelCorp_PAX_Payment_DA_222"/>
+       <class name="testScriptsCorporate.HotelCorp_PAX_Payment_DC_131"/>
+       <class name="testScriptsCorporate.HotelCorp_PAX_MultiRoomNight"/>
+       <class name="testScriptsCorporate.HotelCorp_Coupon"/> <!-- // merged with PKG Rate -->
+       <class name="testScriptsCorporate.HotelCorp_Spl_Rate"/>
+       <class name="testScriptsCorporate.HotelCorp_Cancellation_HQ"/>
+       <class name="testScriptsCorporate.HotelCorp_PAH"/>
+       <class name="testScriptsCorporate.HotelCorp_Intl"/>
+       <class name="testScriptsCorporate.HotelCorp_NetBanking_Retry"/>   
+       <class name="testScriptsCorporate.HotelCorp_Cancellation_HQ"/>             
+       <class name="testScriptsCorporate.HotelCorp_Cancellation_Accounts"/>      
+       <class name="testScriptsCorporate.HotelCorp_PTA_Approved"/>
+       <class name="testScriptsCorporate.HotelCorp_PTA_Rejected"/>
+       <class name="testScriptsCorporate.HotelCorp_HQTrips_LinkVerify"/>
+       <class name="testScriptsCorporate.HotelCorp_Acccount_TripDetails"/>
+       <class name="testScriptsCorporate.HotelCorp_DetailsPage_BackButton"/> 
+       <class name="testScriptsCorporate.HotelCorp_DetailsPage_CancellationPolicy"/>  
+     <!--   <class name="testScriptsCorporate.HotelCorp_Connector_OYO"/> -->
+     </classes>
+</test>
+
+ 
+<test name="Corp.AE" preserve-order="true" parallel="true">
+    <classes>  
+     <!--   <class name="testScriptsCorporate.HotelCorpAE_Pkg_Rate"/>  -->
+       <class name="testScriptsCorporate.HotelCorpAE_Spl_Rate"/> <!-- // Cancellation Merged -->
+       <class name="testScriptsCorporate.HotelCorpAE_Coupon"/> <!--  // CC merged -->
+       <class name="testScriptsCorporate.HotelCorpAE_Intl"/>    
+       <class name="testScriptsCorporate.HotelCorpAE_DetailsPage_BackButton"/>   
+     </classes>
+</test> 
+
+<!-- 
+<test name="Corp.SA" preserve-order="true">
+    <classes>
+      <class name="testScriptsCorporate.CorpSA_Hotel"/>
+      <class name="testScriptsCorporate.CorpSA_Hotel_Intl"/>      
+    </classes>
+</test> 
+ -->
+</suite> 

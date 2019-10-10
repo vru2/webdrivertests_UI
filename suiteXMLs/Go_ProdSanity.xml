@@ -1,0 +1,110 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Prod Sanity Check" parallel="tests" thread-count="50">
+
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+</listeners> 
+ 
+ <test name="B2C Air" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsIndia.AirDom_OW_Prod_NBRetry"/>
+      <class name="testScriptsIndia.AirDom_OW_Search_Results"/>
+      <class name="testScriptsIndia.AirDom_RT_Search_Results"/>
+      <class name="testScriptsIndia.AirIntl_OW_Serach_Results"/>
+      <class name="testScriptsIndia.AirIntl_RT_Search_Results"/>
+      <class name="testScriptsIndia.ArIntl_MC_Serach_Results"/>
+    </classes>
+</test>
+
+  <test name="B2C Hotels" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_Prod_NetBanking"/>
+	  <class name="testScriptsIndiaHotels.HotelCom_Intl_Book_RoomType2" />	
+    </classes>
+</test> 
+
+ <test name="Hotel API" preserve-order="true" parallel="true">
+    <classes>
+      <class name="com.cleartrip.hotel.extapi.CHMM_Prod"/>      
+<!--       <class name="testScriptsIndiaHotels.HotelCom_External_API_Prod"/>       -->
+    </classes>
+</test> 
+ 
+ <test name="B2C Account" preserve-order="true">
+    <classes>
+      <class name="testScriptsB2CAccounts.B2CAccount_Login"/>
+    </classes>
+</test> 
+  
+ <test name="Agency Air" preserve-order="true" >
+    <classes>
+      <class name="testScriptsAgency.AgencyAir_Dom_OneWay_NetBanking_Production"/>
+    </classes>
+</test> 
+
+ <test name="Agency Hotel" preserve-order="true">
+    <classes>
+      	<class name="testScriptsAgency.AgencyHotel_PAX_220_DC"/>
+    </classes>
+</test> 
+
+<test name="Corp Air" preserve-order="true">
+    <classes>
+      <class name="testScriptsCorpIndia.AirCorp_Dom_OW_NBFailureCC"/>
+    </classes>
+</test>
+
+<test name="Corp Hotel" preserve-order="true">
+    <classes>
+         <class name="testScriptsCorporate.HotelCorp_PAX_Payment_CC_120"/>
+    </classes>
+</test>
+ 
+<test name="AE Hotels" preserve-order="true" parallel="true">
+		<classes>
+			<class name="testScriptsMiddleEastHotels.HotelAE_Payment_PAX_Combo" />
+			<class name="testScriptsMiddleEastHotels.HotelAE_Intl" />
+		</classes>
+</test>
+  
+<test name="AE Air" preserve-order="true">
+    <classes>
+    	<class name="testScriptsMiddleEastAir.MEAir_Dom_Unsigned_MC_NB_Retry_Booking"/>
+    </classes>
+</test>
+
+<test name="Trains" preserve-order="true" >
+    <classes>
+      <class name="testScriptsTrains.Pax_1A_ACFirstClass"/>
+    </classes>
+</test>
+
+
+<test name="Amex WL Air" preserve-order="true" >
+    <classes>
+ 	  		<class name="testScriptsAmexWhiteLabel.Beta_AirDom_OW_AmexWhiteLabel"/>
+    </classes>
+</test>
+
+<test name="Amex WL Hotel" preserve-order="true" >
+    <classes>
+      <class name="testScriptsIndiaHotels.HotelCom_AmexTravel_Prod"/>
+    </classes>
+</test>
+
+  <test name="Flight XP WL" preserve-order="true">
+    	<classes> 	 
+ 	  		<class name="testScriptsFlightXP.Beta_FlightXP_OW"/> 
+ 		</classes>
+</test>
+ <test name="Air EXTAPI Itinerarycreate" preserve-order="true" parallel="true">
+
+    <classes> 	 
+       	<class name="testScriptsJsonExternalAPI.BetaJsonOnewaySinglePAX" />
+     		<class name="testScriptsExternalAPI.BetaonewaysinglePAX"/>
+     	<class name="testScriptsExternalAPI.BetaRoundtripSinglePAX"/> 
+        </classes>
+    
+ </test>   
+
+</suite> 

@@ -1,0 +1,30 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Local Web Desktop Failed">
+    
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+</listeners>
+ 
+	<suite-files>
+				<suite-file path="Locals_Desktop_Events.xml"></suite-file>
+	</suite-files >
+ 
+
+ 
+ <test name="Local Whitelabel FNB Adult">
+    <classes>
+  	<class name="testScriptsLocalsWL.LocalsWL_FNB_Adult"/>
+    </classes>    
+ </test>
+ 
+ 
+<test name="FNB Adult Only" preserve-order="true">
+    <classes>
+  	  	<class name="testScriptsLocals.Locals_FNB_Adult"/>
+    </classes>
+</test>
+
+
+ 
+
+ </suite> 

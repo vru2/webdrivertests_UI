@@ -1,0 +1,33 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Mini Release BookApp Seat Selection Cases" parallel="tests" thread-count="50">
+
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		 <listener class-name="commonServices.RemoveDuplicateResults" />
+		<listener class-name="commonServices.RetryListener" />  
+	</listeners>
+
+	
+
+
+ <test name="Air Seat Selection Cases" preserve-order="true" parallel="classes">
+		<classes>
+			<class name="testScriptsIndia.AirDom_OW_SeatSelection_IndiGo_Booking" /> 
+			<class name="testScriptsIndia.AirDom_RT_SeatSelectionToBothSectors_IndiGo_Booking" />
+			<class name="testScriptsIndia.AirDom_OW_SeatSelection_SG_Booking" /> 
+			<class name="testScriptsIndia.AirDom_RT_SeatSelectionToBothSectors_SG_Booking" />  
+		</classes> 
+</test>   
+		
+
+  
+  
+  
+  
+  
+  
+ 
+  
+  
+ 
+</suite>

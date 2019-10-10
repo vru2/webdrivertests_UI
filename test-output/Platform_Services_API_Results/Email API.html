@@ -1,0 +1,151 @@
+<html>
+<head>
+<title>TestNG:  Email API</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Email API</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>4/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Thu Jan 10 09:42:47 IST 2019</td>
+</tr>
+<tr><td>Total time:</td><td>3 seconds (3613 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.cleartrip.platform.email.Email_Template_true.message()'><b>message</b><br>Test class: com.cleartrip.platform.email.Email_Template_true<br/>
+<a href="#Output-151135533" onClick='toggleBox("Output-151135533", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-151135533" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-151135533">
+Service URL : http://emailapi.cltp.com:9001/r3/email<br/>
+Test case passed<br/>
+{
+  "id" : "353760df-67a8-4c3b-a509-baacef011a3a",
+  "status" : "ACCEPTED"
+}<br/>
+Status code == 202<br/>
+</div>
+</td>
+<td></td>
+<td>3</td>
+<td>com.cleartrip.platform.email.Email_Template_true@33b37288</td></tr>
+<tr>
+<td title='com.cleartrip.platform.email.EmailPost.message()'><b>message</b><br>Test class: com.cleartrip.platform.email.EmailPost<br/>
+<a href="#Output-2119611630" onClick='toggleBox("Output-2119611630", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-2119611630" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-2119611630">
+Service URL : http://emailapi.cltp.com:9001/r3/email<br/>
+Test case passed<br/>
+{
+  "id" : "9cc8d16a-8163-4b63-b9c1-a4ac6d3814ee",
+  "status" : "ACCEPTED"
+}<br/>
+Status code == 202<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>com.cleartrip.platform.email.EmailPost@77a57272</td></tr>
+<tr>
+<td title='com.cleartrip.platform.email.EmailSpamScore.message()'><b>message</b><br>Test class: com.cleartrip.platform.email.EmailSpamScore<br/>
+<a href="#Output-1399262545" onClick='toggleBox("Output-1399262545", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1399262545" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1399262545">
+Service URL : http://emailapi.cltp.com:9001/r3/check-spam-score<br/>
+Test case passed<br/>
+{
+  "score" : "1.7",
+  "spamResultSet" : [ " -0.0 NO_RELAYS Informational: message was not relayed via SMTP", "  0.0 HTML_MESSAGE BODY: HTML included in message", "  1.1 MIME_HTML_ONLY BODY: Message only has text/html MIME parts", "  0.6 HTML_MIME_NO_HTML_TAG HTML-only message, but there is no HTML tag", " -0.0 NO_RECEIVED Informational: message has no Received headers" ]
+}<br/>
+Status code = 200<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>com.cleartrip.platform.email.EmailSpamScore@7181ae3f</td></tr>
+<tr>
+<td title='com.cleartrip.platform.email.EmailwithAttachments.message()'><b>message</b><br>Test class: com.cleartrip.platform.email.EmailwithAttachments<br/>
+<a href="#Output-28568596" onClick='toggleBox("Output-28568596", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-28568596" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-28568596">
+Service URL : http://emailapi.cltp.com:9001/r3/email<br/>
+Test case passed<br/>
+{
+  "id" : "1c6a5cb4-81d1-4308-8503-400ac998d293",
+  "status" : "ACCEPTED"
+}<br/>
+Status code == 202<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>com.cleartrip.platform.email.EmailwithAttachments@46238e3f</td></tr>
+</table><p>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="B2C Air Payment Regression" parallel="tests"
+	thread-count="20">
+
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="commonServices.RemoveDuplicateResults" />
+		<listener class-name="commonServices.RetryListener" />
+	</listeners>
+
+
+
+
+	<test name="Payment Cases" preserve-order="true" parallel="true">
+
+		<classes>
+
+			<class name="testScriptsPayments.AirDom_OW_GDS_NB_Retry_CCBooking" />
+			<class name="testScriptsPayments.AirDom_OW_LCC_PayUWalletPageLoad" />
+			<class name="testScriptsPayments.AirDom_OW_Full_CTWallet_Booking" />
+			<class name="testScriptsPayments.AirCom_OW_Full_GiftVoucher_Booking" />
+			<class name="testScriptsPayments.AirCom_Dom_AmexCard_Booking" />
+			<class
+				name="testScriptsPayments.AirCom_OW_MIGS_Expressway_Saved_Card_Booking" />
+			<class name="testScriptsPayments.AirDom_OW_DebitCard_Booking" />
+			<class name="testScriptsPayments.AirDom_OW_Booking_With_EMI" />
+			<class name="testScriptsPayments.B2CAirWalletCashbackFeatureCheck" />
+			<class name="testScriptsPayments.B2CAirCheckPaymentOptions" />
+			<class name="testScriptsPayments.AirCom_OW_PaytmWalletPageLoad" />
+
+
+			 <class name="testScriptsPayments.AirDom_OW_MasterPassRetry" />
+		</classes>
+
+	</test>
+
+
+
+</suite>
+
+
+
+<!-- REMOVED CASES -->
+<!-- <class name="testScriptsPayments.AirDom_OW_GDS_PayUWalletRetry_CC_Booking"/> 
+	no need <class name="testScriptsPayments.AirDom_OW_GDS_NB_Retry_AmexCardBooking"/> 
+	not required <class name="testScriptsPayments.AirCom_Dom_Amex_StoredCard_Booking"/> 
+	not required <class name="testScriptsPayments.AirCom_Dom_Migs_StoredCard_Booking"/> 
+	not required <class name="testScriptsPayments.AirCom_OW_AMEX_Expressway_Saved_Card_Booking"/> 
+	not required -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

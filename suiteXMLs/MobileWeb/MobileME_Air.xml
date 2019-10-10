@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+
+<suite name="Air ME" parallel="tests" thread-count="3">
+
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+</listeners>
+
+  <test name="ME-AIR MwebSUBDOMAIN CASES " preserve-order="true" parallel="classes">
+ 		<classes>
+ 		<class name="testScriptsMobileMiddleEast.MobileAE_Air_Dom_OW"/>
+   			 <class name="testScriptsMobileMiddleEast.MobileAE_Air_Dom_RT"/>  
+			<class name="testScriptsMobileMiddleEast.MobileBH_Air_Dom_OW"/> 
+   			<class name="testScriptsMobileMiddleEast.MobileSA_Air_Dom_OW"/>
+   			<class name="testScriptsMobileMiddleEast.MobileKW_Air_Dom_OW_Coupon"/> 	
+ 			<class name="testScriptsMobileMiddleEast.MobileOM_Air_Dom_OW_Coupon"/>		
+    		<class name="testScriptsMobileMiddleEast.MobileQA_Air_Dom_OW"/>
+    		<class name="testScriptsMobileMiddleEast.MobileAE_Air_Dom_OW_Conv_Fee_Check"/>
+    	
+  			<class name="testScriptsMobile.MobileFlightxp"/>	 
+    			 
+		</classes> 
+	</test>
+	</suite>

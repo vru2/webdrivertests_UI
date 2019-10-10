@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Locals Desktop Scenarios">
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+	</listeners>
+	<suite-files>
+	
+	
+	
+
+		<suite-file path="DesktopOthers.xml"></suite-file>
+	    <suite-file path="AdditionalInfoLocal.xml"></suite-file> 
+	   <!--  <suite-file path="DesktopTTD.xml"></suite-file> -->
+	    <suite-file path="WLTTD.xml"></suite-file>
+	    
+	     <suite-file path="Visa.xml"></suite-file>
+	    
+
+	</suite-files>
+</suite>

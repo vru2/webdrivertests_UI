@@ -1,0 +1,99 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Accts Prod" parallel="tests" thread-count="25">
+
+
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="commonServices.RemoveDuplicateResults"/>
+		<listener class-name="commonServices.RetryListener"/>
+</listeners>
+
+
+<test name="MWeb SignIN SignOut" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsAccounts.MW_SignIN_SignOut"/>
+    </classes>
+</test> 
+
+ 	<test name="Acct Link Check" preserve-order="true" parallel="true">
+    	<classes>
+     		<class name="testScriptsAccounts.Account_Link_Check"/>
+   		</classes>
+  	</test>  	
+
+
+  	<test name="HeaderElements" preserve-order="true"  parallel="true">
+    	<classes>
+     		<class name="testScriptsAccounts.HeaderElements"/>
+     		<class name="testScriptsAccounts.HeaderElements_SignIN_Unsigned"/>     		
+   		</classes>
+  	</test> 
+  	
+  	<test name="HomePage SignIn and Signout" preserve-order="true" parallel="true">
+    	<classes>
+     		<class name="testScriptsAccounts.Homepage_LoginAndSignout"/>
+   		</classes>
+  	</test>  	
+  	
+  	
+  	<test name="Profile" preserve-order="true" parallel="true">
+    	<classes>
+     		<class name="testScriptsAccounts.Profile"/>
+   		</classes>
+  	</test>
+  	 
+  	 <test name="Change Password" preserve-order="true" parallel="true">
+    	<classes>
+     		<class name="testScriptsAccounts.Change_Password"/>
+   		</classes>
+  	</test>
+  	
+  		 <test name="Change Username" preserve-order="true" parallel="true">
+    	<classes>
+     		<class name="testScriptsAccounts.Change_Username"/>
+   		</classes>
+  	</test>
+  	
+  	
+  	
+  	<test name="B2C Accounts LHS Tabs" preserve-order="true" parallel="true">
+    	<classes>
+     		<class name="testScriptsAccounts.B2C_AccountsPage_LHSTabs"/>
+   		</classes>
+  	</test>
+  	  			
+	<test name="Unsigned Tripsearch" preserve-order="true" parallel="true">
+    	<classes>
+     		<class name="testScriptsAccounts.Unsigned_Tripsearch"/>
+   		</classes>
+  	</test>
+	
+	
+	<test name="TripsPageSignIN and FBConnnect" preserve-order="true" parallel="true">
+    	<classes>
+     		<class name="testScriptsAccounts.TripsPageSignIN_FBConnnect"/>
+   		</classes>
+  	</test>
+  	
+  	<test name="Accounts Wallet" preserve-order="true" parallel="true">
+    	<classes>
+     		<class name="testScriptsAccounts.Accounts_Wallet"/>
+   		</classes>
+  	</test>
+  	
+  	<test name="Accounts Expressway" preserve-order="true" parallel="true">
+    	<classes>
+     		<class name="testScriptsAccounts.Expressway"/>
+   		</classes>
+  	</test>
+  	
+  	<test name="TrainsRetry" preserve-order="true" parallel="true">
+    	<classes>
+     		<class name="testScriptsTrains.General_NB_Prod"/>
+   		</classes>
+  	</test>
+  	
+  
+  	  	
+		
+  </suite> 

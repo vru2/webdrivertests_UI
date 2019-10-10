@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="20" guice-stage="DEVELOPMENT" name="Failed suite [Trains Prod]" parallel="tests">
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="commonServices.RemoveDuplicateResults"/>
+    <listener class-name="commonServices.RetryListener"/>
+  </listeners>
+  <test name="RAC - 2A(failed)" parallel="tests">
+    <classes>
+      <class name="testScriptsTrains.Pax_2A_RAC">
+        <methods>
+          <include name="B2cTrains_Pax_2Adults_RAC" invocation-numbers="0 0"/>
+          <include name="setUp"/>
+          <include name="afterMethod"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- testScriptsTrains.Pax_2A_RAC -->
+      <class name="testScriptsTrains.Tatkal">
+        <methods>
+          <include name="tearDown"/>
+          <include name="afterMethod"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- testScriptsTrains.Tatkal -->
+      <class name="testScriptsTrains.PAX_1A1SM_NBRetry">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- testScriptsTrains.PAX_1A1SM_NBRetry -->
+      <class name="testScriptsTrains.Pax_1A_General">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- testScriptsTrains.Pax_1A_General -->
+      <class name="testScriptsTrains.Calendar">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- testScriptsTrains.Calendar -->
+      <class name="testScriptsTrains.Pax_3A_Unsigned">
+        <methods>
+          <include name="setUp"/>
+          <include name="afterMethod"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- testScriptsTrains.Pax_3A_Unsigned -->
+      <class name="testScriptsTrains.Pax_Multi">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- testScriptsTrains.Pax_Multi -->
+      <class name="testScriptsTrains.Pax_2A2C">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- testScriptsTrains.Pax_2A2C -->
+      <class name="testScriptsTrains.CalendarSRP">
+        <methods>
+          <include name="setUp"/>
+          <include name="afterMethod"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- testScriptsTrains.CalendarSRP -->
+    </classes>
+  </test> <!-- RAC - 2A(failed) -->
+</suite> <!-- Failed suite [Trains Prod] -->

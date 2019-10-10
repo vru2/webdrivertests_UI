@@ -1,0 +1,149 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="B2C Coupons and Payments" parallel="tests" thread-count="50" preserve-order="true">
+
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />	
+		<listener class-name="commonServices.RetryListener"/>	
+</listeners>
+
+<test name="Coupons" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsIndiaHotels.HotelCom_Coupon_FullCoupon"/>
+    
+      <class name="testScriptsIndiaHotels.HotelCom_Coupon"/>      
+      <class name="testScriptsIndiaHotels.HotelCom_Coupon_DualCashback"/>
+       <class name="testScriptsIndiaHotels.HotelCom_Coupon_Price_Limit"/>
+      <class name="testScriptsIndiaHotels.HotelCom_Coupon_Backup"/>
+    </classes>
+</test>
+
+<test name="Coupons Wallet" preserve-order="true" parallel="true">
+    <classes>    
+      <class name="testScriptsIndiaHotels.HotelCom_Coupon_WalletPlus"/>
+      <class name="testScriptsIndiaHotels.HotelCom_Coupon_WalletRestructuring_Dual"/>    
+    </classes>
+</test>
+
+ <test name="Price Validation" preserve-order="true">
+    <classes>   
+    <class name="testScriptsIndiaHotels.HotelCom_Price_Validation"/>
+     </classes>
+</test> 
+    
+  <test name="Coupons GV" preserve-order="true" parallel="true">
+    <classes>
+       <class name="testScriptsIndiaHotels.HotelCom_Coupon_GiftVoucher"/>
+       <class name="testScriptsIndiaHotels.HotelCom_Coupon_GV_Multi"/>
+    </classes>
+</test> 
+<!-- 
+ <test name="Coupons PAH" preserve-order="true" parallel="true">
+    <classes>
+       <class name="testScriptsIndiaHotels.HotelCom_Coupon_PAH"/>
+       <class name="testScriptsIndiaHotels.HotelCom_Coupon_PAHCC"/>
+    </classes>
+</test>
+ -->
+<test name="Coupons Promo and Select Traveller Pay DC" preserve-order="true" parallel="true">
+    <classes>
+       <class name="testScriptsIndiaHotels.HotelCom_Coupon_HQPromo_Select_Traveller_DC"/>
+       <class name="testScriptsIndiaHotels.HotelCom_Coupon_CHMMPromo"/>
+    </classes>
+</test>
+
+<test name="GST Unsigned and Unconfirmed" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_GST_SGST_Unsigned"/>
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_GST_IGST_Unconfirmed"/>
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_GST_Unselect"/>
+    </classes>
+</test>
+
+<test name="Intl NB retry" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsIndiaHotels.HotelCom_Intl_Book_RoomType2"/>
+    </classes>
+</test>
+
+<test name="Amex White Label" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsIndiaHotels.HotelCom_AmexTravel_HQ_Cancellation"/>
+      <class name="testScriptsIndiaHotels.HotelCom_AmexTravel_Validation"/>
+    </classes>
+</test>
+
+<test name="Amex Card and Search Scenarios" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_Amex_NetBanking_Retry_Homepage_Search"/>
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_Amex_StoredCard_SearchDateless"/>
+    </classes>
+</test> 
+
+<test name="Expedia" preserve-order="true" parallel="true">
+    <classes>        
+	  <class name="testScriptsIndiaHotels.HotelCom_Payment_Connector_Retry_Expedia"/>
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_Connector_Expedia"/>
+    </classes>
+</test>
+
+ <test name="3rd Party Wallets and Search" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsIndiaHotels.HotelCom_Search_SRP_HotelName_Wallet_AmazonPay"/>
+      <class name="testScriptsIndiaHotels.HotelCom_Search_ModifySearch_Wallet_Freecharge"/>
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_Wallet_JioMoney"/>
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_Wallet_Mobikwik"/>
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_Wallet_OlaMoney"/>
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_Wallet_PayTM"/>
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_Wallet_PayU"/>      
+    </classes>
+</test> 
+
+ <test name="PAX and Payment" preserve-order="true" parallel="true">
+    <classes>
+        <class name="testScriptsIndiaHotels.HotelCom_Search_Travellers_Option_1Room_1Adult_CC"/>
+      <class name="testScriptsIndiaHotels.HotelCom_Search_Travellers_Option_1Room_2Adults_DC"/>
+      <class name="testScriptsIndiaHotels.HotelCom_Search_Travellers_Option_2Rooms_4Adults_MasterSC"/>   
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_Pax_3140"/>
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_Pax_Wallet_1R_2A_1C"/>
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_Pax_MultiDays"/>
+    </classes>
+</test> 
+
+ <test name="Free Cancellation Area Specific Search" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsIndiaHotels.HotelCom_Cancellation_Free_AreaSpecificSearch"/>
+    </classes>
+</test> 
+
+<test name="CT Wallet" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_Wallet_SignIn_Homepage"/>
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_Wallet_SignIn_Step2"/>
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_WalletPlus_CC"/>
+    </classes>
+</test>
+
+  <test name="NB Retry Price Check" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsIndiaHotels.HotelCom_PaymentRetry_PriceVerification"/>
+      <class name="testScriptsIndiaHotels.HotelCom_Coupon_PaymentRetry_PriceVerif"/>      
+    </classes>
+</test> 
+
+ <test name="Cancel Acct Details Page Pax" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsIndiaHotels.HotelCom_DetailsPage_PaxChange_Cancl_Acct"/>
+    </classes>
+</test> 
+
+<test name="Refunds" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsIndiaHotels.HotelCom_Refund_Account_FreeCancellation"/>
+      <class name="testScriptsIndiaHotels.HotelCom_Refund_Account_NonRefundable"/>
+      <class name="testScriptsIndiaHotels.HotelCom_Refund_Account_PartialCancellation"/>
+      <class name="testScriptsIndiaHotels.HotelCom_Refund_HQ_FreeCancellation"/>
+      <class name="testScriptsIndiaHotels.HotelCom_Refund_HQ_NonRefundable"/>     
+      <class name="testScriptsIndiaHotels.HotelCom_NonFree_Refund_Verification"/>
+    </classes>
+</test>
+</suite> 

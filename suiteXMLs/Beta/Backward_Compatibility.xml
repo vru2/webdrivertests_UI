@@ -1,0 +1,76 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Backward Compatibility" parallel="tests" thread-count="10" preserve-order="true" >
+
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" /> 
+</listeners>
+
+<test name="B2C Air" preserve-order="true" parallel="true">
+    <classes> 
+          <class name="testScriptsIndia.AirCom_Int_OW_LCC_CC_Booking"/>
+          <class name="testScriptsIndia.AirCom_Dom_Amex_StoredCard_Booking"/>
+    </classes>
+</test>
+
+
+<test name="B2C Hotels" preserve-order="true" parallel="true">
+    <classes> 
+      <class name="testScriptsIndiaHotels.HotelCom_Cancellation_Account"/>
+      <class name="testScriptsIndiaHotels.HotelCom_Cancellation_HQ"/>
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_PAH_SignedIN"/>  
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_Partpay_Second_Payment"/>
+      <class name="testScriptsIndiaHotels.HotelCom_Coupon"/>
+    </classes>
+</test>
+
+
+<test name="ME Air" preserve-order="true" parallel="true">
+    <classes>
+		<class name="testScriptsMiddleEastAir.MEAir_Dom_OW_LCC_Booking"/> 
+    </classes>
+</test>
+
+
+<test name="ME Hotels" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsMiddleEastHotels.HotelAE_Coupon"/>
+    </classes>
+</test>
+
+<test name="Corp COM" preserve-order="true" parallel="true">
+    <classes>
+       <class name="testScriptsCorporate.HotelCorp_Coupon"/>
+      <class name="testScriptsCorpIndia.AirCorp_Intl_OW"/>
+    </classes>
+</test>
+
+<test name="Corp AE" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsCorpAE.AirCorp_Dom_OW_Coupon"/>
+      <class name="testScriptsCorporate.HotelCorpAE_Coupon"/>
+      
+    </classes>
+</test>
+
+<test name="Agency" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsAgency.AgencyHotel_Coupon"/>
+     <class name="testScriptsAgency.AgencyAir_Dom_RT"/>
+    </classes>
+</test>
+
+<test name="Trains" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsTrains.B2cTrains_General"/>
+    </classes>
+</test>
+
+<test name="CHMM" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsCHMM.CHMMCom_Edit_Calendar_SellRate"/>
+    </classes>
+</test>
+
+
+  
+</suite> 

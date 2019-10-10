@@ -1,0 +1,342 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Payments Test App" parallel="tests" preserve-order="true"	thread-count="100">
+
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="commonServices.RemoveDuplicateResults" />
+		<listener class-name="commonServices.RetryListener" />
+	</listeners>
+	
+<test name="NB CCavenueV2"  preserve-order="true" parallel="true" >
+    <classes>
+      <!-- <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_NB_CitiBank"/> -->
+    </classes>
+</test>
+	
+<test name="NB TechProcess"  preserve-order="true" parallel="true" >
+    <classes>
+     <!--  <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_NB_TechProcess"/> -->
+    </classes>
+</test>
+
+<test name="Third Party Wallet" preserve-order="true" parallel="true">
+    <classes>
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_TPW_MobiKwik"/> 
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_TPW_OlaMoney"/>
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_TPW_PayU"/> 
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_TPW_FreeCharge"/>     
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_TPW_JioMoney"/>     
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_TPW_AirtelMoney"/>     
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_TPW_PayTM"/> 
+    </classes>
+</test>
+
+<test name="Noon AE" preserve-order="true" >
+    <classes>
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_CC_PG_Noon_AE"/>
+    </classes>
+</test>
+
+
+<test name="CTpay V2" preserve-order="true" parallel="true">
+    <classes>
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_CTPay_AE"/> 
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_CTPay"/>      
+   </classes>
+</test>
+
+
+<test name="Gift Vouchers" preserve-order="true" parallel="true">
+    <classes>
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_GV_Full"/> 
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_GV_Multi"/>   
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_GV_Multi_AE"/>   
+    </classes>
+</test>
+
+<test name="GV Combo" preserve-order="true" parallel="true">
+    <classes>
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_GV_CC"/>
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_GV_CTWallet"/> 
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_GV_CC_CTWallet"/>
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_GV_SC"/> 
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_GV_CC_AE"/> 
+    </classes>
+</test>
+
+
+<test name="Wallet Combo" preserve-order="true" parallel="true">
+    <classes>
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_CTWallet_CC"/>
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_CTWallet_CC_AE"/>
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_CTWallet_SC"/>
+    </classes>
+</test>
+		
+<test name="RazorPay" preserve-order="true" parallel="true">
+    <classes>
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_RazorPay"/>
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_RazorPay_CTWallet"/>
+    </classes>
+</test>
+	
+<test name="ME CC" preserve-order="true" parallel="true">
+    <classes>
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_CC_AE"/> 
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_CC_SA"/>   
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_CC_BH"/>
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_CC_KW"/>
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_CC_OM"/>
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_CC_QA"/>
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_CC_US"/>
+    </classes>
+</test>
+
+
+<test name="Stored Card"  preserve-order="true" parallel="true">
+    <classes>
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_SC"/>
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_SC_AE"/>
+    </classes>
+</test>
+
+<test name="CC"  preserve-order="true" >
+    <classes>
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_CC"/>
+       <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_CC_Default"/>
+    </classes>
+</test>
+
+<test name="DC" preserve-order="true" >
+    <classes>
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_DC"/>
+    </classes>
+</test>
+
+
+<test name="CC S2S"  preserve-order="true" parallel="true">
+    <classes>
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_CC_PG_PayU_S2S"/>
+    </classes>
+</test>
+
+<test name="SA Checkout"  preserve-order="true" parallel="true">
+    <classes>
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_CC_PG_CheckOut"/>
+    </classes>
+</test>
+
+<test name="SA PayFort"  preserve-order="true" parallel="true">
+    <classes>
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_CC_PG_PayFort_SA"/>
+    </classes>
+</test>
+
+<test name="Wallet Full" preserve-order="true" parallel="true">
+    <classes>
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_CTWallet_Full"/>
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_CTWallet_Full_AE"/>
+    </classes>
+</test>
+
+<test name="CC Amex"  preserve-order="true" parallel="true" >
+    <classes>
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_CC_PG_Amex"/>
+    </classes>
+</test>
+
+<test name="Hotel" preserve-order="true" parallel="true">
+    <classes>
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_Hotels_B2C_CC"/> 
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_Hotels_B2C_CC_AE"/>
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_Hotels_B2C_DC"/> 
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_Hotels_Agency_CC"/>
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_Hotels_Corp_CC"/>
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_Hotels_Mobile_CC"/>      
+    </classes>
+</test>
+
+<test name="Air" preserve-order="true" parallel="true">
+    <classes>
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_Air_Agency_CC"/> 
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_Air_Corp_CC"/>
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_AirIntl_Mobile_CC_AE"/> 
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_Air_Mobile_CC"/> 
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_Air_Mobile_DC"/>
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_AirIntl_B2C_CC"/>    
+    </classes>
+</test>
+
+<test name="Activity" preserve-order="true" parallel="true">
+    <classes>
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_Activity_B2C_CC_AE"/> 
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_Activity_B2C_CC"/>
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_Activity_B2C_DC"/> 
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_Activity_Mobile_CC"/>
+   </classes>
+</test>
+
+
+<test name="API Rearch" preserve-order="true" parallel="true">
+    <classes>
+      <class name="com.cleartrip.platform.paymentsAPI.API_Validate"/>
+      <class name="com.cleartrip.platform.paymentsAPI.API_CC_GV_Wallet"/> 
+      <class name="com.cleartrip.platform.paymentsAPI.API_CC"/>
+      <class name="com.cleartrip.platform.paymentsAPI.API_GV"/> 
+      <class name="com.cleartrip.platform.paymentsAPI.API_Wallet"/>      
+    </classes>
+</test>
+
+<test name="API CTPay V2" preserve-order="true" parallel="true">
+    <classes>
+      <class name="com.cleartrip.platform.paymentsAPI.API_CTpay_GetUrl"/>
+      <class name="com.cleartrip.platform.paymentsAPI.API_CTpay_Status"/>
+      <class name="com.cleartrip.platform.paymentsAPI.API_CTpay_UpdateClient"/> 
+      <class name="com.cleartrip.platform.paymentsAPI.API_CTpay_URLcreation"/>
+    </classes>
+</test>
+
+
+
+<test name="PhonePe"   preserve-order="true" parallel="true" >
+    <classes>
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_PhonePe"/> 
+      <class name="com.cleartrip.payment.nodejs.Payment_NodeJS_PhonePe_CTWallet"/>
+    </classes>
+</test>
+
+<test name="API Refund"  preserve-order="true" parallel="true">
+    <classes>
+      <class name="com.cleartrip.platform.paymentsAPI.API_Refund_CC"/>
+    <!--   <class name="com.cleartrip.platform.paymentsAPI.API_Refund_DA"/>
+      <class name="com.cleartrip.platform.paymentsAPI.API_Refund_DC"/>
+      <class name="com.cleartrip.platform.paymentsAPI.API_Refund_NB"/>
+      <class name="com.cleartrip.platform.paymentsAPI.API_Refund_GV"/>      
+      <class name="com.cleartrip.platform.paymentsAPI.API_Refund_AmazonPay"/> -->
+    </classes>
+</test>
+
+<test name="API OLA" preserve-order="true" parallel="true">
+    <classes>
+      <class name="com.cleartrip.platform.paymentsAPI.API_OLA_Validate_Pay"/>  
+     <!--  <class name="com.cleartrip.platform.paymentsAPI.API_OLA_BalanceCheck"/>  
+      <class name="com.cleartrip.platform.paymentsAPI.API_OLA_StatusCheck"/>  
+      <class name="com.cleartrip.platform.paymentsAPI.API_OLA_PromoStats"/> -->
+    </classes>
+</test>
+
+
+<test name="API Fetch Payment Details" preserve-order="true" parallel="true">
+    <classes>
+      <class name="com.cleartrip.platform.paymentsAPI.API_FetchPay_Details"/> 
+    </classes>
+</test>
+
+
+
+
+<test name="Promos" preserve-order="true" parallel="true">
+    <classes>
+      <class name="com.cleartrip.platform.paymentsAPI.API_Promo_Activate"/>  
+      <class name="com.cleartrip.platform.paymentsAPI.API_Promo_Used"/>  
+      
+    </classes>
+</test>
+
+<test name="API PayU OTP" preserve-order="true" parallel="true">
+    <classes>
+      <class name="com.cleartrip.platform.paymentsAPI.API_PayU_OTPProcess"/>
+      <class name="com.cleartrip.platform.paymentsAPI.API_PayU_OTPResend"/> 
+    </classes>
+</test>
+
+<test name="API Flyin" preserve-order="true" >
+    <classes>
+       <class name="com.cleartrip.platform.paymentsAPI.API_FlyinPay"/> 
+     </classes>
+</test>
+
+
+<test name="API Expressway" preserve-order="true" parallel="true">
+    <classes>
+      <class name="com.cleartrip.platform.paymentsAPI.API_EW_GetOutstanding"/> 
+      <class name="com.cleartrip.platform.paymentsAPI.API_EW_UserDetails"/> 
+      <class name="com.cleartrip.platform.paymentsAPI.API_EW_Validate"/>  
+      <class name="com.cleartrip.platform.paymentsAPI.API_EW_OptIN"/>    
+      <class name="com.cleartrip.platform.paymentsAPI.API_EW_Pay_Multi"/>    
+      <class name="com.cleartrip.platform.paymentsAPI.API_EW_Pay_Multi_V3"/>   
+      <class name="com.cleartrip.platform.paymentsAPI.API_EW_Pay_V3"/>       
+      <class name="com.cleartrip.platform.paymentsAPI.API_EW_Add_Amount"/>       
+      <class name="com.cleartrip.platform.paymentsAPI.API_EW_Pay_AutoDebit"/>     
+   </classes>
+</test>
+
+<test name="API Wallets"  preserve-order="true" parallel="true" >
+    <classes>
+		<class name="com.cleartrip.platform.paymentsAPI.API_Wallet_Promo_CashBackDetails"/>
+		<class name="com.cleartrip.platform.paymentsAPI.API_Wallet_Create"/>			
+		<class name="com.cleartrip.platform.paymentsAPI.API_Wallet_Get_Wallet_Trnx"/>
+		<class name="com.cleartrip.platform.paymentsAPI.API_Wallet_GetDeduction"/>
+		<class name="com.cleartrip.platform.paymentsAPI.API_Wallet_PromoUsed"/>
+		<class name="com.cleartrip.platform.paymentsAPI.API_Wallet_RevertPromo"/>
+		<class name="com.cleartrip.platform.paymentsAPI.API_GV_Capture"/>
+		<class name="com.cleartrip.platform.paymentsAPI.API_GV_Refund"/>	
+		
+		<!-- <class name="com.cleartrip.platform.paymentsAPI.API"/> create wallet
+		<class name="com.cleartrip.platform.paymentsAPI.API_Wallet_RevertPromo"/  > Perform wallet transactions -->
+    </classes>
+</test>
+
+
+<test name="API Wallet App Only"  preserve-order="true" parallel="true" >
+    <classes>
+		<class name="com.cleartrip.platform.paymentsAPI.API_Wallet_CashBackDetails"/>
+		<class name="com.cleartrip.platform.paymentsAPI.API_Wallet_Get_Wallet_All"/>
+		<class name="com.cleartrip.platform.paymentsAPI.API_Wallet_Get_Wallet_INR"/>
+		
+		<class name="com.cleartrip.platform.paymentsAPI.API_GV_Get"/>
+    </classes>
+</test>
+
+
+<test name="API ADCB" preserve-order="true" parallel="true">
+    <classes>
+      <class name="com.cleartrip.platform.paymentsAPI.API_Reward_ADCB_CheckBalance"/> 
+ 
+         </classes>
+</test>
+
+<test name="API PayBack" preserve-order="true" parallel="true">
+    <classes>
+      <class name="com.cleartrip.platform.paymentsAPI.API_Reward_PayBack"/> 
+ 
+         </classes>
+</test>
+
+<test name="API Refunds New" preserve-order="true" parallel="true">
+    <classes>
+      <class name="com.cleartrip.platform.paymentsAPI.API_Refunds"/> 
+ 
+         </classes>
+</test>
+
+<test name="API Stored Card" preserve-order="true" parallel="true">
+    <classes>
+      <class name="com.cleartrip.platform.paymentsAPI.API_storeCard"/> 
+ 
+         </classes>
+</test>
+
+<test name="API Bin Manager"  preserve-order="true" parallel="true" >
+    <classes>
+<class name="com.cleartrip.platform.paymentsAPI.API_Binmanager"/>
+    </classes>
+</test>
+
+<test name="API Reporting"  preserve-order="true" parallel="true" >
+    <classes>
+<class name="com.cleartrip.platform.paymentsAPI.API_Reporting"/>
+    </classes>
+</test>
+
+</suite>

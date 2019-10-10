@@ -1,0 +1,30 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Locals AdditionalInfo TTD" thread-count="3" parallel="classes"
+	verbose="3" preserve-order="true">
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="commonServices.RemoveDuplicateResults" />
+	</listeners>
+	
+	<test name="Locals Desktop TTD cases">
+	<classes>
+			    <class name="com.cleartrip.local.desktop.ttd.KlookWithAdditionalInfo" />
+			    <class name="com.cleartrip.local.desktop.ttd.KlookWithAdditionalInfoList" />
+	</classes>
+	
+	
+	</test>
+	
+	 <test name="Local Whitelabel TTD Cases">
+    <classes>
+	
+	      	<class name="com.cleartrip.local.desktop.wl.ttd.KlookWithAdditionalInfo"/>
+      	   <class name="com.cleartrip.local.desktop.wl.ttd.KlookWithAdditionalInfoList"/>
+
+     </classes>
+     </test>
+     
+     
+     
+	</suite>
+	

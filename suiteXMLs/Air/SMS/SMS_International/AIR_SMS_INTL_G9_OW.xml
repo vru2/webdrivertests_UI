@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="AIR_SMS_INTL_G9_OW_Suite" parallel="none"
+	thread-count="1">
+
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="commonServices.RemoveDuplicateResults" />
+	</listeners>
+
+	<!-- //Get SSR Required - meal-seat-baggage-insurance-coupon -->
+
+	<parameter name="airline" value="" />
+	<parameter name="origin" value="DEL" />
+	<parameter name="destination" value="DXB" />
+	<parameter name="onwardDate" value="15" />
+	<parameter name="paymentMethod" value="credit card" />
+	<parameter name="suppliers" value="AIR_ARABIA" />
+	<parameter name="IsFliteTypeInternational" value="true" />
+	<parameter name="tripType" value="OW" />
+	<parameter name="module" value="sms" />
+
+	<!-- <test name="Air_INTL_SMS : OW 1 ADT Single Airline Without SSR Booking">
+		<parameter name="paxConfig" value="1-0-0" />
+		<parameter name="ssrConfig" value="0-0-0-0-0" />
+		<classes>
+			<class
+				name="testScriptsMicroServices.Air_Suppliers_Pod_SMS_And_SFF_Flow">
+			</class>
+		</classes>
+	</test>
+
+	<test
+		name="Air_INTL_SMS : OW 2 ADT Single Airline Without SSR Booking">
+		<parameter name="paxConfig" value="2-0-0" />
+		<parameter name="ssrConfig" value="0-0-0-0-0" />
+		<classes>
+			<class
+				name="testScriptsMicroServices.Air_Suppliers_Pod_SMS_And_SFF_Flow">
+			</class>
+		</classes>
+	</test>
+
+	<test
+		name="Air_INTL_SMS : OW 1 ADT 1 CHD Airline Airline Without SSR Booking">
+		<parameter name="paxConfig" value="1-1-0" />
+		<parameter name="ssrConfig" value="0-0-0-0-0" />
+		<classes>
+			<class
+				name="testScriptsMicroServices.Air_Suppliers_Pod_SMS_And_SFF_Flow">
+			</class>
+		</classes>
+	</test>
+	
+	<test
+		name="Air_INTL_SMS : OW 2 ADT 2 CHD Single Airline Without SSR Booking">
+		<parameter name="paxConfig" value="2-2-0" />
+		<parameter name="ssrConfig" value="0-0-0-0-0" />
+		<classes>
+			<class
+				name="testScriptsMicroServices.Air_Suppliers_Pod_SMS_And_SFF_Flow">
+			</class>
+		</classes>
+	</test>
+
+	<test
+		name="Air_INTL_SMS : OW 1 ADT 1 CHD 1 INF 1 Airline Without SSR Booking">
+		<parameter name="paxConfig" value="1-1-1" />
+		<parameter name="ssrConfig" value="0-0-0-0-0" />
+		<classes>
+			<class
+				name="testScriptsMicroServices.Air_Suppliers_Pod_SMS_And_SFF_Flow">
+			</class>
+		</classes>
+	</test>
+
+	<test
+		name="Air_INTL_SMS : OW 2 ADT 2 CHD 2 INF 1 Airline Without SSR Booking">
+		<parameter name="paxConfig" value="2-2-2" />
+		<parameter name="ssrConfig" value="0-0-0-0-0" />
+		<classes>
+			<class
+				name="testScriptsMicroServices.Air_Suppliers_Pod_SMS_And_SFF_Flow">
+			</class>
+		</classes>
+	</test>
+
+	<test
+		name="Air_INTL_SMS : OW 1 ADT 1 CHD 1 INF 1 Airline With Baggage Booking">
+		<parameter name="paxConfig" value="1-1-1" />
+		<parameter name="ssrConfig" value="0-0-1-0-0" />
+		<classes>
+			<class
+				name="testScriptsMicroServices.Air_Suppliers_Pod_SMS_And_SFF_Flow">
+			</class>
+		</classes>
+	</test> -->
+
+	<test
+		name="Air_INTL_SMS : OW 1 ADT 1 CHD 1 INF 1 Airline With Baggage,COUPON Booking">
+		<parameter name="paxConfig" value="1-1-1" />
+		<parameter name="ssrConfig" value="0-0-1-0-1" />
+		<classes>
+			<class
+				name="testScriptsMicroServices.Air_Suppliers_Pod_SMS_And_SFF_Flow">
+			</class>
+		</classes>
+	</test>
+
+	<test
+		name="Air_INTL_SMS : OW 1 ADT 1 CHD 1 Airline with Seat,Baggage and COUPON booking">
+		<parameter name="paxConfig" value="1-1-0" />
+		<parameter name="ssrConfig" value="0-1-1-0-1" />
+		<classes>
+			<class
+				name="testScriptsMicroServices.Air_Suppliers_Pod_SMS_And_SFF_Flow">
+			</class>
+		</classes>
+	</test>
+
+	<!-- <test
+		name="Air_INTL_SMS : OW 1 ADT 1 CHD 1 INF 1 Airline With Meal,Seat,COUPON and Expressway Booking">
+		<parameter name="paxConfig" value="1-1-1" />
+		<parameter name="ssrConfig" value="1-1-0-0-1" />
+		<classes>
+			<class
+				name="testScriptsMicroServices.Air_Suppliers_Pod_SMS_And_SFF_Flow">
+			</class>
+		</classes>
+	</test> -->
+
+	<!-- <test
+		name="Air_INTL_SMS : OW 1 ADT 1 CHD 1 INF 1 Airline With Seat but with Expressway Booking">
+		<parameter name="paxConfig" value="1-1-1" />
+		<parameter name="ssrConfig" value="0-1-0-0-0" />
+		<classes>
+			<class
+				name="testScriptsMicroServices.AirIntl_OW_Booking_with_SSR">
+			</class>
+		</classes>
+	</test> -->
+
+	<test name="Air_INTL_SMS : OW 1 ADT 1 CHD within 2 days booking">
+		<parameter name="paxConfig" value="1-1-0" />
+		<parameter name="ssrConfig" value="0-0-0-0-0" />
+		<parameter name="onwardDate" value="1" />
+		<classes>
+			<class
+				name="testScriptsMicroServices.Air_Suppliers_Pod_SMS_And_SFF_Flow">
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Air_INTL_SMS : OW 1 ADT after 4 months booking">
+		<parameter name="paxConfig" value="1-0-0" />
+		<parameter name="ssrConfig" value="0-0-0-0-0" />
+		<parameter name="onwardDate" value="121" />
+		<classes>
+			<class
+				name="testScriptsMicroServices.Air_Suppliers_Pod_SMS_And_SFF_Flow">
+			</class>
+		</classes>
+	</test>
+
+	<test
+		name="Air_INTL_SMS : OW 1 ADT 2 Airlines connected With meal,seat and coupon Booking">
+		<parameter name="origin" value="ALA" />
+		<parameter name="destination" value="AHB" />
+		<parameter name="paxConfig" value="1-0-0" />
+		<parameter name="ssrConfig" value="1-1-0-0-1" />
+		<parameter name="tripType" value="connected" />
+		<classes>
+			<class
+				name="testScriptsMicroServices.Air_Suppliers_Pod_SMS_And_SFF_Flow">
+			</class>
+		</classes>
+	</test>
+</suite>

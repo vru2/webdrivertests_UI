@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ptbscore air" parallel="tests" thread-count="50" preserve-order="true">
+
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+</listeners>
+
+<test name="PTB Air Search and book" preserve-order="true" parallel="true">
+		
+		<classes>
+  		 		<class name="testScriptsIndia.NewUser_Dom_OW_FlightSearchOnly"/> 
+  		 		<class name="testScriptsIndia.NewUser_Dom_OW_SRPEvents"/> 
+  		 		<!-- <class name="testScriptsIndia.Booker_Dom_OW_FlightBook"/> -->
+  		 		<class name="testScriptsIndia.Searcher_Dom_OW_FlightSearch"/>  
+      			 
+	 	</classes>
+	 	
+</test> 
+
+
+</suite> 

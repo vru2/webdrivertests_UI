@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Air Ext API" parallel="classes" thread-count="5">
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<!-- <listener class-name="commonServices.RemoveDuplicateResults" />
+		<listener class-name="commonServices.RetryListener" /> -->
+	</listeners>
+	
+	
+  <test name="Air ExtAPI Book Cases" preserve-order="true">
+		<classes>
+		
+		
+		 <class name="testScriptsExternalAPI.Api_Book_Intl_OW_Indigo_Booking" /> 
+			<class name="testScriptsExternalAPI.Api_Book_Intl_OW_SG_Booking" />
+			
+			<class name="testScriptsExternalAPI.Api_Book_OW_AMADEUS" />
+		    <class name="testScriptsExternalAPI.Api_Book_OW_Via" />
+		    <class name="testScriptsExternalAPI.Api_Book_RT_AMADEUS" /> 
+			<class name="testScriptsExternalAPI.Api_Book_RT_SPICEJET" />
+			 <class name="testScriptsExternalAPI.OnewayBookStopOver" /> 
+			<class name="testScriptsExternalAPI.API_DomOneway_With_GST_IN_Book" />
+			<class name="testScriptsExternalAPI.Api_Book_Intl_RT" />
+			<class name="testScriptsExternalAPI.API_Book_RT_SPICEJETMultiPAX" />
+			<class name="testScriptsExternalAPI.OnewayBook_MultiPAX_StopOver" />
+			<class name="testScriptsExternalAPI.Api_Book_OW_Via_MultiPAX" />
+			
+			<class name="testScriptsExternalAPI.API_IXIGO_Booking" />
+			<class name="testScriptsExternalAPI.Api_IXIGO_RT_Booking" />     
+ 	 </classes> 
+ 	</test>
+ 
+ <test name="Air ExtAPI Search Cases" preserve-order="true">
+		<classes>
+		
+		 <class name="testScriptsExternalAPI.APISearch" />  
+		</classes>
+	</test>  
+
+ <test name="Air ExtAPI B2C Cases" preserve-order="true">
+		<classes>
+			<class name="testScriptsExternalAPI.B2C_OnewaySinglePAX" />
+			<class name="testScriptsExternalAPI.B2CRoundtripSinglepax" /> 
+		</classes>
+	</test> 
+
+	<test name="Air JSON ExtAPI B2C Cases" preserve-order="true">
+		<classes>
+			 <class name="testScriptsJsonExternalAPI.JsonB2COnewaySinglePAX" />
+			<class name="testScriptsJsonExternalAPI.B2CJSONINTLOnewaySinglePAX" />
+		</classes>
+	</test> 
+
+ 	<test name="Air ExtAPI Json Search Cases" preserve-order="true">
+		<classes>
+		<class name="testScriptsJsonExternalAPI.JsonAPISearch" />
+			<class name="testScriptsJsonExternalAPI.JsonB2cApiAirjsonPramCheck" />
+		</classes>
+	</test>   
+  	<test name="Air ExtAPI JSON Book Cases" preserve-order="true">
+		<classes>
+			 <class name="testScriptsJsonExternalAPI.JsonRoundTripMultiPAX_With_GST" />
+			 <class name="testScriptsJsonExternalAPI.JsonINTLRT" />
+			<class name="testScriptsJsonExternalAPI.JsonGDSOnewaySinglePAXInfoinPriceCheck" />
+			<class name="testScriptsJsonExternalAPI.JsonLCCOnewaySinglePAXInfoinPriceCheck" /> 
+			<class name="testScriptsJsonExternalAPI.JsonOnewaySinglePAX" />
+			<class name="testScriptsJsonExternalAPI.JSONAPI_Book_RT_SPICEJETMultiPAX" />
+		    <class name="testScriptsJsonExternalAPI.JSONApi_Book_Intl_OW_SG" />
+			<class name="testScriptsJsonExternalAPI.JsonApi_Book_OW_StopOver" />
+			 <class name="testScriptsJsonExternalAPI.JSONApi_Book_OW_AMADEUS" />
+			<class name="testScriptsJsonExternalAPI.JsonApi_Book_OW_Via_MultiPAX" /> 
+ 		</classes> 
+	</test>  
+ 	 
+	  
+    <!-- removed cases -->
+    <!-- <class name="testScriptsExternalAPI.Api_Book_Intl_OW" /> -->
+    <!-- <class name="testScriptsExternalAPI.Api_Book_RT_Special_9W" /> -->
+    <!-- <class name="testScriptsExternalAPI.RoundtripSinglepax" /> -->
+ 	<!-- <class name="testScriptsExternalAPI.OnewayMultiPAX" /> -->
+	<!-- <class name="testScriptsExternalAPI.DomRTMultiPAX" /> -->
+	<!-- <class name="testScriptsExternalAPI.APIBooking_AmadeusRT_without_contact_in_Itinerary" /> -->
+			
+			
+</suite>

@@ -1,0 +1,55 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Go Camp Activities" verbose="3" preserve-order="true" thread-count="3">
+
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="commonServices.RemoveDuplicateResults" />
+	</listeners>
+		
+		<parameter name="env" value="prod"></parameter>
+		<parameter name="browser" value="chrome"></parameter>
+		<parameter name="user" value="SA"></parameter>
+
+
+	<suite-files>
+
+				<!--CAMP DOMAIN COM Suite  -->
+	
+	
+		
+ 	 	<suite-file path="suiteXMLs/Camp/QA/com/LocalCampTTD.xml"></suite-file>
+ 	 	<suite-file path="suiteXMLs/Camp/QA/com/LocalCampOthers.xml"></suite-file>
+		<suite-file path="suiteXMLs/Camp/QA/com/LocalCampAccountFlow.xml"></suite-file>
+		<suite-file path="suiteXMLs/Camp/QA/com/LocalCampOthers.xml"></suite-file>
+ <!-- 	 	 <suite-file path="suiteXMLs/Camp/QA/com/LocalCampFNB.xml"></suite-file>
+	 	
+		<suite-file path="suiteXMLs/Camp/QA/com/LocalCampAccountFlow.xml"></suite-file>
+		<suite-file path="suiteXMLs/Camp/QA/com/LocalCampEvents.xml"></suite-file>
+ --> 
+ 		
+<!-- 		CAMP DOMAIN AE Suite  -->
+
+		<suite-file path="suiteXMLs/Camp/QA/ae/LocalCampTTD.xml"></suite-file>
+		<suite-file path="suiteXMLs/Camp/QA/ae/LocalCampAccountFlow.xml"></suite-file>
+		<suite-file path="suiteXMLs/Camp/QA/ae/LocalCampOthers.xml"></suite-file>	
+		
+	 	<!-- <suite-file path="suiteXMLs/Camp/QA/ae/LocalCampFNB.xml"></suite-file>
+	 	<suite-file path="suiteXMLs/Camp/QA/ae/LocalCampOthers.xml"></suite-file>
+		<suite-file path="suiteXMLs/Camp/QA/ae/LocalCampAccountFlow.xml"></suite-file>
+		<suite-file path="suiteXMLs/Camp/QA/ae/LocalCampEvents.xml"></suite-file>
+		<suite-file path="suiteXMLs/Camp/QA/ae/LocalCampTTD.xml"></suite-file>-->
+		
+		
+	<!--	<suite-file path="suiteXMLs/Hotels/Hotel_CHMM.xml"></suite-file>
+		<suite-file path="suiteXMLs/Hotels/Hotel_API.xml"></suite-file>-->
+ 
+ 
+ 
+ 
+ 	
+ 	
+	</suite-files>
+
+
+</suite> 
+

@@ -1,0 +1,53 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="AccountRegression" parallel="tests" thread-count="10">
+<!--  -->
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="commonServices.RemoveDuplicateResults"/>
+		<listener class-name="commonServices.RetryListener"/>
+</listeners>
+
+
+ 	<test name="Account - B2CAccountExpressway" preserve-order="true">
+    	<classes>
+     		<class name="testScriptsAccounts.B2CAccountExpressway"/>
+   		</classes>
+  	</test>
+  	
+  	<test name="Account - B2CAccountHeaderElements" preserve-order="true">
+    	<classes>
+     		<class name="testScriptsAccounts.B2CAccountHeaderElements"/>
+   		</classes>
+  	</test> 
+  	
+  	<test name="Account - B2CAccountsLoginFromHomePageAndSignout" preserve-order="true">
+    	<classes>
+     		<class name="testScriptsAccounts.B2CAccountsLoginFromHomePageAndSignout"/>
+   		</classes>
+  	</test>
+  	
+  	<test name="Account - B2CAccouuntProfile" preserve-order="true">
+    	<classes>
+     		<class name="testScriptsAccounts.B2CAccouuntProfile"/>
+   		</classes>
+  	</test>
+  	
+ 	<test name="Account - B2CCAccountDeleteAndRegister" preserve-order="true">
+    	<classes>
+     		<class name="testScriptsAccounts.B2CCAccountDeleteAndRegister"/>
+   		</classes>
+  	</test>
+  	
+  	<test name="Account - B2CAccountTravellersAddEditDelete" preserve-order="true">
+    	<classes>
+     		<class name="testScriptsAccounts.B2CAccountTravellersAddEditDelete"/>
+   		</classes>
+  	</test> 
+  	
+  <!-- 	<test name="Account - B2CAccountSigninFromTripsPageAndFacebookConnnect" preserve-order="true">
+    	<classes>
+     		<class name="testScriptsAccounts.B2CAccountSigninFromTripsPageAndFacebookConnnect"/>
+   		</classes>
+  	</test>  -->
+  
+  </suite> 

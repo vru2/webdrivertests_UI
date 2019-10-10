@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Genreic Smoke Test Cases" parallel="tests" thread-count="5">
+
+<listeners>
+	<listener class-name="org.uncommons.reportng.HTMLReporter" />
+	<listener class-name="commonServices.RemoveDuplicateResults" />
+	<listener class-name="commonServices.RetryListener" />
+	 
+</listeners>
+      	
+     <suite-files> 
+			<suite-file path="Air_Smoke.xml"></suite-file>
+	</suite-files>
+	
+	<suite-files> 
+			<suite-file path="Hotels_Smoke.xml"></suite-file>
+	</suite-files>  
+	
+		<!-- <suite-files> 
+		<suite-file path="Locals_Trains.xml"></suite-file>
+	</suite-files>
+	 -->
+	 
+	 	
+	<!-- <test name="Air B2C" preserve-order="true" parallel="true">
+    	<classes>
+    		<class name="testScriptsIndia.AirCom_HomePage_SignIn_Dom_OW_LCC_Booking" />
+    		<class name="testScriptsMiddleEastAir.MEAir_Int_OW_LCC_CC_Booking"/>
+    	</classes>
+	</test> 
+	
+    <test name="Air Ext-Api" preserve-order="true" parallel="true">
+    	<classes>
+    		<class name="testScriptsExternalAPI.OnewaySinglepax" />
+			<class name="testScriptsJsonExternalAPI.JsonOnewaySinglePAX" />
+		</classes>
+	</test>
+	
+	<test name="Air Agency" preserve-order="true" parallel="true">
+    	<classes>       	 
+	       	<class name="testScriptsAgency.Agency_AirSRP"/>
+	    </classes>
+	</test>
+	
+    <test name="Air Mobile_Web" preserve-order="true" parallel="true">
+    	<classes>
+    		<class name="testScriptsMobile.Mobile_Air_Dom_OW"/>
+    	</classes>
+	</test>
+	
+	<test name="Air Corp" preserve-order="true" parallel="true">
+    	<classes>
+     	 	<class name="testScriptsCorpIndia.AirCorp_DomOW"/>
+		</classes>
+	</test> -->
+	
+	<!--  <test name="Trains" preserve-order="true" parallel="true">
+    	<classes>      	
+	       	<class name="testScriptsTrains.B2cTrains_Pax_1A"/>
+		</classes>
+	</test>
+	       
+	<test name="Locals" preserve-order="true" parallel="true">
+    	<classes>
+    	       <class name="testScriptsLocals.Locals_FNB_Couple"/>
+		       <class name="testScriptsLocals.Locals_Events_JioRetry"/>
+			   <class name="testScriptsLocals.Locals_TTD_Adult_TimeSlot"/>
+		</classes>
+	</test>
+	  -->
+	<!-- <test name="Locals_Mobile_Web" preserve-order="true" parallel="true">
+    	<classes>
+    		<class name="testScriptsLocalsWLMobileWeb.LocalsMobileWeb_WL_TTD_Adult_TimeSlot_Unavailable"/>
+    		<class name="testScriptsLocalsMobileWeb.LocalsMobileWeb_TTD_Adult_Child"/>
+ 		</classes>
+	</test>  -->
+	
+	<!-- <test name="Hotels B2C" preserve-order="true" parallel="true">
+    	<classes>
+	       	<class name="testScriptsIndiaHotels.HotelCom_Search_Travellers_Option_1Room_2Adults_DC"/>
+	       	<class name="testScriptsMiddleEastHotels.HotelAE_Intl_Book_RoomType1"/>
+   	 </classes>
+	</test> 
+	
+	<test name="Hotels B2B" preserve-order="true" parallel="true">
+    	<classes>
+	       	<class name="testScriptsCorporate.HotelCorp_SRP_Search_Only"/>
+	       	<class name="testScriptsAgency.AgencyHotel_SRP_Search_Only"/>
+    	</classes>
+    </test> 
+  
+	<test name="Hotels MobileWeb">
+    	<classes>
+	       	<class name="testScriptsMobileHotels.MobileCom_Hotel_SignIN_Step2_SmokeTest"/>
+    	</classes>
+	</test> 
+	
+	<test name="Hotels API">
+    	<classes>
+	       	<class name="testScriptsIndiaHotels.HotelCom_External_API"/>
+    	</classes>
+	</test>   -->
+	
+</suite>

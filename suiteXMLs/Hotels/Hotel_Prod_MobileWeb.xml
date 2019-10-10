@@ -1,0 +1,56 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="MobileWeb" parallel="tests" thread-count="4" preserve-order="true">
+
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="commonServices.RemoveDuplicateResults"/>
+		<listener class-name="commonServices.RetryListener"/>
+</listeners>
+
+
+<test name="AE" preserve-order="true"  parallel="true">
+   	<classes>
+   	 <class name="com.cleartrip.hotel.pwa.AE_Dom"/>      	
+	 <class name="com.cleartrip.hotel.pwa.AE_Intl"/>        		  
+    </classes>
+</test>
+
+<test name="Com" preserve-order="true"  parallel="true">
+   	<classes>
+   	   <class name="com.cleartrip.hotel.pwa.GST_HotelName_Search"/> 
+   	   <class name="com.cleartrip.hotel.pwa.Intl_Prod"/> 
+    </classes>
+</test>
+
+<test name="ME" preserve-order="true"  parallel="true">
+   	<classes> 
+   	 <class name="com.cleartrip.hotel.pwa.BH_Dom"/>         	
+   	 <class name="com.cleartrip.hotel.pwa.KW_Dom"/>        	
+   	 <class name="com.cleartrip.hotel.pwa.ME_Dom"/>  	
+   	 <class name="com.cleartrip.hotel.pwa.QA_Dom"/>      
+   	 <class name="com.cleartrip.hotel.pwa.SA_Dom"/>       	
+   	 <class name="com.cleartrip.hotel.pwa.OM_Dom"/>            		  
+    </classes>
+</test>
+
+
+<!--================Old MobileWeb Cases(NON-PWA)  -->
+<!-- <test name="AE" preserve-order="true"  parallel="true">
+   	<classes>
+   	 <class name="testScriptsMobileHotels.Dom_AE"/>      	
+   	 <class name="testScriptsMobileHotels.Intl_AE"/>            		  
+    </classes>
+</test>
+
+<test name="ME" preserve-order="true"  parallel="true">
+   	<classes> 
+   	 <class name="testScriptsMobileHotels.Dom_BH"/>         	
+   	 <class name="testScriptsMobileHotels.Dom_QA"/>        	
+   	 <class name="testScriptsMobileHotels.Dom_OM"/>  	
+   	 <class name="testScriptsMobileHotels.Dom_ME"/>      
+   	 <class name="testScriptsMobileHotels.Intl_KW"/>       	
+   	 <class name="testScriptsMobileHotels.Intl_SA"/>            		  
+    </classes>
+</test> -->
+
+</suite> 

@@ -1,0 +1,200 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Agency Air" parallel="none" thread-count="1" >
+
+<listeners>
+
+		<listener class-name="org.uncommons.reportng.HTMLReporter" /> 
+</listeners> 
+
+<!-- <groups>
+      <run>
+        <include name="Smoke Tests"/>
+      </run>
+</groups>
+ -->
+   <test name="Air : PAX"  parallel="tests">
+    <classes>
+        <class name="testScriptsAgency.AgencyAir_PAX_111"/>
+      <class name="testScriptsAgency.AgencyAir_PAX_200"/>
+    <class name="testScriptsAgency.AgencyAir_PAX_210"/> 
+     </classes>
+</test>   
+ 
+ <test name="Air : GSTBookings"  parallel="tests">
+    <classes>
+     <class name="testScriptsAgency.AgencyAir_Dom_OneWay_WithoutGST"/>
+      <class name="testScriptsAgency.AgencyAir_Dom_OneWay_WithGST"/>
+        <class name="testScriptsAgency.AgencyAir_Dom_RT_with_GST"/>   
+   </classes>
+</test> 
+
+
+  <test name="Air : Payment"  parallel="tests">
+    <classes>
+      <class name="testScriptsAgency.AgencyAir_Payment_CC"/>
+     <class name="testScriptsAgency.AgencyAir_Payment_DA"/>
+      <class name="testScriptsAgency.AgencyAir_Payment_DC"/>
+      <class name="testScriptsAgency.AgencyAir_Payment_ITZ"/>
+      <class name="testScriptsAgency.AgencyAir_Payment_CTPay"/> 
+   </classes>
+</test>
+
+ <test name="Air : Insurance" parallel="tests">
+    <classes>
+       <class name="testScriptsAgency.AgencyAir_Insurance"/>
+   </classes>
+</test>
+
+ <test name="Air : ConvenienceFee"  parallel="tests">
+    <classes>
+       <class name="testScriptsAgency.AgencyAir_ConvenienceFee_CC"/>
+       <class name="testScriptsAgency.AgencyAir_ConvenienceFee_NB"/>
+     </classes>
+</test> 
+
+  
+ <test name="Air : Dom MultiCity" parallel="tests">
+    <classes>
+      <class name="testScriptsAgency.AgencyAir_Dom_MuitiCity"/>
+    </classes>
+</test> 
+
+ <test name="Air : Dom Special RT" parallel="tests">
+    <classes>
+      <class name="testScriptsAgency.AgencyAir_Dom_Spl_RT"/>
+    </classes>
+</test>
+
+ <test name="Air : Int MultiCity" parallel="tests">
+    <classes>
+      <class name="testScriptsAgency.AgencyAir_Int_MuitiCity"/>
+    </classes>
+</test> 
+
+<test name="Air : Int RT" parallel="tests">
+    <classes>
+      <class name="testScriptsAgency.AgencyAir_Int_RT"/>
+    </classes>
+</test>
+
+ <test name="Trip Details Page"  parallel="tests">
+    <classes>
+      <class name="testScriptsAgency.AgencyAir_TripDetails_Page"/>
+      <!-- <class name="testScriptsAgency.AirCorp_TripsPage_VerifyOldTripDetailsPage"/> -->
+       </classes>
+</test>
+
+<test name="Air : Coupon" parallel="tests">
+    <classes>
+      <class name="testScriptsAgency.AgencyAir_Coupon"/>
+    </classes>
+</test>
+
+ <!-- <test name="Air : Hold Scenarios"   parallel="tests" >
+    <classes>
+      <class name="testScriptsAgency.AgencyAir_Int_Hold_Confirm"/>
+      <class name="testScriptsAgency.AgencyAir_Int_Hold_Release"/>
+     </classes>
+</test> -->
+
+<test name="Air : Netbank Retry" parallel="tests">
+    <classes>
+      <class name="testScriptsAgency.AgencyAir_Dom_OneWay_Netbanking_Retry"/>
+    </classes>
+</test>
+<test name="Airline Check Agency" parallel="tests">
+    <classes>
+      <class name="testScriptsAgency.AgencyAir_DOM_LCC_ConnectorSpecific_Airlines_Check"/>
+      <class name="testScriptsAgency.AgencyAir_DOM_GDS_ConnectorSpecific_Airlines_Check"/>
+    </classes>
+</test>
+ <test name="Air : OntheGo MarkUP" parallel="tests" >
+    <classes>
+      <class name="testScriptsAgency.AgencyAir_Dom_OnTheGo_Markup"/>
+    </classes>
+</test>
+
+
+ <test name="Admin Scenarios"  parallel="tests">
+    <classes>
+     <class name="testScriptsAgency.Agency_Add_Task"/>
+      <class name="testScriptsAgency.Agency_Adding_Travellers"/>
+      <class name="testScriptsAgency.Agency_Adding_Users"/>
+      <class name="testScriptsAgency.Agency_Currency_Dropdown_Link"/> 
+      
+     <class name="testScriptsAgency.Agency_Message_LinkVerify"/>
+      <class name="testScriptsAgency.Agency_My_Profile_Links_Verify"/> 
+      <class name="testScriptsAgency.Agency_Settings_Links_verify"/>
+       <class name="testScriptsAgency.Agency_More_Links"/>  
+    </classes>
+</test>  
+
+ <test name="SRP and Intinerary Scenarios"  parallel="tests">
+   <classes>
+       <class name="testScriptsAgency.Agency_SRP_CommissionTab"/>
+      <class name="testScriptsAgency.Agency_SRP_Itinerary_PhoneNo"/>
+      <!-- <class name="testScriptsAgency.Agency_SRP_MiniRules"/> -->   
+      <class name="testScriptsAgency.Agency_SRP_ModifySearch"/>   
+      <class name="testScriptsAgency.Agency_SRP_SendQuotation"/>
+      <class name="testScriptsAgency.Agency_SRP_Stops"/>
+      <class name="testScriptsAgency.Agency_SRP_TravelClass"/>
+      <class name="testScriptsAgency.Agency_Itinerary_BookingPolicy"/>
+      <class name="testScriptsAgency.Agency_Itinerary_FareRule"/>
+    <!--  <class name="testScriptsAgency.AgencyAir_DOM_ConnectorSpecific_Airlines_Check"/>  -->
+    </classes>
+</test>
+
+  <test name="Miscellaneous Scenarios"  parallel="tests">
+    <classes>
+  <class name="testScriptsAgency.Agency_Misc_CT_Accepted_DebitCards"/> 
+      <class name="testScriptsAgency.Agency_Misc_Edit_TravelerName"/>
+    <class name="testScriptsAgency.Agency_Misc_PaymentTypes_and_Logos"/>
+       <!-- <class name="testScriptsAgency.Agency_Misc_Pricing_ConvFee_and_Insurance"/> -->
+       <class name="testScriptsAgency.Agency_Footer_Links"/>   
+      <class name="testScriptsAgency.Agency_CopyRight"/>
+   </classes>
+</test>
+
+   <test name="Deposit Account Scenarios"  parallel="tests">
+    <classes>
+     <class name="testScriptsAgency.Agency_Add_Deposit"/>
+      <class name="testScriptsAgency.Agency_Misc_DepositAccount_Instructions"/>
+      <!-- <class name="testScriptsAgency.Agency_Misc_DepositAccount_ManualDebt"/>
+      <class name="testScriptsAgency.Agency_Misc_DepositAccount_Split"/>  -->
+   </classes>
+</test>
+ 
+
+
+
+   <test name="Air : Cancellation"  parallel="tests">
+    <classes>
+      <class name="testScriptsAgency.AgencyAir_Dom_OneWay_Cancellation"/>
+      <!-- <class name="testScriptsAgency.AgencyAir_Dom_OneWay_Cancellation_HQ"/> -->
+    </classes>
+</test>      
+   
+   
+   <!-- Removed Scripts -->
+ <!-- <test name="Air : Data Validation"  parallel="tests">
+    <classes>
+      <class name="testScriptsAgency.AgencyAir_DataValidation_Dom_OneWay_GDS"/>
+      <class name="testScriptsAgency.AgencyAir_DataValidation_Dom_OneWay_LCC"/>
+      <class name="testScriptsAgency.AgencyAir_DataValidation_Int_OneWay_GDS"/>
+   <class name="testScriptsAgency.AgencyAir_DataValidation_Int_OneWay_LCC"/>
+    </classes>
+</test>
+
+<test name="CTPhone Air"  parallel="tests">
+    <classes>
+      <class name="testScriptsAgencyCTPhoneBookings.CTPhoneAir_Dom_OnTheGo_Markup"/>
+      <class name="testScriptsAgencyCTPhoneBookings.CTPhoneAir_Dom_OnTheGo_Discount"/>
+      <class name="testScriptsAgencyCTPhoneBookings.CTPhoneAir_IVR"/>
+      <class name="testScriptsAgencyCTPhoneBookings.CTPhoneAir_Tech_Process"/>
+   </classes>
+</test> 
+ -->  
+ 
+ 
+ 
+</suite>   

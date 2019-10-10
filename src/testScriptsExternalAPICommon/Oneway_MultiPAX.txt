@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itinerary>
+
+                        <cabin-type>E</cabin-type>
+
+                       <flights>
+
+                                                <flight-spec>
+
+ 
+
+<fare-key>supp_INDIGO|si-api-v2-3160907a-0af6-483e-8132-9823a405f0dd|fk_retail_6E_933_1474092000000_LSPL_false__fpr_7487</fare-key>
+
+                                               
+
+                                                <segments>
+
+ 
+
+ 
+
+                                                <segment-spec>
+
+                                                               <departure-airport>DEL</departure-airport>
+
+                        <arrival-airport>BOM</arrival-airport>
+
+                        <flight-number>933</flight-number>
+
+                       <airline>6E</airline>
+
+                        <departure-date>2016-09-17</departure-date>
+
+                        </segment-spec>
+
+                                                </segments>
+
+ 
+
+ 
+
+                                               
+
+                        </flight-spec>
+
+                        </flights>
+
+                       <pax-info-list>
+
+                                                                                   <pax-info>
+
+                                              <title>Mr</title>
+
+                        <first-name>Jivan</first-name>
+
+                        <last-name>Kottian</last-name>
+
+                        <type>ADT</type>
+
+      <id-number>Grant</id-number>
+       <date-of-birth>1990-05-05</date-of-birth>
+                        </pax-info>
+
+                        <pax-info>
+
+                        <title>Mstr</title>
+
+                        <first-name>Test</first-name>
+
+                        <last-name>Test</last-name>
+
+                        <type>CHD</type>
+
+                                                <date-of-birth>2010-05-05</date-of-birth>
+                                                
+
+                        </pax-info>
+
+<pax-info>                                                                                         
+
+                        <title>Mstr</title>
+
+                        <first-name>Test</first-name>
+
+                        <last-name>Test</last-name>
+
+                        <type>INF</type>
+
+                                                <date-of-birth>2016-05-05</date-of-birth>
+                                                
+
+                        </pax-info>
+
+ 
+
+                        </pax-info-list>
+
+                        <contact-detail>
+
+                        <title>Mr</title>
+
+                        <first-name>Test</first-name>
+
+                        <last-name>Booking</last-name>
+
+                        <email>nfsfrank@hotmail.com</email>
+
+                        <address>Unit No 001, Ground Floor, DTC Bldg, Sitaram mills compound, N.M.joshi Marg, Lower parel (E)</address>
+
+                        <mobile>919844000000</mobile>
+
+                        <landline>02240554000</landline>
+
+                        <city-name>Mumbai</city-name>
+
+                        <state-name>Maharashtra</state-name>
+
+                        <country-name>India</country-name>
+
+                        <pin-code>400011</pin-code>
+
+                        </contact-detail></itinerary>

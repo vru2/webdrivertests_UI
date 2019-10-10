@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Beta_Trains_Accounts" parallel="tests" thread-count="50" preserve-order="true">
+
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+<!-- 		<listener class-name="commonServices.RemoveDuplicateResults"/>
+		<listener class-name="commonServices.RetryListener"/> -->
+</listeners>
+  
+	  <test name="Account - B2CAccountsLoginFromHomePageAndSignout" preserve-order="true">
+    	<classes>
+     		<class name="testScriptsAccounts.B2CAccountsLoginFromHomePageAndSignout"/>
+   		</classes>
+  	</test> 
+  	
+  	<test name="Beta Trains" preserve-order="true" >
+    	<classes>
+      		<class name="testScriptsTrains.B2CTrains_General_NB_Prod"/>
+    	</classes> 
+	</test> 
+	
+	 						 
+</suite> 	

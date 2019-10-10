@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="DEV Air" parallel="tests" thread-count="30" preserve-order="true">
+
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+</listeners>
+
+	<test name="Dom Search Cases" preserve-order="true" parallel="tests">
+		<classes>
+  			<class name="testScriptsIndia.AirDom_OW_Search_Results"/>  
+      		<class name="testScriptsIndia.AirDom_RT_Search_Results"/>
+       		<class name="testScriptsIndia.AirDom_MC_Serach_Results"/>
+       	    <class name="testScriptsIndia.AirDom_OW_SameDay_Search_Results"/>
+            <class name="testScriptsIndia.AirDom_RT_SameDay_Search_Results"/>  
+      	    <class name="testScriptsIndia.AirDom_OW_SRP_ModifySearch"/> 
+	 	</classes>
+	</test>
+
+	<test name="Intl Search Cases" preserve-order="true" parallel="tests">
+		<classes>
+    		<class name="testScriptsIndia.AirIntl_OW_Serach_Results"/> 
+    		<class name="testScriptsIndia.AirIntl_RT_Search_Results"/>
+      		<class name="testScriptsIndia.ArIntl_MC_Serach_Results"/>
+      		<class name="testScriptsIndia.AirIntl_OW_SameDay_Search_Results"/>  
+	 	</classes>
+	</test> 
+
+	<test name="B2CAir Test Booking" preserve-order="true" parallel="tests">
+    	<classes> 	 
+    		<class name="testScriptsIndia.AirCom_HomePage_SignIn_Dom_OW_LCC_Booking" />    	  
+    	</classes>
+	</test>
+
+</suite> 

@@ -1,0 +1,33 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="API" parallel="tests" thread-count="3" preserve-order="true">
+
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />		
+</listeners>
+
+<test name="Ext API Chmm" preserve-order="true" >
+    <classes>
+      <class name="com.cleartrip.hotel.extapi.CHMM_Prod"/>
+      <class name="com.cleartrip.hotel.extapi.CHMM_Prod_AE"/>      
+    </classes>
+</test>
+
+<test name="Ext API Dom Expedia" preserve-order="true" >
+    <classes>
+      <class name="com.cleartrip.hotel.extapi.Expedia_Prod_Dom"/>
+    </classes>
+</test>
+
+<test name="Ext API Intl" preserve-order="true" >
+    <classes>
+      <class name="com.cleartrip.hotel.extapi.Expedia_Prod_Intl"/>
+    </classes>
+</test>
+
+<test name="Extranet CHMM" preserve-order="true" >
+    <classes>
+      <class name="testScriptsCHMM.CHMMCom_API_Extranet_Prod"/>
+    </classes>
+</test>
+
+</suite> 

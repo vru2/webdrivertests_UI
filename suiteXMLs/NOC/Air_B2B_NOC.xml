@@ -1,0 +1,63 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Air B2B" parallel="tests" thread-count="50" preserve-order="true">
+
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+
+</listeners>
+
+
+ <test name="Corp.com Scenarios" preserve-order="true"  parallel="true">
+    <classes>
+      <class name="testScriptsCorpIndia.AirCorp_Dom_OW_NBFailure"/>
+      <class name="testScriptsCorpIndia.AirCorp_Dom_RT_SRP_Production"/>
+      <class name="testScriptsCorpIndia.AirCorp_Dom_MC_SRP_Production"/>
+      <class name="testScriptsCorpIndia.AirCorp_Intl_OW_SRP_Production"/>
+      <class name="testScriptsCorpIndia.AirCorp_Intl_RT_Booking_Production"/>
+      <class name="testScriptsCorpIndia.AirCorp_Intl_MC_SRP_Production"/>
+    </classes>
+</test>
+
+<test name="Corp.ae Scenarios" preserve-order="true"  parallel="true">
+	 <classes>
+	      <class name="testScriptsCorpAE.AirCorp_Dom_OW_Production"/>
+	      <class name="testScriptsCorpAE.AirCorp_Dom_RT_SRP_Production"/>
+	      <class name="testScriptsCorpAE.AirCorp_Intl_MC_SRP_Production"/>
+	      <class name="testScriptsCorpAE.AirCorp_Intl_OW_SRP_Production"/>
+	      <class name="testScriptsCorpAE.AirCorp_Intl_RT_Booking_Production"/>
+	      <class name="testScriptsCorpAE.AirCorp_Dom_MC_SRP_Production"/>
+    </classes>
+</test>
+<test name="Corp.SA Search" preserve-order="true"  parallel="true">
+	 <classes>
+	      <class name="testScriptsCorpSA.Beta_CorpSA_Air_Dom_OW"/>
+	      
+    </classes>
+</test>
+
+ 
+ <test name="Agency Scenarios" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsAgency.AgencyAir_Dom_OneWay_NetBanking_Production"/>      
+      <class name="testScriptsAgency.AgencyAir_Dom_RT_Production"/>      
+      <class name="testScriptsAgency.AgencyAir_Dom_MuitiCity_Production"/>
+      <class name="testScriptsAgency.AgencyAir_Int_MuitiCity_Production"/>
+      <class name="testScriptsAgency.AgencyAir_Int_RT_SRP_Production"/>      
+      <class name="testScriptsAgency.AgencyAir_Int_OneWay_Production"/>
+      <class name="testScriptsAgency.Agency_Add_Task"/>
+      <class name="testScriptsAgency.Agency_Adding_Travellers"/>
+      <class name="testScriptsAgency.Agency_Adding_Users"/>
+      <class name="testScriptsAgency.Agency_Currency_Dropdown_Link"/>
+      <class name="testScriptsAgency.Agency_More_Links"/>
+      <class name="testScriptsAgency.Agency_Message_LinkVerify"/>
+      <class name="testScriptsAgency.Agency_My_Profile_Links_Verify"/>
+      <class name="testScriptsAgency.Agency_Settings_Links_verify"/>
+      <class name="testScriptsAgency.Agency_Add_Deposit"/>
+      <class name="testScriptsAgency.Agency_Misc_DepositAccount_Instructions"/>
+      <class name="testScriptsAgency.Agency_Misc_DepositAccount_ManualDebt"/>
+      <class name="testScriptsAgency.Agency_Misc_DepositAccount_Split"/>
+      
+    </classes> 
+</test>
+
+</suite> 

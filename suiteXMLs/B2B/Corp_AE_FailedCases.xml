@@ -1,0 +1,68 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Corp.AE Failed Cases" parallel="tests" thread-count="20"  preserve-order="true">
+
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+</listeners>
+
+
+<test name="Corp.SA Cancellation Acct" preserve-order="true">
+    <classes>
+      <class name="testScriptsCorpSA.CorpSA_Air_Dom_OW_CancellationAcct"/>
+    </classes>
+</test>
+
+
+
+
+<test name="Cancellations" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsCorpAE.AirCorp_Cancellation_HQ"/>
+    </classes>
+</test>
+
+
+
+<test name="Intl OW" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsCorpAE.AirCorp_Intl_OW_Booking"/>
+    </classes>
+</test>
+
+<test name="Corp.SA Air Intl OW" preserve-order="true">
+    <classes>
+      <class name="testScriptsCorpSA.CorpSA_Air_Intl_OW"/>
+    </classes>
+</test>
+
+<test name="Dom OW Coupon" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsCorpAE.AirCorp_Dom_OW_Coupon"/>
+    </classes>
+</test>
+
+
+<test name="Hold Scenarios" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsCorpAE.AirCorp_Intl_OW_Hold_To_Confirm"/>
+      <class name="testScriptsCorpAE.AirCorp_Intl_OW_Hold_To_Release"/>
+    </classes>
+</test>
+
+
+
+<test name="Convenience Fee" preserve-order="true" parallel="true">
+    <classes>        
+      <class name="testScriptsCorpAE.AirCorp_Dom_OW_ConvenienceFee_CC"/>
+     </classes>
+</test> 
+
+
+<test name="Corp.SA Air Intl RT" preserve-order="true">
+    <classes>
+      <class name="testScriptsCorpSA.CorpSA_Air_Intl_RT"/>
+    </classes>
+</test>
+
+
+</suite>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="AIR_SMS_INTL_KIWI_OW_Suite" parallel="none" thread-count="1">
+
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="commonServices.RemoveDuplicateResults" />
+		<listener class-name="commonServices.RetryListener" />
+	</listeners>
+
+	<!-- //Get SSR Required - meal-seat-baggage-insurance-coupon -->
+
+	<parameter name="airline" value="" />
+	<parameter name="origin" value="RUH" />
+	<parameter name="destination" value="JED" />
+	<parameter name="onwardDate" value="15" />
+	<parameter name="paymentMethod" value="Credit Card" />
+	<parameter name="suppliers" value="KIWI" />
+	<parameter name="module" value="sms" />
+
+	<test name="Air_INTL_SMS : OW 1 ADT Single Airline Without SSR Booking">
+		<parameter name="paxConfig" value="1-0-0" />
+		<parameter name="ssrConfig" value="0-0-0-0-0" />
+		<classes>
+			<class
+				name="testScriptsMicroServices.AirIntl_OW_Booking_with_SSR">
+			</class>
+		</classes>
+	</test>
+
+	<test name="Air_INTL_SMS : OW 2 ADT Single Airline Without SSR Booking">
+		<parameter name="paxConfig" value="2-0-0" />
+		<parameter name="ssrConfig" value="0-0-0-0-0" />
+		<classes>
+			<class
+				name="testScriptsMicroServices.AirIntl_OW_Booking_with_SSR">
+			</class>
+		</classes>
+	</test>
+
+	<test
+		name="Air_INTL_SMS : OW 1 ADT 1 CHD Single Airline Without SSR Booking">
+		<parameter name="paxConfig" value="1-1-0" />
+		<parameter name="ssrConfig" value="0-0-0-0-0" />
+		<classes>
+			<class
+				name="testScriptsMicroServices.AirIntl_OW_Booking_with_SSR">
+			</class>
+		</classes>
+	</test>
+
+	<test
+		name="Air_INTL_SMS : OW 2 ADT 2 CHD Single Airline Without SSR Booking">
+		<parameter name="paxConfig" value="2-2-0" />
+		<parameter name="ssrConfig" value="0-0-0-0-0" />
+		<classes>
+			<class
+				name="testScriptsMicroServices.AirIntl_OW_Booking_with_SSR">
+			</class>
+		</classes>
+	</test>
+
+	<test
+		name="Air_INTL_SMS : OW 1 ADT 1 CHD 1 INF Single Airline Without SSR Booking">
+		<parameter name="paxConfig" value="1-1-1" />
+		<parameter name="ssrConfig" value="0-0-0-0-0" />
+		<classes>
+			<class
+				name="testScriptsMicroServices.AirIntl_OW_Booking_with_SSR">
+			</class>
+		</classes>
+	</test>
+
+	<test
+		name="Air_INTL_SMS : OW 2 ADT 2 CHD 2 INF Single Airline Without SSR Booking">
+		<parameter name="paxConfig" value="2-2-2" />
+		<parameter name="ssrConfig" value="0-0-0-0-0" />
+		<classes>
+			<class
+				name="testScriptsMicroServices.AirIntl_OW_Booking_with_SSR">
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Air_INTL_SMS : OW 1 ADT within 2 days booking">
+		<parameter name="paxConfig" value="1-0-0" />
+		<parameter name="ssrConfig" value="0-0-0-0-0" />
+		<parameter name="onwardDate" value="1" />
+		<classes>
+			<class
+				name="testScriptsMicroServices.AirIntl_OW_Booking_with_SSR">
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Air_INTL_SMS : OW 1 ADT expressway Booking">
+		<parameter name="paxConfig" value="1-0-0" />
+		<parameter name="ssrConfig" value="0-0-0-0-0" />
+		<parameter name="onwardDate" value="1" />
+		<classes>
+			<class
+				name="testScriptsMicroServices.AirIntl_OW_Expressway_Booking_with_SSR">
+			</class>
+		</classes>
+	</test>
+
+	<test
+		name="Air_INTL_SMS : OW 1 ADT 1 CHD 1 INF 2 Airline connected With coupon Booking">
+		<parameter name="airline" value="VY" />
+		<parameter name="stops" value="1" />
+		<parameter name="origin" value="LON" />
+		<parameter name="destination" value="MAD" />
+		<parameter name="paxConfig" value="1-1-1" />
+		<parameter name="ssrConfig" value="0-0-0-0-1" />
+		<classes>
+			<class
+				name="testScriptsMicroServices.AirIntl_ConnectingFlight_Booking_with_SSR">
+			</class>
+		</classes>
+	</test>  
+	
+	<test
+		name="Air_INTL_SMS : OW 1 ADT after 4 months without SSR Booking">
+		<parameter name="paxConfig" value="1-1-1" />
+		<parameter name="ssrConfig" value="0-0-0-0-0" />
+		<classes>
+			<class
+				name="testScriptsMicroServices.AirIntl_OW_Booking_with_SSR">
+			</class>
+		</classes>
+	</test>
+	
+</suite>

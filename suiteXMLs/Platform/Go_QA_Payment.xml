@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Payment" parallel="tests" thread-count="30" preserve-order="true">
+
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="commonServices.RemoveDuplicateResults"/>
+		<listener class-name="commonServices.RetryListener"/>
+</listeners>
+
+		
+ <test name="Payment" preserve-order="true" parallel="true">
+    <classes>
+      <!-- <class name="testScriptsIndia.AirDom_OW_Prod_NBRetry"/> -->
+    </classes>
+</test>
+		
+		
+
+</suite> 

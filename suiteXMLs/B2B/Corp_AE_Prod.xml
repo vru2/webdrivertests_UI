@@ -1,0 +1,85 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Corporate.AE Prod" parallel="tests" thread-count="70" preserve-order="true" >
+
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+</listeners>
+
+
+<test name="Convenience Fee" preserve-order="true" parallel="true">
+    <classes>        
+      <class name="testScriptsCorpAE.AirCorp_Dom_OW_ConvenienceFee_CC"/>
+     </classes>
+</test> 
+
+<test name="Hold Scenarios" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsCorpAE.AirCorp_Intl_OW_Hold_To_Confirm"/>
+      <class name="testScriptsCorpAE.AirCorp_Intl_OW_Hold_To_Release"/>
+    </classes>
+</test>
+
+<test name="SRP Scenarios" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsCorpAE.AirCorp_SRP_EmailSelectedFlights"/>
+      <class name="testScriptsCorpAE.AirCorp_SRP_Stops"/>
+      <class name="testScriptsCorpAE.AirCorp_SRP_ModifySearch"/>
+    </classes>
+</test>
+
+<test name="Dom MC MultiPax" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsCorpAE.AirCorp_Dom_MC_MultiPax_Booking"/>
+    </classes>
+</test>
+
+<test name="Dom RT Add Meal" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsCorpAE.AirCorp_Dom_RT_AddMeal_Booking"/>
+    </classes>
+</test>
+
+<test name="Dom Spl RT" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsCorpAE.AirCorp_Dom_SPLRT_Booking"/>
+    </classes>
+</test>
+
+<test name="Intl RT Multi Pax" preserve-order="true">
+    <classes>
+      <class name="testScriptsCorpAE.AirCorp_Intl_RT_MultiPax_Booking"/>
+    </classes>
+</test>
+
+<test name="Intl MC" preserve-order="true">
+    <classes>
+      <class name="testScriptsCorpAE.AirCorp_Intl_MC_Booking"/>
+    </classes>
+</test>
+
+<test name="Intl OW" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsCorpAE.AirCorp_Intl_OW_Booking"/>
+    </classes>
+</test>
+
+<test name="Corp.SA Cancellation Acct" preserve-order="true">
+    <classes>
+      <class name="testScriptsCorpSA.CorpSA_Air_Dom_OW_CancellationAcct"/>
+    </classes>
+</test>
+
+<test name="Corp.SA Air Intl OW" preserve-order="true">
+    <classes>
+      <class name="testScriptsCorpSA.CorpSA_Air_Intl_OW"/>
+    </classes>
+</test>
+
+<test name="Corp.SA Air Intl RT" preserve-order="true">
+    <classes>
+      <class name="testScriptsCorpSA.CorpSA_Air_Intl_RT"/>
+    </classes>
+</test>
+
+ 
+</suite> 

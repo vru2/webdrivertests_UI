@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><itinerary>
+<cabin-type>E</cabin-type>
+<flights>
+<flight-spec>
+<segments>
+<segment-spec><fare-key>supp_SPICEJET|si-api-v2-eab3e9b5-c89a-4aed-9d7c-5a77c5043340|fk_retail_SG_169_1472739000000_CFRIENDS_true__fpr_8468</fare-key>
+<departure-airport>DEL</departure-airport>
+<arrival-airport>BOM</arrival-airport>
+<flight-number>169</flight-number>
+<airline>SG</airline>
+<departure-date>2016-09-01</departure-date>
+</segment-spec>
+</segments>
+</flight-spec>
+<flight-spec>
+<segments>
+<segment-spec><fare-key>supp_SPICEJET|si-api-v2-eab3e9b5-c89a-4aed-9d7c-5a77c5043340|fk_retail_SG_160_1472949000000_CFRIENDS_true__fpr_9300</fare-key>
+<departure-airport>BOM</departure-airport>
+<arrival-airport>DEL</arrival-airport>
+<flight-number>160</flight-number>
+<airline>SG</airline>
+<departure-date>2016-09-04</departure-date>
+</segment-spec>
+</segments>
+</flight-spec>
+</flights>
+<pax-info-list>
+<pax-info>
+<title>Mr</title>
+<first-name>Deepaa</first-name>
+<last-name>Kerurr</last-name>
+<type>ADT</type>
+<id-type>PSPT</id-type>
+<id-number>Grant</id-number>
+</pax-info>
+<pax-info>
+
+                        <title>Mstr</title>
+
+                        <first-name>Test</first-name>
+
+                        <last-name>Test</last-name>
+
+                        <type>CHD</type>
+
+                                                <date-of-birth>2010-05-05</date-of-birth>
+
+                        </pax-info>
+
+<pax-info>                                                                                         
+
+                        <title>Mstr</title>
+
+                        <first-name>Test</first-name>
+
+                        <last-name>Test</last-name>
+
+                        <type>INF</type>
+
+                                                <date-of-birth>2016-05-05</date-of-birth>
+
+                        </pax-info>
+
+
+</pax-info-list>
+<contact-detail>
+<title>Mr</title>
+<first-name>Frank</first-name>
+<last-name>Dsouza</last-name>
+<email>deepa.kerur@cleartrip.com</email>
+<address>Unit No 001, Ground Floor, DTC Bldg, Sitaram mills compound, N.M.joshi Marg, Lower parel (E)</address>
+<mobile>919980494100</mobile>
+<landline>02240554000</landline>
+<city-name>Mumbai</city-name>
+<state-name>Maharashtra</state-name>
+<country-name>India</country-name>
+<pin-code>400011</pin-code>
+</contact-detail>
+<payment-detail>
+<payment-type>DA</payment-type>
+<deposit-account-id>521</deposit-account-id>
+</payment-detail></itinerary>

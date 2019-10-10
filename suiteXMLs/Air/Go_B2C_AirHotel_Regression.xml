@@ -1,0 +1,18 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="B2C Air Test Report" parallel="tests" thread-count="20" preserve-order="true">
+
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="commonServices.RemoveDuplicateResults"/>
+		<listener class-name="commonServices.RetryListener"/>
+</listeners>
+
+
+ <suite-files>
+			<suite-file path="MEAir.xml"></suite-file>
+	</suite-files >
+
+
+	 
+	</suite>
+	 

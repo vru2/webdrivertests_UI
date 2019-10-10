@@ -1,0 +1,61 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Beta Local" parallel="tests" thread-count="4" preserve-order="true">
+
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+	</listeners>
+  
+	<test name="InDesktopLocalSanity">
+		<classes>
+			<class name="com.cleartrip.local.desktop.beta.LocalsTTDCollection" />
+			<class name="com.cleartrip.local.desktop.beta.LocalsKlook" />
+			<class name="com.cleartrip.local.desktop.beta.LocalsMusement" />
+		</classes>
+	</test>
+
+	<test name="AeDesktopLocalSanity">
+		<classes>
+			<class name="com.cleartrip.local.desktop.beta.LocalsAeDomainKlook" />
+			<class name="com.cleartrip.local.desktop.beta.LocalsAeDomainMusement" />
+			<class name="com.cleartrip.local.desktop.beta.LocalsAeDomainTTDCollection" />
+		</classes>
+	</test>
+ 
+	<test name="WhiteLableDesktopLocalSanity">
+		<classes>
+			<class name="com.cleartrip.local.desktop.beta.LocalsDesktopWhiteLableKlook" />
+			<class name="com.cleartrip.local.desktop.beta.LocalsDesktopWhiteLableMusement" />
+			<class name="com.cleartrip.local.desktop.beta.LocalsDesktopWhiteLableTtdCollection" />
+		</classes>
+	</test>
+ 
+ 	<test name="InMobileWebLocalSanity">
+		<classes>
+			<class name="com.cleartrip.local.desktop.beta.LocalsMobileWebTTDAdult" />
+			<class name="com.cleartrip.local.desktop.beta.LocalsMobileWebKlook" />
+			<class name="com.cleartrip.local.desktop.beta.LocalsMobileWebMusement" />
+		</classes>
+	</test>
+
+	<test name="AeMobileWebLocalSanity">
+		<classes>
+			<class name="com.cleartrip.local.desktop.beta.LocalsMobileWebAeDomainKlook" />
+			<class name="com.cleartrip.local.desktop.beta.LocalsMobileWebAeDomainMusement" />
+			<class name="com.cleartrip.local.desktop.beta.LocalsMobileWebAeDomainTTDAdult" />
+		</classes>
+	</test>
+ 	
+	<test name="WhiteLableMobileWebLocalSanity">
+		<classes>
+			<class name="com.cleartrip.local.desktop.beta.LocalsMobileWebWhiteLableKlook" />
+			<class name="com.cleartrip.local.desktop.beta.LocalsMobileWebWhiteLableMusement" />
+			<class name="com.cleartrip.local.desktop.beta.LocalsMobileWebWhiteLableTtdAdult" />
+		</classes>
+	</test>
+	
+	<test name="ActivityAvailabiltySanityCheck">
+	<classes>
+	<class name="com.cleartrip.local.desktop.others.ActivityValidate"/>
+	</classes>
+    </test>
+</suite> 

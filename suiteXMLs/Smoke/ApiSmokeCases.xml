@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Air Ext API and  JSON API Smoke Cases" parallel="tests"
+	thread-count="20" preserve-order="true">
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="commonServices.RemoveDuplicateResults" />
+		<listener class-name="commonServices.RetryListener" />
+	</listeners>
+	<test name="Air ExtAPI  XML SmokeCases" preserve-order="true">
+		<classes>
+
+			<class name="testScriptsExternalAPI.OnewaySinglepax" />
+			<class name="testScriptsExternalAPI.RoundtripSinglepax" />
+			
+<class name="testScriptsExternalAPI.Api_Book_Intl_OW" />
+		</classes>
+	</test>
+		<test name="Air EXTApi JSON SmokeCases" preserve-order="true">
+		<classes>
+
+			<class name="testScriptsJsonExternalAPI.JsonOnewaySinglePAX" />
+			<class name="testScriptsJsonExternalAPI.JSONApi_Book_Intl_OW" />
+			
+<class name="testScriptsJsonExternalAPI.JsonRoundTripSinglePAX" />
+		</classes>
+	</test>
+	</suite>

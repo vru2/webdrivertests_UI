@@ -1,0 +1,27 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Locals TTD MobileWeb" thread-count="4" parallel="classes" verbose="3" preserve-order="true">  
+ 
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+</listeners>
+
+<test name="MobileWeb TTD cases" preserve-order="true">
+    <classes>
+
+       <class name="com.cleartrip.local.mobileweb.ttd.Adult"/>
+       <class name="com.cleartrip.local.mobileweb.ttd.AdultChild"/>
+      <class name="com.cleartrip.local.mobileweb.ttd.AdultTimeSlot"/>
+      <class name="com.cleartrip.local.mobileweb.ttd.AdultTimeSlotUnavailable"/>
+      <class name="com.cleartrip.local.mobileweb.ttd.Caraousal"/>
+      <class name="com.cleartrip.local.mobileweb.ttd.Kids2PAX"/>
+      <class name="com.cleartrip.local.mobileweb.ttd.PerUnitMultiRates"/>
+      <class name="com.cleartrip.local.mobileweb.ttd.ProductEditorial"/>
+      <class name="com.cleartrip.local.mobileweb.ttd.Klook"/>
+      <class name="com.cleartrip.local.mobileweb.ttd.KlookAdditionalInfoList"/>
+      <class name="com.cleartrip.local.mobileweb.ttd.KlookAdditionalInfoWithoutList"/>
+       
+    </classes>    
+  </test>
+ 
+
+ </suite> 

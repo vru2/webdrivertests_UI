@@ -1,0 +1,44 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Camp Others Com">
+
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+	</listeners>
+
+
+	<test name="Others" preserve-order="true">
+
+		<parameter name="domain" value="com"></parameter>
+
+		<classes>
+		
+			<class name="com.cleartrip.local.camp.others.AddingCollectionsSA"></class>
+	  		<class name="com.cleartrip.local.camp.others.ActivityUnitSA"></class>
+			<class name="com.cleartrip.local.camp.others.AddCuisineSA"></class>
+			<class name="com.cleartrip.local.camp.others.AddingCollectionsSA"></class>
+			<class name="com.cleartrip.local.camp.others.CampLogins"></class>
+			<class name="com.cleartrip.local.camp.others.CategoriesSA"></class>
+			<class name="com.cleartrip.local.camp.others.DressCodeSA"></class>
+			<class name="com.cleartrip.local.camp.others.EventInterestTagSA"></class>
+			<class name="com.cleartrip.local.camp.others.NearByCitiesSA"></class>
+			<class name="com.cleartrip.local.camp.others.RestaurantFeatureSA"></class>
+			<class name="com.cleartrip.local.camp.others.TravelerTypesSA"></class>
+			<class name="com.cleartrip.local.camp.others.TTDInterestTagSA"></class>
+			<class name="com.cleartrip.local.camp.others.NearByCitiesSA"></class>
+			<!-- <class name="com.cleartrip.local.camp.others.AccountApprovalSA"></class> -->
+			<class name="com.cleartrip.local.camp.others.AccountPLBConfigurationSA"></class>
+			<class name="com.cleartrip.local.camp.others.EditorialHomePageDealV1"></class>
+			<class name="com.cleartrip.local.camp.others.EditorialHomePageDealV2"></class>
+			<class name="com.cleartrip.local.camp.others.EditorialHomePageExplore"></class>
+			<class name="com.cleartrip.local.camp.others.EditorialHomePageGeneralWebview"></class>
+			<class name="com.cleartrip.local.camp.others.EditorialRefreshEditorials"></class>
+			<class name="com.cleartrip.local.camp.others.CampWLWorkflow"></class>
+			<class name="com.cleartrip.local.camp.others.CampActivityFlow"></class>
+			<class name="com.cleartrip.local.camp.others.GstInvoiceReport"></class>
+			<!-- <class name="com.cleartrip.local.camp.others.vBookingReport"></class> -->
+			<!-- 	<class name="com.cleartrip.local.camp.others.AccountApprovalSA"></class> -->
+  
+		</classes>
+
+	</test>
+</suite> 

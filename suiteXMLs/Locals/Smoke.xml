@@ -1,0 +1,32 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Locals Smoke">
+
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+</listeners>
+ 
+   
+	
+  <test name="Locals TTD">
+    <classes>
+      <class name="testScriptsLocals.Locals_TTD_Carousal_CC"/>
+    </classes>
+  </test> 
+  
+   
+ <test name="Local Events" preserve-order="true">
+    <classes>
+       <class name="testScriptsLocals.Locals_Events_InsiderFree_Booking"/>      
+    </classes>    
+  </test>
+  
+ 
+  <test name="Local FNB" preserve-order="true">
+    <classes>
+  	  	<class name="testScriptsLocals.Locals_FNB_Adult"/>
+    </classes>    
+  </test>
+ 
+ 
+ 
+</suite> 

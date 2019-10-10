@@ -1,0 +1,51 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Corporate" parallel="tests" thread-count="100" preserve-order="true">
+
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />	
+		<listener class-name="commonServices.RetryListener"/>	
+</listeners>
+
+  
+<test name="Corp.Com" preserve-order="true" parallel="true">
+    <classes>
+       <class name="testScriptsCorporate.HotelCorp_PAX_Payment_CC_120"/>
+       <class name="testScriptsCorporate.HotelCorp_PAX_Payment_DA_222"/>	
+       <class name="testScriptsCorporate.HotelCorp_PAX_Payment_DC_131"/>
+       <class name="testScriptsCorporate.HotelCorp_PAX_MultiRoomNight"/>
+       <class name="testScriptsCorporate.HotelCorp_Coupon"/> 
+  	   <class name="testScriptsCorporate.HotelCorp_Spl_Rate"/>
+       <class name="testScriptsCorporate.HotelCorp_Cancellation_HQ"/>
+       <class name="testScriptsCorporate.HotelCorp_PAH"/>  
+       <class name="testScriptsCorporate.HotelCorp_Intl"/>
+       <class name="testScriptsCorporate.HotelCorp_NetBanking_Retry"/>   
+       <class name="testScriptsCorporate.HotelCorp_Cancellation_HQ"/>             
+       <class name="testScriptsCorporate.HotelCorp_Cancellation_Accounts"/>      
+       <class name="testScriptsCorporate.HotelCorp_PTA_Approved"/>
+       <class name="testScriptsCorporate.HotelCorp_PTA_Rejected"/>
+       <class name="testScriptsCorporate.HotelCorp_HQTrips_LinkVerify"/>
+       <class name="testScriptsCorporate.HotelCorp_Acccount_TripDetails"/>  
+       <class name="testScriptsCorporate.HotelCorp_DetailsPage_BackButton"/> 
+       <class name="testScriptsCorporate.HotelCorp_DetailsPage_CancellationPolicy"/> 
+
+         <!--    <class name="testScriptsCorporate.HotelCorp_Connector_OYO"/>  --> 
+
+       <class name="testScriptsCorporate.HotelCorp_DetailsPage_ModifySearch"/> 
+   
+
+     </classes>
+</test>      
+
+ 
+<test name="Corp.AE" preserve-order="true" parallel="true">
+    <classes>  
+      <class name="testScriptsCorporate.HotelCorpAE_Pkg_Rate"/>  
+       <class name="testScriptsCorporate.HotelCorpAE_Spl_Rate"/>
+       <class name="testScriptsCorporate.HotelCorpAE_Coupon"/> 
+       <class name="testScriptsCorporate.HotelCorpAE_Intl"/>    
+       <class name="testScriptsCorporate.HotelCorpAE_DetailsPage_BackButton"/>   
+     </classes>
+</test>
+
+
+</suite> 

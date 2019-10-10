@@ -1,0 +1,71 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="FNB Domain Com">
+
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+	</listeners>
+
+
+		<parameter name="domain" value="com"></parameter>
+		
+	<test name="FNB Activity flow"  preserve-order="true" parallel="classes" thread-count="3">
+
+		
+		<classes>
+
+				<class name="com.cleartrip.local.camp.fnb.CreateActivityPublishUnpublishSA"></class>
+				<class name="com.cleartrip.local.camp.fnb.CreateActivityRejectSA"></class>
+				<class name="com.cleartrip.local.camp.fnb.PricePerPersonKidsOnlySA"></class>
+				<class name="com.cleartrip.local.camp.fnb.PricePerPersonSA"></class>
+				<class name="com.cleartrip.local.camp.fnb.PricePerUnitSA"></class>
+		
+		</classes>
+
+	</test>
+	
+<!-- 	 <test name="FNB Editorial" preserve-order="true" parallel="classes" thread-count="3">
+
+		
+		<classes>
+
+				<class name="com.cleartrip.local.camp.fnb.EditorialRemoveCarousal"></class>
+				<class name="com.cleartrip.local.camp.fnb.EditorialCarousalActivity"></class>
+				<class name="com.cleartrip.local.camp.fnb.EditorialCarousalCollection"></class>
+				<class name="com.cleartrip.local.camp.fnb.EditorialCarousalOfferActivity"></class>
+				<class name="com.cleartrip.local.camp.fnb.EditorialCarousalOfferAll"></class>
+				<class name="com.cleartrip.local.camp.fnb.EditorialCarousalOfferCollection"></class>
+				<class name="com.cleartrip.local.camp.fnb.ProductEditorial"></class>
+				<class name="com.cleartrip.local.camp.fnb.EditorialRemoveHomePageData"></class>
+				<class name="com.cleartrip.local.camp.fnb.EditorialHomePageLayoutCarousal"></class>
+				<class name="com.cleartrip.local.camp.fnb.EditorialHomePageLayoutActivityList"></class>
+				<class name="com.cleartrip.local.camp.fnb.EditorialHomePageLayoutCollectionCards"></class>
+				
+		</classes>
+
+	</test> -->
+	
+	<test name="FNB ManageData" parallel="classes" preserve-order="true" >
+
+		<parameter name="domain" value="com"></parameter>
+		
+		<classes>
+
+			
+					
+				<class name="com.cleartrip.local.camp.fnb.AddBlackOutDatesSA"></class>
+				<class name="com.cleartrip.local.camp.fnb.AddChainSA"></class>
+				<!--<class name="com.cleartrip.local.camp.fnb.AddFNBTagSA"></class>
+				 <class name="com.cleartrip.local.camp.fnb.AssignESPSA"></class> -->
+				<class name="com.cleartrip.local.camp.fnb.EditActivitySA"></class>
+				<class name="com.cleartrip.local.camp.fnb.EditInventorySA"></class>
+				<class name="com.cleartrip.local.camp.fnb.EditVariantPricingSA"></class>
+				<class name="com.cleartrip.local.camp.fnb.FNBCustomCollectionSA"></class>
+				<class name="com.cleartrip.local.camp.fnb.ManageCategoryAssignSA"></class>
+				<class name="com.cleartrip.local.camp.fnb.ReorderSA"></class>
+				<class name="com.cleartrip.local.camp.fnb.SortListingsSA"></class>
+				<class name="com.cleartrip.local.camp.fnb.ItemRecommendationsSA"></class>
+			
+		</classes>
+
+	</test>
+</suite> 

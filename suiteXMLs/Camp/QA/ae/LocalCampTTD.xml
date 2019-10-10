@@ -1,0 +1,40 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Camp TTD Doamin AE" thread-count="6">
+
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+	</listeners>
+
+
+		<parameter name="domain" value="ae"></parameter>
+	
+	<test name="TTD Activity flow">
+
+		
+		<classes>
+			<class name="com.cleartrip.local.camp.ttd.CreateActivityPersonKidsOnlySchedSA"></class>
+			<class name="com.cleartrip.local.camp.ttd.CreateActivityPersonKidsOnlyUnSchedSA"></class>
+		 	<class name="com.cleartrip.local.camp.ttd.CreateActivityPricePerPersonSchedSA"></class>
+			<class name="com.cleartrip.local.camp.ttd.CreateActivityPricePerPersonUnschedSA"></class>
+			<class name="com.cleartrip.local.camp.ttd.CreateActivityPricePerUnitSchedSA"></class>
+			<class name="com.cleartrip.local.camp.ttd.CreateActivityPricePerUnitUnschedSA"></class>
+
+		</classes>
+
+	</test>
+	
+	<test name="ManageData">
+
+		
+		<classes>
+
+			<class name="com.cleartrip.local.camp.ttd.CustomCollectionSA"></class>
+			<class name="com.cleartrip.local.camp.ttd.ManageCategoryAssignSA"></class>
+			<class name="com.cleartrip.local.camp.ttd.ManageCategoryOrderSA"></class>
+			<class name="com.cleartrip.local.camp.ttd.SortListingsSA"></class>
+			<class name="com.cleartrip.local.camp.ttd.ReorderSA"></class>
+
+		</classes>
+
+	</test>
+</suite> 

@@ -1,0 +1,68 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Camp TTD Com">
+
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+	</listeners>
+
+		<parameter name="domain" value="com"></parameter>
+		
+	<test name="TTD Activity flow" preserve-order="true" thread-count="3">
+
+		<classes>
+	
+			<class name="com.cleartrip.local.camp.ttd.CreateActivityPersonKidsOnlySchedSA"></class>
+			<class name="com.cleartrip.local.camp.ttd.CreateActivityPersonKidsOnlyUnSchedSA"></class>
+		 	<class name="com.cleartrip.local.camp.ttd.CreateActivityPricePerPersonSchedSA"></class>
+			<class name="com.cleartrip.local.camp.ttd.CreateActivityPricePerPersonUnschedSA"></class>
+			<class name="com.cleartrip.local.camp.ttd.CreateActivityPricePerUnitSchedSA"></class>
+			<class name="com.cleartrip.local.camp.ttd.CreateActivityPricePerUnitUnschedSA"></class>
+			<class name="com.cleartrip.local.camp.ttd.SpecialCharTtdActivity"></class>
+		 
+		</classes>
+
+	</test>
+	
+	
+	 <test name="TTD Editorial" preserve-order="true" parallel="classes" thread-count="3">
+
+		<classes>
+		
+			<class name="com.cleartrip.local.camp.ttd.EditorialRemoveHomePageData"></class>
+			<class name="com.cleartrip.local.camp.ttd.EditorialHomePageLayoutCarousal"></class>
+			<class name="com.cleartrip.local.camp.ttd.EditorialCarousalActivity"></class>
+			<class name="com.cleartrip.local.camp.ttd.EditorialCarousalCollection"></class>
+			<class name="com.cleartrip.local.camp.ttd.EditorialCarousalOfferActivity"></class>
+			<class name="com.cleartrip.local.camp.ttd.EditorialCarousalOfferAll"></class>
+			<class name="com.cleartrip.local.camp.ttd.EditorialCarousalOfferCollection"></class>
+			<class name="com.cleartrip.local.camp.ttd.EditorialHomePageHeroContent"></class>
+			<class name="com.cleartrip.local.camp.ttd.EditorialHomePageLayoutActivityList"></class>
+			<class name="com.cleartrip.local.camp.ttd.EditorialHomePageLayoutCollectionCards"></class>
+			<class name="com.cleartrip.local.camp.ttd.EditorialRemoveCarousal"></class>
+			<class name="com.cleartrip.local.camp.ttd.ProductEditorial"></class>
+			
+		 
+		</classes>
+
+	</test>
+	
+	<test name="TTD ManageData" preserve-order="true">
+
+		<parameter name="domain" value="com"></parameter>
+		
+		
+		
+		<classes>
+	
+			<class name="com.cleartrip.local.camp.ttd.CustomCollectionSA"></class>
+			<class name="com.cleartrip.local.camp.ttd.ManageCategoryAssignSA"></class>
+			<class name="com.cleartrip.local.camp.ttd.ManageCategoryOrderSA"></class>
+			<class name="com.cleartrip.local.camp.ttd.SortListingsSA"></class>
+			<class name="com.cleartrip.local.camp.ttd.ReorderSA"></class>
+			<class name="com.cleartrip.local.camp.ttd.ItemRecommendationsSA"></class>	
+		 
+		</classes>
+
+	</test> 
+ 
+</suite> 

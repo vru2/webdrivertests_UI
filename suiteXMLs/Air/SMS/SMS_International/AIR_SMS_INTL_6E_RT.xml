@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="AIR_SMS_INTL_6E_RT_Suite" parallel="none"
+	thread-count="1">
+
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="commonServices.RemoveDuplicateResults" />
+	</listeners>
+
+	<!-- //Get SSR Required - meal-seat-baggage-insurance-coupon -->
+
+	<parameter name="airline" value="6E" />
+	<parameter name="origin" value="DEL" />
+	<parameter name="destination" value="DXB" />
+	<parameter name="onwardDate" value="15" />
+	<parameter name="returnDate" value="20" />
+	<parameter name="paymentMethod" value="Credit Card" />
+	<parameter name="IsFliteTypeInternational" value="true" />
+	<parameter name="tripType" value="RT" />
+
+	<!-- Round Trip Domestic Starts Here -->
+
+	<test name="Air_INTL_SMS : RT 1 ADT 1 Airline Without SSR Booking1">
+		<parameter name="paxConfig" value="1-0-0" />
+		<parameter name="ssrConfig" value="0-0-0-0-0" />
+		<classes>
+			<class name="testScriptsMicroServices.Air_Suppliers_Pod_SMS_And_SFF_Flow">
+			</class>
+		</classes>
+	</test>
+
+	<test name="Air_INTL_SMS : RT 2 ADT 1 Airline With Baggage Booking">
+		<parameter name="paxConfig" value="2-0-0" />
+		<parameter name="ssrConfig" value="0-0-1-0-0" />
+		<classes>
+			<class name="testScriptsMicroServices.Air_Suppliers_Pod_SMS_And_SFF_Flow">
+			</class>
+		</classes>
+	</test>
+
+	<test
+		name="Air_INTL_SMS : RT 1 ADT 1 CHD 1 Airline Without SSR Booking2">
+		<parameter name="paxConfig" value="1-1-0" />
+		<parameter name="ssrConfig" value="0-0-0-0-0" />
+		<classes>
+			<class name="testScriptsMicroServices.Air_Suppliers_Pod_SMS_And_SFF_Flow">
+			</class>
+		</classes>
+	</test>
+
+	<test
+		name="Air_INTL_SMS : RT 1 ADT 1 CHD 1 INF 1 Airline Without SSR Booking3">
+		<parameter name="paxConfig" value="1-1-1" />
+		<parameter name="ssrConfig" value="0-0-0-0-0" />
+		<classes>
+			<class name="testScriptsMicroServices.Air_Suppliers_Pod_SMS_And_SFF_Flow">
+			</class>
+		</classes>
+	</test>
+	
+	<test
+		name="Air_INTL_SMS : RT 1 ADT 1 CHD 1 INF 1 Airline Without SSR Booking4">
+		<parameter name="paxConfig" value="2-1-2" />
+		<parameter name="ssrConfig" value="0-0-0-0-0" />
+		<classes>
+			<class name="testScriptsMicroServices.Air_Suppliers_Pod_SMS_And_SFF_Flow">
+			</class>
+		</classes>
+	</test>
+	
+	<test
+		name="Air_INTL_SMS : RT 1 ADT 1 CHD 1 INF 1 Airline Without SSR Booking5">
+		<parameter name="paxConfig" value="2-1-2" />
+		<parameter name="ssrConfig" value="0-0-0-0-0" />
+		<classes>
+			<class name="testScriptsMicroServices.Air_Suppliers_Pod_SMS_And_SFF_Flow">
+			</class>
+		</classes>
+	</test>
+	
+	<test
+		name="Air_INTL_SMS : RT 1 ADT 1 CHD 1 INF 1 Airline Without SSR Booking6">
+		<parameter name="paxConfig" value="2-1-2" />
+		<parameter name="ssrConfig" value="0-0-0-0-0" />
+		<classes>
+			<class name="testScriptsMicroServices.Air_Suppliers_Pod_SMS_And_SFF_Flow">
+			</class>
+		</classes>
+	</test>
+	
+	<test
+		name="Air_INTL_SMS : RT 1 ADT 1 CHD 1 INF 1 Airline Without SSR Booking7">
+		<parameter name="paxConfig" value="2-1-2" />
+		<parameter name="ssrConfig" value="0-0-0-0-0" />
+		<classes>
+			<class name="testScriptsMicroServices.Air_Suppliers_Pod_SMS_And_SFF_Flow">
+			</class>
+		</classes>
+	</test>
+	
+	<test
+		name="Air_INTL_SMS : RT 1 ADT 1 CHD 1 INF 1 Airline Without SSR Booking8">
+		<parameter name="paxConfig" value="2-1-2" />
+		<parameter name="ssrConfig" value="0-0-0-0-0" />
+		<classes>
+			<class name="testScriptsMicroServices.Air_Suppliers_Pod_SMS_And_SFF_Flow">
+			</class>
+		</classes>
+	</test>
+	
+	<test
+		name="Air_INTL_SMS : RT 1 ADT 1 CHD 1 INF 1 Airline Without SSR Booking9">
+		<parameter name="paxConfig" value="2-1-2" />
+		<parameter name="ssrConfig" value="0-0-0-0-0" />
+		<classes>
+			<class name="testScriptsMicroServices.Air_Suppliers_Pod_SMS_And_SFF_Flow">
+			</class>
+		</classes>
+	</test>
+	
+	<test
+		name="Air_INTL_SMS : RT 1 ADT 1 CHD 1 INF 1 Airline Without SSR Booking10">
+		<parameter name="paxConfig" value="2-1-2" />
+		<parameter name="ssrConfig" value="0-0-0-0-0" />
+		<classes>
+			<class name="testScriptsMicroServices.Air_Suppliers_Pod_SMS_And_SFF_Flow">
+			</class>
+		</classes>
+	</test>
+	
+	<test
+		name="Air_INTL_SMS : RT 1 ADT 1 CHD 1 INF 1 Airline Without SSR Booking11">
+		<parameter name="paxConfig" value="2-1-2" />
+		<parameter name="ssrConfig" value="0-0-0-0-0" />
+		<classes>
+			<class name="testScriptsMicroServices.Air_Suppliers_Pod_SMS_And_SFF_Flow">
+			</class>
+		</classes>
+	</test>
+	
+	<test
+		name="Air_INTL_SMS : RT 1 ADT 1 CHD 1 INF 1 Airline Without SSR Booking12">
+		<parameter name="paxConfig" value="2-1-2" />
+		<parameter name="ssrConfig" value="0-0-0-0-0" />
+		<classes>
+			<class name="testScriptsMicroServices.Air_Suppliers_Pod_SMS_And_SFF_Flow">
+			</class>
+		</classes>
+	</test>
+	
+	<test
+		name="Air_INTL_SMS : RT 1 ADT 1 CHD 1 INF 1 Airline Without SSR Booking13">
+		<parameter name="paxConfig" value="2-1-2" />
+		<parameter name="ssrConfig" value="0-0-0-0-0" />
+		<classes>
+			<class name="testScriptsMicroServices.Air_Suppliers_Pod_SMS_And_SFF_Flow">
+			</class>
+		</classes>
+	</test>
+	
+	<test
+		name="Air_INTL_SMS : RT 1 ADT 1 CHD 1 INF 1 Airline Without SSR Booking14">
+		<parameter name="paxConfig" value="2-1-2" />
+		<parameter name="ssrConfig" value="0-0-0-0-0" />
+		<classes>
+			<class name="testScriptsMicroServices.Air_Suppliers_Pod_SMS_And_SFF_Flow">
+			</class>
+		</classes>
+	</test>
+
+	
+</suite>

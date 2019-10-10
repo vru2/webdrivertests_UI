@@ -1,0 +1,420 @@
+<?xml version="1.0" ?>
+<project name="seleniumtests" basedir="." default="build">
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties">
+		<classpath>
+			<pathelement location="lib/ant-contrib-1.0b3/ant-contrib-1.0b3.jar" />
+		</classpath>
+	</taskdef>
+
+	<target name="init" description="All the targets need to depend on this target for properties and classpath initilization.">
+		<var name="app.name" value="seleniumtests" />
+		<dirname property="project.dir" file="${ant.file.seleniumtests}" />
+		<echo message="${ant.file.seleniumtests}" />
+		<var name="build.dir" value="${project.dir}/build" />
+		<var name="resources.dir" value="${project.dir}\resources" />
+		<var name="reports.dir" value="${project.dir}/reports" />
+		<var name="logs.dir" value="${project.dir}/logs" />
+		<var name="configs.dir" value="${project.dir}\config" />
+		<var name="src.dir" value="${project.dir}\src" />
+		<var name="ScreenShots.dir" value="ScreenShots" />
+		<var file="${project.dir}/classpath.properties" />
+		<property environment="cruise" />
+		<path id="build.classpath">
+			<pathelement path="${build.classpath}" />
+		</path>
+		<path id="runtime.classpath">
+			<pathelement path="${runtime.classpath}" />
+			<fileset dir = "${configs.dir}">
+				<include name = "log4j.properties" />
+			</fileset>
+		</path>
+		<taskdef resource="testngtasks" classpath="${testng.jar}" />
+	</target>
+
+	<target name="clean" depends="init" description="Deletes dist and test-reports">
+		<delete dir="${build.dir}" quiet="true" includeemptydirs="true" />
+		<delete dir="${ScreenShots.dir}" quiet="true" includeemptydirs="true" />
+		<delete dir="${logs.dir}" quiet="true" includeemptydirs="true" />
+		<mkdir dir="${logs.dir}" />
+	</target>
+
+	<target name="prepare" depends="clean" description="creates build, dist, dist/WEB-INF, and test-reports directories.">
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${ScreenShots.dir}"/>
+	</target>
+
+
+	<!-- <target name="killbrowser" depends="prepare" description="Killing the opened browsers">
+				<exec dir="${resources.dir}\misc\" executable="bin/bash">
+					<arg value="/c" />
+					<arg value="killbrowsers.bat" />
+				</exec>
+	</target>
+-->
+
+	<target name="build" depends="prepare" description="Compile main source tree java files">
+		<javac encoding="iso-8859-1" destdir="${build.dir}" debug="true" deprecation="false" optimize="false" failonerror="true" fork="true">
+			<src path="${src.dir}" />
+			<classpath refid="build.classpath" />
+		</javac>
+		<copy todir="${build.dir}">
+			<fileset dir="${resources.dir}" />
+		</copy>
+	</target>
+
+	<target name="clean.regress" depends="init" description="Deletes dist and test-reports">
+		<delete dir="${reports.dir}" quiet="true" includeemptydirs="true" />
+		<mkdir dir="${reports.dir}" />
+	</target>
+
+	<target name="regress" depends="clean.regress" description="Runs Regression suite">
+		<testng classpathref="runtime.classpath" outputDir="${reports.dir}" haltOnfailure="true">
+			<classpath>
+				<pathelement path="${configs.dir}" />
+				<pathelement path="${build.dir}" />
+			</classpath>
+			<xmlfileset dir="${project.dir}" includes="suiteXMLs/Go_testng.xml" />
+		</testng>
+	</target>
+
+	<target name="hotels" depends="clean.regress" description="Runs Hotel Regression suite">
+		<testng classpathref="runtime.classpath" outputDir="${reports.dir}" haltOnfailure="true">
+			<classpath>
+				<pathelement path="${configs.dir}" />
+				<pathelement path="${build.dir}" />
+			</classpath>
+			<xmlfileset dir="${project.dir}" includes="suiteXMLs/Go_Hotel.xml" />
+		</testng>
+	</target>
+	<target name="Payments" depends="clean.regress" description="Runs Payment Regression suite">
+		<testng classpathref="runtime.classpath" outputDir="${reports.dir}" haltOnfailure="true">
+			<classpath>
+				<pathelement path="${configs.dir}" />
+				<pathelement path="${build.dir}" />
+			</classpath>
+			<xmlfileset dir="${project.dir}" includes="suiteXMLs/Trains_Accounts/Go_Air_B2C_Payment.xml" />
+		</testng>
+	</target>
+	<target name="bct" depends="clean.regress" description="BCT test">
+		<testng classpathref="runtime.classpath" outputDir="${reports.dir}" haltOnfailure="true">
+			<classpath>
+				<pathelement path="${configs.dir}" />
+				<pathelement path="${build.dir}" />
+			</classpath>
+			<xmlfileset dir="${project.dir}" includes="suiteXMLs/Go_BCT.xml" />
+		</testng>
+	</target>
+	<target name="MobilewebtrainsforPWA" depends="clean.regress" description="Runs mobileweb trains Regression suite">
+		<testng classpathref="runtime.classpath" outputDir="${reports.dir}" haltOnfailure="true">
+			<classpath>
+				<pathelement path="${configs.dir}" />
+				<pathelement path="${build.dir}" />
+			</classpath>
+			<xmlfileset dir="${project.dir}" includes="suiteXMLs/PWAMobileweb/MobilewebTrains.xml" />
+		</testng>
+	</target>
+	<target name="tripservice" depends="clean.regress" description="Runs Corp COM Regression suite">
+		<testng classpathref="runtime.classpath" outputDir="${reports.dir}" haltOnfailure="true">
+			<classpath>
+				<pathelement path="${configs.dir}" />
+				<pathelement path="${build.dir}" />
+			</classpath>
+			<xmlfileset dir="${project.dir}" includes="suiteXMLs/Air/TripService.xml" />
+		</testng>
+	</target>
+	<target name="failedCases" depends="clean.regress" description="Runs Hotel Regression suite">
+		<testng classpathref="runtime.classpath" outputDir="${reports.dir}" haltOnfailure="true">
+			<classpath>
+				<pathelement path="${configs.dir}" />
+				<pathelement path="${build.dir}" />
+			</classpath>
+			<xmlfileset dir="${project.dir}/test-output" includes="testng-failed.xml" />
+		</testng>
+	</target>
+
+	<target name="trains" depends="clean.regress" description="Runs Hotel Regression suite">
+		<testng classpathref="runtime.classpath" outputDir="${reports.dir}" haltOnfailure="true">
+			<classpath>
+				<pathelement path="${configs.dir}" />
+				<pathelement path="${build.dir}" />
+			</classpath>
+			<xmlfileset dir="${project.dir}" includes="suiteXMLs/Go_Trains.xml" />
+		</testng>
+	</target>
+
+	<target name="airdom" depends="clean.regress" description="Runs HQ Scripts">
+		<testng classpathref="runtime.classpath" outputDir="${reports.dir}" haltOnfailure="true">
+			<classpath>
+				<pathelement path="${configs.dir}" />
+				<pathelement path="${build.dir}" />
+			</classpath>
+			<xmlfileset dir="${project.dir}" includes="suiteXMLs/Air/DomesticAir.xml" />
+		</testng>
+	</target>
+
+	<target name="airintl" depends="clean.regress" description="Runs HQ Scripts">
+		<testng classpathref="runtime.classpath" outputDir="${reports.dir}" haltOnfailure="true">
+			<classpath>
+				<pathelement path="${configs.dir}" />
+				<pathelement path="${build.dir}" />
+			</classpath>
+			<xmlfileset dir="${project.dir}" includes="suiteXMLs/Air/Go_Air_B2C_International.xml" />
+		</testng>
+	</target>
+
+	<target name="airpayment" depends="clean.regress" description="Runs HQ Scripts">
+		<testng classpathref="runtime.classpath" outputDir="${reports.dir}" haltOnfailure="true">
+			<classpath>
+				<pathelement path="${configs.dir}" />
+				<pathelement path="${build.dir}" />
+			</classpath>
+			<xmlfileset dir="${project.dir}" includes="suiteXMLs/Go_Air_B2C_Payment.xml" />
+		</testng>
+	</target>
+
+	<target name="sms" depends="clean.regress" description="Runs prod sanity cases">
+		<testng classpathref="runtime.classpath" outputDir="${reports.dir}" haltOnfailure="true">
+			<classpath>
+				<pathelement path="${configs.dir}" />
+				<pathelement path="${build.dir}" />
+			</classpath>
+			<xmlfileset dir="${project.dir}" includes="suiteXMLs/Air/SMS_Suite.xml" />
+		</testng>
+	</target>
+
+	<target name="airmicroservice" depends="clean.regress" description="Runs prod sanity cases">
+		<testng classpathref="runtime.classpath" outputDir="${reports.dir}" haltOnfailure="true">
+			<classpath>
+				<pathelement path="${configs.dir}" />
+				<pathelement path="${build.dir}" />
+			</classpath>
+			<xmlfileset dir="${project.dir}" includes="suiteXMLs/Smoke/Micro/AirMicroService.xml" />
+		</testng>
+	</target>
+	<target name="airme" depends="clean.regress" description="Runs HQ Scripts">
+		<testng classpathref="runtime.classpath" outputDir="${reports.dir}" haltOnfailure="true">
+			<classpath>
+				<pathelement path="${configs.dir}" />
+				<pathelement path="${build.dir}" />
+			</classpath>
+			<xmlfileset dir="${project.dir}" includes="suiteXMLs/Air/MEAir.xml" />
+		</testng>
+	</target>
+
+	<target name="PWAMEAIR" depends="clean.regress" description="Runs HQ Scripts">
+		<testng classpathref="runtime.classpath" outputDir="${reports.dir}" haltOnfailure="true">
+			<classpath>
+				<pathelement path="${configs.dir}" />
+				<pathelement path="${build.dir}" />
+			</classpath>
+			<xmlfileset dir="${project.dir}" includes="suiteXMLs/Air/MEPWA.xml" />
+		</testng>
+	</target>
+
+
+	<target name="extapi" depends="clean.regress" description="Runs Hotel Regression suite">
+		<testng classpathref="runtime.classpath" outputDir="${reports.dir}" haltOnfailure="true">
+			<classpath>
+				<pathelement path="${configs.dir}" />
+				<pathelement path="${build.dir}" />
+			</classpath>
+			<xmlfileset dir="${project.dir}" includes="suiteXMLs/Go_ExternalAPI.xml" />
+		</testng>
+	</target>
+	<target name="extapistaging" depends="clean.regress" description="Runs API Regression suite">
+		<testng classpathref="runtime.classpath" outputDir="${reports.dir}" haltOnfailure="true">
+			<classpath>
+				<pathelement path="${configs.dir}" />
+				<pathelement path="${build.dir}" />
+			</classpath>
+			<xmlfileset dir="${project.dir}" includes="suiteXMLs/EXTAPI/Go_ExternalAPI_Staging.xml" />
+		</testng>
+	</target>
+
+	<target name="b2cairandhotelregress" depends="clean.regress" description="Runs B2C Air and Hotel Regression suite">
+		<testng classpathref="runtime.classpath" outputDir="${reports.dir}" haltOnfailure="true">
+			<classpath>
+				<pathelement path="${configs.dir}" />
+				<pathelement path="${build.dir}" />
+			</classpath>
+			<xmlfileset dir="${project.dir}" includes="suiteXMLs/Go_B2C_AirHotel_Regression.xml" />
+		</testng>
+	</target>
+
+	<target name="b2bahregress" depends="clean.regress" description="Runs Corp COM Regression suite">
+		<testng classpathref="runtime.classpath" outputDir="${reports.dir}" haltOnfailure="true">
+			<classpath>
+				<pathelement path="${configs.dir}" />
+				<pathelement path="${build.dir}" />
+			</classpath>
+			<xmlfileset dir="${project.dir}" includes="suiteXMLs/B2B/Go_CorpCOM.xml" />
+		</testng>
+	</target>
+
+	<target name="betawdregress" depends="clean.regress" description="Runs Corp COM Regression suite">
+		<testng classpathref="runtime.classpath" outputDir="${reports.dir}" haltOnfailure="true">
+			<classpath>
+				<pathelement path="${configs.dir}" />
+				<pathelement path="${build.dir}" />
+			</classpath>
+			<xmlfileset dir="${project.dir}" includes="suiteXMLs/Go_Beta_WD_Suite.xml" />
+		</testng>
+	</target>
+	<target name="betab2cwdregress" depends="clean.regress" description="Runs beta Regression suite">
+		<testng classpathref="runtime.classpath" outputDir="${reports.dir}" haltOnfailure="true">
+			<classpath>
+				<pathelement path="${configs.dir}" />
+				<pathelement path="${build.dir}" />
+			</classpath>
+			<xmlfileset dir="${project.dir}" includes="suiteXMLs/Beta/Beta_B2C_Air.xml" />
+		</testng>
+	</target>
+	<target name="betab2bwdregress" depends="clean.regress" description="Runs beta Regression suite">
+		<testng classpathref="runtime.classpath" outputDir="${reports.dir}" haltOnfailure="true">
+			<classpath>
+				<pathelement path="${configs.dir}" />
+				<pathelement path="${build.dir}" />
+			</classpath>
+			<xmlfileset dir="${project.dir}" includes="suiteXMLs/Beta/Beta_B2B_Air.xml" />
+		</testng>
+	</target>
+	<target name="betatrainsregress" depends="clean.regress" description="Runs beta Regression suite">
+		<testng classpathref="runtime.classpath" outputDir="${reports.dir}" haltOnfailure="true">
+			<classpath>
+				<pathelement path="${configs.dir}" />
+				<pathelement path="${build.dir}" />
+			</classpath>
+			<xmlfileset dir="${project.dir}" includes="suiteXMLs/Beta/Beta_Trains_Accounts.xml" />
+		</testng>
+	</target>
+	<target name="betalocalwdregress" depends="clean.regress" description="Runs beta Regression suite">
+		<testng classpathref="runtime.classpath" outputDir="${reports.dir}" haltOnfailure="true">
+			<classpath>
+				<pathelement path="${configs.dir}" />
+				<pathelement path="${build.dir}" />
+			</classpath>
+			<xmlfileset dir="${project.dir}" includes="suiteXMLs/Beta/Beta_Local.xml" />
+		</testng>
+	</target>
+	<target name="betaextwdregress" depends="clean.regress" description="Runs beta Regression suite">
+		<testng classpathref="runtime.classpath" outputDir="${reports.dir}" haltOnfailure="true">
+			<classpath>
+				<pathelement path="${configs.dir}" />
+				<pathelement path="${build.dir}" />
+			</classpath>
+			<xmlfileset dir="${project.dir}" includes="suiteXMLs/Beta/Beta_EXTAPI.xml" />
+		</testng>
+	</target>
+
+	<target name="ptbscore" depends="clean.regress" description="Runs beta Regression suite">
+		<testng classpathref="runtime.classpath" outputDir="${reports.dir}" haltOnfailure="true">
+			<classpath>
+				<pathelement path="${configs.dir}" />
+				<pathelement path="${build.dir}" />
+			</classpath>
+			<xmlfileset dir="${project.dir}" includes="suiteXMLs/Beta/ptbscore.xml" />
+		</testng>
+	</target>
+
+	<target name="devsanity" depends="clean.regress" description="Runs beta Regression suite">
+		<testng classpathref="runtime.classpath" outputDir="${reports.dir}" haltOnfailure="true">
+			<classpath>
+				<pathelement path="${configs.dir}" />
+				<pathelement path="${build.dir}" />
+			</classpath>
+			<xmlfileset dir="${project.dir}" includes="suiteXMLs/dev/DevSanity.xml" />
+		</testng>
+	</target>
+	<target name="hoteldevsanity" depends="clean.regress" description="Runs beta Regression suite">
+		<testng classpathref="runtime.classpath" outputDir="${reports.dir}" haltOnfailure="true">
+			<classpath>
+				<pathelement path="${configs.dir}" />
+				<pathelement path="${build.dir}" />
+			</classpath>
+			<xmlfileset dir="${project.dir}" includes="suiteXMLs/dev/Dev_Hotels.xml" />
+		</testng>
+	</target>
+	<target name="pricecheck" depends="clean.regress" description="Runs Corp COM Regression suite">
+		<testng classpathref="runtime.classpath" outputDir="${reports.dir}" haltOnfailure="true">
+			<classpath>
+				<pathelement path="${configs.dir}" />
+				<pathelement path="${build.dir}" />
+			</classpath>
+			<xmlfileset dir="${project.dir}" includes="suiteXMLs/Go_PriceComparisionCheck.xml" />
+		</testng>
+	</target>
+
+
+	<target name="corpaeregress" depends="clean.regress" description="Runs Corp AE Regression suite">
+		<testng classpathref="runtime.classpath" outputDir="${reports.dir}" haltOnfailure="true">
+			<classpath>
+				<pathelement path="${configs.dir}" />
+				<pathelement path="${build.dir}" />
+			</classpath>
+			<xmlfileset dir="${project.dir}" includes="suiteXMLs/B2B/Go_CorpAE.xml" />
+		</testng>
+	</target>
+
+
+	<target name="agencyregress" depends="clean.regress" description="Runs Agency Cases">
+		<testng classpathref="runtime.classpath" outputDir="${reports.dir}" haltOnfailure="true">
+			<classpath>
+				<pathelement path="${configs.dir}" />
+				<pathelement path="${build.dir}" />
+			</classpath>
+			<xmlfileset dir="${project.dir}" includes="suiteXMLs/B2B/Go_Agency.xml" />
+		</testng>
+	</target>
+
+
+	<target name="prodsanity" depends="clean.regress" description="Runs prod sanity cases">
+		<testng classpathref="runtime.classpath" outputDir="${reports.dir}" haltOnfailure="true">
+			<classpath>
+				<pathelement path="${configs.dir}" />
+				<pathelement path="${build.dir}" />
+			</classpath>
+			<xmlfileset dir="${project.dir}" includes="suiteXMLs/Go_ProdSanity.xml" />
+		</testng>
+	</target>
+
+	<target name="mobile" depends="clean.regress" description="Runs Mobile HTML5 suite">
+		<testng classpathref="runtime.classpath" outputDir="${reports.dir}" haltOnfailure="true">
+			<classpath>
+				<pathelement path="${configs.dir}" />
+				<pathelement path="${build.dir}" />
+			</classpath>
+			<xmlfileset dir="${project.dir}" includes="suiteXMLs/Go_Mobile.xml" />
+		</testng>
+	</target>
+
+	<target name="sff" depends="clean.regress" description="Runs SFF Scripts">
+		<testng classpathref="runtime.classpath" outputDir="${reports.dir}" haltOnfailure="true">
+			<classpath>
+				<pathelement path="${configs.dir}" />
+				<pathelement path="${build.dir}" />
+			</classpath>
+			<xmlfileset dir="${project.dir}" includes="suiteXMLs/Air/sff.xml" />
+		</testng>
+	</target>
+
+	<target name="hq" depends="clean.regress" description="Runs HQ Scripts">
+		<testng classpathref="runtime.classpath" outputDir="${reports.dir}" haltOnfailure="true">
+			<classpath>
+				<pathelement path="${configs.dir}" />
+				<pathelement path="${build.dir}" />
+			</classpath>
+			<xmlfileset dir="${project.dir}" includes="suiteXMLs/HQ/HQ_Master_Suite.xml" />
+		</testng>
+	</target>
+
+	<target name="retry_failed_cases" depends="init" description="Re-runs failed testcases">
+		<testng classpathref="runtime.classpath" outputDir="${reports.dir}" haltOnfailure="true">
+			<classpath>
+				<pathelement path="${configs.dir}" />
+				<pathelement path="${build.dir}" />
+			</classpath>
+			<xmlfileset dir="${project.dir}" includes="reports/testng-failed.xml" />
+		</testng>
+	</target>
+
+</project>

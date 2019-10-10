@@ -1,0 +1,48 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Air EXT API" parallel="tests" thread-count="50" preserve-order="true">
+
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+</listeners>
+
+
+
+<test name="Air EXTAPI Search Results" preserve-order="true" parallel="true">
+
+    <classes> 	 
+    
+     		 <class name="testScriptsExternalAPI.BetaAPISearch"/> 
+     		
+    </classes>
+    
+ </test> 
+ 
+ 
+ <test name="Air EXTAPI JSON Search Results" preserve-order="true" parallel="true">
+
+    <classes> 	 
+    
+     		 <class name="testScriptsJsonExternalAPI.BetaAPISearch" /> 
+     		
+    </classes>
+    
+ </test>  	  
+  	  
+<test name="Air EXTAPI Itinerarycreate" preserve-order="true" parallel="true">
+
+    <classes> 	 
+    
+    	<class name="testScriptsJsonExternalAPI.BetaJsonOnewaySinglePAX" />
+     	<class name="testScriptsExternalAPI.BetaonewaysinglePAX"/>
+     	<class name="testScriptsExternalAPI.BetaRoundtripSinglePAX"/> 
+     	<class name="testScriptsExternalAPI.BetaAPI_IXIGO_Booking"/>
+     	
+     		
+     		
+    </classes>
+    
+ </test>  	  
+
+ 
+ 
+</suite> 

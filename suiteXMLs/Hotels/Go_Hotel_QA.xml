@@ -1,0 +1,35 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Hotels" parallel="tests" thread-count="200" preserve-order="true">
+
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="commonServices.RemoveDuplicateResults"/>
+		<listener class-name="commonServices.RetryListener"/>
+</listeners>
+
+
+		<suite-files>
+				<suite-file path="Hotel_B2C_Features.xml"></suite-file>
+		</suite-files>
+		
+		 <suite-files>
+				<suite-file path="Hotel_B2C_Payment.xml"></suite-file>
+		</suite-files>  
+
+		<suite-files>
+				<suite-file path="Hotel_ME.xml"></suite-file>
+		</suite-files> 
+			
+		<suite-files>
+				<suite-file path="Hotel_Agency.xml"></suite-file>
+		</suite-files>	
+			
+ 		<suite-files>
+				<suite-file path="Hotel_Corp.xml"></suite-file>
+		</suite-files>	
+		
+		<suite-files>
+				<suite-file path="Hotel_Ext_API.xml"></suite-file>
+		</suite-files>	 
+			
+</suite> 

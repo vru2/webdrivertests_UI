@@ -1,0 +1,65 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Platform_Services_API_Results" parallel="tests" thread-count="10">
+
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="commonServices.RemoveDuplicateResults"/>
+		<listener class-name="commonServices.RetryListener"/>
+</listeners>
+
+	<test name="Platform_API_search">
+
+		<classes>
+<!-- 			<class name="com.cleartrip.platform.sms.PlatformSMSservice" /> -->
+
+<!-- 			<class name="com.cleartrip.platform.whatsapp.WhatsappCheckContacts" /> -->
+<!-- 			<class name="com.cleartrip.platform.whatsapp.WhatsappUserMessage" /> -->
+<!-- 			<class name="com.cleartrip.platform.whatsapp.WhatsappwebhookMessage" /> -->
+<!-- 			<class name="com.cleartrip.platform.whatsapp.WhatsappOptinFlow" /> -->
+<!-- 			<class name="com.cleartrip.platform.whatsapp.WhatsappOptinflowStatus" /> -->
+<!-- 			<class -->
+<!-- 				name="com.cleartrip.platform.whatsapp.WhatsappUserMessageWithAttachments" /> -->
+<!-- 			<class name="com.cleartrip.platform.whatsapp.Whatsappdeliveryfeedback" /> -->
+
+
+			<class name="com.cleartrip.platform.tripServices.GetCallTS" />
+			<class name="com.cleartrip.platform.tripServices.TripservicePostCall_AIR" />
+			<class name="com.cleartrip.platform.tripServices.TripservicePostCall_Hotel" /> 
+			<class name="com.cleartrip.platform.tripServices.TripservicePostCall_Local" />
+			<class name="com.cleartrip.platform.tripServices.TripservicePostCall_Trains" />
+			<class name="com.cleartrip.platform.tripServices.TripservicePutCall_AIR" />
+			<class name="com.cleartrip.platform.tripServices.TripservicePutCall_Hotel" />
+			<class name="com.cleartrip.platform.tripServices.TripservicePutCall_Local" />
+			<class name="com.cleartrip.platform.tripServices.TripservicePutCall_Trains" />
+
+
+<!-- 			<class -->
+<!-- 				name="com.cleartrip.platform.emailservice.EmailserviceEmailPostcall" /> -->
+<!-- 			<class -->
+<!-- 				name="com.cleartrip.platform.emailservice.EmailserviceforAttachments" /> -->
+<!-- 			<class name="com.cleartrip.platform.emailservice.EmailserviceSpamscore" /> -->
+<!-- 			<class name="com.cleartrip.platform.emailservice.Emailservice_Template_true" /> -->
+
+<class name="com.cleartrip.platform.smsservice.DomesticSMS"/> 
+      <class name="com.cleartrip.platform.whatsappService.WhatsappCheckContacts"/>
+      <class name="com.cleartrip.platform.whatsappService.WhatsappDeliveryFeedback"/> 
+      <class name="com.cleartrip.platform.whatsappService.WhatsappUserMessage"/> 
+      <class name="com.cleartrip.platform.whatsappService.WhatsappOptinFlow"/>
+      <class name="com.cleartrip.platform.whatsappService.WhatsappOptinFlowStatus"/>
+      <class name="com.cleartrip.platform.whatsappService.WhatsappUserMessageWithAttachment"/>
+      <class name="com.cleartrip.platform.whatsappService.WhatsappWebhookMessage"/>
+      <class name="com.cleartrip.platform.email.Email_Template_true"/>
+      <class name="com.cleartrip.platform.email.EmailPost"/>
+      <class name="com.cleartrip.platform.email.EmailSpamScore"/>
+      <class name="com.cleartrip.platform.email.EmailwithAttachments"/>
+      <class name="com.cleartrip.platform.supportchatapi.SupportcreateChatAPI"/>
+      <class name="com.cleartrip.platform.supportchatapi.SupportGatewaycreateChatAPI"/>
+
+
+		</classes>
+	</test>
+
+
+
+</suite> 
+	

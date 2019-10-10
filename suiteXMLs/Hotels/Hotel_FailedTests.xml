@@ -1,0 +1,69 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Hotels Failed Cases" parallel="tests" thread-count="100" preserve-order="true">
+
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />		
+</listeners>
+
+<test name="AE Scenarios" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsMiddleEastHotels.HotelAE_Coupon_Cancel_Acct"/>
+      <class name="testScriptsMiddleEastHotels.HotelAE_Payment_Wallet_CT_Cancel_HQ"/>	
+      <class name="testScriptsMiddleEastHotels.HotelAE_Gift_Voucher"/>
+      <class name="testScriptsMiddleEastHotels.HotelAE_Intl"/>
+ 	  <class name="testScriptsMiddleEastHotels.HotelAE_Intl_Book_RoomType3"/> 	 
+      </classes>
+</test>
+
+<test name="ME Domain : DOM Booking" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsMiddleEastHotels.Hotel_MiddleEast_SA"/>
+    </classes>
+</test>
+
+<test name="Search Tags" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsIndiaHotels.HotelCom_SearchTags_Add2Hotel"/>
+    </classes>
+</test>
+
+<test name="Roomer" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_Roomer_Coupon"/>
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_Roomer_Refund"/>      
+    </classes>
+</test>
+
+<test name="Part Pay and Cancel HQ" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_Partpay_Second_Payment_Cancl_HQ"/> 
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_Partpay_Coupon_NBRetry"/>
+    </classes>
+</test>
+
+<test name="Pay @ Hotel(PAH)" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_PAH_CC_DebitNotes"/> 
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_PAH_CC_OTP_NoShow"/>  
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_PAH_SignedIN"/>    
+    </classes>
+</test>
+
+<test name="Agency" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsAgency.AgencyHotel_Cancellation_HQ"/>
+      <class name="testScriptsAgency.AgencyHotel_DetailsPage_CancellationPolicy"/>      
+      <class name="testScriptsAgency.AgencyHotel_GST"/>
+      <class name="testScriptsAgency.AgencyHotel_Intl"/>
+    </classes>
+</test>
+
+<test name="Corp.Com" preserve-order="true" parallel="true">
+    <classes>
+       <class name="testScriptsCorporate.HotelCorp_Cancellation_HQ"/>          
+       <class name="testScriptsCorporate.HotelCorp_Intl"/>
+       <class name="testScriptsCorporate.HotelCorp_HQTrips_LinkVerify"/>
+     </classes>
+</test>
+
+</suite> 

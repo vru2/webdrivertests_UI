@@ -1,0 +1,172 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Accts and Payment Prod" parallel="tests" thread-count="10">
+
+
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="commonServices.RemoveDuplicateResults"/>
+		<listener class-name="commonServices.RetryListener"/>
+</listeners>
+
+
+<!-- <suite-files> -->
+<!-- 				<suite-file path="Prod_Accts_API.xml"></suite-file> -->
+<!-- 		</suite-files> -->
+
+<test name="Payment 3rd Party Wallets" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_Wallet_AmazonPay"/>
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_Wallet_FreeCharge"/>
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_Wallet_JioMoney"/>
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_Wallet_Mobikwik"/>
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_Wallet_OlaMoney"/>
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_Wallet_PayTM"/>
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_Wallet_PayU"/>      
+    </classes>
+</test>
+
+		
+
+<test name="NB Hotels" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsPayments.HotelCom_Prod_Intl_NB"/>
+    </classes>
+</test> 
+
+<test name="NB Air" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsPayments.AirDom_OW_GDS_NB_Retry_CCBooking"/> 
+    </classes>
+</test>
+
+<test name="MWeb SignIN SignOut" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsAccounts.MW_SignIN_SignOut"/>
+    </classes>
+</test> 
+
+ 	<test name="Acct Link Check" preserve-order="true" parallel="true">
+    	<classes>
+     		<class name="testScriptsAccounts.Account_Link_Check"/>
+   		</classes>
+  	</test>  	
+
+
+  	<test name="Settings" preserve-order="true" parallel="true">
+    	<classes>
+     		<class name="testScriptsAccounts.Settings"/>
+   		</classes>
+  	</test>
+
+  	<test name="HeaderElements" preserve-order="true"  parallel="true">
+    	<classes>
+     		<class name="testScriptsAccounts.HeaderElements"/>
+     		<class name="testScriptsAccounts.HeaderElements_SignIN_Unsigned"/>     		
+   		</classes>
+  	</test> 
+  	
+  	<test name="HomePage SignIn and Signout" preserve-order="true" parallel="true">
+    	<classes>
+     		<class name="testScriptsAccounts.Homepage_LoginAndSignout"/>
+   		</classes>
+  	</test>  	
+  	
+  	<!-- <test name="TripsTabs" preserve-order="true">
+    	<classes>
+     		<class name="testScriptsAccounts.TripsTabs"/>
+   		</classes>
+  	</test> -->
+  	
+  	<test name="Profile" preserve-order="true" parallel="true">
+    	<classes>
+     		<class name="testScriptsAccounts.Profile"/>
+   		</classes>
+  	</test>
+  	 
+  	 <test name="Change Password" preserve-order="true" parallel="true">
+    	<classes>
+     		<class name="testScriptsAccounts.Change_Password"/>
+   		</classes>
+  	</test>
+  	
+  	
+  	<test name="B2C Accounts LHS Tabs" preserve-order="true" parallel="true">
+    	<classes>
+     		<class name="testScriptsAccounts.B2C_AccountsPage_LHSTabs"/>
+   		</classes>
+  	</test>
+  	  	
+ 	<test name="Register and Delete" preserve-order="true" parallel="true">
+    	<classes>
+     	<class name="testScriptsAccounts.AccountNewRegistrationAndDeletion"/> 
+   		</classes>
+  	</test>
+  	  			
+	<test name="Unsigned Tripsearch" preserve-order="true" parallel="true">
+    	<classes>
+     		<class name="testScriptsAccounts.Unsigned_Tripsearch"/>
+   		</classes>
+  	</test>
+	
+	
+	<test name="TripsPageSignIN and FBConnnect" preserve-order="true" parallel="true">
+    	<classes>
+     		<class name="testScriptsAccounts.TripsPageSignIN_FBConnnect"/>
+   		</classes>
+  	</test>
+  	
+  
+  	
+	<test name="Traveller Add and Delete" preserve-order="true" parallel="true">
+    	<classes>
+     		<class name="testScriptsAccounts.Travellers_AddEditDelete"/>
+   		</classes>
+  	</test>
+  	
+  	<test name="Accounts Expressway" preserve-order="true" parallel="true">
+    	<classes>
+     		<class name="testScriptsAccounts.Expressway"/>
+   		</classes>
+  	</test>
+  	
+  	
+  	<test name="Change Username" preserve-order="true" parallel="true">
+    	<classes>
+     		<class name="testScriptsAccounts.Change_Username"/>
+   		</classes>
+  	</test>
+  	<test name="Accounts Wallet" preserve-order="true" parallel="true">
+    	<classes>
+     		<class name="testScriptsAccounts.Accounts_Wallet
+     		"/>
+   		</classes>
+  	</test>
+  	
+<!--   	<test name="Mweb MYTrips" preserve-order="true">
+    	<classes>
+     		<class name="testScriptsAccounts.MWTrips"/>
+   		</classes>
+  	</test>
+  	
+  	<test name="Mweb TripCancellation" preserve-order="true">
+    	<classes>
+     		<class name="testScriptsAccounts.MWTripCancellation"/>
+   		</classes>
+  	</test>
+  	
+  	<test name="Mweb Settings" preserve-order="true">
+    	<classes>
+     		<class name="testScriptsAccounts.MWSettings"/>
+   		</classes>
+  	</test> -->
+	
+	  	<test name="Mytrips" preserve-order="true" parallel="true">
+    	<classes>
+     		<class name="testScriptsAccounts.MyTrips_B2C"/>
+     		<!-- <class name="testScriptsAccounts.MyTrips_Corp"/>
+     		<class name="testScriptsAccounts.MyTrips_Agency"/> -->
+   		</classes>
+  	</test>
+  	
+		
+  </suite> 

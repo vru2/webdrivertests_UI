@@ -1,0 +1,31 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Local Camp Others" thread-count="6"
+	verbose="3" time-out ="500000">
+
+
+	<parameter name="env" value="prod"></parameter>
+	<parameter name="browser" value="chrome"></parameter>
+	<parameter name="user" value="SA"></parameter>
+
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+	</listeners>
+
+
+	<test name="Camp Others domain com">
+
+		<parameter name="domain" value="com"></parameter>
+
+
+
+
+		<classes> 
+			
+		<class name="com.cleartrip.local.camp.ttd.EditorialHomePageLayoutActivityList"></class>
+					
+		</classes>
+
+	</test>
+
+
+</suite> 

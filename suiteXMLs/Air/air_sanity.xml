@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="tests" thread-count="1">
+    
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+</listeners>
+  
+  <test name="Air : Unsigned">
+    <classes>
+      <class name="testScriptsIndia.AirComUnsignedUserBooking"/>
+    </classes>
+  </test> 
+	
+	   <test name="Air : Step2 SignIN">
+	    <classes>
+	      <class name="testScriptsIndia.AirComStep2SignINBooking"/>
+	    </classes>
+	  </test> 
+	  
+	  <test name="Air : Homepage SignIN">
+	    <classes>
+	      <class name="testScriptsIndia.AirComSignInBooking"/>
+	    </classes>
+	  </test> 	
+	  
+	  <test name="Air : Rnd Trip Booking">
+	    <classes>
+	      <class name="testScriptsIndia.AirComRoundTripBooking"/>
+	    </classes>
+	  </test>
+	  
+   
+</suite> 

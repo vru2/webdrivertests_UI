@@ -1,0 +1,111 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="B2C Features" parallel="tests" thread-count="150" preserve-order="true">
+
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />	
+		<listener class-name="commonServices.RetryListener"/>	
+</listeners>
+
+<!-- <test name="Roomer" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_Roomer_Coupon"/>
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_Roomer_Refund"/>      
+    </classes>
+</test>  -->
+  
+ <test name="AutoComplete" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsIndiaHotels.HotelCom_Autocomplete_Dom"/>
+      <class name="testScriptsIndiaHotels.HotelCom_Autocomplete_Intl"/>
+    </classes>
+</test>
+
+<test name="DetailsPage Back Button And Modify Search" preserve-order="true" parallel="true">
+    <classes>
+         <class name="testScriptsIndiaHotels.HotelCom_DetailsPage_Backbutton"/> 
+         <class name="testScriptsIndiaHotels.HotelCom_AmexTravel_BackButton"/> 
+         <class name="testScriptsIndiaHotels.HotelCom_DetailsPage_ModifySearch"/> 
+    </classes>
+</test>
+
+<test name="GST Validation SRP" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsIndiaHotels.HotelCom_Price_Tax_Validation_SRP"/>
+    </classes>
+</test>
+
+<!-- <test name="Pay @ Hotel(PAH)" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_PAH_CC_DebitNotes"/> 
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_PAH_CC_OTP_NoShow"/>  
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_PAH_CC_StoredCard"/>  
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_PAH_SignedIN"/>    
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_PAH_Unsigned"/>
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_PAH_Invalid_OTP"/>
+    </classes>
+</test>
+ -->
+
+<test name="Search" preserve-order="true" parallel="true">
+ 	  <classes>
+      <class name="testScriptsIndiaHotels.HotelCom_Search_DealOfTheDay"/>      
+      <class name="testScriptsIndiaHotels.HotelCom_SRP_MapView"/>	
+      <class name="testScriptsIndiaHotels.HotelCom_SRP_GoogleSearch"/>
+      <class name="testScriptsIndiaHotels.HotelCom_SRP_SortOrder_Default"/>     
+    </classes>
+</test>
+
+<!--  <test name="Part Pay and Cancel HQ" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_Partpay_Second_Payment_Cancl_HQ"/> 
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_Partpay_Coupon_NBRetry"/>
+    </classes>
+</test> -->
+
+<test name="Trip Details" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsIndiaHotels.HotelCom_TripDetails_Account"/>
+      <class name="testScriptsIndiaHotels.HotelCom_TripDetails_HQ"/>
+    </classes>
+</test> 
+   
+ <test name="ShortLists" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsIndiaHotels.HotelCom_Shortlist_and_SRP_Page_Dom"/>  
+      <class name="testScriptsIndiaHotels.HotelCom_Shortlist_Others"/>
+      <class name="testScriptsIndiaHotels.HotelCom_Shortlist_Unsigned"/>   
+    </classes>
+</test>
+
+ <test name="UTM Source" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsIndiaHotels.HotelCom_UTMSource_TripAdvisor"/>
+      <class name="testScriptsIndiaHotels.HotelCom_UTMSource_TrivagoRetry"/>
+      <class name="testScriptsIndiaHotels.HotelCom_UTMSource_GoogleRetry"/>
+    </classes>
+</test>
+
+<test name="Search Tags" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsIndiaHotels.HotelCom_SearchTags_SRP"/>
+      <class name="testScriptsIndiaHotels.HotelCom_SearchTags_Add2Hotel"/>
+      <class name="testScriptsIndiaHotels.HotelCom_SearchTag_Create"/>
+      <class name="testScriptsIndiaHotels.HotelCom_SRP_SearchTag_SecondBlockCheck"/>
+    </classes>
+</test> 
+
+<test name="Cancellation Policy" preserve-order="true">
+    <classes>
+      <class name="testScriptsIndiaHotels.HotelCom_Cancellation_Policy"/>
+    </classes>
+</test> 
+
+<!--===============Feature turned off in Production=========================================-->
+<!-- <test name="Hold" preserve-order="true" parallel="true">
+    <classes>
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_Hold_Second_Payment"/>
+      <class name="testScriptsIndiaHotels.HotelCom_Payment_Hold_HQ_Reject"/>
+    </classes>
+</test> -->
+
+</suite> 

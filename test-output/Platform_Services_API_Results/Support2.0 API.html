@@ -1,0 +1,109 @@
+<html>
+<head>
+<title>TestNG:  Support2.0 API</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Support2.0 API</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>2/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Thu Jan 10 09:42:47 IST 2019</td>
+</tr>
+<tr><td>Total time:</td><td>7 seconds (7091 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.cleartrip.platform.supportchatapi.SupportGatewaycreateChatAPI.supportGatewaycreateChat()'><b>supportGatewaycreateChat</b><br>Test class: com.cleartrip.platform.supportchatapi.SupportGatewaycreateChatAPI<br/>
+<a href="#Output-1859127215" onClick='toggleBox("Output-1859127215", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1859127215" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1859127215">
+Test case passed<br/>
+{"Status":"success","ChatKey":"788331804374325598TEAB84856799881FF94CB6D430186139F560CE16B04EC59CF70B972FC86772FFA5E2EE3E4DCC0349DD853BF135C1B11C8BCF20EC930A0701F0E8830F7A7F91599","VisitorID":"788331804596089997","AnswerTimeout":1800,"WebSocketURL":"wss://ows-bo-app12-20.boldchat.com/lb/06/aid/794130127792834009/os.rcv/7707184688427361277?json=true&cto=300000&hbe=10000&auth=Nzk0MTMwMTI3NzkyODM0MDA5Ojc4ODEyNjI5MTMwOTE4NDE3OTpRMjdQcUV1Q1VDYXhPbndKb1plaW4yK040T1ZaUit0VA%3D%3D","ClientID":"7707184688427361277","LongPollURL":"https://os-bo-app12-20.boldchat.com/lb/06/aid/794130127792834009/os.rcv/7707184688427361277?json=true&ws=true&re=true&cto=300000&hbe=30000&lmid=","ClientTimeout":"300","ChatID":"788331804374325598","Name":"test name"}<br/>
+Status code == http://selfcareapi.cltp.com:9001/api/createChatis :: 202<br/>
+ChatKey == 788331804374325598TEAB84856799881FF94CB6D430186139F560CE16B04EC59CF70B972FC86772FFA5E2EE3E4DCC0349DD853BF135C1B11C8BCF20EC930A0701F0E8830F7A7F91599<br/>
+</div>
+</td>
+<td></td>
+<td>1</td>
+<td>com.cleartrip.platform.supportchatapi.SupportGatewaycreateChatAPI@679b62af</td></tr>
+<tr>
+<td title='com.cleartrip.platform.supportchatapi.SupportcreateChatAPI.supportcreateChat()'><b>supportcreateChat</b><br>Test class: com.cleartrip.platform.supportchatapi.SupportcreateChatAPI<br/>
+<a href="#Output-1687480385" onClick='toggleBox("Output-1687480385", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1687480385" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1687480385">
+Test case passed<br/>
+{"Status":"success","ChatKey":"788331803931228999TFB2BDA0220C2BCB1466ED242345BA6F1E12333F4CD7A038D49447392EA6009FB9554CE47B52343EB4C862A4B28DD977C8821B6B19F9D3C93DD3C95C3F7E48A0A","VisitorID":"788331804406152695","AnswerTimeout":1800,"WebSocketURL":"wss://ows-bo-app12-20.boldchat.com/lb/06/aid/794130127792834009/os.rcv/5921647623518091789?json=true&cto=300000&hbe=10000&auth=Nzk0MTMwMTI3NzkyODM0MDA5Ojc4ODEyNjI5MTMwOTE4NDE3OTpRMjdQcUV1Q1VDYXhPbndKb1plaW4yK040T1ZaUit0VA%3D%3D","ClientID":"5921647623518091789","LongPollURL":"https://os-bo-app12-20.boldchat.com/lb/06/aid/794130127792834009/os.rcv/5921647623518091789?json=true&ws=true&re=true&cto=300000&hbe=30000&lmid=","ClientTimeout":"300","ChatID":"788331803931228999","Name":"test name"}<br/>
+Status code == http://selfcareapi.cltp.com:9001/api/createChatis :: 202<br/>
+ChatKey == 788331803931228999TFB2BDA0220C2BCB1466ED242345BA6F1E12333F4CD7A038D49447392EA6009FB9554CE47B52343EB4C862A4B28DD977C8821B6B19F9D3C93DD3C95C3F7E48A0A<br/>
+</div>
+</td>
+<td></td>
+<td>5</td>
+<td>com.cleartrip.platform.supportchatapi.SupportcreateChatAPI@32cf48b7</td></tr>
+</table><p>
+</body>
+</html>

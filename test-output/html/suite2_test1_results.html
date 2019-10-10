@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
+<head>
+  <title>Test Results Report - EMAIL</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="description" content="TestNG unit test results." />
+  <link href="reportng.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="reportng.js"></script>
+</head>
+<body>
+<h1>EMAIL</h1>
+<p>
+  Test duration: 3.053s
+</p>
+
+
+
+
+
+  <table class="resultsTable">
+    <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">com.cleartrip.platform.email.EmailPost</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  message
+      </td>
+  <td class="duration">
+    0.089s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Service URL : http://emailapi.cltp.com:9001/r3/email<br />
+                                Test case passed<br />
+                                {<br/>
+&nbsp; &quot;id&quot; : &quot;62676678-eb7c-40ff-a0a0-faa1a900211a&quot;,<br/>
+&nbsp; &quot;status&quot; : &quot;ACCEPTED&quot;<br/>
+}<br />
+                                Status code == 202<br />
+                  </div>
+    
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">com.cleartrip.platform.email.EmailSpamScore</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  message
+      </td>
+  <td class="duration">
+    0.091s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Service URL : http://emailapi.cltp.com:9001/r3/check-spam-score<br />
+                                Test case passed<br />
+                                {<br/>
+&nbsp; &quot;score&quot; : &quot;1.7&quot;,<br/>
+&nbsp; &quot;spamResultSet&quot; : [ &quot; -0.0 NO_RELAYS Informational: message was not relayed via SMTP&quot;, &quot;&nbsp; 0.0 HTML_MESSAGE BODY: HTML included in message&quot;, &quot;&nbsp; 1.1 MIME_HTML_ONLY BODY: Message only has text/html MIME parts&quot;, &quot;&nbsp; 0.6 HTML_MIME_NO_HTML_TAG HTML-only message, but there is no HTML tag&quot;, &quot; -0.0 NO_RECEIVED Informational: message has no Received headers&quot; ]<br/>
+}<br />
+                                Status code = 200<br />
+                  </div>
+    
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">com.cleartrip.platform.email.Email_Template_true</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  message
+      </td>
+  <td class="duration">
+    2.789s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Service URL : http://emailapi.cltp.com:9001/r3/email<br />
+                                Test case passed<br />
+                                {<br/>
+&nbsp; &quot;id&quot; : &quot;74d3692c-eaae-4e14-9935-8c5b3540d27c&quot;,<br/>
+&nbsp; &quot;status&quot; : &quot;ACCEPTED&quot;<br/>
+}<br />
+                                Status code == 202<br />
+                  </div>
+    
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">com.cleartrip.platform.email.EmailwithAttachments</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  message
+      </td>
+  <td class="duration">
+    0.084s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Service URL : http://emailapi.cltp.com:9001/r3/email<br />
+                                Test case passed<br />
+                                {<br/>
+&nbsp; &quot;id&quot; : &quot;4c116e0d-b3ee-47f3-ab38-1f3cdbe81862&quot;,<br/>
+&nbsp; &quot;status&quot; : &quot;ACCEPTED&quot;<br/>
+}<br />
+                                Status code == 202<br />
+                  </div>
+    
+
+      </td>
+</tr>
+      </table>
+  
+</body>
+</html>

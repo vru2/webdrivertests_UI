@@ -2,52 +2,47 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
     <line>
-      <![CDATA[https://qa2.cleartrip.com/binmanager/v1/payment/cards?bin=534977]]>
+      <![CDATA[<p>Signin not shown is displayed in page</p>]]>
     </line>
     <line>
-      <![CDATA[https://qa2.cleartrip.com/binmanager/v1/payment/cards?bin=534977]]>
-    </line>
-    <line>
-      <![CDATA[https://qa2.cleartrip.com/binmanager/v1/payment/cards?bin=534977]]>
-    </line>
-    <line>
-      <![CDATA[Response body Binmanager : {"cardType":"DEBIT","bin":"534977","bank":"AIRPAK FINANCIAL CORP.","country":"NICARAGUA","issuerType":"MASTERCARD","bankId":null,"subType":"NA","isOtpEligible":false}]]>
-    </line>
-    <line>
-      <![CDATA[statusCode: 200]]>
-    </line>
-    <line>
-      <![CDATA[CardType is : DEBIT]]>
+      <![CDATA[OTP validation message is displayed!!]]>
     </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="2604" started-at="2019-10-14T04:58:52Z" finished-at="2019-10-14T04:58:55Z">
+  <suite name="Default suite" duration-ms="55238" started-at="2019-10-10T09:25:40Z" finished-at="2019-10-10T09:26:35Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="2604" started-at="2019-10-14T04:58:52Z" finished-at="2019-10-14T04:58:55Z">
-      <class name="com.cleartrip.platform.paymentsAPI.API_Binmanager">
-        <test-method status="PASS" signature="binmanager()[pri:0, instance:com.cleartrip.platform.paymentsAPI.API_Binmanager@32d2fa64]" name="binmanager" duration-ms="2572" started-at="2019-10-14T10:28:52Z" finished-at="2019-10-14T10:28:55Z">
+    <test name="Default test" duration-ms="55238" started-at="2019-10-10T09:25:40Z" finished-at="2019-10-10T09:26:35Z">
+      <class name="testScriptsAccounts.Change_Password">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:testScriptsAccounts.Change_Password@4abdb505]" name="setUp" is-config="true" duration-ms="5143" started-at="2019-10-10T14:55:40Z" finished-at="2019-10-10T14:55:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="accountSetting_ChangePwd()[pri:0, instance:testScriptsAccounts.Change_Password@4abdb505]" name="accountSetting_ChangePwd" duration-ms="48910" started-at="2019-10-10T14:55:45Z" finished-at="2019-10-10T14:56:34Z">
           <reporter-output>
             <line>
-              <![CDATA[https://qa2.cleartrip.com/binmanager/v1/payment/cards?bin=534977]]>
+              <![CDATA[<p>Signin not shown is displayed in page</p>]]>
             </line>
             <line>
-              <![CDATA[https://qa2.cleartrip.com/binmanager/v1/payment/cards?bin=534977]]>
-            </line>
-            <line>
-              <![CDATA[https://qa2.cleartrip.com/binmanager/v1/payment/cards?bin=534977]]>
-            </line>
-            <line>
-              <![CDATA[Response body Binmanager : {"cardType":"DEBIT","bin":"534977","bank":"AIRPAK FINANCIAL CORP.","country":"NICARAGUA","issuerType":"MASTERCARD","bankId":null,"subType":"NA","isOtpEligible":false}]]>
-            </line>
-            <line>
-              <![CDATA[statusCode: 200]]>
-            </line>
-            <line>
-              <![CDATA[CardType is : DEBIT]]>
+              <![CDATA[OTP validation message is displayed!!]]>
             </line>
           </reporter-output>
-        </test-method> <!-- binmanager -->
-      </class> <!-- com.cleartrip.platform.paymentsAPI.API_Binmanager -->
+        </test-method> <!-- accountSetting_ChangePwd -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testScriptsAccounts.Change_Password@4abdb505]" name="afterMethod" is-config="true" duration-ms="3" started-at="2019-10-10T14:56:34Z" finished-at="2019-10-10T14:56:34Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=accountSetting_ChangePwd status=SUCCESS method=Change_Password.accountSetting_ChangePwd()[pri:0, instance:testScriptsAccounts.Change_Password@4abdb505] output=<p>Signin not shown is displayed in page</p>]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testScriptsAccounts.Change_Password@4abdb505]" name="tearDown" is-config="true" duration-ms="1147" started-at="2019-10-10T14:56:34Z" finished-at="2019-10-10T14:56:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- testScriptsAccounts.Change_Password -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

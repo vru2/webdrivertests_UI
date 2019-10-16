@@ -3,13 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="testScriptsAccounts.Account_DeleteAndRegister">
+      <class name="testScriptsCorpIndia.AirCorp_Admin_AddDelete_Travellers">
         <methods>
+          <include name="tearDown"/>
           <include name="setUp"/>
           <include name="afterMethod"/>
-          <include name="accountDeleteAndRegister"/>
+          <include name="Corp_Adding_Traveller_258" invocation-numbers="0"/>
         </methods>
-      </class> <!-- testScriptsAccounts.Account_DeleteAndRegister -->
+      </class> <!-- testScriptsCorpIndia.AirCorp_Admin_AddDelete_Travellers -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

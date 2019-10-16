@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Oct 09 12:47:19 IST 2019</td>
+<td>Started on:</td><td>Mon Oct 14 10:28:52 IST 2019</td>
 </tr>
-<tr><td>Total time:</td><td>94 seconds (94023 ms)</td>
+<tr><td>Total time:</td><td>2 seconds (2604 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,86 +67,30 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='testScriptsCorpIndia.AirCorp_Admin_AddDelete_Travellers.Corp_Adding_Traveller_258()'><b>Corp_Adding_Traveller_258</b><br>Test class: testScriptsCorpIndia.AirCorp_Admin_AddDelete_Travellers<br>Parameters: Mr, Frank, La, frank.la@cleartrip.com<br/>
-<a href="#Output-896982466" onClick='toggleBox("Output-896982466", this, "Show output", "Hide output");'>Show output</a>
+<td title='com.cleartrip.platform.paymentsAPI.API_Binmanager.binmanager()'><b>binmanager</b><br>Test class: com.cleartrip.platform.paymentsAPI.API_Binmanager<br/>
+<a href="#Output-896644936" onClick='toggleBox("Output-896644936", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-896982466" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-896982466">
-login failed<br/>
+<a href="#Output-896644936" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-896644936">
+https://qa2.cleartrip.com/binmanager/v1/payment/cards?bin=534977<br/>
+https://qa2.cleartrip.com/binmanager/v1/payment/cards?bin=534977<br/>
+https://qa2.cleartrip.com/binmanager/v1/payment/cards?bin=534977<br/>
+Response body Binmanager : {"cardType":"DEBIT","bin":"534977","bank":"AIRPAK FINANCIAL CORP.","country":"NICARAGUA","issuerType":"MASTERCARD","bankId":null,"subType":"NA","isOtpEligible":false}<br/>
+statusCode: 200<br/>
+CardType is : DEBIT<br/>
 </div>
 </td>
-<td><div><pre>java.lang.AssertionError: Failure!
-	at org.testng.AssertJUnit.fail(AssertJUnit.java:59)
-	at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:24)
-	at domainServices.Corporate.corp_plat_SignIn(Corporate.java:215)
-	at testScriptsCorpIndia.AirCorp_Admin_AddDelete_Travellers.Corp_Adding_Traveller_258(AirCorp_Admin_AddDelete_Travellers.java:30)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:756)
-	at org.testng.TestRunner.run(TestRunner.java:610)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
-	at org.testng.TestNG.runSuites(TestNG.java:1133)
-	at org.testng.TestNG.run(TestNG.java:1104)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace896982466", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace896982466'><pre>java.lang.AssertionError: Failure!
-	at org.testng.AssertJUnit.fail(AssertJUnit.java:59)
-	at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:24)
-	at domainServices.Corporate.corp_plat_SignIn(Corporate.java:215)
-	at testScriptsCorpIndia.AirCorp_Admin_AddDelete_Travellers.Corp_Adding_Traveller_258(AirCorp_Admin_AddDelete_Travellers.java:30)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:756)
-	at org.testng.TestRunner.run(TestRunner.java:610)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
-	at org.testng.TestNG.runSuites(TestNG.java:1133)
-	at org.testng.TestNG.run(TestNG.java:1104)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>85</td>
-<td>testScriptsCorpIndia.AirCorp_Admin_AddDelete_Travellers@1500955a</td></tr>
+<td></td>
+<td>2</td>
+<td>com.cleartrip.platform.paymentsAPI.API_Binmanager@32d2fa64</td></tr>
 </table><p>
 </body>
 </html>

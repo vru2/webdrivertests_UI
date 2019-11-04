@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>MobileFraud MFilter Call</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/1</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Oct 07 11:56:01 IST 2019</td>
+<td>Started on:</td><td>Wed Oct 23 12:23:06 IST 2019</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (105 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (0 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,8 +67,8 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
@@ -76,18 +76,80 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='com.cleartrip.platform.tripServices.TS_MF_MFilter.mFilterCall()'><b>mFilterCall</b><br>Test class: com.cleartrip.platform.tripServices.TS_MF_MFilter<br/>
-<a href="#Output-758547907" onClick='toggleBox("Output-758547907", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-835616853" onClick='toggleBox("Output-835616853", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-758547907" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-758547907">
+<a href="#Output-835616853" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-835616853">
 Service URL : http://172.17.14.236:9080/marketing/mfilter/transactions<br/>
-[{"IF_BlacklistedRiskScore": 0, "INC_HighCRRiskScore": 0, "Dis_BrowserRiskScore": 0, "Dis_DeviceRiskScore": 0, "package_name": "com.Blahblahblah.android", "fraud_category": "NOT_FRAUD", "locale_info": "en_US", "timestamp": "2019-06-05 04:46:26", "device_imei": "Default", "vendor_id": "Default", "campaign_id": "Test Campaign", "DF_APKRiskScore": 0, "IF_VPNProxyRiskScore": 0, "Dis_IPRiskScore": 0, "Dis_OSRiskScore": 0, "device_carrier": "Airtel", "conversion_make": "Default", "publisher_name": "admobs", "Dis_ISPRiskScore": 0, "device_id": "FD2B68B3-618F-48AB-A36A-29D3BF91EXyA" ,"INC_clickUnderRiskScore": 0, "IF_DuplicateIPRiskScore": 0, "app_version": "18.3.0", "user_id": "Default", "sub_publisher_id": "25572_28132_24002", "DF_DuplicateUserRiskScore": 0, "click_id": "103899_842b34a321a674cdbacf0b6b32ea45471520733947-20181103073547-1457-20042_23182_27552", "ip_address": "Default", "CF_ClickSpamRiskSCore": 0, "DF_IncorrectTelcoRiskScore": 0, "DF_FakeDeviceRiskScore": 0, "CF_FakeClickRiskScore": 0, "os_version": "4.4.2", "CF_FakeAttributionRiskScore": 0, "conversion_model": "Default", "device_gaid": "036CD1EA-9DD7-43D4-BECF-436769CC7GDN" ,"record_id": 433618332,"country": "PK", "publisher_id": "Default", "DF_IncorrectRegionRiskScore": 0, "transaction_id": "bbf46ae767767d41bd4474dfbae6d1060068aUXN"}]<br/>
-Status code 200<br/>
+[{"IF_BlacklistedRiskScore": 0, "INC_HighCRRiskScore": 0, "Dis_BrowserRiskScore": 0, "Dis_DeviceRiskScore": 0, "package_name": "com.Blahblahblah.android", "fraud_category": "NOT_FRAUD", "locale_info": "en_US", "timestamp": "2019-06-05 04:46:26", "device_imei": "Default", "vendor_id": "Default", "campaign_id": "Test Campaign", "DF_APKRiskScore": 0, "IF_VPNProxyRiskScore": 0, "Dis_IPRiskScore": 0, "Dis_OSRiskScore": 0, "device_carrier": "Airtel", "conversion_make": "Default", "publisher_name": "admobs", "Dis_ISPRiskScore": 0, "device_id": "FD2B68B3-618F-48AB-A36A-29D3BF91E0Hi" ,"INC_clickUnderRiskScore": 0, "IF_DuplicateIPRiskScore": 0, "app_version": "18.3.0", "user_id": "Default", "sub_publisher_id": "25572_28132_24002", "DF_DuplicateUserRiskScore": 0, "click_id": "103899_842b34a321a674cdbacf0b6b32ea45471520733947-20181103073547-1457-20042_23182_27552", "ip_address": "Default", "CF_ClickSpamRiskSCore": 0, "DF_IncorrectTelcoRiskScore": 0, "DF_FakeDeviceRiskScore": 0, "CF_FakeClickRiskScore": 0, "os_version": "4.4.2", "CF_FakeAttributionRiskScore": 0, "conversion_model": "Default", "device_gaid": "036CD1EA-9DD7-43D4-BECF-436769CC72f2" ,"record_id": 433618342,"country": "PK", "publisher_id": "Default", "DF_IncorrectRegionRiskScore": 0, "transaction_id": "bbf46ae767767d41bd4474dfbae6d1060068aoLo"}]<br/>
 </div>
 </td>
-<td></td>
+<td><div><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
+	at com.cleartrip.platform.tripServices.TS_MF_MFilter.mFilterCall(TS_MF_MFilter.java:32)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace835616853", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace835616853'><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
+	at com.cleartrip.platform.tripServices.TS_MF_MFilter.mFilterCall(TS_MF_MFilter.java:32)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+</pre></div></td>
 <td>0</td>
-<td>com.cleartrip.platform.tripServices.TS_MF_MFilter@62fdb4a6</td></tr>
+<td>com.cleartrip.platform.tripServices.TS_MF_MFilter@4493d195</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.cleartrip.platform.tripServices.TS_MF_MFilter.mFilterCall()'><b>mFilterCall</b><br>Test class: com.cleartrip.platform.tripServices.TS_MF_MFilter<br/>
+<a href="#Output-397712861" onClick='toggleBox("Output-397712861", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-397712861" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-397712861">
+Service URL : http://172.17.14.236:9080/marketing/mfilter/transactions<br/>
+[{"IF_BlacklistedRiskScore": 0, "INC_HighCRRiskScore": 0, "Dis_BrowserRiskScore": 0, "Dis_DeviceRiskScore": 0, "package_name": "com.Blahblahblah.android", "fraud_category": "NOT_FRAUD", "locale_info": "en_US", "timestamp": "2019-06-05 04:46:26", "device_imei": "Default", "vendor_id": "Default", "campaign_id": "Test Campaign", "DF_APKRiskScore": 0, "IF_VPNProxyRiskScore": 0, "Dis_IPRiskScore": 0, "Dis_OSRiskScore": 0, "device_carrier": "Airtel", "conversion_make": "Default", "publisher_name": "admobs", "Dis_ISPRiskScore": 0, "device_id": "FD2B68B3-618F-48AB-A36A-29D3BF91El8I" ,"INC_clickUnderRiskScore": 0, "IF_DuplicateIPRiskScore": 0, "app_version": "18.3.0", "user_id": "Default", "sub_publisher_id": "25572_28132_24002", "DF_DuplicateUserRiskScore": 0, "click_id": "103899_842b34a321a674cdbacf0b6b32ea45471520733947-20181103073547-1457-20042_23182_27552", "ip_address": "Default", "CF_ClickSpamRiskSCore": 0, "DF_IncorrectTelcoRiskScore": 0, "DF_FakeDeviceRiskScore": 0, "CF_FakeClickRiskScore": 0, "os_version": "4.4.2", "CF_FakeAttributionRiskScore": 0, "conversion_model": "Default", "device_gaid": "036CD1EA-9DD7-43D4-BECF-436769CC76rj" ,"record_id": 433618339,"country": "PK", "publisher_id": "Default", "DF_IncorrectRegionRiskScore": 0, "transaction_id": "bbf46ae767767d41bd4474dfbae6d1060068aTZs"}]<br/>
+</div>
+</td>
+<td><div><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
+	at com.cleartrip.platform.tripServices.TS_MF_MFilter.mFilterCall(TS_MF_MFilter.java:32)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace397712861", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace397712861'><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
+	at com.cleartrip.platform.tripServices.TS_MF_MFilter.mFilterCall(TS_MF_MFilter.java:32)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+</pre></div></td>
+<td>0</td>
+<td>com.cleartrip.platform.tripServices.TS_MF_MFilter@4493d195</td></tr>
 </table><p>
 </body>
 </html>

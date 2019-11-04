@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Email</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>6/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/6/6</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Oct 07 11:57:11 IST 2019</td>
+<td>Started on:</td><td>Wed Oct 23 12:23:06 IST 2019</td>
 </tr>
-<tr><td>Total time:</td><td>5 seconds (5879 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (16 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,8 +67,8 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
@@ -76,125 +76,432 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='com.cleartrip.platform.email.GeneratePDF.generatePDF()'><b>generatePDF</b><br>Test class: com.cleartrip.platform.email.GeneratePDF<br/>
-<a href="#Output-2135851840" onClick='toggleBox("Output-2135851840", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-1983660026" onClick='toggleBox("Output-1983660026", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-2135851840" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-2135851840">
+<a href="#Output-1983660026" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1983660026">
 Service URL : https://qa2.cleartrip.com/email/getpdf<br/>
-Test case passed<br/>
-{
-  "id" : "55c11338-af12-4663-9315-d13d6d6034f8",
-  "status" : "SUCCESS",
-  "reason" : "",
-  "pdfFileName" : "/usr/local/storage/platform_email/pdf-attachments//07102019/55c11338-af12-4663-9315-d13d6d6034f8/fare_alert.pdf"
-}<br/>
-Status code == 200<br/>
-55c11338-af12-4663-9315-d13d6d6034f8<br/>
-SUCCESS<br/>
-/usr/local/storage/platform_email/pdf-attachments//07102019/55c11338-af12-4663-9315-d13d6d6034f8/fare_alert.pdf<br/>
 </div>
 </td>
-<td></td>
-<td>5</td>
-<td>com.cleartrip.platform.email.GeneratePDF@797badd3</td></tr>
+<td><div><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
+	at com.cleartrip.platform.email.EmailCommon.EmailgeneratePDF(EmailCommon.java:93)
+	at com.cleartrip.platform.email.GeneratePDF.generatePDF(GeneratePDF.java:15)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1983660026", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1983660026'><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
+	at com.cleartrip.platform.email.EmailCommon.EmailgeneratePDF(EmailCommon.java:93)
+	at com.cleartrip.platform.email.GeneratePDF.generatePDF(GeneratePDF.java:15)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+</pre></div></td>
+<td>0</td>
+<td>com.cleartrip.platform.email.GeneratePDF@42f93a98</td></tr>
 <tr>
 <td title='com.cleartrip.platform.email.GeneratePKPass.generatePKPass()'><b>generatePKPass</b><br>Test class: com.cleartrip.platform.email.GeneratePKPass<br/>
-<a href="#Output-147692170" onClick='toggleBox("Output-147692170", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-59663105" onClick='toggleBox("Output-59663105", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-147692170" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-147692170">
+<a href="#Output-59663105" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-59663105">
 Service URL : https://qa2.cleartrip.com/email/getPkPass<br/>
-Test case passed<br/>
-{
-  "id" : "e9cc0645-24f5-4513-9a13-04aa658fb8c2",
-  "status" : "SUCCESS",
-  "reason" : "",
-  "pkPassFileName" : "/usr/local/storage/platform_email/pkpass-attachments//07102019/e9cc0645-24f5-4513-9a13-04aa658fb8c2/final-test-2.pkpass"
-}<br/>
-Status code == 201<br/>
-e9cc0645-24f5-4513-9a13-04aa658fb8c2<br/>
-SUCCESS<br/>
-/usr/local/storage/platform_email/pkpass-attachments//07102019/e9cc0645-24f5-4513-9a13-04aa658fb8c2/final-test-2.pkpass<br/>
 </div>
 </td>
-<td></td>
-<td>1</td>
-<td>com.cleartrip.platform.email.GeneratePKPass@77be656f</td></tr>
+<td><div><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
+	at com.cleartrip.platform.email.EmailCommon.EmailgeneratePKPass(EmailCommon.java:82)
+	at com.cleartrip.platform.email.GeneratePKPass.generatePKPass(GeneratePKPass.java:14)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace59663105", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace59663105'><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
+	at com.cleartrip.platform.email.EmailCommon.EmailgeneratePKPass(EmailCommon.java:82)
+	at com.cleartrip.platform.email.GeneratePKPass.generatePKPass(GeneratePKPass.java:14)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+</pre></div></td>
+<td>0</td>
+<td>com.cleartrip.platform.email.GeneratePKPass@c46bcd4</td></tr>
 <tr>
 <td title='com.cleartrip.platform.email.EmailPost.message()'><b>message</b><br>Test class: com.cleartrip.platform.email.EmailPost<br/>
-<a href="#Output-1235699057" onClick='toggleBox("Output-1235699057", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-1888719688" onClick='toggleBox("Output-1888719688", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-1235699057" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1235699057">
+<a href="#Output-1888719688" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1888719688">
 Service URL : http://emailapi.cltp.com:9001/r3/email<br/>
-Test case passed<br/>
-{
-  "id" : "07102019-08895fa8-9ffb-4a24-8686-731d8981d7fc",
-  "status" : "ACCEPTED"
-}<br/>
-Status code == 202<br/>
 </div>
 </td>
-<td></td>
+<td><div><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
+	at com.cleartrip.platform.email.EmailCommon.EmailPostAPI(EmailCommon.java:38)
+	at com.cleartrip.platform.email.EmailPost.message(EmailPost.java:15)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1888719688", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1888719688'><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
+	at com.cleartrip.platform.email.EmailCommon.EmailPostAPI(EmailCommon.java:38)
+	at com.cleartrip.platform.email.EmailPost.message(EmailPost.java:15)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+</pre></div></td>
 <td>0</td>
-<td>com.cleartrip.platform.email.EmailPost@516be40f</td></tr>
-<tr>
-<td title='com.cleartrip.platform.email.Email_Template_true.message()'><b>message</b><br>Test class: com.cleartrip.platform.email.Email_Template_true<br/>
-<a href="#Output-1264596747" onClick='toggleBox("Output-1264596747", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1264596747" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1264596747">
-Service URL : http://emailapi.cltp.com:9001/r3/email<br/>
-Test case passed<br/>
-{
-  "id" : "07102019-6cd3f623-6ace-4394-95a6-73726eb3d0c1",
-  "status" : "The following has evaluated to null or missing:\n==> name  [in template \"test\" at line 1, column 17]\n\n----\nTip: If the failing expression is known to legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??\n----\n\n----\nFTL stack trace (\"~\" means nesting-related):\n\t- Failed at: ${name}  [in template \"test\" at line 1, column 15]\n----"
-}<br/>
-Status code == 202<br/>
-</div>
-</td>
-<td></td>
-<td>0</td>
-<td>com.cleartrip.platform.email.Email_Template_true@473b46c3</td></tr>
+<td>com.cleartrip.platform.email.EmailPost@1a8a8f7c</td></tr>
 <tr>
 <td title='com.cleartrip.platform.email.EmailSpamScore.message()'><b>message</b><br>Test class: com.cleartrip.platform.email.EmailSpamScore<br/>
-<a href="#Output-1095483766" onClick='toggleBox("Output-1095483766", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-2086254871" onClick='toggleBox("Output-2086254871", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-1095483766" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1095483766">
+<a href="#Output-2086254871" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-2086254871">
 Service URL : http://emailapi.cltp.com:9001/r3/check-spam-score<br/>
-Test case passed<br/>
-{
-  "score" : "Unable to process the request"
-}<br/>
-{
-  "score" : "Unable to process the request"
-}<br/>
-Status code = 200<br/>
-Status code = 200<br/>
 </div>
 </td>
-<td></td>
+<td><div><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
+	at com.cleartrip.platform.email.EmailCommon.Emailspamscore(EmailCommon.java:71)
+	at com.cleartrip.platform.email.EmailSpamScore.message(EmailSpamScore.java:15)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2086254871", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2086254871'><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
+	at com.cleartrip.platform.email.EmailCommon.Emailspamscore(EmailCommon.java:71)
+	at com.cleartrip.platform.email.EmailSpamScore.message(EmailSpamScore.java:15)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+</pre></div></td>
 <td>0</td>
-<td>com.cleartrip.platform.email.EmailSpamScore@3c0a50da</td></tr>
+<td>com.cleartrip.platform.email.EmailSpamScore@2353b3e6</td></tr>
 <tr>
 <td title='com.cleartrip.platform.email.EmailwithAttachments.message()'><b>message</b><br>Test class: com.cleartrip.platform.email.EmailwithAttachments<br/>
-<a href="#Output-689506788" onClick='toggleBox("Output-689506788", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-1451073139" onClick='toggleBox("Output-1451073139", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-689506788" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-689506788">
+<a href="#Output-1451073139" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1451073139">
 Service URL : http://emailapi.cltp.com:9001/r3/email<br/>
-Test case passed<br/>
-{
-  "id" : "07102019-54517667-c876-493f-8021-ea4863ae8c57",
-  "status" : "ACCEPTED"
-}<br/>
-Status code == 202<br/>
 </div>
 </td>
-<td></td>
+<td><div><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
+	at com.cleartrip.platform.email.EmailCommon.EmailPostAPI(EmailCommon.java:38)
+	at com.cleartrip.platform.email.EmailwithAttachments.message(EmailwithAttachments.java:14)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1451073139", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1451073139'><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
+	at com.cleartrip.platform.email.EmailCommon.EmailPostAPI(EmailCommon.java:38)
+	at com.cleartrip.platform.email.EmailwithAttachments.message(EmailwithAttachments.java:14)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+</pre></div></td>
 <td>0</td>
-<td>com.cleartrip.platform.email.EmailwithAttachments@646be2c3</td></tr>
+<td>com.cleartrip.platform.email.EmailwithAttachments@631330c</td></tr>
+<tr>
+<td title='com.cleartrip.platform.email.Email_Template_true.message()'><b>message</b><br>Test class: com.cleartrip.platform.email.Email_Template_true<br/>
+<a href="#Output-2062313227" onClick='toggleBox("Output-2062313227", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-2062313227" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-2062313227">
+Service URL : http://emailapi.cltp.com:9001/r3/email<br/>
+</div>
+</td>
+<td><div><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
+	at com.cleartrip.platform.email.EmailCommon.EmailPostAPI(EmailCommon.java:38)
+	at com.cleartrip.platform.email.Email_Template_true.message(Email_Template_true.java:14)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2062313227", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2062313227'><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
+	at com.cleartrip.platform.email.EmailCommon.EmailPostAPI(EmailCommon.java:38)
+	at com.cleartrip.platform.email.Email_Template_true.message(Email_Template_true.java:14)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+</pre></div></td>
+<td>0</td>
+<td>com.cleartrip.platform.email.Email_Template_true@51e2adc7</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.cleartrip.platform.email.GeneratePDF.generatePDF()'><b>generatePDF</b><br>Test class: com.cleartrip.platform.email.GeneratePDF<br/>
+<a href="#Output-351440914" onClick='toggleBox("Output-351440914", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-351440914" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-351440914">
+Service URL : https://qa2.cleartrip.com/email/getpdf<br/>
+</div>
+</td>
+<td><div><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
+	at com.cleartrip.platform.email.EmailCommon.EmailgeneratePDF(EmailCommon.java:93)
+	at com.cleartrip.platform.email.GeneratePDF.generatePDF(GeneratePDF.java:15)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace351440914", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace351440914'><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
+	at com.cleartrip.platform.email.EmailCommon.EmailgeneratePDF(EmailCommon.java:93)
+	at com.cleartrip.platform.email.GeneratePDF.generatePDF(GeneratePDF.java:15)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+</pre></div></td>
+<td>0</td>
+<td>com.cleartrip.platform.email.GeneratePDF@42f93a98</td></tr>
+<tr>
+<td title='com.cleartrip.platform.email.GeneratePKPass.generatePKPass()'><b>generatePKPass</b><br>Test class: com.cleartrip.platform.email.GeneratePKPass<br/>
+<a href="#Output-1264328342" onClick='toggleBox("Output-1264328342", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1264328342" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1264328342">
+Service URL : https://qa2.cleartrip.com/email/getPkPass<br/>
+</div>
+</td>
+<td><div><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
+	at com.cleartrip.platform.email.EmailCommon.EmailgeneratePKPass(EmailCommon.java:82)
+	at com.cleartrip.platform.email.GeneratePKPass.generatePKPass(GeneratePKPass.java:14)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1264328342", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1264328342'><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
+	at com.cleartrip.platform.email.EmailCommon.EmailgeneratePKPass(EmailCommon.java:82)
+	at com.cleartrip.platform.email.GeneratePKPass.generatePKPass(GeneratePKPass.java:14)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+</pre></div></td>
+<td>0</td>
+<td>com.cleartrip.platform.email.GeneratePKPass@c46bcd4</td></tr>
+<tr>
+<td title='com.cleartrip.platform.email.EmailPost.message()'><b>message</b><br>Test class: com.cleartrip.platform.email.EmailPost<br/>
+<a href="#Output-898702238" onClick='toggleBox("Output-898702238", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-898702238" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-898702238">
+Service URL : http://emailapi.cltp.com:9001/r3/email<br/>
+</div>
+</td>
+<td><div><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
+	at com.cleartrip.platform.email.EmailCommon.EmailPostAPI(EmailCommon.java:38)
+	at com.cleartrip.platform.email.EmailPost.message(EmailPost.java:15)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace898702238", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace898702238'><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
+	at com.cleartrip.platform.email.EmailCommon.EmailPostAPI(EmailCommon.java:38)
+	at com.cleartrip.platform.email.EmailPost.message(EmailPost.java:15)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+</pre></div></td>
+<td>0</td>
+<td>com.cleartrip.platform.email.EmailPost@1a8a8f7c</td></tr>
+<tr>
+<td title='com.cleartrip.platform.email.EmailSpamScore.message()'><b>message</b><br>Test class: com.cleartrip.platform.email.EmailSpamScore<br/>
+<a href="#Output-1101596503" onClick='toggleBox("Output-1101596503", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1101596503" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1101596503">
+Service URL : http://emailapi.cltp.com:9001/r3/check-spam-score<br/>
+</div>
+</td>
+<td><div><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
+	at com.cleartrip.platform.email.EmailCommon.Emailspamscore(EmailCommon.java:71)
+	at com.cleartrip.platform.email.EmailSpamScore.message(EmailSpamScore.java:15)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1101596503", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1101596503'><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
+	at com.cleartrip.platform.email.EmailCommon.Emailspamscore(EmailCommon.java:71)
+	at com.cleartrip.platform.email.EmailSpamScore.message(EmailSpamScore.java:15)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+</pre></div></td>
+<td>0</td>
+<td>com.cleartrip.platform.email.EmailSpamScore@2353b3e6</td></tr>
+<tr>
+<td title='com.cleartrip.platform.email.EmailwithAttachments.message()'><b>message</b><br>Test class: com.cleartrip.platform.email.EmailwithAttachments<br/>
+<a href="#Output-1600633207" onClick='toggleBox("Output-1600633207", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1600633207" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1600633207">
+Service URL : http://emailapi.cltp.com:9001/r3/email<br/>
+</div>
+</td>
+<td><div><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
+	at com.cleartrip.platform.email.EmailCommon.EmailPostAPI(EmailCommon.java:38)
+	at com.cleartrip.platform.email.EmailwithAttachments.message(EmailwithAttachments.java:14)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1600633207", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1600633207'><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
+	at com.cleartrip.platform.email.EmailCommon.EmailPostAPI(EmailCommon.java:38)
+	at com.cleartrip.platform.email.EmailwithAttachments.message(EmailwithAttachments.java:14)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+</pre></div></td>
+<td>0</td>
+<td>com.cleartrip.platform.email.EmailwithAttachments@631330c</td></tr>
+<tr>
+<td title='com.cleartrip.platform.email.Email_Template_true.message()'><b>message</b><br>Test class: com.cleartrip.platform.email.Email_Template_true<br/>
+<a href="#Output-1072627346" onClick='toggleBox("Output-1072627346", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1072627346" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1072627346">
+Service URL : http://emailapi.cltp.com:9001/r3/email<br/>
+</div>
+</td>
+<td><div><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
+	at com.cleartrip.platform.email.EmailCommon.EmailPostAPI(EmailCommon.java:38)
+	at com.cleartrip.platform.email.Email_Template_true.message(Email_Template_true.java:14)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1072627346", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1072627346'><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
+	at com.cleartrip.platform.email.EmailCommon.EmailPostAPI(EmailCommon.java:38)
+	at com.cleartrip.platform.email.Email_Template_true.message(Email_Template_true.java:14)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+</pre></div></td>
+<td>0</td>
+<td>com.cleartrip.platform.email.Email_Template_true@51e2adc7</td></tr>
 </table><p>
 </body>
 </html>

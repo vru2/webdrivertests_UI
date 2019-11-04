@@ -3,47 +3,95 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
 <head>
-  <title>Test Results Report - TripsPageSignIN and FBConnnect</title>
+  <title>Test Results Report - SMS</title>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
   <meta name="description" content="TestNG unit test results." />
   <link href="reportng.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="reportng.js"></script>
 </head>
 <body>
-<h1>TripsPageSignIN and FBConnnect</h1>
+<h1>SMS</h1>
 <p>
-  Test duration: 132.660s
+  Test duration: 0.000s
 </p>
 
 
 
-
-
   <table class="resultsTable">
-    <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
+    <tr><th colspan="3" class="header failed">Failed Tests</th></tr>
           <tr>
-        <td colspan="3" class="group">testScriptsAccounts.TripsPageSignIN_FBConnnect</td>
+        <td colspan="3" class="group">com.cleartrip.platform.smsservice.DomesticSMS</td>
       </tr>
             
 <tr>
   <td class="method">
-                  accountSigninFromTripsPageAndFacebookConnnect
+                  smsservice
       </td>
   <td class="duration">
-    41.942s
+    0.000s
   </td>
   <td class="result">
         
     
             <div class="testOutput">
-                        Sign in to Cleartrip page is opened<br />
-                                &lt;p&gt;FB Page&nbsp; is displayed in page&lt;/p&gt;<br />
+                        Service URL : http://smsapi.cltp.com:9001/r3/sms<br />
+                  </div>
+    
+
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured</b></a><br />
+    <div class="stackTrace" id="exception-0">
+              com.cleartrip.platform.smsservice.SMSCommon.paramsForSMSservice(SMSCommon.java:27)<br />
+              com.cleartrip.platform.smsservice.DomesticSMS.smsservice(DomesticSMS.java:13)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)<br />
+              java.lang.reflect.Method.invoke(Unknown Source)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:645)<br />
+              org.testng.internal.Invoker.retryFailed(Invoker.java:998)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:756)<br />
+              org.testng.TestRunner.run(TestRunner.java:610)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:387)<br />
+              org.testng.SuiteRunner.access$000(SuiteRunner.java:39)<br />
+              org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)<br />
+              org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)<br />
+              java.util.concurrent.FutureTask.run(Unknown Source)<br />
+              java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)<br />
+              java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)<br />
+              java.lang.Thread.run(Unknown Source)<br />
+                </div>
+      </td>
+</tr>
+      </table>
+
+  <table class="resultsTable" width="100%">
+    <tr><th colspan="3" class="header skipped">Skipped Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">com.cleartrip.platform.smsservice.DomesticSMS</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  smsservice
+      </td>
+  <td class="duration">
+    0.000s
+  </td>
+  <td class="result">
+                               
+    
+            <div class="testOutput">
+                        Service URL : http://smsapi.cltp.com:9001/r3/sms<br />
                   </div>
     
 
       </td>
 </tr>
       </table>
+
   
 </body>
 </html>

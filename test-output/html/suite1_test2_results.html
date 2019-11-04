@@ -3,63 +3,697 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
 <head>
-  <title>Test Results Report - HomePage SignIn and Signout</title>
+  <title>Test Results Report - TripService Updatebooking</title>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
   <meta name="description" content="TestNG unit test results." />
   <link href="reportng.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="reportng.js"></script>
 </head>
 <body>
-<h1>HomePage SignIn and Signout</h1>
+<h1>TripService Updatebooking</h1>
 <p>
-  Test duration: 76.961s
+  Test duration: 0.015s
 </p>
 
 
 
-
-
   <table class="resultsTable">
-    <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
+    <tr><th colspan="3" class="header failed">Failed Tests</th></tr>
           <tr>
-        <td colspan="3" class="group">testScriptsAccounts.Homepage_LoginAndSignout</td>
+        <td colspan="3" class="group">com.cleartrip.platform.tripServices.TS_Invoice_Generation_Air</td>
       </tr>
             
 <tr>
   <td class="method">
-                  accountsHomePageLogin
+                  Tripserviceairputcall
       </td>
   <td class="duration">
-    51.768s
+    0.000s
   </td>
   <td class="result">
         
     
             <div class="testOutput">
-                        &lt;p&gt;Signin not shown is displayed in page&lt;/p&gt;<br />
+                        Service URL : http://172.17.26.11:9031/trips<br />
+                  </div>
+    
+
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured</b></a><br />
+    <div class="stackTrace" id="exception-0">
+              com.cleartrip.platform.tripServices.TripserviceCommon.TripservicePostcallinvoiceair(TripserviceCommon.java:183)<br />
+              com.cleartrip.platform.tripServices.TS_Invoice_Generation_Air.Tripserviceairputcall(TS_Invoice_Generation_Air.java:22)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)<br />
+              java.lang.reflect.Method.invoke(Unknown Source)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:645)<br />
+              org.testng.internal.Invoker.retryFailed(Invoker.java:998)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:756)<br />
+              org.testng.TestRunner.run(TestRunner.java:610)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:387)<br />
+              org.testng.SuiteRunner.access$000(SuiteRunner.java:39)<br />
+              org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)<br />
+              org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)<br />
+              java.util.concurrent.FutureTask.run(Unknown Source)<br />
+              java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)<br />
+              java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)<br />
+              java.lang.Thread.run(Unknown Source)<br />
+                </div>
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">com.cleartrip.platform.tripServices.TS_Invoice_Generation_Hotel</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  Tripservicelocalputcall
+      </td>
+  <td class="duration">
+    0.000s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Service URL : http://172.17.26.11:9031/trips<br />
+                  </div>
+    
+
+        <a href="javascript:toggleElement('exception-1', 'block')" title="Click to expand/collapse"><b>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured</b></a><br />
+    <div class="stackTrace" id="exception-1">
+              com.cleartrip.platform.tripServices.TripserviceCommon.TripservicePostcallinvoicelocal(TripserviceCommon.java:238)<br />
+              com.cleartrip.platform.tripServices.TS_Invoice_Generation_Hotel.Tripservicelocalputcall(TS_Invoice_Generation_Hotel.java:18)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)<br />
+              java.lang.reflect.Method.invoke(Unknown Source)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:645)<br />
+              org.testng.internal.Invoker.retryFailed(Invoker.java:998)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:756)<br />
+              org.testng.TestRunner.run(TestRunner.java:610)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:387)<br />
+              org.testng.SuiteRunner.access$000(SuiteRunner.java:39)<br />
+              org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)<br />
+              org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)<br />
+              java.util.concurrent.FutureTask.run(Unknown Source)<br />
+              java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)<br />
+              java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)<br />
+              java.lang.Thread.run(Unknown Source)<br />
+                </div>
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">com.cleartrip.platform.tripServices.TS_Invoice_Generation_Local</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  Tripservicelocalputcall
+      </td>
+  <td class="duration">
+    0.000s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Service URL : http://172.17.26.11:9031/trips<br />
+                  </div>
+    
+
+        <a href="javascript:toggleElement('exception-2', 'block')" title="Click to expand/collapse"><b>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured</b></a><br />
+    <div class="stackTrace" id="exception-2">
+              com.cleartrip.platform.tripServices.TripserviceCommon.TripservicePostcallinvoicelocal(TripserviceCommon.java:238)<br />
+              com.cleartrip.platform.tripServices.TS_Invoice_Generation_Local.Tripservicelocalputcall(TS_Invoice_Generation_Local.java:18)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)<br />
+              java.lang.reflect.Method.invoke(Unknown Source)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:645)<br />
+              org.testng.internal.Invoker.retryFailed(Invoker.java:998)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:756)<br />
+              org.testng.TestRunner.run(TestRunner.java:610)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:387)<br />
+              org.testng.SuiteRunner.access$000(SuiteRunner.java:39)<br />
+              org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)<br />
+              org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)<br />
+              java.util.concurrent.FutureTask.run(Unknown Source)<br />
+              java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)<br />
+              java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)<br />
+              java.lang.Thread.run(Unknown Source)<br />
+                </div>
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">com.cleartrip.platform.tripServices.TS_POST_EmailByTxnId</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  getEmail
+      </td>
+  <td class="duration">
+    0.000s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Service URL : http://172.17.26.11:9031/trips/email/74979518<br />
+                  </div>
+    
+
+        <a href="javascript:toggleElement('exception-3', 'block')" title="Click to expand/collapse"><b>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured</b></a><br />
+    <div class="stackTrace" id="exception-3">
+              com.cleartrip.platform.tripServices.TS_POST_EmailByTxnId.getEmail(TS_POST_EmailByTxnId.java:19)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)<br />
+              java.lang.reflect.Method.invoke(Unknown Source)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:645)<br />
+              org.testng.internal.Invoker.retryFailed(Invoker.java:998)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:756)<br />
+              org.testng.TestRunner.run(TestRunner.java:610)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:387)<br />
+              org.testng.SuiteRunner.access$000(SuiteRunner.java:39)<br />
+              org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)<br />
+              org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)<br />
+              java.util.concurrent.FutureTask.run(Unknown Source)<br />
+              java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)<br />
+              java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)<br />
+              java.lang.Thread.run(Unknown Source)<br />
+                </div>
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">com.cleartrip.platform.tripServices.TS_PUT_Trips</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  PutTrips
+      </td>
+  <td class="duration">
+    0.000s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Service URL : http://172.17.26.11:9031/trips<br />
+                  </div>
+    
+
+        <a href="javascript:toggleElement('exception-4', 'block')" title="Click to expand/collapse"><b>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured</b></a><br />
+    <div class="stackTrace" id="exception-4">
+              com.cleartrip.platform.tripServices.TripserviceCommon.TripservicePutTrips(TripserviceCommon.java:103)<br />
+              com.cleartrip.platform.tripServices.TS_PUT_Trips.PutTrips(TS_PUT_Trips.java:12)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)<br />
+              java.lang.reflect.Method.invoke(Unknown Source)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:645)<br />
+              org.testng.internal.Invoker.retryFailed(Invoker.java:998)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:756)<br />
+              org.testng.TestRunner.run(TestRunner.java:610)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:387)<br />
+              org.testng.SuiteRunner.access$000(SuiteRunner.java:39)<br />
+              org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)<br />
+              org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)<br />
+              java.util.concurrent.FutureTask.run(Unknown Source)<br />
+              java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)<br />
+              java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)<br />
+              java.lang.Thread.run(Unknown Source)<br />
+                </div>
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">com.cleartrip.platform.tripServices.TS_UpdateBooking_Air</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  Tripserviceairputcall
+      </td>
+  <td class="duration">
+    0.000s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Service URL : http://172.17.26.11:9031/trips<br />
+                  </div>
+    
+
+        <a href="javascript:toggleElement('exception-5', 'block')" title="Click to expand/collapse"><b>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured</b></a><br />
+    <div class="stackTrace" id="exception-5">
+              com.cleartrip.platform.tripServices.TripserviceCommon.TripservicePostcall(TripserviceCommon.java:70)<br />
+              com.cleartrip.platform.tripServices.TS_UpdateBooking_Air.Tripserviceairputcall(TS_UpdateBooking_Air.java:17)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)<br />
+              java.lang.reflect.Method.invoke(Unknown Source)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:645)<br />
+              org.testng.internal.Invoker.retryFailed(Invoker.java:998)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:756)<br />
+              org.testng.TestRunner.run(TestRunner.java:610)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:387)<br />
+              org.testng.SuiteRunner.access$000(SuiteRunner.java:39)<br />
+              org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)<br />
+              org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)<br />
+              java.util.concurrent.FutureTask.run(Unknown Source)<br />
+              java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)<br />
+              java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)<br />
+              java.lang.Thread.run(Unknown Source)<br />
+                </div>
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">com.cleartrip.platform.tripServices.TS_UpdateBooking_Hotel</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  Tripservicehotelputcall
+      </td>
+  <td class="duration">
+    0.000s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Service URL : http://172.17.26.11:9031/trips<br />
+                  </div>
+    
+
+        <a href="javascript:toggleElement('exception-6', 'block')" title="Click to expand/collapse"><b>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured</b></a><br />
+    <div class="stackTrace" id="exception-6">
+              com.cleartrip.platform.tripServices.TripserviceCommon.TripservicePostcall(TripserviceCommon.java:70)<br />
+              com.cleartrip.platform.tripServices.TS_UpdateBooking_Hotel.Tripservicehotelputcall(TS_UpdateBooking_Hotel.java:17)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)<br />
+              java.lang.reflect.Method.invoke(Unknown Source)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:645)<br />
+              org.testng.internal.Invoker.retryFailed(Invoker.java:998)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:756)<br />
+              org.testng.TestRunner.run(TestRunner.java:610)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:387)<br />
+              org.testng.SuiteRunner.access$000(SuiteRunner.java:39)<br />
+              org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)<br />
+              org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)<br />
+              java.util.concurrent.FutureTask.run(Unknown Source)<br />
+              java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)<br />
+              java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)<br />
+              java.lang.Thread.run(Unknown Source)<br />
+                </div>
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">com.cleartrip.platform.tripServices.TS_UpdateBooking_Local</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  Tripservicelocalputcall
+      </td>
+  <td class="duration">
+    0.000s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Service URL : http://172.17.26.11:9031/trips<br />
+                  </div>
+    
+
+        <a href="javascript:toggleElement('exception-7', 'block')" title="Click to expand/collapse"><b>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured</b></a><br />
+    <div class="stackTrace" id="exception-7">
+              com.cleartrip.platform.tripServices.TripserviceCommon.TripservicePostcall(TripserviceCommon.java:70)<br />
+              com.cleartrip.platform.tripServices.TS_UpdateBooking_Local.Tripservicelocalputcall(TS_UpdateBooking_Local.java:16)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)<br />
+              java.lang.reflect.Method.invoke(Unknown Source)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:645)<br />
+              org.testng.internal.Invoker.retryFailed(Invoker.java:998)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:756)<br />
+              org.testng.TestRunner.run(TestRunner.java:610)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:387)<br />
+              org.testng.SuiteRunner.access$000(SuiteRunner.java:39)<br />
+              org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)<br />
+              org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)<br />
+              java.util.concurrent.FutureTask.run(Unknown Source)<br />
+              java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)<br />
+              java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)<br />
+              java.lang.Thread.run(Unknown Source)<br />
+                </div>
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">com.cleartrip.platform.tripServices.TS_UpdateBooking_Trains</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  Tripservicetrainputcall
+      </td>
+  <td class="duration">
+    0.000s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Service URL : http://172.17.26.11:9031/trips<br />
+                  </div>
+    
+
+        <a href="javascript:toggleElement('exception-8', 'block')" title="Click to expand/collapse"><b>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured</b></a><br />
+    <div class="stackTrace" id="exception-8">
+              com.cleartrip.platform.tripServices.TripserviceCommon.TripservicePostcall(TripserviceCommon.java:70)<br />
+              com.cleartrip.platform.tripServices.TS_UpdateBooking_Trains.Tripservicetrainputcall(TS_UpdateBooking_Trains.java:16)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)<br />
+              java.lang.reflect.Method.invoke(Unknown Source)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:645)<br />
+              org.testng.internal.Invoker.retryFailed(Invoker.java:998)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:756)<br />
+              org.testng.TestRunner.run(TestRunner.java:610)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:387)<br />
+              org.testng.SuiteRunner.access$000(SuiteRunner.java:39)<br />
+              org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)<br />
+              org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)<br />
+              java.util.concurrent.FutureTask.run(Unknown Source)<br />
+              java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)<br />
+              java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)<br />
+              java.lang.Thread.run(Unknown Source)<br />
+                </div>
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">com.cleartrip.platform.tripServices.TS_Update_Air_Module</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  airPostCall
+      </td>
+  <td class="duration">
+    0.000s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Service URL : http://172.17.26.11:9031/trips<br />
+                  </div>
+    
+
+        <a href="javascript:toggleElement('exception-9', 'block')" title="Click to expand/collapse"><b>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured</b></a><br />
+    <div class="stackTrace" id="exception-9">
+              com.cleartrip.platform.tripServices.TripserviceCommon.TripservicePostcall(TripserviceCommon.java:70)<br />
+              com.cleartrip.platform.tripServices.TS_Update_Air_Module.airPostCall(TS_Update_Air_Module.java:14)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)<br />
+              java.lang.reflect.Method.invoke(Unknown Source)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:645)<br />
+              org.testng.internal.Invoker.retryFailed(Invoker.java:998)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:756)<br />
+              org.testng.TestRunner.run(TestRunner.java:610)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:387)<br />
+              org.testng.SuiteRunner.access$000(SuiteRunner.java:39)<br />
+              org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)<br />
+              org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)<br />
+              java.util.concurrent.FutureTask.run(Unknown Source)<br />
+              java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)<br />
+              java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)<br />
+              java.lang.Thread.run(Unknown Source)<br />
+                </div>
+      </td>
+</tr>
+      </table>
+
+  <table class="resultsTable" width="100%">
+    <tr><th colspan="3" class="header skipped">Skipped Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">com.cleartrip.platform.tripServices.TS_Invoice_Generation_Air</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  Tripserviceairputcall
+      </td>
+  <td class="duration">
+    0.000s
+  </td>
+  <td class="result">
+                               
+    
+            <div class="testOutput">
+                        Service URL : http://172.17.26.11:9031/trips<br />
                   </div>
     
 
       </td>
 </tr>
+          <tr>
+        <td colspan="3" class="group">com.cleartrip.platform.tripServices.TS_Invoice_Generation_Hotel</td>
+      </tr>
+            
 <tr>
   <td class="method">
-                  resetpassword
+                  Tripservicelocalputcall
       </td>
   <td class="duration">
-    11.876s
+    0.000s
   </td>
   <td class="result">
-        
+                               
     
             <div class="testOutput">
-                        &lt;p&gt;I forgot my password is displayed in page&lt;/p&gt;<br />
+                        Service URL : http://172.17.26.11:9031/trips<br />
+                  </div>
+    
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">com.cleartrip.platform.tripServices.TS_Invoice_Generation_Local</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  Tripservicelocalputcall
+      </td>
+  <td class="duration">
+    0.015s
+  </td>
+  <td class="result">
+                               
+    
+            <div class="testOutput">
+                        Service URL : http://172.17.26.11:9031/trips<br />
+                  </div>
+    
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">com.cleartrip.platform.tripServices.TS_POST_EmailByTxnId</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  getEmail
+      </td>
+  <td class="duration">
+    0.000s
+  </td>
+  <td class="result">
+                               
+    
+            <div class="testOutput">
+                        Service URL : http://172.17.26.11:9031/trips/email/74979518<br />
+                  </div>
+    
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">com.cleartrip.platform.tripServices.TS_PUT_Trips</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  PutTrips
+      </td>
+  <td class="duration">
+    0.000s
+  </td>
+  <td class="result">
+                               
+    
+            <div class="testOutput">
+                        Service URL : http://172.17.26.11:9031/trips<br />
+                  </div>
+    
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">com.cleartrip.platform.tripServices.TS_UpdateBooking_Air</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  Tripserviceairputcall
+      </td>
+  <td class="duration">
+    0.000s
+  </td>
+  <td class="result">
+                               
+    
+            <div class="testOutput">
+                        Service URL : http://172.17.26.11:9031/trips<br />
+                  </div>
+    
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">com.cleartrip.platform.tripServices.TS_UpdateBooking_Hotel</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  Tripservicehotelputcall
+      </td>
+  <td class="duration">
+    0.000s
+  </td>
+  <td class="result">
+                               
+    
+            <div class="testOutput">
+                        Service URL : http://172.17.26.11:9031/trips<br />
+                  </div>
+    
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">com.cleartrip.platform.tripServices.TS_UpdateBooking_Local</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  Tripservicelocalputcall
+      </td>
+  <td class="duration">
+    0.000s
+  </td>
+  <td class="result">
+                               
+    
+            <div class="testOutput">
+                        Service URL : http://172.17.26.11:9031/trips<br />
+                  </div>
+    
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">com.cleartrip.platform.tripServices.TS_UpdateBooking_Trains</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  Tripservicetrainputcall
+      </td>
+  <td class="duration">
+    0.000s
+  </td>
+  <td class="result">
+                               
+    
+            <div class="testOutput">
+                        Service URL : http://172.17.26.11:9031/trips<br />
+                  </div>
+    
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">com.cleartrip.platform.tripServices.TS_Update_Air_Module</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  airPostCall
+      </td>
+  <td class="duration">
+    0.000s
+  </td>
+  <td class="result">
+                               
+    
+            <div class="testOutput">
+                        Service URL : http://172.17.26.11:9031/trips<br />
                   </div>
     
 
       </td>
 </tr>
       </table>
+
   
 </body>
 </html>

@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Whatsapp</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/8/8</td>
+<td>Tests passed/Failed/Skipped:</td><td>8/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Oct 23 12:23:06 IST 2019</td>
+<td>Started on:</td><td>Mon Oct 07 11:57:01 IST 2019</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (0 ms)</td>
+<tr><td>Total time:</td><td>9 seconds (9776 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,8 +67,8 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
@@ -76,572 +76,135 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='com.cleartrip.platform.whatsappService.WhatsappCheckContacts.checkContacts()'><b>checkContacts</b><br>Test class: com.cleartrip.platform.whatsappService.WhatsappCheckContacts<br/>
-<a href="#Output-1209714962" onClick='toggleBox("Output-1209714962", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-71401317" onClick='toggleBox("Output-71401317", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-1209714962" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1209714962">
+<a href="#Output-71401317" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-71401317">
 Service URL : http://whatsappapi.cltp.com:9001/r3/whatsapp/checkContacts<br/>
+Test case passed<br/>
+{"contacts":[{"input":"96639","status":"invalid"},{"input":"9663949690","status":"valid","wa_id":"919663949690"}],"meta":{"api_status":"stable","version":"2.25.2"}}<br/>
+Status code == 200<br/>
 </div>
 </td>
-<td><div><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.whatsappService.WhatsappCommon.paramsForwhatsappservice(WhatsappCommon.java:39)
-	at com.cleartrip.platform.whatsappService.WhatsappCheckContacts.checkContacts(WhatsappCheckContacts.java:14)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1209714962", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1209714962'><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.whatsappService.WhatsappCommon.paramsForwhatsappservice(WhatsappCommon.java:39)
-	at com.cleartrip.platform.whatsappService.WhatsappCheckContacts.checkContacts(WhatsappCheckContacts.java:14)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
-	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-</pre></div></td>
+<td></td>
 <td>0</td>
-<td>com.cleartrip.platform.whatsappService.WhatsappCheckContacts@78e67e0a</td></tr>
-<tr>
-<td title='com.cleartrip.platform.whatsappService.WhatsappDeliveryFeedback.message()'><b>message</b><br>Test class: com.cleartrip.platform.whatsappService.WhatsappDeliveryFeedback<br/>
-<a href="#Output-354718407" onClick='toggleBox("Output-354718407", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-354718407" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-354718407">
-Service URL : http://whatsappapi.cltp.com:9001/r3/whatsapp/message<br/>
-</div>
-</td>
-<td><div><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.whatsappService.WhatsappCommon.paramsForwhatsappmessage(WhatsappCommon.java:49)
-	at com.cleartrip.platform.whatsappService.WhatsappDeliveryFeedback.message(WhatsappDeliveryFeedback.java:15)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace354718407", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace354718407'><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.whatsappService.WhatsappCommon.paramsForwhatsappmessage(WhatsappCommon.java:49)
-	at com.cleartrip.platform.whatsappService.WhatsappDeliveryFeedback.message(WhatsappDeliveryFeedback.java:15)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
-	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-</pre></div></td>
-<td>0</td>
-<td>com.cleartrip.platform.whatsappService.WhatsappDeliveryFeedback@bd8db5a</td></tr>
+<td>com.cleartrip.platform.whatsappService.WhatsappCheckContacts@16267862</td></tr>
 <tr>
 <td title='com.cleartrip.platform.whatsappService.WhatsappUserMessage.message()'><b>message</b><br>Test class: com.cleartrip.platform.whatsappService.WhatsappUserMessage<br/>
-<a href="#Output-913914841" onClick='toggleBox("Output-913914841", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-86439486" onClick='toggleBox("Output-86439486", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-913914841" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-913914841">
+<a href="#Output-86439486" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-86439486">
 Service URL : http://whatsappapi.cltp.com:9001/r3/whatsapp/message<br/>
+Test case passed<br/>
+{"messageId":"07102019-afd0424e-59a9-4b3c-83bb-20eef85d351f","status":"success"}<br/>
+Status code == 202<br/>
+Message Id == 07102019-afd0424e-59a9-4b3c-83bb-20eef85d351f<br/>
 </div>
 </td>
-<td><div><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.whatsappService.WhatsappCommon.paramsForwhatsappmessage(WhatsappCommon.java:49)
-	at com.cleartrip.platform.whatsappService.WhatsappUserMessage.message(WhatsappUserMessage.java:14)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace913914841", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace913914841'><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.whatsappService.WhatsappCommon.paramsForwhatsappmessage(WhatsappCommon.java:49)
-	at com.cleartrip.platform.whatsappService.WhatsappUserMessage.message(WhatsappUserMessage.java:14)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
-	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-</pre></div></td>
+<td></td>
 <td>0</td>
-<td>com.cleartrip.platform.whatsappService.WhatsappUserMessage@2f943d71</td></tr>
-<tr>
-<td title='com.cleartrip.platform.whatsappService.WhatsappMultilanguageSupport.message()'><b>message</b><br>Test class: com.cleartrip.platform.whatsappService.WhatsappMultilanguageSupport<br/>
-<a href="#Output-1378187411" onClick='toggleBox("Output-1378187411", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1378187411" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1378187411">
-Service URL : http://whatsappapi.cltp.com:9001/r3/whatsapp/message<br/>
-</div>
-</td>
-<td><div><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.whatsappService.WhatsappCommon.paramsForwhatsappmultilanguage(WhatsappCommon.java:108)
-	at com.cleartrip.platform.whatsappService.WhatsappMultilanguageSupport.message(WhatsappMultilanguageSupport.java:15)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1378187411", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1378187411'><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.whatsappService.WhatsappCommon.paramsForwhatsappmultilanguage(WhatsappCommon.java:108)
-	at com.cleartrip.platform.whatsappService.WhatsappMultilanguageSupport.message(WhatsappMultilanguageSupport.java:15)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
-	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-</pre></div></td>
-<td>0</td>
-<td>com.cleartrip.platform.whatsappService.WhatsappMultilanguageSupport@4b553d26</td></tr>
+<td>com.cleartrip.platform.whatsappService.WhatsappUserMessage@71248c21</td></tr>
 <tr>
 <td title='com.cleartrip.platform.whatsappService.WhatsappOptinFlow.message()'><b>message</b><br>Test class: com.cleartrip.platform.whatsappService.WhatsappOptinFlow<br/>
-<a href="#Output-1149791604" onClick='toggleBox("Output-1149791604", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-672054577" onClick='toggleBox("Output-672054577", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-1149791604" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1149791604">
+<a href="#Output-672054577" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-672054577">
 Service URL : http://whatsappapi.cltp.com:9001/r3/whatsapp/optin<br/>
+Test case passed<br/>
+{"requestId":"45176fb6-acb4-461c-a691-a55528f866a4","mobileNumber":"9663949690","isOptedin":true,"isValidWhatsappNumber":true,"optInTimeStamp":"2018-11-27T09:26:33Z","optOutTimeStamp":null,"whatsappUsername":"919663949690","countryCode":null,"errormessage":"User already opted in"}<br/>
+Status code == 200<br/>
+requestId == 45176fb6-acb4-461c-a691-a55528f866a4<br/>
+isOptedin == true<br/>
 </div>
 </td>
-<td><div><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.whatsappService.WhatsappCommon.paramsForwhatsappOptin(WhatsappCommon.java:78)
-	at com.cleartrip.platform.whatsappService.WhatsappOptinFlow.message(WhatsappOptinFlow.java:16)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1149791604", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1149791604'><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.whatsappService.WhatsappCommon.paramsForwhatsappOptin(WhatsappCommon.java:78)
-	at com.cleartrip.platform.whatsappService.WhatsappOptinFlow.message(WhatsappOptinFlow.java:16)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
-	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-</pre></div></td>
+<td></td>
 <td>0</td>
-<td>com.cleartrip.platform.whatsappService.WhatsappOptinFlow@80503</td></tr>
+<td>com.cleartrip.platform.whatsappService.WhatsappOptinFlow@442675e1</td></tr>
 <tr>
-<td title='com.cleartrip.platform.whatsappService.WhatsappUserMessageWithAttachment.message()'><b>message</b><br>Test class: com.cleartrip.platform.whatsappService.WhatsappUserMessageWithAttachment<br/>
-<a href="#Output-1491632330" onClick='toggleBox("Output-1491632330", this, "Show output", "Hide output");'>Show output</a>
+<td title='com.cleartrip.platform.whatsappService.WhatsappMultilanguageSupport.message()'><b>message</b><br>Test class: com.cleartrip.platform.whatsappService.WhatsappMultilanguageSupport<br/>
+<a href="#Output-1228474497" onClick='toggleBox("Output-1228474497", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-1491632330" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1491632330">
+<a href="#Output-1228474497" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1228474497">
 Service URL : http://whatsappapi.cltp.com:9001/r3/whatsapp/message<br/>
+Test case passed<br/>
+{"messageId":"07102019-2484105c-bfb6-45a1-839d-0bd7e37faebd","status":"success"}<br/>
+Status code == 202<br/>
+Message Id == 07102019-2484105c-bfb6-45a1-839d-0bd7e37faebd<br/>
 </div>
 </td>
-<td><div><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.whatsappService.WhatsappCommon.paramsForwhatsappservicewithattachment(WhatsappCommon.java:59)
-	at com.cleartrip.platform.whatsappService.WhatsappUserMessageWithAttachment.message(WhatsappUserMessageWithAttachment.java:15)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1491632330", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1491632330'><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.whatsappService.WhatsappCommon.paramsForwhatsappservicewithattachment(WhatsappCommon.java:59)
-	at com.cleartrip.platform.whatsappService.WhatsappUserMessageWithAttachment.message(WhatsappUserMessageWithAttachment.java:15)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
-	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-</pre></div></td>
+<td></td>
 <td>0</td>
-<td>com.cleartrip.platform.whatsappService.WhatsappUserMessageWithAttachment@86be70a</td></tr>
+<td>com.cleartrip.platform.whatsappService.WhatsappMultilanguageSupport@6166e06f</td></tr>
 <tr>
 <td title='com.cleartrip.platform.whatsappService.WhatsappOptinFlowStatus.message()'><b>message</b><br>Test class: com.cleartrip.platform.whatsappService.WhatsappOptinFlowStatus<br/>
-<a href="#Output-1225134099" onClick='toggleBox("Output-1225134099", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-1762309251" onClick='toggleBox("Output-1762309251", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-1225134099" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1225134099">
+<a href="#Output-1762309251" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1762309251">
 Service URL : http://whatsappapi.cltp.com:9001/r3/whatsapp/optinStatus<br/>
+Test case passed<br/>
+{"requestId":"45176fb6-acb4-461c-a691-a55528f866a4","mobileNumber":"9663949690","isOptedin":true,"isValidWhatsappNumber":true,"optInTimeStamp":"2018-11-27T09:26:33Z","optOutTimeStamp":null,"whatsappUsername":"919663949690","countryCode":"91","errormessage":null}<br/>
+Status code == 200<br/>
+requestId == 45176fb6-acb4-461c-a691-a55528f866a4<br/>
+isOptedin == true<br/>
 </div>
 </td>
-<td><div><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.whatsappService.WhatsappCommon.paramsForwhatsappOptinStatus(WhatsappCommon.java:88)
-	at com.cleartrip.platform.whatsappService.WhatsappOptinFlowStatus.message(WhatsappOptinFlowStatus.java:15)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1225134099", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1225134099'><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.whatsappService.WhatsappCommon.paramsForwhatsappOptinStatus(WhatsappCommon.java:88)
-	at com.cleartrip.platform.whatsappService.WhatsappOptinFlowStatus.message(WhatsappOptinFlowStatus.java:15)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
-	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-</pre></div></td>
+<td></td>
 <td>0</td>
-<td>com.cleartrip.platform.whatsappService.WhatsappOptinFlowStatus@69a3d1d</td></tr>
+<td>com.cleartrip.platform.whatsappService.WhatsappOptinFlowStatus@49e202ad</td></tr>
+<tr>
+<td title='com.cleartrip.platform.whatsappService.WhatsappUserMessageWithAttachment.message()'><b>message</b><br>Test class: com.cleartrip.platform.whatsappService.WhatsappUserMessageWithAttachment<br/>
+<a href="#Output-1905316640" onClick='toggleBox("Output-1905316640", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1905316640" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1905316640">
+Service URL : http://whatsappapi.cltp.com:9001/r3/whatsapp/message<br/>
+Test case passed<br/>
+{"messageId":"07102019-29099d14-f6b2-4192-9aac-8db66eea4f69","status":"success"}<br/>
+Status code == 202<br/>
+Message Id == 07102019-29099d14-f6b2-4192-9aac-8db66eea4f69<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>com.cleartrip.platform.whatsappService.WhatsappUserMessageWithAttachment@1c72da34</td></tr>
 <tr>
 <td title='com.cleartrip.platform.whatsappService.WhatsappWebhookMessage.message()'><b>message</b><br>Test class: com.cleartrip.platform.whatsappService.WhatsappWebhookMessage<br/>
-<a href="#Output-129783175" onClick='toggleBox("Output-129783175", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-1953031714" onClick='toggleBox("Output-1953031714", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-129783175" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-129783175">
+<a href="#Output-1953031714" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1953031714">
 Service URL : https://qa2whatsapp.cleartrip.com/whatsapp/webhook/messages/cleartrip<br/>
+Test case passed<br/>
+{"messageId":"07102019-82096ce4-97ef-4f3a-a2b6-57e106a034d2"}<br/>
+Status code == 200<br/>
+messageId == 07102019-82096ce4-97ef-4f3a-a2b6-57e106a034d2<br/>
 </div>
 </td>
-<td><div><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.whatsappService.WhatsappCommon.paramsForwhatsappwebhook(WhatsappCommon.java:98)
-	at com.cleartrip.platform.whatsappService.WhatsappWebhookMessage.message(WhatsappWebhookMessage.java:14)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace129783175", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace129783175'><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.whatsappService.WhatsappCommon.paramsForwhatsappwebhook(WhatsappCommon.java:98)
-	at com.cleartrip.platform.whatsappService.WhatsappWebhookMessage.message(WhatsappWebhookMessage.java:14)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
-	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-</pre></div></td>
+<td></td>
 <td>0</td>
-<td>com.cleartrip.platform.whatsappService.WhatsappWebhookMessage@480bdb19</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-skipped'>
-<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='com.cleartrip.platform.whatsappService.WhatsappCheckContacts.checkContacts()'><b>checkContacts</b><br>Test class: com.cleartrip.platform.whatsappService.WhatsappCheckContacts<br/>
-<a href="#Output-219698901" onClick='toggleBox("Output-219698901", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-219698901" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-219698901">
-Service URL : http://whatsappapi.cltp.com:9001/r3/whatsapp/checkContacts<br/>
-</div>
-</td>
-<td><div><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.whatsappService.WhatsappCommon.paramsForwhatsappservice(WhatsappCommon.java:39)
-	at com.cleartrip.platform.whatsappService.WhatsappCheckContacts.checkContacts(WhatsappCheckContacts.java:14)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace219698901", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace219698901'><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.whatsappService.WhatsappCommon.paramsForwhatsappservice(WhatsappCommon.java:39)
-	at com.cleartrip.platform.whatsappService.WhatsappCheckContacts.checkContacts(WhatsappCheckContacts.java:14)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-</pre></div></td>
-<td>0</td>
-<td>com.cleartrip.platform.whatsappService.WhatsappCheckContacts@78e67e0a</td></tr>
+<td>com.cleartrip.platform.whatsappService.WhatsappWebhookMessage@6b0c2d26</td></tr>
 <tr>
 <td title='com.cleartrip.platform.whatsappService.WhatsappDeliveryFeedback.message()'><b>message</b><br>Test class: com.cleartrip.platform.whatsappService.WhatsappDeliveryFeedback<br/>
-<a href="#Output-1344673447" onClick='toggleBox("Output-1344673447", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-780784301" onClick='toggleBox("Output-780784301", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-1344673447" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1344673447">
+<a href="#Output-780784301" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-780784301">
 Service URL : http://whatsappapi.cltp.com:9001/r3/whatsapp/message<br/>
+Test case passed<br/>
+{"messageId":"07102019-63343f9d-dc43-4a84-92e7-86df49f84d01","status":"success"}<br/>
+Status code == 202<br/>
+Message Id == 07102019-63343f9d-dc43-4a84-92e7-86df49f84d01<br/>
+Test case passed<br/>
+Status code ==  200<br/>
 </div>
 </td>
-<td><div><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.whatsappService.WhatsappCommon.paramsForwhatsappmessage(WhatsappCommon.java:49)
-	at com.cleartrip.platform.whatsappService.WhatsappDeliveryFeedback.message(WhatsappDeliveryFeedback.java:15)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1344673447", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1344673447'><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.whatsappService.WhatsappCommon.paramsForwhatsappmessage(WhatsappCommon.java:49)
-	at com.cleartrip.platform.whatsappService.WhatsappDeliveryFeedback.message(WhatsappDeliveryFeedback.java:15)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-</pre></div></td>
-<td>0</td>
-<td>com.cleartrip.platform.whatsappService.WhatsappDeliveryFeedback@bd8db5a</td></tr>
-<tr>
-<td title='com.cleartrip.platform.whatsappService.WhatsappUserMessage.message()'><b>message</b><br>Test class: com.cleartrip.platform.whatsappService.WhatsappUserMessage<br/>
-<a href="#Output-2040030401" onClick='toggleBox("Output-2040030401", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-2040030401" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-2040030401">
-Service URL : http://whatsappapi.cltp.com:9001/r3/whatsapp/message<br/>
-</div>
-</td>
-<td><div><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.whatsappService.WhatsappCommon.paramsForwhatsappmessage(WhatsappCommon.java:49)
-	at com.cleartrip.platform.whatsappService.WhatsappUserMessage.message(WhatsappUserMessage.java:14)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2040030401", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2040030401'><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.whatsappService.WhatsappCommon.paramsForwhatsappmessage(WhatsappCommon.java:49)
-	at com.cleartrip.platform.whatsappService.WhatsappUserMessage.message(WhatsappUserMessage.java:14)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-</pre></div></td>
-<td>0</td>
-<td>com.cleartrip.platform.whatsappService.WhatsappUserMessage@2f943d71</td></tr>
-<tr>
-<td title='com.cleartrip.platform.whatsappService.WhatsappMultilanguageSupport.message()'><b>message</b><br>Test class: com.cleartrip.platform.whatsappService.WhatsappMultilanguageSupport<br/>
-<a href="#Output-1747035962" onClick='toggleBox("Output-1747035962", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1747035962" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1747035962">
-Service URL : http://whatsappapi.cltp.com:9001/r3/whatsapp/message<br/>
-</div>
-</td>
-<td><div><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.whatsappService.WhatsappCommon.paramsForwhatsappmultilanguage(WhatsappCommon.java:108)
-	at com.cleartrip.platform.whatsappService.WhatsappMultilanguageSupport.message(WhatsappMultilanguageSupport.java:15)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1747035962", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1747035962'><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.whatsappService.WhatsappCommon.paramsForwhatsappmultilanguage(WhatsappCommon.java:108)
-	at com.cleartrip.platform.whatsappService.WhatsappMultilanguageSupport.message(WhatsappMultilanguageSupport.java:15)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-</pre></div></td>
-<td>0</td>
-<td>com.cleartrip.platform.whatsappService.WhatsappMultilanguageSupport@4b553d26</td></tr>
-<tr>
-<td title='com.cleartrip.platform.whatsappService.WhatsappOptinFlow.message()'><b>message</b><br>Test class: com.cleartrip.platform.whatsappService.WhatsappOptinFlow<br/>
-<a href="#Output-612090994" onClick='toggleBox("Output-612090994", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-612090994" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-612090994">
-Service URL : http://whatsappapi.cltp.com:9001/r3/whatsapp/optin<br/>
-</div>
-</td>
-<td><div><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.whatsappService.WhatsappCommon.paramsForwhatsappOptin(WhatsappCommon.java:78)
-	at com.cleartrip.platform.whatsappService.WhatsappOptinFlow.message(WhatsappOptinFlow.java:16)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace612090994", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace612090994'><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.whatsappService.WhatsappCommon.paramsForwhatsappOptin(WhatsappCommon.java:78)
-	at com.cleartrip.platform.whatsappService.WhatsappOptinFlow.message(WhatsappOptinFlow.java:16)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-</pre></div></td>
-<td>0</td>
-<td>com.cleartrip.platform.whatsappService.WhatsappOptinFlow@80503</td></tr>
-<tr>
-<td title='com.cleartrip.platform.whatsappService.WhatsappOptinFlowStatus.message()'><b>message</b><br>Test class: com.cleartrip.platform.whatsappService.WhatsappOptinFlowStatus<br/>
-<a href="#Output-746285777" onClick='toggleBox("Output-746285777", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-746285777" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-746285777">
-Service URL : http://whatsappapi.cltp.com:9001/r3/whatsapp/optinStatus<br/>
-</div>
-</td>
-<td><div><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.whatsappService.WhatsappCommon.paramsForwhatsappOptinStatus(WhatsappCommon.java:88)
-	at com.cleartrip.platform.whatsappService.WhatsappOptinFlowStatus.message(WhatsappOptinFlowStatus.java:15)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace746285777", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace746285777'><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.whatsappService.WhatsappCommon.paramsForwhatsappOptinStatus(WhatsappCommon.java:88)
-	at com.cleartrip.platform.whatsappService.WhatsappOptinFlowStatus.message(WhatsappOptinFlowStatus.java:15)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-</pre></div></td>
-<td>0</td>
-<td>com.cleartrip.platform.whatsappService.WhatsappOptinFlowStatus@69a3d1d</td></tr>
-<tr>
-<td title='com.cleartrip.platform.whatsappService.WhatsappUserMessageWithAttachment.message()'><b>message</b><br>Test class: com.cleartrip.platform.whatsappService.WhatsappUserMessageWithAttachment<br/>
-<a href="#Output-583698613" onClick='toggleBox("Output-583698613", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-583698613" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-583698613">
-Service URL : http://whatsappapi.cltp.com:9001/r3/whatsapp/message<br/>
-</div>
-</td>
-<td><div><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.whatsappService.WhatsappCommon.paramsForwhatsappservicewithattachment(WhatsappCommon.java:59)
-	at com.cleartrip.platform.whatsappService.WhatsappUserMessageWithAttachment.message(WhatsappUserMessageWithAttachment.java:15)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace583698613", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace583698613'><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.whatsappService.WhatsappCommon.paramsForwhatsappservicewithattachment(WhatsappCommon.java:59)
-	at com.cleartrip.platform.whatsappService.WhatsappUserMessageWithAttachment.message(WhatsappUserMessageWithAttachment.java:15)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-</pre></div></td>
-<td>0</td>
-<td>com.cleartrip.platform.whatsappService.WhatsappUserMessageWithAttachment@86be70a</td></tr>
-<tr>
-<td title='com.cleartrip.platform.whatsappService.WhatsappWebhookMessage.message()'><b>message</b><br>Test class: com.cleartrip.platform.whatsappService.WhatsappWebhookMessage<br/>
-<a href="#Output-1900409914" onClick='toggleBox("Output-1900409914", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1900409914" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1900409914">
-Service URL : https://qa2whatsapp.cleartrip.com/whatsapp/webhook/messages/cleartrip<br/>
-</div>
-</td>
-<td><div><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.whatsappService.WhatsappCommon.paramsForwhatsappwebhook(WhatsappCommon.java:98)
-	at com.cleartrip.platform.whatsappService.WhatsappWebhookMessage.message(WhatsappWebhookMessage.java:14)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1900409914", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1900409914'><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.whatsappService.WhatsappCommon.paramsForwhatsappwebhook(WhatsappCommon.java:98)
-	at com.cleartrip.platform.whatsappService.WhatsappWebhookMessage.message(WhatsappWebhookMessage.java:14)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-</pre></div></td>
-<td>0</td>
-<td>com.cleartrip.platform.whatsappService.WhatsappWebhookMessage@480bdb19</td></tr>
+<td></td>
+<td>9</td>
+<td>com.cleartrip.platform.whatsappService.WhatsappDeliveryFeedback@453da22c</td></tr>
 </table><p>
 </body>
 </html>

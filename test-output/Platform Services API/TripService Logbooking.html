@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>TripService Logbooking</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/4/4</td>
+<td>Tests passed/Failed/Skipped:</td><td>4/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Oct 23 12:23:06 IST 2019</td>
+<td>Started on:</td><td>Mon Oct 07 11:52:05 IST 2019</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (156 ms)</td>
+<tr><td>Total time:</td><td>65 seconds (65767 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,8 +67,8 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
@@ -76,356 +76,70 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='com.cleartrip.platform.tripServices.TS_LogBooking_Trains.Tripservicepostcall()'><b>Tripservicepostcall</b><br>Test class: com.cleartrip.platform.tripServices.TS_LogBooking_Trains<br/>
-<a href="#Output-683967766" onClick='toggleBox("Output-683967766", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-1045879886" onClick='toggleBox("Output-1045879886", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-683967766" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-683967766">
+<a href="#Output-1045879886" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1045879886">
 Service URL : http://172.17.26.11:9031/trips<br/>
+{"tripRef":"Q191007525216","id":46092518,"txnId":75227236}<br/>
+TripRef is: Q191007525216<br/>
+Status code 200<br/>
+Database validation Started<br/>
+Q191007525216<br/>
+Database validation Passed<br/>
 </div>
 </td>
-<td><div><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.tripServices.TripserviceCommon.TripservicePostcall(TripserviceCommon.java:70)
-	at com.cleartrip.platform.tripServices.TS_LogBooking_Trains.Tripservicepostcall(TS_LogBooking_Trains.java:19)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace683967766", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace683967766'><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.tripServices.TripserviceCommon.TripservicePostcall(TripserviceCommon.java:70)
-	at com.cleartrip.platform.tripServices.TS_LogBooking_Trains.Tripservicepostcall(TS_LogBooking_Trains.java:19)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
-	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:756)
-	at org.testng.TestRunner.run(TestRunner.java:610)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)
-	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-</pre></div></td>
-<td>0</td>
-<td>com.cleartrip.platform.tripServices.TS_LogBooking_Trains@5a1c0542</td></tr>
+<td></td>
+<td>15</td>
+<td>com.cleartrip.platform.tripServices.TS_LogBooking_Trains@1442d7b5</td></tr>
 <tr>
 <td title='com.cleartrip.platform.tripServices.TS_LogBooking_Air.airPostCall()'><b>airPostCall</b><br>Test class: com.cleartrip.platform.tripServices.TS_LogBooking_Air<br/>
-<a href="#Output-59442199" onClick='toggleBox("Output-59442199", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-887013624" onClick='toggleBox("Output-887013624", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-59442199" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-59442199">
+<a href="#Output-887013624" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-887013624">
 Service URL : http://172.17.26.11:9031/trips<br/>
+{"trip_ref":"Q191007525208","id":46092510,"txn_id":75227228}<br/>
+Status code 200<br/>
+Database validation Started<br/>
+Database validation Passed<br/>
 </div>
 </td>
-<td><div><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.tripServices.TripserviceCommon.TripservicePostcall(TripserviceCommon.java:70)
-	at com.cleartrip.platform.tripServices.TS_LogBooking_Air.airPostCall(TS_LogBooking_Air.java:16)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace59442199", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace59442199'><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.tripServices.TripserviceCommon.TripservicePostcall(TripserviceCommon.java:70)
-	at com.cleartrip.platform.tripServices.TS_LogBooking_Air.airPostCall(TS_LogBooking_Air.java:16)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
-	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:756)
-	at org.testng.TestRunner.run(TestRunner.java:610)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)
-	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-</pre></div></td>
-<td>0</td>
-<td>com.cleartrip.platform.tripServices.TS_LogBooking_Air@184f6be2</td></tr>
+<td></td>
+<td>19</td>
+<td>com.cleartrip.platform.tripServices.TS_LogBooking_Air@6e2c9341</td></tr>
 <tr>
 <td title='com.cleartrip.platform.tripServices.TS_LogBooking_Hotel.hotelPostCall()'><b>hotelPostCall</b><br>Test class: com.cleartrip.platform.tripServices.TS_LogBooking_Hotel<br/>
-<a href="#Output-72889579" onClick='toggleBox("Output-72889579", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-542014518" onClick='toggleBox("Output-542014518", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-72889579" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-72889579">
+<a href="#Output-542014518" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-542014518">
 Service URL : http://172.17.26.11:9031/trips<br/>
+{"trip_ref":"Q191007525210","id":46092512,"txn_id":75227230}<br/>
+Status code 200<br/>
+Database validation Started<br/>
+Database validation Passed<br/>
 </div>
 </td>
-<td><div><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.tripServices.TripserviceCommon.TripservicePostcall(TripserviceCommon.java:70)
-	at com.cleartrip.platform.tripServices.TS_LogBooking_Hotel.hotelPostCall(TS_LogBooking_Hotel.java:16)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace72889579", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace72889579'><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.tripServices.TripserviceCommon.TripservicePostcall(TripserviceCommon.java:70)
-	at com.cleartrip.platform.tripServices.TS_LogBooking_Hotel.hotelPostCall(TS_LogBooking_Hotel.java:16)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
-	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:756)
-	at org.testng.TestRunner.run(TestRunner.java:610)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)
-	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-</pre></div></td>
-<td>0</td>
-<td>com.cleartrip.platform.tripServices.TS_LogBooking_Hotel@56aac163</td></tr>
+<td></td>
+<td>15</td>
+<td>com.cleartrip.platform.tripServices.TS_LogBooking_Hotel@32464a14</td></tr>
 <tr>
 <td title='com.cleartrip.platform.tripServices.TS_LogBooking_Local.localPostCall()'><b>localPostCall</b><br>Test class: com.cleartrip.platform.tripServices.TS_LogBooking_Local<br/>
-<a href="#Output-1990623579" onClick='toggleBox("Output-1990623579", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-623615973" onClick='toggleBox("Output-623615973", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-1990623579" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1990623579">
+<a href="#Output-623615973" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-623615973">
 Service URL : http://172.17.26.11:9031/trips<br/>
+{"trip_ref":"Q191007525212","id":46092514,"txn_id":75227232}<br/>
+Status code 200<br/>
+Database validation Started<br/>
+Database validation Passed<br/>
 </div>
 </td>
-<td><div><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.tripServices.TripserviceCommon.TripservicePostcall(TripserviceCommon.java:70)
-	at com.cleartrip.platform.tripServices.TS_LogBooking_Local.localPostCall(TS_LogBooking_Local.java:16)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1990623579", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1990623579'><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.tripServices.TripserviceCommon.TripservicePostcall(TripserviceCommon.java:70)
-	at com.cleartrip.platform.tripServices.TS_LogBooking_Local.localPostCall(TS_LogBooking_Local.java:16)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
-	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:756)
-	at org.testng.TestRunner.run(TestRunner.java:610)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)
-	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-</pre></div></td>
-<td>0</td>
-<td>com.cleartrip.platform.tripServices.TS_LogBooking_Local@1f7030a6</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-skipped'>
-<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='com.cleartrip.platform.tripServices.TS_LogBooking_Trains.Tripservicepostcall()'><b>Tripservicepostcall</b><br>Test class: com.cleartrip.platform.tripServices.TS_LogBooking_Trains<br/>
-<a href="#Output-758433739" onClick='toggleBox("Output-758433739", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-758433739" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-758433739">
-Service URL : http://172.17.26.11:9031/trips<br/>
-</div>
-</td>
-<td><div><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.tripServices.TripserviceCommon.TripservicePostcall(TripserviceCommon.java:70)
-	at com.cleartrip.platform.tripServices.TS_LogBooking_Trains.Tripservicepostcall(TS_LogBooking_Trains.java:19)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace758433739", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace758433739'><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.tripServices.TripserviceCommon.TripservicePostcall(TripserviceCommon.java:70)
-	at com.cleartrip.platform.tripServices.TS_LogBooking_Trains.Tripservicepostcall(TS_LogBooking_Trains.java:19)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:756)
-	at org.testng.TestRunner.run(TestRunner.java:610)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)
-	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-</pre></div></td>
-<td>0</td>
-<td>com.cleartrip.platform.tripServices.TS_LogBooking_Trains@5a1c0542</td></tr>
-<tr>
-<td title='com.cleartrip.platform.tripServices.TS_LogBooking_Air.airPostCall()'><b>airPostCall</b><br>Test class: com.cleartrip.platform.tripServices.TS_LogBooking_Air<br/>
-<a href="#Output-552241312" onClick='toggleBox("Output-552241312", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-552241312" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-552241312">
-Service URL : http://172.17.26.11:9031/trips<br/>
-</div>
-</td>
-<td><div><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.tripServices.TripserviceCommon.TripservicePostcall(TripserviceCommon.java:70)
-	at com.cleartrip.platform.tripServices.TS_LogBooking_Air.airPostCall(TS_LogBooking_Air.java:16)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace552241312", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace552241312'><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.tripServices.TripserviceCommon.TripservicePostcall(TripserviceCommon.java:70)
-	at com.cleartrip.platform.tripServices.TS_LogBooking_Air.airPostCall(TS_LogBooking_Air.java:16)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:756)
-	at org.testng.TestRunner.run(TestRunner.java:610)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)
-	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-</pre></div></td>
-<td>0</td>
-<td>com.cleartrip.platform.tripServices.TS_LogBooking_Air@184f6be2</td></tr>
-<tr>
-<td title='com.cleartrip.platform.tripServices.TS_LogBooking_Hotel.hotelPostCall()'><b>hotelPostCall</b><br>Test class: com.cleartrip.platform.tripServices.TS_LogBooking_Hotel<br/>
-<a href="#Output-1887641043" onClick='toggleBox("Output-1887641043", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1887641043" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1887641043">
-Service URL : http://172.17.26.11:9031/trips<br/>
-</div>
-</td>
-<td><div><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.tripServices.TripserviceCommon.TripservicePostcall(TripserviceCommon.java:70)
-	at com.cleartrip.platform.tripServices.TS_LogBooking_Hotel.hotelPostCall(TS_LogBooking_Hotel.java:16)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1887641043", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1887641043'><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.tripServices.TripserviceCommon.TripservicePostcall(TripserviceCommon.java:70)
-	at com.cleartrip.platform.tripServices.TS_LogBooking_Hotel.hotelPostCall(TS_LogBooking_Hotel.java:16)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:756)
-	at org.testng.TestRunner.run(TestRunner.java:610)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)
-	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-</pre></div></td>
-<td>0</td>
-<td>com.cleartrip.platform.tripServices.TS_LogBooking_Hotel@56aac163</td></tr>
-<tr>
-<td title='com.cleartrip.platform.tripServices.TS_LogBooking_Local.localPostCall()'><b>localPostCall</b><br>Test class: com.cleartrip.platform.tripServices.TS_LogBooking_Local<br/>
-<a href="#Output-514026201" onClick='toggleBox("Output-514026201", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-514026201" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-514026201">
-Service URL : http://172.17.26.11:9031/trips<br/>
-</div>
-</td>
-<td><div><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.tripServices.TripserviceCommon.TripservicePostcall(TripserviceCommon.java:70)
-	at com.cleartrip.platform.tripServices.TS_LogBooking_Local.localPostCall(TS_LogBooking_Local.java:16)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace514026201", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace514026201'><pre>java.lang.NoClassDefFoundError: Could not initialize class io.restassured.RestAssured
-	at com.cleartrip.platform.tripServices.TripserviceCommon.TripservicePostcall(TripserviceCommon.java:70)
-	at com.cleartrip.platform.tripServices.TS_LogBooking_Local.localPostCall(TS_LogBooking_Local.java:16)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:756)
-	at org.testng.TestRunner.run(TestRunner.java:610)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)
-	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-</pre></div></td>
-<td>0</td>
-<td>com.cleartrip.platform.tripServices.TS_LogBooking_Local@1f7030a6</td></tr>
+<td></td>
+<td>15</td>
+<td>com.cleartrip.platform.tripServices.TS_LogBooking_Local@4e4aea35</td></tr>
 </table><p>
 </body>
 </html>

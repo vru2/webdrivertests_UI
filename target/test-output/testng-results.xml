@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[<p>https://qa2.cleartrip.com/signin?service=/hq</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>submit Button is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>Add Button is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>search property is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>View changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>confirm changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>discard is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>All changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>View changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>confirm changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>publish is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>Add Button is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>search property is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>Add Button is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>search property is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>update button is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>View changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>confirm changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>discard is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>All changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>View changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>confirm changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>publish is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>Add Button is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>search property is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>Add is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>Commit Difference is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>Complete detail is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>Add Button is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>search property is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>View changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>confirm changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>discard is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>All changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>View changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>confirm changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>publish is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>Add Button is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>search property is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>Add Button is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>search property is displayed in page</p>]]>
+    </line>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="377282" started-at="2020-01-30T08:50:05Z" finished-at="2020-01-30T08:56:22Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="377282" started-at="2020-01-30T08:50:05Z" finished-at="2020-01-30T08:56:22Z">
+      <class name="ct_config.CT_Config_AddJSON">
+        <test-method status="PASS" signature="startSelenium()[pri:0, instance:ct_config.CT_Config_AddJSON@4d339552]" name="startSelenium" is-config="true" duration-ms="6408" started-at="2020-01-30T08:50:05Z" finished-at="2020-01-30T08:50:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startSelenium -->
+        <test-method status="PASS" signature="ct_config()[pri:0, instance:ct_config.CT_Config_AddJSON@4d339552]" name="ct_config" duration-ms="369545" started-at="2020-01-30T08:50:11Z" finished-at="2020-01-30T08:56:21Z">
+          <reporter-output>
+            <line>
+              <![CDATA[<p>https://qa2.cleartrip.com/signin?service=/hq</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>submit Button is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>Add Button is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>search property is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>View changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>confirm changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>discard is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>All changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>View changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>confirm changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>publish is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>Add Button is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>search property is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>Add Button is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>search property is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>update button is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>View changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>confirm changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>discard is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>All changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>View changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>confirm changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>publish is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>Add Button is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>search property is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>Add is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>Commit Difference is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>Complete detail is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>Add Button is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>search property is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>View changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>confirm changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>discard is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>All changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>View changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>confirm changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>publish is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>Add Button is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>search property is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>Add Button is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>search property is displayed in page</p>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- ct_config -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:ct_config.CT_Config_AddJSON@4d339552]" name="afterMethod" is-config="true" duration-ms="10" started-at="2020-01-30T08:56:21Z" finished-at="2020-01-30T08:56:21Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=ct_config status=SUCCESS method=CT_Config_AddJSON.ct_config()[pri:0, instance:ct_config.CT_Config_AddJSON@4d339552] output=<p>https://qa2.cleartrip.com/signin?service=/hq</p>]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="closeSelenium()[pri:0, instance:ct_config.CT_Config_AddJSON@4d339552]" name="closeSelenium" is-config="true" duration-ms="1275" started-at="2020-01-30T08:56:21Z" finished-at="2020-01-30T08:56:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeSelenium -->
+      </class> <!-- ct_config.CT_Config_AddJSON -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

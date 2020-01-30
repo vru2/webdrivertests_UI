@@ -1,0 +1,138 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Platform Services API" parallel="tests" thread-count="2">
+
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="common.RemoveDuplicateResults"/>
+		<listener class-name="common.RetryListener"/>
+</listeners>
+
+	<test name="TripService Logbooking">
+		<classes>
+			<class name="tripServices.TS_LogBooking_Air" />
+			<class name="tripServices.TS_LogBooking_Hotel" /> 
+			<class name="tripServices.TS_LogBooking_Local" />
+			<class name="tripServices.TS_LogBooking_Trains" />
+			<class name="tripServices.TS_LogBooking_FPH" />
+		</classes>
+	</test>
+	
+	<test name="TripService Updatebooking" >
+		<classes>
+			<class name="tripServices.TS_UpdateBooking_Air" />
+			<class name="tripServices.TS_UpdateBooking_Hotel" />
+			<class name="tripServices.TS_UpdateBooking_Local" />
+			<class name="tripServices.TS_UpdateBooking_Trains" />
+			<class name="tripServices.TS_UpdateBooking_FPH" />
+		    <class name="tripServices.TS_Update_Air_Module" />
+		    <class name="tripServices.TS_PUT_Trips" />
+		    <class name="tripServices.TS_POST_EmailByTxnId" />
+		    <class name="tripServices.TS_Invoice_Generation_Air" />
+		    <class name="tripServices.TS_Invoice_Generation_Hotel" />
+		    <class name="tripServices.TS_Invoice_Generation_Local" />
+		    <class name="tripServices.TS_UpdateBooking_Trains_Trainfare" />
+		    <class name="tripServices.TS_Amendment" />
+		    
+		</classes>
+
+	</test>
+		<test name="TripService Get Calls"  parallel="true">
+		<classes>
+			<class name="tripServices.TS_GET_Trips" />
+			<class name="tripServices.TS_Get_TripDetails_CommValue" />
+			<class name="tripServices.TS_GET_Company_Bookstat" />
+			<class name="tripServices.TS_GET_Finance_AIR" />
+			<class name="tripServices.TS_GET_Finance_HOTEL" />
+			<class name="tripServices.TS_GET_Finance_LOCAL" />
+			<class name="tripServices.TS_GET_FinanceAllTrips_Air" />
+			<class name="tripServices.TS_GET_FinanceAllTrips_Hotel" />
+			<class name="tripServices.TS_GET_FinanceAllTrips_Local" />
+			<class name="tripServices.TS_GET_Tripscount_Personid" />
+			<class name="tripServices.TS_POST_GetAllTrips" />
+			<class name="tripServices.TS_Post_UpcomingTrips" />
+			<class name="tripServices.TS_GET_Trips_ItineraryId" />
+			<class name="tripServices.TS_Finance_Scrapers" />
+			<class name="tripServices.TS_GET_SUPPLIER" />
+			<class name="tripServices.TS_GET_TripcountbyPNR" />	
+			<class name="tripServices.TS_GET_CancelledInsurance" />	
+			<class name="tripServices.TS_GraphQL"/>
+			<class name="tripServices.TS_TripQuery"/>
+			<class name="tripServices.TS_GET_Trips_API_Versioning"/>
+			<class name="tripServices.TS_GET_Air_Refunded"/>
+			<class name="tripServices.TS_GET_CorpTripCount"/>
+			<class name="tripServices.TS_GET_CorpTripList"/>
+			<class name="tripServices.TS_Affiliated_TxnID"/>
+			<class name="tripServices.TS_Coupon_Validation"/>
+			
+		</classes>
+	</test>
+	
+	<test name="TripService Account APIs" >
+		<classes>
+			<class name="tripServices.Accounts_CreateUpdate_Tagmaster" />
+			<class name="tripServices.Accounts_ExistingUser" />
+			<class name="tripServices.Accounts_FetchtripdetailsByBookedUserid" />
+			<class name="tripServices.Accounts_FetchtripdetailsByPersonid" />
+		    <class name="tripServices.Accounts_FetchtripdetailsByTripid" />
+		    <class name="tripServices.Accounts_FetchtripdetailsByTripref" />
+		    <class name="tripServices.Accounts_FetchtripdetailsByUserid" />
+		    <class name="tripServices.Accounts_Notes" />
+		    <class name="tripServices.Accounts_tagmaster" />
+		    <class name="tripServices.Accounts_Taskcategory" />
+		    <class name="tripServices.Accounts_Depositaccount" />
+		     <class name="tripServices.TS_Updatetag_SyncPut" />
+		</classes>
+	</test>
+	
+	<test name="Trip Lock Expiry"  parallel="true">
+		<classes>
+			<class name="tripServices.TS_TripLockExpiry" />
+		</classes>
+	</test>
+	
+	<!-- <test name="MobileFraud MFilter Call"  parallel="true">
+		<classes>
+			<class name="tripServices.TS_MF_MFilter" />
+		</classes>
+	</test>
+	
+	
+	<test name="SMS"  >
+		<classes>
+		<class name="smsservice.DomesticSMS"/> 
+		</classes>
+	</test>	
+	
+	<test name="Whatsapp"  parallel="true">
+		<classes>		
+		      <class name="whatsappService.WhatsappCheckContacts"/>
+		      <class name="whatsappService.WhatsappDeliveryFeedback"/> 
+		      <class name="whatsappService.WhatsappUserMessage"/> 
+		      <class name="whatsappService.WhatsappOptinFlow"/>
+		       <class name="whatsappService.WhatsappMultilanguageSupport"/> 
+		      <class name="whatsappService.WhatsappOptinFlowStatus"/>
+		      <class name="whatsappService.WhatsappUserMessageWithAttachment"/>
+		      <class name="whatsappService.WhatsappWebhookMessage"/>
+		</classes>
+	</test>
+	
+	<test name="Email"  parallel="true">
+		<classes>
+		      <class name="email.Email_Template_true"/>
+		      <class name="email.EmailPost"/>
+		      <class name="email.EmailSpamScore"/>
+		      <class name="email.EmailwithAttachments"/>
+		       <class name="email.GeneratePDF"/>
+		        <class name="email.GeneratePKPass"/>
+		</classes>
+	</test> -->
+	
+	<!-- <test name="Chat"  parallel="true">
+		<classes>
+		      <class name="supportchatapi.SupportcreateChatAPI"/>
+		      <class name="supportchatapi.SupportGatewaycreateChatAPI"/>
+		</classes>
+	</test> -->
+
+</suite> 
+	

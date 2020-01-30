@@ -1,1 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><booking xmlns="http://www.cleartrip.com/air/"><payment-detail><payment-type>DA</payment-type><deposit-account-id>44237974</deposit-account-id></payment-detail></booking>

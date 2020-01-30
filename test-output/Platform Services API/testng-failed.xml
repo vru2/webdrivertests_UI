@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Platform Services API]" parallel="tests">
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="common.RemoveDuplicateResults"/>
+    <listener class-name="common.RetryListener"/>
+  </listeners>
+  <test thread-count="2" name="TripService Updatebooking(failed)" parallel="tests">
+    <classes>
+      <class name="tripServices.TS_Amendment">
+        <methods>
+          <include name="Tripserviceairputcall"/>
+        </methods>
+      </class> <!-- tripServices.TS_Amendment -->
+    </classes>
+  </test> <!-- TripService Updatebooking(failed) -->
+  <test thread-count="2" name="TripService Account APIs(failed)" parallel="tests">
+    <classes>
+      <class name="tripServices.Accounts_tagmaster">
+        <methods>
+          <include name="Accounts_ExistingUsers"/>
+        </methods>
+      </class> <!-- tripServices.Accounts_tagmaster -->
+      <class name="tripServices.Accounts_Taskcategory">
+        <methods>
+          <include name="Accounts_Taskcategory"/>
+        </methods>
+      </class> <!-- tripServices.Accounts_Taskcategory -->
+    </classes>
+  </test> <!-- TripService Account APIs(failed) -->
+</suite> <!-- Failed suite [Platform Services API] -->

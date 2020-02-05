@@ -1,0 +1,32 @@
+image: atlassian/default-image:2
+
+pipelines:
+  custom:
+    PLATFORM_TEST_AUTOMATION:
+      - variables: #list variable names under here
+          - name: SUITE_NAME
+          - name: ENVIRONMENT
+          - name: SUBJECT
+      - step:
+          name: TAF
+          services:
+            - docker
+          script: # Modify the commands below to build your repository.
+            - APP_NAME=platform-test-automation
+            - Team=platform
+            - sed -i "s+SUITE_NAME+$SUITE_NAME+g" start_command.sh
+            - DIR=`date +%d-%m-%y `-$BITBUCKET_BUILD_NUMBER
+            - sed -i "s/BITBUCKCET_BUILD_NUMBER/$DIR/g" start_command.sh
+            - sed -i "s/DATE_BUILD_NUMBER/$DIR/g" src/main/java/com/cleartrip/hotels/base/Base.java
+            - sed -i "s/APP_NAME/$APP_NAME/g" start_command.sh
+            - sed -i "s/ENV/$ENVIRONMENT/g" start_command.sh
+            - sed -i "s/SUBJECT/$SUBJECT/g" start_command.sh
+            - if [[ $ENVIRONMENT == "prod" || $ENVIRONMENT == "gcp" ]]; then sed -i "s/MAIL_ID/varalakshmi.venkateshaiah@cleartrip.com,veepuru.mallikarjuna@cleartrip.com/g" start_command.sh ; elif [ $ENVIRONMENT == "qa" ]; then sed -i "s/MAIL_ID/varalakshmi.venkateshaiah@cleartrip.com,veepuru.mallikarjuna@cleartrip.com/g" start_command.sh ; fi
+            - git clone git@bitbucket.org:cleartrip/docker_dependency.git
+            - mv docker_dependency/* .
+            - docker login -u $DOCKERHUB_UN -p $DOCKERHUB_PW
+            - docker build -t $DOCKER_REG_URL/$APP_NAME:$BITBUCKET_BUILD_NUMBER .
+            - rm -rf /root/.docker/config.json
+            - docker login -u $DOCKER_REG_UN -p $DOCKER_REG_PW $DOCKER_REG_URL
+            - docker push $DOCKER_REG_URL/$APP_NAME:$BITBUCKET_BUILD_NUMBER
+            - ssh root@$PROXY_SERVER_IP "kubectl set image deployment $APP_NAME-$ENVIRONMENT $APP_NAME-$ENVIRONMENT=$IMAGE_URL/$APP_NAME:$BITBUCKET_BUILD_NUMBER --namespace $Team --record --kubeconfig=/var/kube/deploy/QA/qa-config ; if [ $ENVIRONMENT == 'gcp' ]; then kubectl set image deployment $APP_NAME-$ENVIRONMENT $APP_NAME-$ENVIRONMENT=$IMAGE_URL/$APP_NAME:$BITBUCKET_BUILD_NUMBER --namespace $Team --record --kubeconfig=/var/kube/deploy/PROD/prod-config ; fi"

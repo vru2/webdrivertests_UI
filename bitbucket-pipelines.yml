@@ -17,7 +17,6 @@ pipelines:
             - sed -i "s+SUITE_NAME+$SUITE_NAME+g" start_command.sh
             - DIR=`date +%d-%m-%y `-$BITBUCKET_BUILD_NUMBER
             - sed -i "s/BITBUCKCET_BUILD_NUMBER/$DIR/g" start_command.sh
-            - sed -i "s/DATE_BUILD_NUMBER/$DIR/g" src/main/java/com/cleartrip/hotels/base/Base.java
             - sed -i "s/APP_NAME/$APP_NAME/g" start_command.sh
             - sed -i "s/ENV/$ENVIRONMENT/g" start_command.sh
             - sed -i "s/SUBJECT/$SUBJECT/g" start_command.sh

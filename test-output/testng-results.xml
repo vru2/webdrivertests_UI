@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+  <reporter-output>
+    <line>
+      <![CDATA[new Payment service is called]]>
+    </line>
+    <line>
+      <![CDATA[Master card selected]]>
+    </line>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="81148" started-at="2020-02-11T09:34:47Z" finished-at="2020-02-11T09:36:08Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="81148" started-at="2020-02-11T09:34:47Z" finished-at="2020-02-11T09:36:08Z">
+      <class name="paymentUI.Payment_NodeJS_Activity_B2C_CC_AE">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:paymentUI.Payment_NodeJS_Activity_B2C_CC_AE@69b794e2]" name="setUp" is-config="true" duration-ms="5816" started-at="2020-02-11T09:34:47Z" finished-at="2020-02-11T09:34:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="FAIL" signature="paymentNodeJS_Acty_B2C_CCAE()[pri:0, instance:paymentUI.Payment_NodeJS_Activity_B2C_CC_AE@69b794e2]" name="paymentNodeJS_Acty_B2C_CCAE" duration-ms="75279" started-at="2020-02-11T09:34:53Z" finished-at="2020-02-11T09:36:08Z">
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[Session [7b00f178-572e-4b81-a9b4-a2c5b4e82f0a] was terminated due to FORWARDING_TO_NODE_FAILED
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.6.0', revision: '6fbf3ec767', time: '2017-09-27T16:15:40.131Z'
+System info: host: 'IT3786-KIRANKUM', ip: '192.168.50.189', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{mobileEmulationEnabled=false, hasTouchScreen=true, platform=XP, acceptSslCerts=false, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, platformName=XP, setWindowRect=true, unexpectedAlertBehaviour=, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=true, chrome={chromedriverVersion=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73), userDataDir=C:\Users\KIRANK~1\AppData\Local\Temp\scoped_dir6340_21853}, takesHeapSnapshot=true, unhandledPromptBehavior=, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, version=79.0.3945.130, browserConnectionEnabled=false, nativeEvents=true, webdriver.remote.sessionid=7b00f178-572e-4b81-a9b4-a2c5b4e82f0a, locationContextEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 7b00f178-572e-4b81-a9b4-a2c5b4e82f0a
+*** Element info: {Using=id, value=result}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: Session [7b00f178-572e-4b81-a9b4-a2c5b4e82f0a] was terminated due to FORWARDING_TO_NODE_FAILED
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.6.0', revision: '6fbf3ec767', time: '2017-09-27T16:15:40.131Z'
+System info: host: 'IT3786-KIRANKUM', ip: '192.168.50.189', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{mobileEmulationEnabled=false, hasTouchScreen=true, platform=XP, acceptSslCerts=false, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, platformName=XP, setWindowRect=true, unexpectedAlertBehaviour=, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=true, chrome={chromedriverVersion=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73), userDataDir=C:\Users\KIRANK~1\AppData\Local\Temp\scoped_dir6340_21853}, takesHeapSnapshot=true, unhandledPromptBehavior=, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, version=79.0.3945.130, browserConnectionEnabled=false, nativeEvents=true, webdriver.remote.sessionid=7b00f178-572e-4b81-a9b4-a2c5b4e82f0a, locationContextEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 7b00f178-572e-4b81-a9b4-a2c5b4e82f0a
+*** Element info: {Using=id, value=result}
+at sun.reflect.GeneratedConstructorAccessor12.newInstance(Unknown Source)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+at java.lang.reflect.Constructor.newInstance(Unknown Source)
+at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:82)
+at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:45)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:402)
+at org.openqa.selenium.By$ById.findElement(By.java:218)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
+at common.WrapperMethod.isElementPresent(WrapperMethod.java:735)
+at common.WrapperMethod.elementVisible(WrapperMethod.java:884)
+at common.WrapperMethod.getText(WrapperMethod.java:1721)
+at domains.PaymentNodeJS.paymentNodeJS_ConfirmationPage(PaymentNodeJS.java:626)
+at paymentUI.Payment_NodeJS_Activity_B2C_CC_AE.paymentNodeJS_Acty_B2C_CCAE(Payment_NodeJS_Activity_B2C_CC_AE.java:25)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.grid.common.exception.GridException: Session [7b00f178-572e-4b81-a9b4-a2c5b4e82f0a] was terminated due to FORWARDING_TO_NODE_FAILED
+at org.openqa.grid.internal.ActiveTestSessions.getExistingSession(ActiveTestSessions.java:105)
+at org.openqa.grid.internal.Registry.getExistingSession(Registry.java:404)
+at org.openqa.grid.web.servlet.handler.RequestHandler.getSession(RequestHandler.java:232)
+at org.openqa.grid.web.servlet.handler.RequestHandler.process(RequestHandler.java:117)
+at org.openqa.grid.web.servlet.DriverServlet.process(DriverServlet.java:83)
+at org.openqa.grid.web.servlet.DriverServlet.doPost(DriverServlet.java:67)
+at javax.servlet.http.HttpServlet.service(HttpServlet.java:707)
+at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+at org.seleniumhq.jetty9.servlet.ServletHolder.handle(ServletHolder.java:841)
+at org.seleniumhq.jetty9.servlet.ServletHandler.doHandle(ServletHandler.java:543)
+at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:188)
+at org.seleniumhq.jetty9.server.session.SessionHandler.doHandle(SessionHandler.java:1584)
+at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:188)
+at org.seleniumhq.jetty9.server.handler.ContextHandler.doHandle(ContextHandler.java:1228)
+at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope(ScopedHandler.java:168)
+at org.seleniumhq.jetty9.servlet.ServletHandler.doScope(ServletHandler.java:481)
+at org.seleniumhq.jetty9.server.session.SessionHandler.doScope(SessionHandler.java:1553)
+at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope(ScopedHandler.java:166)
+at org.seleniumhq.jetty9.server.handler.ContextHandler.doScope(ContextHandler.java:1130)
+at org.seleniumhq.jetty9.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+at org.seleniumhq.jetty9.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+at org.seleniumhq.jetty9.server.Server.handle(Server.java:564)
+at org.seleniumhq.jetty9.server.HttpChannel.handle(HttpChannel.java:320)
+at org.seleniumhq.jetty9.server.HttpConnection.onFillable(HttpConnection.java:251)
+at org.seleniumhq.jetty9.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:279)
+at org.seleniumhq.jetty9.io.FillInterest.fillable(FillInterest.java:112)
+at org.seleniumhq.jetty9.io.ChannelEndPoint$2.run(ChannelEndPoint.java:124)
+at org.seleniumhq.jetty9.util.thread.Invocable.invokePreferred(Invocable.java:122)
+at org.seleniumhq.jetty9.util.thread.strategy.ExecutingExecutionStrategy.invoke(ExecutingExecutionStrategy.java:58)
+at org.seleniumhq.jetty9.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:201)
+at org.seleniumhq.jetty9.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:133)
+at org.seleniumhq.jetty9.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:672)
+at org.seleniumhq.jetty9.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:590)
+at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          <reporter-output>
+            <line>
+              <![CDATA[new Payment service is called]]>
+            </line>
+            <line>
+              <![CDATA[Master card selected]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- paymentNodeJS_Acty_B2C_CCAE -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:paymentUI.Payment_NodeJS_Activity_B2C_CC_AE@69b794e2]" name="afterMethod" is-config="true" duration-ms="13" started-at="2020-02-11T09:36:08Z" finished-at="2020-02-11T09:36:08Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=paymentNodeJS_Acty_B2C_CCAE status=FAILURE method=Payment_NodeJS_Activity_B2C_CC_AE.paymentNodeJS_Acty_B2C_CCAE()[pri:0, instance:paymentUI.Payment_NodeJS_Activity_B2C_CC_AE@69b794e2] output=new Payment service is called]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="FAIL" signature="tearDown()[pri:0, instance:paymentUI.Payment_NodeJS_Activity_B2C_CC_AE@69b794e2]" name="tearDown" is-config="true" duration-ms="6" started-at="2020-02-11T09:36:08Z" finished-at="2020-02-11T09:36:08Z">
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[Session [7b00f178-572e-4b81-a9b4-a2c5b4e82f0a] was terminated due to FORWARDING_TO_NODE_FAILED
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.6.0', revision: '6fbf3ec767', time: '2017-09-27T16:15:40.131Z'
+System info: host: 'IT3786-KIRANKUM', ip: '192.168.50.189', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{mobileEmulationEnabled=false, hasTouchScreen=true, platform=XP, acceptSslCerts=false, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, platformName=XP, setWindowRect=true, unexpectedAlertBehaviour=, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=true, chrome={chromedriverVersion=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73), userDataDir=C:\Users\KIRANK~1\AppData\Local\Temp\scoped_dir6340_21853}, takesHeapSnapshot=true, unhandledPromptBehavior=, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, version=79.0.3945.130, browserConnectionEnabled=false, nativeEvents=true, webdriver.remote.sessionid=7b00f178-572e-4b81-a9b4-a2c5b4e82f0a, locationContextEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 7b00f178-572e-4b81-a9b4-a2c5b4e82f0a]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: Session [7b00f178-572e-4b81-a9b4-a2c5b4e82f0a] was terminated due to FORWARDING_TO_NODE_FAILED
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.6.0', revision: '6fbf3ec767', time: '2017-09-27T16:15:40.131Z'
+System info: host: 'IT3786-KIRANKUM', ip: '192.168.50.189', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{mobileEmulationEnabled=false, hasTouchScreen=true, platform=XP, acceptSslCerts=false, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, platformName=XP, setWindowRect=true, unexpectedAlertBehaviour=, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=true, chrome={chromedriverVersion=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73), userDataDir=C:\Users\KIRANK~1\AppData\Local\Temp\scoped_dir6340_21853}, takesHeapSnapshot=true, unhandledPromptBehavior=, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, version=79.0.3945.130, browserConnectionEnabled=false, nativeEvents=true, webdriver.remote.sessionid=7b00f178-572e-4b81-a9b4-a2c5b4e82f0a, locationContextEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 7b00f178-572e-4b81-a9b4-a2c5b4e82f0a
+at sun.reflect.GeneratedConstructorAccessor12.newInstance(Unknown Source)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+at java.lang.reflect.Constructor.newInstance(Unknown Source)
+at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:82)
+at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:45)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:586)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:643)
+at org.openqa.selenium.remote.RemoteWebDriver.close(RemoteWebDriver.java:472)
+at common.WrapperMethod.browserClose(WrapperMethod.java:124)
+at paymentUI.Payment_NodeJS_Activity_B2C_CC_AE.tearDown(Payment_NodeJS_Activity_B2C_CC_AE.java:41)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
+at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)
+at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
+at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
+at org.testng.internal.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:214)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.grid.common.exception.GridException: Session [7b00f178-572e-4b81-a9b4-a2c5b4e82f0a] was terminated due to FORWARDING_TO_NODE_FAILED
+at org.openqa.grid.internal.ActiveTestSessions.getExistingSession(ActiveTestSessions.java:105)
+at org.openqa.grid.internal.Registry.getExistingSession(Registry.java:404)
+at org.openqa.grid.web.servlet.handler.RequestHandler.getSession(RequestHandler.java:232)
+at org.openqa.grid.web.servlet.handler.RequestHandler.process(RequestHandler.java:117)
+at org.openqa.grid.web.servlet.DriverServlet.process(DriverServlet.java:83)
+at org.openqa.grid.web.servlet.DriverServlet.doDelete(DriverServlet.java:73)
+at javax.servlet.http.HttpServlet.service(HttpServlet.java:713)
+at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+at org.seleniumhq.jetty9.servlet.ServletHolder.handle(ServletHolder.java:841)
+at org.seleniumhq.jetty9.servlet.ServletHandler.doHandle(ServletHandler.java:543)
+at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:188)
+at org.seleniumhq.jetty9.server.session.SessionHandler.doHandle(SessionHandler.java:1584)
+at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:188)
+at org.seleniumhq.jetty9.server.handler.ContextHandler.doHandle(ContextHandler.java:1228)
+at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope(ScopedHandler.java:168)
+at org.seleniumhq.jetty9.servlet.ServletHandler.doScope(ServletHandler.java:481)
+at org.seleniumhq.jetty9.server.session.SessionHandler.doScope(SessionHandler.java:1553)
+at org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope(ScopedHandler.java:166)
+at org.seleniumhq.jetty9.server.handler.ContextHandler.doScope(ContextHandler.java:1130)
+at org.seleniumhq.jetty9.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+at org.seleniumhq.jetty9.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+at org.seleniumhq.jetty9.server.Server.handle(Server.java:564)
+at org.seleniumhq.jetty9.server.HttpChannel.handle(HttpChannel.java:320)
+at org.seleniumhq.jetty9.server.HttpConnection.onFillable(HttpConnection.java:251)
+at org.seleniumhq.jetty9.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:279)
+at org.seleniumhq.jetty9.io.FillInterest.fillable(FillInterest.java:112)
+at org.seleniumhq.jetty9.io.ChannelEndPoint$2.run(ChannelEndPoint.java:124)
+at org.seleniumhq.jetty9.util.thread.Invocable.invokePreferred(Invocable.java:122)
+at org.seleniumhq.jetty9.util.thread.strategy.ExecutingExecutionStrategy.invoke(ExecutingExecutionStrategy.java:58)
+at org.seleniumhq.jetty9.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:201)
+at org.seleniumhq.jetty9.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:133)
+at org.seleniumhq.jetty9.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:672)
+at org.seleniumhq.jetty9.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:590)
+at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- paymentUI.Payment_NodeJS_Activity_B2C_CC_AE -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

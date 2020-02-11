@@ -24,6 +24,8 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.remote.RemoteWebDriver;
+
+import static common.CachedProperties.objectReportInstancePayment;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 
@@ -37,6 +39,7 @@ public class CommonUtil {
 	public CachedProperties objectRepos = objectReportInstance();
 	public CachedProperties platform = platformInstance();
 	public CachedProperties objectReposPlatform = objectReportInstancePlatform();
+	public CachedProperties objectReposPayment = objectReportInstancePayment();
 	public CachedProperties rubyAPITrips = getTrip();
 	
 	public String debug = common.value("debug");
@@ -181,14 +184,14 @@ public class CommonUtil {
 				filepath = file.getCanonicalPath() + "/ScreenShots/" + filename;
 			}
 
-			WebDriver augmentedDriver = new Augmenter().augment(driver);
+			/*WebDriver augmentedDriver = new Augmenter().augment(driver);
 			File screenshotFile = ((TakesScreenshot) augmentedDriver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(screenshotFile, new File(filepath));
 			addLog("<a href'" + filepath + "'>screenshot</a>");
 			addLog("Screenshot Name :" + filename);
 			Reporter.log("Screenshot Path :" + filename);
 			addLog(driver.getCurrentUrl());
-			System.out.println("Script Failed : "+testName);
+			System.out.println("Script Failed : "+testName);*/
 		}
 		/*else if (OS.contains("Linux")){
 
@@ -210,6 +213,43 @@ public class CommonUtil {
 		}
 */	}
 	
+
+	public By getObjectPayment(String objectKey) throws Exception {
+		String[] curObject = objectReposPayment.value(objectKey).split(":");
+		String objectType = curObject[0];
+		String objectValue = curObject[1];
+		// find by id
+		if (objectType.equalsIgnoreCase("ID")) {
+			return By.id(objectValue);
+		}
+		// find by XPATH
+		else if (objectType.equalsIgnoreCase("XPATH")) {
+			return By.xpath(objectValue);
+		}
+		// find by name
+		else if (objectType.equalsIgnoreCase("NAME")) {
+			return By.name(objectValue);
+		}
+		// Find by css
+		else if (objectType.equalsIgnoreCase("CSS")) {
+			return By.cssSelector(objectValue);
+		}
+		// find by link
+		else if (objectType.equalsIgnoreCase("LINK")) {
+			return By.linkText(objectValue);
+		}
+		// find by class
+		else if (objectType.equalsIgnoreCase("CLASSNAME")) {
+			return By.className(objectValue);
+		}
+		// find by partial link
+		else if (objectType.equalsIgnoreCase("PARTIALLINK")) {
+			return By.partialLinkText(objectValue);
+
+		} else {
+			throw new Exception("Wrong object type:" + objectKey);
+		}
+	}
 	
 	public void addLog(String logMessage) {
 		Reporter.log("<p>"+logMessage+"</p>",false);

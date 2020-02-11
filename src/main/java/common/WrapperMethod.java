@@ -1,48 +1,67 @@
+// Framework - cleartrip Automation
+// Version -Web Driver 2.0
+// Creation Date - MAR, 2015
+// Author - Mohamed Faisal
+// Copyright � 2012 cleartrip Travel. All right reserved.//
 package common;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Capabilities;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.Platform;
-import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.junit.Assert;
 import static org.testng.AssertJUnit.assertTrue;
-import org.testng.Reporter;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxProfile;
-import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.interactions.Actions;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
-import org.apache.log4j.Logger;
 
-public class WrapperMethod extends CommonUtil{
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.time.StopWatch;
+import org.apache.log4j.Logger;
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Capabilities;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.Platform;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.UnexpectedAlertBehaviour;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.Augmenter;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.ITestResult;
+import org.testng.Reporter;
+import org.testng.annotations.BeforeClass;
+
+import testrailpoc.testrail_utils;
+
+public class WrapperMethod extends CommonUtil {
+	// WebElement we=null;
 	private static WebDriver browserDriver;
+	//	/public static Logger logger = Logger.getLogger(WrapperMethod.class);
+
 	public static Logger logger = Logger.getLogger("");
-	protected String baseUrl;
-	
 	public Boolean MakePaymentTrue = common.value("makePayment").equals("true"),
 			NetBanking = common.value("makePayment").contains("true"),
 			ProductionUrl = common.value("host").contains("www"), BetaURL = common.value("host").contains("beta"),
@@ -51,6 +70,21 @@ public class WrapperMethod extends CommonUtil{
 			check_cancellation_failure = common.value("check_cancellation_failure").contains("true"),
 			MakePaymentOnlyInProd = MakePaymentTrue && ProductionUrl;
 
+	public int MultiDate = 20, OnwardDate = 25, ReturnDate = 26, num_adults = 0, num_children = 0, num_infants = 0,
+			num_of_sectors = 0, time_nano = 10, time_short = 50, time_medium = 300, time_extrashort = 200,
+			time_long = 900, time_Search = 600, time_SRP = 90, time_Review = 600, time_Login = 100,
+			time_Traveller = 600, time_Pay = 300, time_confirmation = 900, time_verylong = 18;
+
+	public String gds_airlines[] = new String[] { "Bangkok Airways", "Air India", "Kingfisher", "Air India Express",
+			"Air France", "Air Arabia", "British Airways", "Cathay Pacific", "Egypt Air", "Emirates", "Ethiopian Air",
+			"Etihad Airways", "Gulf Air", "Kenya Airways", "Kuwait Airways", "Lufthansa", "Malaysia Airlines",
+			"Multiple Carriers", "Myanmar Intl", "Oman Av", "Qantas Airways", "Qatar Airways", "Royal Jordanian", "SAS",
+			"SilkAir", "Saudi Arabian Air", "Singapore Air", "South African", "SriLankan Airlines", "Swiss Intl Air",
+			"Thai Airways", "Turkish Airlines", "Virgin Atlantic", "Air Asia", "All Nippon", "Mihin Lanka" };
+
+	public boolean GDS_Flight, B2B_GDS_Flight = false;
+	public int number_gds_Airlines = gds_airlines.length;
+	protected String baseUrl;
 
 	public String getBaseUrl(String domain) {
 		// addLog("Domain: " + domain + " Host: " + common.value("host"),true);
@@ -68,12 +102,58 @@ public class WrapperMethod extends CommonUtil{
 		// addLog("baseURL: " + baseUrl, true);
 		return baseUrl;
 	}
-	
+
+	/*
+	 * Modified By: prashanth.k@cleartrip.com To be used till AEF testing is in
+	 * progress. To revert to older method once it is complete.
+	 * 
+	 * public String getBaseUrl(String domain) { if (domain.equals("com")) { baseUrl
+	 * = "https://" + common.value("host") + common.value("url") + domain; } else
+	 * if(domain.equals("ae")) { baseUrl = "https://" + "www" + common.value("url")
+	 * + domain; } else if (domain.equals("qa") || domain.equals("bh") ||
+	 * domain.equals("sa") || domain.equals("om") || domain.equals("kw") ||
+	 * domain.equals("me")) { if
+	 * (common.value("host").equals("qa2")||common.value("host").equals("hf")) {
+	 * baseUrl = "https://" + domain + common.value("url") + "com"; }else if
+	 * (common.value("host").equals("beta")) { baseUrl = "https://" + "beta" +
+	 * domain + common.value("url") + "com"; } }
+	 * ////System.out.println("Browser has opened"); return baseUrl; }
+	 */
+
 	public void browserClose(RemoteWebDriver driver) {
 		driver.close();
 		driver.quit();
+		/*
+		 * try { Thread.sleep(100); driver.quit(); } catch (Exception e) { }
+		 */
 	}
-	
+
+	public boolean b2bGDSAirlines(RemoteWebDriver driver) throws Exception {
+		String Air_Itinerary = getText(driver, getObject("AirCorpCom_TravellerPage_ItineraryBlock"));
+		for (int i = 0; i < number_gds_Airlines; i++) {
+			if (Air_Itinerary.contains(gds_airlines[i])) {
+				B2B_GDS_Flight = Air_Itinerary.contains(gds_airlines[i]);
+				break;
+			} /*
+			 * else { B2B_GDS_Flight = Air_Itinerary.contains(gds_airlines[i]); }
+			 */
+		}
+		return B2B_GDS_Flight;
+	}
+
+	public boolean b2cGDSAirlines(RemoteWebDriver driver) throws Exception {
+		String Air_Itinerary = getText(driver, getObject(""));
+		for (int i = 0; i < number_gds_Airlines; i++) {
+			if (Air_Itinerary.contains(gds_airlines[i])) {
+				GDS_Flight = Air_Itinerary.contains(gds_airlines[i]);
+				i = number_gds_Airlines + 1;
+			} /*
+			 * else { GDS_Flight = Air_Itinerary.contains(gds_airlines[i]); }
+			 */
+		}
+		return GDS_Flight;
+	}
+
 	public DesiredCapabilities createChromeConfig() throws IOException, InterruptedException {
 		ChromeOptions options = new ChromeOptions();
 		Map<String, Object> prefs = new HashMap<String, Object>();
@@ -81,7 +161,7 @@ public class WrapperMethod extends CommonUtil{
 		//String filepath = file.getCanonicalPath() + "\\exe\\chromedriver_mac";
 		// String filepath = "C:\\chromedriver.exe";
 		String filepath =file.getCanonicalPath()+"\\exe\\chromedriver.exe";
-		 printInfo(filepath);
+		printInfo(filepath);
 		prefs.put("profile.default_content_settings.popups", 0);
 		options.setExperimentalOption("prefs", prefs);
 		//options.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR,UnexpectedAlertBehaviour.IGNORE);
@@ -90,26 +170,25 @@ public class WrapperMethod extends CommonUtil{
 		cap.setCapability(ChromeOptions.CAPABILITY, options);
 		return cap;
 	}
-	
-	public DesiredCapabilities createHeadlessChrome() throws IOException {
+
+	public DesiredCapabilities createChromeConfig1() throws IOException, InterruptedException {
 		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--headless");
-		options.addArguments("window-size=1200,1100");
 		Map<String, Object> prefs = new HashMap<String, Object>();
 		File file = new File(".");
 		//String filepath = file.getCanonicalPath() + "\\exe\\chromedriver_mac";
-		// String filepath = "C:\\chromedriver.exe";
 		String filepath =file.getCanonicalPath()+"\\exe\\chromedriver.exe";
-		 printInfo(filepath);
+		// String filepath = "C:\\chromedriver.exe";
+		// printInfo(filepath);
 		prefs.put("profile.default_content_settings.popups", 0);
 		options.setExperimentalOption("prefs", prefs);
-		//options.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR,UnexpectedAlertBehaviour.IGNORE);
+		options.addArguments(
+				"--user-agent=Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_3_2 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5");
+		options.addArguments("--no-sandbox");
 		// System.setProperty("webdriver.chrome.driver", filepath);
 		DesiredCapabilities cap = DesiredCapabilities.chrome();
-		cap.setCapability(ChromeOptions.CAPABILITY, options);
 		return cap;
 	}
-	
+
 	public RemoteWebDriver getDriver(RemoteWebDriver driver) throws IOException, InterruptedException {
 		if (driver == null) {
 			if (common.value("browser").equalsIgnoreCase("IE") && common.value("mode").equalsIgnoreCase("local")) {
@@ -150,34 +229,8 @@ public class WrapperMethod extends CommonUtil{
 				driver.manage().timeouts().setScriptTimeout(50, TimeUnit.SECONDS);
 				driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
 			} else if (common.value("browser").equalsIgnoreCase("CHROME")
-					&& common.value("mode").equalsIgnoreCase("local") && common.value("headlessbrowser").equalsIgnoreCase("true")) {
-//				 System.out.println("-------------"+System.getProperty("os.name"));
-				if (System.getProperty("os.name").contains("Windows")) {
-					File file = new File(".");
-					String filepath = file.getCanonicalPath() + "//exe//chromedriver.exe";
-					System.setProperty("webdriver.chrome.driver", filepath);
-				}else if(System.getProperty("os.name").contains("Linux")){
-					File file = new File(".");
-					String filepath = file.getCanonicalPath() + "//exe//chromedriver";
-					System.setProperty("webdriver.chrome.driver", filepath);
-				} else {
-					File file = new File(".");
-					String filepath = file.getCanonicalPath() + "//exe//chromedriver_mac";
-					System.setProperty("webdriver.chrome.driver", filepath);
-				}
-				
-				/* * File f = new File("exe\\chromedriver.exe"); String path =
-				 * f.getAbsolutePath(); System.setProperty("webdriver.chrome.driver", path);
-*/				 
-				driver = new ChromeDriver(createHeadlessChrome());
-				driver.manage().window().setSize(new Dimension(1200,1100));
-				// driver = new ChromeDriver();
-				// TimeUnit.SECONDS.sleep(2);
-				// driver.manage().timeouts().setScriptTimeout(100, TimeUnit.SECONDS);
-			} 
-			else if (common.value("browser").equalsIgnoreCase("CHROME")
-					&& common.value("mode").equalsIgnoreCase("local")&& common.value("headlessbrowser").equalsIgnoreCase("false")) {
-//				 System.out.println("-------------"+System.getProperty("os.name"));
+					&& common.value("mode").equalsIgnoreCase("local")) {
+				// System.out.println("-------------"+System.getProperty("os.name"));
 				if (System.getProperty("os.name").contains("Windows")) {
 					File file = new File(".");
 					String filepath = file.getCanonicalPath() + "//exe//chromedriver.exe";
@@ -199,8 +252,7 @@ public class WrapperMethod extends CommonUtil{
 				// driver = new ChromeDriver();
 				// TimeUnit.SECONDS.sleep(2);
 				// driver.manage().timeouts().setScriptTimeout(100, TimeUnit.SECONDS);
-			}
-			else {
+			} else {
 				// Grid env
 				if (common.value("browser").equalsIgnoreCase("IE")) {
 					File file;
@@ -221,18 +273,8 @@ public class WrapperMethod extends CommonUtil{
 					capability.setBrowserName("firefox");
 					driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
 					driver.manage().timeouts().setScriptTimeout(100, TimeUnit.SECONDS);
-				} else if (common.value("browser").equalsIgnoreCase("CHROME")&&common.value("headlessbrowser").equalsIgnoreCase("true")) {
-					
-					System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
-					driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), createHeadlessChrome());
+				} else if (common.value("browser").equalsIgnoreCase("CHROME")) {
 
-					TimeUnit.SECONDS.sleep(1);
-
-					// driver.manage().window().maximize();
-					driver.manage().timeouts().setScriptTimeout(180, TimeUnit.SECONDS);
-					driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
-				}else if (common.value("browser").equalsIgnoreCase("CHROME")&&common.value("headlessbrowser").equalsIgnoreCase("false")) {
-					
 					System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
 					driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), createChromeConfig());
 
@@ -251,16 +293,226 @@ public class WrapperMethod extends CommonUtil{
 		// driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 		return driver;
 	}
-	
-	public RemoteWebDriver Chrome_Config(RemoteWebDriver driver) throws Exception {
-		if (common.value("mode").equalsIgnoreCase("local")&&common.value("headlessbrowser").equalsIgnoreCase("false")) {
-			driver = new ChromeDriver(createChromeConfig());
-		} else if(common.value("mode").equalsIgnoreCase("local")&&common.value("headlessbrowser").equalsIgnoreCase("true"))
-		{
-			driver = new ChromeDriver(createHeadlessChrome());
-			driver.manage().window().setSize(new Dimension(1200,1100));
+	/*
+	 * Author: prashanth.k@cleartrip.com This method is for muti browserenvironment.
+	 * Picks the hub URL from the comm.properties
+	 */
+	public RemoteWebDriver getDriver_MB(RemoteWebDriver driver, String browser)
+			throws IOException, InterruptedException {
+		if ((driver == null) && common.value("mode").equalsIgnoreCase("local")) {
+			if (browser.equalsIgnoreCase("IE")) {
+				File file;
+				if (System.getProperty("os.name").contains("Windows") && getBit().contains("86")) {
+					file = new File("exe\\IEDriverServer64.exe");
+				} else {
+					file = new File("exe\\IEDriverServer32.exe");
+				}
+				DesiredCapabilities capability = DesiredCapabilities.internetExplorer();
+				capability.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
+				System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
+				driver = new InternetExplorerDriver(capability);
+				capability.setPlatform(Platform.WINDOWS);
+				driver.manage().timeouts().setScriptTimeout(100, TimeUnit.SECONDS);
+
+			} else if (browser.equalsIgnoreCase("FIREFOX")) {
+				if (System.getProperty("os.name").contains("Windows")) {
+					File file = new File(".");
+					String filepath = file.getCanonicalPath() + "//exe//geckodriver.exe";
+					System.setProperty("webdriver.gecko.driver", filepath);
+				} else {
+					File file = new File(".");
+					String filepath = file.getCanonicalPath() + "//exe//geckodriver";
+					System.setProperty("webdriver.gecko.driver", filepath);
+				}
+
+				FirefoxProfile ff = new FirefoxProfile();
+				DesiredCapabilities capability = DesiredCapabilities.firefox();
+				capability.setCapability(FirefoxDriver.PROFILE, ff);
+				capability.setBrowserName("firefox");
+				capability.setJavascriptEnabled(true);
+				capability.setPlatform(Platform.WINDOWS);
+				driver = new FirefoxDriver(capability);
+				// driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),
+				// capability); //to be deleted
+				driver.manage().timeouts().setScriptTimeout(50, TimeUnit.SECONDS);
+				driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
+			} else if (browser.equalsIgnoreCase("CHROME")) {
+				// System.out.println("-------------"+System.getProperty("os.name"));
+				if (System.getProperty("os.name").contains("Windows")) {
+					File file = new File(".");
+					String filepath = file.getCanonicalPath() + "//exe//chromedriver_mac.exe";
+					System.setProperty("webdriver.chrome.driver", filepath);
+				} else {
+					File file = new File(".");
+					String filepath = file.getCanonicalPath() + "//exe//chromedriver_mac";
+					System.setProperty("webdriver.chrome.driver", filepath);
+				}
+
+				driver = new ChromeDriver(createChromeConfig());
+
+			}
+		} else if ((driver == null) && common.value("mode").equalsIgnoreCase("remote")) {
+			// Grid env
+			if (common.value("browser").equalsIgnoreCase("IE")) {
+				File file;
+				if (System.getProperty("os.name").contains("Windows") && getBit().contains("86")) {
+					file = new File("exe\\IEDriverServer64.exe");
+				} else {
+					file = new File("exe\\IEDriverServer32.exe");
+				}
+
+				DesiredCapabilities capability = DesiredCapabilities.internetExplorer();
+				capability.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
+				System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
+				driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
+				driver.manage().timeouts().setScriptTimeout(100, TimeUnit.SECONDS);
+			} else if (common.value("browser").equalsIgnoreCase("FIREFOX")) {
+				if (System.getProperty("os.name").contains("Windows")) {
+					File file = new File(".");
+					String filepath = file.getCanonicalPath() + "//exe//geckodriver.exe";
+					System.setProperty("webdriver.gecko.driver", filepath);
+				} else {
+					File file = new File(".");
+					String filepath = file.getCanonicalPath() + "//exe//geckodriver";
+					System.setProperty("webdriver.gecko.driver", filepath);
+				}
+
+				DesiredCapabilities capability = DesiredCapabilities.firefox();
+				capability.setJavascriptEnabled(true);
+				capability.setBrowserName("firefox");
+				driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
+				driver.manage().timeouts().setScriptTimeout(100, TimeUnit.SECONDS);
+			} else if (common.value("browser").equalsIgnoreCase("CHROME")) {
+				System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
+				driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), createChromeConfig());
+				TimeUnit.SECONDS.sleep(1);
+
+				driver.manage().window().maximize();
+				driver.manage().timeouts().setScriptTimeout(60, TimeUnit.SECONDS);
+				driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+			} else {
+				addLog("Chk config Browser", true);
+			}
 		}
-		else {
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		// driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+		return driver;
+	}
+
+	public RemoteWebDriver getDriverFF(RemoteWebDriver driver) throws IOException, InterruptedException {
+		if (driver == null) {
+
+			if (common.value("mode").equalsIgnoreCase("local")) {
+				// driver = new FirefoxDriver();
+				FirefoxProfile ff = new FirefoxProfile();
+
+				ff.setPreference("browser.download.folderList", 2);
+				ff.setPreference("javascript.enabled", 0);
+				DesiredCapabilities capability = DesiredCapabilities.firefox();
+				capability.setCapability(FirefoxDriver.PROFILE, ff);
+				capability.setBrowserName("firefox");
+				capability.setJavascriptEnabled(true);
+				capability.setPlatform(Platform.WINDOWS);
+				driver = new FirefoxDriver(capability);
+				// driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),
+				// capability);
+				driver.manage().timeouts().setScriptTimeout(5, TimeUnit.SECONDS);
+				driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
+			} else {
+
+				DesiredCapabilities capability = DesiredCapabilities.firefox();
+				capability.setJavascriptEnabled(true);
+				capability.setBrowserName("firefox");
+				driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
+				driver.manage().timeouts().setScriptTimeout(1, TimeUnit.SECONDS);
+
+			}
+		}
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		// driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+		return driver;
+	}
+
+	public RemoteWebDriver IE_Config(RemoteWebDriver driver, final String Version) throws Exception {
+		if (common.value("mode").equalsIgnoreCase("local")) {
+			File file;
+			if (getBit().contains("NO")) {
+
+				file = new File("exe\\IEDriverServer64.exe");
+			} else {
+				file = new File("exe\\IEDriverServer32.exe");
+			}
+			DesiredCapabilities capability = DesiredCapabilities.internetExplorer();
+			capability.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
+			System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
+			driver = new InternetExplorerDriver(capability);
+		} else {
+			DesiredCapabilities capability = DesiredCapabilities.internetExplorer();
+			capability.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
+			capability.setCapability("ignoreProtectedModeSettings", true);
+			capability.setCapability("ie.ensureCleanSession", true);
+			capability.setCapability("ignoreZoomSetting", true);
+			capability.setCapability("requireWindowFocus", true);
+			capability.setCapability("InternetExplorerUnexpectedAlertBehavior", true);
+			capability.setVersion(Version);
+
+			capability.setBrowserName("internet explorer");
+
+			capability.setPlatform(Platform.WINDOWS);
+			System.setProperty("webdriver.ie.driver", "C:\\IEDriverServer.exe");
+			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
+		}
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		driver.manage().timeouts().setScriptTimeout(100, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
+		return driver;
+	}
+
+	public RemoteWebDriver IE_Browser(RemoteWebDriver driver) throws Exception {
+		if (common.value("mode").equalsIgnoreCase("local")) {
+			File file;
+			if (getBit().contains("NO")) {
+
+				file = new File("exe\\IEDriverServer64.exe");
+			} else {
+				file = new File("exe\\IEDriverServer32.exe");
+			}
+			DesiredCapabilities capability = DesiredCapabilities.internetExplorer();
+			capability.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
+			System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
+			driver = new InternetExplorerDriver(capability);
+		} else {
+			DesiredCapabilities capability = DesiredCapabilities.internetExplorer();
+			capability.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
+			capability.setCapability("ignoreProtectedModeSettings", true);
+			capability.setCapability("ie.ensureCleanSession", true);
+			capability.setCapability("ignoreZoomSetting", true);
+			capability.setCapability("InternetExplorerUnexpectedAlertBehavior", true);
+			// capability.setVersion(Version);
+
+			capability.setBrowserName("internet explorer");
+
+			// capability.setBrowserName("iexplore");
+			capability.setPlatform(Platform.WINDOWS);
+			System.setProperty("webdriver.ie.driver", "C:\\IEDriverServer.exe");
+			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
+		}
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		driver.manage().timeouts().setScriptTimeout(100, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
+		return driver;
+	}
+
+	public RemoteWebDriver Chrome_Config(RemoteWebDriver driver) throws Exception {
+		if (common.value("mode").equalsIgnoreCase("local")) {
+			driver = new ChromeDriver(createChromeConfig());
+		} else {
 			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), createChromeConfig());
 		}
 		driver.manage().window().maximize();
@@ -268,6 +520,199 @@ public class WrapperMethod extends CommonUtil{
 		// driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 		// driver.manage().timeouts().setScriptTimeout(100, TimeUnit.SECONDS);
 		return driver;
+	}
+
+	public RemoteWebDriver Firefox_Config(RemoteWebDriver driver) throws Exception {
+		driver = new FirefoxDriver();
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		// driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+		driver.manage().timeouts().setScriptTimeout(100, TimeUnit.SECONDS);
+		return driver;
+	}
+
+	public RemoteWebDriver getMobileDriver(RemoteWebDriver driver) throws IOException, InterruptedException {
+		if (driver == null) {
+			// Local env
+			// System.out.println(common.value("mobilebrowser"));
+			// System.out.println(common.value("mode"));
+			if (common.value("mobilebrowser").equalsIgnoreCase("Chrome")
+					&& common.value("mode").equalsIgnoreCase("local")) {
+				if (System.getProperty("os.name").contains("Windows")) {
+					System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
+				} else if(System.getProperty("os.name").contains("Linux")){
+					File file = new File(".");
+					String filepath = file.getCanonicalPath() + "//exe//chromedriver";
+					System.setProperty("webdriver.chrome.driver", filepath);
+				} else {
+					File file = new File(".");
+					String filepath = file.getCanonicalPath() + "//exe//chromedriver_mac";
+					System.setProperty("webdriver.chrome.driver", filepath);
+				}
+				ChromeOptions options = new ChromeOptions();
+				options.addArguments(
+						"--user-agent=Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_3_2 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5");
+				driver = new ChromeDriver(options);
+
+				driver.manage().deleteAllCookies();
+				// driver.navigate().refresh();
+				// driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+				// driver.navigate().refresh();
+			} else if (common.value("mobilebrowser").equalsIgnoreCase("CHROME")
+					&& common.value("mode").equalsIgnoreCase("g") || common.value("mode").equalsIgnoreCase("Grid")) {
+				if (System.getProperty("os.name").contains("Windows")) {
+					System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
+				}else if(System.getProperty("os.name").contains("Linux")){
+					File file = new File(".");
+					String filepath = file.getCanonicalPath() + "//exe//chromedriver";
+					System.setProperty("webdriver.chrome.driver", filepath);
+				} else {
+					File file = new File(".");
+					String filepath = file.getCanonicalPath() + "//exe//chromedriver_mac";
+					System.setProperty("webdriver.chrome.driver", filepath);
+				}
+
+				// System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
+				ChromeOptions options = new ChromeOptions();
+				options.addArguments(
+						"--user-agent=Mozilla/5.0 (Ubuntu; Android 6.0; HTC One M9 Build/MRA58K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.98 Mobile Safari/537.36");
+				driver = new ChromeDriver(options);
+
+				driver.manage().deleteAllCookies();
+				// driver.navigate().refresh();
+				// driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+				// driver.navigate().refresh();
+			}
+			if (common.value("mobilebrowser").equalsIgnoreCase("firefox")
+					&& common.value("mode").equalsIgnoreCase("local")) {
+				String userAgent = "--user-agent=Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_3_2 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5";
+				FirefoxProfile profile = new FirefoxProfile();
+				profile.setPreference("general.useragent.override", userAgent);
+				DesiredCapabilities cap = DesiredCapabilities.firefox();
+				org.openqa.selenium.Proxy p = new org.openqa.selenium.Proxy();
+				cap.setCapability(CapabilityType.PROXY, p);
+				cap.setCapability(FirefoxDriver.PROFILE, profile);
+				driver = new FirefoxDriver(cap);
+				driver.navigate().refresh();
+				// driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+				driver.navigate().refresh();
+
+			} else if (common.value("mobilebrowser").equalsIgnoreCase("firefox")
+					&& common.value("mode").equalsIgnoreCase("grid")) {
+				String userAgent = "--user-agent=Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_3_2 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5";
+				FirefoxProfile profile = new FirefoxProfile();
+				profile.setPreference("general.useragent.override", userAgent);
+				DesiredCapabilities cap = DesiredCapabilities.firefox();
+				org.openqa.selenium.Proxy p = new org.openqa.selenium.Proxy();
+				cap.setCapability(CapabilityType.PROXY, p);
+				cap.setCapability(FirefoxDriver.PROFILE, profile);
+				driver = new FirefoxDriver(cap);
+				driver.navigate().refresh();
+				// driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+				driver.navigate().refresh();
+			}
+		}
+		return driver;
+	}
+
+	public RemoteWebDriver getMobileDriver1(RemoteWebDriver driver) throws IOException, InterruptedException {
+		if (driver == null) {
+			// Local env
+			// System.out.println(common.value("mobilebrowser"));
+			// System.out.println(common.value("mode"));
+			if (common.value("mobilebrowser").equalsIgnoreCase("Chrome")
+					&& common.value("mode").equalsIgnoreCase("local")) {
+				System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
+				ChromeOptions options = new ChromeOptions();
+				options.addArguments(
+						"--user-agent=Mozilla/5.0 (iPhone; U; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5");
+				driver = new ChromeDriver(options);
+
+				driver.manage().deleteAllCookies();
+				// driver.navigate().refresh();
+				// driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+				// driver.navigate().refresh();
+			} else if (common.value("mobilebrowser").equalsIgnoreCase("CHROME")
+					&& common.value("mode").equalsIgnoreCase("g") || common.value("mode").equalsIgnoreCase("Grid")) {
+				System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
+				ChromeOptions options = new ChromeOptions();
+				options.addArguments(
+						"--user-agent=Mozilla/5.0 (iPhone; U; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5");
+				driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), createChromeConfig());
+				driver.manage().deleteAllCookies();
+				// driver.navigate().refresh();
+				// driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+				// driver.navigate().refresh();
+			}
+			if (common.value("mobilebrowser").equalsIgnoreCase("firefox")
+					&& common.value("mode").equalsIgnoreCase("local")) {
+				String userAgent = "--user-agent=Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_3_2 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5";
+				FirefoxProfile profile = new FirefoxProfile();
+				profile.setPreference("general.useragent.override", userAgent);
+				DesiredCapabilities cap = DesiredCapabilities.firefox();
+				org.openqa.selenium.Proxy p = new org.openqa.selenium.Proxy();
+				cap.setCapability(CapabilityType.PROXY, p);
+				cap.setCapability(FirefoxDriver.PROFILE, profile);
+				driver = new FirefoxDriver(cap);
+				driver.navigate().refresh();
+				// driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+				driver.navigate().refresh();
+
+			} else if (common.value("mobilebrowser").equalsIgnoreCase("firefox")
+					&& common.value("mode").equalsIgnoreCase("grid")) {
+				String userAgent = "--user-agent=Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_3_2 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5";
+				FirefoxProfile profile = new FirefoxProfile();
+				profile.setPreference("general.useragent.override", userAgent);
+				DesiredCapabilities cap = DesiredCapabilities.firefox();
+				org.openqa.selenium.Proxy p = new org.openqa.selenium.Proxy();
+				cap.setCapability(CapabilityType.PROXY, p);
+				cap.setCapability(FirefoxDriver.PROFILE, profile);
+				driver = new FirefoxDriver(cap);
+				driver.navigate().refresh();
+				// driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+				driver.navigate().refresh();
+			}
+		}
+		return driver;
+	}
+
+	public RemoteWebDriver getPWA(RemoteWebDriver driver) throws IOException, InterruptedException {
+		if (driver == null) {
+			if (common.value("mobilebrowser").equalsIgnoreCase("Chrome")) {
+				System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
+				ChromeOptions options = new ChromeOptions();
+				options.addArguments(
+						"--user-agent=Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_3_2 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5");
+				driver = new ChromeDriver(options);
+
+				driver.manage().deleteAllCookies();
+			}
+		}
+		return driver;
+	}
+
+	public RemoteWebDriver getMobileDriver2(RemoteWebDriver driver) throws IOException, InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
+		Map<String, String> mobileEmulation = new HashMap<String, String>();
+		mobileEmulation.put("deviceName", "Google Nexus 5");
+		Map<String, Object> chromeOptions = new HashMap<String, Object>();
+		chromeOptions.put("mobileEmulation", mobileEmulation);
+		DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+		capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+		driver = new ChromeDriver(capabilities);
+		return driver;
+	}
+
+	public RemoteWebDriver getMobileDriver3(RemoteWebDriver driver) throws IOException, InterruptedException {
+
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/exe/chromedriver.exe");
+		ChromeOptions options = new ChromeOptions();
+		//options.addArguments("--user-agent=Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1");
+		options.addArguments("user-agent=Mozilla/5.0 (Windows Phone 10.0; Android 4.2.1; Microsoft; Lumia 640 XL LTE) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Mobile Safari/537.36 Edge/12.10166");
+		driver = new ChromeDriver(options);
+		driver.manage().deleteAllCookies();
+		return driver;
+
 	}
 
 	public String get_BrowserName(RemoteWebDriver driver) {
@@ -284,7 +729,7 @@ public class WrapperMethod extends CommonUtil{
 		}
 		return BrowserName;
 	}
-	
+
 	public static boolean isElementPresent(RemoteWebDriver driver, By by) throws Exception {
 		try {
 			driver.findElement(by);
@@ -724,7 +1169,7 @@ public class WrapperMethod extends CommonUtil{
 			 driver.getCurrentUrl());
 		}*/
 	}
-	
+
 	public void safeClickLog(RemoteWebDriver driver, By by, String text, int time) throws Exception {
 		elementPresent_log(driver, by,  text, time);
 		WebElement we = driver.findElement(by);
@@ -740,15 +1185,15 @@ public class WrapperMethod extends CommonUtil{
 			// driver.getCurrentUrl());
 		}
 	}
-	
-	
-	
+
+
+
 	public void pressEnterKey(RemoteWebDriver driver) throws InterruptedException {
 		Thread.sleep(4000);
 		Actions builder = new Actions(driver);
 		builder.sendKeys(Keys.ENTER).build().perform();
 	}
-	
+
 	public void sendKeysByKeyboard(RemoteWebDriver driver,By by, String text) throws InterruptedException {
 		WebElement el = driver.findElement(by);
 		el.clear();
@@ -760,7 +1205,7 @@ public class WrapperMethod extends CommonUtil{
 			Thread.sleep(200);
 		}
 	}
-	
+
 	public void smartClick(RemoteWebDriver driver, By by) throws Exception {
 		if (elementVisible(driver, by, 2)) {
 			elementPresent(driver, by);
@@ -825,9 +1270,9 @@ public class WrapperMethod extends CommonUtil{
 	}
 
 	public void scrollToPageTop(RemoteWebDriver driver) throws Exception {
-	((JavascriptExecutor) driver).executeScript("window.scrollBy(0,-1000)", "");
+		((JavascriptExecutor) driver).executeScript("window.scrollBy(0,-1000)", "");
 	}
-	
+
 	public void safeClickListContains(RemoteWebDriver driver, By by, String Text) throws Exception {
 		elementVisible(driver, by, 10);
 		boolean elementAvailable = false;
@@ -1027,13 +1472,13 @@ public class WrapperMethod extends CommonUtil{
 
 		we = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 		if (element) {
-				new Select(we).selectByVisibleText(text);
+			new Select(we).selectByVisibleText(text);
 		} else {
 			addLog("Element " + by + " or Text " + text + " is not displayed in " + driver.getCurrentUrl());
 		}
 		// driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 	}
-	
+
 	public void safeSelectint(RemoteWebDriver driver, By by, int i) throws Exception {
 		elementPresent(driver, by);
 		boolean element = isElementPresent(driver, by);
@@ -1042,7 +1487,7 @@ public class WrapperMethod extends CommonUtil{
 
 		we = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 		if (element) {
-				new Select(we).selectByIndex(i);
+			new Select(we).selectByIndex(i);
 		} else {
 			addLog("Element " + by + " or Text " + i + " is not displayed in " + driver.getCurrentUrl());
 		}
@@ -1057,7 +1502,7 @@ public class WrapperMethod extends CommonUtil{
 
 		we = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 		if (element) {
-				new Select(we).selectByValue("Mr");
+			new Select(we).selectByValue("Mr");
 		} else {
 			addLog("Element " + by + " or Text " + text + " is not displayed in " + driver.getCurrentUrl());
 		}
@@ -1072,13 +1517,13 @@ public class WrapperMethod extends CommonUtil{
 
 		we = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 		if (element) {
-				new Select(we).selectByValue(text);
+			new Select(we).selectByValue(text);
 		} else {
 			addLog("Element " + by + " or Text " + text + " is not displayed in " + driver.getCurrentUrl());
 		}
 		// driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 	}
-	
+
 	public void safeSelectByText(RemoteWebDriver driver, By by, String text) throws Exception {
 		elementPresent(driver, by);
 		boolean element = isElementPresent(driver, by);
@@ -1087,14 +1532,14 @@ public class WrapperMethod extends CommonUtil{
 
 		we = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 		if (element) {
-				new Select(we).selectByVisibleText(text);
+			new Select(we).selectByVisibleText(text);
 		} else {
 			addLog("Element " + by + " or Text " + text + " is not displayed in " + driver.getCurrentUrl());
 		}
 		// driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 	}
-	
-	
+
+
 
 	public void safeSelectByIndex(RemoteWebDriver driver, By by, int index) throws Exception {
 		elementPresent(driver, by);
@@ -1277,7 +1722,7 @@ public class WrapperMethod extends CommonUtil{
 		elementPresent(driver, by);
 		boolean element = isElementPresent(driver, by);
 		if (element) {
-			
+
 			if(isAlertPresent(driver)) {
 				driver.switchTo().alert().accept();
 			}
@@ -1346,7 +1791,7 @@ public class WrapperMethod extends CommonUtil{
 			Actions action = new Actions(driver);
 			WebElement we = driver.findElement(By.xpath(SelCarrier));
 			action.moveToElement(we).moveToElement(driver.findElement(By.xpath("//a[contains(text(),'Only')]")))
-					.click();
+			.click();
 			Thread.sleep(3000);
 		} else {
 			addLog(Carrier + " not displayed in the SRP");
@@ -1548,7 +1993,7 @@ public class WrapperMethod extends CommonUtil{
 	public void javaExecutorClick(RemoteWebDriver driver, By by) {
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(by));
 	}
-	
+
 	public void scrollSmooth(RemoteWebDriver driver,final int y) {
 		for (int i = 0; i < y; i++) {
 			((JavascriptExecutor) driver).executeScript("window.scrollBy(0,4)", "");
@@ -1560,24 +2005,24 @@ public class WrapperMethod extends CommonUtil{
 		boolean elementAvailable = false;
 		List<WebElement> we =driver.findElements(by);
 		for(WebElement  WebEle : we ){
-		 String elementText = WebEle.getText();
-		 if(elementText.equalsIgnoreCase(activityName)){
-			 WebEle.click();
-			 elementAvailable = true;
-		     break;
-		 }else {   
-			 JavascriptExecutor jse = (JavascriptExecutor) driver;
-		     jse.executeScript("window.scrollBy(0, 50)", "");		
-		     
-		       }
-	     }			    	
-		     
+			String elementText = WebEle.getText();
+			if(elementText.equalsIgnoreCase(activityName)){
+				WebEle.click();
+				elementAvailable = true;
+				break;
+			}else {   
+				JavascriptExecutor jse = (JavascriptExecutor) driver;
+				jse.executeScript("window.scrollBy(0, 50)", "");		
+
+			}
+		}			    	
+
 		if(!elementAvailable){
 			addLog(activityName + " : is not displayed in the List");
 			Assert.assertTrue(false);
 		}
 	}
-	
+
 	public void moveToGivenElementLocatorByActionClassAndClickByJS(RemoteWebDriver driver,WebElement element) throws InterruptedException {
 		Actions action = new Actions(driver);
 		action.moveToElement(element).click();
@@ -1588,38 +2033,38 @@ public class WrapperMethod extends CommonUtil{
 	public void openNewTabAddCtWalletMoneyAndSwitchBackToMainPage(RemoteWebDriver driver, String email) throws InterruptedException {
 		addLog("Opening new chrome tab...",true);
 		Thread.sleep(2000);
-		
+
 		Object ob=(JavascriptExecutor) driver.executeScript("window.open()");
 
-	    ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
-	    addLog("Switched to new chrome tab...",true);
-	    driver.switchTo().window(tabs.get(1)); //switches to new tab
-	    
-	  //  String urlToAddCTWallentMoney=dataFile.value("UrlToAddWalletMoney").replace("cleartripautomationsff@gmail.com", email);
-	    String urlToAddCTWallentMoney=dataFile.value("UrlToAddWalletMoney");
-	  //  addLog("Adding money into ctwallet for user : "+email,true);
-	    driver.get(urlToAddCTWallentMoney);
-	    addLog("Switching back to main chrome window...",true);
-	    driver.switchTo().window(tabs.get(0)); // switch back to main screen 
-	    Thread.sleep(3000);
+		ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
+		addLog("Switched to new chrome tab...",true);
+		driver.switchTo().window(tabs.get(1)); //switches to new tab
+
+		//  String urlToAddCTWallentMoney=dataFile.value("UrlToAddWalletMoney").replace("cleartripautomationsff@gmail.com", email);
+		String urlToAddCTWallentMoney=dataFile.value("UrlToAddWalletMoney");
+		//  addLog("Adding money into ctwallet for user : "+email,true);
+		driver.get(urlToAddCTWallentMoney);
+		addLog("Switching back to main chrome window...",true);
+		driver.switchTo().window(tabs.get(0)); // switch back to main screen 
+		Thread.sleep(3000);
 	}
-	
+
 	// Author Varalakshmi
 	public void modalWindow(RemoteWebDriver driver)
 			throws InterruptedException, Exception {
 		ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
 		driver.switchTo().window(tabs.get(1));
-        //driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 		String Modal_URL = driver.getCurrentUrl();
-	    driver.switchTo().window(tabs.get(0));
-	    driver.get(Modal_URL);
-	    driver.switchTo().window(tabs.get(1)).close();
+		driver.switchTo().window(tabs.get(0));
+		driver.get(Modal_URL);
+		driver.switchTo().window(tabs.get(1)).close();
 		driver.switchTo().window(tabs.get(0));
 		String  newUrl =Modal_URL;		
 		String Host = common.value("host");
 		if(Host.equalsIgnoreCase("qa2")) {
-		 newUrl = Modal_URL.replace("https://www.", "https://qa2.");	
-			  }		
+			newUrl = Modal_URL.replace("https://www.", "https://qa2.");	
+		}		
 		driver.get(newUrl);					
 	}
 }

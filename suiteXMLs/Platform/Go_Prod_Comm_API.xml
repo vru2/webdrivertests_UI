@@ -1,0 +1,41 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Platform Services Prod" parallel="tests" thread-count="2">
+
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="common.RemoveDuplicateResults"/>
+		<listener class-name="common.RetryListener"/>
+	    <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+</listeners>
+
+	<test name="SMS"  >
+		<classes>
+		<class name="smsserviceprod.DomesticSMS"/> 
+		</classes>
+	</test>	
+	
+	<test name="Whatsapp"  parallel="true">
+		<classes>		
+		      <class name="whatsappServiceProd.WhatsappCheckContacts"/>
+		      <class name="whatsappServiceProd.WhatsappDeliveryFeedback"/> 
+		      <class name="whatsappServiceProd.WhatsappUserMessage"/> 
+		      <class name="whatsappServiceProd.WhatsappOptinFlow"/>
+		      <class name="whatsappServiceProd.WhatsappOptinFlowStatus"/>
+		      <class name="whatsappServiceProd.WhatsappMultilanguageSupport"/>
+		      <class name="whatsappServiceProd.WhatsappUserMessageWithAttachment"/>
+		      <class name="whatsappServiceProd.WhatsappWebhookMessage"/>
+		</classes>
+	</test>
+	
+	<test name="emailprod"  parallel="true">
+		<classes>
+		      <class name="emailprod.Email_Template_true"/>
+		      <class name="emailprod.EmailPost"/>
+		      <class name="emailprod.EmailSpamScore"/>
+		      <class name="emailprod.EmailwithAttachments"/>
+		       <class name="emailprod.GeneratePDF"/>
+		        <class name="emailprod.GeneratePKPass"/>
+		</classes>
+	</test>
+</suite> 
+	

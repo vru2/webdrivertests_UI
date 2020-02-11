@@ -1,13 +1,15 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Platform Services API" parallel="tests" thread-count="2">
+<suite name="Platform Services API" parallel="tests" thread-count="1">
 
 <listeners>
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
 		<listener class-name="common.RemoveDuplicateResults"/>
 		<listener class-name="common.RetryListener"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
 
-	<test name="TripService Logbooking">
+   <parameter name="hostvalue" value="qa2"></parameter>
+	 <test name="TripService Logbooking">
 		<classes>
 			<class name="tripServices.TS_LogBooking_Air" />
 			<class name="tripServices.TS_LogBooking_Hotel" /> 
@@ -17,7 +19,7 @@
 		</classes>
 	</test>
 	
-	<test name="TripService Updatebooking" >
+	<test name="TripService Updatebooking">
 		<classes>
 			<class name="tripServices.TS_UpdateBooking_Air" />
 			<class name="tripServices.TS_UpdateBooking_Hotel" />
@@ -36,7 +38,7 @@
 		</classes>
 
 	</test>
-		<test name="TripService Get Calls"  parallel="true">
+		<test name="TripService Get Calls" >
 		<classes>
 			<class name="tripServices.TS_GET_Trips" />
 			<class name="tripServices.TS_Get_TripDetails_CommValue" />
@@ -67,7 +69,7 @@
 		</classes>
 	</test>
 	
-	<test name="TripService Account APIs" >
+	<test name="TripService Account APIs">
 		<classes>
 			<class name="tripServices.Accounts_CreateUpdate_Tagmaster" />
 			<class name="tripServices.Accounts_ExistingUser" />
@@ -83,12 +85,12 @@
 		     <class name="tripServices.TS_Updatetag_SyncPut" />
 		</classes>
 	</test>
-	
-	<test name="Trip Lock Expiry"  parallel="true">
+	<!-- 
+	<test name="Trip Lock Expiry">
 		<classes>
 			<class name="tripServices.TS_TripLockExpiry" />
 		</classes>
-	</test>
+	</test> -->
 	
 	<!-- <test name="MobileFraud MFilter Call"  parallel="true">
 		<classes>

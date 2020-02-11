@@ -42,7 +42,7 @@ public class WrapperMethod extends CommonUtil{
 	private static WebDriver browserDriver;
 	public static Logger logger = Logger.getLogger("");
 	protected String baseUrl;
-	
+
 	public Boolean MakePaymentTrue = common.value("makePayment").equals("true"),
 			NetBanking = common.value("makePayment").contains("true"),
 			ProductionUrl = common.value("host").contains("www"), BetaURL = common.value("host").contains("beta"),
@@ -50,7 +50,6 @@ public class WrapperMethod extends CommonUtil{
 			check_booking_failure = common.value("check_booking_failure").contains("true"),
 			check_cancellation_failure = common.value("check_cancellation_failure").contains("true"),
 			MakePaymentOnlyInProd = MakePaymentTrue && ProductionUrl;
-
 
 	public String getBaseUrl(String domain) {
 		// addLog("Domain: " + domain + " Host: " + common.value("host"),true);
@@ -1622,4 +1621,6 @@ public class WrapperMethod extends CommonUtil{
 			  }		
 		driver.get(newUrl);					
 	}
+	
 }
+

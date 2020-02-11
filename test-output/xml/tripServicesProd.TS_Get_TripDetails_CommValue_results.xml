@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TripService Get Calls"
+           tests="2"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="7.650">
+  <properties />
+  
+  
+            <testcase name="emailasCommunicationValue" time="6.432" classname="tripServicesProd.TS_Get_TripDetails_CommValue" />
+                <testcase name="phoneasCommunicationValue" time="1.218" classname="tripServicesProd.TS_Get_TripDetails_CommValue" />
+      
+</testsuite>

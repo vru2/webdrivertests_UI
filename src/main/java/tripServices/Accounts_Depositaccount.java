@@ -4,6 +4,8 @@ import static org.testng.Assert.assertTrue;
 
 import org.testng.Assert;
 import org.testng.Reporter;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
@@ -11,6 +13,14 @@ import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
 
 public class Accounts_Depositaccount extends TripserviceCommon {
+	String Host;
+	 @Parameters({ "hostvalue"})
+	    @BeforeClass
+	    public void setUp(String hostvalue)
+	    {
+	        Host =hostvalue;
+	    }
+	
 	@Test(groups={"Regression"})
 	public void Accounts_FetchByPersonid() throws Exception{
 		Response resp;
@@ -19,7 +29,6 @@ public class Accounts_Depositaccount extends TripserviceCommon {
 		String url1_qa="http://172.17.26.11:9031/api/trips/deposit-account-details?id=46206142";
 		String url_prod="http://trip-service.cltp.com:9001/api/trips/deposit-account-details?id=132459010";
 		String url1_prod="http://trip-service.cltp.com:9001/api/trips/deposit-account-details?id=132518836";
-		String Host = common.value("host");
 		if(Host.equalsIgnoreCase("qa2")) {
 			System.out.println(url_qa);
 	    resp=RestAssured.get(url_qa);
@@ -137,5 +146,4 @@ public class Accounts_Depositaccount extends TripserviceCommon {
 		}
 		
 	}
-
 }

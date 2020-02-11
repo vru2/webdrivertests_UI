@@ -26,6 +26,7 @@ import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.Reporter;
+import org.testng.annotations.Parameters;
 
 import testrailpoc.testrail_utils;
 
@@ -48,7 +49,6 @@ public class CommonUtil {
 //			System.out.println(Data);
 		}
 	}
-
 
 	public String getBit() {
 		String architecture = "os.arch";

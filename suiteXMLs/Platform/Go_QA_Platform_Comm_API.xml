@@ -1,0 +1,50 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Platform Services API" parallel="tests" thread-count="2">
+
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="common.RemoveDuplicateResults"/>
+		<listener class-name="common.RetryListener"/>
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+</listeners>
+	
+	<parameter name="env" value="qa2"></parameter>
+	<test name="SMS"  >
+		<classes>
+		<class name="smsservice.DomesticSMS"/> 
+		</classes>
+	</test>	
+	
+	<test name="Whatsapp"  parallel="true">
+		<classes>		
+		      <class name="whatsappService.WhatsappCheckContacts"/>
+		      <class name="whatsappService.WhatsappDeliveryFeedback"/> 
+		      <class name="whatsappService.WhatsappUserMessage"/> 
+		      <class name="whatsappService.WhatsappOptinFlow"/>
+		       <class name="whatsappService.WhatsappMultilanguageSupport"/> 
+		      <class name="whatsappService.WhatsappOptinFlowStatus"/>
+		      <class name="whatsappService.WhatsappUserMessageWithAttachment"/>
+		      <class name="whatsappService.WhatsappWebhookMessage"/>
+		</classes>
+	</test>
+	
+	<test name="Email"  parallel="true">
+		<classes>
+		      <class name="email.Email_Template_true"/>
+		      <class name="email.EmailPost"/>
+		      <class name="email.EmailSpamScore"/>
+		      <class name="email.EmailwithAttachments"/>
+		       <class name="email.GeneratePDF"/>
+		        <class name="email.GeneratePKPass"/>
+		</classes>
+	</test>
+	
+	<!-- <test name="Chat"  parallel="true">
+		<classes>
+		      <class name="supportchatapi.SupportcreateChatAPI"/>
+		      <class name="supportchatapi.SupportGatewaycreateChatAPI"/>
+		</classes>
+	</test> -->
+
+</suite> 
+	

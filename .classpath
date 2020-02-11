@@ -23,9 +23,16 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+<<<<<<< HEAD
 	<classpathentry exported="true" kind="con" path="org.testng.TESTNG_CONTAINER"/>
 	<classpathentry exported="true" kind="lib" path="/home/varalakshmiv/Downloads/mysql-connector.jar"/>
 	<classpathentry exported="true" kind="lib" path="/home/varalakshmiv/Automation/webdrivertests/lib/selenium-server-standalone-3.6.0.jar"/>
 	<classpathentry exported="true" kind="lib" path="/home/varalakshmiv/Downloads/ojdbc14.jar"/>
+=======
+	<classpathentry exported="true" kind="lib" path="src/ojdbc14.jar"/>
+	<classpathentry exported="true" kind="lib" path="src/mysql-connector-java-8.0.12.jar"/>
+	<classpathentry exported="true" kind="lib" path="src/selenium-java-3.6.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="src/selenium-server-standalone-3.6.0.jar"/>
+>>>>>>> 8ca9bfe0dd47345001536b16316a757a3cd52190
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

@@ -13,8 +13,9 @@ import io.restassured.response.Response;
 
 
 import common.CommonUtil;
+import common.WrapperMethod;
 
-public class PlatformCommonUtil extends CommonUtil {
+public class PlatformCommonUtil extends WrapperMethod {
 	public String Service_Url (String Service) throws IOException {
 		String url = "";
 		String environment = common.value("host");

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<<<<<<< HEAD
 <suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Platform Services Prod]" parallel="tests">
   <listeners>
     <listener class-name="org.uncommons.reportng.HTMLReporter"/>
@@ -17,3 +18,19 @@
     </classes>
   </test> <!-- TripService Get Calls(failed) -->
 </suite> <!-- Failed suite [Platform Services Prod] -->
+=======
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="paymentUI.Payment_NodeJS_Activity_B2C_CC_AE">
+        <methods>
+          <include name="tearDown"/>
+          <include name="afterMethod"/>
+          <include name="setUp"/>
+          <include name="paymentNodeJS_Acty_B2C_CCAE"/>
+        </methods>
+      </class> <!-- paymentUI.Payment_NodeJS_Activity_B2C_CC_AE -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
+>>>>>>> 8ca9bfe0dd47345001536b16316a757a3cd52190

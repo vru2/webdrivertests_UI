@@ -11,6 +11,8 @@ public class CachedProperties {
 	private static CachedProperties cacheUrlProperties;
 	private static CachedProperties ORProperties;
 	private static CachedProperties ORPropertiesPlatform;	
+
+	private static CachedProperties ORPropertiesPayment;	
 	private static CachedProperties platformInstance;
 	private static CachedProperties rubyAPIProperties;
 	
@@ -196,6 +198,18 @@ public class CachedProperties {
 		if ((testcardtype != null) && (!testcardtype.isEmpty())) {
 			properties.setProperty("testcardtype",testcardtype);
 		}
+	}
+	
+
+	public static CachedProperties objectReportInstancePayment() {
+		if (ORPropertiesPayment== null) {
+			try {
+				ORPropertiesPayment = new CachedProperties("objectRepositoryPayment.properties");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		return ORPropertiesPayment;
 	}
 	
 	

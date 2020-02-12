@@ -62,11 +62,7 @@ public class WrapperMethod extends CommonUtil {
 	//	/public static Logger logger = Logger.getLogger(WrapperMethod.class);
 
 	public static Logger logger = Logger.getLogger("");
-<<<<<<< HEAD
 	protected String baseUrl;
-
-=======
->>>>>>> 8ca9bfe0dd47345001536b16316a757a3cd52190
 	public Boolean MakePaymentTrue = common.value("makePayment").equals("true"),
 			NetBanking = common.value("makePayment").contains("true"),
 			ProductionUrl = common.value("host").contains("www"), BetaURL = common.value("host").contains("beta"),
@@ -75,8 +71,6 @@ public class WrapperMethod extends CommonUtil {
 			check_cancellation_failure = common.value("check_cancellation_failure").contains("true"),
 			MakePaymentOnlyInProd = MakePaymentTrue && ProductionUrl;
 
-<<<<<<< HEAD
-=======
 	public int MultiDate = 20, OnwardDate = 25, ReturnDate = 26, num_adults = 0, num_children = 0, num_infants = 0,
 			num_of_sectors = 0, time_nano = 10, time_short = 50, time_medium = 300, time_extrashort = 200,
 			time_long = 900, time_Search = 600, time_SRP = 90, time_Review = 600, time_Login = 100,
@@ -91,9 +85,7 @@ public class WrapperMethod extends CommonUtil {
 
 	public boolean GDS_Flight, B2B_GDS_Flight = false;
 	public int number_gds_Airlines = gds_airlines.length;
-	protected String baseUrl;
 
->>>>>>> 8ca9bfe0dd47345001536b16316a757a3cd52190
 	public String getBaseUrl(String domain) {
 		// addLog("Domain: " + domain + " Host: " + common.value("host"),true);
 		if (domain.equals("com") || domain.equals("ae") || domain.equals("sa")) {

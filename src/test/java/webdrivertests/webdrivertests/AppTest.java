@@ -1,4 +1,4 @@
-package PlatformAutomation.PlatformAutomation;
+package webdrivertests.webdrivertests;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

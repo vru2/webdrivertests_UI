@@ -13,7 +13,7 @@
 		</classes>
 	</test>
 
-  <test name="QA CT-CONFIG ADD FLOAT"  parallel="true">
+  <!-- <test name="QA CT-CONFIG ADD FLOAT"  parallel="true">
 		<classes>
 		<class name="ct_config.CT_Config_Addfloat"/>
 		</classes>
@@ -83,6 +83,6 @@
 		<classes>
 				<class name="ct_config.CT_Config_Revert"/>
 		</classes>
-	</test>
+	</test> -->
 </suite> 
 	

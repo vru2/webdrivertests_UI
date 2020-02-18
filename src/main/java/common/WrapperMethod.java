@@ -176,6 +176,8 @@ public class WrapperMethod extends CommonUtil {
 	      ChromeOptions options = new ChromeOptions();
 	      options.addArguments("--headless");
 	      options.addArguments("window-size=1200,1100");
+	      options.addArguments("--no-sandbox");
+	      options.addArguments("--disable-dev-shm-usage");
 	      Map<String, Object> prefs = new HashMap();
 	      File file = new File(".");
 	      String filepath = file.getCanonicalPath() + "\\exe\\chromedriver.exe";

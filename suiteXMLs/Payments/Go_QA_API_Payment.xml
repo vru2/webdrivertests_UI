@@ -1,20 +1,19 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Payment Services API" parallel="tests" thread-count="1">
+<suite name="Payment UI" parallel="tests" thread-count="2">
 
 <listeners>
-		<listener class-name="org.uncommons.reportng.HTMLReporter" />
-		<listener class-name="common.RemoveDuplicateResults"/>
-		<listener class-name="common.RetryListener"/>
-        <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+<listener class-name="org.uncommons.reportng.HTMLReporter" />
+<listener class-name="common.RemoveDuplicateResults"/>
+<listener class-name="common.RetryListener"/>
+       <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
 
-	 <test name="Pay Call">
-		<classes>
-			<class name="paymentsAPI.API_CC" />			
-			<class name="paymentsAPI.API_GV_Wallet" />
-		</classes>
-	</test>
-	
+<test name="Pay Call">
+<classes>
+<class name="paymentsUI.Payment_NodeJS_CC" />
+<class name="paymentsUI.Payment_NodeJS_CC_US" />
+</classes>
+</test>
+
 
 </suite> 
-	

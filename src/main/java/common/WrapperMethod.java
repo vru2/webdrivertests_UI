@@ -26,6 +26,7 @@ import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Capabilities;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoAlertPresentException;
@@ -170,7 +171,22 @@ public class WrapperMethod extends CommonUtil {
 		cap.setCapability(ChromeOptions.CAPABILITY, options);
 		return cap;
 	}
-
+	
+	 public DesiredCapabilities createHeadlessChrome() throws IOException {
+	      ChromeOptions options = new ChromeOptions();
+	      options.addArguments("--headless");
+	      options.addArguments("window-size=1200,1100");
+	      Map<String, Object> prefs = new HashMap();
+	      File file = new File(".");
+	      String filepath = file.getCanonicalPath() + "\\exe\\chromedriver.exe";
+	      this.printInfo(filepath);
+	      prefs.put("profile.default_content_settings.popups", 0);
+	      options.setExperimentalOption("prefs", prefs);
+	      DesiredCapabilities cap = DesiredCapabilities.chrome();
+	      cap.setCapability("goog:chromeOptions", options);
+	      return cap;
+	   }
+	 
 	public DesiredCapabilities createChromeConfig1() throws IOException, InterruptedException {
 		ChromeOptions options = new ChromeOptions();
 		Map<String, Object> prefs = new HashMap<String, Object>();
@@ -229,7 +245,7 @@ public class WrapperMethod extends CommonUtil {
 				driver.manage().timeouts().setScriptTimeout(50, TimeUnit.SECONDS);
 				driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
 			} else if (common.value("browser").equalsIgnoreCase("CHROME")
-					&& common.value("mode").equalsIgnoreCase("local")) {
+					&& common.value("mode").equalsIgnoreCase("local")&&common.value("headlessbrowser").equalsIgnoreCase("true")) {
 				// System.out.println("-------------"+System.getProperty("os.name"));
 				if (System.getProperty("os.name").contains("Windows")) {
 					File file = new File(".");
@@ -248,7 +264,32 @@ public class WrapperMethod extends CommonUtil {
 				 * File f = new File("exe\\chromedriver.exe"); String path =
 				 * f.getAbsolutePath(); System.setProperty("webdriver.chrome.driver", path);
 				 */
-				driver = new ChromeDriver(createChromeConfig());
+				driver = new ChromeDriver(this.createHeadlessChrome());
+				 ((RemoteWebDriver)driver).manage().window().setSize(new Dimension(1200, 1100));
+				// driver = new ChromeDriver();
+				// TimeUnit.SECONDS.sleep(2);
+				// driver.manage().timeouts().setScriptTimeout(100, TimeUnit.SECONDS);
+			}else if (common.value("browser").equalsIgnoreCase("CHROME")
+					&& common.value("mode").equalsIgnoreCase("local")&&common.value("headlessbrowser").equalsIgnoreCase("false")) {
+				// System.out.println("-------------"+System.getProperty("os.name"));
+				if (System.getProperty("os.name").contains("Windows")) {
+					File file = new File(".");
+					String filepath = file.getCanonicalPath() + "//exe//chromedriver.exe";
+					System.setProperty("webdriver.chrome.driver", filepath);
+				}else if(System.getProperty("os.name").contains("Linux")){
+					File file = new File(".");
+					String filepath = file.getCanonicalPath() + "//exe//chromedriver";
+					System.setProperty("webdriver.chrome.driver", filepath);
+				} else {
+					File file = new File(".");
+					String filepath = file.getCanonicalPath() + "//exe//chromedriver_mac";
+					System.setProperty("webdriver.chrome.driver", filepath);
+				}
+				/*
+				 * File f = new File("exe\\chromedriver.exe"); String path =
+				 * f.getAbsolutePath(); System.setProperty("webdriver.chrome.driver", path);
+				 */
+				driver = new ChromeDriver(this.createChromeConfig());
 				// driver = new ChromeDriver();
 				// TimeUnit.SECONDS.sleep(2);
 				// driver.manage().timeouts().setScriptTimeout(100, TimeUnit.SECONDS);
@@ -273,7 +314,17 @@ public class WrapperMethod extends CommonUtil {
 					capability.setBrowserName("firefox");
 					driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
 					driver.manage().timeouts().setScriptTimeout(100, TimeUnit.SECONDS);
-				} else if (common.value("browser").equalsIgnoreCase("CHROME")) {
+				} else if (common.value("browser").equalsIgnoreCase("CHROME")&&common.value("headlessbrowser").equalsIgnoreCase("true")) {
+
+					System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
+					driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), createHeadlessChrome());
+
+					TimeUnit.SECONDS.sleep(1);
+
+					// driver.manage().window().maximize();
+					driver.manage().timeouts().setScriptTimeout(180, TimeUnit.SECONDS);
+					driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
+				}else if (common.value("browser").equalsIgnoreCase("CHROME")&&common.value("headlessbrowser").equalsIgnoreCase("false")) {
 
 					System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
 					driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), createChromeConfig());
@@ -283,7 +334,8 @@ public class WrapperMethod extends CommonUtil {
 					// driver.manage().window().maximize();
 					driver.manage().timeouts().setScriptTimeout(180, TimeUnit.SECONDS);
 					driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
-				} else {
+				}
+				else {
 					addLog("Chk config Browser", true);
 				}
 			}
@@ -510,11 +562,14 @@ public class WrapperMethod extends CommonUtil {
 	}
 
 	public RemoteWebDriver Chrome_Config(RemoteWebDriver driver) throws Exception {
-		if (common.value("mode").equalsIgnoreCase("local")) {
-			driver = new ChromeDriver(createChromeConfig());
-		} else {
-			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), createChromeConfig());
-		}
+	      if (this.common.value("mode").equalsIgnoreCase("local") && this.common.value("headlessbrowser").equalsIgnoreCase("false")) {
+	         driver = new ChromeDriver(this.createChromeConfig());
+	      } else if (this.common.value("mode").equalsIgnoreCase("local") && this.common.value("headlessbrowser").equalsIgnoreCase("true")) {
+	         driver = new ChromeDriver(this.createHeadlessChrome());
+	         ((RemoteWebDriver)driver).manage().window().setSize(new Dimension(1200, 1100));
+	      } else {
+	         driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), this.createChromeConfig());
+	      }
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		// driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+    <line>
+      <![CDATA[new Payment service is called]]>
+    </line>
+    <line>
+      <![CDATA[Master card selected]]>
+    </line>
+    <line>
+      <![CDATA[<p>http://172.17.15.176:9080/success?tripRef=T1739708301</p>]]>
+    </line>
+    <line>
+      <![CDATA[CC  : T1739708301]]>
+    </line>
+    <line>
+      <![CDATA[ConfirmationMsg = Payment successful! :)]]>
+    </line>
+    <line>
+      <![CDATA[new Payment service is called]]>
+    </line>
+    <line>
+      <![CDATA[Master card selected]]>
+    </line>
+    <line>
+      <![CDATA[<p>http://172.17.15.176:9080/success?tripRef=T1075788738</p>]]>
+    </line>
+    <line>
+      <![CDATA[CC US  : T1075788738]]>
+    </line>
+    <line>
+      <![CDATA[ConfirmationMsg = Payment successful! :)]]>
+    </line>
+  </reporter-output>
+  <suite name="Payment UI" duration-ms="33078" started-at="2020-02-17T10:37:15Z" finished-at="2020-02-17T10:37:48Z">
+    <groups>
+    </groups>
+    <test name="Pay Call" duration-ms="33078" started-at="2020-02-17T10:37:15Z" finished-at="2020-02-17T10:37:48Z">
+      <class name="paymentsUI.Payment_NodeJS_CC">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:paymentsUI.Payment_NodeJS_CC@60d8c9b7]" name="setUp" is-config="true" duration-ms="1441" started-at="2020-02-17T10:37:15Z" finished-at="2020-02-17T10:37:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="paymentNodeJS_CC()[pri:0, instance:paymentsUI.Payment_NodeJS_CC@60d8c9b7]" name="paymentNodeJS_CC" duration-ms="14038" started-at="2020-02-17T10:37:17Z" finished-at="2020-02-17T10:37:31Z">
+          <reporter-output>
+            <line>
+              <![CDATA[new Payment service is called]]>
+            </line>
+            <line>
+              <![CDATA[Master card selected]]>
+            </line>
+            <line>
+              <![CDATA[<p>http://172.17.15.176:9080/success?tripRef=T1739708301</p>]]>
+            </line>
+            <line>
+              <![CDATA[CC  : T1739708301]]>
+            </line>
+            <line>
+              <![CDATA[ConfirmationMsg = Payment successful! :)]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- paymentNodeJS_CC -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:paymentsUI.Payment_NodeJS_CC@60d8c9b7]" name="afterMethod" is-config="true" duration-ms="2" started-at="2020-02-17T10:37:31Z" finished-at="2020-02-17T10:37:31Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=paymentNodeJS_CC status=SUCCESS method=Payment_NodeJS_CC.paymentNodeJS_CC()[pri:0, instance:paymentsUI.Payment_NodeJS_CC@60d8c9b7] output=new Payment service is called]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:paymentsUI.Payment_NodeJS_CC@60d8c9b7]" name="tearDown" is-config="true" duration-ms="143" started-at="2020-02-17T10:37:31Z" finished-at="2020-02-17T10:37:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- paymentsUI.Payment_NodeJS_CC -->
+      <class name="paymentsUI.Payment_NodeJS_CC_US">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:paymentsUI.Payment_NodeJS_CC_US@48aaecc3]" name="setUp" is-config="true" duration-ms="811" started-at="2020-02-17T10:37:31Z" finished-at="2020-02-17T10:37:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="paymentNodeJS_CCUS()[pri:0, instance:paymentsUI.Payment_NodeJS_CC_US@48aaecc3]" name="paymentNodeJS_CCUS" duration-ms="16469" started-at="2020-02-17T10:37:32Z" finished-at="2020-02-17T10:37:48Z">
+          <reporter-output>
+            <line>
+              <![CDATA[new Payment service is called]]>
+            </line>
+            <line>
+              <![CDATA[Master card selected]]>
+            </line>
+            <line>
+              <![CDATA[<p>http://172.17.15.176:9080/success?tripRef=T1075788738</p>]]>
+            </line>
+            <line>
+              <![CDATA[CC US  : T1075788738]]>
+            </line>
+            <line>
+              <![CDATA[ConfirmationMsg = Payment successful! :)]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- paymentNodeJS_CCUS -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:paymentsUI.Payment_NodeJS_CC_US@48aaecc3]" name="afterMethod" is-config="true" duration-ms="1" started-at="2020-02-17T10:37:48Z" finished-at="2020-02-17T10:37:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=paymentNodeJS_CCUS status=SUCCESS method=Payment_NodeJS_CC_US.paymentNodeJS_CCUS()[pri:0, instance:paymentsUI.Payment_NodeJS_CC_US@48aaecc3] output=new Payment service is called]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:paymentsUI.Payment_NodeJS_CC_US@48aaecc3]" name="tearDown" is-config="true" duration-ms="132" started-at="2020-02-17T10:37:48Z" finished-at="2020-02-17T10:37:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- paymentsUI.Payment_NodeJS_CC_US -->
+    </test> <!-- Pay Call -->
+  </suite> <!-- Payment UI -->
+</testng-results>

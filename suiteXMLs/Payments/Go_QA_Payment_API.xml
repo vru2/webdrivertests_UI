@@ -1,0 +1,203 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Payment API" parallel="tests" thread-count="1">
+
+<listeners>
+<listener class-name="org.uncommons.reportng.HTMLReporter" />
+<listener class-name="common.RemoveDuplicateResults"/>
+<listener class-name="common.RetryListener"/>
+       <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+</listeners>
+
+	
+
+
+<test name="API Navison" preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_Navison_CC"/>
+      <class name="paymentsAPI.API_Navison_Air"/>      
+    </classes>
+</test>
+
+<test name="API Rearch" preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_Validate"/>
+      <class name="paymentsAPI.API_CC_Visa_Type"/>
+      <class name="paymentsAPI.API_CC_GV_Wallet"/> 
+      <class name="paymentsAPI.API_CC"/>
+      <class name="paymentsAPI.API_GV"/> 
+      <class name="paymentsAPI.API_Wallet"/>
+    </classes>
+</test>
+
+<test name="API CTPay V2" preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_CTpay_GetUrl"/>
+      <class name="paymentsAPI.API_CTpay_Status"/>
+      <class name="paymentsAPI.API_CTpay_UpdateClient"/> 
+      <class name="paymentsAPI.API_CTpay_URLcreation"/>
+    </classes>
+</test>
+
+<test name="API Refund"  preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_Refund_CC"/>
+    <!--   <class name="paymentsAPI.API_Refund_DA"/>
+      <class name="paymentsAPI.API_Refund_DC"/>
+      <class name="paymentsAPI.API_Refund_NB"/>
+      <class name="paymentsAPI.API_Refund_GV"/>      
+      <class name="paymentsAPI.API_Refund_AmazonPay"/> -->
+    </classes>
+</test>
+
+<test name="API OLA" preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_OLA_Validate_Pay"/>  
+     <!--  <class name="paymentsAPI.API_OLA_BalanceCheck"/>  
+      <class name="paymentsAPI.API_OLA_StatusCheck"/>  
+      <class name="paymentsAPI.API_OLA_PromoStats"/> -->
+    </classes>
+</test>
+
+<test name="API Fetch Payment Details" preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_FetchPay_Details"/> 
+    </classes>
+</test>
+
+<test name="Promo service" preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_PromoService"/> 
+    </classes>
+</test>
+
+<test name="Promos" preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_Promo_Activate"/>  
+      <class name="paymentsAPI.API_Promo_Used"/>        
+    </classes>
+</test>
+
+<test name="API Flyin" preserve-order="true" >
+    <classes>
+       <class name="paymentsAPI.API_FlyinPay"/> 
+     </classes>
+</test>
+
+<test name="API Expressway" preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_EW_GetOutstanding"/> 
+      <class name="paymentsAPI.API_EW_UserDetails"/> 
+      <class name="paymentsAPI.API_EW_Validate"/>  
+      <class name="paymentsAPI.API_EW_OptIN"/>    
+<!--       <class name="paymentsAPI.API_EW_Pay_Multi"/>    
+      <class name="paymentsAPI.API_EW_Pay_Multi_V3"/>    -->
+      <class name="paymentsAPI.API_EW_Pay_V3"/>       
+      <class name="paymentsAPI.API_EW_Add_Amount"/>       
+      <class name="paymentsAPI.API_EW_Pay_AutoDebit"/>     
+   </classes>
+</test>
+
+<test name="API Wallets"  preserve-order="true" parallel="true" >
+    <classes>
+		<class name="paymentsAPI.API_Wallet_Promo_CashBackDetails"/>
+		<class name="paymentsAPI.API_Wallet_Create"/>			
+		<class name="paymentsAPI.API_Wallet_Get_Wallet_Trnx"/>
+		<class name="paymentsAPI.API_Wallet_GetDeduction"/>
+		<class name="paymentsAPI.API_Wallet_PromoUsed"/>
+		<class name="paymentsAPI.API_Wallet_RevertPromo"/>
+		<class name="paymentsAPI.API_GV_Capture"/>
+		<class name="paymentsAPI.API_GV_Refund"/>	
+		
+		<!-- <class name="paymentsAPI.API"/> create wallet
+		<class name="paymentsAPI.API_Wallet_RevertPromo"/  > Perform wallet transactions -->
+    </classes>
+</test>
+
+<test name="API Wallet App Only"  preserve-order="true" parallel="true" >
+    <classes>
+		<class name="paymentsAPI.API_Wallet_CashBackDetails"/>
+		<class name="paymentsAPI.API_Wallet_Get_Wallet_All"/>
+		<class name="paymentsAPI.API_Wallet_Get_Wallet_INR"/>	
+		<class name="paymentsAPI.API_GV_Get"/>
+    </classes>
+</test>
+
+<test name="API ADCB" preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_Reward_ADCB_CheckBalance"/> 
+      <class name="paymentsAPI.API_Reward_ADCB_Pay"/> 
+    </classes>
+</test>
+
+<test name="API PayBack" preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_RewardPayback"/> 
+    </classes>
+</test>
+
+<test name="API Refunds New" preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_Refunds"/> 
+    </classes>
+</test>
+
+<test name="API Stored Card" preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_storeCard"/> 
+   </classes>
+</test>
+
+<test name="API Create Insert record" preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_CreateRecord"/>  
+         </classes>
+</test>
+
+<test name="API ROR" preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_ROR"/>  
+    </classes>
+</test>
+
+<test name="API Payment read" preserve-order="true" parallel="true">
+    <classes>
+    <!--   <class name="paymentsAPI.API_ROR123"/> -->  
+    </classes>
+</test>
+
+
+
+<test name="API Bin Manager"  preserve-order="true" parallel="true" >
+  <classes>
+		<class name="paymentsAPI.API_Binmanager"/>
+		<class name="paymentsAPI.API_Binmanager_Add_MC_Credit"/>
+		<class name="paymentsAPI.API_Binmanager_Get_Card"/>
+		<!-- <class name="paymentsAPI.API_Binmanager_Get_Multiple_Cards"/> -->
+    </classes>
+</test>
+
+<test name="API Reporting"  preserve-order="true" parallel="true" >
+    <classes>
+		<class name="paymentsAPI.API_Reporting"/>
+		<class name="paymentsAPI.API_Reporting_TS_V3"/>
+    </classes>
+</test>
+
+<!-- 
+<test name="API PayU OTP" preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_PayU_OTPProcess"/>
+      <class name="paymentsAPI.API_PayU_OTPResend"/> 
+    </classes>
+</test>
+ -->
+
+
+
+
+
+
+
+
+
+</suite> 

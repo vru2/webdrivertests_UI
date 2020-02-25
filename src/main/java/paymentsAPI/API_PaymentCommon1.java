@@ -11,18 +11,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Random;
 
 import org.apache.commons.lang3.RandomStringUtils;
-import org.apache.http.HttpRequest;
-import org.json.JSONArray;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Reporter;
-import org.testng.asserts.SoftAssert;
 
 import domains.PlatformCommonUtil;
 import io.restassured.RestAssured;

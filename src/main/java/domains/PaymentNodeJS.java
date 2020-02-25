@@ -45,7 +45,9 @@ import junit.framework.Assert;
 import paymentsAPI.API_PaymentCommon1;
 import paymentsUI.PaymentUI_CommonUtilities;
 
-public class PaymentNodeJS extends API_PaymentCommon1 {
+public class PaymentNodeJS extends API_PaymentCommon1{
+	
+
 
 	public String getPaymentNodeUrl = "http://172.17.15.176:9080";
 
@@ -63,19 +65,19 @@ public class PaymentNodeJS extends API_PaymentCommon1 {
 	public void paymentNodeJS_HomePage(RemoteWebDriver driver, String payServer, String testServer) throws Exception {
 		elementVisible(driver, getObjectPayment("HomePage_Header"), 10);
 		elementPresent(driver, getObjectPayment("HomePage_Confirm_Btn"), 5);
-		if (common.value("PaymentServer").equalsIgnoreCase("OLD")) {
+		if (common.value("PaymentServer").equalsIgnoreCase("MYSQL")) {
 			Thread.sleep(500);
-			safeType(driver, getObjectPayment("HomePage_Host_ServerIp_Txt"), "172.17.13.109:9080/payment");
-			Reporter.log("OLD payment 172.17.13.109:9080/payment"); 
+			safeType(driver, getObjectPayment("HomePage_Host_ServerIp_Txt"), "172.17.26.11:8358/paymentservice");
+			Reporter.log("Mysql payment 172.17.26.11:8358/payment"); 
 		} else if (common.value("PaymentServer").equalsIgnoreCase("DEV")) {
 			Thread.sleep(500);
-			safeType(driver, getObjectPayment("HomePage_Host_ServerIp_Txt"), "172.17.26.11:8250:9001/paymentservice");
+			safeType(driver, getObjectPayment("HomePage_Host_ServerIp_Txt"), "172.17.26.11:8250:/paymentservice");
 			Reporter.log("DEV payment 172.17.26.11:8250:9001/paymentservice"); 
 		}		
 		else {
-			// safeType(driver, getObjectPayment("HomePage_Host_ServerIp_Txt"),
-			// "172.17.8.218:9001/paymentservice");
-			// safeType(driver, getObjectPayment("HomePage_Test_ServerIp_Txt"), "NEW");
+			Thread.sleep(500);
+			safeType(driver, getObjectPayment("HomePage_Host_ServerIp_Txt"), "172.17.26.11:8070/paymentservice");
+			Reporter.log("Oracle payment 172.17.26.11:8070/paymentservice"); 
 		}
 		safeClick(driver, getObjectPayment("HomePage_Confirm_Btn"));
 	}
@@ -96,13 +98,12 @@ public class PaymentNodeJS extends API_PaymentCommon1 {
 			if (textPresent(driver, "Payment Server(Host:Port", 1)) {
 				elementVisible(driver, getObjectPayment("HomePage_Header"), 10);
 				elementPresent(driver, getObjectPayment("HomePage_Confirm_Btn"), 5);
-				if (common.value("PaymentServer").equalsIgnoreCase("OLD")) {
+				if (common.value("PaymentServer").equalsIgnoreCase("MYSQL")) {
 					Thread.sleep(500);
-					safeType(driver, getObjectPayment("HomePage_Host_ServerIp_Txt"), "172.17.13.109:9080/payment");
+					safeType(driver, getObjectPayment("HomePage_Host_ServerIp_Txt"), "172.17.26.11:8358/paymentservice");
 				} else {
-					// safeType(driver, getObjectPayment("HomePage_Host_ServerIp_Txt"),
-					// "172.17.8.218:9001/paymentservice");
-					// safeType(driver, getObjectPayment("HomePage_Test_ServerIp_Txt"), "NEW");
+					Thread.sleep(500);
+					safeType(driver, getObjectPayment("HomePage_Host_ServerIp_Txt"), "172.17.26.11:8070/paymentservice");
 				}
 				safeClick(driver, getObjectPayment("HomePage_Confirm_Btn"));
 			}
@@ -582,8 +583,8 @@ public class PaymentNodeJS extends API_PaymentCommon1 {
 			else if (textPresent(driver,"Payment successful", 1)){
 				break;
 			}
-			else if (textPresent(driver, "This site can�t be reached", 1)) {
-				Reporter.log("This site can�t be reached msg is displayed");
+			else if (textPresent(driver, "This site can’t be reached", 1)) {
+				Reporter.log("This site can’t be reached msg is displayed");
 				logURL(driver);
 				Assert.assertTrue(false);
 			} else if (textPresent(driver, "Sorry, our system is acting up.", 1)) {
@@ -1450,7 +1451,7 @@ public class PaymentNodeJS extends API_PaymentCommon1 {
 			endPoint = endPointgetPay;	
 			int randomNumber= PaymentUI_CommonUtilities.generateFiveDigitRandomNumber();
 			String randNumber= Integer.toString(randomNumber);
-			String appRef= "Q185" + randNumber;
+			String appRef= "Q201" + randNumber;
 			params = "{\"train_booking\":{\"traveller_details\":[{\"seq_no\":1,\"type\":\"ADT\",\"title\":\"Ms\",\"first_name\":\"Test\",\"last_name\":\"Test\"}],\"itinerary_details\":[{\"from_station_code\":\"SBC\",\"to_station_code\":\"MYS\",\"from_station_name\":\"KSR BENGALURU\",\"to_station_name\":\"MYSURU JN\",\"train_name\":\"BSB MYS EXP\",\"train_number\":\"16230\",\"departure_time\":\"2019-11-12T00:15:00\",\"arrival_time\":\"2019-11-12T02:45:00\",\"booking_class\":\"AC 2 Tier(2A)\",\"updated_availability\":\"AVAILABLE-0119\",\"quota\":\"General\",\"seatStatus\":true}],\"pricing_details\":[{\"other_railway_charges\":119.4,\"agent_service_charge\":40,\"total\":775.4,\"insuranceCharge\":0,\"currency\":\"INR\",\"pax_pay_info\":[{\"base_fare\":616,\"pax_count\":1,\"pax_type\":\"ADULT\"}]}],\"transaction_fee_details\":{\"CC\":{\"DEFAULT\":1.8},\"DC\":{\"DEFAULT\":1},\"NB\":{\"1\":1.1,\"2\":1.2,\"3\":1.1,\"23\":1.1,\"DEFAULT\":1.35},\"KC\":{\"DEFAULT\":0},\"DA\":{\"DEFAULT\":0},\"TW\":{\"DEFAULT\":1},\"UP\":{\"DEFAULT\":1}}},\"itinerary_id\":\"f25db800de1e0137664316217d236675\",\"ttl\":3600,\"trip_id\":45134538,\"app_ref1\":\"" + appRef +"\",\"app_ref2\":74282510,\"customer_detail\":{\"ip_address\":\"119.82.106.202\",\"mobile\":1212121212,\"landline\":1212121212,\"email\":\"cltppayment@gmail.com\",\"first_name\":\"Cltp\",\"last_name\":\"payment\",\"username\":\"cltppayment@gmail.com\"},\"product_type\":\"TRAIN\",\"currency\":\"INR\",\"order_info1\":\"16230/SBC/MYS/2019111200:15:00\",\"order_info2\":\"Test Test\",\"source_type\":\"ACCOUNT\",\"high_risk\":false,\"country\":\"IN\",\"user_id\":\"64891349\",\"email_id\":\"cltppayment@gmail.com\",\"d_plus_x_in_hours\":273,\"app_return_info\":{\"url\":\"https://qa2.cleartrip.com/trains/itinerary/f25db800de1e0137664316217d236675/process_payment\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://trains-book-nget.cltp.com:9001/r3/trains/itinerary/f25db800de1e0137664316217d236675/book_internal\",\"params\":null},\"payment_category\":\"B\"}";;
 			response = RestAssured.given().
 					when().log().all().body(params).headers(headers).post(endPoint);
@@ -1465,8 +1466,7 @@ public class PaymentNodeJS extends API_PaymentCommon1 {
 
 		}
 
-		Reporter.log(urlgetPay);						
-		Reporter.log(endPoint);			
+		Reporter.log(urlgetPay);			
 		return response;
 	}
 
@@ -1688,8 +1688,8 @@ public class PaymentNodeJS extends API_PaymentCommon1 {
 		boolean isAvailable= false;
 
 		try{
-			List<WebElement> element = driver.findElements(By.xpath(xpath));
-			if(element.size()==1){
+			WebElement element = driver.findElement(By.xpath(xpath));
+			if(element.isDisplayed()){
 				isAvailable=true;
 			}
 		}
@@ -1970,4 +1970,5 @@ public class PaymentNodeJS extends API_PaymentCommon1 {
 		}
 	}
 	
+
 }

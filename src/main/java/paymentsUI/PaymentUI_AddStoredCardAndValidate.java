@@ -3,21 +3,22 @@ package paymentsUI;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import org.junit.Assert;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
+import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import domains.PaymentNodeJS;
 import io.restassured.response.Response;
 
-public class PaymentUI_AddStoredCardAndValidate extends PaymentNodeJS{
+public class PaymentUI_AddStoredCardAndValidate extends domains.PaymentNodeJS{
 
 	public RemoteWebDriver driver;
 	protected String Url;
@@ -39,7 +40,8 @@ public class PaymentUI_AddStoredCardAndValidate extends PaymentNodeJS{
 
 	@Test
 	public void addSCandVerifyIfAdded() throws Exception{
-
+          
+		try {
 			driver=(RemoteWebDriver) getDriver(driver);
 			driver.manage().deleteAllCookies();
 			driver.get(cleartripQaUrl);
@@ -80,6 +82,13 @@ public class PaymentUI_AddStoredCardAndValidate extends PaymentNodeJS{
 			click(driver,PaymentUI_CommonUtilities.makePaymentbutton);
 			validateIfPresent(driver,PaymentUI_CommonUtilities.errortextCvvXpath);
 			elementPresent(driver, By.xpath("//p[text()='Stored Cards']"));
+		}
+		
+		catch(Exception e) {
+			Reporter.log("Exception is" +e);
+			Assert.assertTrue(false);
+		}
+			
 	}
 
 	@AfterMethod (alwaysRun = true)

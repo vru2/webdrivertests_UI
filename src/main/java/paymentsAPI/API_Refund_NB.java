@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 import io.restassured.response.Response;
 import junit.framework.Assert;
 
-public class API_Refund_NB extends API_PaymentCommon
+public class API_Refund_NB extends API_PaymentCommon1
 {
 	@Test
 	public void RefundAPI_NB() throws IOException, JSONException, ClassNotFoundException, SQLException, InterruptedException{

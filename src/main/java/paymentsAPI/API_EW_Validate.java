@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
 
-public class API_EW_Validate extends API_PaymentCommon
+public class API_EW_Validate extends API_PaymentCommon1
 {
 	@Test
 	public void Expressway_Validate() throws IOException, JSONException{

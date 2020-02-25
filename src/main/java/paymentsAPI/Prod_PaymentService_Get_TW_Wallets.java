@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
 
-public class Prod_PaymentService_Get_TW_Wallets extends API_PaymentCommon
+public class Prod_PaymentService_Get_TW_Wallets extends API_PaymentCommon1
 {
 	@Test
 	public void Pay_getCardTypes()  {

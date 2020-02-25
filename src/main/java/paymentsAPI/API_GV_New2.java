@@ -9,7 +9,7 @@ import java.util.Random;
 import org.json.JSONException;
 import org.testng.annotations.Test;
 
-public class API_GV_New2 extends API_PaymentCommon
+public class API_GV_New2 extends API_PaymentCommon1
 {
 	@Test
 	public void paymentGV_API() throws IOException, JSONException{

@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
 
-public class API_GV_Get extends API_PaymentCommon
+public class API_GV_Get extends API_PaymentCommon1
 {
 	@Test
 	public void API_GVGet() throws ClassNotFoundException, SQLException  {

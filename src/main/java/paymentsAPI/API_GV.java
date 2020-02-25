@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
 
-public class API_GV extends API_PaymentCommon
+public class API_GV extends API_PaymentCommon1
 {
 	@Test
 	public void paymentGV_API() throws IOException, JSONException{

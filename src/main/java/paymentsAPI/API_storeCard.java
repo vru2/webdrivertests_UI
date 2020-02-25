@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
-public class API_storeCard extends API_PaymentCommon
+public class API_storeCard extends API_PaymentCommon1
 {	
 	
 	@Test(priority = 1, alwaysRun = true)

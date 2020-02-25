@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
 
-public class API_FetchPay_Details extends API_PaymentCommon
+public class API_FetchPay_Details extends API_PaymentCommon1
 {
 	@Test
 	public void PaymentCtPayCreate() {

@@ -11,10 +11,18 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.http.HttpRequest;
+import org.json.JSONArray;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Reporter;
+import org.testng.asserts.SoftAssert;
 
 import domains.PlatformCommonUtil;
 import io.restassured.RestAssured;
@@ -22,15 +30,15 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import junit.framework.Assert;
 
-public class API_PaymentCommon extends PlatformCommonUtil
+public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 {	
 	String paramsCC ="[{\"payment\":{\"seq_no\":1,\"trip_id\":106562332,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":276,\"payment_category\":\"B\",\"fraud_system_invocation\":\"Y\",\"ui_version\":\"v2\",\"customer_detail\":{\"ip_address\":\"119.82.73.123\",\"mobile\":\"9986696785\",\"email\":\"cltppayment@gmail.com\",\"firstName\":\"test\"},\"app_ref1\":\"Q18110926800\",\"app_ref2\":\"167823462\",\"itinerary_id\":\"683a3a6bec-4e58-422a-a2c9-90707b1e5a12\",\"payment_type\":\"CC\",\"amount\":100.99,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"9W/362/DEL/BOM/201811XXXXXX00\",\"order_info2\":\"Kiran Kumar\",\"source_type\":\"ACCOUNT\",\"user_id\":85721640,\"company_id\":110340,\"app_return_info\":{\"url\":\"https://www.cleartrip.com/flights/itinerary/683a3a6bec-4e58-422a-a2c9-90707b1e5a12/book\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://book-flights.cltp.com:9001/r3/book/flights/itinerary/683a3a6bec-4e58-422a-a2c9-90707b1e5a12/book-internal?ll=INFO\"},\"host_name\":\"qa2.cleartrip.com\",\"card_detail\":{\"card_number\":\"5123456789012346\",\"card_type_id\":1,\"expiry_month\":\"05\",\"expiry_year\":\"2020\",\"cvv\":\"123\",\"name\":\"CleartripCard\",\"billto_detail\":{\"firstname\":\"test\",\"lastname\":\"test\",\"address1\":\"Cleartrip JP Nagar\",\"city_name\":\"Bangalore\",\"state_name\":\"Karnataka\",\"country_name\":\"India\",\"postal_code\":\"560076\"}},\"user_agent\":\"Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko\"}}]";
 	String paramsCCVISA ="[{\"payment\":{\"seq_no\":1,\"trip_id\":106562332,\"app_userid\":10001,\"product_type\":\"VISA\",\"high_risk\":false,\"d_plus_x_in_hours\":276,\"payment_category\":\"B\",\"fraud_system_invocation\":\"Y\",\"ui_version\":\"v2\",\"customer_detail\":{\"ip_address\":\"119.82.73.123\",\"mobile\":\"9986696785\",\"email\":\"cltppayment@gmail.com\",\"firstName\":\"test\"},\"app_ref1\":\"Q18110926800\",\"app_ref2\":\"167823462\",\"itinerary_id\":\"683a3a6bec-4e58-422a-a2c9-90707b1e5a12\",\"payment_type\":\"CC\",\"amount\":100.99,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"9W/362/DEL/BOM/201811XXXXXX00\",\"order_info2\":\"Kiran Kumar\",\"source_type\":\"ACCOUNT\",\"user_id\":85721640,\"company_id\":110340,\"app_return_info\":{\"url\":\"https://www.cleartrip.com/flights/itinerary/683a3a6bec-4e58-422a-a2c9-90707b1e5a12/book\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://book-flights.cltp.com:9001/r3/book/flights/itinerary/683a3a6bec-4e58-422a-a2c9-90707b1e5a12/book-internal?ll=INFO\"},\"host_name\":\"qa2.cleartrip.com\",\"card_detail\":{\"card_number\":\"5123456789012346\",\"card_type_id\":1,\"expiry_month\":\"05\",\"expiry_year\":\"2020\",\"cvv\":\"123\",\"name\":\"CleartripCard\",\"billto_detail\":{\"firstname\":\"test\",\"lastname\":\"test\",\"address1\":\"Cleartrip JP Nagar\",\"city_name\":\"Bangalore\",\"state_name\":\"Karnataka\",\"country_name\":\"India\",\"postal_code\":\"560076\"}},\"user_agent\":\"Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko\"}}]";
 
 	String ParamsGV_Refund = "{\"paymentId\":43178534,\"amount\":400,\"refundId\":9283288,\"giftVoucherRecipientEmail\":\"cleartriptest@gmail.com\",\"originalGiftVoucherNumber\":\"3000331134027267\",\"originalInvoiceNumber\":\"43178534_Q190808460482\",\"originalGvTxnId\":\"1908081707\",\"originalBatchNumber\":\"10573009\",\"originalApprovalCode\":\"7015313\",\"currency\":\"INR\",\"tripRef\":\"Q190808460482\"}";
-	String ParamsGV_CAPTURE = "{\"cardNumber\":\"3000331034493248\",\"cardPin\":\"176338\",\"cardCategory\":\"\",\"amount\":10.0,\"currency\":\"INR\",\"paymentId\":";
+	String ParamsGV_CAPTURE = "{\"cardNumber\":\"3000331035866895\",\"cardPin\":\"461701\",\"cardCategory\":\"\",\"amount\":3956.0,\"currency\":\"INR\",\"paymentId\":";
 
-	String ParamsGV_CAPTURE1	= ",\"tripRef\":\"T8345130204\",\"productType\":\"DOMESTIC-AIR\"}";
+	String ParamsGV_CAPTURE1	= ",\"tripRef\":\"Q200221757654\",\"productType\":\"DOMESTIC-AIR\"}";
 
 	String paramsGV  = "[{\"payment\":{\"seq_no\":2,\"trip_id\":106562332,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":1618,\"payment_category\":\"B\",\"fraud_system_invocation\":\"N\",\"ui_version\":\"v2\",\"customer_detail\":{\"ip_address\":\"119.82.106.202\",\"mobile\":\"9986696785\",\"email\":\"cltppayment@gmail.com\"},\"app_ref1\":\"Q18110930000\",\"app_ref2\":\"167823462\",\"itinerary_id\":\"684fe048c7-cde3-4c20-9b73-a70e3c43bc9d\",\"payment_type\":\"GV\",\"amount\":1.0,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"SG/8481/PAT/DEL/201812XXXXXX00\",\"order_info2\":\"Cleartrip tester\",\"source_type\":\"WL\",\"user_id\":51351954,\"company_id\":5291262,\"app_return_info\":{\"url\":\"dummy\",\"method\":\"POST\"},\"gift_voucher_detail\":{\"card_number\":\"3000331032330649\",\"card_pin\":\"968322\",\"amount\":1,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"SG/8481/PAT/DEL/201812XXXXXX00\",\"order_info2\":\"Cleartrip Tester\",\"source_type\":\"WL\",\"user_id\":51351954,\"company_id\":5291262,\"app_return_info\":{\"url\":\"dummy\",\"method\":\"POST\"},\"gift_voucher_detail\":{\"card_number\":\"3000331035883413\",\"card_pin\":\"273064\",\"card_category\":\"\"}}}}]";
 	String paramsWallet ="[{\"payment\":{\"seq_no\":1,\"trip_id\":54808092,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":1618,\"payment_category\":\"B\",\"fraud_system_invocation\":\"N\",\"ui_version\":\"v2\",\"customer_detail\":{\"ip_address\":\"119.82.106.202\",\"mobile\":\"9986696785\",\"email\":\"cltppayment@gmail.com\"},\"app_ref1\":\"Q1809140000\",\"app_ref2\":\"74049672\",\"itinerary_id\":\"681f6b756d-67de-4efc-b663-5a7ac1bd9fa1\",\"payment_type\":\"WT\",\"amount\":0.1,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"6E\\/233\\/BLR\\/MAA\\/20181125062500\",\"order_info2\":\"Test Booking\",\"source_type\":\"ACCOUNT\",\"user_id\":41654864,\"company_id\":110340,\"app_return_info\":{\"url\":\"https://qa2.cleartrip.com/flights/itinerary/681f6b756d-67de-4efc-b663-5a7ac1bd9fa1/book\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://book-flights.cltp.com:9001/r3/book/flights/itinerary/681f6b756d-67de-4efc-b663-5a7ac1bd9fa1/book-internal?ll=INFO\"},\"user_agent\":\"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrom/69.0.3497.100 Safari/537.36\"}}]";
@@ -135,25 +143,27 @@ public class API_PaymentCommon extends PlatformCommonUtil
 	String Params_Singlebincard_Visa_Debit=Param1+Param2+Param3+Param7;
 
 
-	String urlPay = "http://172.17.8.218:9001";
-	//String urlFlyin = "http://172.17.15.129:9080";
-	String urlEW = "http://172.17.8.218:9001";
-	String urlRefundNew = "http://172.17.8.218:9001";
-	String urlOLApromo = "http://172.17.26.11:7999";
-	String promoURL = "http://172.17.26.11:7999";
-	String endPointCardMulti = "/v1/payment/common/json?country=Palau&issuerType=MASTER";
-	String endPointPromotriprefandid = "/promoservice/v1/promogroups/Q0806201815/promotions/22899";
-	String endPointPromoGroupPromoRef = "/promoservice/v1/promogroups/Q1901160033/";
-	String endPointPromoGroupTripRef = "/promoservice/v1/promogroups/Q191115575604/promotions";
-	String endPointPromoFromPromoId = "/promoservice/v1/promogroups/Q191115575604/";
-	String endPointPromoGroupsFromCreatedDate= "/promoservice/v1/promogroups?createdDate=15-11-2019";
-	String endPointPromoGroupsForAUpdatedDate= "/promoservice/v1/promogroups?updatedDate=15-11-2019";
-	String endPointPromoGroupsForACreatedAndUpdatedDate= "/promoservice/v1/promogroups?createdDate=15-11-2019&updatedDate=15-11-2019";
-	String urladcb = "http://172.17.12.82:9080";
+	String urlPay = "http://172.17.26.11:8358";
+	String promoURL = "http://172.17.26.11:8360";
 	String urlRewards = "http://172.17.12.82:9080";
-	String urlFetchPayDetails = "http://172.17.26.11:9031";
-	String urlWallet = "http://172.17.26.11:8071";
+	String urlWallet = "http://172.17.26.11:8359";
 
+	String urlrewards_validate = "http://172.17.26.11:8358";
+	String urlrewards_validate1 = "http://172.17.26.11:8070";
+	String urlrewards_payURI1 ="http://paymentservice.cltp.com:9001";
+	String urlrewards_URI1 = "http://rewardsservice.cltp.com:9001/";
+	String urlPromo_Used = "http://wallet-service.cltp.com:9001";
+	String urlReporting ="http://172.17.26.11:8272";
+	String urlReportingTS ="http://172.17.26.11:9031";
+
+	/*
+	
+
+	String urlPay = "http://172.17.8.218:9001";
+	String urlRefundNew = "http://172.17.8.218:9001";
+	String promoURL = "http://172.17.26.11:7999";
+	String urlRewards = "http://172.17.12.82:9080";
+	String urlWallet = "http://172.17.26.11:8071";
 	String urladcb_validat = "http://172.17.26.11:8070";
 
 	String urlrewards_validate = "http://172.17.26.11:8070";
@@ -161,7 +171,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 	String urlrewards_URI = "http://rewardsservice.cltp.com:9001/";
 	String urlPromo_Used = "http://wallet-service.cltp.com:9001";
 	String urlReporting ="http://172.17.26.11:8272";
-	String urlReportingTS ="http://172.17.26.11:9031";
+	String urlReportingTS ="http://172.17.26.11:9031";*/
 
 	String urlInit = "/paymentservice/service/otp/init";
 	String urlProcess = "/paymentservice/service/otp/process";
@@ -184,9 +194,18 @@ public class API_PaymentCommon extends PlatformCommonUtil
 	String urlROR_Fetch_RefundByID ="/paymentservice/service/refund/info/9373548";
 	String urlROR_Fetch_ProfileList= "/paymentservice/service/profileList/info/5071366";
 	String urlROR_MultiSearch_Pay= "/paymentservice/search/payments/v1?query=id:43621536,paymentType:CC";
+
+	String endPointCardMulti = "/v1/payment/common/json?country=Palau&issuerType=MASTER";
+	String endPointPromotriprefandid = "/promoservice/v1/promogroups/Q0806201815/promotions/22899";
+	String endPointPromoGroupPromoRef = "/promoservice/v1/promogroups/Q1901160033/";
+	String endPointPromoGroupTripRef = "/promoservice/v1/promogroups/Q191115575604/promotions";
+	String endPointPromoFromPromoId = "/promoservice/v1/promogroups/Q191115575604/";
+	String endPointPromoGroupsFromCreatedDate= "/promoservice/v1/promogroups?createdDate=15-11-2019";
+	String endPointPromoGroupsForAUpdatedDate= "/promoservice/v1/promogroups?updatedDate=15-11-2019";
+	String endPointPromoGroupsForACreatedAndUpdatedDate= "/promoservice/v1/promogroups?createdDate=15-11-2019&updatedDate=15-11-2019";
 	
-	
-	
+
+
 	String url_NavisonCC = "/paymentservice/service/mis/detail?tripRef=Q200117692102&paymentType=CC";
 	String url_NavisonAir = "/paymentservice/service/air/mis/detail?tripRef=Q191226667766&paymentType=UP";
 
@@ -305,6 +324,9 @@ public class API_PaymentCommon extends PlatformCommonUtil
 	String Prod_Url_EndPoint_Get_TP_Wallets="/paymentservice/service/thirdpartywallets";
 
 	String Prod_Url_EndPoint_Rewards_PayBack_Mobile="/payments/rewards/payback/checkAccountLinked?mobileNumber=9620351338";
+	String Prod_Url_ActiveNB= "/paymentservice/service/netbankingbanks?status=active";
+	String Prod_Url_PaymentStatus= "/paymentservice/service/status?paymentIds=129369172";
+	String Prod_Url_ActiveCardType= "/paymentservice/service/cardtypes?status=active";
 	String Prod_Url_EndPoint_Rewards_ADCB_Balance="/payments/rewards/checkBalance";
 	String Prod_Url_EndPoint_Wallet_getWallet="/payments/wallet/74728676/getWallet";
 	String Prod_Url_EndPoint_Promo_Group = "/promoservice/v1/promogroups/190313426926";
@@ -400,8 +422,8 @@ public class API_PaymentCommon extends PlatformCommonUtil
 	}
 
 	public Response payGet(String payType, String payType1) {
-		RestAssured.baseURI =urlOLApromo;
-		Reporter.log(urlOLApromo);
+		RestAssured.baseURI =promoURL;
+		Reporter.log(promoURL);
 		String url = null;
 		HashMap<String, Object> headers = new HashMap<>();
 		headers = headersForms();
@@ -415,7 +437,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			url= urlpromoUsed;
 		}
 		else if(payType.equalsIgnoreCase("FetchPayDetails")) {
-			RestAssured.baseURI =urlFetchPayDetails;
+			RestAssured.baseURI =urlReportingTS;
 			url= url1_FetchPayDetails;
 		}
 		else if(payType.equalsIgnoreCase("CreateRecord")) {
@@ -452,14 +474,14 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			url= url_NavisonCC;
 		}
 		else if(payType.equalsIgnoreCase("NavisonAir")) {
-			
+
 			url= url_NavisonAir;
 		}
 		else if(payType.equalsIgnoreCase("ROR_MultiSearch")) {
 			RestAssured.baseURI ="http://paymentservicereporting.cltp.com:9001";
 			url= urlROR_MultiSearch_Pay;
 		}
-		
+
 		Reporter.log(url);
 
 
@@ -560,7 +582,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			params = Params_RORSearch_Profile_List;
 			url= urlRORSearch_Profile_List;
 		}
-		/*else if(payType.equalsIgnoreCase("ROR_Create_Refunds")) {
+		else if(payType.equalsIgnoreCase("ROR_Create_Refunds")) {
 			String ranno = getDateTime(1, "mmddss");
 			params = Params_RORCreate_Refund+ranno+"}";
 			url= urlRORCreate_Refunds;
@@ -570,7 +592,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			String ranno = getDateTime(1, "mmddss");
 			params = ParamsROR_Recon+ranno+"}";
 			url= urlRORRecon;
-		}*/
+		}
 
 
 
@@ -600,7 +622,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		String params = null;
 		HashMap<String, Object> headers = new HashMap<>();
 		Response resp = null;
-		trip_refPromo.add(API_PaymentCommon.tripRefForPromo());
+		trip_refPromo.add(API_PaymentCommon1.tripRefForPromo());
 		if(payType.equalsIgnoreCase("")) {
 			params = "";
 			url= "";
@@ -982,10 +1004,38 @@ public class API_PaymentCommon extends PlatformCommonUtil
 					get(url);
 		}
 
+		else if(payType.equalsIgnoreCase("ActiveNB")) {
+			RestAssured.baseURI = Prod_Url_PaymentService;
+			url = Prod_Url_ActiveNB;
+			request = RestAssured.given().
+					when().
+					log().all().
+					headers(headers).
+					get(url);
+		}
+
+		else if(payType.equalsIgnoreCase("GetPaymentStatus")) {
+			RestAssured.baseURI = Prod_Url_PaymentService;
+			url = Prod_Url_PaymentStatus;
+			request = RestAssured.given().
+					when().
+					log().all().
+					headers(headers).
+					get(url);
+		}
+
+		else if(payType.equalsIgnoreCase("ActiveCardTypes")) {
+            RestAssured.baseURI = Prod_Url_PaymentService;
+            url = Prod_Url_ActiveCardType;
+            request = RestAssured.given().
+					when().
+					log().all().
+					headers(headers).
+					get(url);
+		}
 
 		Reporter.log(url);
-
-		return request;
+        return request;
 	}
 
 	public Response rearchGV(String payType, String payType1) throws ClassNotFoundException, SQLException{
@@ -1018,7 +1068,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		}
 		else if(payType.equalsIgnoreCase("CAPTURE")) {
 			url= urlEndPoint_GV_CAPTURE;
-			params = ParamsGV_CAPTURE+"43625664"+ParamsGV_CAPTURE1;
+			params = ParamsGV_CAPTURE+"43848507"+ParamsGV_CAPTURE1;
 			System.out.println(params);
 			request = RestAssured.given().
 					when().
@@ -1079,7 +1129,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 	}
 
 	public Response ola(String payType, String payType1, String promoID) throws Exception {
-		RestAssured.baseURI = urlRefundNew;
+		RestAssured.baseURI = urlPay;
 		String params = null;
 		String Url = null;
 		HashMap<String, Object> headers = new HashMap<>();
@@ -1103,7 +1153,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 					get(Url);
 		}
 		else if(payType.equalsIgnoreCase("PromoStatus")) {				
-			Url = urlOLApromo+urlOLA_PromoGroup;
+			Url = promoURL+urlOLA_PromoGroup;
 			//String trip = getRandomNo(99999999);
 			Random rand = new Random();
 			int n = rand.nextInt(9999999);
@@ -1121,7 +1171,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 					headers(headers).
 					post(Url);
 		}
-		Reporter.log(urlRefundNew);
+		Reporter.log(urlPay);
 		Reporter.log(Url);
 		////System.out.println(response.body().asString());
 		return response;
@@ -2324,7 +2374,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		}
 
 		else if(payType.equalsIgnoreCase("ROR_Recon")){
-			if(!resp.body().asString().contains("refundAmount")) {
+			if(!resp.body().asString().contains("payment_id")) {
 				Reporter.log("refundAmount");
 				Assert.assertTrue(false);
 			}
@@ -2365,13 +2415,6 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			}	
 		}
 
-		
-		
-		
-		
-
-
-
 		return resp;	
 	}
 
@@ -2384,6 +2427,11 @@ public class API_PaymentCommon extends PlatformCommonUtil
 
 		if(statusCode!=200) {
 			Assert.assertTrue(false);
+			Reporter.log("Response Status code is not matching");
+		}
+
+		else {
+			Reporter.log("Response status code is matching");
 		}
 		if(payType.equalsIgnoreCase("Rwd_PayBack_Mobile")) {
 			String status = jsonPathEvaluator.getString("status");
@@ -2408,6 +2456,42 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			if(!description.contains("You have provided incorrect card details")) {
 				Assert.assertTrue(false);
 			}
+		}
+		else if(payType.equalsIgnoreCase("GetPaymentStatus")) {
+			boolean isMatching = false;
+			List<HashMap<String,Object>> payStatusList = new ArrayList<>();
+			payStatusList = jsonPathEvaluator.get("bookPaymentResponse");
+			for(HashMap<String,Object> m : payStatusList) {
+				if(m.get("status").equals("S") && m.get("description").equals("Verification SUCCESS Transaction")) {
+					isMatching = true;
+					Reporter.log("Payment Status Is Successful");
+				}
+
+				else {
+					Reporter.log("Payment Status Is Not Successful");
+				}
+			}
+
+			Assert.assertTrue(isMatching);
+		}
+
+		else if(payType.equals("ThirdPartyWallets")) {
+			boolean isMatching = false;
+			List<HashMap<String,Object>> tpStatusList = new ArrayList<>();
+			tpStatusList = (List<HashMap<String, Object>>) resp;
+			for(HashMap<String,Object> m : tpStatusList) {
+				if(m.get("status").equals("D") || m.get("status").equals("A")) {
+					isMatching = true;
+					Reporter.log("Third Party Wllet Status Is Successful");
+				}
+
+				else {
+					Reporter.log("Payment Status Is Not Successful");
+				}
+			}
+
+			Assert.assertTrue(isMatching);
+
 		}
 		else if(payType.equalsIgnoreCase("Wallet_Get_Currency")) {
 			String str_resp = resp.body().asString();
@@ -2470,12 +2554,9 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		}
 		else if(payType.equals("ADD")) {
 			url =urlCTPay_ADD ; 
-			String ranno = "1234";
+			String ranno = getRandomNos(4);
 
-			String Date = "1223";
-			/*String ranno = getRandomNos(4);
-
-			String Date = getDateTime(1, "ssmm");*/
+			String Date = getDateTime(1, "ssmm");
 
 			params = paramsctPay_ADD+Date+paramsctPay_ADD1;		
 			request = RestAssured.given().
@@ -2519,13 +2600,13 @@ public class API_PaymentCommon extends PlatformCommonUtil
 	}	
 
 	public Response refund(String payType, String RefundID) {
-		RestAssured.baseURI = urlRefundNew;
+		RestAssured.baseURI = urlPay;
 		String endPoint = null;
 		HashMap<String, Object> headers	= new HashMap<>();
 		headers = headersForms();
 		Response response = null;
 		if(payType.equalsIgnoreCase("refund")) {
-			endPoint = urlRefundNew+url_RefundNEW_EndPoint+RefundID;
+			endPoint = urlPay+url_RefundNEW_EndPoint+RefundID;
 			if(common.value("PaymentServer").equalsIgnoreCase("old")) {
 				endPoint = "http://paymentservice.cltp.com:9001/paymentservice/service/refund?refundids="+RefundID;
 			}
@@ -2534,7 +2615,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			response = RestAssured.given().
 					when().log().all().headers(headers).get(endPoint);
 		}
-		Reporter.log(urlRefundNew);
+		Reporter.log(urlPay);
 		Reporter.log(endPoint);
 		return response;
 	}
@@ -2572,7 +2653,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 	}
 
 	public Response expressWay(String payType, String PayType1) {
-		RestAssured.baseURI = urlEW;
+		RestAssured.baseURI = urlPay;
 		String endPoint = null;
 		String params = null;
 		HashMap<String, Object> headers	= new HashMap<>();
@@ -2642,7 +2723,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 					when().log().all().headers(headers).get(endPoint);
 		}
 
-		Reporter.log(urlEW);
+		Reporter.log(urlPay);
 		Reporter.log(endPoint);
 		return response;
 
@@ -2659,34 +2740,34 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		//String track = "CLR"+ getRandomNo(8);
 
 		if(payType.equalsIgnoreCase("checkBalance")) {
-			RestAssured.baseURI = urladcb;
+			RestAssured.baseURI = urlRewards;
 			endPoint = urladcb_checkbalance;	
 			params = Paramsadcb_checkbalance1+trackid+Paramsadcb_checkbalance2;
 			response = RestAssured.given().
 					when().log().all().body(params).headers(headers).post(endPoint);
 		}
 		else if(payType.equalsIgnoreCase("sendOTP")) {
-			RestAssured.baseURI = urladcb;
+			RestAssured.baseURI = urlRewards;
 			endPoint = urladcb_sendOTP;	
 			params = Paramsadcb_sendOTP1+trackid+Paramsadcb_sendOTP2;
 			response = RestAssured.given().
 					when().log().all().body(params).headers(headers).post(endPoint);
 		}			
 		else if(payType.equalsIgnoreCase("validate")) {
-			RestAssured.baseURI = urladcb_validat;
+			RestAssured.baseURI = urlrewards_validate;
 			endPoint = urladcb_validate;	
 			params = Paramsadcb_validate1+trackid+Paramsadcb_validate2;
 			response = RestAssured.given().
 					when().log().all().body(params).headers(headers).post(endPoint);
 		}
 		else if(payType.equalsIgnoreCase("pay")) {
-			RestAssured.baseURI = urladcb_validat;
+			RestAssured.baseURI = urlrewards_validate;
 			endPoint = urladcb_pay;	
 			params = Paramsadcb_pay1+trackid+Paramsadcb_pay2;
 			response = RestAssured.given().
 					when().log().all().body(params).headers(headers).post(endPoint);
 		}
-		Reporter.log(urladcb);
+		Reporter.log(urlRewards);
 		Reporter.log(endPoint);
 		return response;
 
@@ -2702,28 +2783,28 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		payment_id.add(PlatformCommonUtil.generatePaymentID());
 		trk_id.add("pay12341608"+PlatformCommonUtil.generateTrackID());
 		if(payType.equalsIgnoreCase("ADCB_CheckBalance")) {
-			RestAssured.baseURI = urladcb;
+			RestAssured.baseURI = urlRewards;
 			endPoint = urladcb_checkbalance;	
 			params = Paramsadcb_checkbalance1+trackid+Paramsadcb_checkbalance2;
 			response = RestAssured.given().
 					when().log().all().body(params).headers(headers).post(endPoint);
 		}
 		else if(payType.equalsIgnoreCase("ADCB_sendOTP")) {
-			RestAssured.baseURI = urladcb;
+			RestAssured.baseURI = urlRewards;
 			endPoint = urladcb_sendOTP;	
 			params = Paramsadcb_sendOTP1+trackid+Paramsadcb_sendOTP2;
 			response = RestAssured.given().
 					when().log().all().body(params).headers(headers).post(endPoint);
 		}			
 		else if(payType.equalsIgnoreCase("ADCB_validate")) {
-			RestAssured.baseURI = urladcb_validat;
+			RestAssured.baseURI = urlrewards_validate;
 			endPoint = urladcb_validate;	
 			params = Paramsadcb_validate1+trackid+Paramsadcb_validate2;
 			response = RestAssured.given().
 					when().log().all().body(params).headers(headers).post(endPoint);
 		}
 		else if(payType.equalsIgnoreCase("ADCB_pay")) {
-			RestAssured.baseURI = urladcb_validat;
+			RestAssured.baseURI = urlrewards_validate;
 			endPoint = urladcb_pay;	
 			params = Paramsadcb_pay1+trackid+Paramsadcb_pay2;
 			response = RestAssured.given().
@@ -2873,7 +2954,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			response = RestAssured.given().
 					when().log().all().body(params).headers(headers).post(endPoint);
 		}
-		Reporter.log(urladcb);
+		Reporter.log(urlRewards);
 		Reporter.log(endPoint);
 		return response;			
 	}
@@ -3142,6 +3223,21 @@ public class API_PaymentCommon extends PlatformCommonUtil
 
 	public ArrayList<String> db_GV() throws SQLException, ClassNotFoundException {
 		ArrayList<String> data = new ArrayList<String>();
+		if (common.value("PaymentDB").equalsIgnoreCase("ORACLE")) {
+			data = db_GV_Oracle();
+			
+		} else {
+			data = db_GV_MySQL();
+			}
+			
+		return data;
+		
+	}
+	
+	
+	
+	public ArrayList<String> db_GV_Oracle() throws SQLException, ClassNotFoundException {
+		ArrayList<String> data = new ArrayList<String>();
 		ArrayList<String> Name = new ArrayList<String>();
 		{
 			String url = "jdbc:oracle:thin:@172.17.4.101:1521/cleardb";
@@ -3166,7 +3262,39 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		}
 		return data;
 	}
+	
+	
 
+	public ArrayList<String> db_GV_MySQL() throws SQLException, ClassNotFoundException {
+		ArrayList<String> data = new ArrayList<String>();
+		ArrayList<String> Name = new ArrayList<String>();
+		{
+
+			String MySQL_URL = "jdbc:mysql://172.17.4.15:3306/payment";
+			String MySQL_User = "payment";
+			String MySQL_Password = "P@yment@123";
+			String query =  "select ID from payment.payments where Payment_Type='GV' AND status ='S' order by created_at desc";
+			Connection myCon = DriverManager.getConnection(MySQL_URL, MySQL_User, MySQL_Password);
+
+			if (myCon != null) {
+				ResultSet myRes = myCon.createStatement().executeQuery(query);
+				while (myRes.next() == true) {
+					ResultSetMetaData result = myRes.getMetaData();
+					for (int x = 1; x <= 1; x++) {
+						String colName = result.getColumnName(x);
+						String colValue = myRes.getString(x);
+						Name.add(colName);
+						data.add(colValue);
+					}
+				}
+				myCon.close();
+			} else
+				Reporter.log("MYSQL Connection not established");
+		}
+		return data;
+	}
+	
+	
 	public Response validation_RewardPayback(String payType, Response resp) throws Exception{
 		boolean isMatching = false;
 		String status="";

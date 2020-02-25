@@ -5,7 +5,7 @@ package paymentsAPI;
 
 import java.util.Random;
 
-public class API_OLA_PromoStatus extends API_PaymentCommon
+public class API_OLA_PromoStatus extends API_PaymentCommon1
 {
 	
 	Random rand = new Random();

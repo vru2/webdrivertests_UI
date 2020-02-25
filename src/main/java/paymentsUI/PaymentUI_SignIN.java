@@ -25,7 +25,7 @@ public class PaymentUI_SignIN extends PaymentNodeJS{
 		resp = payUIget("BookApp/GetPay","");
 		//qaUrl = qaurl;
 		Url = qaurl+ fetchPaymentURL(resp);
-		//System.out.println(Url);
+		Reporter.log(Url);
 	}
 	
 

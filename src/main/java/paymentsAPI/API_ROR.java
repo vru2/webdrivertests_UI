@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
 
-public class API_ROR extends API_PaymentCommon
+public class API_ROR extends API_PaymentCommon1
 {
 	@Test(alwaysRun=true)
 	public void ROR_Fetch_PaymentByID() throws IOException, JSONException{

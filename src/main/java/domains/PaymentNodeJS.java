@@ -42,10 +42,10 @@ import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import junit.framework.Assert;
-import paymentsAPI.API_PaymentCommon;
+import paymentsAPI.API_PaymentCommon1;
 import paymentsUI.PaymentUI_CommonUtilities;
 
-public class PaymentNodeJS extends API_PaymentCommon {
+public class PaymentNodeJS extends API_PaymentCommon1 {
 
 	public String getPaymentNodeUrl = "http://172.17.15.176:9080";
 

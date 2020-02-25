@@ -5,9 +5,9 @@ package paymentsUI;
 
 import org.testng.annotations.Test;
 
-import paymentsAPI.API_PaymentCommon;
+import paymentsAPI.API_PaymentCommon1;
 
-	public class Payment_NodeJS_Create_GV extends API_PaymentCommon{
+	public class Payment_NodeJS_Create_GV extends API_PaymentCommon1{
 	
 	
   @Test 

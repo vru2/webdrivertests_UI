@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
 
-public class API_PromoService extends API_PaymentCommon {
+public class API_PromoService extends API_PaymentCommon1 {
 
 	@Test(priority=1)
 	public void get_PromotionFromTripRefAndPromoId() throws Exception{

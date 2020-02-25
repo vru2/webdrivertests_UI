@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
 
-public class API_Binmanager_Add_MC_Credit extends API_PaymentCommon
+public class API_Binmanager_Add_MC_Credit extends API_PaymentCommon1
 {
 	
 	@Test

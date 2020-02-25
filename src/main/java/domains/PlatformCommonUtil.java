@@ -1,11 +1,17 @@
 package domains;
 
 import java.io.IOException;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
+
 import org.testng.Reporter;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
@@ -485,5 +491,21 @@ public class PlatformCommonUtil extends WrapperMethod {
 		String tid_new = Integer.toString(tid);
 		return tid_new;
 	}
+	
+	public String getDateTime(int day, String format) throws Exception {
+		Calendar calender = new GregorianCalendar();
+		calender.add(Calendar.DATE, +day);
+		java.util.Date date = calender.getTime();
+		String dateTime = new SimpleDateFormat(format).format(date);
+		return dateTime;
+	}
 
+
+
+	public String getRandomNos(int number) throws Exception {
+		int randomInventory = ThreadLocalRandom.current().nextInt(number);
+		randomInventory = (int) (Math.random() * number);
+		String Str_randomInventory = Integer.toString(randomInventory);
+		return Str_randomInventory;
+	}
 }

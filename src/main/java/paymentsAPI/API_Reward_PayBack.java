@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
 
-public class API_Reward_PayBack extends API_PaymentCommon
+public class API_Reward_PayBack extends API_PaymentCommon1
 {	
 	Random rand = new Random();
 	int n = rand.nextInt(9999999);

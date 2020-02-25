@@ -74,7 +74,7 @@ public class PaymentUI_CommonUtilities {
 	protected static String paymentModeDC= "Debit Card";
 	protected static String paymentModeNB= "Net Banking";
 	protected static String paymentModeUPI= "UPI";
-	protected static String paymentModeRP= "Rewards Point";
+	protected static String paymentModeADCB= "ADCB TouchPoints";
 	protected static String paymentModeAP= "Apple Pay";
 	protected static String paymentModeStoredCard= "Stored Cards";
 	protected static String errorTextInvalidCCDetailsxpath= "//div[contains(@class,'retry')]";
@@ -115,6 +115,7 @@ public class PaymentUI_CommonUtilities {
     public static String manageTripsXpath= "//a[text()='Manage trips']";
     public static String expresswayXpath= "//a[text()='Expressway']";
     public static String removeStoredCardXpath= "//a[@title='Remove this card']";
+    public static String walletCheckBox= "(//label[@class='checkbox-round'])[1]";
     
 	public static int generateFiveDigitRandomNumber(){
 		Random r = new Random( System.currentTimeMillis() );

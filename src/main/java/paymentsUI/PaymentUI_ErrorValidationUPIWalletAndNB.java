@@ -2,6 +2,7 @@ package paymentsUI;
 
 import java.util.concurrent.TimeUnit;
 
+import org.junit.Assert;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.Reporter;
@@ -34,7 +35,7 @@ public class PaymentUI_ErrorValidationUPIWalletAndNB extends PaymentNodeJS {
 		try{
 			driver=(RemoteWebDriver) getDriver(driver);
 			driver.manage().deleteAllCookies(); 
-			driver.get(Url);
+			driver.get(Url);		
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 			click(driver,PaymentUI_CommonUtilities.upiModeXpath);
 			click(driver,PaymentUI_CommonUtilities.makePaymentbutton);
@@ -46,6 +47,7 @@ public class PaymentUI_ErrorValidationUPIWalletAndNB extends PaymentNodeJS {
 
 		catch(Exception e){
 			Reporter.log("Exception is"+e);
+			Assert.assertTrue(false);
 		}
 	}
 

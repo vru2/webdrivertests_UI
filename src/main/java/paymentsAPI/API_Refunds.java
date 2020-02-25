@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
-public class API_Refunds extends API_PaymentCommon
+public class API_Refunds extends API_PaymentCommon1
 {
 	
 	public void refund_entry(String tripid, String amount,Boolean isFullWalletRefund, String status) throws Exception{

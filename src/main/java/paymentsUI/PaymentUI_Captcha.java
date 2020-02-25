@@ -10,10 +10,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import domains.PaymentNodeJS;
 import io.restassured.response.Response;
 
-public class PaymentUI_Captcha extends PaymentNodeJS{
+public class PaymentUI_Captcha extends domains.PaymentNodeJS{
 	public RemoteWebDriver driver;
 	protected String Url;
 	protected String paymentUrl;

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[MySQL Payment service is called]]>
+    </line>
+    <line>
+      <![CDATA[Master card selected]]>
+    </line>
+    <line>
+      <![CDATA[<p>http://172.17.15.176:9080/success?tripRef=T180916660</p>]]>
+    </line>
+    <line>
+      <![CDATA[CC  : T180916660]]>
+    </line>
+    <line>
+      <![CDATA[ConfirmationMsg = Payment successful! :)]]>
+    </line>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="19411" started-at="2020-02-27T11:26:49Z" finished-at="2020-02-27T11:27:08Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="19411" started-at="2020-02-27T11:26:49Z" finished-at="2020-02-27T11:27:08Z">
+      <class name="paymentsUI.Payment_NodeJS_CC">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:paymentsUI.Payment_NodeJS_CC@41ee392b]" name="setUp" is-config="true" duration-ms="3345" started-at="2020-02-27T11:26:49Z" finished-at="2020-02-27T11:26:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="paymentNodeJS_CC()[pri:0, instance:paymentsUI.Payment_NodeJS_CC@41ee392b]" name="paymentNodeJS_CC" duration-ms="15433" started-at="2020-02-27T11:26:52Z" finished-at="2020-02-27T11:27:07Z">
+          <reporter-output>
+            <line>
+              <![CDATA[MySQL Payment service is called]]>
+            </line>
+            <line>
+              <![CDATA[Master card selected]]>
+            </line>
+            <line>
+              <![CDATA[<p>http://172.17.15.176:9080/success?tripRef=T180916660</p>]]>
+            </line>
+            <line>
+              <![CDATA[CC  : T180916660]]>
+            </line>
+            <line>
+              <![CDATA[ConfirmationMsg = Payment successful! :)]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- paymentNodeJS_CC -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:paymentsUI.Payment_NodeJS_CC@41ee392b]" name="afterMethod" is-config="true" duration-ms="2" started-at="2020-02-27T11:27:07Z" finished-at="2020-02-27T11:27:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=paymentNodeJS_CC status=SUCCESS method=Payment_NodeJS_CC.paymentNodeJS_CC()[pri:0, instance:paymentsUI.Payment_NodeJS_CC@41ee392b] output=MySQL Payment service is called]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:paymentsUI.Payment_NodeJS_CC@41ee392b]" name="tearDown" is-config="true" duration-ms="608" started-at="2020-02-27T11:27:07Z" finished-at="2020-02-27T11:27:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- paymentsUI.Payment_NodeJS_CC -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

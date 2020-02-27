@@ -72,20 +72,7 @@ public class WrapperMethod extends CommonUtil {
 			check_cancellation_failure = common.value("check_cancellation_failure").contains("true"),
 			MakePaymentOnlyInProd = MakePaymentTrue && ProductionUrl;
 
-	public int MultiDate = 20, OnwardDate = 25, ReturnDate = 26, num_adults = 0, num_children = 0, num_infants = 0,
-			num_of_sectors = 0, time_nano = 10, time_short = 50, time_medium = 300, time_extrashort = 200,
-			time_long = 900, time_Search = 600, time_SRP = 90, time_Review = 600, time_Login = 100,
-			time_Traveller = 600, time_Pay = 300, time_confirmation = 900, time_verylong = 18;
-
-	public String gds_airlines[] = new String[] { "Bangkok Airways", "Air India", "Kingfisher", "Air India Express",
-			"Air France", "Air Arabia", "British Airways", "Cathay Pacific", "Egypt Air", "Emirates", "Ethiopian Air",
-			"Etihad Airways", "Gulf Air", "Kenya Airways", "Kuwait Airways", "Lufthansa", "Malaysia Airlines",
-			"Multiple Carriers", "Myanmar Intl", "Oman Av", "Qantas Airways", "Qatar Airways", "Royal Jordanian", "SAS",
-			"SilkAir", "Saudi Arabian Air", "Singapore Air", "South African", "SriLankan Airlines", "Swiss Intl Air",
-			"Thai Airways", "Turkish Airlines", "Virgin Atlantic", "Air Asia", "All Nippon", "Mihin Lanka" };
-
-	public boolean GDS_Flight, B2B_GDS_Flight = false;
-	public int number_gds_Airlines = gds_airlines.length;
+public boolean GDS_Flight, B2B_GDS_Flight = false;
 
 	public String getBaseUrl(String domain) {
 		// addLog("Domain: " + domain + " Host: " + common.value("host"),true);
@@ -147,8 +134,73 @@ public class WrapperMethod extends CommonUtil {
 	      return cap;
 	   }
 	 
-	
-	public RemoteWebDriver getDriver(RemoteWebDriver driver) throws IOException, InterruptedException {
+	 public DesiredCapabilities createHeadlessChromeMobile() throws IOException {
+	      ChromeOptions options = new ChromeOptions();
+	      options.addArguments("--headless");
+	      options.addArguments("window-size=1200,1100");
+	      options.addArguments("--no-sandbox");
+	      options.addArguments("--disable-dev-shm-usage");
+	      options.addArguments("--user-agent=Mozilla/5.0 (iPhone; U; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5");
+	      Map<String, Object> prefs = new HashMap();
+	      
+
+		 	if (System.getProperty("os.name").contains("Windows")) {
+				File file = new File(".");
+				String filepath = file.getCanonicalPath() + "//exe//chromedriver.exe";
+				System.setProperty("webdriver.chrome.driver", filepath);
+			}else if(System.getProperty("os.name").contains("Linux")){
+				File file = new File(".");
+				String filepath = file.getCanonicalPath() + "//exe//chromedriver";
+				System.setProperty("webdriver.chrome.driver", filepath);
+			} else {
+				File file = new File(".");
+				String filepath = file.getCanonicalPath() + "//exe//chromedriver_mac";
+				System.setProperty("webdriver.chrome.driver", filepath);
+			}
+	      
+	      prefs.put("profile.default_content_settings.popups", 0);
+	      options.setExperimentalOption("prefs", prefs);
+	      DesiredCapabilities cap = DesiredCapabilities.chrome();
+	      cap.setCapability("goog:chromeOptions", options);
+	      return cap;
+	   }
+	 
+	 public WebDriver getMobileDriver(WebDriver driver) throws IOException {
+
+		 
+		 
+		 Map<String, String> mobileEmulation = new HashMap<>();
+
+		 mobileEmulation.put("deviceName", "Nexus 5");
+		 
+		 	if (System.getProperty("os.name").contains("Windows")) {
+				File file = new File(".");
+				String filepath = file.getCanonicalPath() + "//exe//chromedriver.exe";
+				System.setProperty("webdriver.chrome.driver", filepath);
+			}else if(System.getProperty("os.name").contains("Linux")){
+				File file = new File(".");
+				String filepath = file.getCanonicalPath() + "//exe//chromedriver";
+				System.setProperty("webdriver.chrome.driver", filepath);
+			} else {
+				File file = new File(".");
+				String filepath = file.getCanonicalPath() + "//exe//chromedriver_mac";
+				System.setProperty("webdriver.chrome.driver", filepath);
+			}
+		 
+			
+		 ChromeOptions chromeOptions = new ChromeOptions();
+		 chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
+		 if(common.value("headlessbrowser").equalsIgnoreCase("false") ){
+			 driver = new ChromeDriver(chromeOptions);
+		 }
+			
+		 else driver = new ChromeDriver(this.createHeadlessChromeMobile());
+		return driver;
+		 
+	 }
+	 
+	 
+	 public RemoteWebDriver getDriver(RemoteWebDriver driver) throws IOException, InterruptedException {
 		if (driver == null) {
 			if (common.value("browser").equalsIgnoreCase("IE") && common.value("mode").equalsIgnoreCase("local")) {
 				File file;
@@ -228,10 +280,6 @@ public class WrapperMethod extends CommonUtil {
 					String filepath = file.getCanonicalPath() + "//exe//chromedriver_mac";
 					System.setProperty("webdriver.chrome.driver", filepath);
 				}
-				/*
-				 * File f = new File("exe\\chromedriver.exe"); String path =
-				 * f.getAbsolutePath(); System.setProperty("webdriver.chrome.driver", path);
-				 */
 				driver = new ChromeDriver(this.createChromeConfig());
 				// driver = new ChromeDriver();
 				// TimeUnit.SECONDS.sleep(2);
@@ -307,34 +355,30 @@ public class WrapperMethod extends CommonUtil {
 	}
 
 
-	public RemoteWebDriver getMobileDriver(RemoteWebDriver driver) throws IOException, InterruptedException {
+	public RemoteWebDriver getMobileDriver1(RemoteWebDriver driver) throws IOException, InterruptedException {
 		if (driver == null) {
-			// Local env
-			// System.out.println(common.value("mobilebrowser"));
-			// System.out.println(common.value("mode"));
 			if (common.value("mobilebrowser").equalsIgnoreCase("Chrome")
-					&& common.value("mode").equalsIgnoreCase("local")) {
+					&& common.value("mode").equalsIgnoreCase("local")&&common.value("headlessbrowser").equalsIgnoreCase("true")) { 
 				System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
 				ChromeOptions options = new ChromeOptions();
 				options.addArguments(
 						"--user-agent=Mozilla/5.0 (iPhone; U; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5");
+			
 				driver = new ChromeDriver(options);
 
 				driver.manage().deleteAllCookies();
 				// driver.navigate().refresh();
 				// driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 				// driver.navigate().refresh();
-			} else if (common.value("mobilebrowser").equalsIgnoreCase("CHROME")
-					&& common.value("mode").equalsIgnoreCase("g") || common.value("mode").equalsIgnoreCase("Grid")) {
+			}
+			else if (common.value("mobilebrowser").equalsIgnoreCase("CHROME")
+					&& common.value("mode").equalsIgnoreCase("local") || common.value("mode").equalsIgnoreCase("Grid")) {
 				System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
 				ChromeOptions options = new ChromeOptions();
 				options.addArguments(
 						"--user-agent=Mozilla/5.0 (iPhone; U; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5");
-				driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), createChromeConfig());
+				driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), createHeadlessChromeMobile());
 				driver.manage().deleteAllCookies();
-				// driver.navigate().refresh();
-				// driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-				// driver.navigate().refresh();
 			}
 			if (common.value("mobilebrowser").equalsIgnoreCase("firefox")
 					&& common.value("mode").equalsIgnoreCase("local")) {

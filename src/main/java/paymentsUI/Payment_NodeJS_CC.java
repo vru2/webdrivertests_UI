@@ -22,17 +22,8 @@ public class Payment_NodeJS_CC extends PaymentNodeJS {
 		driver.get(baseUrl);
 		paymentNodeJS_Select_Payment(driver, "CC", "", common.value("testcardtype"));
 		paymentNodeJS_Make_Payment(driver, "CC",common.value("testcardtype") );
-		String TripRef = paymentNodeJS_ConfirmationPage(driver, "CC", "", "CC ");
-		/*
-		 * String[] Columns = { "STATUS", "PAYMENT_TYPE","DESCRIPTION","CURRENCY" };
-		 * String[] Values = { "S", "CC", "Payment successful", "INR" };
-		 * dataBase_Validation("T8719845509", "payments",Columns, Values, "");
-		 * dataBase_Validation("T8719845509", "payments","PAYMENT_TYPE","CC", "");
-		 * dataBase_Validation("T8719845509", "payments","PAYMENT_TYPE","CC", "");
-		 * getCardGateWayAccess("");
-		 */
-
-	}
+		paymentNodeJS_ConfirmationPage(driver, "CC", "", "CC ");
+		}
 
 	@BeforeClass
 	public void setUp() throws Exception {

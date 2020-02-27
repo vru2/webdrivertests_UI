@@ -1,554 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
-<head>
-  <title>Test Results Report - Multiple Apis</title>
-  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-  <meta name="description" content="TestNG unit test results." />
-  <link href="reportng.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="reportng.js"></script>
-</head>
-<body>
-<h1>Multiple Apis</h1>
-<p>
-  Test duration: 0.963s
-</p>
-
-
-
-
-
-  <table class="resultsTable">
-    <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
-          <tr>
-        <td colspan="3" class="group">paymentsAPI.Prod_APIs</td>
-      </tr>
-            
-<tr>
-  <td class="method">
-                  getActiveCardTypes
-      </td>
-  <td class="duration">
-    0.149s
-  </td>
-  <td class="result">
-        
-    
-            <div class="testOutput">
-                        /paymentservice/service/cardtypes?status=active<br />
-                                Response body ActiveCardTypes : &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;<br/>
-&lt;card-types&gt;<br/>
-	&lt;card-type&gt;<br/>
-		&lt;id&gt;1&lt;/id&gt;<br/>
-		&lt;name&gt;Visa&lt;/name&gt;<br/>
-		&lt;status&gt;A&lt;/status&gt;<br/>
-	&lt;/card-type&gt;<br/>
-	&lt;card-type&gt;<br/>
-		&lt;id&gt;2&lt;/id&gt;<br/>
-		&lt;name&gt;MasterCard&lt;/name&gt;<br/>
-		&lt;status&gt;A&lt;/status&gt;<br/>
-	&lt;/card-type&gt;<br/>
-	&lt;card-type&gt;<br/>
-		&lt;id&gt;3&lt;/id&gt;<br/>
-		&lt;name&gt;Amex&lt;/name&gt;<br/>
-		&lt;status&gt;A&lt;/status&gt;<br/>
-	&lt;/card-type&gt;<br/>
-	&lt;card-type&gt;<br/>
-		&lt;id&gt;4&lt;/id&gt;<br/>
-		&lt;name&gt;Citi Diners&lt;/name&gt;<br/>
-		&lt;status&gt;A&lt;/status&gt;<br/>
-	&lt;/card-type&gt;<br/>
-	&lt;card-type&gt;<br/>
-		&lt;id&gt;5&lt;/id&gt;<br/>
-		&lt;name&gt;Maestro&lt;/name&gt;<br/>
-		&lt;status&gt;A&lt;/status&gt;<br/>
-	&lt;/card-type&gt;<br/>
-	&lt;card-type&gt;<br/>
-		&lt;id&gt;6&lt;/id&gt;<br/>
-		&lt;name&gt;Discover&lt;/name&gt;<br/>
-		&lt;status&gt;A&lt;/status&gt;<br/>
-	&lt;/card-type&gt;<br/>
-	&lt;card-type&gt;<br/>
-		&lt;id&gt;8&lt;/id&gt;<br/>
-		&lt;name&gt;Rupay&lt;/name&gt;<br/>
-		&lt;status&gt;A&lt;/status&gt;<br/>
-	&lt;/card-type&gt;<br/>
-&lt;/card-types&gt;<br />
-                                statusCode: 200<br />
-                                Response status code is matching<br />
-                  </div>
-    
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  getActiveNB
-      </td>
-  <td class="duration">
-    0.258s
-  </td>
-  <td class="result">
-        
-    
-            <div class="testOutput">
-                        /paymentservice/service/netbankingbanks?status=active<br />
-                                Response body ActiveNB : &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;<br/>
-&lt;banks&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;9&lt;/id&gt;<br/>
-		&lt;name&gt;Axis Bank&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;2&lt;/id&gt;<br/>
-		&lt;name&gt;HDFC Bank&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp; 		&lt;image-name&gt;hdfc.gif&lt;/image-name&gt;<br/>
-	&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;1&lt;/id&gt;<br/>
-		&lt;name&gt;ICICI Bank&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp; 		&lt;image-name&gt;icici.gif&lt;/image-name&gt;<br/>
-	&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;21&lt;/id&gt;<br/>
-		&lt;name&gt;State Bank of India&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;3&lt;/id&gt;<br/>
-		&lt;name&gt;Citibank&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp; 		&lt;image-name&gt;citi.gif&lt;/image-name&gt;<br/>
-	&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;18&lt;/id&gt;<br/>
-		&lt;name&gt;Kotak Bank&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;22&lt;/id&gt;<br/>
-		&lt;name&gt;Allahabad Bank&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;44&lt;/id&gt;<br/>
-		&lt;name&gt;Andhra Bank&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;25&lt;/id&gt;<br/>
-		&lt;name&gt;Bank Of Maharashtra&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;24&lt;/id&gt;<br/>
-		&lt;name&gt;Bank of Bahrain and Kuwait&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;12&lt;/id&gt;<br/>
-		&lt;name&gt;Bank of Baroda - Corporate&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;17&lt;/id&gt;<br/>
-		&lt;name&gt;Bank of Baroda - Retail&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;4&lt;/id&gt;<br/>
-		&lt;name&gt;Bank of India&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;5000314&lt;/id&gt;<br/>
-		&lt;name&gt;Bharatiya Mahila Bank Corporate&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;49&lt;/id&gt;<br/>
-		&lt;name&gt;Canara Bank&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;50&lt;/id&gt;<br/>
-		&lt;name&gt;Catholic Syrian Bank&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;26&lt;/id&gt;<br/>
-		&lt;name&gt;Central Bank of India&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;27&lt;/id&gt;<br/>
-		&lt;name&gt;City Union Bank&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;28&lt;/id&gt;<br/>
-		&lt;name&gt;Corporation Bank&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;19&lt;/id&gt;<br/>
-		&lt;name&gt;Deutsche Bank&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;41&lt;/id&gt;<br/>
-		&lt;name&gt;Development Credit Bank&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;42&lt;/id&gt;<br/>
-		&lt;name&gt;Dhanlaxmi Bank&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;29&lt;/id&gt;<br/>
-		&lt;name&gt;Federal Bank&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;16&lt;/id&gt;<br/>
-		&lt;name&gt;IDBI Bank&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;45&lt;/id&gt;<br/>
-		&lt;name&gt;ING Vysya Bank (now Kotak)&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;30&lt;/id&gt;<br/>
-		&lt;name&gt;Indian Bank&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;6&lt;/id&gt;<br/>
-		&lt;name&gt;Indian Overseas Bank&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;5&lt;/id&gt;<br/>
-		&lt;name&gt;IndusInd Bank&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;46&lt;/id&gt;<br/>
-		&lt;name&gt;Jammu and Kashmir Bank&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;7&lt;/id&gt;<br/>
-		&lt;name&gt;Karnataka Bank&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;20&lt;/id&gt;<br/>
-		&lt;name&gt;Karur Vyasa Bank&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;31&lt;/id&gt;<br/>
-		&lt;name&gt;Lakshmi Vilas Bank&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;13&lt;/id&gt;<br/>
-		&lt;name&gt;Oriental Bank of Commerce&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;14&lt;/id&gt;<br/>
-		&lt;name&gt;Punjab National Bank - Corporate&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;15&lt;/id&gt;<br/>
-		&lt;name&gt;Punjab National Bank - Retail&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;11&lt;/id&gt;<br/>
-		&lt;name&gt;South Indian Bank&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;48&lt;/id&gt;<br/>
-		&lt;name&gt;Standard Chartered Bank&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;33&lt;/id&gt;<br/>
-		&lt;name&gt;State Bank of Hyderabad&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;34&lt;/id&gt;<br/>
-		&lt;name&gt;State Bank of Indore&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;51&lt;/id&gt;<br/>
-		&lt;name&gt;State Bank of Patiala&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;40&lt;/id&gt;<br/>
-		&lt;name&gt;Syndicate Bank&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;37&lt;/id&gt;<br/>
-		&lt;name&gt;Tamilnad Mercantile Bank&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;8&lt;/id&gt;<br/>
-		&lt;name&gt;Union Bank of India&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;43&lt;/id&gt;<br/>
-		&lt;name&gt;United Bank of India&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;38&lt;/id&gt;<br/>
-		&lt;name&gt;Vijaya Bank&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;10&lt;/id&gt;<br/>
-		&lt;name&gt;Yes Bank&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;5001332&lt;/id&gt;<br/>
-		&lt;name&gt;Airtel Payments Bank&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;53&lt;/id&gt;<br/>
-		&lt;name&gt;Cosmos Bank&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;5000318&lt;/id&gt;<br/>
-		&lt;name&gt;DBS Bank&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;IN&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; 	&lt;bank&gt;<br/>
-		&lt;id&gt;5000326&lt;/id&gt;<br/>
-		&lt;name&gt;Knet&lt;/name&gt;<br/>
-					&lt;domains&gt;<br/>
-								&nbsp; &lt;domain&gt;KW&lt;/domain&gt;<br/>
-							&lt;/domains&gt;<br/>
-			&nbsp;&nbsp;&nbsp; 	&nbsp;&nbsp;&nbsp; 			&lt;status&gt;A&lt;/status&gt;<br/>
-	&nbsp; 		&lt;/bank&gt;<br/>
-&nbsp; &lt;/banks&gt;<br />
-                                statusCode: 200<br />
-                                Response status code is matching<br />
-                  </div>
-    
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  getPaymentStatus
-      </td>
-  <td class="duration">
-    0.285s
-  </td>
-  <td class="result">
-        
-    
-            <div class="testOutput">
-                        /paymentservice/service/status?paymentIds=129369172<br />
-                                Response body GetPaymentStatus : {&quot;bookPaymentResponse&quot;:[{&quot;id&quot;:129369172,&quot;customer_detail&quot;:{&quot;ip_address&quot;:&quot;223.227.18.99&quot;,&quot;address1&quot;:&quot;Cleartrip, Unit No 001, Ground Floor, DTC Bldg, Sitaram Mills Compound, N.M. Joshi Marg, Delisle Road, Lower Parel (E)&quot;,&quot;city_name&quot;:&quot;Mumbai&quot;,&quot;postal_code&quot;:&quot;400011&quot;,&quot;state_name&quot;:&quot;Maharashtra&quot;,&quot;country_name&quot;:&quot;India&quot;,&quot;mobile&quot;:&quot;9632699584&quot;,&quot;landline&quot;:&quot;+912241300300&quot;,&quot;email&quot;:&quot;prakhar.chatterjee@cleartrip.com&quot;},&quot;app_ref1&quot;:&quot;19100984422&quot;,&quot;app_ref2&quot;:&quot;207618912&quot;,&quot;payment_type&quot;:&quot;DC&quot;,&quot;amount&quot;:7389.0,&quot;currency&quot;:&quot;INR&quot;,&quot;card_detail&quot;:{&quot;card_number&quot;:&quot;510372XXXX850160&quot;,&quot;card_type_id&quot;:2,&quot;bank_id&quot;:71},&quot;status&quot;:&quot;S&quot;,&quot;description&quot;:&quot;Verification SUCCESS Transaction&quot;,&quot;redirection_required&quot;:&quot;N&quot;,&quot;collect_otp&quot;:false}]}<br />
-                                statusCode: 200<br />
-                                Response status code is matching<br />
-                                Payment Status Is Successful<br />
-                  </div>
-    
-
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  getThirdPartyWallets
-      </td>
-  <td class="duration">
-    0.271s
-  </td>
-  <td class="result">
-        
-    
-            <div class="testOutput">
-                        /paymentservice/service/thirdpartywallets<br />
-                                Response body Pay_Get_TW_Wallets : [{&quot;id&quot;:&quot;1&quot;,&quot;channels&quot;:[&quot;MOBILE&quot;],&quot;domains&quot;:[&quot;IN&quot;],&quot;credential&quot;:&quot;PAYZAPP_WALLET&quot;,&quot;mobile_credential&quot;:null,&quot;display_name&quot;:&quot;HDFC PayZapp&quot;,&quot;status&quot;:&quot;D&quot;,&quot;value&quot;:&quot;HDFC_WALLET&quot;},{&quot;id&quot;:&quot;2&quot;,&quot;channels&quot;:[&quot;B2C&quot;],&quot;domains&quot;:[&quot;IN&quot;],&quot;credential&quot;:&quot;MOBIKWIK_WALLET&quot;,&quot;mobile_credential&quot;:null,&quot;display_name&quot;:&quot;Mobikwik&quot;,&quot;status&quot;:&quot;A&quot;,&quot;value&quot;:&quot;MOBIKWIK_WALLET&quot;},{&quot;id&quot;:&quot;3&quot;,&quot;channels&quot;:[&quot;B2C&quot;],&quot;domains&quot;:[&quot;IN&quot;],&quot;credential&quot;:&quot;PAYTM_WALLET_WEB&quot;,&quot;mobile_credential&quot;:&quot;PAYTM_WALLET_MOBILE&quot;,&quot;display_name&quot;:&quot;Paytm&quot;,&quot;status&quot;:&quot;A&quot;,&quot;value&quot;:&quot;PAYTM_WALLET&quot;},{&quot;id&quot;:&quot;4&quot;,&quot;channels&quot;:[&quot;MOBILE&quot;],&quot;domains&quot;:[],&quot;credential&quot;:null,&quot;mobile_credential&quot;:null,&quot;display_name&quot;:&quot;Masterpass&quot;,&quot;status&quot;:&quot;D&quot;,&quot;value&quot;:&quot;MASTERPASS_WALLET&quot;},{&quot;id&quot;:&quot;5&quot;,&quot;channels&quot;:[&quot;MOBILE&quot;,&quot;B2C&quot;],&quot;domains&quot;:[&quot;IN&quot;],&quot;credential&quot;:null,&quot;mobile_credential&quot;:null,&quot;display_name&quot;:&quot;PayU&quot;,&quot;status&quot;:&quot;D&quot;,&quot;value&quot;:&quot;PAYU_WALLET&quot;},{&quot;id&quot;:&quot;6&quot;,&quot;channels&quot;:[&quot;B2C&quot;,&quot;MOBILE&quot;],&quot;domains&quot;:[&quot;IN&quot;],&quot;credential&quot;:&quot;OLA_WALLET&quot;,&quot;mobile_credential&quot;:null,&quot;display_name&quot;:&quot;Ola_Money&quot;,&quot;status&quot;:&quot;D&quot;,&quot;value&quot;:&quot;OLA_WALLET&quot;},{&quot;id&quot;:&quot;7&quot;,&quot;channels&quot;:[&quot;B2C&quot;],&quot;domains&quot;:[&quot;IN&quot;],&quot;credential&quot;:&quot;JIO_WALLET&quot;,&quot;mobile_credential&quot;:null,&quot;display_name&quot;:&quot;jio_money&quot;,&quot;status&quot;:&quot;A&quot;,&quot;value&quot;:&quot;JIO_WALLET&quot;},{&quot;id&quot;:&quot;8&quot;,&quot;channels&quot;:[&quot;B2C&quot;],&quot;domains&quot;:[&quot;IN&quot;],&quot;credential&quot;:&quot;FREECHARGE_WALLET&quot;,&quot;mobile_credential&quot;:null,&quot;display_name&quot;:&quot;freecharge&quot;,&quot;status&quot;:&quot;A&quot;,&quot;value&quot;:&quot;FREECHARGE_WLT&quot;},{&quot;id&quot;:&quot;9&quot;,&quot;channels&quot;:[&quot;B2C&quot;],&quot;domains&quot;:[&quot;IN&quot;],&quot;credential&quot;:null,&quot;mobile_credential&quot;:null,&quot;display_name&quot;:&quot;airtel_money&quot;,&quot;status&quot;:&quot;A&quot;,&quot;value&quot;:&quot;AIRTEL_MONEY&quot;},{&quot;id&quot;:&quot;10&quot;,&quot;channels&quot;:[&quot;B2C&quot;,&quot;MOBILE&quot;],&quot;domains&quot;:[&quot;IN&quot;],&quot;credential&quot;:null,&quot;mobile_credential&quot;:null,&quot;display_name&quot;:&quot;AmazonPay&quot;,&quot;status&quot;:&quot;A&quot;,&quot;value&quot;:&quot;AMAZON_WALLET&quot;}]<br />
-                                statusCode: 200<br />
-                                Response status code is matching<br />
-                  </div>
-    
-
-      </td>
-</tr>
-      </table>
-  
-</body>
-</html>

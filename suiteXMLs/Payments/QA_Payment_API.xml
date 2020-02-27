@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Payment API" parallel="tests" thread-count="5">
+<suite name="Payment API" parallel="tests" thread-count="10">
 
 <listeners>
 <listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -7,9 +7,6 @@
 <listener class-name="common.RetryListener"/>
        <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
-
-	
-
 
 <test name="API Navison" preserve-order="true" parallel="true">
     <classes>

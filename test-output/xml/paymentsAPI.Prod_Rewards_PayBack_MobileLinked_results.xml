@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Rewards"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="1.175">
+  <properties />
+  
+  
+            <testcase name="Get_CardTypes" time="1.175" classname="paymentsAPI.Prod_Rewards_PayBack_MobileLinked" />
+      
+</testsuite>

@@ -47,11 +47,6 @@ public class CommonUtil {
 	public boolean debugger = Boolean.parseBoolean(debug);
 	StopWatch watch;
 	
-	public void printInfo(String Data) {
-		if (debugger) {
-//			System.out.println(Data);
-		}
-	}
 
 	public String getBit() {
 		String architecture = "os.arch";
@@ -184,16 +179,16 @@ public class CommonUtil {
 				filepath = file.getCanonicalPath() + "/ScreenShots/" + filename;
 			}
 
-			/*WebDriver augmentedDriver = new Augmenter().augment(driver);
+			WebDriver augmentedDriver = new Augmenter().augment(driver);
 			File screenshotFile = ((TakesScreenshot) augmentedDriver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(screenshotFile, new File(filepath));
 			addLog("<a href'" + filepath + "'>screenshot</a>");
 			addLog("Screenshot Name :" + filename);
 			Reporter.log("Screenshot Path :" + filename);
 			addLog(driver.getCurrentUrl());
-			System.out.println("Script Failed : "+testName);*/
+			System.out.println("Script Failed : "+testName);
 		}
-		/*else if (OS.contains("Linux")){
+		else if (OS.contains("Linux")){
 
 			if (Status == 2) {
 				File file = new File(".");
@@ -202,7 +197,7 @@ public class CommonUtil {
 				System.out.println("linux path " + filepath);
 				WebDriver augmentedDriver = new Augmenter().augment(driver);
 				File screenshotFile = ((TakesScreenshot) augmentedDriver).getScreenshotAs(OutputType.FILE);
-			 Files.copy(screenshotFile, new File(filepath));
+			 //Files.copy(screenshotFile, new File(filepath));
 				//FileUtils(screenshotFile, new File(filepath));
 				addLog("<a href'" + filepath + "'>screenshot</a>");
 				addLog("Screenshot Name :" + filename);
@@ -211,7 +206,7 @@ public class CommonUtil {
 
 
 		}
-*/	}
+	}
 	
 
 	public By getObjectPayment(String objectKey) throws Exception {

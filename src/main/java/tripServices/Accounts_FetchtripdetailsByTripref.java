@@ -22,8 +22,6 @@ public class Accounts_FetchtripdetailsByTripref extends TripserviceCommon{
 		String url_hotel="http://172.17.26.11:9031/api/trips/fetch-trip-details?tripRef=Q191114574380&size=1";
 		String url_local="http://172.17.26.11:9031/api/trips/fetch-trip-details?tripRef=Q191003516082&size=1";
 		String url_train="http://172.17.26.11:9031/api/trips/fetch-trip-details?tripRef=Q190814464246&size=1";
-		String url_prod="http://trip-service.cltp.com:9001/api/trips/fetch-trip-details?tripRef=190401816972&size=1";
-		
 		String Host = common.value("host");
 		if(Host.equalsIgnoreCase("qa2")) {
 			System.out.println(url_air);
@@ -90,23 +88,6 @@ public class Accounts_FetchtripdetailsByTripref extends TripserviceCommon{
 			Reporter.log("Status code " + resp3.statusCode());
 			assertTrue(false);
 		}
-		}
-		else if (Host.equalsIgnoreCase("www")){
-			 System.out.println(url_prod);
-			    resp=RestAssured.get(url_prod);
-			    if(resp.statusCode()==200){
-			    	System.out.println(resp.asString());
-			    	Reporter.log(resp.asString());
-				    Reporter.log("Status code " + resp.statusCode());
-					ResponseBody body= resp.getBody();
-					String bodyAsString = body.asString();
-					Assert.assertEquals(bodyAsString.contains("trip_id"), true ,"Response boday contains trip_id");
-					Assert.assertEquals(bodyAsString.contains("trip_ref"), true ,"Response boday contains trip_ref");
-		         Assert.assertNotNull("train_bookings");
-			    }else{
-					Reporter.log("Status code " + resp.statusCode());
-					assertTrue(false);
-				}
 		}
 	}
 }

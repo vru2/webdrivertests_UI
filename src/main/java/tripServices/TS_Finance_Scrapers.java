@@ -16,10 +16,11 @@ public class TS_Finance_Scrapers extends TripserviceCommon {
 		} else if(Host.equalsIgnoreCase("dev")) {
 			resp=TripserviceFinanceScrapers(parmas_financescrapers,headersForTripservicepostcall(),url);
 			validationforfinancescrapers(resp);	
-		} else if (Host.equalsIgnoreCase("www")) {
-			resp=TripserviceFinanceScrapers(parmas_financescrapersprod,headersForTripservicepostcall(),url);
-			validationforfinancescrapers(resp);
-		}
+		} /*
+			 * else if (Host.equalsIgnoreCase("www")) {
+			 * resp=TripserviceFinanceScrapers(parmas_financescrapersprod,
+			 * headersForTripservicepostcall(),url); validationforfinancescrapers(resp); }
+			 */
 			
  }
 }

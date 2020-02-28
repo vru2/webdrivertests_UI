@@ -17,11 +17,11 @@ public class TS_GraphQL extends TripserviceCommon{
 			System.out.println(resp.asString());
 			validationforgraphql(resp);
 		}
-		if(Host.equalsIgnoreCase("www")){
-			resp=TripserviceGraphQL(graphql_prod,headersForTripservicepostgraphql(),url);
-			System.out.println(resp.asString());
-			validationforgraphql(resp);
-		}
+		/*
+		 * if(Host.equalsIgnoreCase("www")){
+		 * resp=TripserviceGraphQL(graphql_prod,headersForTripservicepostgraphql(),url);
+		 * System.out.println(resp.asString()); validationforgraphql(resp); }
+		 */
 		if(Host.equalsIgnoreCase("dev")){
 			resp=TripserviceGraphQL(graphql_qa,headersForTripservicepostgraphql(),url);
 			validationforgraphql(resp);

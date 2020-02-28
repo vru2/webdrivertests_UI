@@ -27,12 +27,13 @@ public class TS_UpdateBooking_Local extends TripserviceCommon {
 			resp1=TripserviceHotelsPutcall(params5,headersForTripserviceputcall(),url1);
 			validationforput(resp1);	
 		}
-		else if(Host.equalsIgnoreCase("www")) {
-			String url1=("http://trip-service.cltp.com:9001/trips/"+tripref+"/local-bookings/update-booking");
-			resp1=TripserviceHotelsPutcall(params5,headersForTripserviceputcall(),url1);
-			System.out.println(resp1.asString());
-			validationforput(resp1);
-		}	
+		/*
+		 * else if(Host.equalsIgnoreCase("www")) { String
+		 * url1=("http://trip-service.cltp.com:9001/trips/"+tripref+
+		 * "/local-bookings/update-booking");
+		 * resp1=TripserviceHotelsPutcall(params5,headersForTripserviceputcall(),url1);
+		 * System.out.println(resp1.asString()); validationforput(resp1); }
+		 */	
 		//String url1=Service_Url("TRIPSERVICE_PUT_CALL");
 		Thread.sleep(4000);
 		DBValidation_Txn(resp, "C");

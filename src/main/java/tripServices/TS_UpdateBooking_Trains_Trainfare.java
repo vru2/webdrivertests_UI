@@ -68,11 +68,12 @@ public class TS_UpdateBooking_Trains_Trainfare  extends TripserviceCommon {
 			resp1=TripserviceHotelsPutcall(updatetrainfare,headersForTripserviceputcall(),url1);
 			validationforputtrains(resp1);	
 		}
-		else if(Host.equalsIgnoreCase("www")) {
-			String url1 = ("http://172.21.48.21:9031/trips/"+tripref+"/train-bookings/update-booking");
-			resp1=TripserviceHotelsPutcall(params7,headersForTripserviceputcall(),url1);
-			validationforputtrains(resp1);
-		}	
+		/*
+		 * else if(Host.equalsIgnoreCase("www")) { String url1 =
+		 * ("http://172.21.48.21:9031/trips/"+tripref+"/train-bookings/update-booking");
+		 * resp1=TripserviceHotelsPutcall(params7,headersForTripserviceputcall(),url1);
+		 * validationforputtrains(resp1); }
+		 */	
 		Thread.sleep(4000);
 		 DBValidation_TxnTrains(resp, "C");	
 		 Response resp2;

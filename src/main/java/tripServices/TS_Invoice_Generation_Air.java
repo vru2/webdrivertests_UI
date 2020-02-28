@@ -31,11 +31,12 @@ public class TS_Invoice_Generation_Air extends TripserviceCommon {
 		String url1 = ("http://172.17.32.12:9031/trips/"+tripref+"/air-bookings/update-booking");
 		resp1=TripserviceHotelsPutcall(params3,headersForTripserviceputcall(),url1);
 		validationforput(resp1);	
-	} else if (Host.equalsIgnoreCase("www")) {
-		String url1 = ("http://172.21.48.21:9031/trips/"+tripref+"/air-bookings/update-booking");
-		resp1=TripserviceHotelsPutcall(params3,headersForTripserviceputcall(),url1);
-		validationforput(resp1);
-	}
+		} /*
+			 * else if (Host.equalsIgnoreCase("www")) { String url1 =
+			 * ("http://172.21.48.21:9031/trips/"+tripref+"/air-bookings/update-booking");
+			 * resp1=TripserviceHotelsPutcall(params3,headersForTripserviceputcall(),url1);
+			 * validationforput(resp1); }
+			 */
 		Thread.sleep(8000);		
 		DBValidation_Txn(resp, "C");	
 

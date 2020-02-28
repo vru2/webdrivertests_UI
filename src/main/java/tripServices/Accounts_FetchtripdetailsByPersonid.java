@@ -17,8 +17,6 @@ public class Accounts_FetchtripdetailsByPersonid extends TripserviceCommon{
 		Response resp1;
 		String url_qa="http://172.17.26.11:9031/api/trips/fetch-trip-details?personId=41690278&size=1";
 		String url1_qa="http://172.17.26.11:9031/api/trips/fetch-trip-details?personId=41690278&size=10";
-		String url_prod="http://trip-service.cltp.com:9001/api/trips/fetch-trip-details?personId=86970492&size=1";
-		String url1_prod="http://trip-service.cltp.com:9001/api/trips/fetch-trip-details?personId=86970492&size=10";
 		String Host = common.value("host");
 		if(Host.equalsIgnoreCase("qa2")) {
 			System.out.println(url_qa);
@@ -58,43 +56,5 @@ public class Accounts_FetchtripdetailsByPersonid extends TripserviceCommon{
 		}
 		
 		}
-		else if(Host.equalsIgnoreCase("www")){
-			System.out.println(url_prod);
-		    resp=RestAssured.get(url_prod);
-		    if(resp.statusCode()==200){
-		    	System.out.println(resp.asString());
-		    	Reporter.log(resp.asString());
-			    Reporter.log("Status code " + resp.statusCode());
-				ResponseBody<?> body= resp.getBody();
-				String bodyAsString = body.asString();
-				Assert.assertEquals(bodyAsString.contains("trip_id"), true ,"Response boday contains trip_id");
-				Assert.assertEquals(bodyAsString.contains("trip_ref"), true ,"Response boday contains trip_ref");
-				Assert.assertEquals(bodyAsString.contains("totalElements"), true ,"Response boday contains totalElements");
-				Assert.assertEquals(bodyAsString.contains("numberOfElements"), true ,"Response boday contains numberOfElements");
-	            Assert.assertNotNull("air_bookings");
-		    }else{
-				Reporter.log("Status code " + resp.statusCode());
-				assertTrue(false);
-			}
-		    Thread.sleep(2000);
-		    System.out.println(url1_prod);
-		    resp1=RestAssured.get(url1_prod);
-		    if(resp1.statusCode()==200){
-		    	System.out.println(resp1.asString());
-		    	Reporter.log(resp1.asString());
-			    Reporter.log("Status code " + resp1.statusCode());
-				ResponseBody<?> body= resp1.getBody();
-				String bodyAsString = body.asString();
-				Assert.assertEquals(bodyAsString.contains("trip_id"), true ,"Response boday contains trip_id");
-				Assert.assertEquals(bodyAsString.contains("trip_ref"), true ,"Response boday contains trip_ref");
-				Assert.assertEquals(bodyAsString.contains("totalElements"), true ,"Response boday contains totalElements");
-				Assert.assertEquals(bodyAsString.contains("numberOfElements"), true ,"Response boday contains numberOfElements");
-	            Assert.assertNotNull("air_bookings");
-		    }else{
-				Reporter.log("Status code " + resp1.statusCode());
-				assertTrue(false);
-			}
-		}
-		
 	}
 }

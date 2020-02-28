@@ -30,20 +30,16 @@ public class TS_GET_CancelledInsurance extends TripserviceCommon {
 			Reporter.log("Status code : " + resp.statusCode());
 			assertTrue(false);
 		}
-		}else if(Host.equalsIgnoreCase("www")) {
-			Reporter.log("http://trip-service.cltp.com:9001/trips/cancelledInsurances?date=12-12-2019");
-			Response resp=RestAssured.get("http://trip-service.cltp.com:9001/trips/cancelledInsurances?date=12-12-2019");
-			System.out.println(resp.asString());
-			if(resp.statusCode()==200){
-				ResponseBody body= resp.getBody();
-				String bodyAsString = body.asString();
-				Assert.assertNotNull("refund_id");
-				Reporter.log(bodyAsString);
-			}else{
-				Reporter.log("Status code : " + resp.statusCode());
-				assertTrue(false);
-			}
-		}else if(Host.equalsIgnoreCase("dev")) {
+		} /*
+			 * else if(Host.equalsIgnoreCase("www")) { Reporter.log(
+			 * "http://trip-service.cltp.com:9001/trips/cancelledInsurances?date=12-12-2019"
+			 * ); Response resp=RestAssured.get(
+			 * "http://trip-service.cltp.com:9001/trips/cancelledInsurances?date=12-12-2019"
+			 * ); System.out.println(resp.asString()); if(resp.statusCode()==200){
+			 * ResponseBody body= resp.getBody(); String bodyAsString = body.asString();
+			 * Assert.assertNotNull("refund_id"); Reporter.log(bodyAsString); }else{
+			 * Reporter.log("Status code : " + resp.statusCode()); assertTrue(false); } }
+			 */else if(Host.equalsIgnoreCase("dev")) {
 			Reporter.log("http://172.17.32.12:9031/trips/cancelledInsurances?date=08/07/2019");
 			Response resp=RestAssured.given().
 				      when().

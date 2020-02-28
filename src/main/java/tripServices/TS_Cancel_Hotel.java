@@ -29,11 +29,12 @@ public class TS_Cancel_Hotel extends TripserviceCommon{
 			resp1=TripserviceHotelsPutcall(params4,headersForTripserviceputcall(),url1);
 			validationforput(resp1);	
 		}
-		else if(Host.equalsIgnoreCase("www")) {
-		String url1 = ("http://172.21.48.21:9031/trips/"+tripref+"/hotel-bookings/update-booking");
-		resp1=TripserviceHotelsPutcall(params4,headersForTripserviceputcall(),url1);
-		validationforput(resp1);
-		}
+		/*
+		 * else if(Host.equalsIgnoreCase("www")) { String url1 =
+		 * ("http://172.21.48.21:9031/trips/"+tripref+"/hotel-bookings/update-booking");
+		 * resp1=TripserviceHotelsPutcall(params4,headersForTripserviceputcall(),url1);
+		 * validationforput(resp1); }
+		 */
 		Thread.sleep(4000);
 		DBValidation_Txn(resp, "C");
        // Cancel

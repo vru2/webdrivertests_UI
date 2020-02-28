@@ -18,8 +18,6 @@ public class Accounts_ExistingUser extends TripserviceCommon {
 		Response resp1;
 		String url_qa="http://172.17.26.11:9031/api/trips/existing-user?userId=41695410";
 		String url1_qa="http://172.17.26.11:9031/api/trips/existing-user?emailId=varalakshmivaru29@gmail.com";
-		String url_prod="http://trip-service.cltp.com:9001/api/trips/existing-user?userId=86627412";
-		String url1_prod="http://trip-service.cltp.com:9001/api/trips/existing-user?emailId=varalakshmi.venkateshaiah@cleartrip.com";
 		String Host = common.value("host");
 		if(Host.equalsIgnoreCase("qa2")) {
 			System.out.println(url_qa);
@@ -49,35 +47,6 @@ public class Accounts_ExistingUser extends TripserviceCommon {
 			Reporter.log("Status code " + resp1.statusCode());
 			assertTrue(false);
 		}
-		} else if(Host.equalsIgnoreCase("www")){
-			System.out.println(url_prod);
-		    resp=RestAssured.get(url_prod);
-		    if(resp.statusCode()==200){
-		    	System.out.println(resp.asString());
-		    	Reporter.log(resp.asString());
-			    Reporter.log("Status code " + resp.statusCode());
-				ResponseBody body= resp.getBody();
-				String bodyAsString = body.asString();
-				Assert.assertEquals(bodyAsString.contains("true"), true ,"Response boday contains true");
-		    }else{
-				Reporter.log("Status code " + resp.statusCode());
-				assertTrue(false);
-			}
-		    Thread.sleep(2000);
-		    System.out.println(url1_prod);
-		    resp1=RestAssured.get(url1_prod);
-		    if(resp1.statusCode()==200){
-		    	System.out.println(resp1.asString());
-		    	Reporter.log(resp1.asString());
-			    Reporter.log("Status code " + resp1.statusCode());
-				ResponseBody body= resp1.getBody();
-				String bodyAsString = body.asString();
-				Assert.assertEquals(bodyAsString.contains("true"), true ,"Response boday contains true");
-		    }else{
-				Reporter.log("Status code " + resp1.statusCode());
-				assertTrue(false);
-			}
-		}
-		
+		} 
 	}
 }

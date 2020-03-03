@@ -21,8 +21,6 @@ public class Accounts_FetchtripdetailsByTripid extends TripserviceCommon {
 		String url_hotel="http://172.17.26.11:9031/api/trips/fetch-trip-details?tripId=46202808&size=1";
 		String url_local="http://172.17.26.11:9031/api/trips/fetch-trip-details?tripId=46089500&size=1";
 		String url_train="http://172.17.26.11:9031/api/trips/fetch-trip-details?tripId=45967650&size=1";
-		String Host = common.value("host");
-		if(Host.equalsIgnoreCase("qa2")) {
 			System.out.println(url_air);
 	    resp=RestAssured.get(url_air);
 	    if(resp.statusCode()==200){
@@ -89,4 +87,3 @@ public class Accounts_FetchtripdetailsByTripid extends TripserviceCommon {
 		}
 		}
 	}
-}

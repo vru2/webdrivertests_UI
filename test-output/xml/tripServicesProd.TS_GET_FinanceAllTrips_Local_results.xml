@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TripService Get Calls"
+           tests="2"
+           failures="0"
+           errors="0"
+           skipped="1"
+           time="65.380">
+  <properties />
+  
+            <testcase name="getTripService" time="0.0" classname="tripServicesProd.TS_GET_FinanceAllTrips_Local">
+          <skipped />
+    </testcase>
+  
+            <testcase name="getTripService" time="2.506" classname="tripServicesProd.TS_GET_FinanceAllTrips_Local" />
+      
+</testsuite>

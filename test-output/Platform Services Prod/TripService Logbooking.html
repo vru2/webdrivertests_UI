@@ -1,0 +1,165 @@
+<html>
+<head>
+<title>TestNG:  TripService Logbooking</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>TripService Logbooking</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>5/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Mon Mar 02 09:57:46 IST 2020</td>
+</tr>
+<tr><td>Total time:</td><td>3 seconds (3069 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='tripServicesProd.TS_LogBooking_Trains.Tripservicepostcall()'><b>Tripservicepostcall</b><br>Test class: tripServicesProd.TS_LogBooking_Trains<br/>
+<a href="#Output-1109576912" onClick='toggleBox("Output-1109576912", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1109576912" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1109576912">
+{
+  "tripRef" : "200302341570",
+  "id" : 138147078,
+  "txnId" : 222415480
+}<br/>
+TripRef is: 200302341570<br/>
+Status code 200<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>tripServicesProd.TS_LogBooking_Trains@7c469c48</td></tr>
+<tr>
+<td title='tripServicesProd.TS_LogBooking_Air.airPostCall()'><b>airPostCall</b><br>Test class: tripServicesProd.TS_LogBooking_Air<br/>
+<a href="#Output-1677121799" onClick='toggleBox("Output-1677121799", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1677121799" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1677121799">
+{
+  "trip_ref" : "200302331452",
+  "id" : 138136960,
+  "txn_id" : 222395538
+}<br/>
+Status code 200<br/>
+</div>
+</td>
+<td></td>
+<td>2</td>
+<td>tripServicesProd.TS_LogBooking_Air@5dd6264</td></tr>
+<tr>
+<td title='tripServicesProd.TS_LogBooking_FPH.airPostCall()'><b>airPostCall</b><br>Test class: tripServicesProd.TS_LogBooking_FPH<br/>
+<a href="#Output-1861732570" onClick='toggleBox("Output-1861732570", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1861732570" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1861732570">
+{
+  "trip_ref" : "200302341572",
+  "id" : 138147080,
+  "txn_id" : 222415482
+}<br/>
+Status code 200<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>tripServicesProd.TS_LogBooking_FPH@12e61fe6</td></tr>
+<tr>
+<td title='tripServicesProd.TS_LogBooking_Hotel.hotelPostCall()'><b>hotelPostCall</b><br>Test class: tripServicesProd.TS_LogBooking_Hotel<br/>
+<a href="#Output-875537677" onClick='toggleBox("Output-875537677", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-875537677" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-875537677">
+{
+  "trip_ref" : "200302341566",
+  "id" : 138147074,
+  "txn_id" : 222415476
+}<br/>
+Status code 200<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>tripServicesProd.TS_LogBooking_Hotel@1ffe63b9</td></tr>
+<tr>
+<td title='tripServicesProd.TS_LogBooking_Local.localPostCall()'><b>localPostCall</b><br>Test class: tripServicesProd.TS_LogBooking_Local<br/>
+<a href="#Output-628534919" onClick='toggleBox("Output-628534919", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-628534919" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-628534919">
+{
+  "trip_ref" : "200302341568",
+  "id" : 138147076,
+  "txn_id" : 222415478
+}<br/>
+Status code 200<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>tripServicesProd.TS_LogBooking_Local@51e5fc98</td></tr>
+</table><p>
+</body>
+</html>

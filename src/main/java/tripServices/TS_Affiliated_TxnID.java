@@ -13,8 +13,6 @@ import io.restassured.response.ResponseBody;
 public class TS_Affiliated_TxnID extends TripserviceCommon {
 	@Test(groups={"Regression"})
 	public void getTripService(){
-		String Host = common.value("host");
-		if(Host.equalsIgnoreCase("qa2")) {
 		Reporter.log("http://172.17.26.11:9031/trips/affiliate-txn-id?affiliateTxnId=1");
 		Response resp=RestAssured.get("http://172.17.26.11:9031/trips/affiliate-txn-id?affiliateTxnId=1");
 		if(resp.statusCode()==200){
@@ -39,7 +37,7 @@ public class TS_Affiliated_TxnID extends TripserviceCommon {
 				Reporter.log("Status code : " + resp.statusCode());
 				assertTrue(false);
 			}
-		}*/else if(Host.equalsIgnoreCase("dev")) {
+		}*//*else if(Host.equalsIgnoreCase("dev")) {
 			Reporter.log("http://172.17.32.12:9031/affiliate-txn-id?affiliateTxnId=1");
 			Response resp=RestAssured.get("http://172.17.32.12:9031/affiliate-txn-id?affiliateTxnId=1");
 			if(resp.statusCode()==200){
@@ -51,7 +49,5 @@ public class TS_Affiliated_TxnID extends TripserviceCommon {
 				Reporter.log("Status code : " + resp.statusCode());
 				assertTrue(false);
 			}
-		}
-	}
-
+		}*/
 }

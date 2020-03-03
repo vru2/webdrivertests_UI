@@ -64,11 +64,23 @@ public class WrapperMethod extends CommonUtil {
 
 	public static Logger logger = Logger.getLogger("");
 	protected String baseUrl;
+<<<<<<< HEAD
 	public Boolean MakePaymentTrue = common.value("makePayment").equals("true"),
 			NetBanking = common.value("makePayment").contains("true"),
 			ProductionUrl = common.value("host").contains("www"), BetaURL = common.value("host").contains("beta"),
 			MakePaymentOnlyInQA2 = MakePaymentTrue && !(ProductionUrl || BetaURL),
 			MakePaymentOnlyInProd = MakePaymentTrue && ProductionUrl;
+=======
+	
+	
+	  public Boolean MakePaymentTrue = common.value("makePayment").equals("true"),
+	  NetBanking = common.value("makePayment").contains("true"), ProductionUrl =
+	  common.value("host").contains("www"), BetaURL =
+	  common.value("host").contains("beta"), MakePaymentOnlyInQA2 = MakePaymentTrue
+	  && !(ProductionUrl || BetaURL),MakePaymentOnlyInProd = MakePaymentTrue && ProductionUrl;
+	 
+	 
+>>>>>>> 5f16e3df7fd1c32d449035e9b1333d77f614e933
 
 public boolean GDS_Flight, B2B_GDS_Flight = false;
 

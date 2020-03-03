@@ -147,6 +147,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String urlPromo_Used = "http://wallet-service.cltp.com:9001";
 	String urlReporting ="http://172.17.26.11:8272";
 	String urlReportingTS ="http://172.17.26.11:9031";
+	String urlCardInfo_Service="http://172.17.26.11:8331";
+	
 
 	/*
 	
@@ -157,6 +159,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String urlRewards = "http://172.17.12.82:9080";
 	String urlWallet = "http://172.17.26.11:8071";
 	String urladcb_validat = "http://172.17.26.11:8070";
+	String urlCardInfo_Service="http://172.17.26.11:8331";
 
 	String urlrewards_validate = "http://172.17.26.11:8070";
 	String urlrewards_payURI ="http://paymentservice.cltp.com:9001";
@@ -298,7 +301,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String url_Binmanager = "https://qa2.cleartrip.com/binmanager/v1/payment/cards?bin=534977";
 
 	String url_Reportingendpoint ="/paymentservice/service/air/mis/detail?tripRef=Q200109687244&paymentType=CC&reqFor=refund";
-	String url_ReportingPaymentID ="/paymentservice/payments/46318902";
+	String url_ReportingPaymentID ="/paymentservice/payments/46393204";
 
 	String url_ReportingTS_V3 ="/trips?tripID=Q191014530470&refundRequired=true&historyRequired=true&paymentsRequired=true&apiVersion=V3";
 
@@ -1171,7 +1174,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	}
 
 	public Response BinDetail(String url, String params){
-		String baseurl="http://172.17.26.11:8331";
+		String baseurl=urlCardInfo_Service;
 		RestAssured.baseURI =baseurl;
 		Reporter.log(baseurl);
 		String url1 = null;
@@ -1992,8 +1995,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			}/*if(!resp.body().asString().contains("Successful Transaction")) {
 				Reporter.log("Successful Transaction is not displayed");
 				Assert.assertTrue(false);
-			}*/if(!resp.body().asString().contains("46318902")) {
-				Reporter.log("43226132 is not displayed");
+			}*/if(!resp.body().asString().contains("payment_type")) {
+				Reporter.log("payment_type is not displayed");
 				Assert.assertTrue(false);
 			}
 		}

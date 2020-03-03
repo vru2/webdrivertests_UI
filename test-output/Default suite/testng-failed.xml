@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="paymentsAPI.API_EW_Pay_AutoDebit">
+      <class name="paymentsAPI.API_GV_Capture">
         <methods>
-          <include name="Expressway_AutoDebit"/>
+          <include name="API_GVCapture"/>
         </methods>
-      </class> <!-- paymentsAPI.API_EW_Pay_AutoDebit -->
+      </class> <!-- paymentsAPI.API_GV_Capture -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

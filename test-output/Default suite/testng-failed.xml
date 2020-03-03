@@ -3,12 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tripServices.Accounts_Depositaccount">
+      <class name="paymentsAPI.API_GV_Get">
         <methods>
-          <include name="Accounts_FetchByPersonid"/>
-          <include name="setUp"/>
+          <include name="API_GVGet"/>
         </methods>
-      </class> <!-- tripServices.Accounts_Depositaccount -->
+      </class> <!-- paymentsAPI.API_GV_Get -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

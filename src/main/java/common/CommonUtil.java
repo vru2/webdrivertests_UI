@@ -156,10 +156,7 @@ public class CommonUtil {
 			watch.stop();
 			addLog("Time taken by script : " + watch.toString());
 		}
-		if (common.value("testrailupdate").equalsIgnoreCase("true")) {
-			testrail_utils util = new testrail_utils();
-			util.UpdateTestRail(_result, common.value("travelprojectid"));
-		}
+	
 	}
 	public void screenshot(ITestResult result, RemoteWebDriver driver) throws Exception {
 

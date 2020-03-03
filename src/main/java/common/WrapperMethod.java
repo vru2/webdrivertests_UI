@@ -68,8 +68,6 @@ public class WrapperMethod extends CommonUtil {
 			NetBanking = common.value("makePayment").contains("true"),
 			ProductionUrl = common.value("host").contains("www"), BetaURL = common.value("host").contains("beta"),
 			MakePaymentOnlyInQA2 = MakePaymentTrue && !(ProductionUrl || BetaURL),
-			check_booking_failure = common.value("check_booking_failure").contains("true"),
-			check_cancellation_failure = common.value("check_cancellation_failure").contains("true"),
 			MakePaymentOnlyInProd = MakePaymentTrue && ProductionUrl;
 
 public boolean GDS_Flight, B2B_GDS_Flight = false;

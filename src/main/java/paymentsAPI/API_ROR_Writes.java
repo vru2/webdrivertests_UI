@@ -12,7 +12,7 @@ import io.restassured.response.Response;
 
 public class API_ROR_Writes extends API_PaymentCommon1
 {
-/*	@Test(alwaysRun=true)
+	@Test(alwaysRun=true)
 	public void ROR_Fetch_PaymentByID() throws IOException, JSONException{
 		Response resp ;		
 		resp = payGet1("RORFetch_Pay_BY_ID","");	
@@ -91,7 +91,7 @@ public class API_ROR_Writes extends API_PaymentCommon1
 		Response resp ;		
 		resp = payPost("ROR_Recon","");	
 		validation("ROR_Recon", resp); 
-	}*/
+	}
 	
 	@Test(alwaysRun=true)
 	public void ROR_MultiSearch_Pay() throws Exception{

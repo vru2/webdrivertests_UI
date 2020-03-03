@@ -150,19 +150,17 @@
          </classes>
 </test>
 
-<test name="API ROR" preserve-order="true" parallel="true">
+<test name="API ROR Writes" preserve-order="true" parallel="true">
     <classes>
-      <class name="paymentsAPI.API_ROR"/>  
+      <class name="paymentsAPI.API_ROR_Writes"/>  
     </classes>
 </test>
 
-<test name="API Payment read" preserve-order="true" parallel="true">
+<test name="API Payment Reads" preserve-order="true" parallel="true">
     <classes>
-    <!--   <class name="paymentsAPI.API_ROR123"/> -->  
+      <class name="paymentsAPI.API_ROR_Reads"/>  
     </classes>
 </test>
-
-
 
 <test name="API Bin Manager"  preserve-order="true" parallel="true" >
   <classes>

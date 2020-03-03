@@ -220,6 +220,9 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 	String urlRORRecon="/paymentservice/service/refund/recon";
 
+	String urlROR_WalletFetch_Reads="/payments/wallet/fetch/v2?userId=13957750&currency=AED";
+	String urlROR_MultiSearch_Reads ="/paymentservice/search/payments/v1?query=id:43622220,paymentType:WT";
+	
 	String urlgetPay = "http://172.17.26.11:8070";
 	String endPointgetPay = "/paymentservice/api/getPaymentURL";
 
@@ -473,10 +476,24 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			url= url_NavisonAir;
 		}
 		else if(payType.equalsIgnoreCase("ROR_MultiSearch")) {
-			RestAssured.baseURI ="http://paymentservicereporting.cltp.com:9001";
+			RestAssured.baseURI =urlReporting;
+
+			Reporter.log(urlReporting);
 			url= urlROR_MultiSearch_Pay;
 		}
+		else if(payType.equalsIgnoreCase("ROR_WalletFetch")) {
+			RestAssured.baseURI =urlWallet;
+			Reporter.log(urlWallet);
+			url= urlROR_WalletFetch_Reads;
+		}
+		else if(payType.equalsIgnoreCase("ROR_MultiSearch_Reads")) {
+			RestAssured.baseURI =urlReporting;
+			Reporter.log(urlReporting);
+			url= urlROR_MultiSearch_Reads;
+		}
 
+		
+		
 		Reporter.log(url);
 
 
@@ -2409,7 +2426,24 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 				Assert.assertTrue(false);
 			}	
 		}
+		else if(payType.equalsIgnoreCase("ROR_WalletFetch")){
 
+			if(!resp.body().asString().contains("5153574")) {
+				Reporter.log("5153574 is not displayed");
+				Assert.assertTrue(false);
+			}	
+		}
+		else if(payType.equalsIgnoreCase("ROR_MultiSearch_Reads")){
+
+			if(!resp.body().asString().contains("43622220")) {
+				Reporter.log("43622220 is not displayed");
+				Assert.assertTrue(false);
+			}	
+		}
+
+		
+		
+		
 		return resp;	
 	}
 

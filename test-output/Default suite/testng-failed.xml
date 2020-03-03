@@ -3,11 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="paymentsAPI.API_GV_Capture">
+      <class name="paymentsAPI.API_PromoService">
         <methods>
-          <include name="API_GVCapture"/>
+          <include name="createPromo"/>
+          <include name="activatePromo"/>
         </methods>
-      </class> <!-- paymentsAPI.API_GV_Capture -->
+      </class> <!-- paymentsAPI.API_PromoService -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

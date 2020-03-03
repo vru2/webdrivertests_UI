@@ -18,8 +18,6 @@ public class Accounts_ExistingUser extends TripserviceCommon {
 		Response resp1;
 		String url_qa="http://172.17.26.11:9031/api/trips/existing-user?userId=41695410";
 		String url1_qa="http://172.17.26.11:9031/api/trips/existing-user?emailId=varalakshmivaru29@gmail.com";
-		String Host = common.value("host");
-		if(Host.equalsIgnoreCase("qa2")) {
 			System.out.println(url_qa);
 	    resp=RestAssured.get(url_qa);
 	    if(resp.statusCode()==200){
@@ -49,4 +47,3 @@ public class Accounts_ExistingUser extends TripserviceCommon {
 		}
 		} 
 	}
-}

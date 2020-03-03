@@ -14,12 +14,6 @@ import io.restassured.response.ResponseBody;
 
 public class Accounts_Depositaccount extends TripserviceCommon {
 	String Host;
-	 @Parameters({ "hostvalue"})
-	    @BeforeClass
-	    public void setUp(String hostvalue)
-	    {
-	        Host =hostvalue;
-	    }
 	
 	@Test(groups={"Regression"})
 	public void Accounts_FetchByPersonid() throws Exception{
@@ -27,7 +21,6 @@ public class Accounts_Depositaccount extends TripserviceCommon {
 		Response resp1;
 		String url_qa="http://172.17.26.11:9031/api/trips/deposit-account-details?id=46207180";
 		String url1_qa="http://172.17.26.11:9031/api/trips/deposit-account-details?id=46206142";	
-		if(Host.equalsIgnoreCase("qa2")) {
 			System.out.println(url_qa);
 	    resp=RestAssured.get(url_qa);
 	    if(resp.statusCode()==200){
@@ -89,4 +82,3 @@ public class Accounts_Depositaccount extends TripserviceCommon {
 		}
 		
 	}
-}

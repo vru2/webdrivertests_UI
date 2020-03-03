@@ -1313,15 +1313,16 @@ System.out.println("response string=="+responseString);*/
 			Reporter.log("Not expected to fall in Cancellation queue. Result: Did not fall in this queue");
 			// System.out.println("Not expected to fall in Cancellation queue. Result: Did not fall in this queue");
 		} else {
-			if (check_cancellation_failure) {
-				Reporter.log("Not expected to fall in Cancellation queue. Result: Falling in this queue. Error!");
-				// System.out.println("Not expected to fall in Cancellation queue. Result: Falling in this queue. Error!");
-				assertTrue("Failure!", false);
-			}
+			/*
+			 * if (check_cancellation_failure) { Reporter.
+			 * log("Not expected to fall in Cancellation queue. Result: Falling in this queue. Error!"
+			 * ); // System.out.
+			 * println("Not expected to fall in Cancellation queue. Result: Falling in this queue. Error!"
+			 * ); assertTrue("Failure!", false); }
+			 */
 			manualCancel = true;
 			Reporter.log("Not expected to fall in Cancellation queue. Result: Falling in this queue. May be because cancellation failed. PLEASE CHECK!");
-			System.out
-			.println("Not expected to fall in Cancellation queue. Result: Falling in this queue. May be because cancellation failed. PLEASE CHECK!");
+			System.out.println("Not expected to fall in Cancellation queue. Result: Falling in this queue. May be because cancellation failed. PLEASE CHECK!");
 			if (type.equalsIgnoreCase("Auto Refund")) {
 				safeSelect(driver, getObject("Air_HQ_Cancellation_Queue_Action_Select"), "Auto Refund");
 			} else if (type.equalsIgnoreCase("Manual Refund")) {

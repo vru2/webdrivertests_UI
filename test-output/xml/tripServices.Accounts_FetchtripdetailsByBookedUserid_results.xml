@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TripService Account APIs"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="4.224">
+  <properties />
+  
+  
+            <testcase name="Accounts_FetchByBookedUserid" time="4.224" classname="tripServices.Accounts_FetchtripdetailsByBookedUserid" />
+      
+</testsuite>

@@ -3,14 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="paymentsUI.Payment_NodeJS_CC">
+      <class name="tripServices.Accounts_Depositaccount">
         <methods>
-          <include name="paymentNodeJS_CC"/>
-          <include name="afterMethod"/>
+          <include name="Accounts_FetchByPersonid"/>
           <include name="setUp"/>
-          <include name="tearDown"/>
         </methods>
-      </class> <!-- paymentsUI.Payment_NodeJS_CC -->
+      </class> <!-- tripServices.Accounts_Depositaccount -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

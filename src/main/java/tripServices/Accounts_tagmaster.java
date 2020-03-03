@@ -21,8 +21,6 @@ public class Accounts_tagmaster extends TripserviceCommon{
 		String url1="http://172.17.26.11:9031/api/trips/tag-master?tagMasterId=233166322";
 		String url2="http://172.17.26.11:9031/api/trips/tag-master?tagMasterId=233226280";
 		String url3="http://172.17.26.11:9031/api/trips/tag-master?tagMasterId=233266298";
-		String Host = common.value("host");
-		if(Host.equalsIgnoreCase("qa2")) {
 		System.out.println(url);
 	    resp=RestAssured.get(url);
 	    if(resp.statusCode()==200){
@@ -118,6 +116,5 @@ public class Accounts_tagmaster extends TripserviceCommon{
 			assertTrue(false);
 		}
 	    
-}
 }
 }

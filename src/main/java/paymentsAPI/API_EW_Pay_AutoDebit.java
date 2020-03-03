@@ -12,14 +12,14 @@ import io.restassured.response.Response;
 
 public class API_EW_Pay_AutoDebit extends API_PaymentCommon1
 {
-	@Test
+	@Test(priority=1)
 	public void Expressway_Pay() throws IOException, JSONException{
 		Response resp ;		
-		resp = expressWay("pay", "");	
+		resp = expressWay("payV3", "");	
 		validation("EW_PAY", resp);
 	}
 	
-	@Test(dependsOnMethods = {"Expressway_Pay"})
+	@Test(priority=2)
 	public void Expressway_AutoDebit() throws IOException, JSONException{
 		Response resp ;		
 		resp = expressWay("Autodebit", "");	

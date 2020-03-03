@@ -1,51 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
+    <line>
+      <![CDATA[http://172.17.26.11:8358]]>
+    </line>
+    <line>
+      <![CDATA[/paymentservice/service/pay/v3]]>
+    </line>
+    <line>
+      <![CDATA[Response body EW_PAY : [{"id":43850886,"customer_detail":{"address1":"Cleartrip JP Nagar Bangalore","city_name":"Bangalore","postal_code":"560076","state_name":"Karnataka","country_name":"India","mobile":"91 1212121212","email":"varalakshmi.venkateshaiah@cleartrip.com"},"app_ref1":"Q19051212126","app_ref2":"185110142","payment_type":"EP","amount":10.0,"currency":"INR","status":"S","description":"Payment will be done later","redirection_required":"N","collect_otp":false,"seq_no":1,"exp_txn_id":955,"exp_id":1029}]]]>
+    </line>
+    <line>
+      <![CDATA[statusCode: 200]]>
+    </line>
+    <line>
+      <![CDATA[http://172.17.26.11:8358]]>
+    </line>
+    <line>
+      <![CDATA[/paymentservice/expresswayplus/autodebit?expIdList=1029]]>
+    </line>
+    <line>
+      <![CDATA[Response body EW_Autodebit : {"exp_user_details":[{"debit_amount":20.0,"exp_id":1029,"user_id":41683432,"email_id":"varalakshmi.venkateshaiah@cleartrip.com","currency":"INR","available_balance":25000.0,"credit_limit":25000.0,"opted_amount":25000.0,"card_number":"512345XXXXXX2346","card_id":2584,"error_message":"CAPTURED","status":"S","payment_id":"43850887"}]}]]>
+    </line>
+    <line>
+      <![CDATA[statusCode: 200]]>
+    </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="48" started-at="2020-03-03T05:05:39Z" finished-at="2020-03-03T05:05:39Z">
+  <suite name="Default suite" duration-ms="20627" started-at="2020-03-03T10:36:27Z" finished-at="2020-03-03T10:36:48Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="48" started-at="2020-03-03T05:05:39Z" finished-at="2020-03-03T05:05:39Z">
-      <class name="paymentsAPI.API_GV_Get">
-        <test-method status="FAIL" signature="API_GVGet()[pri:0, instance:paymentsAPI.API_GV_Get@64d2d351]" name="API_GVGet" duration-ms="15" started-at="2020-03-03T05:05:39Z" finished-at="2020-03-03T05:05:39Z">
-          <exception class="java.lang.NullPointerException">
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-at paymentsAPI.API_PaymentCommon1.db_GV(API_PaymentCommon1.java:3218)
-at paymentsAPI.API_PaymentCommon1.rearchGV(API_PaymentCommon1.java:1034)
-at paymentsAPI.API_GV_Get.API_GVGet(API_GV_Get.java:16)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+    <test name="Default test" duration-ms="20627" started-at="2020-03-03T10:36:27Z" finished-at="2020-03-03T10:36:48Z">
+      <class name="paymentsAPI.API_EW_Pay_AutoDebit">
+        <test-method status="PASS" signature="Expressway_Pay()[pri:1, instance:paymentsAPI.API_EW_Pay_AutoDebit@51931956]" name="Expressway_Pay" duration-ms="2590" started-at="2020-03-03T10:36:27Z" finished-at="2020-03-03T10:36:30Z">
           <reporter-output>
+            <line>
+              <![CDATA[http://172.17.26.11:8358]]>
+            </line>
+            <line>
+              <![CDATA[/paymentservice/service/pay/v3]]>
+            </line>
+            <line>
+              <![CDATA[Response body EW_PAY : [{"id":43850886,"customer_detail":{"address1":"Cleartrip JP Nagar Bangalore","city_name":"Bangalore","postal_code":"560076","state_name":"Karnataka","country_name":"India","mobile":"91 1212121212","email":"varalakshmi.venkateshaiah@cleartrip.com"},"app_ref1":"Q19051212126","app_ref2":"185110142","payment_type":"EP","amount":10.0,"currency":"INR","status":"S","description":"Payment will be done later","redirection_required":"N","collect_otp":false,"seq_no":1,"exp_txn_id":955,"exp_id":1029}]]]>
+            </line>
+            <line>
+              <![CDATA[statusCode: 200]]>
+            </line>
           </reporter-output>
-        </test-method> <!-- API_GVGet -->
-      </class> <!-- paymentsAPI.API_GV_Get -->
+        </test-method> <!-- Expressway_Pay -->
+        <test-method status="PASS" signature="Expressway_AutoDebit()[pri:2, instance:paymentsAPI.API_EW_Pay_AutoDebit@51931956]" name="Expressway_AutoDebit" duration-ms="17999" started-at="2020-03-03T10:36:30Z" finished-at="2020-03-03T10:36:48Z">
+          <reporter-output>
+            <line>
+              <![CDATA[http://172.17.26.11:8358]]>
+            </line>
+            <line>
+              <![CDATA[/paymentservice/expresswayplus/autodebit?expIdList=1029]]>
+            </line>
+            <line>
+              <![CDATA[Response body EW_Autodebit : {"exp_user_details":[{"debit_amount":20.0,"exp_id":1029,"user_id":41683432,"email_id":"varalakshmi.venkateshaiah@cleartrip.com","currency":"INR","available_balance":25000.0,"credit_limit":25000.0,"opted_amount":25000.0,"card_number":"512345XXXXXX2346","card_id":2584,"error_message":"CAPTURED","status":"S","payment_id":"43850887"}]}]]>
+            </line>
+            <line>
+              <![CDATA[statusCode: 200]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Expressway_AutoDebit -->
+      </class> <!-- paymentsAPI.API_EW_Pay_AutoDebit -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

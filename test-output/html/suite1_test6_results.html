@@ -3,42 +3,174 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
 <head>
-  <title>Test Results Report - MobileFraud MFilter Call</title>
+  <title>Test Results Report - API Wallet App Only</title>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
   <meta name="description" content="TestNG unit test results." />
   <link href="reportng.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="reportng.js"></script>
 </head>
 <body>
-<h1>MobileFraud MFilter Call</h1>
+<h1>API Wallet App Only</h1>
 <p>
-  Test duration: 0.302s
+  Test duration: 3.931s
 </p>
 
 
 
-
-
   <table class="resultsTable">
-    <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
+    <tr><th colspan="3" class="header failed">Failed Tests</th></tr>
           <tr>
-        <td colspan="3" class="group">tripServices.TS_MF_MFilter</td>
+        <td colspan="3" class="group">paymentsAPI.API_Wallet_Get_Wallet_INR</td>
       </tr>
             
 <tr>
   <td class="method">
-                  mFilterCall
+                  Wallet_GETWALLET
       </td>
   <td class="duration">
-    0.302s
+    0.029s
   </td>
   <td class="result">
         
     
             <div class="testOutput">
-                        Service URL : http://172.17.26.11:8362/marketing/mfilter/transactions<br />
-                                [{&quot;IF_BlacklistedRiskScore&quot;: 0, &quot;INC_HighCRRiskScore&quot;: 0, &quot;Dis_BrowserRiskScore&quot;: 0, &quot;Dis_DeviceRiskScore&quot;: 0, &quot;package_name&quot;: &quot;com.Blahblahblah.android&quot;, &quot;fraud_category&quot;: &quot;NOT_FRAUD&quot;, &quot;locale_info&quot;: &quot;en_US&quot;, &quot;timestamp&quot;: &quot;2019-06-05 04:46:26&quot;, &quot;device_imei&quot;: &quot;Default&quot;, &quot;vendor_id&quot;: &quot;Default&quot;, &quot;campaign_id&quot;: &quot;Test Campaign&quot;, &quot;DF_APKRiskScore&quot;: 0, &quot;IF_VPNProxyRiskScore&quot;: 0, &quot;Dis_IPRiskScore&quot;: 0, &quot;Dis_OSRiskScore&quot;: 0, &quot;device_carrier&quot;: &quot;Airtel&quot;, &quot;conversion_make&quot;: &quot;Default&quot;, &quot;publisher_name&quot;: &quot;admobs&quot;, &quot;Dis_ISPRiskScore&quot;: 0, &quot;device_id&quot;: &quot;FD2B68B3-618F-48AB-A36A-29D3BF91E9Mz&quot; ,&quot;INC_clickUnderRiskScore&quot;: 0, &quot;IF_DuplicateIPRiskScore&quot;: 0, &quot;app_version&quot;: &quot;18.3.0&quot;, &quot;user_id&quot;: &quot;Default&quot;, &quot;sub_publisher_id&quot;: &quot;25572_28132_24002&quot;, &quot;DF_DuplicateUserRiskScore&quot;: 0, &quot;click_id&quot;: &quot;103899_842b34a321a674cdbacf0b6b32ea45471520733947-20181103073547-1457-20042_23182_27552&quot;, &quot;ip_address&quot;: &quot;Default&quot;, &quot;CF_ClickSpamRiskSCore&quot;: 0, &quot;DF_IncorrectTelcoRiskScore&quot;: 0, &quot;DF_FakeDeviceRiskScore&quot;: 0, &quot;CF_FakeClickRiskScore&quot;: 0, &quot;os_version&quot;: &quot;4.4.2&quot;, &quot;CF_FakeAttributionRiskScore&quot;: 0, &quot;conversion_model&quot;: &quot;Default&quot;, &quot;device_gaid&quot;: &quot;036CD1EA-9DD7-43D4-BECF-436769CC7FWl&quot; ,&quot;record_id&quot;: 433618358,&quot;country&quot;: &quot;PK&quot;, &quot;publisher_id&quot;: &quot;Default&quot;, &quot;DF_IncorrectRegionRiskScore&quot;: 0, &quot;transaction_id&quot;: &quot;bbf46ae767767d41bd4474dfbae6d1060068aZ1m&quot;}]<br />
-                                Status code 200<br />
+                        http://172.17.26.11:8359<br />
+                                /payments/wallet/fetch?userId=13957750&amp;currency=INR<br />
+                                http://172.17.26.11:8359<br />
+                                /payments/wallet/fetch?userId=13957750&amp;currency=INR<br />
+                                Response body wallet_GETWALLET_INR : {&quot;timestamp&quot;:&quot;2020-03-05T04:38:53.738+0000&quot;,&quot;status&quot;:500,&quot;error&quot;:&quot;Internal Server Error&quot;,&quot;message&quot;:&quot;More than one matching record found for query: select * from payment_wallet_details where user_id=? and currency=? params: [13957750, INR]&quot;,&quot;path&quot;:&quot;/payments/wallet/fetch&quot;}<br />
+                                statusCode: 500<br />
+                  </div>
+    
+
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>junit.framework.AssertionFailedError</b></a><br />
+    <div class="stackTrace" id="exception-0">
+              junit.framework.Assert.fail(Assert.java:48)<br />
+              junit.framework.Assert.assertTrue(Assert.java:20)<br />
+              junit.framework.Assert.assertTrue(Assert.java:27)<br />
+              paymentsAPI.API_PaymentCommon1.validation(API_PaymentCommon1.java:1317)<br />
+              paymentsAPI.API_Wallet_Get_Wallet_INR.Wallet_GETWALLET(API_Wallet_Get_Wallet_INR.java:16)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:583)<br />
+              org.testng.internal.Invoker.retryFailed(Invoker.java:839)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1010)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)<br />
+              java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)<br />
+              java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)<br />
+              java.lang.Thread.run(Thread.java:748)<br />
+                </div>
+      </td>
+</tr>
+      </table>
+
+  <table class="resultsTable" width="100%">
+    <tr><th colspan="3" class="header skipped">Skipped Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">paymentsAPI.API_Wallet_Get_Wallet_INR</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  Wallet_GETWALLET
+      </td>
+  <td class="duration">
+    0.075s
+  </td>
+  <td class="result">
+                         
+    
+            <div class="testOutput">
+                        http://172.17.26.11:8359<br />
+                                /payments/wallet/fetch?userId=13957750&amp;currency=INR<br />
+                                http://172.17.26.11:8359<br />
+                                /payments/wallet/fetch?userId=13957750&amp;currency=INR<br />
+                                Response body wallet_GETWALLET_INR : {&quot;timestamp&quot;:&quot;2020-03-05T04:38:53.708+0000&quot;,&quot;status&quot;:500,&quot;error&quot;:&quot;Internal Server Error&quot;,&quot;message&quot;:&quot;More than one matching record found for query: select * from payment_wallet_details where user_id=? and currency=? params: [13957750, INR]&quot;,&quot;path&quot;:&quot;/payments/wallet/fetch&quot;}<br />
+                                statusCode: 500<br />
+                  </div>
+    
+
+      </td>
+</tr>
+      </table>
+
+  <table class="resultsTable">
+    <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">paymentsAPI.API_GV_Get</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  API_GVGet
+      </td>
+  <td class="duration">
+    2.691s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        http://172.17.26.11:8359<br />
+                                http://172.17.26.11:8359<br />
+                                /payments/gv/get?cardnumber=3000331033588753&amp;cardpin=247648&amp;currency=INR&amp;productType=DOMESTIC-AIR&amp;itineraryId=681f6b756d-67de-4efc-b663-5a7ac1bd9fa1&amp;cardCategory=DF<br />
+                                Response body GV_GET : {&quot;cardNumber&quot;:&quot;3000331033588753&quot;, &quot;cardType&quot;:&quot;Cleartrip Test e-GV&quot;, &quot;isExpired&quot;:false, &quot;balance&quot;:4990.0, &quot;status&quot;:&quot;S&quot;}<br />
+                                statusCode: 200<br />
+                  </div>
+    
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">paymentsAPI.API_Wallet_CashBackDetails</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  Wallet_CashBack
+      </td>
+  <td class="duration">
+    0.923s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        http://172.17.26.11:8359<br />
+                                /payments/wallet/cashback?emailId=test@test123.com&amp;currency=INR&amp;amount=1&amp;tripRef=Q190812462222&amp;expiryDate =20-09-19<br />
+                                http://172.17.26.11:8359<br />
+                                /payments/wallet/cashback?emailId=test@test123.com&amp;currency=INR&amp;amount=1&amp;tripRef=Q190812462222&amp;expiryDate =20-09-19<br />
+                                Response body wallet_CASHBACK_DETAILS_WALLETS : {&quot;status&quot;:&quot;S&quot;,&quot;description&quot;:&quot;Wallet cashback success&quot;,&quot;walletbalance&quot;:2155.0}<br />
+                                statusCode: 200<br />
+                  </div>
+    
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">paymentsAPI.API_Wallet_Get_Wallet_All</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  Wallet_GETWALLET
+      </td>
+  <td class="duration">
+    0.213s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        http://172.17.26.11:8359<br />
+                                http://172.17.26.11:8359<br />
+                                /payments/wallet/65179937/getWallet<br />
+                                Response body wallet_GETWALLET_ALL : [{&quot;balance&quot;:10001.0,&quot;wallet-id&quot;:5156154,&quot;currency&quot;:&quot;INR&quot;,&quot;promo-balance&quot;:0.0,&quot;wallet-no&quot;:&quot;3000331040000246&quot;}]<br />
+                                statusCode: 200<br />
                   </div>
     
 

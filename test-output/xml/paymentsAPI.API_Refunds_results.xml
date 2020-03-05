@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="API Refunds New"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="7.612">
+  <properties />
+  
+  
+            <testcase name="refund_walletCC" time="7.612" classname="paymentsAPI.API_Refunds" />
+      
+</testsuite>

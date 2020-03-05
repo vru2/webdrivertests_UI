@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="API Bin Manager"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="0.996">
+  <properties />
+  
+  
+            <testcase name="binmanager_MC_Credit" time="0.996" classname="paymentsAPI.API_Binmanager_Add_MC_Credit" />
+      
+</testsuite>

@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>2/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Mar 03 16:58:11 IST 2020</td>
+<td>Started on:</td><td>Thu Mar 05 14:19:00 IST 2020</td>
 </tr>
-<tr><td>Total time:</td><td>3 seconds (3154 ms)</td>
+<tr><td>Total time:</td><td>1 seconds (1618 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,37 +75,10 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='paymentsAPI.API_ROR_Reads.ROR_MultiSearch_Reads()'><b>ROR_MultiSearch_Reads</b><br>Test class: paymentsAPI.API_ROR_Reads<br/>
-<a href="#Output-480490520" onClick='toggleBox("Output-480490520", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-480490520" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-480490520">
-http://172.17.26.11:8358<br/>
-http://172.17.26.11:8272<br/>
-/paymentservice/search/payments/v1?query=id:43622220,paymentType:WT<br/>
-Response body ROR_MultiSearch_Reads : [{"id":43622220,"trip_id":46373624,"txn_id":75572810,"payment_type":"WT","amount":2060.0,"created_at":1579790943000,"updated_at":1579790943000,"seq_no":2,"status":"S","description":"Wallet payment success","currency":"INR","order_info1":"SG/3407/BLR/MAA/20200223150000","order_info2":"kiran kumar","app_ref1":"Q200123741806","app_ref2":75572810,"neglist_id":null,"pos_list_id":null,"linkable_id":null,"linkable_type":null,"user_message":null,"pan_number":null,"payment_category":"B","merchant_txn_ref":"43622220","payment_subtype":null,"express_checkout":null,"emi_count":null,"emi_fee":null,"ref_payment_id":null,"payment_cards_gateway_accesses":[],"payment_gift_voucher_txns":[],"payment_tp_wallet_txns":[],"payment_upi_txns":[],"payment_redirect_timings":[],"payment_card_details":[],"payment_cash_card_detail":null,"payment_ivr_detail":null,"payment_techpro_detail":null,"payment_third_party_da_details":[],"payment_third_party_details":[],"payment_ap_txns":[],"payment_da_transactions":[],"payment_da_details":[],"payment_wallet_transactions":[{"id":5974868,"wallet_detail_id":"5155670","transaction_type":"CAPTURE","amount":"2060.00","status":"S","description":"Transaction successful.","reference1":"2001232019","reference2":"10641658","reference3":"0","reference4":"11670303","invoice_id":"43622220_Q200123741806","trip_ref":"Q200123741806","trip_details":"Bangalore - Chennai one-way","event":"BOOKING","opening_balance":"13758.30","closing_balance":"11698.30","created_at":1579790943000,"updated_at":1579790943000,"created_by":"65176051","updated_by":"65176051","expiry_date":null},{"id":5976798,"wallet_detail_id":"5155670","transaction_type":"REFUND","amount":"2055.00","status":"S","description":"Transaction successful.","reference1":"2002121756","reference2":"10645284","reference3":"0","reference4":"13569222","invoice_id":"9384576_Q200123741806","trip_ref":"Q200123741806","trip_details":"Bangalore - Chennai one-way","event":"REFUND","opening_balance":"7395.90","closing_balance":"9450.90","created_at":1581510410000,"updated_at":1581510411000,"created_by":"0","updated_by":"65176051","expiry_date":null}],"refunds":[{"id":9384576,"payment_id":43622220,"refund_amount":2055.0,"refund_file_id":null,"status":"D","description":"1 segments","created_at":1581510347000,"updated_at":1581510414000,"seq_no":null,"bos_file_id":null,"pg_generation_txn_id":75593788,"payment_reconciliation_file_id":null,"txn_id":75593786,"taken":null,"pbos_file_id":null,"rollbacked":null,"rollback_supported":"N","arn_no":null,"attempted":"Y","refund_type":"WALLET","payment_refund_mappings":[{"id":9091212,"payment_id":43622220,"refund_id":9384576,"trip_id":46373624,"txn_id":75593786,"refund_amount":2055.0,"created_at":1581510347000,"updated_at":1581510347000}]}],"payment_customer_details":[{"id":40785494,"payment_id":0,"ip_address":null,"address1":null,"address2":null,"address3":null,"city_name":null,"postal_code":null,"state_name":null,"country_name":null,"mobile":"9986696785","landline":null,"other_phone":null,"email":"cltpacct@gmail.com","created_at":1579790943000,"updated_at":1579790943000}],"payment_refund_mappings":[{"id":9091212,"payment_id":43622220,"refund_id":9384576,"trip_id":46373624,"txn_id":75593786,"refund_amount":2055.0,"created_at":1581510347000,"updated_at":1581510347000}],"reward_points_txns":null,"payment_cash_detail":null,"payment_net_banking_details":[]}]<br/>
-statusCode: 200<br/>
-</div>
-</td>
+<td title='tripServices.AppNotification.appnotification()'><b>appnotification</b><br>Test class: tripServices.AppNotification</td>
 <td></td>
-<td>2</td>
-<td>paymentsAPI.API_ROR_Reads@64d2d351</td></tr>
-<tr>
-<td title='paymentsAPI.API_ROR_Reads.ROR_WalletFetch()'><b>ROR_WalletFetch</b><br>Test class: paymentsAPI.API_ROR_Reads<br/>
-<a href="#Output-1687627235" onClick='toggleBox("Output-1687627235", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1687627235" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1687627235">
-http://172.17.26.11:8358<br/>
-http://172.17.26.11:8359<br/>
-/payments/wallet/fetch/v2?userId=13957750&currency=AED<br/>
-Response body ROR_WalletFetch : {"id":5153574,"wallet_number":"3000331020000001","user_id":13957750,"currency":"AED","balance":4207188.0,"promo_balance":0.0}<br/>
-statusCode: 200<br/>
-</div>
-</td>
-<td></td>
-<td>0</td>
-<td>paymentsAPI.API_ROR_Reads@64d2d351</td></tr>
+<td>1</td>
+<td>tripServices.AppNotification@35fc6dc4</td></tr>
 </table><p>
 </body>
 </html>

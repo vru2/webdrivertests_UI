@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
+<head>
+  <title>Test Results Report - API CTPay V2</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="description" content="TestNG unit test results." />
+  <link href="reportng.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="reportng.js"></script>
+</head>
+<body>
+<h1>API CTPay V2</h1>
+<p>
+  Test duration: 47.901s
+</p>
+
+
+
+
+
+  <table class="resultsTable">
+    <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">paymentsAPI.API_CTpay_GetUrl</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  PaymentCtPayCreate
+      </td>
+  <td class="duration">
+    11.963s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        https://qa2.cleartrip.com<br />
+                                /paymentservice/ct/v2/getCtPaymentUrl<br />
+                                Response body GETURL : {&quot;order_id&quot;:&quot;T2333454445&quot;,&quot;redirection_url&quot;:&quot;https://qa2.cleartrip.com/paymentservice/ct/v2/a073de29-66a9-4027-94fd-3d0e2ee4ba79/initiatePayment&quot;,&quot;status&quot;:&quot;SUCCESS&quot;,&quot;created_at&quot;:&quot;05-03-2020 10:09:00.896+0530&quot;}<br />
+                                statusCode: 200<br />
+                                CTpay&nbsp; URL https://qa2.cleartrip.com/paymentservice/ct/v2/a073de29-66a9-4027-94fd-3d0e2ee4ba79/initiatePayment<br />
+                  </div>
+    
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">paymentsAPI.API_CTpay_Status</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  PaymentCtPayStatus
+      </td>
+  <td class="duration">
+    12.001s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        https://qa2.cleartrip.com<br />
+                                /paymentservice/ct/v2/T2021069300/status<br />
+                                Response body STATUS : {&quot;ctpay_id&quot;:1090,&quot;payment_id&quot;:43015252,&quot;order_id&quot;:&quot;T2021069300&quot;,&quot;amount&quot;:500.0,&quot;currency&quot;:&quot;INR&quot;,&quot;customer_detail&quot;:{&quot;ip_address&quot;:&quot;217.164.159.242&quot;,&quot;address1&quot;:&quot;Unit No 001, Ground Floor, DTC Bldg, Sitaram mills compound, N.M.joshi Marg, Lower parel (E)&quot;,&quot;city_name&quot;:&quot;Mumbai&quot;,&quot;postal_code&quot;:&quot;400011&quot;,&quot;state_name&quot;:&quot;Maharashtra&quot;,&quot;country_name&quot;:&quot;India&quot;,&quot;mobile&quot;:&quot;0509009839&quot;,&quot;email&quot;:&quot;anas.ansari@cleartrip.com&quot;},&quot;client_id&quot;:1111,&quot;payment_type&quot;:&quot;NB&quot;,&quot;order_status&quot;:&quot;SUCCESS&quot;,&quot;description&quot;:&quot;Payment successful&quot;,&quot;gateway_txnNo&quot;:&quot;308005128715&quot;,&quot;bank_name&quot;:&quot;Citibank&quot;}<br />
+                                statusCode: 200<br />
+                                Order_Status SUCCESS<br />
+                                Description : Payment successful<br />
+                  </div>
+    
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">paymentsAPI.API_CTpay_URLcreation</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  CreateURL_CTpay
+      </td>
+  <td class="duration">
+    11.982s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        https://qa2.cleartrip.com<br />
+                                paymentservice/ct/v2/getCtPaymentUrl<br />
+                                Response body CreateURL : {&quot;order_id&quot;:&quot;T2021069300&quot;,&quot;redirection_url&quot;:&quot;https://qa2.cleartrip.com/paymentservice/ct/v2/3cbd6497-f72f-4614-b4b4-6099f7a544b9/initiatePayment&quot;,&quot;status&quot;:&quot;SUCCESS&quot;,&quot;created_at&quot;:&quot;05-03-2020 10:09:00.892+0530&quot;}<br />
+                                statusCode: 200<br />
+                                Order_ID T2021069300<br />
+                                redirection_url : https://qa2.cleartrip.com/paymentservice/ct/v2/3cbd6497-f72f-4614-b4b4-6099f7a544b9/initiatePayment<br />
+                                status : SUCCESS<br />
+                  </div>
+    
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">paymentsAPI.API_CTpay_UpdateClient</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  PaymentCtPayUpdate
+      </td>
+  <td class="duration">
+    11.955s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        https://qa2.cleartrip.com<br />
+                                /paymentservice/ct/v2/updateClient<br />
+                                Response body UPDATE : {&quot;client_id&quot;:1125,&quot;client_key&quot;:&quot;52d31bda9ece78a511eea56eaa72d49b&quot;,&quot;s2s_url&quot;:&quot;&quot;,&quot;payment_types&quot;:&quot;CC,DC,TW&quot;,&quot;active&quot;:true,&quot;created_at&quot;:&quot;31-05-2019 15:57:13.000+0530&quot;,&quot;updated_at&quot;:&quot;07-06-2019 09:26:25.000+0530&quot;,&quot;status&quot;:&quot;SUCCESS&quot;}<br />
+                                statusCode: 200<br />
+                                 status : SUCCESS<br />
+                  </div>
+    
+
+      </td>
+</tr>
+      </table>
+  
+</body>
+</html>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="API Expressway"
+           tests="4"
+           failures="2"
+           errors="0"
+           skipped="2"
+           time="0.517">
+  <properties />
+            <testcase name="Expressway_Pay" time="0.113" classname="paymentsAPI.API_EW_Pay_AutoDebit">
+                <failure type="junit.framework.AssertionFailedError"
+                  message="(null)"
+              >
+<![CDATA[junit.framework.AssertionFailedError
+  junit.framework.Assert.fail(Assert.java:48)
+  junit.framework.Assert.assertTrue(Assert.java:20)
+  junit.framework.Assert.assertTrue(Assert.java:27)
+  paymentsAPI.API_PaymentCommon1.validation(API_PaymentCommon1.java:1527)
+  paymentsAPI.API_EW_Pay_AutoDebit.Expressway_Pay(API_EW_Pay_AutoDebit.java:19)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+  org.testng.internal.Invoker.retryFailed(Invoker.java:839)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1010)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+  java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+  java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+  java.lang.Thread.run(Thread.java:748)
+]]>
+      </failure>
+
+          </testcase>
+            <testcase name="Expressway_AutoDebit" time="0.099" classname="paymentsAPI.API_EW_Pay_AutoDebit">
+                <failure type="junit.framework.AssertionFailedError"
+                  message="(null)"
+              >
+<![CDATA[junit.framework.AssertionFailedError
+  junit.framework.Assert.fail(Assert.java:48)
+  junit.framework.Assert.assertTrue(Assert.java:20)
+  junit.framework.Assert.assertTrue(Assert.java:27)
+  paymentsAPI.API_PaymentCommon1.validation(API_PaymentCommon1.java:1317)
+  paymentsAPI.API_EW_Pay_AutoDebit.Expressway_AutoDebit(API_EW_Pay_AutoDebit.java:26)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+  org.testng.internal.Invoker.retryFailed(Invoker.java:839)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1010)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+  java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+  java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+  java.lang.Thread.run(Thread.java:748)
+]]>
+      </failure>
+
+          </testcase>
+  
+            <testcase name="Expressway_Pay" time="0.0" classname="paymentsAPI.API_EW_Pay_AutoDebit">
+          <skipped />
+    </testcase>
+            <testcase name="Expressway_AutoDebit" time="0.0" classname="paymentsAPI.API_EW_Pay_AutoDebit">
+          <skipped />
+    </testcase>
+  
+  
+</testsuite>

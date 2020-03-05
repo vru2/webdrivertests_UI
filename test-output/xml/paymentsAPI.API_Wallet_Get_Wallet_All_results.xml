@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="API Wallet App Only"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="0.213">
+  <properties />
+  
+  
+            <testcase name="Wallet_GETWALLET" time="0.213" classname="paymentsAPI.API_Wallet_Get_Wallet_All" />
+      
+</testsuite>

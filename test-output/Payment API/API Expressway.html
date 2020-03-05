@@ -1,0 +1,440 @@
+<html>
+<head>
+<title>TestNG:  API Expressway</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>API Expressway</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>5/3/3</td>
+</tr><tr>
+<td>Started on:</td><td>Thu Mar 05 10:08:49 IST 2020</td>
+</tr>
+<tr><td>Total time:</td><td>12 seconds (12701 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='paymentsAPI.API_EW_Pay_AutoDebit.Expressway_AutoDebit()'><b>Expressway_AutoDebit</b><br>Test class: paymentsAPI.API_EW_Pay_AutoDebit<br/>
+<a href="#Output-21863985" onClick='toggleBox("Output-21863985", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-21863985" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-21863985">
+http://172.17.26.11:8358<br/>
+/paymentservice/expresswayplus/autodebit?expIdList=1029<br/>
+Response body EW_Autodebit : {"timestamp":1583383141997,"status":500,"error":"Internal Server Error","message":"No message available","path":"/paymentservice/expresswayplus/autodebit"}<br/>
+statusCode: 500<br/>
+</div>
+</td>
+<td><div><pre>junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:48)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertTrue(Assert.java:27)
+	at paymentsAPI.API_PaymentCommon1.validation(API_PaymentCommon1.java:1317)
+	at paymentsAPI.API_EW_Pay_AutoDebit.Expressway_AutoDebit(API_EW_Pay_AutoDebit.java:26)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace21863985", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace21863985'><pre>junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:48)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertTrue(Assert.java:27)
+	at paymentsAPI.API_PaymentCommon1.validation(API_PaymentCommon1.java:1317)
+	at paymentsAPI.API_EW_Pay_AutoDebit.Expressway_AutoDebit(API_EW_Pay_AutoDebit.java:26)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:839)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1010)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+</pre></div></td>
+<td>0</td>
+<td>paymentsAPI.API_EW_Pay_AutoDebit@76508ed1</td></tr>
+<tr>
+<td title='paymentsAPI.API_EW_Pay_V3.Expressway_Pay()'><b>Expressway_Pay</b><br>Test class: paymentsAPI.API_EW_Pay_V3<br/>
+<a href="#Output-1630767428" onClick='toggleBox("Output-1630767428", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1630767428" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1630767428">
+http://172.17.26.11:8358<br/>
+/paymentservice/service/pay/v3<br/>
+Response body EW_PAY : [{"id":43851314,"customer_detail":{"address1":"Cleartrip JP Nagar Bangalore","city_name":"Bangalore","postal_code":"560076","state_name":"Karnataka","country_name":"India","mobile":"91 1212121212","email":"varalakshmi.venkateshaiah@cleartrip.com"},"app_ref1":"Q19051212126","app_ref2":"185110142","payment_type":"EP","amount":10.0,"currency":"INR","status":"F","description":"LAST_BILL_PAID_VALIDATION_FAILED:Exp User [1029] hasn't paid last bill, billId=1299, billAmount=20.0","collect_otp":false,"seq_no":1}]<br/>
+statusCode: 200<br/>
+Payment will be done later message not displayed <br/>
+</div>
+</td>
+<td><div><pre>junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:48)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertTrue(Assert.java:27)
+	at paymentsAPI.API_PaymentCommon1.validation(API_PaymentCommon1.java:1527)
+	at paymentsAPI.API_EW_Pay_V3.Expressway_Pay(API_EW_Pay_V3.java:19)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1630767428", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1630767428'><pre>junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:48)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertTrue(Assert.java:27)
+	at paymentsAPI.API_PaymentCommon1.validation(API_PaymentCommon1.java:1527)
+	at paymentsAPI.API_EW_Pay_V3.Expressway_Pay(API_EW_Pay_V3.java:19)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:839)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1010)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+</pre></div></td>
+<td>0</td>
+<td>paymentsAPI.API_EW_Pay_V3@4ac3c60d</td></tr>
+<tr>
+<td title='paymentsAPI.API_EW_Pay_AutoDebit.Expressway_Pay()'><b>Expressway_Pay</b><br>Test class: paymentsAPI.API_EW_Pay_AutoDebit<br/>
+<a href="#Output-1096552495" onClick='toggleBox("Output-1096552495", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1096552495" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1096552495">
+http://172.17.26.11:8358<br/>
+/paymentservice/service/pay/v3<br/>
+Response body EW_PAY : [{"id":43851318,"customer_detail":{"address1":"Cleartrip JP Nagar Bangalore","city_name":"Bangalore","postal_code":"560076","state_name":"Karnataka","country_name":"India","mobile":"91 1212121212","email":"varalakshmi.venkateshaiah@cleartrip.com"},"app_ref1":"Q19051212126","app_ref2":"185110142","payment_type":"EP","amount":10.0,"currency":"INR","status":"F","description":"LAST_BILL_PAID_VALIDATION_FAILED:Exp User [1029] hasn't paid last bill, billId=1299, billAmount=20.0","collect_otp":false,"seq_no":1}]<br/>
+statusCode: 200<br/>
+Payment will be done later message not displayed <br/>
+</div>
+</td>
+<td><div><pre>junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:48)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertTrue(Assert.java:27)
+	at paymentsAPI.API_PaymentCommon1.validation(API_PaymentCommon1.java:1527)
+	at paymentsAPI.API_EW_Pay_AutoDebit.Expressway_Pay(API_EW_Pay_AutoDebit.java:19)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1096552495", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1096552495'><pre>junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:48)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertTrue(Assert.java:27)
+	at paymentsAPI.API_PaymentCommon1.validation(API_PaymentCommon1.java:1527)
+	at paymentsAPI.API_EW_Pay_AutoDebit.Expressway_Pay(API_EW_Pay_AutoDebit.java:19)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:839)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1010)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+</pre></div></td>
+<td>0</td>
+<td>paymentsAPI.API_EW_Pay_AutoDebit@76508ed1</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='paymentsAPI.API_EW_Add_Amount.Expressway_AddAmt()'><b>Expressway_AddAmt</b><br>Test class: paymentsAPI.API_EW_Add_Amount<br/>
+<a href="#Output-2092522391" onClick='toggleBox("Output-2092522391", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-2092522391" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-2092522391">
+http://172.17.26.11:8358<br/>
+/paymentservice/expresswayplus/41697596/INR/addcredit?creditAmount=10<br/>
+Response body EW_AddAmt : {"exp_id":1010,"user_id":41697596,"email_id":"testcltp2@gmail.com","currency":"INR","available_balance":27510.0,"credit_limit":27510.0,"opted-in":true,"card_number":"512345XXXXXX2346","card_id":2575,"expiry_month":5,"expiry_year":2020}<br/>
+statusCode: 200<br/>
+</div>
+</td>
+<td></td>
+<td>11</td>
+<td>paymentsAPI.API_EW_Add_Amount@4facf68f</td></tr>
+<tr>
+<td title='paymentsAPI.API_EW_OptIN.Expressway_UserDetails()'><b>Expressway_UserDetails</b><br>Test class: paymentsAPI.API_EW_OptIN<br/>
+<a href="#Output-383732504" onClick='toggleBox("Output-383732504", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-383732504" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-383732504">
+http://172.17.26.11:8358<br/>
+/paymentservice/expresswayplus/user/opt/in/41697596/INR<br/>
+Response body EW_OPTIN : {"status":false,"description":"Account is already activated"}<br/>
+statusCode: 200<br/>
+</div>
+</td>
+<td></td>
+<td>4</td>
+<td>paymentsAPI.API_EW_OptIN@3911c2a7</td></tr>
+<tr>
+<td title='paymentsAPI.API_EW_UserDetails.Expressway_UserDetails()'><b>Expressway_UserDetails</b><br>Test class: paymentsAPI.API_EW_UserDetails<br/>
+<a href="#Output-1692534648" onClick='toggleBox("Output-1692534648", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1692534648" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1692534648">
+http://172.17.26.11:8358<br/>
+/paymentservice/expresswayplus/details/41649008/INR<br/>
+Response body EW_USERDETAILS : {"exp_id":1001,"user_id":41649008,"email_id":"anas.ansari@cleartrip.com","currency":"INR","available_balance":50000.0,"credit_limit":50000.0,"opted-in":true,"card_number":"401200XXXXXX1112","card_id":2668,"expiry_month":12,"expiry_year":2020}<br/>
+statusCode: 200<br/>
+available_balance 50000.0<br/>
+credit_limit : 50000.0<br/>
+</div>
+</td>
+<td></td>
+<td>11</td>
+<td>paymentsAPI.API_EW_UserDetails@31368b99</td></tr>
+<tr>
+<td title='paymentsAPI.API_EW_Validate.Expressway_Validate()'><b>Expressway_Validate</b><br>Test class: paymentsAPI.API_EW_Validate<br/>
+<a href="#Output-1939418125" onClick='toggleBox("Output-1939418125", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1939418125" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1939418125">
+http://172.17.26.11:8358<br/>
+/paymentservice/service/validate<br/>
+Response body EW_VALIDATE : {"bookValidateResponse":[{"customer_detail":{"address1":"Cleartrip JP Nagar Bangalore","city_name":"Bangalore","postal_code":"560076","state_name":"Karnataka","country_name":"India","mobile":"91 1212121212","email":"cltppayment@gmail.com"},"payment_type":"EP","amount":5.0,"currency":"INR","response_code":"0","redirection_required":"N","response_message":"Validation successful","seq_no":1,"exp_id":1008,"otp_eligible":false}]}<br/>
+statusCode: 200<br/>
+</div>
+</td>
+<td></td>
+<td>11</td>
+<td>paymentsAPI.API_EW_Validate@1725dc0f</td></tr>
+<tr>
+<td title='paymentsAPI.API_EW_GetOutstanding.Expressway_getOutstandingAmt()'><b>Expressway_getOutstandingAmt</b><br>Test class: paymentsAPI.API_EW_GetOutstanding<br/>
+<a href="#Output-1129464805" onClick='toggleBox("Output-1129464805", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1129464805" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1129464805">
+http://172.17.26.11:8358<br/>
+/paymentservice/expresswayplus/outstandingbalance?userId=41697596&currency=INR<br/>
+Response body EW_OUTSTANDING : {"dueAmount":0.0,"expId":1010,"userId":41697596,"currency":"INR","cardId":2575,"cardNumber":"512345XXXXXX2346"}<br/>
+statusCode: 200<br/>
+</div>
+</td>
+<td></td>
+<td>11</td>
+<td>paymentsAPI.API_EW_GetOutstanding@50b472aa</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='paymentsAPI.API_EW_Pay_AutoDebit.Expressway_AutoDebit()'><b>Expressway_AutoDebit</b><br>Test class: paymentsAPI.API_EW_Pay_AutoDebit<br/>
+<a href="#Output-1633837438" onClick='toggleBox("Output-1633837438", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1633837438" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1633837438">
+http://172.17.26.11:8358<br/>
+/paymentservice/expresswayplus/autodebit?expIdList=1029<br/>
+Response body EW_Autodebit : {"timestamp":1583383141897,"status":500,"error":"Internal Server Error","message":"No message available","path":"/paymentservice/expresswayplus/autodebit"}<br/>
+statusCode: 500<br/>
+</div>
+</td>
+<td><div><pre>junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:48)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertTrue(Assert.java:27)
+	at paymentsAPI.API_PaymentCommon1.validation(API_PaymentCommon1.java:1317)
+	at paymentsAPI.API_EW_Pay_AutoDebit.Expressway_AutoDebit(API_EW_Pay_AutoDebit.java:26)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1633837438", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1633837438'><pre>junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:48)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertTrue(Assert.java:27)
+	at paymentsAPI.API_PaymentCommon1.validation(API_PaymentCommon1.java:1317)
+	at paymentsAPI.API_EW_Pay_AutoDebit.Expressway_AutoDebit(API_EW_Pay_AutoDebit.java:26)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+</pre></div></td>
+<td>0</td>
+<td>paymentsAPI.API_EW_Pay_AutoDebit@76508ed1</td></tr>
+<tr>
+<td title='paymentsAPI.API_EW_Pay_V3.Expressway_Pay()'><b>Expressway_Pay</b><br>Test class: paymentsAPI.API_EW_Pay_V3<br/>
+<a href="#Output-444013899" onClick='toggleBox("Output-444013899", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-444013899" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-444013899">
+http://172.17.26.11:8358<br/>
+/paymentservice/service/pay/v3<br/>
+Response body EW_PAY : [{"id":43851306,"customer_detail":{"address1":"Cleartrip JP Nagar Bangalore","city_name":"Bangalore","postal_code":"560076","state_name":"Karnataka","country_name":"India","mobile":"91 1212121212","email":"varalakshmi.venkateshaiah@cleartrip.com"},"app_ref1":"Q19051212126","app_ref2":"185110142","payment_type":"EP","amount":10.0,"currency":"INR","status":"F","description":"LAST_BILL_PAID_VALIDATION_FAILED:Exp User [1029] hasn't paid last bill, billId=1299, billAmount=20.0","collect_otp":false,"seq_no":1}]<br/>
+statusCode: 200<br/>
+Payment will be done later message not displayed <br/>
+</div>
+</td>
+<td><div><pre>junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:48)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertTrue(Assert.java:27)
+	at paymentsAPI.API_PaymentCommon1.validation(API_PaymentCommon1.java:1527)
+	at paymentsAPI.API_EW_Pay_V3.Expressway_Pay(API_EW_Pay_V3.java:19)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace444013899", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace444013899'><pre>junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:48)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertTrue(Assert.java:27)
+	at paymentsAPI.API_PaymentCommon1.validation(API_PaymentCommon1.java:1527)
+	at paymentsAPI.API_EW_Pay_V3.Expressway_Pay(API_EW_Pay_V3.java:19)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+</pre></div></td>
+<td>11</td>
+<td>paymentsAPI.API_EW_Pay_V3@4ac3c60d</td></tr>
+<tr>
+<td title='paymentsAPI.API_EW_Pay_AutoDebit.Expressway_Pay()'><b>Expressway_Pay</b><br>Test class: paymentsAPI.API_EW_Pay_AutoDebit<br/>
+<a href="#Output-1336605552" onClick='toggleBox("Output-1336605552", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1336605552" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1336605552">
+http://172.17.26.11:8358<br/>
+/paymentservice/service/pay/v3<br/>
+Response body EW_PAY : [{"id":43851317,"customer_detail":{"address1":"Cleartrip JP Nagar Bangalore","city_name":"Bangalore","postal_code":"560076","state_name":"Karnataka","country_name":"India","mobile":"91 1212121212","email":"varalakshmi.venkateshaiah@cleartrip.com"},"app_ref1":"Q19051212126","app_ref2":"185110142","payment_type":"EP","amount":10.0,"currency":"INR","status":"F","description":"LAST_BILL_PAID_VALIDATION_FAILED:Exp User [1029] hasn't paid last bill, billId=1299, billAmount=20.0","collect_otp":false,"seq_no":1}]<br/>
+statusCode: 200<br/>
+Payment will be done later message not displayed <br/>
+</div>
+</td>
+<td><div><pre>junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:48)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertTrue(Assert.java:27)
+	at paymentsAPI.API_PaymentCommon1.validation(API_PaymentCommon1.java:1527)
+	at paymentsAPI.API_EW_Pay_AutoDebit.Expressway_Pay(API_EW_Pay_AutoDebit.java:19)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1336605552", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1336605552'><pre>junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:48)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertTrue(Assert.java:27)
+	at paymentsAPI.API_PaymentCommon1.validation(API_PaymentCommon1.java:1527)
+	at paymentsAPI.API_EW_Pay_AutoDebit.Expressway_Pay(API_EW_Pay_AutoDebit.java:19)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+</pre></div></td>
+<td>0</td>
+<td>paymentsAPI.API_EW_Pay_AutoDebit@76508ed1</td></tr>
+</table><p>
+</body>
+</html>

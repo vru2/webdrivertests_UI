@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="API Reporting"
+           tests="2"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="0.155">
+  <properties />
+  
+  
+            <testcase name="reportingAPI" time="0.050" classname="paymentsAPI.API_Reporting" />
+                <testcase name="reportingPay" time="0.105" classname="paymentsAPI.API_Reporting" />
+      
+</testsuite>

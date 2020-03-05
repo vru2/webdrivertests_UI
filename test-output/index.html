@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\Kiran Kumar\AppData\Local\Temp\testng-eclipse-978184908\testng-customsuite.xml</span>
+                    <span>testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,12 +102,7 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="paymentsAPI.API_ROR_Reads" hash-for-method="ROR_MultiSearch_Reads">ROR_MultiSearch_Reads</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="paymentsAPI.API_ROR_Reads" hash-for-method="ROR_WalletFetch">ROR_WalletFetch</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="tripServices.AppNotification" hash-for-method="appnotification">appnotification</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -125,21 +120,14 @@
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">paymentsAPI.API_ROR_Reads</span>
+              <span class="class-name">tripServices.AppNotification</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="ROR_MultiSearch_Reads">
-                  </a> <!-- ROR_MultiSearch_Reads -->
-                  <span class="method-name">ROR_MultiSearch_Reads</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="ROR_WalletFetch">
-                  </a> <!-- ROR_WalletFetch -->
-                  <span class="method-name">ROR_WalletFetch</span>
+                  <a name="appnotification">
+                  </a> <!-- appnotification -->
+                  <span class="method-name">appnotification</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -147,7 +135,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Kiran Kumar\AppData\Local\Temp\testng-eclipse-978184908\testng-customsuite.xml</span>
+            <span class="header-content">/tmp/testng-eclipse--747717234/testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -156,7 +144,7 @@
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default suite&quot;&gt;
   &lt;test thread-count=&quot;5&quot; verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;paymentsAPI.API_ROR_Reads&quot;/&gt;
+      &lt;class name=&quot;tripServices.AppNotification&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -196,20 +184,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'ROR_MultiSearch_Reads')
-data.setCell(0, 2, 'paymentsAPI.API_ROR_Reads')
-data.setCell(0, 3, 2427);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'ROR_WalletFetch')
-data.setCell(1, 2, 'paymentsAPI.API_ROR_Reads')
-data.setCell(1, 3, 697);
+data.setCell(0, 1, 'appnotification')
+data.setCell(0, 2, 'tripServices.AppNotification')
+data.setCell(0, 3, 1595);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 3 seconds</span>
+              <span class="suite-total-time">Total running time: 1 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -220,26 +204,6 @@ return data;
             <span class="header-content">Reporter output for Default suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="reporter-method-div">
-              <span class="reporter-method-name">ROR_WalletFetch</span>
-              <div class="reporter-method-output-div">
-                <span class="reporter-method-output">http://172.17.26.11:8358</span>
-                <span class="reporter-method-output">http://172.17.26.11:8359</span>
-                <span class="reporter-method-output">/payments/wallet/fetch/v2?userId=13957750&currency=AED</span>
-                <span class="reporter-method-output">Response body ROR_WalletFetch : {"id":5153574,"wallet_number":"3000331020000001","user_id":13957750,"currency":"AED","balance":4207188.0,"promo_balance":0.0}</span>
-                <span class="reporter-method-output">statusCode: 200</span>
-              </div> <!-- reporter-method-output-div -->
-            </div> <!-- reporter-method-div -->
-            <div class="reporter-method-div">
-              <span class="reporter-method-name">ROR_MultiSearch_Reads</span>
-              <div class="reporter-method-output-div">
-                <span class="reporter-method-output">http://172.17.26.11:8358</span>
-                <span class="reporter-method-output">http://172.17.26.11:8272</span>
-                <span class="reporter-method-output">/paymentservice/search/payments/v1?query=id:43622220,paymentType:WT</span>
-                <span class="reporter-method-output">Response body ROR_MultiSearch_Reads : [{"id":43622220,"trip_id":46373624,"txn_id":75572810,"payment_type":"WT","amount":2060.0,"created_at":1579790943000,"updated_at":1579790943000,"seq_no":2,"status":"S","description":"Wallet payment success","currency":"INR","order_info1":"SG/3407/BLR/MAA/20200223150000","order_info2":"kiran kumar","app_ref1":"Q200123741806","app_ref2":75572810,"neglist_id":null,"pos_list_id":null,"linkable_id":null,"linkable_type":null,"user_message":null,"pan_number":null,"payment_category":"B","merchant_txn_ref":"43622220","payment_subtype":null,"express_checkout":null,"emi_count":null,"emi_fee":null,"ref_payment_id":null,"payment_cards_gateway_accesses":[],"payment_gift_voucher_txns":[],"payment_tp_wallet_txns":[],"payment_upi_txns":[],"payment_redirect_timings":[],"payment_card_details":[],"payment_cash_card_detail":null,"payment_ivr_detail":null,"payment_techpro_detail":null,"payment_third_party_da_details":[],"payment_third_party_details":[],"payment_ap_txns":[],"payment_da_transactions":[],"payment_da_details":[],"payment_wallet_transactions":[{"id":5974868,"wallet_detail_id":"5155670","transaction_type":"CAPTURE","amount":"2060.00","status":"S","description":"Transaction successful.","reference1":"2001232019","reference2":"10641658","reference3":"0","reference4":"11670303","invoice_id":"43622220_Q200123741806","trip_ref":"Q200123741806","trip_details":"Bangalore - Chennai one-way","event":"BOOKING","opening_balance":"13758.30","closing_balance":"11698.30","created_at":1579790943000,"updated_at":1579790943000,"created_by":"65176051","updated_by":"65176051","expiry_date":null},{"id":5976798,"wallet_detail_id":"5155670","transaction_type":"REFUND","amount":"2055.00","status":"S","description":"Transaction successful.","reference1":"2002121756","reference2":"10645284","reference3":"0","reference4":"13569222","invoice_id":"9384576_Q200123741806","trip_ref":"Q200123741806","trip_details":"Bangalore - Chennai one-way","event":"REFUND","opening_balance":"7395.90","closing_balance":"9450.90","created_at":1581510410000,"updated_at":1581510411000,"created_by":"0","updated_by":"65176051","expiry_date":null}],"refunds":[{"id":9384576,"payment_id":43622220,"refund_amount":2055.0,"refund_file_id":null,"status":"D","description":"1 segments","created_at":1581510347000,"updated_at":1581510414000,"seq_no":null,"bos_file_id":null,"pg_generation_txn_id":75593788,"payment_reconciliation_file_id":null,"txn_id":75593786,"taken":null,"pbos_file_id":null,"rollbacked":null,"rollback_supported":"N","arn_no":null,"attempted":"Y","refund_type":"WALLET","payment_refund_mappings":[{"id":9091212,"payment_id":43622220,"refund_id":9384576,"trip_id":46373624,"txn_id":75593786,"refund_amount":2055.0,"created_at":1581510347000,"updated_at":1581510347000}]}],"payment_customer_details":[{"id":40785494,"payment_id":0,"ip_address":null,"address1":null,"address2":null,"address3":null,"city_name":null,"postal_code":null,"state_name":null,"country_name":null,"mobile":"9986696785","landline":null,"other_phone":null,"email":"cltpacct@gmail.com","created_at":1579790943000,"updated_at":1579790943000}],"payment_refund_mappings":[{"id":9091212,"payment_id":43622220,"refund_id":9384576,"trip_id":46373624,"txn_id":75593786,"refund_amount":2055.0,"created_at":1581510347000,"updated_at":1581510347000}],"reward_points_txns":null,"payment_cash_detail":null,"payment_net_banking_details":[]}]</span>
-                <span class="reporter-method-output">statusCode: 200</span>
-              </div> <!-- reporter-method-output-div -->
-            </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
@@ -255,14 +219,10 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">paymentsAPI.API_ROR_Reads</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">tripServices.AppNotification</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">ROR_MultiSearch_Reads</span>
+                <span class="method-name">appnotification</span>
                 <span class="method-start">0 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">ROR_WalletFetch</span>
-                <span class="method-start">2429 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

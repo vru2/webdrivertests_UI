@@ -1,0 +1,573 @@
+<html>
+<head>
+<title>TestNG:  Promo service</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Promo service</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>10/1/1</td>
+</tr><tr>
+<td>Started on:</td><td>Thu Mar 05 10:08:49 IST 2020</td>
+</tr>
+<tr><td>Total time:</td><td>2016 seconds (2016005 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='paymentsAPI.API_PromoService.activatePromo()'><b>activatePromo</b><br>Test class: paymentsAPI.API_PromoService</td>
+<td><div><pre>java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at org.apache.http.impl.io.AbstractSessionInputBuffer.fillBuffer(AbstractSessionInputBuffer.java:158)
+	at org.apache.http.impl.io.SocketInputBuffer.fillBuffer(SocketInputBuffer.java:82)
+	at org.apache.http.impl.io.AbstractSessionInputBuffer.readLine(AbstractSessionInputBuffer.java:271)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.AbstractHttpClientConnection.receiveResponseHeader(AbstractHttpClientConnection.java:281)
+	at org.apache.http.impl.conn.DefaultClientConnection.receiveResponseHeader(DefaultClientConnection.java:257)
+	at org.apache.http.impl.conn.ManagedClientConnectionImpl.receiveResponseHeader(ManagedClientConnectionImpl.java:207)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:684)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:486)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.apache.http.client.HttpClient$execute$2.call(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl$RestAssuredHttpBuilder.doRequest(RequestSpecificationImpl.groovy:2028)
+	at io.restassured.internal.http.HTTPBuilder.post(HTTPBuilder.java:349)
+	at io.restassured.internal.http.HTTPBuilder$post$8.call(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.sendRequest(RequestSpecificationImpl.groovy:1202)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1210)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)
+	at io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)
+	at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:149)
+	at io.restassured.internal.filter.SendRequestFilter.filter(SendRequestFilter.groovy:30)
+	at io.restassured.filter.Filter$filter$2.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at io.restassured.filter.Filter$filter$0.call(Unknown Source)
+	at io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)
+	at io.restassured.filter.time.TimingFilter.filter(TimingFilter.java:56)
+	at io.restassured.filter.Filter$filter$0.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at io.restassured.filter.Filter$filter$0.call(Unknown Source)
+	at io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)
+	at io.restassured.filter.log.RequestLoggingFilter.filter(RequestLoggingFilter.java:124)
+	at io.restassured.filter.Filter$filter$0.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at io.restassured.filter.Filter$filter$2.call(Unknown Source)
+	at io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)
+	at io.restassured.filter.FilterContext$next$1.call(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.applyPathParamsAndSendRequest(RequestSpecificationImpl.groovy:1631)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1210)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)
+	at io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)
+	at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:48)
+	at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.callCurrent(PogoInterceptableSite.java:58)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:182)
+	at io.restassured.internal.RequestSpecificationImpl.applyPathParamsAndSendRequest(RequestSpecificationImpl.groovy:1637)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1210)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)
+	at io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)
+	at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:48)
+	at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.callCurrent(PogoInterceptableSite.java:58)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:182)
+	at io.restassured.internal.RequestSpecificationImpl.post(RequestSpecificationImpl.groovy:170)
+	at io.restassured.internal.RequestSpecificationImpl.post(RequestSpecificationImpl.groovy)
+	at paymentsAPI.API_PaymentCommon1.promoPost(API_PaymentCommon1.java:666)
+	at paymentsAPI.API_PromoService.activatePromo(API_PromoService.java:75)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+... Removed 22 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace172351430", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace172351430'><pre>java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at org.apache.http.impl.io.AbstractSessionInputBuffer.fillBuffer(AbstractSessionInputBuffer.java:158)
+	at org.apache.http.impl.io.SocketInputBuffer.fillBuffer(SocketInputBuffer.java:82)
+	at org.apache.http.impl.io.AbstractSessionInputBuffer.readLine(AbstractSessionInputBuffer.java:271)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.AbstractHttpClientConnection.receiveResponseHeader(AbstractHttpClientConnection.java:281)
+	at org.apache.http.impl.conn.DefaultClientConnection.receiveResponseHeader(DefaultClientConnection.java:257)
+	at org.apache.http.impl.conn.ManagedClientConnectionImpl.receiveResponseHeader(ManagedClientConnectionImpl.java:207)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:684)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:486)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.apache.http.client.HttpClient$execute$2.call(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl$RestAssuredHttpBuilder.doRequest(RequestSpecificationImpl.groovy:2028)
+	at io.restassured.internal.http.HTTPBuilder.post(HTTPBuilder.java:349)
+	at io.restassured.internal.http.HTTPBuilder$post$8.call(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.sendRequest(RequestSpecificationImpl.groovy:1202)
+	at sun.reflect.GeneratedMethodAccessor109.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1210)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)
+	at io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)
+	at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:149)
+	at io.restassured.internal.filter.SendRequestFilter.filter(SendRequestFilter.groovy:30)
+	at io.restassured.filter.Filter$filter$2.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at io.restassured.filter.Filter$filter$0.call(Unknown Source)
+	at io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)
+	at io.restassured.filter.time.TimingFilter.filter(TimingFilter.java:56)
+	at io.restassured.filter.Filter$filter$0.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at io.restassured.filter.Filter$filter$0.call(Unknown Source)
+	at io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)
+	at io.restassured.filter.log.RequestLoggingFilter.filter(RequestLoggingFilter.java:124)
+	at io.restassured.filter.Filter$filter$0.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at io.restassured.filter.Filter$filter$2.call(Unknown Source)
+	at io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)
+	at io.restassured.filter.FilterContext$next$1.call(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.applyPathParamsAndSendRequest(RequestSpecificationImpl.groovy:1631)
+	at sun.reflect.GeneratedMethodAccessor41.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1210)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)
+	at io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)
+	at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:48)
+	at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.callCurrent(PogoInterceptableSite.java:58)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:182)
+	at io.restassured.internal.RequestSpecificationImpl.applyPathParamsAndSendRequest(RequestSpecificationImpl.groovy:1637)
+	at sun.reflect.GeneratedMethodAccessor40.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1210)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)
+	at io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)
+	at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:48)
+	at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.callCurrent(PogoInterceptableSite.java:58)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:182)
+	at io.restassured.internal.RequestSpecificationImpl.post(RequestSpecificationImpl.groovy:170)
+	at io.restassured.internal.RequestSpecificationImpl.post(RequestSpecificationImpl.groovy)
+	at paymentsAPI.API_PaymentCommon1.promoPost(API_PaymentCommon1.java:666)
+	at paymentsAPI.API_PromoService.activatePromo(API_PromoService.java:75)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:839)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1010)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+</pre></div></td>
+<td>901</td>
+<td>paymentsAPI.API_PromoService@10e41621</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='paymentsAPI.API_PromoService.createPromo()'><b>createPromo</b><br>Test class: paymentsAPI.API_PromoService<br/>
+<a href="#Output-415591355" onClick='toggleBox("Output-415591355", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-415591355" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-415591355">
+Response body CreatePromo : {"user_id":41649008,"trip_ref":"Q180611203503","type":"AIR_BOOKING","status":"DEACTIVE","promotions":[{"amount":336,"id":50647,"wallet":null,"mobile":null,"cardNumber":null,"email":null,"currency":"INR","expiry_date":"22-01-2021","trigger_date":"22-10-2019","status":"DEACTIVE","transactions":null},{"amount":500,"id":50648,"wallet":null,"mobile":null,"cardNumber":null,"email":null,"currency":"INR","expiry_date":"26-03-2020","trigger_date":"25-12-2019","status":"DEACTIVE","transactions":null},{"amount":120,"id":50649,"wallet":"OLA","mobile":"9986696785","cardNumber":null,"email":"test@test.com","currency":"INR","expiry_date":"14-09-2020","trigger_date":"04-04-2020","status":"DEACTIVE","transactions":null}]}
+<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>paymentsAPI.API_PromoService@10e41621</td></tr>
+<tr>
+<td title='paymentsAPI.API_PromoService.createPromoGroup()'><b>createPromoGroup</b><br>Test class: paymentsAPI.API_PromoService<br/>
+<a href="#Output-72033725" onClick='toggleBox("Output-72033725", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-72033725" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-72033725">
+Response body CreatePromoGroup : {"user_id":65176819,"trip_ref":"Q18061152636","type":"AIR_BOOKING","status":"DEACTIVE","promotions":[{"amount":10,"id":50650,"wallet":null,"mobile":null,"cardNumber":null,"email":null,"currency":"INR","expiry_date":"14-02-2021","trigger_date":"16-12-2020","status":"DEACTIVE","transactions":null},{"amount":150,"id":50651,"wallet":null,"mobile":null,"cardNumber":null,"email":null,"currency":"INR","expiry_date":"15-12-2020","trigger_date":"17-12-2019","status":"DEACTIVE","transactions":null},{"amount":20,"id":50652,"wallet":null,"mobile":null,"cardNumber":null,"email":null,"currency":"INR","expiry_date":"16-12-2020","trigger_date":"16-01-2020","status":"DEACTIVE","transactions":null}]}
+<br/>
+</div>
+</td>
+<td></td>
+<td>106</td>
+<td>paymentsAPI.API_PromoService@10e41621</td></tr>
+<tr>
+<td title='paymentsAPI.API_PromoService.get_PromoGroupFromPromoRef()'><b>get_PromoGroupFromPromoRef</b><br>Test class: paymentsAPI.API_PromoService<br/>
+<a href="#Output-497852985" onClick='toggleBox("Output-497852985", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-497852985" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-497852985">
+Response body PromoGroupFromPromoRef : {"user_id":41695398,"trip_ref":"Q1901160033","type":"AIR_BOOKING","status":"ACTIVE","promotions":[{"amount":120,"id":32639,"wallet":"OLA","mobile":"9511271487","cardNumber":null,"email":"test@test.com","currency":"INR","expiry_date":"11-07-2019","trigger_date":"12-03-2019","status":"COMPLETE","transactions":[{"id":78853,"time":"12-03-2019 12:56:53 IST","type":"EXECUTE","status":"SUCCESS"}]},{"amount":500,"id":32641,"wallet":null,"mobile":null,"cardNumber":null,"email":null,"currency":"INR","expiry_date":"11-07-2019","trigger_date":"12-03-2019","status":"COMPLETE","transactions":[{"id":78851,"time":"12-03-2019 12:54:42 IST","type":"EXECUTE","status":"SUCCESS"}]}]}
+<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>paymentsAPI.API_PromoService@10e41621</td></tr>
+<tr>
+<td title='paymentsAPI.API_PromoService.get_PromotionFromTripRefAndPromoId()'><b>get_PromotionFromTripRefAndPromoId</b><br>Test class: paymentsAPI.API_PromoService<br/>
+<a href="#Output-722570297" onClick='toggleBox("Output-722570297", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-722570297" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-722570297">
+Response body PromoTripRefAndId : {"amount":500,"id":22899,"wallet":null,"mobile":null,"cardNumber":null,"email":null,"currency":"INR","expiry_date":"11-08-2018","trigger_date":"11-07-2018","status":"ACTIVE","transactions":null}
+<br/>
+Status is showing as: ACTIVE<br/>
+Currency is showing as: INR<br/>
+</div>
+</td>
+<td></td>
+<td>105</td>
+<td>paymentsAPI.API_PromoService@10e41621</td></tr>
+<tr>
+<td title='paymentsAPI.API_PromoService.get_PromotionGroupsFromCreatedDate()'><b>get_PromotionGroupsFromCreatedDate</b><br>Test class: paymentsAPI.API_PromoService<br/>
+<a href="#Output-791915610" onClick='toggleBox("Output-791915610", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-791915610" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-791915610">
+Response body PromoGroupsFromCreatedDate : [{"user_id":65176051,"trip_ref":"Q191115575500","type":"AIR_BOOKING","status":"ACTIVE","promotions":[{"amount":10,"id":45081,"wallet":"CLEARTRIP","mobile":"9986696785","cardNumber":null,"email":"cltpacct@gmail.com","currency":"INR","expiry_date":"14-01-2020","trigger_date":"15-11-2019","status":"COMPLETE","transactions":[{"id":83045,"time":"15-11-2019 16:00:15 IST","type":"EXECUTE","status":"SUCCESS"}]},{"amount":197,"id":45083,"wallet":"CLEARTRIP","mobile":"9986696785","cardNumber":null,"email":"cltpacct@gmail.com","currency":"INR","expiry_date":"24-03-2020","trigger_date":"24-01-2020","status":"ACTIVE","transactions":null},{"amount":20,"id":45085,"wallet":"CLEARTRIP","mobile":"9986696785","cardNumber":null,"email":"cltpacct@gmail.com","currency":"INR","expiry_date":"23-04-2020","trigger_date":"23-02-2020","status":"ACTIVE","transactions":null}]},{"user_id":41698090,"trip_ref":"Q191115575566","type":"AIR_BOOKING","status":"ACTIVE","promotions":[{"amount":540,"id":45095,"wallet":"CLEARTRIP","mobile":"8553430914","cardNumber":null,"email":"vaishali.baronia@cleartrip.com","currency":"INR","expiry_date":"14-01-2020","trigger_date":"15-11-2019","status":"COMPLETE","transactions":[{"id":83015,"time":"15-11-2019 14:40:59 IST","type":"EXECUTE","status":"SUCCESS"}]}]},{"user_id":41698090,"trip_ref":"Q191115575588","type":"AIR_BOOKING","status":"ACTIVE","promotions":[{"amount":10,"id":45115,"wallet":"CLEARTRIP","mobile":"8553430914","cardNumber":null,"email":"vaishali.baronia@cleartrip.com","currency":"INR","expiry_date":"14-01-2020","trigger_date":"15-11-2019","status":"COMPLETE","transactions":[{"id":83029,"time":"15-11-2019 15:05:01 IST","type":"EXECUTE","status":"SUCCESS"}]},{"amount":200,"id":45117,"wallet":"CLEARTRIP","mobile":"8553430914","cardNumber":null,"email":"vaishali.baronia@cleartrip.com","currency":"INR","expiry_date":"15-01-2020","trigger_date":"16-11-2019","status":"ACTIVE","transactions":null},{"amount":20,"id":45119,"wallet":"CLEARTRIP","mobile":"8553430914","cardNumber":null,"email":"vaishali.baronia@cleartrip.com","currency":"INR","expiry_date":"14-02-2020","trigger_date":"16-12-2019","status":"ACTIVE","transactions":null}]},{"user_id":41698090,"trip_ref":"Q191115575586","type":"AIR_BOOKING","status":"ACTIVE","promotions":[{"amount":10,"id":45109,"wallet":"CLEARTRIP","mobile":"8553430914","cardNumber":null,"email":"vaishali.baronia@cleartrip.com","currency":"INR","expiry_date":"14-01-2020","trigger_date":"15-11-2019","status":"COMPLETE","transactions":[{"id":83027,"time":"15-11-2019 15:02:59 IST","type":"EXECUTE","status":"SUCCESS"}]},{"amount":200,"id":45111,"wallet":"CLEARTRIP","mobile":"8553430914","cardNumber":null,"email":"vaishali.baronia@cleartrip.com","currency":"INR","expiry_date":"31-01-2020","trigger_date":"02-12-2019","status":"ACTIVE","transactions":null},{"amount":20,"id":45113,"wallet":"CLEARTRIP","mobile":"8553430914","cardNumber":null,"email":"vaishali.baronia@cleartrip.com","currency":"INR","expiry_date":"01-03-2020","trigger_date":"01-01-2020","status":"ACTIVE","transactions":null}]},{"user_id":41654864,"trip_ref":"Q191115575400","type":"AIR_BOOKING","status":"ACTIVE","promotions":[{"amount":10,"id":45069,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"cltppayment@gmail.com","currency":"INR","expiry_date":"14-01-2020","trigger_date":"15-11-2019","status":"ACTIVE","transactions":[{"id":83005,"time":"15-11-2019 12:00:27 IST","type":"EXECUTE","status":"FAILED"},{"id":83007,"time":"15-11-2019 12:15:35 IST","type":"EXECUTE","status":"FAILED"}]},{"amount":200,"id":45071,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"cltppayment@gmail.com","currency":"INR","expiry_date":"29-01-2020","trigger_date":"30-11-2019","status":"ACTIVE","transactions":null},{"amount":20,"id":45073,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"cltppayment@gmail.com","currency":"INR","expiry_date":"28-02-2020","trigger_date":"30-12-2019","status":"ACTIVE","transactions":null}]},{"user_id":65176819,"trip_ref":"Q191115575584","type":"AIR_BOOKING","status":"CANCELLED","promotions":[{"amount":10,"id":45103,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"prakhar.chatterjee@cleartrip.com","currency":"INR","expiry_date":"14-01-2020","trigger_date":"15-11-2019","status":"REVERTED","transactions":[{"id":83023,"time":"15-11-2019 14:58:15 IST","type":"EXECUTE","status":"SUCCESS"},{"id":83025,"time":"15-11-2019 15:01:00 IST","type":"ROLLBACK","status":"SUCCESS"}]},{"amount":200,"id":45105,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"prakhar.chatterjee@cleartrip.com","currency":"INR","expiry_date":"24-02-2020","trigger_date":"26-12-2019","status":"CANCELLED","transactions":null},{"amount":20,"id":45107,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"prakhar.chatterjee@cleartrip.com","currency":"INR","expiry_date":"25-03-2020","trigger_date":"25-01-2020","status":"CANCELLED","transactions":null}]},{"user_id":41701076,"trip_ref":"Q191115575288","type":"AIR_BOOKING","status":"DEACTIVE","promotions":[{"amount":353,"id":45065,"wallet":"PAYBACK","mobile":"9686155445","cardNumber":null,"email":"nandan.suresh@cleartrip.com","currency":"PNT","expiry_date":"15-05-2020","trigger_date":"15-11-2019","status":"DEACTIVE","transactions":null}]},{"user_id":41626396,"trip_ref":"Q191115575384","type":"AIR_BOOKING","status":"ACTIVE","promotions":[{"amount":254,"id":45067,"wallet":"CLEARTRIP","mobile":"9980957509","cardNumber":null,"email":"cleartriptest@gmail.com","currency":"INR","expiry_date":"14-01-2020","trigger_date":"15-11-2019","status":"COMPLETE","transactions":[{"id":83003,"time":"15-11-2019 11:53:57 IST","type":"EXECUTE","status":"SUCCESS"}]}]},{"user_id":41698090,"trip_ref":"Q191115575560","type":"AIR_BOOKING","status":"ACTIVE","promotions":[{"amount":792,"id":45093,"wallet":"CLEARTRIP","mobile":"8553430914","cardNumber":null,"email":"vaishali.baronia@cleartrip.com","currency":"INR","expiry_date":"14-01-2020","trigger_date":"15-11-2019","status":"COMPLETE","transactions":[{"id":83013,"time":"15-11-2019 14:39:22 IST","type":"EXECUTE","status":"SUCCESS"}]}]},{"user_id":41701076,"trip_ref":"Q191115575286","type":"AIR_BOOKING","status":"DEACTIVE","promotions":[{"amount":353,"id":45063,"wallet":"PAYBACK","mobile":"9686155445","cardNumber":null,"email":"nandan.suresh@cleartrip.com","currency":"PNT","expiry_date":"15-05-2020","trigger_date":"15-11-2019","status":"DEACTIVE","transactions":null}]},{"user_id":41701076,"trip_ref":"Q191115575240","type":"AIR_BOOKING","status":"DEACTIVE","promotions":[{"amount":370,"id":45059,"wallet":"PAYBACK","mobile":"9686155445","cardNumber":null,"email":"nandan.suresh@cleartrip.com","currency":"PNT","expiry_date":"15-05-2020","trigger_date":"15-11-2019","status":"DEACTIVE","transactions":null}]},{"user_id":41698090,"trip_ref":"Q191115575616","type":"AIR_BOOKING","status":"ACTIVE","promotions":[{"amount":10,"id":45127,"wallet":"CLEARTRIP","mobile":"8553430914","cardNumber":null,"email":"vaishali.baronia@cleartrip.com","currency":"INR","expiry_date":"14-01-2020","trigger_date":"15-11-2019","status":"COMPLETE","transactions":[{"id":83037,"time":"15-11-2019 15:30:00 IST","type":"EXECUTE","status":"SUCCESS"}]},{"amount":200,"id":45129,"wallet":"CLEARTRIP","mobile":"8553430914","cardNumber":null,"email":"vaishali.baronia@cleartrip.com","currency":"INR","expiry_date":"15-01-2020","trigger_date":"16-11-2019","status":"ACTIVE","transactions":null},{"amount":20,"id":45131,"wallet":"CLEARTRIP","mobile":"8553430914","cardNumber":null,"email":"vaishali.baronia@cleartrip.com","currency":"INR","expiry_date":"14-02-2020","trigger_date":"16-12-2019","status":"ACTIVE","transactions":null}]},{"user_id":65176051,"trip_ref":"Q191115575496","type":"AIR_BOOKING","status":"DEACTIVE","promotions":[{"amount":10,"id":45075,"wallet":"CLEARTRIP","mobile":"9986696785","cardNumber":null,"email":"cltpacct@gmail.com","currency":"INR","expiry_date":"14-01-2020","trigger_date":"15-11-2019","status":"DEACTIVE","transactions":null},{"amount":155,"id":45077,"wallet":"CLEARTRIP","mobile":"9986696785","cardNumber":null,"email":"cltpacct@gmail.com","currency":"INR","expiry_date":"24-03-2020","trigger_date":"24-01-2020","status":"DEACTIVE","transactions":null},{"amount":20,"id":45079,"wallet":"CLEARTRIP","mobile":"9986696785","cardNumber":null,"email":"cltpacct@gmail.com","currency":"INR","expiry_date":"23-04-2020","trigger_date":"23-02-2020","status":"DEACTIVE","transactions":null}]},{"user_id":41654864,"trip_ref":"Q191115575572","type":"AIR_BOOKING","status":"ACTIVE","promotions":[{"amount":10,"id":45097,"wallet":"CLEARTRIP","mobile":"1234567890","cardNumber":null,"email":"cltppayment@gmail.com","currency":"INR","expiry_date":"14-01-2020","trigger_date":"15-11-2019","status":"ACTIVE","transactions":[{"id":83017,"time":"15-11-2019 14:42:20 IST","type":"EXECUTE","status":"FAILED"},{"id":83019,"time":"15-11-2019 14:43:09 IST","type":"EXECUTE","status":"FAILED"}]},{"amount":200,"id":45099,"wallet":"CLEARTRIP","mobile":"1234567890","cardNumber":null,"email":"cltppayment@gmail.com","currency":"INR","expiry_date":"23-02-2020","trigger_date":"25-12-2019","status":"ACTIVE","transactions":null},{"amount":20,"id":45101,"wallet":"CLEARTRIP","mobile":"1234567890","cardNumber":null,"email":"cltppayment@gmail.com","currency":"INR","expiry_date":"24-03-2020","trigger_date":"24-01-2020","status":"ACTIVE","transactions":null}]},{"user_id":41698090,"trip_ref":"Q191115575270","type":"AIR_BOOKING","status":"DEACTIVE","promotions":[{"amount":266,"id":45061,"wallet":"PAYBACK","mobile":"8553430914","cardNumber":null,"email":"vaishali.baronia@cleartrip.com","currency":"PNT","expiry_date":"15-05-2020","trigger_date":"15-11-2019","status":"DEACTIVE","transactions":null}]},{"user_id":65176051,"trip_ref":"Q191115575506","type":"AIR_BOOKING","status":"CANCELLED","promotions":[{"amount":10,"id":45087,"wallet":"CLEARTRIP","mobile":"9986696785","cardNumber":null,"email":"cltpacct@gmail.com","currency":"INR","expiry_date":"14-01-2020","trigger_date":"15-11-2019","status":"REVERTED","transactions":[{"id":83009,"time":"15-11-2019 13:55:53 IST","type":"EXECUTE","status":"SUCCESS"},{"id":83011,"time":"15-11-2019 14:10:07 IST","type":"ROLLBACK","status":"SUCCESS"}]},{"amount":155,"id":45089,"wallet":"CLEARTRIP","mobile":"9986696785","cardNumber":null,"email":"cltpacct@gmail.com","currency":"INR","expiry_date":"24-03-2020","trigger_date":"24-01-2020","status":"CANCELLED","transactions":null},{"amount":20,"id":45091,"wallet":"CLEARTRIP","mobile":"9986696785","cardNumber":null,"email":"cltpacct@gmail.com","currency":"INR","expiry_date":"23-04-2020","trigger_date":"23-02-2020","status":"CANCELLED","transactions":null}]},{"user_id":65176819,"trip_ref":"Q191115575628","type":"AIR_BOOKING","status":"CANCELLED","promotions":[{"amount":10,"id":45133,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"prakhar.chatterjee@cleartrip.com","currency":"INR","expiry_date":"14-01-2020","trigger_date":"15-11-2019","status":"REVERTED","transactions":[{"id":83039,"time":"15-11-2019 15:37:46 IST","type":"EXECUTE","status":"SUCCESS"},{"id":83041,"time":"15-11-2019 15:39:42 IST","type":"ROLLBACK","status":"SUCCESS"}]},{"amount":200,"id":45135,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"prakhar.chatterjee@cleartrip.com","currency":"INR","expiry_date":"27-02-2020","trigger_date":"29-12-2019","status":"CANCELLED","transactions":null},{"amount":20,"id":45137,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"prakhar.chatterjee@cleartrip.com","currency":"INR","expiry_date":"28-03-2020","trigger_date":"28-01-2020","status":"CANCELLED","transactions":null}]},{"user_id":65176819,"trip_ref":"Q191115575604","type":"AIR_BOOKING","status":"ACTIVE","promotions":[{"amount":10,"id":45121,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"prakhar.chatterjee@cleartrip.com","currency":"INR","expiry_date":"14-01-2020","trigger_date":"15-11-2019","status":"COMPLETE","transactions":[{"id":83033,"time":"15-11-2019 15:16:51 IST","type":"EXECUTE","status":"SUCCESS"}]},{"amount":200,"id":45123,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"prakhar.chatterjee@cleartrip.com","currency":"INR","expiry_date":"26-02-2020","trigger_date":"28-12-2019","status":"ACTIVE","transactions":null},{"amount":20,"id":45125,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"prakhar.chatterjee@cleartrip.com","currency":"INR","expiry_date":"27-03-2020","trigger_date":"27-01-2020","status":"ACTIVE","transactions":null}]}]
+<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>paymentsAPI.API_PromoService@10e41621</td></tr>
+<tr>
+<td title='paymentsAPI.API_PromoService.get_PromotionsFromOnlyPromoId()'><b>get_PromotionsFromOnlyPromoId</b><br>Test class: paymentsAPI.API_PromoService<br/>
+<a href="#Output-2069179024" onClick='toggleBox("Output-2069179024", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-2069179024" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-2069179024">
+Response body PromoFromPromoId : {"user_id":65176819,"trip_ref":"Q191115575604","type":"AIR_BOOKING","status":"ACTIVE","promotions":[{"amount":10,"id":45121,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"prakhar.chatterjee@cleartrip.com","currency":"INR","expiry_date":"14-01-2020","trigger_date":"15-11-2019","status":"COMPLETE","transactions":[{"id":83033,"time":"15-11-2019 15:16:51 IST","type":"EXECUTE","status":"SUCCESS"}]},{"amount":200,"id":45123,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"prakhar.chatterjee@cleartrip.com","currency":"INR","expiry_date":"26-02-2020","trigger_date":"28-12-2019","status":"ACTIVE","transactions":null},{"amount":20,"id":45125,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"prakhar.chatterjee@cleartrip.com","currency":"INR","expiry_date":"27-03-2020","trigger_date":"27-01-2020","status":"ACTIVE","transactions":null}]}
+<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>paymentsAPI.API_PromoService@10e41621</td></tr>
+<tr>
+<td title='paymentsAPI.API_PromoService.get_PromotionsFromTripRef()'><b>get_PromotionsFromTripRef</b><br>Test class: paymentsAPI.API_PromoService<br/>
+<a href="#Output-578736141" onClick='toggleBox("Output-578736141", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-578736141" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-578736141">
+Response body PromoFromTripRef : [{"amount":10,"id":45121,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"prakhar.chatterjee@cleartrip.com","currency":"INR","expiry_date":"14-01-2020","trigger_date":"15-11-2019","status":"COMPLETE","transactions":[{"id":83033,"time":"15-11-2019 15:16:51 IST","type":"EXECUTE","status":"SUCCESS"}]},{"amount":200,"id":45123,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"prakhar.chatterjee@cleartrip.com","currency":"INR","expiry_date":"26-02-2020","trigger_date":"28-12-2019","status":"ACTIVE","transactions":null},{"amount":20,"id":45125,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"prakhar.chatterjee@cleartrip.com","currency":"INR","expiry_date":"27-03-2020","trigger_date":"27-01-2020","status":"ACTIVE","transactions":null}]
+<br/>
+No transaction statuses are available<br/>
+No transaction statuses are available<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>paymentsAPI.API_PromoService@10e41621</td></tr>
+<tr>
+<td title='paymentsAPI.API_PromoService.get_PromotionsGroupForACreatedAndUpdatedDate()'><b>get_PromotionsGroupForACreatedAndUpdatedDate</b><br>Test class: paymentsAPI.API_PromoService<br/>
+<a href="#Output-1689353162" onClick='toggleBox("Output-1689353162", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1689353162" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1689353162">
+Response body PromoGroupsForACreatedAndUpdatedDate : [{"user_id":65176051,"trip_ref":"Q191115575500","type":"AIR_BOOKING","status":"ACTIVE","promotions":[{"amount":10,"id":45081,"wallet":"CLEARTRIP","mobile":"9986696785","cardNumber":null,"email":"cltpacct@gmail.com","currency":"INR","expiry_date":"14-01-2020","trigger_date":"15-11-2019","status":"COMPLETE","transactions":[{"id":83045,"time":"15-11-2019 16:00:15 IST","type":"EXECUTE","status":"SUCCESS"}]},{"amount":197,"id":45083,"wallet":"CLEARTRIP","mobile":"9986696785","cardNumber":null,"email":"cltpacct@gmail.com","currency":"INR","expiry_date":"24-03-2020","trigger_date":"24-01-2020","status":"ACTIVE","transactions":null},{"amount":20,"id":45085,"wallet":"CLEARTRIP","mobile":"9986696785","cardNumber":null,"email":"cltpacct@gmail.com","currency":"INR","expiry_date":"23-04-2020","trigger_date":"23-02-2020","status":"ACTIVE","transactions":null}]},{"user_id":41698090,"trip_ref":"Q191115575566","type":"AIR_BOOKING","status":"ACTIVE","promotions":[{"amount":540,"id":45095,"wallet":"CLEARTRIP","mobile":"8553430914","cardNumber":null,"email":"vaishali.baronia@cleartrip.com","currency":"INR","expiry_date":"14-01-2020","trigger_date":"15-11-2019","status":"COMPLETE","transactions":[{"id":83015,"time":"15-11-2019 14:40:59 IST","type":"EXECUTE","status":"SUCCESS"}]}]},{"user_id":41698090,"trip_ref":"Q191115575588","type":"AIR_BOOKING","status":"ACTIVE","promotions":[{"amount":10,"id":45115,"wallet":"CLEARTRIP","mobile":"8553430914","cardNumber":null,"email":"vaishali.baronia@cleartrip.com","currency":"INR","expiry_date":"14-01-2020","trigger_date":"15-11-2019","status":"COMPLETE","transactions":[{"id":83029,"time":"15-11-2019 15:05:01 IST","type":"EXECUTE","status":"SUCCESS"}]},{"amount":200,"id":45117,"wallet":"CLEARTRIP","mobile":"8553430914","cardNumber":null,"email":"vaishali.baronia@cleartrip.com","currency":"INR","expiry_date":"15-01-2020","trigger_date":"16-11-2019","status":"ACTIVE","transactions":null},{"amount":20,"id":45119,"wallet":"CLEARTRIP","mobile":"8553430914","cardNumber":null,"email":"vaishali.baronia@cleartrip.com","currency":"INR","expiry_date":"14-02-2020","trigger_date":"16-12-2019","status":"ACTIVE","transactions":null}]},{"user_id":41698090,"trip_ref":"Q191115575586","type":"AIR_BOOKING","status":"ACTIVE","promotions":[{"amount":10,"id":45109,"wallet":"CLEARTRIP","mobile":"8553430914","cardNumber":null,"email":"vaishali.baronia@cleartrip.com","currency":"INR","expiry_date":"14-01-2020","trigger_date":"15-11-2019","status":"COMPLETE","transactions":[{"id":83027,"time":"15-11-2019 15:02:59 IST","type":"EXECUTE","status":"SUCCESS"}]},{"amount":200,"id":45111,"wallet":"CLEARTRIP","mobile":"8553430914","cardNumber":null,"email":"vaishali.baronia@cleartrip.com","currency":"INR","expiry_date":"31-01-2020","trigger_date":"02-12-2019","status":"ACTIVE","transactions":null},{"amount":20,"id":45113,"wallet":"CLEARTRIP","mobile":"8553430914","cardNumber":null,"email":"vaishali.baronia@cleartrip.com","currency":"INR","expiry_date":"01-03-2020","trigger_date":"01-01-2020","status":"ACTIVE","transactions":null}]},{"user_id":41654864,"trip_ref":"Q191115575400","type":"AIR_BOOKING","status":"ACTIVE","promotions":[{"amount":10,"id":45069,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"cltppayment@gmail.com","currency":"INR","expiry_date":"14-01-2020","trigger_date":"15-11-2019","status":"ACTIVE","transactions":[{"id":83005,"time":"15-11-2019 12:00:27 IST","type":"EXECUTE","status":"FAILED"},{"id":83007,"time":"15-11-2019 12:15:35 IST","type":"EXECUTE","status":"FAILED"}]},{"amount":200,"id":45071,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"cltppayment@gmail.com","currency":"INR","expiry_date":"29-01-2020","trigger_date":"30-11-2019","status":"ACTIVE","transactions":null},{"amount":20,"id":45073,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"cltppayment@gmail.com","currency":"INR","expiry_date":"28-02-2020","trigger_date":"30-12-2019","status":"ACTIVE","transactions":null}]},{"user_id":65176819,"trip_ref":"Q191115575584","type":"AIR_BOOKING","status":"CANCELLED","promotions":[{"amount":10,"id":45103,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"prakhar.chatterjee@cleartrip.com","currency":"INR","expiry_date":"14-01-2020","trigger_date":"15-11-2019","status":"REVERTED","transactions":[{"id":83023,"time":"15-11-2019 14:58:15 IST","type":"EXECUTE","status":"SUCCESS"},{"id":83025,"time":"15-11-2019 15:01:00 IST","type":"ROLLBACK","status":"SUCCESS"}]},{"amount":200,"id":45105,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"prakhar.chatterjee@cleartrip.com","currency":"INR","expiry_date":"24-02-2020","trigger_date":"26-12-2019","status":"CANCELLED","transactions":null},{"amount":20,"id":45107,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"prakhar.chatterjee@cleartrip.com","currency":"INR","expiry_date":"25-03-2020","trigger_date":"25-01-2020","status":"CANCELLED","transactions":null}]},{"user_id":41626396,"trip_ref":"Q191115575384","type":"AIR_BOOKING","status":"ACTIVE","promotions":[{"amount":254,"id":45067,"wallet":"CLEARTRIP","mobile":"9980957509","cardNumber":null,"email":"cleartriptest@gmail.com","currency":"INR","expiry_date":"14-01-2020","trigger_date":"15-11-2019","status":"COMPLETE","transactions":[{"id":83003,"time":"15-11-2019 11:53:57 IST","type":"EXECUTE","status":"SUCCESS"}]}]},{"user_id":41698090,"trip_ref":"Q191115575560","type":"AIR_BOOKING","status":"ACTIVE","promotions":[{"amount":792,"id":45093,"wallet":"CLEARTRIP","mobile":"8553430914","cardNumber":null,"email":"vaishali.baronia@cleartrip.com","currency":"INR","expiry_date":"14-01-2020","trigger_date":"15-11-2019","status":"COMPLETE","transactions":[{"id":83013,"time":"15-11-2019 14:39:22 IST","type":"EXECUTE","status":"SUCCESS"}]}]},{"user_id":41698090,"trip_ref":"Q191115575616","type":"AIR_BOOKING","status":"ACTIVE","promotions":[{"amount":10,"id":45127,"wallet":"CLEARTRIP","mobile":"8553430914","cardNumber":null,"email":"vaishali.baronia@cleartrip.com","currency":"INR","expiry_date":"14-01-2020","trigger_date":"15-11-2019","status":"COMPLETE","transactions":[{"id":83037,"time":"15-11-2019 15:30:00 IST","type":"EXECUTE","status":"SUCCESS"}]},{"amount":200,"id":45129,"wallet":"CLEARTRIP","mobile":"8553430914","cardNumber":null,"email":"vaishali.baronia@cleartrip.com","currency":"INR","expiry_date":"15-01-2020","trigger_date":"16-11-2019","status":"ACTIVE","transactions":null},{"amount":20,"id":45131,"wallet":"CLEARTRIP","mobile":"8553430914","cardNumber":null,"email":"vaishali.baronia@cleartrip.com","currency":"INR","expiry_date":"14-02-2020","trigger_date":"16-12-2019","status":"ACTIVE","transactions":null}]},{"user_id":65176051,"trip_ref":"Q191115575506","type":"AIR_BOOKING","status":"CANCELLED","promotions":[{"amount":10,"id":45087,"wallet":"CLEARTRIP","mobile":"9986696785","cardNumber":null,"email":"cltpacct@gmail.com","currency":"INR","expiry_date":"14-01-2020","trigger_date":"15-11-2019","status":"REVERTED","transactions":[{"id":83009,"time":"15-11-2019 13:55:53 IST","type":"EXECUTE","status":"SUCCESS"},{"id":83011,"time":"15-11-2019 14:10:07 IST","type":"ROLLBACK","status":"SUCCESS"}]},{"amount":155,"id":45089,"wallet":"CLEARTRIP","mobile":"9986696785","cardNumber":null,"email":"cltpacct@gmail.com","currency":"INR","expiry_date":"24-03-2020","trigger_date":"24-01-2020","status":"CANCELLED","transactions":null},{"amount":20,"id":45091,"wallet":"CLEARTRIP","mobile":"9986696785","cardNumber":null,"email":"cltpacct@gmail.com","currency":"INR","expiry_date":"23-04-2020","trigger_date":"23-02-2020","status":"CANCELLED","transactions":null}]},{"user_id":65176819,"trip_ref":"Q191115575628","type":"AIR_BOOKING","status":"CANCELLED","promotions":[{"amount":10,"id":45133,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"prakhar.chatterjee@cleartrip.com","currency":"INR","expiry_date":"14-01-2020","trigger_date":"15-11-2019","status":"REVERTED","transactions":[{"id":83039,"time":"15-11-2019 15:37:46 IST","type":"EXECUTE","status":"SUCCESS"},{"id":83041,"time":"15-11-2019 15:39:42 IST","type":"ROLLBACK","status":"SUCCESS"}]},{"amount":200,"id":45135,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"prakhar.chatterjee@cleartrip.com","currency":"INR","expiry_date":"27-02-2020","trigger_date":"29-12-2019","status":"CANCELLED","transactions":null},{"amount":20,"id":45137,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"prakhar.chatterjee@cleartrip.com","currency":"INR","expiry_date":"28-03-2020","trigger_date":"28-01-2020","status":"CANCELLED","transactions":null}]},{"user_id":65176819,"trip_ref":"Q191115575604","type":"AIR_BOOKING","status":"ACTIVE","promotions":[{"amount":10,"id":45121,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"prakhar.chatterjee@cleartrip.com","currency":"INR","expiry_date":"14-01-2020","trigger_date":"15-11-2019","status":"COMPLETE","transactions":[{"id":83033,"time":"15-11-2019 15:16:51 IST","type":"EXECUTE","status":"SUCCESS"}]},{"amount":200,"id":45123,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"prakhar.chatterjee@cleartrip.com","currency":"INR","expiry_date":"26-02-2020","trigger_date":"28-12-2019","status":"ACTIVE","transactions":null},{"amount":20,"id":45125,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"prakhar.chatterjee@cleartrip.com","currency":"INR","expiry_date":"27-03-2020","trigger_date":"27-01-2020","status":"ACTIVE","transactions":null}]}]
+<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>paymentsAPI.API_PromoService@10e41621</td></tr>
+<tr>
+<td title='paymentsAPI.API_PromoService.get_PromotionsGroupForAUpdatedDate()'><b>get_PromotionsGroupForAUpdatedDate</b><br>Test class: paymentsAPI.API_PromoService<br/>
+<a href="#Output-1343845110" onClick='toggleBox("Output-1343845110", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1343845110" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1343845110">
+Response body PromoGroupsForAUpdatedDate : [{"user_id":65176051,"trip_ref":"Q191115575500","type":"AIR_BOOKING","status":"ACTIVE","promotions":[{"amount":10,"id":45081,"wallet":"CLEARTRIP","mobile":"9986696785","cardNumber":null,"email":"cltpacct@gmail.com","currency":"INR","expiry_date":"14-01-2020","trigger_date":"15-11-2019","status":"COMPLETE","transactions":[{"id":83045,"time":"15-11-2019 16:00:15 IST","type":"EXECUTE","status":"SUCCESS"}]},{"amount":197,"id":45083,"wallet":"CLEARTRIP","mobile":"9986696785","cardNumber":null,"email":"cltpacct@gmail.com","currency":"INR","expiry_date":"24-03-2020","trigger_date":"24-01-2020","status":"ACTIVE","transactions":null},{"amount":20,"id":45085,"wallet":"CLEARTRIP","mobile":"9986696785","cardNumber":null,"email":"cltpacct@gmail.com","currency":"INR","expiry_date":"23-04-2020","trigger_date":"23-02-2020","status":"ACTIVE","transactions":null}]},{"user_id":41698090,"trip_ref":"Q191115575566","type":"AIR_BOOKING","status":"ACTIVE","promotions":[{"amount":540,"id":45095,"wallet":"CLEARTRIP","mobile":"8553430914","cardNumber":null,"email":"vaishali.baronia@cleartrip.com","currency":"INR","expiry_date":"14-01-2020","trigger_date":"15-11-2019","status":"COMPLETE","transactions":[{"id":83015,"time":"15-11-2019 14:40:59 IST","type":"EXECUTE","status":"SUCCESS"}]}]},{"user_id":41698090,"trip_ref":"Q191115575588","type":"AIR_BOOKING","status":"ACTIVE","promotions":[{"amount":10,"id":45115,"wallet":"CLEARTRIP","mobile":"8553430914","cardNumber":null,"email":"vaishali.baronia@cleartrip.com","currency":"INR","expiry_date":"14-01-2020","trigger_date":"15-11-2019","status":"COMPLETE","transactions":[{"id":83029,"time":"15-11-2019 15:05:01 IST","type":"EXECUTE","status":"SUCCESS"}]},{"amount":200,"id":45117,"wallet":"CLEARTRIP","mobile":"8553430914","cardNumber":null,"email":"vaishali.baronia@cleartrip.com","currency":"INR","expiry_date":"15-01-2020","trigger_date":"16-11-2019","status":"ACTIVE","transactions":null},{"amount":20,"id":45119,"wallet":"CLEARTRIP","mobile":"8553430914","cardNumber":null,"email":"vaishali.baronia@cleartrip.com","currency":"INR","expiry_date":"14-02-2020","trigger_date":"16-12-2019","status":"ACTIVE","transactions":null}]},{"user_id":41698090,"trip_ref":"Q191115575586","type":"AIR_BOOKING","status":"ACTIVE","promotions":[{"amount":10,"id":45109,"wallet":"CLEARTRIP","mobile":"8553430914","cardNumber":null,"email":"vaishali.baronia@cleartrip.com","currency":"INR","expiry_date":"14-01-2020","trigger_date":"15-11-2019","status":"COMPLETE","transactions":[{"id":83027,"time":"15-11-2019 15:02:59 IST","type":"EXECUTE","status":"SUCCESS"}]},{"amount":200,"id":45111,"wallet":"CLEARTRIP","mobile":"8553430914","cardNumber":null,"email":"vaishali.baronia@cleartrip.com","currency":"INR","expiry_date":"31-01-2020","trigger_date":"02-12-2019","status":"ACTIVE","transactions":null},{"amount":20,"id":45113,"wallet":"CLEARTRIP","mobile":"8553430914","cardNumber":null,"email":"vaishali.baronia@cleartrip.com","currency":"INR","expiry_date":"01-03-2020","trigger_date":"01-01-2020","status":"ACTIVE","transactions":null}]},{"user_id":41654864,"trip_ref":"Q191115575400","type":"AIR_BOOKING","status":"ACTIVE","promotions":[{"amount":10,"id":45069,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"cltppayment@gmail.com","currency":"INR","expiry_date":"14-01-2020","trigger_date":"15-11-2019","status":"ACTIVE","transactions":[{"id":83005,"time":"15-11-2019 12:00:27 IST","type":"EXECUTE","status":"FAILED"},{"id":83007,"time":"15-11-2019 12:15:35 IST","type":"EXECUTE","status":"FAILED"}]},{"amount":200,"id":45071,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"cltppayment@gmail.com","currency":"INR","expiry_date":"29-01-2020","trigger_date":"30-11-2019","status":"ACTIVE","transactions":null},{"amount":20,"id":45073,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"cltppayment@gmail.com","currency":"INR","expiry_date":"28-02-2020","trigger_date":"30-12-2019","status":"ACTIVE","transactions":null}]},{"user_id":65176819,"trip_ref":"Q191115575584","type":"AIR_BOOKING","status":"CANCELLED","promotions":[{"amount":10,"id":45103,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"prakhar.chatterjee@cleartrip.com","currency":"INR","expiry_date":"14-01-2020","trigger_date":"15-11-2019","status":"REVERTED","transactions":[{"id":83023,"time":"15-11-2019 14:58:15 IST","type":"EXECUTE","status":"SUCCESS"},{"id":83025,"time":"15-11-2019 15:01:00 IST","type":"ROLLBACK","status":"SUCCESS"}]},{"amount":200,"id":45105,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"prakhar.chatterjee@cleartrip.com","currency":"INR","expiry_date":"24-02-2020","trigger_date":"26-12-2019","status":"CANCELLED","transactions":null},{"amount":20,"id":45107,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"prakhar.chatterjee@cleartrip.com","currency":"INR","expiry_date":"25-03-2020","trigger_date":"25-01-2020","status":"CANCELLED","transactions":null}]},{"user_id":41626396,"trip_ref":"Q191115575384","type":"AIR_BOOKING","status":"ACTIVE","promotions":[{"amount":254,"id":45067,"wallet":"CLEARTRIP","mobile":"9980957509","cardNumber":null,"email":"cleartriptest@gmail.com","currency":"INR","expiry_date":"14-01-2020","trigger_date":"15-11-2019","status":"COMPLETE","transactions":[{"id":83003,"time":"15-11-2019 11:53:57 IST","type":"EXECUTE","status":"SUCCESS"}]}]},{"user_id":41698090,"trip_ref":"Q191115575560","type":"AIR_BOOKING","status":"ACTIVE","promotions":[{"amount":792,"id":45093,"wallet":"CLEARTRIP","mobile":"8553430914","cardNumber":null,"email":"vaishali.baronia@cleartrip.com","currency":"INR","expiry_date":"14-01-2020","trigger_date":"15-11-2019","status":"COMPLETE","transactions":[{"id":83013,"time":"15-11-2019 14:39:22 IST","type":"EXECUTE","status":"SUCCESS"}]}]},{"user_id":64890067,"trip_ref":"Q191114574910","type":"AIR_BOOKING","status":"ACTIVE","promotions":[{"amount":381,"id":45049,"wallet":"CLEARTRIP","mobile":"1234567890","cardNumber":null,"email":"sonali.gupta@cleartrip.com","currency":"INR","expiry_date":"13-01-2020","trigger_date":"14-11-2019","status":"COMPLETE","transactions":[{"id":83047,"time":"15-11-2019 17:49:43 IST","type":"EXECUTE","status":"SUCCESS"}]}]},{"user_id":41698090,"trip_ref":"Q191115575616","type":"AIR_BOOKING","status":"ACTIVE","promotions":[{"amount":10,"id":45127,"wallet":"CLEARTRIP","mobile":"8553430914","cardNumber":null,"email":"vaishali.baronia@cleartrip.com","currency":"INR","expiry_date":"14-01-2020","trigger_date":"15-11-2019","status":"COMPLETE","transactions":[{"id":83037,"time":"15-11-2019 15:30:00 IST","type":"EXECUTE","status":"SUCCESS"}]},{"amount":200,"id":45129,"wallet":"CLEARTRIP","mobile":"8553430914","cardNumber":null,"email":"vaishali.baronia@cleartrip.com","currency":"INR","expiry_date":"15-01-2020","trigger_date":"16-11-2019","status":"ACTIVE","transactions":null},{"amount":20,"id":45131,"wallet":"CLEARTRIP","mobile":"8553430914","cardNumber":null,"email":"vaishali.baronia@cleartrip.com","currency":"INR","expiry_date":"14-02-2020","trigger_date":"16-12-2019","status":"ACTIVE","transactions":null}]},{"user_id":41626396,"trip_ref":"Q191007525614","type":"HOTEL_BOOKING","status":"CANCELLED","promotions":[{"amount":5,"id":43261,"wallet":"CLEARTRIP","mobile":"9980957509","cardNumber":null,"email":"cleartriptest@gmail.com","currency":"AED","expiry_date":"06-12-2019","trigger_date":"07-10-2019","status":"COMPLETE","transactions":[{"id":81885,"time":"07-10-2019 16:56:00 IST","type":"EXECUTE","status":"SUCCESS"},{"id":83021,"time":"15-11-2019 14:53:36 IST","type":"ROLLBACK","status":"FAILED"},{"id":83031,"time":"15-11-2019 15:13:48 IST","type":"ROLLBACK","status":"FAILED"},{"id":83035,"time":"15-11-2019 15:29:04 IST","type":"ROLLBACK","status":"FAILED"}]},{"amount":2,"id":43263,"wallet":"CLEARTRIP","mobile":"9980957509","cardNumber":null,"email":"cleartriptest@gmail.com","currency":"AED","expiry_date":"13-12-2019","trigger_date":"14-10-2019","status":"CANCELLED","transactions":null}]},{"user_id":65182732,"trip_ref":"Q191114574972","type":"AIR_BOOKING","status":"ACTIVE","promotions":[{"amount":87,"id":45055,"wallet":"PAYBACK","mobile":"9686155445","cardNumber":null,"email":"ssdd@sdf.com","currency":"PNT","expiry_date":"14-05-2020","trigger_date":"14-11-2019","status":"ACTIVE","transactions":[{"id":83043,"time":"15-11-2019 15:55:34 IST","type":"EXECUTE","status":"FAILED"}]}]},{"user_id":65176051,"trip_ref":"Q191115575506","type":"AIR_BOOKING","status":"CANCELLED","promotions":[{"amount":10,"id":45087,"wallet":"CLEARTRIP","mobile":"9986696785","cardNumber":null,"email":"cltpacct@gmail.com","currency":"INR","expiry_date":"14-01-2020","trigger_date":"15-11-2019","status":"REVERTED","transactions":[{"id":83009,"time":"15-11-2019 13:55:53 IST","type":"EXECUTE","status":"SUCCESS"},{"id":83011,"time":"15-11-2019 14:10:07 IST","type":"ROLLBACK","status":"SUCCESS"}]},{"amount":155,"id":45089,"wallet":"CLEARTRIP","mobile":"9986696785","cardNumber":null,"email":"cltpacct@gmail.com","currency":"INR","expiry_date":"24-03-2020","trigger_date":"24-01-2020","status":"CANCELLED","transactions":null},{"amount":20,"id":45091,"wallet":"CLEARTRIP","mobile":"9986696785","cardNumber":null,"email":"cltpacct@gmail.com","currency":"INR","expiry_date":"23-04-2020","trigger_date":"23-02-2020","status":"CANCELLED","transactions":null}]},{"user_id":65176819,"trip_ref":"Q191115575628","type":"AIR_BOOKING","status":"CANCELLED","promotions":[{"amount":10,"id":45133,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"prakhar.chatterjee@cleartrip.com","currency":"INR","expiry_date":"14-01-2020","trigger_date":"15-11-2019","status":"REVERTED","transactions":[{"id":83039,"time":"15-11-2019 15:37:46 IST","type":"EXECUTE","status":"SUCCESS"},{"id":83041,"time":"15-11-2019 15:39:42 IST","type":"ROLLBACK","status":"SUCCESS"}]},{"amount":200,"id":45135,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"prakhar.chatterjee@cleartrip.com","currency":"INR","expiry_date":"27-02-2020","trigger_date":"29-12-2019","status":"CANCELLED","transactions":null},{"amount":20,"id":45137,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"prakhar.chatterjee@cleartrip.com","currency":"INR","expiry_date":"28-03-2020","trigger_date":"28-01-2020","status":"CANCELLED","transactions":null}]},{"user_id":65176819,"trip_ref":"Q191115575604","type":"AIR_BOOKING","status":"ACTIVE","promotions":[{"amount":10,"id":45121,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"prakhar.chatterjee@cleartrip.com","currency":"INR","expiry_date":"14-01-2020","trigger_date":"15-11-2019","status":"COMPLETE","transactions":[{"id":83033,"time":"15-11-2019 15:16:51 IST","type":"EXECUTE","status":"SUCCESS"}]},{"amount":200,"id":45123,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"prakhar.chatterjee@cleartrip.com","currency":"INR","expiry_date":"26-02-2020","trigger_date":"28-12-2019","status":"ACTIVE","transactions":null},{"amount":20,"id":45125,"wallet":"CLEARTRIP","mobile":"9632699584","cardNumber":null,"email":"prakhar.chatterjee@cleartrip.com","currency":"INR","expiry_date":"27-03-2020","trigger_date":"27-01-2020","status":"ACTIVE","transactions":null}]}]
+<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>paymentsAPI.API_PromoService@10e41621</td></tr>
+<tr>
+<td title='paymentsAPI.API_PromoService.updatePromo()'><b>updatePromo</b><br>Test class: paymentsAPI.API_PromoService<br/>
+<a href="#Output-966672167" onClick='toggleBox("Output-966672167", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-966672167" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-966672167">
+Response body UpdatePromo : {"user_id":41649008,"trip_ref":"Q180611186865","type":"AIR_BOOKING","status":"DEACTIVE","promotions":[{"amount":336,"id":50653,"wallet":null,"mobile":null,"cardNumber":null,"email":null,"currency":"INR","expiry_date":"02-11-2020","trigger_date":"01-10-2019","status":"DEACTIVE","transactions":null},{"amount":500,"id":50654,"wallet":null,"mobile":null,"cardNumber":null,"email":null,"currency":"INR","expiry_date":"11-11-2020","trigger_date":"01-08-2020","status":"DEACTIVE","transactions":null}]}
+<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>paymentsAPI.API_PromoService@10e41621</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='paymentsAPI.API_PromoService.activatePromo()'><b>activatePromo</b><br>Test class: paymentsAPI.API_PromoService</td>
+<td><div><pre>java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at org.apache.http.impl.io.AbstractSessionInputBuffer.fillBuffer(AbstractSessionInputBuffer.java:158)
+	at org.apache.http.impl.io.SocketInputBuffer.fillBuffer(SocketInputBuffer.java:82)
+	at org.apache.http.impl.io.AbstractSessionInputBuffer.readLine(AbstractSessionInputBuffer.java:271)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.AbstractHttpClientConnection.receiveResponseHeader(AbstractHttpClientConnection.java:281)
+	at org.apache.http.impl.conn.DefaultClientConnection.receiveResponseHeader(DefaultClientConnection.java:257)
+	at org.apache.http.impl.conn.ManagedClientConnectionImpl.receiveResponseHeader(ManagedClientConnectionImpl.java:207)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:684)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:486)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.apache.http.client.HttpClient$execute$2.call(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl$RestAssuredHttpBuilder.doRequest(RequestSpecificationImpl.groovy:2028)
+	at io.restassured.internal.http.HTTPBuilder.post(HTTPBuilder.java:349)
+	at io.restassured.internal.http.HTTPBuilder$post$8.call(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.sendRequest(RequestSpecificationImpl.groovy:1202)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1210)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)
+	at io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)
+	at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:149)
+	at io.restassured.internal.filter.SendRequestFilter.filter(SendRequestFilter.groovy:30)
+	at io.restassured.filter.Filter$filter$2.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at io.restassured.filter.Filter$filter$0.call(Unknown Source)
+	at io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)
+	at io.restassured.filter.time.TimingFilter.filter(TimingFilter.java:56)
+	at io.restassured.filter.Filter$filter$0.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at io.restassured.filter.Filter$filter$0.call(Unknown Source)
+	at io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)
+	at io.restassured.filter.log.RequestLoggingFilter.filter(RequestLoggingFilter.java:124)
+	at io.restassured.filter.Filter$filter$0.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at io.restassured.filter.Filter$filter$2.call(Unknown Source)
+	at io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)
+	at io.restassured.filter.FilterContext$next$1.call(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.applyPathParamsAndSendRequest(RequestSpecificationImpl.groovy:1631)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1210)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)
+	at io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)
+	at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:48)
+	at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.callCurrent(PogoInterceptableSite.java:58)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:182)
+	at io.restassured.internal.RequestSpecificationImpl.applyPathParamsAndSendRequest(RequestSpecificationImpl.groovy:1637)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1210)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)
+	at io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)
+	at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:48)
+	at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.callCurrent(PogoInterceptableSite.java:58)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:182)
+	at io.restassured.internal.RequestSpecificationImpl.post(RequestSpecificationImpl.groovy:170)
+	at io.restassured.internal.RequestSpecificationImpl.post(RequestSpecificationImpl.groovy)
+	at paymentsAPI.API_PaymentCommon1.promoPost(API_PaymentCommon1.java:666)
+	at paymentsAPI.API_PromoService.activatePromo(API_PromoService.java:75)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+... Removed 22 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace235644268", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace235644268'><pre>java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at org.apache.http.impl.io.AbstractSessionInputBuffer.fillBuffer(AbstractSessionInputBuffer.java:158)
+	at org.apache.http.impl.io.SocketInputBuffer.fillBuffer(SocketInputBuffer.java:82)
+	at org.apache.http.impl.io.AbstractSessionInputBuffer.readLine(AbstractSessionInputBuffer.java:271)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.AbstractHttpClientConnection.receiveResponseHeader(AbstractHttpClientConnection.java:281)
+	at org.apache.http.impl.conn.DefaultClientConnection.receiveResponseHeader(DefaultClientConnection.java:257)
+	at org.apache.http.impl.conn.ManagedClientConnectionImpl.receiveResponseHeader(ManagedClientConnectionImpl.java:207)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:684)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:486)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.apache.http.client.HttpClient$execute$2.call(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl$RestAssuredHttpBuilder.doRequest(RequestSpecificationImpl.groovy:2028)
+	at io.restassured.internal.http.HTTPBuilder.post(HTTPBuilder.java:349)
+	at io.restassured.internal.http.HTTPBuilder$post$8.call(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.sendRequest(RequestSpecificationImpl.groovy:1202)
+	at sun.reflect.GeneratedMethodAccessor109.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1210)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)
+	at io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)
+	at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:149)
+	at io.restassured.internal.filter.SendRequestFilter.filter(SendRequestFilter.groovy:30)
+	at io.restassured.filter.Filter$filter$2.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at io.restassured.filter.Filter$filter$0.call(Unknown Source)
+	at io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)
+	at io.restassured.filter.time.TimingFilter.filter(TimingFilter.java:56)
+	at io.restassured.filter.Filter$filter$0.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at io.restassured.filter.Filter$filter$0.call(Unknown Source)
+	at io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)
+	at io.restassured.filter.log.RequestLoggingFilter.filter(RequestLoggingFilter.java:124)
+	at io.restassured.filter.Filter$filter$0.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at io.restassured.filter.Filter$filter$2.call(Unknown Source)
+	at io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)
+	at io.restassured.filter.FilterContext$next$1.call(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.applyPathParamsAndSendRequest(RequestSpecificationImpl.groovy:1631)
+	at sun.reflect.GeneratedMethodAccessor41.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1210)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)
+	at io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)
+	at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:48)
+	at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.callCurrent(PogoInterceptableSite.java:58)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:182)
+	at io.restassured.internal.RequestSpecificationImpl.applyPathParamsAndSendRequest(RequestSpecificationImpl.groovy:1637)
+	at sun.reflect.GeneratedMethodAccessor40.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1210)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)
+	at io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)
+	at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:48)
+	at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.callCurrent(PogoInterceptableSite.java:58)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:182)
+	at io.restassured.internal.RequestSpecificationImpl.post(RequestSpecificationImpl.groovy:170)
+	at io.restassured.internal.RequestSpecificationImpl.post(RequestSpecificationImpl.groovy)
+	at paymentsAPI.API_PaymentCommon1.promoPost(API_PaymentCommon1.java:666)
+	at paymentsAPI.API_PromoService.activatePromo(API_PromoService.java:75)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+</pre></div></td>
+<td>901</td>
+<td>paymentsAPI.API_PromoService@10e41621</td></tr>
+</table><p>
+</body>
+</html>

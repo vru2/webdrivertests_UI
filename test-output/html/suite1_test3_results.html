@@ -3,16 +3,16 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
 <head>
-  <title>Test Results Report - API Navison</title>
+  <title>Test Results Report - Trip Lock Expiry</title>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
   <meta name="description" content="TestNG unit test results." />
   <link href="reportng.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="reportng.js"></script>
 </head>
 <body>
-<h1>API Navison</h1>
+<h1>Trip Lock Expiry</h1>
 <p>
-  Test duration: 9.266s
+  Test duration: 0.100s
 </p>
 
 
@@ -22,48 +22,28 @@
   <table class="resultsTable">
     <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
           <tr>
-        <td colspan="3" class="group">paymentsAPI.API_Navison_Air</td>
+        <td colspan="3" class="group">tripServicesProd.TS_TripLockExpiry</td>
       </tr>
             
 <tr>
   <td class="method">
-                  paymentCC_API
+                  Trip_LockExpiry
       </td>
   <td class="duration">
-    4.611s
+    0.100s
   </td>
   <td class="result">
         
     
             <div class="testOutput">
-                        http://172.17.26.11:8358<br />
-                                /paymentservice/service/air/mis/detail?tripRef=Q191226667766&amp;paymentType=UP<br />
-                                Response body NavisonAir : {&quot;trip_ref&quot;:&quot;Q191226667766&quot;,&quot;credential_name&quot;:&quot;RAZORPAY&quot;,&quot;gateway_transaction_id&quot;:&quot;pay_DwqiXprgKznIMC&quot;,&quot;payment_id&quot;:43438730,&quot;transaction_amount&quot;:11430.0,&quot;currency&quot;:&quot;INR&quot;,&quot;payment_category&quot;:&quot;B&quot;}<br />
-                                statusCode: 200<br />
-                  </div>
-    
-
-      </td>
-</tr>
-          <tr>
-        <td colspan="3" class="group">paymentsAPI.API_Navison_CC</td>
-      </tr>
-            
-<tr>
-  <td class="method">
-                  paymentCC_API
-      </td>
-  <td class="duration">
-    4.655s
-  </td>
-  <td class="result">
-        
-    
-            <div class="testOutput">
-                        http://172.17.26.11:8358<br />
-                                /paymentservice/service/mis/detail?tripRef=Q200117692102&amp;paymentType=CC<br />
-                                Response body NavisonCC : {&quot;trip_ref&quot;:&quot;Q200117692102&quot;,&quot;credential_name&quot;:&quot;IN_PAYU_STAGING&quot;,&quot;gateway_transaction_id&quot;:&quot;403993715520416248&quot;,&quot;payment_id&quot;:43610228,&quot;transaction_amount&quot;:2354.0,&quot;currency&quot;:&quot;INR&quot;}<br />
-                                statusCode: 200<br />
+                        {<br/>
+&nbsp; &quot;trip_ref&quot; : &quot;191218163562&quot;,<br/>
+&nbsp; &quot;lock_owner&quot; : &quot;BookApp&quot;,<br/>
+&nbsp; &quot;lock_time&quot; : &quot;2020-03-09T09:11:11.062+0530&quot;,<br/>
+&nbsp; &quot;host_name&quot; : null,<br/>
+&nbsp; &quot;expiry_time&quot; : &quot;2020-03-09T09:14:31.062+0530&quot;<br/>
+}<br />
+                                Status code 200<br />
                   </div>
     
 

@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="0.218">
+           time="0.096">
   <properties />
   
   
-            <testcase name="localPostCall" time="0.218" classname="tripServicesProd.TS_LogBooking_Local" />
+            <testcase name="localPostCall" time="0.096" classname="tripServicesProd.TS_LogBooking_Local" />
       
 </testsuite>

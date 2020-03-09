@@ -15,7 +15,7 @@ public class TS_LogBooking_FPH extends TripserviceCommon {
 		resp=TripservicePostcall(param_fph_log,headersForTripservicepostcall(),url);
 		Validation(resp);
 		Thread.sleep(7000);
-		DBValidation_Txn(resp, "C");
+		DBValidation_Txn(resp, "O");
 			
 	}
 }

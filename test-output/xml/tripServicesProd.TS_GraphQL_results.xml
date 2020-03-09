@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="0.950">
+           time="0.816">
   <properties />
   
   
-            <testcase name="postGraphQL" time="0.950" classname="tripServicesProd.TS_GraphQL" />
+            <testcase name="postGraphQL" time="0.816" classname="tripServicesProd.TS_GraphQL" />
       
 </testsuite>

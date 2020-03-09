@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="0.112">
+           time="0.100">
   <properties />
   
   
-            <testcase name="Trip_LockExpiry" time="0.112" classname="tripServicesProd.TS_TripLockExpiry" />
+            <testcase name="Trip_LockExpiry" time="0.100" classname="tripServicesProd.TS_TripLockExpiry" />
       
 </testsuite>

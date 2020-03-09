@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="1.841">
+           time="1.578">
   <properties />
   
   
-            <testcase name="airPostCall" time="1.841" classname="tripServicesProd.TS_Finance_Scrapers" />
+            <testcase name="airPostCall" time="1.578" classname="tripServicesProd.TS_Finance_Scrapers" />
       
 </testsuite>

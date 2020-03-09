@@ -4,11 +4,11 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="7.669">
+           time="15.773">
   <properties />
   
   
-            <testcase name="phoneasCommunicationValue" time="1.502" classname="tripServicesProd.TS_Get_TripDetails_CommValue" />
-                <testcase name="emailasCommunicationValue" time="6.167" classname="tripServicesProd.TS_Get_TripDetails_CommValue" />
+            <testcase name="emailasCommunicationValue" time="10.629" classname="tripServicesProd.TS_Get_TripDetails_CommValue" />
+                <testcase name="phoneasCommunicationValue" time="5.144" classname="tripServicesProd.TS_Get_TripDetails_CommValue" />
       
 </testsuite>

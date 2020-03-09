@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="0.127">
+           time="0.079">
   <properties />
   
   
-            <testcase name="Tripservicepostcall" time="0.127" classname="tripServicesProd.TS_LogBooking_Trains" />
+            <testcase name="Tripservicepostcall" time="0.079" classname="tripServicesProd.TS_LogBooking_Trains" />
       
 </testsuite>

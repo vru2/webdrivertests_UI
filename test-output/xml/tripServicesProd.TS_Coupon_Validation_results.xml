@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="3.301">
+           time="8.978">
   <properties />
   
   
-            <testcase name="couponValidation" time="3.301" classname="tripServicesProd.TS_Coupon_Validation" />
+            <testcase name="couponValidation" time="8.978" classname="tripServicesProd.TS_Coupon_Validation" />
       
 </testsuite>

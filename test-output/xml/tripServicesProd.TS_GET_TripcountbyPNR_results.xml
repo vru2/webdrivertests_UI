@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="118.962">
+           time="44.543">
   <properties />
   
   
-            <testcase name="getTripcount" time="118.962" classname="tripServicesProd.TS_GET_TripcountbyPNR" />
+            <testcase name="getTripcount" time="44.543" classname="tripServicesProd.TS_GET_TripcountbyPNR" />
       
 </testsuite>

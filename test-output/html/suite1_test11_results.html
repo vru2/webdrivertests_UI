@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
+<head>
+  <title>Test Results Report - API Stored Card</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="description" content="TestNG unit test results." />
+  <link href="reportng.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="reportng.js"></script>
+</head>
+<body>
+<h1>API Stored Card</h1>
+<p>
+  Test duration: 5.431s
+</p>
+
+
+
+
+
+  <table class="resultsTable">
+    <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">paymentsAPI.API_storeCard</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  Wallet_getCard_DeleteCard
+      </td>
+  <td class="duration">
+    0.360s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        http://172.17.26.11:8358<br />
+                                /paymentservice/card/get/41654864<br />
+                                Response body wallet_getcards : [{&quot;id&quot;:&quot;4016&quot;,&quot;number&quot;:&quot;512345XXXXXX2346&quot;,&quot;cardNumberHash&quot;:&quot;7b528fa824b1d0665ddc060790f23245e0cb96f3e68b986fecba8c6570256988&quot;,&quot;name&quot;:&quot;test&quot;,&quot;exp_month&quot;:&quot;05&quot;,&quot;exp_year&quot;:&quot;2020&quot;,&quot;credit_debit&quot;:&quot;C&quot;,&quot;type&quot;:&quot;MasterCard&quot;},{&quot;id&quot;:&quot;3601&quot;,&quot;number&quot;:&quot;340000XXXXXX009&quot;,&quot;cardNumberHash&quot;:&quot;39f2cc98b14fc0e5fc978b15e8a71a34664cb1d01967b3f2295e060be6817073&quot;,&quot;name&quot;:&quot;TEST&quot;,&quot;exp_month&quot;:&quot;05&quot;,&quot;exp_year&quot;:&quot;2021&quot;,&quot;credit_debit&quot;:&quot;C&quot;,&quot;type&quot;:&quot;Amex&quot;,&quot;bill_address&quot;:&quot;test&quot;,&quot;bill_city&quot;:&quot;test&quot;,&quot;bill_state&quot;:&quot;karnataka&quot;,&quot;bill_country&quot;:&quot;India&quot;}]<br/>
+<br />
+                                statusCode: 200<br />
+                                http://172.17.26.11:8358<br />
+                                /paymentservice/card/delete/4016<br />
+                                Response body wallet_deleteCards : [{&quot;id&quot;:&quot;3601&quot;,&quot;number&quot;:&quot;340000XXXXXX009&quot;,&quot;cardNumberHash&quot;:&quot;39f2cc98b14fc0e5fc978b15e8a71a34664cb1d01967b3f2295e060be6817073&quot;,&quot;name&quot;:&quot;TEST&quot;,&quot;exp_month&quot;:&quot;05&quot;,&quot;exp_year&quot;:&quot;2021&quot;,&quot;credit_debit&quot;:&quot;C&quot;,&quot;type&quot;:&quot;Amex&quot;,&quot;bill_address&quot;:&quot;test&quot;,&quot;bill_city&quot;:&quot;test&quot;,&quot;bill_state&quot;:&quot;karnataka&quot;,&quot;bill_country&quot;:&quot;India&quot;}]<br/>
+<br />
+                                statusCode: 200<br />
+                  </div>
+    
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  Wallet_storeCard
+      </td>
+  <td class="duration">
+    4.902s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        http://172.17.26.11:8358<br />
+                                /paymentservice/card/store?cardNumber=5123456789012346&amp;name=test&amp;cardTypeId=2&amp;expiryMonth=05&amp;expiryYear=2020&amp;userId=41654864<br />
+                                Response body wallet_getcards : [{&quot;id&quot;:&quot;4016&quot;,&quot;number&quot;:&quot;512345XXXXXX2346&quot;,&quot;cardNumberHash&quot;:&quot;7b528fa824b1d0665ddc060790f23245e0cb96f3e68b986fecba8c6570256988&quot;,&quot;name&quot;:&quot;test&quot;,&quot;exp_month&quot;:&quot;05&quot;,&quot;exp_year&quot;:&quot;2020&quot;,&quot;credit_debit&quot;:&quot;C&quot;,&quot;type&quot;:&quot;MasterCard&quot;},{&quot;id&quot;:&quot;3601&quot;,&quot;number&quot;:&quot;340000XXXXXX009&quot;,&quot;cardNumberHash&quot;:&quot;39f2cc98b14fc0e5fc978b15e8a71a34664cb1d01967b3f2295e060be6817073&quot;,&quot;name&quot;:&quot;TEST&quot;,&quot;exp_month&quot;:&quot;05&quot;,&quot;exp_year&quot;:&quot;2021&quot;,&quot;credit_debit&quot;:&quot;C&quot;,&quot;type&quot;:&quot;Amex&quot;,&quot;bill_address&quot;:&quot;test&quot;,&quot;bill_city&quot;:&quot;test&quot;,&quot;bill_state&quot;:&quot;karnataka&quot;,&quot;bill_country&quot;:&quot;India&quot;}]<br/>
+<br />
+                                statusCode: 200<br />
+                  </div>
+    
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  Wallet_validateCard
+      </td>
+  <td class="duration">
+    0.169s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        http://172.17.26.11:8358<br />
+                                /paymentservice/card/validate?cardNumber=5123456789012346&amp;name=test&amp;cardTypeId=2&amp;expiryMonth=5&amp;expiryYear=2020&amp;userId=41654864<br />
+                                Response body wallet_getcards : [{&quot;number&quot;:&quot;512345XXXX012346&quot;,&quot;name&quot;:&quot;test&quot;,&quot;exp_month&quot;:&quot;05&quot;,&quot;exp_year&quot;:&quot;2020&quot;,&quot;credit_debit&quot;:&quot;C&quot;,&quot;type&quot;:&quot;MasterCard&quot;,&quot;international&quot;:false}]<br/>
+<br />
+                                statusCode: 200<br />
+                  </div>
+    
+
+      </td>
+</tr>
+      </table>
+  
+</body>
+</html>

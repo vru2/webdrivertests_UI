@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="API Wallets"
+           tests="2"
+           failures="0"
+           errors="0"
+           skipped="1"
+           time="4.382">
+  <properties />
+  
+            <testcase name="Wallet_REVERTPROMO" time="0.0" classname="paymentsAPI.API_Wallet_RevertPromo">
+          <skipped />
+    </testcase>
+  
+            <testcase name="Wallet_REVERTPROMO" time="0.496" classname="paymentsAPI.API_Wallet_RevertPromo" />
+      
+</testsuite>

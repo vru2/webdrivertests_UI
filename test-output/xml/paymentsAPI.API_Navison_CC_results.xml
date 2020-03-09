@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="API Navison"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="4.655">
+  <properties />
+  
+  
+            <testcase name="paymentCC_API" time="4.655" classname="paymentsAPI.API_Navison_CC" />
+      
+</testsuite>

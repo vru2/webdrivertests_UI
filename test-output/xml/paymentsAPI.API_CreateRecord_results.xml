@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="API Create Insert record"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="0.040">
+  <properties />
+  
+  
+            <testcase name="paymentCC_API" time="0.040" classname="paymentsAPI.API_CreateRecord" />
+      
+</testsuite>

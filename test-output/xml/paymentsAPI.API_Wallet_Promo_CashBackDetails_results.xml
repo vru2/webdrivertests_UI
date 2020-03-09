@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="API Wallets"
+           tests="2"
+           failures="0"
+           errors="0"
+           skipped="1"
+           time="3.936">
+  <properties />
+  
+            <testcase name="PromoCashBack" time="0.0" classname="paymentsAPI.API_Wallet_Promo_CashBackDetails">
+          <skipped />
+    </testcase>
+  
+            <testcase name="PromoCashBack" time="0.032" classname="paymentsAPI.API_Wallet_Promo_CashBackDetails" />
+      
+</testsuite>

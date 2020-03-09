@@ -1,0 +1,146 @@
+<html>
+<head>
+<title>TestNG:  API CTPay V2</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>API CTPay V2</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>4/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Thu Mar 05 10:08:49 IST 2020</td>
+</tr>
+<tr><td>Total time:</td><td>12 seconds (12064 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='paymentsAPI.API_CTpay_URLcreation.CreateURL_CTpay()'><b>CreateURL_CTpay</b><br>Test class: paymentsAPI.API_CTpay_URLcreation<br/>
+<a href="#Output-1642755839" onClick='toggleBox("Output-1642755839", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1642755839" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1642755839">
+https://qa2.cleartrip.com<br/>
+paymentservice/ct/v2/getCtPaymentUrl<br/>
+Response body CreateURL : {"order_id":"T2021069300","redirection_url":"https://qa2.cleartrip.com/paymentservice/ct/v2/3cbd6497-f72f-4614-b4b4-6099f7a544b9/initiatePayment","status":"SUCCESS","created_at":"05-03-2020 10:09:00.892+0530"}<br/>
+statusCode: 200<br/>
+Order_ID T2021069300<br/>
+redirection_url : https://qa2.cleartrip.com/paymentservice/ct/v2/3cbd6497-f72f-4614-b4b4-6099f7a544b9/initiatePayment<br/>
+status : SUCCESS<br/>
+</div>
+</td>
+<td></td>
+<td>11</td>
+<td>paymentsAPI.API_CTpay_URLcreation@35047d03</td></tr>
+<tr>
+<td title='paymentsAPI.API_CTpay_GetUrl.PaymentCtPayCreate()'><b>PaymentCtPayCreate</b><br>Test class: paymentsAPI.API_CTpay_GetUrl<br/>
+<a href="#Output-1040734062" onClick='toggleBox("Output-1040734062", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1040734062" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1040734062">
+https://qa2.cleartrip.com<br/>
+/paymentservice/ct/v2/getCtPaymentUrl<br/>
+Response body GETURL : {"order_id":"T2333454445","redirection_url":"https://qa2.cleartrip.com/paymentservice/ct/v2/a073de29-66a9-4027-94fd-3d0e2ee4ba79/initiatePayment","status":"SUCCESS","created_at":"05-03-2020 10:09:00.896+0530"}<br/>
+statusCode: 200<br/>
+CTpay  URL https://qa2.cleartrip.com/paymentservice/ct/v2/a073de29-66a9-4027-94fd-3d0e2ee4ba79/initiatePayment<br/>
+</div>
+</td>
+<td></td>
+<td>11</td>
+<td>paymentsAPI.API_CTpay_GetUrl@659a969b</td></tr>
+<tr>
+<td title='paymentsAPI.API_CTpay_Status.PaymentCtPayStatus()'><b>PaymentCtPayStatus</b><br>Test class: paymentsAPI.API_CTpay_Status<br/>
+<a href="#Output-1004955189" onClick='toggleBox("Output-1004955189", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1004955189" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1004955189">
+https://qa2.cleartrip.com<br/>
+/paymentservice/ct/v2/T2021069300/status<br/>
+Response body STATUS : {"ctpay_id":1090,"payment_id":43015252,"order_id":"T2021069300","amount":500.0,"currency":"INR","customer_detail":{"ip_address":"217.164.159.242","address1":"Unit No 001, Ground Floor, DTC Bldg, Sitaram mills compound, N.M.joshi Marg, Lower parel (E)","city_name":"Mumbai","postal_code":"400011","state_name":"Maharashtra","country_name":"India","mobile":"0509009839","email":"anas.ansari@cleartrip.com"},"client_id":1111,"payment_type":"NB","order_status":"SUCCESS","description":"Payment successful","gateway_txnNo":"308005128715","bank_name":"Citibank"}<br/>
+statusCode: 200<br/>
+Order_Status SUCCESS<br/>
+Description : Payment successful<br/>
+</div>
+</td>
+<td></td>
+<td>12</td>
+<td>paymentsAPI.API_CTpay_Status@76908cc0</td></tr>
+<tr>
+<td title='paymentsAPI.API_CTpay_UpdateClient.PaymentCtPayUpdate()'><b>PaymentCtPayUpdate</b><br>Test class: paymentsAPI.API_CTpay_UpdateClient<br/>
+<a href="#Output-934247226" onClick='toggleBox("Output-934247226", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-934247226" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-934247226">
+https://qa2.cleartrip.com<br/>
+/paymentservice/ct/v2/updateClient<br/>
+Response body UPDATE : {"client_id":1125,"client_key":"52d31bda9ece78a511eea56eaa72d49b","s2s_url":"","payment_types":"CC,DC,TW","active":true,"created_at":"31-05-2019 15:57:13.000+0530","updated_at":"07-06-2019 09:26:25.000+0530","status":"SUCCESS"}<br/>
+statusCode: 200<br/>
+ status : SUCCESS<br/>
+</div>
+</td>
+<td></td>
+<td>11</td>
+<td>paymentsAPI.API_CTpay_UpdateClient@2473d930</td></tr>
+</table><p>
+</body>
+</html>

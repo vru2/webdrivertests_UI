@@ -1,0 +1,236 @@
+<html>
+<head>
+<title>TestNG:  API Wallet App Only</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>API Wallet App Only</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>3/1/1</td>
+</tr><tr>
+<td>Started on:</td><td>Thu Mar 05 10:08:53 IST 2020</td>
+</tr>
+<tr><td>Total time:</td><td>2 seconds (2972 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='paymentsAPI.API_Wallet_Get_Wallet_INR.Wallet_GETWALLET()'><b>Wallet_GETWALLET</b><br>Test class: paymentsAPI.API_Wallet_Get_Wallet_INR<br/>
+<a href="#Output-1334983755" onClick='toggleBox("Output-1334983755", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1334983755" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1334983755">
+http://172.17.26.11:8359<br/>
+/payments/wallet/fetch?userId=13957750&currency=INR<br/>
+http://172.17.26.11:8359<br/>
+/payments/wallet/fetch?userId=13957750&currency=INR<br/>
+Response body wallet_GETWALLET_INR : {"timestamp":"2020-03-05T04:38:53.738+0000","status":500,"error":"Internal Server Error","message":"More than one matching record found for query: select * from payment_wallet_details where user_id=? and currency=? params: [13957750, INR]","path":"/payments/wallet/fetch"}<br/>
+statusCode: 500<br/>
+</div>
+</td>
+<td><div><pre>junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:48)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertTrue(Assert.java:27)
+	at paymentsAPI.API_PaymentCommon1.validation(API_PaymentCommon1.java:1317)
+	at paymentsAPI.API_Wallet_Get_Wallet_INR.Wallet_GETWALLET(API_Wallet_Get_Wallet_INR.java:16)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1334983755", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1334983755'><pre>junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:48)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertTrue(Assert.java:27)
+	at paymentsAPI.API_PaymentCommon1.validation(API_PaymentCommon1.java:1317)
+	at paymentsAPI.API_Wallet_Get_Wallet_INR.Wallet_GETWALLET(API_Wallet_Get_Wallet_INR.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:839)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1010)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+</pre></div></td>
+<td>0</td>
+<td>paymentsAPI.API_Wallet_Get_Wallet_INR@2f7298b</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='paymentsAPI.API_GV_Get.API_GVGet()'><b>API_GVGet</b><br>Test class: paymentsAPI.API_GV_Get<br/>
+<a href="#Output-2099676477" onClick='toggleBox("Output-2099676477", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-2099676477" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-2099676477">
+http://172.17.26.11:8359<br/>
+http://172.17.26.11:8359<br/>
+/payments/gv/get?cardnumber=3000331033588753&cardpin=247648&currency=INR&productType=DOMESTIC-AIR&itineraryId=681f6b756d-67de-4efc-b663-5a7ac1bd9fa1&cardCategory=DF<br/>
+Response body GV_GET : {"cardNumber":"3000331033588753", "cardType":"Cleartrip Test e-GV", "isExpired":false, "balance":4990.0, "status":"S"}<br/>
+statusCode: 200<br/>
+</div>
+</td>
+<td></td>
+<td>2</td>
+<td>paymentsAPI.API_GV_Get@188715b5</td></tr>
+<tr>
+<td title='paymentsAPI.API_Wallet_CashBackDetails.Wallet_CashBack()'><b>Wallet_CashBack</b><br>Test class: paymentsAPI.API_Wallet_CashBackDetails<br/>
+<a href="#Output-2090055631" onClick='toggleBox("Output-2090055631", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-2090055631" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-2090055631">
+http://172.17.26.11:8359<br/>
+/payments/wallet/cashback?emailId=test@test123.com&currency=INR&amount=1&tripRef=Q190812462222&expiryDate =20-09-19<br/>
+http://172.17.26.11:8359<br/>
+/payments/wallet/cashback?emailId=test@test123.com&currency=INR&amount=1&tripRef=Q190812462222&expiryDate =20-09-19<br/>
+Response body wallet_CASHBACK_DETAILS_WALLETS : {"status":"S","description":"Wallet cashback success","walletbalance":2155.0}<br/>
+statusCode: 200<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>paymentsAPI.API_Wallet_CashBackDetails@50eac852</td></tr>
+<tr>
+<td title='paymentsAPI.API_Wallet_Get_Wallet_All.Wallet_GETWALLET()'><b>Wallet_GETWALLET</b><br>Test class: paymentsAPI.API_Wallet_Get_Wallet_All<br/>
+<a href="#Output-345153832" onClick='toggleBox("Output-345153832", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-345153832" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-345153832">
+http://172.17.26.11:8359<br/>
+http://172.17.26.11:8359<br/>
+/payments/wallet/65179937/getWallet<br/>
+Response body wallet_GETWALLET_ALL : [{"balance":10001.0,"wallet-id":5156154,"currency":"INR","promo-balance":0.0,"wallet-no":"3000331040000246"}]<br/>
+statusCode: 200<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>paymentsAPI.API_Wallet_Get_Wallet_All@16ec5519</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='paymentsAPI.API_Wallet_Get_Wallet_INR.Wallet_GETWALLET()'><b>Wallet_GETWALLET</b><br>Test class: paymentsAPI.API_Wallet_Get_Wallet_INR<br/>
+<a href="#Output-539456641" onClick='toggleBox("Output-539456641", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-539456641" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-539456641">
+http://172.17.26.11:8359<br/>
+/payments/wallet/fetch?userId=13957750&currency=INR<br/>
+http://172.17.26.11:8359<br/>
+/payments/wallet/fetch?userId=13957750&currency=INR<br/>
+Response body wallet_GETWALLET_INR : {"timestamp":"2020-03-05T04:38:53.708+0000","status":500,"error":"Internal Server Error","message":"More than one matching record found for query: select * from payment_wallet_details where user_id=? and currency=? params: [13957750, INR]","path":"/payments/wallet/fetch"}<br/>
+statusCode: 500<br/>
+</div>
+</td>
+<td><div><pre>junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:48)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertTrue(Assert.java:27)
+	at paymentsAPI.API_PaymentCommon1.validation(API_PaymentCommon1.java:1317)
+	at paymentsAPI.API_Wallet_Get_Wallet_INR.Wallet_GETWALLET(API_Wallet_Get_Wallet_INR.java:16)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace539456641", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace539456641'><pre>junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:48)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertTrue(Assert.java:27)
+	at paymentsAPI.API_PaymentCommon1.validation(API_PaymentCommon1.java:1317)
+	at paymentsAPI.API_Wallet_Get_Wallet_INR.Wallet_GETWALLET(API_Wallet_Get_Wallet_INR.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+</pre></div></td>
+<td>0</td>
+<td>paymentsAPI.API_Wallet_Get_Wallet_INR@2f7298b</td></tr>
+</table><p>
+</body>
+</html>

@@ -97,6 +97,18 @@
 			<class name="tripServices.TS_MF_MFilter" />
 		</classes>
 	</test>
+	
+	<test name="Eventbus API"  parallel="true">
+		<classes>
+			<class name="tripServices.Eventbus_API" />
+		</classes>
+	</test>
+	
+	<test name="App Notification"  parallel="true">
+		<classes>
+			<class name="tripServices.AppNotification" />
+		</classes>
+	</test>
 
 </suite> 
 	

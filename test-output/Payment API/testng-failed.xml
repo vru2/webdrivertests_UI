@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="10" guice-stage="DEVELOPMENT" name="Failed suite [Payment API]" parallel="tests">
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="common.RemoveDuplicateResults"/>
+    <listener class-name="common.RetryListener"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+  </listeners>
+  <test thread-count="10" name="API Refund(failed)" parallel="methods">
+    <classes>
+      <class name="paymentsAPI.API_Refund_CC">
+        <methods>
+          <include name="paymentCC_API"/>
+        </methods>
+      </class> <!-- paymentsAPI.API_Refund_CC -->
+    </classes>
+  </test> <!-- API Refund(failed) -->
+  <test thread-count="10" name="API Fetch Payment Details(failed)" parallel="methods">
+    <classes>
+      <class name="paymentsAPI.API_FetchPay_Details">
+        <methods>
+          <include name="PaymentCtPayCreate"/>
+        </methods>
+      </class> <!-- paymentsAPI.API_FetchPay_Details -->
+    </classes>
+  </test> <!-- API Fetch Payment Details(failed) -->
+  <test thread-count="10" name="API Wallets(failed)" parallel="methods">
+    <classes>
+      <class name="paymentsAPI.API_Wallet_GetDeduction">
+        <methods>
+          <include name="Wallet_GETDEDUCTION"/>
+        </methods>
+      </class> <!-- paymentsAPI.API_Wallet_GetDeduction -->
+      <class name="paymentsAPI.API_Wallet_Get_Wallet_Trnx">
+        <methods>
+          <include name="Wallet_GETWALLET"/>
+        </methods>
+      </class> <!-- paymentsAPI.API_Wallet_Get_Wallet_Trnx -->
+      <class name="paymentsAPI.API_Wallet_RevertPromo">
+        <methods>
+          <include name="Wallet_REVERTPROMO"/>
+        </methods>
+      </class> <!-- paymentsAPI.API_Wallet_RevertPromo -->
+      <class name="paymentsAPI.API_Wallet_PromoUsed">
+        <methods>
+          <include name="Wallet_Promo_used"/>
+        </methods>
+      </class> <!-- paymentsAPI.API_Wallet_PromoUsed -->
+      <class name="paymentsAPI.API_Wallet_Promo_CashBackDetails">
+        <methods>
+          <include name="PromoCashBack"/>
+        </methods>
+      </class> <!-- paymentsAPI.API_Wallet_Promo_CashBackDetails -->
+      <class name="paymentsAPI.API_Wallet_Create">
+        <methods>
+          <include name="Wallet_GETWALLET"/>
+        </methods>
+      </class> <!-- paymentsAPI.API_Wallet_Create -->
+    </classes>
+  </test> <!-- API Wallets(failed) -->
+  <test thread-count="10" name="API ADCB(failed)" parallel="methods">
+    <classes>
+      <class name="paymentsAPI.API_Reward_ADCB_Pay">
+        <methods>
+          <include name="adcb_Pay"/>
+        </methods>
+      </class> <!-- paymentsAPI.API_Reward_ADCB_Pay -->
+      <class name="paymentsAPI.API_Reward_ADCB_CheckBalance">
+        <methods>
+          <include name="adcb_Checkbalance"/>
+        </methods>
+      </class> <!-- paymentsAPI.API_Reward_ADCB_CheckBalance -->
+    </classes>
+  </test> <!-- API ADCB(failed) -->
+  <test thread-count="10" name="API Wallet App Only(failed)" parallel="methods">
+    <classes>
+      <class name="paymentsAPI.API_Wallet_Get_Wallet_INR">
+        <methods>
+          <include name="Wallet_GETWALLET"/>
+        </methods>
+      </class> <!-- paymentsAPI.API_Wallet_Get_Wallet_INR -->
+    </classes>
+  </test> <!-- API Wallet App Only(failed) -->
+  <test thread-count="10" name="API OLA(failed)" parallel="methods">
+    <classes>
+      <class name="paymentsAPI.API_OLA_Validate_Pay">
+        <methods>
+          <include name="paymentOTP_CheckStat"/>
+          <include name="paymentOTP_Validate"/>
+          <include name="paymentOTP_Pay"/>
+          <include name="paymentOTP_PromoStat"/>
+        </methods>
+      </class> <!-- paymentsAPI.API_OLA_Validate_Pay -->
+    </classes>
+  </test> <!-- API OLA(failed) -->
+  <test thread-count="10" name="API ROR Writes(failed)" parallel="methods">
+    <classes>
+      <class name="paymentsAPI.API_ROR_Writes">
+        <methods>
+          <include name="ROR_Create_Refunds"/>
+          <include name="ROR_Recon"/>
+        </methods>
+      </class> <!-- paymentsAPI.API_ROR_Writes -->
+    </classes>
+  </test> <!-- API ROR Writes(failed) -->
+  <test thread-count="10" name="API Expressway(failed)" parallel="methods">
+    <classes>
+      <class name="paymentsAPI.API_EW_Pay_AutoDebit">
+        <methods>
+          <include name="Expressway_AutoDebit"/>
+          <include name="Expressway_Pay"/>
+        </methods>
+      </class> <!-- paymentsAPI.API_EW_Pay_AutoDebit -->
+      <class name="paymentsAPI.API_EW_Pay_V3">
+        <methods>
+          <include name="Expressway_Pay"/>
+        </methods>
+      </class> <!-- paymentsAPI.API_EW_Pay_V3 -->
+    </classes>
+  </test> <!-- API Expressway(failed) -->
+  <test thread-count="10" name="API PayBack(failed)" parallel="methods">
+    <classes>
+      <class name="paymentsAPI.API_RewardPayback">
+        <methods>
+          <include name="RewardPayback_redeemPoints"/>
+          <include name="RewardPayback_refundPoints"/>
+        </methods>
+      </class> <!-- paymentsAPI.API_RewardPayback -->
+    </classes>
+  </test> <!-- API PayBack(failed) -->
+  <test thread-count="10" name="Promos(failed)" parallel="methods">
+    <classes>
+      <class name="paymentsAPI.API_Promo_Activate">
+        <methods>
+          <include name="Promo_Activate"/>
+        </methods>
+      </class> <!-- paymentsAPI.API_Promo_Activate -->
+      <class name="paymentsAPI.API_Promo_Used">
+        <methods>
+          <include name="PaymentCtPayCreate"/>
+        </methods>
+      </class> <!-- paymentsAPI.API_Promo_Used -->
+    </classes>
+  </test> <!-- Promos(failed) -->
+  <test thread-count="10" name="Promo service(failed)" parallel="methods">
+    <classes>
+      <class name="paymentsAPI.API_PromoService">
+        <methods>
+          <include name="createPromo"/>
+          <include name="activatePromo"/>
+        </methods>
+      </class> <!-- paymentsAPI.API_PromoService -->
+    </classes>
+  </test> <!-- Promo service(failed) -->
+</suite> <!-- Failed suite [Payment API] -->

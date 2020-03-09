@@ -1,0 +1,185 @@
+<html>
+<head>
+<title>TestNG:  API Rearch</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>API Rearch</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>6/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Thu Mar 05 10:08:49 IST 2020</td>
+</tr>
+<tr><td>Total time:</td><td>13 seconds (13600 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='paymentsAPI.API_CC.paymentCC_API()'><b>paymentCC_API</b><br>Test class: paymentsAPI.API_CC<br/>
+<a href="#Output-1722383740" onClick='toggleBox("Output-1722383740", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1722383740" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1722383740">
+http://172.17.26.11:8358<br/>
+/paymentservice/service/pay/v3<br/>
+Response body CC : [{"id":43851311,"customer_detail":{"ip_address":"119.82.73.123","mobile":"9986696785","email":"cltppayment@gmail.com","first_name":"test"},"app_ref1":"Q18110926800","app_ref2":"167823462","payment_type":"CC","amount":100.99,"currency":"INR","credential_name":"IN_PAYU_STAGING","card_detail":{"card_number":"5123456789012346","card_type_id":1,"expiry_month":"05","expiry_year":"2020","cvv":"123","name":"CleartripCard","billto_detail":{"firstname":"test","lastname":"test","address1":"Cleartrip JP Nagar","city_name":"Bangalore","state_name":"Karnataka","country_name":"India","postal_code":"560076"}},"status":"I","redirection_required":"Y","collect_otp":false,"redirection_info":{"url":"https://test.payu.in/_payment","method":"POST","params":{"key":"gtKFFx","txnid":"43851311","amount":"100.99","productinfo":"DOMESTIC_AIR","firstname":"CleartripCard","email":"cltppayment@gmail.com","phone":"9986696785","hash":"31cd87115c167cb2a8b921435f76ce69665edf7442d07b8cbcefb55ff9fd1da83922709803d81b8bf8e767765f103db31df1a1c4e1364245b18801ad95f9d7b9","udf1":"Q18110926800","pg":"CC","bankcode":"CC","ccnum":"5123456789012346","ccname":"CleartripCard","ccvv":"123","ccexpmon":"05","ccexpyr":"2020","surl":"https://qa2.cleartrip.com/paymentservice/return/payu","furl":"https://qa2.cleartrip.com/paymentservice/return/payu"}},"seq_no":1}]<br/>
+statusCode: 200<br/>
+Status is Sucess [I]<br/>
+description Process [null]<br/>
+ Payment ID: [43851311]<br/>
+</div>
+</td>
+<td></td>
+<td>12</td>
+<td>paymentsAPI.API_CC@7880cdf3</td></tr>
+<tr>
+<td title='paymentsAPI.API_CC_Visa_Type.paymentCC_API()'><b>paymentCC_API</b><br>Test class: paymentsAPI.API_CC_Visa_Type<br/>
+<a href="#Output-662186387" onClick='toggleBox("Output-662186387", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-662186387" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-662186387">
+http://172.17.26.11:8358<br/>
+/paymentservice/service/pay/v3<br/>
+Response body CC : [{"id":43851309,"customer_detail":{"ip_address":"119.82.73.123","mobile":"9986696785","email":"cltppayment@gmail.com","first_name":"test"},"app_ref1":"Q18110926800","app_ref2":"167823462","payment_type":"CC","amount":100.99,"currency":"INR","credential_name":"IN_PAYU_STAGING","card_detail":{"card_number":"5123456789012346","card_type_id":1,"expiry_month":"05","expiry_year":"2020","cvv":"123","name":"CleartripCard","billto_detail":{"firstname":"test","lastname":"test","address1":"Cleartrip JP Nagar","city_name":"Bangalore","state_name":"Karnataka","country_name":"India","postal_code":"560076"}},"status":"I","redirection_required":"Y","collect_otp":false,"redirection_info":{"url":"https://test.payu.in/_payment","method":"POST","params":{"key":"gtKFFx","txnid":"43851309","amount":"100.99","productinfo":"VISA","firstname":"CleartripCard","email":"cltppayment@gmail.com","phone":"9986696785","hash":"3f0b7dca82fae7929769eb6c746136ee65f06dceaaf9fa7e4c3ae32b408ae1a2aed5217b4117255d376399589bb3a4e48fe3a04c78fb562d9d0c8996799aa9aa","udf1":"Q18110926800","pg":"CC","bankcode":"CC","ccnum":"5123456789012346","ccname":"CleartripCard","ccvv":"123","ccexpmon":"05","ccexpyr":"2020","surl":"https://qa2.cleartrip.com/paymentservice/return/payu","furl":"https://qa2.cleartrip.com/paymentservice/return/payu"}},"seq_no":1}]<br/>
+statusCode: 200<br/>
+Status is Sucess [I]<br/>
+description Process [null]<br/>
+ Payment ID: [43851309]<br/>
+</div>
+</td>
+<td></td>
+<td>12</td>
+<td>paymentsAPI.API_CC_Visa_Type@ef9296d</td></tr>
+<tr>
+<td title='paymentsAPI.API_CC_GV_Wallet.paymentCC_API()'><b>paymentCC_API</b><br>Test class: paymentsAPI.API_CC_GV_Wallet<br/>
+<a href="#Output-377525108" onClick='toggleBox("Output-377525108", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-377525108" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-377525108">
+http://172.17.26.11:8358<br/>
+/paymentservice/service/pay/v3<br/>
+Response body CCGVWL : [{"id":43851313,"customer_detail":{"ip_address":"119.82.73.123","mobile":"9986696785","email":"cltppayment@gmail.com","first_name":"test"},"app_ref1":"Q18110926800","app_ref2":"167823462","payment_type":"CC","amount":10.99,"currency":"INR","credential_name":"IN_PAYU_STAGING","card_detail":{"card_number":"5123456789012346","card_type_id":1,"expiry_month":"05","expiry_year":"2020","cvv":"123","name":"CleartripCard","billto_detail":{"firstname":"test","lastname":"test","address1":"Cleartrip JP Nagar","city_name":"Bangalore","state_name":"Karnataka","country_name":"India","postal_code":"560076"}},"status":"I","redirection_required":"Y","collect_otp":false,"redirection_info":{"url":"https://test.payu.in/_payment","method":"POST","params":{"key":"gtKFFx","txnid":"43851313","amount":"10.99","productinfo":"DOMESTIC_AIR","firstname":"CleartripCard","email":"cltppayment@gmail.com","phone":"9986696785","hash":"d972e90523027683dc1d7a31ec04df85c82a1b1634c648955ca833f9f1771cc0675cd060107ec4e759d8edcdf5f69cfa421c9c1ffddaddbbb8ec3a8d4f14dd06","udf1":"Q18110926800","pg":"CC","bankcode":"CC","ccnum":"5123456789012346","ccname":"CleartripCard","ccvv":"123","ccexpmon":"05","ccexpyr":"2020","surl":"https://qa2.cleartrip.com/paymentservice/return/payu","furl":"https://qa2.cleartrip.com/paymentservice/return/payu"}},"seq_no":1},{"id":43851310,"customer_detail":{"ip_address":"119.82.106.202","mobile":"12121221212","email":"cltppayment@gmail.com"},"app_ref1":"Q18110930000","app_ref2":"167823462","payment_type":"GV","amount":10.0,"currency":"INR","status":"P","description":"Not attempted","redirection_required":"N","collect_otp":false,"seq_no":2},{"id":43851312,"customer_detail":{"ip_address":"119.82.106.202","mobile":"12121221212","email":"cltppayment@gmail.com"},"app_ref1":"Q1809140000","app_ref2":"74049672","payment_type":"WT","amount":10.0,"currency":"INR","status":"P","description":"Not attempted","redirection_required":"N","collect_otp":false,"seq_no":2}]<br/>
+statusCode: 200<br/>
+ID : [43851313, 43851310, 43851312]<br/>
+status : [I, P, P]<br/>
+</div>
+</td>
+<td></td>
+<td>12</td>
+<td>paymentsAPI.API_CC_GV_Wallet@36c88a32</td></tr>
+<tr>
+<td title='paymentsAPI.API_GV.paymentGV_API()'><b>paymentGV_API</b><br>Test class: paymentsAPI.API_GV<br/>
+<a href="#Output-1435657736" onClick='toggleBox("Output-1435657736", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1435657736" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1435657736">
+http://172.17.26.11:8358<br/>
+/paymentservice/service/pay/v3<br/>
+Response body GV : [{"id":43851308,"customer_detail":{"ip_address":"119.82.106.202","mobile":"9986696785","email":"cltppayment@gmail.com"},"app_ref1":"Q18110930000","app_ref2":"167823462","payment_type":"GV","amount":1.0,"currency":"INR","status":"S","description":"Gift voucher redemption success","error_code":"0","redirection_required":"N","collect_otp":false,"seq_no":2}]<br/>
+statusCode: 200<br/>
+Status is failing [S]<br/>
+Description GV [Gift voucher redemption success]<br/>
+ Payment ID: [43851308]<br/>
+</div>
+</td>
+<td></td>
+<td>12</td>
+<td>paymentsAPI.API_GV@5be6e01c</td></tr>
+<tr>
+<td title='paymentsAPI.API_Validate.paymentValidate_API()'><b>paymentValidate_API</b><br>Test class: paymentsAPI.API_Validate<br/>
+<a href="#Output-1706448525" onClick='toggleBox("Output-1706448525", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1706448525" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1706448525">
+http://172.17.26.11:8358<br/>
+/paymentservice/service/validate/v3<br/>
+Response body VALIDATE : [{"customer_detail":{"ip_address":"119.82.73.123","mobile":"9986696785","email":"cltppayment@gmail.com","first_name":"test"},"payment_type":"CC","amount":100.99,"currency":"INR","card_detail":{"card_number":"5123456789012346","card_type_id":1,"expiry_month":"05","expiry_year":"2020","cvv":"123","name":"CleartripCard","billto_detail":{"firstname":"test","lastname":"test","address1":"Cleartrip JP Nagar","city_name":"Bangalore","state_name":"Karnataka","country_name":"India","postal_code":"560076"}},"response_code":"0","redirection_required":"Y","response_message":"Payment can be processed-Redirection required","seq_no":1,"otp_eligible":false}]<br/>
+statusCode: 200<br/>
+redirection required [Y]<br/>
+Response [Payment can be processed-Redirection required]<br/>
+</div>
+</td>
+<td></td>
+<td>12</td>
+<td>paymentsAPI.API_Validate@6af93788</td></tr>
+<tr>
+<td title='paymentsAPI.API_Wallet.paymentWallet_API()'><b>paymentWallet_API</b><br>Test class: paymentsAPI.API_Wallet<br/>
+<a href="#Output-2063468518" onClick='toggleBox("Output-2063468518", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-2063468518" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-2063468518">
+http://172.17.26.11:8358<br/>
+/paymentservice/service/pay/v3<br/>
+Response body WALLET : [{"id":43851307,"customer_detail":{"ip_address":"119.82.106.202","mobile":"9986696785","email":"cltppayment@gmail.com"},"app_ref1":"Q1809140000","app_ref2":"74049672","payment_type":"WT","amount":0.1,"currency":"INR","status":"S","description":"Wallet payment success","error_code":"0","redirection_required":"N","collect_otp":false,"seq_no":1}]<br/>
+statusCode: 200<br/>
+Status is failing [S]<br/>
+Description Wallet [Wallet payment success]<br/>
+ Payment ID: [43851307]<br/>
+</div>
+</td>
+<td></td>
+<td>13</td>
+<td>paymentsAPI.API_Wallet@1c93084c</td></tr>
+</table><p>
+</body>
+</html>

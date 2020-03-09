@@ -225,6 +225,15 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 	String urlROR_WalletFetch_Reads="/payments/wallet/fetch/v2?userId=13957750&currency=AED";
 	String urlROR_MultiSearch_Reads ="/paymentservice/search/payments/v1?query=id:43622220,paymentType:WT";
+	String urlROR_MultiSearch_TripRef_Reads= "/paymentservice/search/payments/v1?query=appRef1:Q190809461122";
+	
+	String urlROR_Wallet_Trnx_Reads = "/paymentservice/search/walletTransactions/v1?query=walletDetailId:5155670";
+	
+	String urlROR_Wallet_GetWallet_Reads = "/payments/wallet/5789285/v2/getWallet";
+	String urlROR_GV_Details_Reads = "/paymentservice/search/gvDetails/v1?query=refundId:9367489";
+	
+	String urlROR_Refund_Reads = "/paymentservice/search/refunds/v1?query=paymentId:43410410,status:D";
+	
 	
 	String endPointgetPay = "/paymentservice/api/getPaymentURL";
 
@@ -461,7 +470,6 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 	public Response payGet1(String payType, String payType1) {
 		RestAssured.baseURI =urlPay;
-		Reporter.log(urlPay);
 		String url = null;
 		HashMap<String, Object> headers = new HashMap<>();
 		headers = headersForms();
@@ -479,25 +487,63 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			url= url_NavisonCC;
 		}
 		else if(payType.equalsIgnoreCase("NavisonAir")) {
-
 			url= url_NavisonAir;
 		}
 		else if(payType.equalsIgnoreCase("ROR_MultiSearch")) {
 			RestAssured.baseURI =urlReporting;
-
-			Reporter.log(urlReporting);
 			url= urlROR_MultiSearch_Pay;
-		}
+			Reporter.log(urlReporting+url);
+		}	
+		
+		
+
 		else if(payType.equalsIgnoreCase("ROR_WalletFetch")) {
+			RestAssured.baseURI =urlReporting;
+			url= urlROR_MultiSearch_TripRef_Reads;
+			Reporter.log(urlReporting+url);
+		}
+
+
+		else if(payType.equalsIgnoreCase("ROR_MultiSearch_TripRef_Reads")) {
+			RestAssured.baseURI =urlWallet;
+			url= urlROR_MultiSearch_TripRef_Reads;
+			Reporter.log(urlReporting+url);
+		}
+		
+		else if(payType.equalsIgnoreCase("ROR_WalletGetV2_Reads")) {
 			RestAssured.baseURI =urlWallet;
 			Reporter.log(urlWallet);
 			url= urlROR_WalletFetch_Reads;
+			Reporter.log(urlReporting+url);
 		}
 		else if(payType.equalsIgnoreCase("ROR_MultiSearch_Reads")) {
 			RestAssured.baseURI =urlReporting;
-			Reporter.log(urlReporting);
 			url= urlROR_MultiSearch_Reads;
+			Reporter.log(urlReporting+url);
 		}
+		else if(payType.equalsIgnoreCase("ROR_WalletTrnx_Reads")) {
+			RestAssured.baseURI =urlReporting;
+			url= urlROR_Wallet_Trnx_Reads;
+			Reporter.log(urlReporting+url);
+		}
+		else if(payType.equalsIgnoreCase("ROR_WalletGet_Reads")) {
+			RestAssured.baseURI =urlWallet;
+			url= urlROR_Wallet_GetWallet_Reads;
+			Reporter.log(urlReporting+url);
+		}
+		else if(payType.equalsIgnoreCase("ROR_GV_Details")) {
+			RestAssured.baseURI =urlPay;
+			url= urlROR_GV_Details_Reads;
+			Reporter.log(urlPay+url);
+			
+		}
+
+		else if(payType.equalsIgnoreCase("ROR_Refund_Details")) {
+			RestAssured.baseURI =urlReporting;			
+			url= urlROR_Refund_Reads;
+			Reporter.log(urlPay=url);
+		}
+		
 
 		
 		
@@ -2448,8 +2494,46 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			}	
 		}
 
+		else if(payType.equalsIgnoreCase("ROR_MultiSearch_TripRef_Reads")){
+
+			if(!resp.body().asString().contains("43179370")) {
+				Reporter.log("43179370 is not displayed");
+				Assert.assertTrue(false);
+			}	
+		}
+
+		else if(payType.equalsIgnoreCase("ROR_WalletTrnx_Reads")){
+
+			if(!resp.body().asString().contains("5990704")) {
+				Reporter.log("5990704 is not displayed");
+				Assert.assertTrue(false);
+			}	
+		}
+
+		else if(payType.equalsIgnoreCase("ROR_WalletGet_Reads")){
+
+			if(!resp.body().asString().contains("3000331020000001")) {
+				Reporter.log("3000331020000001 is not displayed");
+				Assert.assertTrue(false);
+			}	
+		}
+
+		else if(payType.equalsIgnoreCase("ROR_GV_Details")){
+
+			if(!resp.body().asString().contains("3000331039771395")) {
+				Reporter.log("3000331039771395 is not displayed");
+				Assert.assertTrue(false);
+			}	
+		}
 		
-		
+
+		else if(payType.equalsIgnoreCase("ROR_Refund_Details")){
+
+			if(!resp.body().asString().contains("Recon Req")) {
+				Reporter.log("Recon Re is not displayed");
+				Assert.assertTrue(false);
+			}	
+		}
 		
 		return resp;	
 	}

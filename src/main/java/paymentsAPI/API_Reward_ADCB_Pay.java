@@ -41,8 +41,8 @@ public class API_Reward_ADCB_Pay extends API_PaymentCommon1
 
 		resp = adcb("pay",track);	
 		validation("adcb_pay", resp);
-		
-		Reporter.log("------ Pay2 Started -------");
+
+		Reporter.log("------ Pay  Started cwith same trackID payment should not go through-------");
 		
 		resp = adcb("pay",track);	
 		validation("adcb_pay2", resp);	

@@ -19,21 +19,19 @@ public class API_Refund_CC extends API_PaymentCommon1
 	@Test
 	public void paymentCC_API() throws IOException, JSONException, ClassNotFoundException, SQLException, InterruptedException{
 			Response resp ;		
-			ArrayList<String> db_CC = db_Refund_Common("CC");
-			String RefundID = db_CC.get(4);
+			ArrayList<String> db_CC = db_CC();
+			String RefundID = db_CC.get(5);
 			Reporter.log("RefundID "+RefundID);
 			resp = refund("refund", RefundID);
 			validation("", resp);
 			Thread.sleep(7000);
-			ArrayList<String> db_refundStatusCC =  db_Refund_StatusCC(RefundID);
+			ArrayList<String> db_refundStatusCC =  db_Refund_Status(RefundID);
 			Reporter.log("Refund Status for ID "+RefundID+" is "+db_refundStatusCC.get(0));
 			if(!db_refundStatusCC.get(0).contains("D")) {
 				Reporter.log("Refund Status should be D is displayed as "+db_refundStatusCC.get(0));
 				Reporter.log("Deleting refund ID "+RefundID);
-				db_Refund_Delete(RefundID);
+				db_Refund_Delete_ID(RefundID);
 				Assert.assertTrue(false);
 			}
-		
 		}
-	
 }

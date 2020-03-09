@@ -21,6 +21,7 @@ import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import junit.framework.Assert;
+import paymentsUI.PaymentUI_CommonUtilities;
 
 public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 {	
@@ -135,6 +136,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String Params_Singlebincard_Visa_Debit=Param1+Param2+Param3+Param7;
 
 
+	String urlgetPay2 = "http://172.17.26.11:8070";
 	String urlPay = "http://172.17.26.11:8358";
 	String promoURL = "http://172.17.26.11:8360";
 	String urlRewards = "http://172.17.12.82:9080";
@@ -153,6 +155,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	/*
 	
 
+	String urlgetPay = "http://172.17.26.11:8070";
 	String urlPay = "http://172.17.8.218:9001";
 	String urlRefundNew = "http://172.17.8.218:9001";
 	String promoURL = "http://172.17.26.11:7999";
@@ -223,7 +226,6 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String urlROR_WalletFetch_Reads="/payments/wallet/fetch/v2?userId=13957750&currency=AED";
 	String urlROR_MultiSearch_Reads ="/paymentservice/search/payments/v1?query=id:43622220,paymentType:WT";
 	
-	String urlgetPay = "http://172.17.26.11:8070";
 	String endPointgetPay = "/paymentservice/api/getPaymentURL";
 
 	String urlEndPoint_Wallet_RevertPromo ="/payments/wallet/promo/revert?tripRef=Q19050680568";
@@ -344,6 +346,11 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 
 
+	String MySQL_URL = "jdbc:mysql://172.17.4.15:3306/payment";
+	String MySQL_User = "payment";
+	String MySQL_Password = "P@yment@123";
+	
+	
 	List<Integer> payment_id = new ArrayList<Integer>();
 	List<String> trk_id = new ArrayList<String>();
 	List<String> trip_refPromo = new ArrayList<String>();
@@ -2562,6 +2569,40 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		return resp;
 	}
 
+
+	public Response payUIget(String payType, String PayType1) throws Exception {
+		String endPoint = null;
+		String params = null; 
+		HashMap<String, Object> headers	= new HashMap<>();
+		HashMap<String, Object> cookies	= new HashMap<>();
+		headers = headersForms();
+		cookies = addCookies();
+		Response response = null;
+		if(payType.equalsIgnoreCase("BookApp/GetPay")){
+			RestAssured.baseURI = urlPay;
+			endPoint = endPointgetPay;	
+			int randomNumber= PaymentUI_CommonUtilities.generateFiveDigitRandomNumber();
+			String randNumber= Integer.toString(randomNumber);
+			String appRef= "Q201" + randNumber;
+			params = "{\"train_booking\":{\"traveller_details\":[{\"seq_no\":1,\"type\":\"ADT\",\"title\":\"Ms\",\"first_name\":\"Test\",\"last_name\":\"Test\"}],\"itinerary_details\":[{\"from_station_code\":\"SBC\",\"to_station_code\":\"MYS\",\"from_station_name\":\"KSR BENGALURU\",\"to_station_name\":\"MYSURU JN\",\"train_name\":\"BSB MYS EXP\",\"train_number\":\"16230\",\"departure_time\":\"2019-11-12T00:15:00\",\"arrival_time\":\"2019-11-12T02:45:00\",\"booking_class\":\"AC 2 Tier(2A)\",\"updated_availability\":\"AVAILABLE-0119\",\"quota\":\"General\",\"seatStatus\":true}],\"pricing_details\":[{\"other_railway_charges\":119.4,\"agent_service_charge\":40,\"total\":775.4,\"insuranceCharge\":0,\"currency\":\"INR\",\"pax_pay_info\":[{\"base_fare\":616,\"pax_count\":1,\"pax_type\":\"ADULT\"}]}],\"transaction_fee_details\":{\"CC\":{\"DEFAULT\":1.8},\"DC\":{\"DEFAULT\":1},\"NB\":{\"1\":1.1,\"2\":1.2,\"3\":1.1,\"23\":1.1,\"DEFAULT\":1.35},\"KC\":{\"DEFAULT\":0},\"DA\":{\"DEFAULT\":0},\"TW\":{\"DEFAULT\":1},\"UP\":{\"DEFAULT\":1}}},\"itinerary_id\":\"f25db800de1e0137664316217d236675\",\"ttl\":3600,\"trip_id\":45134538,\"app_ref1\":\"" + appRef +"\",\"app_ref2\":74282510,\"customer_detail\":{\"ip_address\":\"119.82.106.202\",\"mobile\":1212121212,\"landline\":1212121212,\"email\":\"cltppayment@gmail.com\",\"first_name\":\"Cltp\",\"last_name\":\"payment\",\"username\":\"cltppayment@gmail.com\"},\"product_type\":\"TRAIN\",\"currency\":\"INR\",\"order_info1\":\"16230/SBC/MYS/2019111200:15:00\",\"order_info2\":\"Test Test\",\"source_type\":\"ACCOUNT\",\"high_risk\":false,\"country\":\"IN\",\"user_id\":\"64891349\",\"email_id\":\"cltppayment@gmail.com\",\"d_plus_x_in_hours\":273,\"app_return_info\":{\"url\":\"https://qa2.cleartrip.com/trains/itinerary/f25db800de1e0137664316217d236675/process_payment\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://trains-book-nget.cltp.com:9001/r3/trains/itinerary/f25db800de1e0137664316217d236675/book_internal\",\"params\":null},\"payment_category\":\"B\"}";;
+			response = RestAssured.given().
+					when().log().all().body(params).headers(headers).post(endPoint);
+		}
+		if(payType.equalsIgnoreCase("BookApp/GetPayWithCookie")){
+
+			RestAssured.baseURI = urlPay;
+			endPoint = endPointgetPay;	
+			params = "{\"train_booking\":{\"traveller_details\":[{\"seq_no\":1,\"type\":\"ADT\",\"title\":\"Ms\",\"first_name\":\"Test\",\"last_name\":\"Test\"}],\"itinerary_details\":[{\"from_station_code\":\"SBC\",\"to_station_code\":\"MYS\",\"from_station_name\":\"KSR BENGALURU\",\"to_station_name\":\"MYSURU JN\",\"train_name\":\"BSB MYS EXP\",\"train_number\":\"16230\",\"departure_time\":\"2019-11-12T00:15:00\",\"arrival_time\":\"2019-11-12T02:45:00\",\"booking_class\":\"AC 2 Tier(2A)\",\"updated_availability\":\"AVAILABLE-0119\",\"quota\":\"General\",\"seatStatus\":true}],\"pricing_details\":[{\"other_railway_charges\":119.4,\"agent_service_charge\":40,\"total\":775.4,\"insuranceCharge\":0,\"currency\":\"INR\",\"pax_pay_info\":[{\"base_fare\":616,\"pax_count\":1,\"pax_type\":\"ADULT\"}]}],\"transaction_fee_details\":{\"CC\":{\"DEFAULT\":1.8},\"DC\":{\"DEFAULT\":1},\"NB\":{\"1\":1.1,\"2\":1.2,\"3\":1.1,\"23\":1.1,\"DEFAULT\":1.35},\"KC\":{\"DEFAULT\":0},\"DA\":{\"DEFAULT\":0},\"TW\":{\"DEFAULT\":1},\"UP\":{\"DEFAULT\":1}}},\"itinerary_id\":\"f25db800de1e0137664316217d236675\",\"ttl\":3600,\"trip_id\":45134538,\"app_ref1\":\"Q19020128945\",\"app_ref2\":74282510,\"customer_detail\":{\"ip_address\":\"119.82.106.202\",\"mobile\":1212121212,\"landline\":1212121212,\"email\":\"cltppayment@gmail.com\",\"first_name\":\"Cltp\",\"last_name\":\"payment\",\"username\":\"cltppayment@gmail.com\"},\"product_type\":\"TRAIN\",\"currency\":\"INR\",\"order_info1\":\"16230/SBC/MYS/2019111200:15:00\",\"order_info2\":\"Test Test\",\"source_type\":\"ACCOUNT\",\"high_risk\":false,\"country\":\"IN\",\"user_id\":\"64891349\",\"email_id\":\"cltppayment@gmail.com\",\"d_plus_x_in_hours\":273,\"app_return_info\":{\"url\":\"https://qa2.cleartrip.com/trains/itinerary/f25db800de1e0137664316217d236675/process_payment\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://trains-book-nget.cltp.com:9001/r3/trains/itinerary/f25db800de1e0137664316217d236675/book_internal\",\"params\":null},\"payment_category\":\"B\"}";;
+			response = RestAssured.given().
+					when().log().all().body(params).headers(headers).cookies(cookies).post(endPoint);
+
+		}
+
+		Reporter.log(urlPay);			
+		return response;
+	}
+
+	
 	public Response rearchCtPay(String payType, String payType1) throws Exception{
 
 		RestAssured.baseURI =urlCTPay;
@@ -3116,6 +3157,36 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		}
 		return data;
 	}
+	
+	
+	public ArrayList<String> db_Refund_Common_MySQL(String RefundType) throws SQLException, ClassNotFoundException {
+		ArrayList<String> data = new ArrayList<String>();
+		ArrayList<String> Name = new ArrayList<String>();
+		{
+			String MySQL_URL = "jdbc:mysql://172.17.4.15:3306/payment";
+			String MySQL_User = "payment";
+			String MySQL_Password = "P@yment@123";
+			String query =  "select ID from payment.refunds where STATUS='P' AND REFUND_AMOUNT!=0 AND REFUND_TYPE ='"+RefundType+"' ORDER BY CREATED_AT desc";
+			
+			Connection myCon = DriverManager.getConnection(MySQL_URL, MySQL_User, MySQL_Password);
+			if (myCon != null) {
+				ResultSet myRes = myCon.createStatement().executeQuery(query);
+				while (myRes.next() == true) {
+					ResultSetMetaData result = myRes.getMetaData();
+					for (int x = 1; x <= 1; x++) {
+						String colName = result.getColumnName(x);
+						String colValue = myRes.getString(x);
+						Name.add(colName);
+						data.add(colValue);
+					}
+				}
+				myCon.close();
+			} else
+				Reporter.log("Connection not established");
+		}
+		return data;
+	}
+
 
 
 	public ArrayList<String> MySQL_DB(String RefundType) throws SQLException, ClassNotFoundException {
@@ -3123,9 +3194,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		ArrayList<String> Name = new ArrayList<String>();
 		{
 
-			//jdbc:mysql://localhost:3306/orion_db
 			String url = "jdbc:mysql://172.17.14.174:3306/payment";
-			//String url = "jdbc:oracle:thin:@172.17.14.174:3306/payment";
 			String user = "cleartrip";
 			String password = "1nterl3av3";
 			String query =  "select ctpay_id from ctpay_details where ORDER_ID ='T121212123344'";
@@ -3195,6 +3264,37 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		}
 		return data;
 	}
+	
+	public ArrayList<String> db_Refund_Delete_MySQL(String TripID) throws SQLException, ClassNotFoundException {
+		ArrayList<String> data = new ArrayList<String>();
+		{
+			String query =  "Delete from payments.refunds where ID = "+TripID;
+			Connection myCon = DriverManager.getConnection(MySQL_URL, MySQL_User, MySQL_Password);
+			if (myCon != null) {
+				ResultSet myRes = myCon.createStatement().executeQuery(query);
+
+				myCon.close();
+			} else
+				Reporter.log("Connection not established");
+		}
+		return data;
+	}
+	
+	
+
+
+	public ArrayList<String> db_Refund_Delete_ID(String TripID) throws SQLException, ClassNotFoundException {
+		ArrayList<String> data = new ArrayList<String>();
+		if (common.value("PaymentDB").equalsIgnoreCase("ORACLE")) {
+			data = db_Refund_Delete(TripID);
+			
+		} else {
+			data = db_Refund_Delete_MySQL(TripID);
+			}
+			
+		return data;
+		
+	}
 
 	public ArrayList<String> db_Refund_Amazon(String RefundType) throws SQLException, ClassNotFoundException {
 		ArrayList<String> data = new ArrayList<String>();
@@ -3249,6 +3349,49 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		}
 		return data;
 	}
+	
+	public ArrayList<String> db_Refund_StatusCC_MySQL(String RefundID) throws SQLException, ClassNotFoundException {
+		ArrayList<String> data = new ArrayList<String>();
+		ArrayList<String> Name = new ArrayList<String>();
+		{
+			String MySQL_URL = "jdbc:mysql://172.17.4.15:3306/payment";
+			String MySQL_User = "payment";
+			String MySQL_Password = "P@yment@123";
+			Connection myCon = DriverManager.getConnection(MySQL_URL, MySQL_User, MySQL_Password);
+			String query =  "select STATUS from payment.REFUNDS where ID ="+RefundID;
+			if (myCon != null) {
+				ResultSet myRes = myCon.createStatement().executeQuery(query);
+				while (myRes.next() == true) {
+					ResultSetMetaData result = myRes.getMetaData();
+					for (int x = 1; x <= 1; x++) {
+						String colName = result.getColumnName(x);
+						String colValue = myRes.getString(x);
+						Name.add(colName);
+						data.add(colValue);
+					}
+				}
+				myCon.close();
+			} else
+				Reporter.log("Connection not established");
+		}
+		return data;
+	}
+	
+	
+
+	public ArrayList<String> db_Refund_Status(String RefundID) throws SQLException, ClassNotFoundException {
+		ArrayList<String> data = new ArrayList<String>();
+		if (common.value("PaymentDB").equalsIgnoreCase("ORACLE")) {
+			data = db_Refund_StatusCC(RefundID);
+			
+		} else {
+			data = db_Refund_StatusCC_MySQL(RefundID);
+			}
+			
+		return data;
+		
+	}
+	
 
 	public ArrayList<String> db_GV() throws SQLException, ClassNotFoundException {
 		ArrayList<String> data = new ArrayList<String>();
@@ -3262,6 +3405,22 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		return data;
 		
 	}
+	
+	
+	public ArrayList<String> db_CC() throws SQLException, ClassNotFoundException {
+		ArrayList<String> data = new ArrayList<String>();
+		if (common.value("PaymentDB").equalsIgnoreCase("ORACLE")) {
+			data = db_Refund_Common("CC");
+			
+		} else {
+			data = db_Refund_Common_MySQL("CC");
+			}
+			
+		return data;
+		
+	}
+	
+	
 	
 	
 	

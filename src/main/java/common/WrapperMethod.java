@@ -105,14 +105,9 @@ public boolean GDS_Flight, B2B_GDS_Flight = false;
 		ChromeOptions options = new ChromeOptions();
 		Map<String, Object> prefs = new HashMap<String, Object>();
 		File file = new File(".");
-		//String filepath = file.getCanonicalPath() + "\\exe\\chromedriver_mac";
-		// String filepath = "C:\\chromedriver.exe";
 		String filepath =file.getCanonicalPath()+"\\exe\\chromedriver.exe";
-		//printInfo(filepath);
 		prefs.put("profile.default_content_settings.popups", 0);
 		options.setExperimentalOption("prefs", prefs);
-		//options.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR,UnexpectedAlertBehaviour.IGNORE);
-		// System.setProperty("webdriver.chrome.driver", filepath);
 		DesiredCapabilities cap = DesiredCapabilities.chrome();
 		cap.setCapability(ChromeOptions.CAPABILITY, options);
 		return cap;
@@ -217,8 +212,7 @@ public boolean GDS_Flight, B2B_GDS_Flight = false;
 				capability.setPlatform(Platform.WINDOWS);
 				driver.manage().timeouts().setScriptTimeout(100, TimeUnit.SECONDS);
 
-			} else if (common.value("browser").equalsIgnoreCase("FIREFOX")
-					&& common.value("mode").equalsIgnoreCase("local")) {
+			} else if (common.value("browser").equalsIgnoreCase("FIREFOX") && common.value("mode").equalsIgnoreCase("local")) {
 				if (System.getProperty("os.name").contains("Windows")) {
 					File file = new File(".");
 					String filepath = file.getCanonicalPath() + "//exe//geckodriver.exe";
@@ -308,7 +302,11 @@ public boolean GDS_Flight, B2B_GDS_Flight = false;
 					driver.manage().timeouts().setScriptTimeout(100, TimeUnit.SECONDS);
 				} else if (common.value("browser").equalsIgnoreCase("CHROME")&&common.value("headlessbrowser").equalsIgnoreCase("true")) {
 
-					System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
+					File file = new File(".");
+					String filepath = file.getCanonicalPath() + "//exe//chromedriver.exe";
+					System.setProperty("webdriver.chrome.driver", filepath);
+
+					
 					driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), createHeadlessChrome());
 
 					TimeUnit.SECONDS.sleep(1);
@@ -318,7 +316,9 @@ public boolean GDS_Flight, B2B_GDS_Flight = false;
 					driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
 				}else if (common.value("browser").equalsIgnoreCase("CHROME")&&common.value("headlessbrowser").equalsIgnoreCase("false")) {
 
-					System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
+					File file = new File(".");
+					String filepath = file.getCanonicalPath() + "//exe//chromedriver.exe";
+					System.setProperty("webdriver.chrome.driver", filepath);
 					driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), createChromeConfig());
 
 					TimeUnit.SECONDS.sleep(1);

@@ -44,7 +44,6 @@ public class PaymentUI_ErrorValidationUPIWalletAndNB extends PaymentNodeJS {
 			click(driver,PaymentUI_CommonUtilities.makePaymentbutton);
 			validateIfPresent(driver,PaymentUI_CommonUtilities.nbErrorTextXpath);
 		}
-
 		catch(Exception e){
 			Reporter.log("Exception is"+e);
 			Assert.assertTrue(false);

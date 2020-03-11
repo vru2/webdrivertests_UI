@@ -16,6 +16,8 @@ import java.util.Random;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.testng.Reporter;
 
+import com.mysql.jdbc.PreparedStatement;
+
 import domains.PlatformCommonUtil;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
@@ -29,9 +31,9 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String paramsCCVISA ="[{\"payment\":{\"seq_no\":1,\"trip_id\":106562332,\"app_userid\":10001,\"product_type\":\"VISA\",\"high_risk\":false,\"d_plus_x_in_hours\":276,\"payment_category\":\"B\",\"fraud_system_invocation\":\"Y\",\"ui_version\":\"v2\",\"customer_detail\":{\"ip_address\":\"119.82.73.123\",\"mobile\":\"9986696785\",\"email\":\"cltppayment@gmail.com\",\"firstName\":\"test\"},\"app_ref1\":\"Q18110926800\",\"app_ref2\":\"167823462\",\"itinerary_id\":\"683a3a6bec-4e58-422a-a2c9-90707b1e5a12\",\"payment_type\":\"CC\",\"amount\":100.99,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"9W/362/DEL/BOM/201811XXXXXX00\",\"order_info2\":\"Kiran Kumar\",\"source_type\":\"ACCOUNT\",\"user_id\":85721640,\"company_id\":110340,\"app_return_info\":{\"url\":\"https://www.cleartrip.com/flights/itinerary/683a3a6bec-4e58-422a-a2c9-90707b1e5a12/book\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://book-flights.cltp.com:9001/r3/book/flights/itinerary/683a3a6bec-4e58-422a-a2c9-90707b1e5a12/book-internal?ll=INFO\"},\"host_name\":\"qa2.cleartrip.com\",\"card_detail\":{\"card_number\":\"5123456789012346\",\"card_type_id\":1,\"expiry_month\":\"05\",\"expiry_year\":\"2020\",\"cvv\":\"123\",\"name\":\"CleartripCard\",\"billto_detail\":{\"firstname\":\"test\",\"lastname\":\"test\",\"address1\":\"Cleartrip JP Nagar\",\"city_name\":\"Bangalore\",\"state_name\":\"Karnataka\",\"country_name\":\"India\",\"postal_code\":\"560076\"}},\"user_agent\":\"Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko\"}}]";
 
 	String ParamsGV_Refund = "{\"paymentId\":43178534,\"amount\":400,\"refundId\":9283288,\"giftVoucherRecipientEmail\":\"cleartriptest@gmail.com\",\"originalGiftVoucherNumber\":\"3000331134027267\",\"originalInvoiceNumber\":\"43178534_Q190808460482\",\"originalGvTxnId\":\"1908081707\",\"originalBatchNumber\":\"10573009\",\"originalApprovalCode\":\"7015313\",\"currency\":\"INR\",\"tripRef\":\"Q190808460482\"}";
-	String ParamsGV_CAPTURE = "{\"cardNumber\":\"3000331036539304\",\"cardPin\":\"960136\",\"cardCategory\":\"\",\"amount\":3555.0,\"currency\":\"INR\",\"paymentId\":";
+	String ParamsGV_CAPTURE = "{\"cardNumber\":\"3000331032058605\",\"cardPin\":\"299574\",\"cardCategory\":\"\",\"amount\":10.0,\"currency\":\"INR\",\"paymentId\":";
 
-	String ParamsGV_CAPTURE1	= ",\"tripRef\":\"Q200303761250\",\"productType\":\"DOMESTIC-AIR\"}";
+	String ParamsGV_CAPTURE1	= ",\"tripRef\":\"T5017864736\",\"productType\":\"DOMESTIC-AIR\"}";
 
 	String paramsGV  = "[{\"payment\":{\"seq_no\":2,\"trip_id\":106562332,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":1618,\"payment_category\":\"B\",\"fraud_system_invocation\":\"N\",\"ui_version\":\"v2\",\"customer_detail\":{\"ip_address\":\"119.82.106.202\",\"mobile\":\"9986696785\",\"email\":\"cltppayment@gmail.com\"},\"app_ref1\":\"Q18110930000\",\"app_ref2\":\"167823462\",\"itinerary_id\":\"684fe048c7-cde3-4c20-9b73-a70e3c43bc9d\",\"payment_type\":\"GV\",\"amount\":1.0,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"SG/8481/PAT/DEL/201812XXXXXX00\",\"order_info2\":\"Cleartrip tester\",\"source_type\":\"WL\",\"user_id\":51351954,\"company_id\":5291262,\"app_return_info\":{\"url\":\"dummy\",\"method\":\"POST\"},\"gift_voucher_detail\":{\"card_number\":\"3000331032330649\",\"card_pin\":\"968322\",\"amount\":1,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"SG/8481/PAT/DEL/201812XXXXXX00\",\"order_info2\":\"Cleartrip Tester\",\"source_type\":\"WL\",\"user_id\":51351954,\"company_id\":5291262,\"app_return_info\":{\"url\":\"dummy\",\"method\":\"POST\"},\"gift_voucher_detail\":{\"card_number\":\"3000331035883413\",\"card_pin\":\"273064\",\"card_category\":\"\"}}}}]";
 	String paramsWallet ="[{\"payment\":{\"seq_no\":1,\"trip_id\":54808092,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":1618,\"payment_category\":\"B\",\"fraud_system_invocation\":\"N\",\"ui_version\":\"v2\",\"customer_detail\":{\"ip_address\":\"119.82.106.202\",\"mobile\":\"9986696785\",\"email\":\"cltppayment@gmail.com\"},\"app_ref1\":\"Q1809140000\",\"app_ref2\":\"74049672\",\"itinerary_id\":\"681f6b756d-67de-4efc-b663-5a7ac1bd9fa1\",\"payment_type\":\"WT\",\"amount\":0.1,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"6E\\/233\\/BLR\\/MAA\\/20181125062500\",\"order_info2\":\"Test Booking\",\"source_type\":\"ACCOUNT\",\"user_id\":41654864,\"company_id\":110340,\"app_return_info\":{\"url\":\"https://qa2.cleartrip.com/flights/itinerary/681f6b756d-67de-4efc-b663-5a7ac1bd9fa1/book\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://book-flights.cltp.com:9001/r3/book/flights/itinerary/681f6b756d-67de-4efc-b663-5a7ac1bd9fa1/book-internal?ll=INFO\"},\"user_agent\":\"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrom/69.0.3497.100 Safari/537.36\"}}]";
@@ -1133,7 +1135,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		}
 		else if(payType.equalsIgnoreCase("CAPTURE")) {
 			url= urlEndPoint_GV_CAPTURE;
-			params = ParamsGV_CAPTURE+"43850763"+ParamsGV_CAPTURE1;
+			params = ParamsGV_CAPTURE+"43852510"+ParamsGV_CAPTURE1;
 			//System.out.println(params);
 			request = RestAssured.given().
 					when().
@@ -3350,14 +3352,32 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	public ArrayList<String> db_Refund_Delete_MySQL(String TripID) throws SQLException, ClassNotFoundException {
 		ArrayList<String> data = new ArrayList<String>();
 		{
+
+			String MySQL_URL = "jdbc:mysql://172.17.14.174:3306/payment";
+			String MySQL_User = "cleartrip";
+			String MySQL_Password = "1nterl3av3";
 			String query =  "Delete from payments.refunds where ID = "+TripID;
-			Connection myCon = DriverManager.getConnection(MySQL_URL, MySQL_User, MySQL_Password);
-			if (myCon != null) {
-				ResultSet myRes = myCon.createStatement().executeQuery(query);
+			
+
+		    try (Connection myCon = DriverManager.getConnection(MySQL_URL, MySQL_User, MySQL_Password);
+		        java.sql.PreparedStatement stmt = myCon.prepareStatement(query)) {
+		      
+		      stmt.setInt(1, 2);
+		      stmt.executeUpdate();
+		      
+		      System.out.println("Record deleted successfully");
+			
+			
+			//Connection myCon = DriverManager.getConnection(MySQL_URL, MySQL_User, MySQL_Password);
+		/*	if (myCon != null) {
+				ResultSet myRes = myCon.createStatement().execute
 
 				myCon.close();
 			} else
-				Reporter.log("Connection not established");
+				Reporter.log("Connection not established");*/
+		}catch (SQLException e) {
+		      e.printStackTrace();
+		}
 		}
 		return data;
 	}

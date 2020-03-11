@@ -162,7 +162,7 @@
   <classes>
 		<class name="paymentsAPI.API_Binmanager"/>
 		<class name="paymentsAPI.API_Binmanager_Add_MC_Credit"/>
-		<class name="paymentsAPI.API_Binmanager_Get_Card"/>
+		<class name="paymentsAPI.API_Binmanager_Get_Card"/> 
 		<!-- <class name="paymentsAPI.API_Binmanager_Get_Multiple_Cards"/> -->
     </classes>
 </test>

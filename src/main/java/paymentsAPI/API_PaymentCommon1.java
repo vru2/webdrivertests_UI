@@ -227,7 +227,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String urlROR_MultiSearch_Reads ="/paymentservice/search/payments/v1?query=id:43622220,paymentType:WT";
 	String urlROR_MultiSearch_TripRef_Reads= "/paymentservice/search/payments/v1?query=appRef1:Q190809461122";
 	
-	String urlROR_Wallet_Trnx_Reads = "/paymentservice/search/walletTransactions/v1?query=walletDetailId:5155670";
+	String urlROR_Wallet_Trnx_Reads = "/paymentservice/search/walletTransactions/v1?query=walletDetailId:5154746";
 	
 	String urlROR_Wallet_GetWallet_Reads = "/payments/wallet/5789285/v2/getWallet";
 	String urlROR_GV_Details_Reads = "/paymentservice/search/gvDetails/v1?query=refundId:9367489";
@@ -498,20 +498,20 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		
 
 		else if(payType.equalsIgnoreCase("ROR_WalletFetch")) {
-			RestAssured.baseURI =urlReporting;
+			RestAssured.baseURI =urlWallet;
 			url= urlROR_MultiSearch_TripRef_Reads;
 			Reporter.log(urlReporting+url);
 		}
 
 
 		else if(payType.equalsIgnoreCase("ROR_MultiSearch_TripRef_Reads")) {
-			RestAssured.baseURI =urlWallet;
+			RestAssured.baseURI =urlReporting;
 			url= urlROR_MultiSearch_TripRef_Reads;
 			Reporter.log(urlReporting+url);
 		}
 		
 		else if(payType.equalsIgnoreCase("ROR_WalletGetV2_Reads")) {
-			RestAssured.baseURI =urlWallet;
+			RestAssured.baseURI =urlPay;
 			Reporter.log(urlWallet);
 			url= urlROR_WalletFetch_Reads;
 			Reporter.log(urlReporting+url);
@@ -2504,16 +2504,16 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 		else if(payType.equalsIgnoreCase("ROR_WalletTrnx_Reads")){
 
-			if(!resp.body().asString().contains("5990704")) {
-				Reporter.log("5990704 is not displayed");
+			if(!resp.body().asString().contains("5154746")) {
+				Reporter.log("5154746 is not displayed");
 				Assert.assertTrue(false);
 			}	
 		}
 
 		else if(payType.equalsIgnoreCase("ROR_WalletGet_Reads")){
 
-			if(!resp.body().asString().contains("3000331020000001")) {
-				Reporter.log("3000331020000001 is not displayed");
+			if(!resp.body().asString().contains("5789285")) {
+				Reporter.log("5789285 is not displayed");
 				Assert.assertTrue(false);
 			}	
 		}
@@ -2526,7 +2526,6 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			}	
 		}
 		
-
 		else if(payType.equalsIgnoreCase("ROR_Refund_Details")){
 
 			if(!resp.body().asString().contains("Recon Req")) {
@@ -3251,7 +3250,6 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			String MySQL_User = "payment";
 			String MySQL_Password = "P@yment@123";
 			String query =  "select ID from payment.refunds where STATUS='P' AND REFUND_AMOUNT!=0 AND REFUND_TYPE ='"+RefundType+"' ORDER BY CREATED_AT desc";
-			
 			Connection myCon = DriverManager.getConnection(MySQL_URL, MySQL_User, MySQL_Password);
 			if (myCon != null) {
 				ResultSet myRes = myCon.createStatement().executeQuery(query);

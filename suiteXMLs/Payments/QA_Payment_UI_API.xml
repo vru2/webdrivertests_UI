@@ -17,5 +17,4 @@
 				<suite-file path="QA_Payment_UI.xml"></suite-file>
 		</suite-files> 
 		
-
 </suite> 

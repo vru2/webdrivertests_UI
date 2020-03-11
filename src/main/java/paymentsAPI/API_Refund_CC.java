@@ -23,7 +23,7 @@ public class API_Refund_CC extends API_PaymentCommon1
 			String RefundID = db_CC.get(5);
 			Reporter.log("RefundID "+RefundID);
 			resp = refund("refund", RefundID);
-			validation("", resp);
+			//validation("", resp);
 			Thread.sleep(7000);
 			ArrayList<String> db_refundStatusCC =  db_Refund_Status(RefundID);
 			Reporter.log("Refund Status for ID "+RefundID+" is "+db_refundStatusCC.get(0));

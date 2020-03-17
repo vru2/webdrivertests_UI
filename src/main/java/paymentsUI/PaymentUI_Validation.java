@@ -78,7 +78,8 @@ public class PaymentUI_Validation extends PaymentNodeJS{
 
 	@Test(priority=3)
 	public void emptyCreditCardErrorValidation() throws Exception{
-		try {
+		try {	
+			click(driver, PaymentUI_CommonUtilities.creditCardPaymentxpath);
 			storedCardCheckbox(driver,PaymentUI_CommonUtilities.storedCardCheckbox);
 			convenienceText(driver,PaymentUI_CommonUtilities.convenienceTextxpath);
 			validateCCPageText(driver,PaymentUI_CommonUtilities.creditOrDebitCardPageTextxpath);

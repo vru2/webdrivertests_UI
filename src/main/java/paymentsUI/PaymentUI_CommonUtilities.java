@@ -80,7 +80,7 @@ public class PaymentUI_CommonUtilities {
 	protected static String errorTextInvalidCCDetailsxpath= "//div[contains(@class,'retry')]";
 	protected static String captchaErrorXpath= "//p[text()='captchaerrormessage']";
 	public static String captchaErrorName= "Please validate captcha";
-	public static String errorTextInvalidCC="There seems to be an error in the credentials entered. Please verify them and try again";
+	public static String errorTextInvalidCC="Error in credentials entered. Verify your details and try again.";
 	protected static String licenseAgreementxpath= "//span[contains(text(),'I understand and agree to the rules and restrictions of this fare, ')]/../label[contains(@class,'checkbox')]";
 	public static String licenseAgreementErrorText= "Please accept the terms and conditions to proceed with this booking.";
 	public static String licenseAgreementErrorTextXpath= "//p[text()='Please accept the terms and conditions to proceed with this booking.']";
@@ -93,7 +93,7 @@ public class PaymentUI_CommonUtilities {
 	protected static String imageNameMasterCard= "MasterCard SecureCode";
 	protected static String imageNameAmex= "SafeKey";
 	protected static String irctcLogoxpath= "//img[@class='irctcLogo']";
-	protected static String totalAmountWithTaxXpath= "//span[text()='(Total inclusive all taxes)']";
+	protected static String totalAmountWithTaxXpath= "//span[text()='Total inclusive all taxes']";
 	protected static String storedCardTextXpath= "//p[text()='Save this card and make single-click payments']";
 	public static String storedCardCheckbox= "//p[text()='Save this card and make single-click payments']/../label[contains(@class,'checkbox')]";
 	public static String paymentSuccessHeaderTextXpath= "//h1[text()='Your payment was successful!']";

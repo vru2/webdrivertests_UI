@@ -100,12 +100,12 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 				elementPresent(driver, getObjectPayment("HomePage_Confirm_Btn"), 5);
 				if (common.value("PaymentServer").equalsIgnoreCase("MYSQL")) {
 					Thread.sleep(500);
-					safeType(driver, getObjectPayment("HomePage_Host_ServerIp_Txt"), "172.17.26.11:8358/paymentservice");
+					smartType(driver, getObjectPayment("HomePage_Host_ServerIp_Txt"), "172.17.26.11:8358/paymentservice");
 				} else {
 					Thread.sleep(500);
-					safeType(driver, getObjectPayment("HomePage_Host_ServerIp_Txt"), "172.17.26.11:8070/paymentservice");
+					smartType(driver, getObjectPayment("HomePage_Host_ServerIp_Txt"), "172.17.26.11:8070/paymentservice");
 				}
-				safeClick(driver, getObjectPayment("HomePage_Confirm_Btn"));
+				smartClick(driver, getObjectPayment("HomePage_Confirm_Btn"));
 			}
 		}
 		elementVisible(driver, getObjectPayment("SelectPayment_Header"), 5);
@@ -502,9 +502,11 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 				safeType(driver, getObjectPayment("PaymentPage_TW_Paypal_Password"), platform.value("Paypal_Password"));
 				safeClick(driver, getObjectPayment("PaymentPage_TW_Paypal_Login"));
 				elementVisible(driver, getObjectPayment("PaymentPage_TW_Paypal_CC_CVV"), 20);
-				textPresent(driver, "PayPal is the safer, faster way to pay", 5);
+				textPresent(driver, "Cancel and return to Cleartrip", 5);
+				safeClick(driver, getObjectPayment("PaymentPage_TW_Paypal_Pay_Now_Btn"));
+				Thread.sleep(5000);
 				safeType(driver, getObjectPayment("PaymentPage_TW_Paypal_CC_CVV"), platform.value("Paypal_CVV"));
-				safeClick(driver, getObjectPayment("PaymentPage_TW_Paypal_CVV_Paynow_Btn"));
+				//safeClick(driver, getObjectPayment("PaymentPage_TW_Paypal_CVV_Paynow_Btn"));
 
 				elementVisible(driver, getObjectPayment("PaymentPage_TW_Paypal_3D_Page_Header"), 20);
 

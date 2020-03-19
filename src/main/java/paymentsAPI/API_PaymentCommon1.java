@@ -136,7 +136,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String Param7="\", \"card_type\": \"DEBIT\", \"country\": \"INDIA\",\"is_otp_eligible\": true,\"issuer_type\": \"VISA\",\"sub_type\": \"NA\"}";
 	String Params_Singlebincard_Visa_Credit=Param1+Param2+Param3+Param6;
 	String Params_Singlebincard_Visa_Debit=Param1+Param2+Param3+Param7;
-
+/*
 
 	String urlgetPay2 = "http://172.17.26.11:8070";
 	String urlPay = "http://172.17.26.11:8358";
@@ -151,10 +151,10 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String urlPromo_Used = "http://wallet-service.cltp.com:9001";
 	String urlReporting ="http://172.17.26.11:8272";
 	String urlReportingTS ="http://172.17.26.11:9031";
-	String urlCardInfo_Service="http://172.17.26.11:8331";
+	String urlCardInfo_Service="http://172.17.26.11:8331";*/
 	
 
-	/*
+	
 	
 
 	String urlgetPay = "http://172.17.26.11:8070";
@@ -171,7 +171,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String urlrewards_URI = "http://rewardsservice.cltp.com:9001/";
 	String urlPromo_Used = "http://wallet-service.cltp.com:9001";
 	String urlReporting ="http://172.17.26.11:8272";
-	String urlReportingTS ="http://172.17.26.11:9031";*/
+	String urlReportingTS ="http://172.17.26.11:9031";
 
 	String urlInit = "/paymentservice/service/otp/init";
 	String urlProcess = "/paymentservice/service/otp/process";

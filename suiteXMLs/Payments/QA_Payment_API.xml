@@ -63,9 +63,9 @@
 
 <test name="API Promo service" preserve-order="true" parallel="true">
     <classes>
-    <!--   <class name="paymentsAPI.API_PromoService"/> 
+      <class name="paymentsAPI.API_PromoService"/> 
       <class name="paymentsAPI.API_Promo_Activate"/>  
-      <class name="paymentsAPI.API_Promo_Used"/>  -->
+      <class name="paymentsAPI.API_Promo_Used"/> 
     </classes>
 </test>
 
@@ -124,7 +124,7 @@
 
 <test name="API PayBack" preserve-order="true" parallel="true">
     <classes>
-     <!--  <class name="paymentsAPI.API_RewardPayback"/>  -->
+      <class name="paymentsAPI.API_RewardPayback"/> 
     </classes>
 </test>
 

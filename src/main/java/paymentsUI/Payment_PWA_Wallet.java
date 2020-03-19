@@ -26,9 +26,9 @@ public class Payment_PWA_Wallet extends PaymentNodeJS {
 	
 	@BeforeClass
 	public String Setup() throws IOException, InterruptedException {
-		paymenturl=getPaymenturl(driver,param,apiurl);
+		/*paymenturl=getPaymenturl(driver,param,apiurl);
 		  this.driver = getPWA(driver); baseUrl = getBaseUrl("com");
-		  Thread.sleep(3000);
+		  Thread.sleep(3000);*/
 		 
 	    return paymenturl;
 	}
@@ -49,7 +49,7 @@ public class Payment_PWA_Wallet extends PaymentNodeJS {
 	  }
 	 
 	   Reporter.log("Unsigned validation is passed"); 
-	   cookie(driver);
+	  // cookie(driver);
 	   refreshPage(driver); 
 	   Thread.sleep(8000);
 	   textPresent_Log(driver,"Select payment option",60);

@@ -117,7 +117,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String Params_RORCreate_Payment = "[{\"payment\":{\"id\":null,\"trip_id\":46198930,\"txn_id\":75300328,\"payment_type\":\"IV\",\"amount\":\"1000.0\",\"created_at\":\"2019-11-20T18:40:29+05:30\",\"updated_at\":\"2019-11-20T18:40:29+05:30\",\"seq_no\":3,\"status\":\"S\",\"description\":\"created by API\",\"currency\":\"INR\",\"order_info1\":123,\"order_info2\":345,\"app_ref1\":\"Q191109570525\",\"app_ref2\":75300328,\"neglist_id\":\"y\",\"poslist_id\":109,\"linkable_id\":null,\"linkable_type\":null,\"user_message\":null,\"pan_number\":null,\"payment_category\":\"B\",\"merchant_txn_ref\":\"12312\",\"payment_subtype\":\"ADCB\",\"express_checkout\":null,\"emi_count\":null,\"emi_fee\":null,\"ref_payment_id\":null,\"ivr_detail\":{\"id\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"seq_no\":null,\"payment_id\":null,\"transaction_ref_no\":\"Q234334\",\"card_number\":\"1234 2344 3434\",\"response_message\":\"testmsg\",\"gateway_txn_id\":12345,\"gateway\":\"ivr_gateway\",\"status\":null,\"credential_name\":\"test\"}}}]";
 	String Params_RORCreate_Profile_List = "{\"card_number_prefix\":\"12345679\",\"ip_address\":\"12.34.56.81\",\"phone_number\":\"121212121221\",\"booked_by_email_id\":\"123@1223.com\",\"card_holder_email_id\":\"123@1223.com\",\"status\":\"T\",\"list_type\":0,\"temporary\":1,\"user_id\":\"123456543\"}";
 	String Params_RORSearch_Profile_List = "{\"list_type\":0,\"page_number\":2911}";
-	String Params_RORCreate_Refund = "{\"isFullWalletRefund\":false,\"tripRef\":\"Q191204588938\",\"amount\":4314,\"description\":\"Autaomtion REFUND\",\"txnid\":";
+	String Params_RORCreate_Refund = "{\"isFullWalletRefund\":false,\"tripRef\":\"Q191204588938\",\"amount\":10,\"description\":\"Autaomtion REFUND\",\"txnid\":";
 	String ParamsROR_Recon = "{\"tripRef\":\"Q191203587976\",\"txnId\":";
 
 	String s=RandomStringUtils.randomAlphabetic(5);
@@ -136,9 +136,9 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String Param7="\", \"card_type\": \"DEBIT\", \"country\": \"INDIA\",\"is_otp_eligible\": true,\"issuer_type\": \"VISA\",\"sub_type\": \"NA\"}";
 	String Params_Singlebincard_Visa_Credit=Param1+Param2+Param3+Param6;
 	String Params_Singlebincard_Visa_Debit=Param1+Param2+Param3+Param7;
-/*
 
-	String urlgetPay2 = "http://172.17.26.11:8070";
+
+//String urlgetPay2 = "http://172.17.26.11:8070";
 	String urlPay = "http://172.17.26.11:8358";
 	String promoURL = "http://172.17.26.11:8360";
 	String urlRewards = "http://172.17.12.82:9080";
@@ -151,10 +151,10 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String urlPromo_Used = "http://wallet-service.cltp.com:9001";
 	String urlReporting ="http://172.17.26.11:8272";
 	String urlReportingTS ="http://172.17.26.11:9031";
-	String urlCardInfo_Service="http://172.17.26.11:8331";*/
+	String urlCardInfo_Service="http://172.17.26.11:8331";
 	
 
-	
+	/*
 	
 
 	String urlgetPay = "http://172.17.26.11:8070";
@@ -171,7 +171,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String urlrewards_URI = "http://rewardsservice.cltp.com:9001/";
 	String urlPromo_Used = "http://wallet-service.cltp.com:9001";
 	String urlReporting ="http://172.17.26.11:8272";
-	String urlReportingTS ="http://172.17.26.11:9031";
+	String urlReportingTS ="http://172.17.26.11:9031";*/
 
 	String urlInit = "/paymentservice/service/otp/init";
 	String urlProcess = "/paymentservice/service/otp/process";

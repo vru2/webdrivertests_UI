@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 import io.restassured.response.Response;
 
 public class API_ROR_Writes extends API_PaymentCommon1
-{/*
+{
 	@Test(alwaysRun=true)
 	public void ROR_Fetch_PaymentByID() throws IOException, JSONException{
 		Response resp ;		
@@ -99,7 +99,7 @@ public class API_ROR_Writes extends API_PaymentCommon1
 		resp = payGet1("ROR_MultiSearch","");	
 		validation("ROR_MultiSearch", resp); 
 	}
-	*/
+	
 	
 	/*@Test(alwaysRun=true)
 	public void ROR_Update_GW_Status() throws Exception{
@@ -108,11 +108,6 @@ public class API_ROR_Writes extends API_PaymentCommon1
 		validation("RORUpdate_GW_Status", resp); 
 	}*/
 	
-	@Test(alwaysRun=true)
-	public void ROR_Recon() throws Exception{
-		Response resp ;		
-		resp = payPost("ROR_Recon","");	
-		validation("ROR_Recon", resp); 
-	}
+	
 	
 }

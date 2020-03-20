@@ -143,6 +143,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String promoURL = "http://172.17.26.11:8360";
 	String urlRewards = "http://172.17.12.82:9080";
 	String urlWallet = "http://172.17.26.11:8359";
+	String urlCardInfo_Service="http://172.17.26.11:8331";
 
 	String urlrewards_validate = "http://172.17.26.11:8358";
 	String urlrewards_validate1 = "http://172.17.26.11:8070";
@@ -151,10 +152,9 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String urlPromo_Used = "http://wallet-service.cltp.com:9001";
 	String urlReporting ="http://172.17.26.11:8272";
 	String urlReportingTS ="http://172.17.26.11:9031";
-	String urlCardInfo_Service="http://172.17.26.11:8331";*/
 	
 
-	
+	*/
 	
 
 	String urlgetPay = "http://172.17.26.11:8070";

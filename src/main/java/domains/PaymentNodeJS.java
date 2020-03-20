@@ -103,7 +103,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 					smartType(driver, getObjectPayment("HomePage_Host_ServerIp_Txt"), "172.17.26.11:8358/paymentservice");
 				} else {
 					Thread.sleep(500);
-					smartType(driver, getObjectPayment("HomePage_Host_ServerIp_Txt"), "172.17.26.11:8070/paymentservice");
+					//smartType(driver, getObjectPayment("HomePage_Host_ServerIp_Txt"), "172.17.8.218:9001/paymentservice");
 				}
 				smartClick(driver, getObjectPayment("HomePage_Confirm_Btn"));
 			}

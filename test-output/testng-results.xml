@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+  <reporter-output>
+    <line>
+      <![CDATA[ORACLE Payment service is called]]>
+    </line>
+    <line>
+      <![CDATA[<p><a href'E:\BitbucketNew\webdrivertests\ScreenShots\paymentNodeJS_SC_Fri_20Mar2020_072306.png'>screenshot</a></p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>Screenshot Name :paymentNodeJS_SC_Fri_20Mar2020_072306.png</p>]]>
+    </line>
+    <line>
+      <![CDATA[Screenshot Path :paymentNodeJS_SC_Fri_20Mar2020_072306.png]]>
+    </line>
+    <line>
+      <![CDATA[<p>http://172.17.15.176:9080/failure?tripRef=T4656645553</p>]]>
+    </line>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="99231" started-at="2020-03-20T13:51:28Z" finished-at="2020-03-20T13:53:07Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="99231" started-at="2020-03-20T13:51:28Z" finished-at="2020-03-20T13:53:07Z">
+      <class name="paymentsUI.Payment_NodeJS_NB_CitiBank">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:paymentsUI.Payment_NodeJS_NB_CitiBank@41ee392b]" name="setUp" is-config="true" duration-ms="5131" started-at="2020-03-20T13:51:28Z" finished-at="2020-03-20T13:51:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="FAIL" signature="paymentNodeJS_SC()[pri:0, instance:paymentsUI.Payment_NodeJS_NB_CitiBank@41ee392b]" name="paymentNodeJS_SC" duration-ms="92959" started-at="2020-03-20T13:51:33Z" finished-at="2020-03-20T13:53:06Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Failure! Element not Visible!]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Failure! Element not Visible!
+at org.testng.AssertJUnit.fail(AssertJUnit.java:59)
+at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:24)
+at common.WrapperMethod.elementPresent(WrapperMethod.java:633)
+at common.WrapperMethod.safeClick(WrapperMethod.java:842)
+at domains.PaymentNodeJS.paymentNodeJS_Make_Payment(PaymentNodeJS.java:353)
+at paymentsUI.Payment_NodeJS_NB_CitiBank.paymentNodeJS_SC(Payment_NodeJS_NB_CitiBank.java:25)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+            <line>
+              <![CDATA[ORACLE Payment service is called]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- paymentNodeJS_SC -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:paymentsUI.Payment_NodeJS_NB_CitiBank@41ee392b]" name="afterMethod" is-config="true" duration-ms="360" started-at="2020-03-20T13:53:06Z" finished-at="2020-03-20T13:53:06Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=paymentNodeJS_SC status=FAILURE method=Payment_NodeJS_NB_CitiBank.paymentNodeJS_SC()[pri:0, instance:paymentsUI.Payment_NodeJS_NB_CitiBank@41ee392b] output=ORACLE Payment service is called]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[<p><a href'E:\BitbucketNew\webdrivertests\ScreenShots\paymentNodeJS_SC_Fri_20Mar2020_072306.png'>screenshot</a></p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>Screenshot Name :paymentNodeJS_SC_Fri_20Mar2020_072306.png</p>]]>
+            </line>
+            <line>
+              <![CDATA[Screenshot Path :paymentNodeJS_SC_Fri_20Mar2020_072306.png]]>
+            </line>
+            <line>
+              <![CDATA[<p>http://172.17.15.176:9080/failure?tripRef=T4656645553</p>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:paymentsUI.Payment_NodeJS_NB_CitiBank@41ee392b]" name="tearDown" is-config="true" duration-ms="739" started-at="2020-03-20T13:53:06Z" finished-at="2020-03-20T13:53:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- paymentsUI.Payment_NodeJS_NB_CitiBank -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

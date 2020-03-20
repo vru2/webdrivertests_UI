@@ -139,7 +139,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 
 //String urlgetPay2 = "http://172.17.26.11:8070";
-	String urlPay = "http://172.17.26.11:8358";
+	/*String urlPay = "http://172.17.26.11:8358";
 	String promoURL = "http://172.17.26.11:8360";
 	String urlRewards = "http://172.17.12.82:9080";
 	String urlWallet = "http://172.17.26.11:8359";
@@ -151,10 +151,10 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String urlPromo_Used = "http://wallet-service.cltp.com:9001";
 	String urlReporting ="http://172.17.26.11:8272";
 	String urlReportingTS ="http://172.17.26.11:9031";
-	String urlCardInfo_Service="http://172.17.26.11:8331";
+	String urlCardInfo_Service="http://172.17.26.11:8331";*/
 	
 
-	/*
+	
 	
 
 	String urlgetPay = "http://172.17.26.11:8070";
@@ -171,7 +171,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String urlrewards_URI = "http://rewardsservice.cltp.com:9001/";
 	String urlPromo_Used = "http://wallet-service.cltp.com:9001";
 	String urlReporting ="http://172.17.26.11:8272";
-	String urlReportingTS ="http://172.17.26.11:9031";*/
+	String urlReportingTS ="http://172.17.26.11:9031";
 
 	String urlInit = "/paymentservice/service/otp/init";
 	String urlProcess = "/paymentservice/service/otp/process";

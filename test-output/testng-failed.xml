@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [Platform Services API]" parallel="tests">
+  <parameter name="hostvalue" value="qa2"/>
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="common.RemoveDuplicateResults"/>
+    <listener class-name="common.RetryListener"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+  </listeners>
+  <test thread-count="1" name="TripService Updatebooking(failed)" parallel="tests">
+    <classes>
+      <class name="tripServices.TS_Amendment">
+        <methods>
+          <include name="Tripserviceairputcall"/>
+        </methods>
+      </class> <!-- tripServices.TS_Amendment -->
+    </classes>
+  </test> <!-- TripService Updatebooking(failed) -->
+  <test thread-count="1" name="Eventbus API(failed)" parallel="methods">
+    <classes>
+      <class name="tripServices.Eventbus_API">
+        <methods>
+          <include name="eventbus"/>
+        </methods>
+      </class> <!-- tripServices.Eventbus_API -->
+    </classes>
+  </test> <!-- Eventbus API(failed) -->
+</suite> <!-- Failed suite [Platform Services API] -->

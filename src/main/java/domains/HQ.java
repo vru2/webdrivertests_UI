@@ -2170,16 +2170,18 @@ System.out.println("response string=="+responseString);*/
 		HttpPost httppostBook = new HttpPost(getBaseUrl(domain) + "/automation/book");
 		//HttpPost httppostBook = new HttpPost("https://qa2.cleartrip.com/automation/book");
 		httppostBook.setConfig(requestConfig);
-
-		JsonObject jsonObject = Json.createObjectBuilder().add("email_id", rubyAPITrips.value(userMail))
-				.add("user_id", rubyAPITrips.value(userId)).add("trip_ref", rubyAPITrips.value(tripType))
-				.add("host", common.value("host")).build();
-
-		String jsonString = jsonObject.toString();
-		Reporter.log("Call made to ruby API is : " + jsonString);
-		System.out.println("Call made to ruby API is : " + jsonString);
-		StringEntity se = new StringEntity(jsonString);
-		httppostBook.setEntity(se);
+		/*
+		 * JsonObject jsonObject = Json.createObjectBuilder().add("email_id",
+		 * rubyAPITrips.value(userMail)) .add("user_id",
+		 * rubyAPITrips.value(userId)).add("trip_ref", rubyAPITrips.value(tripType))
+		 * .add("host", common.value("host")).build();
+		 */
+		/*
+		 * String jsonString = jsonObject.toString();
+		 * Reporter.log("Call made to ruby API is : " + jsonString);
+		 * System.out.println("Call made to ruby API is : " + jsonString); StringEntity
+		 * se = new StringEntity(jsonString); httppostBook.setEntity(se);
+		 */
 
 		watch.start();
 		HttpResponse response = http.execute(httppostBook);

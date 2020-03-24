@@ -67,9 +67,9 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		String urlPromo_Used = "http://wallet-service.cltp.com:9001";
 		String urlReporting ="http://172.17.26.11:8272";
 		String urlReportingTS ="http://172.17.26.11:9031";
-	*/
+	
 		
-		
+		*/
 		
 	
 	

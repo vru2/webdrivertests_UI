@@ -1,0 +1,237 @@
+<html>
+<head>
+<title>TestNG:  Whatsapp</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Whatsapp</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>8/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Fri Mar 20 16:20:45 IST 2020</td>
+</tr>
+<tr><td>Total time:</td><td>11 seconds (11133 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='whatsappServiceProd.WhatsappCheckContacts.checkContacts()'><b>checkContacts</b><br>Test class: whatsappServiceProd.WhatsappCheckContacts<br/>
+<a href="#Output-920723405" onClick='toggleBox("Output-920723405", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-920723405" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-920723405">
+Test case passed<br/>
+{"contacts":[{"input":"96639","status":"invalid"},{"input":"9663949690","status":"valid","wa_id":"919663949690"}],"meta":{"api_status":"stable","version":"2.25.5"}}<br/>
+Status code == 200<br/>
+</div>
+</td>
+<td></td>
+<td>2</td>
+<td>whatsappServiceProd.WhatsappCheckContacts@4386f16</td></tr>
+<tr>
+<td title='whatsappServiceProd.WhatsappUserMessage.message()'><b>message</b><br>Test class: whatsappServiceProd.WhatsappUserMessage<br/>
+<a href="#Output-1712879827" onClick='toggleBox("Output-1712879827", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1712879827" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1712879827">
+Test case passed<br/>
+{
+  "messageId" : "20032020-355c228d-f04e-4871-b48b-389ef2a13d5f",
+  "status" : "success"
+}<br/>
+Status code == 202<br/>
+Message Id == 20032020-355c228d-f04e-4871-b48b-389ef2a13d5f<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>whatsappServiceProd.WhatsappUserMessage@4690b489</td></tr>
+<tr>
+<td title='whatsappServiceProd.WhatsappOptinFlow.message()'><b>message</b><br>Test class: whatsappServiceProd.WhatsappOptinFlow<br/>
+<a href="#Output-6539317" onClick='toggleBox("Output-6539317", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-6539317" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-6539317">
+Test case passed<br/>
+{
+  "requestId" : "e9043352-e767-4628-8819-491a0d5817c8",
+  "mobileNumber" : "9663949690",
+  "isOptedin" : true,
+  "isValidWhatsappNumber" : true,
+  "optInTimeStamp" : "2019-01-11T04:45:52Z",
+  "optOutTimeStamp" : null,
+  "whatsappUsername" : "919663949690",
+  "countryCode" : null,
+  "errormessage" : "User already opted in"
+}<br/>
+Status code == 200<br/>
+requestId == e9043352-e767-4628-8819-491a0d5817c8<br/>
+isOptedin == true<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>whatsappServiceProd.WhatsappOptinFlow@79b06cab</td></tr>
+<tr>
+<td title='whatsappServiceProd.WhatsappOptinFlowStatus.message()'><b>message</b><br>Test class: whatsappServiceProd.WhatsappOptinFlowStatus<br/>
+<a href="#Output-1935949586" onClick='toggleBox("Output-1935949586", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1935949586" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1935949586">
+Test case passed<br/>
+{
+  "requestId" : "e9043352-e767-4628-8819-491a0d5817c8",
+  "mobileNumber" : "9663949690",
+  "isOptedin" : true,
+  "isValidWhatsappNumber" : true,
+  "optInTimeStamp" : "2019-01-11T04:45:52Z",
+  "optOutTimeStamp" : null,
+  "whatsappUsername" : "919663949690",
+  "countryCode" : "91",
+  "errormessage" : null
+}<br/>
+Status code == 200<br/>
+requestId == e9043352-e767-4628-8819-491a0d5817c8<br/>
+isOptedin == true<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>whatsappServiceProd.WhatsappOptinFlowStatus@3eb7fc54</td></tr>
+<tr>
+<td title='whatsappServiceProd.WhatsappMultilanguageSupport.message()'><b>message</b><br>Test class: whatsappServiceProd.WhatsappMultilanguageSupport<br/>
+<a href="#Output-40200642" onClick='toggleBox("Output-40200642", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-40200642" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-40200642">
+Test case passed<br/>
+{
+  "messageId" : "20032020-0c8e64a0-49f2-4446-bf0b-52f9cf4e11e0",
+  "status" : "success"
+}<br/>
+Status code == 202<br/>
+Message Id == 20032020-0c8e64a0-49f2-4446-bf0b-52f9cf4e11e0<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>whatsappServiceProd.WhatsappMultilanguageSupport@7f552bd3</td></tr>
+<tr>
+<td title='whatsappServiceProd.WhatsappUserMessageWithAttachment.message()'><b>message</b><br>Test class: whatsappServiceProd.WhatsappUserMessageWithAttachment<br/>
+<a href="#Output-1827048783" onClick='toggleBox("Output-1827048783", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1827048783" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1827048783">
+Test case passed<br/>
+{
+  "messageId" : "20032020-ef452f65-edbe-40c1-9bb9-e5a1d5d4f60d",
+  "status" : "success"
+}<br/>
+Status code == 202<br/>
+Message Id == 20032020-ef452f65-edbe-40c1-9bb9-e5a1d5d4f60d<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>whatsappServiceProd.WhatsappUserMessageWithAttachment@3c22fc4c</td></tr>
+<tr>
+<td title='whatsappServiceProd.WhatsappWebhookMessage.message()'><b>message</b><br>Test class: whatsappServiceProd.WhatsappWebhookMessage<br/>
+<a href="#Output-2040719589" onClick='toggleBox("Output-2040719589", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-2040719589" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-2040719589">
+Test case passed<br/>
+{
+  "messageId" : "20032020-b06569a7-88e8-44da-b817-065c6c9a0304"
+}<br/>
+Status code == 200<br/>
+messageId == 20032020-b06569a7-88e8-44da-b817-065c6c9a0304<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>whatsappServiceProd.WhatsappWebhookMessage@460d0a57</td></tr>
+<tr>
+<td title='whatsappServiceProd.WhatsappDeliveryFeedback.message()'><b>message</b><br>Test class: whatsappServiceProd.WhatsappDeliveryFeedback<br/>
+<a href="#Output-1360254779" onClick='toggleBox("Output-1360254779", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1360254779" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1360254779">
+Service URL : http://whatsappapi.cltp.com:9001/r3/whatsapp/message<br/>
+Test case passed<br/>
+{
+  "messageId" : "20032020-6b7055a2-cde1-40c9-a070-6162ea627d2b",
+  "status" : "success"
+}<br/>
+Status code == 202<br/>
+Message Id == 20032020-6b7055a2-cde1-40c9-a070-6162ea627d2b<br/>
+Test case passed<br/>
+Status code ==  200<br/>
+</div>
+</td>
+<td></td>
+<td>11</td>
+<td>whatsappServiceProd.WhatsappDeliveryFeedback@363ee3a2</td></tr>
+</table><p>
+</body>
+</html>

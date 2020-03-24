@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TripService Logbooking"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="0.285">
+  <properties />
+  
+  
+            <testcase name="localPostCall" time="0.285" classname="tripServicesProd.TS_LogBooking_Local" />
+      
+</testsuite>

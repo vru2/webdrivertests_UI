@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="SMS"
+           tests="2"
+           failures="1"
+           errors="0"
+           skipped="1"
+           time="2.107">
+  <properties />
+            <testcase name="smsservice" time="0.216" classname="smsservice.DomesticSMS">
+                <failure type="io.restassured.path.json.exception.JsonPathException"
+                  message="Failed to parse the JSON document"
+              >
+<![CDATA[io.restassured.path.json.exception.JsonPathException: Failed to parse the JSON document
+  io.restassured.path.json.JsonPath$ExceptionCatcher.invoke(JsonPath.java:930)
+  io.restassured.path.json.JsonPath$4.doParseWith(JsonPath.java:895)
+  io.restassured.path.json.JsonPath$JsonParser.parseWith(JsonPath.java:974)
+  io.restassured.path.json.JsonPath.get(JsonPath.java:201)
+  smsservice.SMSCommon.validation(SMSCommon.java:48)
+  smsservice.DomesticSMS.smsservice(DomesticSMS.java:14)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+  org.testng.internal.Invoker.retryFailed(Invoker.java:839)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1010)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+  org.testng.TestRunner.privateRun(TestRunner.java:648)
+  org.testng.TestRunner.run(TestRunner.java:505)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+  org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
+  org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
+  org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
+  java.util.concurrent.FutureTask.run(FutureTask.java:266)
+  java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+  java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+  java.lang.Thread.run(Thread.java:748)
+Caused by: groovy.json.JsonException: Lexing failed on line: 1, column: 1, while reading '<', no possible valid JSON value or punctuation could be recognized.
+  groovy.json.JsonLexer.nextToken(JsonLexer.java:85)
+  groovy.json.JsonLexer$nextToken$0.call(Unknown Source)
+  io.restassured.internal.path.json.ConfigurableJsonSlurper.parse(ConfigurableJsonSlurper.groovy:97)
+  io.restassured.internal.path.json.ConfigurableJsonSlurper$parse$0.callCurrent(Unknown Source)
+  io.restassured.internal.path.json.ConfigurableJsonSlurper.parseText(ConfigurableJsonSlurper.groovy:83)
+  io.restassured.path.json.JsonPath$4$1.method(JsonPath.java:893)
+  io.restassured.path.json.JsonPath$ExceptionCatcher.invoke(JsonPath.java:928)
+  io.restassured.path.json.JsonPath$4.doParseWith(JsonPath.java:895)
+  io.restassured.path.json.JsonPath$JsonParser.parseWith(JsonPath.java:974)
+  io.restassured.path.json.JsonPath.get(JsonPath.java:201)
+  smsservice.SMSCommon.validation(SMSCommon.java:48)
+  smsservice.DomesticSMS.smsservice(DomesticSMS.java:14)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+  org.testng.internal.Invoker.retryFailed(Invoker.java:839)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1010)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+  org.testng.TestRunner.privateRun(TestRunner.java:648)
+  org.testng.TestRunner.run(TestRunner.java:505)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+  org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
+  org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
+  org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
+  java.util.concurrent.FutureTask.run(FutureTask.java:266)
+  java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+  java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+  java.lang.Thread.run(Thread.java:748)
+]]>
+      </failure>
+
+          </testcase>
+  
+            <testcase name="smsservice" time="0.0" classname="smsservice.DomesticSMS">
+          <skipped />
+    </testcase>
+  
+  
+</testsuite>

@@ -19,6 +19,7 @@ public class TS_LogBooking_Trains extends TripserviceCommon{
 	 resp=TripservicePostcall(params6,headersForTripservicepostcall(),url);
 	 validation(resp);
 	 System.out.println(resp.asString());
+	 Thread.sleep(4000);
 	 DBValidation_TxnTrains(resp, "O");		
 	}
 	}

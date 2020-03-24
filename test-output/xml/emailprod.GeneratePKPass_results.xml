@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="emailprod"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="0.947">
+  <properties />
+  
+  
+            <testcase name="generatePKPass" time="0.947" classname="emailprod.GeneratePKPass" />
+      
+</testsuite>

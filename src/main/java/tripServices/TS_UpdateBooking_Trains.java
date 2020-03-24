@@ -33,7 +33,6 @@ public class TS_UpdateBooking_Trains extends TripserviceCommon {
 		 * validationforputtrains(resp1); }
 		 */	
 		Thread.sleep(4000);
-		Thread.sleep(10000);
 		 DBValidation_TxnTrains(resp, "C");	
  }
 

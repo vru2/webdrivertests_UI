@@ -27,6 +27,46 @@ import paymentsUI.PaymentUI_CommonUtilities;
 
 public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 {	
+
+	//String urlgetPay2 = "http://172.17.26.11:8070"; 
+    /*				
+		String urlPay = "http://172.17.26.11:8358";
+		String promoURL = "http://172.17.26.11:8360";
+		String urlRewards = "http://172.17.12.82:9080";
+		String urlWallet = "http://172.17.26.11:8359";
+		String urlCardInfo_Service="http://172.17.26.11:8331";
+
+		String urlrewards_validate = "http://172.17.26.11:8358";
+		String urlrewards_validate1 = "http://172.17.26.11:8070";
+		String urlrewards_payURI1 ="http://paymentservice.cltp.com:9001";
+		String urlrewards_URI1 = "http://rewardsservice.cltp.com:9001/";
+		String urlPromo_Used = "http://wallet-service.cltp.com:9001";
+		String urlReporting ="http://172.17.26.11:8272";
+		String urlReportingTS ="http://172.17.26.11:9031";	
+		*/
+
+		String urlgetPay = "http://172.17.26.11:8070";
+		String urlPay = "http://172.17.8.218:9001";
+		String urlRefundNew = "http://172.17.8.218:9001";
+		String promoURL = "http://172.17.26.11:7999";
+		String urlRewards = "http://172.17.12.82:9080";
+		String urlWallet = "http://172.17.26.11:8071";
+		String urladcb_validat = "http://172.17.26.11:8070";
+		String urlCardInfo_Service="http://172.17.26.11:8331";
+
+		String urlrewards_validate = "http://172.17.26.11:8070";
+		String urlrewards_payURI ="http://paymentservice.cltp.com:9001";
+		String urlrewards_URI = "http://rewardsservice.cltp.com:9001/";
+		String urlPromo_Used = "http://wallet-service.cltp.com:9001";
+		String urlReporting ="http://172.17.26.11:8272";
+		String urlReportingTS ="http://172.17.26.11:9031";
+	
+		
+		
+		
+	
+	
+	
 	String paramsCC ="[{\"payment\":{\"seq_no\":1,\"trip_id\":106562332,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":276,\"payment_category\":\"B\",\"fraud_system_invocation\":\"Y\",\"ui_version\":\"v2\",\"customer_detail\":{\"ip_address\":\"119.82.73.123\",\"mobile\":\"9986696785\",\"email\":\"cltppayment@gmail.com\",\"firstName\":\"test\"},\"app_ref1\":\"Q18110926800\",\"app_ref2\":\"167823462\",\"itinerary_id\":\"683a3a6bec-4e58-422a-a2c9-90707b1e5a12\",\"payment_type\":\"CC\",\"amount\":100.99,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"9W/362/DEL/BOM/201811XXXXXX00\",\"order_info2\":\"Kiran Kumar\",\"source_type\":\"ACCOUNT\",\"user_id\":85721640,\"company_id\":110340,\"app_return_info\":{\"url\":\"https://www.cleartrip.com/flights/itinerary/683a3a6bec-4e58-422a-a2c9-90707b1e5a12/book\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://book-flights.cltp.com:9001/r3/book/flights/itinerary/683a3a6bec-4e58-422a-a2c9-90707b1e5a12/book-internal?ll=INFO\"},\"host_name\":\"qa2.cleartrip.com\",\"card_detail\":{\"card_number\":\"5123456789012346\",\"card_type_id\":1,\"expiry_month\":\"05\",\"expiry_year\":\"2020\",\"cvv\":\"123\",\"name\":\"CleartripCard\",\"billto_detail\":{\"firstname\":\"test\",\"lastname\":\"test\",\"address1\":\"Cleartrip JP Nagar\",\"city_name\":\"Bangalore\",\"state_name\":\"Karnataka\",\"country_name\":\"India\",\"postal_code\":\"560076\"}},\"user_agent\":\"Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko\"}}]";
 	String paramsCCVISA ="[{\"payment\":{\"seq_no\":1,\"trip_id\":106562332,\"app_userid\":10001,\"product_type\":\"VISA\",\"high_risk\":false,\"d_plus_x_in_hours\":276,\"payment_category\":\"B\",\"fraud_system_invocation\":\"Y\",\"ui_version\":\"v2\",\"customer_detail\":{\"ip_address\":\"119.82.73.123\",\"mobile\":\"9986696785\",\"email\":\"cltppayment@gmail.com\",\"firstName\":\"test\"},\"app_ref1\":\"Q18110926800\",\"app_ref2\":\"167823462\",\"itinerary_id\":\"683a3a6bec-4e58-422a-a2c9-90707b1e5a12\",\"payment_type\":\"CC\",\"amount\":100.99,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"9W/362/DEL/BOM/201811XXXXXX00\",\"order_info2\":\"Kiran Kumar\",\"source_type\":\"ACCOUNT\",\"user_id\":85721640,\"company_id\":110340,\"app_return_info\":{\"url\":\"https://www.cleartrip.com/flights/itinerary/683a3a6bec-4e58-422a-a2c9-90707b1e5a12/book\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://book-flights.cltp.com:9001/r3/book/flights/itinerary/683a3a6bec-4e58-422a-a2c9-90707b1e5a12/book-internal?ll=INFO\"},\"host_name\":\"qa2.cleartrip.com\",\"card_detail\":{\"card_number\":\"5123456789012346\",\"card_type_id\":1,\"expiry_month\":\"05\",\"expiry_year\":\"2020\",\"cvv\":\"123\",\"name\":\"CleartripCard\",\"billto_detail\":{\"firstname\":\"test\",\"lastname\":\"test\",\"address1\":\"Cleartrip JP Nagar\",\"city_name\":\"Bangalore\",\"state_name\":\"Karnataka\",\"country_name\":\"India\",\"postal_code\":\"560076\"}},\"user_agent\":\"Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko\"}}]";
 
@@ -117,7 +157,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String Params_RORCreate_Payment = "[{\"payment\":{\"id\":null,\"trip_id\":46198930,\"txn_id\":75300328,\"payment_type\":\"IV\",\"amount\":\"1000.0\",\"created_at\":\"2019-11-20T18:40:29+05:30\",\"updated_at\":\"2019-11-20T18:40:29+05:30\",\"seq_no\":3,\"status\":\"S\",\"description\":\"created by API\",\"currency\":\"INR\",\"order_info1\":123,\"order_info2\":345,\"app_ref1\":\"Q191109570525\",\"app_ref2\":75300328,\"neglist_id\":\"y\",\"poslist_id\":109,\"linkable_id\":null,\"linkable_type\":null,\"user_message\":null,\"pan_number\":null,\"payment_category\":\"B\",\"merchant_txn_ref\":\"12312\",\"payment_subtype\":\"ADCB\",\"express_checkout\":null,\"emi_count\":null,\"emi_fee\":null,\"ref_payment_id\":null,\"ivr_detail\":{\"id\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"seq_no\":null,\"payment_id\":null,\"transaction_ref_no\":\"Q234334\",\"card_number\":\"1234 2344 3434\",\"response_message\":\"testmsg\",\"gateway_txn_id\":12345,\"gateway\":\"ivr_gateway\",\"status\":null,\"credential_name\":\"test\"}}}]";
 	String Params_RORCreate_Profile_List = "{\"card_number_prefix\":\"12345679\",\"ip_address\":\"12.34.56.81\",\"phone_number\":\"121212121221\",\"booked_by_email_id\":\"123@1223.com\",\"card_holder_email_id\":\"123@1223.com\",\"status\":\"T\",\"list_type\":0,\"temporary\":1,\"user_id\":\"123456543\"}";
 	String Params_RORSearch_Profile_List = "{\"list_type\":0,\"page_number\":2911}";
-	String Params_RORCreate_Refund = "{\"isFullWalletRefund\":false,\"tripRef\":\"Q191204588938\",\"amount\":4314,\"description\":\"Autaomtion REFUND\",\"txnid\":";
+	String Params_RORCreate_Refund = "{\"isFullWalletRefund\":false,\"tripRef\":\"Q191204588938\",\"amount\":10,\"description\":\"Autaomtion REFUND\",\"txnid\":";
 	String ParamsROR_Recon = "{\"tripRef\":\"Q191203587976\",\"txnId\":";
 
 	String s=RandomStringUtils.randomAlphabetic(5);
@@ -138,41 +178,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String Params_Singlebincard_Visa_Debit=Param1+Param2+Param3+Param7;
 
 
-	String urlgetPay2 = "http://172.17.26.11:8070";
-	String urlPay = "http://172.17.26.11:8358";
-	String promoURL = "http://172.17.26.11:8360";
-	String urlRewards = "http://172.17.12.82:9080";
-	String urlWallet = "http://172.17.26.11:8359";
-
-	String urlrewards_validate = "http://172.17.26.11:8358";
-	String urlrewards_validate1 = "http://172.17.26.11:8070";
-	String urlrewards_payURI1 ="http://paymentservice.cltp.com:9001";
-	String urlrewards_URI1 = "http://rewardsservice.cltp.com:9001/";
-	String urlPromo_Used = "http://wallet-service.cltp.com:9001";
-	String urlReporting ="http://172.17.26.11:8272";
-	String urlReportingTS ="http://172.17.26.11:9031";
-	String urlCardInfo_Service="http://172.17.26.11:8331";
 	
-
-	/*
 	
-
-	String urlgetPay = "http://172.17.26.11:8070";
-	String urlPay = "http://172.17.8.218:9001";
-	String urlRefundNew = "http://172.17.8.218:9001";
-	String promoURL = "http://172.17.26.11:7999";
-	String urlRewards = "http://172.17.12.82:9080";
-	String urlWallet = "http://172.17.26.11:8071";
-	String urladcb_validat = "http://172.17.26.11:8070";
-	String urlCardInfo_Service="http://172.17.26.11:8331";
-
-	String urlrewards_validate = "http://172.17.26.11:8070";
-	String urlrewards_payURI ="http://paymentservice.cltp.com:9001";
-	String urlrewards_URI = "http://rewardsservice.cltp.com:9001/";
-	String urlPromo_Used = "http://wallet-service.cltp.com:9001";
-	String urlReporting ="http://172.17.26.11:8272";
-	String urlReportingTS ="http://172.17.26.11:9031";*/
-
 	String urlInit = "/paymentservice/service/otp/init";
 	String urlProcess = "/paymentservice/service/otp/process";
 	String urlResend = "/paymentservice/service/otp/resend";

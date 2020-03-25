@@ -28,7 +28,7 @@ public class CachedProperties {
 		return cachedProperties;
 	}
 	
-	public static CachedProperties getTrip() {
+	/*public static CachedProperties getTrip() {
 		if (rubyAPIProperties == null) {
 			try {
 				rubyAPIProperties = new CachedProperties("rubyAPITripId.properties");
@@ -38,7 +38,7 @@ public class CachedProperties {
 		}
 		return rubyAPIProperties;
 	}
-
+*/
 
 	public static CachedProperties dataInstance() {
 		if (dataProperties == null) {

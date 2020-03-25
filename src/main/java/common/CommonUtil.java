@@ -13,7 +13,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-import static common.CachedProperties.getTrip;
 import static common.CachedProperties.objectReportInstancePlatform;
 
 import org.apache.commons.io.FileUtils;
@@ -41,7 +40,7 @@ public class CommonUtil {
 	public CachedProperties platform = platformInstance();
 	public CachedProperties objectReposPlatform = objectReportInstancePlatform();
 	public CachedProperties objectReposPayment = objectReportInstancePayment();
-	public CachedProperties rubyAPITrips = getTrip();
+	//public CachedProperties rubyAPITrips = getTrip();
 	
 	public String debug = common.value("debug");
 	public boolean debugger = Boolean.parseBoolean(debug);

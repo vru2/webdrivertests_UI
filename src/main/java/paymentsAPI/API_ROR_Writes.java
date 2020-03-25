@@ -108,6 +108,6 @@ public class API_ROR_Writes extends API_PaymentCommon1
 		validation("RORUpdate_GW_Status", resp); 
 	}*/
 	
-
+	
 	
 }

@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="1" ignored="1" total="11" passed="9">
+  <reporter-output>
+    <line>
+      <![CDATA[http://172.17.26.11:8358]]>
+    </line>
+    <line>
+      <![CDATA[http://qa2.cleartrip.com/pay/train/VFtUdUBFQhMh?lang=en]]>
+    </line>
+    <line>
+      <![CDATA[Response body BookApp/GetPay : {"trip_ref":"Q20125177","status":"S","error_msg":null,"payment_url":"/pay/train/VFtUdUBFQhMh?lang=en"}]]>
+    </line>
+    <line>
+      <![CDATA[statusCode: 200]]>
+    </line>
+    <line>
+      <![CDATA[Exception isorg.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//p[text()='Trip Details']"}
+  (Session info: headless chrome=80.0.3987.149)
+  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'SYSADM-IT3407', ip: '192.168.254.12', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.35.528161 (5b82f2d2aae0ca..., userDataDir: C:\Users\RAJESH~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 80.0.3987.149, webStorageEnabled: true}
+Session ID: f469b8acb928df6373c647e3533dff92
+*** Element info: {Using=xpath, value=//p[text()='Trip Details']}]]>
+    </line>
+    <line>
+      <![CDATA[<p><a href'D:\payment_scripts\webdrivertests\ScreenShots\authenticateVariousDetails_Wed_25Mar2020_072750.png'>screenshot</a></p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>Screenshot Name :authenticateVariousDetails_Wed_25Mar2020_072750.png</p>]]>
+    </line>
+    <line>
+      <![CDATA[Screenshot Path :authenticateVariousDetails_Wed_25Mar2020_072750.png]]>
+    </line>
+    <line>
+      <![CDATA[<p>https://qa2.cleartrip.com/pay/train/VFtUdUBFQhMh?lang=en</p>]]>
+    </line>
+    <line>
+      <![CDATA[http://172.17.26.11:8358]]>
+    </line>
+    <line>
+      <![CDATA[http://qa2.cleartrip.com/pay/train/V1VUd0BFQhMh?lang=en]]>
+    </line>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="143327" started-at="2020-03-25T13:56:59Z" finished-at="2020-03-25T13:59:22Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="143327" started-at="2020-03-25T13:56:59Z" finished-at="2020-03-25T13:59:22Z">
+      <class name="paymentsUI.PaymentUI_Validation">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:paymentsUI.PaymentUI_Validation@2df3b89c]" name="setUp" is-config="true" duration-ms="2212" started-at="2020-03-25T13:56:59Z" finished-at="2020-03-25T13:57:01Z">
+          <reporter-output>
+            <line>
+              <![CDATA[http://172.17.26.11:8358]]>
+            </line>
+            <line>
+              <![CDATA[http://qa2.cleartrip.com/pay/train/VFtUdUBFQhMh?lang=en]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="getPayURL()[pri:1, instance:paymentsUI.PaymentUI_Validation@2df3b89c]" name="getPayURL" duration-ms="31" started-at="2020-03-25T13:57:01Z" finished-at="2020-03-25T13:57:01Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Response body BookApp/GetPay : {"trip_ref":"Q20125177","status":"S","error_msg":null,"payment_url":"/pay/train/VFtUdUBFQhMh?lang=en"}]]>
+            </line>
+            <line>
+              <![CDATA[statusCode: 200]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- getPayURL -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:paymentsUI.PaymentUI_Validation@2df3b89c]" name="afterMethod" is-config="true" duration-ms="3" started-at="2020-03-25T13:57:01Z" finished-at="2020-03-25T13:57:01Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=getPayURL status=SUCCESS method=PaymentUI_Validation.getPayURL()[pri:1, instance:paymentsUI.PaymentUI_Validation@2df3b89c] output=Response body BookApp/GetPay : {"trip_ref":"Q20125177","status":"S","error_msg":null,"payment_url":"/pay/train/VFtUdUBFQhMh?lang=en"}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="firePaymentURLandValidatePaymentModes()[pri:2, instance:paymentsUI.PaymentUI_Validation@2df3b89c]" name="firePaymentURLandValidatePaymentModes" duration-ms="27515" started-at="2020-03-25T13:57:01Z" depends-on-methods="paymentsUI.PaymentUI_Validation.getPayURL" finished-at="2020-03-25T13:57:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- firePaymentURLandValidatePaymentModes -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:paymentsUI.PaymentUI_Validation@2df3b89c]" name="afterMethod" is-config="true" duration-ms="0" started-at="2020-03-25T13:57:29Z" finished-at="2020-03-25T13:57:29Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=firePaymentURLandValidatePaymentModes status=SUCCESS method=PaymentUI_Validation.firePaymentURLandValidatePaymentModes()[pri:2, instance:paymentsUI.PaymentUI_Validation@2df3b89c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="emptyCreditCardErrorValidation()[pri:3, instance:paymentsUI.PaymentUI_Validation@2df3b89c]" name="emptyCreditCardErrorValidation" duration-ms="551" started-at="2020-03-25T13:57:29Z" finished-at="2020-03-25T13:57:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- emptyCreditCardErrorValidation -->
+        <test-method status="PASS" signature="emptyDebitCardErrorValidation()[pri:4, instance:paymentsUI.PaymentUI_Validation@2df3b89c]" name="emptyDebitCardErrorValidation" duration-ms="339" started-at="2020-03-25T13:57:29Z" finished-at="2020-03-25T13:57:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- emptyDebitCardErrorValidation -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:paymentsUI.PaymentUI_Validation@2df3b89c]" name="afterMethod" is-config="true" duration-ms="0" started-at="2020-03-25T13:57:29Z" finished-at="2020-03-25T13:57:29Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=emptyCreditCardErrorValidation status=SUCCESS method=PaymentUI_Validation.emptyCreditCardErrorValidation()[pri:3, instance:paymentsUI.PaymentUI_Validation@2df3b89c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="FAIL" signature="authenticateVariousDetails()[pri:6, instance:paymentsUI.PaymentUI_Validation@2df3b89c]" name="authenticateVariousDetails" duration-ms="20045" started-at="2020-03-25T13:57:30Z" finished-at="2020-03-25T13:57:50Z">
+          <exception class="junit.framework.AssertionFailedError">
+            <message>
+              <![CDATA[Section Name is not valid]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[junit.framework.AssertionFailedError: Section Name is not valid
+at junit.framework.Assert.fail(Assert.java:50)
+at junit.framework.Assert.assertTrue(Assert.java:20)
+at domains.PaymentNodeJS.validateSectionDetails(PaymentNodeJS.java:1612)
+at paymentsUI.PaymentUI_Validation.authenticateVariousDetails(PaymentUI_Validation.java:185)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- junit.framework.AssertionFailedError -->
+          <reporter-output>
+            <line>
+              <![CDATA[Exception isorg.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//p[text()='Trip Details']"}
+  (Session info: headless chrome=80.0.3987.149)
+  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'SYSADM-IT3407', ip: '192.168.254.12', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.35.528161 (5b82f2d2aae0ca..., userDataDir: C:\Users\RAJESH~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 80.0.3987.149, webStorageEnabled: true}
+Session ID: f469b8acb928df6373c647e3533dff92
+*** Element info: {Using=xpath, value=//p[text()='Trip Details']}]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- authenticateVariousDetails -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:paymentsUI.PaymentUI_Validation@2df3b89c]" name="afterMethod" is-config="true" duration-ms="0" started-at="2020-03-25T13:57:30Z" finished-at="2020-03-25T13:57:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=emptyDebitCardErrorValidation status=SUCCESS method=PaymentUI_Validation.emptyDebitCardErrorValidation()[pri:4, instance:paymentsUI.PaymentUI_Validation@2df3b89c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:paymentsUI.PaymentUI_Validation@2df3b89c]" name="afterMethod" is-config="true" duration-ms="474" started-at="2020-03-25T13:57:50Z" finished-at="2020-03-25T13:57:50Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=authenticateVariousDetails status=FAILURE method=PaymentUI_Validation.authenticateVariousDetails()[pri:6, instance:paymentsUI.PaymentUI_Validation@2df3b89c] output=Exception isorg.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//p[text()='Trip Details']"}
+  (Session info: headless chrome=80.0.3987.149)
+  (Driver info: chromedriver=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'SYSADM-IT3407', ip: '192.168.254.12', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.35.528161 (5b82f2d2aae0ca..., userDataDir: C:\Users\RAJESH~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 80.0.3987.149, webStorageEnabled: true}
+Session ID: f469b8acb928df6373c647e3533dff92
+*** Element info: {Using=xpath, value=//p[text()='Trip Details']}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[<p><a href'D:\payment_scripts\webdrivertests\ScreenShots\authenticateVariousDetails_Wed_25Mar2020_072750.png'>screenshot</a></p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>Screenshot Name :authenticateVariousDetails_Wed_25Mar2020_072750.png</p>]]>
+            </line>
+            <line>
+              <![CDATA[Screenshot Path :authenticateVariousDetails_Wed_25Mar2020_072750.png]]>
+            </line>
+            <line>
+              <![CDATA[<p>https://qa2.cleartrip.com/pay/train/VFtUdUBFQhMh?lang=en</p>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="licenseAgreementPolicy()[pri:7, instance:paymentsUI.PaymentUI_Validation@2df3b89c]" name="licenseAgreementPolicy" duration-ms="5367" started-at="2020-03-25T13:57:50Z" finished-at="2020-03-25T13:57:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- licenseAgreementPolicy -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:paymentsUI.PaymentUI_Validation@2df3b89c]" name="afterMethod" is-config="true" duration-ms="0" started-at="2020-03-25T13:57:55Z" finished-at="2020-03-25T13:57:55Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=licenseAgreementPolicy status=SUCCESS method=PaymentUI_Validation.licenseAgreementPolicy()[pri:7, instance:paymentsUI.PaymentUI_Validation@2df3b89c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="imagesAndText()[pri:8, instance:paymentsUI.PaymentUI_Validation@2df3b89c]" name="imagesAndText" duration-ms="256" started-at="2020-03-25T13:57:55Z" finished-at="2020-03-25T13:57:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- imagesAndText -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:paymentsUI.PaymentUI_Validation@2df3b89c]" name="afterMethod" is-config="true" duration-ms="1" started-at="2020-03-25T13:57:56Z" finished-at="2020-03-25T13:57:56Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=imagesAndText status=SUCCESS method=PaymentUI_Validation.imagesAndText()[pri:8, instance:paymentsUI.PaymentUI_Validation@2df3b89c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="validateInvalidExpiry()[pri:9, instance:paymentsUI.PaymentUI_Validation@2df3b89c]" name="validateInvalidExpiry" duration-ms="24308" started-at="2020-03-25T13:57:56Z" finished-at="2020-03-25T13:58:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateInvalidExpiry -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:paymentsUI.PaymentUI_Validation@2df3b89c]" name="afterMethod" is-config="true" duration-ms="1" started-at="2020-03-25T13:58:20Z" finished-at="2020-03-25T13:58:20Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=validateInvalidExpiry status=SUCCESS method=PaymentUI_Validation.validateInvalidExpiry()[pri:9, instance:paymentsUI.PaymentUI_Validation@2df3b89c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="validateInvalidCvv()[pri:10, instance:paymentsUI.PaymentUI_Validation@2df3b89c]" name="validateInvalidCvv" duration-ms="16799" started-at="2020-03-25T13:58:20Z" finished-at="2020-03-25T13:58:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateInvalidCvv -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:paymentsUI.PaymentUI_Validation@2df3b89c]" name="afterMethod" is-config="true" duration-ms="1" started-at="2020-03-25T13:58:37Z" finished-at="2020-03-25T13:58:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=validateInvalidCvv status=SUCCESS method=PaymentUI_Validation.validateInvalidCvv()[pri:10, instance:paymentsUI.PaymentUI_Validation@2df3b89c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="secondRetryMakePayment()[pri:11, instance:paymentsUI.PaymentUI_Validation@2df3b89c]" name="secondRetryMakePayment" duration-ms="44717" started-at="2020-03-25T13:58:37Z" finished-at="2020-03-25T13:59:22Z">
+          <reporter-output>
+            <line>
+              <![CDATA[http://172.17.26.11:8358]]>
+            </line>
+            <line>
+              <![CDATA[http://qa2.cleartrip.com/pay/train/V1VUd0BFQhMh?lang=en]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- secondRetryMakePayment -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:paymentsUI.PaymentUI_Validation@2df3b89c]" name="afterMethod" is-config="true" duration-ms="1" started-at="2020-03-25T13:59:22Z" finished-at="2020-03-25T13:59:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=secondRetryMakePayment status=SUCCESS method=PaymentUI_Validation.secondRetryMakePayment()[pri:11, instance:paymentsUI.PaymentUI_Validation@2df3b89c] output=http://172.17.26.11:8358]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:paymentsUI.PaymentUI_Validation@2df3b89c]" name="tearDown" is-config="true" duration-ms="660" started-at="2020-03-25T13:59:22Z" finished-at="2020-03-25T13:59:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- paymentsUI.PaymentUI_Validation -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

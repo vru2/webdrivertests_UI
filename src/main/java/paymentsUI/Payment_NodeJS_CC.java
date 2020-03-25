@@ -21,7 +21,7 @@ public class Payment_NodeJS_CC extends PaymentNodeJS {
 	public void paymentNodeJS_CC() throws Exception {
 		driver.manage().deleteAllCookies();
 		driver.get(baseUrl);
-		safeClick(driver, By.id(""));
+		//safeClick(driver, By.id(""));
 		paymentNodeJS_Select_Payment(driver, "CC", "", common.value("testcardtype"));
 		paymentNodeJS_Make_Payment(driver, "CC",common.value("testcardtype") );
 		paymentNodeJS_ConfirmationPage(driver, "CC", "", "CC ");

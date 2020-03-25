@@ -32,7 +32,7 @@ public class PaymentUI_Validation extends PaymentNodeJS{
 	public Response resp;
 
 
-	@BeforeClass
+	@BeforeClass 
 	public void setUp() throws Exception {
 		resp = payUIget("BookApp/GetPay","");
 		qaUrl = qaurl;
@@ -139,9 +139,20 @@ public class PaymentUI_Validation extends PaymentNodeJS{
 
 
 
-	@Test(priority=9)
+	@Test(priority=11)
 	public void secondRetryMakePayment() throws InterruptedException {
 		try {
+			
+			resp = payUIget("BookApp/GetPay","");
+			qaUrl = qaurl;
+			Url = qaUrl+ fetchPaymentURL(resp);
+			driver.get(Url);
+			elementVisible(driver, By.xpath("(//label[@class='checkbox-round'])[1]"), 10);
+			List<WebElement> walletCheckBoxList = driver.findElements(By.xpath("(//label[@class='checkbox-round'])[1]"));
+			if(walletCheckBoxList.size()!=0) {
+				click(driver,PaymentUI_CommonUtilities.walletCheckBox);
+				driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			}
 			int flag=1;
 			click(driver,PaymentUI_CommonUtilities.creditCardPaymentxpath);
 			while (flag<3){
@@ -199,7 +210,7 @@ public class PaymentUI_Validation extends PaymentNodeJS{
 
 	@Test(priority=7)
 	public void licenseAgreementPolicy() throws Exception{
-		
+
 		try {
 			click(driver,PaymentUI_CommonUtilities.licenseAgreementxpath);
 			validateErrorWhenLicenseCheckboxIsUnchecked(driver,PaymentUI_CommonUtilities.licenseAgreementxpath);
@@ -229,14 +240,56 @@ public class PaymentUI_Validation extends PaymentNodeJS{
 			validateIfPresent(driver,PaymentUI_CommonUtilities.totalAmountWithTaxXpath);
 			validateIfPresent(driver,PaymentUI_CommonUtilities.storedCardTextXpath);
 		}
-		
+
 		catch(Exception e) {
 			Reporter.log("Exception is" +e);
 			Assert.assertTrue(false);
 		}
-		
+
 	}
 
+	@Test(priority=9)
+	public void validateInvalidExpiry() {
+		try {
+			fillValidAmexCreditCardDetails(driver,PaymentUI_CommonUtilities.cardNumberxpath,PaymentUI_CommonUtilities.cardHolderNamexpath,PaymentUI_CommonUtilities.expiryMonthxpath,PaymentUI_CommonUtilities.expiryYearxpath,PaymentUI_CommonUtilities.cvvNumberxpath);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			driver.findElement(By.xpath(PaymentUI_CommonUtilities.expiryYearxpath)).sendKeys(PaymentUI_CommonUtilities.invalidAmexExpiryYear);
+			click(driver,PaymentUI_CommonUtilities.makePaymentbutton);
+			click(driver,PaymentUI_CommonUtilities.amexGatewayAuthenticationSubmitxpath);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			validateIfPresent(driver, PaymentUI_CommonUtilities.invalid3DFailureXpath);
+			validateIfPresent(driver,PaymentUI_CommonUtilities.makePaymentbutton);
+		}
+		catch(Exception e) {
+			Reporter.log("Exception is" +e);
+			Assert.assertTrue(false);
+		}
+	}
+	
+	
+	@Test(priority=10)
+	public void validateInvalidCvv() {
+		try {
+			elementVisible(driver, By.xpath("(//label[@class='checkbox-round'])[1]"), 10);
+			List<WebElement> walletCheckBoxList = driver.findElements(By.xpath("(//label[@class='checkbox-round'])[1]"));
+			if(walletCheckBoxList.size()!=0) {
+				click(driver,PaymentUI_CommonUtilities.walletCheckBox);
+				driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			}
+			
+			click(driver,PaymentUI_CommonUtilities.creditCardPaymentxpath);
+			fillValidAmexCreditCardDetails(driver,PaymentUI_CommonUtilities.cardNumberxpath,PaymentUI_CommonUtilities.cardHolderNamexpath,PaymentUI_CommonUtilities.expiryMonthxpath,PaymentUI_CommonUtilities.expiryYearxpath,PaymentUI_CommonUtilities.cvvNumberxpath);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			driver.findElement(By.xpath(PaymentUI_CommonUtilities.cvvNumberxpath)).sendKeys(PaymentUI_CommonUtilities.invalidAmexCvv);
+			click(driver,PaymentUI_CommonUtilities.makePaymentbutton);
+			click(driver,PaymentUI_CommonUtilities.amexGatewayAuthenticationSubmitxpath);
+			
+		}
+		catch(Exception e) {
+			Reporter.log("Exception is" +e);
+			Assert.assertTrue(false);
+		}
+	}
 
 	@AfterMethod (alwaysRun = true)
 	public void afterMethod(ITestResult _result) throws Exception {

@@ -17,6 +17,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.http.HttpEntity;
@@ -30,6 +31,7 @@ import org.json.JSONObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -1514,6 +1516,41 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 		}
 
 	}
+	
+	public static boolean isElementPresent(RemoteWebDriver driver, String xpath) throws Exception {
+		try {
+			driver.findElement(By.xpath(xpath));
+			return true;
+		} catch (NoSuchElementException e) {
+			return false;
+		}
+	}
+	
+	public boolean elementVisible(RemoteWebDriver driver, String xpath, int Time) throws Exception {
+		boolean visible = false;
+		boolean elementPresent;
+		int second = 0;
+		try {
+			for (second = 0; second <= Time; second++) {
+				elementPresent = isElementPresent(driver, xpath);
+				if (elementPresent) {
+					if (driver.findElement(By.xpath(xpath)).isDisplayed()) {
+						visible = true;
+						break;
+					}
+				}
+				Thread.sleep(1000);
+			}
+			if (!visible) {
+				// addLog(by + " is not displayed in the page", true);
+			}
+			return visible;
+		} catch (StaleElementReferenceException e) {
+			return false;
+		} catch (NoSuchElementException e) {
+			return false;
+		}
+	}
 
 	public void click(RemoteWebDriver driver,String xpath) throws InterruptedException{
 		driver.findElement(By.xpath(xpath)).click();
@@ -1597,6 +1634,24 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 		}
 
 	}
+	
+	
+	public static void selectItemFromList(RemoteWebDriver driver,String xpath,String text) {
+		try {
+			Select select = new Select(driver.findElement(By.xpath(xpath)));
+			List<WebElement> list = select.getOptions();
+			for (WebElement element : list) {
+				if (element.getText().contains(text)) {
+					select.selectByVisibleText(element.getText());
+					return;
+				}
+			}
+		} catch(Exception e){
+			Reporter.log("Exception is" +e);
+			Assert.fail("No such element found::locator value");
+		}
+	}
+	
 
 	public void validateIfImagesArePresent(RemoteWebDriver driver,String xpath,String imageName){
 		boolean isPresent= false;

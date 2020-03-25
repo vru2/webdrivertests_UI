@@ -27,6 +27,9 @@ public class PaymentUI_CommonUtilities {
 	public static String makePaymentbutton= "//button[text()='Make Payment']";
 	protected static String debitCardPaymentxpath= "//p[text()='Debit Card']";
 	protected static String creditCardPaymentxpath= "//p[text()='Credit Card']";
+	protected static String netBankingPaymentxpath= "//p[text()='Net Banking']";
+	protected static String nbHDFCSelectXpath = "//ul[@class='Datalist radioList radio-item-list bt-0 bb-0 ']/li[2]";
+	protected static String nbCitiSelectXpath = "//ul[@class='Datalist radioList radio-item-list bt-0 bb-0 ']/li[5]";
 	protected static String footerxpath= "//a[text()='footername']";
 	protected static String footerOne= "About Us";
 	protected static String footerTwo= "Careers";
@@ -68,21 +71,33 @@ public class PaymentUI_CommonUtilities {
 	public static String invalidCardNumber= "5123456789012345";
 	public static String validAmexCardNumber= "345678000000007";
 	public static String validAmexExpiryYear= "2021";
+	public static String invalidAmexExpiryYear= "2020";
 	public static String validAmexCvv= "1234";
+	public static String invalidAmexCvv= "4321";
 	protected static String paymentModexpath= "//p[text()='paymentmode']";
 	protected static String paymentModeCC= "Credit Card";
 	protected static String paymentModeDC= "Debit Card";
 	protected static String paymentModeNB= "Net Banking";
 	protected static String paymentModeUPI= "UPI";
+	protected static String paymentModes="//ul[@id='paymentModeTab']";
 	protected static String paymentModeADCB= "ADCB TouchPoints";
 	protected static String paymentModeAP= "Apple Pay";
 	protected static String paymentModeStoredCard= "Stored Cards";
+	public static String nbOption1= "//p[text()='Please enter a valid cvv']";
+	protected static String nbDropDown="//select[@name='bankId']";
+	protected static String nbHdfcSubmit="//input[@name='proceed']";
+	protected static String nbCitiSubmit="//input[@value='Return To the Merchant Site']";
+	protected static String nbHdfcCancel="//input[@name='cancel']";
+	public static String popularBanks="//p[text()='Popular Banks']";
+	public static String errortextSelectBank="Please select your bank";
+	public static String errorSelectBankxpath="//p[text()='Please select your bank']";
 	protected static String errorTextInvalidCCDetailsxpath= "//div[contains(@class,'retry')]";
 	protected static String captchaErrorXpath= "//p[text()='captchaerrormessage']";
 	public static String captchaErrorName= "Please validate captcha";
 	public static String errorTextInvalidCC="Error in credentials entered. Verify your details and try again.";
 	protected static String licenseAgreementxpath= "//span[contains(text(),'I understand and agree to the rules and restrictions of this fare, ')]/../label[contains(@class,'checkbox')]";
 	public static String licenseAgreementErrorText= "Please accept the terms and conditions to proceed with this booking.";
+	public static String invalid3DFailureXpath="//div[text()='Oops! Your payment failed. If you were charged, any amount deducted will be reversed automatically.']";
 	public static String licenseAgreementErrorTextXpath= "//p[text()='Please accept the terms and conditions to proceed with this booking.']";
 	protected static String licenseAgreementFieldxpath= "//a[text()='#']";
 	protected static String licenseAgreementFieldBookingPolicy= "Booking policy";
@@ -116,6 +131,8 @@ public class PaymentUI_CommonUtilities {
     public static String expresswayXpath= "//a[text()='Expressway']";
     public static String removeStoredCardXpath= "//a[@title='Remove this card']";
     public static String walletCheckBox= "(//label[@class='checkbox-round'])[1]";
+	public static String citiBankTransaction="//select[@name='PAID']";
+	public static String paymentSuccess="//h1[contains(text(),'Payment successful!')]";
     
 	public static int generateFiveDigitRandomNumber(){
 		Random r = new Random( System.currentTimeMillis() );

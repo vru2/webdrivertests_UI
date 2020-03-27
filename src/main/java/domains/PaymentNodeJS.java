@@ -450,6 +450,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 
 			} else if (bankType.equalsIgnoreCase("Paytm")) {
 				Thread.sleep(5000);
+				waitForElementVisibility(driver, By.xpath("//div[2]/button"),20);
 				/*elementVisible(driver, getObjectPayment("TW_PayTM_Proceed_Btn"), 20);				
 				elementPresent(driver, getObjectPayment("TW_PayTM_PhoneNo_Txt_Box"));*/
 				elementPresent_log(driver, By.xpath("//div[2]/button"), "Paytm Pay Button", 5);
@@ -1983,6 +1984,27 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 			Reporter.log("Exception is" +e);
 		}
 	}
+	
+	public void signCleartripHomePage(RemoteWebDriver driver,String email, String password)throws Exception  {
+		try {
+				
+				driver.get(qaurl);		
+				Thread.sleep(5000);
+				safeClick(driver, getObjectPayment("B2C_HomePage_YourTrips"));
+				safeClick(driver, getObjectPayment("B2C_HomePage_SignIn"));
+				Thread.sleep(5000);
+				driver.switchTo().frame("modal_window");
+				safeType(driver, getObjectPayment("B2C_HomePage_Email"), email);
+				safeType(driver, getObjectPayment("B2C_HomePage_Password"), password);
+				safeClick(driver, getObjectPayment("B2C_HomePage_SignInButton"));
+				Thread.sleep(10000);
+		
+			} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
+	}
+	
 	
 	public void selectFromDropdown(RemoteWebDriver driver, String xpath, String dropDownValue){
 		try{

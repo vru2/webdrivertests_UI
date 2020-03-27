@@ -35,7 +35,7 @@ public class PaymentUI_Progress extends PaymentNodeJS{
 
 	@Test(priority=1)
 	public void firePaymentURLandValidatePaymentModes() throws Exception{		
-			validation_PaymentUI("BookApp/GetPay", resp);
+		validation_PaymentUI("BookApp/GetPay", resp);
 		try{
 			driver=(RemoteWebDriver) getDriver(driver);
 			driver.manage().deleteAllCookies(); 
@@ -51,32 +51,49 @@ public class PaymentUI_Progress extends PaymentNodeJS{
 				click(driver,PaymentUI_CommonUtilities.walletCheckBox);
 				driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			}
-			
+
 		}
 		catch(Exception e){
 			Reporter.log("Exception is"+e);
 			Assert.assertTrue(false);
 		}
 	}
-	
+
 	@Test(priority=2)
 	public void inProgressPayment() throws Exception{
 		try{
-			fillValidAmexCreditCardDetails(driver,PaymentUI_CommonUtilities.cardNumberxpath,PaymentUI_CommonUtilities.cardHolderNamexpath,PaymentUI_CommonUtilities.expiryMonthxpath,PaymentUI_CommonUtilities.expiryYearxpath,PaymentUI_CommonUtilities.cvvNumberxpath);
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			boolean storedCard = driver.findElementByXPath("//p[text()='Stored Card']").isDisplayed();
+			if(storedCard==true)
+			{
+				click(driver,PaymentUI_CommonUtilities.creditCardPaymentxpath);
+				fillValidAmexCreditCardDetails(driver,PaymentUI_CommonUtilities.cardNumberxpath,PaymentUI_CommonUtilities.cardHolderNamexpath,PaymentUI_CommonUtilities.expiryMonthxpath,PaymentUI_CommonUtilities.expiryYearxpath,PaymentUI_CommonUtilities.cvvNumberxpath);
+			}
+			else 
+			{
+				fillValidAmexCreditCardDetails(driver,PaymentUI_CommonUtilities.cardNumberxpath,PaymentUI_CommonUtilities.cardHolderNamexpath,PaymentUI_CommonUtilities.expiryMonthxpath,PaymentUI_CommonUtilities.expiryYearxpath,PaymentUI_CommonUtilities.cvvNumberxpath);
+			}
+
+			List<WebElement> walletCheckBoxList=driver.findElements(By.xpath("//label[@class='checkbox-round'][1]"));
+			int chkBoxes=walletCheckBoxList.size();
+			for(int i=0;i<chkBoxes;i++){
+				walletCheckBoxList.get(1).click();
+				break;
+			}
+
 			click(driver,PaymentUI_CommonUtilities.makePaymentbutton);
-			Thread.sleep(10000);
-            driver.get(Url);
-            validateIfPresent(driver, PaymentUI_CommonUtilities.paymentInProgressHeaderXpath);
-            validateIfPresent(driver, PaymentUI_CommonUtilities.paymentInProgressMessageXpath);
+			Thread.sleep(6000);
+			driver.get(Url);
+			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+			validateIfPresent(driver, PaymentUI_CommonUtilities.paymentInProgressHeaderXpath);
+			validateIfPresent(driver, PaymentUI_CommonUtilities.paymentInProgressMessageXpath);
+
 		}
-		
 		catch(Exception e){
 			Reporter.log("Exception is"+e);
 			Assert.assertTrue(false);
 		}
 	}
-	
+
 	@AfterMethod (alwaysRun = true)
 	public void afterMethod(ITestResult _result) throws Exception {
 		afterMethod(driver, _result);

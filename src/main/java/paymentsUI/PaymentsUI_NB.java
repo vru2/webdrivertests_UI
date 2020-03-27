@@ -84,9 +84,11 @@ public class PaymentsUI_NB extends PaymentNodeJS{
 			selectItemFromList(driver,PaymentUI_CommonUtilities.citiBankTransaction,"Y");
 			elementVisible(driver, PaymentUI_CommonUtilities.nbCitiSubmit, 30);
 			click(driver,PaymentUI_CommonUtilities.nbCitiSubmit);
-			Thread.sleep(1000);
+			Thread.sleep(5000);
 			driver.get(Url);
-			validateIfPresent(driver,PaymentUI_CommonUtilities.paymentSuccess);
+			validateIfPresent(driver,PaymentUI_CommonUtilities.paymentSuccessHeaderTextXpath);
+			validateIfPresent(driver,PaymentUI_CommonUtilities.paymentSuccessMessageTextXpath);
+			
 		}
 		catch(Exception e) {
 			Reporter.log("Exception is" +e);
@@ -128,7 +130,7 @@ public class PaymentsUI_NB extends PaymentNodeJS{
 	public void afterMethod(ITestResult _result) throws Exception {
 		afterMethod(driver, _result);
 	}
-
+	
 	@AfterClass
 	public void tearDown(){
 		browserClose(driver);

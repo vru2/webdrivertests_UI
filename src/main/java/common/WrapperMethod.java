@@ -1573,6 +1573,9 @@ public boolean GDS_Flight, B2B_GDS_Flight = false;
 	public static boolean isElementSelected(RemoteWebDriver driver, By by) {
 		return driver.findElement(by).isSelected();
 	}
+	
+	
+	
 
 	public void javaExecutorClick(RemoteWebDriver driver, By by) {
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(by));

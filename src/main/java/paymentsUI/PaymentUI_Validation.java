@@ -179,27 +179,34 @@ public class PaymentUI_Validation extends PaymentNodeJS{
 
 
 	@Test(priority=6)
-	public void authenticateVariousDetails(){
+	public void authenticateVariousDetailsLoggedin(){
 
 		try {
-			validateSectionDetails(driver,PaymentUI_CommonUtilities.sectionTripDetails,PaymentUI_CommonUtilities.sectionxpath);
-			validateSectionDetails(driver,PaymentUI_CommonUtilities.sectionTravellers,PaymentUI_CommonUtilities.sectionxpath);
-			validateSectionDetails(driver,PaymentUI_CommonUtilities.sectionItinerary,PaymentUI_CommonUtilities.sectionxpath);
-			validateSectionDetails(driver,PaymentUI_CommonUtilities.sectionPricingDetails,PaymentUI_CommonUtilities.sectionxpath);
-			validatetriptravellersanditineraryDetails(driver,PaymentUI_CommonUtilities.triptravelleranditinerarysectionfieldTripId,PaymentUI_CommonUtilities.triptravelleranditinerarysectionfieldxpath);
-			validatetriptravellersanditineraryDetails(driver,PaymentUI_CommonUtilities.triptravelleranditinerarysectionfieldAdult,PaymentUI_CommonUtilities.triptravelleranditinerarysectionfieldxpath);
-			validatetriptravellersanditineraryDetails(driver,PaymentUI_CommonUtilities.triptravelleranditinerarysectionfieldTrain,PaymentUI_CommonUtilities.triptravelleranditinerarysectionfieldxpath);
-			validatetriptravellersanditineraryDetails(driver,PaymentUI_CommonUtilities.triptravelleranditinerarysectionfieldDeparture,PaymentUI_CommonUtilities.triptravelleranditinerarysectionfieldxpath);
-			validatetriptravellersanditineraryDetails(driver,PaymentUI_CommonUtilities.triptravelleranditinerarysectionfieldArrival,PaymentUI_CommonUtilities.triptravelleranditinerarysectionfieldxpath);
-			validatetriptravellersanditineraryDetails(driver,PaymentUI_CommonUtilities.triptravelleranditinerarysectionfieldClass,PaymentUI_CommonUtilities.triptravelleranditinerarysectionfieldxpath);
-			validatetriptravellersanditineraryDetails(driver,PaymentUI_CommonUtilities.triptravelleranditinerarysectionfieldQuota,PaymentUI_CommonUtilities.triptravelleranditinerarysectionfieldxpath);
-			validatetriptravellersanditineraryDetails(driver,PaymentUI_CommonUtilities.triptravelleranditinerarysectionfieldUpdatedAvailability,PaymentUI_CommonUtilities.triptravelleranditinerarysectionfieldxpath);
+			//Commenting Out as most of these fields are removed
+			//validateSectionDetails(driver,PaymentUI_CommonUtilities.sectionTripDetails,PaymentUI_CommonUtilities.sectionxpath);
+			//validateSectionDetails(driver,PaymentUI_CommonUtilities.sectionTravellers,PaymentUI_CommonUtilities.sectionxpath);
+			//validateSectionDetails(driver,PaymentUI_CommonUtilities.sectionItinerary,PaymentUI_CommonUtilities.sectionxpath);
+			//validateSectionDetails(driver,PaymentUI_CommonUtilities.sectionPricingDetails,PaymentUI_CommonUtilities.sectionxpath);
+			validateIfPresent(driver,PaymentUI_CommonUtilities.sectionTravellersXpath);
+			validateIfPresent(driver,PaymentUI_CommonUtilities.sectionItineraryXpath);
+			
+			//validatetriptravellersanditineraryDetails(driver,PaymentUI_CommonUtilities.triptravelleranditinerarysectionfieldTripId,PaymentUI_CommonUtilities.triptravelleranditinerarysectionfieldxpath);
+			//validatetriptravellersanditineraryDetails(driver,PaymentUI_CommonUtilities.triptravelleranditinerarysectionfieldAdult,PaymentUI_CommonUtilities.triptravelleranditinerarysectionfieldxpath);
+			//validatetriptravellersanditineraryDetails(driver,PaymentUI_CommonUtilities.triptravelleranditinerarysectionfieldTrain,PaymentUI_CommonUtilities.triptravelleranditinerarysectionfieldxpath);
+			validateIfPresent(driver,PaymentUI_CommonUtilities.triptravelleranditinerarysectionfieldTrainXpath);
+			//validatetriptravellersanditineraryDetails(driver,PaymentUI_CommonUtilities.triptravelleranditinerarysectionfieldDeparture,PaymentUI_CommonUtilities.triptravelleranditinerarysectionfieldxpath);
+			//validatetriptravellersanditineraryDetails(driver,PaymentUI_CommonUtilities.triptravelleranditinerarysectionfieldArrival,PaymentUI_CommonUtilities.triptravelleranditinerarysectionfieldxpath);
+			//validatetriptravellersanditineraryDetails(driver,PaymentUI_CommonUtilities.triptravelleranditinerarysectionfieldClass,PaymentUI_CommonUtilities.triptravelleranditinerarysectionfieldxpath);
+			//validatetriptravellersanditineraryDetails(driver,PaymentUI_CommonUtilities.triptravelleranditinerarysectionfieldQuota,PaymentUI_CommonUtilities.triptravelleranditinerarysectionfieldxpath);
+			//validatetriptravellersanditineraryDetails(driver,PaymentUI_CommonUtilities.triptravelleranditinerarysectionfieldUpdatedAvailability,PaymentUI_CommonUtilities.triptravelleranditinerarysectionfieldxpath);
+			validateIfPresent(driver,PaymentUI_CommonUtilities.showFareBreakUp);
+			click(driver,PaymentUI_CommonUtilities.showFareBreakUp);
 			validatepricingSectionDetails(driver,PaymentUI_CommonUtilities.pricingsectionfieldOtherRailwayCharges,PaymentUI_CommonUtilities.pricingsectionfieldxpath);
 			validatepricingSectionDetails(driver,PaymentUI_CommonUtilities.pricingsectionfieldAgentServiceCharges,PaymentUI_CommonUtilities.pricingsectionfieldxpath);
-			validatepricingSectionDetails(driver,PaymentUI_CommonUtilities.pricingsectionfieldGST,PaymentUI_CommonUtilities.pricingsectionfieldxpath);
+			//validatepricingSectionDetails(driver,PaymentUI_CommonUtilities.pricingsectionfieldGST,PaymentUI_CommonUtilities.pricingsectionfieldxpath);
 			validatepricingSectionDetails(driver,PaymentUI_CommonUtilities.pricingsectionfieldConvenienceFee,PaymentUI_CommonUtilities.pricingsectionfieldxpath);
-			validatepricingSectionDetails(driver,PaymentUI_CommonUtilities.pricingsectionfieldInuranceCharge,PaymentUI_CommonUtilities.pricingsectionfieldxpath);
-			validatepricingSectionDetails(driver,PaymentUI_CommonUtilities.pricingsectionfieldRefundType,PaymentUI_CommonUtilities.pricingsectionfieldxpath);
+			//validatepricingSectionDetails(driver,PaymentUI_CommonUtilities.pricingsectionfieldInuranceCharge,PaymentUI_CommonUtilities.pricingsectionfieldxpath);
+			//validatepricingSectionDetails(driver,PaymentUI_CommonUtilities.pricingsectionfieldRefundType,PaymentUI_CommonUtilities.pricingsectionfieldxpath);
 		}
 
 		catch(Exception e) {
@@ -256,7 +263,7 @@ public class PaymentUI_Validation extends PaymentNodeJS{
 			driver.findElement(By.xpath(PaymentUI_CommonUtilities.expiryYearxpath)).sendKeys(PaymentUI_CommonUtilities.invalidAmexExpiryYear);
 			click(driver,PaymentUI_CommonUtilities.makePaymentbutton);
 			click(driver,PaymentUI_CommonUtilities.amexGatewayAuthenticationSubmitxpath);
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			validateIfPresent(driver, PaymentUI_CommonUtilities.invalid3DFailureXpath);
 			validateIfPresent(driver,PaymentUI_CommonUtilities.makePaymentbutton);
 		}
@@ -279,7 +286,7 @@ public class PaymentUI_Validation extends PaymentNodeJS{
 			
 			click(driver,PaymentUI_CommonUtilities.creditCardPaymentxpath);
 			fillValidAmexCreditCardDetails(driver,PaymentUI_CommonUtilities.cardNumberxpath,PaymentUI_CommonUtilities.cardHolderNamexpath,PaymentUI_CommonUtilities.expiryMonthxpath,PaymentUI_CommonUtilities.expiryYearxpath,PaymentUI_CommonUtilities.cvvNumberxpath);
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 			driver.findElement(By.xpath(PaymentUI_CommonUtilities.cvvNumberxpath)).sendKeys(PaymentUI_CommonUtilities.invalidAmexCvv);
 			click(driver,PaymentUI_CommonUtilities.makePaymentbutton);
 			click(driver,PaymentUI_CommonUtilities.amexGatewayAuthenticationSubmitxpath);

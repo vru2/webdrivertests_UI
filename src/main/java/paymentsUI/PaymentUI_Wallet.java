@@ -19,7 +19,7 @@ import io.restassured.response.Response;
 
 
 
-public class PaymentUI_Coupon extends PaymentNodeJS{
+public class PaymentUI_Wallet extends PaymentNodeJS{
 
 	public RemoteWebDriver driver;
 	protected String Url;
@@ -42,7 +42,7 @@ public class PaymentUI_Coupon extends PaymentNodeJS{
 	}
 
 	@Test(priority=2, dependsOnMethods={"getPayURL"})
-	public void couponPayment() throws Exception{
+	public void walletPayment() throws Exception{
 		try {
 			driver=(RemoteWebDriver) getDriver(driver);
 			driver.manage().deleteAllCookies(); 
@@ -57,9 +57,9 @@ public class PaymentUI_Coupon extends PaymentNodeJS{
 			elementVisible(driver, By.xpath("(//label[@class='checkbox-round'])[2]"), 10);
 			elementVisible(driver, By.xpath("//p[contains(text(),'Paying completely via Cleartrip wallet!')]"), 10);
 			click(driver,PaymentUI_CommonUtilities.makePaymentbutton);
-			Thread.sleep(10000);
+			Thread.sleep(7000);
 			driver.get(Url);
-			validateIfPresent(driver,PaymentUI_CommonUtilities.paymentSuccess);
+			validateIfPresent(driver,PaymentUI_CommonUtilities.paymentSuccessHeaderTextXpath);
 		}
 		catch(Exception e) {
 			Reporter.log("Exception is" +e);

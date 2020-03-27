@@ -41,7 +41,7 @@ public class PaymentUI_SuccessfulPaymentMessage extends PaymentNodeJS{
 			fillValidAmexCreditCardDetails(driver,PaymentUI_CommonUtilities.cardNumberxpath,PaymentUI_CommonUtilities.cardHolderNamexpath,PaymentUI_CommonUtilities.expiryMonthxpath,PaymentUI_CommonUtilities.expiryYearxpath,PaymentUI_CommonUtilities.cvvNumberxpath);
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			click(driver,PaymentUI_CommonUtilities.makePaymentbutton);
-			Thread.sleep(15);
+			Thread.sleep(6000);
 			click(driver,PaymentUI_CommonUtilities.amexGatewayAuthenticationSubmitxpath);
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 			driver.get(Url);

@@ -14,6 +14,9 @@
       <class name="paymentsUI.PaymentUI_Captcha"/> 
       <class name="paymentsUI.PaymentUI_SignIN"/>
       <class name="paymentsUI.PaymentUI_Validation"/>
+	  <class name="paymentsUI.PaymentsUI_NB"/>
+	  <class name="paymentsUI.PaymentUI_Wallet"/>
+	  
     </classes>
 </test>
 

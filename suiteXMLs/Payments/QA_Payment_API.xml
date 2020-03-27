@@ -15,7 +15,7 @@
     </classes>
 </test>
 
-<test name="API Rearch" preserve-order="true" parallel="true">
+<test name="API Rearch pay" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsAPI.API_Validate"/>
       <class name="paymentsAPI.API_CC_Visa_Type"/>
@@ -23,8 +23,12 @@
       <class name="paymentsAPI.API_CC"/>
       <class name="paymentsAPI.API_GV"/> 
       <class name="paymentsAPI.API_Wallet"/>
+      <class name="paymentsAPI.API_GV_WL"/> 
     </classes>
 </test>
+
+
+
 
 <test name="API CTPay V2" preserve-order="true" parallel="true">
     <classes>

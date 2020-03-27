@@ -98,7 +98,7 @@
 		<class name="paymentsAPI.API_Wallet_GetDeduction"/>
 		<class name="paymentsAPI.API_Wallet_PromoUsed"/>
 		<class name="paymentsAPI.API_Wallet_RevertPromo"/>
-		<class name="paymentsAPI.API_GV_Capture"/>
+<!-- 		<class name="paymentsAPI.API_GV_Capture"/> -->
 		<class name="paymentsAPI.API_GV_Refund"/>	
 		
 		<!-- <class name="paymentsAPI.API"/> create wallet

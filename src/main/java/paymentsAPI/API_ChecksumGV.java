@@ -6,9 +6,9 @@ import java.security.NoSuchAlgorithmException;
 public class API_ChecksumGV {
     public static void main(String[] args) {
         String currency = "INR";
-        String amount = "10";
+        String amount = "100000";
         String userEmail = "kiran.kumar@cleartrip.com";
-        String paymentId = "43226234";
+        String paymentId = "43853761";
         String checkSumKey = "cleartrip";
 
         String pipe = "|";

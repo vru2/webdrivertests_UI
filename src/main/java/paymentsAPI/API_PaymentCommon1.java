@@ -797,7 +797,6 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 	public Response rearchPayment(String payType, String payType1){
 		RestAssured.baseURI =urlPay;
-		Reporter.log(urlPay);
 		String url = urlPayV3;
 		String params = null;
 		HashMap<String, Object> headers = new HashMap<>();
@@ -829,7 +828,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			params = paramsFlyIN;
 		}
 
-		Reporter.log(url);
+		Reporter.log(urlPay+url);
 		request = RestAssured.given().
 				when().
 				log().all().
@@ -841,7 +840,6 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 	public Response createGV(int Amount) {
 		RestAssured.baseURI =urlWallet;
-		Reporter.log(urlWallet);
 		String params = paramsGV_Create_10;
 		HashMap<String, Object> headers = new HashMap<>();
 		headers = headersForms_GVCreate_10();
@@ -858,7 +856,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		Response request = null;	 
 
 		String url= urlEndpoint_GVCreate;
-		Reporter.log(url);
+		Reporter.log(urlWallet+url);
+		Reporter.log("Params : "+params);
 		request = RestAssured.given().
 				when().
 				log().all().
@@ -1010,8 +1009,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 					post(url);
 		}
 
-		Reporter.log(urlWallet);
-		Reporter.log(url);
+		Reporter.log(urlWallet+url);
+		Reporter.log("Params : "+params);
 
 		return request;
 	}
@@ -1111,6 +1110,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		}
 
 		Reporter.log(url);
+		Reporter.log("Params : "+params);
         return request;
 	}
 
@@ -1164,8 +1164,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 		}
 
-		Reporter.log(urlWallet);
-		Reporter.log(url);
+		Reporter.log(urlWallet+url);
+		Reporter.log("Params : "+params);
 		return request;
 
 
@@ -1199,8 +1199,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 				body(params).
 				headers(headers).
 				post(Url);
-		Reporter.log(urlPay);
-		Reporter.log(Url);
+		Reporter.log(urlPay+Url);
+		Reporter.log("Params : "+params);
 		return response;
 	}
 
@@ -1249,6 +1249,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		}
 		Reporter.log(urlPay);
 		Reporter.log(Url);
+		Reporter.log("Params : "+params);
 		////System.out.println(response.body().asString());
 		return response;
 
@@ -2566,7 +2567,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 	public Response validation_Prod(String payType, Response resp) {
 		Reporter.log("Response body "+payType +" : "+ resp.body().asString());
-		System.out.println("Response body "+payType +" : "+ resp.body().asString());
+		//System.out.println("Response body "+payType +" : "+ resp.body().asString());
 		int statusCode = resp.getStatusCode();	
 		Reporter.log("statusCode: " + statusCode);
 		JsonPath jsonPathEvaluator = resp.jsonPath();
@@ -2711,7 +2712,6 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		Reporter.log(urlPay);			
 		return response;
 	}
-
 	
 	public Response rearchCtPay(String payType, String payType1) throws Exception{
 
@@ -2775,6 +2775,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 					post(url);
 		}
 		Reporter.log(urlCTPay);
+		Reporter.log("Params : "+params);
 		Reporter.log(url);
 		return request;
 	}	
@@ -2828,6 +2829,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 					when().log().all().headers(headers).post(endPoint);
 		}
 		Reporter.log(urlrewards_validate);
+		Reporter.log("Params : "+params);
 		Reporter.log(endPoint);
 		return response;
 	}
@@ -2904,6 +2906,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		}
 
 		Reporter.log(urlPay);
+		Reporter.log("Params : "+params);
 		Reporter.log(endPoint);
 		return response;
 
@@ -2948,6 +2951,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 					when().log().all().body(params).headers(headers).post(endPoint);
 		}
 		Reporter.log(urlRewards);
+		Reporter.log("Params : "+params);
 		Reporter.log(endPoint);
 		return response;
 
@@ -3135,6 +3139,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 					when().log().all().body(params).headers(headers).post(endPoint);
 		}
 		Reporter.log(urlRewards);
+		Reporter.log("Params : "+params);
 		Reporter.log(endPoint);
 		return response;			
 	}

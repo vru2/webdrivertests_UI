@@ -15,6 +15,13 @@
     </classes>
 </test>
 
+
+<test name="API DA Pay" preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_DA_PayV2"/>      
+    </classes>
+</test>
+
 <test name="API Rearch pay" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsAPI.API_Validate"/>

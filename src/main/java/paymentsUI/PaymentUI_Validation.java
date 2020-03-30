@@ -262,8 +262,10 @@ public class PaymentUI_Validation extends PaymentNodeJS{
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			driver.findElement(By.xpath(PaymentUI_CommonUtilities.expiryYearxpath)).sendKeys(PaymentUI_CommonUtilities.invalidAmexExpiryYear);
 			click(driver,PaymentUI_CommonUtilities.makePaymentbutton);
+			waitForElementVisibility(driver,By.xpath("//input[@type='submit']"), 15);
 			click(driver,PaymentUI_CommonUtilities.amexGatewayAuthenticationSubmitxpath);
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			//driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			waitForElementVisibility(driver,By.xpath("//div[text()='Oops! Your payment failed. If you were charged, any amount deducted will be reversed automatically.']"), 20);
 			validateIfPresent(driver, PaymentUI_CommonUtilities.invalid3DFailureXpath);
 			validateIfPresent(driver,PaymentUI_CommonUtilities.makePaymentbutton);
 		}
@@ -283,14 +285,17 @@ public class PaymentUI_Validation extends PaymentNodeJS{
 				click(driver,PaymentUI_CommonUtilities.walletCheckBox);
 				driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			}
-			
 			click(driver,PaymentUI_CommonUtilities.creditCardPaymentxpath);
 			fillValidAmexCreditCardDetails(driver,PaymentUI_CommonUtilities.cardNumberxpath,PaymentUI_CommonUtilities.cardHolderNamexpath,PaymentUI_CommonUtilities.expiryMonthxpath,PaymentUI_CommonUtilities.expiryYearxpath,PaymentUI_CommonUtilities.cvvNumberxpath);
-			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			driver.findElement(By.xpath(PaymentUI_CommonUtilities.cvvNumberxpath)).sendKeys(PaymentUI_CommonUtilities.invalidAmexCvv);
 			click(driver,PaymentUI_CommonUtilities.makePaymentbutton);
+			waitForElementVisibility(driver,By.xpath("//input[@type='submit']"), 15);
 			click(driver,PaymentUI_CommonUtilities.amexGatewayAuthenticationSubmitxpath);
-			
+			driver.get(Url);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			validateIfPresent(driver,PaymentUI_CommonUtilities.paymentSuccessHeaderTextXpath);
+		
 		}
 		catch(Exception e) {
 			Reporter.log("Exception is" +e);

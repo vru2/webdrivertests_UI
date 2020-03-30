@@ -22,7 +22,7 @@ import domains.PaymentNodeJS;
 	   driver.get(baseUrl);	   
 	   paymentNodeJS_Select_Payment(driver, "PHONEPE", "", "");
 	   paymentNodeJS_Make_Payment(driver, "PHONEPE", "");
-	//   paymentNodeJS_ConfirmationPage(driver, "PHONEPE", "","PHONEPE ");
+	// paymentNodeJS_ConfirmationPage(driver, "PHONEPE", "","PHONEPE ");
   }
 
   @BeforeClass

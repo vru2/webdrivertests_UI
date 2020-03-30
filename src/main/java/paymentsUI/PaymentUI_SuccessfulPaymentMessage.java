@@ -3,6 +3,7 @@ package paymentsUI;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.Reporter;
@@ -45,6 +46,7 @@ public class PaymentUI_SuccessfulPaymentMessage extends PaymentNodeJS{
 			click(driver,PaymentUI_CommonUtilities.amexGatewayAuthenticationSubmitxpath);
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 			driver.get(Url);
+			waitForElementVisibility(driver,By.xpath("//h1[text()='Payment successful!']"),10);
 			validateIfPresent(driver,PaymentUI_CommonUtilities.paymentSuccessHeaderTextXpath);
 			validateIfPresent(driver,PaymentUI_CommonUtilities.paymentSuccessMessageTextXpath);
 		}

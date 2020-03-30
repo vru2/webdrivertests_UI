@@ -83,7 +83,8 @@ public class PaymentUI_Progress extends PaymentNodeJS{
 			click(driver,PaymentUI_CommonUtilities.makePaymentbutton);
 			Thread.sleep(6000);
 			driver.get(Url);
-			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+			//driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+			waitForElementVisibility(driver,By.xpath("//h1[text()='Payment in progress']"),10);
 			validateIfPresent(driver, PaymentUI_CommonUtilities.paymentInProgressHeaderXpath);
 			validateIfPresent(driver, PaymentUI_CommonUtilities.paymentInProgressMessageXpath);
 

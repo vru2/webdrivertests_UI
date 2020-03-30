@@ -59,6 +59,7 @@ public class PaymentUI_Wallet extends PaymentNodeJS{
 			click(driver,PaymentUI_CommonUtilities.makePaymentbutton);
 			Thread.sleep(7000);
 			driver.get(Url);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			validateIfPresent(driver,PaymentUI_CommonUtilities.paymentSuccessHeaderTextXpath);
 		}
 		catch(Exception e) {

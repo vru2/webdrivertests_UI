@@ -16,6 +16,7 @@
       <class name="paymentsUI.PaymentUI_Validation"/>
 	  <class name="paymentsUI.PaymentsUI_NB"/>
 	  <class name="paymentsUI.PaymentUI_Wallet"/>
+	  <class name="paymentsUI.PaymentUI_PhonePe"/> 
 	  
     </classes>
 </test>

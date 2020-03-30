@@ -8,6 +8,7 @@ public class PaymentUI_CommonUtilities {
 	public static String creditCardPageText= "Enter your credit card details.";
 	public static String debitCardPageText= "Enter your debit card details.";
 	protected static String convenienceTextxpath= "//p[contains(text(),'#')]";
+	
 	public static String convenienceFeeText= "Convenience fee";
 	protected static String cardNumberxpath= "//input[contains(@id,'cardNumber')]";
 	protected static String expiryMonthxpath = "//select[contains(@id,'expiryMonth')]";
@@ -30,6 +31,8 @@ public class PaymentUI_CommonUtilities {
 	protected static String netBankingPaymentxpath= "//p[text()='Net Banking']";
 	protected static String nbHDFCSelectXpath = "//ul[@class='Datalist radioList radio-item-list bt-0 bb-0 ']/li[2]";
 	protected static String nbCitiSelectXpath = "//ul[@class='Datalist radioList radio-item-list bt-0 bb-0 ']/li[5]";
+	protected static String phonePeMobileNo="//input[@name='mobileNumber']";
+	protected static String phonePeMobileNoSubmit= "//button[@id='onboardingFormSubmitBtn']";
 	protected static String footerxpath= "//a[text()='footername']";
 	protected static String footerOne= "About Us";
 	protected static String footerTwo= "Careers";
@@ -126,6 +129,7 @@ public class PaymentUI_CommonUtilities {
     public static String paymentInProgressHeaderXpath="//h1[text()='Payment in progress']";
     public static String paymentInProgressMessageXpath= "//span[text()='The payment for this itinerary is already in progress. Please wait 20 minutes and visit your profile to verify the booking status.']";
     public static String upiErrorTextXpath= "//p[text()='Please select any UPI payment method.']";
+    public static String upiErrorTextSelectUPI="Please select any UPI payment method.";
     public static String upiModeXpath= "//p[text()='UPI']";
     public static String nbModeXpath= "//p[text()='Net Banking']";
     public static String storedCardXpath= "//p[text()='Stored Cards']";
@@ -140,6 +144,7 @@ public class PaymentUI_CommonUtilities {
     public static String walletCheckBox= "(//label[@class='checkbox-round'])[1]";
 	public static String citiBankTransaction="//select[@name='PAID']";
 	public static String paymentSuccess="//h1[contains(text(),'Payment successful!')]";
+	public static String convenienceXpathNew="//p[contains(text(),'Includes a convenience fee of')]";
     
 	public static int generateFiveDigitRandomNumber(){
 		Random r = new Random( System.currentTimeMillis() );

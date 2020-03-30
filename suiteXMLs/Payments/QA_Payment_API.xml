@@ -15,7 +15,7 @@
     </classes>
 </test>
 
-<test name="API Rearch" preserve-order="true" parallel="true">
+<test name="API Rearch pay" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsAPI.API_Validate"/>
       <class name="paymentsAPI.API_CC_Visa_Type"/>
@@ -23,8 +23,12 @@
       <class name="paymentsAPI.API_CC"/>
       <class name="paymentsAPI.API_GV"/> 
       <class name="paymentsAPI.API_Wallet"/>
+      <class name="paymentsAPI.API_GV_WL"/> 
     </classes>
 </test>
+
+
+
 
 <test name="API CTPay V2" preserve-order="true" parallel="true">
     <classes>
@@ -38,20 +42,12 @@
 <test name="API Refund"  preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsAPI.API_Refund_CC"/>
-    <!--   <class name="paymentsAPI.API_Refund_DA"/>
-      <class name="paymentsAPI.API_Refund_DC"/>
-      <class name="paymentsAPI.API_Refund_NB"/>
-      <class name="paymentsAPI.API_Refund_GV"/>      
-      <class name="paymentsAPI.API_Refund_AmazonPay"/> -->
     </classes>
 </test>
 
 <test name="API OLA" preserve-order="true" parallel="true">
     <classes>
-      <class name="paymentsAPI.API_OLA_Validate_Pay"/>  
-     <!--  <class name="paymentsAPI.API_OLA_BalanceCheck"/>  
-      <class name="paymentsAPI.API_OLA_StatusCheck"/>  
-      <class name="paymentsAPI.API_OLA_PromoStats"/> -->
+  <!--     <class name="paymentsAPI.API_OLA_Validate_Pay"/>   -->
     </classes>
 </test>
 

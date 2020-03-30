@@ -10,7 +10,7 @@ public class API_ROR_Reads extends API_PaymentCommon1
 {
 
 	
-	@Test(alwaysRun=true)
+/*	@Test(alwaysRun=true)
 	public void ROR_WalletFetch() throws Exception{
 		Response resp ;		
 		resp = payGet1("ROR_WalletGet_Reads","");	
@@ -59,4 +59,11 @@ public class API_ROR_Reads extends API_PaymentCommon1
 		validation("ROR_Refund_Details", resp); 
 	}
 	
+*/
+	@Test(alwaysRun=true)
+	public void ROR_PaymentID() throws Exception{
+		Response resp ;		
+		resp = Reporting("ReportingPAYID","");	
+		validation("ReportingPAYID", resp); 
+	}
 }

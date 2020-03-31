@@ -10,12 +10,12 @@ import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
 
-public class API_DA_PayV2 extends API_PaymentCommon1
+public class API_DA_ValidateV3 extends API_PaymentCommon1
 {
 	@Test
 	public void paymentDA_API() throws IOException, JSONException{
 		Response resp ;		
-		resp = rearchPayment("DA","");	
-		validation("DA", resp);
+		resp = rearchPayment("DAVAlidate","");	
+		validation("DAValidate", resp);
 		}
 }

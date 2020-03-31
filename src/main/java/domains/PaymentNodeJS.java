@@ -382,7 +382,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 			safeClick(driver, getObjectPayment("MakePayment_Pay_Btn_Phonepe"));
 			/*elementVisible(driver, getObjectPayment("MakePayment_PhonePe_Page_Pay_Btn"), 10);
 			safeClick(driver, getObjectPayment("MakePayment_PhonePe_Page_Pay_Btn"));*/
-			elementPresent_log(driver, By.id("mobileNumber"), "", 10);
+			elementPresent_log(driver, By.id("mobileNumber"), "", 30);
 		} else if (payType.equalsIgnoreCase("RAZORPAY")) {
 			safeClick(driver, getObjectPayment("MakePayment_Pay_Btn_RazorPay"));
 			elementVisible(driver, getObjectPayment("MakePayment_RazorPay_Page_Logo"), 10);

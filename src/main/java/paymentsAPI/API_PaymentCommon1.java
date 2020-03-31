@@ -29,6 +29,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 {	
 	String urlPay = "http://172.17.26.11:8358";
 	String promoURL = "http://172.17.26.11:8360";
+	String urlDA = "http://172.17.28.21:8403";
 	String urlRewards = "http://172.17.12.83:9080";
 	String urlWallet = "http://172.17.26.11:8359";
 	String urlCardInfo_Service="http://172.17.26.11:8331";
@@ -42,8 +43,9 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String urlReportingTS ="http://172.17.26.11:9031";
 	
 	
-	
-		/*String urlPay = "http://172.17.8.218:9001";
+	/*
+		String urlPay = "http://172.17.8.218:9001";
+		String urlDA = "http://172.17.28.21:8403";
 		String urlRefundNew = "http://172.17.8.218:9001";
 		String promoURL = "http://172.17.26.11:7999";
 		String urlRewards = "http://172.17.12.82:9080";
@@ -56,8 +58,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		String urlrewards_URI = "http://rewardsservice.cltp.com:9001/";
 		String urlPromo_Used = "http://wallet-service.cltp.com:9001";
 		String urlReporting ="http://172.17.26.11:8272";
-		String urlReportingTS ="http://172.17.26.11:9031";*/
-	
+		String urlReportingTS ="http://172.17.26.11:9031";
+	*/
 	
 
 		
@@ -102,6 +104,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	
 	String paramsEW_Validate = "{\"payment\":[{\"seq_no\":1,\"trip_id\":116912714,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":217,\"payment_category\":\"B\",\"fraud_system_invocation\":\"Y\",\"customer_detail\":{\"address1\":\"Cleartrip JP Nagar Bangalore\",\"city_name\":\"Bangalore\",\"postal_code\":\"560076\",\"state_name\":\"Karnataka\",\"country_name\":\"India\",\"mobile\":\"91 1212121212\",\"email\":\"cltppayment@gmail.com\"},\"app_ref1\":\"Q1903221094\",\"app_ref2\":\"185110142\",\"itinerary_id\":\"68b08214fd-e940-42d5-9f0d-190322223806\",\"payment_type\":\"EP\",\"amount\":5,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"6E/676/BLR/CCU/201904XXXXXX00\",\"order_info2\":\"Mitali Biswas\",\"source_type\":\"ACCOUNT\",\"user_id\":41654864,\"company_id\":41654864,\"app_return_info\":{\"url\":\"https://qa2.cleartrip.com/flights/itinerary/68b08214fd-e940-42d5-9f0d-190322223806/book\",\"method\":\"POST\"},\"host_name\":\"qa2.cleartrip.com\",\"user_agent\":\"Apache-HttpClient/4.4 (Java 1.5 minimum; Java/1.8.0_51)\"}]}";
 	String paramsEW_AddAmt = "";
+	String paramsDA_Refund = "{\"txn_id\":75413816,\"payment_id\":43422440,\"refund_txn_id\":75413816,\"amount\":1352.0}";
 
 	String ParamsValidate = "[{\"payment\":{\"seq_no\":1,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":755,\"payment_category\":\"B\",\"fraud_system_invocation\":\"Y\",\"ui_version\":\"v2\",\"customer_detail\":{\"ip_address\":\"119.82.106.204\",\"mobile\":\" 919986696785\",\"email\":\"cltppayment@gmail.com\"},\"itinerary_id\":\"68730b1763-f9d8-4059-88ff-62ce5f4a1ef8\",\"payment_type\":\"CC\",\"amount\":4118.0,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"SG/812/BLR/CCU/20181113055500\",\"order_info2\":\"Test Pay\",\"source_type\":\"ACCOUNT\",\"user_id\":41644016,\"company_id\":110340,\"app_return_info\":{\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://book-flights.cltp.com:9001/r3/book/flights/itinerary/68730b1763-f9d8-4059-88ff-62ce5f4a1ef8/book-internal?ll=INFO\"},\"host_name\":\"qa2.cleartrip.com\",\"card_detail\":{\"card_number\":\"5123456789012346\",\"card_type_id\":2,\"expiry_month\":\"5\",\"expiry_year\":\"2020\",\"cvv\":\"123\",\"name\":\"Test\",\"billto_detail\":{\"firstname\":\"Test\",\"address1\":\" \",\"city_name\":\"\",\"state_name\":\"\",\"country_name\":\"\",\"postal_code\":\"\"}}}}]";
 	String ParamsOLAValidate1 = "{\"promoId\":\"PS";
@@ -261,7 +264,14 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String urlEndPoint_Wallet_CASHBACK_Wallet = "/payments/wallet/cashback?emailId=test@test123.com&currency=INR&amount=1&tripRef=Q190812462222&expiryDate =20-09-19";
 	String urlEndPoint_Wallet_Create = "/payments/wallet/65176051/createWallet";
 
+	String urlDA_Balance = "/account/61/balance";
+	String urlDA_Refund= "/account/46207144/trips/Q191210603834/refund";
+	String urlDA_Status = "/account/387212870";
+	
+	
 	String urlCTPay = "https://qa2.cleartrip.com";
+	
+	
 	String urlCTPay_Get ="/paymentservice/ct/v2/getCtPaymentUrl";
 	String urlCTPay_ADD ="/paymentservice/ct/v2/addClient";
 	String urlCTPay_Status ="/paymentservice/ct/v2/T2021069300/status";
@@ -748,6 +758,28 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 
 
+	public Response DAGet(String Type, String Type1){
+		RestAssured.baseURI = urlDA;
+		String url = null;
+		HashMap<String, Object> headers = new HashMap<String,Object>();
+		headers = headersForms();
+		Response request;
+		if(Type.equalsIgnoreCase("DABalance")){
+			url = urlDA_Balance;
+		}else if(Type.equalsIgnoreCase("DAStatus")){
+			url = urlDA_Status;
+		}
+
+		request = RestAssured.given().
+				when().
+				log().all().
+				headers(headers).
+				get(url);
+
+		return request;
+	
+	}
+	
 	public Response promoGet(String payType, String payType1){
 		RestAssured.baseURI = promoURL;
 		String url = null;
@@ -825,11 +857,17 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			params = paramsDAPayV3;
 		}
 		
-		
+
 		else if(payType.equalsIgnoreCase("DAVAlidate")) {
 			url = urlPayValidateV3;
 			params = paramsDAValidateV3;
 		}
+		else if(payType.equalsIgnoreCase("DARefund")) {
+			RestAssured.baseURI =urlDA;
+			url = urlDA_Refund;
+			params = paramsDA_Refund;
+		}
+		
 		
 		
 
@@ -1440,6 +1478,41 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			
 		}	
 		else if(payType.equalsIgnoreCase("DAPay")) {
+			if(!resp.body().asString().contains("Payment successful")){
+				Assert.assertTrue(false);
+			
+			}
+			
+		}
+
+		else if(payType.equalsIgnoreCase("DABalance")) {
+
+			String Balance = jsonPathEvaluator.getString("balance");
+			String CreditLimit = jsonPathEvaluator.getString("credit_limit");
+			String balance_type = jsonPathEvaluator.getString("balance_type");
+			Reporter.log("Balance " +Balance);
+			Reporter.log("CreditLimit " +CreditLimit);
+			if(!balance_type.equals("DR")) {
+				Assert.assertTrue(false);
+		
+			}  
+			
+		}
+		
+		else if(payType.equalsIgnoreCase("DAStatus")) {
+
+			String Balance = jsonPathEvaluator.getString("balance");
+			String CreditLimit = jsonPathEvaluator.getString("credit_limit");
+			String balance_type = jsonPathEvaluator.getString("balance_type");
+			Reporter.log("Balance " +Balance);
+			Reporter.log("CreditLimit " +CreditLimit);
+			if(!balance_type.equals("DR")) {
+				Assert.assertTrue(false);
+		
+			}  
+			
+		}
+		else if(payType.equalsIgnoreCase("DARefund")) {
 			if(!resp.body().asString().contains("Payment successful")){
 				Assert.assertTrue(false);
 			

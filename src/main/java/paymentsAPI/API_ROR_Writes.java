@@ -101,13 +101,6 @@ public class API_ROR_Writes extends API_PaymentCommon1
 	}
 	
 	
-	/*@Test(alwaysRun=true)
-	public void ROR_Update_GW_Status() throws Exception{
-		Response resp ;		
-		resp = payPost("RORUpdate_GW_Status","");	
-		validation("RORUpdate_GW_Status", resp); 
-	}*/
-	
 	
 	
 }

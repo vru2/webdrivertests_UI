@@ -92,7 +92,9 @@
       <class name="paymentsAPI.API_EW_Pay_Multi_V3"/>    -->
       <class name="paymentsAPI.API_EW_Pay_V3"/>       
       <class name="paymentsAPI.API_EW_Add_Amount"/>       
-      <class name="paymentsAPI.API_EW_Pay_AutoDebit"/>     
+      <class name="paymentsAPI.API_EW_Pay_AutoDebit"/>    
+      <class name="paymentsAPI.API_EW_Summary"/>  
+         
    </classes>
 </test>
 

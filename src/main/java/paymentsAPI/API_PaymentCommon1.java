@@ -290,6 +290,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String urlEW_PayV3= "/paymentservice/service/pay/v3";
 	String urlEW_Refund= "/paymentservice/expressway/v2/refund?refundIds=";
 
+	String 	urlEW_Summary = "/paymentservice/expresswayplus/paymentSummary?trip_ref=Q190521160824";
 	String url_RefundNEW_EndPoint= "/paymentservice/service/refund?refundids=";
 
 	String urlOLA_Validate = "/paymentservice/service/cashback/ola/validate";
@@ -1431,7 +1432,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 	public Response validation(String payType, Response resp){
 		Reporter.log("Response body "+payType +" : "+ resp.body().asString());
-		System.out.println("Response body "+payType +" : "+ resp.body().asString());
+		//System.out.println("Response body "+payType +" : "+ resp.body().asString());
 		int statusCode = resp.getStatusCode();	
 		Reporter.log("statusCode: " + statusCode);
 		JsonPath jsonPathEvaluator = resp.jsonPath();
@@ -1774,6 +1775,17 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 				Reporter.log("Not attempted ");
 				Assert.assertTrue(false);
 			}	
+		}
+		
+		else if (payType.equalsIgnoreCase("EW_Summary")) {
+			if(!resp.body().asString().contains("amount")) {
+				Reporter.log("amount is not displayed : ");
+				Assert.assertTrue(false);
+			}
+			if(!resp.body().asString().contains("S")) {
+				Reporter.log("Status S is not displayed : ");
+				Assert.assertTrue(false);
+			}
 		}
 		else if (payType.equalsIgnoreCase("EW_VALIDATE")) {
 			if(!resp.body().asString().contains("Validation successful")) {
@@ -3023,6 +3035,11 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		}
 		else if(payType.equalsIgnoreCase("refund")) {
 			endPoint = urlEW_Refund;	
+			response = RestAssured.given().
+					when().log().all().headers(headers).get(endPoint);
+		}
+		else if(payType.equalsIgnoreCase("EW_Summary")) {
+			endPoint = urlEW_Summary;	
 			response = RestAssured.given().
 					when().log().all().headers(headers).get(endPoint);
 		}

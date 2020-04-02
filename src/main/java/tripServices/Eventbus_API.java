@@ -1,5 +1,6 @@
 package tripServices;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
@@ -12,7 +13,8 @@ public class Eventbus_API extends TripserviceCommon{
 	
 	String url="http://172.17.26.11:9070/event/publish";
 	Response resp;
-	String params="{\"eventContent\":\"test\",\"eventName\": \"test\",\"eventReference\":\"test\"}";
+	String s=RandomStringUtils.randomNumeric(3);
+	String params="{\"eventContent\":\"test"+s+"\",\"eventName\": \"test\",\"eventReference\":\"test\"}";
 	@Test
 	public void eventbus() {
 	resp=RestAssured.given().

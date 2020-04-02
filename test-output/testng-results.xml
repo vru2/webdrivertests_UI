@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[{
+  "data" : true,
+  "success" : true,
+  "errors" : [ ]
+}]]>
+    </line>
+    <line>
+      <![CDATA[Status code 200]]>
+    </line>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="2518" started-at="2020-04-02T05:29:02Z" finished-at="2020-04-02T05:29:05Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="2518" started-at="2020-04-02T05:29:02Z" finished-at="2020-04-02T05:29:05Z">
+      <class name="tripServices.Eventbus_API">
+        <test-method status="PASS" signature="eventbus()[pri:0, instance:tripServices.Eventbus_API@6a28ffa4]" name="eventbus" duration-ms="2491" started-at="2020-04-02T05:29:02Z" finished-at="2020-04-02T05:29:05Z">
+          <reporter-output>
+            <line>
+              <![CDATA[{
+  "data" : true,
+  "success" : true,
+  "errors" : [ ]
+}]]>
+            </line>
+            <line>
+              <![CDATA[Status code 200]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- eventbus -->
+      </class> <!-- tripServices.Eventbus_API -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

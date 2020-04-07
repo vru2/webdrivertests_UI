@@ -450,10 +450,10 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 
 			} else if (bankType.equalsIgnoreCase("Paytm")) {
 				Thread.sleep(5000);
-				waitForElementVisibility(driver, By.xpath("//div[2]/button"),20);
+				waitForElementVisibility(driver, By.xpath("//section/button"),20);
 				/*elementVisible(driver, getObjectPayment("TW_PayTM_Proceed_Btn"), 20);				
 				elementPresent(driver, getObjectPayment("TW_PayTM_PhoneNo_Txt_Box"));*/
-				elementPresent_log(driver, By.xpath("//div[2]/button"), "Paytm Pay Button", 5);
+				elementPresent_log(driver, By.xpath("//section/button"), "Paytm Pay Button", 5);
 				//textPresent_Log(driver, "CLEARTRIP PRIVATE LIMITED Order", 10);
 			} else if (bankType.equalsIgnoreCase("Masterpass")) {
 

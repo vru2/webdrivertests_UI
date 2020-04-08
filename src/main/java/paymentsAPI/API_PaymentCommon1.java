@@ -29,7 +29,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 {	
 	
 	
-/*	String urlPay = "http://172.17.26.11:8358";
+	String urlPay = "http://172.17.26.11:8358";
 	String promoURL = "http://172.17.26.11:8360";
 	String urlDA = "http://172.17.28.21:8403";
 	String urlRewards = "http://172.17.12.83:9080";
@@ -44,8 +44,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String urlReporting ="http://172.17.26.11:8272";
 	String urlReportingTS ="http://172.17.26.11:9031";
 	
-	*/
-
+	
+/*
 		String urlFlyin = "http://172.17.26.11:8406";
 		String urlPay = "http://172.17.26.11:8070";
 		String urlDA = "http://172.17.28.21:8403";
@@ -61,7 +61,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		String urlrewards_URI = "http://172.17.12.83:9080";
 		String urlPromo_Used = "http://172.17.26.11:8071";
 		String urlReporting ="http://172.17.26.11:8272";
-		String urlReportingTS ="http://172.17.26.11:9031";
+		String urlReportingTS ="http://172.17.26.11:9031";*/
 	
 	
 
@@ -352,7 +352,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 
 	String Prod_Url_PaymentService="http://172.21.65.21:8070";
-	String Prod_Url_Rewards1="http://rewardsservice.cltp.com:9001";
+	//String Prod_Url_Rewards1="http://rewardsservice.cltp.com:9001";
 	String Prod_Url_Rewards="http://172.21.3.122:9080";
 	String Prod_Url_Wallet="http://172.21.65.21:8071";
 	String Prod_Url_Promo="http://172.21.48.21:7999";

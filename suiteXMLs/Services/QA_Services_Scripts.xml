@@ -1,0 +1,18 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="QA Services Scripts" parallel="tests" thread-count="1">
+
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="common.RemoveDuplicateResults"/>
+		<listener class-name="common.RetryListener"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+</listeners>
+
+		<suite-files>
+				<suite-file path="QA_Services_Comm_API.xml"></suite-file>
+		</suite-files>
+		
+		 <suite-files>
+				<suite-file path="QA_Tripservices_API.xml"></suite-file>
+		</suite-files>
+</suite>

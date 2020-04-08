@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TripService Get Calls"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="2.711">
+  <properties />
+  
+  
+            <testcase name="getTripService" time="2.711" classname="tripServicesProd.TS_GET_Tripscount_Personid" />
+      
+</testsuite>

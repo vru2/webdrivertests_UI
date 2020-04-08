@@ -27,24 +27,27 @@ import paymentsUI.PaymentUI_CommonUtilities;
 
 public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 {	
-	String urlPay = "http://172.17.26.11:8358";
+	
+	
+/*	String urlPay = "http://172.17.26.11:8358";
 	String promoURL = "http://172.17.26.11:8360";
 	String urlDA = "http://172.17.28.21:8403";
 	String urlRewards = "http://172.17.12.83:9080";
 	String urlWallet = "http://172.17.26.11:8359";
 	String urlCardInfo_Service="http://172.17.26.11:8331";
-
+	String urlFlyin = "http://172.17.26.11:8406";
 	String urlrewards_validate = "http://172.17.26.11:8358";
 	String urlrewards_validate1 = "http://172.17.26.11:8070";
-	String urlrewards_payURI1 ="http://paymentservice.cltp.com:9001";
-	String urlrewards_URI1 = "http://rewardsservice.cltp.com:9001/";
-	String urlPromo_Used = "http://wallet-service.cltp.com:9001";
+	String urlrewards_payURI1 ="http://172.17.26.11:8358";
+	String urlrewards_URI1 = "http://172.17.12.83:9080/";
+	String urlPromo_Used = "http://172.17.26.11:8359";
 	String urlReporting ="http://172.17.26.11:8272";
 	String urlReportingTS ="http://172.17.26.11:9031";
 	
-	
-	/*
-		String urlPay = "http://172.17.8.218:9001";
+	*/
+
+		String urlFlyin = "http://172.17.26.11:8406";
+		String urlPay = "http://172.17.26.11:8070";
 		String urlDA = "http://172.17.28.21:8403";
 		String urlRefundNew = "http://172.17.8.218:9001";
 		String promoURL = "http://172.17.26.11:7999";
@@ -54,12 +57,12 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		String urlCardInfo_Service="http://172.17.26.11:8331";
 
 		String urlrewards_validate = "http://172.17.26.11:8070";
-		String urlrewards_payURI ="http://paymentservice.cltp.com:9001";
-		String urlrewards_URI = "http://rewardsservice.cltp.com:9001/";
-		String urlPromo_Used = "http://wallet-service.cltp.com:9001";
+		String urlrewards_payURI ="http://172.17.26.11:8070";
+		String urlrewards_URI = "http://172.17.12.83:9080";
+		String urlPromo_Used = "http://172.17.26.11:8071";
 		String urlReporting ="http://172.17.26.11:8272";
 		String urlReportingTS ="http://172.17.26.11:9031";
-	*/
+	
 	
 
 		
@@ -290,6 +293,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String urlEW_PayV3= "/paymentservice/service/pay/v3";
 	String urlEW_Refund= "/paymentservice/expressway/v2/refund?refundIds=";
 
+	String 	urlEW_Summary = "/paymentservice/expresswayplus/paymentSummary?trip_ref=Q190521160824";
 	String url_RefundNEW_EndPoint= "/paymentservice/service/refund?refundids=";
 
 	String urlOLA_Validate = "/paymentservice/service/cashback/ola/validate";
@@ -508,10 +512,14 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			url= urlROR_Fetch_ProfileList;
 		}
 		else if(payType.equalsIgnoreCase("NavisonCC")) {
+			RestAssured.baseURI =urlReporting;
 			url= url_NavisonCC;
+			Reporter.log(urlReporting+url);
 		}
 		else if(payType.equalsIgnoreCase("NavisonAir")) {
+			RestAssured.baseURI =urlReporting;
 			url= url_NavisonAir;
+			Reporter.log(urlReporting+url);
 		}
 		else if(payType.equalsIgnoreCase("ROR_MultiSearch")) {
 			RestAssured.baseURI =urlReporting;
@@ -567,14 +575,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			url= urlROR_Refund_Reads;
 			Reporter.log(urlPay=url);
 		}
-		
-
-		
-		
 		Reporter.log(url);
-
-
-
 		request = RestAssured.given().
 				when().
 				log().all().
@@ -585,7 +586,6 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 	public Response payPut(String payType, String payType1) {
 		RestAssured.baseURI =urlPay;
-		Reporter.log(urlPay);
 		String url = null;
 		String params = null;
 		HashMap<String, Object> headers = new HashMap<>();
@@ -627,9 +627,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 		} 		
 
-
-
-
+		Reporter.log(urlPay+url);
+		Reporter.log("Params :" +params);
 
 		request = RestAssured.given().
 				when().
@@ -684,6 +683,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		}
 
 
+		Reporter.log(urlPay+url);
+		Reporter.log("Params :" +params);
 
 
 		request = RestAssured.given().
@@ -753,6 +754,9 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			resp = RestAssured.given().when().log().all().body(params).headers(headers).post(url);
 		}
 
+
+		Reporter.log(promoURL+url);
+		Reporter.log("Params :" +params);
 		return resp;			
 	}
 
@@ -776,6 +780,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 				headers(headers).
 				get(url);
 
+		Reporter.log(urlDA+url);
 		return request;
 	
 	}
@@ -783,13 +788,11 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	public Response promoGet(String payType, String payType1){
 		RestAssured.baseURI = promoURL;
 		String url = null;
-		String params = null;
 		HashMap<String, Object> headers = new HashMap<String,Object>();
 		headers = headersForms();
 		Response request;
 		if(payType.equalsIgnoreCase("")){
-			params = "";
-			url = "";
+				url = "";
 		}
 
 		else if(payType.equalsIgnoreCase("PromoTripRefAndId")){
@@ -820,6 +823,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			url = promoURL + endPointPromoGroupsForACreatedAndUpdatedDate;
 		}
 
+		Reporter.log(promoURL+url);
 		request = RestAssured.given().
 				when().
 				log().all().
@@ -881,12 +885,14 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			params = paramsGVWL;
 		}
 		else if(payType.equalsIgnoreCase("FLYIN")) {
-			RestAssured.baseURI ="http://172.17.26.11:8406";
+			RestAssured.baseURI =urlFlyin;
 			url = urlPayFlyin;
 			params = paramsFlyIN;
+			Reporter.log(urlFlyin+url);
 		}
 
 		Reporter.log(urlPay+url);
+		Reporter.log("Params : "+params);
 		request = RestAssured.given().
 				when().
 				log().all().
@@ -950,7 +956,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		return request;
 	}
 
-	public Response rearch_Smiles(String payType, String payType1){
+/*	public Response rearch_Smiles(String payType, String payType1){
 		RestAssured.baseURI =urlPay;
 		Reporter.log(urlPay);
 		String url = urlPayV3;
@@ -964,7 +970,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		}
 
 		return request;
-	}
+	}*/
 
 	@SuppressWarnings("null")
 	public String[] getGV(int Amount) {
@@ -1370,7 +1376,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 					headers(headers).
 					get(url);
 		}
-		Reporter.log(urlWallet);
+		Reporter.log(urlCardInfo_Service+url);
 		Reporter.log(url);
 		return request;
 	}
@@ -1431,7 +1437,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 	public Response validation(String payType, Response resp){
 		Reporter.log("Response body "+payType +" : "+ resp.body().asString());
-		System.out.println("Response body "+payType +" : "+ resp.body().asString());
+		//System.out.println("Response body "+payType +" : "+ resp.body().asString());
 		int statusCode = resp.getStatusCode();	
 		Reporter.log("statusCode: " + statusCode);
 		JsonPath jsonPathEvaluator = resp.jsonPath();
@@ -1774,6 +1780,17 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 				Reporter.log("Not attempted ");
 				Assert.assertTrue(false);
 			}	
+		}
+		
+		else if (payType.equalsIgnoreCase("EW_Summary")) {
+			if(!resp.body().asString().contains("amount")) {
+				Reporter.log("amount is not displayed : ");
+				Assert.assertTrue(false);
+			}
+			if(!resp.body().asString().contains("S")) {
+				Reporter.log("Status S is not displayed : ");
+				Assert.assertTrue(false);
+			}
 		}
 		else if (payType.equalsIgnoreCase("EW_VALIDATE")) {
 			if(!resp.body().asString().contains("Validation successful")) {
@@ -3023,6 +3040,11 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		}
 		else if(payType.equalsIgnoreCase("refund")) {
 			endPoint = urlEW_Refund;	
+			response = RestAssured.given().
+					when().log().all().headers(headers).get(endPoint);
+		}
+		else if(payType.equalsIgnoreCase("EW_Summary")) {
+			endPoint = urlEW_Summary;	
 			response = RestAssured.given().
 					when().log().all().headers(headers).get(endPoint);
 		}

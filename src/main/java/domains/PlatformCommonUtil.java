@@ -481,6 +481,17 @@ public class PlatformCommonUtil extends WrapperMethod {
 		return random.nextInt(900000);
 	}
 	
+	public String generateRandomWord(int wordLength) {
+		java.util.Random r= new java.util.Random();
+		StringBuilder sb = new StringBuilder(wordLength);
+		for(int i = 0; i < wordLength; i++) { // For each letter in the word
+			char tmp = (char) ('a' + r.nextInt('z' - 'a')); // Generate a letter between a and z
+			sb.append(tmp); // Add it to the String
+		}
+		return sb.toString();
+	}
+	
+	
 	public static int generatePaymentID(){
 		int pid= PlatformCommonUtil.getRandomNumber();
 		return pid;
@@ -500,6 +511,7 @@ public class PlatformCommonUtil extends WrapperMethod {
 		return dateTime;
 	}
 
+	
 
 
 	public String getRandomNos(int number) throws Exception {

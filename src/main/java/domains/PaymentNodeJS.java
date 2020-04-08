@@ -1820,6 +1820,19 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 			Reporter.log("Exception is" +e);
 		}
 	}
+	
+	public void fillCardDetailsForEW(RemoteWebDriver driver, String cardNumberxpath,String cardNamexpath, String expiryMonthxpath, String expiryYearxpath){
+		try{
+			driver.findElement(By.xpath(cardNumberxpath)).sendKeys(PaymentUI_CommonUtilities.validAmexCardNumber);
+			driver.findElement(By.xpath(cardNamexpath)).sendKeys(PaymentUI_CommonUtilities.validCardName);
+			driver.findElement(By.xpath(expiryMonthxpath)).sendKeys(PaymentUI_CommonUtilities.ewAddCardValidExpiryMonth);
+			driver.findElement(By.xpath(expiryYearxpath)).sendKeys(PaymentUI_CommonUtilities.ewAddCardValidExpiryYear);
+			}
+
+		catch(Exception e){
+			Reporter.log("Exception is" +e);
+		}
+	}
 
 
 	public void validateErrorForInvalidCCDetails(RemoteWebDriver driver, String xpath){

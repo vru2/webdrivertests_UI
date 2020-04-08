@@ -79,6 +79,7 @@ public class PaymentUI_Validation extends PaymentNodeJS{
 	@Test(priority=3)
 	public void emptyCreditCardErrorValidation() throws Exception{
 		try {	
+			waitForElementVisibility(driver,By.xpath("//p[text()='Credit Card']"), 15);
 			click(driver, PaymentUI_CommonUtilities.creditCardPaymentxpath);
 			storedCardCheckbox(driver,PaymentUI_CommonUtilities.storedCardCheckbox);
 			convenienceText(driver,PaymentUI_CommonUtilities.convenienceTextxpath);
@@ -102,6 +103,7 @@ public class PaymentUI_Validation extends PaymentNodeJS{
 	public void emptyDebitCardErrorValidation() throws Exception{
 
 		try {
+			waitForElementVisibility(driver,By.xpath("//p[text()='Debit Card']"), 15);
 			click(driver,PaymentUI_CommonUtilities.debitCardPaymentxpath);
 			convenienceText(driver,PaymentUI_CommonUtilities.convenienceTextxpath);
 			validateDCPageText(driver,PaymentUI_CommonUtilities.creditOrDebitCardPageTextxpath);
@@ -166,7 +168,7 @@ public class PaymentUI_Validation extends PaymentNodeJS{
 			fillValidCreditCardDetails(driver,PaymentUI_CommonUtilities.cardNumberxpath);
 			if(driver.findElement(By.xpath(PaymentUI_CommonUtilities.makePaymentbutton)).isEnabled()){
 				click(driver,PaymentUI_CommonUtilities.makePaymentbutton);
-				validateNoErrorForValidCCDetails(driver,PaymentUI_CommonUtilities.errorTextInvalidCCDetailsxpath);
+				//validateNoErrorForValidCCDetails(driver,PaymentUI_CommonUtilities.errorTextInvalidCCDetailsxpath);
 			}
 
 		}
@@ -187,6 +189,7 @@ public class PaymentUI_Validation extends PaymentNodeJS{
 			//validateSectionDetails(driver,PaymentUI_CommonUtilities.sectionTravellers,PaymentUI_CommonUtilities.sectionxpath);
 			//validateSectionDetails(driver,PaymentUI_CommonUtilities.sectionItinerary,PaymentUI_CommonUtilities.sectionxpath);
 			//validateSectionDetails(driver,PaymentUI_CommonUtilities.sectionPricingDetails,PaymentUI_CommonUtilities.sectionxpath);
+			waitForElementVisibility(driver,By.xpath("//p[contains(text(),'Travellers')]"),15);
 			validateIfPresent(driver,PaymentUI_CommonUtilities.sectionTravellersXpath);
 			validateIfPresent(driver,PaymentUI_CommonUtilities.sectionItineraryXpath);
 			
@@ -258,6 +261,7 @@ public class PaymentUI_Validation extends PaymentNodeJS{
 	@Test(priority=9)
 	public void validateInvalidExpiry() {
 		try {
+			waitForElementVisibility(driver,By.xpath("//p[text()='Credit Card']"), 15);
 			fillValidAmexCreditCardDetails(driver,PaymentUI_CommonUtilities.cardNumberxpath,PaymentUI_CommonUtilities.cardHolderNamexpath,PaymentUI_CommonUtilities.expiryMonthxpath,PaymentUI_CommonUtilities.expiryYearxpath,PaymentUI_CommonUtilities.cvvNumberxpath);
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			driver.findElement(By.xpath(PaymentUI_CommonUtilities.expiryYearxpath)).sendKeys(PaymentUI_CommonUtilities.invalidAmexExpiryYear);

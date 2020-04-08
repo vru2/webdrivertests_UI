@@ -49,67 +49,99 @@ public class PaymentUI_AddStoredCardAndValidate extends domains.PaymentNodeJS{
 			//driver.manage().addCookie(cookieName);
 			//refreshPage(driver);
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			click(driver,PaymentUI_CommonUtilities.manageTripsXpath);
-			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-
-			elementVisible(driver, getObject("Acc_Expressway_Tab"), 10);
-			textPresent_Log(driver, "Trips you've booked", 10);
-			safeClick(driver, getObject("Acc_Expressway_Tab"));
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			List<WebElement> element= driver.findElements(By.xpath("//h3[contains(text(),'3456 78')]"));
-			if(element.size()==1){
-				click(driver,PaymentUI_CommonUtilities.removeStoredCardXpath);
-				Alert alert = driver.switchTo().alert();
-				alert.accept();
+			//			click(driver,PaymentUI_CommonUtilities.manageTripsXpath);
+			//			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+			//elementVisible(driver, getObject("Acc_Expressway_Tab"), 10);
+			//			textPresent_Log(driver, "Trips you've booked", 10);
+			//			safeClick(driver, getObject("Acc_Expressway_Tab"));
+			//			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			click(driver,PaymentUI_CommonUtilities.homePageUserAccountLinkXpath);
+			click(driver,PaymentUI_CommonUtilities.homePageAccountEWLinkXpath);
+			
+			//boolean storeCard = driver.findElement(By.xpath("//button[@id='startExpress']")).isDisplayed();
+			boolean storeCard = driver.findElement(By.xpath("//h5[contains(text(),'Introducing single-click flight bookings')]")).isDisplayed();
+			
+			if(storeCard==true) 
+			{
+				click(driver,PaymentUI_CommonUtilities.addNewCardEWXpath);
+				fillCardDetailsForEW(driver, PaymentUI_CommonUtilities.ewCardNumberXpath,PaymentUI_CommonUtilities.ewCardHolderNameXpath,PaymentUI_CommonUtilities.ewCardExpiryMonthXpath,PaymentUI_CommonUtilities.ewCardExpiryYearXpath);
+				click(driver,PaymentUI_CommonUtilities.ewAddCardButtonXpath);
+				safeType(driver,By.xpath("//textarea[contains(@id,'xpress_street_address')]"),"test");
+				safeType(driver,By.xpath("//input[contains(@id,'xpress_city')]"),"test");
+				safeType(driver,By.xpath("//input[contains(@id,'xpress_state')]"),"test");
+				safeType(driver,By.xpath("//input[contains(@id,'xpress_pin')]"),"123456");
+				safeType(driver,By.xpath("//input[contains(@id,'xpress_country')]"),"India");
+				click(driver,PaymentUI_CommonUtilities.ewAddCardAddrButtonXpath);
+				List<WebElement> element= driver.findElements(By.xpath("//h3[contains(text(),'3456 78')]"));
+				if(element.size()==1)
+				{
+					click(driver,PaymentUI_CommonUtilities.removeStoredCardXpath);
+					Alert alert = driver.switchTo().alert();
+					alert.accept();
+				}
+				
 			}
-			driver=(RemoteWebDriver) getDriver(driver);
-			driver.get(Url);
-			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-			driver.manage().addCookie(cookieName);
-			refreshPage(driver);
-			elementVisible(driver, By.xpath("(//label[@class='checkbox-round'])[1]"), 10);
-			List<WebElement> walletCheckBoxList = driver.findElements(By.xpath("(//label[@class='checkbox-round'])[1]"));
-			if(walletCheckBoxList.size()!=0) {
+			
+			else{
+			
+			List<WebElement> element= driver.findElements(By.xpath("//h3[contains(text(),'3456 78')]"));
+				if(element.size()==1)
+				{
+					click(driver,PaymentUI_CommonUtilities.removeStoredCardXpath);
+					Alert alert = driver.switchTo().alert();
+					alert.accept();
+				}
+				
+			}
+				driver=(RemoteWebDriver) getDriver(driver);
+				driver.get(Url);
+				driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+				driver.manage().addCookie(cookieName);
+				refreshPage(driver);
+				elementVisible(driver, By.xpath("(//label[@class='checkbox-round'])[1]"), 10);
+				List<WebElement> walletCheckBoxList = driver.findElements(By.xpath("(//label[@class='checkbox-round'])[1]"));
+				if(walletCheckBoxList.size()!=0) 
+				{
+					click(driver,PaymentUI_CommonUtilities.walletCheckBox);
+					driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+				}
+				fillValidAmexCreditCardDetails(driver,PaymentUI_CommonUtilities.cardNumberxpath,PaymentUI_CommonUtilities.cardHolderNamexpath,PaymentUI_CommonUtilities.expiryMonthxpath,PaymentUI_CommonUtilities.expiryYearxpath,PaymentUI_CommonUtilities.cvvNumberxpath);
+				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+				assert_elementNotPresent(driver, By.xpath("//p[text()='Stored Cards']"));
+				//click(driver,PaymentUI_CommonUtilities.storedCardCheckbox);
+				click(driver,PaymentUI_CommonUtilities.makePaymentbutton);
+				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+				elementVisible(driver, By.xpath("//input[@type='submit']"), 10);
+				click(driver,PaymentUI_CommonUtilities.amexGatewayAuthenticationSubmitxpath);
+				resp = payUIget("BookApp/GetPay","");
+				Url = qaUrl+ fetchPaymentURL(resp);
+				driver.get(Url);
+				elementVisible(driver, By.xpath("(//label[@class='checkbox-round'])[1]"), 10);
 				click(driver,PaymentUI_CommonUtilities.walletCheckBox);
 				driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+				//validatePaymentModes(driver,PaymentUI_CommonUtilities.paymentModeStoredCard,PaymentUI_CommonUtilities.paymentModexpath);
+				validateIfPresent(driver,PaymentUI_CommonUtilities.storedCardNewXpath);
+				click(driver,PaymentUI_CommonUtilities.storedCardNewXpath);
+				validateIfPresent(driver,PaymentUI_CommonUtilities.amexCardIsPresentEndingWithSeven);
+				click(driver,PaymentUI_CommonUtilities.makePaymentbutton);
+				validateIfPresent(driver,PaymentUI_CommonUtilities.errortextCvvXpath);
+				validateIfPresent(driver,PaymentUI_CommonUtilities.storedCardNewXpath);
 			}
-			fillValidAmexCreditCardDetails(driver,PaymentUI_CommonUtilities.cardNumberxpath,PaymentUI_CommonUtilities.cardHolderNamexpath,PaymentUI_CommonUtilities.expiryMonthxpath,PaymentUI_CommonUtilities.expiryYearxpath,PaymentUI_CommonUtilities.cvvNumberxpath);
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			assert_elementNotPresent(driver, By.xpath("//p[text()='Stored Cards']"));
-			//click(driver,PaymentUI_CommonUtilities.storedCardCheckbox);
-			click(driver,PaymentUI_CommonUtilities.makePaymentbutton);
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			elementVisible(driver, By.xpath("//input[@type='submit']"), 10);
-			click(driver,PaymentUI_CommonUtilities.amexGatewayAuthenticationSubmitxpath);
-			resp = payUIget("BookApp/GetPay","");
-			Url = qaUrl+ fetchPaymentURL(resp);
-			driver.get(Url);
-			elementVisible(driver, By.xpath("(//label[@class='checkbox-round'])[1]"), 10);
-			click(driver,PaymentUI_CommonUtilities.walletCheckBox);
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			//validatePaymentModes(driver,PaymentUI_CommonUtilities.paymentModeStoredCard,PaymentUI_CommonUtilities.paymentModexpath);
-			validateIfPresent(driver,PaymentUI_CommonUtilities.storedCardNewXpath);
-			click(driver,PaymentUI_CommonUtilities.storedCardNewXpath);
-			validateIfPresent(driver,PaymentUI_CommonUtilities.amexCardIsPresentEndingWithSeven);
-			click(driver,PaymentUI_CommonUtilities.makePaymentbutton);
-			validateIfPresent(driver,PaymentUI_CommonUtilities.errortextCvvXpath);
-			validateIfPresent(driver,PaymentUI_CommonUtilities.storedCardNewXpath);
+
+			catch(Exception e) {
+				Reporter.log("Exception is" +e);
+				Assert.assertTrue(false);
+			}
+
 		}
 
-		catch(Exception e) {
-			Reporter.log("Exception is" +e);
-			Assert.assertTrue(false);
+		@AfterMethod (alwaysRun = true)
+		public void afterMethod(ITestResult _result) throws Exception {
+			afterMethod(driver, _result);
 		}
 
+		@AfterClass
+		public void tearDown() throws Exception {
+			browserClose(driver);
+		}
 	}
-
-	@AfterMethod (alwaysRun = true)
-	public void afterMethod(ITestResult _result) throws Exception {
-		afterMethod(driver, _result);
-	}
-
-	@AfterClass
-	public void tearDown() throws Exception {
-		browserClose(driver);
-	}
-}

@@ -15,6 +15,21 @@ public class PaymentUI_CommonUtilities {
 	protected static String expiryYearxpath = "//select[contains(@id,'expiryYear')]";
 	protected static String cardHolderNamexpath = "//input[contains(@id,'name')]";
 	protected static String cvvNumberxpath = "//input[contains(@id,'cvv')]";
+	
+	protected static String ewCardNumberXpath= "//input[contains(@id,'CC')]";
+	protected static String ewCardExpiryMonthXpath = "//select[contains(@id,'CcExpirationMonth')]";
+	protected static String ewCardExpiryYearXpath = "//select[contains(@id,'CcExpirationYear')]";
+	protected static String ewCardHolderNameXpath = "//input[contains(@name,'name')]";
+	protected static String ewAddCardButtonXpath = "//button[contains(@id,'addCard')]";
+	public static String ewAddCardValidExpiryMonth= "5";
+	public static String ewAddCardValidExpiryYear= "2021";
+	public static String ewAddCardStreetAddrXpath= "//textarea[contains(@id,'xpress_street_address')]";
+	public static String ewAddCardCityXpath= "//input[contains(@id,'xpress_city')]";
+	public static String ewAddCardStateXpath= "//input[contains(@id,'xpress_state')]";
+	public static String ewAddCardPinCodeXpath= "//input[contains(@id,'xpress_pin')]";
+	public static String ewAddCardCountryXpath= "//input[contains(@id,'xpress_country')]";
+	public static String ewAddCardAddrButtonXpath= "//button[contains(@id,'saveBillAddress')]";
+	
 	protected static String cardNumbererrorxpath = "//input[contains(@id,'cardNumber')]/../../../following-sibling::p[text()='errortext']";
 	protected static String cardHoldererrorxpath= "//input[contains(@id,'name')]/../../following-sibling::p[text()='errortext']";
 	protected static String cardCvverrorxpath= "//input[contains(@id,'cvv')]/../../../../following-sibling::p[text()='errortext']";
@@ -145,8 +160,11 @@ public class PaymentUI_CommonUtilities {
 	public static String citiBankTransaction="//select[@name='PAID']";
 	public static String paymentSuccess="//h1[contains(text(),'Payment successful!')]";
 	public static String convenienceXpathNew="//p[contains(text(),'Includes a convenience fee of')]";
+    protected static String homePageUserAccountLinkXpath= "//a[@id='userAccountLink']";
+    protected static String homePageAccountEWLinkXpath= "//a[contains(@href,'/account/expressway?src=qtct&sub_src=expressway')]";
+	protected static String addNewCardEWXpath="//button[@id='startExpress']";
     
-	public static int generateFiveDigitRandomNumber(){
+    public static int generateFiveDigitRandomNumber(){
 		Random r = new Random( System.currentTimeMillis() );
 		return 10000 + r.nextInt(20000);
 

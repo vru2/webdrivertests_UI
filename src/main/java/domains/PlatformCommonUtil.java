@@ -513,7 +513,6 @@ public class PlatformCommonUtil extends WrapperMethod {
 
 	
 
-
 	public String getRandomNos(int number) throws Exception {
 		int randomInventory = ThreadLocalRandom.current().nextInt(number);
 		randomInventory = (int) (Math.random() * number);

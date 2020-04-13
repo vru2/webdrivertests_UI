@@ -9,7 +9,7 @@ import java.util.HashMap;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.testng.Reporter;
 
-import com.sun.javafx.collections.MappingChange.Map;
+//import com.sun.javafx.collections.MappingChange.Map;
 
 import domains.PlatformCommonUtil;
 import io.restassured.RestAssured;

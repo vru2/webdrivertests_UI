@@ -27,7 +27,7 @@ import paymentsUI.PaymentUI_CommonUtilities;
 
 public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 {	
-	/*
+	
 	
 	String urlPay = "http://172.17.26.11:8358";// Mysql
 	String urlWallet = "http://172.17.26.11:8359";
@@ -42,11 +42,11 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String urlrewards_URI1 = "http://172.17.12.83:9080/";
 	String urlPromo_Used = "http://172.17.26.11:8359";
 	String urlReporting ="http://172.17.26.11:8272";
-	String urlReportingTS ="http://172.17.26.11:9031";*/
+	String urlReportingTS ="http://172.17.26.11:9031";
 	
 	
 
-		String urlFlyin = "http://172.17.26.11:8406"; // ORACLE
+	/*	String urlFlyin = "http://172.17.26.11:8406"; // ORACLE
 		String urlPay = "http://172.17.26.11:8070";
 		String urlDA = "http://172.17.28.21:8403";
 		String urlRefundNew = "http://172.17.8.218:9001";
@@ -62,7 +62,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		String urlPromo_Used = "http://172.17.26.11:8071";
 		String urlReporting ="http://172.17.26.11:8272";
 		String urlReportingTS ="http://172.17.26.11:9031";		
-		
+		*/
 	
 	
 	

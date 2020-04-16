@@ -29,21 +29,25 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 {	
 	
 	
-	String urlPay = "http://172.17.26.11:8358";// Mysql
+	String urlPay = "http://172.17.28.21:8358";// Mysql
 	String urlWallet = "http://172.17.26.11:8359";
 	String promoURL = "http://172.17.26.11:8360";
 	String urlDA = "http://172.17.28.21:8403";
 	String urlRewards = "http://172.17.12.83:9080";
 	String urlCardInfo_Service="http://172.17.26.11:8331";
 	String urlFlyin = "http://172.17.26.11:8406";
-	String urlrewards_validate = "http://172.17.26.11:8358";
-	String urlrewards_validate1 = "http://172.17.26.11:8070";
-	String urlrewards_payURI1 ="http://172.17.26.11:8358";
+	String urlrewards_validate = "http://172.17.28.21:8358";
+	String urlrewards_validate1 = "http://172.17.28.21:8358";
+	String urlrewards_payURI1 ="http://172.17.28.21:8358";
 	String urlrewards_URI1 = "http://172.17.12.83:9080/";
 	String urlPromo_Used = "http://172.17.26.11:8359";
-	String urlReporting ="http://172.17.26.11:8272";
+	String urlReporting ="http://172.17.28.21:8272";
 	String urlReportingTS ="http://172.17.26.11:9031";
 	
+	
+/*//OLD mysql apps
+	String urlPay = "http://172.17.26.11:8358";
+	String urlReporting ="http://172.17.26.11:8272";*/
 	
 
 	/*	String urlFlyin = "http://172.17.26.11:8406"; // ORACLE
@@ -60,9 +64,10 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		String urlrewards_payURI ="http://172.17.26.11:8070";
 		String urlrewards_URI = "http://172.17.12.83:9080";
 		String urlPromo_Used = "http://172.17.26.11:8071";
-		String urlReporting ="http://172.17.26.11:8272";
+		String urlReporting ="http://172.17.28.21:8272";
 		String urlReportingTS ="http://172.17.26.11:9031";		
 		*/
+	
 	
 	
 	

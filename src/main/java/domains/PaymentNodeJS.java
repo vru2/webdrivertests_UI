@@ -69,7 +69,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 		elementPresent(driver, getObjectPayment("HomePage_Confirm_Btn"), 5);
 		if (common.value("PaymentServer").equalsIgnoreCase("MYSQL")) {
 			Thread.sleep(500);
-			safeType(driver, getObjectPayment("HomePage_Host_ServerIp_Txt"), "172.17.28.21:8358/paymentservice");
+			safeType(driver, getObjectPayment("HomePage_Host_ServerIp_Txt"), url_TestApp);
 			Reporter.log("Mysql payment 172.17.26.11:8358/payment"); 
 		} else if (common.value("PaymentServer").equalsIgnoreCase("DEV")) {
 			Thread.sleep(500);
@@ -102,7 +102,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 				elementPresent(driver, getObjectPayment("HomePage_Confirm_Btn"), 5);
 				if (common.value("PaymentServer").equalsIgnoreCase("MYSQL")) {
 					Thread.sleep(500);
-					smartType(driver, getObjectPayment("HomePage_Host_ServerIp_Txt"), "172.17.28.21:8358/paymentservice");
+					smartType(driver, getObjectPayment("HomePage_Host_ServerIp_Txt"), url_TestApp);
 				} else {
 					Thread.sleep(500);
 					//smartType(driver, getObjectPayment("HomePage_Host_ServerIp_Txt"), "172.17.8.218:9001/paymentservice");

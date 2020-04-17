@@ -29,7 +29,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 {	
 	
 	
-	String urlPay = "http://172.17.28.21:8358";// Mysql
+/*	String urlPay = "http://172.17.28.21:8358";// Mysql
 	String urlWallet = "http://172.17.26.11:8359";
 	String promoURL = "http://172.17.26.11:8360";
 	String urlDA = "http://172.17.28.21:8403";
@@ -43,14 +43,14 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String urlPromo_Used = "http://172.17.26.11:8359";
 	String urlReporting ="http://172.17.28.21:8272";
 	String urlReportingTS ="http://172.17.26.11:9031";
-	
+	public String url_TestApp = "172.17.28.21:8358/paymentservice";*/
 	
 /*//OLD mysql apps
 	String urlPay = "http://172.17.26.11:8358";
 	String urlReporting ="http://172.17.26.11:8272";*/
 	
 
-	/*	String urlFlyin = "http://172.17.26.11:8406"; // ORACLE
+		String urlFlyin = "http://172.17.26.11:8406"; // ORACLE
 		String urlPay = "http://172.17.26.11:8070";
 		String urlDA = "http://172.17.28.21:8403";
 		String urlRefundNew = "http://172.17.8.218:9001";
@@ -66,7 +66,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		String urlPromo_Used = "http://172.17.26.11:8071";
 		String urlReporting ="http://172.17.28.21:8272";
 		String urlReportingTS ="http://172.17.26.11:9031";		
-		*/
+		String url_TestApp = "172.17.28.21:8358/paymentservice";
+		
 	
 	
 	
@@ -3195,18 +3196,20 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			response = RestAssured.given().
 					when().log().all().body(params).headers(headers).post(endPoint);
 		}
-		//			else if(payType.equalsIgnoreCase("PAYBACK_Pay_WT")) {
-		//				Random rand = new Random();
-		//				int n = rand.nextInt(9999999);
-		//				String trackid1 = Integer.toString(n);
-		//				String track = "CLRTRP"+ trackid1;
-		//				
-		//				RestAssured.baseURI = urlrewards_payURI;
-		//				endPoint = urlreward_payback_pay;
-		//				params = ParamsPayBack_Pay+track+ParamsPayBack_PayWT;
-		//				response = RestAssured.given().
-		//						when().log().all().body(params).headers(headers).post(endPoint);
-		//			}
+				/*	else if(payType.equalsIgnoreCase("PAYBACK_Pay_WT")) {
+						Random rand = new Random();
+						int n = rand.nextInt(9999999);
+						String trackid1 = Integer.toString(n);
+						String track = "CLRTRP"+ trackid1;
+						
+						RestAssured.baseURI = urlrewards_payURI;
+						endPoint = urlreward_payback_pay;
+						params = ParamsPayBack_Pay+track+ParamsPayBack_PayWT;
+						response = RestAssured.given().
+								when().log().all().body(params).headers(headers).post(endPoint);
+					}*/
+		
+		
 		else if(payType.equalsIgnoreCase("PAYBACK_Pay_WT_MultiGV")) {
 			Random rand = new Random();
 			int n = rand.nextInt(9999999);
@@ -3249,7 +3252,11 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			String random_num = Integer.toString(rand_num);
 			String track_id = "pay123419823" + random_num;
 			int payment_id_redeem = payment_id.get(0);
-			params = "{\"rewardsType\":\"PAYBACK\",\"rewardsRequestType\":\"REDEEM\",\"paymentId\": " +payment_id_redeem+ ",\"trackId\": \"" + track_id + "\","+ "\"amount\":1,\"currency\":\"INR\",\"params\":{\"mobile\":\"9632699584\",\"tripRef\":\"Q191014530822\",\"pin\":\"3642\"}}";
+			params = "{\"rewardsType\":\"PAYBACK\",\"rewardsRequestType\":\"REDEEM\",\"paymentId\": " +payment_id_redeem+ ",\"trackId\": \"" + track_id + "\","+ "\"amount\":1,\"currency\":\"INR\",\"params\":{\"mobile\":\"9986696785\",\"tripRef\":\"Q191014530822\",\"pin\":\"4841\"}}";
+
+			System.out.println("params : "+params);
+
+			Reporter.log("params : "+params);
 			response = RestAssured.given().
 					when().log().all().body(params).headers(headers).post(endPoint);
 		}
@@ -3766,7 +3773,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		String status="";
 		String description="";
 		Reporter.log("Response body "+payType +" : "+ resp.body().asString());
-		//System.out.println("Response body "+payType +" : "+ resp.body().asString());
+		System.out.println("Response body "+payType +" : "+ resp.body().asString());
 		int statusCode = resp.getStatusCode();	
 		Reporter.log("statusCode: " + statusCode);
 		JsonPath jsonPathEvaluator = resp.jsonPath();
@@ -3929,11 +3936,10 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			String responseMessage = jsonPathEvaluator.getString("response_message");
 			redirectionRequired= redirectionRequired.replace("[", "");
 			redirectionRequired= redirectionRequired.replace("]", "");
-			System.out.println(redirectionRequired);
+			
 			responseMessage= responseMessage.replace("[", "");
 			responseMessage= responseMessage.replace("]", "");
-			System.out.println(responseMessage);
-
+			
 			if(redirectionRequired.equalsIgnoreCase("N") && responseMessage.equalsIgnoreCase("Reward Points validation successful")){
 				Reporter.log("There is no redirection required as the card details are valid");
 				Reporter.log("Reward Points validation successful");
@@ -3944,7 +3950,6 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 				isMatching=false;
 			}
 		}
-
 		Assert.assertTrue(isMatching);
 		return resp;
 	}

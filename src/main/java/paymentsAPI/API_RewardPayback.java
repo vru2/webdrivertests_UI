@@ -13,42 +13,7 @@ import io.restassured.response.Response;
 
 public class API_RewardPayback extends API_PaymentCommon1  {
 
-
-	@Test(priority=3)
-	public void RewardPayback_CheckBalance_Mobile(){
-		try{
-			Response res = reward("PAYBACK_CheckBalance", "");
-			validation_RewardPayback("PAYBACK_CheckBalance", res);
-		}
-
-		catch(Exception e){
-			Reporter.log("Exception faced is" +e);
-		}
-	}
-
-	@Test(priority=4)
-	public void RewardPayback_CheckBalance_Card(){
-		try{
-			Response res = reward("PAYBACK_CheckBalance_card", "");
-			validation_RewardPayback("PAYBACK_CheckBalance_card", res);
-		}
-
-		catch(Exception e){
-			Reporter.log("Exception faced is" +e);
-		}
-	}
-
-	@Test(priority=7)
-	public void RewardPayback_CheckEarnPoints(){
-		try{
-			Response res = reward("PAYBACK_CheckEarnPoints", "");
-			validation_RewardPayback("PAYBACK_CheckEarnPoints", res);
-		}
-
-		catch(Exception e){
-			Reporter.log("Exception is"+e);
-		}
-	}
+	
 
 	@Test(priority=1)
 	public void RewardPayBack_RewardCheckMobileLinked(){
@@ -74,18 +39,47 @@ public class API_RewardPayback extends API_PaymentCommon1  {
 			Reporter.log("Exception is" +e);
 		}
 	}
-
-	@Test(priority=11, enabled=false)
-	public void RewardPayback_forgotPassword(){
+	
+	@Test(priority=3)
+	public void RewardPayback_CheckBalance_Mobile(){
 		try{
-			Response res = reward("PAYBACK_Forgotpassword", "");
-			validation_RewardPayback("PAYBACK_Forgotpassword", res);
+			Response res = reward("PAYBACK_CheckBalance", "");
+			validation_RewardPayback("PAYBACK_CheckBalance", res);
+		}
+
+		catch(Exception e){
+			Reporter.log("Exception faced is" +e);
+		}
+	}
+
+	@Test(priority=4)
+	public void RewardPayback_CheckBalance_Card(){
+		try{
+			Response res = reward("PAYBACK_CheckBalance_card", "");
+			validation_RewardPayback("PAYBACK_CheckBalance_card", res);
+		}
+
+		catch(Exception e){
+			Reporter.log("Exception faced is" +e);
+		}
+	}
+	
+
+
+	@Test(priority=5)
+	public void RewardPayback_ValidateCardDetails(){
+		try{
+            Response res = reward("PAYBACK_Validate", "");
+            validation_RewardPayback("PAYBACK_Validate", res);
+			
 		}
 
 		catch(Exception e){
 			Reporter.log("Exception is" +e);
 		}
 	}
+
+
 
 	@Test(priority=6)
 	public void RewardPayback_redeemPoints(){
@@ -97,6 +91,17 @@ public class API_RewardPayback extends API_PaymentCommon1  {
 
 		catch(Exception e){
 			Reporter.log("Exception is" +e);
+		}
+	}
+	@Test(priority=7)
+	public void RewardPayback_CheckEarnPoints(){
+		try{
+			Response res = reward("PAYBACK_CheckEarnPoints", "");
+			validation_RewardPayback("PAYBACK_CheckEarnPoints", res);
+		}
+
+		catch(Exception e){
+			Reporter.log("Exception is"+e);
 		}
 	}
 
@@ -135,16 +140,16 @@ public class API_RewardPayback extends API_PaymentCommon1  {
 		}
 	}
 
-	@Test(priority=5)
-	public void RewardPayback_ValidateCardDetails(){
+	@Test(priority=11, enabled=false)
+	public void RewardPayback_forgotPassword(){
 		try{
-            Response res = reward("PAYBACK_Validate", "");
-            validation_RewardPayback("PAYBACK_Validate", res);
-			
+			Response res = reward("PAYBACK_Forgotpassword", "");
+			validation_RewardPayback("PAYBACK_Forgotpassword", res);
 		}
 
 		catch(Exception e){
 			Reporter.log("Exception is" +e);
 		}
 	}
+
 }

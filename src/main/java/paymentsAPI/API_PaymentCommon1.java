@@ -29,7 +29,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 {	
 	
 	
-/*	String urlPay = "http://172.17.28.21:8358";// Mysql
+	String urlPay = "http://172.17.28.21:8358";// Mysql
 	String urlWallet = "http://172.17.26.11:8359";
 	String promoURL = "http://172.17.26.11:8360";
 	String urlDA = "http://172.17.28.21:8403";
@@ -43,15 +43,12 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String urlPromo_Used = "http://172.17.26.11:8359";
 	String urlReporting ="http://172.17.28.21:8272";
 	String urlReportingTS ="http://172.17.26.11:9031";
-	public String url_TestApp = "172.17.28.21:8358/paymentservice";*/
+	public String url_TestApp = "172.17.28.21:8358/paymentservice";
 	
-/*//OLD mysql apps
-	String urlPay = "http://172.17.26.11:8358";
-	String urlReporting ="http://172.17.26.11:8272";*/
 	
-
+/*
 		String urlFlyin = "http://172.17.26.11:8406"; // ORACLE
-		String urlPay = "http://172.17.26.11:8070";
+		String urlPay = "http://172.17.8.218:9001";
 		String urlDA = "http://172.17.28.21:8403";
 		String urlRefundNew = "http://172.17.8.218:9001";
 		String promoURL = "http://172.17.26.11:7999";
@@ -66,10 +63,13 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		String urlPromo_Used = "http://172.17.26.11:8071";
 		String urlReporting ="http://172.17.28.21:8272";
 		String urlReportingTS ="http://172.17.26.11:9031";		
-		public String url_TestApp = "172.17.28.21:8358/paymentservice";
+		public String url_TestApp = "172.17.28.21:8358/paymentservice";*/
 		
 	
-	
+
+/*//OLD mysql apps
+	String urlPay = "http://172.17.26.11:8358";
+	String urlReporting ="http://172.17.26.11:8272";*/
 	
 	
 	String paramsCC ="[{\"payment\":{\"seq_no\":1,\"trip_id\":106562332,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":276,\"payment_category\":\"B\",\"fraud_system_invocation\":\"Y\",\"ui_version\":\"v2\",\"customer_detail\":{\"ip_address\":\"119.82.73.123\",\"mobile\":\"9986696785\",\"email\":\"cltppayment@gmail.com\",\"firstName\":\"test\"},\"app_ref1\":\"Q18110926800\",\"app_ref2\":\"167823462\",\"itinerary_id\":\"683a3a6bec-4e58-422a-a2c9-90707b1e5a12\",\"payment_type\":\"CC\",\"amount\":100.99,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"9W/362/DEL/BOM/201811XXXXXX00\",\"order_info2\":\"Kiran Kumar\",\"source_type\":\"ACCOUNT\",\"user_id\":85721640,\"company_id\":110340,\"app_return_info\":{\"url\":\"https://www.cleartrip.com/flights/itinerary/683a3a6bec-4e58-422a-a2c9-90707b1e5a12/book\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://book-flights.cltp.com:9001/r3/book/flights/itinerary/683a3a6bec-4e58-422a-a2c9-90707b1e5a12/book-internal?ll=INFO\"},\"host_name\":\"qa2.cleartrip.com\",\"card_detail\":{\"card_number\":\"5123456789012346\",\"card_type_id\":1,\"expiry_month\":\"05\",\"expiry_year\":\"2020\",\"cvv\":\"123\",\"name\":\"CleartripCard\",\"billto_detail\":{\"firstname\":\"test\",\"lastname\":\"test\",\"address1\":\"Cleartrip JP Nagar\",\"city_name\":\"Bangalore\",\"state_name\":\"Karnataka\",\"country_name\":\"India\",\"postal_code\":\"560076\"}},\"user_agent\":\"Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko\"}}]";
@@ -1441,7 +1441,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 	public Response validation(String payType, Response resp){
 		Reporter.log("Response body "+payType +" : "+ resp.body().asString());
-		//System.out.println("Response body "+payType +" : "+ resp.body().asString());
+		System.out.println("Response body "+payType +" : "+ resp.body().asString());
 		int statusCode = resp.getStatusCode();	
 		Reporter.log("statusCode: " + statusCode);
 		JsonPath jsonPathEvaluator = resp.jsonPath();

@@ -103,6 +103,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 				if (common.value("PaymentServer").equalsIgnoreCase("MYSQL")) {
 					Thread.sleep(500);
 					smartType(driver, getObjectPayment("HomePage_Host_ServerIp_Txt"), url_TestApp);
+
 				} else {
 					Thread.sleep(500);
 					//smartType(driver, getObjectPayment("HomePage_Host_ServerIp_Txt"), "172.17.8.218:9001/paymentservice");
@@ -2029,6 +2030,174 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 			Reporter.log("Exception is" +e);
 		}
 	}
+	
+	
+	public void paymentUI_PWA_Select_Payment(RemoteWebDriver driver, String payType, String payType1, String cardType)
+			throws Exception {
+		if (cardType.equalsIgnoreCase("MASTER")||cardType.equalsIgnoreCase("")) {
+			cardType = "MASTER";
+		}else if (cardType.equalsIgnoreCase("AMEX")) {
+			cardType = "AMEX";
+		}
+		String Country = null;
+		if (!payType1.equals("")) {
+			Country = payType1.substring(0, 2);
+		}
+//		elementVisible(driver, getObjectPayment("SelectPayment_Header"), 5);
+//		elementPresent(driver, getObjectPayment("SelectPayment_Header"), 5);
+//		textPresent(driver, "Select payment option", 1);
+		if (payType.equalsIgnoreCase("CC")) {
+			paymentUI_PWA_EnterCard_Details(driver, cardType);
+		} 
+		else if (payType.equalsIgnoreCase("DC")) {
+			select_Card(driver);
+			safeClick(driver, getObjectPayment("SelectPayment_CC_DC_Dropdown"));
+			safeClick(driver, getObjectPayment("SelectPayment_Type_DC"));
+			paymentNodeJS_EnterCard_Details(driver, cardType);
+		} 
+	
+		else if (payType.equalsIgnoreCase("ADCB")) {
+			
+			safeClick(driver, getObjectPayment("SelectPayment_CC_DC_Dropdown"));
+			safeClick(driver, getObjectPayment("SelectPayment_Type_DC"));
+			paymentUI_PWA_EnterCard_Details(driver, cardType);
+		} 
+		else if (payType.equalsIgnoreCase("CTCC")) {
+			add_Wallet(driver, "");
+			select_Card(driver);
+			paymentNodeJS_EnterCard_Details(driver, cardType);
+		} 
+		else if (payType.equalsIgnoreCase("CTFULL")) {
+			safeType(driver, getObjectPayment("SelectPayment_Amount_Txt"), "0");
+			add_Wallet(driver, "");
+		} 
+		
+		else if (payType.equalsIgnoreCase("NB")) {
+			safeClickList(driver, getObjectPayment("SelectPayment_Option"), "Net Banking");
+			safeClick(driver, getObjectPayment("MakePayment_NB_Bank_Dropdown"));
+			safeClickList(driver, getObjectPayment("SelectPayment_NB_Bank"), payType1);
+			if(payType1.equalsIgnoreCase("Citibank")) {
+				safeClick(driver, getObjectPayment("SelectPayment_NB_Bank_Select_Arrow"));
+				//safeSelectByIndex(driver, getObjectPayment("SelectPayment_NB_Bank_Select"), 6);
+				safeClick(driver, By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='ICICI Bank'])[1]/following::span[2]"));
+			}
+			else if(payType1.equalsIgnoreCase("HDFC Bank")) {
+				safeClick(driver, getObjectPayment("SelectPayment_NB_Bank_Select_Arrow"));
+				//safeSelectByIndex(driver, getObjectPayment("SelectPayment_NB_Bank_Select"), 6);
+
+				safeClickList(driver, getObjectPayment("SelectPayment_NB_Bank"), payType1);
+			}
+		}		
+		else if (payType.equalsIgnoreCase("PHONEPE")) {
+			safeType(driver, getObjectPayment("SelectPayment_Amount_Txt"), "1");
+			safeClickList(driver, getObjectPayment("SelectPayment_Option"), "UPI");
+		} else if (payType.equalsIgnoreCase("PHONEPECTWALL")) {
+			add_Wallet(driver, "");
+			safeType(driver, getObjectPayment("SelectPayment_Amount_Txt"), "1");
+			safeClickList(driver, getObjectPayment("SelectPayment_Option"), "UPI");
+		} 
+		else if (payType.equalsIgnoreCase("TPW")) {
+			safeType(driver, By.id("amount"), "1");
+			safeClickList(driver, getObjectPayment("SelectPayment_Option"), "Wallets");
+			safeClickList(driver, getObjectPayment("SelectPayment_Wallet_Types"), payType1);
+
+		}	
+
+	}
+	
+	public void paymentUI_PWA_EnterCard_Details(RemoteWebDriver driver, String cardType) throws Exception {
+		if(cardType.equalsIgnoreCase("MASTER")){
+			Reporter.log("Master card selected");
+		}
+		if (cardType.equalsIgnoreCase("AMEX")) {
+			safeClick(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"));
+			if (!textPresentInElement(driver,getObjectPayment("PWA_PaymentPage_CC_ErrorValidCredentials_Msg"),"Please enter valid card details", 2)) {
+				Reporter.log("Validation Failed text is displayed");
+				assertTrue(false);
+			}
+		
+			Reporter.log("Card No : " + platform.value("AmexCard_Number_New"));
+			safeType_NonClear(driver, getObjectPayment("PWA_PaymentPage_CC_Number"), platform.value("AmexCard_Number_New"));
+			safeType(driver, getObjectPayment("PWA_PaymentPage_CC_Expiry"), platform.value("PWAAmexCard_Expiry"));
+			//safeType(driver, getObjectPayment(""), platform.value("AmexCard_Year"));
+			safeType(driver, getObjectPayment("PWA_PaymentPage_CC_CVV"), platform.value("AmexCard_CVV"));
+			
+			if (!textPresent(driver,"Per passenger convenience fee", 2)) {
+				Reporter.log("Per passenger convenience is displayed");
+				assertTrue(false);
+			}
+		} 
+		else if (cardType.equalsIgnoreCase("DC")) {
+			Reporter.log("Card No : " + platform.value("DebitCard_Number"));
+			safeType_NonClear(driver, getObjectPayment("PWA_PaymentPage_CC_Number"), platform.value("DebitCard_Number"));
+			safeType(driver, getObjectPayment("PWA_PaymentPage_CC_Expiry"), platform.value("PWADebitCard_Expiry"));
+			safeType(driver, getObjectPayment("PWA_PaymentPage_CC_CVV"), platform.value("DebitCard_CVV"));
+			}
+		  
+		else if (cardType.equalsIgnoreCase("ADCB")) {
+		
+			Reporter.log("ADCB Card No : " + platform.value("ADCBCard_Number"));
+			safeType_NonClear(driver, getObjectPayment("PWA_PaymentPage_CC_Number"), platform.value("ADCBCard_Number"));
+			safeType(driver, getObjectPayment("PWA_PaymentPage_CC_Expiry"), platform.value("PWA_ADCBCard_Expiry"));
+			safeType(driver, getObjectPayment("PWA_PaymentPage_CC_CVV"), platform.value("ADCBCard_CVV"));
+		}
+			
+	}
+	
+	public String paymentUI_PWA_Make_Payment(RemoteWebDriver driver, String payType, String bankType) throws Exception {
+		String TripID = null;
+		if (payType.equalsIgnoreCase("CC") || payType.equalsIgnoreCase("DC")) {
+			Thread.sleep(2000);
+			if (!elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"), 2)) {
+				paymentUI_PWA_EnterCard_Details(driver, payType);
+			}
+			safeClick(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"));
+			elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"), 2);
+			if (textPresent(driver, "Validation Failed", 2)) {
+				Reporter.log("Validation Failed text is displayed");
+				assertTrue(false);
+			}
+			//======================================//
+			paymentNodeJS_BankPage(driver, bankType);
+		}   else if (payType.equalsIgnoreCase("NB")) {
+			safeClick(driver, getObjectPayment("MakePayment_Pay_Btn_NB"));
+			if (bankType.equalsIgnoreCase("Citibank")) {
+				if(textPresent(driver, "Payment failed", 1)) {
+					Reporter.log("Payment failed");
+					Assert.assertTrue(false);
+				}
+				elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"), 30);
+				safeClick(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"));
+			}else if (bankType.equalsIgnoreCase("Hdfcbank")) {
+				if(textPresent(driver, "Payment failed", 1)) {
+					Reporter.log("Payment failed");
+					Assert.assertTrue(false);
+				}
+				elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_UserName"), 30);
+				safeType(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_UserName"), "test");
+				safeType(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_Password"), "test");
+				safeClick(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_Submit_Btn"));
+				Thread.sleep(5000);
+				elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_IntermitentText"), 5);
+				safeClick(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_Submit_Btn2"));
+			}
+
+		} 
+		else if (payType.equalsIgnoreCase("PHONEPE")) {
+			safeClick(driver, getObjectPayment("MakePayment_Pay_Btn_Phonepe"));
+			/*elementVisible(driver, getObjectPayment("MakePayment_PhonePe_Page_Pay_Btn"), 10);
+			safeClick(driver, getObjectPayment("MakePayment_PhonePe_Page_Pay_Btn"));*/
+			elementPresent_log(driver, By.id("mobileNumber"), "", 30);
+		}
+		
+		return TripID;
+	}
+	public static void paymentUI_PWA_ConfirmationPage(RemoteWebDriver driver) {
+		
+	}
+
+	
+	
 	
 
 }

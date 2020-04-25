@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
@@ -59,7 +60,7 @@ public class TS_Cancel_Hotel extends TripserviceCommon{
 	    System.out.println(cancelparams); 
         String url2=("http://172.17.26.11:9031/trips/"+tripref+"/cancel");
         Response resp3=TripservicePostcancelcall(cancelparams,headersForTripservicepostcancelcall(),url2);
-        System.out.println(resp3.asString());
+        Reporter.log(resp3.asString());
         cancelValidation(resp3);   
       /*  ArrayList<String> payments=db_Payments(TripID);
         String payemntid=payments.get(0);

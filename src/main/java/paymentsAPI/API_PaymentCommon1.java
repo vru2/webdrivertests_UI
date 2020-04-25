@@ -45,8 +45,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String urlReportingTS ="http://172.17.26.11:9031";
 	public String url_TestApp = "172.17.28.21:8358/paymentservice";
 	
-	
-/*
+	/*
+
 		String urlFlyin = "http://172.17.26.11:8406"; // ORACLE
 		String urlPay = "http://172.17.8.218:9001";
 		String urlDA = "http://172.17.28.21:8403";
@@ -63,8 +63,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		String urlPromo_Used = "http://172.17.26.11:8071";
 		String urlReporting ="http://172.17.28.21:8272";
 		String urlReportingTS ="http://172.17.26.11:9031";		
-		public String url_TestApp = "172.17.28.21:8358/paymentservice";
-		*/
+		public String url_TestApp = "172.17.28.21:8358/paymentservice";*/
+		
 	
 
 /*//OLD mysql apps

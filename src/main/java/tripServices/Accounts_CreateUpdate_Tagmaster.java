@@ -24,7 +24,7 @@ public class Accounts_CreateUpdate_Tagmaster extends TripserviceCommon {
 		String params="{\"tags\":[{\"tag_name\":\"testcorpautomation"+s+"tags\",\"tag_description\":\"tester\",\"created_at\":\"2019-11-06T15:34:13.544+0530\",\"updated_at\":\"2019-11-06T15:34:13.544+0530\",\"source_type\":\"CORP\",\"rule_id\":null,\"status\":\"A\",\"created_by\":\"65182099\",\"updated_by\":\"65182099\",\"user_id\":\"41695398\",\"coupon_expiry_date\":null,\"coupon_type\":null,\"parent_id\":null},{\"tag_name\":\"testerhqautomation"+s+"tag\",\"tag_description\":\"tester 2\",\"created_at\":\"2019-11-06T15:34:13.571+0530\",\"updated_at\":\"2019-11-06T15:34:13.571+0530\",\"source_type\":\"HQ\",\"rule_id\":null,\"status\":\"A\",\"created_by\":\"65182099\",\"updated_by\":\"65182099\",\"user_id\":\"41695398\",\"coupon_expiry_date\":null,\"coupon_type\":null,\"parent_id\":null},{\"tag_name\":\"Coupon:Automation"+s+"\",\"tag_description\":\"tester 2\",\"created_at\":\"2019-11-06T15:34:13.604+0530\",\"updated_at\":\"2019-11-06T15:34:13.604+0530\",\"source_type\":\"SYNC\",\"rule_id\":null,\"status\":null,\"created_by\":\"65182099\",\"updated_by\":\"65182099\",\"user_id\":\"41695398\",\"coupon_expiry_date\":\"2019-11-30\",\"coupon_type\":null,\"parent_id\":null}],\"tag_type\":\"Company\",\"reference_id\":1234}";
 		String triptag="{\"tags\":[{\"tag_name\":\"testautomationtrip"+s+"tags\",\"tag_description\":\"tester\",\"created_at\":\"2019-11-06T15:34:13.544+0530\",\"updated_at\":\"2019-11-06T15:34:13.544+0530\",\"source_type\":\"CORP\",\"rule_id\":null,\"status\":\"A\",\"created_by\":\"65182099\",\"updated_by\":\"65182099\",\"user_id\":\"41695398\",\"coupon_expiry_date\":null,\"coupon_type\":null,\"parent_id\":null}],\"tag_type\":\"Trip\",\"reference_id\":46252034}";
 		String Host = common.value("host");
-			System.out.println(url);
+			Reporter.log(url);
 	    resp=RestAssured.given().
 				when().
 				log().all().
@@ -33,7 +33,7 @@ public class Accounts_CreateUpdate_Tagmaster extends TripserviceCommon {
 				post(url);
 	    		
 	    if(resp.statusCode()==200){
-	    	System.out.println(resp.asString());
+	    	Reporter.log(resp.asString());
 	    	Reporter.log(resp.asString());
 		    Reporter.log("Status code " + resp.statusCode());
 			ResponseBody body= resp.getBody();
@@ -71,7 +71,7 @@ public class Accounts_CreateUpdate_Tagmaster extends TripserviceCommon {
 				post(url);
 	    		
 	    if(resp1.statusCode()==200){
-	    	System.out.println(resp1.asString());
+	    	Reporter.log(resp1.asString());
 	    	Reporter.log(resp1.asString());
 		    Reporter.log("Status code " + resp1.statusCode());
 			ResponseBody body= resp1.getBody();

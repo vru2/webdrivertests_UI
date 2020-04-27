@@ -9,9 +9,9 @@
 	</listeners>
 
 
-		<suite-files>
+		<!-- <suite-files>
 				<suite-file path="QA_Accts_API.xml"></suite-file>
-		</suite-files>
+		</suite-files> -->
 		
 		 <suite-files>
 				<suite-file path="QA_Accounts_Service_JAVA_APIS.xml"></suite-file>

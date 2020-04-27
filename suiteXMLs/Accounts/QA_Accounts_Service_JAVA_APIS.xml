@@ -108,6 +108,33 @@
 	</test>
 	
 	
+	<test name="Identity Service Add client" parallel="true">
+		<classes>
+			<class name="accountsAPI.IdentityService_AddClient" />
+		</classes>
+	</test>
+
+	<test name="Identity Service-Get resource" parallel="true">
+		<classes>
+			<class name="accountsAPI.IdentityService_Getresource" />
+		</classes>
+	</test>
+
+	<test name="Identity Service-Get Token Through Code" parallel="true">
+		<classes>
+			<class
+				name="accountsAPI.Identtiyservice_get_tokenthroughCode" />
+		</classes>
+	</test>
+
+	<test name="Identity Service-Get Token Through refresh token"
+		parallel="true">
+		<classes>
+			<class
+				name="accountsAPI.Identtiyservice_get_tokenthroughrefreshToken" />
+		</classes>
+	</test>
+	
 	
 	
 </suite>

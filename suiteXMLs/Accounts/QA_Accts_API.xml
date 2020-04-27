@@ -318,7 +318,7 @@
 	</test>
 
 
-	<test name="Identity Service Add client" parallel="true">
+	<!-- <test name="Identity Service Add client" parallel="true">
 		<classes>
 			<class name="accountsAPI.IdentityService_AddClient" />
 		</classes>
@@ -343,7 +343,7 @@
 			<class
 				name="accountsAPI.Identtiyservice_get_tokenthroughrefreshToken" />
 		</classes>
-	</test>
+	</test> -->
 
 	<test name="OTP API for Unsigned Trip Search" parallel="true">
 		<classes>

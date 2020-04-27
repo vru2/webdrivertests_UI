@@ -16,6 +16,14 @@
 </test>
 
 
+<test name="API Refunds Count" preserve-order="true" parallel="true">
+    <classes><!-- 
+      <class name="paymentsAPI.API_Navison_CC"/>
+      <class name="paymentsAPI.API_Navison_Air"/>      --> 
+    </classes>
+</test>
+
+
 <test name="API Deposit Account DA" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsAPI.API_DA_PayV3"/>

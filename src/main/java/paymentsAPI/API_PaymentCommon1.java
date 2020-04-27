@@ -29,25 +29,26 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 {	
 	
 	
-	String urlPay = "http://172.17.26.11:8358";
+	String urlPay = "http://172.17.28.21:8358";// Mysql
+	String urlWallet = "http://172.17.26.11:8359";
 	String promoURL = "http://172.17.26.11:8360";
 	String urlDA = "http://172.17.28.21:8403";
 	String urlRewards = "http://172.17.12.83:9080";
-	String urlWallet = "http://172.17.26.11:8359";
 	String urlCardInfo_Service="http://172.17.26.11:8331";
 	String urlFlyin = "http://172.17.26.11:8406";
-	String urlrewards_validate = "http://172.17.26.11:8358";
-	String urlrewards_validate1 = "http://172.17.26.11:8070";
-	String urlrewards_payURI1 ="http://172.17.26.11:8358";
+	String urlrewards_validate = "http://172.17.28.21:8358";
+	String urlrewards_validate1 = "http://172.17.28.21:8358";
+	String urlrewards_payURI1 ="http://172.17.28.21:8358";
 	String urlrewards_URI1 = "http://172.17.12.83:9080/";
 	String urlPromo_Used = "http://172.17.26.11:8359";
-	String urlReporting ="http://172.17.26.11:8272";
+	String urlReporting ="http://172.17.28.21:8272";
 	String urlReportingTS ="http://172.17.26.11:9031";
+	public String url_TestApp = "172.17.28.21:8358/paymentservice";
 	
-	
-/*
-		String urlFlyin = "http://172.17.26.11:8406";
-		String urlPay = "http://172.17.26.11:8070";
+	/*
+
+		String urlFlyin = "http://172.17.26.11:8406"; // ORACLE
+		String urlPay = "http://172.17.8.218:9001";
 		String urlDA = "http://172.17.28.21:8403";
 		String urlRefundNew = "http://172.17.8.218:9001";
 		String promoURL = "http://172.17.26.11:7999";
@@ -60,14 +61,15 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		String urlrewards_payURI ="http://172.17.26.11:8070";
 		String urlrewards_URI = "http://172.17.12.83:9080";
 		String urlPromo_Used = "http://172.17.26.11:8071";
-		String urlReporting ="http://172.17.26.11:8272";
-		String urlReportingTS ="http://172.17.26.11:9031";*/
-	
+		String urlReporting ="http://172.17.28.21:8272";
+		String urlReportingTS ="http://172.17.26.11:9031";		
+		public String url_TestApp = "172.17.28.21:8358/paymentservice";*/
+		
 	
 
-		
-		
-	
+/*//OLD mysql apps
+	String urlPay = "http://172.17.26.11:8358";
+	String urlReporting ="http://172.17.26.11:8272";*/
 	
 	
 	String paramsCC ="[{\"payment\":{\"seq_no\":1,\"trip_id\":106562332,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":276,\"payment_category\":\"B\",\"fraud_system_invocation\":\"Y\",\"ui_version\":\"v2\",\"customer_detail\":{\"ip_address\":\"119.82.73.123\",\"mobile\":\"9986696785\",\"email\":\"cltppayment@gmail.com\",\"firstName\":\"test\"},\"app_ref1\":\"Q18110926800\",\"app_ref2\":\"167823462\",\"itinerary_id\":\"683a3a6bec-4e58-422a-a2c9-90707b1e5a12\",\"payment_type\":\"CC\",\"amount\":100.99,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"9W/362/DEL/BOM/201811XXXXXX00\",\"order_info2\":\"Kiran Kumar\",\"source_type\":\"ACCOUNT\",\"user_id\":85721640,\"company_id\":110340,\"app_return_info\":{\"url\":\"https://www.cleartrip.com/flights/itinerary/683a3a6bec-4e58-422a-a2c9-90707b1e5a12/book\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://book-flights.cltp.com:9001/r3/book/flights/itinerary/683a3a6bec-4e58-422a-a2c9-90707b1e5a12/book-internal?ll=INFO\"},\"host_name\":\"qa2.cleartrip.com\",\"card_detail\":{\"card_number\":\"5123456789012346\",\"card_type_id\":1,\"expiry_month\":\"05\",\"expiry_year\":\"2020\",\"cvv\":\"123\",\"name\":\"CleartripCard\",\"billto_detail\":{\"firstname\":\"test\",\"lastname\":\"test\",\"address1\":\"Cleartrip JP Nagar\",\"city_name\":\"Bangalore\",\"state_name\":\"Karnataka\",\"country_name\":\"India\",\"postal_code\":\"560076\"}},\"user_agent\":\"Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko\"}}]";
@@ -79,7 +81,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String ParamsGV_CAPTURE1	= ",\"tripRef\":\"T5017864736\",\"productType\":\"DOMESTIC-AIR\"}";
 	String paramsDA = "{\"payment\":[{\"tripId\":46393238,\"seqNo\":1,\"highRisk\":false,\"d_plus_x_in_hours\":1138,\"fraudSystemInvocation\":\"N\",\"uiVersion\":\"v1\",\"customerDetail\":{\"address1\":\"One way\",\"city_name\":\"jp nagar\",\"postal_code\":\"111111\",\"state_name\":\"KA\",\"country_name\":\"India\",\"landline\":\"08012121212\",\"email\":\"123@123.com\"},\"appRef1\":\"Q1221212112\",\"appRef2\":\"75604242\",\"paymentType\":\"DA\",\"amount\":1.1,\"currency\":\"INR\",\"orderInfo1\":\"SG/8905/DEL/BLR/202004XXXXXX00\",\"orderInfo2\":\"Kiran Kumar\",\"sourceType\":\"API\",\"userId\":41651546,\"companyId\":110340,\"appReturnInfo\":{\"method\":\"POST\"},\"paymentCategory\":\"B\",\"deposit_account_detail\":{\"id\":44980178,\"transaction_password\":\"test123\"},\"isPWA\":false,\"pwa\":false,\"dplusXInHours\":1138}]}";
 	String paramsDAValidateV3 = "[{\"payment\":{\"seq_no\":1,\"high_risk\":false,\"d_plus_x_in_hours\":633,\"payment_category\":\"B\",\"fraud_system_invocation\":\"N\",\"ui_version\":\"v1\",\"customer_detail\":{\"address1\":\"test\",\"city_name\":\"test\",\"postal_code\":\"121212\",\"state_name\":\"test\",\"country_name\":\"india\",\"mobile\":\"121221211\",\"landline\":\"\",\"email\":\"testcthotel@gmail.com\"},\"payment_type\":\"DA\",\"amount\":10.0,\"currency\":\"INR\",\"order_info1\":\"SG/8161/DEL/BOM/20200426155000\",\"order_info2\":\"test booking\",\"source_type\":\"CORP\",\"user_id\":13939735,\"company_id\":101,\"app_return_info\":{\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://corporate.cltp.com:9001/r3/corp/air-book-internal?itineraryId\\u003d689a209bce-a21e-49ac-a0f9-200330145310\\u0026corpPageId\\u003d\"},\"deposit_account_detail\":{\"id\":46207144,\"transaction_password\":\"test123\"}}}]";
-	String paramsDAPayV3 = "[{\"payment\":{\"seq_no\":1,\"trip_id\":46413164,\"high_risk\":false,\"d_plus_x_in_hours\":633,\"payment_category\":\"B\",\"fraud_system_invocation\":\"N\",\"ui_version\":\"v1\",\"customer_detail\":{\"address1\":\"test\",\"city_name\":\"test\",\"postal_code\":\"121212\",\"state_name\":\"test\",\"country_name\":\"india\",\"mobile\":\"121221211\",\"landline\":\"\",\"email\":\"testcthotel@gmail.com\"},\"app_ref1\":\"Q200330788702\",\"app_ref2\":\"75629492\",\"payment_type\":\"DA\",\"amount\":1.0,\"currency\":\"INR\",\"order_info1\":\"SG/8161/DEL/BOM/20200426155000\",\"order_info2\":\"test booking\",\"source_type\":\"CORP\",\"user_id\":790982,\"company_id\":101,\"app_return_info\":{\"url\":\"https://demo.cleartripforbusiness.com/airConfirmNetBanking?itineraryId\\u003d689a209bce-a21e-49ac-a0f9-200330145310\\u0026corpPageId\\u003db8d196f8-af63-45cd-9516-d4c91f7821f2\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://corporate.cltp.com:9001/r3/corp/air-book-internal?itineraryId\\u003d689a209bce-a21e-49ac-a0f9-200330145310\\u0026corpPageId\\u003db8d196f8-af63-45cd-9516-d4c91f7821f2\"},\"deposit_account_detail\":{\"id\":46207144,\"transaction_password\":\"test123\"}}}]";
+	String paramsDAPayV3 = "[{\"payment\":{\"seq_no\":1,\"trip_id\":43453224,\"high_risk\":false,\"d_plus_x_in_hours\":633,\"payment_category\":\"B\",\"fraud_system_invocation\":\"N\",\"ui_version\":\"v1\",\"customer_detail\":{\"address1\":\"test\",\"city_name\":\"test\",\"postal_code\":\"121212\",\"state_name\":\"test\",\"country_name\":\"india\",\"mobile\":\"121221211\",\"landline\":\"\",\"email\":\"testcthotel@gmail.com\"},\"app_ref1\":\"Q200330788702\",\"app_ref2\":\"75629492\",\"payment_type\":\"DA\",\"amount\":1.0,\"currency\":\"INR\",\"order_info1\":\"SG/8161/DEL/BOM/20200426155000\",\"order_info2\":\"test booking\",\"source_type\":\"CORP\",\"user_id\":790982,\"company_id\":101,\"app_return_info\":{\"url\":\"https://demo.cleartripforbusiness.com/airConfirmNetBanking?itineraryId\\u003d689a209bce-a21e-49ac-a0f9-200330145310\\u0026corpPageId\\u003db8d196f8-af63-45cd-9516-d4c91f7821f2\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://corporate.cltp.com:9001/r3/corp/air-book-internal?itineraryId\\u003d689a209bce-a21e-49ac-a0f9-200330145310\\u0026corpPageId\\u003db8d196f8-af63-45cd-9516-d4c91f7821f2\"},\"deposit_account_detail\":{\"id\":46207144,\"transaction_password\":\"test123\"}}}]";
 
 	String paramsGV  = "[{\"payment\":{\"seq_no\":2,\"trip_id\":106562332,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":1618,\"payment_category\":\"B\",\"fraud_system_invocation\":\"N\",\"ui_version\":\"v2\",\"customer_detail\":{\"ip_address\":\"119.82.106.202\",\"mobile\":\"9986696785\",\"email\":\"cltppayment@gmail.com\"},\"app_ref1\":\"Q18110930000\",\"app_ref2\":\"167823462\",\"itinerary_id\":\"684fe048c7-cde3-4c20-9b73-a70e3c43bc9d\",\"payment_type\":\"GV\",\"amount\":1.0,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"SG/8481/PAT/DEL/201812XXXXXX00\",\"order_info2\":\"Cleartrip tester\",\"source_type\":\"WL\",\"user_id\":51351954,\"company_id\":5291262,\"app_return_info\":{\"url\":\"dummy\",\"method\":\"POST\"},\"gift_voucher_detail\":{\"card_number\":\"3000331032330649\",\"card_pin\":\"968322\",\"amount\":1,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"SG/8481/PAT/DEL/201812XXXXXX00\",\"order_info2\":\"Cleartrip Tester\",\"source_type\":\"WL\",\"user_id\":51351954,\"company_id\":5291262,\"app_return_info\":{\"url\":\"dummy\",\"method\":\"POST\"},\"gift_voucher_detail\":{\"card_number\":\"3000331035883413\",\"card_pin\":\"273064\",\"card_category\":\"\"}}}}]";
 	String paramsWallet ="[{\"payment\":{\"seq_no\":1,\"trip_id\":54808092,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":1618,\"payment_category\":\"B\",\"fraud_system_invocation\":\"N\",\"ui_version\":\"v2\",\"customer_detail\":{\"ip_address\":\"119.82.106.202\",\"mobile\":\"9986696785\",\"email\":\"cltppayment@gmail.com\"},\"app_ref1\":\"Q1809140000\",\"app_ref2\":\"74049672\",\"itinerary_id\":\"681f6b756d-67de-4efc-b663-5a7ac1bd9fa1\",\"payment_type\":\"WT\",\"amount\":0.1,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"6E\\/233\\/BLR\\/MAA\\/20181125062500\",\"order_info2\":\"Test Booking\",\"source_type\":\"ACCOUNT\",\"user_id\":41654864,\"company_id\":110340,\"app_return_info\":{\"url\":\"https://qa2.cleartrip.com/flights/itinerary/681f6b756d-67de-4efc-b663-5a7ac1bd9fa1/book\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://book-flights.cltp.com:9001/r3/book/flights/itinerary/681f6b756d-67de-4efc-b663-5a7ac1bd9fa1/book-internal?ll=INFO\"},\"user_agent\":\"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrom/69.0.3497.100 Safari/537.36\"}}]";
@@ -867,6 +869,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			params = paramsDAValidateV3;
 		}
 		else if(payType.equalsIgnoreCase("DARefund")) {
+
+			Reporter.log(urlDA+url);
 			RestAssured.baseURI =urlDA;
 			url = urlDA_Refund;
 			params = paramsDA_Refund;
@@ -1437,7 +1441,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 	public Response validation(String payType, Response resp){
 		Reporter.log("Response body "+payType +" : "+ resp.body().asString());
-		//System.out.println("Response body "+payType +" : "+ resp.body().asString());
+		System.out.println("Response body "+payType +" : "+ resp.body().asString());
 		int statusCode = resp.getStatusCode();	
 		Reporter.log("statusCode: " + statusCode);
 		JsonPath jsonPathEvaluator = resp.jsonPath();
@@ -3192,18 +3196,20 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			response = RestAssured.given().
 					when().log().all().body(params).headers(headers).post(endPoint);
 		}
-		//			else if(payType.equalsIgnoreCase("PAYBACK_Pay_WT")) {
-		//				Random rand = new Random();
-		//				int n = rand.nextInt(9999999);
-		//				String trackid1 = Integer.toString(n);
-		//				String track = "CLRTRP"+ trackid1;
-		//				
-		//				RestAssured.baseURI = urlrewards_payURI;
-		//				endPoint = urlreward_payback_pay;
-		//				params = ParamsPayBack_Pay+track+ParamsPayBack_PayWT;
-		//				response = RestAssured.given().
-		//						when().log().all().body(params).headers(headers).post(endPoint);
-		//			}
+				/*	else if(payType.equalsIgnoreCase("PAYBACK_Pay_WT")) {
+						Random rand = new Random();
+						int n = rand.nextInt(9999999);
+						String trackid1 = Integer.toString(n);
+						String track = "CLRTRP"+ trackid1;
+						
+						RestAssured.baseURI = urlrewards_payURI;
+						endPoint = urlreward_payback_pay;
+						params = ParamsPayBack_Pay+track+ParamsPayBack_PayWT;
+						response = RestAssured.given().
+								when().log().all().body(params).headers(headers).post(endPoint);
+					}*/
+		
+		
 		else if(payType.equalsIgnoreCase("PAYBACK_Pay_WT_MultiGV")) {
 			Random rand = new Random();
 			int n = rand.nextInt(9999999);
@@ -3246,7 +3252,11 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			String random_num = Integer.toString(rand_num);
 			String track_id = "pay123419823" + random_num;
 			int payment_id_redeem = payment_id.get(0);
-			params = "{\"rewardsType\":\"PAYBACK\",\"rewardsRequestType\":\"REDEEM\",\"paymentId\": " +payment_id_redeem+ ",\"trackId\": \"" + track_id + "\","+ "\"amount\":1,\"currency\":\"INR\",\"params\":{\"mobile\":\"9632699584\",\"tripRef\":\"Q191014530822\",\"pin\":\"3642\"}}";
+			params = "{\"rewardsType\":\"PAYBACK\",\"rewardsRequestType\":\"REDEEM\",\"paymentId\": " +payment_id_redeem+ ",\"trackId\": \"" + track_id + "\","+ "\"amount\":1,\"currency\":\"INR\",\"params\":{\"mobile\":\"9986696785\",\"tripRef\":\"Q191014530822\",\"pin\":\"4841\"}}";
+
+			System.out.println("params : "+params);
+
+			Reporter.log("params : "+params);
 			response = RestAssured.given().
 					when().log().all().body(params).headers(headers).post(endPoint);
 		}
@@ -3763,6 +3773,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		String status="";
 		String description="";
 		Reporter.log("Response body "+payType +" : "+ resp.body().asString());
+		System.out.println("Response body "+payType +" : "+ resp.body().asString());
 		int statusCode = resp.getStatusCode();	
 		Reporter.log("statusCode: " + statusCode);
 		JsonPath jsonPathEvaluator = resp.jsonPath();
@@ -3925,11 +3936,10 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			String responseMessage = jsonPathEvaluator.getString("response_message");
 			redirectionRequired= redirectionRequired.replace("[", "");
 			redirectionRequired= redirectionRequired.replace("]", "");
-			System.out.println(redirectionRequired);
+			
 			responseMessage= responseMessage.replace("[", "");
 			responseMessage= responseMessage.replace("]", "");
-			System.out.println(responseMessage);
-
+			
 			if(redirectionRequired.equalsIgnoreCase("N") && responseMessage.equalsIgnoreCase("Reward Points validation successful")){
 				Reporter.log("There is no redirection required as the card details are valid");
 				Reporter.log("Reward Points validation successful");
@@ -3940,7 +3950,6 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 				isMatching=false;
 			}
 		}
-
 		Assert.assertTrue(isMatching);
 		return resp;
 	}

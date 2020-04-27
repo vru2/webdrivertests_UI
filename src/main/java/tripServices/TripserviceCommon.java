@@ -289,7 +289,7 @@ public class TripserviceCommon extends PlatformCommonUtil {
 	}
 		
 	public Response Validation(Response resp){
-		System.out.println(resp.asString());
+		Reporter.log(resp.asString());
 		ResponseBody body= resp.getBody();
 		String bodyAsString = body.asString();
 		JsonPath jsonPath = new JsonPath(bodyAsString);

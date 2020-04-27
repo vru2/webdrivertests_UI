@@ -19,8 +19,8 @@ import junit.framework.Assert;
 import static io.restassured.RestAssured.given;
 public class IdentityService_Getresource extends AccountsCommon_API
 {
-	
-	
+
+
 	@Test
 	public void identtiyservice_getresource() throws IOException, JSONException{
 
@@ -28,7 +28,7 @@ public class IdentityService_Getresource extends AccountsCommon_API
 		String Type = null;
 		String url="https://qa2.cleartrip.com/ctauth/resource";
 		resp =postCallIdentity(url);
-		
+
 		String ReponseStr = resp.body().asString();
 		Reporter.log("Response body "+Type +" : "+ resp.body().asString());
 
@@ -45,13 +45,14 @@ public class IdentityService_Getresource extends AccountsCommon_API
 		}
 		ResponseBody body = resp.getBody();
 		System.out.println("Response of API is:" + body.asString());
-		
-		String status = jsonPathEvaluator.getString("status");
-		
-		if(!status.contains("UNAUTHORIZED")) {
+
+		String status = jsonPathEvaluator.getString("message");
+
+		if(!status.contains("Not authorized, Invalid token")) {
 			Assert.assertTrue(false);						
 		}
 		
+
 	}
 }
 

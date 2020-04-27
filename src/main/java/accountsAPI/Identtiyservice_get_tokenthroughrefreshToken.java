@@ -39,13 +39,13 @@ public class Identtiyservice_get_tokenthroughrefreshToken extends AccountsCommon
 		ResponseBody body = resp.getBody();
 		System.out.println("Response of API is:" + body.asString());
 		
-		String status = jsonPathEvaluator.getString("status");
+		//String status = jsonPathEvaluator.getString("status");
 		String message = jsonPathEvaluator.getString("message");
 		
-		if(!status.contains("UNAUTHORIZED")) {
+		/*if(!status.contains("UNAUTHORIZED")) {
 			Assert.assertTrue(false);						
-		}
-		if(!message.contains("invalid Refresh token or client id")) {
+		}*/
+		if(!message.contains("Given Client id doesn't Exist")) {
 			Assert.assertTrue(false);						
 		}
 		

@@ -41,9 +41,9 @@ public class Identtiyservice_get_tokenthroughCode  extends AccountsCommon_API
 		ResponseBody body = resp.getBody();
 		System.out.println("Response of API is:" + body.asString());
 		
-		String status = jsonPathEvaluator.getString("status");
+		String status = jsonPathEvaluator.getString("message");
 		
-		if(!status.contains("UNAUTHORIZED")) {
+		if(!status.contains("Given Client id doesn't Exist")) {
 			Assert.assertTrue(false);						
 		}
 		

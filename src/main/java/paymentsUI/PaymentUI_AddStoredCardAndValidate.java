@@ -45,9 +45,9 @@ public class PaymentUI_AddStoredCardAndValidate extends domains.PaymentNodeJS{
 			driver=(RemoteWebDriver) getDriver(driver);
 			driver.manage().deleteAllCookies();
 			signCleartripHomePage(driver,"cltppayment@gmail.com","cleartrip");
-			//driver.get(cleartripQaUrl);
-			//driver.manage().addCookie(cookieName);
-			//refreshPage(driver);
+//			driver.get(cleartripQaUrl);
+//			driver.manage().addCookie(cookieName);
+			refreshPage(driver);
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			//			click(driver,PaymentUI_CommonUtilities.manageTripsXpath);
 			//			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
@@ -57,11 +57,24 @@ public class PaymentUI_AddStoredCardAndValidate extends domains.PaymentNodeJS{
 			//			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			click(driver,PaymentUI_CommonUtilities.homePageUserAccountLinkXpath);
 			click(driver,PaymentUI_CommonUtilities.homePageAccountEWLinkXpath);
+			Thread.sleep(3000);
+			boolean savedCards = driver.findElement(By.xpath("//div/h2[contains(text(),'Your saved cards')]")).isDisplayed();
+			if(savedCards==true)
+			{
+				List<WebElement> savedCardList= driver.findElements(By.xpath("//ul[@id='cardlist']/li"));
+				int size=savedCardList.size();
+				while(size>1)
+				{
+					click(driver,PaymentUI_CommonUtilities.removeStoredCardXpath);
+					Alert alert = driver.switchTo().alert();
+					alert.accept();
+					Thread.sleep(5000);
+					size--;
+				}
+			}
 			
-			//boolean storeCard = driver.findElement(By.xpath("//button[@id='startExpress']")).isDisplayed();
-			boolean storeCard = driver.findElement(By.xpath("//h5[contains(text(),'Introducing single-click flight bookings')]")).isDisplayed();
-			
-			if(storeCard==true) 
+			//boolean storeCard = driver.findElement(By.xpath("//h5[contains(text(),'Introducing single-click flight bookings')]")).isDisplayed();
+			else
 			{
 				click(driver,PaymentUI_CommonUtilities.addNewCardEWXpath);
 				fillCardDetailsForEW(driver, PaymentUI_CommonUtilities.ewCardNumberXpath,PaymentUI_CommonUtilities.ewCardHolderNameXpath,PaymentUI_CommonUtilities.ewCardExpiryMonthXpath,PaymentUI_CommonUtilities.ewCardExpiryYearXpath);
@@ -74,25 +87,21 @@ public class PaymentUI_AddStoredCardAndValidate extends domains.PaymentNodeJS{
 				click(driver,PaymentUI_CommonUtilities.ewAddCardAddrButtonXpath);
 				List<WebElement> element= driver.findElements(By.xpath("//h3[contains(text(),'3456 78')]"));
 				if(element.size()==1)
-				{
-					click(driver,PaymentUI_CommonUtilities.removeStoredCardXpath);
+				{	click(driver,PaymentUI_CommonUtilities.removeStoredCardXpath);
 					Alert alert = driver.switchTo().alert();
 					alert.accept();
 				}
-				
-			}
-			
-			else{
-			
-			List<WebElement> element= driver.findElements(By.xpath("//h3[contains(text(),'3456 78')]"));
-				if(element.size()==1)
-				{
-					click(driver,PaymentUI_CommonUtilities.removeStoredCardXpath);
-					Alert alert = driver.switchTo().alert();
-					alert.accept();
 				}
-				
-			}
+			
+//			else{
+//			List<WebElement> element= driver.findElements(By.xpath("//h3[contains(text(),'3456 78')]"));
+//				if(element.size()==1)
+//				{
+//					click(driver,PaymentUI_CommonUtilities.removeStoredCardXpath);
+//					Alert alert = driver.switchTo().alert();
+//					alert.accept();
+//				}
+//			}
 				driver=(RemoteWebDriver) getDriver(driver);
 				driver.get(Url);
 				driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);

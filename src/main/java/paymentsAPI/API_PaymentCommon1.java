@@ -44,7 +44,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String urlReporting ="http://172.17.28.21:8272";
 	String urlReportingTS ="http://172.17.26.11:9031";
 	public String url_TestApp = "172.17.28.21:8358/paymentservice";
-	
+	String urlFetchRefunds="http://172.17.28.21:8358";
 	/*
 
 		String urlFlyin = "http://172.17.26.11:8406"; // ORACLE
@@ -171,6 +171,12 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String Params_RORCreate_Refund = "{\"isFullWalletRefund\":false,\"tripRef\":\"Q191204588938\",\"amount\":10,\"description\":\"Autaomtion REFUND\",\"txnid\":";
 	String ParamsROR_Recon = "{\"tripRef\":\"Q191203587976\",\"txnId\":";
 
+	String ParamsFetchRefund="{\"refundIds\":\"[9387165,9387150,9387149,9387190,9387357,9387405,"
+			+ "9387189,9387188,9387204,9387205,9387206,9387207,9387241,9387240," + 
+			"9387340,9387368,9387346,9387310,9387344]\",\"txnIds\": [75671590,75671700],"+"\"status\": [\"D\",\"P\",\"S\",\"T\",\"F\"]}";
+	
+	String ParamsFetchRefundByTripRef="";
+	
 	String s=RandomStringUtils.randomAlphabetic(5);
 	String r=RandomStringUtils.randomNumeric(2);
 	String t=RandomStringUtils.randomNumeric(6);
@@ -347,7 +353,9 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String url_ReportingPaymentID ="/paymentservice/payments/43911126";
 
 	String url_ReportingTS_V3 ="/trips?tripID=Q191014530470&refundRequired=true&historyRequired=true&paymentsRequired=true&apiVersion=V3";
-
+	String urlRefundsTrip="/paymentservice/refund/data/fetch";
+	String urlRefundsTripRef="/paymentservice/refund/data/fetchByTripRef";
+	
 
 	String url_Singlebincard="/v1/payment/card";
 
@@ -677,10 +685,10 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			params = Params_RORCreate_Refund+ranno+"}";
 			url= urlRORCreate_Refunds;
 		}
-
+	
 		else if(payType.equalsIgnoreCase("ROR_Recon")) {
 			String ranno = getDateTime(1, "mmddss");
-			params = ParamsROR_Recon+ranno+"}";
+			params = ParamsROR_Recon+ranno+"}";	
 			url= urlRORRecon;
 		}
 
@@ -786,6 +794,28 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		return request;
 	
 	}
+	
+	public Response fetchrefunds(String refundType, String payType1) {
+		RestAssured.baseURI = urlFetchRefunds;
+		String url = null;
+		HashMap<String, Object> headers = new HashMap<String,Object>();
+		headers = headersForms();
+		Response request;
+		if(refundType.equalsIgnoreCase("RefundsTrip")){
+			url = urlRefundsTrip;
+		}
+		else if(refundType.equalsIgnoreCase("RefundsTripRef")){
+			url = urlRefundsTripRef;
+		}
+		request = RestAssured.given().
+				when().
+				log().all().
+				headers(headers).
+				body(ParamsFetchRefund).
+				post(url);
+		return request;
+	}
+	
 	
 	public Response promoGet(String payType, String payType1){
 		RestAssured.baseURI = promoURL;

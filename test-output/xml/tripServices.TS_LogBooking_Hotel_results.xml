@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TripService Logbooking"
+           tests="2"
+           failures="1"
+           errors="0"
+           skipped="1"
+           time="22.856">
+  <properties />
+            <testcase name="hotelPostCall" time="10.492" classname="tripServices.TS_LogBooking_Hotel">
+                <failure type="java.sql.SQLException"
+                  message="Listener refused the connection with the following error:
+ORA-12516, TNS:listener could not find available handler with matching protocol stack
+The Connection descriptor used by the client was:
+172.17.4.101:1521/cleardb
+"
+              >
+<![CDATA[java.sql.SQLException: Listener refused the connection with the following error:
+ORA-12516, TNS:listener could not find available handler with matching protocol stack
+The Connection descriptor used by the client was:
+172.17.4.101:1521/cleardb
+
+  oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:112)
+  oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:261)
+  oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:387)
+  oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:414)
+  oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:165)
+  oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:35)
+  oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:801)
+  java.sql.DriverManager.getConnection(DriverManager.java:664)
+  java.sql.DriverManager.getConnection(DriverManager.java:247)
+  tripServices.TripserviceCommon.db_TripTxn(TripserviceCommon.java:648)
+  tripServices.TripserviceCommon.DBValidation_Txn(TripserviceCommon.java:527)
+  tripServices.TS_LogBooking_Hotel.hotelPostCall(TS_LogBooking_Hotel.java:19)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+  org.testng.internal.Invoker.retryFailed(Invoker.java:839)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1010)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+  org.testng.TestRunner.privateRun(TestRunner.java:648)
+  org.testng.TestRunner.run(TestRunner.java:505)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+  org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
+  org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
+  org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
+  java.util.concurrent.FutureTask.run(FutureTask.java:266)
+  java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+  java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+  java.lang.Thread.run(Thread.java:748)
+]]>
+      </failure>
+
+          </testcase>
+  
+            <testcase name="hotelPostCall" time="0.0" classname="tripServices.TS_LogBooking_Hotel">
+          <skipped />
+    </testcase>
+  
+  
+</testsuite>

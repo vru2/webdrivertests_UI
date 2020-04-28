@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TripService Updatebooking"
+           tests="2"
+           failures="0"
+           errors="0"
+           skipped="1"
+           time="32.537">
+  <properties />
+  
+            <testcase name="Tripserviceairputcall" time="0.0" classname="tripServices.TS_Invoice_Generation_Air">
+          <skipped />
+    </testcase>
+  
+            <testcase name="Tripserviceairputcall" time="17.974" classname="tripServices.TS_Invoice_Generation_Air" />
+      
+</testsuite>

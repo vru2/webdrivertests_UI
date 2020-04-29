@@ -42,8 +42,8 @@ import io.restassured.response.Response;
   public void paymentNodeJS_PWA_UI_CC() throws Exception {
        driver.manage().deleteAllCookies(); 
 	   driver.get(Url);	   
-//	   paymentUI_PWA_Select_Payment(driver, "CC", "", "AMEX");
-//	   paymentUI_PWA_Make_Payment(driver, "CC", common.value("testcardtype"));
+	   paymentUI_PWA_Select_Payment(driver, "CC", "", "AMEX");
+	   paymentUI_PWA_Make_Payment(driver, "CC", common.value("testcardtype"));
 	   paymentNodeJS_ConfirmationPage(driver, "CC", "","Air Mobile CC");
   }
 

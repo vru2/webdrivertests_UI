@@ -163,12 +163,19 @@ public boolean GDS_Flight, B2B_GDS_Flight = false;
 	 
 	 public WebDriver getMobileDriver(WebDriver driver) throws IOException {
 
+		 Map<String, Object> deviceMetrics = new HashMap<>();
+		 // Added individual deviceMetrices & useragent
+		 deviceMetrics.put("width", 360); 
+		 deviceMetrics.put("height", 600);
+		 deviceMetrics.put("pixelRatio", 3.0);
 		 
+		 //Map<String, String> mobileEmulation = new HashMap<>(); -- revert incase mobile agent doesn't work
+		 //mobileEmulation.put("deviceName", "Nexus 5"); 
 		 
-		 Map<String, String> mobileEmulation = new HashMap<>();
-
-		 mobileEmulation.put("deviceName", "Nexus 5");
-		 
+		 // Added individual deviceMetrices & useragent
+		 Map<String, Object> mobileEmulation = new HashMap<>();
+		 mobileEmulation.put("deviceMetrics", deviceMetrics);
+		 mobileEmulation.put("userAgent", "Mozilla/5.0 (Linux; Android 4.2.1; en-us; Nexus 5 Build/JOP40D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19");
 		 	if (System.getProperty("os.name").contains("Windows")) {
 				File file = new File(".");
 				String filepath = file.getCanonicalPath() + "//exe//chromedriver.exe";

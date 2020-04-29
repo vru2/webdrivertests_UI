@@ -58,9 +58,8 @@ public class TS_GET_CorpTripList extends TripserviceCommon {
 				Reporter.log("Status code : " + resp.statusCode());
 				assertTrue(false);
 			}
-			Reporter.log("http://172.17.26.11:9031/trips/corp?domain=demo.cleartripforbusiness.com&booking-status=P");
-			Response resp1 = RestAssured
-					.get("http://172.17.26.11:9031/trips/corp?domain=demo.cleartripforbusiness.com&booking-status=P");
+			Reporter.log("http://172.17.26.11:9031/trips/corp?domain=demo.cleartripforbusiness.com&booking_status=P");
+			Response resp1 = RestAssured.get("http://172.17.26.11:9031/trips/corp?domain=demo.cleartripforbusiness.com&booking_status=P");
 			System.out.println(resp1.asString());
 			if (resp1.statusCode() == 200) {
 				ResponseBody body = resp1.getBody();

@@ -14,11 +14,6 @@
           <include name="getProducttypeBookingType"/>
         </methods>
       </class> <!-- tripServicesProd.TS_Get_ProductType_BookType -->
-      <class name="tripServicesProd.TS_GET_FinanceAllTrips_Local">
-        <methods>
-          <include name="getTripService"/>
-        </methods>
-      </class> <!-- tripServicesProd.TS_GET_FinanceAllTrips_Local -->
     </classes>
   </test> <!-- TripService Get Calls(failed) -->
 </suite> <!-- Failed suite [Platform Services Prod] -->

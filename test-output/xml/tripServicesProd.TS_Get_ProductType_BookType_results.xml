@@ -4,9 +4,9 @@
            failures="1"
            errors="0"
            skipped="1"
-           time="0.639">
+           time="0.607">
   <properties />
-            <testcase name="getProducttypeBookingType" time="0.259" classname="tripServicesProd.TS_Get_ProductType_BookType">
+            <testcase name="getProducttypeBookingType" time="0.291" classname="tripServicesProd.TS_Get_ProductType_BookType">
                 <failure type="java.lang.AssertionError"
                   message="expected [true] but found [false]"
               >

@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="5.057">
+           time="5.071">
   <properties />
   
   
-            <testcase name="Accounts_FetchByPersonid" time="5.057" classname="tripServicesProd.Accounts_FetchtripdetailsByPersonid" />
+            <testcase name="Accounts_FetchByPersonid" time="5.071" classname="tripServicesProd.Accounts_FetchtripdetailsByPersonid" />
       
 </testsuite>

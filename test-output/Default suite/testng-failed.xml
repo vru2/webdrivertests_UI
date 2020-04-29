@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="ct_config.Fetch_ctconfig">
+      <class name="tripServices.TS_GET_CorpTripList">
         <methods>
-          <include name="fetchResourcefromNFS_GFS"/>
+          <include name="getCorpTripCount"/>
         </methods>
-      </class> <!-- ct_config.Fetch_ctconfig -->
+      </class> <!-- tripServices.TS_GET_CorpTripList -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

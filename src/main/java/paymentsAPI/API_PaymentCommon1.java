@@ -196,7 +196,13 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String Params_Singlebincard_Visa_Credit=Param1+Param2+Param3+Param6;
 	String Params_Singlebincard_Visa_Debit=Param1+Param2+Param3+Param7;
 
+	String Params_Reporting_UpdloadQ_FetchBy_RefundID="{\"refundIds\":[9387291,9387289],\"txnIds\":null,\"status\":null}";
+	String Params_Reporting_UpdloadQ_FetchBy_TripID="{\"tripRef\":[\"Q190722430506\",\"Q200417823668\"],\"status\":\"D\"}";
 
+	
+	String Params_Reporting_Refund_Status_Post="{\"refundStatus\":\"D\",\"paymentType\":[\"GV\",\"CC\"],\"tripRef\":[\"Q190722430506\",\"Q200417823774\"]}";
+
+	
 	
 	
 	String urlInit = "/paymentservice/service/otp/init";
@@ -369,6 +375,11 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String url_ReportingRefundQ_Count_S_PayType_GW = "/paymentservice/service/refund/count/refunds?refundStatus=D&paymentType=CC,DC&gatewayId=10";
 	String url_ReportingRefundQ_Count_D_CashCard = "/paymentservice/service/refund/count/refunds?refundStatus=d&cashCardStatus=s&cashCardId=1&paymentType=KC";
 	String url_ReportingRefundQ_Count_P_PayType = "/paymentservice/service/refund/count/refunds?refundStatus=p&paymentType=NB,DC,CC&paymentStatus=s";	
+	String url_ReportingRefundUploadQ_fetch_RefundID = "/paymentservice/refund/data/fetch";	
+	String url_ReportingRefundUploadQ_fetch_TripID = "/paymentservice/refund/data/fetchByTripRef";	
+	String url_ReportingRefund_Count_ID = "/paymentservice/service/refund/count/refunds";	
+	
+	
 
 	String url_Singlebincard="/v1/payment/card";
 
@@ -2872,142 +2883,39 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		System.out.println("Response body "+payType +" : "+ resp.body().asString());
 		int statusCode = resp.getStatusCode();	
 		Reporter.log("statusCode: " + statusCode);
-		JsonPath jsonPathEvaluator = resp.jsonPath();
-		
-		if(statusCode!=10000) {
+		JsonPath jsonPathEvaluator = resp.jsonPath();		
+		if(statusCode!=200) {
 				Assert.assertTrue(false);
 		}
 		
-		if(payType.equalsIgnoreCase("ReportingPaginatePayType")) {
-			String redirection = jsonPathEvaluator.getString("redirection_required");
-			String Response = jsonPathEvaluator.getString("response_message");
-			Reporter.log("redirection required " +redirection);
-			Reporter.log("Response " +Response);
-			if(!redirection.equals("[Y]")) {
+		
+		if(payType.equalsIgnoreCase("ReportingPaginate")) {
+			String str_resp = resp.body().asString();			
+			if(!str_resp.contains("page_size")) {
+				Assert.assertTrue(false);
+			}			
+		}
+		
+		else if(payType.equalsIgnoreCase("BasicValidaton")) {
+			String status = jsonPathEvaluator.getString("status");
+			String description = jsonPathEvaluator.getString("description");
+			if(!status.equals("S")) {
 				Assert.assertTrue(false);
 			}  
-			if(!Response.equals("")) {
+			if(!description.equals("Successfully fetched")) {
 				Assert.assertTrue(false);
 			}
 		}
 		
-		else if(payType.equalsIgnoreCase("ReportingPaginate")) {
-			String redirection = jsonPathEvaluator.getString("redirection_required");
-			String Response = jsonPathEvaluator.getString("response_message");
-			Reporter.log("redirection required " +redirection);
-			Reporter.log("Response " +Response);
-			if(!redirection.equals("[Y]")) {
-				Assert.assertTrue(false);
-			}  
-			if(!Response.equals("")) {
-				Assert.assertTrue(false);
-			}
-		}
 		
-		else if(payType.equalsIgnoreCase("ReportingRefundQCountD")) {
-			String redirection = jsonPathEvaluator.getString("redirection_required");
-			String Response = jsonPathEvaluator.getString("response_message");
-			Reporter.log("redirection required " +redirection);
-			Reporter.log("Response " +Response);
-			if(!redirection.equals("[Y]")) {
-				Assert.assertTrue(false);
-			}  
-			if(!Response.equals("")) {
-				Assert.assertTrue(false);
-			}
-		}
 		
-		else if(payType.equalsIgnoreCase("ReportingRefundQCountDDA")) {
-			String redirection = jsonPathEvaluator.getString("redirection_required");
-			String Response = jsonPathEvaluator.getString("response_message");
-			Reporter.log("redirection required " +redirection);
-			Reporter.log("Response " +Response);
-			if(!redirection.equals("[Y]")) {
+		else if(payType.equalsIgnoreCase("ReportingRefundUploadFetch")) {
+			String str_resp = resp.body().asString();			
+			if(!str_resp.contains("refund_amount")) {
 				Assert.assertTrue(false);
-			}  
-			if(!Response.equals("")) {
-				Assert.assertTrue(false);
-			}
+			}		
 		}
-		
-		else if(payType.equalsIgnoreCase("ReportingRefundQCountSTnx")) {
-			String redirection = jsonPathEvaluator.getString("redirection_required");
-			String Response = jsonPathEvaluator.getString("response_message");
-			Reporter.log("redirection required " +redirection);
-			Reporter.log("Response " +Response);
-			if(!redirection.equals("[Y]")) {
-				Assert.assertTrue(false);
-			}  
-			if(!Response.equals("")) {
-				Assert.assertTrue(false);
-			}
-		}
-		
-		else if(payType.equalsIgnoreCase("ReportingRefundQCountSTnxGw")) {
-			String redirection = jsonPathEvaluator.getString("redirection_required");
-			String Response = jsonPathEvaluator.getString("response_message");
-			Reporter.log("redirection required " +redirection);
-			Reporter.log("Response " +Response);
-			if(!redirection.equals("[Y]")) {
-				Assert.assertTrue(false);
-			}  
-			if(!Response.equals("")) {
-				Assert.assertTrue(false);
-			}
-		}
-		
-		else if(payType.equalsIgnoreCase("ReportingRefundQCountSPayType")) {
-			String redirection = jsonPathEvaluator.getString("redirection_required");
-			String Response = jsonPathEvaluator.getString("response_message");
-			Reporter.log("redirection required " +redirection);
-			Reporter.log("Response " +Response);
-			if(!redirection.equals("[Y]")) {
-				Assert.assertTrue(false);
-			}  
-			if(!Response.equals("")) {
-				Assert.assertTrue(false);
-			}
-		}
-		
-		else if(payType.equalsIgnoreCase("ReportingRefundQCountSPayTypeGw")) {
-			String redirection = jsonPathEvaluator.getString("redirection_required");
-			String Response = jsonPathEvaluator.getString("response_message");
-			Reporter.log("redirection required " +redirection);
-			Reporter.log("Response " +Response);
-			if(!redirection.equals("[Y]")) {
-				Assert.assertTrue(false);
-			}  
-			if(!Response.equals("")) {
-				Assert.assertTrue(false);
-			}
-		}
-		
-		else if(payType.equalsIgnoreCase("ReportingRefundQCountDCashCard")) {
-			String redirection = jsonPathEvaluator.getString("redirection_required");
-			String Response = jsonPathEvaluator.getString("response_message");
-			Reporter.log("redirection required " +redirection);
-			Reporter.log("Response " +Response);
-			if(!redirection.equals("[Y]")) {
-				Assert.assertTrue(false);
-			}  
-			if(!Response.equals("")) {
-				Assert.assertTrue(false);
-			}
-		}
-		
-		else if(payType.equalsIgnoreCase("ReportingRefundQCountPpayType")) {
-			String redirection = jsonPathEvaluator.getString("redirection_required");
-			String Response = jsonPathEvaluator.getString("response_message");
-			Reporter.log("redirection required " +redirection);
-			Reporter.log("Response " +Response);
-			if(!redirection.equals("[Y]")) {
-				Assert.assertTrue(false);
-			}  
-			if(!Response.equals("")) {
-				Assert.assertTrue(false);
-			}
-		}
-		
+			
 		else if(payType.equalsIgnoreCase("ReportingPaginate")) {
 			String redirection = jsonPathEvaluator.getString("redirection_required");
 			String Response = jsonPathEvaluator.getString("response_message");
@@ -3688,6 +3596,39 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			response = RestAssured.given().
 					when().log().all().headers(headers).get(endPoint);
 		}	
+		
+		
+		
+		else if(payType.equalsIgnoreCase("ReportingRefundUploadFetchRefundID")) {
+			RestAssured.baseURI =urlReporting;
+			String Param = Params_Reporting_UpdloadQ_FetchBy_RefundID;
+			Reporter.log(urlReporting);	
+			endPoint = url_ReportingRefundUploadQ_fetch_RefundID;
+			response = RestAssured.given().
+					when().log().all().headers(headers).body(Param).post(endPoint);
+		}	
+		
+		else if(payType.equalsIgnoreCase("ReportingRefundUploadFetchTripID")) {
+			RestAssured.baseURI =urlReporting;
+
+			String Param = Params_Reporting_UpdloadQ_FetchBy_TripID;
+			Reporter.log(urlReporting);	
+			endPoint = url_ReportingRefundUploadQ_fetch_TripID;
+			response = RestAssured.given().
+					when().log().all().headers(headers).body(Param).post(endPoint);
+		}	
+		
+		else if(payType.equalsIgnoreCase("ReportingStatusPost")) {
+			RestAssured.baseURI =urlReporting;
+
+			String Param = Params_Reporting_Refund_Status_Post;
+			Reporter.log(urlReporting);	
+			endPoint = url_ReportingRefund_Count_ID;
+			response = RestAssured.given().
+					when().log().all().headers(headers).body(Param).post(endPoint);
+		}	
+		
+		
 		
 		
 		

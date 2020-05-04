@@ -44,7 +44,7 @@
 			<class name="tripServicesProd.TS_GET_CorpTripList"/>
 			<class name="tripServicesProd.TS_Affiliated_TxnID"/>
 			<class name="tripServicesProd.TS_Coupon_Validation"/>
-			<class name="tripServicesProd.TS_Get_ProductType_BookType"/>
+			<!-- <class name="tripServicesProd.TS_Get_ProductType_BookType"/> -->
 			<class name="tripServicesProd.TS_Get_TripDetails_CommValue"/>
 		</classes>
 	</test>

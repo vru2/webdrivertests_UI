@@ -23,6 +23,13 @@
     </classes>
 </test>
 
+<test name="API Refunds ROR Counts" preserve-order="true" parallel="true">
+    <classes>
+     <!--  <class name="paymentsAPI.API_ROR_RefundQ_Count"/> -->
+    </classes>
+</test>
+
+
 
 <test name="API Deposit Account DA" preserve-order="true" parallel="true">
     <classes>
@@ -33,7 +40,7 @@
     </classes>
 </test>
 
-<test name="API Rearch pay" preserve-order="true" parallel="true">
+<test name="AAPI Pay Calls" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsAPI.API_Validate"/>
       <class name="paymentsAPI.API_CC_Visa_Type"/>
@@ -44,7 +51,6 @@
       <class name="paymentsAPI.API_GV_WL"/> 
     </classes>
 </test>
-
 
 
 

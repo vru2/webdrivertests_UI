@@ -65,6 +65,10 @@
 			<class name="tripServices.TS_GET_CorpTripList"/>
 			<class name="tripServices.TS_Affiliated_TxnID"/>
 			<class name="tripServices.TS_Coupon_Validation"/>
+			<class name="tripServices.TS_ProductType_Userid_Air"/>
+			<class name="tripServices.TS_ProductType_Userid_Hotel"/>
+			<class name="tripServices.TS_ProductType_Userid_Local"/>
+			<class name="tripServices.TS_ProductType_Userid_Train"/>
 			
 		</classes>
 	</test>

@@ -135,6 +135,37 @@
 		</classes>
 	</test>
 	
+	<test name="User classification-Health Test URL"
+		parallel="true">
+		<classes>
+			<class
+				name="accountsAPI.Userclassification_Health_Test_Url" />
+		</classes>
+	</test>
+	
+	<test name="User classification-Get trip details from TripId"
+		parallel="true">
+		<classes>
+			<class
+				name="accountsAPI.Userclassification_Gettripdetails_fromtripid" />
+		</classes>
+	</test>
+	
+	<test name="User classification-Get User details by emailId"
+		parallel="true">
+		<classes>
+			<class
+				name="accountsAPI.Userclassification_Userdetails_emailid" />
+		</classes>
+	</test>
+	<test name="User classification-Parsing CSV"
+		parallel="true">
+		<classes>
+			<class
+				name="accountsAPI.Userclassification_Parsing_CSV" />
+		</classes>
+	</test>
+	
 	
 	
 </suite>

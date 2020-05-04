@@ -171,11 +171,10 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String Params_RORCreate_Refund = "{\"isFullWalletRefund\":false,\"tripRef\":\"Q191204588938\",\"amount\":10,\"description\":\"Autaomtion REFUND\",\"txnid\":";
 	String ParamsROR_Recon = "{\"tripRef\":\"Q191203587976\",\"txnId\":";
 
-	String ParamsFetchRefund="{\"refundIds\":\"[9387165,9387150,9387149,9387190,9387357,9387405,"
-			+ "9387189,9387188,9387204,9387205,9387206,9387207,9387241,9387240," + 
-			"9387340,9387368,9387346,9387310,9387344]\",\"txnIds\": [75671590,75671700],"+"\"status\": [\"D\",\"P\",\"S\",\"T\",\"F\"]}";
+	String ParamsFetchRefund="{\"refundIds\":[9387165,9387150,9387149,9387190,9387357"
+			+ ",9387405],\"txnIds\": null,"+"\"status\": [\"D\",\"P\",\"S\",\"T\",\"F\"]}";
 	
-	String ParamsFetchRefundByTripRef="";
+	String ParamsFetchRefundByTripRef="{\"tripRef\":[\"Q200422824400\",\"Q200421824282\",\"Q200421824270\",\"Q200414822686\",\"Q200414822642\", \"Q200413822486\",\"Q200413822480\"],\"status\": \"D\"}";
 	
 	String s=RandomStringUtils.randomAlphabetic(5);
 	String r=RandomStringUtils.randomNumeric(2);
@@ -798,20 +797,25 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	public Response fetchrefunds(String refundType, String payType1) {
 		RestAssured.baseURI = urlFetchRefunds;
 		String url = null;
+		String params = null;
 		HashMap<String, Object> headers = new HashMap<String,Object>();
 		headers = headersForms();
 		Response request;
 		if(refundType.equalsIgnoreCase("RefundsTrip")){
 			url = urlRefundsTrip;
+			params=ParamsFetchRefund;
 		}
 		else if(refundType.equalsIgnoreCase("RefundsTripRef")){
 			url = urlRefundsTripRef;
+			params=ParamsFetchRefundByTripRef;
 		}
+		
+		Reporter.log(url);
+		Reporter.log("Params :" +params);
 		request = RestAssured.given().
-				when().
 				log().all().
+				body(params).
 				headers(headers).
-				body(ParamsFetchRefund).
 				post(url);
 		return request;
 	}
@@ -1506,27 +1510,19 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 				}
 				Assert.assertTrue(false);
 			}
-
 		}
 		
 		else if(payType.equalsIgnoreCase("DA")) {
 			if(!resp.body().asString().contains("Payment successful")){
 				Assert.assertTrue(false);
-			
 			}
-			
-			
 		}	
 		else if(payType.equalsIgnoreCase("DAPay")) {
 			if(!resp.body().asString().contains("Payment successful")){
 				Assert.assertTrue(false);
-			
 			}
-			
 		}
-
 		else if(payType.equalsIgnoreCase("DABalance")) {
-
 			String Balance = jsonPathEvaluator.getString("balance");
 			String CreditLimit = jsonPathEvaluator.getString("credit_limit");
 			String balance_type = jsonPathEvaluator.getString("balance_type");
@@ -1534,13 +1530,10 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			Reporter.log("CreditLimit " +CreditLimit);
 			if(!balance_type.equals("DR")) {
 				Assert.assertTrue(false);
-		
 			}  
-			
 		}
 		
 		else if(payType.equalsIgnoreCase("DAStatus")) {
-
 			String Balance = jsonPathEvaluator.getString("balance");
 			String CreditLimit = jsonPathEvaluator.getString("credit_limit");
 			String balance_type = jsonPathEvaluator.getString("balance_type");
@@ -1668,6 +1661,19 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 				Assert.assertTrue(false);
 			}
 		}	
+		else if(payType.equals("RefundsTrip")) {
+			if(statusCode!=200) {
+				Assert.assertTrue(false);
+			}
+		}
+		
+		else if(payType.equals("RefundsTripRef")) {
+			String status = jsonPathEvaluator.getString("status");
+			if(statusCode!=200) {
+				Assert.assertTrue(false);
+			}
+		
+		}
 		else if(payType.equalsIgnoreCase("GETURL")) {
 			String CTPay_URL = jsonPathEvaluator.getString("redirection_url");
 			Reporter.log("CTpay  URL "+CTPay_URL);

@@ -34,6 +34,16 @@
 </test>
 
 
+<test name="Payment UI PWA"  preserve-order="true" parallel="true" >
+    <classes>
+      <class name="paymentsUI.Payment_UI_PWA_CC"/>
+      <class name="paymentsUI.Payment_UI_PWA_NB"/>
+      <class name="paymentsUI.Payment_UI_PWA_TPW_AmazonPay"/> 
+      <class name="paymentsUI.Payment_UI_PWA_UPI"/> 
+    
+    </classes>
+</test>
+
 	
 <test name="NB CCavenueV2"  preserve-order="true" parallel="true" >
     <classes>

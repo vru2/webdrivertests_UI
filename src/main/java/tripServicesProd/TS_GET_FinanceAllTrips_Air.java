@@ -17,6 +17,7 @@ public class TS_GET_FinanceAllTrips_Air extends TripserviceCommon {
 	public void getTripService() throws IOException{
 		String url="http://trip-service.cltp.com:9001/trips/finance/all-trips?date=2019-09-01&productType=air&txnType=1&paymentStatus=SUCCESS&domains=cleartrip.com%24";
 		Response resp=RestAssured.get(url);
+		System.out.println(resp.asString());
 		if(resp.statusCode()==200){
 			ResponseBody body= resp.getBody();
 			String bodyAsString = body.asString();

@@ -17,6 +17,7 @@
 	  <class name="paymentsUI.PaymentsUI_NB"/>
 	  <class name="paymentsUI.PaymentUI_Wallet"/>
 	  <class name="paymentsUI.PaymentUI_PhonePe"/> 
+	  <class name="paymentsUI.PaymentUI_TPW_AmazonPay"/>
 	  
     </classes>
 </test>

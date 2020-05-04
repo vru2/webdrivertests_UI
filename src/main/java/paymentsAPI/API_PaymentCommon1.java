@@ -27,7 +27,7 @@ import paymentsUI.PaymentUI_CommonUtilities;
 
 public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 {	
-	
+	/*
 	
 	String urlPay = "http://172.17.28.21:8358";// Mysql
 	String urlWallet = "http://172.17.26.11:8359";
@@ -44,13 +44,13 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String urlReporting ="http://172.17.28.21:8272";
 	String urlReportingTS ="http://172.17.26.11:9031";
 	public String url_TestApp = "172.17.28.21:8358/paymentservice";
+	String urlFetchRefunds="http://172.17.28.21:8358";*/
 	
-	/*
 
 		String urlFlyin = "http://172.17.26.11:8406"; // ORACLE
-		String urlPay = "http://172.17.8.218:9001";
+		String urlPay = "http://172.17.26.11:8070";
 		String urlDA = "http://172.17.28.21:8403";
-		String urlRefundNew = "http://172.17.8.218:9001";
+		String urlRefundNew = "http://172.17.26.11:8070";
 		String promoURL = "http://172.17.26.11:7999";
 		String urlRewards = "http://172.17.12.82:9080";
 		String urlWallet = "http://172.17.26.11:8071";
@@ -63,8 +63,10 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		String urlPromo_Used = "http://172.17.26.11:8071";
 		String urlReporting ="http://172.17.28.21:8272";
 		String urlReportingTS ="http://172.17.26.11:9031";		
-		public String url_TestApp = "172.17.28.21:8358/paymentservice";*/
+		public String url_TestApp = "";
+		String urlFetchRefunds="http://172.17.26.11:8070";
 		
+
 	
 
 /*//OLD mysql apps
@@ -171,6 +173,12 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String Params_RORCreate_Refund = "{\"isFullWalletRefund\":false,\"tripRef\":\"Q191204588938\",\"amount\":10,\"description\":\"Autaomtion REFUND\",\"txnid\":";
 	String ParamsROR_Recon = "{\"tripRef\":\"Q191203587976\",\"txnId\":";
 
+	String ParamsFetchRefund="{\"refundIds\":\"[9387165,9387150,9387149,9387190,9387357,9387405,"
+			+ "9387189,9387188,9387204,9387205,9387206,9387207,9387241,9387240," + 
+			"9387340,9387368,9387346,9387310,9387344]\",\"txnIds\": [75671590,75671700],"+"\"status\": [\"D\",\"P\",\"S\",\"T\",\"F\"]}";
+	
+	String ParamsFetchRefundByTripRef="";
+	
 	String s=RandomStringUtils.randomAlphabetic(5);
 	String r=RandomStringUtils.randomNumeric(2);
 	String t=RandomStringUtils.randomNumeric(6);
@@ -188,7 +196,13 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String Params_Singlebincard_Visa_Credit=Param1+Param2+Param3+Param6;
 	String Params_Singlebincard_Visa_Debit=Param1+Param2+Param3+Param7;
 
+	String Params_Reporting_UpdloadQ_FetchBy_RefundID="{\"refundIds\":[9387291,9387289],\"txnIds\":null,\"status\":null}";
+	String Params_Reporting_UpdloadQ_FetchBy_TripID="{\"tripRef\":[\"Q190722430506\",\"Q200417823668\"],\"status\":\"D\"}";
 
+	
+	String Params_Reporting_Refund_Status_Post="{\"refundStatus\":\"D\",\"paymentType\":[\"GV\",\"CC\"],\"tripRef\":[\"Q190722430506\",\"Q200417823774\"]}";
+
+	
 	
 	
 	String urlInit = "/paymentservice/service/otp/init";
@@ -347,7 +361,25 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String url_ReportingPaymentID ="/paymentservice/payments/43911126";
 
 	String url_ReportingTS_V3 ="/trips?tripID=Q191014530470&refundRequired=true&historyRequired=true&paymentsRequired=true&apiVersion=V3";
-
+	String urlRefundsTrip="/paymentservice/refund/data/fetch";
+	String urlRefundsTripRef="/paymentservice/refund/data/fetchByTripRef";
+	
+	String url_ReportingPaginate = "/paymentservice/paginate/refunds?pageNo=1385&status=P&sort=desc";
+	String url_ReportingPaginate_PayType = "/paymentservice/paginate/refunds?pageNo=1&status=D&sort=desc&paymentType=NB";
+	
+	String url_ReportingRefundQ_Count_D = "/paymentservice/service/refund/count/refunds?refundStatus=D";
+	String url_ReportingRefundQ_Count_D_DA = "/paymentservice/service/refund/count/refunds?refundStatus=D&daStatus=S";
+	String url_ReportingRefundQ_Count_S_Txns = "/paymentservice/service/refund/count/refunds?refundStatus=S&txnType=CAPT,QURY";
+	String url_ReportingRefundQ_Count_S_Txns_Gw = "/paymentservice/service/refund/count/refunds?refundStatus=S&txnType=CAPT,QURY&gatewayId=10";
+	String url_ReportingRefundQ_Count_S_PayType = "/paymentservice/service/refund/count/refunds?refundStatus=s&paymentType=CC,DC";
+	String url_ReportingRefundQ_Count_S_PayType_GW = "/paymentservice/service/refund/count/refunds?refundStatus=D&paymentType=CC,DC&gatewayId=10";
+	String url_ReportingRefundQ_Count_D_CashCard = "/paymentservice/service/refund/count/refunds?refundStatus=d&cashCardStatus=s&cashCardId=1&paymentType=KC";
+	String url_ReportingRefundQ_Count_P_PayType = "/paymentservice/service/refund/count/refunds?refundStatus=p&paymentType=NB,DC,CC&paymentStatus=s";	
+	String url_ReportingRefundUploadQ_fetch_RefundID = "/paymentservice/refund/data/fetch";	
+	String url_ReportingRefundUploadQ_fetch_TripID = "/paymentservice/refund/data/fetchByTripRef";	
+	String url_ReportingRefund_Count_ID = "/paymentservice/service/refund/count/refunds";	
+	
+	
 
 	String url_Singlebincard="/v1/payment/card";
 
@@ -677,10 +709,10 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			params = Params_RORCreate_Refund+ranno+"}";
 			url= urlRORCreate_Refunds;
 		}
-
+	
 		else if(payType.equalsIgnoreCase("ROR_Recon")) {
 			String ranno = getDateTime(1, "mmddss");
-			params = ParamsROR_Recon+ranno+"}";
+			params = ParamsROR_Recon+ranno+"}";	
 			url= urlRORRecon;
 		}
 
@@ -786,6 +818,28 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		return request;
 	
 	}
+	
+	public Response fetchrefunds(String refundType, String payType1) {
+		RestAssured.baseURI = urlFetchRefunds;
+		String url = null;
+		HashMap<String, Object> headers = new HashMap<String,Object>();
+		headers = headersForms();
+		Response request;
+		if(refundType.equalsIgnoreCase("RefundsTrip")){
+			url = urlRefundsTrip;
+		}
+		else if(refundType.equalsIgnoreCase("RefundsTripRef")){
+			url = urlRefundsTripRef;
+		}
+		request = RestAssured.given().
+				when().
+				log().all().
+				headers(headers).
+				body(ParamsFetchRefund).
+				post(url);
+		return request;
+	}
+	
 	
 	public Response promoGet(String payType, String payType1){
 		RestAssured.baseURI = promoURL;
@@ -2824,6 +2878,60 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	}
 
 
+	public Response validation_ROR(String payType, Response resp){
+		Reporter.log("Response body "+payType +" : "+ resp.body().asString());
+		System.out.println("Response body "+payType +" : "+ resp.body().asString());
+		int statusCode = resp.getStatusCode();	
+		Reporter.log("statusCode: " + statusCode);
+		JsonPath jsonPathEvaluator = resp.jsonPath();		
+		if(statusCode!=200) {
+				Assert.assertTrue(false);
+		}
+		
+		
+		if(payType.equalsIgnoreCase("ReportingPaginate")) {
+			String str_resp = resp.body().asString();			
+			if(!str_resp.contains("page_size")) {
+				Assert.assertTrue(false);
+			}			
+		}
+		
+		else if(payType.equalsIgnoreCase("BasicValidaton")) {
+			String status = jsonPathEvaluator.getString("status");
+			String description = jsonPathEvaluator.getString("description");
+			if(!status.equals("S")) {
+				Assert.assertTrue(false);
+			}  
+			if(!description.equals("Successfully fetched")) {
+				Assert.assertTrue(false);
+			}
+		}
+		
+		
+		
+		else if(payType.equalsIgnoreCase("ReportingRefundUploadFetch")) {
+			String str_resp = resp.body().asString();			
+			if(!str_resp.contains("refund_amount")) {
+				Assert.assertTrue(false);
+			}		
+		}
+			
+		else if(payType.equalsIgnoreCase("ReportingPaginate")) {
+			String redirection = jsonPathEvaluator.getString("redirection_required");
+			String Response = jsonPathEvaluator.getString("response_message");
+			Reporter.log("redirection required " +redirection);
+			Reporter.log("Response " +Response);
+			if(!redirection.equals("[Y]")) {
+				Assert.assertTrue(false);
+			}  
+			if(!Response.equals("")) {
+				Assert.assertTrue(false);
+			}
+		}
+		return resp;
+	}
+	
+	
 	public Response payUIget(String payType, String PayType1) throws Exception {
 		String endPoint = null;
 		String params = null; 
@@ -3391,10 +3499,139 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 			Reporter.log(urlReportingTS);	
 			endPoint = url_ReportingTS_V3;
-			Reporter.log(endPoint);
 			response = RestAssured.given().
 					when().log().all().headers(headers).get(endPoint);
-		}					
+		}	
+		else if(payType.equalsIgnoreCase("ReportingPaginate")) {
+			RestAssured.baseURI =urlReporting;
+
+			Reporter.log(urlReporting);	
+			endPoint = url_ReportingPaginate;
+			response = RestAssured.given().
+					when().log().all().headers(headers).get(endPoint);
+		}	
+		
+		else if(payType.equalsIgnoreCase("ReportingPaginatePayType")) {
+			RestAssured.baseURI =urlReporting;
+
+			Reporter.log(urlReporting);	
+	
+			endPoint = url_ReportingPaginate_PayType;
+			response = RestAssured.given().
+					when().log().all().headers(headers).get(endPoint);
+		}	
+		
+		else if(payType.equalsIgnoreCase("ReportingRefundQCountD")) {
+			RestAssured.baseURI =urlReporting;
+
+			Reporter.log(urlReporting);	
+			endPoint = url_ReportingRefundQ_Count_D;
+			response = RestAssured.given().
+					when().log().all().headers(headers).get(endPoint);
+		}	
+		
+		
+		else if(payType.equalsIgnoreCase("ReportingRefundQCountDDA")) {
+			RestAssured.baseURI =urlReporting;
+
+			Reporter.log(urlReporting);	
+			endPoint = url_ReportingRefundQ_Count_D_DA;
+			response = RestAssured.given().
+					when().log().all().headers(headers).get(endPoint);
+		}	
+		
+		
+		else if(payType.equalsIgnoreCase("ReportingRefundQCountSTnx")) {
+			RestAssured.baseURI =urlReporting;
+
+			Reporter.log(urlReporting);	
+			endPoint = url_ReportingRefundQ_Count_S_Txns;
+			response = RestAssured.given().
+					when().log().all().headers(headers).get(endPoint);
+		}	
+		
+		
+		else if(payType.equalsIgnoreCase("ReportingRefundQCountSTnxGw")) {
+			RestAssured.baseURI =urlReporting;
+
+			Reporter.log(urlReporting);	
+			endPoint = url_ReportingRefundQ_Count_S_Txns_Gw;
+			response = RestAssured.given().
+					when().log().all().headers(headers).get(endPoint);
+		}	
+		
+		
+		else if(payType.equalsIgnoreCase("ReportingRefundQCountSPayType")) {
+			RestAssured.baseURI =urlReporting;
+
+			Reporter.log(urlReporting);	
+			endPoint = url_ReportingRefundQ_Count_S_PayType;
+			response = RestAssured.given().
+					when().log().all().headers(headers).get(endPoint);
+		}	
+		
+		else if(payType.equalsIgnoreCase("ReportingRefundQCountSPayTypeGw")) {
+			RestAssured.baseURI =urlReporting;
+
+			Reporter.log(urlReporting);	
+			endPoint = url_ReportingRefundQ_Count_S_PayType_GW;
+			response = RestAssured.given().
+					when().log().all().headers(headers).get(endPoint);
+		}	
+		
+		else if(payType.equalsIgnoreCase("ReportingRefundQCountDCashCard")) {
+			RestAssured.baseURI =urlReporting;
+
+			Reporter.log(urlReporting);	
+			endPoint = url_ReportingRefundQ_Count_D_CashCard;
+			response = RestAssured.given().
+					when().log().all().headers(headers).get(endPoint);
+		}	
+		
+		else if(payType.equalsIgnoreCase("ReportingRefundQCountPpayType")) {
+			RestAssured.baseURI =urlReporting;
+
+			Reporter.log(urlReporting);	
+			endPoint = url_ReportingRefundQ_Count_P_PayType;
+			response = RestAssured.given().
+					when().log().all().headers(headers).get(endPoint);
+		}	
+		
+		
+		
+		else if(payType.equalsIgnoreCase("ReportingRefundUploadFetchRefundID")) {
+			RestAssured.baseURI =urlReporting;
+			String Param = Params_Reporting_UpdloadQ_FetchBy_RefundID;
+			Reporter.log(urlReporting);	
+			endPoint = url_ReportingRefundUploadQ_fetch_RefundID;
+			response = RestAssured.given().
+					when().log().all().headers(headers).body(Param).post(endPoint);
+		}	
+		
+		else if(payType.equalsIgnoreCase("ReportingRefundUploadFetchTripID")) {
+			RestAssured.baseURI =urlReporting;
+
+			String Param = Params_Reporting_UpdloadQ_FetchBy_TripID;
+			Reporter.log(urlReporting);	
+			endPoint = url_ReportingRefundUploadQ_fetch_TripID;
+			response = RestAssured.given().
+					when().log().all().headers(headers).body(Param).post(endPoint);
+		}	
+		
+		else if(payType.equalsIgnoreCase("ReportingStatusPost")) {
+			RestAssured.baseURI =urlReporting;
+
+			String Param = Params_Reporting_Refund_Status_Post;
+			Reporter.log(urlReporting);	
+			endPoint = url_ReportingRefund_Count_ID;
+			response = RestAssured.given().
+					when().log().all().headers(headers).body(Param).post(endPoint);
+		}	
+		
+		
+		
+		
+		
 		Reporter.log(endPoint);		
 		return response;
 	}

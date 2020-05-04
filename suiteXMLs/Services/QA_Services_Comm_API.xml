@@ -33,9 +33,9 @@
 		      <class name="email.Email_Template_true"/>
 		      <class name="email.EmailPost"/>
 		      <class name="email.EmailSpamScore"/>
-		      <class name="email.EmailwithAttachments"/>
+		     <!-- <class name="email.EmailwithAttachments"/> -->
 		       <class name="email.GeneratePDF"/>
-		        <class name="email.GeneratePKPass"/>
+		       <!--  <class name="email.GeneratePKPass"/> -->
 		</classes>
 	</test>
 	

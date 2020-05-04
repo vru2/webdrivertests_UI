@@ -71,7 +71,7 @@ public class TS_Amendment extends TripserviceCommon {
 			validationforput(resp3);	
 			Thread.sleep(2000);
 		}
-		Thread.sleep(10000);		
+		Thread.sleep(14000);		
 		DBValidation_Txn(resp, "C");	
  }
 }

@@ -102,6 +102,7 @@ public class PaymentUI_CommonUtilities {
 	protected static String paymentModeDC= "Debit Card";
 	protected static String paymentModeNB= "Net Banking";
 	protected static String paymentModeUPI= "UPI";
+	protected static String paymentModeWallet="Wallets";
 	protected static String paymentModes="//ul[@id='paymentModeTab']";
 	protected static String paymentModeADCB= "ADCB TouchPoints";
 	protected static String paymentModeAP= "Apple Pay";
@@ -146,6 +147,15 @@ public class PaymentUI_CommonUtilities {
     public static String upiErrorTextXpath= "//p[text()='Please select any UPI payment method.']";
     public static String upiErrorTextSelectUPI="Please select any UPI payment method.";
     public static String upiModeXpath= "//p[text()='UPI']";
+    public static String walletsXpath="//p[contains(text(),'Wallets')]";
+    public static String walletErrorTextSelectWallet="Please select any wallet";
+    public static String walletErrorTextXpath= "//p[text()='Please select any wallet']";
+    public static String walletAmazonPaySelectXpath="//ul[contains(@class,'Datalist radioList')]/li[8]";
+    public static String amazonPayUsernameXpath="//input[@name='email']";
+    public static String amazonPayPasswordXpath="//input[@name='password']";
+    public static String amazonPaySubmitButtonXpath="//input[@id='signInSubmit']";
+    public static String amazonPayOTPPageXpath="//h1[contains(text(),'Authentication required')]";
+   
     public static String nbModeXpath= "//p[text()='Net Banking']";
     public static String storedCardXpath= "//p[text()='Stored Cards']";
     public static String storedCardNewXpath= "//p[text()='Stored Card']";

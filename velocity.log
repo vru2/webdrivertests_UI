@@ -1,528 +1,106 @@
-<<<<<<< HEAD
-Thu Apr 30 11:50:55 IST 2020  [debug] AvalonLogChute initialized using file 'velocity.log'
-Thu Apr 30 11:50:55 IST 2020  [trace] *******************************************************************
-Thu Apr 30 11:50:55 IST 2020  [debug] Starting Apache Velocity v1.5 (compiled: 2007-02-22 08:52:29)
-Thu Apr 30 11:50:55 IST 2020  [trace] RuntimeInstance initializing.
-Thu Apr 30 11:50:55 IST 2020  [debug] Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
-Thu Apr 30 11:50:55 IST 2020  [debug] Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
-Thu Apr 30 11:50:55 IST 2020  [debug] Using logger class org.apache.velocity.runtime.log.AvalonLogChute
-Thu Apr 30 11:50:55 IST 2020  [debug] Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
-Thu Apr 30 11:50:55 IST 2020  [debug] ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:50:55 IST 2020  [trace] ClasspathResourceLoader : initialization complete.
-Thu Apr 30 11:50:55 IST 2020  [debug] ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
-Thu Apr 30 11:50:55 IST 2020  [trace] Default ResourceManager initialization complete.
-Thu Apr 30 11:50:55 IST 2020  [debug] Loaded System Directive: org.apache.velocity.runtime.directive.Literal
-Thu Apr 30 11:50:55 IST 2020  [debug] Loaded System Directive: org.apache.velocity.runtime.directive.Macro
-Thu Apr 30 11:50:55 IST 2020  [debug] Loaded System Directive: org.apache.velocity.runtime.directive.Parse
-Thu Apr 30 11:50:55 IST 2020  [debug] Loaded System Directive: org.apache.velocity.runtime.directive.Include
-Thu Apr 30 11:50:55 IST 2020  [debug] Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
-Thu Apr 30 11:50:55 IST 2020  [debug] Created '20' parsers.
-Thu Apr 30 11:50:55 IST 2020  [trace] Velocimacro : initialization starting.
-Thu Apr 30 11:50:55 IST 2020  [debug] Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
-Thu Apr 30 11:50:55 IST 2020  [debug] Velocimacro : Default library not found.
-Thu Apr 30 11:50:55 IST 2020  [debug] Velocimacro : allowInline = true : VMs can be defined inline in templates
-Thu Apr 30 11:50:55 IST 2020  [debug] Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
-Thu Apr 30 11:50:55 IST 2020  [debug] Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
-Thu Apr 30 11:50:55 IST 2020  [debug] Velocimacro : autoload off : VM system will not automatically reload global library macros
-Thu Apr 30 11:50:55 IST 2020  [trace] Velocimacro : Velocimacro : initialization complete.
-Thu Apr 30 11:50:55 IST 2020  [trace] RuntimeInstance successfully initialized.
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/index.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/overview.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/suites.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Thu Apr 30 11:52:10 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/output.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-=======
-<<<<<<< HEAD
-Wed Apr 29 15:43:08 IST 2020  [debug] AvalonLogChute initialized using file 'velocity.log'
-Wed Apr 29 15:43:08 IST 2020  [trace] *******************************************************************
-Wed Apr 29 15:43:08 IST 2020  [debug] Starting Apache Velocity v1.5 (compiled: 2007-02-22 08:52:29)
-Wed Apr 29 15:43:08 IST 2020  [trace] RuntimeInstance initializing.
-Wed Apr 29 15:43:08 IST 2020  [debug] Default Properties File: org/apache/velocity/runtime/defaults/velocity.properties
-Wed Apr 29 15:43:08 IST 2020  [debug] Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
-Wed Apr 29 15:43:08 IST 2020  [debug] Using logger class org.apache.velocity.runtime.log.AvalonLogChute
-Wed Apr 29 15:43:08 IST 2020  [debug] Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
-Wed Apr 29 15:43:08 IST 2020  [debug] ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:43:08 IST 2020  [trace] ClasspathResourceLoader : initialization complete.
-Wed Apr 29 15:43:08 IST 2020  [debug] ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
-Wed Apr 29 15:43:08 IST 2020  [trace] Default ResourceManager initialization complete.
-Wed Apr 29 15:43:08 IST 2020  [debug] Loaded System Directive: org.apache.velocity.runtime.directive.Literal
-Wed Apr 29 15:43:08 IST 2020  [debug] Loaded System Directive: org.apache.velocity.runtime.directive.Macro
-Wed Apr 29 15:43:08 IST 2020  [debug] Loaded System Directive: org.apache.velocity.runtime.directive.Parse
-Wed Apr 29 15:43:08 IST 2020  [debug] Loaded System Directive: org.apache.velocity.runtime.directive.Include
-Wed Apr 29 15:43:08 IST 2020  [debug] Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
-Wed Apr 29 15:43:08 IST 2020  [debug] Created '20' parsers.
-Wed Apr 29 15:43:08 IST 2020  [trace] Velocimacro : initialization starting.
-Wed Apr 29 15:43:08 IST 2020  [debug] Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
-Wed Apr 29 15:43:08 IST 2020  [debug] Velocimacro : Default library not found.
-Wed Apr 29 15:43:08 IST 2020  [debug] Velocimacro : allowInline = true : VMs can be defined inline in templates
-Wed Apr 29 15:43:08 IST 2020  [debug] Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
-Wed Apr 29 15:43:08 IST 2020  [debug] Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
-Wed Apr 29 15:43:08 IST 2020  [debug] Velocimacro : autoload off : VM system will not automatically reload global library macros
-Wed Apr 29 15:43:08 IST 2020  [trace] Velocimacro : Velocimacro : initialization complete.
-Wed Apr 29 15:43:08 IST 2020  [trace] RuntimeInstance successfully initialized.
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/index.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/overview.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/suites.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/groups.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/groups.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:56 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/output.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 15:51:57 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-=======
-Wed Apr 29 11:05:58 IST 2020  [debug] AvalonLogChute initialized using file 'velocity.log'
-Wed Apr 29 11:05:58 IST 2020  [trace] *******************************************************************
-Wed Apr 29 11:05:58 IST 2020  [debug] Starting Apache Velocity v1.5 (compiled: 2007-02-22 08:52:29)
-Wed Apr 29 11:05:58 IST 2020  [trace] RuntimeInstance initializing.
-Wed Apr 29 11:05:58 IST 2020  [debug] Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
-Wed Apr 29 11:05:58 IST 2020  [debug] Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
-Wed Apr 29 11:05:58 IST 2020  [debug] Using logger class org.apache.velocity.runtime.log.AvalonLogChute
-Wed Apr 29 11:05:58 IST 2020  [debug] Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
-Wed Apr 29 11:05:58 IST 2020  [debug] ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 11:05:58 IST 2020  [trace] ClasspathResourceLoader : initialization complete.
-Wed Apr 29 11:05:58 IST 2020  [debug] ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
-Wed Apr 29 11:05:58 IST 2020  [trace] Default ResourceManager initialization complete.
-Wed Apr 29 11:05:58 IST 2020  [debug] Loaded System Directive: org.apache.velocity.runtime.directive.Literal
-Wed Apr 29 11:05:58 IST 2020  [debug] Loaded System Directive: org.apache.velocity.runtime.directive.Macro
-Wed Apr 29 11:05:58 IST 2020  [debug] Loaded System Directive: org.apache.velocity.runtime.directive.Parse
-Wed Apr 29 11:05:58 IST 2020  [debug] Loaded System Directive: org.apache.velocity.runtime.directive.Include
-Wed Apr 29 11:05:58 IST 2020  [debug] Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
-Wed Apr 29 11:05:58 IST 2020  [debug] Created '20' parsers.
-Wed Apr 29 11:05:58 IST 2020  [trace] Velocimacro : initialization starting.
-Wed Apr 29 11:05:58 IST 2020  [debug] Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
-Wed Apr 29 11:05:58 IST 2020  [debug] Velocimacro : Default library not found.
-Wed Apr 29 11:05:58 IST 2020  [debug] Velocimacro : allowInline = true : VMs can be defined inline in templates
-Wed Apr 29 11:05:58 IST 2020  [debug] Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
-Wed Apr 29 11:05:58 IST 2020  [debug] Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
-Wed Apr 29 11:05:58 IST 2020  [debug] Velocimacro : autoload off : VM system will not automatically reload global library macros
-Wed Apr 29 11:05:58 IST 2020  [trace] Velocimacro : Velocimacro : initialization complete.
-Wed Apr 29 11:05:58 IST 2020  [trace] RuntimeInstance successfully initialized.
-Wed Apr 29 11:08:07 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 11:08:07 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 11:08:07 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 11:08:07 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 11:08:07 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 11:08:07 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 11:08:07 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 11:08:07 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/index.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 11:08:07 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/overview.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 11:08:07 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/suites.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 11:08:07 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 11:08:07 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 11:08:07 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 11:08:08 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 11:08:08 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 11:08:08 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 11:08:08 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 11:08:08 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 11:08:08 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 11:08:08 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 11:08:08 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 11:08:08 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 11:08:08 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 11:08:08 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 11:08:08 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
-Wed Apr 29 11:08:08 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/output.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
->>>>>>> c8ed82766312ab5b0aa17f3785442271d9807dd4
->>>>>>> 2fe9433aa8a3bf726c58807b32cac199e3748a7e
+Mon May 04 10:45:11 IST 2020  [debug] AvalonLogChute initialized using file 'velocity.log'
+Mon May 04 10:45:11 IST 2020  [trace] *******************************************************************
+Mon May 04 10:45:11 IST 2020  [debug] Starting Apache Velocity v1.5 (compiled: 2007-02-22 08:52:29)
+Mon May 04 10:45:11 IST 2020  [trace] RuntimeInstance initializing.
+Mon May 04 10:45:11 IST 2020  [debug] Default Properties File: org/apache/velocity/runtime/defaults/velocity.properties
+Mon May 04 10:45:11 IST 2020  [debug] Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+Mon May 04 10:45:11 IST 2020  [debug] Using logger class org.apache.velocity.runtime.log.AvalonLogChute
+Mon May 04 10:45:11 IST 2020  [debug] Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+Mon May 04 10:45:11 IST 2020  [debug] ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:11 IST 2020  [trace] ClasspathResourceLoader : initialization complete.
+Mon May 04 10:45:11 IST 2020  [debug] ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+Mon May 04 10:45:11 IST 2020  [trace] Default ResourceManager initialization complete.
+Mon May 04 10:45:11 IST 2020  [debug] Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+Mon May 04 10:45:11 IST 2020  [debug] Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+Mon May 04 10:45:11 IST 2020  [debug] Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+Mon May 04 10:45:11 IST 2020  [debug] Loaded System Directive: org.apache.velocity.runtime.directive.Include
+Mon May 04 10:45:11 IST 2020  [debug] Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+Mon May 04 10:45:11 IST 2020  [debug] Created '20' parsers.
+Mon May 04 10:45:11 IST 2020  [trace] Velocimacro : initialization starting.
+Mon May 04 10:45:11 IST 2020  [debug] Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+Mon May 04 10:45:11 IST 2020  [debug] Velocimacro : Default library not found.
+Mon May 04 10:45:11 IST 2020  [debug] Velocimacro : allowInline = true : VMs can be defined inline in templates
+Mon May 04 10:45:11 IST 2020  [debug] Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+Mon May 04 10:45:11 IST 2020  [debug] Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+Mon May 04 10:45:11 IST 2020  [debug] Velocimacro : autoload off : VM system will not automatically reload global library macros
+Mon May 04 10:45:11 IST 2020  [trace] Velocimacro : Velocimacro : initialization complete.
+Mon May 04 10:45:11 IST 2020  [trace] RuntimeInstance successfully initialized.
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/xml/results.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/index.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/overview.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/suites.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:18 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:19 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:19 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:19 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:19 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:19 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:19 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:19 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:19 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:19 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:19 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:19 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:19 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:19 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:19 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:19 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:19 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:19 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:19 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:19 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:19 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:19 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:19 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:19 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:19 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:19 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/class-results.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Mon May 04 10:45:19 IST 2020  [debug] ResourceManager : found org/uncommons/reportng/templates/html/output.html.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader

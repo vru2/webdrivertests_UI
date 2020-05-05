@@ -14,16 +14,16 @@ public class API_Refunds_Fetch extends API_PaymentCommon1 {
 	public void fetchRefundsMultiple() throws IOException, JSONException{
 		Response resp ;		
 		resp = fetchrefunds("RefundsTrip","");	
-		System.out.println(resp);
-		//validation("RefundsTrip", resp);
+		//System.out.println(resp);
+		validation("RefundsTrip", resp);
 		}
 
 
-/*	@Test(priority=2)
+	@Test(priority=2)
 	public void fetchRefundsByTripRef() throws IOException, JSONException{
 		Response resp ;		
 		resp = fetchrefunds("RefundsTripRef","");	
-		//validation("RefundsTripRef", resp);
-		}*/
+		validation("RefundsTripRef", resp);
+		}
 	
 }

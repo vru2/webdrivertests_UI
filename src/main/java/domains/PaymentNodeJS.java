@@ -1,5 +1,6 @@
 package domains;
 
+import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 import java.io.BufferedReader;
@@ -48,21 +49,20 @@ import paymentsAPI.API_PaymentCommon1;
 import paymentsUI.PaymentUI_CommonUtilities;
 
 public class PaymentNodeJS extends API_PaymentCommon1{
-	
-
 
 	public String getPaymentNodeUrl = "http://172.17.15.176:9080";
-
 	public String getPaymentSummaryUrl = "http://172.17.14.217:9080/ct-logger/paymentDashboard";
-
 	protected String qaurl = "https://qa2.cleartrip.com";
-
 	//String urlgetPay = "http://172.17.26.11:8070";
-
 	String endPointgetPay = "/paymentservice/api/getPaymentURL";
+	public Response resp;
+	public static String paymentUIurl;
 
-	
+	public void pwapaymentUI_Setup() throws Exception {
+		resp = payUIget("BookApp/GetPay","");
+		paymentUIurl = qaurl+ fetchPaymentURL(resp);
 
+	}
 
 	public void paymentNodeJS_HomePage(RemoteWebDriver driver, String payServer, String testServer) throws Exception {
 		elementVisible(driver, getObjectPayment("HomePage_Header"), 10);
@@ -502,7 +502,8 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 
 				elementVisible(driver, By.id("btnNext"), 20);
 				safeClick(driver, By.id("btnNext"));
-				Thread.sleep(5000);
+				Thread.sleep(3000);
+				safeClick(driver,By.xpath("//button[@id='acceptAllButton']"));
 				safeType(driver, getObjectPayment("PaymentPage_TW_Paypal_Password"), platform.value("Paypal_Password"));
 				safeClick(driver, getObjectPayment("PaymentPage_TW_Paypal_Login"));
 				elementVisible(driver, getObjectPayment("PaymentPage_TW_Paypal_CC_CVV"), 20);
@@ -1518,7 +1519,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 		}
 
 	}
-	
+
 	public static boolean isElementPresent(RemoteWebDriver driver, String xpath) throws Exception {
 		try {
 			driver.findElement(By.xpath(xpath));
@@ -1527,7 +1528,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 			return false;
 		}
 	}
-	
+
 	public boolean elementVisible(RemoteWebDriver driver, String xpath, int Time) throws Exception {
 		boolean visible = false;
 		boolean elementPresent;
@@ -1636,8 +1637,8 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 		}
 
 	}
-	
-	
+
+
 	public static void selectItemFromList(RemoteWebDriver driver,String xpath,String text) {
 		try {
 			Select select = new Select(driver.findElement(By.xpath(xpath)));
@@ -1653,7 +1654,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 			Assert.fail("No such element found::locator value");
 		}
 	}
-	
+
 
 	public void validateIfImagesArePresent(RemoteWebDriver driver,String xpath,String imageName){
 		boolean isPresent= false;
@@ -1821,14 +1822,14 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 			Reporter.log("Exception is" +e);
 		}
 	}
-	
+
 	public void fillCardDetailsForEW(RemoteWebDriver driver, String cardNumberxpath,String cardNamexpath, String expiryMonthxpath, String expiryYearxpath){
 		try{
 			driver.findElement(By.xpath(cardNumberxpath)).sendKeys(PaymentUI_CommonUtilities.validAmexCardNumber);
 			driver.findElement(By.xpath(cardNamexpath)).sendKeys(PaymentUI_CommonUtilities.validCardName);
 			driver.findElement(By.xpath(expiryMonthxpath)).sendKeys(PaymentUI_CommonUtilities.ewAddCardValidExpiryMonth);
 			driver.findElement(By.xpath(expiryYearxpath)).sendKeys(PaymentUI_CommonUtilities.ewAddCardValidExpiryYear);
-			}
+		}
 
 		catch(Exception e){
 			Reporter.log("Exception is" +e);
@@ -1998,40 +1999,40 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 			Reporter.log("Exception is" +e);
 		}
 	}
-	
+
 	public void signCleartripHomePage(RemoteWebDriver driver,String email, String password)throws Exception  {
 		try {
-				
-				driver.get(qaurl);		
-				Thread.sleep(5000);
-				safeClick(driver, getObjectPayment("B2C_HomePage_YourTrips"));
-				safeClick(driver, getObjectPayment("B2C_HomePage_SignIn"));
-				Thread.sleep(5000);
-				driver.switchTo().frame("modal_window");
-				safeType(driver, getObjectPayment("B2C_HomePage_Email"), email);
-				safeType(driver, getObjectPayment("B2C_HomePage_Password"), password);
-				safeClick(driver, getObjectPayment("B2C_HomePage_SignInButton"));
-				Thread.sleep(10000);
-		
-			} catch (InterruptedException e) {
+
+			driver.get(qaurl);		
+			Thread.sleep(5000);
+			safeClick(driver, getObjectPayment("B2C_HomePage_YourTrips"));
+			safeClick(driver, getObjectPayment("B2C_HomePage_SignIn"));
+			Thread.sleep(5000);
+			driver.switchTo().frame("modal_window");
+			safeType(driver, getObjectPayment("B2C_HomePage_Email"), email);
+			safeType(driver, getObjectPayment("B2C_HomePage_Password"), password);
+			safeClick(driver, getObjectPayment("B2C_HomePage_SignInButton"));
+			Thread.sleep(10000);
+
+		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 
 	}
-	
-	
+
+
 	public void selectFromDropdown(RemoteWebDriver driver, String xpath, String dropDownValue){
 		try{
 			Select options = new Select(driver.findElement(By.xpath(xpath)));
 			options.selectByVisibleText(dropDownValue);
 		}
-		
+
 		catch(Exception e){
 			Reporter.log("Exception is" +e);
 		}
 	}
-	
-	
+
+
 	public void paymentUI_PWA_Select_Payment(RemoteWebDriver driver, String payType, String payType1, String cardType)
 			throws Exception {
 		if (cardType.equalsIgnoreCase("MASTER")||cardType.equalsIgnoreCase("")) {
@@ -2043,9 +2044,9 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 		if (!payType1.equals("")) {
 			Country = payType1.substring(0, 2);
 		}
-//		elementVisible(driver, getObjectPayment("SelectPayment_Header"), 5);
-//		elementPresent(driver, getObjectPayment("SelectPayment_Header"), 5);
-//		textPresent(driver, "Select payment option", 1);
+		//		elementVisible(driver, getObjectPayment("SelectPayment_Header"), 5);
+		//		elementPresent(driver, getObjectPayment("SelectPayment_Header"), 5);
+		//		textPresent(driver, "Select payment option", 1);
 		if (payType.equalsIgnoreCase("CC")) {
 			paymentUI_PWA_EnterCard_Details(driver, cardType);
 		} 
@@ -2055,9 +2056,9 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 			safeClick(driver, getObjectPayment("SelectPayment_Type_DC"));
 			paymentNodeJS_EnterCard_Details(driver, cardType);
 		} 
-	
+
 		else if (payType.equalsIgnoreCase("ADCB")) {
-			
+
 			safeClick(driver, getObjectPayment("SelectPayment_CC_DC_Dropdown"));
 			safeClick(driver, getObjectPayment("SelectPayment_Type_DC"));
 			paymentUI_PWA_EnterCard_Details(driver, cardType);
@@ -2071,40 +2072,75 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 			safeType(driver, getObjectPayment("SelectPayment_Amount_Txt"), "0");
 			add_Wallet(driver, "");
 		} 
-		
+
 		else if (payType.equalsIgnoreCase("NB")) {
-			safeClickList(driver, getObjectPayment("SelectPayment_Option"), "Net Banking");
-			safeClick(driver, getObjectPayment("MakePayment_NB_Bank_Dropdown"));
-			safeClickList(driver, getObjectPayment("SelectPayment_NB_Bank"), payType1);
+			elementVisible(driver, getObjectPayment("PWA_PaymentPage_NB_Tab"), 5);
+			safeClick(driver, getObjectPayment("PWA_PaymentPage_NB_Tab"));
+			isElementPresent(driver, getObjectPayment("PWA_PaymentPage_Select_NB"));
+			//safeClickList(driver, getObjectPayment("SelectPayment_NB_Bank"), payType1);
+			elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"), 5);
+			safeClick(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"));
+			if (!textPresentInElement(driver,getObjectPayment("PWA_PaymentPage_SelectNBErrorMsg"),"Please select your bank", 2)) {
+				Reporter.log("Please select your bank text is not displayed");
+				assertTrue(false);
+			}
+
 			if(payType1.equalsIgnoreCase("Citibank")) {
-				safeClick(driver, getObjectPayment("SelectPayment_NB_Bank_Select_Arrow"));
+				elementPresent(driver, getObjectPayment("PWA_PaymentPage_CitiBank"));
+				safeClick(driver, getObjectPayment("PWA_PaymentPage_CitiBank"));
+				Thread.sleep(3000);
+				safeClick(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"));
+				//safeClick(driver, getObjectPayment("SelectPayment_NB_Bank_Select_Arrow"));
 				//safeSelectByIndex(driver, getObjectPayment("SelectPayment_NB_Bank_Select"), 6);
-				safeClick(driver, By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='ICICI Bank'])[1]/following::span[2]"));
+				//safeClick(driver, By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='ICICI Bank'])[1]/following::span[2]"));
 			}
 			else if(payType1.equalsIgnoreCase("HDFC Bank")) {
 				safeClick(driver, getObjectPayment("SelectPayment_NB_Bank_Select_Arrow"));
-				//safeSelectByIndex(driver, getObjectPayment("SelectPayment_NB_Bank_Select"), 6);
-
+				safeSelectByIndex(driver, getObjectPayment("SelectPayment_NB_Bank_Select"), 6);
 				safeClickList(driver, getObjectPayment("SelectPayment_NB_Bank"), payType1);
 			}
 		}		
 		else if (payType.equalsIgnoreCase("PHONEPE")) {
-			safeType(driver, getObjectPayment("SelectPayment_Amount_Txt"), "1");
-			safeClickList(driver, getObjectPayment("SelectPayment_Option"), "UPI");
-		} else if (payType.equalsIgnoreCase("PHONEPECTWALL")) {
+			pwascrollSmooth(driver, 4);
+			elementPresent(driver, getObjectPayment("PWA_PaymentPage_UPI_Tab"),5);
+			safeClick(driver, getObjectPayment("PWA_PaymentPage_UPI_Tab"));
+			elementPresent(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"),5);
+			safeClick(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"));
+			if (!textPresentInElement(driver,getObjectPayment("PWA_PaymentPage_SelectUPIErrorMsg"),"Please select any UPI payment method.", 2)) {
+				Reporter.log("Please select any UPI payment method text is not displayed");
+				assertTrue(false);
+			}
+			elementPresent(driver, getObjectPayment("PWA_PaymentPage_SelectPhonePe"),5);
+			safeClick(driver, getObjectPayment("PWA_PaymentPage_SelectPhonePe"));
+		} 
+		else if (payType.equalsIgnoreCase("PHONEPECTWALL")) {
 			add_Wallet(driver, "");
 			safeType(driver, getObjectPayment("SelectPayment_Amount_Txt"), "1");
 			safeClickList(driver, getObjectPayment("SelectPayment_Option"), "UPI");
 		} 
 		else if (payType.equalsIgnoreCase("TPW")) {
-			safeType(driver, By.id("amount"), "1");
-			safeClickList(driver, getObjectPayment("SelectPayment_Option"), "Wallets");
-			safeClickList(driver, getObjectPayment("SelectPayment_Wallet_Types"), payType1);
-
-		}	
-
+			//safeType(driver, By.id("amount"), "1");
+			elementPresent(driver, getObjectPayment("PWA_PaymentPage_WALLETS_Tab"),5);
+			safeClick(driver, getObjectPayment("PWA_PaymentPage_WALLETS_Tab"));
+			//safeClick(driver, getObjectPayment("PWA_PaymentPage_AmazonPay"));
+			elementPresent(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"),5);
+			safeClick(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"));
+			pwascrollSmooth(driver, 4);
+			if (!textPresentInElement(driver,getObjectPayment("PWA_PaymentPage_SelectTPW_ErrorMsg"),"Please select any wallet", 2)) {
+				Reporter.log("Please select your wallet text is not displayed");
+				assertTrue(false);
+			}
+			elementPresent(driver, getObjectPayment("PWA_PaymentPage_AmazonPay"),5);
+			safeClick(driver, getObjectPayment("PWA_PaymentPage_AmazonPay"));
+		}
+		if(payType1.equalsIgnoreCase("Citibank")) {
+			elementPresent(driver, getObjectPayment("PWA_PaymentPage_CitiBank"),5);
+			safeClick(driver, getObjectPayment("PWA_PaymentPage_CitiBank"));
+			Thread.sleep(3000);
+			safeClick(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"));
+		}
 	}
-	
+
 	public void paymentUI_PWA_EnterCard_Details(RemoteWebDriver driver, String cardType) throws Exception {
 		if(cardType.equalsIgnoreCase("MASTER")){
 			Reporter.log("Master card selected");
@@ -2115,13 +2151,13 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 				Reporter.log("Validation Failed text is displayed");
 				assertTrue(false);
 			}
-		
+
 			Reporter.log("Card No : " + platform.value("AmexCard_Number_New"));
 			safeType_NonClear(driver, getObjectPayment("PWA_PaymentPage_CC_Number"), platform.value("AmexCard_Number_New"));
 			safeType(driver, getObjectPayment("PWA_PaymentPage_CC_Expiry"), platform.value("PWAAmexCard_Expiry"));
 			//safeType(driver, getObjectPayment(""), platform.value("AmexCard_Year"));
 			safeType(driver, getObjectPayment("PWA_PaymentPage_CC_CVV"), platform.value("AmexCard_CVV"));
-			
+
 			if (!textPresent(driver,"Per passenger convenience fee", 2)) {
 				Reporter.log("Per passenger convenience is displayed");
 				assertTrue(false);
@@ -2132,20 +2168,20 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 			safeType_NonClear(driver, getObjectPayment("PWA_PaymentPage_CC_Number"), platform.value("DebitCard_Number"));
 			safeType(driver, getObjectPayment("PWA_PaymentPage_CC_Expiry"), platform.value("PWADebitCard_Expiry"));
 			safeType(driver, getObjectPayment("PWA_PaymentPage_CC_CVV"), platform.value("DebitCard_CVV"));
-			}
-		  
+		}
+
 		else if (cardType.equalsIgnoreCase("ADCB")) {
-		
+
 			Reporter.log("ADCB Card No : " + platform.value("ADCBCard_Number"));
 			safeType_NonClear(driver, getObjectPayment("PWA_PaymentPage_CC_Number"), platform.value("ADCBCard_Number"));
 			safeType(driver, getObjectPayment("PWA_PaymentPage_CC_Expiry"), platform.value("PWA_ADCBCard_Expiry"));
 			safeType(driver, getObjectPayment("PWA_PaymentPage_CC_CVV"), platform.value("ADCBCard_CVV"));
 		}
-			
+
 	}
-	
-	public String paymentUI_PWA_Make_Payment(RemoteWebDriver driver, String payType, String bankType) throws Exception {
-		String TripID = null;
+
+	public void paymentUI_PWA_Make_Payment(RemoteWebDriver driver, String payType, String bankType) throws Exception {
+		//String TripID = null;
 		if (payType.equalsIgnoreCase("CC") || payType.equalsIgnoreCase("DC")) {
 			Thread.sleep(2000);
 			if (!elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"), 2)) {
@@ -2160,11 +2196,12 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 			//======================================//
 			paymentNodeJS_BankPage(driver, bankType);
 		}   else if (payType.equalsIgnoreCase("NB")) {
-			safeClick(driver, getObjectPayment("MakePayment_Pay_Btn_NB"));
+			//safeClick(driver, getObjectPayment("MakePayment_Pay_Btn_NB"));
 			if (bankType.equalsIgnoreCase("Citibank")) {
 				if(textPresent(driver, "Payment failed", 1)) {
 					Reporter.log("Payment failed");
 					Assert.assertTrue(false);
+					//input[@type='submit']
 				}
 				elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"), 30);
 				safeClick(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"));
@@ -2173,7 +2210,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 					Reporter.log("Payment failed");
 					Assert.assertTrue(false);
 				}
-				elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_UserName"), 30);
+				elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_UserName"), 20);
 				safeType(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_UserName"), "test");
 				safeType(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_Password"), "test");
 				safeClick(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_Submit_Btn"));
@@ -2184,20 +2221,93 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 
 		} 
 		else if (payType.equalsIgnoreCase("PHONEPE")) {
-			safeClick(driver, getObjectPayment("MakePayment_Pay_Btn_Phonepe"));
+			Thread.sleep(3000);
+			elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"), 3);
+			safeClick(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"));
+		//	elementVisible(driver, getObjectPayment("PWA_PaymentPage_AmazonPay_logo"),5);
+			//elementVisible(driver, getObjectPayment("PWA_PaymentPage_AmazonPayPage_username"), 5);
+	
 			/*elementVisible(driver, getObjectPayment("MakePayment_PhonePe_Page_Pay_Btn"), 10);
 			safeClick(driver, getObjectPayment("MakePayment_PhonePe_Page_Pay_Btn"));*/
 			elementPresent_log(driver, By.id("mobileNumber"), "", 30);
 		}
-		
-		return TripID;
+		else if (payType.equalsIgnoreCase("TPW")) {
+			if (bankType.equalsIgnoreCase("AmazonPay")) {
+				Thread.sleep(3000);
+				elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"), 3);
+				safeClick(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"));
+				elementVisible(driver, getObjectPayment("PWA_PaymentPage_AmazonPay_logo"),5);
+				elementVisible(driver, getObjectPayment("PWA_PaymentPage_AmazonPayPage_username"), 5);
+				safeType(driver, getObjectPayment("PWA_PaymentPage_AmazonPayPage_username"), platform.value("AmazonPay_TestUser"));
+				safeType(driver, getObjectPayment("PWA_PaymentPage_AmazonPayPage_password"), platform.value("AmazonPay_TestUser_password"));
+				safeClick(driver, getObjectPayment("PWA_PaymentPage_AmazonPayPage_button"));
+			}
+		}
+	//return TripID;
+		}
+	
+	public void paymentUI_PWA_ConvFee_Fare(RemoteWebDriver driver, String payType) throws Exception
+	{
+		if (payType.equalsIgnoreCase("CC") || payType.equalsIgnoreCase("DC") || payType.equalsIgnoreCase("NB") || payType.equalsIgnoreCase("TPW")|| payType.equalsIgnoreCase("PHONEPE")) 
+		{
+			Thread.sleep(2000);
+			elementVisible(driver,  getObjectPayment("PWA_PaymentPage_Conv_Fee"),5);
+			String ConvFee=getText(driver,  getObjectPayment("PWA_PaymentPage_Conv_Fee"));
+			System.out.println(ConvFee);
+			elementVisible(driver,  getObjectPayment("PWA_PaymentPage_FareBreakup_Icon"),5);
+			safeClick(driver,  getObjectPayment("PWA_PaymentPage_FareBreakup_Icon"));
+			elementVisible(driver,getObjectPayment("PWA_PaymentPage_FareBreakup_Header"),5);
+			textAssert(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_Header"), "Fare BreakUp");
+			elementVisible(driver,getObjectPayment("PWA_PaymentPage_FareBreakup_YouPayText"),5);
+			textAssert(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_YouPayText"), "You pay");
+			elementVisible(driver,getObjectPayment("PWA_PaymentPage_FareBreakup_BaseFare_Text"),5);
+			textAssert(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_BaseFare_Text"), "Base Fare");
+			elementVisible(driver,getObjectPayment("PWA_PaymentPage_FareBreakup_ConvFee_Text"),5);
+			textAssert(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_ConvFee_Text"), "Convenience Fee");
+			elementVisible(driver,getObjectPayment("PWA_PaymentPage_FareBreakup_OtherCharges_Text"),5);
+			//textAssert(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_OtherCharges_Text"), "Fare BreakUp");
+			elementVisible(driver,getObjectPayment("PWA_PaymentPage_FareBreakup_GST_Text"),5);
+			textAssert(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_GST_Text"), "Agent Service Charge (Inclusive of GST)");
+			elementVisible(driver,getObjectPayment("PWA_PaymentPage_FareBreakup_Total_Text"),5);
+			textAssert(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_Total_Text"), "Total");
+			elementVisible(driver,getObjectPayment("PWA_PaymentPage_FareBreakup_closeIcon"),5);
+			safeClick(driver,  getObjectPayment("PWA_PaymentPage_FareBreakup_closeIcon"));
+		}
 	}
-	public static void paymentUI_PWA_ConfirmationPage(RemoteWebDriver driver) {
-		
+	
+	public void paymentUI_PWA_ConfirmationPage(RemoteWebDriver driver, String payType, String Confirm_Msg, String LoggerMsg) throws Exception {
+		if (payType.equalsIgnoreCase("CC") || payType.equalsIgnoreCase("DC") || payType.equalsIgnoreCase("NBCiti")) 
+		{
+			driver.get(paymentUIurl);
+			logURL(driver);
+			waitForElementVisibility(driver, By.xpath("//section/button"), 10);
+			//Thread.sleep(10000);
+			String confirmationMsg = getText(driver, getObjectPayment("PaymentUI_Success_Msg"));			
+			String ConfirmText= getText(driver, getObjectPayment("PaymentUI_Confirm_Text"));	
+			//System.out.println(ConfirmText);
+			if (!confirmationMsg.equals("Payment successful!")) {
+				assertTrue(false);
+			}
+			assertEquals("to view your booking details and Trip ID.",ConfirmText);
+		}
+		else if (payType.equalsIgnoreCase("TPW")|| payType.equalsIgnoreCase("PHONEPE")) {
+			driver.get(paymentUIurl);
+			Thread.sleep(10000);
+			logURL(driver);
+			waitForElementVisibility(driver, By.xpath("//h1[contains(text(),'Payment in progress')]"), 10);
+			String InProgressHeader = getText(driver, getObjectPayment("PaymentUI_InProgress_Header"));			
+			String InprogressText= getText(driver, getObjectPayment("PaymentUI_InProgress_Text"));	
+			//System.out.println(ConfirmText);
+			if (!InProgressHeader.equals("Payment in progress")) {
+				assertTrue(false);
+			}
+			assertEquals("The payment for this itinerary is already in progress. Please wait 20 minutes and visit your profile to verify the booking status.",InprogressText);
+			
+			
+		}
 	}
 
-	
-	
-	
+
+
 
 }

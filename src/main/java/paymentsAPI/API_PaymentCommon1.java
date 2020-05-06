@@ -64,7 +64,9 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		String urlReporting ="http://172.17.28.21:8272";
 		String urlReportingTS ="http://172.17.26.11:9031";		
 		public String url_TestApp = "";
-		String urlFetchRefunds="http://172.17.26.11:8070";
+		//String urlFetchRefunds="http://172.17.26.11:8070";
+		String urlFetchRefunds="http://172.17.28.21:8358";
+		//String urlCS="http://172.17.26.11:8070";
 		
 
 	
@@ -200,7 +202,17 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 	
 	String Params_Reporting_Refund_Status_Post="{\"refundStatus\":\"D\",\"paymentType\":[\"GV\",\"CC\"],\"tripRef\":[\"Q190722430506\",\"Q200417823774\"]}";
-
+	
+	String paramsCSPayvalidate="[{\"payment\":{\"seq_no\":1,\"trip_id\":106562332,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":276,\r\n" + 
+			"\"payment_category\":\"B\",\"fraud_system_invocation\":\"Y\",\"ui_version\":\"v2\",\"customer_detail\":{\"ip_address\":\"119.82.73.123\",\r\n" + 
+			"\"mobile\":\"9986696785\",\"email\":\"cltppayment@gmail.com\",\"firstName\" : \"test\"},\"app_ref1\":\"Q18110926806\",\"creditshell_account_detail\":{\"id\":1},\r\n" + 
+			"\"app_ref2\":\"167823462\",\"itinerary_id\":\"683a3a6bec-4e58-422a-a2c9-90707b1e5a12\",\"payment_type\":\"CS\",\"amount\":1,\"currency\":\"USD\",\"country\":\"IN\",\r\n" + 
+			"\"order_info1\":\"9W/362/DEL/BOM/201811XXXXXX00\",\"order_info2\":\"Kiran Kumar\",\"source_type\":\"ACCOUNT\",\"user_id\":85721640,\"company_id\":110340,\r\n" + 
+			"\"app_return_info\":{\"url\":\"https://www.cleartrip.com/flights/itinerary/683a3a6bec-4e58-422a-a2c9-90707b1e5a12/book\",\"method\":\"POST\",\"book_internal\":true,\r\n" + 
+			"\"book_internal_url\":\"http://book-flights.cltp.com:9001/r3/book/flights/itinerary/683a3a6bec-4e58-422a-a2c9-90707b1e5a12/book-internal?ll=INFO\"\r\n" + 
+			"},\"host_name\":\"qa2.cleartrip.com\",\"user_agent\":\"Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko\"}}]";
+	
+	String paramsCSPay="";
 	
 	
 	
@@ -412,7 +424,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 	String PaymentUI_Trains1 = "\",\"app_ref2\":74282510,\"customer_detail\":{\"ip_address\":\"119.82.106.202\",\"mobile\":1212121212,\"landline\":1212121212,\"email\":\"cltppayment@gmail.com\",\"first_name\":\"Cltp\",\"last_name\":\"payment\",\"username\":\"cltppayment@gmail.com\"},\"product_type\":\"TRAIN\",\"currency\":\"INR\",\"order_info1\":\"16230/SBC/MYS/2019111200:15:00\",\"order_info2\":\"Test Test\",\"source_type\":\"ACCOUNT\",\"high_risk\":false,\"country\":\"IN\",\"user_id\":\"64891349\",\"email_id\":\"cltppayment@gmail.com\",\"d_plus_x_in_hours\":273,\"app_return_info\":{\"url\":\"https://qa2.cleartrip.com/trains/itinerary/f25db800de1e0137664316217d236675/process_payment\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://trains-book-nget.cltp.com:9001/r3/trains/itinerary/f25db800de1e0137664316217d236675/book_internal\",\"params\":null},\"payment_category\":\"B\"}";
 
-
+	String urlCS_Pay="/paymentservice/service/pay/v3";
+	String urlCS_Validate="/paymentservice/service/validate/v3";
 
 
 	String MySQL_URL = "jdbc:mysql://172.17.4.15:3306/payment";
@@ -927,15 +940,22 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			params = paramsDAValidateV3;
 		}
 		else if(payType.equalsIgnoreCase("DARefund")) {
-
 			Reporter.log(urlDA+url);
 			RestAssured.baseURI =urlDA;
 			url = urlDA_Refund;
 			params = paramsDA_Refund;
 		}
 		
-		
-		
+		else if(payType.equalsIgnoreCase("CSPay")) {
+			//RestAssured.baseURI =urlCS;
+			url = urlCS_Pay;
+			params = paramsCSPayvalidate;
+		}
+		else if(payType.equalsIgnoreCase("CSValidate")) {
+			//RestAssured.baseURI =urlCS;
+			url = urlCS_Validate;
+			params = paramsCSPayvalidate;
+		}
 
 		else if(payType.equalsIgnoreCase("GV")) {
 			params = paramsGV;
@@ -1587,6 +1607,37 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			
 		}		
 		
+		else if(payType.equalsIgnoreCase("CSValidate")) {
+			String paymenttype = jsonPathEvaluator.getString("payment_type");
+			String responsemsg = jsonPathEvaluator.getString("response_message");
+			Reporter.log("paymentType is " +paymenttype);
+			Reporter.log("Response Message " +responsemsg);
+		
+			if(!paymenttype.equals("[CS]"))
+			{
+				Assert.assertTrue(false);
+			}
+			if(!responsemsg.equals("[Validation successful]")) {
+				Assert.assertTrue(false);
+			}
+		}
+		else if(payType.equalsIgnoreCase("CSPay")) {
+			String paymenttype = jsonPathEvaluator.getString("payment_type");
+			String description = jsonPathEvaluator.getString("description");
+			String status=jsonPathEvaluator.getString("status");
+			Reporter.log("paymentType is " +paymenttype);
+			Reporter.log("Response Message " +description);
+			Reporter.log("status Message " +status);
+			if(!paymenttype.equals("[CS]")){
+				Assert.assertTrue(false);
+			}
+			if(!status.equals("[S]")) {
+				Assert.assertTrue(false);
+			}	
+			if(!description.equals("[Pay Success]")) {
+				Assert.assertTrue(false);
+			}
+		}
 		
 		else if(payType.equalsIgnoreCase("GV")) {
 			String paymentID = jsonPathEvaluator.getString("id");

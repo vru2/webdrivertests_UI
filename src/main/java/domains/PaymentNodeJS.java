@@ -2101,7 +2101,14 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 			}
 		}		
 		else if (payType.equalsIgnoreCase("PHONEPE")) {
-			pwascrollSmooth(driver, 4);
+		Thread.sleep(3000);
+		boolean toggle=	driver.findElement(By.xpath("//label[contains(@class,'pwa-radio-toggle')]")).isEnabled();
+			if (toggle=true)
+					{
+					safeClick(driver, getObjectPayment("PWA_PaymentPage_Wallet_Toggle"));
+					Thread.sleep(1000);
+				}
+			pwascrollSmooth(driver,3);
 			elementPresent(driver, getObjectPayment("PWA_PaymentPage_UPI_Tab"),5);
 			safeClick(driver, getObjectPayment("PWA_PaymentPage_UPI_Tab"));
 			elementPresent(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"),5);
@@ -2136,7 +2143,8 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 		if(payType1.equalsIgnoreCase("Citibank")) {
 			elementPresent(driver, getObjectPayment("PWA_PaymentPage_CitiBank"),5);
 			safeClick(driver, getObjectPayment("PWA_PaymentPage_CitiBank"));
-			Thread.sleep(3000);
+			Thread.sleep(5000);
+			waitForElementToBeClickable(driver,getObjectPayment("PWA_PaymentPage_Pay_Button"));
 			safeClick(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"));
 		}
 	}
@@ -2221,7 +2229,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 
 		} 
 		else if (payType.equalsIgnoreCase("PHONEPE")) {
-			Thread.sleep(3000);
+			Thread.sleep(4000);
 			elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"), 3);
 			safeClick(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"));
 		//	elementVisible(driver, getObjectPayment("PWA_PaymentPage_AmazonPay_logo"),5);
@@ -2250,7 +2258,8 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 	{
 		if (payType.equalsIgnoreCase("CC") || payType.equalsIgnoreCase("DC") || payType.equalsIgnoreCase("NB") || payType.equalsIgnoreCase("TPW")|| payType.equalsIgnoreCase("PHONEPE")) 
 		{
-			Thread.sleep(2000);
+			Thread.sleep(3000);
+			waitForElementVisibility(driver,getObjectPayment("PWA_PaymentPage_Conv_Fee"),5);
 			elementVisible(driver,  getObjectPayment("PWA_PaymentPage_Conv_Fee"),5);
 			String ConvFee=getText(driver,  getObjectPayment("PWA_PaymentPage_Conv_Fee"));
 			System.out.println(ConvFee);

@@ -24,6 +24,7 @@ import io.restassured.response.Response;
 	  driver.get(paymentUIurl);	   
 	  driver.manage().addCookie(cookieName);
 	  refreshPage(driver);
+	  
 	  paymentUI_PWA_Select_Payment(driver, "PHONEPE", "", "");
 	  paymentUI_PWA_ConvFee_Fare(driver,"PHONEPE");
 	  paymentUI_PWA_Make_Payment(driver, "PHONEPE", "");

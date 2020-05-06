@@ -40,6 +40,14 @@
     </classes>
 </test>
 
+<test name="API Credit Shell" preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_CS_Pay"/>
+      <class name="paymentsAPI.API_CS_Validate"/>
+     
+    </classes>
+</test>
+
 <test name="AAPI Pay Calls" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsAPI.API_Validate"/>

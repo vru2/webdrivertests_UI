@@ -38,6 +38,8 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String url_da= "http://hq-paydeposit.cltp.com:9001";
 
 	String url_Acct_Service="http://accounts-service-api.cltp.com:9001";
+	
+	String url_userclassification="http://172.17.26.11:8017";
 
 	String url_flyin="http://user-accounts.cltp.com:9001";
 
@@ -48,6 +50,9 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String url_FetchBank_Prod="/r3/companies/5334580/bank_details?caller=postman";
 	String url_GstDetails_Prod="/partial/account/user/gst?email_id=ns.likhitha@cleartrip.com";
 	String url_AcctHealthtestURL_Prod="/accountsR3/health_test";
+	String url_Userclassification_Health_Test_Url="/actuator/health";
+	String url_Userclassification_Userdetails_emailid="/users/detail?email_id=test@cleartrip.com";
+	String url_Userclassification_Gettripdetails_fromtripid="/users/trip?trip_id=Q200102680486";
 	String url_UserInfo_Prod="/account/api/user_info?user_id=32553048&api_product_id=1040";
 	String url_People_search_API_prod="/people/search?username=ns.likhitha@cleartrip.com&caller=postman";
 	String url_UserProfile_Json_Prod="/people/14029546?caller=postman&source=B2C";
@@ -90,6 +95,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String url_cfw_active_status="/activate/vOCNSWKS2uLqsDVH";
 	String url_identtiyservice_getresource="/ctauth/resource";
 	String url_flyinsignup="/partners/signup";
+	String url_Userclassification_parsingcsv="/users/data";
 	String url_flyinsignupV2="/partners/v2/signup";
 	String url_flyinresetpassword="/partners/account/reset_password";
 	String url_flyinresetpasswordV2="/partners/account/resetPassword";
@@ -210,6 +216,15 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	public HashMap<String, Object> headersForms1(){
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("Accept", "text/json");
+		return headers;
+	}
+	
+	public HashMap<String, Object> userclassification(){
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("Accept", "*/*");
+		headers.put("Cookie", "tkn=1566811020");
+		headers.put("ct-auth", "=NOV37K8fIkKrO9UwFQe19R0a5X1JweTyx50XXqKuFtDEYT3NSjEZ4ndP38P9vE5vL1YjeWNmu3xY%2FpzUexWQN1w%2Fj5gAPNmv1vpKnDrAx3FoX9evvh5diDC4jtyRjOeZZJtx%2BJ31duZqrcZ2jUdJ6F4ai43jNI5aChVTEmGAfqQahvGkzHhRz5kPpCa%2F7j3utX4un4jpIzA3dx1i9UD1iDhmbaHDtVTELASCTE65iYNDav43rPHfhVjrxuJhRUe9V9J1s9EnvD%2BVObAzErSBUd%2BYomLdDuWrqqdRzGq7%2FdYA0m79Z5nuhvvWgXtLZpphBygb5DF%2BiBArg6EEGJYTRX%2BnhhaYeP8g0CEQkY6Tiy4JTEWCk4w4RPfV8FxcD5fiBiYwxcyF82ssHriGcBPoZbqcwrH37YPhmlmSgDptHRHSU4sbkK%2B1ntNdKiZtuD7S519sHoYJ20LxLarNevMhefLj6wy0K9HoNEZdzP3I6V6sfLCHbaSEDTDVfF6ZO2eL%2BY0HEOXDxFMm4qDR%2FfSwa6%2BHx%2F4do5V1cUolGYLe7LksliKRdHKdB04q2m8OnZXTH2Z4tsAXBZj47Mu0vEuTRiAH0Rp2vtFkuXiol%2Fc%2BBJD4qswYyk0D6GkqDc%2FryiGzrriKvMSxzl8ZjdP0xHKTJjDfE5MjfU2lez8Mc21eeVj4yG9Y5gNNb6MvOPOrwEDI%2FRkVukgyqFl7OJk6DNu3G%2FLNPaqxgHPoG%2Fb4MQRnyZVI9iJH8UXIBBVrkHxP0uq0KBIFqMINY881df17xzwxrP0wDfAjdIJWLC650cfnf3%2BZ8zInGGcv79tFePFr5UA0tMv7Ci9nlUUKOJuJ4P3asT%2F%2Fu6AA%2BWLog2uJ%2FY2YYqgP%2FV7P4M74%2FvZ8fgql9D8g8%2F%2F1HM9Q%2BhZwENf6sKaAU%2FkxX%2BEKCRjKf8O%2BTNUSfsuE8coUcku3YuzCaIBgM2P8Rb8sKLbSBDeyofU70uSSaMEckaUyLeYQbOVx%2F%2B7JUlOisjgFuy%2BxyJIPcX7Yv7eIVOKsnEkZCKNo2VdexAMFzV8jJWCkNJigozPGBBeEcF5L025fFK4zyLlxhOOqSrzgJ%2FV%2BKw55kneImPwOmjjTx8bKaKUlDohE7GDIWcILQ88d%2BXi7A5SMIuz2WcT5ii0Wf%2B8AovNHaAE6ks%2FCbb9HIDfkrt1RUQubPWxQct8F190iQxv9R6IFJ5ykwqipKSTD3By%2BM95FvKgObf5mq7KTh4b8T%2BeFMlESYJHyLIxZIZoHl9lVnkf7P1e8%2FtlB9wGg6ZHy9%2B0obMoFR67KLl5Gf2Fubx9%2Bu6Hxgn%2BXdJPeAfwgbb%2BQmBiXP12zCP6SuogJGXte7YQyF6Em8tznMbrROwtZON8HERSFujfxKGUlphAbOSefgP%2B7S8ROG3IPs9BT1n1utI2bh3BRC5ImSyZhXOG2sznZdCQ79pKhhufWoot4da2aQ5TFdB5HS5I82K%2BNFYkqRWdK4vmOr5j0J6GyQhEu5IsLcsngqwvuBRkhZ%2FI2BlzDhJYXPlwWKqeoicydwftbEFDnNHvr5PmogWHBoxfe612L%2FoZuaHewfiNVtslgbnGnbzo6cVZBOb0MxCSiNyccvTZ6ZeZ3IoYf5mwSBgL53KSTx%2BaaO3PBn83YSeM2dk11dlD76Dw%2Ffwp7gLIb%2F9H19TQBwMECqNmAPkW775ynG45GwhE3BA0pwhTRn%2BF4GSBlk6n2YHWpqXOktV2t3ZZwho5dU%2BaKzPeoMZcLm18PAfmgcxcaHmOpT1wFnNWYyCeiZznaCO9YTQ3FbGs4nAqkYk9hDhgYJqbJURM1jqwd4ch6crWYVNCfNitCNVhPo3B%2FDv1XaI9BG%2FLSfa135ZZnPKwv1y8t39qMq352A4wsNG2izaRrjnoaWiLKDGOUX%2BRok8Bb4V7wJ2EvtuXgtFEdfGbHBW0PzOK2OozohB9Dcgfts6VVKh8VSsvBANqvPq2RH7kHqbSLc9UJgkwqxts8%2Bd%2BSsIIGaMKD99hLTqgVmIUIqdVm4RmzEJgGapd1ctsXLC7sin8EFVLSe4juh8UQyyDu2b0xk7xzV9RE2zRKcmaTIC8FI090LXfNrm2b4Wg39HgSi6EUUuSZp7XxKeTcbVc%2BlMKi82vuY1n6sIKh8txtE%2F7NrtDOycAE9sDoft%2BF3co7qPUE%2FXlzAxsN2yq6OaUgthEti7EbdOojrwBO%2BuNn%2BFc9R7t%2FrGr0yaLVlYSuewN2tZM6zuH7OltU2deuFjUlxcBx3jbyC3sE9N9FHNZ2%2FW68PF8heKldwZv5Yn7Qqopa0e8CTCnvtG8C9W93QdfSWckeD6FKK35kVZSky0Yt%2Bv89OjGsPOpebpZ2fzmK9MevAM2T1SiSCYC%2F1EfxXjE%2BmdhUIJpLzfaOermg6pY4h%2BhGX%2BvQAX1dJ6uJHPWHDxj0aOciap78wvRMklnmz9ebtyEEtpjj07%2FtBLiwwuc9E0f7zJ3cqbZC9yWB8TwmeulXflZVQW5hPtSjZMLkrZbJPH0AT0HCVXVmEbiVsDsyvoI90kblkZIwpwyinvDao5Dh5nRs8taMkOkQ4l%2FKctQoR6I%2BHI1q%2Fw4lUFS%2Bxx0kw7WhMu2idTMlg5eeieb6F%2BoMbMacE%2B3lUHxYFmx2yp%2FFf53Z1qZOjX0QcMJszTQZyxyYGg0opJacUPvjs68W9U6MeyquvyQby5cHYIYFJ7ElbIx652w11kKuGhLjmnXolFtr8s6QTzTgZiZrBT5kvKTpQFDJtRSC6PtWuIZJ05z34%2F6G5UiS2UjEVH%2FppjO3BF62j1vzKNA%2Bt3dmkILfeJmfA7u%2Brdaf%2BDS9bOBu3BBgJumFzBVdVyGw164B5XcNaiilm88fji2bWSKj0T4l2Adjl0WNmGrNF%2FXkL6xnRPvNfQSi48tKBDCPNQ%3D%3D'");
+		headers.put("Connection", "keep-alive");
 		return headers;
 	}
 
@@ -604,6 +619,15 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			url = url_flyinsignup;					
 			params =params_flyinsignup ;
 		}
+		
+		if(Type.equals("Userclassification_Parsing_CSV")) {
+			headers =userclassification();
+
+			RestAssured.baseURI =url_userclassification;
+			url = url_Userclassification_parsingcsv;	
+			params ="" ;
+			
+		}
 
 
 		if(Type.equals("flyinsignupV2")) {
@@ -917,6 +941,26 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		else if(Type.equals("AcctHealthtestURL_Prod")) {
 			url = url_AcctHealthtestURL_Prod;
 		}
+		else if(Type.equals("Userclassification_Health_Test_Url"))
+		{
+			RestAssured.baseURI=url_userclassification;
+			url = url_Userclassification_Health_Test_Url;
+			headers = userclassification();
+		}
+		else if(Type.equals("Userclassification_Userdetails_emailid"))
+		{
+			RestAssured.baseURI=url_userclassification;
+			url = url_Userclassification_Userdetails_emailid;
+			headers = userclassification();
+		}
+		
+		else if(Type.equals("Userclassification_Gettripdetails_fromtripid"))
+		{
+			RestAssured.baseURI=url_userclassification;
+			url = url_Userclassification_Gettripdetails_fromtripid;
+			headers = userclassification();
+		}
+		
 		else if(Type.equals("UserInfo_Prod")) {
 			url = url_UserInfo_Prod;
 		}
@@ -1165,6 +1209,35 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			}
 			
 		}
+		
+		else if(Type.equalsIgnoreCase("Userclassification_Gettripdetails_fromtripid")) {
+			String id = jsonPathEvaluator.getString("id");
+			String tripId = jsonPathEvaluator.getString("tripId");
+			String emailId = jsonPathEvaluator.getString("emailId");
+			//String delete_user = jsonPathEvaluator.getString("delete_user");
+			if(!id.contains("13307715")) {
+				Assert.assertTrue(false);						
+			}
+			if(!tripId.contains("Q200102680486")) {
+				Assert.assertTrue(false);						
+			}
+			if(!emailId.contains("ns.likhitha@cleartrip.com")) {
+				Assert.assertTrue(false);						
+			}
+			
+		}
+		else if(Type.equalsIgnoreCase("Userclassification_Userdetails_emailid")) {
+			String ReponseStr = resp.body().asString();
+			
+			if(!ReponseStr.contains("4962816")) {
+				Assert.assertTrue(false);						
+			}
+
+			if(!ReponseStr.contains("test@cleartrip.com")) {
+				Assert.assertTrue(false);						
+			}
+			
+		}
 
 		else if(Type.equalsIgnoreCase("AcctHealthtestURL")) {
 			String app = jsonPathEvaluator.getString("app");
@@ -1183,6 +1256,19 @@ public class AccountsCommon_API extends PlatformCommonUtil
 
 		}
 
+		
+		else if(Type.equalsIgnoreCase("Userclassification_Health_Test_Url")) {
+			String status = jsonPathEvaluator.getString("status");
+			
+
+			if(!status.contains("UP")) {
+				Assert.assertTrue(false);						
+			}
+			
+
+		}
+
+		
 		else if(Type.equalsIgnoreCase("partnercontroller_usersearch")) {
 			String emailId = jsonPathEvaluator.getString("emailId");
 			String id = jsonPathEvaluator.getString("id");
@@ -1690,6 +1776,16 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			}
 
 		}
+		
+		else if(Type.equalsIgnoreCase("Userclassification_Parsing_CSV")) {
+
+			String ReponseStr = resp.body().asString();
+			if(!ReponseStr.contains("File has been read from the server")){
+				Assert.assertTrue(false);
+			}
+
+		}
+
 
 
 		else if(Type.equalsIgnoreCase("flyinsignupV2")) {

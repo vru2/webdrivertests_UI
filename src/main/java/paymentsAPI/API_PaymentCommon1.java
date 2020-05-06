@@ -65,7 +65,6 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		String urlReportingTS ="http://172.17.26.11:9031";		
 		public String url_TestApp = "";
 		String urlFetchRefunds="http://172.17.26.11:8070";
-		
 
 	
 

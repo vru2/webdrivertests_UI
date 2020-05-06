@@ -40,6 +40,14 @@
     </classes>
 </test>
 
+<test name="API Credit Shell" preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_CS_Pay"/>
+      <class name="paymentsAPI.API_CS_Validate"/>
+     
+    </classes>
+</test>
+
 <test name="AAPI Pay Calls" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsAPI.API_Validate"/>
@@ -153,7 +161,7 @@
 <test name="API Refunds New" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsAPI.API_Refunds"/> 
-    </classes>
+     </classes>
 </test>
 
 <test name="API Stored Card" preserve-order="true" parallel="true">
@@ -194,6 +202,12 @@
 		<class name="paymentsAPI.API_Reporting"/>
 		<class name="paymentsAPI.API_Reporting_TS_V3"/>
     </classes>
+</test>
+
+<test name="API FetchRefunds New"  preserve-order="true" parallel="true" >
+    <classes>
+		<class name="paymentsAPI.API_Refunds_Fetch"/>
+	 </classes>
 </test>
 
 <!-- 

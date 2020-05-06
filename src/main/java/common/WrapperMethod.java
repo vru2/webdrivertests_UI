@@ -166,7 +166,7 @@ public boolean GDS_Flight, B2B_GDS_Flight = false;
 		 Map<String, Object> deviceMetrics = new HashMap<>();
 		 // Added individual deviceMetrices & useragent
 		 deviceMetrics.put("width", 360); 
-		 deviceMetrics.put("height", 600);
+		 deviceMetrics.put("height", 560);
 		 deviceMetrics.put("pixelRatio", 3.0);
 		 
 		 //Map<String, String> mobileEmulation = new HashMap<>(); -- revert incase mobile agent doesn't work
@@ -1591,6 +1591,12 @@ public boolean GDS_Flight, B2B_GDS_Flight = false;
 	public void scrollSmooth(RemoteWebDriver driver,final int y) {
 		for (int i = 0; i < y; i++) {
 			((JavascriptExecutor) driver).executeScript("window.scrollBy(0,4)", "");
+		}
+	}
+	
+	public void pwascrollSmooth(RemoteWebDriver driver,final int y) {
+		for (int i = 0; i < y; i++) {
+			((JavascriptExecutor) driver).executeScript("window.scrollBy(0,700)", "");
 		}
 	}
 

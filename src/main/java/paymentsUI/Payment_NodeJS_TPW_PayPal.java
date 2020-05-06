@@ -22,6 +22,7 @@ import domains.PaymentNodeJS;
 	   driver.get(baseUrl);	   
 	   paymentNodeJS_Select_Payment(driver, "TPW", "Paypal", "");
 	   paymentNodeJS_Make_Payment(driver, "TPW", "Paypal");
+	 //button[@id='acceptAllButton']
 	   paymentNodeJS_ConfirmationPage(driver, "Paypal", "","Paypal ");
   }
 

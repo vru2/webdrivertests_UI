@@ -166,6 +166,14 @@
 		</classes>
 	</test>
 	
+	<test name="Accounts PWA - GET user by ID "
+		parallel="true">
+		<classes>
+			<class
+				name="accountsAPI.Account_Service_PWA_GetUserbyID" />
+		</classes>
+	</test>
+	
 	
 	
 </suite>

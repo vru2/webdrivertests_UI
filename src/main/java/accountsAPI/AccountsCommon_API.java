@@ -125,6 +125,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String url_partnercontroller_usersearch="/account/partner/people/v1/search?emails=test@flyin.com&partner=1";
 	String url_peoplecontroller_getuserbyemail="/account/people?docRequired=false&email=kirti.pandey@cleartrip.com&partner=1&travellersRequired=false&userPreference=false";
 	String url_peoplecontroller_getuserbyid="account/people/7707500017642?docRequired=false&partner=1&travellersRequired=false&userPreference=false";
+	String url_Account_Service_PWA_GetUserbyID="/account/people/v2/14029546?docRequired=false&savedCards=true&travellersRequired=true&userPreference=true";
 	String url_peoplecontroller_getuserbyid_v2="/account/people/v2/41623980?docRequired=true&savedCards=true&travellersRequired=true&userPreference=true";
 	String url_apiConfig_APIkey="/account/api_config?api_key=d4beada793e93d93fcd432141709400f";
 	String  url_b2bgetTravelerURL="/companies/b2b/101/travellers?sourceType=corp&titleType=adult";
@@ -264,6 +265,14 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("Content-Type", "application/json");
 		 headers.put("AUTH_KEY", "7GHT#@D65yhgder4R");
+		//GCP -- headers.put("AUTH_KEY", "H67f$we&HGTR34clQ");
+
+		return headers;
+	}
+	public HashMap<String, Object> headersFormpwa(){
+		HashMap<String, Object> headers = new HashMap<>();
+		//headers.put("Content-Type", "application/json");
+		 headers.put("AUTH_KEY", "7GHT#@D65yhgder4R1234");
 		//GCP -- headers.put("AUTH_KEY", "H67f$we&HGTR34clQ");
 
 		return headers;
@@ -1080,6 +1089,12 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			headers = headersFormscfwoptinstatus();
 
 		}
+		else if (Type.equals("Account_Service_PWA_GetUserbyID")){
+			RestAssured.baseURI=url_Acct_Service;
+			url = url_Account_Service_PWA_GetUserbyID;
+			headers = headersFormpwa();
+
+		}
 		
 		else if (Type.equals("peoplecontroller_getuserbyid_v2")){
 			RestAssured.baseURI=url_Acct_Service;
@@ -1298,6 +1313,17 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			String emailId = jsonPathEvaluator.getString("emailId");
 
 			if(!emailId.contains("test@flyin.com")) {
+				Assert.assertTrue(false);						
+			}
+
+
+		}
+		
+		else if(Type.equalsIgnoreCase("Account_Service_PWA_GetUserbyID")) {
+
+			String id = jsonPathEvaluator.getString("id");
+
+			if(!id.contains("14029546")) {
 				Assert.assertTrue(false);						
 			}
 

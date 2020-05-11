@@ -37,6 +37,8 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	
 	String url_da= "http://hq-paydeposit.cltp.com:9001";
 
+	String url_Identitymicro_service="http://identity-microservice.cltp.com:9001";
+	
 	String url_Acct_Service="http://accounts-service-api.cltp.com:9001";
 	
 	String url_userclassification="http://172.17.26.11:8017";
@@ -90,6 +92,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String url_b2csignin="/externalapi/signin";
 	String url_b2csignin_prod="/externalapi/signin";
 	String url_flyinsignin="/partners/signin";
+	String url_Account_Service_PWA_SignIn_API="/signin";
 	String url_flyinsigninV2="/partners/v2/signin";
 	String url_Manage_trips_OTP_API="/account/auth/otp?trip_ref=Q190827475876&email_id=ns.likhitha@cleartrip.com";
 	String url_cfw_active_status="/activate/vOCNSWKS2uLqsDVH";
@@ -126,6 +129,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String url_peoplecontroller_getuserbyemail="/account/people?docRequired=false&email=kirti.pandey@cleartrip.com&partner=1&travellersRequired=false&userPreference=false";
 	String url_peoplecontroller_getuserbyid="account/people/7707500017642?docRequired=false&partner=1&travellersRequired=false&userPreference=false";
 	String url_Account_Service_PWA_GetUserbyID="/account/people/v2/14029546?docRequired=false&savedCards=true&travellersRequired=true&userPreference=true";
+	String url_Account_Service_PWA_GetUser_Byemail="/account/people?docRequired=true&email=priyankapukale259@gmail.com&partner=0&savedCards=true&travellersRequired=true&userPreference=false";
 	String url_peoplecontroller_getuserbyid_v2="/account/people/v2/41623980?docRequired=true&savedCards=true&travellersRequired=true&userPreference=true";
 	String url_apiConfig_APIkey="/account/api_config?api_key=d4beada793e93d93fcd432141709400f";
 	String  url_b2bgetTravelerURL="/companies/b2b/101/travellers?sourceType=corp&titleType=adult";
@@ -152,6 +156,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String params_b2csignin="{\"email\":\"ns.likhitha@cleartrip.com\",\"password\":\"cleartrip123\",\"persistent_login\":\"t\",\"service\":\"\",\"caller\":\"homepage\",\"source\":\"ui\",\"action_type\":\"\",\"trip_ref\":\"\",\"_\": \"\"}";
 	String params_b2csignin_prod="{\"email\":\"ns.likhitha@cleartrip.com\",\"password\":\"Likhitha@143\",\"persistent_login\":\"t\",\"service\":\"\",\"caller\":\"homepage\",\"source\":\"ui\",\"action_type\":\"\",\"trip_ref\":\"\",\"_\": \"\"}";
 	String params_flyinsignin="{\"username\" : \"ok@cltp.com\",\"partner\":1,\"password\":\"cleartrip1\"}";
+	String params_Account_Service_PWA_SignIn_API="{\"username\" : \"ns.likhitha@cleartrip.com\",\"password\":\"cleartrip123\"}";
 	String params_Manage_trips_OTP_API="{\"trip_ref\":\"Q19050680460\",\"email_id\":\"ns.likhitha@cleartrip.com\"}";
 	String params_cfw_active_status="{ \"cfw\":\"false\", \"user\": { \"password\": \"cleartrip1\" }, \"retype_password\": \"cleartrip1\", \"personal_data\": { \"title\": \"Mr\", \"first_name\": \"vinay\", \"last_name\": \"raj\" }, \"phone_number\": { \"phone_number_value\": \"+919743049515\", \"category\": \"mobile\" }, \"email_id\":\"ns.likhitha@cleartrip.com\" }";
 	String params_identtiyservice_getresource="access_token:rUBn829a8U4nH12Zo4uiHj9CHOSu3H5k44FyRJVERLB2rjdlOy";
@@ -202,7 +207,11 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String params_AccountsInfoAPI_BasedonUserId="{ \"people_ids\": [ 123, 14029546 ], \"filters\": { \"status\": [ \"A\",null ], \"exists\": [ \"api_key\" ] } , \"projections\" : [\"id\",\"status\",\"api_key\",\"username\"] }";
 
     String params_linkdepositaccount="{\"id\":387212750, \"linkable_id\":41654804, \"linkable_type\":\"Person\"}";
-	String cookie_value="MKdWExw7U5XHoqe5gvgNopvxR5VsdX%2BpbbtylbnbKovhQpnu62WWKv%2BtD0jlCQDW8KL31XDlHVQmZoLGGy3WuRq1V5%2Ff3cyOpY2e6VG%2B%2BEOmq1SZSPf0WwaBL9xsdFkeY8GZx6NCwQFZbnJNIFnBulgIq9NgXMFGIPcWjGvmYQ%2B7UvTyVzquOz%2F1UiyzcmLYG3ErhISsFBA7BHEzpGo4DEDWyymP5FpIOUZNJCY9VHPeH9%2BfEB%2FiE0WBt%2Fw8puA9IuQyIf89aiXKZtgoUuvt2S5NH52%2FqXy5YwY4naN9Fcti8vagSTjEILeaVGDZ9b0juahVCMz9Vt4TUmw5bD1fEhp8aGI0bkbHwvph%2F%2Ft678xfrYbifDim8FL7wHL9GLFX%2FgE5ffoswLeSHRaogy%2BY3VIwd%2BA0HfHap1%2FZKKJCwCp1FSlOYF7EqPdAiqIcu6uoDuIhpL2LD8jpaIgkNQT9G803IMJwTODu%2BN%2BIs%2BffvAOq8MsEeEuvJSbH7PowAwVswaTwsas4StK%2BPgsSD4qhUzenIycPyPqUUz5dsqejPub%2FM95pcbY4SRSdUkjIIF4wvM%2FxxitipKMbF8a57BVyUsQXhrQ8KUs7LfEQJw1bgBTXfF%2BmXV4GdF3cGT4Ijps1%2FBYKFLzqdoorE5DNKwtjZBgaRXctMghyBrbIkk1oVlwcO2XdIRIMLR3MvvwrB7R%2BLpWZgHfDMhEbt%2Bu7TdG8I425Ob4Au8ejc%2BuIvEQXek%2FWb25YYgoaZ3u0i1r%2Fb%2BL8vJHXcEOEUlE82lIxQfU3VpRaGR0GlHLFiGZZTVNEQsc%3D";
+   
+    String li = RandomStringUtils.randomAlphabetic(5);
+    String params_pwaregister="{\"username\":\"testpwa"+li+"@gmail.com\", \"password\":\"Hello@123\"}";
+    String params_pwafetchDAdetails="";				
+	 String cookie_value="MKdWExw7U5XHoqe5gvgNopvxR5VsdX%2BpbbtylbnbKovhQpnu62WWKv%2BtD0jlCQDW8KL31XDlHVQmZoLGGy3WuRq1V5%2Ff3cyOpY2e6VG%2B%2BEOmq1SZSPf0WwaBL9xsdFkeY8GZx6NCwQFZbnJNIFnBulgIq9NgXMFGIPcWjGvmYQ%2B7UvTyVzquOz%2F1UiyzcmLYG3ErhISsFBA7BHEzpGo4DEDWyymP5FpIOUZNJCY9VHPeH9%2BfEB%2FiE0WBt%2Fw8puA9IuQyIf89aiXKZtgoUuvt2S5NH52%2FqXy5YwY4naN9Fcti8vagSTjEILeaVGDZ9b0juahVCMz9Vt4TUmw5bD1fEhp8aGI0bkbHwvph%2F%2Ft678xfrYbifDim8FL7wHL9GLFX%2FgE5ffoswLeSHRaogy%2BY3VIwd%2BA0HfHap1%2FZKKJCwCp1FSlOYF7EqPdAiqIcu6uoDuIhpL2LD8jpaIgkNQT9G803IMJwTODu%2BN%2BIs%2BffvAOq8MsEeEuvJSbH7PowAwVswaTwsas4StK%2BPgsSD4qhUzenIycPyPqUUz5dsqejPub%2FM95pcbY4SRSdUkjIIF4wvM%2FxxitipKMbF8a57BVyUsQXhrQ8KUs7LfEQJw1bgBTXfF%2BmXV4GdF3cGT4Ijps1%2FBYKFLzqdoorE5DNKwtjZBgaRXctMghyBrbIkk1oVlwcO2XdIRIMLR3MvvwrB7R%2BLpWZgHfDMhEbt%2Bu7TdG8I425Ob4Au8ejc%2BuIvEQXek%2FWb25YYgoaZ3u0i1r%2Fb%2BL8vJHXcEOEUlE82lIxQfU3VpRaGR0GlHLFiGZZTVNEQsc%3D";
 	public HashMap<String, Object> headersForms(){
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("ct-gn-auth", "dc7cfd533f661f92ebf6dceaf9930c3dba977bb8");
@@ -272,7 +281,16 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	public HashMap<String, Object> headersFormpwa(){
 		HashMap<String, Object> headers = new HashMap<>();
 		//headers.put("Content-Type", "application/json");
-		 headers.put("AUTH_KEY", "7GHT#@D65yhgder4R1234");
+		 headers.put("AUTH_KEY", "7GHT#@D65yhgder4R");
+		//GCP -- headers.put("AUTH_KEY", "H67f$we&HGTR34clQ");
+
+		return headers;
+	}
+	public HashMap<String, Object> headersFormpwaemail(){
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("Content-Type", "application/json");
+		 headers.put("AUTH_KEY", "7GHT#@D65yhgder4R");
+		 headers.put("accept", "application/json");
 		//GCP -- headers.put("AUTH_KEY", "H67f$we&HGTR34clQ");
 
 		return headers;
@@ -310,6 +328,15 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		headers.put("Accept", "text/json");
 		return headers;
 	}
+	
+	public HashMap<String, Object> headersFormspwaregister(){
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("auth_key", "7GHT#@D65yhgder4R");
+		headers.put("Content-Type", "application/json");
+		headers.put("referer", "qa2.cleartrip.com");
+		headers.put("x-ct-caller-app", "x-ct-caller-app: my-app-name");
+		return headers;
+	}
 
 
 
@@ -337,6 +364,18 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		//GCP -- headers.put("AUTH_KEY", "H67f$we&HGTR34clQ");
 		return headers;
 	}
+	public HashMap<String, Object> headersFormspwasignin(){
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("Content-Type", "application/json");
+		//headers.put("Content-Type", "text/plain");
+		headers.put("X-CT-SOURCETYPE", "mobile");
+		headers.put("Referer", "cleartrip");
+		return headers;
+	}
+	
+	
+	
+	
 	public HashMap<String, Object> headersFormsTCupdateTraveller(){
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("Content-Type", "application/json");
@@ -406,6 +445,29 @@ public class AccountsCommon_API extends PlatformCommonUtil
 				multiPart("client_id","test").
 				when().
 				log().all().
+				post(url);
+		return resp;
+	}
+	
+	public Response pwaregisterapi(String url){
+		Response resp;
+		resp = RestAssured.given().
+				headers(headersFormspwaregister()).				
+				when().
+				log().all().
+                body(params_pwaregister).
+
+				post(url);
+		return resp;
+	}
+	public Response pwafetchDAdetails(String url){
+		Response resp;
+		resp = RestAssured.given().
+				//headers(headersFormspwaregister()).				
+				when().
+				log().all().
+               // body(params_pwafetchDAdetails).
+
 				post(url);
 		return resp;
 	}
@@ -569,6 +631,14 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			RestAssured.baseURI =url_Acct_Service;
 			url = url_flyinsignin;					
 			params =params_flyinsignin ;
+		}
+		
+		if(Type.equals("Account_Service_PWA_SignIn_API")) {
+			headers = headersFormspwasignin();
+
+			RestAssured.baseURI =url_Identitymicro_service;
+			url = url_Account_Service_PWA_SignIn_API;					
+			params =params_Account_Service_PWA_SignIn_API ;
 		}
 
 
@@ -1096,6 +1166,14 @@ public class AccountsCommon_API extends PlatformCommonUtil
 
 		}
 		
+		
+		else if (Type.equals("Account_Service_PWA_GetUser_Byemail")){
+			RestAssured.baseURI=url_Acct_Service;
+			url = url_Account_Service_PWA_GetUser_Byemail;
+			headers = headersFormpwaemail();
+
+		}
+		
 		else if (Type.equals("peoplecontroller_getuserbyid_v2")){
 			RestAssured.baseURI=url_Acct_Service;
 			url = url_peoplecontroller_getuserbyid_v2;
@@ -1324,6 +1402,16 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			String id = jsonPathEvaluator.getString("id");
 
 			if(!id.contains("14029546")) {
+				Assert.assertTrue(false);						
+			}
+
+
+		}
+		else if(Type.equalsIgnoreCase("Account_Service_PWA_GetUser_Byemail")) {
+
+			String emailId = jsonPathEvaluator.getString("emailId");
+
+			if(!emailId.contains("priyankapukale259@gmail.com")) {
 				Assert.assertTrue(false);						
 			}
 
@@ -1781,6 +1869,12 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		else if(Type.equalsIgnoreCase("flyinsignin")) {
 			String ReponseStr = resp.body().asString();
 			if(!ReponseStr.contains("ok@cltp.com")){
+				Assert.assertTrue(false);
+			}
+		}
+		else if(Type.equalsIgnoreCase("Account_Service_PWA_SignIn_API")) {
+			String ReponseStr = resp.body().asString();
+			if(!ReponseStr.contains("ns.likhitha@cleartrip.com")){
 				Assert.assertTrue(false);
 			}
 		}

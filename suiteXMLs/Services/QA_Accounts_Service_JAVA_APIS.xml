@@ -165,7 +165,45 @@
 		</classes>
 	</test>
 	
+	<test name="Accounts PWA - GET user by ID "
+		parallel="true">
+		<classes>
+			<class
+				name="accountsAPI.Account_Service_PWA_GetUserbyID" />
+		</classes>
+	</test>
+	<test name="Accounts PWA - GET user by EmailID "
+		parallel="true">
+		<classes>
+			<class
+				name="accountsAPI.Account_Service_PWA_GetUser_Byemail" />
+		</classes>
+	</test>
 	
+	<test name="Accounts PWA - SignIn "
+		parallel="true">
+		<classes>
+			<class
+				name="accountsAPI.Account_Service_PWA_SignIn_API" />
+		</classes>
+	</test>
+	
+	<test name="Accounts PWA - Register "
+		parallel="true">
+		<classes>
+			<class
+				name="accountsAPI.Accounts_Service_PWA_register" />
+		</classes>
+	</test>
+	
+	
+	<test name="Accounts PWA - Fetch DA Details "
+		parallel="true">
+		<classes>
+			<class
+				name="accountsAPI.Accounts_Service_PWA_Fetch_DA_Details" />
+		</classes>
+	</test>
 	
 	
 </suite>

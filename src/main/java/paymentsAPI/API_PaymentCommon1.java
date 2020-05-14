@@ -44,9 +44,12 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String urlReporting ="http://172.17.28.21:8272";
 	String urlReportingTS ="http://172.17.26.11:9031";
 	public String url_TestApp = "172.17.28.21:8358/paymentservice";
-	String urlFetchRefunds="http://172.17.28.21:8358";*/
-	
+	String urlFetchRefunds="http://172.17.28.21:8358";
+	String url_Binmanager = "https://qa2.cleartrip.com/binmanager/v1/payment/cards?bin=534977";
 
+	*/
+	
+/*
 		String urlFlyin = "http://172.17.26.11:8406"; // ORACLE
 		String urlPay = "http://172.17.26.11:8070";
 		String urlDA = "http://172.17.28.21:8403";
@@ -63,13 +66,33 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		String urlPromo_Used = "http://172.17.26.11:8071";
 		String urlReporting ="http://172.17.28.21:8272";
 		String urlReportingTS ="http://172.17.26.11:9031";		
+		String url_Binmanager = "https://qa2.cleartrip.com/binmanager/v1/payment/cards?bin=534977";
 		public String url_TestApp = "";
 		String urlFetchRefunds="http://172.17.26.11:8070";
-		//String urlFetchRefunds="http://172.17.26.11:8070";
+*/		//String urlFetchRefunds="http://172.17.26.11:8070";
 		//String urlCS="http://172.17.26.11:8070";
-		
-
 	
+	
+	String urlFlyin = "http://flyin-paymentservice.gcp-cltp.com"; 
+	String urlPay = "http://payment-service.gcp-cltp.com";
+	String urlRefundNew = "http://payment-service.gcp-cltp.com";
+	String promoURL = "http://promoservice.gcp-cltp.com";
+	String urlWallet = "http://wallet-service.gcp-cltp.com";
+	String urladcb_validat = "http://payment-service.gcp-cltp.com";
+	String urlCardInfo_Service="http://card-info-service.gcp-cltp.com";
+	String urlrewards_validate = "http://payment-service.gcp-cltp.com";
+	String urlrewards_payURI ="http://payment-service.gcp-cltp.com";
+	String urlPromo_Used = "http://wallet-service.gcp-cltp.com";
+	String urlReporting ="http://paymentservicereporting.gcp-cltp.com";
+	String urlReportingTS ="http://trip-service-api.gcp-cltp.com";		
+	public String url_TestApp = "";
+	String urlFetchRefunds="http://paymentservicereporting.gcp-cltp.com";
+	String urlDA = "http://pay-deposit-account-r3.gcp-cltp.com";
+	String urlrewards_URI = "http://10.163.15.236:9080";
+	String urlRewards = "http://rewardsservice.gcp-cltp.com:9080";
+	String url_Binmanager = "https://www.cleartrip.com/binmanager/v1/payment/cards?bin=534977";
+
+
 
 /*//OLD mysql apps
 	String urlPay = "http://172.17.26.11:8358";
@@ -366,7 +389,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String url_walletDeleteCards ="/paymentservice/card/delete/%s";
 	String url_walletStoreCards ="/paymentservice/card/store?cardNumber=5123456789012346&name=test&cardTypeId=2&expiryMonth=05&expiryYear=2020&userId=41654864";
 
-	String url_Binmanager = "https://qa2.cleartrip.com/binmanager/v1/payment/cards?bin=534977";
+	//String url_Binmanager = "https://qa2.cleartrip.com/binmanager/v1/payment/cards?bin=534977";
 
 	String url_Reportingendpoint ="/paymentservice/service/air/mis/detail?tripRef=Q200109687244&paymentType=CC&reqFor=refund";
 	String url_ReportingPaymentID ="/paymentservice/payments/43911126";
@@ -396,17 +419,24 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 
 
-	String Prod_Url_PaymentService="http://172.21.65.21:8070";
+	/*String Prod_Url_PaymentService="http://172.21.65.21:8070";
 	//String Prod_Url_Rewards1="http://rewardsservice.cltp.com:9001";
 	String Prod_Url_Rewards="http://172.21.3.122:9080";
 	String Prod_Url_Wallet="http://172.21.65.21:8071";
-	String Prod_Url_Promo="http://172.21.48.21:7999";
+	String Prod_Url_Promo="http://172.21.48.21:7999";*/
+	
+	String Prod_Url_PaymentService="http://paymentservice.cltp.com:9001";
+	//String Prod_Url_Rewards1="http://rewardsservice.cltp.com:9001";
+	String Prod_Url_Rewards="http://10.163.15.235:9001";
+	String Prod_Url_Wallet="http://wallet-service.cltp.com:9001";
+	String Prod_Url_Promo="http://promoservice.cltp.com:9001";
+	
 
 	String Prod_Url_EndPoint_Get_TP_Wallets="/paymentservice/service/thirdpartywallets";
 
 	String Prod_Url_EndPoint_Rewards_PayBack_Mobile="/payments/rewards/payback/checkAccountLinked?mobileNumber=9620351338";
 	String Prod_Url_ActiveNB= "/paymentservice/service/netbankingbanks?status=active";
-	String Prod_Url_PaymentStatus= "/paymentservice/service/status?paymentIds=129369172";
+	String Prod_Url_PaymentStatus= "/paymentservice/service/status?paymentIds=140145386";
 	String Prod_Url_ActiveCardType= "/paymentservice/service/cardtypes?status=active";
 	String Prod_Url_EndPoint_Rewards_ADCB_Balance="/payments/rewards/checkBalance";
 	String Prod_Url_EndPoint_Wallet_getWallet="/payments/wallet/74728676/getWallet";
@@ -511,7 +541,6 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	
 	public Response payGet(String payType, String payType1) {
 		RestAssured.baseURI =promoURL;
-		Reporter.log(promoURL);
 		String url = null;
 		HashMap<String, Object> headers = new HashMap<>();
 		headers = headersForms();
@@ -521,6 +550,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		}
 
 		else if(payType.equalsIgnoreCase("PromoUsed")) {
+
+			Reporter.log(urlReportingTS);	
 			RestAssured.baseURI =urlPromo_Used;
 			url= urlpromoUsed;
 		}
@@ -533,6 +564,9 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			Reporter.log(urlPay);			
 			url = urlPay_CreateRecord;
 		}
+
+		Reporter.log(url);	
+
 		request = RestAssured.given().
 				when().
 				log().all().
@@ -718,13 +752,13 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		}
 		else if(payType.equalsIgnoreCase("ROR_Create_Refunds")) {
 			String ranno = getDateTime(1, "mmddss");
-			params = Params_RORCreate_Refund+ranno+"}";
+			params = Params_RORCreate_Refund+"5"+ranno+"}";
 			url= urlRORCreate_Refunds;
 		}
 	
 		else if(payType.equalsIgnoreCase("ROR_Recon")) {
 			String ranno = getDateTime(1, "mmddss");
-			params = ParamsROR_Recon+ranno+"}";	
+			params = ParamsROR_Recon+"6"+ranno+"}";	
 			url= urlRORRecon;
 		}
 
@@ -1163,13 +1197,15 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 	public Response prodAPIs(String payType, String payType1){
 		String url = null;
+		String endpointurl = null;
 		String params = null;
 		HashMap<String, Object> headers = new HashMap<>();
 		headers = headersForms();
 		Response request = null;	  
 
 		if(payType.equalsIgnoreCase("Rwd_PayBack_Mobile")) {
-			RestAssured.baseURI =Prod_Url_Rewards;
+			endpointurl = Prod_Url_Rewards;
+			RestAssured.baseURI =endpointurl;
 			url= Prod_Url_EndPoint_Rewards_PayBack_Mobile;
 			request = RestAssured.given().
 					when().
@@ -1178,7 +1214,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 					get(url);
 		}
 		if(payType.equalsIgnoreCase("Rwd_ADCB_Balance")) {
-			RestAssured.baseURI =Prod_Url_Rewards;
+			endpointurl = Prod_Url_Rewards;
+			RestAssured.baseURI =endpointurl;
 			url= Prod_Url_EndPoint_Rewards_ADCB_Balance;
 			params=Prod_Params_Rewards_ADCB_Balance;
 			request = RestAssured.given().
@@ -1189,7 +1226,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 					post(url);
 		}
 		else if(payType.equalsIgnoreCase("Wallet_Get_Currency")) {
-			RestAssured.baseURI =Prod_Url_Wallet;
+			endpointurl = Prod_Url_Wallet;
+			RestAssured.baseURI =endpointurl;
 			url= Prod_Url_EndPoint_Wallet_getWallet;
 			request = RestAssured.given().
 					when().
@@ -1198,7 +1236,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 					get(url);
 		}
 		else if(payType.equalsIgnoreCase("Pay_Get_TW_Wallets")) {
-			RestAssured.baseURI =Prod_Url_PaymentService;
+			endpointurl = Prod_Url_PaymentService;
+			RestAssured.baseURI =endpointurl;
 			url= Prod_Url_EndPoint_Get_TP_Wallets;
 			request = RestAssured.given().
 					when().
@@ -1207,7 +1246,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 					get(url);
 		}
 		else if(payType.equalsIgnoreCase("Promo_Get_Group")) {
-			RestAssured.baseURI =Prod_Url_Promo;
+			endpointurl = Prod_Url_Promo;
+			RestAssured.baseURI =endpointurl;
 			url= Prod_Url_EndPoint_Promo_Group;
 			request = RestAssured.given().
 					when().
@@ -1216,7 +1256,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 					get(url);
 		}
 		else if(payType.equalsIgnoreCase("Bin_Get_CardInfo")) {
-			RestAssured.baseURI ="https://www.cleartrip.com";
+			endpointurl = "https://www.cleartrip.com";;
+			RestAssured.baseURI =endpointurl;
 			url= "/binmanager/v1/payment/cards?bin=552260";
 			request = RestAssured.given().
 					when().
@@ -1226,7 +1267,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		}
 
 		else if(payType.equalsIgnoreCase("ActiveNB")) {
-			RestAssured.baseURI = Prod_Url_PaymentService;
+			endpointurl = Prod_Url_PaymentService;
+			RestAssured.baseURI =endpointurl;
 			url = Prod_Url_ActiveNB;
 			request = RestAssured.given().
 					when().
@@ -1236,7 +1278,9 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		}
 
 		else if(payType.equalsIgnoreCase("GetPaymentStatus")) {
-			RestAssured.baseURI = Prod_Url_PaymentService;
+			endpointurl = Prod_Url_PaymentService;
+			RestAssured.baseURI =endpointurl;
+			
 			url = Prod_Url_PaymentStatus;
 			request = RestAssured.given().
 					when().
@@ -1246,7 +1290,9 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		}
 
 		else if(payType.equalsIgnoreCase("ActiveCardTypes")) {
-            RestAssured.baseURI = Prod_Url_PaymentService;
+			endpointurl = Prod_Url_PaymentService;
+			RestAssured.baseURI =endpointurl;
+			
             url = Prod_Url_ActiveCardType;
             request = RestAssured.given().
 					when().
@@ -1255,7 +1301,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 					get(url);
 		}
 
-		Reporter.log(url);
+		Reporter.log(endpointurl+url);
 		Reporter.log("Params : "+params);
         return request;
 	}
@@ -1496,14 +1542,14 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		}
 		else if(url.equalsIgnoreCase("Get_Card")) {
 			String bin = jsonPath.getString("bin");
-			String issuerType = jsonPath.getString("issuerType");
+			String country = jsonPath.getString("country");
 			if(!bin.equalsIgnoreCase("512345")) {
 				Reporter.log("bin =" +bin);
 				Assert.assertFalse(true);		
 
 			}
-			if(!issuerType.equalsIgnoreCase("MASTERCARD")) {
-				Reporter.log("issuerType =" +issuerType);
+			if(!country.equalsIgnoreCase("INDIA")) {
+				Reporter.log("country =" +country);
 				Assert.assertFalse(true);		
 
 			}

@@ -23,8 +23,8 @@
 
 <test name="Rewards"  preserve-order="true" parallel="true" >
     <classes>
-		<class name="paymentsAPI.Prod_Rewards_ADCB_CheckBalance"/>
-		<class name="paymentsAPI.Prod_Rewards_PayBack_MobileLinked"/>
+<!-- 		<class name="paymentsAPI.Prod_Rewards_ADCB_CheckBalance"/>
+		<class name="paymentsAPI.Prod_Rewards_PayBack_MobileLinked"/> -->
     </classes>
 </test>
 

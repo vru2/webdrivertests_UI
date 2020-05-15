@@ -49,7 +49,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 	*/
 	
-/*
+
 		String urlFlyin = "http://172.17.26.11:8406"; // ORACLE
 		String urlPay = "http://172.17.26.11:8070";
 		String urlDA = "http://172.17.28.21:8403";
@@ -69,9 +69,9 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		String url_Binmanager = "https://qa2.cleartrip.com/binmanager/v1/payment/cards?bin=534977";
 		public String url_TestApp = "";
 		String urlFetchRefunds="http://172.17.26.11:8070";
-*/		//String urlFetchRefunds="http://172.17.26.11:8070";
+		//String urlFetchRefunds="http://172.17.26.11:8070";
 		//String urlCS="http://172.17.26.11:8070";
-	
+	/*
 	
 	String urlFlyin = "http://flyin-paymentservice.gcp-cltp.com"; 
 	String urlPay = "http://payment-service.gcp-cltp.com";
@@ -92,7 +92,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String urlRewards = "http://rewardsservice.gcp-cltp.com:9080";
 	String url_Binmanager = "https://www.cleartrip.com/binmanager/v1/payment/cards?bin=534977";
 
-
+*/
 
 /*//OLD mysql apps
 	String urlPay = "http://172.17.26.11:8358";

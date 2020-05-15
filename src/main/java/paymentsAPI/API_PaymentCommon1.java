@@ -427,7 +427,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	
 	String Prod_Url_PaymentService="http://paymentservice.cltp.com:9001";
 	//String Prod_Url_Rewards1="http://rewardsservice.cltp.com:9001";
-	String Prod_Url_Rewards="http://10.163.15.235:9001";
+	//String Prod_Url_Rewards="http://10.163.15.235:9001";
+	String Prod_Url_Rewards="http://rewardsservice.cltp.com:9001";
 	String Prod_Url_Wallet="http://wallet-service.cltp.com:9001";
 	String Prod_Url_Promo="http://promoservice.cltp.com:9001";
 	

@@ -14,7 +14,11 @@
 		</suite-files>
 		
 		 <suite-files>
-				<suite-file path="QA_Payment_UI.xml"></suite-file>
+				<suite-file path="QA_Payment_PayUI_Only.xml"></suite-file>
 		</suite-files> 
 		
-</suite> 
+		 <suite-files>		 
+				<suite-file path="QA_Payment_TestApp.xml"></suite-file>
+		</suite-files> 
+		
+</suite>

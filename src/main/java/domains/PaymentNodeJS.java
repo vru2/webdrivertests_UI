@@ -282,6 +282,18 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 			safeClickList(driver, getObjectPayment("EnterPayment_Card_PGCredential_Text"),
 					platform.value("Noon_PGCred"));
 		}  
+		
+		else if (cardType.equalsIgnoreCase("RAZORPAY")) {
+			Reporter.log("Card No : " + platform.value("RazorPay_Number"));
+			Reporter.log("PG Credentials : " + platform.value("RazorPay_PGCred"));
+			safeType_NonClear(driver, getObjectPayment("EnterPayment_Card_Number"),	platform.value("RazorPay_Number"));
+			safeType(driver, getObjectPayment("EnterPayment_Card_Exp_Month"), platform.value("RazorPay_Month"));
+			safeType(driver, getObjectPayment("EnterPayment_Card_Exp_Year"), platform.value("RazorPay_Year"));
+			safeType(driver, getObjectPayment("EnterPayment_Card_CVV"), platform.value("RazorPay_CVV"));
+			safeClick(driver, getObjectPayment("EnterPayment_Card_PGCredential_Drop_Dwn"));
+			safeClickList(driver, getObjectPayment("EnterPayment_Card_PGCredential_Text"), platform.value("RazorPay_PGCred"));
+			Thread.sleep(5000);
+		}
 
 		else if (cardType.equalsIgnoreCase("S2S")) {
 			Reporter.log("Card No : " + platform.value("S2S_Number"));
@@ -330,7 +342,17 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 			safeType(driver, getObjectPayment("MakePayment_PgCred_SA_Checkout_Password_Txt"), "Checkout1!");
 			Thread.sleep(2000);
 			safeClick(driver, getObjectPayment("MakePayment_PgCred_SA_Checkout_Continue_Btn"));
-		} else if (payType.equalsIgnoreCase("CCPayFortSA")) {
+		}
+		
+		else if (payType.equalsIgnoreCase("CCRazorPay")) {
+			safeClick(driver, getObjectPayment("MakePayment_Pay_Btn_CC"));
+			elementVisible(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Logo"), 30);
+			elementVisible(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Submit"), 10);
+			Thread.sleep(2000);
+			safeClick(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Submit"));
+		}
+		
+		else if (payType.equalsIgnoreCase("CCPayFortSA")) {
 			safeClick(driver, getObjectPayment("MakePayment_Pay_Btn_CC"));
 			elementVisible(driver, getObjectPayment("MakePayment_PgCred_SA_Checkout_Password_Txt"), 30);
 			elementVisible(driver, getObjectPayment("MakePayment_PgCred_SA_Checkout_Logo"), 20);

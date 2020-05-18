@@ -130,6 +130,13 @@
       <class name="paymentsUI.Payment_NodeJS_RazorPay_CTWallet"/>
     </classes>
 </test>
+
+
+<test name="RazorPay CC" preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsUI.Payment_NodeJS_CC_PG_RazorPay"/>
+    </classes>
+</test>
 	
 <test name="ME CC" preserve-order="true" parallel="true">
     <classes>

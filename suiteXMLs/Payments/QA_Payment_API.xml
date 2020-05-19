@@ -23,12 +23,6 @@
     </classes>
 </test>
 
-<test name="API CreditShell" preserve-order="true" parallel="true">
-    <classes>
-      <class name="paymentsAPI.API_CS_Pay"/>
-      <class name="paymentsAPI.API_CS_Validate"/>      
-    </classes>
-</test>
 
 <test name="API Refunds ROR Counts" preserve-order="true" parallel="true">
     <classes>

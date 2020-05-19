@@ -2910,7 +2910,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			List<HashMap<String,Object>> payStatusList = new ArrayList<>();
 			payStatusList = jsonPathEvaluator.get("bookPaymentResponse");
 			for(HashMap<String,Object> m : payStatusList) {
-				if(m.get("status").equals("S") && m.get("description").equals("Verification SUCCESS Transaction")) {
+				if(m.get("status").equals("S") && m.get("description").equals("Payment successful")) {
 					isMatching = true;
 					Reporter.log("Payment Status Is Successful");
 				}

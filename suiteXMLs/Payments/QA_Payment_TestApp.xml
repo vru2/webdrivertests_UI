@@ -96,9 +96,11 @@
 </test>
 
 
-<test name="RazorPay CC" preserve-order="true" parallel="true">
+<test name="RazorPay CC NB" preserve-order="true" parallel="true">
     <classes>
-      <class name="paymentsUI.Payment_NodeJS_CC_PG_RazorPay"/>
+      <class name="paymentsUI.Payment_NodeJS_CC_PG_RazorPay"/>   
+      <class name="paymentsUI.Payment_NodeJS_NB_RazorPay"/>
+      
     </classes>
 </test>
 	

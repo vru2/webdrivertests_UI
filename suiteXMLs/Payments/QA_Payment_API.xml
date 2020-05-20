@@ -5,7 +5,7 @@
 <listener class-name="org.uncommons.reportng.HTMLReporter" />
 <listener class-name="common.RemoveDuplicateResults"/>
 <listener class-name="common.RetryListener"/>
-       <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
 
 <test name="API Navison" preserve-order="true" parallel="true">
@@ -22,6 +22,7 @@
       <class name="paymentsAPI.API_Navison_Air"/>      --> 
     </classes>
 </test>
+
 
 <test name="API Refunds ROR Counts" preserve-order="true" parallel="true">
     <classes>

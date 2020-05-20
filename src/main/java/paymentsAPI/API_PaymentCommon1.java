@@ -44,7 +44,10 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String urlReporting ="http://172.17.28.21:8272";
 	String urlReportingTS ="http://172.17.26.11:9031";
 	public String url_TestApp = "172.17.28.21:8358/paymentservice";
-	String urlFetchRefunds="http://172.17.28.21:8358";*/
+	String urlFetchRefunds="http://172.17.28.21:8358";
+	String url_Binmanager = "https://qa2.cleartrip.com/binmanager/v1/payment/cards?bin=534977";
+
+	*/
 	
 
 		String urlFlyin = "http://172.17.26.11:8406"; // ORACLE
@@ -63,13 +66,33 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		String urlPromo_Used = "http://172.17.26.11:8071";
 		String urlReporting ="http://172.17.28.21:8272";
 		String urlReportingTS ="http://172.17.26.11:9031";		
+		String url_Binmanager = "https://qa2.cleartrip.com/binmanager/v1/payment/cards?bin=534977";
 		public String url_TestApp = "";
 		String urlFetchRefunds="http://172.17.26.11:8070";
 		//String urlFetchRefunds="http://172.17.26.11:8070";
 		//String urlCS="http://172.17.26.11:8070";
-		
-
+	/*
 	
+	String urlFlyin = "http://flyin-paymentservice.gcp-cltp.com"; 
+	String urlPay = "http://payment-service.gcp-cltp.com";
+	String urlRefundNew = "http://payment-service.gcp-cltp.com";
+	String promoURL = "http://promoservice.gcp-cltp.com";
+	String urlWallet = "http://wallet-service.gcp-cltp.com";
+	String urladcb_validat = "http://payment-service.gcp-cltp.com";
+	String urlCardInfo_Service="http://card-info-service.gcp-cltp.com";
+	String urlrewards_validate = "http://payment-service.gcp-cltp.com";
+	String urlrewards_payURI ="http://payment-service.gcp-cltp.com";
+	String urlPromo_Used = "http://wallet-service.gcp-cltp.com";
+	String urlReporting ="http://paymentservicereporting.gcp-cltp.com";
+	String urlReportingTS ="http://trip-service-api.gcp-cltp.com";		
+	public String url_TestApp = "";
+	String urlFetchRefunds="http://paymentservicereporting.gcp-cltp.com";
+	String urlDA = "http://pay-deposit-account-r3.gcp-cltp.com";
+	String urlrewards_URI = "http://10.163.15.236:9080";
+	String urlRewards = "http://rewardsservice.gcp-cltp.com:9080";
+	String url_Binmanager = "https://www.cleartrip.com/binmanager/v1/payment/cards?bin=534977";
+
+*/
 
 /*//OLD mysql apps
 	String urlPay = "http://172.17.26.11:8358";
@@ -109,7 +132,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String paramsEW_PayV3 = "[{\"payment\":{\"seq_no\":1,\"trip_id\":116912714,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":217,\"payment_category\":\"B\",\"fraud_system_invocation\":\"Y\",\"customer_detail\":{\"address1\":\"Cleartrip JP Nagar Bangalore\",\"city_name\":\"Bangalore\",\"postal_code\":\"560076\",\"state_name\":\"Karnataka\",\"country_name\":\"India\",\"mobile\":\"91 1212121212\",\"email\":\"varalakshmi.venkateshaiah@cleartrip.com\"},\"app_ref1\":\"Q19051212126\",\"app_ref2\":\"185110142\",\"itinerary_id\":\"68b08214fd-e940-42d5-9f0d-190322223806\",\"payment_type\":\"EP\",\"amount\":10,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"6E/676/BLR/CCU/201904XXXXXX00\",\"order_info2\":\"Kiran Kumar\",\"source_type\":\"ACCOUNT\",\"user_id\":41683432,\"company_id\":41654864,\"app_return_info\":{\"url\":\"https://qa2.cleartrip.com/flights/itinerary/68b08214fd-e940-42d5-9f0d-190322223806/book\",\"method\":\"POST\"},\"host_name\":\"qa2.cleartrip.com\",\"user_agent\":\"Apache-HttpClient/4.4 (Java 1.5 minimum; Java/1.8.0_51)\"}}]";
 	String paramsEW_PayMultiV3 = "[{\"payment\":{\"seq_no\":4,\"trip_id\":116912714,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":217,\"payment_category\":\"B\",\"fraud_system_invocation\":\"Y\",\"customer_detail\":{\"address1\":\"Cleartrip JP Nagar Bangalore\",\"city_name\":\"Bangalore\",\"postal_code\":\"560076\",\"state_name\":\"Karnataka\",\"country_name\":\"India\",\"mobile\":\"91 1212121212\",\"email\":\"anas.ansari@cleartrip.com\"},\"app_ref1\":\"Q1903221094\",\"app_ref2\":\"185110142\",\"itinerary_id\":\"68b08214fd-e940-42d5-9f0d-190322223806\",\"payment_type\":\"EP\",\"amount\":5,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"6E/676/BLR/CCU/201904XXXXXX00\",\"order_info2\":\"Mitali Biswas\",\"source_type\":\"ACCOUNT\",\"user_id\":41649008,\"company_id\":41649008,\"app_return_info\":{\"url\":\"https://qa2.cleartrip.com/flights/itinerary/68b08214fd-e940-42d5-9f0d-190322223806/book\",\"method\":\"POST\"},\"host_name\":\"qa2.cleartrip.com\",\"user_agent\":\"Apache-HttpClient/4.4 (Java 1.5 minimum; Java/1.8.0_51)\"}},{\"payment\":{\"seq_no\":1,\"trip_id\":116912714,\"appUserid\":10001,\"productType\":\"DOMESTIC-AIR\",\"highRisk\":false,\"d_plus_x_in_hours\":1618,\"fraudSystemInvocation\":\"N\",\"uiVersion\":\"v2\",\"customerDetail\":{\"ip_address\":\"119.82.106.202\",\"mobile\":\"12121221212\",\"email\":\"anas.ansari@cleartrip.com\"},\"appRef1\":\"Q6876405349\",\"appRef2\":\"74049672\",\"itineraryId\":\"681f6b756d-67de-4efc-b663-5a7ac1bd9fa1\",\"paymentType\":\"GV\",\"amount\":1.0,\"currency\":\"INR\",\"country\":\"IN\",\"orderInfo1\":\"6E/233/BLR/MAA/20181125062500\",\"orderInfo2\":\"Test Booking\",\"sourceType\":\"ACCOUNT\",\"userId\":13957750,\"companyId\":110340,\"appReturnInfo\":{\"url\":\"http://172.17.15.176:9080/return\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://172.17.15.176:9080/bookInternalURL\"},\"giftVoucherDetail\":{\"card_number\":\"3000331035614653\",\"card_pin\":\"105525\"},\"userAgent\":\"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36\",\"paymentCategory\":\"B\",\"isPWA\":false,\"dplusXInHours\":1618,\"pwa\":false}},{\"payment\":{\"seq_no\":2,\"trip_id\":116912714,\"appUserid\":10001,\"productType\":\"DOMESTIC-AIR\",\"highRisk\":false,\"d_plus_x_in_hours\":1618,\"fraudSystemInvocation\":\"N\",\"uiVersion\":\"v2\",\"customerDetail\":{\"ip_address\":\"119.82.106.202\",\"mobile\":\"12121221212\",\"email\":\"anas.ansari@cleartrip.com\"},\"appRef1\":\"Q6876405349\",\"appRef2\":\"74049672\",\"itineraryId\":\"681f6b756d-67de-4efc-b663-5a7ac1bd9fa1\",\"paymentType\":\"GV\",\"amount\":1.0,\"currency\":\"INR\",\"country\":\"IN\",\"orderInfo1\":\"6E/233/BLR/MAA/20181125062500\",\"orderInfo2\":\"Test Booking\",\"sourceType\":\"ACCOUNT\",\"userId\":13957750,\"companyId\":110340,\"appReturnInfo\":{\"url\":\"http://172.17.15.176:9080/return\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://172.17.15.176:9080/bookInternalURL\"},\"giftVoucherDetail\":{\"card_number\":\"3000331031424400\",\"card_pin\":\"198024\"},\"userAgent\":\"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36\",\"paymentCategory\":\"B\",\"isPWA\":false,\"dplusXInHours\":1618,\"pwa\":false}},{\"payment\":{\"seq_no\":1,\"trip_id\":116912714,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":217,\"payment_category\":\"B\",\"customer_detail\":{\"address1\":\"Flat 403 Tower 1, Mallika Malancha HIG Complex Action area 2B, Newtown\",\"city_name\":\"kolkata\",\"postal_code\":\"560066\",\"state_name\":\"West Bengal\",\"country_name\":\"India\",\"mobile\":\"91 1212121212\",\"email\":\"anas.ansari@cleartrip.com\"},\"app_ref1\":\"Q1904190001\",\"app_ref2\":\"185110142\",\"itinerary_id\":\"68b08214fd-e940-42d5-9f0d-190322223806\",\"payment_type\":\"WT\",\"amount\":50,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"6E/676/BLR/CCU/201904XXXXXX00\",\"order_info2\":\"Test test\",\"source_type\":\"ACCOUNT\",\"user_id\":41654864,\"company_id\":41649008,\"app_return_info\":{\"url\":\"https://qa2.cleartrip.com/flights/itinerary/68b08214fd-e940-42d5-9f0d-190322223806/book\",\"method\":\"POST\"},\"host_name\":\"qa2.cleartrip.com\",\"user_agent\":\"Apache-HttpClient/4.4 (Java 1.5 minimum; Java/1.8.0_51)\"}}]";
 	String paramsEW_PayMulti= "{\"payment\":[{\"seq_no\":4,\"trip_id\":116912714,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":217,\"payment_category\":\"B\",\"fraud_system_invocation\":\"Y\",\"customer_detail\":{\"address1\":\"Cleartrip JP Nagar Bangalore\",\"city_name\":\"Bangalore\",\"postal_code\":\"560076\",\"state_name\":\"Karnataka\",\"country_name\":\"India\",\"mobile\":\"91 1212121212\",\"email\":\"anas.ansari@cleartrip.com\"},\"app_ref1\":\"Q1904190001\",\"app_ref2\":\"185110142\",\"itinerary_id\":\"68b08214fd-e940-42d5-9f0d-190322223806\",\"payment_type\":\"EP\",\"amount\":100.5,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"6E/676/BLR/CCU/201904XXXXXX00\",\"order_info2\":\"test test\",\"source_type\":\"ACCOUNT\",\"user_id\":41649008,\"company_id\":41649008,\"app_return_info\":{\"url\":\"https://qa2.cleartrip.com/flights/itinerary/68b08214fd-e940-42d5-9f0d-190322223806/book\",\"method\":\"POST\"},\"host_name\":\"qa2.cleartrip.com\",\"user_agent\":\"Apache-HttpClient/4.4 (Java 1.5 minimum; Java/1.8.0_51)\"},{\"seq_no\":1,\"trip_id\":116912714,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":217,\"payment_category\":\"B\",\"customer_detail\":{\"address1\":\"Cleartrip JP Nagar Bangalore\",\"city_name\":\"Bangalore\",\"postal_code\":\"560076\",\"state_name\":\"Karnataka\",\"country_name\":\"India\",\"mobile\":\"91 1212121212\",\"email\":\"anas.ansari@cleartrip.com\"},\"app_ref1\":\"Q1904190001\",\"app_ref2\":\"185110142\",\"itinerary_id\":\"68b08214fd-e940-42d5-9f0d-190322223806\",\"payment_type\":\"WT\",\"amount\":1.0,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"6E/676/BLR/CCU/201904XXXXXX00\",\"order_info2\":\"Test test\",\"source_type\":\"ACCOUNT\",\"user_id\":41649008,\"company_id\":41649008,\"app_return_info\":{\"url\":\"https://qa2.cleartrip.com/flights/itinerary/68b08214fd-e940-42d5-9f0d-190322223806/book\",\"method\":\"POST\"},\"host_name\":\"qa2.cleartrip.com\",\"user_agent\":\"Apache-HttpClient/4.4 (Java 1.5 minimum; Java/1.8.0_51)\"},{\"seq_no\":2,\"trip_id\":116912714,\"appUserid\":10001,\"productType\":\"DOMESTIC-AIR\",\"highRisk\":false,\"d_plus_x_in_hours\":1618,\"fraudSystemInvocation\":\"N\",\"uiVersion\":\"v2\",\"customerDetail\":{\"ip_address\":\"119.82.106.202\",\"mobile\":\"12121221212\",\"email\":\"anas.ansari@cleartrip.com\"},\"appRef1\":\"Q6876405349\",\"appRef2\":\"74049672\",\"itineraryId\":\"681f6b756d-67de-4efc-b663-5a7ac1bd9fa1\",\"paymentType\":\"GV\",\"amount\":1.0,\"currency\":\"INR\",\"country\":\"IN\",\"orderInfo1\":\"6E/233/BLR/MAA/20181125062500\",\"orderInfo2\":\"Test Booking\",\"sourceType\":\"ACCOUNT\",\"userId\":13957750,\"companyId\":110340,\"appReturnInfo\":{\"url\":\"http://172.17.15.176:9080/return\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://172.17.15.176:9080/bookInternalURL\"},\"giftVoucherDetail\":{\"card_number\":\"3000331031424400\",\"card_pin\":\"198024\"},\"userAgent\":\"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36\",\"paymentCategory\":\"B\",\"dplusXInHours\":1618,\"pwa\":false},{\"seq_no\":3,\"trip_id\":116912714,\"appUserid\":10001,\"productType\":\"DOMESTIC-AIR\",\"highRisk\":false,\"d_plus_x_in_hours\":1618,\"fraudSystemInvocation\":\"N\",\"uiVersion\":\"v2\",\"customerDetail\":{\"ip_address\":\"119.82.106.202\",\"mobile\":\"12121221212\",\"email\":\"anas.ansari@cleartrip.com\"},\"appRef1\":\"Q6876405349\",\"appRef2\":\"74049672\",\"itineraryId\":\"681f6b756d-67de-4efc-b663-5a7ac1bd9fa1\",\"paymentType\":\"GV\",\"amount\":1.0,\"currency\":\"INR\",\"country\":\"IN\",\"orderInfo1\":\"6E/233/BLR/MAA/20181125062500\",\"orderInfo2\":\"Test Booking\",\"sourceType\":\"ACCOUNT\",\"userId\":13957750,\"companyId\":110340,\"appReturnInfo\":{\"url\":\"http://172.17.15.176:9080/return\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://172.17.15.176:9080/bookInternalURL\"},\"giftVoucherDetail\":{\"card_number\":\"3000331031424400\",\"card_pin\":\"198024\"},\"userAgent\":\"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36\",\"paymentCategory\":\"B\",\"isPWA\":false,\"dplusXInHours\":1618,\"pwa\":false}]}";
-	String paramsGVWL = "[{\"payment\":{\"seq_no\":2,\"trip_id\":54808092,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":1618,\"payment_category\":\"B\",\"fraud_system_invocation\":\"N\",\"ui_version\":\"v2\",\"customer_detail\":{\"ip_address\":\"119.82.106.202\",\"mobile\":\"12121221212\",\"email\":\"cltppayment@gmail.com\"},\"app_ref1\":\"T8162456096\",\"app_ref2\":\"74049672\",\"itinerary_id\":\"681f6b756d-67de-4efc-b663-5a7ac1bd9fa1\",\"payment_type\":\"WT\",\"amount\":10,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"6E\\/233\\/BLR\\/MAA\\/20181125062500\",\"order_info2\":\"Test Booking\",\"source_type\":\"ACCOUNT\",\"user_id\":41654864,\"company_id\":110340,\"app_return_info\":{\"url\":\"https://qa2.cleartrip.com/flights/itinerary/681f6b756d-67de-4efc-b663-5a7ac1bd9fa1/book\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://book-flights.cltp.com:9001/r3/book/flights/itinerary/681f6b756d-67de-4efc-b663-5a7ac1bd9fa1/book-internal?ll=INFO\"},\"user_agent\":\"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrom/69.0.3497.100 Safari/537.36\"}},{\"payment\":{\"seq_no\":2,\"trip_id\":106562332,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":1618,\"payment_category\":\"B\",\"fraud_system_invocation\":\"N\",\"ui_version\":\"v2\",\"customer_detail\":{\"ip_address\":\"119.82.106.202\",\"mobile\":\"12121221212\",\"email\":\"cltppayment@gmail.com\"},\"app_ref1\":\"T8162456096\",\"app_ref2\":\"167823462\",\"itinerary_id\":\"684fe048c7-cde3-4c20-9b73-a70e3c43bc9d\",\"payment_type\":\"GV\",\"amount\":10.0,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"SG/8481/PAT/DEL/201812XXXXXX00\",\"order_info2\":\"Cleartrip tester\",\"source_type\":\"WL\",\"user_id\":51351954,\"company_id\":5291262,\"app_return_info\":{\"url\":\"dummy\",\"method\":\"POST\"},\"gift_voucher_detail\":{\"card_number\":\"3000331038355707\",\"card_pin\":\"802965\",\"amount\":10,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"SG/8481/PAT/DEL/201812XXXXXX00\",\"order_info2\":\"Cleartrip Tester\",\"source_type\":\"WL\",\"user_id\":51351954,\"company_id\":5291262,\"app_return_info\":{\"url\":\"dummy\",\"method\":\"POST\"},\"gift_voucher_detail\":{\"card_number\":\"3000331038355707\",\"card_pin\":\"802965\",\"card_category\":\"\"}}}}]";
+	String paramsGVWL = "[{\"payment\":{\"seq_no\":2,\"trip_id\":54808092,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":1618,\"payment_category\":\"B\",\"fraud_system_invocation\":\"N\",\"ui_version\":\"v2\",\"customer_detail\":{\"ip_address\":\"119.82.106.202\",\"mobile\":\"12121221212\",\"email\":\"kiran.kumar@cleartrip.com\"},\"app_ref1\":\"T8162456096\",\"app_ref2\":\"74049672\",\"itinerary_id\":\"681f6b756d-67de-4efc-b663-5a7ac1bd9fa1\",\"payment_type\":\"WT\",\"amount\":10,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"6E\\/233\\/BLR\\/MAA\\/20181125062500\",\"order_info2\":\"Test Booking\",\"source_type\":\"ACCOUNT\",\"user_id\":41654864,\"company_id\":110340,\"app_return_info\":{\"url\":\"https://qa2.cleartrip.com/flights/itinerary/681f6b756d-67de-4efc-b663-5a7ac1bd9fa1/book\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://book-flights.cltp.com:9001/r3/book/flights/itinerary/681f6b756d-67de-4efc-b663-5a7ac1bd9fa1/book-internal?ll=INFO\"},\"user_agent\":\"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrom/69.0.3497.100 Safari/537.36\"}},{\"payment\":{\"seq_no\":2,\"trip_id\":106562332,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":1618,\"payment_category\":\"B\",\"fraud_system_invocation\":\"N\",\"ui_version\":\"v2\",\"customer_detail\":{\"ip_address\":\"119.82.106.202\",\"mobile\":\"12121221212\",\"email\":\"cltppayment@gmail.com\"},\"app_ref1\":\"T8162456096\",\"app_ref2\":\"167823462\",\"itinerary_id\":\"684fe048c7-cde3-4c20-9b73-a70e3c43bc9d\",\"payment_type\":\"GV\",\"amount\":10.0,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"SG/8481/PAT/DEL/201812XXXXXX00\",\"order_info2\":\"Cleartrip tester\",\"source_type\":\"WL\",\"user_id\":51351954,\"company_id\":5291262,\"app_return_info\":{\"url\":\"dummy\",\"method\":\"POST\"},\"gift_voucher_detail\":{\"card_number\":\"3000331038355707\",\"card_pin\":\"802965\",\"amount\":10,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"SG/8481/PAT/DEL/201812XXXXXX00\",\"order_info2\":\"Cleartrip Tester\",\"source_type\":\"WL\",\"user_id\":51351954,\"company_id\":5291262,\"app_return_info\":{\"url\":\"dummy\",\"method\":\"POST\"},\"gift_voucher_detail\":{\"card_number\":\"3000331039130955\",\"card_pin\":\"192217\",\"card_category\":\"\"}}}}]";
 	
 	String paramsEW_Validate = "{\"payment\":[{\"seq_no\":1,\"trip_id\":116912714,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":217,\"payment_category\":\"B\",\"fraud_system_invocation\":\"Y\",\"customer_detail\":{\"address1\":\"Cleartrip JP Nagar Bangalore\",\"city_name\":\"Bangalore\",\"postal_code\":\"560076\",\"state_name\":\"Karnataka\",\"country_name\":\"India\",\"mobile\":\"91 1212121212\",\"email\":\"cltppayment@gmail.com\"},\"app_ref1\":\"Q1903221094\",\"app_ref2\":\"185110142\",\"itinerary_id\":\"68b08214fd-e940-42d5-9f0d-190322223806\",\"payment_type\":\"EP\",\"amount\":5,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"6E/676/BLR/CCU/201904XXXXXX00\",\"order_info2\":\"Mitali Biswas\",\"source_type\":\"ACCOUNT\",\"user_id\":41654864,\"company_id\":41654864,\"app_return_info\":{\"url\":\"https://qa2.cleartrip.com/flights/itinerary/68b08214fd-e940-42d5-9f0d-190322223806/book\",\"method\":\"POST\"},\"host_name\":\"qa2.cleartrip.com\",\"user_agent\":\"Apache-HttpClient/4.4 (Java 1.5 minimum; Java/1.8.0_51)\"}]}";
 	String paramsEW_AddAmt = "";
@@ -366,7 +389,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String url_walletDeleteCards ="/paymentservice/card/delete/%s";
 	String url_walletStoreCards ="/paymentservice/card/store?cardNumber=5123456789012346&name=test&cardTypeId=2&expiryMonth=05&expiryYear=2020&userId=41654864";
 
-	String url_Binmanager = "https://qa2.cleartrip.com/binmanager/v1/payment/cards?bin=534977";
+	//String url_Binmanager = "https://qa2.cleartrip.com/binmanager/v1/payment/cards?bin=534977";
 
 	String url_Reportingendpoint ="/paymentservice/service/air/mis/detail?tripRef=Q200109687244&paymentType=CC&reqFor=refund";
 	String url_ReportingPaymentID ="/paymentservice/payments/43911126";
@@ -396,17 +419,25 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 
 
-	String Prod_Url_PaymentService="http://172.21.65.21:8070";
+	/*String Prod_Url_PaymentService="http://172.21.65.21:8070";
 	//String Prod_Url_Rewards1="http://rewardsservice.cltp.com:9001";
 	String Prod_Url_Rewards="http://172.21.3.122:9080";
 	String Prod_Url_Wallet="http://172.21.65.21:8071";
-	String Prod_Url_Promo="http://172.21.48.21:7999";
+	String Prod_Url_Promo="http://172.21.48.21:7999";*/
+	
+	String Prod_Url_PaymentService="http://paymentservice.cltp.com:9001";
+	//String Prod_Url_Rewards1="http://rewardsservice.cltp.com:9001";
+	//String Prod_Url_Rewards="http://10.163.15.235:9001";
+	String Prod_Url_Rewards="http://rewardsservice.cltp.com:9001";
+	String Prod_Url_Wallet="http://wallet-service.cltp.com:9001";
+	String Prod_Url_Promo="http://promoservice.cltp.com:9001";
+	
 
 	String Prod_Url_EndPoint_Get_TP_Wallets="/paymentservice/service/thirdpartywallets";
 
 	String Prod_Url_EndPoint_Rewards_PayBack_Mobile="/payments/rewards/payback/checkAccountLinked?mobileNumber=9620351338";
 	String Prod_Url_ActiveNB= "/paymentservice/service/netbankingbanks?status=active";
-	String Prod_Url_PaymentStatus= "/paymentservice/service/status?paymentIds=129369172";
+	String Prod_Url_PaymentStatus= "/paymentservice/service/status?paymentIds=140145386";
 	String Prod_Url_ActiveCardType= "/paymentservice/service/cardtypes?status=active";
 	String Prod_Url_EndPoint_Rewards_ADCB_Balance="/payments/rewards/checkBalance";
 	String Prod_Url_EndPoint_Wallet_getWallet="/payments/wallet/74728676/getWallet";
@@ -511,7 +542,6 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	
 	public Response payGet(String payType, String payType1) {
 		RestAssured.baseURI =promoURL;
-		Reporter.log(promoURL);
 		String url = null;
 		HashMap<String, Object> headers = new HashMap<>();
 		headers = headersForms();
@@ -521,6 +551,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		}
 
 		else if(payType.equalsIgnoreCase("PromoUsed")) {
+
+			Reporter.log(urlReportingTS);	
 			RestAssured.baseURI =urlPromo_Used;
 			url= urlpromoUsed;
 		}
@@ -533,6 +565,9 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			Reporter.log(urlPay);			
 			url = urlPay_CreateRecord;
 		}
+
+		Reporter.log(url);	
+
 		request = RestAssured.given().
 				when().
 				log().all().
@@ -718,13 +753,13 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		}
 		else if(payType.equalsIgnoreCase("ROR_Create_Refunds")) {
 			String ranno = getDateTime(1, "mmddss");
-			params = Params_RORCreate_Refund+ranno+"}";
+			params = Params_RORCreate_Refund+"5"+ranno+"}";
 			url= urlRORCreate_Refunds;
 		}
 	
 		else if(payType.equalsIgnoreCase("ROR_Recon")) {
 			String ranno = getDateTime(1, "mmddss");
-			params = ParamsROR_Recon+ranno+"}";	
+			params = ParamsROR_Recon+"6"+ranno+"}";	
 			url= urlRORRecon;
 		}
 
@@ -1163,13 +1198,15 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 	public Response prodAPIs(String payType, String payType1){
 		String url = null;
+		String endpointurl = null;
 		String params = null;
 		HashMap<String, Object> headers = new HashMap<>();
 		headers = headersForms();
 		Response request = null;	  
 
 		if(payType.equalsIgnoreCase("Rwd_PayBack_Mobile")) {
-			RestAssured.baseURI =Prod_Url_Rewards;
+			endpointurl = Prod_Url_Rewards;
+			RestAssured.baseURI =endpointurl;
 			url= Prod_Url_EndPoint_Rewards_PayBack_Mobile;
 			request = RestAssured.given().
 					when().
@@ -1178,7 +1215,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 					get(url);
 		}
 		if(payType.equalsIgnoreCase("Rwd_ADCB_Balance")) {
-			RestAssured.baseURI =Prod_Url_Rewards;
+			endpointurl = Prod_Url_Rewards;
+			RestAssured.baseURI =endpointurl;
 			url= Prod_Url_EndPoint_Rewards_ADCB_Balance;
 			params=Prod_Params_Rewards_ADCB_Balance;
 			request = RestAssured.given().
@@ -1189,7 +1227,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 					post(url);
 		}
 		else if(payType.equalsIgnoreCase("Wallet_Get_Currency")) {
-			RestAssured.baseURI =Prod_Url_Wallet;
+			endpointurl = Prod_Url_Wallet;
+			RestAssured.baseURI =endpointurl;
 			url= Prod_Url_EndPoint_Wallet_getWallet;
 			request = RestAssured.given().
 					when().
@@ -1198,7 +1237,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 					get(url);
 		}
 		else if(payType.equalsIgnoreCase("Pay_Get_TW_Wallets")) {
-			RestAssured.baseURI =Prod_Url_PaymentService;
+			endpointurl = Prod_Url_PaymentService;
+			RestAssured.baseURI =endpointurl;
 			url= Prod_Url_EndPoint_Get_TP_Wallets;
 			request = RestAssured.given().
 					when().
@@ -1207,7 +1247,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 					get(url);
 		}
 		else if(payType.equalsIgnoreCase("Promo_Get_Group")) {
-			RestAssured.baseURI =Prod_Url_Promo;
+			endpointurl = Prod_Url_Promo;
+			RestAssured.baseURI =endpointurl;
 			url= Prod_Url_EndPoint_Promo_Group;
 			request = RestAssured.given().
 					when().
@@ -1216,7 +1257,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 					get(url);
 		}
 		else if(payType.equalsIgnoreCase("Bin_Get_CardInfo")) {
-			RestAssured.baseURI ="https://www.cleartrip.com";
+			endpointurl = "https://www.cleartrip.com";;
+			RestAssured.baseURI =endpointurl;
 			url= "/binmanager/v1/payment/cards?bin=552260";
 			request = RestAssured.given().
 					when().
@@ -1226,7 +1268,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		}
 
 		else if(payType.equalsIgnoreCase("ActiveNB")) {
-			RestAssured.baseURI = Prod_Url_PaymentService;
+			endpointurl = Prod_Url_PaymentService;
+			RestAssured.baseURI =endpointurl;
 			url = Prod_Url_ActiveNB;
 			request = RestAssured.given().
 					when().
@@ -1236,7 +1279,9 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		}
 
 		else if(payType.equalsIgnoreCase("GetPaymentStatus")) {
-			RestAssured.baseURI = Prod_Url_PaymentService;
+			endpointurl = Prod_Url_PaymentService;
+			RestAssured.baseURI =endpointurl;
+			
 			url = Prod_Url_PaymentStatus;
 			request = RestAssured.given().
 					when().
@@ -1246,7 +1291,9 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		}
 
 		else if(payType.equalsIgnoreCase("ActiveCardTypes")) {
-            RestAssured.baseURI = Prod_Url_PaymentService;
+			endpointurl = Prod_Url_PaymentService;
+			RestAssured.baseURI =endpointurl;
+			
             url = Prod_Url_ActiveCardType;
             request = RestAssured.given().
 					when().
@@ -1255,7 +1302,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 					get(url);
 		}
 
-		Reporter.log(url);
+		Reporter.log(endpointurl+url);
 		Reporter.log("Params : "+params);
         return request;
 	}
@@ -1496,14 +1543,14 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		}
 		else if(url.equalsIgnoreCase("Get_Card")) {
 			String bin = jsonPath.getString("bin");
-			String issuerType = jsonPath.getString("issuerType");
+			String country = jsonPath.getString("country");
 			if(!bin.equalsIgnoreCase("512345")) {
 				Reporter.log("bin =" +bin);
 				Assert.assertFalse(true);		
 
 			}
-			if(!issuerType.equalsIgnoreCase("MASTERCARD")) {
-				Reporter.log("issuerType =" +issuerType);
+			if(!country.equalsIgnoreCase("INDIA")) {
+				Reporter.log("country =" +country);
 				Assert.assertFalse(true);		
 
 			}
@@ -2863,7 +2910,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			List<HashMap<String,Object>> payStatusList = new ArrayList<>();
 			payStatusList = jsonPathEvaluator.get("bookPaymentResponse");
 			for(HashMap<String,Object> m : payStatusList) {
-				if(m.get("status").equals("S") && m.get("description").equals("Verification SUCCESS Transaction")) {
+				if(m.get("status").equals("S") && m.get("description").equals("Payment successful")) {
 					isMatching = true;
 					Reporter.log("Payment Status Is Successful");
 				}

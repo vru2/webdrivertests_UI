@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Payment API and UI" parallel="tests" thread-count="10">
+<suite name="Payments API and UI" parallel="tests" thread-count="10">
 
 
 <listeners>
@@ -14,7 +14,11 @@
 		</suite-files>
 		
 		 <suite-files>
-				<suite-file path="QA_Payment_UI.xml"></suite-file>
+			<suite-file path="QA_Payment_PayUI_Only.xml"></suite-file>
 		</suite-files> 
 		
-</suite> 
+		 <suite-files>		 
+			<suite-file path="QA_Payment_TestApp.xml"></suite-file>
+		</suite-files> 
+		
+</suite>

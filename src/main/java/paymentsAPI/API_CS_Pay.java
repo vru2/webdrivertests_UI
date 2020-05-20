@@ -13,9 +13,6 @@ public class API_CS_Pay extends API_PaymentCommon1 {
 	public void paymentCS_API() throws IOException, JSONException{
 		Response resp ;		
 		resp = rearchPayment("CSPay","");
-		System.out.println(resp);
 		validation("CSPay", resp);
-		}
-
-
+	}
 }

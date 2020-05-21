@@ -130,7 +130,7 @@
 		<class name="paymentsAPI.API_Wallet_PromoUsed"/>
 		<class name="paymentsAPI.API_Wallet_RevertPromo"/>
 <!-- 		<class name="paymentsAPI.API_GV_Capture"/> -->
-		<class name="paymentsAPI.API_GV_Refund"/>	
+		<!-- <class name="paymentsAPI.API_GV_Refund"/>	 -->
 		
 		<!-- <class name="paymentsAPI.API"/> create wallet
 		<class name="paymentsAPI.API_Wallet_RevertPromo"/  > Perform wallet transactions -->
@@ -142,14 +142,14 @@
 		<class name="paymentsAPI.API_Wallet_CashBackDetails"/>
 		<class name="paymentsAPI.API_Wallet_Get_Wallet_All"/>
 		<class name="paymentsAPI.API_Wallet_Get_Wallet_INR"/>	
-		<class name="paymentsAPI.API_GV_Get"/>
+		<!-- <class name="paymentsAPI.API_GV_Get"/> -->
     </classes>
 </test>
 
 <test name="API ADCB" preserve-order="true" parallel="true">
     <classes>
-      <class name="paymentsAPI.API_Reward_ADCB_CheckBalance"/> 
-      <class name="paymentsAPI.API_Reward_ADCB_Pay"/> 
+    <!--   <class name="paymentsAPI.API_Reward_ADCB_CheckBalance"/> 
+      <class name="paymentsAPI.API_Reward_ADCB_Pay"/>  -->
     </classes>
 </test>
 
@@ -207,7 +207,7 @@
 
 <test name="API FetchRefunds New"  preserve-order="true" parallel="true" >
     <classes>
-		<class name="paymentsAPI.API_Refunds_Fetch"/>
+		<!-- <class name="paymentsAPI.API_Refunds_Fetch"/> -->
 	 </classes>
 </test>
 

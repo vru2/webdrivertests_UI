@@ -36,17 +36,13 @@ public class API_RewardPayback extends API_PaymentCommon1  {
 	public void RewardPayback_CheckBalance_Card() throws Exception{
 		Response res = reward("PAYBACK_CheckBalance_card", "");
 		validation_RewardPayback("PAYBACK_CheckBalance_card", res);
-		}
-	
-
+	}
 
 	@Test(priority=5)
 	public void RewardPayback_ValidateCardDetails() throws Exception{
         Response res = reward("PAYBACK_Validate", "");
         validation_RewardPayback("PAYBACK_Validate", res);
 	}
-
-
 
 	@Test(priority=6)
 	public void RewardPayback_redeemPoints() throws Exception{
@@ -69,7 +65,7 @@ public class API_RewardPayback extends API_PaymentCommon1  {
 	@Test(priority=9)
 	public void RewardPayback_earnNotUsed() throws Exception{
 		Response res = reward("PAYBACK_Earn", "");
-	validation_RewardPayback("PAYBACK_Earn", res);
+		validation_RewardPayback("PAYBACK_Earn", res);
 	}
 
 	@Test(priority=10, dependsOnMethods = { "RewardPayback_earnNotUsed" })

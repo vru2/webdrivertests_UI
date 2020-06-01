@@ -3464,7 +3464,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			String random_num = Integer.toString(rand_num);
 			String track_id = "pay123419823" + random_num;
 			int payment_id_redeem = payment_id.get(0);
-			params = "{\"rewardsType\":\"PAYBACK\",\"rewardsRequestType\":\"REDEEM\",\"paymentId\": " +payment_id_redeem+ ",\"trackId\": \"" + track_id + "\","+ "\"amount\":1,\"currency\":\"INR\",\"params\":{\"mobile\":\"9986696785\",\"tripRef\":\"Q191014530822\",\"pin\":\"4841\"}}";
+			params = "{\"rewardsType\":\"PAYBACK\",\"rewardsRequestType\":\"REDEEM\",\"paymentId\": " +payment_id_redeem+ ",\"trackId\": \"" + track_id + "\","+ "\"amount\":1,\"currency\":\"INR\",\"params\":{\"mobile\":\"9986696785\",\"tripRef\":\"Q191014530822\",\"pin\":\"1138\"}}";
 
 			System.out.println("params : "+params);
 

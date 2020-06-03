@@ -616,7 +616,16 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 	}
 
 	public String paymentNodeJS_ConfirmationPage(RemoteWebDriver driver, String payType, String Confirm_Msg, String LoggerMsg) throws Exception {
-		for (int i = 0; i < 5; i++) {		
+		for (int i = 0; i < 5; i++) {
+			if(elementVisible(driver, By.id("payu_logo"), 5)) {
+				safeType(driver, getObjectPayment("PayU_Page_CC_Number"), "5123456789012346");
+				safeType(driver, getObjectPayment("PayU_Page_CC_Name"), "TestPayU");
+				safeSelect(driver,getObjectPayment("PayU_Page_CC_EXP_Month") , "Sep (9)");
+				safeSelect(driver,getObjectPayment("PayU_Page_CC_EXP_Year") , "2020");
+				safeType(driver, getObjectPayment("PayU_Page_CC_CVV"), "123");
+				safeClick(driver, getObjectPayment("PayU_Page_CC_Pay_Btn"));
+				
+			}
 			if (textPresent(driver, "AXIS SIMULATOR", 1)) {
 				smartType(driver, By.id("password"), "123456");
 				smartClick(driver, By.id("submitBtn"));	

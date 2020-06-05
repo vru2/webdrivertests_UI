@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [Platform Services API (0)]" parallel="tests">
+  <parameter name="hostvalue" value="qa2"/>
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="common.RemoveDuplicateResults"/>
+    <listener class-name="common.RetryListener"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+  </listeners>
+  <test thread-count="1" name="TripService Updatebooking(failed)" parallel="tests">
+    <classes>
+      <class name="tripServices.TS_Invoice_Generation_Hotel">
+        <methods>
+          <include name="Tripservicelocalputcall"/>
+        </methods>
+      </class> <!-- tripServices.TS_Invoice_Generation_Hotel -->
+      <class name="tripServices.TS_PUT_Trips">
+        <methods>
+          <include name="PutTrips"/>
+        </methods>
+      </class> <!-- tripServices.TS_PUT_Trips -->
+      <class name="tripServices.TS_Update_Air_Module">
+        <methods>
+          <include name="airPostCall"/>
+        </methods>
+      </class> <!-- tripServices.TS_Update_Air_Module -->
+      <class name="tripServices.TS_Invoice_Generation_Local">
+        <methods>
+          <include name="Tripservicelocalputcall"/>
+        </methods>
+      </class> <!-- tripServices.TS_Invoice_Generation_Local -->
+      <class name="tripServices.TS_UpdateBooking_Trains_Trainfare">
+        <methods>
+          <include name="Tripservicetrainputcall"/>
+        </methods>
+      </class> <!-- tripServices.TS_UpdateBooking_Trains_Trainfare -->
+      <class name="tripServices.TS_Invoice_Generation_Air">
+        <methods>
+          <include name="Tripserviceairputcall"/>
+        </methods>
+      </class> <!-- tripServices.TS_Invoice_Generation_Air -->
+      <class name="tripServices.TS_POST_EmailByTxnId">
+        <methods>
+          <include name="getEmail"/>
+        </methods>
+      </class> <!-- tripServices.TS_POST_EmailByTxnId -->
+      <class name="tripServices.TS_UpdateBooking_FPH">
+        <methods>
+          <include name="Tripserviceairputcall"/>
+        </methods>
+      </class> <!-- tripServices.TS_UpdateBooking_FPH -->
+    </classes>
+  </test> <!-- TripService Updatebooking(failed) -->
+  <test thread-count="1" name="TripService Get Calls(failed)" parallel="tests">
+    <classes>
+      <class name="tripServices.TS_GET_Finance_HOTEL">
+        <methods>
+          <include name="getTripService"/>
+        </methods>
+      </class> <!-- tripServices.TS_GET_Finance_HOTEL -->
+      <class name="tripServices.TS_GET_Trips_API_Versioning">
+        <methods>
+          <include name="getTripService"/>
+        </methods>
+      </class> <!-- tripServices.TS_GET_Trips_API_Versioning -->
+      <class name="tripServices.TS_Post_UpcomingTrips">
+        <methods>
+          <include name="upcomingTripsPostCall"/>
+        </methods>
+      </class> <!-- tripServices.TS_Post_UpcomingTrips -->
+    </classes>
+  </test> <!-- TripService Get Calls(failed) -->
+</suite> <!-- Failed suite [Platform Services API (0)] -->

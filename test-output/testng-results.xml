@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[hq loaded]]>
+    </line>
+    <line>
+      <![CDATA[Signed into hq]]>
+    </line>
+    <line>
+      <![CDATA[<p>https://qa2.cleartrip.com/partners/dashboard</p>]]>
+    </line>
+    <line>
+      <![CDATA[ct-admin url launched]]>
+    </line>
+    <line>
+      <![CDATA[<p>Resource drop is visible is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[ct-admin ui loaded]]>
+    </line>
+    <line>
+      <![CDATA[<p>walletCredentials is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[WalletCredentails ui is loaded]]>
+    </line>
+    <line>
+      <![CDATA[<p>Deactivate is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[nbCredentials ui loaded]]>
+    </line>
+    <line>
+      <![CDATA[<p>Tests_HDFC is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[pgCredentials ui loaded]]>
+    </line>
+    <line>
+      <![CDATA[<p>Update is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[update pgCredentials page ui loaded]]>
+    </line>
+    <line>
+      <![CDATA[value entered]]>
+    </line>
+    <line>
+      <![CDATA[Clicked on Update]]>
+    </line>
+    <line>
+      <![CDATA[<p>Tests_HDFC is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[Update was successfull]]>
+    </line>
+  </reporter-output>
+  <suite name="Platform Services API" duration-ms="24337" started-at="2020-06-05T03:21:34Z" finished-at="2020-06-05T03:21:58Z">
+    <groups>
+    </groups>
+    <test name="Ct-admin UI" duration-ms="24337" started-at="2020-06-05T03:21:34Z" finished-at="2020-06-05T03:21:58Z">
+      <class name="ct_admin.CT_Admin">
+        <test-method status="PASS" signature="startSelenium()[pri:0, instance:ct_admin.CT_Admin@419c5f1a]" name="startSelenium" is-config="true" duration-ms="1257" started-at="2020-06-05T03:21:34Z" finished-at="2020-06-05T03:21:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startSelenium -->
+        <test-method status="PASS" signature="ct_admin_ui()[pri:0, instance:ct_admin.CT_Admin@419c5f1a]" name="ct_admin_ui" duration-ms="22906" started-at="2020-06-05T03:21:35Z" finished-at="2020-06-05T03:21:58Z">
+          <reporter-output>
+            <line>
+              <![CDATA[hq loaded]]>
+            </line>
+            <line>
+              <![CDATA[Signed into hq]]>
+            </line>
+            <line>
+              <![CDATA[<p>https://qa2.cleartrip.com/partners/dashboard</p>]]>
+            </line>
+            <line>
+              <![CDATA[ct-admin url launched]]>
+            </line>
+            <line>
+              <![CDATA[<p>Resource drop is visible is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[ct-admin ui loaded]]>
+            </line>
+            <line>
+              <![CDATA[<p>walletCredentials is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[WalletCredentails ui is loaded]]>
+            </line>
+            <line>
+              <![CDATA[<p>Deactivate is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[nbCredentials ui loaded]]>
+            </line>
+            <line>
+              <![CDATA[<p>Tests_HDFC is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[pgCredentials ui loaded]]>
+            </line>
+            <line>
+              <![CDATA[<p>Update is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[update pgCredentials page ui loaded]]>
+            </line>
+            <line>
+              <![CDATA[value entered]]>
+            </line>
+            <line>
+              <![CDATA[Clicked on Update]]>
+            </line>
+            <line>
+              <![CDATA[<p>Tests_HDFC is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[Update was successfull]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- ct_admin_ui -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:ct_admin.CT_Admin@419c5f1a]" name="afterMethod" is-config="true" duration-ms="2" started-at="2020-06-05T03:21:58Z" finished-at="2020-06-05T03:21:58Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=ct_admin_ui status=SUCCESS method=CT_Admin.ct_admin_ui()[pri:0, instance:ct_admin.CT_Admin@419c5f1a] output=hq loaded]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="closeSelenium()[pri:0, instance:ct_admin.CT_Admin@419c5f1a]" name="closeSelenium" is-config="true" duration-ms="134" started-at="2020-06-05T03:21:58Z" finished-at="2020-06-05T03:21:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeSelenium -->
+      </class> <!-- ct_admin.CT_Admin -->
+    </test> <!-- Ct-admin UI -->
+  </suite> <!-- Platform Services API -->
+</testng-results>

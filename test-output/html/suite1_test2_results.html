@@ -1,0 +1,1283 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
+<head>
+  <title>Test Results Report - TripService Updatebooking</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="description" content="TestNG unit test results." />
+  <link href="reportng.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="reportng.js"></script>
+</head>
+<body>
+<h1>TripService Updatebooking</h1>
+<p>
+  Test duration: 2873.626s
+</p>
+
+
+
+  <table class="resultsTable">
+    <tr><th colspan="3" class="header failed">Failed Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">tripServices.TS_Invoice_Generation_Air</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  Tripserviceairputcall
+      </td>
+  <td class="duration">
+    131.058s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Service URL : http://172.17.26.11:9031/trips<br />
+                  </div>
+    
+
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>java.net.ConnectException: Connection timed out (Connection timed out)</b></a><br />
+    <div class="stackTrace" id="exception-0">
+              java.net.PlainSocketImpl.socketConnect(Native Method)<br />
+              java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)<br />
+              java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)<br />
+              java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)<br />
+              java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)<br />
+              java.net.Socket.connect(Socket.java:607)<br />
+              org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121)<br />
+              org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)<br />
+              org.apache.http.impl.conn.ManagedClientConnectionImpl.open(ManagedClientConnectionImpl.java:326)<br />
+              org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:610)<br />
+              org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:445)<br />
+              org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835)<br />
+              org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)<br />
+              org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)<br />
+              org.apache.http.client.HttpClient$execute$0.call(Unknown Source)<br />
+              io.restassured.internal.RequestSpecificationImpl$RestAssuredHttpBuilder.doRequest(RequestSpecificationImpl.groovy:2028)<br />
+              io.restassured.internal.http.HTTPBuilder.post(HTTPBuilder.java:349)<br />
+              io.restassured.internal.http.HTTPBuilder$post$4.call(Unknown Source)<br />
+              io.restassured.internal.RequestSpecificationImpl.sendRequest(RequestSpecificationImpl.groovy:1202)<br />
+              sun.reflect.GeneratedMethodAccessor89.invoke(Unknown Source)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)<br />
+              groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1210)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)<br />
+              io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)<br />
+              org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:48)<br />
+              org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:149)<br />
+              io.restassured.internal.filter.SendRequestFilter.filter(SendRequestFilter.groovy:30)<br />
+              io.restassured.filter.Filter$filter$0.call(Unknown Source)<br />
+              org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)<br />
+              io.restassured.filter.Filter$filter.call(Unknown Source)<br />
+              io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)<br />
+              io.restassured.filter.time.TimingFilter.filter(TimingFilter.java:56)<br />
+              io.restassured.filter.Filter$filter.call(Unknown Source)<br />
+              org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)<br />
+              io.restassured.filter.Filter$filter.call(Unknown Source)<br />
+              io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)<br />
+              io.restassured.filter.log.RequestLoggingFilter.filter(RequestLoggingFilter.java:124)<br />
+              io.restassured.filter.Filter$filter.call(Unknown Source)<br />
+              org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)<br />
+              io.restassured.filter.Filter$filter$0.call(Unknown Source)<br />
+              io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)<br />
+              io.restassured.filter.FilterContext$next$0.call(Unknown Source)<br />
+              io.restassured.internal.RequestSpecificationImpl.applyPathParamsAndSendRequest(RequestSpecificationImpl.groovy:1631)<br />
+              sun.reflect.GeneratedMethodAccessor77.invoke(Unknown Source)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)<br />
+              groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1210)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)<br />
+              io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)<br />
+              org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:48)<br />
+              org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.callCurrent(PogoInterceptableSite.java:58)<br />
+              org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:182)<br />
+              io.restassured.internal.RequestSpecificationImpl.applyPathParamsAndSendRequest(RequestSpecificationImpl.groovy:1637)<br />
+              sun.reflect.GeneratedMethodAccessor76.invoke(Unknown Source)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)<br />
+              groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1210)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)<br />
+              io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)<br />
+              org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:48)<br />
+              org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.callCurrent(PogoInterceptableSite.java:58)<br />
+              org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:182)<br />
+              io.restassured.internal.RequestSpecificationImpl.post(RequestSpecificationImpl.groovy:170)<br />
+              io.restassured.internal.RequestSpecificationImpl.post(RequestSpecificationImpl.groovy)<br />
+              tripServices.TripserviceCommon.TripservicePostcallinvoiceair(TripserviceCommon.java:190)<br />
+              tripServices.TS_Invoice_Generation_Air.Tripserviceairputcall(TS_Invoice_Generation_Air.java:22)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:583)<br />
+              org.testng.internal.Invoker.retryFailed(Invoker.java:839)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1010)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:648)<br />
+              org.testng.TestRunner.run(TestRunner.java:505)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:455)<br />
+              org.testng.SuiteRunner.access$000(SuiteRunner.java:40)<br />
+              org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)<br />
+              org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)<br />
+              java.util.concurrent.FutureTask.run(FutureTask.java:266)<br />
+              java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)<br />
+              java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)<br />
+              java.lang.Thread.run(Thread.java:748)<br />
+                </div>
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">tripServices.TS_Invoice_Generation_Hotel</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  Tripservicelocalputcall
+      </td>
+  <td class="duration">
+    131.059s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Service URL : http://172.17.26.11:9031/trips<br />
+                  </div>
+    
+
+        <a href="javascript:toggleElement('exception-1', 'block')" title="Click to expand/collapse"><b>java.net.ConnectException: Connection timed out (Connection timed out)</b></a><br />
+    <div class="stackTrace" id="exception-1">
+              java.net.PlainSocketImpl.socketConnect(Native Method)<br />
+              java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)<br />
+              java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)<br />
+              java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)<br />
+              java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)<br />
+              java.net.Socket.connect(Socket.java:607)<br />
+              org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121)<br />
+              org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)<br />
+              org.apache.http.impl.conn.ManagedClientConnectionImpl.open(ManagedClientConnectionImpl.java:326)<br />
+              org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:610)<br />
+              org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:445)<br />
+              org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835)<br />
+              org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)<br />
+              org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)<br />
+              org.apache.http.client.HttpClient$execute$0.call(Unknown Source)<br />
+              io.restassured.internal.RequestSpecificationImpl$RestAssuredHttpBuilder.doRequest(RequestSpecificationImpl.groovy:2028)<br />
+              io.restassured.internal.http.HTTPBuilder.post(HTTPBuilder.java:349)<br />
+              io.restassured.internal.http.HTTPBuilder$post$4.call(Unknown Source)<br />
+              io.restassured.internal.RequestSpecificationImpl.sendRequest(RequestSpecificationImpl.groovy:1202)<br />
+              sun.reflect.GeneratedMethodAccessor89.invoke(Unknown Source)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)<br />
+              groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1210)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)<br />
+              io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)<br />
+              org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:48)<br />
+              org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:149)<br />
+              io.restassured.internal.filter.SendRequestFilter.filter(SendRequestFilter.groovy:30)<br />
+              io.restassured.filter.Filter$filter$0.call(Unknown Source)<br />
+              org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)<br />
+              io.restassured.filter.Filter$filter.call(Unknown Source)<br />
+              io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)<br />
+              io.restassured.filter.time.TimingFilter.filter(TimingFilter.java:56)<br />
+              io.restassured.filter.Filter$filter.call(Unknown Source)<br />
+              org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)<br />
+              io.restassured.filter.Filter$filter.call(Unknown Source)<br />
+              io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)<br />
+              io.restassured.filter.log.RequestLoggingFilter.filter(RequestLoggingFilter.java:124)<br />
+              io.restassured.filter.Filter$filter.call(Unknown Source)<br />
+              org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)<br />
+              io.restassured.filter.Filter$filter$0.call(Unknown Source)<br />
+              io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)<br />
+              io.restassured.filter.FilterContext$next$0.call(Unknown Source)<br />
+              io.restassured.internal.RequestSpecificationImpl.applyPathParamsAndSendRequest(RequestSpecificationImpl.groovy:1631)<br />
+              sun.reflect.GeneratedMethodAccessor77.invoke(Unknown Source)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)<br />
+              groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1210)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)<br />
+              io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)<br />
+              org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:48)<br />
+              org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.callCurrent(PogoInterceptableSite.java:58)<br />
+              org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:182)<br />
+              io.restassured.internal.RequestSpecificationImpl.applyPathParamsAndSendRequest(RequestSpecificationImpl.groovy:1637)<br />
+              sun.reflect.GeneratedMethodAccessor76.invoke(Unknown Source)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)<br />
+              groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1210)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)<br />
+              io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)<br />
+              org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:48)<br />
+              org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.callCurrent(PogoInterceptableSite.java:58)<br />
+              org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:182)<br />
+              io.restassured.internal.RequestSpecificationImpl.post(RequestSpecificationImpl.groovy:170)<br />
+              io.restassured.internal.RequestSpecificationImpl.post(RequestSpecificationImpl.groovy)<br />
+              tripServices.TripserviceCommon.TripservicePostcallinvoicelocal(TripserviceCommon.java:245)<br />
+              tripServices.TS_Invoice_Generation_Hotel.Tripservicelocalputcall(TS_Invoice_Generation_Hotel.java:18)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:583)<br />
+              org.testng.internal.Invoker.retryFailed(Invoker.java:839)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1010)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:648)<br />
+              org.testng.TestRunner.run(TestRunner.java:505)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:455)<br />
+              org.testng.SuiteRunner.access$000(SuiteRunner.java:40)<br />
+              org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)<br />
+              org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)<br />
+              java.util.concurrent.FutureTask.run(FutureTask.java:266)<br />
+              java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)<br />
+              java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)<br />
+              java.lang.Thread.run(Thread.java:748)<br />
+                </div>
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">tripServices.TS_Invoice_Generation_Local</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  Tripservicelocalputcall
+      </td>
+  <td class="duration">
+    131.063s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Service URL : http://172.17.26.11:9031/trips<br />
+                  </div>
+    
+
+        <a href="javascript:toggleElement('exception-2', 'block')" title="Click to expand/collapse"><b>java.net.ConnectException: Connection timed out (Connection timed out)</b></a><br />
+    <div class="stackTrace" id="exception-2">
+              java.net.PlainSocketImpl.socketConnect(Native Method)<br />
+              java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)<br />
+              java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)<br />
+              java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)<br />
+              java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)<br />
+              java.net.Socket.connect(Socket.java:607)<br />
+              org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121)<br />
+              org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)<br />
+              org.apache.http.impl.conn.ManagedClientConnectionImpl.open(ManagedClientConnectionImpl.java:326)<br />
+              org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:610)<br />
+              org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:445)<br />
+              org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835)<br />
+              org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)<br />
+              org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)<br />
+              org.apache.http.client.HttpClient$execute$0.call(Unknown Source)<br />
+              io.restassured.internal.RequestSpecificationImpl$RestAssuredHttpBuilder.doRequest(RequestSpecificationImpl.groovy:2028)<br />
+              io.restassured.internal.http.HTTPBuilder.post(HTTPBuilder.java:349)<br />
+              io.restassured.internal.http.HTTPBuilder$post$4.call(Unknown Source)<br />
+              io.restassured.internal.RequestSpecificationImpl.sendRequest(RequestSpecificationImpl.groovy:1202)<br />
+              sun.reflect.GeneratedMethodAccessor89.invoke(Unknown Source)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)<br />
+              groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1210)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)<br />
+              io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)<br />
+              org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:48)<br />
+              org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:149)<br />
+              io.restassured.internal.filter.SendRequestFilter.filter(SendRequestFilter.groovy:30)<br />
+              io.restassured.filter.Filter$filter$0.call(Unknown Source)<br />
+              org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)<br />
+              io.restassured.filter.Filter$filter.call(Unknown Source)<br />
+              io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)<br />
+              io.restassured.filter.time.TimingFilter.filter(TimingFilter.java:56)<br />
+              io.restassured.filter.Filter$filter.call(Unknown Source)<br />
+              org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)<br />
+              io.restassured.filter.Filter$filter.call(Unknown Source)<br />
+              io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)<br />
+              io.restassured.filter.log.RequestLoggingFilter.filter(RequestLoggingFilter.java:124)<br />
+              io.restassured.filter.Filter$filter.call(Unknown Source)<br />
+              org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)<br />
+              io.restassured.filter.Filter$filter$0.call(Unknown Source)<br />
+              io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)<br />
+              io.restassured.filter.FilterContext$next$0.call(Unknown Source)<br />
+              io.restassured.internal.RequestSpecificationImpl.applyPathParamsAndSendRequest(RequestSpecificationImpl.groovy:1631)<br />
+              sun.reflect.GeneratedMethodAccessor77.invoke(Unknown Source)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)<br />
+              groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1210)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)<br />
+              io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)<br />
+              org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:48)<br />
+              org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.callCurrent(PogoInterceptableSite.java:58)<br />
+              org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:182)<br />
+              io.restassured.internal.RequestSpecificationImpl.applyPathParamsAndSendRequest(RequestSpecificationImpl.groovy:1637)<br />
+              sun.reflect.GeneratedMethodAccessor76.invoke(Unknown Source)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)<br />
+              groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1210)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)<br />
+              io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)<br />
+              org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:48)<br />
+              org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.callCurrent(PogoInterceptableSite.java:58)<br />
+              org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:182)<br />
+              io.restassured.internal.RequestSpecificationImpl.post(RequestSpecificationImpl.groovy:170)<br />
+              io.restassured.internal.RequestSpecificationImpl.post(RequestSpecificationImpl.groovy)<br />
+              tripServices.TripserviceCommon.TripservicePostcallinvoicelocal(TripserviceCommon.java:245)<br />
+              tripServices.TS_Invoice_Generation_Local.Tripservicelocalputcall(TS_Invoice_Generation_Local.java:18)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:583)<br />
+              org.testng.internal.Invoker.retryFailed(Invoker.java:839)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1010)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:648)<br />
+              org.testng.TestRunner.run(TestRunner.java:505)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:455)<br />
+              org.testng.SuiteRunner.access$000(SuiteRunner.java:40)<br />
+              org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)<br />
+              org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)<br />
+              java.util.concurrent.FutureTask.run(FutureTask.java:266)<br />
+              java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)<br />
+              java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)<br />
+              java.lang.Thread.run(Thread.java:748)<br />
+                </div>
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">tripServices.TS_POST_EmailByTxnId</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  getEmail
+      </td>
+  <td class="duration">
+    131.066s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Service URL : http://172.17.26.11:9031/trips/email/74979518<br />
+                  </div>
+    
+
+        <a href="javascript:toggleElement('exception-3', 'block')" title="Click to expand/collapse"><b>java.net.ConnectException: Connection timed out (Connection timed out)</b></a><br />
+    <div class="stackTrace" id="exception-3">
+              java.net.PlainSocketImpl.socketConnect(Native Method)<br />
+              java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)<br />
+              java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)<br />
+              java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)<br />
+              java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)<br />
+              java.net.Socket.connect(Socket.java:607)<br />
+              org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121)<br />
+              org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)<br />
+              org.apache.http.impl.conn.ManagedClientConnectionImpl.open(ManagedClientConnectionImpl.java:326)<br />
+              org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:610)<br />
+              org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:445)<br />
+              org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835)<br />
+              org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)<br />
+              org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)<br />
+              org.apache.http.client.HttpClient$execute$0.call(Unknown Source)<br />
+              io.restassured.internal.RequestSpecificationImpl$RestAssuredHttpBuilder.doRequest(RequestSpecificationImpl.groovy:2028)<br />
+              io.restassured.internal.http.HTTPBuilder.post(HTTPBuilder.java:349)<br />
+              io.restassured.internal.http.HTTPBuilder$post$4.call(Unknown Source)<br />
+              io.restassured.internal.RequestSpecificationImpl.sendRequest(RequestSpecificationImpl.groovy:1202)<br />
+              sun.reflect.GeneratedMethodAccessor89.invoke(Unknown Source)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)<br />
+              groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1210)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)<br />
+              io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)<br />
+              org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:48)<br />
+              org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:149)<br />
+              io.restassured.internal.filter.SendRequestFilter.filter(SendRequestFilter.groovy:30)<br />
+              io.restassured.filter.Filter$filter$0.call(Unknown Source)<br />
+              org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)<br />
+              io.restassured.filter.Filter$filter.call(Unknown Source)<br />
+              io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)<br />
+              io.restassured.filter.time.TimingFilter.filter(TimingFilter.java:56)<br />
+              io.restassured.filter.Filter$filter.call(Unknown Source)<br />
+              org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)<br />
+              io.restassured.filter.Filter$filter$0.call(Unknown Source)<br />
+              io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)<br />
+              io.restassured.filter.FilterContext$next$0.call(Unknown Source)<br />
+              io.restassured.internal.RequestSpecificationImpl.applyPathParamsAndSendRequest(RequestSpecificationImpl.groovy:1631)<br />
+              sun.reflect.GeneratedMethodAccessor77.invoke(Unknown Source)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)<br />
+              groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1210)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)<br />
+              io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)<br />
+              org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:48)<br />
+              org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.callCurrent(PogoInterceptableSite.java:58)<br />
+              org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:182)<br />
+              io.restassured.internal.RequestSpecificationImpl.applyPathParamsAndSendRequest(RequestSpecificationImpl.groovy:1637)<br />
+              sun.reflect.GeneratedMethodAccessor76.invoke(Unknown Source)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)<br />
+              groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1210)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)<br />
+              io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)<br />
+              org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:48)<br />
+              org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.callCurrent(PogoInterceptableSite.java:58)<br />
+              org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:182)<br />
+              io.restassured.internal.RequestSpecificationImpl.post(RequestSpecificationImpl.groovy:170)<br />
+              io.restassured.internal.RequestSpecificationImpl.post(RequestSpecificationImpl.groovy)<br />
+              io.restassured.RestAssured.post(RestAssured.java:802)<br />
+              tripServices.TS_POST_EmailByTxnId.getEmail(TS_POST_EmailByTxnId.java:19)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:583)<br />
+              org.testng.internal.Invoker.retryFailed(Invoker.java:839)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1010)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:648)<br />
+              org.testng.TestRunner.run(TestRunner.java:505)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:455)<br />
+              org.testng.SuiteRunner.access$000(SuiteRunner.java:40)<br />
+              org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)<br />
+              org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)<br />
+              java.util.concurrent.FutureTask.run(FutureTask.java:266)<br />
+              java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)<br />
+              java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)<br />
+              java.lang.Thread.run(Thread.java:748)<br />
+                </div>
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">tripServices.TS_PUT_Trips</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  PutTrips
+      </td>
+  <td class="duration">
+    131.053s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Service URL : http://172.17.26.11:9031/trips<br />
+                  </div>
+    
+
+        <a href="javascript:toggleElement('exception-4', 'block')" title="Click to expand/collapse"><b>java.net.ConnectException: Connection timed out (Connection timed out)</b></a><br />
+    <div class="stackTrace" id="exception-4">
+              java.net.PlainSocketImpl.socketConnect(Native Method)<br />
+              java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)<br />
+              java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)<br />
+              java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)<br />
+              java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)<br />
+              java.net.Socket.connect(Socket.java:607)<br />
+              org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121)<br />
+              org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)<br />
+              org.apache.http.impl.conn.ManagedClientConnectionImpl.open(ManagedClientConnectionImpl.java:326)<br />
+              org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:610)<br />
+              org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:445)<br />
+              org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835)<br />
+              org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)<br />
+              org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)<br />
+              org.apache.http.client.HttpClient$execute$0.call(Unknown Source)<br />
+              io.restassured.internal.RequestSpecificationImpl$RestAssuredHttpBuilder.doRequest(RequestSpecificationImpl.groovy:2028)<br />
+              io.restassured.internal.http.HTTPBuilder.doRequest(HTTPBuilder.java:494)<br />
+              io.restassured.internal.http.HTTPBuilder.request(HTTPBuilder.java:451)<br />
+              io.restassured.internal.http.HTTPBuilder$request$5.call(Unknown Source)<br />
+              io.restassured.internal.RequestSpecificationImpl.sendHttpRequest(RequestSpecificationImpl.groovy:1434)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)<br />
+              groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1210)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)<br />
+              io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)<br />
+              org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:48)<br />
+              org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.callCurrent(PogoInterceptableSite.java:58)<br />
+              io.restassured.internal.RequestSpecificationImpl.sendRequest(RequestSpecificationImpl.groovy:1221)<br />
+              sun.reflect.GeneratedMethodAccessor89.invoke(Unknown Source)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)<br />
+              groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1210)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)<br />
+              io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)<br />
+              org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:48)<br />
+              org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:149)<br />
+              io.restassured.internal.filter.SendRequestFilter.filter(SendRequestFilter.groovy:30)<br />
+              io.restassured.filter.Filter$filter$0.call(Unknown Source)<br />
+              org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)<br />
+              io.restassured.filter.Filter$filter.call(Unknown Source)<br />
+              io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)<br />
+              io.restassured.filter.time.TimingFilter.filter(TimingFilter.java:56)<br />
+              io.restassured.filter.Filter$filter.call(Unknown Source)<br />
+              org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)<br />
+              io.restassured.filter.Filter$filter.call(Unknown Source)<br />
+              io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)<br />
+              io.restassured.filter.log.RequestLoggingFilter.filter(RequestLoggingFilter.java:124)<br />
+              io.restassured.filter.Filter$filter.call(Unknown Source)<br />
+              org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)<br />
+              io.restassured.filter.Filter$filter$0.call(Unknown Source)<br />
+              io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)<br />
+              io.restassured.filter.FilterContext$next$0.call(Unknown Source)<br />
+              io.restassured.internal.RequestSpecificationImpl.applyPathParamsAndSendRequest(RequestSpecificationImpl.groovy:1631)<br />
+              sun.reflect.GeneratedMethodAccessor77.invoke(Unknown Source)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)<br />
+              groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1210)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)<br />
+              io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)<br />
+              org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:48)<br />
+              org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.callCurrent(PogoInterceptableSite.java:58)<br />
+              org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:182)<br />
+              io.restassured.internal.RequestSpecificationImpl.applyPathParamsAndSendRequest(RequestSpecificationImpl.groovy:1637)<br />
+              sun.reflect.GeneratedMethodAccessor76.invoke(Unknown Source)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)<br />
+              groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1210)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)<br />
+              io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)<br />
+              org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:48)<br />
+              org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.callCurrent(PogoInterceptableSite.java:58)<br />
+              org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:182)<br />
+              io.restassured.internal.RequestSpecificationImpl.put(RequestSpecificationImpl.groovy:174)<br />
+              io.restassured.internal.RequestSpecificationImpl.put(RequestSpecificationImpl.groovy)<br />
+              tripServices.TripserviceCommon.TripservicePutTrips(TripserviceCommon.java:110)<br />
+              tripServices.TS_PUT_Trips.PutTrips(TS_PUT_Trips.java:12)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:583)<br />
+              org.testng.internal.Invoker.retryFailed(Invoker.java:839)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1010)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:648)<br />
+              org.testng.TestRunner.run(TestRunner.java:505)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:455)<br />
+              org.testng.SuiteRunner.access$000(SuiteRunner.java:40)<br />
+              org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)<br />
+              org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)<br />
+              java.util.concurrent.FutureTask.run(FutureTask.java:266)<br />
+              java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)<br />
+              java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)<br />
+              java.lang.Thread.run(Thread.java:748)<br />
+                </div>
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">tripServices.TS_UpdateBooking_FPH</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  Tripserviceairputcall
+      </td>
+  <td class="duration">
+    17.282s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Service URL : http://172.17.26.11:9031/trips<br />
+                                Status code is : 200<br />
+                                Response Body: {&quot;trip_ref&quot;:&quot;Q200528832908&quot;,&quot;id&quot;:46466420,&quot;txn_id&quot;:75691342}<br />
+                                TripId is: Q200528832908<br />
+                                {&quot;trip_ref&quot;:&quot;Q200528832908&quot;}<br />
+                                Status code 200<br />
+                                Response Body: {&quot;trip_ref&quot;:&quot;Q200528832908&quot;}<br />
+                                TripId is: Q200528832908<br />
+                                Database validation Started<br />
+                                 Status is displayed as O<br />
+                  </div>
+    
+
+        <a href="javascript:toggleElement('exception-5', 'block')" title="Click to expand/collapse"><b>java.lang.AssertionError: expected [true] but found [false]</b></a><br />
+    <div class="stackTrace" id="exception-5">
+              org.testng.Assert.fail(Assert.java:96)<br />
+              org.testng.Assert.failNotEquals(Assert.java:776)<br />
+              org.testng.Assert.assertTrue(Assert.java:44)<br />
+              org.testng.Assert.assertTrue(Assert.java:54)<br />
+              tripServices.TripserviceCommon.DBValidation_Txn(TripserviceCommon.java:534)<br />
+              tripServices.TS_UpdateBooking_FPH.Tripserviceairputcall(TS_UpdateBooking_FPH.java:35)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:583)<br />
+              org.testng.internal.Invoker.retryFailed(Invoker.java:839)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1010)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:648)<br />
+              org.testng.TestRunner.run(TestRunner.java:505)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:455)<br />
+              org.testng.SuiteRunner.access$000(SuiteRunner.java:40)<br />
+              org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)<br />
+              org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)<br />
+              java.util.concurrent.FutureTask.run(FutureTask.java:266)<br />
+              java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)<br />
+              java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)<br />
+              java.lang.Thread.run(Thread.java:748)<br />
+                </div>
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">tripServices.TS_UpdateBooking_Trains_Trainfare</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  Tripservicetrainputcall
+      </td>
+  <td class="duration">
+    131.066s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Service URL : http://172.17.26.11:9031/trips<br />
+                  </div>
+    
+
+        <a href="javascript:toggleElement('exception-6', 'block')" title="Click to expand/collapse"><b>java.net.ConnectException: Connection timed out (Connection timed out)</b></a><br />
+    <div class="stackTrace" id="exception-6">
+              java.net.PlainSocketImpl.socketConnect(Native Method)<br />
+              java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)<br />
+              java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)<br />
+              java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)<br />
+              java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)<br />
+              java.net.Socket.connect(Socket.java:607)<br />
+              org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121)<br />
+              org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)<br />
+              org.apache.http.impl.conn.ManagedClientConnectionImpl.open(ManagedClientConnectionImpl.java:326)<br />
+              org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:610)<br />
+              org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:445)<br />
+              org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835)<br />
+              org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)<br />
+              org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)<br />
+              org.apache.http.client.HttpClient$execute$0.call(Unknown Source)<br />
+              io.restassured.internal.RequestSpecificationImpl$RestAssuredHttpBuilder.doRequest(RequestSpecificationImpl.groovy:2028)<br />
+              io.restassured.internal.http.HTTPBuilder.post(HTTPBuilder.java:349)<br />
+              io.restassured.internal.http.HTTPBuilder$post$4.call(Unknown Source)<br />
+              io.restassured.internal.RequestSpecificationImpl.sendRequest(RequestSpecificationImpl.groovy:1202)<br />
+              sun.reflect.GeneratedMethodAccessor89.invoke(Unknown Source)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)<br />
+              groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1210)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)<br />
+              io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)<br />
+              org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:48)<br />
+              org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:149)<br />
+              io.restassured.internal.filter.SendRequestFilter.filter(SendRequestFilter.groovy:30)<br />
+              io.restassured.filter.Filter$filter$0.call(Unknown Source)<br />
+              org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)<br />
+              io.restassured.filter.Filter$filter.call(Unknown Source)<br />
+              io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)<br />
+              io.restassured.filter.time.TimingFilter.filter(TimingFilter.java:56)<br />
+              io.restassured.filter.Filter$filter.call(Unknown Source)<br />
+              org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)<br />
+              io.restassured.filter.Filter$filter.call(Unknown Source)<br />
+              io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)<br />
+              io.restassured.filter.log.RequestLoggingFilter.filter(RequestLoggingFilter.java:124)<br />
+              io.restassured.filter.Filter$filter.call(Unknown Source)<br />
+              org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)<br />
+              io.restassured.filter.Filter$filter$0.call(Unknown Source)<br />
+              io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)<br />
+              io.restassured.filter.FilterContext$next$0.call(Unknown Source)<br />
+              io.restassured.internal.RequestSpecificationImpl.applyPathParamsAndSendRequest(RequestSpecificationImpl.groovy:1631)<br />
+              sun.reflect.GeneratedMethodAccessor77.invoke(Unknown Source)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)<br />
+              groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1210)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)<br />
+              io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)<br />
+              org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:48)<br />
+              org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.callCurrent(PogoInterceptableSite.java:58)<br />
+              org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:182)<br />
+              io.restassured.internal.RequestSpecificationImpl.applyPathParamsAndSendRequest(RequestSpecificationImpl.groovy:1637)<br />
+              sun.reflect.GeneratedMethodAccessor76.invoke(Unknown Source)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)<br />
+              groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1210)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)<br />
+              io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)<br />
+              org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:48)<br />
+              org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.callCurrent(PogoInterceptableSite.java:58)<br />
+              org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:182)<br />
+              io.restassured.internal.RequestSpecificationImpl.post(RequestSpecificationImpl.groovy:170)<br />
+              io.restassured.internal.RequestSpecificationImpl.post(RequestSpecificationImpl.groovy)<br />
+              tripServices.TripserviceCommon.TripservicePostcall(TripserviceCommon.java:77)<br />
+              tripServices.TS_UpdateBooking_Trains_Trainfare.Tripservicetrainputcall(TS_UpdateBooking_Trains_Trainfare.java:24)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:583)<br />
+              org.testng.internal.Invoker.retryFailed(Invoker.java:839)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1010)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:648)<br />
+              org.testng.TestRunner.run(TestRunner.java:505)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:455)<br />
+              org.testng.SuiteRunner.access$000(SuiteRunner.java:40)<br />
+              org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)<br />
+              org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)<br />
+              java.util.concurrent.FutureTask.run(FutureTask.java:266)<br />
+              java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)<br />
+              java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)<br />
+              java.lang.Thread.run(Thread.java:748)<br />
+                </div>
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">tripServices.TS_Update_Air_Module</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  airPostCall
+      </td>
+  <td class="duration">
+    130.999s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Service URL : http://172.17.26.11:9031/trips<br />
+                  </div>
+    
+
+        <a href="javascript:toggleElement('exception-7', 'block')" title="Click to expand/collapse"><b>java.net.ConnectException: Connection timed out (Connection timed out)</b></a><br />
+    <div class="stackTrace" id="exception-7">
+              java.net.PlainSocketImpl.socketConnect(Native Method)<br />
+              java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)<br />
+              java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)<br />
+              java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)<br />
+              java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)<br />
+              java.net.Socket.connect(Socket.java:607)<br />
+              org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121)<br />
+              org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)<br />
+              org.apache.http.impl.conn.ManagedClientConnectionImpl.open(ManagedClientConnectionImpl.java:326)<br />
+              org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:610)<br />
+              org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:445)<br />
+              org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835)<br />
+              org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)<br />
+              org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)<br />
+              org.apache.http.client.HttpClient$execute$0.call(Unknown Source)<br />
+              io.restassured.internal.RequestSpecificationImpl$RestAssuredHttpBuilder.doRequest(RequestSpecificationImpl.groovy:2028)<br />
+              io.restassured.internal.http.HTTPBuilder.post(HTTPBuilder.java:349)<br />
+              io.restassured.internal.http.HTTPBuilder$post$4.call(Unknown Source)<br />
+              io.restassured.internal.RequestSpecificationImpl.sendRequest(RequestSpecificationImpl.groovy:1202)<br />
+              sun.reflect.GeneratedMethodAccessor89.invoke(Unknown Source)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)<br />
+              groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1210)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)<br />
+              io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)<br />
+              org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:48)<br />
+              org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:149)<br />
+              io.restassured.internal.filter.SendRequestFilter.filter(SendRequestFilter.groovy:30)<br />
+              io.restassured.filter.Filter$filter$0.call(Unknown Source)<br />
+              org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)<br />
+              io.restassured.filter.Filter$filter.call(Unknown Source)<br />
+              io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)<br />
+              io.restassured.filter.time.TimingFilter.filter(TimingFilter.java:56)<br />
+              io.restassured.filter.Filter$filter.call(Unknown Source)<br />
+              org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)<br />
+              io.restassured.filter.Filter$filter.call(Unknown Source)<br />
+              io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)<br />
+              io.restassured.filter.log.RequestLoggingFilter.filter(RequestLoggingFilter.java:124)<br />
+              io.restassured.filter.Filter$filter.call(Unknown Source)<br />
+              org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)<br />
+              io.restassured.filter.Filter$filter$0.call(Unknown Source)<br />
+              io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)<br />
+              io.restassured.filter.FilterContext$next$0.call(Unknown Source)<br />
+              io.restassured.internal.RequestSpecificationImpl.applyPathParamsAndSendRequest(RequestSpecificationImpl.groovy:1631)<br />
+              sun.reflect.GeneratedMethodAccessor77.invoke(Unknown Source)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)<br />
+              groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1210)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)<br />
+              io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)<br />
+              org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:48)<br />
+              org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.callCurrent(PogoInterceptableSite.java:58)<br />
+              org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:182)<br />
+              io.restassured.internal.RequestSpecificationImpl.applyPathParamsAndSendRequest(RequestSpecificationImpl.groovy:1637)<br />
+              sun.reflect.GeneratedMethodAccessor76.invoke(Unknown Source)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)<br />
+              groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1210)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)<br />
+              groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)<br />
+              io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)<br />
+              org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:48)<br />
+              org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.callCurrent(PogoInterceptableSite.java:58)<br />
+              org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:182)<br />
+              io.restassured.internal.RequestSpecificationImpl.post(RequestSpecificationImpl.groovy:170)<br />
+              io.restassured.internal.RequestSpecificationImpl.post(RequestSpecificationImpl.groovy)<br />
+              tripServices.TripserviceCommon.TripservicePostcall(TripserviceCommon.java:77)<br />
+              tripServices.TS_Update_Air_Module.airPostCall(TS_Update_Air_Module.java:14)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:498)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:583)<br />
+              org.testng.internal.Invoker.retryFailed(Invoker.java:839)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1010)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:648)<br />
+              org.testng.TestRunner.run(TestRunner.java:505)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:455)<br />
+              org.testng.SuiteRunner.access$000(SuiteRunner.java:40)<br />
+              org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)<br />
+              org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)<br />
+              java.util.concurrent.FutureTask.run(FutureTask.java:266)<br />
+              java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)<br />
+              java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)<br />
+              java.lang.Thread.run(Thread.java:748)<br />
+                </div>
+      </td>
+</tr>
+      </table>
+
+  <table class="resultsTable" width="100%">
+    <tr><th colspan="3" class="header skipped">Skipped Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">tripServices.TS_Invoice_Generation_Air</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  Tripserviceairputcall
+      </td>
+  <td class="duration">
+    131.060s
+  </td>
+  <td class="result">
+                         
+    
+            <div class="testOutput">
+                        Service URL : http://172.17.26.11:9031/trips<br />
+                  </div>
+    
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">tripServices.TS_Invoice_Generation_Hotel</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  Tripservicelocalputcall
+      </td>
+  <td class="duration">
+    131.047s
+  </td>
+  <td class="result">
+                         
+    
+            <div class="testOutput">
+                        Service URL : http://172.17.26.11:9031/trips<br />
+                  </div>
+    
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">tripServices.TS_Invoice_Generation_Local</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  Tripservicelocalputcall
+      </td>
+  <td class="duration">
+    131.061s
+  </td>
+  <td class="result">
+                         
+    
+            <div class="testOutput">
+                        Service URL : http://172.17.26.11:9031/trips<br />
+                  </div>
+    
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">tripServices.TS_POST_EmailByTxnId</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  getEmail
+      </td>
+  <td class="duration">
+    131.037s
+  </td>
+  <td class="result">
+                         
+    
+            <div class="testOutput">
+                        Service URL : http://172.17.26.11:9031/trips/email/74979518<br />
+                  </div>
+    
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">tripServices.TS_PUT_Trips</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  PutTrips
+      </td>
+  <td class="duration">
+    131.060s
+  </td>
+  <td class="result">
+                         
+    
+            <div class="testOutput">
+                        Service URL : http://172.17.26.11:9031/trips<br />
+                  </div>
+    
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">tripServices.TS_UpdateBooking_FPH</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  Tripserviceairputcall
+      </td>
+  <td class="duration">
+    15.908s
+  </td>
+  <td class="result">
+                         
+    
+            <div class="testOutput">
+                        Service URL : http://172.17.26.11:9031/trips<br />
+                                Status code is : 200<br />
+                                Response Body: {&quot;trip_ref&quot;:&quot;Q200528832906&quot;,&quot;id&quot;:46466418,&quot;txn_id&quot;:75691340}<br />
+                                TripId is: Q200528832906<br />
+                                {&quot;trip_ref&quot;:&quot;Q200528832906&quot;}<br />
+                                Status code 200<br />
+                                Response Body: {&quot;trip_ref&quot;:&quot;Q200528832906&quot;}<br />
+                                TripId is: Q200528832906<br />
+                                Database validation Started<br />
+                                 Status is displayed as O<br />
+                  </div>
+    
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">tripServices.TS_UpdateBooking_Trains_Trainfare</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  Tripservicetrainputcall
+      </td>
+  <td class="duration">
+    131.065s
+  </td>
+  <td class="result">
+                         
+    
+            <div class="testOutput">
+                        Service URL : http://172.17.26.11:9031/trips<br />
+                  </div>
+    
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">tripServices.TS_Update_Air_Module</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  airPostCall
+      </td>
+  <td class="duration">
+    1001.093s
+  </td>
+  <td class="result">
+                         
+    
+            <div class="testOutput">
+                        Service URL : http://172.17.26.11:9031/trips<br />
+                                {&quot;trip_ref&quot;:&quot;Q200528832910&quot;,&quot;id&quot;:46466422,&quot;txn_id&quot;:75691344}<br />
+                                {&quot;trip_ref&quot;:&quot;Q200528832910&quot;,&quot;id&quot;:46466422,&quot;txn_id&quot;:75691344}<br />
+                                Status code 200<br />
+                  </div>
+    
+
+      </td>
+</tr>
+      </table>
+
+  <table class="resultsTable">
+    <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">tripServices.TS_Amendment</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  Tripserviceairputcall
+      </td>
+  <td class="duration">
+    76.460s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Service URL : http://172.17.26.11:9031/trips<br />
+                                Status code is : 200<br />
+                                Response Body: {&quot;trip_ref&quot;:&quot;Q200528832964&quot;,&quot;id&quot;:46466476,&quot;txn_id&quot;:75691400}<br />
+                                TripId is: Q200528832964<br />
+                                {&quot;trip_ref&quot;:&quot;Q200528832964&quot;}<br />
+                                Status code 200<br />
+                                Response Body: {&quot;trip_ref&quot;:&quot;Q200528832964&quot;}<br />
+                                TripId is: Q200528832964<br />
+                                Database validation Started<br />
+                                Database validation Passed<br />
+                                {&quot;air_bookings&quot;:[{&quot;air_booking_type&quot;:&quot;D&quot;,&quot;amend_itinerary_id&quot;:&quot;686d08d63e-93b9-4f64-862b-191128162634&quot;,&quot;seq_no&quot;:1,&quot;external_references&quot;:[{&quot;name&quot;:&quot;DESIGN_VERSION&quot;,&quot;value&quot;:&quot;v2&quot;},{&quot;name&quot;:&quot;NEW_GST_FLOW&quot;,&quot;value&quot;:&quot;N&quot;},{&quot;name&quot;:&quot;deal&quot;,&quot;value&quot;:&quot;Get Instant cashback upto Rs 3000 on this flight. Use coupon code FLYVA_https://www.cleartrip.com/offers/india/virginatlantic&quot;},{&quot;name&quot;:&quot;out_deal&quot;,&quot;value&quot;:&quot;Get Instant cashback upto Rs 3000 on this flight. Use coupon code FLYVA_https://www.cleartrip.com/offers/india/virginatlantic&quot;},{&quot;name&quot;:&quot;ret_deal&quot;,&quot;value&quot;:&quot;Get Instant cashback upto Rs 3000 on this flight. Use coupon code FLYVA_https://www.cleartrip.com/offers/india/virginatlantic&quot;},{&quot;name&quot;:&quot;AMENDMENT_INFO_1575352564224_PAX_1&quot;,&quot;value&quot;:&quot;1&quot;},{&quot;name&quot;:&quot;AMENDMENT_ID&quot;,&quot;value&quot;:&quot;1575352564224&quot;},{&quot;name&quot;:&quot;AMEND_PAX_IDX&quot;,&quot;value&quot;:&quot;[1]&quot;},{&quot;name&quot;:&quot;SINGLE_PAGEBOOKING_FLAG&quot;,&quot;value&quot;:&quot;Y&quot;},{&quot;name&quot;:&quot;journeyId_DEL_HYD&quot;,&quot;value&quot;:&quot;AIR_ASIA__OWDELHYD100I55041bfce438f5ec6474ea9d15cb48e7e5670exp1575359795510&quot;}],&quot;flights&quot;:[{&quot;id&quot;:42444130,&quot;flight_index&quot;:1,&quot;routed&quot;:&quot;N&quot;,&quot;segments&quot;:[{&quot;id&quot;:47557115,&quot;amd_status&quot;:&quot;X&quot;,&quot;arrival_airport&quot;:&quot;HYD&quot;,&quot;arrival_date_time&quot;:&quot;2019-12-28T07:40:00.000+0530&quot;,&quot;arrival_terminal&quot;:&quot;&quot;,&quot;book_pcc&quot;:&quot;OTAINCLEAN&quot;,&quot;departure_airport&quot;:&quot;DEL&quot;,&quot;departure_date_time&quot;:&quot;2019-12-28T05:30:00.000+0530&quot;,&quot;departure_terminal&quot;:&quot;Terminal 3&quot;,&quot;duration&quot;:7800,&quot;flight_number&quot;:&quot;5041&quot;,&quot;marketing_airline&quot;:&quot;I5&quot;,&quot;operating_airline&quot;:&quot;I5&quot;,&quot;seat_available&quot;:80,&quot;seq_no&quot;:1,&quot;stopover_count&quot;:0,&quot;sup_currency&quot;:&quot;INR&quot;,&quot;sup_total_currency_rate&quot;:1,&quot;supplier&quot;:&quot;AIR_ASIA&quot;},{&quot;amd_status&quot;:&quot;N&quot;,&quot;arrival_airport&quot;:&quot;HYD&quot;,&quot;arrival_date_time&quot;:&quot;2019-12-31T07:40:00.000+0530&quot;,&quot;arrival_terminal&quot;:&quot;&quot;,&quot;book_pcc&quot;:&quot;OTAINCLEAN&quot;,&quot;departure_airport&quot;:&quot;DEL&quot;,&quot;departure_date_time&quot;:&quot;2019-12-31T05:30:00.000+0530&quot;,&quot;departure_terminal&quot;:&quot;Terminal 3&quot;,&quot;duration&quot;:7800,&quot;flight_number&quot;:&quot;5041&quot;,&quot;marketing_airline&quot;:&quot;I5&quot;,&quot;operating_airline&quot;:&quot;I5&quot;,&quot;seat_available&quot;:72,&quot;seq_no&quot;:2,&quot;stopover_count&quot;:0,&quot;sup_currency&quot;:&quot;INR&quot;,&quot;sup_total_currency_rate&quot;:1,&quot;supplier&quot;:&quot;AIR_ASIA&quot;}]}],&quot;air_booking_infos&quot;:[{&quot;id&quot;:67898306,&quot;amd_status&quot;:&quot;X&quot;,&quot;amd_type&quot;:&quot;1&quot;,&quot;pax_info_seq_no&quot;:1,&quot;pricing_object_seq_no&quot;:1,&quot;segment_seq_no&quot;:1,&quot;seq_no&quot;:1},{&quot;agent_pcc&quot;:&quot;OTAINCLEAN&quot;,&quot;amd_status&quot;:&quot;N&quot;,&quot;amd_type&quot;:&quot;1&quot;,&quot;auto_refund&quot;:&quot;Y&quot;,&quot;booking_class&quot;:&quot;K&quot;,&quot;booking_status&quot;:&quot;M&quot;,&quot;cabin_type&quot;:&quot;E&quot;,&quot;pax_info_seq_no&quot;:1,&quot;pricing_object_seq_no&quot;:2,&quot;seat_number&quot;:&quot;&quot;,&quot;segment_seq_no&quot;:2,&quot;seq_no&quot;:2,&quot;status_history&quot;:16,&quot;status_reason&quot;:&quot;M&quot;,&quot;ticket_type&quot;:&quot;E&quot;,&quot;multipcc_rev&quot;:0,&quot;external_references&quot;:[{&quot;name&quot;:&quot;journeyId_DEL_HYD&quot;,&quot;value&quot;:&quot;AIR_ASIA__OWDELHYD100I55041e1c5661e9fe140caa97c5834724dca66exp1574945823153&quot;},{&quot;name&quot;:&quot;connectorReturnedCurrency_DEL_HYD&quot;,&quot;value&quot;:&quot;INR&quot;},{&quot;name&quot;:&quot;total_fare_DEL_HYD&quot;,&quot;value&quot;:&quot;2997.0&quot;},{&quot;name&quot;:&quot;promiseId_DEL_HYD&quot;,&quot;value&quot;:&quot;AIR_ASIA__b914c2b16027948c5d7a909e90fbf7890db1209800a1af962612f1252d3f957eV2__100D1577511000I55041DELHYDOW__DC_dc1&quot;},{&quot;name&quot;:&quot;fareId_DEL_HYD&quot;,&quot;value&quot;:&quot;K01H00EP_BA157_MNINR&quot;}]}],&quot;air_booking_detail&quot;:{},&quot;pricing_objects&quot;:[{&quot;id&quot;:127949017,&quot;amd_status&quot;:&quot;X&quot;,&quot;seq_no&quot;:1},{&quot;amd_status&quot;:&quot;N&quot;,&quot;cleartrip_sbc&quot;:0,&quot;congestion_charge&quot;:635,&quot;fare_basis_code&quot;:&quot;K01H00&quot;,&quot;fare_category&quot;:&quot;retail&quot;,&quot;fare_key&quot;:&quot;DC_dc1|sms_y|fn_5041|supp_AIR_ASIA|si-oa-5fdf8445-6439-4451-a511-5b23d45333c2|fk_retail_I5_5041_1577750400000_K01H00_true_&quot;,&quot;fare_sub_type&quot;:&quot;&quot;,&quot;net_agency_commission&quot;:0,&quot;segment_amount&quot;:8562,&quot;seq_no&quot;:2,&quot;service_tax&quot;:0,&quot;tax_base_st&quot;:0,&quot;tax_ecess&quot;:0,&quot;tax_shecess&quot;:0,&quot;cost_pricing_object&quot;:{&quot;congestion_charge&quot;:635,&quot;fare_basis_code&quot;:&quot;K01H00&quot;,&quot;fare_category&quot;:&quot;retail&quot;,&quot;fare_key&quot;:&quot;DC_dc1|sms_y|fn_5041|supp_AIR_ASIA|si-oa-5fdf8445-6439-4451-a511-5b23d45333c2|fk_retail_I5_5041_1577750400000_K01H00_true_&quot;,&quot;fare_sub_type&quot;:&quot;&quot;,&quot;seq_no&quot;:2,&quot;pricing_elements&quot;:[{&quot;amount&quot;:2424,&quot;category&quot;:&quot;BF&quot;,&quot;chnl_charge&quot;:&quot;false&quot;,&quot;chnl_display&quot;:&quot;false&quot;,&quot;chnl_refund&quot;:&quot;false&quot;,&quot;code&quot;:&quot;&quot;,&quot;usr_charge&quot;:&quot;false&quot;,&quot;usr_display&quot;:&quot;false&quot;,&quot;usr_refund&quot;:&quot;false&quot;,&quot;wp_check&quot;:&quot;false&quot;},{&quot;amount&quot;:91,&quot;category&quot;:&quot;TAX&quot;,&quot;chnl_charge&quot;:&quot;false&quot;,&quot;chnl_display&quot;:&quot;false&quot;,&quot;chnl_refund&quot;:&quot;false&quot;,&quot;code&quot;:&quot;PSF&quot;,&quot;usr_charge&quot;:&quot;false&quot;,&quot;usr_display&quot;:&quot;false&quot;,&quot;usr_refund&quot;:&quot;false&quot;,&quot;wp_check&quot;:&quot;false&quot;},{&quot;amount&quot;:65,&quot;category&quot;:&quot;TAX&quot;,&quot;chnl_charge&quot;:&quot;false&quot;,&quot;chnl_display&quot;:&quot;false&quot;,&quot;chnl_refund&quot;:&quot;false&quot;,&quot;code&quot;:&quot;SGST&quot;,&quot;usr_charge&quot;:&quot;false&quot;,&quot;usr_display&quot;:&quot;false&quot;,&quot;usr_refund&quot;:&quot;false&quot;,&quot;wp_check&quot;:&quot;false&quot;},{&quot;amount&quot;:65,&quot;category&quot;:&quot;TAX&quot;,&quot;chnl_charge&quot;:&quot;false&quot;,&quot;chnl_display&quot;:&quot;false&quot;,&quot;chnl_refund&quot;:&quot;false&quot;,&quot;code&quot;:&quot;CGST&quot;,&quot;usr_charge&quot;:&quot;false&quot;,&quot;usr_display&quot;:&quot;false&quot;,&quot;usr_refund&quot;:&quot;false&quot;,&quot;wp_check&quot;:&quot;false&quot;},{&quot;amount&quot;:75,&quot;category&quot;:&quot;TAX&quot;,&quot;chnl_charge&quot;:&quot;false&quot;,&quot;chnl_display&quot;:&quot;false&quot;,&quot;chnl_refund&quot;:&quot;false&quot;,&quot;code&quot;:&quot;CUTE&quot;,&quot;usr_charge&quot;:&quot;false&quot;,&quot;usr_display&quot;:&quot;false&quot;,&quot;usr_refund&quot;:&quot;false&quot;,&quot;wp_check&quot;:&quot;false&quot;},{&quot;amount&quot;:277,&quot;category&quot;:&quot;TAX&quot;,&quot;chnl_charge&quot;:&quot;false&quot;,&quot;chnl_display&quot;:&quot;false&quot;,&quot;chnl_refund&quot;:&quot;false&quot;,&quot;code&quot;:&quot;AIRLINE-MSC&quot;,&quot;usr_charge&quot;:&quot;false&quot;,&quot;usr_display&quot;:&quot;false&quot;,&quot;usr_refund&quot;:&quot;false&quot;,&quot;wp_check&quot;:&quot;false&quot;},{&quot;amount&quot;:0,&quot;category&quot;:&quot;TAX&quot;,&quot;chnl_charge&quot;:&quot;false&quot;,&quot;chnl_display&quot;:&quot;false&quot;,&quot;chnl_refund&quot;:&quot;false&quot;,&quot;code&quot;:&quot;YQ&quot;,&quot;usr_charge&quot;:&quot;false&quot;,&quot;usr_display&quot;:&quot;false&quot;,&quot;usr_refund&quot;:&quot;false&quot;,&quot;wp_check&quot;:&quot;false&quot;},{&quot;amount&quot;:0,&quot;category&quot;:&quot;TAX&quot;,&quot;chnl_charge&quot;:&quot;false&quot;,&quot;chnl_display&quot;:&quot;false&quot;,&quot;chnl_refund&quot;:&quot;false&quot;,&quot;code&quot;:&quot;YR&quot;,&quot;usr_charge&quot;:&quot;false&quot;,&quot;usr_display&quot;:&quot;false&quot;,&quot;usr_refund&quot;:&quot;false&quot;,&quot;wp_check&quot;:&quot;false&quot;},{&quot;amount&quot;:0,&quot;category&quot;:&quot;TAX&quot;,&quot;chnl_charge&quot;:&quot;false&quot;,&quot;chnl_display&quot;:&quot;false&quot;,&quot;chnl_refund&quot;:&quot;false&quot;,&quot;code&quot;:&quot;UDF&quot;,&quot;usr_charge&quot;:&quot;false&quot;,&quot;usr_display&quot;:&quot;false&quot;,&quot;usr_refund&quot;:&quot;false&quot;,&quot;wp_check&quot;:&quot;false&quot;},{&quot;amount&quot;:0,&quot;category&quot;:&quot;TAX&quot;,&quot;chnl_charge&quot;:&quot;false&quot;,&quot;chnl_display&quot;:&quot;false&quot;,&quot;chnl_refund&quot;:&quot;false&quot;,&quot;code&quot;:&quot;OCT&quot;,&quot;usr_charge&quot;:&quot;false&quot;,&quot;usr_display&quot;:&quot;false&quot;,&quot;usr_refund&quot;:&quot;false&quot;,&quot;wp_check&quot;:&quot;false&quot;},{&quot;amount&quot;:153,&quot;category&quot;:&quot;TAX&quot;,&quot;chnl_charge&quot;:&quot;true&quot;,&quot;chnl_display&quot;:&quot;true&quot;,&quot;chnl_refund&quot;:&quot;false&quot;,&quot;code&quot;:&quot;AMD_OCT&quot;,&quot;usr_charge&quot;:&quot;true&quot;,&quot;usr_display&quot;:&quot;true&quot;,&quot;usr_refund&quot;:&quot;false&quot;,&quot;wp_check&quot;:&quot;false&quot;}]},&quot;pricing_elements&quot;:[{&quot;amount&quot;:2424,&quot;category&quot;:&quot;BF&quot;,&quot;chnl_charge&quot;:&quot;true&quot;,&quot;chnl_display&quot;:&quot;true&quot;,&quot;chnl_refund&quot;:&quot;true&quot;,&quot;code&quot;:&quot;&quot;,&quot;usr_charge&quot;:&quot;true&quot;,&quot;usr_display&quot;:&quot;true&quot;,&quot;usr_refund&quot;:&quot;true&quot;,&quot;wp_check&quot;:&quot;true&quot;},{&quot;amount&quot;:91,&quot;category&quot;:&quot;TAX&quot;,&quot;chnl_charge&quot;:&quot;true&quot;,&quot;chnl_display&quot;:&quot;true&quot;,&quot;chnl_refund&quot;:&quot;false&quot;,&quot;code&quot;:&quot;PSF&quot;,&quot;usr_charge&quot;:&quot;true&quot;,&quot;usr_display&quot;:&quot;true&quot;,&quot;usr_refund&quot;:&quot;false&quot;,&quot;wp_check&quot;:&quot;true&quot;},{&quot;amount&quot;:65,&quot;category&quot;:&quot;TAX&quot;,&quot;chnl_charge&quot;:&quot;true&quot;,&quot;chnl_display&quot;:&quot;true&quot;,&quot;chnl_refund&quot;:&quot;false&quot;,&quot;code&quot;:&quot;SGST&quot;,&quot;usr_charge&quot;:&quot;true&quot;,&quot;usr_display&quot;:&quot;true&quot;,&quot;usr_refund&quot;:&quot;false&quot;,&quot;wp_check&quot;:&quot;true&quot;},{&quot;amount&quot;:65,&quot;category&quot;:&quot;TAX&quot;,&quot;chnl_charge&quot;:&quot;true&quot;,&quot;chnl_display&quot;:&quot;true&quot;,&quot;chnl_refund&quot;:&quot;false&quot;,&quot;code&quot;:&quot;CGST&quot;,&quot;usr_charge&quot;:&quot;true&quot;,&quot;usr_display&quot;:&quot;true&quot;,&quot;usr_refund&quot;:&quot;false&quot;,&quot;wp_check&quot;:&quot;true&quot;},{&quot;amount&quot;:75,&quot;category&quot;:&quot;TAX&quot;,&quot;chnl_charge&quot;:&quot;true&quot;,&quot;chnl_display&quot;:&quot;true&quot;,&quot;chnl_refund&quot;:&quot;false&quot;,&quot;code&quot;:&quot;CUTE&quot;,&quot;usr_charge&quot;:&quot;true&quot;,&quot;usr_display&quot;:&quot;true&quot;,&quot;usr_refund&quot;:&quot;false&quot;,&quot;wp_check&quot;:&quot;true&quot;},{&quot;amount&quot;:277,&quot;category&quot;:&quot;TAX&quot;,&quot;chnl_charge&quot;:&quot;true&quot;,&quot;chnl_display&quot;:&quot;true&quot;,&quot;chnl_refund&quot;:&quot;false&quot;,&quot;code&quot;:&quot;AIRLINE-MSC&quot;,&quot;usr_charge&quot;:&quot;true&quot;,&quot;usr_display&quot;:&quot;true&quot;,&quot;usr_refund&quot;:&quot;false&quot;,&quot;wp_check&quot;:&quot;true&quot;},{&quot;amount&quot;:0,&quot;category&quot;:&quot;TAX&quot;,&quot;chnl_charge&quot;:&quot;true&quot;,&quot;chnl_display&quot;:&quot;true&quot;,&quot;chnl_refund&quot;:&quot;false&quot;,&quot;code&quot;:&quot;YQ&quot;,&quot;usr_charge&quot;:&quot;true&quot;,&quot;usr_display&quot;:&quot;true&quot;,&quot;usr_refund&quot;:&quot;false&quot;,&quot;wp_check&quot;:&quot;true&quot;},{&quot;amount&quot;:0,&quot;category&quot;:&quot;TAX&quot;,&quot;chnl_charge&quot;:&quot;true&quot;,&quot;chnl_display&quot;:&quot;true&quot;,&quot;chnl_refund&quot;:&quot;false&quot;,&quot;code&quot;:&quot;YR&quot;,&quot;usr_charge&quot;:&quot;true&quot;,&quot;usr_display&quot;:&quot;true&quot;,&quot;usr_refund&quot;:&quot;false&quot;,&quot;wp_check&quot;:&quot;true&quot;},{&quot;amount&quot;:0,&quot;category&quot;:&quot;TAX&quot;,&quot;chnl_charge&quot;:&quot;true&quot;,&quot;chnl_display&quot;:&quot;true&quot;,&quot;chnl_refund&quot;:&quot;false&quot;,&quot;code&quot;:&quot;UDF&quot;,&quot;usr_charge&quot;:&quot;true&quot;,&quot;usr_display&quot;:&quot;true&quot;,&quot;usr_refund&quot;:&quot;false&quot;,&quot;wp_check&quot;:&quot;true&quot;},{&quot;amount&quot;:0,&quot;category&quot;:&quot;TAX&quot;,&quot;chnl_charge&quot;:&quot;true&quot;,&quot;chnl_display&quot;:&quot;true&quot;,&quot;chnl_refund&quot;:&quot;false&quot;,&quot;code&quot;:&quot;OCT&quot;,&quot;usr_charge&quot;:&quot;true&quot;,&quot;usr_display&quot;:&quot;true&quot;,&quot;usr_refund&quot;:&quot;false&quot;,&quot;wp_check&quot;:&quot;true&quot;},{&quot;amount&quot;:0,&quot;category&quot;:&quot;FEE&quot;,&quot;chnl_charge&quot;:&quot;true&quot;,&quot;chnl_display&quot;:&quot;true&quot;,&quot;chnl_refund&quot;:&quot;false&quot;,&quot;code&quot;:&quot;CNCL&quot;,&quot;usr_charge&quot;:&quot;true&quot;,&quot;usr_display&quot;:&quot;true&quot;,&quot;usr_refund&quot;:&quot;false&quot;,&quot;wp_check&quot;:&quot;false&quot;},{&quot;amount&quot;:3100,&quot;category&quot;:&quot;FEE&quot;,&quot;chnl_charge&quot;:&quot;true&quot;,&quot;chnl_display&quot;:&quot;true&quot;,&quot;chnl_refund&quot;:&quot;false&quot;,&quot;code&quot;:&quot;AMD&quot;,&quot;usr_charge&quot;:&quot;true&quot;,&quot;usr_display&quot;:&quot;true&quot;,&quot;usr_refund&quot;:&quot;false&quot;,&quot;wp_check&quot;:&quot;false&quot;},{&quot;amount&quot;:153,&quot;category&quot;:&quot;TAX&quot;,&quot;chnl_charge&quot;:&quot;true&quot;,&quot;chnl_display&quot;:&quot;true&quot;,&quot;chnl_refund&quot;:&quot;false&quot;,&quot;code&quot;:&quot;AMD_OCT&quot;,&quot;usr_charge&quot;:&quot;true&quot;,&quot;usr_display&quot;:&quot;true&quot;,&quot;usr_refund&quot;:&quot;false&quot;,&quot;wp_check&quot;:&quot;false&quot;},{&quot;amount&quot;:12,&quot;category&quot;:&quot;MKP&quot;,&quot;chnl_charge&quot;:&quot;true&quot;,&quot;chnl_display&quot;:&quot;true&quot;,&quot;chnl_refund&quot;:&quot;false&quot;,&quot;code&quot;:&quot;&quot;,&quot;usr_charge&quot;:&quot;true&quot;,&quot;usr_display&quot;:&quot;true&quot;,&quot;usr_refund&quot;:&quot;false&quot;,&quot;wp_check&quot;:&quot;false&quot;},{&quot;amount&quot;:50,&quot;category&quot;:&quot;MKP&quot;,&quot;chnl_charge&quot;:&quot;true&quot;,&quot;chnl_display&quot;:&quot;true&quot;,&quot;chnl_refund&quot;:&quot;false&quot;,&quot;code&quot;:&quot;&quot;,&quot;usr_charge&quot;:&quot;true&quot;,&quot;usr_display&quot;:&quot;true&quot;,&quot;usr_refund&quot;:&quot;false&quot;,&quot;wp_check&quot;:&quot;false&quot;},{&quot;amount&quot;:50,&quot;category&quot;:&quot;MKP&quot;,&quot;chnl_charge&quot;:&quot;true&quot;,&quot;chnl_display&quot;:&quot;true&quot;,&quot;chnl_refund&quot;:&quot;false&quot;,&quot;code&quot;:&quot;&quot;,&quot;usr_charge&quot;:&quot;true&quot;,&quot;usr_display&quot;:&quot;true&quot;,&quot;usr_refund&quot;:&quot;false&quot;,&quot;wp_check&quot;:&quot;false&quot;},{&quot;amount&quot;:50,&quot;category&quot;:&quot;MKP&quot;,&quot;chnl_charge&quot;:&quot;true&quot;,&quot;chnl_display&quot;:&quot;true&quot;,&quot;chnl_refund&quot;:&quot;false&quot;,&quot;code&quot;:&quot;&quot;,&quot;usr_charge&quot;:&quot;true&quot;,&quot;usr_display&quot;:&quot;true&quot;,&quot;usr_refund&quot;:&quot;false&quot;,&quot;wp_check&quot;:&quot;false&quot;},{&quot;amount&quot;:50,&quot;category&quot;:&quot;MKP&quot;,&quot;chnl_charge&quot;:&quot;true&quot;,&quot;chnl_display&quot;:&quot;true&quot;,&quot;chnl_refund&quot;:&quot;false&quot;,&quot;code&quot;:&quot;&quot;,&quot;usr_charge&quot;:&quot;true&quot;,&quot;usr_display&quot;:&quot;true&quot;,&quot;usr_refund&quot;:&quot;false&quot;,&quot;wp_check&quot;:&quot;false&quot;},{&quot;amount&quot;:50,&quot;category&quot;:&quot;MKP&quot;,&quot;chnl_charge&quot;:&quot;true&quot;,&quot;chnl_display&quot;:&quot;true&quot;,&quot;chnl_refund&quot;:&quot;false&quot;,&quot;code&quot;:&quot;&quot;,&quot;usr_charge&quot;:&quot;true&quot;,&quot;usr_display&quot;:&quot;true&quot;,&quot;usr_refund&quot;:&quot;false&quot;,&quot;wp_check&quot;:&quot;false&quot;},{&quot;amount&quot;:50,&quot;category&quot;:&quot;MKP&quot;,&quot;chnl_charge&quot;:&quot;true&quot;,&quot;chnl_display&quot;:&quot;true&quot;,&quot;chnl_refund&quot;:&quot;false&quot;,&quot;code&quot;:&quot;&quot;,&quot;usr_charge&quot;:&quot;true&quot;,&quot;usr_display&quot;:&quot;true&quot;,&quot;usr_refund&quot;:&quot;false&quot;,&quot;wp_check&quot;:&quot;false&quot;},{&quot;amount&quot;:1000,&quot;category&quot;:&quot;MKP&quot;,&quot;chnl_charge&quot;:&quot;true&quot;,&quot;chnl_display&quot;:&quot;true&quot;,&quot;chnl_refund&quot;:&quot;false&quot;,&quot;code&quot;:&quot;&quot;,&quot;usr_charge&quot;:&quot;true&quot;,&quot;usr_display&quot;:&quot;true&quot;,&quot;usr_refund&quot;:&quot;false&quot;,&quot;wp_check&quot;:&quot;false&quot;},{&quot;amount&quot;:1000,&quot;category&quot;:&quot;MKP&quot;,&quot;chnl_charge&quot;:&quot;true&quot;,&quot;chnl_display&quot;:&quot;true&quot;,&quot;chnl_refund&quot;:&quot;false&quot;,&quot;code&quot;:&quot;&quot;,&quot;usr_charge&quot;:&quot;true&quot;,&quot;usr_display&quot;:&quot;true&quot;,&quot;usr_refund&quot;:&quot;false&quot;,&quot;wp_check&quot;:&quot;false&quot;}]}]}],&quot;express_checkout&quot;:&quot;false&quot;,&quot;id&quot;:46466476,&quot;insurances&quot;:[],&quot;itinerary_id&quot;:&quot;68aa44f0c9-7ba7-403c-86c6-191203112559&quot;,&quot;notes&quot;:[{&quot;note&quot;:&quot;Total:3553.0{ TAXCUTE:75.0 TAXOCT:0.0 BF:2424.0 FEECNCL:0.0 TAXAIRLINE-MSC:277.0 TAXAMD_OCT:153.0 TAXPSF:91.0 FEEAMD:3100.0 MKP:2312.0 TAXSGST:65.0 FEEOFR:-5009.0 TAXUDF:0.0 TAXYR:0.0 TAXYQ:0.0 TAXCGST:65.0}&quot;,&quot;subject&quot;:&quot;Amendment Fare Info&quot;,&quot;user_id&quot;:0}],&quot;trip_ref&quot;:&quot;Q200528832964&quot;,&quot;trip_type&quot;:1,&quot;txns&quot;:[{&quot;external_references&quot;:[{&quot;name&quot;:&quot;CNCL_CT&quot;,&quot;value&quot;:&quot;0&quot;}],&quot;source_id&quot;:&quot;115.114.17.142&quot;,&quot;source_type&quot;:&quot;ACCOUNT&quot;,&quot;status&quot;:&quot;O&quot;,&quot;txn_type&quot;:2,&quot;user_id&quot;:41683574}]}<br />
+                                {&quot;trip_ref&quot;:&quot;Q200528832964&quot;,&quot;id&quot;:46466476,&quot;txn_id&quot;:75691404}<br />
+                                Status code 200<br />
+                                Response Body: {&quot;trip_ref&quot;:&quot;Q200528832964&quot;,&quot;id&quot;:46466476,&quot;txn_id&quot;:75691404}<br />
+                                TripId is: Q200528832964<br />
+                                {&quot;trip_ref&quot;:&quot;Q200528832964&quot;}<br />
+                                Status code 200<br />
+                                Response Body: {&quot;trip_ref&quot;:&quot;Q200528832964&quot;}<br />
+                                TripId is: Q200528832964<br />
+                                Database validation Started<br />
+                                Database validation Passed<br />
+                  </div>
+    
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">tripServices.TS_UpdateBooking_Air</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  Tripserviceairputcall
+      </td>
+  <td class="duration">
+    15.601s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Service URL : http://172.17.26.11:9031/trips<br />
+                                Status code is : 200<br />
+                                Response Body: {&quot;trip_ref&quot;:&quot;Q200528832898&quot;,&quot;id&quot;:46466410,&quot;txn_id&quot;:75691332}<br />
+                                TripId is: Q200528832898<br />
+                                {&quot;trip_ref&quot;:&quot;Q200528832898&quot;}<br />
+                                Status code 200<br />
+                                Response Body: {&quot;trip_ref&quot;:&quot;Q200528832898&quot;}<br />
+                                TripId is: Q200528832898<br />
+                                Database validation Started<br />
+                                Database validation Passed<br />
+                  </div>
+    
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">tripServices.TS_UpdateBooking_Hotel</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  Tripservicehotelputcall
+      </td>
+  <td class="duration">
+    14.536s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Service URL : http://172.17.26.11:9031/trips<br />
+                                Status code is : 200<br />
+                                Response Body: {&quot;trip_ref&quot;:&quot;Q200528832900&quot;,&quot;id&quot;:46466412,&quot;txn_id&quot;:75691334}<br />
+                                TripId is: Q200528832900<br />
+                                {&quot;trip_ref&quot;:&quot;Q200528832900&quot;}<br />
+                                Status code 200<br />
+                                Response Body: {&quot;trip_ref&quot;:&quot;Q200528832900&quot;}<br />
+                                TripId is: Q200528832900<br />
+                                Database validation Started<br />
+                                Database validation Passed<br />
+                  </div>
+    
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">tripServices.TS_UpdateBooking_Local</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  Tripservicelocalputcall
+      </td>
+  <td class="duration">
+    12.284s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Service URL : http://172.17.26.11:9031/trips<br />
+                                Status code is : 200<br />
+                                Response Body: {&quot;trip_ref&quot;:&quot;Q200528832902&quot;,&quot;id&quot;:46466414,&quot;txn_id&quot;:75691336}<br />
+                                TripId is: Q200528832902<br />
+                                {&quot;trip_ref&quot;:&quot;Q200528832902&quot;}<br />
+                                Status code 200<br />
+                                Response Body: {&quot;trip_ref&quot;:&quot;Q200528832902&quot;}<br />
+                                TripId is: Q200528832902<br />
+                                Database validation Started<br />
+                                Database validation Passed<br />
+                  </div>
+    
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">tripServices.TS_UpdateBooking_Trains</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  Tripservicetrainputcall
+      </td>
+  <td class="duration">
+    16.768s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Service URL : http://172.17.26.11:9031/trips<br />
+                                {&quot;tripRef&quot;:&quot;Q200528832904&quot;,&quot;id&quot;:46466416,&quot;txnId&quot;:75691338}<br />
+                                TripRef is: Q200528832904<br />
+                                Status code 200<br />
+                                {&quot;tripRef&quot;:&quot;Q200528832904&quot;}<br />
+                                Status code 200<br />
+                                Response Body: {&quot;tripRef&quot;:&quot;Q200528832904&quot;}<br />
+                                TripRef is: Q200528832904<br />
+                                Database validation Started<br />
+                                Q200528832904<br />
+                                Database validation Passed<br />
+                  </div>
+    
+
+      </td>
+</tr>
+      </table>
+  
+</body>
+</html>

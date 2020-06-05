@@ -3,14 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="ct_admin.CT_Admin">
+      <class name="paymentsUI.Payment_NodeJS_CC_AE">
         <methods>
+          <include name="paymentNodeJS_CCAE"/>
+          <include name="tearDown"/>
           <include name="afterMethod"/>
-          <include name="closeSelenium"/>
-          <include name="startSelenium"/>
-          <include name="ct_admin_ui"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- ct_admin.CT_Admin -->
+      </class> <!-- paymentsUI.Payment_NodeJS_CC_AE -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

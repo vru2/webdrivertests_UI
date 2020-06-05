@@ -2,143 +2,65 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
     <line>
-      <![CDATA[hq loaded]]>
+      <![CDATA[ORACLE Payment service is called]]>
     </line>
     <line>
-      <![CDATA[Signed into hq]]>
+      <![CDATA[Master card selected]]>
     </line>
     <line>
-      <![CDATA[<p>https://qa2.cleartrip.com/partners/dashboard</p>]]>
+      <![CDATA[<p>http://172.17.15.176:9080/success?tripRef=T4333046353</p>]]>
     </line>
     <line>
-      <![CDATA[ct-admin url launched]]>
+      <![CDATA[AE  : T4333046353]]>
     </line>
     <line>
-      <![CDATA[<p>Resource drop is visible is displayed in page</p>]]>
-    </line>
-    <line>
-      <![CDATA[ct-admin ui loaded]]>
-    </line>
-    <line>
-      <![CDATA[<p>walletCredentials is displayed in page</p>]]>
-    </line>
-    <line>
-      <![CDATA[WalletCredentails ui is loaded]]>
-    </line>
-    <line>
-      <![CDATA[<p>Deactivate is displayed in page</p>]]>
-    </line>
-    <line>
-      <![CDATA[nbCredentials ui loaded]]>
-    </line>
-    <line>
-      <![CDATA[<p>Tests_HDFC is displayed in page</p>]]>
-    </line>
-    <line>
-      <![CDATA[pgCredentials ui loaded]]>
-    </line>
-    <line>
-      <![CDATA[<p>Update is displayed in page</p>]]>
-    </line>
-    <line>
-      <![CDATA[update pgCredentials page ui loaded]]>
-    </line>
-    <line>
-      <![CDATA[value entered]]>
-    </line>
-    <line>
-      <![CDATA[Clicked on Update]]>
-    </line>
-    <line>
-      <![CDATA[<p>Tests_HDFC is displayed in page</p>]]>
-    </line>
-    <line>
-      <![CDATA[Update was successfull]]>
+      <![CDATA[ConfirmationMsg = Payment successful! :)]]>
     </line>
   </reporter-output>
-  <suite name="Platform Services API" duration-ms="24337" started-at="2020-06-05T03:21:34Z" finished-at="2020-06-05T03:21:58Z">
+  <suite name="Default suite" duration-ms="47193" started-at="2020-06-05T04:37:59Z" finished-at="2020-06-05T04:38:46Z">
     <groups>
     </groups>
-    <test name="Ct-admin UI" duration-ms="24337" started-at="2020-06-05T03:21:34Z" finished-at="2020-06-05T03:21:58Z">
-      <class name="ct_admin.CT_Admin">
-        <test-method status="PASS" signature="startSelenium()[pri:0, instance:ct_admin.CT_Admin@419c5f1a]" name="startSelenium" is-config="true" duration-ms="1257" started-at="2020-06-05T03:21:34Z" finished-at="2020-06-05T03:21:35Z">
+    <test name="Default test" duration-ms="47193" started-at="2020-06-05T04:37:59Z" finished-at="2020-06-05T04:38:46Z">
+      <class name="paymentsUI.Payment_NodeJS_CC_AE">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:paymentsUI.Payment_NodeJS_CC_AE@2ea6137]" name="setUp" is-config="true" duration-ms="5128" started-at="2020-06-05T04:37:59Z" finished-at="2020-06-05T04:38:04Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- startSelenium -->
-        <test-method status="PASS" signature="ct_admin_ui()[pri:0, instance:ct_admin.CT_Admin@419c5f1a]" name="ct_admin_ui" duration-ms="22906" started-at="2020-06-05T03:21:35Z" finished-at="2020-06-05T03:21:58Z">
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="paymentNodeJS_CCAE()[pri:0, instance:paymentsUI.Payment_NodeJS_CC_AE@2ea6137]" name="paymentNodeJS_CCAE" duration-ms="41313" started-at="2020-06-05T04:38:04Z" finished-at="2020-06-05T04:38:45Z">
           <reporter-output>
             <line>
-              <![CDATA[hq loaded]]>
+              <![CDATA[ORACLE Payment service is called]]>
             </line>
             <line>
-              <![CDATA[Signed into hq]]>
+              <![CDATA[Master card selected]]>
             </line>
             <line>
-              <![CDATA[<p>https://qa2.cleartrip.com/partners/dashboard</p>]]>
+              <![CDATA[<p>http://172.17.15.176:9080/success?tripRef=T4333046353</p>]]>
             </line>
             <line>
-              <![CDATA[ct-admin url launched]]>
+              <![CDATA[AE  : T4333046353]]>
             </line>
             <line>
-              <![CDATA[<p>Resource drop is visible is displayed in page</p>]]>
-            </line>
-            <line>
-              <![CDATA[ct-admin ui loaded]]>
-            </line>
-            <line>
-              <![CDATA[<p>walletCredentials is displayed in page</p>]]>
-            </line>
-            <line>
-              <![CDATA[WalletCredentails ui is loaded]]>
-            </line>
-            <line>
-              <![CDATA[<p>Deactivate is displayed in page</p>]]>
-            </line>
-            <line>
-              <![CDATA[nbCredentials ui loaded]]>
-            </line>
-            <line>
-              <![CDATA[<p>Tests_HDFC is displayed in page</p>]]>
-            </line>
-            <line>
-              <![CDATA[pgCredentials ui loaded]]>
-            </line>
-            <line>
-              <![CDATA[<p>Update is displayed in page</p>]]>
-            </line>
-            <line>
-              <![CDATA[update pgCredentials page ui loaded]]>
-            </line>
-            <line>
-              <![CDATA[value entered]]>
-            </line>
-            <line>
-              <![CDATA[Clicked on Update]]>
-            </line>
-            <line>
-              <![CDATA[<p>Tests_HDFC is displayed in page</p>]]>
-            </line>
-            <line>
-              <![CDATA[Update was successfull]]>
+              <![CDATA[ConfirmationMsg = Payment successful! :)]]>
             </line>
           </reporter-output>
-        </test-method> <!-- ct_admin_ui -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:ct_admin.CT_Admin@419c5f1a]" name="afterMethod" is-config="true" duration-ms="2" started-at="2020-06-05T03:21:58Z" finished-at="2020-06-05T03:21:58Z">
+        </test-method> <!-- paymentNodeJS_CCAE -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:paymentsUI.Payment_NodeJS_CC_AE@2ea6137]" name="afterMethod" is-config="true" duration-ms="3" started-at="2020-06-05T04:38:45Z" finished-at="2020-06-05T04:38:45Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=ct_admin_ui status=SUCCESS method=CT_Admin.ct_admin_ui()[pri:0, instance:ct_admin.CT_Admin@419c5f1a] output=hq loaded]]]>
+                <![CDATA[[TestResult name=paymentNodeJS_CCAE status=SUCCESS method=Payment_NodeJS_CC_AE.paymentNodeJS_CCAE()[pri:0, instance:paymentsUI.Payment_NodeJS_CC_AE@2ea6137] output=ORACLE Payment service is called]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="closeSelenium()[pri:0, instance:ct_admin.CT_Admin@419c5f1a]" name="closeSelenium" is-config="true" duration-ms="134" started-at="2020-06-05T03:21:58Z" finished-at="2020-06-05T03:21:58Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:paymentsUI.Payment_NodeJS_CC_AE@2ea6137]" name="tearDown" is-config="true" duration-ms="719" started-at="2020-06-05T04:38:45Z" finished-at="2020-06-05T04:38:46Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- closeSelenium -->
-      </class> <!-- ct_admin.CT_Admin -->
-    </test> <!-- Ct-admin UI -->
-  </suite> <!-- Platform Services API -->
+        </test-method> <!-- tearDown -->
+      </class> <!-- paymentsUI.Payment_NodeJS_CC_AE -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

@@ -26,7 +26,7 @@ public class TS_Update_Air_Module extends TripserviceCommon {
 		Thread.sleep(2000);
 		validationforputtrips(resp1);
 		}
-		Thread.sleep(4000);
+		Thread.sleep(8000);
 		DBValidation_airbookingdetails(resp,api_tp_wallet_amt);
 		}
 }

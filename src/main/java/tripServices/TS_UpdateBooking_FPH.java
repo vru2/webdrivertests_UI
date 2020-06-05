@@ -31,7 +31,7 @@ public class TS_UpdateBooking_FPH extends TripserviceCommon {
 			 * resp1=TripserviceHotelsPutcall(param_fph_update,headersForTripserviceputcall(
 			 * ),url1); validationforput(resp1); }
 			 */
-		Thread.sleep(4000);		
+		Thread.sleep(12000);		
 		DBValidation_Txn(resp, "C");	
  }
 }

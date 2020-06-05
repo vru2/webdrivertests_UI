@@ -3,14 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="ct_admin.CT_Admin">
+      <class name="tripServices.TS_Invoice_Generation_Air">
         <methods>
-          <include name="afterMethod"/>
-          <include name="closeSelenium"/>
-          <include name="startSelenium"/>
-          <include name="ct_admin_ui"/>
+          <include name="Tripserviceairputcall"/>
         </methods>
-      </class> <!-- ct_admin.CT_Admin -->
+      </class> <!-- tripServices.TS_Invoice_Generation_Air -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

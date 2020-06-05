@@ -37,7 +37,7 @@ public class TS_Invoice_Generation_Air extends TripserviceCommon {
 			 * resp1=TripserviceHotelsPutcall(params3,headersForTripserviceputcall(),url1);
 			 * validationforput(resp1); }
 			 */
-		Thread.sleep(8000);		
+		Thread.sleep(15000);		
 		DBValidation_Txn(resp, "C");	
 
 		String Host1 = common.value("host");

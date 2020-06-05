@@ -623,8 +623,9 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 				safeSelect(driver,getObjectPayment("PayU_Page_CC_EXP_Month") , "Sep (9)");
 				safeSelect(driver,getObjectPayment("PayU_Page_CC_EXP_Year") , "2020");
 				safeType(driver, getObjectPayment("PayU_Page_CC_CVV"), "123");
+				Thread.sleep(2000);
 				safeClick(driver, getObjectPayment("PayU_Page_CC_Pay_Btn"));
-				
+				Thread.sleep(2000);
 			}
 			if (textPresent(driver, "AXIS SIMULATOR", 1)) {
 				smartType(driver, By.id("password"), "123456");

@@ -16,7 +16,7 @@ public class CT_Admin_Common extends WrapperMethod {
 	public RemoteWebDriver driver = null;
 	static String url="/hq/ct-admin/recordList";
 	String username="varalakshmi.venkateshaiah@cleartrip.com";
-	String pwd="Cleartrip@123";
+	String pwd="Cleartrip@1";
 	String s;
 	
 	
@@ -30,6 +30,7 @@ public class CT_Admin_Common extends WrapperMethod {
 	}
 	public void LoginHQ(RemoteWebDriver driver) throws Exception {
 		driver.get(baseUrl+"/hq");
+		elementPresent_log(driver,By.id("email"),"Email textbox is visible",50);
 		System.out.println("hq loaded");
 		Reporter.log("hq loaded");
 		HQSignIn(driver);

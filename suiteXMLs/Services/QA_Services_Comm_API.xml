@@ -24,7 +24,7 @@
 		       <class name="whatsappService.WhatsappMultilanguageSupport"/> 
 		      <class name="whatsappService.WhatsappOptinFlowStatus"/>
 		      <class name="whatsappService.WhatsappUserMessageWithAttachment"/>
-		      <class name="whatsappService.WhatsappWebhookMessage"/>
+		      <!-- <class name="whatsappService.WhatsappWebhookMessage"/> -->
 		</classes>
 	</test>
 	

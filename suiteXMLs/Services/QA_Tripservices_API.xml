@@ -19,7 +19,7 @@
 		</classes>
 	</test>
 	
-<!-- 	<test name="TripService Updatebooking">
+	<test name="TripService Updatebooking">
 		<classes>
 			<class name="tripServices.TS_UpdateBooking_Air" />
 			<class name="tripServices.TS_UpdateBooking_Hotel" />
@@ -112,7 +112,7 @@
 		<classes>
 			<class name="tripServices.AppNotification" />
 		</classes>
-	</test> -->
+	</test>
 
 </suite> 
 	

@@ -8,43 +8,7 @@
        <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
 
-	
-<test name="Payment UI Pay"  preserve-order="true" parallel="true" >
-    <classes>
-      <class name="paymentsUI.PaymentUI_Captcha"/> 
-      <class name="paymentsUI.PaymentUI_SignIN"/>
-      <class name="paymentsUI.PaymentUI_Validation"/>
-	  <class name="paymentsUI.PaymentsUI_NB"/>
-	  <class name="paymentsUI.PaymentUI_Wallet"/>
-	  <class name="paymentsUI.PaymentUI_PhonePe"/> 
-	  <class name="paymentsUI.PaymentUI_TPW_AmazonPay"/>
-	  
-    </classes>
-</test>
 
-
-<test name="Payment UI Validation"  preserve-order="true" parallel="true" >
-    <classes>
-      <class name="paymentsUI.PaymentUI_AddStoredCardAndValidate"/>
-      <class name="paymentsUI.PaymentUI_ErrorValidationUPIWalletAndNB"/>
-      <class name="paymentsUI.PaymentUI_SuccessfulPaymentMessage"/> 
-      <class name="paymentsUI.PaymentUI_Progress"/> 
-    
-    </classes>
-</test>
-
-
-<test name="Payment UI PWA"  preserve-order="true" parallel="true" >
-    <classes>
-      <class name="paymentsUI.Payment_UI_PWA_CC"/>
-      <class name="paymentsUI.Payment_UI_PWA_NB"/>
-      <class name="paymentsUI.Payment_UI_PWA_TPW_AmazonPay"/> 
-      <class name="paymentsUI.Payment_UI_PWA_UPI"/> 
-    
-    </classes>
-</test>
-
-	
 <test name="NB CCavenueV2"  preserve-order="true" parallel="true" >
     <classes>
       <class name="paymentsUI.Payment_NodeJS_NB_CitiBank"/>
@@ -132,9 +96,11 @@
 </test>
 
 
-<test name="RazorPay CC" preserve-order="true" parallel="true">
+<test name="RazorPay CC NB" preserve-order="true" parallel="true">
     <classes>
-      <class name="paymentsUI.Payment_NodeJS_CC_PG_RazorPay"/>
+      <class name="paymentsUI.Payment_NodeJS_CC_PG_RazorPay"/>   
+      <class name="paymentsUI.Payment_NodeJS_NB_RazorPay"/>
+      
     </classes>
 </test>
 	
@@ -233,6 +199,41 @@
    </classes>
 </test>
 
+
+<test name="Payment UI Pay"  preserve-order="true" parallel="true" >
+    <classes>
+      <class name="paymentsUI.PaymentUI_Captcha"/> 
+      <class name="paymentsUI.PaymentUI_SignIN"/>
+      <class name="paymentsUI.PaymentUI_Validation"/>
+	  <class name="paymentsUI.PaymentsUI_NB"/>
+	  <class name="paymentsUI.PaymentUI_Wallet"/>
+	  <class name="paymentsUI.PaymentUI_PhonePe"/> 
+	  <class name="paymentsUI.PaymentUI_TPW_AmazonPay"/>
+	  
+    </classes>
+</test>
+
+
+<test name="Payment UI Validation"  preserve-order="true" parallel="true" >
+    <classes>
+      <class name="paymentsUI.PaymentUI_AddStoredCardAndValidate"/>
+      <class name="paymentsUI.PaymentUI_ErrorValidationUPIWalletAndNB"/>
+      <class name="paymentsUI.PaymentUI_SuccessfulPaymentMessage"/> 
+      <class name="paymentsUI.PaymentUI_Progress"/> 
+    
+    </classes>
+</test>
+
+
+<test name="Payment UI PWA"  preserve-order="true" parallel="true" >
+    <classes>
+      <class name="paymentsUI.Payment_UI_PWA_CC"/>
+      <class name="paymentsUI.Payment_UI_PWA_NB"/>
+      <class name="paymentsUI.Payment_UI_PWA_TPW_AmazonPay"/> 
+      <class name="paymentsUI.Payment_UI_PWA_UPI"/> 
+    
+    </classes>
+</test>
 
 
 

@@ -308,7 +308,11 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 		} else if (cardType.equalsIgnoreCase("PAYFORT")) {
 			// Reporter.log("Card No : "+platform.value("S2S_Number"));
 			Reporter.log("PG Credentials : " + platform.value("SAFort_PGCred"));
+			elementVisible(driver, getObjectPayment("EnterPayment_Card_Exp_Month"), 10);
+			safeType(driver, getObjectPayment("EnterPayment_Card_Exp_Month"), "12");
+			Thread.sleep(1000);
 			safeClick(driver, getObjectPayment("EnterPayment_Card_PGCredential_Drop_Dwn"));
+			Thread.sleep(1000);
 			safeClickList(driver, getObjectPayment("EnterPayment_Card_PGCredential_Text"),
 					platform.value("SAFort_PGCred"));
 		}
@@ -605,7 +609,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 			safeClick(driver, getObjectPayment("MakePayment_PgCred_S2S_Submit_Btn"));
 		}
 		else if (bankType.equalsIgnoreCase("Noon")) {
-			elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_Noon_Submit_Btn"), 30);
+			elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_Noon_Submit_Btn"), 10);
 			textPresent(driver, "Please submit your Verified by Visa password", 1);
 			elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_Noon_Password_TxtBx"), "Noon pay redirection ", 1);
 			safeType(driver, getObjectPayment("MakePayment_NB_Bank_Noon_Password_TxtBx"),"1234");

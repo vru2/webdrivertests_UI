@@ -16,7 +16,7 @@ public class TS_GET_Finance_AIR extends TripserviceCommon {
 	@Test(groups={"Regression"})
 	public void getTripService() throws IOException, InterruptedException{
 		String url=Service_Url("TRIPSERVICE_GETFINANCE_AIR_CALL");
-		System.out.println(url);
+		Reporter.log(url);
 		Response resp=RestAssured.get(url);
 		Thread.sleep(6000);
 		if(resp.statusCode()==200){

@@ -21,10 +21,10 @@ public class Accounts_Depositaccount extends TripserviceCommon {
 		Response resp1;
 		String url_qa="http://172.17.26.11:9031/api/trips/deposit-account-details?id=46207180";
 		String url1_qa="http://172.17.26.11:9031/api/trips/deposit-account-details?id=46206142";	
-			System.out.println(url_qa);
+			Reporter.log(url_qa);
 	    resp=RestAssured.get(url_qa);
 	    if(resp.statusCode()==200){
-	    	System.out.println(resp.asString());
+	    	Reporter.log(resp.asString());
 	    	Reporter.log(resp.asString());
 		    Reporter.log("Status code " + resp.statusCode());
 			ResponseBody body= resp.getBody();
@@ -50,10 +50,10 @@ public class Accounts_Depositaccount extends TripserviceCommon {
 			assertTrue(false);
 		}
 	    Thread.sleep(2000);
-	    System.out.println(url1_qa);
+	    Reporter.log(url1_qa);
 	    resp1=RestAssured.get(url1_qa);
 	    if(resp1.statusCode()==200){
-	    	System.out.println(resp1.asString());
+	    	Reporter.log(resp1.asString());
 	    	Reporter.log(resp1.asString());
 		    Reporter.log("Status code " + resp1.statusCode());
 			ResponseBody body= resp1.getBody();

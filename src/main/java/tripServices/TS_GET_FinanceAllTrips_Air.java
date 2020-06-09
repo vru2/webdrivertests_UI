@@ -16,6 +16,7 @@ public class TS_GET_FinanceAllTrips_Air extends TripserviceCommon {
 	@Test(groups={"Regression"})
 	public void getTripService() throws IOException{
 		String url=Service_Url("TRIPSERVICE_GETFINANCEALLTRIPS_AIR");
+		Reporter.log(url);
 		Response resp=RestAssured.get(url);
 		if(resp.statusCode()==200){
 			ResponseBody body= resp.getBody();

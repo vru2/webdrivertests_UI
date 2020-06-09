@@ -21,7 +21,8 @@ public class TS_Updatetag_SyncPut extends TripserviceCommon{
 		String Host = common.value("host");
 		if(Host.equalsIgnoreCase("qa2")) {
 			System.out.println(url);
-	    resp=RestAssured.given().
+			Reporter.log(url);
+			resp=RestAssured.given().
 				when().
 				log().all().
 				body(param).

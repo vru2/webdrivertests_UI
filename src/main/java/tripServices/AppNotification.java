@@ -14,6 +14,7 @@ public class AppNotification extends TripserviceCommon {
 	String params="{ \"ccId\": \"5cb5c2fbacfa9d0c0f0adf54\", \"message\": { \"content\": \"Tester notify\", \"title\": \"application_notification\" }, \"tags\": [ \"L2I\" ], \"to\": { \"emails\": [ \"vaishali.baronia@cleartrip.com|__g0be06471c8df4606a03170618905e591\" ], \"objectIds\": [ \"5d16a777b32c4d5119129e98\" ] }}";
 	@Test
 	public void appnotification() {
+		Reporter.log(url);
 		resp=RestAssured.given().
 				when().
 				log().all().

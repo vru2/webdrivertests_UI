@@ -16,10 +16,10 @@ public class Accounts_Notes extends TripserviceCommon {
 		Response resp;
 		Response resp1;
 		String url_qa="http://172.17.26.11:9031/api/trips/notes?id=57046380";
-		System.out.println(url_qa);
+		Reporter.log(url_qa);
 	    resp=RestAssured.get(url_qa);
 	    if(resp.statusCode()==200){
-	    	System.out.println(resp.asString());
+	    	Reporter.log(resp.asString());
 	    	Reporter.log(resp.asString());
 		    Reporter.log("Status code " + resp.statusCode());
 			Assert.assertNotNull("id");

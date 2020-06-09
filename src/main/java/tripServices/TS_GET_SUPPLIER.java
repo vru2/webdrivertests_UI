@@ -16,10 +16,10 @@ public class TS_GET_SUPPLIER extends TripserviceCommon {
 	@Test(groups={"Regression"})
 	public void getSupplier() throws IOException, InterruptedException{
 		String url=Service_Url("TRIPSERVICE_GET_SUPPLIER");
-		System.out.println(url);
+		Reporter.log(url);
 		Response resp=RestAssured.get(url);
 		Thread.sleep(6000);
-		System.out.println(resp.asString());
+		Reporter.log(resp.asString());
 		if(resp.statusCode()==200){
 			ResponseBody body= resp.getBody();
 			String bodyAsString = body.asString();

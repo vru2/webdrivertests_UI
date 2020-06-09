@@ -17,6 +17,7 @@ public class TS_GET_Tripscount_Personid extends TripserviceCommon {
 	@Test(groups={"Regression"})
 	public void getTripService() throws IOException{
 		String url=Service_Url("TRIPSERVICE_GETTRIPCOUNT_CALL");
+		Reporter.log(url);
 		Response resp=RestAssured.get(url);
 		if(resp.statusCode()==200){
 			Reporter.log(resp.body().asString());

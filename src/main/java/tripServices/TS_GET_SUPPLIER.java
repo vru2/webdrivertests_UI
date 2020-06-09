@@ -17,6 +17,7 @@ public class TS_GET_SUPPLIER extends TripserviceCommon {
 	public void getSupplier() throws IOException, InterruptedException{
 		String url=Service_Url("TRIPSERVICE_GET_SUPPLIER");
 		System.out.println(url);
+		Reporter.log(url);
 		Response resp=RestAssured.get(url);
 		Thread.sleep(6000);
 		System.out.println(resp.asString());

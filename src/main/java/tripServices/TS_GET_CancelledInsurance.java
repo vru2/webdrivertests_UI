@@ -47,6 +47,7 @@ public class TS_GET_CancelledInsurance extends TripserviceCommon {
 				      headers(headersForTripservicepostcall()).
 				      get("http://172.17.26.11:9031/trips/cancelledInsurances?date=09-26-2019");
 		    System.out.println(resp.asString());
+		    Reporter.log(resp.asString());
 			if(resp.statusCode()==200){
 			Assert.assertNotNull("refund_id");
 			}else{

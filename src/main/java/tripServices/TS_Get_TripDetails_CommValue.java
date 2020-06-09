@@ -16,7 +16,8 @@ public class TS_Get_TripDetails_CommValue extends TripserviceCommon {
 	public void phoneasCommunicationValue() throws Exception{
 		Response resp;
 		String url =  Service_Url("TRIPSERVICE_GETCOMMU_CALL");
-        resp=RestAssured.get(url+"/PHONE/1234567890?size=20&dbFetchType=REAL_TIME");
+        Reporter.log(url);
+		resp=RestAssured.get(url+"/PHONE/1234567890?size=20&dbFetchType=REAL_TIME");
         if(resp.statusCode()==200){
 			Reporter.log("Status code : " + resp.statusCode());
 			ResponseBody body= resp.getBody();
@@ -38,6 +39,7 @@ public class TS_Get_TripDetails_CommValue extends TripserviceCommon {
 		Response resp1;
 		Thread.sleep(2000);
 	    String url1=Service_Url("TRIPSERVICE_GETCOMMU_CALL");
+	    Reporter.log(url1);
         resp1=RestAssured.get(url1+"/EMAIL/testcltp6@gmail.com?size=20&dbFetchType=REAL_TIME");
        System.out.println(resp1.asString());
         if(resp1.statusCode()==200){

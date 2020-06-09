@@ -21,8 +21,7 @@ public class TS_TripLockExpiry extends TripserviceCommon {
 		String Host = common.value("host");
 		if(Host.equalsIgnoreCase("qa2")) {
 		System.out.println(url);
-		Reporter.log(url);
-		resp=RestAssured.given().
+		 resp=RestAssured.given().
 					when().
 					log().all().
 					headers("Accept", "application/json").

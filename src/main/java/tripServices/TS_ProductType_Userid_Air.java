@@ -16,7 +16,6 @@ public class TS_ProductType_Userid_Air extends TripserviceCommon{
 	public void producttype_userid_air() {
 		Response resp;
 		String url="http://172.17.26.11:9031/api/trips/AIR/41683432?startDateTime=2020-03-01T00:00:00.000+0530&endDateTime=2020-04-08T12:00:00.000+0530";
-		Reporter.log(url);
 		resp=RestAssured.get(url);
 		System.out.println(resp.asString());
 		if(resp.statusCode()==200)

@@ -17,8 +17,7 @@ public class Eventbus_API extends TripserviceCommon{
 	String params="{\"eventContent\":\"test"+s+"\",\"eventName\": \"test\",\"eventReference\":\"test\"}";
 	@Test
 	public void eventbus() {
-		Reporter.log(url);
-		resp=RestAssured.given().
+	resp=RestAssured.given().
 		 when().
 		 log().all().
 		 body(params).

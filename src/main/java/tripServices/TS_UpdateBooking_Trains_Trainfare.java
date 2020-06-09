@@ -21,7 +21,6 @@ public class TS_UpdateBooking_Trains_Trainfare  extends TripserviceCommon {
 	{
 		Response resp;
 		String url =  Service_Url("TRIPSERVICE_POST_CALL");
-		Reporter.log(url);
 		resp=TripservicePostcall(params6,headersForTripservicepostcall(),url);
 		validation(resp);
 		ResponseBody body= resp.getBody();
@@ -60,7 +59,6 @@ public class TS_UpdateBooking_Trains_Trainfare  extends TripserviceCommon {
         System.out.println(updatetrainfare);
 		if(Host.equalsIgnoreCase("qa2")) {
 		String url1 = ("http://172.17.26.11:9031/trips/"+tripref+"/train-bookings/update-booking");
-		Reporter.log(url1);
 		resp1=TripserviceHotelsPutcall(updatetrainfare,headersForTripserviceputcall(),url1);
 		validationforputtrains(resp1);	
 		Thread.sleep(3000);

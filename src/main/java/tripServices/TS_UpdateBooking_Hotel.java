@@ -3,7 +3,6 @@ package tripServices;
 import java.io.IOException;
 import java.sql.SQLException;
 
-import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
@@ -15,8 +14,6 @@ public class TS_UpdateBooking_Hotel extends TripserviceCommon {
 	{
 		Response resp;
 		String url =  Service_Url("TRIPSERVICE_POST_CALL");
-		
-		Reporter.log(url);
 		resp=TripservicePostcall(params1,headersForTripservicepostcall(),url);
 		System.out.println(resp.asString());
 		validationforputcall(resp); 
@@ -25,7 +22,6 @@ public class TS_UpdateBooking_Hotel extends TripserviceCommon {
 		if(Host.equalsIgnoreCase("qa2")) {
 		String url1=("http://172.17.26.11:9031/trips/"+tripref+"/hotel-bookings/update-booking");
 		Thread.sleep(2000);
-		Reporter.log(url1);
 		resp1=TripserviceHotelsPutcall(params4,headersForTripserviceputcall(),url1);
 		validationforput(resp1);
 			

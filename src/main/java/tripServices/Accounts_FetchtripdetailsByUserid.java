@@ -18,7 +18,6 @@ public class Accounts_FetchtripdetailsByUserid extends TripserviceCommon{
 		String url_qa="http://172.17.26.11:9031/api/trips/fetch-trip-details?userId=41697596&size=10";
 		String url1_qa="http://172.17.26.11:9031/api/trips/fetch-trip-details?userId=41656838&page=4&size=10";
 			System.out.println(url_qa);
-			Reporter.log(url_qa);
 	    resp=RestAssured.get(url_qa);
 	    if(resp.statusCode()==200){
 	    	System.out.println(resp.asString());
@@ -37,7 +36,6 @@ public class Accounts_FetchtripdetailsByUserid extends TripserviceCommon{
 		}
 	    Thread.sleep(2000);
 	    System.out.println(url1_qa);
-	    Reporter.log(url1_qa);
 	    resp1=RestAssured.get(url1_qa);
 	    if(resp1.statusCode()==200){
 	    	System.out.println(resp1.asString());

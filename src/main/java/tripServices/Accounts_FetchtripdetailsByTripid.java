@@ -22,7 +22,6 @@ public class Accounts_FetchtripdetailsByTripid extends TripserviceCommon {
 		String url_local="http://172.17.26.11:9031/api/trips/fetch-trip-details?tripId=46089500&size=1";
 		String url_train="http://172.17.26.11:9031/api/trips/fetch-trip-details?tripId=45967650&size=1";
 			System.out.println(url_air);
-			Reporter.log(url_air);
 	    resp=RestAssured.get(url_air);
 	    if(resp.statusCode()==200){
 	    	System.out.println(resp.asString());
@@ -39,7 +38,6 @@ public class Accounts_FetchtripdetailsByTripid extends TripserviceCommon {
 		}
 	    Thread.sleep(2000);
 	    System.out.println(url_hotel);
-	    Reporter.log(url_hotel);
 	    resp1=RestAssured.get(url_hotel);
 	    if(resp1.statusCode()==200){
 	    	System.out.println(resp1.asString());
@@ -57,7 +55,6 @@ public class Accounts_FetchtripdetailsByTripid extends TripserviceCommon {
 		
 		 Thread.sleep(2000);
 		    System.out.println(url_local);
-		    Reporter.log(url_local);
 		    resp2=RestAssured.get(url_local);
 		    if(resp2.statusCode()==200){
 		    	System.out.println(resp2.asString());
@@ -74,7 +71,6 @@ public class Accounts_FetchtripdetailsByTripid extends TripserviceCommon {
 			}
 	 Thread.sleep(2000);
 	    System.out.println(url_train);
-	    Reporter.log(url_train);
 	    resp3=RestAssured.get(url_train);
 	    if(resp3.statusCode()==200){
 	    	System.out.println(resp3.asString());

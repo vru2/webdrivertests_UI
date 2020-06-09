@@ -22,7 +22,6 @@ public class Accounts_tagmaster extends TripserviceCommon{
 		String url2="http://172.17.26.11:9031/api/trips/tag-master?tagMasterId=233226280";
 		String url3="http://172.17.26.11:9031/api/trips/tag-master?tagMasterId=233266298";
 		System.out.println(url);
-		Reporter.log(url);
 	    resp=RestAssured.get(url);
 	    if(resp.statusCode()==200){
 	    	System.out.println(resp.asString());
@@ -44,7 +43,6 @@ public class Accounts_tagmaster extends TripserviceCommon{
 		}
 	    
 	    System.out.println(url1);
-	    Reporter.log(url1);
 	    resp1=RestAssured.get(url1);
 	    if(resp1.statusCode()==200){
 	    	System.out.println(resp1.asString());
@@ -70,7 +68,6 @@ public class Accounts_tagmaster extends TripserviceCommon{
 			assertTrue(false);
 		}
 	    System.out.println(url2);
-	    Reporter.log(url2);
 	    resp2=RestAssured.get(url2);
 	    if(resp2.statusCode()==200){
 	    	System.out.println(resp2.asString());
@@ -96,7 +93,6 @@ public class Accounts_tagmaster extends TripserviceCommon{
 			assertTrue(false);
 		}
 	    System.out.println(url3);
-	    Reporter.log(url3);
 	    resp3=RestAssured.get(url3);
 	    if(resp3.statusCode()==200){
 	    	System.out.println(resp3.asString());

@@ -15,14 +15,12 @@ public class TS_Invoice_Generation_Local extends TripserviceCommon {
 	{
 		Response resp;
 		String url =  Service_Url("TRIPSERVICE_POST_CALL");
-	     Reporter.log(url);
 		resp=TripservicePostcallinvoicelocal(invoice_local,headersForTripservicepostcall(),url);
 		validationforputcall(resp);		
 		Response resp1;
 		String Host = common.value("host");
 		if(Host.equalsIgnoreCase("qa2")) {
 			String url1=("http://172.17.26.11:9031/trips/"+tripref+"/local-bookings/update-booking");
-			Reporter.log(url1);
 			resp1=TripserviceHotelsPutcall(params5,headersForTripserviceputcall(),url1);
 			validationforput(resp1);
 			

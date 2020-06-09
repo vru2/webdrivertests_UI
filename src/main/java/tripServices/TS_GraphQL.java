@@ -2,7 +2,6 @@ package tripServices;
 
 import java.io.IOException;
 
-import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
@@ -14,7 +13,6 @@ public class TS_GraphQL extends TripserviceCommon{
 		String url =  Service_Url("TRIPSERVICE_POST_GRAPHQL");
 		String Host = common.value("host");
 		if(Host.equalsIgnoreCase("qa2")) {
-			Reporter.log(url);
 			resp=TripserviceGraphQL(graphql_qa,headersForTripservicepostgraphql(),url);
 			System.out.println(resp.asString());
 			validationforgraphql(resp);

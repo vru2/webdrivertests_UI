@@ -16,7 +16,6 @@ public class TS_POST_EmailByTxnId extends TripserviceCommon {
 	@Test(groups={"Regression"})
 	public void getEmail() throws IOException, InterruptedException{
 		String url=Service_Url("TRIPSERVICE_GET_EMAIL");
-	    Reporter.log(url);
 		Response resp=RestAssured.post(url);
 		System.out.println(resp.asString());
 		if(resp.statusCode()==200){

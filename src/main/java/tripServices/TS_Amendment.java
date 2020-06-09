@@ -16,14 +16,12 @@ public class TS_Amendment extends TripserviceCommon {
 	{
 		Response resp;
 		String url =  Service_Url("TRIPSERVICE_POST_CALL");
-		Reporter.log(url);
 		resp=TripservicePostcall(params,headersForTripservicepostcall(),url);
 		validationforputcall(resp);		
 		Response resp1;
 		String Host = common.value("host");
 		if(Host.equalsIgnoreCase("qa2")) {
 		String url1 = ("http://172.17.26.11:9031/trips/"+tripref+"/air-bookings/update-booking");
-		Reporter.log(url1);
 		resp1=TripserviceHotelsPutcall(params3,headersForTripserviceputcall(),url1);
 		validationforput(resp1);	
 	} else if(Host.equalsIgnoreCase("dev")) {
@@ -63,13 +61,11 @@ public class TS_Amendment extends TripserviceCommon {
 		Reporter.log(amendlogbooking);
 		if(Host.equalsIgnoreCase("qa2")) {
 			String url1 = ("http://172.17.26.11:9031/trips/amend");
-			Reporter.log(url1);
 			resp2=TripservicePostcall(amendlogbooking,headersForTripserviceputcall(),url1);
 			System.out.println(resp2.asString());
 			validationforput(resp2);
 			Thread.sleep(2000);
 			String url2 = ("http://172.17.26.11:9031/trips/amend/"+tripref+"/air-bookings/update-booking");
-			Reporter.log(url2);
 			resp3=TripserviceHotelsPutcall(amendupdatebooking,headersForTripserviceputcall(),url2);
 			System.out.println(resp3.asString());
 			validationforput(resp3);	

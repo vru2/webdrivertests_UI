@@ -19,7 +19,6 @@ public class Accounts_FetchtripdetailsByPersonid extends TripserviceCommon{
 		String url1_qa="http://172.17.26.11:9031/api/trips/fetch-trip-details?personId=41690278&size=10";
 		String Host = common.value("host");
 	    resp=RestAssured.get(url_qa);
-	    Reporter.log(url_qa);
 	    if(resp.statusCode()==200){
 	    	System.out.println(resp.asString());
 	    	Reporter.log(resp.asString());
@@ -37,7 +36,6 @@ public class Accounts_FetchtripdetailsByPersonid extends TripserviceCommon{
 		}
 	    Thread.sleep(2000);
 	    System.out.println(url1_qa);
-	    Reporter.log(url1_qa);
 	    resp1=RestAssured.get(url1_qa);
 	    if(resp1.statusCode()==200){
 	    	System.out.println(resp1.asString());

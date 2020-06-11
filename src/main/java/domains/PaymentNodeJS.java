@@ -148,7 +148,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 			add_GV(driver, "");
 		} else if (payType.equalsIgnoreCase("GVCC")) {
 			add_GV(driver, "");
-			select_Card(driver);
+			//select_Card(driver);
 			paymentNodeJS_EnterCard_Details(driver, cardType);
 		} else if (payType.equalsIgnoreCase("GVCCWALL")) {
 			add_GV(driver, "");
@@ -239,7 +239,8 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 	public void paymentNodeJS_EnterCard_Details(RemoteWebDriver driver, String cardType) throws Exception {
 		if(cardType.equalsIgnoreCase("MASTER")){
 			Reporter.log("Master card selected");
-			elementPresent(driver, getObjectPayment("EnterPayment_Card_Exp_Month"));
+			elementVisible(driver, getObjectPayment("EnterPayment_Card_Exp_Month"),5);
+			Thread.sleep(2000);
 			safeType(driver, getObjectPayment("EnterPayment_Card_Exp_Month"), "12");
 		}
 		if (cardType.equalsIgnoreCase("AMEX")) {

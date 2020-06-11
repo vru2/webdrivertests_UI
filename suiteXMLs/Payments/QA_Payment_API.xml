@@ -72,11 +72,6 @@
     </classes>
 </test>
 
-<test name="API Refund"  preserve-order="true" parallel="true">
-    <classes>
-      <class name="paymentsAPI.API_Refund_CC"/>
-    </classes>
-</test>
 
 <test name="API OLA" preserve-order="true" parallel="true">
     <classes>
@@ -112,10 +107,10 @@
       <class name="paymentsAPI.API_EW_Validate"/>  
       <class name="paymentsAPI.API_EW_OptIN"/>    
 <!--       <class name="paymentsAPI.API_EW_Pay_Multi"/>    
-      <class name="paymentsAPI.API_EW_Pay_Multi_V3"/>    -->
-      <class name="paymentsAPI.API_EW_Pay_V3"/>       
-      <class name="paymentsAPI.API_EW_Add_Amount"/>       
-      <class name="paymentsAPI.API_EW_Pay_AutoDebit"/>    
+      <class name="paymentsAPI.API_EW_Pay_Multi_V3"/>    
+      <class name="paymentsAPI.API_EW_Pay_V3"/>        -->
+      <class name="paymentsAPI.API_EW_Add_Amount"/>       <!-- 
+      <class name="paymentsAPI.API_EW_Pay_AutoDebit"/>     -->
       <class name="paymentsAPI.API_EW_Summary"/>  
          
    </classes>
@@ -218,6 +213,13 @@
       <class name="paymentsAPI.API_PayU_OTPResend"/> 
     </classes>
 </test>
+
+<test name="API Refund"  preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_Refund_CC"/>
+    </classes>
+</test>
+
  -->
 
 </suite> 

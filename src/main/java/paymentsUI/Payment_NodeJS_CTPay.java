@@ -23,7 +23,7 @@ import domains.PaymentNodeJS;
 	   driver.get(baseUrl);	   
 	   paymentNodeJS_Select_Payment(driver, "CTP", "", "");
 	   paymentNodeJS_Make_Payment(driver, "CTP", "");
-	   paymentNodeJS_ConfirmationPage(driver, "CTP", "","Ct pay ");
+	  // paymentNodeJS_ConfirmationPage(driver, "CTP", "","Ct pay ");
 	  // paymentNodeJS_ConfirmationPage(driver, "CTP", "","Ct pay  ");
 	  }
   }

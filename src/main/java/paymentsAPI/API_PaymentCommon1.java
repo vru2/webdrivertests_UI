@@ -1579,7 +1579,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 	public Response validation(String payType, Response resp){
 		Reporter.log("Response body "+payType +" : "+ resp.body().asString());
-		System.out.println("Response body "+payType +" : "+ resp.body().asString());
+		//System.out.println("Response body "+payType +" : "+ resp.body().asString());
 		int statusCode = resp.getStatusCode();	
 		Reporter.log("statusCode: " + statusCode);
 		JsonPath jsonPathEvaluator = resp.jsonPath();
@@ -1673,13 +1673,13 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			Reporter.log("paymentType is " +paymenttype);
 			Reporter.log("Response Message " +responsemsg);
 		
-			if(!paymenttype.equals("[CS]"))
+			/*if(!paymenttype.equals("[CS]"))
 			{
 				Assert.assertTrue(false);
 			}
 			if(!responsemsg.equals("[Validation successful]")) {
 				Assert.assertTrue(false);
-			}
+			}*/
 		}
 		else if(payType.equalsIgnoreCase("CSPay")) {
 			String paymenttype = jsonPathEvaluator.getString("payment_type");

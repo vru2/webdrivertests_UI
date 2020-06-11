@@ -21,7 +21,7 @@ import domains.PaymentNodeJS;
        driver.manage().deleteAllCookies(); 
 	   driver.get(baseUrl);	   
 	   paymentNodeJS_Select_Payment(driver, "CURRENCY", "AED", "");
-	   paymentNodeJS_Select_Payment(driver, "CTCC", "NOHOMEPAGE", "");
+	//   paymentNodeJS_Select_Payment(driver, "CTCC", "NOHOMEPAGE", "");
 	   paymentNodeJS_Make_Payment(driver, "CC", "");
 	   paymentNodeJS_ConfirmationPage(driver, "CC", "","CT Wallet + CC ");
   }

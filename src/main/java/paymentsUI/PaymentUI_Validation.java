@@ -40,14 +40,8 @@ public class PaymentUI_Validation extends PaymentNodeJS{
 	}
 
 	@Test(priority=1)
-	public void getPayURL() throws Exception{
-		validation_PaymentUI("BookApp/GetPay", resp);
-
-	}
-
-	@Test(priority=2, dependsOnMethods={"getPayURL"})
 	public void firePaymentURLandValidatePaymentModes() throws Exception{
-		try {
+
 			driver=(RemoteWebDriver) getDriver(driver);
 			driver.manage().deleteAllCookies(); 
 			driver.get(Url);
@@ -66,19 +60,13 @@ public class PaymentUI_Validation extends PaymentNodeJS{
 			validatePaymentModes(driver,PaymentUI_CommonUtilities.paymentModeDC,PaymentUI_CommonUtilities.paymentModexpath);
 			validatePaymentModes(driver,PaymentUI_CommonUtilities.paymentModeNB,PaymentUI_CommonUtilities.paymentModexpath);
 			validatePaymentModes(driver,PaymentUI_CommonUtilities.paymentModeUPI,PaymentUI_CommonUtilities.paymentModexpath);
-			validatePaymentModes(driver,PaymentUI_CommonUtilities.paymentModeADCB,PaymentUI_CommonUtilities.paymentModexpath);
-		}
-
-		catch(Exception e) {
-			Reporter.log("Exception is" +e);
-			Assert.assertTrue(false);
-		}
+			//validatePaymentModes(driver,PaymentUI_CommonUtilities.paymentModeADCB,PaymentUI_CommonUtilities.paymentModexpath);
+		
 
 	}
 
-	@Test(priority=3)
+	@Test(priority=2)
 	public void emptyCreditCardErrorValidation() throws Exception{
-		try {	
 			waitForElementVisibility(driver,By.xpath("//p[text()='Credit Card']"), 15);
 			click(driver, PaymentUI_CommonUtilities.creditCardPaymentxpath);
 			storedCardCheckbox(driver,PaymentUI_CommonUtilities.storedCardCheckbox);
@@ -90,19 +78,13 @@ public class PaymentUI_Validation extends PaymentNodeJS{
 			validateErrors(driver,PaymentUI_CommonUtilities.errortextCvv,PaymentUI_CommonUtilities.cardCvverrorxpath);
 			validateErrors(driver,PaymentUI_CommonUtilities.errortextExpiryMonth,PaymentUI_CommonUtilities.expiryerrorxpath);
 			validateErrors(driver,PaymentUI_CommonUtilities.errortextExpiryYear,PaymentUI_CommonUtilities.expiryerrorxpath);
-		}
-
-		catch(Exception e) {
-			Reporter.log("Exception is" +e);
-			Assert.assertTrue(false);
-		}
-
+		
 	}
 
-	@Test(priority=4)
+	@Test(priority=3)
 	public void emptyDebitCardErrorValidation() throws Exception{
 
-		try {
+	
 			waitForElementVisibility(driver,By.xpath("//p[text()='Debit Card']"), 15);
 			click(driver,PaymentUI_CommonUtilities.debitCardPaymentxpath);
 			convenienceText(driver,PaymentUI_CommonUtilities.convenienceTextxpath);
@@ -113,16 +95,11 @@ public class PaymentUI_Validation extends PaymentNodeJS{
 			validateErrors(driver,PaymentUI_CommonUtilities.errortextCvv,PaymentUI_CommonUtilities.cardCvverrorxpath);
 			validateErrors(driver,PaymentUI_CommonUtilities.errortextExpiryMonth,PaymentUI_CommonUtilities.expiryerrorxpath);
 			validateErrors(driver,PaymentUI_CommonUtilities.errortextExpiryYear,PaymentUI_CommonUtilities.expiryerrorxpath);	
-		}
-
-		catch(Exception e) {
-			Reporter.log("Exception is" +e);
-			Assert.assertTrue(false);
-		}
+		
 
 	}
 
-	@Test(priority=5, enabled=false)
+	@Test(priority=4, enabled=false)
 	public void footerLinks() throws Exception{
 
 		/*		validateFooterLink(driver,PaymentUICommonUtilities.footerOne,PaymentUICommonUtilities.footerxpath);
@@ -142,8 +119,8 @@ public class PaymentUI_Validation extends PaymentNodeJS{
 
 
 	@Test(priority=11)
-	public void secondRetryMakePayment() throws InterruptedException {
-		try {
+	public void secondRetryMakePayment() throws Exception {
+		
 			
 			resp = payUIget("BookApp/GetPay","");
 			qaUrl = qaurl;
@@ -171,19 +148,15 @@ public class PaymentUI_Validation extends PaymentNodeJS{
 				//validateNoErrorForValidCCDetails(driver,PaymentUI_CommonUtilities.errorTextInvalidCCDetailsxpath);
 			}
 
-		}
+		
 
-		catch(Exception e) {
-			Reporter.log("Exception is" +e);
-			Assert.assertTrue(false);
-		}
+		
 	}
 
 
 	@Test(priority=6)
-	public void authenticateVariousDetailsLoggedin(){
+	public void authenticateVariousDetailsLoggedin() throws Exception{
 
-		try {
 			//Commenting Out as most of these fields are removed
 			//validateSectionDetails(driver,PaymentUI_CommonUtilities.sectionTripDetails,PaymentUI_CommonUtilities.sectionxpath);
 			//validateSectionDetails(driver,PaymentUI_CommonUtilities.sectionTravellers,PaymentUI_CommonUtilities.sectionxpath);
@@ -202,26 +175,20 @@ public class PaymentUI_Validation extends PaymentNodeJS{
 			//validatetriptravellersanditineraryDetails(driver,PaymentUI_CommonUtilities.triptravelleranditinerarysectionfieldClass,PaymentUI_CommonUtilities.triptravelleranditinerarysectionfieldxpath);
 			//validatetriptravellersanditineraryDetails(driver,PaymentUI_CommonUtilities.triptravelleranditinerarysectionfieldQuota,PaymentUI_CommonUtilities.triptravelleranditinerarysectionfieldxpath);
 			//validatetriptravellersanditineraryDetails(driver,PaymentUI_CommonUtilities.triptravelleranditinerarysectionfieldUpdatedAvailability,PaymentUI_CommonUtilities.triptravelleranditinerarysectionfieldxpath);
-			validateIfPresent(driver,PaymentUI_CommonUtilities.showFareBreakUp);
+			/*validateIfPresent(driver,PaymentUI_CommonUtilities.showFareBreakUp);
 			click(driver,PaymentUI_CommonUtilities.showFareBreakUp);
 			validatepricingSectionDetails(driver,PaymentUI_CommonUtilities.pricingsectionfieldOtherRailwayCharges,PaymentUI_CommonUtilities.pricingsectionfieldxpath);
 			validatepricingSectionDetails(driver,PaymentUI_CommonUtilities.pricingsectionfieldAgentServiceCharges,PaymentUI_CommonUtilities.pricingsectionfieldxpath);
 			//validatepricingSectionDetails(driver,PaymentUI_CommonUtilities.pricingsectionfieldGST,PaymentUI_CommonUtilities.pricingsectionfieldxpath);
-			validatepricingSectionDetails(driver,PaymentUI_CommonUtilities.pricingsectionfieldConvenienceFee,PaymentUI_CommonUtilities.pricingsectionfieldxpath);
+			validatepricingSectionDetails(driver,PaymentUI_CommonUtilities.pricingsectionfieldConvenienceFee,PaymentUI_CommonUtilities.pricingsectionfieldxpath);*/
 			//validatepricingSectionDetails(driver,PaymentUI_CommonUtilities.pricingsectionfieldInuranceCharge,PaymentUI_CommonUtilities.pricingsectionfieldxpath);
 			//validatepricingSectionDetails(driver,PaymentUI_CommonUtilities.pricingsectionfieldRefundType,PaymentUI_CommonUtilities.pricingsectionfieldxpath);
-		}
-
-		catch(Exception e) {
-			Reporter.log("Exception is" +e);
-			Assert.assertTrue(false);
-		}
+	
 	}
 
 	@Test(priority=7)
 	public void licenseAgreementPolicy() throws Exception{
 
-		try {
 			click(driver,PaymentUI_CommonUtilities.licenseAgreementxpath);
 			validateErrorWhenLicenseCheckboxIsUnchecked(driver,PaymentUI_CommonUtilities.licenseAgreementxpath);
 			Thread.sleep(5000);
@@ -229,17 +196,12 @@ public class PaymentUI_Validation extends PaymentNodeJS{
 			validateLicenseAgreementPolicyLinks(driver,PaymentUI_CommonUtilities.licenseAgreementFieldBookingPolicy,PaymentUI_CommonUtilities.licenseAgreementFieldxpath);
 			validateLicenseAgreementPolicyLinks(driver,PaymentUI_CommonUtilities.licenseAgreementFieldPrivacyPolicy,PaymentUI_CommonUtilities.licenseAgreementFieldxpath);
 			validateLicenseAgreementPolicyLinks(driver,PaymentUI_CommonUtilities.licenseAgreementFieldTermsAndConditions,PaymentUI_CommonUtilities.licenseAgreementFieldxpath);
-		}
-
-		catch(Exception e) {
-			Reporter.log("Exception is" +e);
-			Assert.assertTrue(false);
-		}
+		
 	}
 
 	@Test(priority=8)
 	public void imagesAndText() throws InterruptedException{
-		try {
+		
 			validateIfImagesArePresent(driver,PaymentUI_CommonUtilities.imagesXpath,PaymentUI_CommonUtilities.imageNameVisa);
 			validateIfImagesArePresent(driver,PaymentUI_CommonUtilities.imagesXpath,PaymentUI_CommonUtilities.imageNameMasterCard);
 			click(driver,PaymentUI_CommonUtilities.creditCardPaymentxpath);
@@ -249,18 +211,12 @@ public class PaymentUI_Validation extends PaymentNodeJS{
 			validateIfPresent(driver,PaymentUI_CommonUtilities.irctcLogoxpath);
 			validateIfPresent(driver,PaymentUI_CommonUtilities.totalAmountWithTaxXpath);
 			validateIfPresent(driver,PaymentUI_CommonUtilities.storedCardTextXpath);
-		}
-
-		catch(Exception e) {
-			Reporter.log("Exception is" +e);
-			Assert.assertTrue(false);
-		}
+		
 
 	}
 
 	@Test(priority=9)
-	public void validateInvalidExpiry() {
-		try {
+	public void validateInvalidExpiry() throws Exception {
 			waitForElementVisibility(driver,By.xpath("//p[text()='Credit Card']"), 15);
 			fillValidAmexCreditCardDetails(driver,PaymentUI_CommonUtilities.cardNumberxpath,PaymentUI_CommonUtilities.cardHolderNamexpath,PaymentUI_CommonUtilities.expiryMonthxpath,PaymentUI_CommonUtilities.expiryYearxpath,PaymentUI_CommonUtilities.cvvNumberxpath);
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -272,17 +228,12 @@ public class PaymentUI_Validation extends PaymentNodeJS{
 			waitForElementVisibility(driver,By.xpath("//div[text()='Oops! Your payment failed. If you were charged, any amount deducted will be reversed automatically.']"), 20);
 			validateIfPresent(driver, PaymentUI_CommonUtilities.invalid3DFailureXpath);
 			validateIfPresent(driver,PaymentUI_CommonUtilities.makePaymentbutton);
-		}
-		catch(Exception e) {
-			Reporter.log("Exception is" +e);
-			Assert.assertTrue(false);
-		}
+		
 	}
 	
 	
 	@Test(priority=10)
-	public void validateInvalidCvv() {
-		try {
+	public void validateInvalidCvv() throws Exception {
 			elementVisible(driver, By.xpath("(//label[@class='checkbox-round'])[1]"), 10);
 			List<WebElement> walletCheckBoxList = driver.findElements(By.xpath("(//label[@class='checkbox-round'])[1]"));
 			if(walletCheckBoxList.size()!=0) {
@@ -300,11 +251,7 @@ public class PaymentUI_Validation extends PaymentNodeJS{
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			validateIfPresent(driver,PaymentUI_CommonUtilities.paymentSuccessHeaderTextXpath);
 		
-		}
-		catch(Exception e) {
-			Reporter.log("Exception is" +e);
-			Assert.assertTrue(false);
-		}
+		
 	}
 
 	@AfterMethod (alwaysRun = true)

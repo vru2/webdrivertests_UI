@@ -34,7 +34,6 @@ public class Accounts_CreateUpdate_Tagmaster extends TripserviceCommon {
 	    		
 	    if(resp.statusCode()==200){
 	    	Reporter.log(resp.asString());
-	    	Reporter.log(resp.asString());
 		    Reporter.log("Status code " + resp.statusCode());
 			ResponseBody body= resp.getBody();
 			String bodyAsString = body.asString();

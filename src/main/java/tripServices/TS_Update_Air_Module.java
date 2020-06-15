@@ -1,5 +1,6 @@
 package tripServices;
 
+import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import com.jayway.restassured.path.json.JsonPath;
@@ -11,6 +12,7 @@ public class TS_Update_Air_Module extends TripserviceCommon {
 	public void airPostCall() throws Exception{
 		Response resp;
 		String url =  Service_Url("TRIPSERVICE_POST_CALL");
+		Reporter.log(url);
 		resp=TripservicePostcall(params,headersForTripservicepostcall(),url);
 		Validation(resp);
 		JsonPath jsonPath = new JsonPath(resp.asString());
@@ -22,11 +24,12 @@ public class TS_Update_Air_Module extends TripserviceCommon {
 		String Host = common.value("host");
 		if((Host.equalsIgnoreCase("qa2"))) {
 		String url1=("http://172.17.26.11:9031/trips");
+		Reporter.log(url1);
 		resp1=TripserviceUpdateModule(params11,headersForTripserviceputtripscall(),url1);
 		Thread.sleep(2000);
 		validationforputtrips(resp1);
 		}
-		Thread.sleep(4000);
+		Thread.sleep(8000);
 		DBValidation_airbookingdetails(resp,api_tp_wallet_amt);
 		}
 }

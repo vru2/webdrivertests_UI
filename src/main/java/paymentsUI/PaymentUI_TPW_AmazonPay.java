@@ -38,24 +38,16 @@ public class PaymentUI_TPW_AmazonPay extends PaymentNodeJS{
 		
 	}
 
-	@Test(priority=1)
-	public void getPayURL() throws Exception{
-		validation_PaymentUI("BookApp/GetPay", resp);
+	
 
-	}
-
-	@Test(priority=2, dependsOnMethods={"getPayURL"})
+	@Test()
 	public void amazonPayPayment() throws Exception{
-		try {
+			validation_PaymentUI("BookApp/GetPay", resp);
+	
 			driver=(RemoteWebDriver) getDriver(driver);
 			driver.manage().deleteAllCookies(); 
-			driver.get(Url);
-			//driver.manage().addCookie(cookieName);
-			//refreshPage(driver);
-			Thread.sleep(6000);
-			//driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			//waitForElementVisibility(driver,By.xpath("//input[@type='submit']"), 15);
-			
+			driver.get(Url);			
+			elementPresent(driver,By.xpath(PaymentUI_CommonUtilities.paymentModes), 10);
 			elementVisible(driver,PaymentUI_CommonUtilities.paymentModes, 10);
 			validatePaymentURLLoad(driver,Url);
 			validatePaymentModes(driver,PaymentUI_CommonUtilities.paymentModeWallet,PaymentUI_CommonUtilities.paymentModexpath);
@@ -73,17 +65,10 @@ public class PaymentUI_TPW_AmazonPay extends PaymentNodeJS{
 			safeType(driver,By.xpath("//input[@name='email']"), dataFile.value("PaymentUI_AmazonPay_Email"));
 			safeType(driver,By.xpath("//input[@name='password']"), dataFile.value("PaymentUI_AmazonPay_Pwd"));
 			click(driver,PaymentUI_CommonUtilities.amazonPaySubmitButtonXpath);
-			//waitForElementVisibility(driver,By.xpath("//h1[contains(text(),'Authentication required')]"),10);
-			//validateIfPresent(driver,PaymentUI_CommonUtilities.amazonPayOTPPageXpath);
 			driver.get(Url);
-			//Thread.sleep(6000);
-			waitForElementVisibility(driver,By.xpath("//h1[text()='Payment in progress']"),20);
-			validateIfPresent(driver,PaymentUI_CommonUtilities.paymentInProgressHeaderXpath);
-		}
-		catch(Exception e) {
-			Reporter.log("Exception is" +e);
-			Assert.assertTrue(false);
-		}
+			/*waitForElementVisibility(driver,By.xpath("//h1[text()='Payment in progress']"),20);
+			validateIfPresent(driver,PaymentUI_CommonUtilities.paymentInProgressHeaderXpath);*/
+		
 	}
 
 	@AfterMethod (alwaysRun = true)

@@ -14,6 +14,7 @@ public class TS_GET_Trips_ItineraryId extends TripserviceCommon {
 	@Test(groups={"Regression"})
 	public void getTripsbyItineraryId() throws IOException{
 		String url=Service_Url("TRIPSERVICE_GETTRIPS_ITINERARYID");
+		Reporter.log(url);
 		Response resp=RestAssured.get(url);
 		if(resp.statusCode()==200){
 			ResponseBody body= resp.getBody();

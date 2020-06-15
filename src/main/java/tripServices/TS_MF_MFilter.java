@@ -29,6 +29,7 @@ public class TS_MF_MFilter extends TripserviceCommon {
 		String Params4=",\"country\": \"PK\", \"publisher_id\": \"Default\", \"DF_IncorrectRegionRiskScore\": 0, \"transaction_id\": \"bbf46ae767767d41bd4474dfbae6d1060068a"+n+"\"}]";
 		String Params=Params1+Params2+Params3+Params4;
 		Reporter.log(Params);
+		Reporter.log(url);
 		resp = RestAssured.given().
 				when().
 				log().all().

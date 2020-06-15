@@ -21,10 +21,10 @@ public class Accounts_tagmaster extends TripserviceCommon{
 		String url1="http://172.17.26.11:9031/api/trips/tag-master?tagMasterId=233166322";
 		String url2="http://172.17.26.11:9031/api/trips/tag-master?tagMasterId=233226280";
 		String url3="http://172.17.26.11:9031/api/trips/tag-master?tagMasterId=233266298";
-		System.out.println(url);
+		Reporter.log(url);
 	    resp=RestAssured.get(url);
 	    if(resp.statusCode()==200){
-	    	System.out.println(resp.asString());
+	    	Reporter.log(resp.asString());
 	    	Reporter.log(resp.asString());
 		    Reporter.log("Status code " + resp.statusCode());
 		    ResponseBody body= resp.getBody();
@@ -42,10 +42,10 @@ public class Accounts_tagmaster extends TripserviceCommon{
 			assertTrue(false);
 		}
 	    
-	    System.out.println(url1);
+	    Reporter.log(url1);
 	    resp1=RestAssured.get(url1);
 	    if(resp1.statusCode()==200){
-	    	System.out.println(resp1.asString());
+	    	Reporter.log(resp1.asString());
 	    	Reporter.log(resp1.asString());
 		    Reporter.log("Status code " + resp1.statusCode());
 		    ResponseBody body= resp1.getBody();
@@ -67,10 +67,10 @@ public class Accounts_tagmaster extends TripserviceCommon{
 			Reporter.log("Status code " + resp1.statusCode());
 			assertTrue(false);
 		}
-	    System.out.println(url2);
+	    Reporter.log(url2);
 	    resp2=RestAssured.get(url2);
 	    if(resp2.statusCode()==200){
-	    	System.out.println(resp2.asString());
+	    	Reporter.log(resp2.asString());
 	    	Reporter.log(resp2.asString());
 		    Reporter.log("Status code " + resp2.statusCode());
 		    ResponseBody body= resp2.getBody();
@@ -92,10 +92,10 @@ public class Accounts_tagmaster extends TripserviceCommon{
 			Reporter.log("Status code " + resp2.statusCode());
 			assertTrue(false);
 		}
-	    System.out.println(url3);
+	    Reporter.log(url3);
 	    resp3=RestAssured.get(url3);
 	    if(resp3.statusCode()==200){
-	    	System.out.println(resp3.asString());
+	    	Reporter.log(resp3.asString());
 	    	Reporter.log(resp3.asString());
 		    Reporter.log("Status code " + resp3.statusCode());
 		    ResponseBody body= resp3.getBody();

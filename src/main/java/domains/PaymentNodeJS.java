@@ -148,7 +148,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 			add_GV(driver, "");
 		} else if (payType.equalsIgnoreCase("GVCC")) {
 			add_GV(driver, "");
-			select_Card(driver);
+			//select_Card(driver);
 			paymentNodeJS_EnterCard_Details(driver, cardType);
 		} else if (payType.equalsIgnoreCase("GVCCWALL")) {
 			add_GV(driver, "");
@@ -239,6 +239,9 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 	public void paymentNodeJS_EnterCard_Details(RemoteWebDriver driver, String cardType) throws Exception {
 		if(cardType.equalsIgnoreCase("MASTER")){
 			Reporter.log("Master card selected");
+			elementVisible(driver, getObjectPayment("EnterPayment_Card_Exp_Month"),5);
+			Thread.sleep(2000);
+			safeType(driver, getObjectPayment("EnterPayment_Card_Exp_Month"), "12");
 		}
 		if (cardType.equalsIgnoreCase("AMEX")) {
 			Reporter.log("Card No : " + platform.value("AmexCard_Number"));
@@ -308,7 +311,11 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 		} else if (cardType.equalsIgnoreCase("PAYFORT")) {
 			// Reporter.log("Card No : "+platform.value("S2S_Number"));
 			Reporter.log("PG Credentials : " + platform.value("SAFort_PGCred"));
+			elementVisible(driver, getObjectPayment("EnterPayment_Card_Exp_Month"), 10);
+			safeType(driver, getObjectPayment("EnterPayment_Card_Exp_Month"), "12");
+			Thread.sleep(1000);
 			safeClick(driver, getObjectPayment("EnterPayment_Card_PGCredential_Drop_Dwn"));
+			Thread.sleep(1000);
 			safeClickList(driver, getObjectPayment("EnterPayment_Card_PGCredential_Text"),
 					platform.value("SAFort_PGCred"));
 		}
@@ -605,7 +612,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 			safeClick(driver, getObjectPayment("MakePayment_PgCred_S2S_Submit_Btn"));
 		}
 		else if (bankType.equalsIgnoreCase("Noon")) {
-			elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_Noon_Submit_Btn"), 30);
+			elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_Noon_Submit_Btn"), 10);
 			textPresent(driver, "Please submit your Verified by Visa password", 1);
 			elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_Noon_Password_TxtBx"), "Noon pay redirection ", 1);
 			safeType(driver, getObjectPayment("MakePayment_NB_Bank_Noon_Password_TxtBx"),"1234");
@@ -616,7 +623,17 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 	}
 
 	public String paymentNodeJS_ConfirmationPage(RemoteWebDriver driver, String payType, String Confirm_Msg, String LoggerMsg) throws Exception {
-		for (int i = 0; i < 5; i++) {		
+		for (int i = 0; i < 5; i++) {
+			if(elementVisible(driver, By.id("payu_logo"), 5)) {
+				safeType(driver, getObjectPayment("PayU_Page_CC_Number"), "5123456789012346");
+				safeType(driver, getObjectPayment("PayU_Page_CC_Name"), "TestPayU");
+				safeSelect(driver,getObjectPayment("PayU_Page_CC_EXP_Month") , "Sep (9)");
+				safeSelect(driver,getObjectPayment("PayU_Page_CC_EXP_Year") , "2020");
+				safeType(driver, getObjectPayment("PayU_Page_CC_CVV"), "123");
+				Thread.sleep(2000);
+				safeClick(driver, getObjectPayment("PayU_Page_CC_Pay_Btn"));
+				Thread.sleep(2000);
+			}
 			if (textPresent(driver, "AXIS SIMULATOR", 1)) {
 				smartType(driver, By.id("password"), "123456");
 				smartClick(driver, By.id("submitBtn"));	

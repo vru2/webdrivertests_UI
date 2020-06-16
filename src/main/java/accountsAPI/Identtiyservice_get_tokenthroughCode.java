@@ -43,7 +43,7 @@ public class Identtiyservice_get_tokenthroughCode  extends AccountsCommon_API
 		
 		String status = jsonPathEvaluator.getString("message");
 		
-		if(!status.contains("Given Client id doesn't Exist")) {
+		if(!status.contains("Invalid RedirectUri or Client!")) {
 			Assert.assertTrue(false);						
 		}
 		

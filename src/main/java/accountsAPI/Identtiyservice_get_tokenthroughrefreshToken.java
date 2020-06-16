@@ -30,7 +30,7 @@ public class Identtiyservice_get_tokenthroughrefreshToken extends AccountsCommon
 
 		Reporter.log("statusCode: " + statusCode);
 		JsonPath jsonPathEvaluator = resp.jsonPath();
-		if(statusCode!=401) {
+		if(statusCode!=200) {
 			Assert.assertTrue(false);
 		}
 
@@ -40,12 +40,12 @@ public class Identtiyservice_get_tokenthroughrefreshToken extends AccountsCommon
 		System.out.println("Response of API is:" + body.asString());
 		
 		//String status = jsonPathEvaluator.getString("status");
-		String message = jsonPathEvaluator.getString("message");
+		String token_type = jsonPathEvaluator.getString("token_type");
 		
 		/*if(!status.contains("UNAUTHORIZED")) {
 			Assert.assertTrue(false);						
 		}*/
-		if(!message.contains("Given Client id doesn't Exist")) {
+		if(!token_type.contains("access_token")) {
 			Assert.assertTrue(false);						
 		}
 		

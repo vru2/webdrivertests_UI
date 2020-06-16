@@ -23,6 +23,14 @@
 </test>
 
 
+
+<test name="Payment UI Amendment"  preserve-order="true" parallel="true" >
+    <classes>
+      <!-- <class name="paymentsUI.PaymentUI_Captcha"/> --> 
+	  
+    </classes>
+</test>
+
 <test name="Payment UI Validation"  preserve-order="true" parallel="true" >
     <classes>
       <class name="paymentsUI.PaymentUI_AddStoredCardAndValidate"/>

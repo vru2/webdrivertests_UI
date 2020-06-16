@@ -405,6 +405,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String url_ReportingPaymentID ="/paymentservice/payments/43911126";
 
 	String url_ReportingTS_V3 ="/trips?tripID=Q191014530470&refundRequired=true&historyRequired=true&paymentsRequired=true&apiVersion=V3";
+	String url_ReportingTS_Archived_V3 ="";
+
 	String urlRefundsTrip="/paymentservice/refund/data/fetch";
 	String urlRefundsTripRef="/paymentservice/refund/data/fetchByTripRef";
 	
@@ -2877,6 +2879,13 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 				Assert.assertTrue(false);
 			}	
 		}
+		else if(payType.equalsIgnoreCase("ReportingTS_Archived_V3")){
+
+				Reporter.log("Recon Re is not displayed");
+				Assert.assertTrue(false);
+		}
+		
+		
 		
 		return resp;	
 	}
@@ -3639,6 +3648,15 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 			Reporter.log(urlReportingTS);	
 			endPoint = url_ReportingTS_V3;
+			response = RestAssured.given().
+					when().log().all().headers(headers).get(endPoint);
+		}	
+
+		else if(payType.equalsIgnoreCase("ReportingTS_Archived_V3")) {
+			RestAssured.baseURI =urlReportingTS;
+
+			Reporter.log(urlReportingTS);	
+			endPoint = url_ReportingTS_Archived_V3;
 			response = RestAssured.given().
 					when().log().all().headers(headers).get(endPoint);
 		}	

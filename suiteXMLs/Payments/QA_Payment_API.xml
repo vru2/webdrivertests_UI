@@ -200,6 +200,13 @@
     </classes>
 </test>
 
+
+<test name="API Reporting Archived"  preserve-order="true" parallel="true" >
+    <classes>
+		<!-- <class name="paymentsAPI.API_Reporting_TS_Archived_V3"/> -->
+    </classes>
+</test>
+
 <test name="API FetchRefunds New"  preserve-order="true" parallel="true" >
     <classes>
 		<!-- <class name="paymentsAPI.API_Refunds_Fetch"/> -->

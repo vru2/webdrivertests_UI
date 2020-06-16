@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[Response body null : {"access_token":"Fd6WZ54bp11CODPPWGJMkBYAcQSNMksZAexPHuny9Ylh0ZXULC","refresh_token":"oU4il8ohv5PvvY9ZzIHzi36LJ5Yislwch5NLP0YBXl9ipNk7VZ","expires_in":60,"token_type":"access_token"}]]>
+    </line>
+    <line>
+      <![CDATA[statusCode: 200]]>
+    </line>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="3401" started-at="2020-06-15T06:55:23Z" finished-at="2020-06-15T06:55:26Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="3401" started-at="2020-06-15T06:55:23Z" finished-at="2020-06-15T06:55:26Z">
+      <class name="accountsAPI.Identtiyservice_get_tokenthroughrefreshToken">
+        <test-method status="PASS" signature="identtiyservice_get_tokenthroughCode()[pri:0, instance:accountsAPI.Identtiyservice_get_tokenthroughrefreshToken@971d0d8]" name="identtiyservice_get_tokenthroughCode" duration-ms="3376" started-at="2020-06-15T06:55:23Z" finished-at="2020-06-15T06:55:26Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Response body null : {"access_token":"Fd6WZ54bp11CODPPWGJMkBYAcQSNMksZAexPHuny9Ylh0ZXULC","refresh_token":"oU4il8ohv5PvvY9ZzIHzi36LJ5Yislwch5NLP0YBXl9ipNk7VZ","expires_in":60,"token_type":"access_token"}]]>
+            </line>
+            <line>
+              <![CDATA[statusCode: 200]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- identtiyservice_get_tokenthroughCode -->
+      </class> <!-- accountsAPI.Identtiyservice_get_tokenthroughrefreshToken -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

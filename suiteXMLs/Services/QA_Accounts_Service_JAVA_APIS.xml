@@ -64,7 +64,11 @@
 			<class
 				name="accountsAPI.Account_Service_Travellercontroller_UpdateTraveller" />
 			<class name="accountsAPI.Account_Service_Peoplecontroller_GetuserById_V2" />
-
+			<class name="accountsAPI.Account_Service_Caching_Userprofilejson_Email" />
+			<class name="accountsAPI.Account_Service_Caching_Userprofilejson_ID" />
+			
+			
+			
 
 		</classes>
 	</test>

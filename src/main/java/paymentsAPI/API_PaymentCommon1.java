@@ -405,7 +405,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String url_ReportingPaymentID ="/paymentservice/payments/43911126";
 
 	String url_ReportingTS_V3 ="/trips?tripID=Q191014530470&refundRequired=true&historyRequired=true&paymentsRequired=true&apiVersion=V3";
-	String url_ReportingTS_Archived_V3 ="";
+	String url_ReportingTS_Archived_V3_False ="/paymentservice/payments/42752096?isArchived=false";
+	String url_ReportingTS_Archived_V3_True ="/paymentservice/payments/42752096?isArchived=true";
 
 	String urlRefundsTrip="/paymentservice/refund/data/fetch";
 	String urlRefundsTripRef="/paymentservice/refund/data/fetchByTripRef";
@@ -1583,7 +1584,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 	public Response validation(String payType, Response resp){
 		Reporter.log("Response body "+payType +" : "+ resp.body().asString());
-		//System.out.println("Response body "+payType +" : "+ resp.body().asString());
+		System.out.println("Response body "+payType +" : "+ resp.body().asString());
 		int statusCode = resp.getStatusCode();	
 		Reporter.log("statusCode: " + statusCode);
 		JsonPath jsonPathEvaluator = resp.jsonPath();
@@ -2879,12 +2880,18 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 				Assert.assertTrue(false);
 			}	
 		}
-		else if(payType.equalsIgnoreCase("ReportingTS_Archived_V3")){
-
-				Reporter.log("Recon Re is not displayed");
-				Assert.assertTrue(false);
+		else if(payType.equalsIgnoreCase("ReportingTS_Archived_V3_False")){
+					if(!resp.body().asString().contains("40294932")) {
+						Reporter.log("40294932 is not displayed");
+						Assert.assertTrue(false);
+					}
 		}
-		
+		else if(payType.equalsIgnoreCase("ReportingTS_Archived_V3_True")){
+			if(!resp.body().asString().contains("40294932")) {
+				Reporter.log("40294932 is not displayed");
+				Assert.assertTrue(false);
+			}
+}
 		
 		
 		return resp;	
@@ -3652,14 +3659,24 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 					when().log().all().headers(headers).get(endPoint);
 		}	
 
-		else if(payType.equalsIgnoreCase("ReportingTS_Archived_V3")) {
-			RestAssured.baseURI =urlReportingTS;
+		else if(payType.equalsIgnoreCase("ReportingTS_Archived_V3_False")) {
+			RestAssured.baseURI =urlReporting;
 
 			Reporter.log(urlReportingTS);	
-			endPoint = url_ReportingTS_Archived_V3;
+			endPoint = url_ReportingTS_Archived_V3_False;
 			response = RestAssured.given().
 					when().log().all().headers(headers).get(endPoint);
 		}	
+		else if(payType.equalsIgnoreCase("ReportingTS_Archived_V3_True")) {
+			RestAssured.baseURI =urlReporting;
+
+			Reporter.log(urlReportingTS);	
+			endPoint = url_ReportingTS_Archived_V3_True;
+			response = RestAssured.given().
+					when().log().all().headers(headers).get(endPoint);
+		}	
+				
+		
 		else if(payType.equalsIgnoreCase("ReportingPaginate")) {
 			RestAssured.baseURI =urlReporting;
 

@@ -9,6 +9,8 @@ import static common.CachedProperties.platformInstance;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -148,6 +150,14 @@ public class CommonUtil {
 		Date s = c.getTime();
 		String dateString = new SimpleDateFormat("_EEE_ddMMMyyyy_hhmmss").format(s);
 		return dateString;
+	}
+	
+	
+	public String getNewDate_TripID() throws Exception {
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("hhmmss");
+		LocalDateTime now =  LocalDateTime.now();
+		String TripID = "Q1012"+dtf.format(now);
+		return TripID;
 	}
 	
 	public void afterMethodProcess(ITestResult _result) throws Exception {

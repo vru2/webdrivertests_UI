@@ -8,8 +8,25 @@
 <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
 
+
+
+<test name="Air Payment UI PayNB"  preserve-order="true" parallel="true" >
+    <classes>
+      <class name="paymentsUI_Air.PaymentUI_Air_NB_CITI"/> 
+	  <class name="paymentsUI_Air.PaymentUI_Air_NB_HDFC"/> 
+	  <!-- <class name="paymentsUI_Air.PaymentUI_Air_NB_ICICI"/>  -->	  
+    </classes>
+</test>
+
+
+<test name="Air Payment UI Amendment"  preserve-order="true" parallel="true" >
+    <classes>
+      <!-- <class name="paymentsUI_Air.PaymentUI_Captcha"/> --> 
+	  
+    </classes>
+</test>
 	
-<test name="Payment UI Pay"  preserve-order="true" parallel="true" >
+<test name="Trains Payment UI Pay"  preserve-order="true" parallel="true" >
     <classes>
       <class name="paymentsUI.PaymentUI_Captcha"/> 
       <class name="paymentsUI.PaymentUI_SignIN"/>
@@ -21,20 +38,14 @@
     </classes>
 </test>
 	
-<test name="Payment UI Pay"  preserve-order="true" parallel="true" >
+<test name="Trains Payment UI Pay"  preserve-order="true" parallel="true" >
     <classes>
 	  <class name="paymentsUI.PaymentsUI_NB"/>
     </classes>
 </test>
 
-<test name="Payment UI Amendment"  preserve-order="true" parallel="true" >
-    <classes>
-      <!-- <class name="paymentsUI.PaymentUI_Captcha"/> --> 
-	  
-    </classes>
-</test>
 
-<test name="Payment UI Validation"  preserve-order="true" parallel="true" >
+<test name="Trains Payment UI Validation"  preserve-order="true" parallel="true" >
     <classes>
       <class name="paymentsUI.PaymentUI_AddStoredCardAndValidate"/>
       <class name="paymentsUI.PaymentUI_ErrorValidationUPIWalletAndNB"/>
@@ -45,7 +56,7 @@
 </test>
 
 
-<test name="Payment UI PWA"  preserve-order="true" parallel="true" >
+<test name="Trains Payment UI PWA"  preserve-order="true" parallel="true" >
     <classes>
 <!--       <class name="paymentsUI.Payment_UI_PWA_CC"/>
       <class name="paymentsUI.Payment_UI_PWA_NB"/>

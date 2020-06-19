@@ -3121,7 +3121,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		response = RestAssured.given().
 				when().log().all().body(params).headers(headers).post(endPoint);
 			Reporter.log("URL : "+urlPay+endPoint);
-			Reporter.log("Params : "+params);
+			//Reporter.log("Params : "+params);
 			return response;
 	}
 	

@@ -1,3 +1,6 @@
+// Framework - Cleartrip Automation
+// Author - Kiran Kumar
+
 package paymentsUI_Air;
 
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -16,19 +19,19 @@ public class CC_Master extends PaymentUI_Common{
 	public Response resp;
 	
 	@Test
-	public void NB_ICICI_Pay() throws Exception {
+	public void CC_PayU_Pay() throws Exception {
 		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
-		driver.get(PayUrl);	   
+		driver.get(PayUrl);
 		payUI_Select_PaymentType(driver, "CC");
-		payUI_Enter_PaymentDetails(driver, "CC", "MasterCard");
+		payUI_Enter_PaymentDetails(driver, "CC", "MASTER");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
-	}	
+	}
 
 	@BeforeClass
 	public void setUp() throws Exception {
 		driver=(RemoteWebDriver) getDriver(driver);
-	}		
+	}
 
 	@AfterMethod (alwaysRun = true)
 	public void afterMethod(ITestResult _result) throws Exception {
@@ -37,9 +40,7 @@ public class CC_Master extends PaymentUI_Common{
 	  
 	@AfterClass
 	public void tearDown() throws Exception {
-		//browserClose(driver);
+		browserClose(driver);
 	}
-
-	
 	
 }

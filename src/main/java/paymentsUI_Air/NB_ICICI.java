@@ -1,3 +1,6 @@
+// Framework - Cleartrip Automation
+// Author - Kiran Kumar
+
 package paymentsUI_Air;
 
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -37,7 +40,7 @@ public class NB_ICICI extends PaymentUI_Common{
 	  
 	@AfterClass
 	public void tearDown() throws Exception {
-		//browserClose(driver);
+		browserClose(driver);
 	}
 
 	

@@ -10,7 +10,8 @@
 
 <test name="Air Payment UI PayNB"  preserve-order="true" parallel="true" >
     <classes>
-      <class name="paymentsUI_Air.CC_Master"/> 
+      <class name="paymentsUI_Air.CC_Master"/>
+      <class name="paymentsUI_Air.CC_Amex"/>      
     </classes>
 </test>
 

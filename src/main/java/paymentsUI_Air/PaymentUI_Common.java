@@ -92,7 +92,10 @@ protected String qaurl = "https://qa2.cleartrip.com";
 			switch (BankName) {
 				case "MASTER":
 				Enter_CC_Details(driver, platform.value("MasterCard_Number"), platform.value("MasterCard_Month"), platform.value("MasterCard_Year"), platform.value("MasterCard_CVV"));
-				break;				
+				break;	
+				case "AMEX":
+				Enter_CC_Details(driver, platform.value("AmexCard_Number"), platform.value("AmexCard_Month_New"), platform.value("AmexCard_Year"), platform.value("AmexCard_CVV"));
+				break;
 			}			
 			safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 			Reporter.log("Make Payment button is Clicked");
@@ -122,6 +125,11 @@ protected String qaurl = "https://qa2.cleartrip.com";
 				Reporter.log("Payment is not sucessfull");
 				Assert.assertTrue(false);
 		}
+		}else if(BankName.equalsIgnoreCase("AMEX")) {
+			textPresent(driver, "ACS Emulator", 10);
+			Reporter.log("Amex Auth page is displayed");
+			elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_Amex3DPage_Submit_Btn"), 20);
+			safeClick(driver, getObjectPayment("MakePayment_NB_Bank_Amex3DPage_Submit_Btn"));
 		}else if(BankName.equalsIgnoreCase("Citibank")) {
 			elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"), 30);
 			Reporter.log("CitiBank Auth page is displayed");

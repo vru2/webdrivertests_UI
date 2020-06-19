@@ -3,6 +3,7 @@ package paymentsUI_Air;
 import org.junit.Assert;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Reporter;
+
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import paymentsAPI.API_PaymentCommon1;
@@ -64,6 +65,7 @@ protected String qaurl = "https://qa2.cleartrip.com";
 	public void payUI_Enter_PaymentDetails(RemoteWebDriver driver, String PayType, String PaySubType) throws Exception {
 		switch (PayType) {
 		case "CC":
+			payUI_Select_CC(driver, PayType, PaySubType);
 			break;
 		case "DC":
 			
@@ -80,6 +82,22 @@ protected String qaurl = "https://qa2.cleartrip.com";
 		default:
 			break;
 		}		
+	}
+	
+	
+	public void payUI_Select_CC(RemoteWebDriver driver, String PayType, String PaySubType) throws Exception {		
+			elementVisible(driver, getObjectPayment(""), 5);
+			
+		
+	}
+	
+	public void Enter_CC_Details_Only(RemoteWebDriver driver, String CCNumber, String CCExpMonth, String CCExpYear, String CVV) throws Exception {
+		safeType(driver, getObjectPayment(""), CCNumber);
+		safeSelect(driver, getObjectPayment(""), CCExpMonth);
+		safeSelect(driver, getObjectPayment(""), CCExpYear);
+		safeType(driver, getObjectPayment(""), "test");
+		safeType(driver, getObjectPayment(""), CVV);
+		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 	}
 	
 	public void payUI_Enter_NB_Details(RemoteWebDriver driver, String PayType, String PaySubType) throws Exception {		

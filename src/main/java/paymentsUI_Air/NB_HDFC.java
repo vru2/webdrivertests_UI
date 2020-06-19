@@ -8,7 +8,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import io.restassured.response.Response;
 
-public class PaymentUI_Air_NB_HDFC extends PaymentUI_Common{
+public class NB_HDFC extends PaymentUI_Common{
 	public RemoteWebDriver driver;
 	protected String Url;
 	protected String paymentUrl;

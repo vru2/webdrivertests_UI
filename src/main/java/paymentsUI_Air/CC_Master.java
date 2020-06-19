@@ -8,7 +8,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import io.restassured.response.Response;
 
-public class PaymentUI_Air_NB_ICICI extends PaymentUI_Common{
+public class CC_Master extends PaymentUI_Common{
 	public RemoteWebDriver driver;
 	protected String Url;
 	protected String paymentUrl;
@@ -20,8 +20,8 @@ public class PaymentUI_Air_NB_ICICI extends PaymentUI_Common{
 		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);	   
-		payUI_Select_PaymentType(driver, "NB");
-		payUI_Enter_PaymentDetails(driver, "NB", "ICICI Bank");
+		payUI_Select_PaymentType(driver, "CC");
+		payUI_Enter_PaymentDetails(driver, "CC", "MasterCard");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
 	}	
 

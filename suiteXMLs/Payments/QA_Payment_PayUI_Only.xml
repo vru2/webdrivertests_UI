@@ -12,9 +12,9 @@
 
 <test name="Air Payment UI PayNB"  preserve-order="true" parallel="true" >
     <classes>
-      <class name="paymentsUI_Air.PaymentUI_Air_NB_CITI"/> 
-	  <class name="paymentsUI_Air.PaymentUI_Air_NB_HDFC"/> 
-	  <!-- <class name="paymentsUI_Air.PaymentUI_Air_NB_ICICI"/>  -->	  
+      <class name="paymentsUI_Air.NB_CITI"/> 
+	  <class name="paymentsUI_Air.NB_HDFC"/> 
+	  <!-- <class name="paymentsUI_Air.NB_ICICI"/>  -->	  
     </classes>
 </test>
 

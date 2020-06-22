@@ -38,7 +38,12 @@ protected String qaurl = "https://qa2.cleartrip.com";
 	}
 	
 	public void payUI_Select_PaymentType(RemoteWebDriver driver, String PayType) throws Exception {
-		elementVisible(driver, getObjectPayment("PayUI_Pay_Tabs"), 10);
+		if(!elementVisible(driver, getObjectPayment("PayUI_Pay_Tabs"), 10)) {
+			Reporter.log("PayUI Page is not displayed");
+			String UI_error = getText(driver, By.xpath("//h1"));
+			Reporter.log(UI_error);			
+			Assert.assertTrue(false);
+		}
 		switch (PayType) {
 		case "CC":
 			PayType = "Credit Card";
@@ -167,6 +172,11 @@ protected String qaurl = "https://qa2.cleartrip.com";
 				driver.get(PayUrl);	
 				textPresent_Log(driver, "Payment successful", 10);
 				textPresent_Log(driver, "view your booking details and Trip ID", 5);
+				break;
+			}
+			else if(i==1) {
+				driver.get(PayUrl);	
+				textPresent_Log(driver, "Payment successful", 10);
 				break;
 			}
 			else if(i==10){

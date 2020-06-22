@@ -64,130 +64,52 @@
 			<class
 				name="accountsAPI.Account_Service_Travellercontroller_UpdateTraveller" />
 			<class name="accountsAPI.Account_Service_Peoplecontroller_GetuserById_V2" />
+
+		</classes>
+	</test>
+
+	<test name="Account-service-Caching-userprofile" parallel="true">
+		<classes>
 			<class name="accountsAPI.Account_Service_Caching_Userprofilejson_Email" />
 			<class name="accountsAPI.Account_Service_Caching_Userprofilejson_ID" />
-			
-			
-			
-
+			<class name="accountsAPI.Account_Service_Update_User" />
 		</classes>
+
 	</test>
 
-
-
-	<!-- <test name="Account_Service_FlyinV2_Signin" parallel="true">
-		<classes>
-			<class name="accountsAPI.Account_Service_FlyinV2_Signin" />
-		</classes>
-	</test>
-
-	<test name="Account_Service_FlyinV2_SignUp" parallel="true">
-		<classes>
-			<class name="accountsAPI.Account_Service_FlyinV2_SignUP" />
-		</classes>
-	</test>
-
-	<test name="Account_Service_FlyinV2_Social_SignUp" parallel="true">
-		<classes>
-			<class name="accountsAPI.Account_Service_FlyinV2_SocialSignup" />
-		</classes>
-	</test>
-
-
-	<test name="Account_Service_FlyinV2_UserSearch" parallel="true">
-		<classes>
-			<class name="accountsAPI.Account_Service_FlyinV2_UserSearch" />
-		</classes>
-	</test>
-
-	<test name="Account_Service_Flyin_ForgotPassword" parallel="true">
-		<classes>
-			<class name="accountsAPI.Account_Service_Flyin_ForgotPassword" />
-		</classes>
-	</test>
-
-	<test name="Account_Service_Flyin_ResetPassword" parallel="true">
-		<classes>
-			<class name="accountsAPI.Account_Service_Flyin_ResetPassword" />
-		</classes>
-	</test>
-
-	<test name="Account_Service_Flyin_Signin" parallel="true">
-		<classes>
-			<class name="accountsAPI.Account_Service_Flyin_Signin" />
-		</classes>
-	</test>
-
-	<test name="Account_Service_Flyin_SignUp" parallel="true">
-		<classes>
-			<class name="accountsAPI.Account_Service_Flyin_Signup" />
-		</classes>
-	</test>
-
-	
-	<test name="Account_Service_Flyin_SocialSignUp" parallel="true">
-		<classes>
-			<class name="accountsAPI.Account_Service_Flyin_Social_Signup" />
-		</classes>
-	</test>
-
-	
-	<test name="Account_Service_Flyin_UserSearch" parallel="true">
-		<classes>
-			<class name="accountsAPI.Account_Service_UserSearch" />
-		</classes>
-	</test>
-
-	
-	<test name="Account_Service_Partnercontroller_Updatetraveller"
-		parallel="true">
-		<classes>
-			<class
-				name="accountsAPI.Account_Service_Partnercontroller_UpdateTraveller" />
-		</classes>
-	</test>
-
-	
-	<test name="Account_Service_partnercontroller_Usersearch"
-		parallel="true">
-		<classes>
-			<class name="accountsAPI.Account_Service_Partnercontroller_Usersearch" />
-		</classes>
-	</test>
-
-	
-	<test name="Account_Service_peoplecontroller_GetuserByEmail"
-		parallel="true">
-		<classes>
-			<class name="accountsAPI.Account_Service_Peoplecontroller_GetuserByEmail" />
-		</classes>
-	</test>
-
-	
-	<test name="Account_Service_peoplecontroller_GetuserById"
-		parallel="true">
-		<classes>
-			<class name="accountsAPI.Account_Service_Peoplecontroller_GetuserById" />
-		</classes>
-	</test>
-
-	
-	<test name="Account_Service_Travellercontroller_UpdateTraveller"
-		parallel="true">
-		<classes>
-			<class
-				name="accountsAPI.Account_Service_Travellercontroller_UpdateTraveller" />
-		</classes>
-	</test>
-
-	
-	<test name="Account_Service_Peoplecontroller_GetuserById_V2"
-		parallel="true">
-		<classes>
-			<class name="accountsAPI.Account_Service_Peoplecontroller_GetuserById_V2" />
-		</classes>
-	</test>
- -->
+	<!-- <test name="Account_Service_FlyinV2_Signin" parallel="true"> <classes> 
+		<class name="accountsAPI.Account_Service_FlyinV2_Signin" /> </classes> </test> 
+		<test name="Account_Service_FlyinV2_SignUp" parallel="true"> <classes> <class 
+		name="accountsAPI.Account_Service_FlyinV2_SignUP" /> </classes> </test> <test 
+		name="Account_Service_FlyinV2_Social_SignUp" parallel="true"> <classes> <class 
+		name="accountsAPI.Account_Service_FlyinV2_SocialSignup" /> </classes> </test> 
+		<test name="Account_Service_FlyinV2_UserSearch" parallel="true"> <classes> 
+		<class name="accountsAPI.Account_Service_FlyinV2_UserSearch" /> </classes> 
+		</test> <test name="Account_Service_Flyin_ForgotPassword" parallel="true"> 
+		<classes> <class name="accountsAPI.Account_Service_Flyin_ForgotPassword" 
+		/> </classes> </test> <test name="Account_Service_Flyin_ResetPassword" parallel="true"> 
+		<classes> <class name="accountsAPI.Account_Service_Flyin_ResetPassword" /> 
+		</classes> </test> <test name="Account_Service_Flyin_Signin" parallel="true"> 
+		<classes> <class name="accountsAPI.Account_Service_Flyin_Signin" /> </classes> 
+		</test> <test name="Account_Service_Flyin_SignUp" parallel="true"> <classes> 
+		<class name="accountsAPI.Account_Service_Flyin_Signup" /> </classes> </test> 
+		<test name="Account_Service_Flyin_SocialSignUp" parallel="true"> <classes> 
+		<class name="accountsAPI.Account_Service_Flyin_Social_Signup" /> </classes> 
+		</test> <test name="Account_Service_Flyin_UserSearch" parallel="true"> <classes> 
+		<class name="accountsAPI.Account_Service_UserSearch" /> </classes> </test> 
+		<test name="Account_Service_Partnercontroller_Updatetraveller" parallel="true"> 
+		<classes> <class name="accountsAPI.Account_Service_Partnercontroller_UpdateTraveller" 
+		/> </classes> </test> <test name="Account_Service_partnercontroller_Usersearch" 
+		parallel="true"> <classes> <class name="accountsAPI.Account_Service_Partnercontroller_Usersearch" 
+		/> </classes> </test> <test name="Account_Service_peoplecontroller_GetuserByEmail" 
+		parallel="true"> <classes> <class name="accountsAPI.Account_Service_Peoplecontroller_GetuserByEmail" 
+		/> </classes> </test> <test name="Account_Service_peoplecontroller_GetuserById" 
+		parallel="true"> <classes> <class name="accountsAPI.Account_Service_Peoplecontroller_GetuserById" 
+		/> </classes> </test> <test name="Account_Service_Travellercontroller_UpdateTraveller" 
+		parallel="true"> <classes> <class name="accountsAPI.Account_Service_Travellercontroller_UpdateTraveller" 
+		/> </classes> </test> <test name="Account_Service_Peoplecontroller_GetuserById_V2" 
+		parallel="true"> <classes> <class name="accountsAPI.Account_Service_Peoplecontroller_GetuserById_V2" 
+		/> </classes> </test> -->
 
 	<!-- <test name="Identity Service Add client" parallel="true"> <classes> 
 		<class name="accountsAPI.IdentityService_AddClient" /> </classes> </test> 

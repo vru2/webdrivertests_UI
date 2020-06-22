@@ -368,6 +368,14 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		//GCP -- headers.put("AUTH_KEY", "H67f$we&HGTR34clQ");
 		return headers;
 	}
+	public HashMap<String, Object> headersFormsupdateuser(){
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("Content-Type", "application/json");
+		headers.put("AUTH_KEY", "7GHT#@D65yhgder4R");
+		headers.put("x-ct-caller-app", "mobile");
+		//GCP -- headers.put("AUTH_KEY", "H67f$we&HGTR34clQ");
+		return headers;
+	}
 	public HashMap<String, Object> headersFormspwasignin(){
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("Content-Type", "application/json");
@@ -714,7 +722,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		}
 		
 		if(Type.equals("Account_Service_Update_User")) {
-			headers = headersForms4();
+			headers = headersFormsupdateuser();
 
 			RestAssured.baseURI =url_Acct_Service;
 			url = url_Account_Service_Update_User;					

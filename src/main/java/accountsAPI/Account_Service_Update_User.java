@@ -19,9 +19,9 @@ public class Account_Service_Update_User extends AccountsCommon_API
 		
 		validation_user_update(resp,"Account_Service_Update_User","");
 				
-		ResponseBody body = resp.getBody();
+		/*ResponseBody body = resp.getBody();
 		System.out.println("Response of API is:" + body.asString());
-		System.out.println(resp.statusCode());
+		System.out.println(resp.statusCode());*/
 		
 	}
 	

@@ -60,6 +60,7 @@
 			<class name="tripServices.TS_GraphQL"/>
 			<class name="tripServices.TS_TripQuery"/>
 			<class name="tripServices.TS_GET_Trips_API_Versioning"/>
+			<class name="tripServices.TS_GET_Trips_API_Versioning_Archived"/>
 			<class name="tripServices.TS_GET_Air_Refunded"/>
 			<class name="tripServices.TS_GET_CorpTripCount"/>
 			<class name="tripServices.TS_GET_CorpTripList"/>

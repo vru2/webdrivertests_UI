@@ -8,14 +8,14 @@
 <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
 
-<test name="Air Payment UI PayNB"  preserve-order="true" parallel="true" >
+<test name="Air Payment UI CC"  preserve-order="true" parallel="true" >
     <classes>
       <class name="paymentsUI_Air.CC_Master"/>
       <class name="paymentsUI_Air.CC_Amex"/>      
     </classes>
 </test>
 
-<test name="Air Payment UI PayNB"  preserve-order="true" parallel="true" >
+<test name="Air Payment UI NB"  preserve-order="true" parallel="true" >
     <classes>
       <class name="paymentsUI_Air.NB_CITI"/> 
 	  <class name="paymentsUI_Air.NB_HDFC"/> 
@@ -26,7 +26,7 @@
 
 <test name="Air Payment UI Amendment"  preserve-order="true" parallel="true" >
     <classes>
-      <!-- <class name="paymentsUI_Air.PaymentUI_Captcha"/> --> 
+      <class name="paymentsUI_Air.Amendment"/> 
 	  
     </classes>
 </test>
@@ -38,8 +38,7 @@
       <class name="paymentsUI.PaymentUI_Validation"/>
 	  <class name="paymentsUI.PaymentUI_Wallet"/>
 	  <class name="paymentsUI.PaymentUI_PhonePe"/> 
-	  <class name="paymentsUI.PaymentUI_TPW_AmazonPay"/>
-	  
+	  <class name="paymentsUI.PaymentUI_TPW_AmazonPay"/>	  
     </classes>
 </test>
 	

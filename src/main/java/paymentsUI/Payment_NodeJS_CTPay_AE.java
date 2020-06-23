@@ -23,8 +23,8 @@ import domains.PaymentNodeJS;
 	   driver.get(baseUrl);	   
 	   paymentNodeJS_Select_Payment(driver, "CURRENCY", "AED", "");
 	  // paymentNodeJS_Select_Payment(driver, "CTP", "NOHOMEPAGE", "");
-	   paymentNodeJS_Make_Payment(driver, "CTP", "");
-	   paymentNodeJS_ConfirmationPage(driver, "CTP", "","CTPay AE ");
+	   paymentNodeJS_Make_Payment(driver, "CTPAE", "");
+	 //  paymentNodeJS_ConfirmationPage(driver, "CTPAE", "","CTPay AE ");
 	   }
 	  }
 

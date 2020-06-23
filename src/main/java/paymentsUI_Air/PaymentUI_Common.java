@@ -90,10 +90,10 @@ protected String qaurl = "https://qa2.cleartrip.com";
 			break;
 		}		
 	}
-	
-	
+		
 	public void payUI_Select_CC(RemoteWebDriver driver, String BankName) throws Exception {		
 			elementVisible(driver, getObjectPayment("PaymentPage_CreditCard_Number"), 5);
+			textPresent_Log(driver, "Enter your credit card details.", 1);
 			switch (BankName) {
 				case "MASTER":
 				Enter_CC_Details(driver, platform.value("MasterCard_Number"), platform.value("MasterCard_Month"), platform.value("MasterCard_Year"), platform.value("MasterCard_CVV"));
@@ -159,6 +159,9 @@ protected String qaurl = "https://qa2.cleartrip.com";
 	
 	public void payUI_Select_NB(RemoteWebDriver driver, String BankName) throws Exception {		
 			elementVisible(driver, getObjectPayment("PayUI_NB_DropDown"), 5);
+			textPresent_Log(driver, "Popular Banks", 1);
+			//textPresent_Log(driver, "", 1);
+			
 			safeSelect(driver, getObjectPayment("PayUI_NB_DropDown"), BankName);
 			safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 			payUI_BankPage(driver, BankName);

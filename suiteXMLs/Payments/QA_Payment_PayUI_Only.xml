@@ -23,6 +23,11 @@
     </classes>
 </test>
 
+<test name="Air Payment UI Text Validation"  preserve-order="true" parallel="true" >
+    <classes>
+      <class name="paymentsUI_Air.Validate_Text_Messages"/>	  
+    </classes>
+</test>
 
 <test name="Air Payment UI Amendment"  preserve-order="true" parallel="true" >
     <classes>

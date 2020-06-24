@@ -17,7 +17,7 @@
 	
 	<test name="Whatsapp"  parallel="true">
 		<classes>		
-		      <class name="whatsappService.WhatsappCheckContacts"/>
+		      <!-- <class name="whatsappService.WhatsappCheckContacts"/> -->
 		      <class name="whatsappService.WhatsappDeliveryFeedback"/> 
 		      <class name="whatsappService.WhatsappUserMessage"/> 
 		      <class name="whatsappService.WhatsappOptinFlow"/>

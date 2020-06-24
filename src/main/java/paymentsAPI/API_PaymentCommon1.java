@@ -397,7 +397,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String url_walletGetCards ="/paymentservice/card/get/41654864"; //  41654864 41701828
 	String url_walletValidateCards ="/paymentservice/card/validate?cardNumber=5123456789012346&name=test&cardTypeId=2&expiryMonth=5&expiryYear=2020&userId=41654864";
 	String url_walletDeleteCards ="/paymentservice/card/delete/%s";
-	String url_walletStoreCards ="/paymentservice/card/store?cardNumber=5123456789012346&name=test&cardTypeId=2&expiryMonth=05&expiryYear=2020&userId=41654864";
+	String url_walletStoreCards ="/paymentservice/card/store?cardNumber=340000000000009&name=test&cardTypeId=2&expiryMonth=09&expiryYear=2020&userId=41654864";
 
 	//String url_Binmanager = "https://qa2.cleartrip.com/binmanager/v1/payment/cards?bin=534977";
 

@@ -35,9 +35,9 @@
     <classes>
       <class name="paymentsUI.PaymentUI_Captcha"/> 
       <class name="paymentsUI.PaymentUI_SignIN"/>
-      <class name="paymentsUI.PaymentUI_Validation"/>
+  <!--     <class name="paymentsUI.PaymentUI_Validation"/> -->
 	  <class name="paymentsUI.PaymentUI_Wallet"/>
-	  <class name="paymentsUI.PaymentUI_PhonePe"/> 
+	 <!--  <class name="paymentsUI.PaymentUI_PhonePe"/>  -->
 	  <class name="paymentsUI.PaymentUI_TPW_AmazonPay"/>	  
     </classes>
 </test>
@@ -51,7 +51,7 @@
 
 <test name="Trains Payment UI Validation"  preserve-order="true" parallel="true" >
     <classes>
-      <class name="paymentsUI.PaymentUI_AddStoredCardAndValidate"/>
+     <!--  <class name="paymentsUI.PaymentUI_AddStoredCardAndValidate"/> -->
       <class name="paymentsUI.PaymentUI_ErrorValidationUPIWalletAndNB"/>
       <class name="paymentsUI.PaymentUI_SuccessfulPaymentMessage"/> 
       <class name="paymentsUI.PaymentUI_Progress"/> 

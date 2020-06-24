@@ -40,8 +40,6 @@ public class PaymentUI_AddStoredCardAndValidate extends domains.PaymentNodeJS{
 
 	@Test
 	public void addSCandVerifyIfAdded() throws Exception{
-
-		try {
 			driver=(RemoteWebDriver) getDriver(driver);
 			driver.manage().deleteAllCookies();
 			signCleartripHomePage(driver,"cltppayment@gmail.com","cleartrip");
@@ -135,12 +133,7 @@ public class PaymentUI_AddStoredCardAndValidate extends domains.PaymentNodeJS{
 				click(driver,PaymentUI_CommonUtilities.makePaymentbutton);
 				validateIfPresent(driver,PaymentUI_CommonUtilities.errortextCvvXpath);
 				validateIfPresent(driver,PaymentUI_CommonUtilities.storedCardNewXpath);
-			}
-
-			catch(Exception e) {
-				Reporter.log("Exception is" +e);
-				Assert.assertTrue(false);
-			}
+			
 
 		}
 

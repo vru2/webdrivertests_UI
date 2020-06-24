@@ -44,7 +44,7 @@ public class API_storeCard extends API_PaymentCommon1
 		
 		for (int i=0;i< cardids.size();i++)
 		{
-			if((cardnumber.get(i).toString()).equalsIgnoreCase("512345XXXXXX2346"))
+			if((cardnumber.get(i).toString()).equalsIgnoreCase("340000XXXXXX0009"))
 			{
 				cardid = cardids.get(i).toString();
 				resp = walletEndPoints("wallet_deleteCards",cardid);	

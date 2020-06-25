@@ -40,11 +40,11 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 	public void Validate_Text_DC() throws Exception {
 		payUI_Select_PaymentType(driver, "DC");
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));	
-		textPresent_Log(driver, "Enter your debit card details", 5);	
+		textPresent_Log(driver, "Enter your debit card details", 5);
 		textPresent_Log(driver, "Please enter a valid card number", 1);		
 		textPresent_Log(driver, "Please enter a valid expiry month", 1);		
 		textPresent_Log(driver, "Please enter a valid expiry year", 1);		
-		textPresent_Log(driver, "Please enter a valid cvv", 1);		
+		textPresent_Log(driver, "Please enter a valid cvv", 1);
 	}
 
 	@Test(priority=3)
@@ -112,8 +112,7 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 	@Test(priority=9)
 	public void Validate_Expressway() throws Exception {		
 		safeClick(driver, getObjectPayment("PayUI_Expressway_CheckBox"));
-		textPresent_Log(driver, "2006–2020 Cleartrip Pvt. Ltd", 1);
-		
+		textPresent_Log(driver, "2006–2020 Cleartrip Pvt. Ltd", 1);		
 	}
 	
 	@Test(priority=10)
@@ -126,12 +125,8 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 			Assert.assertEquals(Title, "cleartrip | payment securely1");
 			Assert.assertTrue(false);
 		}
-		
 	}
-	
-	
-	
-	
+		
 	@BeforeClass
 	public void setUp() throws Exception {
 		driver=(RemoteWebDriver) getDriver(driver);

@@ -356,10 +356,9 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 		
 		else if (payType.equalsIgnoreCase("CCRazorPay")) {
 			safeClick(driver, getObjectPayment("MakePayment_Pay_Btn_CC"));
-			textPresent(driver, "Welcome to Razorpay Bank", 5);
-			elementVisible(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Logo"), 10);
-			safeClick(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Submit"));
-		
+			textPresent_Log(driver, "Welcome to Razorpay Bank", 10);
+			elementVisible(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Logo"), 1);
+			safeClick(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Submit"));		
 		}
 		
 		else if (payType.equalsIgnoreCase("CCPayFortSA")) {
@@ -394,8 +393,8 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 					Reporter.log("Payment failed");
 					Assert.assertTrue(false);
 				}
-				textPresent(driver, "Welcome to Razorpay Bank", 5);
-				elementVisible(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Logo"), 10);
+				textPresent_Log(driver, "Welcome to Razorpay Bank", 10);
+				elementVisible(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Logo"), 1);
 				safeClick(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Submit"));
 			}
 			else if (bankType.equalsIgnoreCase("TECHPROCESS")) {

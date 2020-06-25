@@ -122,7 +122,7 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 		String Title = driver.getTitle();
 		if(!Title.contains("cleartrip | payment securely1")) {
 			Reporter.log("cleartrip | payment securely page title is not displayed");
-			Assert.assertEquals(Title, "cleartrip | payment securely1");
+			Assert.assertEquals(Title, "cleartrip | payment securely");
 			Assert.assertTrue(false);
 		}
 	}

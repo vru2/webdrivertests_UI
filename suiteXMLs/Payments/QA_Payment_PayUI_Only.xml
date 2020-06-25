@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Payment New UI" parallel="tests" thread-count="10">
+<suite name="Payment New UI" parallel="tests" thread-count="2">
 
 <listeners>
 <listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -7,6 +7,18 @@
 <listener class-name="common.RetryListener"/>
 <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
+
+<test name="Air Payment UI Text Validation"  preserve-order="true" parallel="true" >
+    <classes>
+      <class name="paymentsUI_Air.Validate_Text_Messages"/>
+    </classes>
+</test>
+
+<test name="Air Payment UI Amendment"  preserve-order="true" parallel="true" >
+    <classes>
+      <class name="paymentsUI_Air.Amendment"/>	  
+    </classes>
+</test>
 
 <test name="Air Payment UI CC"  preserve-order="true" parallel="true" >
     <classes>
@@ -23,18 +35,14 @@
     </classes>
 </test>
 
-<test name="Air Payment UI Text Validation"  preserve-order="true" parallel="true" >
+
+<test name="Air Payment UI Captcha Validation Only"  preserve-order="true" parallel="true" >
     <classes>
-      <class name="paymentsUI_Air.Validate_Text_Messages"/>	  
+      <class name="paymentsUI_Air.Captcha_Validation_Only"/> 	  
     </classes>
 </test>
 
-<test name="Air Payment UI Amendment"  preserve-order="true" parallel="true" >
-    <classes>
-      <class name="paymentsUI_Air.Amendment"/> 
-	  
-    </classes>
-</test>
+
 	
 <test name="Trains Payment UI Pay"  preserve-order="true" parallel="true" >
     <classes>

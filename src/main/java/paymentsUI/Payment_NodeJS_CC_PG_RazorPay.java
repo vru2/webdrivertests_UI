@@ -23,7 +23,7 @@ public class Payment_NodeJS_CC_PG_RazorPay extends PaymentNodeJS {
 		paymentNodeJS_Select_Payment(driver, "CC", "", "RazorPay");
 		paymentNodeJS_Make_Payment(driver, "CCRazorPay","");
 		paymentNodeJS_ConfirmationPage(driver, "CCRazorPay", "", "CCRazorPay ");
-		}
+	}
 
 	@BeforeClass
 	public void setUp() throws Exception {

@@ -1,0 +1,41 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Wallet API" parallel="tests" thread-count="5">
+
+<listeners>
+<listener class-name="org.uncommons.reportng.HTMLReporter" />
+<listener class-name="common.RemoveDuplicateResults"/>
+<listener class-name="common.RetryListener"/>
+<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+</listeners>
+
+<test name="AAPI Pay Calls" preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_CC_GV_Wallet"/> 
+      <class name="paymentsAPI.API_GV"/> 
+      <class name="paymentsAPI.API_Wallet"/>
+      <class name="paymentsAPI.API_GV_WL"/> 
+    </classes>
+</test>
+
+
+<test name="API Wallets"  preserve-order="true" parallel="true" >
+    <classes>
+		<class name="paymentsAPI.API_Wallet_Promo_CashBackDetails"/>
+		<class name="paymentsAPI.API_Wallet_Create"/>			
+		<class name="paymentsAPI.API_Wallet_Get_Wallet_Trnx"/>
+		<class name="paymentsAPI.API_Wallet_GetDeduction"/>
+		<class name="paymentsAPI.API_Wallet_PromoUsed"/>
+		<class name="paymentsAPI.API_Wallet_RevertPromo"/>
+    </classes>
+</test>
+
+<test name="API Wallet App Only"  preserve-order="true" parallel="true" >
+    <classes>
+		<class name="paymentsAPI.API_Wallet_CashBackDetails"/>
+		<class name="paymentsAPI.API_Wallet_Get_Wallet_All"/>
+		<class name="paymentsAPI.API_Wallet_Get_Wallet_INR"/>	
+    </classes>
+</test>
+
+
+</suite> 

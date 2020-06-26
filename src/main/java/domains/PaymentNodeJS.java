@@ -356,7 +356,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 		
 		else if (payType.equalsIgnoreCase("CCRazorPay")) {
 			safeClick(driver, getObjectPayment("MakePayment_Pay_Btn_CC"));
-			textPresent_Log(driver, "Welcome to Razorpay Bank", 10);
+			textPresent_Log(driver, "Welcome to Razorpay Bank", 30);
 			elementVisible(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Logo"), 1);
 			safeClick(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Submit"));		
 		}

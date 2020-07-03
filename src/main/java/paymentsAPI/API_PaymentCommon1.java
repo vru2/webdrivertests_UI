@@ -688,7 +688,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			Reporter.log(urlPay=url);
 		}
 		Reporter.log(url);
-		System.out.println(url);
+		//System.out.println(url);
 		request = RestAssured.get(url);
 		return request;			
 	}
@@ -4576,6 +4576,22 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	}
 
 
+	public Response addWalletAmt(Response resp, String EmailID, int Amount, String Currency){
+		RestAssured.baseURI =urlWallet;
+		String url = "/payments/wallet/cashback?emailId="+EmailID+"&currency="+Currency+"&amount="+Amount+"&tripRef=Q190812462288&expiryDate=20/12/20";
+		HashMap<String, Object> headers = new HashMap<>();
+		headers = headersForms();
+		Response request;	
+
+		System.out.println(url);
+		request = 		
+		RestAssured.given().
+		when().
+		log().all().
+		headers(headers).
+		get(url);
+		return request;
+	}
 }
 
 

@@ -5,8 +5,11 @@ package paymentsUI_Air;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Reporter;
+
+import com.gargoylesoftware.htmlunit.UrlFetchWebConnection;
 
 import io.restassured.internal.util.SafeExceptionRethrower;
 import io.restassured.path.json.JsonPath;
@@ -21,9 +24,10 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 	protected String qaUrl;
 	public Response resp;
 
-protected String qaurl = "https://qa2.cleartrip.com";
+	protected String qaurl = "https://qa2.cleartrip.com";
+	Cookie cookie_Parl_Wallet = new Cookie("ct-auth", "");
+	Cookie cookie_Fulls_Wallet = new Cookie("ct-auth", "");	
 	
-
 	public String fetchPaymentURL(Response resp){
 		String payurl="";
 		JsonPath jsonPathEvaluator = resp.jsonPath();
@@ -206,6 +210,7 @@ protected String qaurl = "https://qa2.cleartrip.com";
 			}
 	}
 	
+
 	
 	
 }

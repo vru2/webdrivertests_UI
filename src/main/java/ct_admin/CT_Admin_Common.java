@@ -16,7 +16,7 @@ public class CT_Admin_Common extends WrapperMethod {
 	public RemoteWebDriver driver = null;
 	static String url="/hq/ct-admin/recordList";
 	String username="varalakshmi.venkateshaiah@cleartrip.com";
-	String pwd="Cleartrip@1";
+	String pwd="Cleartrip@123";
 	String s;
 	
 	

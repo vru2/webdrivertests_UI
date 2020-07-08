@@ -3,6 +3,8 @@
 
 package paymentsUI_Air;
 
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
@@ -111,6 +113,10 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 				break;
 			}			
 			safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
+			if(textPresent(driver, "Internal server error", 2)) {
+				Reporter.log("Internal server error is displayed after Clicking Make Payment");
+				Assert.assertTrue(false);
+			}
 			Reporter.log("Make Payment button is Clicked");
 			if(!BankName.contains("CAPTCHA")) {
 			payUI_BankPage(driver, BankName);

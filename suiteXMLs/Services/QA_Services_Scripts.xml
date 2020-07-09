@@ -16,7 +16,7 @@
 				<suite-file path="QA_Tripservices_API.xml"></suite-file>
 		</suite-files>
 		<suite-files>
-				<suite-file path="QA_CT_Admin_UI.xml"></suite-file>
+				<suite-file path="QA_CT_Admin_CT_CONFIG_UI.xml"></suite-file>
 		</suite-files> 
 		 <suite-files>
 				<suite-file path="QA_Accounts_Service_JAVA_APIS.xml"></suite-file>

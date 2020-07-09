@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+    <line>
+      <![CDATA[<p>Email textbox is visible is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[hq loaded]]>
+    </line>
+    <line>
+      <![CDATA[Signed into hq]]>
+    </line>
+    <line>
+      <![CDATA[<p>https://qa2.cleartrip.com/partners/dashboard</p>]]>
+    </line>
+    <line>
+      <![CDATA[ct-admin url launched]]>
+    </line>
+    <line>
+      <![CDATA[<p>Resource drop is visible is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[ct-admin ui loaded]]>
+    </line>
+    <line>
+      <![CDATA[<p>walletCredentials is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[WalletCredentails ui is loaded]]>
+    </line>
+    <line>
+      <![CDATA[<p>Deactivate is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[nbCredentials ui loaded]]>
+    </line>
+    <line>
+      <![CDATA[<p>Tests_HDFC is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[pgCredentials ui loaded]]>
+    </line>
+    <line>
+      <![CDATA[<p>Update is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[update pgCredentials page ui loaded]]>
+    </line>
+    <line>
+      <![CDATA[value entered]]>
+    </line>
+    <line>
+      <![CDATA[Clicked on Update]]>
+    </line>
+    <line>
+      <![CDATA[<p>Tests_HDFC is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[Update was successfull]]>
+    </line>
+    <line>
+      <![CDATA[<p>https://qa2.cleartrip.com/partners/dashboard</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>submit Button is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>Add Button is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>search property is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>View changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>confirm changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>discard is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>All changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>View changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>confirm changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>publish is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>Add Button is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>search property is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>Add Button is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>search property is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>update button is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>View changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>confirm changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>discard is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>All changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>View changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>confirm changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>publish is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>Add Button is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>search property is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>Add is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>Commit Difference is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>Complete detail is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>Add Button is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>search property is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>View changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>confirm changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>discard is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>All changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>View changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>confirm changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>publish is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>Add Button is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>search property is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>Add Button is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>search property is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>View changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>confirm changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>discard is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>All changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>View changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>confirm changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>publish is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>Add Button is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>search property is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>Add Button is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>search property is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>update button is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>View changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>confirm changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>discard is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>All changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>View changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>confirm changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>publish is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>Add Button is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>search property is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>Add Button is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>search property is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>submit Button is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>Add Button is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>search property is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>Add Button is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>search property is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>Add Button is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>search property is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>View changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>confirm changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>discard is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>All changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>View changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>confirm changes is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>publish is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>Add Button is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>search property is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>Add Button is displayed in page</p>]]>
+    </line>
+    <line>
+      <![CDATA[<p>search property is displayed in page</p>]]>
+    </line>
+  </reporter-output>
+  <suite name="Platform Services API" duration-ms="324785" started-at="2020-07-09T06:36:57Z" finished-at="2020-07-09T06:42:22Z">
+    <groups>
+    </groups>
+    <test name="Ct-admin UI" duration-ms="25672" started-at="2020-07-09T06:36:57Z" finished-at="2020-07-09T06:37:23Z">
+      <class name="ct_admin.CT_Admin">
+        <test-method status="PASS" signature="startSelenium()[pri:0, instance:ct_admin.CT_Admin@419c5f1a]" name="startSelenium" is-config="true" duration-ms="1319" started-at="2020-07-09T06:36:57Z" finished-at="2020-07-09T06:36:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startSelenium -->
+        <test-method status="PASS" signature="ct_admin_ui()[pri:0, instance:ct_admin.CT_Admin@419c5f1a]" name="ct_admin_ui" duration-ms="24121" started-at="2020-07-09T06:36:58Z" finished-at="2020-07-09T06:37:23Z">
+          <reporter-output>
+            <line>
+              <![CDATA[<p>Email textbox is visible is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[hq loaded]]>
+            </line>
+            <line>
+              <![CDATA[Signed into hq]]>
+            </line>
+            <line>
+              <![CDATA[<p>https://qa2.cleartrip.com/partners/dashboard</p>]]>
+            </line>
+            <line>
+              <![CDATA[ct-admin url launched]]>
+            </line>
+            <line>
+              <![CDATA[<p>Resource drop is visible is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[ct-admin ui loaded]]>
+            </line>
+            <line>
+              <![CDATA[<p>walletCredentials is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[WalletCredentails ui is loaded]]>
+            </line>
+            <line>
+              <![CDATA[<p>Deactivate is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[nbCredentials ui loaded]]>
+            </line>
+            <line>
+              <![CDATA[<p>Tests_HDFC is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[pgCredentials ui loaded]]>
+            </line>
+            <line>
+              <![CDATA[<p>Update is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[update pgCredentials page ui loaded]]>
+            </line>
+            <line>
+              <![CDATA[value entered]]>
+            </line>
+            <line>
+              <![CDATA[Clicked on Update]]>
+            </line>
+            <line>
+              <![CDATA[<p>Tests_HDFC is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[Update was successfull]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- ct_admin_ui -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:ct_admin.CT_Admin@419c5f1a]" name="afterMethod" is-config="true" duration-ms="2" started-at="2020-07-09T06:37:23Z" finished-at="2020-07-09T06:37:23Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=ct_admin_ui status=SUCCESS method=CT_Admin.ct_admin_ui()[pri:0, instance:ct_admin.CT_Admin@419c5f1a] output=<p>Email textbox is visible is displayed in page</p>]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="closeSelenium()[pri:0, instance:ct_admin.CT_Admin@419c5f1a]" name="closeSelenium" is-config="true" duration-ms="180" started-at="2020-07-09T06:37:23Z" finished-at="2020-07-09T06:37:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeSelenium -->
+      </class> <!-- ct_admin.CT_Admin -->
+    </test> <!-- Ct-admin UI -->
+    <test name="Ct-config UI" duration-ms="299067" started-at="2020-07-09T06:37:23Z" finished-at="2020-07-09T06:42:22Z">
+      <class name="ct_config.CT_Config">
+        <test-method status="PASS" signature="startSelenium()[pri:0, instance:ct_config.CT_Config@63021689]" name="startSelenium" is-config="true" duration-ms="783" started-at="2020-07-09T06:37:23Z" finished-at="2020-07-09T06:37:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startSelenium -->
+        <test-method status="PASS" signature="ct_config()[pri:0, instance:ct_config.CT_Config@63021689]" name="ct_config" duration-ms="298202" started-at="2020-07-09T06:37:24Z" finished-at="2020-07-09T06:42:22Z">
+          <reporter-output>
+            <line>
+              <![CDATA[<p>https://qa2.cleartrip.com/partners/dashboard</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>submit Button is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>Add Button is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>search property is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>View changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>confirm changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>discard is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>All changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>View changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>confirm changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>publish is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>Add Button is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>search property is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>Add Button is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>search property is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>update button is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>View changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>confirm changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>discard is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>All changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>View changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>confirm changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>publish is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>Add Button is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>search property is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>Add is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>Commit Difference is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>Complete detail is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>Add Button is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>search property is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>View changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>confirm changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>discard is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>All changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>View changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>confirm changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>publish is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>Add Button is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>search property is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>Add Button is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>search property is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>View changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>confirm changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>discard is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>All changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>View changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>confirm changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>publish is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>Add Button is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>search property is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>Add Button is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>search property is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>update button is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>View changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>confirm changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>discard is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>All changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>View changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>confirm changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>publish is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>Add Button is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>search property is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>Add Button is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>search property is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>submit Button is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>Add Button is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>search property is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>Add Button is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>search property is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>Add Button is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>search property is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>View changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>confirm changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>discard is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>All changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>View changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>confirm changes is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>publish is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>Add Button is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>search property is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>Add Button is displayed in page</p>]]>
+            </line>
+            <line>
+              <![CDATA[<p>search property is displayed in page</p>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- ct_config -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:ct_config.CT_Config@63021689]" name="afterMethod" is-config="true" duration-ms="0" started-at="2020-07-09T06:42:22Z" finished-at="2020-07-09T06:42:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=ct_config status=SUCCESS method=CT_Config.ct_config()[pri:0, instance:ct_config.CT_Config@63021689] output=<p>https://qa2.cleartrip.com/partners/dashboard</p>]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="closeSelenium()[pri:0, instance:ct_config.CT_Config@63021689]" name="closeSelenium" is-config="true" duration-ms="76" started-at="2020-07-09T06:42:22Z" finished-at="2020-07-09T06:42:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeSelenium -->
+      </class> <!-- ct_config.CT_Config -->
+    </test> <!-- Ct-config UI -->
+  </suite> <!-- Platform Services API -->
+</testng-results>

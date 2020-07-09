@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [Platform Services API]" parallel="tests">
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="common.RemoveDuplicateResults"/>
+    <listener class-name="common.RetryListener"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+  </listeners>
+  <test thread-count="1" name="Ct-admin UI(failed)" parallel="tests">
+    <classes>
+      <class name="ct_admin.CT_Admin">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="closeSelenium"/>
+          <include name="startSelenium"/>
+          <include name="ct_admin_ui"/>
+        </methods>
+      </class> <!-- ct_admin.CT_Admin -->
+    </classes>
+  </test> <!-- Ct-admin UI(failed) -->
+  <test thread-count="1" name="Ct-config UI(failed)" parallel="tests">
+    <classes>
+      <class name="ct_config.CT_Config">
+        <methods>
+          <include name="closeSelenium"/>
+          <include name="ct_config"/>
+          <include name="startSelenium"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- ct_config.CT_Config -->
+    </classes>
+  </test> <!-- Ct-config UI(failed) -->
+</suite> <!-- Failed suite [Platform Services API] -->

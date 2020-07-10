@@ -11,7 +11,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import io.restassured.response.Response;
 
-public class Wallet_Only extends PaymentUI_Common{
+public class CC_AE extends PaymentUI_Common{
 	public RemoteWebDriver driver;
 	protected String Url;
 	protected String paymentUrl;
@@ -19,12 +19,12 @@ public class Wallet_Only extends PaymentUI_Common{
 	public Response resp;
 	
 	@Test
-	public void CC_Amex_Pay() throws Exception {
-		String PayUrl = getPayUI("Air", "");
+	public void CC_PayU_Pay_AE() throws Exception {
+		String PayUrl = getPayUI("AirAE", "AE");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
 		payUI_Select_PaymentType(driver, "CC");
-		payUI_Enter_PaymentDetails(driver, "CC", "AMEX");
+		payUI_Enter_PaymentDetails(driver, "CC", "MASTER");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
 	}
 

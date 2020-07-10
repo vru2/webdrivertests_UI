@@ -22,6 +22,9 @@ public class Wallet_NB extends PaymentUI_Common{
 	public void CC_Amex_Pay() throws Exception {
 		Response resp = null;
 		resp  = addWalletAmt(resp, "kiran.kumar@cleartrip.com", 10, "INR");
+		//Utilize the balance ₹ 2,929.10 in your wallet as a partial payment for this booking.
+
+
 		System.out.println(resp.asString());
 		/*
 		String PayUrl = getPayUI("Air", "");

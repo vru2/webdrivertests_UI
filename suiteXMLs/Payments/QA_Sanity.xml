@@ -8,10 +8,9 @@
 <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
 
-
 <test name="UI CC"  preserve-order="true" parallel="true" >
     <classes>
-      <class name="paymentsUI_Air.CC_Master"/>
+<!--       <class name="paymentsUI_Air.CC_Master"/> -->
     </classes>
 </test>
 

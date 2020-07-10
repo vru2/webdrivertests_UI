@@ -27,8 +27,9 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 	public Response resp;
 
 	protected String qaurl = "https://qa2.cleartrip.com";
+	protected String qaurlae = "https://qa2.cleartrip.ae";
 	Cookie cookie_Parl_Wallet = new Cookie("ct-auth", "");
-	Cookie cookie_Fulls_Wallet = new Cookie("ct-auth", "");	
+	Cookie cookie_Full_Wallet = new Cookie("ct-auth", "5zoM9zvEgPvd1fO%2BsJylFp4hvaybBzUzp2ilDBfOdXvOg%2BIVENg%2BHdsz3cA98%2B5BD3habrO078UoXdzWM34lXZaLbE1jIpkEaANLn%2BHJadeW7kll2UfWWUfOoZLsVWTER2KXP0MBz2Ucg2wdtjfomKwrrYOshnOlUWyYWat6SeV2Tt6lvwTzivgXCSht22Dws");	
 	
 	public String fetchPaymentURL(Response resp){
 		String payurl="";
@@ -38,7 +39,10 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 	}
 	
 	public String getPayUI(String PayType, String PayType1) throws Exception {
-		resp = payUIget(PayType,"");
+		resp = payUIget(PayType,PayType1);
+		if(PayType1.equalsIgnoreCase("AE")) {
+			qaurl=qaurlae;
+		}
 		Url = qaurl+ fetchPaymentURL(resp);
 		Reporter.log("Payment URL : " +Url);
 		return Url;
@@ -111,13 +115,13 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 				case "CAPTCHA":
 				Enter_CC_Details(driver, "512345678901234", platform.value("MasterCard_Month"), platform.value("MasterCard_Year"), platform.value("MasterCard_CVV"));
 				break;
-			}			
+			}
 			safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
-			if(textPresent(driver, "Internal server error", 2)) {
+			Reporter.log("Make Payment button is Clicked");
+			if(textPresent(driver, "Internal server error", 5)) {
 				Reporter.log("Internal server error is displayed after Clicking Make Payment");
 				Assert.assertTrue(false);
 			}
-			Reporter.log("Make Payment button is Clicked");
 			if(!BankName.contains("CAPTCHA")) {
 			payUI_BankPage(driver, BankName);
 			}

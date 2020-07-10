@@ -3,8 +3,10 @@
 
 package paymentsUI_Air;
 
+import org.junit.Assert;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
+import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -19,10 +21,15 @@ public class Amendment extends PaymentUI_Common{
 	public Response resp;
 	
 	@Test
-	public void CC_Amex_Pay() throws Exception {
+	public void CC_Amendment() throws Exception {
 		String PayUrl = getPayUI("AirAmend", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		if(textPresent(driver, "Includes a convenience fee of", 1)){
+			Reporter.log("convenience fee text is displayed");
+			Assert.assertTrue(false);
+		}	
+		textPresent_Log(driver, "Includes a convenience fee of", 1);
 		payUI_Select_PaymentType(driver, "NB");
 		payUI_Enter_PaymentDetails(driver, "NB", "Citibank");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);

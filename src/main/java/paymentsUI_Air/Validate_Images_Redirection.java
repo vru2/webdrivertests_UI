@@ -14,7 +14,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import io.restassured.response.Response;
 
-public class Validate_Text_Messages extends PaymentUI_Common{
+public class Validate_Images_Redirection extends PaymentUI_Common{
 	public RemoteWebDriver driver;
 	protected String Url;
 	protected String paymentUrl;
@@ -117,16 +117,13 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 	@Test(priority=9)
 	public void Validate_Expressway() throws Exception {		
 		safeClick(driver, getObjectPayment("PayUI_Expressway_CheckBox"));
-		textPresent_Log(driver, "2006–2020 Cleartrip Pvt. Ltd", 1);
-		textPresent_Log(driver, "Save this card and make single-click payments", 1);		
+		textPresent_Log(driver, "2006–2020 Cleartrip Pvt. Ltd", 1);		
 	}
 	
 	@Test(priority=10)
 	public void Validate_Misc() throws Exception {		
 		elementPresent_log(driver, getObjectPayment("PayUI_Cleartrip_Logo"), "Cleartrip ", 2);
-		textPresent_Log(driver, "2006–2020 Cleartrip Pvt. Ltd", 1);
-		textPresent_Log(driver, "Completely safe and secure transaction", 1);
-		textPresent_Log(driver, "Total inclusive all taxes", 1);	
+		textPresent_Log(driver, "2006–2020 Cleartrip Pvt. Ltd", 1);		
 		String Title = driver.getTitle();
 		if(!Title.contains("cleartrip | payment securely")) {
 			Reporter.log("cleartrip | payment securely page title is not displayed");

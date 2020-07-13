@@ -105,7 +105,7 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 			payUI_Select_CC(driver, BankName);
 			break;
 		case "DC":
-			
+			payUI_Select_CC(driver, BankName);
 			break;
 		case "NB":
 			payUI_Select_NB(driver, BankName);

@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Payment New UI" parallel="tests" thread-count="5">
+<suite name="Payment New UI" parallel="tests" thread-count="2">
 
 <listeners>
 <listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -28,7 +28,7 @@
     </classes>
 </test>
 
-<test name="Air Payment UI Wallet"  preserve-order="true" parallel="true" >
+<test name="Air Payment UI Wallet Page Only"  preserve-order="true" parallel="true" >
     <classes>
       <class name="paymentsUI_Air.Wallet_Full"/>
     </classes>
@@ -56,14 +56,14 @@
       
 
 <test name="Air ME Domain"  preserve-order="true" parallel="true" >
-    <classes>
+    <classes><!-- 
       <class name="paymentsUI_Air.CC_AE"/>      
       <class name="paymentsUI_Air.CC_BH"/>      
       <class name="paymentsUI_Air.CC_KW"/>      
       <class name="paymentsUI_Air.CC_OM"/>      
       <class name="paymentsUI_Air.CC_QA"/>      
       <class name="paymentsUI_Air.CC_SA"/>      
-      <class name="paymentsUI_Air.CC_US"/>      
+      <class name="paymentsUI_Air.CC_US"/>       -->
     </classes>
 </test>
 

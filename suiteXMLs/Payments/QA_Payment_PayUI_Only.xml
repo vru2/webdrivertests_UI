@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Payment New UI" parallel="tests" thread-count="1">
+<suite name="Payment New UI" parallel="tests" thread-count="10">
 
 <listeners>
 <listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -22,8 +22,8 @@
 
 <test name="Air Payment UI CC"  preserve-order="true" parallel="true" >
     <classes>
-      <class name="paymentsUI_Air.CC_Master"/>
-      <class name="paymentsUI_Air.CC_Amex"/>      
+      <class name="paymentsUI_Air.CC_IN_Master"/>
+      <class name="paymentsUI_Air.CC_IN_Amex"/>      
     </classes>
 </test>
 

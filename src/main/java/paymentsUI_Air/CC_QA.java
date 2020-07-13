@@ -11,7 +11,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import io.restassured.response.Response;
 
-public class CC_Master extends PaymentUI_Common{
+public class CC_QA extends PaymentUI_Common{
 	public RemoteWebDriver driver;
 	protected String Url;
 	protected String paymentUrl;
@@ -19,8 +19,8 @@ public class CC_Master extends PaymentUI_Common{
 	public Response resp;
 	
 	@Test
-	public void CC_PayU_Pay() throws Exception {
-		String PayUrl = getPayUI("Air", "");
+	public void CC_PayU_Pay_QA() throws Exception {
+		String PayUrl = getPayUI("AirQA", "QA");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
 		payUI_Select_PaymentType(driver, "CC");

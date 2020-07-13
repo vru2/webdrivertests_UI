@@ -28,6 +28,12 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 
 	protected String qaurl = "https://qa2.cleartrip.com";
 	protected String qaurlae = "https://qa2.cleartrip.ae";
+	protected String qaurlbh = "https://bh.cleartrip.com";
+	protected String qaurlkw = "https://kw.cleartrip.com";
+	protected String qaurlom = "https://om.cleartrip.com";
+	protected String qaurlsa = "https://qa2.cleartrip.sa";
+	protected String qaurlus = "https://qa2.cleartrip.us";
+	protected String qaurlqa = "https://qa.cleartrip.com";
 	Cookie cookie_Parl_Wallet = new Cookie("ct-auth", "");
 	Cookie cookie_Full_Wallet = new Cookie("ct-auth", "5zoM9zvEgPvd1fO%2BsJylFp4hvaybBzUzp2ilDBfOdXvOg%2BIVENg%2BHdsz3cA98%2B5BD3habrO078UoXdzWM34lXZaLbE1jIpkEaANLn%2BHJadeW7kll2UfWWUfOoZLsVWTER2KXP0MBz2Ucg2wdtjfomKwrrYOshnOlUWyYWat6SeV2Tt6lvwTzivgXCSht22Dws");	
 	
@@ -42,8 +48,21 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 		resp = payUIget(PayType,PayType1);
 		if(PayType1.equalsIgnoreCase("AE")) {
 			qaurl=qaurlae;
+		}else if(PayType1.equalsIgnoreCase("BH")) {
+			qaurl=qaurlbh;
+		}else if(PayType1.equalsIgnoreCase("KW")) {
+			qaurl=qaurlkw;
+		}else if(PayType1.equalsIgnoreCase("OM")) {
+			qaurl=qaurlom;
+		}else if(PayType1.equalsIgnoreCase("QA")) {
+			qaurl=qaurlqa;
+		}else if(PayType1.equalsIgnoreCase("SA")) {
+			qaurl=qaurlsa;
+		}else if(PayType1.equalsIgnoreCase("US")) {
+			qaurl=qaurlus;
 		}
 		Url = qaurl+ fetchPaymentURL(resp);
+		System.out.println("Payment URL : " +Url);
 		Reporter.log("Payment URL : " +Url);
 		return Url;
 	}

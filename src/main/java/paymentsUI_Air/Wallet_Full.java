@@ -42,7 +42,6 @@ public class Wallet_Full extends PaymentUI_Common{
 			Reporter.log("Error in credentials entered. Verify your details and try again message is displayed");
 			Assert.assertTrue(false);
 		}
-		Thread.sleep(10000);
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
 	}
 

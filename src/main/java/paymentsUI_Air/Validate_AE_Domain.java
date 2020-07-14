@@ -37,10 +37,11 @@ public class Validate_AE_Domain extends PaymentUI_Common{
 			Reporter.log("TotalPay Left Column doesnt contain AED  "+totalPay_LeftColumn);
 			Assert.assertTrue(false);
 		}
+		*/
 		if(!totalPay.contains("AED")) {
 			Reporter.log("TotalPay doesnt contain AED"+totalPay);
 			Assert.assertTrue(false);
-		}*/
+		}
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));	
 		textPresent_Log(driver, "Enter your credit card details", 5);	
 		textPresent_Log(driver, "Please enter a valid card number", 1);		

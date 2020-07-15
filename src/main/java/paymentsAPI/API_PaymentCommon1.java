@@ -25,6 +25,9 @@ import paymentsUI.PaymentUI_CommonUtilities;
 
 public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 {	
+	
+	//  https://qa2.cleartrip.com/paymentservice/api/wallet?product=DOMESTIC-AIR&currency=INR 
+	
 	/*
 	
 	String urlPay = "http://172.17.28.21:8358";// Mysql
@@ -4613,7 +4616,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 	public Response addWalletAmt(Response resp, String EmailID, int Amount, String Currency){
 		RestAssured.baseURI =urlWallet;
-		String url = "/payments/wallet/cashback?emailId="+EmailID+"&currency="+Currency+"&amount="+Amount+"&tripRef=Q190812462288&expiryDate=20/12/20";
+		String url = "/payments/wallet/cashback?emailId="+EmailID+"&currency="+Currency+"&amount="+Amount+"&tripRef=Q190812462288";
 		HashMap<String, Object> headers = new HashMap<>();
 		headers = headersForms();
 		Response request;	
@@ -4625,6 +4628,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		log().all().
 		headers(headers).
 		get(url);
+		System.out.println(request);
 		return request;
 	}
 }

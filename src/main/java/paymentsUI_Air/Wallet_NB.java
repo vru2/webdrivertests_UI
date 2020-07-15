@@ -4,11 +4,14 @@
 package paymentsUI_Air;
 
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.Assert;
 import org.testng.ITestResult;
+import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
 import io.restassured.response.Response;
 
 public class Wallet_NB extends PaymentUI_Common{
@@ -19,24 +22,33 @@ public class Wallet_NB extends PaymentUI_Common{
 	public Response resp;
 	
 	@Test
-	public void CC_Amex_Pay() throws Exception {
+	public void Wallet_Part_Pay() throws Exception {
 		Response resp = null;
-		resp  = addWalletAmt(resp, "kiran.kumar@cleartrip.com", 10, "INR");
-		//Utilize the balance ₹ 2,929.10 in your wallet as a partial payment for this booking.
-
-
-		System.out.println(resp.asString());
-		/*
+		resp  = addWalletAmt(resp, "ct_wallet_partial@cleartrip.com", 10, "INR");
 		String PayUrl = getPayUI("Air", "");
-		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
 		driver.manage().addCookie(cookie_Parl_Wallet);
-		
-		payUI_Select_PaymentType(driver, "CC");
-		payUI_Enter_PaymentDetails(driver, "CC", "AMEX");
+		refreshPage(driver);
+		elementVisible(driver, getObjectPayment("PaymentPage_Utilize_WalletBalance_CheckBox_Enabled"), 10);
+		safeClick(driver, getObjectPayment("PaymentPage_Utilize_WalletBalance_CheckBox_Enabled"));
+		Thread.sleep(5000);
+		if(textPresent(driver, "Deduction from wallet", 5)) {
+			Reporter.log("Wallet is enabled after uncheking the checkbox");
+			Assert.assertTrue(false);
+		}
+		elementVisible(driver, getObjectPayment("PaymentPage_Utilize_WalletBalance_CheckBox"), 10);
+		safeClick(driver, getObjectPayment("PaymentPage_Utilize_WalletBalance_CheckBox"));
+		textPresent_Log(driver, "Utilize the balance", 5);
+		textPresent_Log(driver, " in your wallet as a partial payment for this booking.", 2);
+		textPresent_Log(driver, "Total payable", 1);
+		textPresent_Log(driver, "Deduction from wallet", 1);
+		textPresent_Log(driver, "Balance payable", 	1);
+		textPresent_Log(driver, "Includes a convenience fee of", 1);
+		payUI_Select_PaymentType(driver, "NB");
+		payUI_Enter_PaymentDetails(driver, "NB", "Citibank");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
-	*/}
-/*
+	}
+
 	@BeforeClass
 	public void setUp() throws Exception {
 		driver=(RemoteWebDriver) getDriver(driver);
@@ -50,6 +62,6 @@ public class Wallet_NB extends PaymentUI_Common{
 	@AfterClass
 	public void tearDown() throws Exception {
 		browserClose(driver);
-	}*/
+	}
 	
 }

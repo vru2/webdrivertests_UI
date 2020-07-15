@@ -34,7 +34,7 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 	protected String qaurlsa = "https://qa2.cleartrip.sa";
 	protected String qaurlus = "https://qa2.cleartrip.us";
 	protected String qaurlqa = "https://qa.cleartrip.com";
-	Cookie cookie_Parl_Wallet = new Cookie("ct-auth", "");
+	Cookie cookie_Parl_Wallet = new Cookie("ct-auth", "u8ikyrIDWHzYjvgXGe7DcSilWSeNdD3sGtbSzvPZYHJsqbodZst%2B%2F0ze9bW1F%2F23uQmW3NiUZma8q2lELnUuyC3uAF5DaTQONdJlLn%2FO2me%2FiLCzDjUE8Mm7nMigogz0cui%2F5Lc2RncHKyY%2FG5jXeVJ2Z%2BJW4q4d2%2BSGAnvG%2FbfJ2a5%2BLtDuDuClv7XsKTWXoRahiCr1K%2B3iYGbIxo%2FJPQ%3D%3D");
 	Cookie cookie_Full_Wallet = new Cookie("ct-auth", "5zoM9zvEgPvd1fO%2BsJylFp4hvaybBzUzp2ilDBfOdXvOg%2BIVENg%2BHdsz3cA98%2B5BD3habrO078UoXdzWM34lXZaLbE1jIpkEaANLn%2BHJadeW7kll2UfWWUfOoZLsVWTER2KXP0MBz2Ucg2wdtjfomKwrrYOshnOlUWyYWat6SeV2Tt6lvwTzivgXCSht22Dws");	
 	
 	public String fetchPaymentURL(Response resp){
@@ -62,7 +62,7 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 			qaurl=qaurlus;
 		}
 		Url = qaurl+ fetchPaymentURL(resp);
-		System.out.println("Payment URL : " +Url);
+		//System.out.println("Payment URL : " +Url);
 		Reporter.log("Payment URL : " +Url);
 		return Url;
 	}

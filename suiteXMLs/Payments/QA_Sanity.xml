@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="QA Sanity" parallel="tests" thread-count="10">
+<suite name="QA Sanity" parallel="tests" thread-count="2">
 
 <listeners>
 <listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -10,7 +10,7 @@
 
 <test name="UI CC"  preserve-order="true" parallel="true" >
     <classes>
-<!--       <class name="paymentsUI_Air.CC_IN_Master"/> -->
+      <class name="paymentsUI_Air.CC_IN_Master"/>
     </classes>
 </test>
 

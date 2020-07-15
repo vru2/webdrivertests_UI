@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Payment New UI" parallel="tests" thread-count="1">
+<suite name="Payment New UI" parallel="tests" thread-count="2">
 
 <listeners>
 <listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -42,7 +42,8 @@
 
 <test name="Air Wallet Page Only"  preserve-order="true" parallel="true" >
     <classes>
-      <class name="paymentsUI_Air.Wallet_Full"/>
+      <class name="paymentsUI_Air.Wallet_Full"/> 
+      <class name="paymentsUI_Air.Wallet_NB"/>      
     </classes>
 </test>
 

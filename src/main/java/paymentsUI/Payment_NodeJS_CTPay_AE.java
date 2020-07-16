@@ -4,6 +4,7 @@
 package paymentsUI;
 
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -22,8 +23,10 @@ import domains.PaymentNodeJS;
        driver.manage().deleteAllCookies(); 
 	   driver.get(baseUrl);	   
 	   paymentNodeJS_Select_Payment(driver, "CURRENCY", "AED", "");
+	   
 	  // paymentNodeJS_Select_Payment(driver, "CTP", "NOHOMEPAGE", "");
 	   paymentNodeJS_Make_Payment(driver, "CTPAE", "");
+	   Assert.assertTrue(false);
 	 //  paymentNodeJS_ConfirmationPage(driver, "CTPAE", "","CTPay AE ");
 	   }
 	  }

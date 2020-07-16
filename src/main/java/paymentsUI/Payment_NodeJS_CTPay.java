@@ -4,6 +4,7 @@
 package paymentsUI;
 
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -23,6 +24,7 @@ import domains.PaymentNodeJS;
 	   driver.get(baseUrl);	   
 	   paymentNodeJS_Select_Payment(driver, "CTP", "", "");
 	   paymentNodeJS_Make_Payment(driver, "CTP", "");
+	   Assert.assertTrue(false);
 	  // paymentNodeJS_ConfirmationPage(driver, "CTP", "","Ct pay ");
 	  // paymentNodeJS_ConfirmationPage(driver, "CTP", "","Ct pay  ");
 	  }

@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Payment New UI" parallel="tests" thread-count="2">
+<suite name="Payments UI Page" parallel="tests" thread-count="2">
 
 <listeners>
 <listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -8,31 +8,37 @@
 <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
 
-<test name="Air Text Validation"  preserve-order="true" parallel="true" >
+<test name="Text Validation"  preserve-order="true" parallel="true" >
     <classes>
       <class name="paymentsUI_Air.Validate_Text_Messages"/>
     </classes>
 </test>
 
-<test name="Air Amendment"  preserve-order="true" parallel="true" >
+<test name="Amendment"  preserve-order="true" parallel="true" >
     <classes>
       <class name="paymentsUI_Air.Amendment"/>
     </classes>
 </test>
 
-<test name="Air GV"  preserve-order="true" parallel="true" >
+<test name="GV"  preserve-order="true" parallel="true" >
     <classes>
       <class name="paymentsUI_Air.NB_GV"/>	  
     </classes>
 </test>
 
-<test name="Air Coupon Removal"  preserve-order="true" parallel="true" >
+<test name="StoredCard"  preserve-order="true" parallel="true" >
+    <classes>
+      <class name="paymentsUI_Air.StoredCard"/>	  
+    </classes>
+</test>
+
+<test name="Coupon Invalid Paytype"  preserve-order="true" parallel="true" >
     <classes>
       <class name="paymentsUI_Air.Coupon"/>	  
     </classes>
 </test>
 
-<test name="Air CC"  preserve-order="true" parallel="true" >
+<test name="CC"  preserve-order="true" parallel="true" >
     <classes>
       <class name="paymentsUI_Air.CC_IN_Master"/>
       <!-- <class name="paymentsUI_Air.DC_IN_Master"/> -->
@@ -40,7 +46,7 @@
     </classes>
 </test>
 
-<test name="Air Wallet Page Only"  preserve-order="true" parallel="true" >
+<test name="Wallet"  preserve-order="true" parallel="true" >
     <classes>
       <class name="paymentsUI_Air.Wallet_Full"/> 
       <class name="paymentsUI_Air.Wallet_NB"/>      
@@ -55,13 +61,13 @@
     </classes>
 </test>
 
-<test name="Air AE Validation"  preserve-order="true" parallel="true" >
+<test name="AE Validation"  preserve-order="true" parallel="true" >
     <classes>
       <class name="paymentsUI_Air.Validate_AE_Domain"/>   
     </classes>
 </test>
 
-<test name="Air ME Domain"  preserve-order="true" parallel="true" >
+<test name="ME Domain"  preserve-order="true" parallel="true" >
     <classes><!-- 
       <class name="paymentsUI_Air.CC_AE"/>      
       <class name="paymentsUI_Air.CC_BH"/>      
@@ -73,13 +79,13 @@
     </classes>
 </test>
 
-<test name="Air Captcha Validation Only"  preserve-order="true" parallel="true" >
+<test name="Captcha Validation Only"  preserve-order="true" parallel="true" >
     <classes>
       <class name="paymentsUI_Air.Captcha_Validation_Only"/> 	  
     </classes>
 </test>
 	
-<test name="Trains Pay"  preserve-order="true" parallel="true" >
+<test name="Train Pay"  preserve-order="true" parallel="true" >
     <classes>
       <class name="paymentsUI.PaymentUI_Captcha"/> 
       <class name="paymentsUI.PaymentUI_SignIN"/>
@@ -90,13 +96,13 @@
     </classes>
 </test>
 	
-<test name="Trains Pay NB"  preserve-order="true" parallel="true" >
+<test name="Train Pay NB"  preserve-order="true" parallel="true" >
     <classes>
 	  <class name="paymentsUI.PaymentsUI_NB"/>
     </classes>
 </test>
 
-<test name="Trains Validation"  preserve-order="true" parallel="true" >
+<test name="Train Validation"  preserve-order="true" parallel="true" >
     <classes>
      <!--  <class name="paymentsUI.PaymentUI_AddStoredCardAndValidate"/> -->
       <class name="paymentsUI.PaymentUI_ErrorValidationUPIWalletAndNB"/>

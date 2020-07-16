@@ -26,6 +26,7 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		elementPresent_log(driver, getObjectPayment("PayUI_PageLoader_Spinner"), "Page Loaded ", 10);
 		payUI_Select_PaymentType(driver, "CC");
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));	
 		textPresent_Log(driver, "Enter your credit card details", 5);	

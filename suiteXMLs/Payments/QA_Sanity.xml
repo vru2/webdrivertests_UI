@@ -5,7 +5,6 @@
 <listener class-name="org.uncommons.reportng.HTMLReporter" />
 <listener class-name="common.RemoveDuplicateResults"/>
 <listener class-name="common.RetryListener"/>
-<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
 
 <test name="UI CC"  preserve-order="true" parallel="true" >

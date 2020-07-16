@@ -36,7 +36,7 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 	protected String qaurlqa = "https://qa.cleartrip.com";
 	Cookie cookie_Parl_Wallet = new Cookie("ct-auth", "u8ikyrIDWHzYjvgXGe7DcSilWSeNdD3sGtbSzvPZYHJsqbodZst%2B%2F0ze9bW1F%2F23uQmW3NiUZma8q2lELnUuyC3uAF5DaTQONdJlLn%2FO2me%2FiLCzDjUE8Mm7nMigogz0cui%2F5Lc2RncHKyY%2FG5jXeVJ2Z%2BJW4q4d2%2BSGAnvG%2FbfJ2a5%2BLtDuDuClv7XsKTWXoRahiCr1K%2B3iYGbIxo%2FJPQ%3D%3D");
 	Cookie cookie_Full_Wallet = new Cookie("ct-auth", "5zoM9zvEgPvd1fO%2BsJylFp4hvaybBzUzp2ilDBfOdXvOg%2BIVENg%2BHdsz3cA98%2B5BD3habrO078UoXdzWM34lXZaLbE1jIpkEaANLn%2BHJadeW7kll2UfWWUfOoZLsVWTER2KXP0MBz2Ucg2wdtjfomKwrrYOshnOlUWyYWat6SeV2Tt6lvwTzivgXCSht22Dws");	
-	
+	Cookie cookie_Stored_Card = new Cookie("ct-auth", "3cZX3Pk7YZLQGkv5lH%2BqMisg41mHr4%2BV5LnkFlBYXSW7TbjXLYl7j8XVySMQUxQsuv18jxT4Krq%2BnZKZgt%2FgtsPPZuvu7kgJgSXq9dBmctulsdFnuefY%2Fk4K%2FkHUuDj%2BnitdvoouxVugJ172IcDxp41NeKUSgTMU9EpGlYfZJ60e5yZIWxI28YU6CxlbH7FH");
 	public String fetchPaymentURL(Response resp){
 		String payurl="";
 		JsonPath jsonPathEvaluator = resp.jsonPath();
@@ -68,7 +68,11 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 	}
 	
 	public void payUI_Select_PaymentType(RemoteWebDriver driver, String PayType) throws Exception {
-		if(!elementVisible(driver, getObjectPayment("PayUI_Pay_Tabs"), 10)) {
+		if(textPresent(driver, "There's something wrong with our system", 5)) {
+			Reporter.log("There's something wrong with our system");			
+			Assert.assertTrue(false);
+		}
+		if(!elementVisible(driver, getObjectPayment("PayUI_Pay_Tabs"), 30)) {
 			Reporter.log("PayUI Page is not displayed");
 			String UI_error = getText(driver, By.xpath("//h1"));
 			Reporter.log(UI_error);			
@@ -93,11 +97,20 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 		case "ADCB":
 			PayType = "";
 			break;
+		case "SC":
+			PayType = "Stored Card";
+			break;
 		default:
 			break;
 		}		
 		safeClickList(driver, getObjectPayment("PayUI_Pay_Tabs"), PayType);	
 	}
+	
+	public void payUI_PageLoader(RemoteWebDriver driver) throws Exception {
+		elementNotVisible(driver, getObjectPayment("PayUI_PageLoader_Spinner"), 10);
+		elementNotVisible(driver, getObjectPayment("PayUI_PageLoader_Shimmer"), 10);
+	}
+		
 	
 	public void payUI_Enter_PaymentDetails(RemoteWebDriver driver, String PayType, String BankName) throws Exception {
 		switch (PayType) {
@@ -157,8 +170,7 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 		safeType(driver, getObjectPayment("PaymentPage_CreditCard_CVV"), CVV);
 	}
 	
-	public void payUI_BankPage(RemoteWebDriver driver, String BankName) throws Exception {	
-		
+	public void payUI_BankPage(RemoteWebDriver driver, String BankName) throws Exception {		
 		elementNotVisible(driver, getObjectPayment("PayUI_Pay_Tabs"), 10);		
 		if(BankName.equalsIgnoreCase("MASTER")) {
 			if (textPresent(driver, "AXIS SIMULATOR", 10)) {
@@ -171,16 +183,16 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 				Assert.assertTrue(false);
 		}
 		}else if(BankName.equalsIgnoreCase("AMEX")) {
-			textPresent(driver, "ACS Emulator", 10);
+			elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_Amex3DPage_Submit_Btn"), "Amex Bank page not displayed", 20);
+			textPresent(driver, "ACS Emulator", 1);
 			Reporter.log("Amex Auth page is displayed");
-			elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_Amex3DPage_Submit_Btn"), 20);
 			safeClick(driver, getObjectPayment("MakePayment_NB_Bank_Amex3DPage_Submit_Btn"));
 		}else if(BankName.equalsIgnoreCase("Citibank")) {
-			elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"), 30);
+			elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"), "Citi Bank page not displayed", 30);
 			Reporter.log("CitiBank Auth page is displayed");
 			safeClick(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"));
 		}else if(BankName.equalsIgnoreCase("Hdfc Bank")) {
-			elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_UserName"), 30);
+			elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_UserName"), "Tech Process Bank page not displayed", 30);
 			Reporter.log("HDFCBank Auth page is displayed");
 			safeType(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_UserName"), "test");
 			safeType(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_Password"), "test");
@@ -189,13 +201,13 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 			elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_IntermitentText"), 5);
 			safeClick(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_Submit_Btn2"));
 		}else if(BankName.equalsIgnoreCase("ICICI Bank")) {
-			textPresent(driver, "Welcome to Razorpay Bank", 5);
+			elementPresent_log(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Logo"), "Razorpay Bank page not displayed", 30);
+			textPresent(driver, "Welcome to Razorpay Bank", 1);
 			Reporter.log("RazorPay Auth page is displayed");
-			elementVisible(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Logo"), 10);
 			safeClick(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Submit"));	
 		}
 		else if(BankName.equalsIgnoreCase("CAPTCHA")) {
-			elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"), 30);
+			elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"), "Citi Bank page not displayed", 30);
 			Reporter.log("CitiBank Auth page is displayed");
 			safeSelect(driver, By.cssSelector("select[name=\"PAID\"]"), "N");
 			safeClick(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"));

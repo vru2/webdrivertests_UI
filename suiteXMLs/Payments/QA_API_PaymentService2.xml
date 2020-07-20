@@ -1,0 +1,25 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PaymentService API" parallel="tests" thread-count="1">
+
+<listeners>
+<listener class-name="org.uncommons.reportng.HTMLReporter" />
+<listener class-name="common.RemoveDuplicateResults"/>
+<listener class-name="common.RetryListener"/>
+<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+</listeners>
+
+
+
+<test name="API Pay Calls" preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_Validate"/>
+      <class name="paymentsAPI.API_CC_Visa_Type"/>
+      <class name="paymentsAPI.API_CC_GV_Wallet"/> 
+      <class name="paymentsAPI.API_CC"/>
+      <class name="paymentsAPI.API_GV"/> 
+      <class name="paymentsAPI.API_Wallet"/>
+      <class name="paymentsAPI.API_GV_WL"/> 
+    </classes>
+</test>
+
+</suite> 

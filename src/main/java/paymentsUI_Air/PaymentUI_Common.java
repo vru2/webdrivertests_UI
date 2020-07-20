@@ -170,6 +170,18 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 		safeType(driver, getObjectPayment("PaymentPage_CreditCard_CVV"), CVV);
 	}
 	
+	
+	public void Enter_DC_Details(RemoteWebDriver driver, String CCNumber, String CCExpMonth, String CCExpYear, String CVV) throws Exception {
+		Reporter.log("Card Details +\n"+ CCNumber +"\n " + CCExpMonth  +" " + CCExpYear +" " + CVV);
+		safeType(driver, getObjectPayment("PaymentPage_DebitCard_Number"), CCNumber);
+		safeClick(driver, getObjectPayment("PaymentPage_DebitCard_Exp_Month"));
+		safeSelect(driver, getObjectPayment("PaymentPage_DebitCard_Exp_Month"), CCExpMonth);
+		safeClick(driver, getObjectPayment("PaymentPage_DebitCard_Exp_Year"));
+		safeSelect(driver, getObjectPayment("PaymentPage_DebitCard_Exp_Year"), CCExpYear);
+		safeType(driver, getObjectPayment("PaymentPage_DebitCard_Name"), "test");
+		safeType(driver, getObjectPayment("PaymentPage_DebitCard_CVV"), CVV);
+	}
+	
 	public void payUI_BankPage(RemoteWebDriver driver, String BankName) throws Exception {		
 		elementNotVisible(driver, getObjectPayment("PayUI_Pay_Tabs"), 10);		
 		if(BankName.equalsIgnoreCase("MASTER")) {

@@ -26,7 +26,6 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
-		elementPresent_log(driver, getObjectPayment("PayUI_PageLoader_Spinner"), "Page Loaded ", 10);
 		payUI_Select_PaymentType(driver, "CC");
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));	
 		textPresent_Log(driver, "Enter your credit card details", 5);	
@@ -134,6 +133,19 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 			Assert.assertEquals(Title, "cleartrip | payment securely");
 			Assert.assertTrue(false);
 		}
+	}
+	
+	@Test(priority=11)
+	public void Validate_CCDC_Text() throws Exception {
+		payUI_Select_PaymentType(driver, "CC");
+		Enter_CC_Details(driver, platform.value("ADCBCard_Number"), platform.value("ADCBCard_Expiry_Month"), platform.value("ADCBCard_Expiry_Year"), platform.value("ADCBCard_CVV"));
+
+		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
+		textPresent_Log(driver, "Enter valid credit card number", 5);
+		payUI_Select_PaymentType(driver, "DC");
+		Enter_CC_Details(driver, platform.value("AmexCard_Number"), platform.value("AmexCard_Month_New"), platform.value("AmexCard_Year"), platform.value("AmexCard_CVV"));
+		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
+		textPresent_Log(driver, "Enter valid dredit card number", 5);
 	}
 		
 	@BeforeClass

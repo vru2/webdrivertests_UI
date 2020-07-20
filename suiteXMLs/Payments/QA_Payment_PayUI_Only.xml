@@ -8,9 +8,11 @@
 <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
 
-<test name="Text Validation"  preserve-order="true" parallel="true" >
+<test name="Validation"  preserve-order="true" parallel="true" >
     <classes>
       <class name="paymentsUI_Air.Validate_Text_Messages"/>
+    <!--   <class name="paymentsUI_Air.Validate_Images_Link"/>  -->
+      <class name="paymentsUI_Air.Validate_AE_Domain"/>   
     </classes>
 </test>
 
@@ -63,7 +65,6 @@
 
 <test name="AE Validation"  preserve-order="true" parallel="true" >
     <classes>
-      <class name="paymentsUI_Air.Validate_AE_Domain"/>   
     </classes>
 </test>
 

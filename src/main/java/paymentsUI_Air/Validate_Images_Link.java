@@ -3,42 +3,26 @@
 
 package paymentsUI_Air;
 
-import org.junit.Assert;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
-import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
 import io.restassured.response.Response;
 
-public class Amendment extends PaymentUI_Common{
+public class Validate_Images_Link extends PaymentUI_Common{
 	public RemoteWebDriver driver;
 	protected String Url;
 	protected String paymentUrl;
 	protected String qaUrl;
 	public Response resp;
 	
-	@Test
-	public void CC_Amendment() throws Exception {
-		String PayUrl = getPayUI("AirAmend", "");
-		driver.manage().deleteAllCookies(); 
-		driver.get(PayUrl);
-		if(textPresent(driver, "Includes a convenience fee of", 1)){
-			Reporter.log("convenience fee text is displayed");
-			Assert.assertTrue(false);
-		}	
-		if(textPresent(driver, "Includes a convenience fee of", 1)) {
-			Reporter.log("Includes a convenience fee of - text is displayed" );
-			Assert.assertTrue(false);
-		}
-		payUI_Select_PaymentType(driver, "NB");
-		payUI_Enter_PaymentDetails(driver, "NB", "Citibank");
-		payUI_Mock_ConfirmationPage(driver, PayUrl);
+	@Test(priority=1)
+	public void images() throws Exception {
+		
 	}
-
+		
 	@BeforeClass
 	public void setUp() throws Exception {
 		driver=(RemoteWebDriver) getDriver(driver);
@@ -52,6 +36,5 @@ public class Amendment extends PaymentUI_Common{
 	@AfterClass
 	public void tearDown() throws Exception {
 		browserClose(driver);
-	}
-	
+	}	
 }

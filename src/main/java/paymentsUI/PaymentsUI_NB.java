@@ -1,20 +1,14 @@
 package paymentsUI;
 
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Cookie;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
-import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
 import domains.PaymentNodeJS;
 import io.restassured.response.Response;
 
@@ -25,7 +19,6 @@ public class PaymentsUI_NB extends PaymentNodeJS{
 	protected String paymentUrl;
 	protected String qaUrl;
 	public Response resp;
-
 
 	@BeforeClass 
 	public void setUp() throws Exception {
@@ -42,7 +35,6 @@ public class PaymentsUI_NB extends PaymentNodeJS{
 
 	@Test(priority=2, dependsOnMethods={"getPayURL"})
 	public void cancelNBPayment() throws Exception{
-		try {
 			driver=(RemoteWebDriver) getDriver(driver);
 			driver.manage().deleteAllCookies(); 
 			driver.get(Url);
@@ -62,17 +54,12 @@ public class PaymentsUI_NB extends PaymentNodeJS{
 			elementVisible(driver, PaymentUI_CommonUtilities.nbCitiSubmit, 30);
 			click(driver,PaymentUI_CommonUtilities.nbCitiSubmit);
 			validateIfPresent(driver, PaymentUI_CommonUtilities.invalid3DFailureXpath);
-		}
-		catch(Exception e) {
-			Reporter.log("Exception is" +e);
-			Assert.assertTrue(false);
-		}
+		
 	}
 
 
 	@Test(priority=3)
 	public void successfulNBPayment() throws Exception{
-		try {
 			elementVisible(driver,PaymentUI_CommonUtilities.paymentModes, 30);
 			Thread.sleep(2000);
 			validatePaymentModes(driver,PaymentUI_CommonUtilities.paymentModeNB,PaymentUI_CommonUtilities.paymentModexpath);
@@ -89,11 +76,7 @@ public class PaymentsUI_NB extends PaymentNodeJS{
 			validateIfPresent(driver,PaymentUI_CommonUtilities.paymentSuccessHeaderTextXpath);
 			validateIfPresent(driver,PaymentUI_CommonUtilities.paymentSuccessMessageTextXpath);
 			
-		}
-		catch(Exception e) {
-			Reporter.log("Exception is" +e);
-			Assert.assertTrue(false);
-		}
+		
 	}
 
 	/*@Test(priority=4)

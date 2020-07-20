@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Payment UI" parallel="tests" thread-count="10">
+<suite name="Payment TestAPP UI" parallel="tests" thread-count="2">
 
 <listeners>
 <listener class-name="org.uncommons.reportng.HTMLReporter" />

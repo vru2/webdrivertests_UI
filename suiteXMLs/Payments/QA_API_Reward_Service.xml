@@ -1,0 +1,25 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Rewards API" parallel="tests" thread-count="5">
+
+<listeners>
+<listener class-name="org.uncommons.reportng.HTMLReporter" />
+<listener class-name="common.RemoveDuplicateResults"/>
+<listener class-name="common.RetryListener"/>
+<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+</listeners>
+
+<test name="API ADCB" preserve-order="true" parallel="true">
+    <classes>
+    <!--   <class name="paymentsAPI.API_Reward_ADCB_CheckBalance"/> 
+      <class name="paymentsAPI.API_Reward_ADCB_Pay"/>  -->
+    </classes>
+</test>
+
+<test name="API PayBack" preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_RewardPayback"/> 
+    </classes>
+</test>
+
+
+</suite> 

@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Payment New UI" parallel="tests" thread-count="10">
+<suite name="Payments UI Page" parallel="tests" thread-count="2">
 
 <listeners>
 <listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -8,64 +8,107 @@
 <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
 
-<test name="Air Payment UI CC"  preserve-order="true" parallel="true" >
+<test name="Validation"  preserve-order="true" parallel="true" >
     <classes>
-      <class name="paymentsUI_Air.CC_Master"/>
-      <class name="paymentsUI_Air.CC_Amex"/>      
+      <class name="paymentsUI_Air.Validate_Text_Messages"/>
+    <!--   <class name="paymentsUI_Air.Validate_Images_Link"/>  -->
+      <class name="paymentsUI_Air.Validate_AE_Domain"/>   
     </classes>
 </test>
 
-<test name="Air Payment UI NB"  preserve-order="true" parallel="true" >
+<test name="Amendment"  preserve-order="true" parallel="true" >
+    <classes>
+      <class name="paymentsUI_Air.Amendment"/>
+    </classes>
+</test>
+
+<test name="GV"  preserve-order="true" parallel="true" >
+    <classes>
+      <class name="paymentsUI_Air.NB_GV"/>	  
+    </classes>
+</test>
+
+<test name="StoredCard"  preserve-order="true" parallel="true" >
+    <classes>
+      <class name="paymentsUI_Air.StoredCard"/>	  
+    </classes>
+</test>
+
+<test name="Coupon Invalid Paytype"  preserve-order="true" parallel="true" >
+    <classes>
+      <class name="paymentsUI_Air.Coupon"/>	  
+    </classes>
+</test>
+
+<test name="CC"  preserve-order="true" parallel="true" >
+    <classes>
+      <class name="paymentsUI_Air.CC_IN_Master"/>
+      <!-- <class name="paymentsUI_Air.DC_IN_Master"/> -->
+      <class name="paymentsUI_Air.CC_IN_Amex"/>      
+    </classes>
+</test>
+
+<test name="Wallet"  preserve-order="true" parallel="true" >
+    <classes>
+      <class name="paymentsUI_Air.Wallet_Full"/> 
+      <class name="paymentsUI_Air.Wallet_NB"/>      
+    </classes>
+</test>
+
+<test name="Air NB"  preserve-order="true" parallel="true" >
     <classes>
       <class name="paymentsUI_Air.NB_CITI"/> 
 	  <class name="paymentsUI_Air.NB_HDFC"/> 
-	  <!-- <class name="paymentsUI_Air.NB_ICICI"/>  -->	  
+	 <!--  <class name="paymentsUI_Air.NB_ICICI"/> 	   -->
     </classes>
 </test>
 
-
-<test name="Air Payment UI Amendment"  preserve-order="true" parallel="true" >
+<test name="AE Validation"  preserve-order="true" parallel="true" >
     <classes>
-      <class name="paymentsUI_Air.Amendment"/> 
-	  
+    </classes>
+</test>
+
+<test name="ME Domain"  preserve-order="true" parallel="true" >
+    <classes><!-- 
+      <class name="paymentsUI_Air.CC_AE"/>      
+      <class name="paymentsUI_Air.CC_BH"/>      
+      <class name="paymentsUI_Air.CC_KW"/>      
+      <class name="paymentsUI_Air.CC_OM"/>      
+      <class name="paymentsUI_Air.CC_QA"/>      
+      <class name="paymentsUI_Air.CC_SA"/>      
+      <class name="paymentsUI_Air.CC_US"/>       -->
+    </classes>
+</test>
+
+<test name="Captcha Validation Only"  preserve-order="true" parallel="true" >
+    <classes>
+      <class name="paymentsUI_Air.Captcha_Validation_Only"/> 	  
     </classes>
 </test>
 	
-<test name="Trains Payment UI Pay"  preserve-order="true" parallel="true" >
+<test name="Train Pay"  preserve-order="true" parallel="true" >
     <classes>
       <class name="paymentsUI.PaymentUI_Captcha"/> 
       <class name="paymentsUI.PaymentUI_SignIN"/>
-      <class name="paymentsUI.PaymentUI_Validation"/>
+  <!--     <class name="paymentsUI.PaymentUI_Validation"/> -->
 	  <class name="paymentsUI.PaymentUI_Wallet"/>
-	  <class name="paymentsUI.PaymentUI_PhonePe"/> 
+	 <!--  <class name="paymentsUI.PaymentUI_PhonePe"/>  -->
 	  <class name="paymentsUI.PaymentUI_TPW_AmazonPay"/>	  
     </classes>
 </test>
 	
-<test name="Trains Payment UI Pay NB"  preserve-order="true" parallel="true" >
+<test name="Train Pay NB"  preserve-order="true" parallel="true" >
     <classes>
 	  <class name="paymentsUI.PaymentsUI_NB"/>
     </classes>
 </test>
 
-
-<test name="Trains Payment UI Validation"  preserve-order="true" parallel="true" >
+<test name="Train Validation"  preserve-order="true" parallel="true" >
     <classes>
-      <class name="paymentsUI.PaymentUI_AddStoredCardAndValidate"/>
+     <!--  <class name="paymentsUI.PaymentUI_AddStoredCardAndValidate"/> -->
       <class name="paymentsUI.PaymentUI_ErrorValidationUPIWalletAndNB"/>
       <class name="paymentsUI.PaymentUI_SuccessfulPaymentMessage"/> 
       <class name="paymentsUI.PaymentUI_Progress"/> 
-    
-    </classes>
-</test>
-
-
-<test name="Trains Payment UI PWA"  preserve-order="true" parallel="true" >
-    <classes>
-<!--       <class name="paymentsUI.Payment_UI_PWA_CC"/>
-      <class name="paymentsUI.Payment_UI_PWA_NB"/>
-      <class name="paymentsUI.Payment_UI_PWA_TPW_AmazonPay"/> 
-      <class name="paymentsUI.Payment_UI_PWA_UPI"/>  -->
     
     </classes>
 </test>

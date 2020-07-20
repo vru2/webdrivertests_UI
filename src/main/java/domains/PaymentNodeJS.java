@@ -356,10 +356,9 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 		
 		else if (payType.equalsIgnoreCase("CCRazorPay")) {
 			safeClick(driver, getObjectPayment("MakePayment_Pay_Btn_CC"));
-			textPresent(driver, "Welcome to Razorpay Bank", 5);
-			elementVisible(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Logo"), 10);
-			safeClick(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Submit"));
-		
+			textPresent_Log(driver, "Welcome to Razorpay Bank", 30);
+			elementVisible(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Logo"), 1);
+			safeClick(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Submit"));		
 		}
 		
 		else if (payType.equalsIgnoreCase("CCPayFortSA")) {
@@ -394,8 +393,8 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 					Reporter.log("Payment failed");
 					Assert.assertTrue(false);
 				}
-				textPresent(driver, "Welcome to Razorpay Bank", 5);
-				elementVisible(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Logo"), 10);
+				textPresent_Log(driver, "Welcome to Razorpay Bank", 10);
+				elementVisible(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Logo"), 1);
 				safeClick(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Submit"));
 			}
 			else if (bankType.equalsIgnoreCase("TECHPROCESS")) {
@@ -468,7 +467,21 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 			paymentNodeJS_BankPage(driver, "AMEX");*/
 
 		}
-
+		else if (payType.equalsIgnoreCase("CTPAE")) {
+			elementVisible(driver, getObjectPayment("SelectPayment_Type_CtPay"), 10);
+			((JavascriptExecutor) driver).executeScript("window.scrollBy(0,-500)", "");
+			safeClick(driver, getObjectPayment("SelectPayment_Type_CtPay"));			
+			elementPresent(driver, getObjectPayment("MakePayment_CtPay_CT_Logo"));
+			if(!textPresent(driver, "Enter your credit card details", 20)) {
+				Reporter.log("Enter your credit card details text is not displayed");
+				Assert.assertTrue(false);
+			}
+			String URLAE = logURL(driver);
+			if(!URLAE.contains("cleartrip.ae")) {
+				Reporter.log("URL dosent contain .ae"+URLAE);
+				Assert.assertTrue(false);
+			}
+		}
 		else if (payType.equalsIgnoreCase("CTFULL")) {
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("window.scrollBy(0,-1000)");
@@ -628,14 +641,19 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 	public String paymentNodeJS_ConfirmationPage(RemoteWebDriver driver, String payType, String Confirm_Msg, String LoggerMsg) throws Exception {
 		for (int i = 0; i < 5; i++) {
 			if(elementVisible(driver, By.id("payu_logo"), 5)) {
+				safeClick(driver, By.id("creditlink"));
+				Thread.sleep(500);
 				safeType(driver, getObjectPayment("PayU_Page_CC_Number"), "5123456789012346");
+				Thread.sleep(500);
 				safeType(driver, getObjectPayment("PayU_Page_CC_Name"), "TestPayU");
+				Thread.sleep(500);
 				safeSelect(driver,getObjectPayment("PayU_Page_CC_EXP_Month") , "Sep (9)");
+				Thread.sleep(500);
 				safeSelect(driver,getObjectPayment("PayU_Page_CC_EXP_Year") , "2020");
 				safeType(driver, getObjectPayment("PayU_Page_CC_CVV"), "123");
-				Thread.sleep(2000);
+				Thread.sleep(1000);
 				safeClick(driver, getObjectPayment("PayU_Page_CC_Pay_Btn"));
-				Thread.sleep(2000);
+				Thread.sleep(1000);
 			}
 			if (textPresent(driver, "AXIS SIMULATOR", 1)) {
 				smartType(driver, By.id("password"), "123456");

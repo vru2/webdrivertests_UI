@@ -37,23 +37,20 @@ public class PaymentUI_PhonePe extends PaymentNodeJS{
 		
 	}
 
-	@Test(priority=1)
+	/*@Test(priority=1)
 	public void getPayURL() throws Exception{
-		validation_PaymentUI("BookApp/GetPay", resp);
+		//validation_PaymentUI("BookApp/GetPay", resp);
 
-	}
+	}*/
 
-	@Test(priority=2, dependsOnMethods={"getPayURL"})
+	@Test(priority=1)
 	public void phonePayPayment() throws Exception{
-		try {
 			driver=(RemoteWebDriver) getDriver(driver);
 			driver.manage().deleteAllCookies(); 
 			driver.get(Url);
 			driver.manage().addCookie(cookieName);
 			refreshPage(driver);
 			Thread.sleep(6000);
-			//driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			//waitForElementVisibility(driver,By.xpath("//input[@type='submit']"), 15);
 			List<WebElement> walletCheckBoxList=driver.findElements(By.xpath("//label[@class='checkbox-round'][1]"));
 			int chkBoxes=walletCheckBoxList.size();
 			for(int i=0;i<chkBoxes;i++)
@@ -72,17 +69,11 @@ public class PaymentUI_PhonePe extends PaymentNodeJS{
 			driver.findElement(By.xpath("//li[@role='menuitem']")).click();
 			click(driver,PaymentUI_CommonUtilities.makePaymentbutton);
 			waitForElementVisibility(driver,By.xpath("//input[@name='mobileNumber']"),20);
-			safeType(driver,By.xpath("//input[@name='mobileNumber']"), "8951009392");
+			safeType(driver,By.xpath("//input[@name='mobileNumber']"), "9986696785");
 			click(driver,PaymentUI_CommonUtilities.phonePeMobileNoSubmit);
 			driver.get(Url);
-			Thread.sleep(6000);
 			waitForElementVisibility(driver,By.xpath("//h1[text()='Payment in progress']"),10);
 			validateIfPresent(driver,PaymentUI_CommonUtilities.paymentInProgressHeaderXpath);
-		}
-		catch(Exception e) {
-			Reporter.log("Exception is" +e);
-			Assert.assertTrue(false);
-		}
 	}
 
 	@AfterMethod (alwaysRun = true)

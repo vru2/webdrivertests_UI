@@ -14,9 +14,8 @@ public class API_storeCard extends API_PaymentCommon1
 {	
 	
 	@Test(priority = 1, alwaysRun = true)
-	public void Wallet_storeCard () throws Exception{
+	public void Get_storedCards () throws Exception{
 		Response resp ;		
-		
 		resp = walletEndPoints("wallet_storeCards","");	
 		validation("wallet_getcards", resp);
 			
@@ -24,7 +23,7 @@ public class API_storeCard extends API_PaymentCommon1
 	
 	
 	@Test(priority = 2, alwaysRun = true)
-	public void Wallet_validateCard () throws Exception{
+	public void validateCard () throws Exception{
 		Response resp1 ;		
 		resp1 = walletEndPoints("wallet_validateCards","");	
 		validation("wallet_getcards", resp1);
@@ -32,7 +31,7 @@ public class API_storeCard extends API_PaymentCommon1
 	}
 	
 	@Test(priority = 3, alwaysRun = true)
-	public void Wallet_getCard_DeleteCard () throws Exception{
+	public void Delete_StoredCard () throws Exception{
 		Response resp ;		
 		String cardid = null;
 		resp = walletEndPoints("wallet_getCards","");	
@@ -44,7 +43,7 @@ public class API_storeCard extends API_PaymentCommon1
 		
 		for (int i=0;i< cardids.size();i++)
 		{
-			if((cardnumber.get(i).toString()).equalsIgnoreCase("512345XXXXXX2346"))
+			if((cardnumber.get(i).toString()).equalsIgnoreCase("340000XXXXXX0009"))
 			{
 				cardid = cardids.get(i).toString();
 				resp = walletEndPoints("wallet_deleteCards",cardid);	

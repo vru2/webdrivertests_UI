@@ -13,6 +13,12 @@
 			<class name="ct_admin.CT_Admin" />
 		</classes>
 	</test>
+	
+	 <test name="Ct-config UI">
+		<classes>
+			<class name="ct_config.CT_Config" />
+		</classes>
+	</test>
 
 </suite> 
 	

@@ -17,7 +17,7 @@ import domains.PaymentNodeJS;
 	private String baseUrl;
 	
   @Test 
-  public void paymentNodeJS_SC() throws Exception {
+  public void paymentNodeJS_RazorPay() throws Exception {
 	   driver.manage().deleteAllCookies(); 
 	   if(!ProductionUrl) {
 	       driver.get(baseUrl);	   

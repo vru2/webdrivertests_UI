@@ -3,11 +3,17 @@
 
 package paymentsUI_Air;
 
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Reporter;
 
+import com.gargoylesoftware.htmlunit.UrlFetchWebConnection;
+
+import io.restassured.internal.util.SafeExceptionRethrower;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import paymentsAPI.API_PaymentCommon1;
@@ -20,9 +26,17 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 	protected String qaUrl;
 	public Response resp;
 
-protected String qaurl = "https://qa2.cleartrip.com";
-	
-
+	protected String qaurl = "https://qa2.cleartrip.com";
+	protected String qaurlae = "https://qa2.cleartrip.ae";
+	protected String qaurlbh = "https://bh.cleartrip.com";
+	protected String qaurlkw = "https://kw.cleartrip.com";
+	protected String qaurlom = "https://om.cleartrip.com";
+	protected String qaurlsa = "https://qa2.cleartrip.sa";
+	protected String qaurlus = "https://qa2.cleartrip.us";
+	protected String qaurlqa = "https://qa.cleartrip.com";
+	Cookie cookie_Parl_Wallet = new Cookie("ct-auth", "u8ikyrIDWHzYjvgXGe7DcSilWSeNdD3sGtbSzvPZYHJsqbodZst%2B%2F0ze9bW1F%2F23uQmW3NiUZma8q2lELnUuyC3uAF5DaTQONdJlLn%2FO2me%2FiLCzDjUE8Mm7nMigogz0cui%2F5Lc2RncHKyY%2FG5jXeVJ2Z%2BJW4q4d2%2BSGAnvG%2FbfJ2a5%2BLtDuDuClv7XsKTWXoRahiCr1K%2B3iYGbIxo%2FJPQ%3D%3D");
+	Cookie cookie_Full_Wallet = new Cookie("ct-auth", "5zoM9zvEgPvd1fO%2BsJylFp4hvaybBzUzp2ilDBfOdXvOg%2BIVENg%2BHdsz3cA98%2B5BD3habrO078UoXdzWM34lXZaLbE1jIpkEaANLn%2BHJadeW7kll2UfWWUfOoZLsVWTER2KXP0MBz2Ucg2wdtjfomKwrrYOshnOlUWyYWat6SeV2Tt6lvwTzivgXCSht22Dws");	
+	Cookie cookie_Stored_Card = new Cookie("ct-auth", "3cZX3Pk7YZLQGkv5lH%2BqMisg41mHr4%2BV5LnkFlBYXSW7TbjXLYl7j8XVySMQUxQsuv18jxT4Krq%2BnZKZgt%2FgtsPPZuvu7kgJgSXq9dBmctulsdFnuefY%2Fk4K%2FkHUuDj%2BnitdvoouxVugJ172IcDxp41NeKUSgTMU9EpGlYfZJ60e5yZIWxI28YU6CxlbH7FH");
 	public String fetchPaymentURL(Response resp){
 		String payurl="";
 		JsonPath jsonPathEvaluator = resp.jsonPath();
@@ -31,14 +45,34 @@ protected String qaurl = "https://qa2.cleartrip.com";
 	}
 	
 	public String getPayUI(String PayType, String PayType1) throws Exception {
-		resp = payUIget(PayType,"");
+		resp = payUIget(PayType,PayType1);
+		if(PayType1.equalsIgnoreCase("AE")) {
+			qaurl=qaurlae;
+		}else if(PayType1.equalsIgnoreCase("BH")) {
+			qaurl=qaurlbh;
+		}else if(PayType1.equalsIgnoreCase("KW")) {
+			qaurl=qaurlkw;
+		}else if(PayType1.equalsIgnoreCase("OM")) {
+			qaurl=qaurlom;
+		}else if(PayType1.equalsIgnoreCase("QA")) {
+			qaurl=qaurlqa;
+		}else if(PayType1.equalsIgnoreCase("SA")) {
+			qaurl=qaurlsa;
+		}else if(PayType1.equalsIgnoreCase("US")) {
+			qaurl=qaurlus;
+		}
 		Url = qaurl+ fetchPaymentURL(resp);
+		//System.out.println("Payment URL : " +Url);
 		Reporter.log("Payment URL : " +Url);
 		return Url;
 	}
 	
 	public void payUI_Select_PaymentType(RemoteWebDriver driver, String PayType) throws Exception {
-		if(!elementVisible(driver, getObjectPayment("PayUI_Pay_Tabs"), 10)) {
+		if(textPresent(driver, "There's something wrong with our system", 5)) {
+			Reporter.log("There's something wrong with our system");			
+			Assert.assertTrue(false);
+		}
+		if(!elementVisible(driver, getObjectPayment("PayUI_Pay_Tabs"), 30)) {
 			Reporter.log("PayUI Page is not displayed");
 			String UI_error = getText(driver, By.xpath("//h1"));
 			Reporter.log(UI_error);			
@@ -63,11 +97,20 @@ protected String qaurl = "https://qa2.cleartrip.com";
 		case "ADCB":
 			PayType = "";
 			break;
+		case "SC":
+			PayType = "Stored Card";
+			break;
 		default:
 			break;
 		}		
 		safeClickList(driver, getObjectPayment("PayUI_Pay_Tabs"), PayType);	
 	}
+	
+	public void payUI_PageLoader(RemoteWebDriver driver) throws Exception {
+		elementNotVisible(driver, getObjectPayment("PayUI_PageLoader_Spinner"), 10);
+		elementNotVisible(driver, getObjectPayment("PayUI_PageLoader_Shimmer"), 10);
+	}
+		
 	
 	public void payUI_Enter_PaymentDetails(RemoteWebDriver driver, String PayType, String BankName) throws Exception {
 		switch (PayType) {
@@ -75,7 +118,7 @@ protected String qaurl = "https://qa2.cleartrip.com";
 			payUI_Select_CC(driver, BankName);
 			break;
 		case "DC":
-			
+			payUI_Select_CC(driver, BankName);
 			break;
 		case "NB":
 			payUI_Select_NB(driver, BankName);
@@ -90,10 +133,10 @@ protected String qaurl = "https://qa2.cleartrip.com";
 			break;
 		}		
 	}
-	
-	
+		
 	public void payUI_Select_CC(RemoteWebDriver driver, String BankName) throws Exception {		
 			elementVisible(driver, getObjectPayment("PaymentPage_CreditCard_Number"), 5);
+			textPresent_Log(driver, "Enter your credit card details.", 1);
 			switch (BankName) {
 				case "MASTER":
 				Enter_CC_Details(driver, platform.value("MasterCard_Number"), platform.value("MasterCard_Month"), platform.value("MasterCard_Year"), platform.value("MasterCard_CVV"));
@@ -101,10 +144,19 @@ protected String qaurl = "https://qa2.cleartrip.com";
 				case "AMEX":
 				Enter_CC_Details(driver, platform.value("AmexCard_Number"), platform.value("AmexCard_Month_New"), platform.value("AmexCard_Year"), platform.value("AmexCard_CVV"));
 				break;
-			}			
+				case "CAPTCHA":
+				Enter_CC_Details(driver, "512345678901234", platform.value("MasterCard_Month"), platform.value("MasterCard_Year"), platform.value("MasterCard_CVV"));
+				break;
+			}
 			safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 			Reporter.log("Make Payment button is Clicked");
-			payUI_BankPage(driver, BankName);			
+			if(textPresent(driver, "Internal server error", 5)) {
+				Reporter.log("Internal server error is displayed after Clicking Make Payment");
+				Assert.assertTrue(false);
+			}
+			if(!BankName.contains("CAPTCHA")) {
+			payUI_BankPage(driver, BankName);
+			}
 	}
 	
 	public void Enter_CC_Details(RemoteWebDriver driver, String CCNumber, String CCExpMonth, String CCExpYear, String CVV) throws Exception {
@@ -118,7 +170,19 @@ protected String qaurl = "https://qa2.cleartrip.com";
 		safeType(driver, getObjectPayment("PaymentPage_CreditCard_CVV"), CVV);
 	}
 	
-	public void payUI_BankPage(RemoteWebDriver driver, String BankName) throws Exception {	
+	
+	public void Enter_DC_Details(RemoteWebDriver driver, String CCNumber, String CCExpMonth, String CCExpYear, String CVV) throws Exception {
+		Reporter.log("Card Details +\n"+ CCNumber +"\n " + CCExpMonth  +" " + CCExpYear +" " + CVV);
+		safeType(driver, getObjectPayment("PaymentPage_DebitCard_Number"), CCNumber);
+		safeClick(driver, getObjectPayment("PaymentPage_DebitCard_Exp_Month"));
+		safeSelect(driver, getObjectPayment("PaymentPage_DebitCard_Exp_Month"), CCExpMonth);
+		safeClick(driver, getObjectPayment("PaymentPage_DebitCard_Exp_Year"));
+		safeSelect(driver, getObjectPayment("PaymentPage_DebitCard_Exp_Year"), CCExpYear);
+		safeType(driver, getObjectPayment("PaymentPage_DebitCard_Name"), "test");
+		safeType(driver, getObjectPayment("PaymentPage_DebitCard_CVV"), CVV);
+	}
+	
+	public void payUI_BankPage(RemoteWebDriver driver, String BankName) throws Exception {		
 		elementNotVisible(driver, getObjectPayment("PayUI_Pay_Tabs"), 10);		
 		if(BankName.equalsIgnoreCase("MASTER")) {
 			if (textPresent(driver, "AXIS SIMULATOR", 10)) {
@@ -131,16 +195,16 @@ protected String qaurl = "https://qa2.cleartrip.com";
 				Assert.assertTrue(false);
 		}
 		}else if(BankName.equalsIgnoreCase("AMEX")) {
-			textPresent(driver, "ACS Emulator", 10);
+			elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_Amex3DPage_Submit_Btn"), "Amex Bank page not displayed", 20);
+			textPresent(driver, "ACS Emulator", 1);
 			Reporter.log("Amex Auth page is displayed");
-			elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_Amex3DPage_Submit_Btn"), 20);
 			safeClick(driver, getObjectPayment("MakePayment_NB_Bank_Amex3DPage_Submit_Btn"));
 		}else if(BankName.equalsIgnoreCase("Citibank")) {
-			elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"), 30);
+			elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"), "Citi Bank page not displayed", 30);
 			Reporter.log("CitiBank Auth page is displayed");
 			safeClick(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"));
 		}else if(BankName.equalsIgnoreCase("Hdfc Bank")) {
-			elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_UserName"), 30);
+			elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_UserName"), "Tech Process Bank page not displayed", 30);
 			Reporter.log("HDFCBank Auth page is displayed");
 			safeType(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_UserName"), "test");
 			safeType(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_Password"), "test");
@@ -149,17 +213,29 @@ protected String qaurl = "https://qa2.cleartrip.com";
 			elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_IntermitentText"), 5);
 			safeClick(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_Submit_Btn2"));
 		}else if(BankName.equalsIgnoreCase("ICICI Bank")) {
-			textPresent(driver, "Welcome to Razorpay Bank", 5);
+			elementPresent_log(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Logo"), "Razorpay Bank page not displayed", 30);
+			textPresent(driver, "Welcome to Razorpay Bank", 1);
 			Reporter.log("RazorPay Auth page is displayed");
-			elementVisible(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Logo"), 10);
 			safeClick(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Submit"));	
 		}
+		else if(BankName.equalsIgnoreCase("CAPTCHA")) {
+			elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"), "Citi Bank page not displayed", 30);
+			Reporter.log("CitiBank Auth page is displayed");
+			safeSelect(driver, By.cssSelector("select[name=\"PAID\"]"), "N");
+			safeClick(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"));
+		}
+			
 	}
 		
 	
 	public void payUI_Select_NB(RemoteWebDriver driver, String BankName) throws Exception {		
 			elementVisible(driver, getObjectPayment("PayUI_NB_DropDown"), 5);
-			safeSelect(driver, getObjectPayment("PayUI_NB_DropDown"), BankName);
+			textPresent_Log(driver, "Popular Banks", 1);
+			//textPresent_Log(driver, "", 1);
+			if(BankName.contains("CAPTCHA")) {
+				safeSelect(driver, getObjectPayment("PayUI_NB_DropDown"), "Citibank");
+			}
+			else safeSelect(driver, getObjectPayment("PayUI_NB_DropDown"), BankName);
 			safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 			payUI_BankPage(driver, BankName);
 	}	
@@ -187,6 +263,7 @@ protected String qaurl = "https://qa2.cleartrip.com";
 			}
 	}
 	
+
 	
 	
 }

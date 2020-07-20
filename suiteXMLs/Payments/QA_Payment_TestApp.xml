@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Payment Test App" parallel="tests" thread-count="5">
+<suite name="Payment Test App" parallel="tests" thread-count="3">
 
 <listeners>
 <listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -99,8 +99,7 @@
 <test name="RazorPay CC NB" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsUI.Payment_NodeJS_CC_PG_RazorPay"/>   
-      <class name="paymentsUI.Payment_NodeJS_NB_RazorPay"/>
-      
+      <class name="paymentsUI.Payment_NodeJS_NB_RazorPay"/>      
     </classes>
 </test>
 	
@@ -139,7 +138,7 @@
 
 <test name="CC S2S"  preserve-order="true" parallel="true">
     <classes>
-      <class name="paymentsUI.Payment_NodeJS_CC_PG_PayU_S2S"/>
+      <!-- <class name="paymentsUI.Payment_NodeJS_CC_PG_PayU_S2S"/> -->
     </classes>
 </test>
 

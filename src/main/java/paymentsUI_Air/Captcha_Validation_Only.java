@@ -3,7 +3,6 @@
 
 package paymentsUI_Air;
 
-import org.junit.Assert;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.Reporter;
@@ -14,7 +13,7 @@ import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
 
-public class Amendment extends PaymentUI_Common{
+public class Captcha_Validation_Only extends PaymentUI_Common{
 	public RemoteWebDriver driver;
 	protected String Url;
 	protected String paymentUrl;
@@ -22,23 +21,25 @@ public class Amendment extends PaymentUI_Common{
 	public Response resp;
 	
 	@Test
-	public void CC_Amendment() throws Exception {
-		String PayUrl = getPayUI("AirAmend", "");
+	public void Validate_Text_Captcha() throws Exception {
+		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
-		if(textPresent(driver, "Includes a convenience fee of", 1)){
-			Reporter.log("convenience fee text is displayed");
-			Assert.assertTrue(false);
-		}	
-		if(textPresent(driver, "Includes a convenience fee of", 1)) {
-			Reporter.log("Includes a convenience fee of - text is displayed" );
-			Assert.assertTrue(false);
+		for (int i = 0; i <=4; i++) {
+		if(i==1) {
+			textPresent_Log(driver, "Oops! Your payment failed. If you were charged, any amount deducted will be reversed automatically", 10);
 		}
 		payUI_Select_PaymentType(driver, "NB");
-		payUI_Enter_PaymentDetails(driver, "NB", "Citibank");
-		payUI_Mock_ConfirmationPage(driver, PayUrl);
-	}
-
+		payUI_Enter_PaymentDetails(driver, "NB", "CAPTCHA" );// CITIBANK		
+		}
+		Thread.sleep(5000);
+		elementPresent(driver, getObjectPayment("PayUI_Captcha_CheckBox"), 10);
+		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
+		textPresent_Log(driver, "Please validate captcha", 5);
+		Reporter.log("Captch error mesage is displayed");
+	}	
+	
+	
 	@BeforeClass
 	public void setUp() throws Exception {
 		driver=(RemoteWebDriver) getDriver(driver);

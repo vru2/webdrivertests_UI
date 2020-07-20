@@ -1,0 +1,105 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PaymentService API" parallel="tests" thread-count="1">
+
+<listeners>
+<listener class-name="org.uncommons.reportng.HTMLReporter" />
+<listener class-name="common.RemoveDuplicateResults"/>
+<listener class-name="common.RetryListener"/>
+<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+</listeners>
+
+
+<test name="API Deposit Account DA" preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_DA_PayV3"/>
+      <class name="paymentsAPI.API_DA_ValidateV3"/>
+      <class name="paymentsAPI.API_DA_APP_Refund"/>
+      <class name="paymentsAPI.API_DA_APP_Balance"/> 
+    </classes>
+</test>
+
+<test name="API Credit Shell" preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_CS_Pay"/>
+      <class name="paymentsAPI.API_CS_Validate"/>     
+    </classes>
+</test>
+
+<test name="API Pay Calls" preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_Validate"/>
+      <class name="paymentsAPI.API_CC_Visa_Type"/>
+      <class name="paymentsAPI.API_CC_GV_Wallet"/> 
+      <class name="paymentsAPI.API_CC"/>
+      <class name="paymentsAPI.API_GV"/> 
+      <class name="paymentsAPI.API_Wallet"/>
+      <class name="paymentsAPI.API_GV_WL"/> 
+    </classes>
+</test>
+
+
+
+<test name="API CTPay V2" preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_CTpay_GetUrl"/>
+      <class name="paymentsAPI.API_CTpay_Status"/>
+      <class name="paymentsAPI.API_CTpay_UpdateClient"/> 
+      <class name="paymentsAPI.API_CTpay_URLcreation"/>
+    </classes>
+</test>
+
+
+<test name="API Flyin" preserve-order="true" >
+    <classes>
+       <class name="paymentsAPI.API_FlyinPay"/> 
+     </classes>
+</test>
+
+<test name="API Expressway" preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_EW_GetOutstanding"/> 
+      <class name="paymentsAPI.API_EW_UserDetails"/> 
+      <class name="paymentsAPI.API_EW_Validate"/>  
+      <class name="paymentsAPI.API_EW_OptIN"/>    
+<!--       <class name="paymentsAPI.API_EW_Pay_Multi"/>    
+      <class name="paymentsAPI.API_EW_Pay_Multi_V3"/>    
+      <class name="paymentsAPI.API_EW_Pay_V3"/>        -->
+      <class name="paymentsAPI.API_EW_Add_Amount"/>       <!-- 
+      <class name="paymentsAPI.API_EW_Pay_AutoDebit"/>     -->
+      <class name="paymentsAPI.API_EW_Summary"/>  
+         
+   </classes>
+</test>
+
+<test name="API Refunds New" preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_Refunds"/> 
+     </classes>
+</test>
+
+<test name="API Stored Card" preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_storeCard"/> 
+   </classes>
+</test>
+
+<test name="API Create Insert record" preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_CreateRecord"/>  
+         </classes>
+</test>
+
+<test name="API ROR Writes" preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_ROR_Writes"/>  
+    </classes>
+</test>
+
+
+<test name="API FetchRefunds New"  preserve-order="true" parallel="true" >
+    <classes>
+		<!-- <class name="paymentsAPI.API_Refunds_Fetch"/> -->
+	 </classes>
+</test>
+
+</suite> 

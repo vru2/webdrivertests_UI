@@ -76,6 +76,15 @@
 		</classes>
 
 	</test>
+	
+	<test name="Account-service-Apple-Signin" parallel="true">
+		<classes>
+			<class name="accountsAPI.Account_Service_AppleSignin" />
+			<class name="accountsAPI.Account_Service_AppleSignin_uniqueId" />
+			<class name="accountsAPI.Account_Service_AppleSignin_Entity" />
+		</classes>
+
+	</test>
 
 	<!-- <test name="Account_Service_FlyinV2_Signin" parallel="true"> <classes> 
 		<class name="accountsAPI.Account_Service_FlyinV2_Signin" /> </classes> </test> 

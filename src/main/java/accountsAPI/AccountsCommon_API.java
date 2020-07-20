@@ -32,6 +32,8 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	//String url_NewAcct= "http://accounts-service-api.cltp.com:9001";
 
 	String url_qa2 = "https://qa2.cleartrip.com:9001";
+	
+	String url_Acct_Service_applesgnin = "http://172.17.28.21:8336";
 
 	String url_identity="https://qa2.cleartrip.com";
 
@@ -99,6 +101,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String url_identtiyservice_getresource="/ctauth/resource";
 	String url_flyinsignup="/partners/signup";
 	String url_Account_Service_Update_User="/account/people/v2?domain=qa2.cleartrip.com";
+	String url_Account_Service_AppleSignin_uniqueId="/apple/signin";
 	String url_Userclassification_parsingcsv="/users/data";
 	String url_flyinsignupV2="/partners/v2/signup";
 	String url_flyinresetpassword="/partners/account/reset_password";
@@ -150,12 +153,14 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String url_createCompanyTags="/r3/companies/121/tags";
 	String url_createUpdateTraveller_bookstep2="/people/externalapi/41623878/create_update_travellers?caller=bookstep2";
 	String url_AccountsInfoAPI_BasedonUserId="/v1/people/filters?caller=ct-suite";
-
+	String url_Account_Service_AppleSignin="/apple/signin";
 
 	String params_CreateWallet = "{\"currency\":\"INR\", \"caller\":\"pay-refund\", \"id\":\"5682929\"}";
 	String params_FetchPeople = "{\"email_ids\":[\"vinay.raj@cleartrip.com\",\"sathianarayanan.s@cleartrip.com\",\"kiran.kumar@cleartrip.com\",\"xyz1\"]}";
 	String params_Feedbackemail="{\"email_id\":\"ns.likhitha@cleartrip.com\",\"msg\":\"test\",\"subject\":\"working\",\"email_type\":\"default\"}";
 	String params_Signinpostcall="{\"email\":\"ns.likhitha@cleartrip.com\",\"password\":\"cleartrip123\",\"persistent_login\":\"t\",\"service\":\"\",\"caller\":\"homepage\",\"source\":\"ui\",\"action_type\":\"\",\"trip_ref\":\"\",\"_\": \"\"}";
+	String params_Account_Service_AppleSignin="{\"appleId\":\"12\",\"emailId\":\"hihitest1@gmail.com\",\"firstName\":\"abcd\",\"lastName\":\"sai\",\"title\":\"Mr.\"}";
+
 	String params_b2csignin="{\"email\":\"ns.likhitha@cleartrip.com\",\"password\":\"cleartrip123\",\"persistent_login\":\"t\",\"service\":\"\",\"caller\":\"homepage\",\"source\":\"ui\",\"action_type\":\"\",\"trip_ref\":\"\",\"_\": \"\"}";
 	String params_b2csignin_prod="{\"email\":\"ns.likhitha@cleartrip.com\",\"password\":\"Likhitha@143\",\"persistent_login\":\"t\",\"service\":\"\",\"caller\":\"homepage\",\"source\":\"ui\",\"action_type\":\"\",\"trip_ref\":\"\",\"_\": \"\"}";
 	String params_flyinsignin="{\"username\" : \"ok@cltp.com\",\"partner\":1,\"password\":\"cleartrip1\"}";
@@ -165,6 +170,8 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String params_identtiyservice_getresource="access_token:rUBn829a8U4nH12Zo4uiHj9CHOSu3H5k44FyRJVERLB2rjdlOy";
 	String params_flyinsignup="{ \"username\" : \"ok@cltp.com\", \"password\" : \"cleartrip1\", \"partner\" : \"1\", \"source\" : \"homepage\", \"title\" : \"Mr>\", \"first_name\":\"test\", \"last_name\":\"testte\" }";
 	String params_Account_Service_Update_User="{\"id\":65200798,\"username\":\"byeeeee@gmail.com\",\"profilePercentCompleted\":null,\"travellerDetails\":[{\"id\":65200798,\"isRegistered\":true,\"profileData\":null,\"contactInfo\":{\"phoneNumbers\":[{\"id\":25750976,\"mobileNumber\":\"122289822222\",\"mobileCountryCode\":\"92\",\"category\":\"mobile\"}],\"whatsapp\":null,\"addresses\":[],\"otherDetails\":[],\"emails\":[]},\"ffnPreferences\":null,\"personalDetails\":{\"anniversaryDate\":null,\"companyDesignation\":null,\"concatName\":\"heyhey\",\"countryOfResidence\":null,\"countryOfResidenceId\":null,\"countryPreference\":null,\"currency\":null,\"dateOfBirth\":null,\"department\":null,\"emergencyContactName\":null,\"emergencyContactNumber\":\"1234567890\",\"firstName\":\"sujeeeeeee\",\"gender\":null,\"homeAirport\":null,\"homeAirportId\":null,\"language\":\"English\",\"lastName\":\"Gigerrrrrrr\",\"middleName\":\"Lhdhdhed\",\"nickName\":null,\"primaryEmail\":\"hihihi@gmail.com\",\"title\":\"Mr\",\"createdAt\":\"2020-06-09T07:08:39\",\"updatedAt\":\"2020-06-09T07:08:39\"},\"preferences\":null,\"docDetails\":[{\"countryIssued\":\"India\",\"dateOfBirth\":null,\"docNumber\":null,\"docType\":\"1\",\"expiryDate\":null,\"issuedDate\":\"2020-01-03T06:52:50\",\"nationality\":\"India\",\"createdAt\":\"2020-06-03T06:52:50\",\"updatedAt\":\"2020-06-03T06:52:50\"}],\"createdAt\":\"2020-06-09T07:08:39\",\"updatedAt\":\"2020-06-09T07:08:39\"}],\"companyDetails\":null,\"depositAccounts\":null,\"gstDetails\":[{\"gstHolderName\":\"Dcompany\",\"gstHolderStateCode\":\"21\",\"gstHolderStateName\":\"Andhra\",\"gstNumber\":\"21AABBB5678J1Z0\"}],\"resources\":null,\"savedCards\":null,\"registrationDate\":\"2020-06-09T07:08:39\",\"lastUpdatedOn\":\"2020-06-09T07:08:39\"}";
+	String params_Account_Service_AppleSignin_uniqueId="{\"appleId\":\"1:a:2:b:35\",\"emailId\":\"123@privaterelay.appleid.com\",\"firstName\":\"abcd\",\"lastName\":\"sai\",\"title\":\"Mr.\"}";
+	String params_Account_Service_AppleSignin_Entity="{\"appleId\":\"1:a:2:b:3\",\"emailId\":\"sai@privaterelay.appleid.com\",\"firstName\":\"abcd\",\"lastName\":\"sai\",\"title\":\"Mr.\"}";
 	String params_flyinresetpassword="{ \"username\" : \"ok@cltp.com\", \"old_password\" : \"cleartrip1\", \"new_password\" : \"cleartrip1\", \"partner\" : 1, \"source\":\"homepage\" }";
 	String params_flyinresetpasswordV2="{ \"username\" : \"ok@cltp.com\", \"old_password\" : \"cleartrip1\", \"new_password\" : \"cleartrip1\", \"partner\" : 1, \"source\":\"homepage\" }";
 
@@ -352,8 +359,22 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		return headers;
 	}
 
+	
+	
 
 
+	public HashMap<String, Object> headersFormsapplesignin(){
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("Content-Type", "application/json");
+		headers.put("Referer", "www.cleartrip.com");
+		headers.put("X-CT-SOURCETYPE", "mobile");
+		headers.put("User-Agent", "Apple");
+		headers.put("X-CT-AUTH-TOKEN", "test123");
+		headers.put("X-CT-TOKEN-TYPE", "JWT");
+		
+		return headers;
+	}
+	
 	public HashMap<String, Object> headersForms3(){
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("Accept", "text/json");
@@ -966,6 +987,31 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			params = params_AccountsInfoAPI_BasedonUserId;
 		}
 
+		if(Type.equals("Account_Service_AppleSignin")) {
+			headers = headersFormsapplesignin();
+
+			RestAssured.baseURI =url_Acct_Service_applesgnin;
+			url = url_Account_Service_AppleSignin;					
+			params =params_Account_Service_AppleSignin ;
+		}
+		
+		
+		if(Type.equals("Account_Service_AppleSignin_uniqueId")) {
+			headers = headersFormsapplesignin();
+
+			RestAssured.baseURI =url_Acct_Service_applesgnin;
+			url = url_Account_Service_AppleSignin_uniqueId;					
+			params =params_Account_Service_AppleSignin_uniqueId ;
+		}
+		
+		if(Type.equals("Account_Service_AppleSignin_Entity")) {
+			headers = headersFormsapplesignin();
+
+			RestAssured.baseURI =url_Acct_Service_applesgnin;
+			url = url_Account_Service_AppleSignin_uniqueId;					
+			params =params_Account_Service_AppleSignin_Entity ;
+		}
+		
 		Reporter.log("url  "+url);
 		request = RestAssured.given().
 				when().
@@ -1291,6 +1337,44 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			}
 		}
 	}
+	
+	public void validation_Apple_signin(Response resp, String Type, String Type2){
+		Reporter.log("Response body "+Type +" : "+ resp.body().asString());
+		//System.out.println("Response body "+Type +" : "+ resp.body().asString());
+		int statusCode = resp.getStatusCode();
+		//int statusCode1 = resp.getStatusCode();
+		Reporter.log("statusCode: " + statusCode);
+		JsonPath jsonPathEvaluator = resp.jsonPath();
+		if(statusCode!=409) {
+			Assert.assertTrue(false);
+		}
+
+		if(Type.equalsIgnoreCase("Account_Service_AppleSignin_uniqueId")) {
+			String username = jsonPathEvaluator.getString("message");
+			if(!username.contains("Apple id unique constraint violated for private email : 123@privaterelay.appleid.com")) {
+				Assert.assertTrue(false);						
+			}
+		}
+	}
+	
+	public void validation_Apple_signin_entity(Response resp, String Type, String Type2){
+		Reporter.log("Response body "+Type +" : "+ resp.body().asString());
+		//System.out.println("Response body "+Type +" : "+ resp.body().asString());
+		int statusCode = resp.getStatusCode();
+		//int statusCode1 = resp.getStatusCode();
+		Reporter.log("statusCode: " + statusCode);
+		JsonPath jsonPathEvaluator = resp.jsonPath();
+		if(statusCode!=422) {
+			Assert.assertTrue(false);
+		}
+
+		if(Type.equalsIgnoreCase("Account_Service_AppleSignin_Entity")) {
+			String username = jsonPathEvaluator.getString("message");
+			if(!username.contains("Another entity already exists with private email sai@privaterelay.appleid.com, can't proceed with the request")) {
+				Assert.assertTrue(false);						
+			}
+		}
+	}
 	public Response validation(Response resp, String Type, String Type2){
 		Reporter.log("Response body "+Type +" : "+ resp.body().asString());
 		//System.out.println("Response body "+Type +" : "+ resp.body().asString());
@@ -1329,6 +1413,13 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			}
 		}
 
+		else if(Type.equalsIgnoreCase("Account_Service_AppleSignin")) {
+
+			String ReponseStr = resp.body().asString();
+			if(!ReponseStr.contains("hihitest1@gmail.com")){
+				Assert.assertTrue(false);
+			}
+		}
 
 		else if(Type.equalsIgnoreCase("depositAccount_walletbalance_check")) {
 

@@ -27,7 +27,7 @@ public class Captcha_Validation_Only extends PaymentUI_Common{
 		driver.get(PayUrl);
 		for (int i = 0; i <=4; i++) {
 		if(i==1) {
-			textPresent_Log(driver, "Oops! Your payment failed. If you were charged, any amount deducted will be reversed automatically", 10);
+			textPresent_Log(driver, "Oops! Your payment failed. If you were charged, any amount deducted will be reversed automatically", 5);
 		}
 		payUI_Select_PaymentType(driver, "NB");
 		payUI_Enter_PaymentDetails(driver, "NB", "CAPTCHA" );// CITIBANK		

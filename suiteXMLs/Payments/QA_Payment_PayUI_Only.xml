@@ -3,15 +3,15 @@
 
 <listeners>
 <listener class-name="org.uncommons.reportng.HTMLReporter" />
-<listener class-name="common.RemoveDuplicateResults"/>
-<listener class-name="common.RetryListener"/>
+<listener class-name="common.RemoveDuplicateResults"/><!-- 
+<listener class-name="common.RetryListener"/> -->
 <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
 
 <test name="Validation"  preserve-order="true" parallel="true" >
     <classes>
       <class name="paymentsUI_Air.Validate_Text_Messages"/>
-    <!--   <class name="paymentsUI_Air.Validate_Images_Link"/>  -->
+      <class name="paymentsUI_Air.Validate_Images_Links"/> 
       <class name="paymentsUI_Air.Validate_AE_Domain"/>   
     </classes>
 </test>

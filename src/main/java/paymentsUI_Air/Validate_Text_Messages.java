@@ -41,7 +41,7 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 	public void Validate_Text_DC() throws Exception {
 		payUI_Select_PaymentType(driver, "DC");
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));	
-		textPresent_Log(driver, "Enter your debit card details", 5);
+		textPresent_Log(driver, "Enter your debit card details", 2);
 		textPresent_Log(driver, "Please enter a valid card number", 1);		
 		textPresent_Log(driver, "Please enter a valid expiry month", 1);		
 		textPresent_Log(driver, "Please enter a valid expiry year", 1);		
@@ -52,7 +52,7 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 	@Test(priority=3)
 	public void Validate_Text_NB() throws Exception {
 		payUI_Select_PaymentType(driver, "NB");
-		textPresent_Log(driver, "Popular Banks", 5);	
+		textPresent_Log(driver, "Popular Banks", 2);	
 		textPresent_Log(driver, "All Other Banks", 1);	
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));		
 		textPresent_Log(driver, "Please select your bank", 5);	
@@ -64,7 +64,7 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 		payUI_Select_PaymentType(driver, "TW");
 		textPresent_Log(driver, "Select a wallet to make your payment", 5);	
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));		
-		textPresent_Log(driver, "Please select any wallet", 5);	
+		textPresent_Log(driver, "Please select any wallet", 2);	
 		textPresent_Log(driver, "Includes a convenience fee of", 1);
 	}
 
@@ -73,7 +73,7 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 		payUI_Select_PaymentType(driver, "UPI");
 		textPresent_Log(driver, "Select UPI partner to make your payment", 5);	
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));		
-		textPresent_Log(driver, "Please select any UPI payment method.", 5);
+		textPresent_Log(driver, "Please select any UPI payment method.", 2);
 		textPresent_Log(driver, "Includes a convenience fee of", 1);
 	}
 	
@@ -81,7 +81,7 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 	public void Validate_TermandCondition() throws Exception {
 		safeClick(driver, getObjectPayment("PayUI_I_Agree_CheckBox"));
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));		
-		textPresent_Log(driver, "Please accept the terms and conditions to proceed with this booking.", 5);
+		textPresent_Log(driver, "Please accept the terms and conditions to proceed with this booking.", 2);
 		boolean button = driver.findElement(By.xpath("//button")).isEnabled();
 		if(!button) {
 			Reporter.log("Make Pament Button is not disabled");
@@ -141,11 +141,11 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 		Enter_CC_Details(driver, platform.value("ADCBCard_Number"), platform.value("ADCBCard_Expiry_Month"), platform.value("ADCBCard_Expiry_Year"), platform.value("ADCBCard_CVV"));
 
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
-		textPresent_Log(driver, "Enter valid credit card number", 5);
+		textPresent_Log(driver, "Enter valid credit card number", 2);
 		payUI_Select_PaymentType(driver, "DC");
 		Enter_CC_Details(driver, platform.value("AmexCard_Number"), platform.value("AmexCard_Month_New"), platform.value("AmexCard_Year"), platform.value("AmexCard_CVV"));
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
-		textPresent_Log(driver, "Enter valid dredit card number", 5);
+		textPresent_Log(driver, "Enter valid dredit card number", 2);
 	}
 		
 	@BeforeClass

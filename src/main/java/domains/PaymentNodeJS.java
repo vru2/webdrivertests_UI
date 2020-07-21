@@ -393,7 +393,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 					Reporter.log("Payment failed");
 					Assert.assertTrue(false);
 				}
-				textPresent_Log(driver, "Welcome to Razorpay Bank", 10);
+				textPresent_Log(driver, "Welcome to Razorpay Bank", 30);
 				elementVisible(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Logo"), 1);
 				safeClick(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Submit"));
 			}

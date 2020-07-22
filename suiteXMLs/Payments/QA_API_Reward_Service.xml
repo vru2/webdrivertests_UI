@@ -10,8 +10,8 @@
 
 <test name="API ADCB" preserve-order="true" parallel="true">
     <classes>
-    <!--   <class name="paymentsAPI.API_Reward_ADCB_CheckBalance"/> 
-      <class name="paymentsAPI.API_Reward_ADCB_Pay"/>  -->
+      <class name="paymentsAPI.API_Reward_ADCB_CheckBalance"/> 
+      <class name="paymentsAPI.API_Reward_ADCB_Pay"/> 
     </classes>
 </test>
 

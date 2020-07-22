@@ -32,7 +32,6 @@ public class Wallet_Full extends PaymentUI_Common{
 		textPresent_Log(driver, "Balance payable", 	1);
 		textPresent_Log(driver, "Includes a convenience fee of", 1);
 		String CT_WalletImage_Text =getText(driver, getObjectPayment("PayUI_CTWallet_Image_text"));
-		System.out.println(CT_WalletImage_Text);
 		if(!(CT_WalletImage_Text.contains("cleartrip")&&CT_WalletImage_Text.contains("Wallet"))) {
 			Reporter.log("CT_WalletImage_Text : "+CT_WalletImage_Text);
 			Assert.assertTrue(false);

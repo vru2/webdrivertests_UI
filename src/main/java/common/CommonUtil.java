@@ -154,7 +154,7 @@ public class CommonUtil {
 	
 	
 	public String getNewDate_TripID() throws Exception {
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("hhmmss");
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("hhmmSSS");
 		LocalDateTime now =  LocalDateTime.now();
 		String TripID = "Q1012"+dtf.format(now);
 		return TripID;

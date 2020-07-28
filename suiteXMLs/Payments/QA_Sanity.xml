@@ -9,7 +9,7 @@
 
 <test name="UI CC"  preserve-order="true" parallel="true" >
     <classes>
-      <class name="paymentsUI_Air.CC_IN_Master"/>
+      <class name="paymentsUI_Air.NB_CITI"/>
     </classes>
 </test>
 

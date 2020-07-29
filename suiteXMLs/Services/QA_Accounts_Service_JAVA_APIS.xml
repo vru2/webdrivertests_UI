@@ -82,6 +82,7 @@
 			<class name="accountsAPI.Account_Service_AppleSignin" />
 			<class name="accountsAPI.Account_Service_AppleSignin_uniqueId" />
 			<class name="accountsAPI.Account_Service_AppleSignin_Entity" />
+			<class name="accountsAPI.Account_Service_AppleRegister_NullEmail" />
 		</classes>
 
 	</test>

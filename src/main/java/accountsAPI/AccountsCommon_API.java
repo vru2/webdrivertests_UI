@@ -172,6 +172,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String params_Account_Service_Update_User="{\"id\":65200798,\"username\":\"byeeeee@gmail.com\",\"profilePercentCompleted\":null,\"travellerDetails\":[{\"id\":65200798,\"isRegistered\":true,\"profileData\":null,\"contactInfo\":{\"phoneNumbers\":[{\"id\":25750976,\"mobileNumber\":\"122289822222\",\"mobileCountryCode\":\"92\",\"category\":\"mobile\"}],\"whatsapp\":null,\"addresses\":[],\"otherDetails\":[],\"emails\":[]},\"ffnPreferences\":null,\"personalDetails\":{\"anniversaryDate\":null,\"companyDesignation\":null,\"concatName\":\"heyhey\",\"countryOfResidence\":null,\"countryOfResidenceId\":null,\"countryPreference\":null,\"currency\":null,\"dateOfBirth\":null,\"department\":null,\"emergencyContactName\":null,\"emergencyContactNumber\":\"1234567890\",\"firstName\":\"sujeeeeeee\",\"gender\":null,\"homeAirport\":null,\"homeAirportId\":null,\"language\":\"English\",\"lastName\":\"Gigerrrrrrr\",\"middleName\":\"Lhdhdhed\",\"nickName\":null,\"primaryEmail\":\"hihihi@gmail.com\",\"title\":\"Mr\",\"createdAt\":\"2020-06-09T07:08:39\",\"updatedAt\":\"2020-06-09T07:08:39\"},\"preferences\":null,\"docDetails\":[{\"countryIssued\":\"India\",\"dateOfBirth\":null,\"docNumber\":null,\"docType\":\"1\",\"expiryDate\":null,\"issuedDate\":\"2020-01-03T06:52:50\",\"nationality\":\"India\",\"createdAt\":\"2020-06-03T06:52:50\",\"updatedAt\":\"2020-06-03T06:52:50\"}],\"createdAt\":\"2020-06-09T07:08:39\",\"updatedAt\":\"2020-06-09T07:08:39\"}],\"companyDetails\":null,\"depositAccounts\":null,\"gstDetails\":[{\"gstHolderName\":\"Dcompany\",\"gstHolderStateCode\":\"21\",\"gstHolderStateName\":\"Andhra\",\"gstNumber\":\"21AABBB5678J1Z0\"}],\"resources\":null,\"savedCards\":null,\"registrationDate\":\"2020-06-09T07:08:39\",\"lastUpdatedOn\":\"2020-06-09T07:08:39\"}";
 	String params_Account_Service_AppleSignin_uniqueId="{\"appleId\":\"1:a:2:b:35\",\"emailId\":\"123@privaterelay.appleid.com\",\"firstName\":\"abcd\",\"lastName\":\"sai\",\"title\":\"Mr.\"}";
 	String params_Account_Service_AppleSignin_Entity="{\"appleId\":\"1:a:2:b:3\",\"emailId\":\"sai@privaterelay.appleid.com\",\"firstName\":\"abcd\",\"lastName\":\"sai\",\"title\":\"Mr.\"}";
+	String params_Account_Service_AppleRegister_NullEmail="{\"appleId\":\"1:a:2:b:3:00\",\"emailId\":\"\",\"firstName\":\"abcd\",\"lastName\":\"sai\",\"title\":\"Mr.\"}";
 	String params_flyinresetpassword="{ \"username\" : \"ok@cltp.com\", \"old_password\" : \"cleartrip1\", \"new_password\" : \"cleartrip1\", \"partner\" : 1, \"source\":\"homepage\" }";
 	String params_flyinresetpasswordV2="{ \"username\" : \"ok@cltp.com\", \"old_password\" : \"cleartrip1\", \"new_password\" : \"cleartrip1\", \"partner\" : 1, \"source\":\"homepage\" }";
 
@@ -1012,6 +1013,14 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			params =params_Account_Service_AppleSignin_Entity ;
 		}
 		
+		if(Type.equals("Account_Service_AppleRegister_NullEmail")) {
+			headers = headersFormsapplesignin();
+
+			RestAssured.baseURI =url_Acct_Service_applesgnin;
+			url = url_Account_Service_AppleSignin_uniqueId;					
+			params =params_Account_Service_AppleRegister_NullEmail ;
+		}
+		
 		Reporter.log("url  "+url);
 		request = RestAssured.given().
 				when().
@@ -1337,6 +1346,27 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			}
 		}
 	}
+	
+	
+	public void validation_AppleRegister_NullEmail(Response resp, String Type, String Type2){
+		Reporter.log("Response body "+Type +" : "+ resp.body().asString());
+		//System.out.println("Response body "+Type +" : "+ resp.body().asString());
+		int statusCode = resp.getStatusCode();
+		//int statusCode1 = resp.getStatusCode();
+		Reporter.log("statusCode: " + statusCode);
+		JsonPath jsonPathEvaluator = resp.jsonPath();
+		if(statusCode!=404) {
+			Assert.assertTrue(false);
+		}
+
+		if(Type.equalsIgnoreCase("Account_Service_AppleRegister_NullEmail")) {
+			String username = jsonPathEvaluator.getString("message");
+			if(!username.contains("No user found with appleId : 1:a:2:b:3:00")) {
+				Assert.assertTrue(false);						
+			}
+		}
+	}
+	
 	
 	public void validation_Apple_signin(Response resp, String Type, String Type2){
 		Reporter.log("Response body "+Type +" : "+ resp.body().asString());

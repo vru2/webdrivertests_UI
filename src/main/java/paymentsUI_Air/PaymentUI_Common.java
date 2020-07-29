@@ -44,21 +44,21 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 		return payurl;
 	}
 	
-	public String getPayUI(String PayType, String PayType1) throws Exception {
-		resp = payUIget(PayType,PayType1);
-		if(PayType1.equalsIgnoreCase("AE")) {
+	public String getPayUI(String PayType, String Domain) throws Exception {
+		resp = payUIget(PayType,Domain);
+		if(Domain.equalsIgnoreCase("AE")) {
 			qaurl=qaurlae;
-		}else if(PayType1.equalsIgnoreCase("BH")) {
+		}else if(Domain.equalsIgnoreCase("BH")) {
 			qaurl=qaurlbh;
-		}else if(PayType1.equalsIgnoreCase("KW")) {
+		}else if(Domain.equalsIgnoreCase("KW")) {
 			qaurl=qaurlkw;
-		}else if(PayType1.equalsIgnoreCase("OM")) {
+		}else if(Domain.equalsIgnoreCase("OM")) {
 			qaurl=qaurlom;
-		}else if(PayType1.equalsIgnoreCase("QA")) {
+		}else if(Domain.equalsIgnoreCase("QA")) {
 			qaurl=qaurlqa;
-		}else if(PayType1.equalsIgnoreCase("SA")) {
+		}else if(Domain.equalsIgnoreCase("SA")) {
 			qaurl=qaurlsa;
-		}else if(PayType1.equalsIgnoreCase("US")) {
+		}else if(Domain.equalsIgnoreCase("US")) {
 			qaurl=qaurlus;
 		}
 		Url = qaurl+ fetchPaymentURL(resp);

@@ -44,6 +44,13 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 		return payurl;
 	}
 	
+	public String fetchPaymentTripID(Response resp){
+		String tripID="";
+		JsonPath jsonPathEvaluator = resp.jsonPath();
+		tripID = jsonPathEvaluator.getString("trip_ref");
+		return tripID;
+	}
+	
 	public String getPayUI(String PayType, String Domain) throws Exception {
 		resp = payUIget(PayType,Domain);
 		if(Domain.equalsIgnoreCase("AE")) {
@@ -64,15 +71,23 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 		Url = qaurl+ fetchPaymentURL(resp);
 		//System.out.println("Payment URL : " +Url);
 		Reporter.log("Payment URL : " +Url);
+		String TripID = fetchPaymentTripID(resp);
+		//System.out.println("TripID : "+TripID);
+		Reporter.log("TripID : "+TripID);
 		return Url;
 	}
 	
 	public void payUI_Select_PaymentType(RemoteWebDriver driver, String PayType) throws Exception {
-		if(textPresent(driver, "There's something wrong with our system", 5)) {
+		for (int i = 0; i < 10; i++) {			
+			if(textPresent(driver, "System error", 1)) {
 			Reporter.log("There's something wrong with our system");			
 			Assert.assertTrue(false);
 		}
-		if(!elementVisible(driver, getObjectPayment("PayUI_Pay_Tabs"), 30)) {
+		if(elementVisible(driver, getObjectPayment("PayUI_Pay_Tabs"), 1)) {
+			break;
+		}
+		}
+		if(!elementVisible(driver, getObjectPayment("PayUI_Pay_Tabs"), 10)) {
 			Reporter.log("PayUI Page is not displayed");
 			String UI_error = getText(driver, By.xpath("//h1"));
 			Reporter.log(UI_error);			

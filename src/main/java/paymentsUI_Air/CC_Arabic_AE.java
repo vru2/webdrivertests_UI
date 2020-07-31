@@ -12,7 +12,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import io.restassured.response.Response;
 
-public class CC_AE_Arabic extends PaymentUI_Common{
+public class CC_Arabic_AE extends PaymentUI_Common{
 	public RemoteWebDriver driver;
 	protected String Url;
 	protected String paymentUrl;

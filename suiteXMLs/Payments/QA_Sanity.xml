@@ -12,12 +12,12 @@
       <class name="paymentsUI_Air.NB_CITI"/>
     </classes>
 </test>
-
+<!-- 
 <test name="Test App CC"  preserve-order="true" >
     <classes>
       <class name="paymentsUI.Payment_NodeJS_CC"/>
     </classes>
-</test>
+</test> -->
 
 <test name="Pay DA" preserve-order="true" parallel="true">
     <classes>

@@ -1,0 +1,82 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Platform Services API" parallel="tests" thread-count="1">
+
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="common.RemoveDuplicateResults"/>
+		<listener class-name="common.RetryListener"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+</listeners>
+
+   <parameter name="hostvalue" value="qa2"></parameter>
+	 <test name="TripService Logbooking">
+		<classes>
+			<class name="tripServices.TS_LogBooking_Air" />
+			<class name="tripServices.TS_LogBooking_Hotel" /> 
+			<class name="tripServices.TS_LogBooking_Local" />
+			<class name="tripServices.TS_LogBooking_Trains" />
+		</classes>
+	</test>
+	
+	<test name="TripService Updatebooking">
+		<classes>
+			<class name="tripServices.TS_UpdateBooking_Air" />
+			<class name="tripServices.TS_UpdateBooking_Hotel" />
+			<class name="tripServices.TS_UpdateBooking_Local" />
+			<class name="tripServices.TS_UpdateBooking_Trains" />
+		    <class name="tripServices.TS_Invoice_Generation_Air" />
+		 </classes>
+
+	</test>
+		<test name="TripService Get Calls" >
+		<classes>
+			<class name="tripServices.TS_POST_GetAllTrips" />
+			<class name="tripServices.TS_Post_UpcomingTrips" />
+			<class name="tripServices.TS_GET_Trips_API_Versioning"/>
+			<class name="tripServices.TS_GET_Trips_API_Versioning_Archived"/>			
+		</classes>
+	</test>
+	<test name="Trip Lock Expiry">
+		<classes>
+			<class name="tripServices.TS_TripLockExpiry" />
+		</classes>
+	</test>
+	
+	<test name="Eventbus API"  parallel="true">
+		<classes>
+			<class name="tripServices.Eventbus_API" />
+		</classes>
+	</test>
+	
+	<test name="App Notification"  parallel="true">
+		<classes>
+			<class name="tripServices.AppNotification" />
+		</classes>
+	</test>
+
+ <test name="Ct-config UI">
+		<classes>
+			<class name="ct_config.CT_Config" />
+		</classes>
+	</test>
+	
+	<test name="SMS"  >
+		<classes>
+		<class name="smsservice.DomesticSMS"/> 
+		</classes>
+	</test>	
+	
+	<test name="Whatsapp"  parallel="true">
+		<classes>		
+		      <class name="whatsappService.WhatsappUserMessage"/> 
+		</classes>
+	</test>
+	
+	<test name="Email"  parallel="true">
+		<classes>
+		      <class name="email.Email_Template_true"/>
+		      <class name="email.EmailPost"/>
+		</classes>
+	</test>
+</suite> 
+	

@@ -9,23 +9,13 @@
 	</listeners>
 
 	<parameter name="hostvalue" value="qa2"></parameter>
-	<test name="TripService Logbooking">
-		<classes>
-			<class name="tripServices.TS_LogBooking_Air" />
-		</classes>
-	</test>
+	
 
 	<test name="TripService Updatebooking">
 		<classes>
 			<class name="tripServices.TS_UpdateBooking_Air" />
 		</classes>
 
-	</test>
-	<test name="TripService Get Calls">
-		<classes>
-			<class name="tripServices.TS_GET_Trips_API_Versioning" />
-			<class name="tripServices.TS_GET_Trips_API_Versioning_Archived" />
-		</classes>
 	</test>
 
 	<test name="Eventbus API" parallel="true">

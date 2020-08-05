@@ -97,11 +97,11 @@
 		</classes>
 	</test>
 	
-	<test name="MobileFraud MFilter Call"  parallel="true">
+	<!-- <test name="MobileFraud MFilter Call"  parallel="true">
 		<classes>
 			<class name="tripServices.TS_MF_MFilter" />
 		</classes>
-	</test>
+	</test> -->
 	
 	<test name="Eventbus API"  parallel="true">
 		<classes>

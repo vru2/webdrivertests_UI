@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="QA Sanity" parallel="tests" thread-count="2">
+<suite name="QA Sanity Payment" parallel="tests" thread-count="2">
 
 <listeners>
 <listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -7,32 +7,32 @@
 <listener class-name="common.RetryListener"/>
 </listeners>
 
-<test name="UI CC"  preserve-order="true" parallel="true" >
+<test name="UI"  preserve-order="true" parallel="true" >
     <classes>
       <class name="paymentsUI_Air.NB_CITI"/>
     </classes>
 </test>
-<!-- 
-<test name="Test App CC"  preserve-order="true" >
+
+<test name="Test App"  preserve-order="true" >
     <classes>
       <class name="paymentsUI.Payment_NodeJS_CC"/>
     </classes>
-</test> -->
+</test>
 
-<test name="Pay DA" preserve-order="true" parallel="true">
+<test name="DA" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsAPI.API_DA_PayV3"/>
     </classes>
 </test>
 
-<test name="Pay CC" preserve-order="true" parallel="true">
+<test name="Paymentservice" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsAPI.API_CC"/>
     </classes>
 </test>
 
 
-<test name=" Pomo service" preserve-order="true" parallel="true">
+<test name="Pomo service" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsAPI.API_Promo_Used"/> 
     </classes>
@@ -44,13 +44,13 @@
     </classes>
 </test>
 
-<test name="Rewards" preserve-order="true" parallel="true">
+<test name="Rewardservice" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsAPI.API_Reward_PayBack_CheckBalance"/> 
     </classes>
 </test>
 
-<test name="API Wallets"  preserve-order="true" parallel="true" >
+<test name="Walletservice"  preserve-order="true" parallel="true" >
     <classes>
 		<class name="paymentsAPI.API_Wallet_Get_Wallet_Trnx"/>
     </classes>

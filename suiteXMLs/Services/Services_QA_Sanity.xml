@@ -56,7 +56,7 @@
 
 	<test name="Accounts-Service-PWA" parallel="true">
 		<classes>
-			<class name="accountsAPI.Account_Service_PWA_GetUser_Byemail" />
+			
 			<class name="accountsAPI.Account_Service_PWA_SignIn_API" />
 		</classes>
 	</test>
@@ -64,8 +64,7 @@
 
 	<test name="Accounts-Service-Userclassification" parallel="true">
 		<classes>
-			<class name="accountsAPI.Userclassification_Userdetails_emailid" />
-			<class name="accountsAPI.Userclassification_Gettripdetails_fromtripid" />
+			
 			<class name="accountsAPI.Userclassification_Health_Test_Url" />
 
 		</classes>
@@ -74,7 +73,7 @@
 	<test name="Identity-service" parallel="true">
 		<classes>
 
-			<class name="accountsAPI.Identtiyservice_get_tokenthroughCode" />
+			
 			<class name="accountsAPI.IdentityService_AddClient" />
 
 		</classes>
@@ -83,20 +82,14 @@
 	<test name="Account-service-Controllers" parallel="true">
 		<classes>
 			<class name="accountsAPI.Account_Service_FlyinV2_Signin" />
-			<class name="accountsAPI.Account_Service_FlyinV2_UserSearch" />
-			<class name="accountsAPI.Account_Service_Flyin_Signin" />
-			<class name="accountsAPI.Account_Service_Flyin_Signup" />
-			<class name="accountsAPI.Account_Service_Peoplecontroller_GetuserById" />
-			<class
-				name="accountsAPI.Account_Service_Travellercontroller_UpdateTraveller" />
-			<class name="accountsAPI.Account_Service_Peoplecontroller_GetuserById_V2" />
+			
 
 		</classes>
 	</test>
 
 	<test name="Account-service-Caching-userprofile" parallel="true">
 		<classes>
-			<class name="accountsAPI.Account_Service_Caching_Userprofilejson_Email" />
+			
 			<class name="accountsAPI.Account_Service_Update_User" />
 		</classes>
 
@@ -105,7 +98,7 @@
 	<test name="Account-service-Apple-Signin" parallel="true">
 		<classes>
 			<class name="accountsAPI.Account_Service_AppleSignin" />
-			<class name="accountsAPI.Account_Service_AppleSignin_uniqueId" />
+			
 		</classes>
 
 	</test>

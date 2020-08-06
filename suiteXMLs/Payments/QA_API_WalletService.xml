@@ -17,6 +17,13 @@
     </classes>
 </test>
 
+<test name="API Wallet Promo Used" preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_Promo_Used"/> 
+    </classes>
+</test>
+
+
 
 <test name="API Wallets"  preserve-order="true" parallel="true" >
     <classes>

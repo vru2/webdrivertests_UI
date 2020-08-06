@@ -89,7 +89,7 @@
     <classes>
       <class name="paymentsAPI.API_PromoService"/> 
       <class name="paymentsAPI.API_Promo_Activate"/>  
-      <class name="paymentsAPI.API_Promo_Used"/> 
+      <!-- <class name="paymentsAPI.API_Promo_Used"/>  -->
     </classes>
 </test>
 

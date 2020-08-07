@@ -443,6 +443,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 				Assert.assertTrue(false);
 			}
 			logURL(driver);
+			
 
 			safeClick(driver, getObjectPayment("MakePayment_CtPay_CC_Tab"));
 			safeType(driver, getObjectPayment("MakePayment_CtPay_CC_Number"), "5123456789012346");

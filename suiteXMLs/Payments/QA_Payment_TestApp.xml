@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Payment Test App" parallel="tests" thread-count="3">
+<suite name="Payment Test App" parallel="tests" thread-count="5">
 
 <listeners>
 <listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -23,11 +23,6 @@
 </test>
 
 
-<test name="PayPal"  preserve-order="true" parallel="true" >
-    <classes>
-      <class name="paymentsUI.Payment_NodeJS_TPW_PayPal"/> 
-    </classes>
-</test>
 
 	
 <test name="NB TechProcess" preserve-order="true" parallel="true" >
@@ -197,5 +192,12 @@
       <class name="paymentsUI.Payment_NodeJS_Activity_Mobile_CC"/>
    </classes>
 </test>
+
+<!-- 
+<test name="PayPal"  preserve-order="true" parallel="true" >
+    <classes>
+      <class name="paymentsUI.Payment_NodeJS_TPW_PayPal"/> 
+    </classes>
+</test> -->
 
 </suite> 

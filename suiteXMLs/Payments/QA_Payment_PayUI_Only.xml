@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Payments UI Page" parallel="tests" thread-count="2">
+<suite name="Payments UI Page" parallel="tests" thread-count="5">
 
 <listeners>
 <listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -91,7 +91,7 @@
       <class name="paymentsUI.PaymentUI_Captcha"/> 
       <class name="paymentsUI.PaymentUI_SignIN"/>
   <!--     <class name="paymentsUI.PaymentUI_Validation"/> -->
-	  <class name="paymentsUI.PaymentUI_Wallet"/>
+	  <!-- <class name="paymentsUI.PaymentUI_Wallet"/> -->
 	 <!--  <class name="paymentsUI.PaymentUI_PhonePe"/>  -->
 	  <class name="paymentsUI.PaymentUI_TPW_AmazonPay"/>	  
     </classes>

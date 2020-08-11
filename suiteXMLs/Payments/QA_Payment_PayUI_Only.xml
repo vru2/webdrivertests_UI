@@ -12,9 +12,29 @@
     <classes>
       <class name="paymentsUI_Air.Validate_Text_Messages"/>
       <class name="paymentsUI_Air.Validate_Images_Links"/> 
+    </classes>
+</test>
+
+
+<test name="AE Validation"  preserve-order="true" parallel="true" >
+    <classes>
       <class name="paymentsUI_Air.Validate_AE_Domain"/>   
     </classes>
 </test>
+
+<test name="Arabic"  preserve-order="true" parallel="true" >
+    <classes><!-- 
+      <class name="paymentsUI_Air.CC_Arabic_AE"/>   --> 
+    </classes>
+</test>
+
+
+<test name="ADCB Pay"  preserve-order="true" parallel="true" >
+    <classes>
+      <!-- <class name="paymentsUI_Air.Validate_AE_Domain"/>    -->
+    </classes>
+</test>
+
 
 <test name="Amendment"  preserve-order="true" parallel="true" >
     <classes>
@@ -60,11 +80,6 @@
       <class name="paymentsUI_Air.NB_CITI"/> 
 	  <class name="paymentsUI_Air.NB_HDFC"/> 
 	 <!--  <class name="paymentsUI_Air.NB_ICICI"/> 	   -->
-    </classes>
-</test>
-
-<test name="AE Validation"  preserve-order="true" parallel="true" >
-    <classes>
     </classes>
 </test>
 

@@ -3195,8 +3195,9 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		String params = null; 
 		HashMap<String, Object> headers	= new HashMap<>();
 		HashMap<String, Object> cookies	= new HashMap<>();
-		
-		headers = headersFormspay();
+		if(common.value("payAuth").contains("false")) {
+			headers = headersForms();
+		} else headers = headersFormspay();
 		cookies = addCookies();
 		Response response = null;
 		if(payType.equalsIgnoreCase("BookApp/GetPay")){

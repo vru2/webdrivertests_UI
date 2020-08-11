@@ -62,7 +62,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 	public static String paymentUIurl;
 
 	public void pwapaymentUI_Setup() throws Exception {
-		resp = payUIget("BookApp/GetPay","");
+		resp = payUIget("BookApp/GetPay","", "");
 		paymentUIurl = qaurl+ fetchPaymentURL(resp);
 
 	}

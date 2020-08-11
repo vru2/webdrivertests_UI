@@ -21,7 +21,7 @@ public class PaymentUI_Captcha extends domains.PaymentNodeJS{
 
 	@BeforeClass
 	public void setUp() throws Exception {
-		resp = payUIget("BookApp/GetPay","");
+		resp = payUIget("BookApp/GetPay","",getNewDate_TripID());
 		qaUrl = qaurl;
 		Url = qaUrl+ fetchPaymentURL(resp);
 	}

@@ -26,7 +26,7 @@ public class PaymentUI_SignIN_AR extends PaymentNodeJS{
 	
 	@BeforeClass
 	public void setUp() throws Exception {
-		resp = payUIget("BookApp/GetPay","");
+		resp = payUIget("BookApp/GetPay","",getNewDate_TripID());
 		//qaUrl = qaurl;
 		Url = "https://qa2.cleartrip.com/pay/train/WlxVcEdAQxBJMzk1UQ==?lang=ar";
 		Reporter.log(Url);

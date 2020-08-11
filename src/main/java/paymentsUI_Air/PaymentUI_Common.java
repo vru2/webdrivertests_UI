@@ -210,16 +210,16 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 				Assert.assertTrue(false);
 		}
 		}else if(BankName.equalsIgnoreCase("AMEX")) {
-			elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_Amex3DPage_Submit_Btn"), "Amex Bank page not displayed", 20);
+			elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_Amex3DPage_Submit_Btn"), "Amex Bank ", 20);
 			textPresent(driver, "ACS Emulator", 1);
 			Reporter.log("Amex Auth page is displayed");
 			safeClick(driver, getObjectPayment("MakePayment_NB_Bank_Amex3DPage_Submit_Btn"));
 		}else if(BankName.equalsIgnoreCase("Citibank")) {
-			elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"), "Citi Bank page not displayed", 30);
+			elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"), "Citi Bank  ", 30);
 			Reporter.log("CitiBank Auth page is displayed");
 			safeClick(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"));
 		}else if(BankName.equalsIgnoreCase("Hdfc Bank")) {
-			elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_UserName"), "Tech Process Bank page not displayed", 30);
+			elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_UserName"), "Tech Process Bank ", 30);
 			Reporter.log("HDFCBank Auth page is displayed");
 			safeType(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_UserName"), "test");
 			safeType(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_Password"), "test");
@@ -228,13 +228,13 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 			elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_IntermitentText"), 5);
 			safeClick(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_Submit_Btn2"));
 		}else if(BankName.equalsIgnoreCase("ICICI Bank")) {
-			elementPresent_log(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Logo"), "Razorpay Bank page not displayed", 30);
+			elementPresent_log(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Logo"), "Razorpay Bank ", 30);
 			textPresent(driver, "Welcome to Razorpay Bank", 1);
 			Reporter.log("RazorPay Auth page is displayed");
 			safeClick(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Submit"));	
 		}
 		else if(BankName.equalsIgnoreCase("CAPTCHA")) {
-			elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"), "Citi Bank page not displayed", 30);
+			elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"), "Citi Bank ", 30);
 			Reporter.log("CitiBank Auth page is displayed");
 			safeSelect(driver, By.cssSelector("select[name=\"PAID\"]"), "N");
 			safeClick(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"));

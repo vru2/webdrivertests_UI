@@ -44,7 +44,9 @@
 
 <test name="GV"  preserve-order="true" parallel="true" >
     <classes>
-      <class name="paymentsUI_Air.NB_GV"/>	  
+      <class name="paymentsUI_Air.NB_GV"/>
+      <class name="paymentsUI_Air.Full_GV"/>	  
+      
     </classes>
 </test>
 

@@ -3,8 +3,11 @@
 
 package paymentsUI_Air;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.Assert;
 import org.testng.ITestResult;
+import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -24,6 +27,12 @@ public class CC_KW extends PaymentUI_Common{
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
 		payUI_Select_PaymentType(driver, "CC");
+		String Total_Price = getText(driver, getObjectPayment("PayUI_Total_Pay_Value"));
+		if(!Total_Price.contains(".00")) {
+			Reporter.log("Total dosent contain decimal .00 "+Total_Price);
+			Assert.assertTrue(false);			
+		}
+		validate_Currency(driver, "", "KWD");
 		payUI_Enter_PaymentDetails(driver, "CC", "MASTER");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
 	}

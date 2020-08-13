@@ -81,6 +81,15 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 	}
 		
 	
+	public void validate_Currency (RemoteWebDriver driver, String Domain, String Currency) throws Exception {
+		String Total_Price = getText(driver, getObjectPayment("PayUI_Total_Pay_Value"));
+		if(!Total_Price.contains(Currency)) {
+			Reporter.log("Total Price doesn't contain Currency : "+Currency+" : "+Total_Price);
+			Assert.assertTrue(false);			
+		}
+		Reporter.log("Total Price "+Total_Price);		
+	}
+	
 	public void payUI_Enter_PaymentDetails(RemoteWebDriver driver, String PayType, String BankName) throws Exception {
 		switch (PayType) {
 		case "CC":

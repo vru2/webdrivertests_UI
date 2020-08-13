@@ -14,7 +14,7 @@
 		</suite-files>
 		
 		 <suite-files>
-			<suite-file path="QA_Payment_PayUI_Only.xml"></suite-file>
+			<suite-file path="QA_Payment_Bento_PayUI.xml"></suite-file>
 		</suite-files> 
 		
 		 <suite-files>		 

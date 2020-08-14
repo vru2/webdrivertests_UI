@@ -17,7 +17,7 @@ import io.restassured.response.Response;
 public class CC_Arabic_AE extends PaymentUI_Common{
 	public RemoteWebDriver driver;
 	protected String Url;
-	protected String paymentUrl;
+	protected String paymentUrl; 
 	protected String qaUrl;
 	public Response resp;
 	
@@ -27,6 +27,7 @@ public class CC_Arabic_AE extends PaymentUI_Common{
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
 		String Arabic= getText(driver, By.cssSelector("p.payment-container-header"));
+		elementPresent_log(driver, getObjectPayment("PayUI_Make_Payment_Btn"), "MakePayment Button", 5);
 		
 		if(textPresent(driver, "Enter your credit card details.", 2)) {
 			Reporter.log("Enter your credit card details. : text is displayed in English");

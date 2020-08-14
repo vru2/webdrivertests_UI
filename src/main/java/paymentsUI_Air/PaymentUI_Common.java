@@ -201,6 +201,23 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 			Reporter.log("CitiBank Auth page is displayed");
 			safeSelect(driver, By.cssSelector("select[name=\"PAID\"]"), "N");
 			safeClick(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"));
+		}else if(BankName.equalsIgnoreCase("Knet")) {
+			textPresent_Log(driver, "Cleartrip Mea Fz Llc", 30);
+			elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_Knet_DropDown"), "Knet Bank ", 2);
+			Reporter.log("Knet Bank page is displayed");
+			safeSelect(driver, getObjectPayment("MakePayment_NB_Bank_Knet_DropDown"), "Knet Test Card [KNET1]");
+			Thread.sleep(5000);
+			elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_Knet_CardNumber"), 5);
+			safeType(driver, getObjectPayment("MakePayment_NB_Bank_Knet_CardNumber"), "0000000001");
+			safeSelect(driver, getObjectPayment("MakePayment_NB_Bank_Knet_Exp_Month"), "09");
+			safeSelect(driver, getObjectPayment("MakePayment_NB_Bank_Knet_Exp_Year"), "2021");
+			safeType(driver, getObjectPayment("MakePayment_NB_Bank_Knet_CVV"), "1234");
+			safeClick(driver, getObjectPayment("MakePayment_NB_Bank_Knet_Proceed"));
+			textPresent_Log(driver, "Billing Information", 20);
+			
+			safeClick(driver, getObjectPayment("MakePayment_NB_Bank_Knet_Confirm"));
+			textPresent(driver, "If You Are Not Redirected Automatically In 30 Seconds", 10);
+			smartClick(driver, getObjectPayment("MakePayment_NB_Bank_Knet_RedirectionPage"));
 		}
 			
 	}
@@ -224,19 +241,19 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 			if(returnUrl.contains("paymentservice/return")) {
 				Reporter.log("Refreshing PayUI page to check the Payment Status");
 				driver.get(PayUrl);	
-				textPresent_Log(driver, "Payment successful", 10);
+				textPresent_Log(driver, "Payment successful", 10); 
 				textPresent_Log(driver, "view your booking details and Trip ID", 5);
 				break;
-			}
-			else if(i==1) {
+			}else if(i==10) {
+				if(textPresent(driver, "Oops! Your payment failed.", 1))	{
+					Reporter.log("Oops! Your payment failed.");
+					Assert.assertTrue(false);
+				}
+			}else if(i!=10) {
 				driver.get(PayUrl);	
 				textPresent_Log(driver, "Payment successful", 10);
 				break;
-			}
-			else if(i==10){
-				Reporter.log("Payment is not sucessful");
-				Assert.assertTrue(false);
-			}
+			}			
 			Thread.sleep(1000);
 			}
 	}

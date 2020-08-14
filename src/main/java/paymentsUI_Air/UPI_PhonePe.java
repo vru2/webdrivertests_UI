@@ -3,30 +3,31 @@
 
 package paymentsUI_Air;
 
-import org.openqa.selenium.remote.RemoteWebDriver; 
+import org.openqa.selenium.By;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
 import io.restassured.response.Response;
 
-public class CC_AE extends PaymentUI_Common{
+public class UPI_PhonePe extends PaymentUI_Common{
 	public RemoteWebDriver driver;
 	protected String Url;
-	protected String paymentUrl;
 	protected String qaUrl;
 	public Response resp;
 	
 	@Test
-	public void CC_PayU_Pay_AE() throws Exception {
-		String PayUrl = getPayUI("AirAE", "AE");
+	public void Amazon_Pay() throws Exception {
+		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
-		payUI_Select_PaymentType(driver, "CC");
-		validate_Currency(driver, "", "AED");
-		payUI_Enter_PaymentDetails(driver, "CC", "MASTER");
-		payUI_Mock_ConfirmationPage(driver, PayUrl);
+		payUI_Select_PaymentType(driver, "UPI");
+		safeClick(driver, getObjectPayment("PayUI_UPI_Radio_Btn"));
+		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
+		textPresent_Log(driver, "Payable by PhonePe Wallet", 30);
 	}
 
 	@BeforeClass
@@ -38,7 +39,7 @@ public class CC_AE extends PaymentUI_Common{
 	public void afterMethod(ITestResult _result) throws Exception {
 		afterMethod(driver, _result);
 	}
-	  
+	
 	@AfterClass
 	public void tearDown() throws Exception {
 		browserClose(driver);

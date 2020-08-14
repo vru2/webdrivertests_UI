@@ -24,9 +24,10 @@ public class CC_BH extends PaymentUI_Common{
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
 		payUI_Select_PaymentType(driver, "CC");
+		validate_Currency(driver, "", "BHD");
 		payUI_Enter_PaymentDetails(driver, "CC", "MASTER");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
-	}
+	} 
 
 	@BeforeClass
 	public void setUp() throws Exception {

@@ -1,0 +1,181 @@
+<html>
+<head>
+<title>TestNG:  Paymentservice</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Paymentservice</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/1</td>
+</tr><tr>
+<td>Started on:</td><td>Mon Aug 17 07:07:21 IST 2020</td>
+</tr>
+<tr><td>Total time:</td><td>11 seconds (11842 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='paymentsAPI.API_CC.paymentCC_API()'><b>paymentCC_API</b><br>Test class: paymentsAPI.API_CC<br/>
+<a href="#Output-334016636" onClick='toggleBox("Output-334016636", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-334016636" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-334016636">
+http://172.17.26.11:8070/paymentservice/service/pay/v3<br/>
+Params : [{"payment":{"seq_no":1,"trip_id":106562332,"app_userid":10001,"product_type":"DOMESTIC-AIR","high_risk":false,"d_plus_x_in_hours":276,"payment_category":"B","fraud_system_invocation":"Y","ui_version":"v2","customer_detail":{"ip_address":"119.82.73.123","mobile":"9986696785","email":"cltppayment@gmail.com","firstName":"test"},"app_ref1":"Q18110926800","app_ref2":"167823462","itinerary_id":"683a3a6bec-4e58-422a-a2c9-90707b1e5a12","payment_type":"CC","amount":100.99,"currency":"INR","country":"IN","order_info1":"9W/362/DEL/BOM/201811XXXXXX00","order_info2":"Kiran Kumar","source_type":"ACCOUNT","user_id":85721640,"company_id":110340,"app_return_info":{"url":"https://www.cleartrip.com/flights/itinerary/683a3a6bec-4e58-422a-a2c9-90707b1e5a12/book","method":"POST","book_internal":true,"book_internal_url":"http://book-flights.cltp.com:9001/r3/book/flights/itinerary/683a3a6bec-4e58-422a-a2c9-90707b1e5a12/book-internal?ll=INFO"},"host_name":"qa2.cleartrip.com","card_detail":{"card_number":"340000000000009","card_type_id":1,"expiry_month":"12","expiry_year":"2021","cvv":"123","name":"CleartripCard","billto_detail":{"firstname":"test","lastname":"test","address1":"Cleartrip JP Nagar","city_name":"Bangalore","state_name":"Karnataka","country_name":"India","postal_code":"560076"}},"user_agent":"Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko"}}]<br/>
+Response body CC : [{"id":44562610,"customer_detail":{"ip_address":"119.82.73.123","mobile":"9986696785","email":"cltppayment@gmail.com","first_name":"test"},"app_ref1":"Q18110926800","app_ref2":"167823462","payment_type":"CC","amount":100.99,"currency":"INR","card_detail":{"card_number":"340000000000009","card_type_id":1,"expiry_month":"12","expiry_year":"2021","cvv":"123","name":"CleartripCard","billto_detail":{"firstname":"test","lastname":"test","address1":"Cleartrip JP Nagar","city_name":"Bangalore","state_name":"Karnataka","country_name":"India","postal_code":"560076"}},"status":"F","description":"Internal server error","error_code":"99","collect_otp":false,"seq_no":1}]<br/>
+statusCode: 200<br/>
+Status is Sucess [F]<br/>
+description Process [Internal server error]<br/>
+ Payment ID: [44562610]<br/>
+</div>
+</td>
+<td><div><pre>junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:48)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertTrue(Assert.java:27)
+	at paymentsAPI.API_PaymentCommon1.validation(API_PaymentCommon1.java:1687)
+	at paymentsAPI.API_CC.paymentCC_API(API_CC.java:19)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace334016636", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace334016636'><pre>junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:48)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertTrue(Assert.java:27)
+	at paymentsAPI.API_PaymentCommon1.validation(API_PaymentCommon1.java:1687)
+	at paymentsAPI.API_CC.paymentCC_API(API_CC.java:19)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:839)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1010)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+</pre></div></td>
+<td>2</td>
+<td>paymentsAPI.API_CC@4b5d6a01</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='paymentsAPI.API_CC.paymentCC_API()'><b>paymentCC_API</b><br>Test class: paymentsAPI.API_CC<br/>
+<a href="#Output-1981819771" onClick='toggleBox("Output-1981819771", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1981819771" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1981819771">
+http://172.17.26.11:8070/paymentservice/service/pay/v3<br/>
+Params : [{"payment":{"seq_no":1,"trip_id":106562332,"app_userid":10001,"product_type":"DOMESTIC-AIR","high_risk":false,"d_plus_x_in_hours":276,"payment_category":"B","fraud_system_invocation":"Y","ui_version":"v2","customer_detail":{"ip_address":"119.82.73.123","mobile":"9986696785","email":"cltppayment@gmail.com","firstName":"test"},"app_ref1":"Q18110926800","app_ref2":"167823462","itinerary_id":"683a3a6bec-4e58-422a-a2c9-90707b1e5a12","payment_type":"CC","amount":100.99,"currency":"INR","country":"IN","order_info1":"9W/362/DEL/BOM/201811XXXXXX00","order_info2":"Kiran Kumar","source_type":"ACCOUNT","user_id":85721640,"company_id":110340,"app_return_info":{"url":"https://www.cleartrip.com/flights/itinerary/683a3a6bec-4e58-422a-a2c9-90707b1e5a12/book","method":"POST","book_internal":true,"book_internal_url":"http://book-flights.cltp.com:9001/r3/book/flights/itinerary/683a3a6bec-4e58-422a-a2c9-90707b1e5a12/book-internal?ll=INFO"},"host_name":"qa2.cleartrip.com","card_detail":{"card_number":"340000000000009","card_type_id":1,"expiry_month":"12","expiry_year":"2021","cvv":"123","name":"CleartripCard","billto_detail":{"firstname":"test","lastname":"test","address1":"Cleartrip JP Nagar","city_name":"Bangalore","state_name":"Karnataka","country_name":"India","postal_code":"560076"}},"user_agent":"Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko"}}]<br/>
+Response body CC : [{"id":44562608,"customer_detail":{"ip_address":"119.82.73.123","mobile":"9986696785","email":"cltppayment@gmail.com","first_name":"test"},"app_ref1":"Q18110926800","app_ref2":"167823462","payment_type":"CC","amount":100.99,"currency":"INR","card_detail":{"card_number":"340000000000009","card_type_id":1,"expiry_month":"12","expiry_year":"2021","cvv":"123","name":"CleartripCard","billto_detail":{"firstname":"test","lastname":"test","address1":"Cleartrip JP Nagar","city_name":"Bangalore","state_name":"Karnataka","country_name":"India","postal_code":"560076"}},"status":"F","description":"Internal server error","error_code":"99","collect_otp":false,"seq_no":1}]<br/>
+statusCode: 200<br/>
+Status is Sucess [F]<br/>
+description Process [Internal server error]<br/>
+ Payment ID: [44562608]<br/>
+</div>
+</td>
+<td><div><pre>junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:48)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertTrue(Assert.java:27)
+	at paymentsAPI.API_PaymentCommon1.validation(API_PaymentCommon1.java:1687)
+	at paymentsAPI.API_CC.paymentCC_API(API_CC.java:19)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 10 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1981819771", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1981819771'><pre>junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:48)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertTrue(Assert.java:27)
+	at paymentsAPI.API_PaymentCommon1.validation(API_PaymentCommon1.java:1687)
+	at paymentsAPI.API_CC.paymentCC_API(API_CC.java:19)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+</pre></div></td>
+<td>9</td>
+<td>paymentsAPI.API_CC@4b5d6a01</td></tr>
+</table><p>
+</body>
+</html>

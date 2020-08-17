@@ -1,0 +1,94 @@
+<html>
+<head>
+<title>TestNG:  DA</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>DA</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Mon Aug 17 07:07:16 IST 2020</td>
+</tr>
+<tr><td>Total time:</td><td>5 seconds (5165 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='paymentsAPI.API_DA_PayV3.paymentDA_API()'><b>paymentDA_API</b><br>Test class: paymentsAPI.API_DA_PayV3<br/>
+<a href="#Output-1287572942" onClick='toggleBox("Output-1287572942", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1287572942" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1287572942">
+http://172.17.26.11:8070/paymentservice/service/pay/v3<br/>
+Params : [{"payment":{"seq_no":1,"trip_id":43453224,"high_risk":false,"d_plus_x_in_hours":633,"payment_category":"B","fraud_system_invocation":"N","ui_version":"v1","customer_detail":{"address1":"test","city_name":"test","postal_code":"121212","state_name":"test","country_name":"india","mobile":"121221211","landline":"","email":"testcthotel@gmail.com"},"app_ref1":"Q200330788702","app_ref2":"75629492","payment_type":"DA","amount":1.0,"currency":"INR","order_info1":"SG/8161/DEL/BOM/20200426155000","order_info2":"test booking","source_type":"CORP","user_id":790982,"company_id":101,"app_return_info":{"url":"https://demo.cleartripforbusiness.com/airConfirmNetBanking?itineraryId\u003d689a209bce-a21e-49ac-a0f9-200330145310\u0026corpPageId\u003db8d196f8-af63-45cd-9516-d4c91f7821f2","method":"POST","book_internal":true,"book_internal_url":"http://corporate.cltp.com:9001/r3/corp/air-book-internal?itineraryId\u003d689a209bce-a21e-49ac-a0f9-200330145310\u0026corpPageId\u003db8d196f8-af63-45cd-9516-d4c91f7821f2"},"deposit_account_detail":{"id":46207144,"transaction_password":"test123"}}}]<br/>
+Response body DAPay : [{"id":44562606,"customer_detail":{"address1":"test","city_name":"test","postal_code":"121212","state_name":"test","country_name":"india","mobile":"121221211","landline":"","email":"testcthotel@gmail.com"},"app_ref1":"Q200330788702","app_ref2":"75629492","payment_type":"DA","amount":1.0,"currency":"INR","status":"S","description":"Payment successful","redirection_required":"N","collect_otp":false,"seq_no":1}]<br/>
+statusCode: 200<br/>
+</div>
+</td>
+<td></td>
+<td>5</td>
+<td>paymentsAPI.API_DA_PayV3@4c9f8c13</td></tr>
+</table><p>
+</body>
+</html>

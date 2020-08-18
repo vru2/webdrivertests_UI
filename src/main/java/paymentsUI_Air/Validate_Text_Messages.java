@@ -139,13 +139,12 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 	public void Validate_CCDC_Text() throws Exception {
 		payUI_Select_PaymentType(driver, "CC");
 		Enter_CC_Details(driver, platform.value("ADCBCard_Number"), platform.value("ADCBCard_Expiry_Month"), platform.value("ADCBCard_Expiry_Year"), platform.value("ADCBCard_CVV"));
-
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		textPresent_Log(driver, "Enter valid credit card number", 2);
 		payUI_Select_PaymentType(driver, "DC");
 		Enter_CC_Details(driver, platform.value("AmexCard_Number"), platform.value("AmexCard_Month_New"), platform.value("AmexCard_Year"), platform.value("AmexCard_CVV"));
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
-		textPresent_Log(driver, "Enter valid dredit card number", 2);
+		textPresent_Log(driver, "Enter valid Credit card number", 2);
 	}
 		
 	@BeforeClass

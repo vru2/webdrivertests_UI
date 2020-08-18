@@ -66,6 +66,30 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 		paymentUIurl = qaurl+ fetchPaymentURL(resp);
 
 	}
+	
+	
+	public void payUI_Mock_ConfirmationPage(RemoteWebDriver driver, String PayUrl) throws InterruptedException {
+		for (int i = 0; i <=10; i++) {
+			String returnUrl  = getURL(driver);
+			if(returnUrl.contains("paymentservice/return")) {
+				Reporter.log("Refreshing PayUI page to check the Payment Status");
+				driver.get(PayUrl);	
+				textPresent_Log(driver, "Payment successful", 10); 
+				textPresent_Log(driver, "view your booking details and Trip ID", 5);
+				break;
+			}else if(i==10) {
+				if(textPresent(driver, "Oops! Your payment failed.", 1))	{
+					Reporter.log("Oops! Your payment failed.");
+					Assert.assertTrue(false);
+				}
+			}else if(i!=10) {
+				driver.get(PayUrl);	
+				textPresent_Log(driver, "Payment successful", 10);
+				break;
+			}			
+			Thread.sleep(1000);
+			}
+	}
 
 	public void paymentNodeJS_HomePage(RemoteWebDriver driver, String payServer, String testServer) throws Exception {
 		elementVisible(driver, getObjectPayment("HomePage_Header"), 10);

@@ -42,6 +42,7 @@ public class Full_GV extends PaymentUI_Common{
 		String FullGVPay = getText(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		Assert.assertEquals("Complete Booking", FullGVPay);
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
+		Reporter.log("Scripts should be fixed after Air integration");
 		Assert.assertTrue(false);
 	}	
 

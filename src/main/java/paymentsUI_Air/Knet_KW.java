@@ -3,15 +3,13 @@
 
 package paymentsUI_Air;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.Assert;
 import org.testng.ITestResult;
-import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
 import io.restassured.response.Response;
 
 public class Knet_KW extends PaymentUI_Common{
@@ -28,7 +26,7 @@ public class Knet_KW extends PaymentUI_Common{
 		driver.get(PayUrl);
 		payUI_Select_PaymentType(driver, "NB");
 		payUI_Enter_PaymentDetails(driver, "NB", "Knet");
-		Thread.sleep(30000);
+		Thread.sleep(5000);
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
 	}
 

@@ -22,7 +22,7 @@ import io.restassured.response.Response;
 public class PaymentUI_TPW_AmazonPay extends PaymentNodeJS{
 
 	public RemoteWebDriver driver;
-	protected String Url;
+	public String Url;
 	protected String paymentUrl;
 	protected String qaUrl;
 	protected String cleartripQaUrl="https://qa2.cleartrip.com";
@@ -34,16 +34,14 @@ public class PaymentUI_TPW_AmazonPay extends PaymentNodeJS{
 	public void setUp() throws Exception {
 		resp = payUIget("BookApp/GetPay","",getNewDate_TripID());
 		qaUrl = qaurl;
-		Url = qaUrl+ fetchPaymentURL(resp);
-		
 	}
-
-	
 
 	@Test()
 	public void amazonPayPayment() throws Exception{
-			validation_PaymentUI("BookApp/GetPay", resp);
-	
+
+		Url = qaUrl+ fetchPaymentURL(resp);
+		String PayUrl = getPayUI("Air", "");
+			validation_PaymentUI("BookApp/GetPay", resp);	
 			driver=(RemoteWebDriver) getDriver(driver);
 			driver.manage().deleteAllCookies(); 
 			driver.get(Url);			
@@ -62,12 +60,16 @@ public class PaymentUI_TPW_AmazonPay extends PaymentNodeJS{
 			waitForElementVisibility(driver,By.xpath("//img[contains(@alt,'Amazon Pay')]"),20);
 			validateIfPresent(driver,PaymentUI_CommonUtilities.amazonPayUsernameXpath);
 			validateIfPresent(driver,PaymentUI_CommonUtilities.amazonPayPasswordXpath);
-			safeType(driver,By.xpath("//input[@name='email']"), dataFile.value("PaymentUI_AmazonPay_Email"));
-			safeType(driver,By.xpath("//input[@name='password']"), dataFile.value("PaymentUI_AmazonPay_Pwd"));
-			click(driver,PaymentUI_CommonUtilities.amazonPaySubmitButtonXpath);
-			driver.get(Url);
-			/*waitForElementVisibility(driver,By.xpath("//h1[text()='Payment in progress']"),20);
-			validateIfPresent(driver,PaymentUI_CommonUtilities.paymentInProgressHeaderXpath);*/
+			textPresent_Log(driver, "Login with your Amazon account", 20);
+			safeType(driver, getObjectPayment("MakePayment_Amazon_Page_Signin_Email"), "kiran.kumar@cleartrip.com");
+			safeType(driver, getObjectPayment("MakePayment_Amazon_Page_Signin_Password"), "Cleartrip@123");
+			safeClick(driver, getObjectPayment("MakePayment_Amazon_Page_Signin_Login"));
+			textPresent_Log(driver, "Select payment method", 20);
+			safeClick(driver, getObjectPayment("MakePayment_Amazon_Page_SelectCard"));
+			safeType(driver, getObjectPayment("MakePayment_Amazon_Page_SelectCard_CVV"), "123");
+			safeClick(driver, getObjectPayment("MakePayment_Amazon_Page_Pay_Button"));
+			Thread.sleep(5000);
+			payUI_Mock_ConfirmationPage(driver, Url);
 		
 	}
 

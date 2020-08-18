@@ -34,6 +34,7 @@ public class AmazonPay extends PaymentUI_Common{
 		safeClick(driver, getObjectPayment("MakePayment_Amazon_Page_SelectCard"));
 		safeType(driver, getObjectPayment("MakePayment_Amazon_Page_SelectCard_CVV"), "123");
 		safeClick(driver, getObjectPayment("MakePayment_Amazon_Page_Pay_Button"));
+		Thread.sleep(5000);
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
 	}
 

@@ -75,6 +75,53 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 		safeClickList(driver, getObjectPayment("PayUI_Pay_Tabs"), PayType);	
 	}
 	
+	public void payUI_Select_PaymentType_PWA(RemoteWebDriver driver, String PayType) throws Exception {
+		for (int i = 0; i < 10; i++) {			
+			if(textPresent(driver, "System error", 1)) {
+			Reporter.log("There's something wrong with our system");			
+			Assert.assertTrue(false);
+		}
+		if(textPresent(driver, "Select payment option", 1)) {
+			break;
+		}
+		}
+		if(!elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 10)) {
+			Reporter.log("PayUI Page is not displayed");
+					
+			Assert.assertTrue(false);
+		}
+		switch (PayType) {
+		case "CC":
+			PayType = "DEBIT/CREDIT CARDS";
+			break;
+		case "DC":
+			PayType = "DEBIT/CREDIT CARDS";
+			break;
+		case "NB":
+			PayType = "NET BANKING";
+			System.out.println("DONE");
+			break;
+		case "TW":
+			PayType = "WALLETS";
+			break;
+		case "UPI":
+			PayType = "UPI";
+			break;
+		case "ADCB":
+			PayType = "";
+			break;
+		case "SC":
+			PayType = "Stored Card";
+			break;
+		default:
+			break;
+		}
+		scrollSmooth(driver, 100);
+		safeClickList(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), PayType);			
+	}
+	
+	
+	
 	public void payUI_PageLoader(RemoteWebDriver driver) throws Exception {
 		elementNotVisible(driver, getObjectPayment("PayUI_PageLoader_Spinner"), 10);
 		elementNotVisible(driver, getObjectPayment("PayUI_PageLoader_Shimmer"), 10);
@@ -100,6 +147,26 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 			break;
 		case "NB":
 			payUI_Select_NB(driver, BankName);
+			break;
+		case "TW":
+			break;
+		case "UPI":
+			break;
+		case "ADCB":
+			break;
+		default:
+			break;
+		}		
+	}
+	
+	
+	public void payUI_Enter_PaymentDetails_PWA(RemoteWebDriver driver, String PayType, String BankName) throws Exception {
+		switch (PayType) {
+		case "DEBIT/CREDIT CARDS":
+			payUI_Select_CARD_PWA(driver, BankName);
+			break;
+		case "NET BANKING":
+			payUI_Select_NB_PWA(driver, BankName);
 			break;
 		case "TW":
 			break;
@@ -137,6 +204,32 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 			}
 	}
 	
+	public void payUI_Select_CARD_PWA(RemoteWebDriver driver, String BankName) throws Exception {		
+		elementVisible(driver, getObjectPayment("PWA_PaymentPage_CC_Number"), 5);
+	//	textPresent_Log(driver, "DEBIT/CREDIT CARDS", 1);
+		Thread.sleep(5000);
+		switch (BankName) {
+			case "MASTER":
+				Enter_CARD_Details_PWA(driver, platform.value("MasterCard_Number"), platform.value("MasterCard_EXP_PWA"), platform.value("MasterCard_CVV"));
+			break;	
+			case "AMEX":
+				Enter_CARD_Details_PWA(driver, platform.value("AmexCard_Number"), platform.value("PWAAmexCard_Expiry"), platform.value("AmexCard_CVV"));
+			break;
+			case "CAPTCHA":
+				Enter_CARD_Details_PWA(driver, "512345678901234", platform.value("MasterCard_EXP_PWA"), platform.value("MasterCard_CVV"));
+			break;
+		}
+		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
+		Reporter.log("Make Payment button is Clicked");
+		if(textPresent(driver, "Internal server error", 5)) {
+			Reporter.log("Internal server error is displayed after Clicking Make Payment");
+			Assert.assertTrue(false);
+		}
+		if(!BankName.contains("CAPTCHA")) {
+		payUI_BankPage(driver, BankName);
+		}
+}
+	
 	public void Enter_CC_Details(RemoteWebDriver driver, String CCNumber, String CCExpMonth, String CCExpYear, String CVV) throws Exception {
 		Reporter.log("Card Details +\n"+ CCNumber +"\n " + CCExpMonth  +" " + CCExpYear +" " + CVV);
 		safeType(driver, getObjectPayment("PaymentPage_CreditCard_Number"), CCNumber);
@@ -146,6 +239,13 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 		safeSelect(driver, getObjectPayment("PaymentPage_CreditCard_Exp_Year"), CCExpYear);
 		safeType(driver, getObjectPayment("PaymentPage_CreditCard_Name"), "test");
 		safeType(driver, getObjectPayment("PaymentPage_CreditCard_CVV"), CVV);
+	}
+	
+	public void Enter_CARD_Details_PWA(RemoteWebDriver driver, String CCNumber, String CCExp, String CVV) throws Exception {
+		Reporter.log("Card Details +\n"+ CCNumber +"\n " + CCExp +" " + CVV);
+		safeType(driver, getObjectPayment("PWA_PaymentPage_CC_Number"), CCNumber);
+		safeType(driver, getObjectPayment("PWA_PaymentPage_CC_Expiry"), CCExp);
+		safeType(driver, getObjectPayment("PWA_PaymentPage_CC_CVV"), CVV);
 	}
 	
 	
@@ -222,7 +322,7 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 			
 	}
 		
-	
+
 	public void payUI_Select_NB(RemoteWebDriver driver, String BankName) throws Exception {		
 			elementVisible(driver, getObjectPayment("PayUI_NB_DropDown"), 5);
 			textPresent_Log(driver, "Popular Banks", 1);
@@ -232,6 +332,32 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 			}
 			else safeSelect(driver, getObjectPayment("PayUI_NB_DropDown"), BankName);
 			safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
+			payUI_BankPage(driver, BankName);
+	}	
+	
+
+	public void payUI_Select_NB_PWA(RemoteWebDriver driver, String BankName) throws Exception {		
+			elementVisible(driver, getObjectPayment("PWA_PaymentPage_Select_NB"), 5);
+			textPresent_Log(driver, "Choose Another Bank", 1);
+			//textPresent_Log(driver, "", 1);
+			if(BankName.contains("CAPTCHA")) {
+				safeSelect(driver, getObjectPayment("PayUI_NB_DropDown"), "Citibank");
+			}
+			else 
+			{
+				safeClick(driver, getObjectPayment("PWA_PaymentPage_Select_NB"));
+				textPresent(driver, "All Other Banks", 5);
+				safeType(driver, getObjectPayment("PWA_NETBANKING_Page_NB_TextBox"), BankName);
+				safeClick(driver, getObjectPayment("PWA_NETBANKING_Page_NB_AJAX"));
+				Thread.sleep(1000);
+				String BankName1 = getText(driver, getObjectPayment("PWA_PaymentPage_NB_Name"));
+				if(!BankName1.equalsIgnoreCase(BankName)) {
+					Reporter.log("Selcted bank is : "+BankName1+" Expected bank is "+BankName);
+					Assert.assertTrue(false);;
+				}
+			}
+			safeClick(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"));
+			Thread.sleep(5000);
 			payUI_BankPage(driver, BankName);
 	}	
 	

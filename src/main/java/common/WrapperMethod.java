@@ -177,7 +177,7 @@ public boolean GDS_Flight, B2B_GDS_Flight = false;
 		 	if (System.getProperty("os.name").contains("Windows")) {
 				File file = new File(".");
 				String filepath = file.getCanonicalPath() + "//exe//chromedriver.exe";
-			//	System.setProperty("webdriver.chrome.driver", filepath);
+				System.setProperty("webdriver.chrome.driver", filepath);
 			}else if(System.getProperty("os.name").contains("Linux")){
 				File file = new File(".");
 				String filepath = file.getCanonicalPath() + "//exe//chromedriver";

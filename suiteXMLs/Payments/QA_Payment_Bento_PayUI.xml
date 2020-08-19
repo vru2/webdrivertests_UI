@@ -74,9 +74,10 @@
     </classes>
 </test>
 
-<test name="Coupon Invalid Paytype"  preserve-order="true" parallel="true" >
+<test name="Coupon"  preserve-order="true" parallel="true" >
     <classes>
       <class name="paymentsUI_Air.Coupon"/>	  
+      <class name="paymentsUI_Air.Coupon_Invalid"/>	  
     </classes>
 </test>
 

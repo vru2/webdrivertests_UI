@@ -609,9 +609,13 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 	public void add_GV(RemoteWebDriver driver, String amount) throws Exception {
 		//String GV[] = paymentNodeJS_GV_Creation(driver, "50");
 		String GV[] = getGV(1);
-		/*System.out.println("GV no " +GV[0]);
-		System.out.println("GV Pin " +GV[1]);*/
+
+		System.out.println(GV[0]+" : "+GV[1]);
 		Reporter.log(GV[0]+" : "+GV[1]);
+		if(GV[0].contains(null)) {
+			Reporter.log("GV creation is failing");
+			Assert.assertTrue(false);
+		}
 		safeType(driver, getObjectPayment("SelectPayment_GV_Card_No"), GV[0]);
 		safeType(driver, getObjectPayment("SelectPayment_GV_Card_Pin"), GV[1]);
 		safeClick(driver, getObjectPayment("SelectPayment_GV_Add_Btn"));

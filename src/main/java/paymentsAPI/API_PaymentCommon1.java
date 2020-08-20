@@ -3089,9 +3089,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		return tripRef;
 	}
 	
-	public String getPayUI(String PayType, String Domain) throws Exception {
-		
-			
+	public String getPayUI(String PayType, String Domain) throws Exception {			
 		tripRef = getNewDate_TripID();
 		resp = payUIget(PayType, Domain, tripRef);
 		if(Domain.equalsIgnoreCase("AE")) {
@@ -3111,11 +3109,10 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		}
 		Url = qaurl+ fetchPaymentURL(resp);
 		Reporter.log("Payment URL : " +Url);
-		//System.out.println("Url : "+Url);
 		String TripID = fetchPaymentTripID(resp);
 		Reporter.log("TripID : "+TripID);
 			
-		if(Url.equals(null)) {
+		if(!Url.contains("pay")) {
 			Reporter.log("Pay URL is not created - Failing the script");
 			Assert.assertTrue(false);			
 		}
@@ -3127,6 +3124,10 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		String payurl="";
 		JsonPath jsonPathEvaluator = resp.jsonPath();
 		payurl = jsonPathEvaluator.getString("payment_url");
+		if(payurl.equals(null)) {
+			Reporter.log("Pay URL is not created - Failing the script");
+			Assert.assertTrue(false);			
+		}
 		return payurl;
 	}
 	

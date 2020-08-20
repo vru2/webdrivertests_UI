@@ -23,7 +23,7 @@ public class Coupon extends PaymentUI_Common{
 	public Response resp;
 	
 	@Test (priority=1)
-	public void Coupon_Remove() throws Exception {		
+	public void Coupon_Valid() throws Exception {		
 		String PayUrl = getPayUI("AirCoupon", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);

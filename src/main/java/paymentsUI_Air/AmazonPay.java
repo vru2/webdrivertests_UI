@@ -26,7 +26,7 @@ public class AmazonPay extends PaymentUI_Common{
 		payUI_Select_PaymentType(driver, "Wallets");
 		safeClick(driver, getObjectPayment("PaymentPage_Wallet_AmazonPay"));
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
-		textPresent_Log(driver, "Login with your Amazon account", 20);
+		textPresent_Log(driver, "Login with your Amazon account", 30);
 		safeType(driver, getObjectPayment("MakePayment_Amazon_Page_Signin_Email"), "kiran.kumar@cleartrip.com");
 		safeType(driver, getObjectPayment("MakePayment_Amazon_Page_Signin_Password"), "Cleartrip@123");
 		safeClick(driver, getObjectPayment("MakePayment_Amazon_Page_Signin_Login"));

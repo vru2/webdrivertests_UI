@@ -86,8 +86,7 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 		}
 		}
 		if(!elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 10)) {
-			Reporter.log("PayUI Page is not displayed");
-					
+			Reporter.log("PayUI Page is not displayed");					
 			Assert.assertTrue(false);
 		}
 		switch (PayType) {
@@ -99,7 +98,6 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 			break;
 		case "NB":
 			PayType = "NET BANKING";
-			System.out.println("DONE");
 			break;
 		case "TW":
 			PayType = "WALLETS";
@@ -121,6 +119,19 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 	}
 	
 	
+	public void payUI_Error_Validation_PWA(RemoteWebDriver driver, By errorMessage, By errorMessagePopUP, String ErrorText) throws Exception {
+		elementPresent_log(driver, errorMessagePopUP, "error Popup", 5);
+		String ErrorMessage = getText(driver, errorMessagePopUP);
+
+		System.out.println("Error message is "+ErrorMessage+" instead of "+ErrorText);
+		if(!ErrorMessage.contains(ErrorText)) {
+			Reporter.log("Error message is "+ErrorMessage+" instead of "+ErrorText);
+			Assert.assertTrue(false);
+		}
+		elementPresent_log(driver, errorMessage, "error text", 5);	
+		textPresent(driver, ErrorText, 1);
+	}
+		
 	
 	public void payUI_PageLoader(RemoteWebDriver driver) throws Exception {
 		elementNotVisible(driver, getObjectPayment("PayUI_PageLoader_Spinner"), 10);
@@ -137,6 +148,17 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 		Reporter.log("Total Price "+Total_Price);		
 	}
 	
+	public void validate_Currency_PWA (RemoteWebDriver driver, String Domain, String Currency) throws Exception {
+		String Total_Price = getText(driver, getObjectPayment("PWA_PaymentPage_TotalPrice"));
+		if(!Total_Price.contains(Currency)) {
+			Reporter.log("Total Price doesn't contain Currency : "+Currency+" : "+Total_Price);
+			Assert.assertTrue(false);			
+		}
+		Reporter.log("Total Price "+Total_Price);		
+	}
+	
+	
+	
 	public void payUI_Enter_PaymentDetails(RemoteWebDriver driver, String PayType, String BankName) throws Exception {
 		switch (PayType) {
 		case "CC":
@@ -151,6 +173,7 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 		case "TW":
 			break;
 		case "UPI":
+			payUI_Select_UPI(driver, BankName);
 			break;
 		case "ADCB":
 			break;
@@ -169,8 +192,10 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 			payUI_Select_NB_PWA(driver, BankName);
 			break;
 		case "TW":
+			payUI_Select_TW_PWA(driver, BankName);
 			break;
 		case "UPI":
+			payUI_Select_UPI_PWA(driver, BankName);
 			break;
 		case "ADCB":
 			break;
@@ -318,7 +343,15 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 			safeClick(driver, getObjectPayment("MakePayment_NB_Bank_Knet_Confirm"));
 			textPresent(driver, "If You Are Not Redirected Automatically In 30 Seconds", 10);
 			smartClick(driver, getObjectPayment("MakePayment_NB_Bank_Knet_RedirectionPage"));
+		}else if(BankName.equalsIgnoreCase("PhonePE")) {
+			elementPresent_log(driver, By.id("mobileNumber"), "PhonePe homepage", 30);
+			Reporter.log("PhonePE page is displayed");
+		}else if(BankName.equalsIgnoreCase("AmazonPay")) {
+			/*elementPresent_log(driver, By.id("mobileNumber"), "PhonePe homepage", 30);
+			Reporter.log("PhonePE page is displayed");*/
 		}
+		
+		
 			
 	}
 		
@@ -334,6 +367,15 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 			safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 			payUI_BankPage(driver, BankName);
 	}	
+	
+	public void payUI_Select_UPI(RemoteWebDriver driver, String BankName) throws Exception {	
+
+		textPresent(driver, "Select UPI partner to make your payment", 5);
+		elementVisible(driver, getObjectPayment("SelectPayment_UPI_PhonePe"), 5);
+		safeClick(driver, getObjectPayment("SelectPayment_UPI_PhonePe"));		
+		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
+		payUI_BankPage(driver, BankName);
+}	
 	
 
 	public void payUI_Select_NB_PWA(RemoteWebDriver driver, String BankName) throws Exception {		
@@ -359,7 +401,31 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 			safeClick(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"));
 			Thread.sleep(5000);
 			payUI_BankPage(driver, BankName);
-	}	
+	}
+
+	public void payUI_Select_UPI_PWA(RemoteWebDriver driver, String BankName) throws Exception {		
+		elementVisible(driver, getObjectPayment("PWA_PaymentPage_SelectPhonePe"), 5);
+		Reporter.log("Phonepe is displayed");		
+		safeClick(driver, getObjectPayment("PWA_PaymentPage_SelectPhonePe"));
+
+		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
+		Reporter.log("Make Payment button is Clicked");
+		Thread.sleep(5000);
+		payUI_BankPage(driver, BankName);
+}
+
+	public void payUI_Select_TW_PWA(RemoteWebDriver driver, String TWType) throws Exception {		
+		elementVisible(driver, getObjectPayment("PWA_PaymentPage_AmazonPay"), 5);
+		Reporter.log("AmazonPay is displayed");		
+
+		scrollSmooth(driver, 100);
+		safeClick(driver, getObjectPayment("PWA_PaymentPage_AmazonPay"));
+		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
+		Reporter.log("Make Payment button is Clicked");
+		Thread.sleep(5000);
+		payUI_BankPage(driver, TWType);
+}
+	
 	
 	public void payUI_Mock_ConfirmationPage(RemoteWebDriver driver, String PayUrl) throws InterruptedException {
 		for (int i = 0; i <=10; i++) {

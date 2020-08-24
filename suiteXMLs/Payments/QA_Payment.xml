@@ -8,7 +8,6 @@
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
 
-	
 		<suite-files>
 			<suite-file path="QA_Payment_API.xml"></suite-file>
 		</suite-files>

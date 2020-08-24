@@ -64,12 +64,13 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 			PayType = "UPI";
 			break;
 		case "ADCB":
-			PayType = "";
+			PayType = "ADCB TouchPoints";
 			break;
 		case "SC":
 			PayType = "Stored Card";
 			break;
 		default:
+			PayType = "Credit Card";
 			break;
 		}		
 		safeClickList(driver, getObjectPayment("PayUI_Pay_Tabs"), PayType);	
@@ -176,6 +177,7 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 			payUI_Select_UPI(driver, BankName);
 			break;
 		case "ADCB":
+			payUI_Select_ADCB(driver, BankName);
 			break;
 		default:
 			break;
@@ -228,6 +230,41 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 			payUI_BankPage(driver, BankName);
 			}
 	}
+	
+	public void payUI_Select_ADCB(RemoteWebDriver driver, String BankName) throws Exception {		
+		elementVisible(driver, getObjectPayment("PaymentPage_CreditCard_Number"), 5);
+		textPresent_Log(driver, "Enter your ADCB card details", 1);		
+		Reporter.log("Card Details +\n"+ platform.value("ADCBCard_Number") +"\n " + platform.value("ADCBCard_Expiry_Month")  +" " + platform.value("ADCBCard_Expiry_Year") +" " + platform.value("ADCBCard_CVV"));
+		safeType(driver, getObjectPayment("PaymentPage_ADCB_Number"), platform.value("ADCBCard_Number"));
+		safeClick(driver, getObjectPayment("PaymentPage_ADCB_EXP_Month"));
+		safeSelect(driver, getObjectPayment("PaymentPage_ADCB_EXP_Month"), platform.value("ADCBCard_Expiry_Month"));
+		safeClick(driver, getObjectPayment("PaymentPage_ADCB_EXP_Year"));
+		safeSelect(driver, getObjectPayment("PaymentPage_ADCB_EXP_Year"), platform.value("ADCBCard_Expiry_Year"));
+		safeType(driver, getObjectPayment("PaymentPage_ADCB_CardName"), "test");
+		safeType(driver, getObjectPayment("PaymentPage_ADCB_CVV"), platform.value("ADCBCard_CVV"));
+		safeClick(driver, getObjectPayment("PaymentPage_ADCB_CheckBlance_Btn"));		
+		elementVisible(driver, getObjectPayment("PaymentPage_ADCB_Redeem_Amount_TextBox"), 30);
+		textPresent_Log(driver, "A minimum amount of AED", 10);
+		textPresent_Log(driver, "Available Balance", 1);
+		textPresent_Log(driver, "Balance TouchPoints", 1);
+		textPresent_Log(driver, "Amount to redeem", 1);
+		textPresent_Log(driver, "Total payable", 1);
+		textPresent_Log(driver, "Amount redeemed", 1);
+		textPresent_Log(driver, "Balance payable", 1);
+		
+		safeType(driver, getObjectPayment("PaymentPage_ADCB_Redeem_Amount_TextBox"), "AED 50");
+	//	safeType(driver, getObjectPayment("PaymentPage_ADCB_OTP"), platform.value("ADCBCard_OTP"));
+		
+		//safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
+		Reporter.log("Make Payment button is Clicked");
+		if(textPresent(driver, "Internal server error", 5)) {
+			Reporter.log("Internal server error is displayed after Clicking Make Payment");
+			Assert.assertTrue(false);
+		}
+		if(!BankName.contains("CAPTCHA")) {
+		payUI_BankPage(driver, BankName);
+		}
+}
 	
 	public void payUI_Select_CARD_PWA(RemoteWebDriver driver, String BankName) throws Exception {		
 		elementVisible(driver, getObjectPayment("PWA_PaymentPage_CC_Number"), 5);
@@ -375,7 +412,8 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 		safeClick(driver, getObjectPayment("SelectPayment_UPI_PhonePe"));		
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		payUI_BankPage(driver, BankName);
-}	
+	}	
+	
 	
 
 	public void payUI_Select_NB_PWA(RemoteWebDriver driver, String BankName) throws Exception {		
@@ -383,7 +421,11 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 			textPresent_Log(driver, "Choose Another Bank", 1);
 			//textPresent_Log(driver, "", 1);
 			if(BankName.contains("CAPTCHA")) {
-				safeSelect(driver, getObjectPayment("PayUI_NB_DropDown"), "Citibank");
+				safeClick(driver, getObjectPayment("PWA_PaymentPage_Select_NB"));
+				textPresent(driver, "All Other Banks", 5);
+				safeType(driver, getObjectPayment("PWA_NETBANKING_Page_NB_TextBox"), "Citibank");
+				safeClick(driver, getObjectPayment("PWA_NETBANKING_Page_NB_AJAX"));
+				Thread.sleep(1000);				
 			}
 			else 
 			{

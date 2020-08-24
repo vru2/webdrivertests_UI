@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Payments UI Page" parallel="tests" thread-count="6">
+<suite name="Payment TestAPP UI" parallel="tests" thread-count="2">
 
 <listeners>
 <listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -7,6 +7,9 @@
 <listener class-name="common.RetryListener"/>
 <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
+
+
+
 
 <test name="Validation"  preserve-order="true" parallel="true" >
     <classes>
@@ -51,6 +54,7 @@
     </classes>
 </test>
 
+
 <test name="PhonePE"  preserve-order="true" parallel="true" >
     <classes>
       <class name="paymentsUI_Air.PhonePE"/>   
@@ -86,6 +90,7 @@
       <class name="paymentsUI_Air.CC_US"/>        
  -->    </classes>
 </test>
+
 
 <test name="ADCB Pay"  preserve-order="true" parallel="true" >
     <classes>
@@ -149,37 +154,8 @@
     </classes>
 </test>
 
-<test name="Captcha Validation Only"  preserve-order="true" >
-    <classes>
-      <class name="paymentsUI_Air.Captcha_Validation_Only"/> 	  
-    </classes>
-</test>
-	
-<test name="Train Pay"  preserve-order="true">
-    <classes>
-      <class name="paymentsUI.PaymentUI_Captcha"/> 
-      <class name="paymentsUI.PaymentUI_SignIN"/>
-  <!--     <class name="paymentsUI.PaymentUI_Validation"/> -->
-	  <!-- <class name="paymentsUI.PaymentUI_Wallet"/> -->
-	 <!--  <class name="paymentsUI.PaymentUI_PhonePe"/>  -->
-	  <class name="paymentsUI.PaymentUI_TPW_AmazonPay"/>	  
-    </classes>
-</test>
-	
-<test name="Train Pay NB"  preserve-order="true" parallel="true" >
-    <classes>
-	  <class name="paymentsUI.PaymentsUI_NB"/>
-    </classes>
-</test>
 
-<test name="Train Validation"  preserve-order="true" parallel="true" >
-    <classes>
-     <!--  <class name="paymentsUI.PaymentUI_AddStoredCardAndValidate"/> -->
-      <class name="paymentsUI.PaymentUI_ErrorValidationUPIWalletAndNB"/>
-      <class name="paymentsUI.PaymentUI_SuccessfulPaymentMessage"/> 
-      <class name="paymentsUI.PaymentUI_Progress"/> 
-    
-    </classes>
-</test>
+
+
 
 </suite> 

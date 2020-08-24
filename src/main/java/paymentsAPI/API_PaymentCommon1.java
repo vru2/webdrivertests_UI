@@ -523,7 +523,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 
 	protected String qaurl = "https://qa2.cleartrip.com";
-	protected String qaurlae = "https://qa2.cleartrip.ae";
+	protected String qaurlae = "https://www.cleartrip.ae";
 	protected String qaurlbh = "https://bh.cleartrip.com";
 	protected String qaurlkw = "https://kw.cleartrip.com";
 	protected String qaurlom = "https://om.cleartrip.com";

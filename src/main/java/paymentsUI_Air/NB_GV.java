@@ -12,14 +12,9 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import io.restassured.response.Response;
 
 public class NB_GV extends PaymentUI_Common{
 	public RemoteWebDriver driver;
-	protected String Url;
-	protected String paymentUrl;
-	protected String qaUrl;
-	public Response resp;
 	
 	@Test
 	public void NB_GV_Pay() throws Exception {
@@ -31,6 +26,7 @@ public class NB_GV extends PaymentUI_Common{
 			Reporter.log("GV is not displayed"+GVText);
 			Assert.assertTrue(false);
 		}
+		textPresent_Log(driver, "Gift Card", 1);
 		payUI_Select_PaymentType(driver, "NB");
 		payUI_Enter_PaymentDetails(driver, "NB", "Citibank");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);

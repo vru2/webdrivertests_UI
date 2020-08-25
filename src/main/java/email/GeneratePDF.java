@@ -11,7 +11,7 @@ public class GeneratePDF extends EmailCommon {
 	@Test(groups={"Regression"})		
 	public void generatePDF() throws IOException {
 		Response resp;
-		String url = Service_Url("EMAIL_GENERATEPDF");
+		String url = "http://172.17.26.11:8001/email/getpdf";
 		resp=EmailgeneratePDF(params4,headersForEmailgeneratePKPasscall(),url);
 		validationPDF(resp);
 	}

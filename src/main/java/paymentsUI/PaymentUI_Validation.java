@@ -34,7 +34,7 @@ public class PaymentUI_Validation extends PaymentNodeJS{
 
 	@BeforeClass 
 	public void setUp() throws Exception {
-		resp = payUIget("BookApp/GetPay","");
+		resp = payUIget("BookApp/GetPay","",getNewDate_TripID());
 		qaUrl = qaurl;
 		Url = qaUrl+ fetchPaymentURL(resp);
 	}
@@ -121,8 +121,8 @@ public class PaymentUI_Validation extends PaymentNodeJS{
 	@Test(priority=11)
 	public void secondRetryMakePayment() throws Exception {
 		
-			
-			resp = payUIget("BookApp/GetPay","");
+
+			resp = payUIget("BookApp/GetPay","",getNewDate_TripID());
 			qaUrl = qaurl;
 			Url = qaUrl+ fetchPaymentURL(resp);
 			driver.get(Url);

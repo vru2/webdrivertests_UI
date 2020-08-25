@@ -11,7 +11,7 @@ public class EmailSpamScore extends EmailCommon {
 	@Test(groups={"Regression"})		
 	public void message() throws IOException {
 		Response resp;
-		String url = Service_Url("EMAIL_SPAMSCORE");
+		String url = "http://172.17.26.11:8001/check-spam-score";
 		resp=Emailspamscore(params,headersForEmailpostcall(),url);
 		validationSpamScore(resp);
 		

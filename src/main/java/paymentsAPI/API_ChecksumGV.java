@@ -6,7 +6,7 @@ import java.security.NoSuchAlgorithmException;
 public class API_ChecksumGV {
     public static void main(String[] args) {
         String currency = "INR";
-        String amount = "5000";
+        String amount = "100";
         String userEmail = "cltpacct@gmail.com";
         String paymentId = "43853761";
         String checkSumKey = "cleartrip";
@@ -20,7 +20,7 @@ public class API_ChecksumGV {
                 .append(paymentId).append(pipe)
                 .append(checkSumKey).toString();
         System.out.println(calculateHash(hashType,hash));
-    }
+    } 
 
     public static String calculateHash(String hashType, String input) {
         byte[] hashseq = input.getBytes();

@@ -1,0 +1,161 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Payment TestAPP UI" parallel="tests" thread-count="2">
+
+<listeners>
+<listener class-name="org.uncommons.reportng.HTMLReporter" />
+<listener class-name="common.RemoveDuplicateResults"/>
+<listener class-name="common.RetryListener"/>
+<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+</listeners>
+
+
+
+
+<test name="Validation"  preserve-order="true" parallel="true" >
+    <classes>
+      <class name="paymentsUI_Air.Validate_Text_Messages"/>
+      <class name="paymentsUI_Air.Validate_Images_Links"/> 
+    </classes>
+</test>
+
+<test name="AE Validation"  preserve-order="true" parallel="true" >
+    <classes>
+      <class name="paymentsUI_Air.Validate_AE_Domain"/>   
+    </classes>
+</test>
+
+<test name="PWA"  preserve-order="true" >
+    <classes>
+      <class name="paymentsUI_Air.PWA_IN_AMEX"/>   
+      <class name="paymentsUI_Air.PWA_IN_Master"/>   
+      <class name="paymentsUI_Air.PWA_NB_CITI"/>   
+      <class name="paymentsUI_Air.PWA_NB_HDFC"/>   
+      <class name="paymentsUI_Air.PWA_PhonePe"/>
+      <class name="paymentsUI_Air.PWA_AmazonPay"/>
+    </classes>
+</test>
+
+<test name="PWA ME" preserve-order="true" >
+    <classes>
+      <class name="paymentsUI_Air.PWA_CC_AE"/>   
+      <class name="paymentsUI_Air.PWA_CC_BH"/>   
+      <class name="paymentsUI_Air.PWA_CC_KW"/>   
+      <class name="paymentsUI_Air.PWA_CC_OM"/>   
+      <class name="paymentsUI_Air.PWA_CC_QA"/>   <!-- 
+      <class name="paymentsUI_Air.PWA_CC_SA"/>
+      <class name="paymentsUI_Air.PWA_CC_US"/>    -->
+    </classes>
+</test>
+
+<test name="PWA Validation and Captcha"  preserve-order="true" >
+    <classes>
+      <class name="paymentsUI_Air.PWA_Validation"/> 
+      <class name="paymentsUI_Air.PWA_Captcha"/> 
+    </classes>
+</test>
+
+
+<test name="PhonePE"  preserve-order="true" parallel="true" >
+    <classes>
+      <class name="paymentsUI_Air.PhonePE"/>   
+    </classes>
+</test>
+
+<test name="Arabic"  preserve-order="true" parallel="true" >
+    <classes><!-- 
+      <class name="paymentsUI_Air.CC_Arabic_AE"/>   --> 
+    </classes>
+</test>
+
+<test name="PhonePe"  preserve-order="true" parallel="true" >
+    <classes>
+      <class name="paymentsUI_Air.UPI_PhonePe"/>   
+    </classes>
+</test>
+
+<test name="AmazonPAy"  preserve-order="true" parallel="true" >
+    <classes>
+      <class name="paymentsUI_Air.AmazonPay"/>   
+    </classes>
+</test>
+
+<test name="ME Domain"  preserve-order="true">
+    <classes>
+      <class name="paymentsUI_Air.CC_AE"/>      
+      <class name="paymentsUI_Air.CC_BH"/>      
+      <class name="paymentsUI_Air.CC_KW"/>      
+      <class name="paymentsUI_Air.CC_OM"/>      
+      <class name="paymentsUI_Air.CC_QA"/>    
+<!--       <class name="paymentsUI_Air.CC_SA"/>      
+      <class name="paymentsUI_Air.CC_US"/>        
+ -->    </classes>
+</test>
+
+
+<test name="ADCB Pay"  preserve-order="true" parallel="true" >
+    <classes>
+      <class name="paymentsUI_Air.ADCB_AE"/>   
+    </classes>
+</test>
+
+
+<test name="Amendment"  preserve-order="true" parallel="true" >
+    <classes>
+      <class name="paymentsUI_Air.Amendment"/>
+    </classes>
+</test>
+
+<test name="GV"  preserve-order="true" parallel="true" >
+    <classes>
+      <class name="paymentsUI_Air.NB_GV"/>
+      <class name="paymentsUI_Air.Full_GV"/>      
+    </classes>
+</test>
+
+<test name="StoredCard"  preserve-order="true" parallel="true" >
+    <classes>
+      <class name="paymentsUI_Air.StoredCard"/>	  
+    </classes>
+</test>
+
+<test name="Coupon"  preserve-order="true" parallel="true" >
+    <classes>
+      <class name="paymentsUI_Air.Coupon"/>	  
+      <class name="paymentsUI_Air.Coupon_Invalid"/>	  
+    </classes>
+</test>
+
+<test name="CC"  preserve-order="true" parallel="true" >
+    <classes>
+      <class name="paymentsUI_Air.CC_IN_Master"/>
+      <!-- <class name="paymentsUI_Air.DC_IN_Master"/> -->
+      <class name="paymentsUI_Air.CC_IN_Amex"/>      
+    </classes>
+</test>
+
+<test name="Wallet"  preserve-order="true" parallel="true" >
+    <classes>
+      <class name="paymentsUI_Air.Wallet_Full"/> 
+      <class name="paymentsUI_Air.Wallet_NB"/>      
+    </classes>
+</test>
+
+<test name="Air NB"  preserve-order="true" parallel="true" >
+    <classes>
+      <class name="paymentsUI_Air.NB_CITI"/> 
+	  <class name="paymentsUI_Air.NB_HDFC"/> 
+	 <!--  <class name="paymentsUI_Air.NB_ICICI"/> 	   -->
+    </classes>
+</test>
+
+<test name="KNet"  preserve-order="true">
+    <classes>
+      <class name="paymentsUI_Air.Knet_KW"/>
+    </classes>
+</test>
+
+
+
+
+
+</suite> 

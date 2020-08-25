@@ -32,7 +32,7 @@ public class PaymentUI_AddStoredCardAndValidate extends domains.PaymentNodeJS{
 
 	@BeforeClass
 	public void setUp() throws Exception {
-		resp = payUIget("BookApp/GetPay","");
+		resp = payUIget("BookApp/GetPay","","");
 		qaUrl = qaurl;
 		Url = qaUrl+ fetchPaymentURL(resp);
 	}
@@ -120,7 +120,7 @@ public class PaymentUI_AddStoredCardAndValidate extends domains.PaymentNodeJS{
 				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 				elementVisible(driver, By.xpath("//input[@type='submit']"), 10);
 				click(driver,PaymentUI_CommonUtilities.amexGatewayAuthenticationSubmitxpath);
-				resp = payUIget("BookApp/GetPay","");
+				resp = payUIget("BookApp/GetPay","",getNewDate_TripID());
 				Url = qaUrl+ fetchPaymentURL(resp);
 				driver.get(Url);
 				elementVisible(driver, By.xpath("(//label[@class='checkbox-round'])[1]"), 10);

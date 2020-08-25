@@ -22,7 +22,7 @@ public class PaymentUI_SignIN extends PaymentNodeJS{
 	
 	@BeforeClass
 	public void setUp() throws Exception {
-		resp = payUIget("BookApp/GetPay","");
+		resp = payUIget("BookApp/GetPay","",getNewDate_TripID());
 		//qaUrl = qaurl;
 		Url = qaurl+ fetchPaymentURL(resp);
 		Reporter.log(Url);

@@ -62,9 +62,33 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 	public static String paymentUIurl;
 
 	public void pwapaymentUI_Setup() throws Exception {
-		resp = payUIget("BookApp/GetPay","");
+		resp = payUIget("BookApp/GetPay","", "");
 		paymentUIurl = qaurl+ fetchPaymentURL(resp);
 
+	}
+	
+	
+	public void payUI_Mock_ConfirmationPage(RemoteWebDriver driver, String PayUrl) throws InterruptedException {
+		for (int i = 0; i <=10; i++) {
+			String returnUrl  = getURL(driver);
+			if(returnUrl.contains("paymentservice/return")) {
+				Reporter.log("Refreshing PayUI page to check the Payment Status");
+				driver.get(PayUrl);	
+				textPresent_Log(driver, "Payment successful", 10); 
+				textPresent_Log(driver, "view your booking details and Trip ID", 5);
+				break;
+			}else if(i==10) {
+				if(textPresent(driver, "Oops! Your payment failed.", 1))	{
+					Reporter.log("Oops! Your payment failed.");
+					Assert.assertTrue(false);
+				}
+			}else if(i!=10) {
+				driver.get(PayUrl);	
+				textPresent_Log(driver, "Payment successful", 10);
+				break;
+			}			
+			Thread.sleep(1000);
+			}
 	}
 
 	public void paymentNodeJS_HomePage(RemoteWebDriver driver, String payServer, String testServer) throws Exception {
@@ -369,7 +393,8 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 			safeType(driver, getObjectPayment("MakePayment_PgCred_SA_Checkout_Password_Txt"), "Checkout1!");
 			Thread.sleep(2000);
 			safeClick(driver, getObjectPayment("MakePayment_PgCred_SA_Checkout_Continue_Btn"));
-		} else if (payType.equalsIgnoreCase("NB")) {
+		} 
+		else if (payType.equalsIgnoreCase("NB")) {
 			safeClick(driver, getObjectPayment("MakePayment_Pay_Btn_NB"));
 			if (bankType.equalsIgnoreCase("Bank of India")) {
 				if(textPresent(driver, "Payment failed", 1)) {
@@ -429,9 +454,11 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 			elementPresent_log(driver, By.id("mobileNumber"), "", 30);
 		} else if (payType.equalsIgnoreCase("RAZORPAY")) {
 			safeClick(driver, getObjectPayment("MakePayment_Pay_Btn_RazorPay"));
-			elementVisible(driver, getObjectPayment("MakePayment_RazorPay_Page_Logo"), 10);
-			textPresent(driver, "ENTER YOUR UPI ID", 1);
+			elementVisible(driver, getObjectPayment("MakePayment_RazorPay_Page_Pay_Btn"), 10);
+			textPresent(driver, "PAY USING QR CODE", 1);
+			Thread.sleep(1000);
 			safeType(driver, getObjectPayment("MakePayment_RazorPay_Page_ID_Txt_Box"), platform.value("RazorPay_Cred"));
+			Thread.sleep(1000);
 			safeClick(driver, getObjectPayment("MakePayment_RazorPay_Page_Pay_Btn"));
 		}else if (payType.equalsIgnoreCase("CTP")) {
 			elementVisible(driver, getObjectPayment("SelectPayment_Type_CtPay"), 10);
@@ -443,6 +470,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 				Assert.assertTrue(false);
 			}
 			logURL(driver);
+			
 
 			safeClick(driver, getObjectPayment("MakePayment_CtPay_CC_Tab"));
 			safeType(driver, getObjectPayment("MakePayment_CtPay_CC_Number"), "5123456789012346");
@@ -584,9 +612,15 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 	public void add_GV(RemoteWebDriver driver, String amount) throws Exception {
 		//String GV[] = paymentNodeJS_GV_Creation(driver, "50");
 		String GV[] = getGV(1);
-		/*System.out.println("GV no " +GV[0]);
-		System.out.println("GV Pin " +GV[1]);*/
+
+		//System.out.println(GV[0]+" : "+GV[1]);
 		Reporter.log(GV[0]+" : "+GV[1]);
+		/*if(!GV[0].contains("")) {			
+			
+		} else {
+			Reporter.log("GV creation is failing");
+			Assert.assertTrue(false);
+		}*/
 		safeType(driver, getObjectPayment("SelectPayment_GV_Card_No"), GV[0]);
 		safeType(driver, getObjectPayment("SelectPayment_GV_Card_Pin"), GV[1]);
 		safeClick(driver, getObjectPayment("SelectPayment_GV_Add_Btn"));

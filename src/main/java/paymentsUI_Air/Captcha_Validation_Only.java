@@ -11,25 +11,22 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import io.restassured.response.Response;
-
 public class Captcha_Validation_Only extends PaymentUI_Common{
 	public RemoteWebDriver driver;
-	protected String Url;
-	protected String paymentUrl;
-	protected String qaUrl;
-	public Response resp;
 	
 	@Test
 	public void Validate_Text_Captcha() throws Exception {
 		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		elementVisible(driver, getObjectPayment("PayUI_Pay_Tabs"), 10);
 		for (int i = 0; i <=4; i++) {
 		if(i==1) {
-			textPresent_Log(driver, "Oops! Your payment failed. If you were charged, any amount deducted will be reversed automatically", 5);
+			textPresent(driver, "Oops! Your payment failed. If you were charged, any amount deducted will be reversed automatically", 1);
 		}
-		payUI_Select_PaymentType(driver, "NB");
+		else {
+			//Assert.assertTrue(false);
+		}		payUI_Select_PaymentType(driver, "NB");
 		payUI_Enter_PaymentDetails(driver, "NB", "CAPTCHA" );// CITIBANK		
 		}
 		Thread.sleep(5000);

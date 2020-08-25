@@ -3,8 +3,6 @@
 
 package paymentsUI_Air;
 
-import static org.junit.Assert.assertTrue;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
@@ -15,18 +13,11 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import groovy.lang.ReadOnlyPropertyException;
-import io.restassured.response.Response;
-
 public class Validate_AE_Domain extends PaymentUI_Common{
 	public RemoteWebDriver driver;
-	protected String Url;
-	protected String paymentUrl;
-	protected String qaUrl;
-	public Response resp;
 	
 	@Test(priority=1)
-	public void Validate_Text_CC() throws Exception {
+	public void Validate_AE_Text_CC() throws Exception {
 		String PayUrl = getPayUI("AirAE", "AE");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
@@ -54,7 +45,7 @@ public class Validate_AE_Domain extends PaymentUI_Common{
 	}
 
 	@Test(priority=2)
-	public void Validate_Text_DC() throws Exception {
+	public void Validate_AE_Text_DC() throws Exception {
 		payUI_Select_PaymentType(driver, "DC");
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));	
 		textPresent_Log(driver, "Enter your debit card details", 5);
@@ -67,7 +58,7 @@ public class Validate_AE_Domain extends PaymentUI_Common{
 	}
 
 	@Test(priority=3)
-	public void Validate_Text_NB() throws Exception {
+	public void Validate_AE_Text_NB() throws Exception {
 		payUI_Select_PaymentType(driver, "NB");
 		textPresent_Log(driver, "Popular Banks", 5);	
 		textPresent_Log(driver, "All Other Banks", 1);	
@@ -78,7 +69,7 @@ public class Validate_AE_Domain extends PaymentUI_Common{
 	}
 
 	@Test(priority=4)
-	public void Validate_TermandCondition() throws Exception {
+	public void Validate_AE_TermandCondition() throws Exception {
 		safeClick(driver, getObjectPayment("PayUI_I_Agree_CheckBox"));
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));		
 		textPresent_Log(driver, "Please accept the terms and conditions to proceed with this booking.", 5);
@@ -90,7 +81,7 @@ public class Validate_AE_Domain extends PaymentUI_Common{
 	}
 		
 	@Test(priority=5)
-	public void Validate_Text_Conv_Fee_Pricing() throws Exception {
+	public void Validate_AE_Text_Conv_Fee_Pricing() throws Exception {
 		payUI_Select_PaymentType(driver, "CC");
 		textPresentInElement(driver, getObjectPayment("PayUI_Convinence_Fee"), "Includes a convenience fee of ₹ 200.00", 1);
 		textPresent_Log(driver, "Includes a convenience fee of", 5);
@@ -102,7 +93,7 @@ public class Validate_AE_Domain extends PaymentUI_Common{
 	}
 
 	@Test(priority=6)
-	public void Validate_Itinerary() throws Exception {
+	public void Validate_AE_Itinerary() throws Exception {
 		String ItineraryDetails = getText(driver, getObjectPayment("PayUI_Itinerary_Details"));
 		if(!(ItineraryDetails.contains("Flight Itinerary")&&ItineraryDetails.contains("New Delhi")&&ItineraryDetails.contains("Mumbai")&&ItineraryDetails.contains("Travellers (5)")&&ItineraryDetails.contains("+1 travellers"))) {
 			Reporter.log("Flight Itinerary and other detail text not diplayed");
@@ -115,14 +106,14 @@ public class Validate_AE_Domain extends PaymentUI_Common{
 	}
 	
 	@Test(priority=7)
-	public void Validate_Expressway() throws Exception {		
+	public void Validate_AE_Expressway() throws Exception {		
 		safeClick(driver, getObjectPayment("PayUI_Expressway_CheckBox"));
 		textPresent_Log(driver, "2006–2020 Cleartrip Pvt. Ltd", 1);		
 		textPresent_Log(driver, "Save this card and make single-click payments", 1);	
 	}
 	
 	@Test(priority=8)
-	public void Validate_Misc() throws Exception {		
+	public void Validate_AE_Misc() throws Exception {		
 		elementPresent_log(driver, getObjectPayment("PayUI_Cleartrip_Logo"), "Cleartrip ", 2);
 		textPresent_Log(driver, "2006–2020 Cleartrip Pvt. Ltd", 1);	
 		textPresent_Log(driver, "Total inclusive all taxes", 1);	

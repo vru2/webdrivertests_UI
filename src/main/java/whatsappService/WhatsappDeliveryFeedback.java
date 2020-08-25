@@ -11,7 +11,7 @@ public class WhatsappDeliveryFeedback extends WhatsappCommon {
 	@Test(groups={"Regression"})
 	public void message() throws IOException, InterruptedException {
 		Response resp;
-		String url = Service_Url("WHATSAPP_MESSAGE");
+		String url = "http://172.17.26.11:8227/whatsapp/message";
         resp=paramsForwhatsappmessage(headersForWhatsappUserMessage(),params1,url);
         Thread.sleep(9000);
         validateMessage(resp);
@@ -20,7 +20,7 @@ public class WhatsappDeliveryFeedback extends WhatsappCommon {
         String Host = common.value("host");
     	Response resp1;
     	if(Host.equalsIgnoreCase("qa2")) {
-        String url4feedback =("http://whatsappapi.cltp.com:9001/r3/whatsapp/feedback?id="+messageId);
+        String url4feedback =("http://172.17.26.11:8227/whatsapp/feedback?id="+messageId);
 		// Service_Url("WHATSAPP_DELIVERY_FEEDBACK"+messageId); ("http://whatsappapi.cltp.com:9001/r3/whatsapp/feedback?id="+messageId);
 	    resp1=paramsForwhatsappdeliveryfeedback(headersForWhatsappUserMessage(),url4feedback);
 	    validateDeliveryFeedback(resp1);

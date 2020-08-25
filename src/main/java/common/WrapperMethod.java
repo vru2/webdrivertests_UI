@@ -165,19 +165,23 @@ public boolean GDS_Flight, B2B_GDS_Flight = false;
 		 // Added individual deviceMetrices & useragent
 		 deviceMetrics.put("width", 360); 
 		 deviceMetrics.put("height", 560);
-		 deviceMetrics.put("pixelRatio", 3.0);
+		 deviceMetrics.put("pixelRatio", 4.0);/*
+		 Dimension dimension = new Dimension(800, 600);
+		 driver.manage().window().setSize(dimension);*/
 		 
 		 //Map<String, String> mobileEmulation = new HashMap<>(); -- revert incase mobile agent doesn't work
 		 //mobileEmulation.put("deviceName", "Nexus 5"); 
 		 
 		 // Added individual deviceMetrices & useragent
 		 Map<String, Object> mobileEmulation = new HashMap<>();
-		 mobileEmulation.put("deviceMetrics", deviceMetrics);
-		 mobileEmulation.put("userAgent", "Mozilla/5.0 (Linux; Android 4.2.1; en-us; Nexus 5 Build/JOP40D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19");
+
+		 mobileEmulation.put("deviceName", "Nexus 5");
+		// mobileEmulation.put("deviceMetrics", deviceMetrics);
+		 //mobileEmulation.put("userAgent", "Mozilla/5.0 (Linux; Android 4.2.1; en-us; Nexus 5 Build/JOP40D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19");
 		 	if (System.getProperty("os.name").contains("Windows")) {
 				File file = new File(".");
 				String filepath = file.getCanonicalPath() + "//exe//chromedriver.exe";
-			//	System.setProperty("webdriver.chrome.driver", filepath);
+				System.setProperty("webdriver.chrome.driver", filepath);
 			}else if(System.getProperty("os.name").contains("Linux")){
 				File file = new File(".");
 				String filepath = file.getCanonicalPath() + "//exe//chromedriver";
@@ -196,6 +200,9 @@ public boolean GDS_Flight, B2B_GDS_Flight = false;
 		 }
 			
 		 else driver = new ChromeDriver(this.createHeadlessChromeMobile());
+		 
+		 Dimension dimension = new Dimension(220, 1000);
+		 driver.manage().window().setSize(dimension);
 		return driver;
 		 
 	 }

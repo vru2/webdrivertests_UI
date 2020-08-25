@@ -3,8 +3,6 @@
 
 package paymentsUI_Air;
 
-import java.util.List;
-
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.ITestResult;
@@ -13,20 +11,18 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
 import io.restassured.response.Response;
 
 public class Validate_Images_Links extends PaymentUI_Common{
 	public RemoteWebDriver driver;
-	protected String Url;
-	protected String paymentUrl;
-	protected String qaUrl;
-	public Response resp;
 	
 	@Test(priority=1)
 	public void images() throws Exception {
 		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		payUI_Select_PaymentType(driver, "CC");
 		String  handle= driver.getWindowHandle();
 		elementPresent_log(driver, getObjectPayment("PayUI_Image_CC_VerifyVisa"), "Visa Image", 5);
 		safeClick(driver, getObjectPayment("PayUI_Image_CC_VerifyVisa"));
@@ -78,6 +74,7 @@ public class Validate_Images_Links extends PaymentUI_Common{
 	public void links() throws Exception {
 
 		String  handle= driver.getWindowHandle();
+		//payUI_Select_PaymentType(driver, "CC");
 		elementPresent_log(driver, getObjectPayment("PayUI_Booking_Policy"), "Booking Policy", 5);
 		safeClick(driver, getObjectPayment("PayUI_Booking_Policy"));
 		Thread.sleep(5000);

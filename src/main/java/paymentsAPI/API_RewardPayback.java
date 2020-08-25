@@ -1,5 +1,3 @@
-
-
 /* AUTHOR: PRAKHAR CHATTERJEE
  * EMAIL: prakhar.chatterjee@cleartrip.com
  * DOCUMENTATION: This Class focusses on automating all API's related to Reward Payback functionality.

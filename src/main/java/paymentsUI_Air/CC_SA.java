@@ -9,14 +9,11 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
 import io.restassured.response.Response;
 
 public class CC_SA extends PaymentUI_Common{
 	public RemoteWebDriver driver;
-	protected String Url;
-	protected String paymentUrl;
-	protected String qaUrl;
-	public Response resp;
 	
 	@Test
 	public void CC_PayU_Pay_SA() throws Exception {
@@ -24,6 +21,7 @@ public class CC_SA extends PaymentUI_Common{
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
 		payUI_Select_PaymentType(driver, "CC");
+		validate_Currency(driver, "", "SAR");
 		payUI_Enter_PaymentDetails(driver, "CC", "MASTER");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
 	}

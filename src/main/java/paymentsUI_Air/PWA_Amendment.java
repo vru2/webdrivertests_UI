@@ -9,18 +9,14 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import io.restassured.response.Response;
+
 import junit.framework.Assert;
 
 public class PWA_Amendment extends PaymentUI_Common{
 	public RemoteWebDriver driver;
-	protected String Url;
-	protected String paymentUrl;
-	protected String qaUrl;
-	public Response resp;
 	
 	@Test
-	public void PWA_PhonePeI() throws Exception {
+	public void PWA_Amend() throws Exception {
 		String PayUrl = getPayUI("AirAmend", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);

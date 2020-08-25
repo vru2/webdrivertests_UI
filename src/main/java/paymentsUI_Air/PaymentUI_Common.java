@@ -3,21 +3,14 @@
 
 package paymentsUI_Air;
 
-import static org.junit.Assert.assertTrue;
-
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Reporter;
 
-import com.gargoylesoftware.htmlunit.UrlFetchWebConnection;
-
-import io.restassured.internal.util.SafeExceptionRethrower;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import paymentsAPI.API_PaymentCommon1;
-import paymentsUI.PaymentUI_CommonUtilities;
 
 
 public class PaymentUI_Common extends API_PaymentCommon1{

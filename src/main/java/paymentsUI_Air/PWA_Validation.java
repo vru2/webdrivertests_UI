@@ -4,7 +4,6 @@
 package paymentsUI_Air;
 
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.remote.server.handler.RefreshPage;
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.Reporter;

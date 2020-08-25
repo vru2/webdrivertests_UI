@@ -3,8 +3,6 @@
 
 package paymentsUI_Air;
 
-import static org.testng.Assert.assertEquals;
-
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -14,21 +12,15 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import io.restassured.response.Response;
 
 public class Full_GV extends PaymentUI_Common{
 	public RemoteWebDriver driver;
-	protected String Url;
-	protected String paymentUrl;
-	protected String qaUrl;
-	public Response resp;
 	
 	@Test
 	public void NB_GV_Pay() throws Exception {
 		String PayUrl = getPayUI("AirGVFull", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);	  
-		System.out.println("PayUrl : " +PayUrl);
 		String GVText=getText(driver, By.xpath("//div[3]/div[4]/div"));
 		if(!GVText.contains("3000331032473351")) {
 			Reporter.log("GV is not displayed"+GVText);

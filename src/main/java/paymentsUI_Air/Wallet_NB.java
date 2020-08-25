@@ -16,10 +16,6 @@ import io.restassured.response.Response;
 
 public class Wallet_NB extends PaymentUI_Common{
 	public RemoteWebDriver driver;
-	protected String Url;
-	protected String paymentUrl;
-	protected String qaUrl;
-	public Response resp;
 	
 	@Test
 	public void Wallet_Part_Pay() throws Exception {

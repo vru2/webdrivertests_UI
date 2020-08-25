@@ -9,17 +9,12 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import io.restassured.response.Response;
 
 public class CC_SA_PayFort extends PaymentUI_Common{
 	public RemoteWebDriver driver;
-	protected String Url;
-	protected String paymentUrl;
-	protected String qaUrl;
-	public Response resp;
 	
 	@Test
-	public void CC_PayU_Pay_SA() throws Exception {
+	public void SA_payfort() throws Exception {
 		String PayUrl = getPayUI("AirSA", "SA");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);

@@ -146,6 +146,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String url_screencaptureInitiate="/sc_external_api/initiate";
 	String url_cfwgstdocstatusupdate="/account/cfw/gst_doc_status";
 	String url_identityserviceaddclient="/ctauth/client";
+	String url_identityservicesignin="/signin";
 	String url_registerUser="/expressway-register";
 	String url_externalApi_Refreshtoken="/r3/account/external_api/refresh_token";
 	String url_createUpdateTraveller="/people/externalapi/41623878/create_update_travellers?caller=Android%20App%2017.11.2";
@@ -202,6 +203,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 
 	String s=RandomStringUtils.randomAlphabetic(3);
 	String params_identityserviceaddclient1= "{ \"clientId\":\"likhithaa" +s;
+	String params_identityservicesignin="{" + " \"username\": \"automate@test.com\"," + "  \"password\": \"Cleartrip@123\"" + 	"  " + "}";
 	String params_identityserviceaddclient2="\", \"clientSecret\":\"secret\", \"authenticated\":\"true\", \"scope\":\"all\", \"authorizedGrantTypes\":\"read,write,trust\", \"redirectUri\":[\"http://localhost:8080/ctauth/authorize\"], \"authorities\":\"authorities\" }";
 	String params_identityserviceaddclient=	params_identityserviceaddclient1+params_identityserviceaddclient2;
 	String i = generateRandomWord(4);
@@ -269,6 +271,17 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		headers.put("Content-Type", "application/json");
 		headers.put("clientGenAuthKey", "HBhen9VEL7zoTM884F1CycCWCb3o6s3FCynh9lTkU");
 
+		return headers;
+	}
+	
+	public HashMap<String, Object> headersFormIdentitysignin(){
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("Content-Type", "application/json");
+		headers.put("Referer", "www.cleartrip.com");
+		headers.put("X-CT-SOURCETYPE", "mobile");
+		headers.put("service", "");
+
+	
 		return headers;
 	}
 
@@ -939,6 +952,15 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			params = params_identityserviceaddclient;
 			Reporter.log(url_identity+url);
 		} 
+		
+
+		if(Type.equals("identityservicesignin")) {
+			headers = headersFormIdentitysignin();
+			RestAssured.baseURI =url_Acct_Service_applesgnin;
+			url = url_identityservicesignin;					
+			params = params_identityservicesignin;
+			Reporter.log(url_Acct_Service_applesgnin+url);
+		}
 
 
 		if(Type.equals("registerUser")) {
@@ -2407,6 +2429,15 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			if(!ReponseStr.contains("clientSecret")) {
 				Assert.assertNotNull("id");
 				Assert.assertNotNull("clientSecret");
+				Assert.assertTrue(false);						
+			}	
+
+		}
+		if(Type.equalsIgnoreCase("identityservicesignin")) {
+			String ReponseStr = resp.body().asString();
+			if(!ReponseStr.contains("automate@test.com")) {
+				Assert.assertNotNull("mobileNumber");
+				Assert.assertNotNull("isRegistered");
 				Assert.assertTrue(false);						
 			}	
 

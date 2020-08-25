@@ -38,6 +38,7 @@
 			<class name="accountsAPI.Identtiyservice_get_tokenthroughCode" />
 			<class name="accountsAPI.IdentityService_Getresource" />
 			<class name="accountsAPI.IdentityService_AddClient" />
+			<class name="accountsAPI.IdentityService_Signin" />
 
 		</classes>
 	</test>

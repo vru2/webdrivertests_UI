@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Random;
 
 import org.apache.commons.lang3.RandomStringUtils;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Reporter;
 
 import domains.PlatformCommonUtil;
@@ -24,6 +25,7 @@ import junit.framework.Assert;
 import paymentsUI.PaymentUI_CommonUtilities;
 
 public class API_PaymentCommon1 extends domains.PlatformCommonUtil
+
 {	
 	
 	//  https://qa2.cleartrip.com/paymentservice/api/wallet?product=DOMESTIC-AIR&currency=INR 
@@ -49,6 +51,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String url_Binmanager = "https://qa2.cleartrip.com/binmanager/v1/payment/cards?bin=534977";
 
 	*/
+	public RemoteWebDriver driver;
 	
 
 		String urlFlyin = "http://172.17.26.11:8406"; // ORACLE
@@ -3116,6 +3119,10 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			Reporter.log("Pay URL is not created - Failing the script");
 			Assert.assertTrue(false);			
 		}
+		if(textPresent(driver, "Oops, Something went wrong", 5)) {
+			Reporter.log("Oops, Something went wrong");
+			Assert.assertTrue(false);
+		}
 		
 		return Url;
 	}
@@ -3226,12 +3233,12 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		String params = null; 
 		HashMap<String, Object> headers	= new HashMap<>();
 		HashMap<String, Object> cookies	= new HashMap<>();
-		if(common.value("payAuth").contains("false")) {
+		if(common.value("payAuth").contains("false")||payType.contains("AirAmend")) {
 			headers = headersForms();
 		} else 
 			{ headers = headersFormspay();
 			Reporter.log("Pay Auth header added");
-			System.out.println("Pay Auth header added");
+			//System.out.println("Pay Auth header added");
 			}
 		cookies = addCookies();
 		Response response = null;
@@ -3241,7 +3248,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			int randomNumber= PaymentUI_CommonUtilities.generateFiveDigitRandomNumber();
 			String randNumber= Integer.toString(randomNumber);
 			//String appRef= "Q201" + randNumber;
-			System.out.println("Appref1 "+tripRef);
+			//System.out.println("Appref1 "+tripRef);
 			params = "{\"train_booking\":{\"traveller_details\":[{\"seq_no\":1,\"type\":\"ADT\",\"title\":\"Ms\",\"first_name\":\"Test\",\"last_name\":\"Test\"}],\"itinerary_details\":[{\"from_station_code\":\"SBC\",\"to_station_code\":\"MYS\",\"from_station_name\":\"KSR BENGALURU\",\"to_station_name\":\"MYSURU JN\",\"train_name\":\"BSB MYS EXP\",\"train_number\":\"16230\",\"departure_time\":\"2019-11-12T00:15:00\",\"arrival_time\":\"2019-11-12T02:45:00\",\"booking_class\":\"AC 2 Tier(2A)\",\"updated_availability\":\"AVAILABLE-0119\",\"quota\":\"General\",\"seatStatus\":true}],\"pricing_details\":[{\"other_railway_charges\":119.4,\"agent_service_charge\":40,\"total\":775.4,\"insuranceCharge\":0,\"currency\":\"INR\",\"pax_pay_info\":[{\"base_fare\":616,\"pax_count\":1,\"pax_type\":\"ADULT\"}]}],\"transaction_fee_details\":{\"CC\":{\"DEFAULT\":1.8},\"DC\":{\"DEFAULT\":1},\"NB\":{\"1\":1.1,\"2\":1.2,\"3\":1.1,\"23\":1.1,\"DEFAULT\":1.35},\"KC\":{\"DEFAULT\":0},\"DA\":{\"DEFAULT\":0},\"TW\":{\"DEFAULT\":1},\"UP\":{\"DEFAULT\":1}}},\"itinerary_id\":\"f25db800de1e0137664316217d236675\",\"ttl\":3600,\"trip_id\":45134538,\"app_ref1\":\"" + tripRef +"\",\"app_ref2\":74282510,\"customer_detail\":{\"ip_address\":\"119.82.106.202\",\"mobile\":1212121212,\"landline\":1212121212,\"email\":\"cltppayment@gmail.com\",\"first_name\":\"Cltp\",\"last_name\":\"payment\",\"username\":\"cltppayment@gmail.com\"},\"product_type\":\"TRAIN\",\"currency\":\"INR\",\"order_info1\":\"16230/SBC/MYS/2019111200:15:00\",\"order_info2\":\"Test Test\",\"source_type\":\"ACCOUNT\",\"high_risk\":false,\"country\":\"IN\",\"user_id\":\"64891349\",\"email_id\":\"cltppayment@gmail.com\",\"d_plus_x_in_hours\":273,\"app_return_info\":{\"url\":\"https://qa2.cleartrip.com/trains/itinerary/f25db800de1e0137664316217d236675/process_payment\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://trains-book-nget.cltp.com:9001/r3/trains/itinerary/f25db800de1e0137664316217d236675/book_internal\",\"params\":null},\"payment_category\":\"B\"}";;
 			
 		}

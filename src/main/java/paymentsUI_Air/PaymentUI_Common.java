@@ -36,6 +36,9 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 			if(textPresent(driver, "System error", 1)) {
 			Reporter.log("There's something wrong with our system");			
 			Assert.assertTrue(false);
+		} else if(textPresent(driver, "Oops, Something went wrong", 1)) {
+			Reporter.log("Oops something wrong with our system");			
+			Assert.assertTrue(false);
 		}
 		if(elementVisible(driver, getObjectPayment("PayUI_Pay_Tabs"), 1)) {
 			break;
@@ -219,6 +222,18 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 				case "CAPTCHA":
 				Enter_CC_Details(driver, "512345678901234", platform.value("MasterCard_Month"), platform.value("MasterCard_Year"), platform.value("MasterCard_CVV"));
 				break;
+				case "CHECKOUT":
+				Enter_CC_Details(driver, platform.value("SACheckOut_Number"), platform.value("SACheckOut_Month_UI"), platform.value("SACheckOut_Year"), platform.value("SACheckOut_CVV"));
+				break;
+				case "PAYFORT":
+				Enter_CC_Details(driver, platform.value("MasterCard_Number"), platform.value("MasterCard_Month"), platform.value("MasterCard_Year"), platform.value("MasterCard_CVV"));
+				break;	
+				case "NOON":
+				Enter_CC_Details(driver, platform.value("Noon_Number"), platform.value("Noon_Month_UI"), platform.value("Noon_Year"), platform.value("Noon_CVV"));
+				break;
+				case "Razorpay":
+				Enter_CC_Details(driver, platform.value("RazorPay_Number"), platform.value("RazorPay_Month_UI"), platform.value("RazorPay_Year"), platform.value("RazorPay_CVV"));
+				break;
 			}
 			safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 			Reporter.log("Make Payment button is Clicked");
@@ -386,10 +401,37 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 		}else if(BankName.equalsIgnoreCase("AmazonPay")) {
 			/*elementPresent_log(driver, By.id("mobileNumber"), "PhonePe homepage", 30);
 			Reporter.log("PhonePE page is displayed");*/
+		}		
+		else if(BankName.equalsIgnoreCase("Checkout")) {
+			elementVisible(driver, getObjectPayment("MakePayment_PgCred_SA_Checkout_Password_Txt"), 30);
+			elementVisible(driver, getObjectPayment("MakePayment_PgCred_SA_Checkout_Logo"), 20);
+			Thread.sleep(2000);
+			safeType(driver, getObjectPayment("MakePayment_PgCred_SA_Checkout_Password_Txt"), "Checkout1!");
+			Thread.sleep(2000);
+			safeClick(driver, getObjectPayment("MakePayment_PgCred_SA_Checkout_Continue_Btn"));		
 		}
-		
-		
-			
+		else if(BankName.equalsIgnoreCase("PayFort")) {
+			elementVisible(driver, getObjectPayment("MakePayment_PgCred_SA_Checkout_Password_Txt"), 30);
+			elementVisible(driver, getObjectPayment("MakePayment_PgCred_SA_Checkout_Logo"), 20);
+			Thread.sleep(2000);
+			safeType(driver, getObjectPayment("MakePayment_PgCred_SA_Checkout_Password_Txt"), "Checkout1!");
+			Thread.sleep(2000);
+			safeClick(driver, getObjectPayment("MakePayment_PgCred_SA_Checkout_Continue_Btn"));
+		}
+		else if(BankName.equalsIgnoreCase("Noon")) {
+			elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_Noon_Submit_Btn"), 10);
+			textPresent(driver, "Please submit your Verified by Visa password", 1);
+			elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_Noon_Password_TxtBx"), "Noon pay redirection ", 1);
+			safeType(driver, getObjectPayment("MakePayment_NB_Bank_Noon_Password_TxtBx"),"1234");
+			safeClick(driver, getObjectPayment("MakePayment_NB_Bank_Noon_Submit_Btn"));
+		}
+		else if(BankName.equalsIgnoreCase("RazorPay")) {
+			safeClick(driver, getObjectPayment("MakePayment_Pay_Btn_CC"));
+			textPresent_Log(driver, "Welcome to Razorpay Bank", 30);
+			elementVisible(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Logo"), 1);
+			safeClick(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Submit"));	
+		}
+	
 	}
 		
 

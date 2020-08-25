@@ -30,11 +30,30 @@ public class Amendment extends PaymentUI_Common{
 			Reporter.log("convenience fee text is displayed");
 			Assert.assertTrue(false);
 		}	
-		if(textPresent(driver, "Includes a convenience fee of", 1)) {
-			Reporter.log("Includes a convenience fee of - text is displayed" );
+
+		payUI_Select_PaymentType(driver, "DC");
+		if(textPresent(driver, "Includes a convenience fee of", 1)){
+			Reporter.log("convenience fee text is displayed");
 			Assert.assertTrue(false);
-		}
+		}	
+
+		payUI_Select_PaymentType(driver, "TW");
+		if(textPresent(driver, "Includes a convenience fee of", 1)){
+			Reporter.log("convenience fee text is displayed");
+			Assert.assertTrue(false);
+		}	
+		payUI_Select_PaymentType(driver, "UPI");
+		if(textPresent(driver, "Includes a convenience fee of", 1)){
+			Reporter.log("convenience fee text is displayed");
+			Assert.assertTrue(false);
+		}	
+
+		
 		payUI_Select_PaymentType(driver, "NB");
+		if(textPresent(driver, "Includes a convenience fee of", 1)){
+			Reporter.log("convenience fee text is displayed");
+			Assert.assertTrue(false);
+		}	
 		payUI_Enter_PaymentDetails(driver, "NB", "Citibank");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
 	}

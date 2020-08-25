@@ -393,7 +393,8 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 			safeType(driver, getObjectPayment("MakePayment_PgCred_SA_Checkout_Password_Txt"), "Checkout1!");
 			Thread.sleep(2000);
 			safeClick(driver, getObjectPayment("MakePayment_PgCred_SA_Checkout_Continue_Btn"));
-		} else if (payType.equalsIgnoreCase("NB")) {
+		} 
+		else if (payType.equalsIgnoreCase("NB")) {
 			safeClick(driver, getObjectPayment("MakePayment_Pay_Btn_NB"));
 			if (bankType.equalsIgnoreCase("Bank of India")) {
 				if(textPresent(driver, "Payment failed", 1)) {

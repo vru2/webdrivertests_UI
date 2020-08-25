@@ -15,7 +15,7 @@
     </classes>
 </test>
 
-<test name="NB" preserve-order="true" parallel="true" >
+<test name="NB GW" preserve-order="true" parallel="true" >
     <classes>
       <class name="paymentsUI.Payment_NodeJS_NB_TechProcess"/>
       <class name="paymentsUI.Payment_NodeJS_NB_CitiBank"/>
@@ -23,11 +23,11 @@
     </classes>
 </test>
 
-<test name="CC DC" preserve-order="true" parallel="true" >
+<test name="CC GW" preserve-order="true" parallel="true" >
     <classes>
       <class name="paymentsUI.Payment_NodeJS_CC_PG_RazorPay"/>   
       <class name="paymentsUI.Payment_NodeJS_CC"/>
-       <class name="paymentsUI.Payment_NodeJS_CC_Default"/>
+      <class name="paymentsUI.Payment_NodeJS_CC_Default"/>
       <class name="paymentsUI.Payment_NodeJS_DC"/>
       <class name="paymentsUI.Payment_NodeJS_CC_PG_CheckOut"/>
       <class name="paymentsUI.Payment_NodeJS_CC_PG_PayFort_SA"/>
@@ -68,16 +68,13 @@
     </classes>
 </test>
 
-<test name="GV Combo" preserve-order="true" parallel="true">
-    <classes>
-    </classes>
-</test>
-
 <test name="Wallet Combo" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsUI.Payment_NodeJS_CTWallet_CC"/>
       <class name="paymentsUI.Payment_NodeJS_CTWallet_CC_AE"/>
       <class name="paymentsUI.Payment_NodeJS_CTWallet_SC"/>
+      <class name="paymentsUI.Payment_NodeJS_CTWallet_Full"/>
+      <class name="paymentsUI.Payment_NodeJS_CTWallet_Full_AE"/>
     </classes>
 </test>
 		
@@ -87,7 +84,6 @@
       <class name="paymentsUI.Payment_NodeJS_RazorPay_CTWallet"/>
     </classes>
 </test>
-
 	
 <test name="ME CC" preserve-order="true" parallel="true">
     <classes>
@@ -112,13 +108,6 @@
 <test name="CC S2S"  preserve-order="true" parallel="true">
     <classes>
       <!-- <class name="paymentsUI.Payment_NodeJS_CC_PG_PayU_S2S"/> -->
-    </classes>
-</test>
-
-<test name="Wallet Full" preserve-order="true" parallel="true">
-    <classes>
-      <class name="paymentsUI.Payment_NodeJS_CTWallet_Full"/>
-      <class name="paymentsUI.Payment_NodeJS_CTWallet_Full_AE"/>
     </classes>
 </test>
 
@@ -153,11 +142,5 @@
    </classes>
 </test>
 
-<!-- 
-<test name="PayPal"  preserve-order="true" parallel="true" >
-    <classes>
-      <class name="paymentsUI.Payment_NodeJS_TPW_PayPal"/> 
-    </classes>
-</test> -->
 
 </suite> 

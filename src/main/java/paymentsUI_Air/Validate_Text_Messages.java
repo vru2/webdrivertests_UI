@@ -79,10 +79,12 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 	
 	@Test(priority=6)
 	public void Validate_TermandCondition() throws Exception {
+		payUI_Select_PaymentType(driver, "CC");
 		safeClick(driver, getObjectPayment("PayUI_I_Agree_CheckBox"));
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));		
 		textPresent_Log(driver, "Please accept the terms and conditions to proceed with this booking.", 2);
 		boolean button = driver.findElement(By.xpath("//button")).isEnabled();
+		safeClick(driver, getObjectPayment("PayUI_I_Agree_CheckBox"));
 		if(!button) {
 			Reporter.log("Make Pament Button is not disabled");
 			Assert.assertTrue(false);
@@ -99,10 +101,13 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 			Reporter.log("You pay & Convenience fee text not diplayed");
 			Assert.assertTrue(false);
 		}
+
+		Assert.assertTrue(false);// validate Conv fee
 	}
 
 	@Test(priority=8)
 	public void Validate_Itinerary() throws Exception {
+		payUI_Select_PaymentType(driver, "CC");
 		String ItineraryDetails = getText(driver, getObjectPayment("PayUI_Itinerary_Details"));
 		if(!(ItineraryDetails.contains("Flight Itinerary")&&ItineraryDetails.contains("New Delhi")&&ItineraryDetails.contains("Mumbai")&&ItineraryDetails.contains("Travellers (5)")&&ItineraryDetails.contains("+1 travellers"))) {
 			Reporter.log("Flight Itinerary and other detail text not diplayed");
@@ -115,7 +120,8 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 	}
 	
 	@Test(priority=9)
-	public void Validate_Expressway() throws Exception {		
+	public void Validate_Expressway() throws Exception {	
+		payUI_Select_PaymentType(driver, "CC");	
 		safeClick(driver, getObjectPayment("PayUI_Expressway_CheckBox"));
 		textPresent_Log(driver, "2006–2020 Cleartrip Pvt. Ltd", 1);
 		textPresent_Log(driver, "Save this card and make single-click payments", 1);		
@@ -123,6 +129,7 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 	
 	@Test(priority=10)
 	public void Validate_Misc() throws Exception {		
+		payUI_Select_PaymentType(driver, "CC");
 		elementPresent_log(driver, getObjectPayment("PayUI_Cleartrip_Logo"), "Cleartrip ", 2);
 		textPresent_Log(driver, "2006–2020 Cleartrip Pvt. Ltd", 1);
 		textPresent_Log(driver, "Completely safe and secure transaction", 1);
@@ -144,7 +151,7 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 		payUI_Select_PaymentType(driver, "DC");
 		Enter_CC_Details(driver, platform.value("AmexCard_Number"), platform.value("AmexCard_Month_New"), platform.value("AmexCard_Year"), platform.value("AmexCard_CVV"));
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
-		textPresent_Log(driver, "Enter valid Credit card number", 2);
+		textPresent_Log(driver, "Enter valid Debit card number", 2);
 	}
 		
 	@BeforeClass

@@ -27,6 +27,7 @@ public class Validate_Images_Links extends PaymentUI_Common{
 		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		payUI_Select_PaymentType(driver, "CC");
 		String  handle= driver.getWindowHandle();
 		elementPresent_log(driver, getObjectPayment("PayUI_Image_CC_VerifyVisa"), "Visa Image", 5);
 		safeClick(driver, getObjectPayment("PayUI_Image_CC_VerifyVisa"));
@@ -78,6 +79,7 @@ public class Validate_Images_Links extends PaymentUI_Common{
 	public void links() throws Exception {
 
 		String  handle= driver.getWindowHandle();
+		//payUI_Select_PaymentType(driver, "CC");
 		elementPresent_log(driver, getObjectPayment("PayUI_Booking_Policy"), "Booking Policy", 5);
 		safeClick(driver, getObjectPayment("PayUI_Booking_Policy"));
 		Thread.sleep(5000);

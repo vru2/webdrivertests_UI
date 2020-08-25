@@ -3,7 +3,6 @@
 
 package paymentsUI_Air;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
@@ -20,7 +19,7 @@ public class UPI_PhonePe extends PaymentUI_Common{
 	public Response resp;
 	
 	@Test
-	public void Amazon_Pay() throws Exception {
+	public void PhonePe_UPI() throws Exception {
 		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);

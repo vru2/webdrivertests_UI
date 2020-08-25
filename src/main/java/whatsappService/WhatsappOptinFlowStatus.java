@@ -11,7 +11,7 @@ public class WhatsappOptinFlowStatus extends WhatsappCommon {
 	public void message() throws IOException
 	{
 	Response resp;
-	String url = Service_Url("WHATSAPP_OPTIN_STATUS");
+	String url = "http://172.17.26.11:8227/whatsapp/optinStatus";
 	resp=paramsForwhatsappOptinStatus(headersForWhatsappUserMessage(),params4,url);
 	validateOptinFlow(resp);
 	}

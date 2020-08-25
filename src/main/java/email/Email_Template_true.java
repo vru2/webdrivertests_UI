@@ -10,7 +10,7 @@ public class Email_Template_true extends EmailCommon {
 	@Test(groups={"Regression"})		
 	public void message() throws IOException {
 		Response resp;
-		String url = Service_Url("EMAILS_POST_CALL");
+		String url = "http://172.17.26.11:8001/email";
 		resp=EmailPostAPI(params2,headersForEmailpostcall(), url);
 		validation(resp);
 	}

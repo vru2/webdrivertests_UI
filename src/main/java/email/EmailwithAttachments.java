@@ -10,8 +10,9 @@ public class EmailwithAttachments extends EmailCommon {
 	@Test(groups={"Regression"})		
 	public void message() throws IOException {
 		Response resp;
-		String url = Service_Url("EMAIL_ATTACHMENTS");
+		String url = "http://172.17.26.11:8001/email";
 		resp=EmailPostAPI(params1,headersForEmailpostcall(), url);
+		System.out.println(resp.asString());
 		validation(resp);
 
  }

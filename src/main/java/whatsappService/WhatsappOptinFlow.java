@@ -12,7 +12,7 @@ public class WhatsappOptinFlow extends WhatsappCommon{
 	{
 		Response resp;
 		//String url = "http://whatsappapi.cltp.com:9001/r3/whatsapp/optin";
-		String url = Service_Url("WHATSAPP_OPTIN");
+		String url ="http://172.17.26.11:8227/whatsapp/optin";
 		resp=paramsForwhatsappOptin(headersForWhatsappUserMessage(),params3,url);
 		validateOptinFlow(resp);
 		

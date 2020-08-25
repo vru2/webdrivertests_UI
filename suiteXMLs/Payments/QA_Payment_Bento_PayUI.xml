@@ -18,12 +18,13 @@
 
 <test name="CC GW"  preserve-order="true" parallel="true" >
     <classes>
-      <class name="paymentsUI_Air.CC_IN_Master"/>
+      <class name="paymentsUI_Air.CC_IN_PayU"/>
       <class name="paymentsUI_Air.CC_IN_Amex"/>      
-      <class name="paymentsUI_Air.CC_IN_RazorPay"/>      
+      <class name="paymentsUI_Air.CC_IN_RazorPay"/>    
+      <class name="paymentsUI_Air.DC_IN_PayU"/>       
       <class name="paymentsUI_Air.CC_SA_Checkout"/>      
       <class name="paymentsUI_Air.CC_SA_PayFort"/>      
-      <class name="paymentsUI_Air.CC_AE_Noon"/>      
+      <class name="paymentsUI_Air.CC_AE_Noon"/>         
     </classes>
 </test>
 
@@ -103,7 +104,7 @@
 
 <test name="ADCB Pay"  preserve-order="true" parallel="true" >
     <classes>
-      <class name="paymentsUI_Air.ADCB_AE"/>   
+      <class name="paymentsUI_Air.CC_AE_ADCB"/>   
     </classes>
 </test>
 

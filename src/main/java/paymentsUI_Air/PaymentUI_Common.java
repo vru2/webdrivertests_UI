@@ -162,7 +162,7 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 			payUI_Select_CC(driver, BankName);
 			break;
 		case "DC":
-			payUI_Select_CC(driver, BankName);
+			payUI_Select_DC(driver, BankName);
 			break;
 		case "NB":
 			payUI_Select_NB(driver, BankName);
@@ -203,42 +203,61 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 	}
 		
 	public void payUI_Select_CC(RemoteWebDriver driver, String BankName) throws Exception {		
-			elementVisible(driver, getObjectPayment("PaymentPage_CreditCard_Number"), 5);
-			textPresent_Log(driver, "Enter your credit card details.", 1);
-			switch (BankName) {
-				case "MASTER":
-				Enter_CC_Details(driver, platform.value("MasterCard_Number"), platform.value("MasterCard_Month"), platform.value("MasterCard_Year"), platform.value("MasterCard_CVV"));
-				break;	
-				case "AMEX":
-				Enter_CC_Details(driver, platform.value("AmexCard_Number"), platform.value("AmexCard_Month_New"), platform.value("AmexCard_Year"), platform.value("AmexCard_CVV"));
-				break;
-				case "CAPTCHA":
-				Enter_CC_Details(driver, "512345678901234", platform.value("MasterCard_Month"), platform.value("MasterCard_Year"), platform.value("MasterCard_CVV"));
-				break;
-				case "CHECKOUT":
-				Enter_CC_Details(driver, platform.value("SACheckOut_Number"), platform.value("SACheckOut_Month_UI"), platform.value("SACheckOut_Year"), platform.value("SACheckOut_CVV"));
-				break;
-				case "PAYFORT":
-				Enter_CC_Details(driver, platform.value("MasterCard_Number"), platform.value("MasterCard_Month"), platform.value("MasterCard_Year"), platform.value("MasterCard_CVV"));
-				break;	
-				case "NOON":
-				Enter_CC_Details(driver, platform.value("Noon_Number"), platform.value("Noon_Month_UI"), platform.value("Noon_Year"), platform.value("Noon_CVV"));
-				break;
-				case "Razorpay":
-				Enter_CC_Details(driver, platform.value("RazorPay_Number"), platform.value("RazorPay_Month_UI"), platform.value("RazorPay_Year"), platform.value("RazorPay_CVV"));
-				break;
-			}
-			safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
-			Reporter.log("Make Payment button is Clicked");
-			if(textPresent(driver, "Internal server error", 5)) {
-				Reporter.log("Internal server error is displayed after Clicking Make Payment");
-				Assert.assertTrue(false);
-			}
-			if(!BankName.contains("CAPTCHA")) {
-			payUI_BankPage(driver, BankName);
-			}
+		elementVisible(driver, getObjectPayment("PaymentPage_CreditCard_Number"), 5);
+		textPresent_Log(driver, "Enter your credit card details.", 1);
+		switch (BankName) {
+			case "MASTER":
+			Enter_CC_Details(driver, platform.value("MasterCard_Number"), platform.value("MasterCard_Month"), platform.value("MasterCard_Year"), platform.value("MasterCard_CVV"));
+			break;	
+			case "AMEX":
+			Enter_CC_Details(driver, platform.value("AmexCard_Number"), platform.value("AmexCard_Month_New"), platform.value("AmexCard_Year"), platform.value("AmexCard_CVV"));
+			break;
+			case "CAPTCHA":
+			Enter_CC_Details(driver, "512345678901234", platform.value("MasterCard_Month"), platform.value("MasterCard_Year"), platform.value("MasterCard_CVV"));
+			break;
+			case "CHECKOUT":
+			Enter_CC_Details(driver, platform.value("SACheckOut_Number"), platform.value("SACheckOut_Month_UI"), platform.value("SACheckOut_Year"), platform.value("SACheckOut_CVV"));
+			break;
+			case "PAYFORT":
+			Enter_CC_Details(driver, platform.value("MasterCard_Number"), platform.value("MasterCard_Month"), platform.value("MasterCard_Year"), platform.value("MasterCard_CVV"));
+			break;	
+			case "NOON":
+			Enter_CC_Details(driver, platform.value("Noon_Number"), platform.value("Noon_Month_UI"), platform.value("Noon_Year"), platform.value("Noon_CVV"));
+			break;
+			case "RAZORPAY":
+			Enter_CC_Details(driver, platform.value("RazorPay_Number"), platform.value("RazorPay_Month_UI"), platform.value("RazorPay_Year"), platform.value("RazorPay_CVV"));
+			break;
+		}
+		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
+		Reporter.log("Make Payment button is Clicked");
+		if(textPresent(driver, "Internal server error", 5)) {
+			Reporter.log("Internal server error is displayed after Clicking Make Payment");
+			Assert.assertTrue(false);
+		}
+		if(!BankName.contains("CAPTCHA")) {
+		payUI_BankPage(driver, BankName);
+		}
+
 	}
-	
+
+	public void payUI_Select_DC(RemoteWebDriver driver, String BankName) throws Exception {		
+		elementVisible(driver, getObjectPayment("PaymentPage_CreditCard_Number"), 5);
+		textPresent_Log(driver, "Enter your debit card details.", 1);
+		switch (BankName) {
+			case "MASTER":
+			Enter_CC_Details(driver, platform.value("MasterCard_Number"), platform.value("MasterCard_Month"), platform.value("MasterCard_Year"), platform.value("MasterCard_CVV"));
+			break;	
+		}
+		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
+		Reporter.log("Make Payment button is Clicked");
+		if(textPresent(driver, "Internal server error", 5)) {
+			Reporter.log("Internal server error is displayed after Clicking Make Payment");
+			Assert.assertTrue(false);
+		}
+		if(!BankName.contains("CAPTCHA")) {
+		payUI_BankPage(driver, BankName);
+		}
+}
 	public void payUI_Select_ADCB(RemoteWebDriver driver, String BankName) throws Exception {		
 		elementVisible(driver, getObjectPayment("PaymentPage_CreditCard_Number"), 5);
 		textPresent_Log(driver, "Enter your ADCB card details", 1);		

@@ -58,17 +58,6 @@ public class Coupon_Invalid extends PaymentUI_Common{
 		payUI_Mock_ConfirmationPage(driver, PayUrl); 
 	}
 	
-/*	@Test (priority=2)
-	public void Coupon_Pay_Valid() throws Exception {
-		
-		String PayUrl = getPayUI("AirCoupon", "");
-		driver.manage().deleteAllCookies(); 
-		driver.get(PayUrl);
-		payUI_Select_PaymentType(driver, "CC");
-		payUI_Enter_PaymentDetails(driver, "CC", "MASTER");
-		payUI_Mock_ConfirmationPage(driver, PayUrl);	
-	}*/
-
 	@BeforeClass
 	public void setUp() throws Exception {
 		driver=(RemoteWebDriver) getDriver(driver);

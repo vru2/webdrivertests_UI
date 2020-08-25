@@ -10,17 +10,16 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class ADCB_AE extends PaymentUI_Common{
+public class CC_IN_PayU extends PaymentUI_Common{
 	public RemoteWebDriver driver;
-	
+
 	@Test
-	public void AE_ADCB() throws Exception {
-		String PayUrl = getPayUI("AirAE", "AE");
+	public void CC_PayU_Pay() throws Exception {
+		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
-		payUI_Select_PaymentType(driver, "ADCB");
-		validate_Currency(driver, "", "AED");
-		payUI_Enter_PaymentDetails(driver, "ADCB", "");
+		payUI_Select_PaymentType(driver, "CC");
+		payUI_Enter_PaymentDetails(driver, "CC", "MASTER");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
 	}
 

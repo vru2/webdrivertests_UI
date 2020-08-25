@@ -10,16 +10,16 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class CC_IN_Master extends PaymentUI_Common{
+public class DC_IN_PayU extends PaymentUI_Common{
 	public RemoteWebDriver driver;
 
 	@Test
-	public void CC_PayU_Pay() throws Exception {
+	public void DC_PayU_Pay() throws Exception {
 		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
-		payUI_Select_PaymentType(driver, "CC");
-		payUI_Enter_PaymentDetails(driver, "CC", "MASTER");
+		payUI_Select_PaymentType(driver, "DC");
+		payUI_Enter_PaymentDetails(driver, "DC", "MASTER");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
 	}
 

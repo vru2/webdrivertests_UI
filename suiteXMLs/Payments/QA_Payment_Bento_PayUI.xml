@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Payments UI Page" parallel="tests" thread-count="6">
+<suite name="Bento UI" parallel="tests" thread-count="6">
 
 <listeners>
 <listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -28,7 +28,7 @@
     </classes>
 </test>
 
-<test name="ME Domain"  preserve-order="true">
+<test name="ME Pay"  preserve-order="true">
     <classes>
       <class name="paymentsUI_Air.CC_AE"/>      
       <class name="paymentsUI_Air.CC_BH"/>      
@@ -52,7 +52,7 @@
     </classes>
 </test>
 
-<test name="PWA ME" preserve-order="true" >
+<test name="PWA ME Pay" preserve-order="true" >
     <classes>
       <class name="paymentsUI_Air.PWA_CC_AE"/>   
       <class name="paymentsUI_Air.PWA_CC_BH"/>   
@@ -63,6 +63,16 @@
       <class name="paymentsUI_Air.PWA_CC_US"/>    -->
     </classes>
 </test>
+
+
+
+<test name="PWA Coupon "  preserve-order="true" >
+    <classes>
+      <class name="paymentsUI_Air.PWA_Coupon"/> 
+    </classes>
+</test>
+
+
 
 <test name="PWA Validation and Captcha"  preserve-order="true" >
     <classes>
@@ -75,12 +85,7 @@
     <classes>
       <class name="paymentsUI_Air.Validate_Text_Messages"/>
       <class name="paymentsUI_Air.Validate_Images_Links"/> 
-    </classes>
-</test>
-
-<test name="AE Validation"  preserve-order="true" parallel="true" >
-    <classes>
-      <class name="paymentsUI_Air.Validate_AE_Domain"/>   
+      <class name="paymentsUI_Air.Validate_AE_Domain"/>  
     </classes>
 </test>
 
@@ -116,7 +121,7 @@
 
 <test name="PayBack"  preserve-order="true" parallel="true" >
     <classes>
-   <!--    <class name="paymentsUI_Air.PayBack"/> -->
+      <class name="paymentsUI_Air.NB_RP"/>
     </classes>
 </test>
 
@@ -153,9 +158,9 @@
     </classes>
 </test>
 
-<test name="Captcha Validation Only"  preserve-order="true" >
+<test name="Captcha Validation"  preserve-order="true" >
     <classes>
-      <class name="paymentsUI_Air.Captcha_Validation_Only"/> 	  
+      <class name="paymentsUI_Air.Captcha_Validation"/> 	  
     </classes>
 </test>
 	
@@ -163,27 +168,17 @@
     <classes>
       <class name="paymentsUI.PaymentUI_Captcha"/> 
       <class name="paymentsUI.PaymentUI_SignIN"/>
-  <!--     <class name="paymentsUI.PaymentUI_Validation"/> -->
-	  <!-- <class name="paymentsUI.PaymentUI_Wallet"/> -->
-	 <!--  <class name="paymentsUI.PaymentUI_PhonePe"/>  -->
 	  <class name="paymentsUI.PaymentUI_TPW_AmazonPay"/>	  
+	  <class name="paymentsUI.PaymentsUI_NB"/>	  
     </classes>
 </test>
 	
-<test name="Train Pay NB"  preserve-order="true" parallel="true" >
-    <classes>
-	  <class name="paymentsUI.PaymentsUI_NB"/>
-    </classes>
-</test>
-
 <test name="Train Validation"  preserve-order="true" parallel="true" >
     <classes>
-     <!--  <class name="paymentsUI.PaymentUI_AddStoredCardAndValidate"/> -->
       <class name="paymentsUI.PaymentUI_ErrorValidationUPIWalletAndNB"/>
       <class name="paymentsUI.PaymentUI_SuccessfulPaymentMessage"/> 
       <class name="paymentsUI.PaymentUI_Progress"/> 
-    
-    </classes>
+   </classes>
 </test>
 
 </suite> 

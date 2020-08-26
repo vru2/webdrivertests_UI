@@ -19,7 +19,7 @@ public class PWA_Captcha extends PaymentUI_Common{
 		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
-		
+		payUI_Select_PaymentType_PWA(driver, "NET BANKING");
 		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 10);
 		for (int i = 0; i <=4; i++) {
 		if(i==1) {

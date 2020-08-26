@@ -3,6 +3,7 @@
 
 package paymentsUI_Air;
 
+import org.junit.Assert;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
@@ -10,24 +11,22 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class NB_RP extends PaymentUI_Common{
+public class PWA_Coupon extends PaymentUI_Common{
 	public RemoteWebDriver driver;
 	
 	@Test
-	public void Payback() throws Exception {
-		String PayUrl = getPayUI("AirRP", "");
+	public void PWA_Coupon1() throws Exception {
+		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
-		driver.get(PayUrl);	 		
-		textPresent_Log(driver, "PAYBACK", 5);
-		payUI_Select_PaymentType(driver, "NB");
-		payUI_Enter_PaymentDetails(driver, "NB", "Citibank");
-		payUI_Mock_ConfirmationPage(driver, PayUrl);
-	}	
+		driver.get(PayUrl);
+		Assert.assertTrue(false);
+		
+	}
 
 	@BeforeClass
 	public void setUp() throws Exception {
-		driver=(RemoteWebDriver) getDriver(driver);
-	}		
+		driver=(RemoteWebDriver) getMobileDriver(driver);
+	}
 
 	@AfterMethod (alwaysRun = true)
 	public void afterMethod(ITestResult _result) throws Exception {
@@ -37,5 +36,6 @@ public class NB_RP extends PaymentUI_Common{
 	@AfterClass
 	public void tearDown() throws Exception {
 		browserClose(driver);
-	}	
+	}
+	
 }

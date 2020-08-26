@@ -49,7 +49,7 @@
     </classes>
 </test>
 
-<test name="AAPI Pay Calls" preserve-order="true" parallel="true">
+<test name="AAPI Pay Calls" preserve-order="true">
     <classes>
       <class name="paymentsAPI.API_Validate"/>
       <class name="paymentsAPI.API_CC_Visa_Type"/>

@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Test App" parallel="tests" thread-count="4">
+<suite name="Test App" parallel="tests" thread-count="7">
 
 <listeners>
 <listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -15,7 +15,7 @@
     </classes>
 </test>
 
-<test name="NB GW" preserve-order="true" parallel="true" >
+<test name="NB GW" preserve-order="true" >
     <classes>
       <class name="paymentsUI.Payment_NodeJS_NB_TechProcess"/>
       <class name="paymentsUI.Payment_NodeJS_NB_CitiBank"/>
@@ -23,7 +23,7 @@
     </classes>
 </test>
 
-<test name="CC GW" preserve-order="true" parallel="true" >
+<test name="CC GW" preserve-order="true" >
     <classes>
       <class name="paymentsUI.Payment_NodeJS_CC_PG_RazorPay"/>   
       <class name="paymentsUI.Payment_NodeJS_CC"/>
@@ -43,7 +43,7 @@
    </classes>
 </test>
 
-<test name="Third Party Wallet" preserve-order="true" parallel="true">
+<test name="Third Party Wallet" preserve-order="true">
     <classes>
       <class name="paymentsUI.Payment_NodeJS_TPW_MobiKwik"/> 
       <class name="paymentsUI.Payment_NodeJS_TPW_OlaMoney"/>
@@ -55,7 +55,7 @@
     </classes>
 </test>
 
-<test name="Gift Vouchers" preserve-order="true" parallel="true">
+<test name="Gift Vouchers" preserve-order="true">
     <classes>
       <class name="paymentsUI.Payment_NodeJS_GV_Full"/> 
       <class name="paymentsUI.Payment_NodeJS_GV_Multi"/>   
@@ -85,7 +85,7 @@
     </classes>
 </test>
 	
-<test name="ME CC" preserve-order="true" parallel="true">
+<test name="ME CC" preserve-order="true">
     <classes>
       <class name="paymentsUI.Payment_NodeJS_CC_AE"/> 
       <class name="paymentsUI.Payment_NodeJS_CC_SA"/>   
@@ -111,7 +111,7 @@
     </classes>
 </test>
 
-<test name="Hotel" preserve-order="true" parallel="true">
+<test name="Hotel" preserve-order="true">
     <classes>
       <class name="paymentsUI.Payment_NodeJS_Hotels_B2C_CC"/> 
       <class name="paymentsUI.Payment_NodeJS_Hotels_B2C_CC_AE"/>
@@ -122,7 +122,7 @@
     </classes>
 </test>
 
-<test name="Air" preserve-order="true" parallel="true">
+<test name="Air" preserve-order="true">
     <classes>
       <class name="paymentsUI.Payment_NodeJS_Air_Agency_CC"/> 
       <class name="paymentsUI.Payment_NodeJS_Air_Corp_CC"/>

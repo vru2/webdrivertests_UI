@@ -10,7 +10,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class AmazonPay extends PaymentUI_Common{
+public class TW_AmazonPay extends PaymentUI_Common{
 	public RemoteWebDriver driver;
 	
 	@Test

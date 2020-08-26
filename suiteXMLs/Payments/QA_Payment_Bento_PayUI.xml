@@ -103,13 +103,13 @@
 
 <test name="AmazonPay"  preserve-order="true" parallel="true" >
     <classes>
-      <class name="paymentsUI_Air.AmazonPay"/>   
+      <class name="paymentsUI_Air.TW_AmazonPay"/>   
     </classes>
 </test>
 
 <test name="ADCB Pay"  preserve-order="true" parallel="true" >
     <classes>
-      <class name="paymentsUI_Air.CC_AE_ADCB"/>   
+      <class name="paymentsUI_Air.RP_ADCB"/>   
     </classes>
 </test>
 
@@ -121,14 +121,14 @@
 
 <test name="PayBack"  preserve-order="true" parallel="true" >
     <classes>
-      <class name="paymentsUI_Air.NB_RP"/>
+      <class name="paymentsUI_Air.RP_PayBack_NB"/>
     </classes>
 </test>
 
 <test name="GV"  preserve-order="true" parallel="true" >
     <classes>
-      <class name="paymentsUI_Air.NB_GV"/>
-      <class name="paymentsUI_Air.Full_GV"/>      
+      <class name="paymentsUI_Air.GV_NB"/>
+      <class name="paymentsUI_Air.GV_Full"/>      
     </classes>
 </test>
 
@@ -160,7 +160,7 @@
 
 <test name="Captcha Validation"  preserve-order="true" >
     <classes>
-      <class name="paymentsUI_Air.Captcha_Validation"/> 	  
+      <class name="paymentsUI_Air.Validation_Captcha"/> 	  
     </classes>
 </test>
 	

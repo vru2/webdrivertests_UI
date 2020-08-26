@@ -3,31 +3,39 @@
 
 package paymentsUI_Air;
 
+import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
+import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class CC_AE_ADCB extends PaymentUI_Common{
+public class GV_NB extends PaymentUI_Common{
 	public RemoteWebDriver driver;
 	
 	@Test
-	public void AE_ADCB() throws Exception {
-		String PayUrl = getPayUI("AirAE", "AE");
+	public void NB_GV_Pay() throws Exception {
+		String PayUrl = getPayUI("AirGV", "");
 		driver.manage().deleteAllCookies(); 
-		driver.get(PayUrl);
-		payUI_Select_PaymentType(driver, "ADCB");
-		validate_Currency(driver, "", "AED");
-		payUI_Enter_PaymentDetails(driver, "ADCB", "");
+		driver.get(PayUrl);	  
+		String GVText=getText(driver, By.xpath("//div[3]/div[4]/div"));
+		if(!GVText.contains("Gift Card (3000331039428010")) {
+			Reporter.log("GV is not displayed "+GVText);
+			Assert.assertTrue(false);
+		}
+		textPresent_Log(driver, "Gift Card", 1);
+		payUI_Select_PaymentType(driver, "NB");
+		payUI_Enter_PaymentDetails(driver, "NB", "Citibank");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
-	}
+	}	
 
 	@BeforeClass
 	public void setUp() throws Exception {
 		driver=(RemoteWebDriver) getDriver(driver);
-	}
+	}		
 
 	@AfterMethod (alwaysRun = true)
 	public void afterMethod(ITestResult _result) throws Exception {
@@ -38,5 +46,7 @@ public class CC_AE_ADCB extends PaymentUI_Common{
 	public void tearDown() throws Exception {
 		browserClose(driver);
 	}
+
+	
 	
 }

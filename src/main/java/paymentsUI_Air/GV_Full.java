@@ -13,23 +13,28 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class NB_GV extends PaymentUI_Common{
+public class GV_Full extends PaymentUI_Common{
 	public RemoteWebDriver driver;
 	
 	@Test
 	public void NB_GV_Pay() throws Exception {
-		String PayUrl = getPayUI("AirGV", "");
+		String PayUrl = getPayUI("AirGVFull", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);	  
 		String GVText=getText(driver, By.xpath("//div[3]/div[4]/div"));
-		if(!GVText.contains("3000331039428010")) {
+		if(!GVText.contains("Gift Card (3000331032473351)")) {
 			Reporter.log("GV is not displayed"+GVText);
 			Assert.assertTrue(false);
 		}
-		textPresent_Log(driver, "Gift Card", 1);
-		payUI_Select_PaymentType(driver, "NB");
-		payUI_Enter_PaymentDetails(driver, "NB", "Citibank");
-		payUI_Mock_ConfirmationPage(driver, PayUrl);
+		if(textPresent(driver, "Enter your credit card details", 2)) {
+			Reporter.log("for full GV aother pay options are displayed - Enter your credit card details");
+			Assert.assertTrue(false);
+		}
+		textPresent_Log(driver, "I understand and agree to the rules and restrictions of this fare", 2);
+		Assert.assertEquals("Complete Booking", getText(driver, getObjectPayment("PayUI_Make_Payment_Btn")));
+		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
+		Reporter.log("Scripts should be fixed after Air integration");
+		Assert.assertTrue(false);
 	}	
 
 	@BeforeClass

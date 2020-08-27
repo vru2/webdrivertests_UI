@@ -671,7 +671,7 @@ public class CT_CONFIG_COMMON extends HQ{
 				 textPresent_Log(driver,"Data type of the property is saved as",5);
 				 safeType(driver,By.id("propertyValue"),value1);	    
 		}else if(action.equalsIgnoreCase("revert")){
-			safeClick(driver,By.linkText("Audit Properties"));
+			safeClick(driver,By.linkText("Audit"));
 			safeClick(driver,By.xpath("//input[@value='Revert']"));
 			safeClick(driver,By.xpath("//button"));
 			safeType(driver,By.xpath("//input[@type='text']"),"Revert");
@@ -680,7 +680,7 @@ public class CT_CONFIG_COMMON extends HQ{
 			textPresent_Log(driver,"Reverted Successfully",50);
 			safeClick(driver,By.xpath("//div[2]/div/div[2]/div/button"));
 			textPresent_Log(driver,"Revert",10);
-			safeClick(driver,By.linkText("Properties"));
+			safeClick(driver,By.linkText("Home"));
 			Thread.sleep(2000);
 			choose_verticle(driver);
 			textPresent_Log(driver,"No changes as of yet",40);

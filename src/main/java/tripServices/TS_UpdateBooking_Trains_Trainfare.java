@@ -76,7 +76,7 @@ public class TS_UpdateBooking_Trains_Trainfare  extends TripserviceCommon {
 		 * resp1=TripserviceHotelsPutcall(params7,headersForTripserviceputcall(),url1);
 		 * validationforputtrains(resp1); }
 		 */	
-		Thread.sleep(4000);
+		Thread.sleep(8000);
 		 DBValidation_TxnTrains(resp, "C");	
 		 Response resp2;
 		 if(Host.equalsIgnoreCase("qa2")) {

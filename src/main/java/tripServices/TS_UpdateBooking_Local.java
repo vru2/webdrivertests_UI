@@ -38,7 +38,7 @@ public class TS_UpdateBooking_Local extends TripserviceCommon {
 		 * System.out.println(resp1.asString()); validationforput(resp1); }
 		 */	
 		//String url1=Service_Url("TRIPSERVICE_PUT_CALL");
-		Thread.sleep(4000);
+		Thread.sleep(8000);
 		DBValidation_Txn(resp, "C");
 	}
 	

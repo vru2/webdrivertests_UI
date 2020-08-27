@@ -17,6 +17,7 @@ public class TS_LogBooking_Air extends TripserviceCommon {
 		Reporter.log(url);
 		resp=TripservicePostcall(params,headersForTripservicepostcall(),url);
 		Validation(resp);
+		System.out.println(resp.asString());
 		Thread.sleep(4000);
 		DBValidation_Txn(resp, "O");
 			

@@ -17,7 +17,7 @@ public class TS_LogBooking_Local extends TripserviceCommon {
 		Reporter.log(url);
 		resp=TripservicePostcall(params2,headersForTripservicepostcall(),url);
 		Validation(resp);
-		Thread.sleep(4000);
+		Thread.sleep(8000);
 		DBValidation_Txn(resp, "O");
 		}
 	}

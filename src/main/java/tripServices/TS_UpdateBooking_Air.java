@@ -35,7 +35,7 @@ public class TS_UpdateBooking_Air extends TripserviceCommon {
 			 * resp1=TripserviceHotelsPutcall(params3,headersForTripserviceputcall(),url1);
 			 * validationforput(resp1); }
 			 */
-		Thread.sleep(4000);		
+		Thread.sleep(8000);		
 		DBValidation_Txn(resp, "C");	
  }
 }

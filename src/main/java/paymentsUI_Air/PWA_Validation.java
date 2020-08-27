@@ -21,6 +21,7 @@ public class PWA_Validation extends PaymentUI_Common{
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
 		payUI_Select_PaymentType_PWA(driver, "DEBIT/CREDIT CARDS");
+		safeClick(driver, getObjectPayment("PWA_PaymentPage_SaveCard"));
 		safeType(driver, getObjectPayment("PWA_PaymentPage_CC_Number"),  platform.value("MasterCard_Number"));
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		payUI_Error_Validation_PWA(driver, getObjectPayment("PWA_Error_ValidCard"), getObjectPayment("PWA_Error_PopUp_Screen"), "Please enter valid card details");	
@@ -41,7 +42,7 @@ public class PWA_Validation extends PaymentUI_Common{
 		safeClickList(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), "UPI");
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		payUI_Error_Validation_PWA(driver, getObjectPayment("PWA_Error_ValidCard"), getObjectPayment("PWA_Error_PopUp_Screen"), "Please select any UPI payment method");
-		safeClick(driver, getObjectPayment("PWA_PaymentPage_SaveCard"));
+		
 	}
 
 	@Test (priority=2)

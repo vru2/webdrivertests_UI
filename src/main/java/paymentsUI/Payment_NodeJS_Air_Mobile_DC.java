@@ -23,7 +23,7 @@ import domains.PaymentNodeJS;
 	   paymentNodeJS_HomePage(driver, "", "");
 	   paymentNodeJS_Select_Source(driver, "MOBILE", "");
 	   paymentNodeJS_Select_Payment(driver, "DC", "", "DC");
-	   paymentNodeJS_Make_Payment(driver, "DC", "");
+	   paymentNodeJS_Make_Payment(driver, "DC", "DC");
 	   paymentNodeJS_ConfirmationPage(driver, "DC", "","Air Mobile DC");
   }
 

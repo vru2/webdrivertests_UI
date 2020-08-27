@@ -4,6 +4,7 @@
 package paymentsUI_Air;
 
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -22,6 +23,7 @@ public class RP_PayBack_NB extends PaymentUI_Common{
 		payUI_Select_PaymentType(driver, "NB");
 		//payUI_Enter_PaymentDetails(driver, "NB", "Citibank");
 		//payUI_Mock_ConfirmationPage(driver, PayUrl);
+		Assert.assertTrue(false);
 	}	
 
 	@BeforeClass

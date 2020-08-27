@@ -22,11 +22,11 @@ public class GV_NB extends PaymentUI_Common{
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);	  
 		String GVText=getText(driver, By.xpath("//div[3]/div[4]/div"));
-		if(!GVText.contains("Gift Card (3000331039428010")) {
+		if(!GVText.contains("Gift card (3000331039428010)")) {
 			Reporter.log("GV is not displayed "+GVText);
 			Assert.assertTrue(false);
 		}
-		textPresent_Log(driver, "Gift Card", 1);
+		textPresent_Log(driver, "Gift card", 1);
 		payUI_Select_PaymentType(driver, "NB");
 		payUI_Enter_PaymentDetails(driver, "NB", "Citibank");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);

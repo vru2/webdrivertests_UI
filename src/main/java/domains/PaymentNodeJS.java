@@ -642,6 +642,10 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 			textPresent(driver, "ACS Emulator", 10);
 			elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_Amex3DPage_Submit_Btn"), 20);
 			safeClick(driver, getObjectPayment("MakePayment_NB_Bank_Amex3DPage_Submit_Btn"));
+		}else if (bankType.equalsIgnoreCase("DC")) {
+			textPresent(driver, "Password", 10);
+			elementVisible(driver, By.xpath("//input[@type='image']"), 20);
+			safeClick(driver, By.xpath("//input[@type='image']"));
 		} else if (bankType.equalsIgnoreCase("CHECKOUT")) {
 			if (platform.value("CheckOut_3D").equals("true")) {
 				elementVisible(driver, getObjectPayment("MakePayment_PgCred_SA_Checkout_Password_Txt"), 30);
@@ -664,7 +668,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 		else if (bankType.equalsIgnoreCase("Noon")) {
 			elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_Noon_Submit_Btn"), 10);
 			textPresent(driver, "Please submit your Verified by Visa password", 1);
-			elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_Noon_Password_TxtBx"), "Noon pay redirection ", 1);
+			elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_Noon_Password_TxtBx"), "Noon pay redirection ", 20);
 			safeType(driver, getObjectPayment("MakePayment_NB_Bank_Noon_Password_TxtBx"),"1234");
 			safeClick(driver, getObjectPayment("MakePayment_NB_Bank_Noon_Submit_Btn"));
 

@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Bento UI" parallel="tests" thread-count="6">
+<suite name="Bento UI" parallel="tests" thread-count="7">
 
 <listeners>
 <listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -16,7 +16,7 @@
     </classes>
 </test>
 
-<test name="CC GW"  preserve-order="true" parallel="true" >
+<test name="CC GW"  preserve-order="true" >
     <classes>
       <class name="paymentsUI_Air.CC_IN_PayU"/>
       <class name="paymentsUI_Air.CC_IN_Amex"/>      
@@ -81,7 +81,7 @@
     </classes>
 </test>
 
-<test name="Validation"  preserve-order="true" parallel="true" >
+<test name="Validation"  preserve-order="true"  >
     <classes>
       <class name="paymentsUI_Air.Validate_Text_Messages"/>
       <class name="paymentsUI_Air.Validate_Images_Links"/> 

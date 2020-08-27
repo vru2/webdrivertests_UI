@@ -529,8 +529,10 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 			if(returnUrl.contains("paymentservice/return")) {
 				Reporter.log("Refreshing PayUI page to check the Payment Status");
 				driver.get(PayUrl);	
-				textPresent_Log(driver, "Payment successful", 10); 
-				textPresent_Log(driver, "view your booking details and Trip ID", 5);
+				textPresent_Log(driver, "Oops, Something went wrong", 5);
+				
+				//textPresent_Log(driver, "Payment successful", 10); 
+				//textPresent_Log(driver, "view your booking details and Trip ID", 5);
 				break;
 			}else if(i==10) {
 				if(textPresent(driver, "Oops! Your payment failed.", 1))	{

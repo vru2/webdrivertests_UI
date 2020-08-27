@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="QA Sanity Payment" parallel="tests" thread-count="2">
+
+<listeners>
+<listener class-name="org.uncommons.reportng.HTMLReporter" />
+<listener class-name="common.RemoveDuplicateResults"/>
+<listener class-name="common.RetryListener"/>
+</listeners>
+
+
+<test name="CC GW" preserve-order="true" >
+    <classes>
+      <class name="paymentsUI.Payment_NodeJS_CC_PG_RazorPay"/>   
+      <class name="paymentsUI.Payment_NodeJS_CC"/>
+      <class name="paymentsUI.Payment_NodeJS_CC_Default"/>
+      <class name="paymentsUI.Payment_NodeJS_DC"/>
+      <class name="paymentsUI.Payment_NodeJS_CC_PG_CheckOut"/>
+      <class name="paymentsUI.Payment_NodeJS_CC_PG_PayFort_SA"/>
+      <class name="paymentsUI.Payment_NodeJS_CC_PG_Amex"/>
+      <class name="paymentsUI.Payment_NodeJS_CC_PG_Noon_AE"/>
+    </classes>
+</test>	
+</suite> 

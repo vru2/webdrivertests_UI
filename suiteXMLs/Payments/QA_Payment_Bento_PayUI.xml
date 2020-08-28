@@ -13,8 +13,17 @@
       <class name="paymentsUI_Air.NB_CITI"/> 
 	  <class name="paymentsUI_Air.NB_HDFC"/> 
 	 <!--  <class name="paymentsUI_Air.NB_ICICI"/> 	   -->
+
     </classes>
 </test>
+
+
+<test name="NB Retry" preserve-order="true">
+    <classes>
+      <class name="paymentsUI_Air.NB_CITI_Retry"/> 
+    </classes>
+</test>
+
 
 <test name="CC GW"  preserve-order="true" >
     <classes>

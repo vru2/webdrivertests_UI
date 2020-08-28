@@ -270,7 +270,11 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 		safeType(driver, getObjectPayment("PaymentPage_ADCB_CardName"), "test");
 		safeType(driver, getObjectPayment("PaymentPage_ADCB_CVV"), platform.value("ADCBCard_CVV"));
 		safeClick(driver, getObjectPayment("PaymentPage_ADCB_CheckBlance_Btn"));		
-		elementVisible(driver, getObjectPayment("PaymentPage_ADCB_Redeem_Amount_TextBox"), 30);
+		if(textPresent(driver, "You have provided incorrect card details", 10)) {
+			Reporter.log("You have provided incorrect card details");
+			Assert.assertTrue(false);
+		}
+		elementVisible(driver, getObjectPayment("PaymentPage_ADCB_Redeem_Amount_TextBox"), 20);		
 		textPresent_Log(driver, "A minimum amount of AED", 10);
 		textPresent_Log(driver, "Available Balance", 1);
 		textPresent_Log(driver, "Balance TouchPoints", 1);

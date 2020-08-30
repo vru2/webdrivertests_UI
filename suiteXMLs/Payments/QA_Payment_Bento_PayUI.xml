@@ -11,9 +11,9 @@
 <test name="NB GW" preserve-order="true" parallel="true" >
     <classes>
       <class name="paymentsUI_Air.NB_CITI"/> 
-	  <class name="paymentsUI_Air.NB_HDFC"/> 
+	  <class name="paymentsUI_Air.NB_HDFC"/>	   
+	  <class name="paymentsUI_Air.NB_CITI_PopularBank"/>	  
 	 <!--  <class name="paymentsUI_Air.NB_ICICI"/> 	   -->
-
     </classes>
 </test>
 
@@ -54,6 +54,7 @@
       <class name="paymentsUI_Air.PWA_IN_AMEX"/>   
       <class name="paymentsUI_Air.PWA_IN_Master"/>   
       <class name="paymentsUI_Air.PWA_NB_CITI"/>   
+      <class name="paymentsUI_Air.PWA_NB_PopularBank_CITI"/>
       <class name="paymentsUI_Air.PWA_NB_HDFC"/>   
       <class name="paymentsUI_Air.PWA_PhonePe"/>
       <class name="paymentsUI_Air.PWA_AmazonPay"/>

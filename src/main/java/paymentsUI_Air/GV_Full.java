@@ -22,7 +22,7 @@ public class GV_Full extends PaymentUI_Common{
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);	  
 		String GVText=getText(driver, By.xpath("//div[3]/div[4]/div"));
-		if(!GVText.contains("Gift Card (3000331032473351)")) {
+		if(!GVText.contains("Gift card (3000331032473351)")) {
 			Reporter.log("GV is not displayed"+GVText);
 			Assert.assertTrue(false);
 		}
@@ -32,7 +32,7 @@ public class GV_Full extends PaymentUI_Common{
 		}
 		textPresent_Log(driver, "I understand and agree to the rules and restrictions of this fare", 2);
 		Assert.assertEquals("Complete Booking", getText(driver, getObjectPayment("PayUI_Make_Payment_Btn")));
-		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
+		//safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		Reporter.log("Scripts should be fixed after Air integration");
 		Assert.assertTrue(false);
 	}	

@@ -370,12 +370,14 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 			textPresent(driver, "ACS Emulator", 1);
 			Reporter.log("Amex Auth page is displayed");
 			safeClick(driver, getObjectPayment("MakePayment_NB_Bank_Amex3DPage_Submit_Btn"));
-		}else if(BankName.equalsIgnoreCase("Citibank")) {
-			elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"), "Citi Bank  ", 30);
+		}else if(BankName.equalsIgnoreCase("Citibank")||BankName.equalsIgnoreCase("CitibankPopular")) {
+			elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"), 20);
+			elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"), "Citi Bank  ", 1);
 			Reporter.log("CitiBank Auth page is displayed");
 			safeClick(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"));
 		}else if(BankName.equalsIgnoreCase("Hdfc Bank")) {
-			elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_UserName"), "Tech Process Bank ", 30);
+			elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_UserName"), 20);
+			elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_UserName"), "Tech Process Bank ", 1);
 			Reporter.log("HDFCBank Auth page is displayed");
 			safeType(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_UserName"), "test");
 			safeType(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_Password"), "test");
@@ -384,13 +386,15 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 			elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_IntermitentText"), 5);
 			safeClick(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_Submit_Btn2"));
 		}else if(BankName.equalsIgnoreCase("ICICI Bank")) {
-			elementPresent_log(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Logo"), "Razorpay Bank ", 30);
+			elementVisible(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Logo"), 20);
+			elementPresent_log(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Logo"), "Razorpay Bank ", 1);
 			textPresent(driver, "Welcome to Razorpay Bank", 1);
 			Reporter.log("RazorPay Auth page is displayed");
 			safeClick(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Submit"));	
 		}
 		else if(BankName.equalsIgnoreCase("CAPTCHA")) {
-			elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"), "Citi Bank ", 30);
+			elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"), 20);
+			elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"), "Citi Bank ", 1);
 			Reporter.log("CitiBank Auth page is displayed");
 			safeSelect(driver, By.cssSelector("select[name=\"PAID\"]"), "N");
 			safeClick(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"));
@@ -458,6 +462,9 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 			if(BankName.contains("CAPTCHA")) {
 				safeSelect(driver, getObjectPayment("PayUI_NB_DropDown"), "Citibank");
 			}
+			else if(BankName.contains("CitibankPopular")) {
+				safeClick(driver, getObjectPayment("PaymentPage_NB_PopularBanks_Citi"));
+			}
 			else safeSelect(driver, getObjectPayment("PayUI_NB_DropDown"), BankName);
 			safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 			payUI_BankPage(driver, BankName);
@@ -483,6 +490,14 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 				textPresent(driver, "All Other Banks", 5);
 				safeType(driver, getObjectPayment("PWA_NETBANKING_Page_NB_TextBox"), "Citibank");
 				safeClick(driver, getObjectPayment("PWA_NETBANKING_Page_NB_AJAX"));
+				Thread.sleep(1000);				
+			}
+			
+			else if(BankName.equalsIgnoreCase("CitibankPopular")) {
+				/*safeClick(driver, getObjectPayment("PWA_PaymentPage_Select_NB"));
+				textPresent(driver, "All Other Banks", 5);
+				safeType(driver, getObjectPayment("PWA_NETBANKING_Page_NB_TextBox"), "Citibank");*/
+				safeClick(driver, getObjectPayment("PWA_PaymentPage_NB_Popularbank_CITI"));
 				Thread.sleep(1000);				
 			}
 			else 
@@ -533,7 +548,7 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 			if(returnUrl.contains("paymentservice/return")) {
 				Reporter.log("Refreshing PayUI page to check the Payment Status");
 				driver.get(PayUrl);	
-				textPresent_Log(driver, "Oops, Something went wrong", 5);
+				textPresent_Log(driver, "Oops, Something went wrong", 20);
 				
 				//textPresent_Log(driver, "Payment successful", 10); 
 				//textPresent_Log(driver, "view your booking details and Trip ID", 5);

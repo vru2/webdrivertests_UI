@@ -4,28 +4,26 @@
 package paymentsUI_Air;
 
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.Assert;
 import org.testng.ITestResult;
-import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class RP_PayBack_NB extends PaymentUI_Common{
+import io.restassured.response.Response;
+
+public class NB_CITI_PopularBank extends PaymentUI_Common{
 	public RemoteWebDriver driver;
 	
 	@Test
-	public void Payback() throws Exception {
-		String PayUrl = getPayUI("AirRP", "");
+	public void NB_Citi_Pay() throws Exception {
+		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
-		driver.get(PayUrl);	 		
-		textPresent_Log(driver, "PAYBACK points", 5);
+		driver.get(PayUrl);	   
 		payUI_Select_PaymentType(driver, "NB");
-		//payUI_Enter_PaymentDetails(driver, "NB", "Citibank");
-		//payUI_Mock_ConfirmationPage(driver, PayUrl);
-		Reporter.log("failing until RP is fixed");
-		Assert.assertTrue(false);
+		//validate_Currency(driver, "", "INR");
+		payUI_Enter_PaymentDetails(driver, "NB", "CitibankPopular");
+		payUI_Mock_ConfirmationPage(driver, PayUrl);
 	}	
 
 	@BeforeClass
@@ -41,5 +39,8 @@ public class RP_PayBack_NB extends PaymentUI_Common{
 	@AfterClass
 	public void tearDown() throws Exception {
 		browserClose(driver);
-	}	
+	}
+
+	
+	
 }

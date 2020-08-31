@@ -120,7 +120,7 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 		elementPresent_log(driver, errorMessagePopUP, "error Popup", 5);
 		String ErrorMessage = getText(driver, errorMessagePopUP);
 
-		System.out.println("Error message is "+ErrorMessage+" instead of "+ErrorText);
+		//System.out.println("Error message is "+ErrorMessage+" instead of "+ErrorText);
 		if(!ErrorMessage.contains(ErrorText)) {
 			Reporter.log("Error message is "+ErrorMessage+" instead of "+ErrorText);
 			Assert.assertTrue(false);
@@ -416,7 +416,10 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 			textPresent(driver, "If You Are Not Redirected Automatically In 30 Seconds", 10);
 			smartClick(driver, getObjectPayment("MakePayment_NB_Bank_Knet_RedirectionPage"));
 		}else if(BankName.equalsIgnoreCase("PhonePE")) {
-			elementPresent_log(driver, By.id("mobileNumber"), "PhonePe homepage", 30);
+			if(!(textPresent(driver, "9986696785", 10)||elementPresent_log(driver, By.id("mobileNumber"), "PhonePe homepage", 30))) {
+				Reporter.log("phonepe page is not displayed");
+				Assert.assertTrue(false);	
+			}
 			Reporter.log("PhonePE page is displayed");
 		}else if(BankName.equalsIgnoreCase("AmazonPay")) {
 			/*elementPresent_log(driver, By.id("mobileNumber"), "PhonePe homepage", 30);

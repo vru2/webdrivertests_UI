@@ -21,14 +21,14 @@ public class CC_Arabic_AE extends PaymentUI_Common{
 		String PayUrl = getPayUI("AirAEAR", "AE");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
-		String Arabic= getText(driver, By.cssSelector("p.payment-container-header"));
+		//String Arabic= getText(driver, By.cssSelector("p.payment-container-header"));
 		elementPresent_log(driver, getObjectPayment("PayUI_Make_Payment_Btn"), "MakePayment Button", 5);
 		
-		if(textPresent(driver, "Enter your credit card details.", 2)) {
+		if(textPresent(driver, "Enter your credit card details", 2)) {
 			Reporter.log("Enter your credit card details. : text is displayed in English");
 			Assert.assertTrue(false);
 		}
-		if(textPresent(driver, "Credit card no.", 2)) {
+		if(textPresent(driver, "Credit card no", 2)) {
 			Reporter.log("Credit card no. : text is displayed in English");
 			Assert.assertTrue(false);
 		}

@@ -356,7 +356,7 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 	public void payUI_BankPage(RemoteWebDriver driver, String BankName) throws Exception {		
 		elementNotVisible(driver, getObjectPayment("PayUI_Pay_Tabs"), 10);		
 		if(BankName.equalsIgnoreCase("MASTER")) {
-			if (textPresent(driver, "AXIS SIMULATOR", 10)) {
+			if (textPresent(driver, "AXIS SIMULATOR", 10)|| textPresent(driver, "CYBER SIMULATOR", 10)) {
 				Reporter.log("PayU OTP page is displayed");
 				smartType(driver, By.id("password"), "123456");
 				smartClick(driver, By.id("submitBtn"));	

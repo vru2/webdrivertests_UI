@@ -22,10 +22,10 @@ public class RP_PayBack_NB extends PaymentUI_Common{
 		driver.get(PayUrl);	 		
 		textPresent_Log(driver, "PAYBACK points", 5);
 		payUI_Select_PaymentType(driver, "NB");
-		//payUI_Enter_PaymentDetails(driver, "NB", "Citibank");
-		//payUI_Mock_ConfirmationPage(driver, PayUrl);
-		Reporter.log("failing until RP is fixed");
-		Assert.assertTrue(false);
+		payUI_Enter_PaymentDetails(driver, "NB", "Citibank");
+		payUI_Mock_ConfirmationPage(driver, PayUrl);
+		/*Reporter.log("failing until RP is fixed");
+		Assert.assertTrue(false);*/
 	}	
 
 	@BeforeClass

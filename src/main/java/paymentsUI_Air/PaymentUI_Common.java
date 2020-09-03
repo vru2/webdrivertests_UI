@@ -546,31 +546,30 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 	
 	
 	public void payUI_Mock_ConfirmationPage(RemoteWebDriver driver, String PayUrl) throws InterruptedException {
+		
 		for (int i = 0; i <=10; i++) {
 			String returnUrl  = getURL(driver);
 			if(returnUrl.contains("paymentservice/return")) {
 				Reporter.log("Refreshing PayUI page to check the Payment Status");
 				driver.get(PayUrl);	
-				textPresent_Log(driver, "Oops, Something went wrong", 20);
-				
-				//textPresent_Log(driver, "Payment successful", 10); 
-				//textPresent_Log(driver, "view your booking details and Trip ID", 5);
+				textPresent_Log(driver, "Payment successful", 20); 
+				Reporter.log("Payment successful");			
 				break;
-			}else if(i==10) {
-				if(textPresent(driver, "Oops! Your payment failed.", 1))	{
-					Reporter.log("Oops! Your payment failed.");
-					Assert.assertTrue(false);
+			}
+			else if(i!=10) {
+				driver.get(PayUrl);
+				if(textPresent(driver, "Payment successful", 10)) {
+					Reporter.log("Payment successful");					
+					break;
 				}
-			}else if(i!=10) {
-				driver.get(PayUrl);	
-				textPresent_Log(driver, "Payment successful", 10);
-				break;
+			}
+			else if(textPresent_Log(driver, "Oops, Something went wrong", 1)) {
+				Reporter.log("Oops! Your payment failed.");
+				Assert.assertTrue(false);
 			}			
+					
 			Thread.sleep(1000);
 			}
 	}
-	
-
-	
 	
 }

@@ -36,7 +36,6 @@ public class PaymentUI_Captcha extends domains.PaymentNodeJS{
 		driver.get(Url);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		validatePaymentURLLoad(driver,Url);
-		try{
 			int flag=1;
 			fillInInvalidCreditCardDetails(driver,PaymentUI_CommonUtilities.cardNumberxpath,PaymentUI_CommonUtilities.cardHolderNamexpath,PaymentUI_CommonUtilities.expiryMonthxpath,PaymentUI_CommonUtilities.expiryYearxpath,PaymentUI_CommonUtilities.cvvNumberxpath);
 			while (flag<4){
@@ -53,11 +52,7 @@ public class PaymentUI_Captcha extends domains.PaymentNodeJS{
 				validateRetryCaptcha(driver,PaymentUI_CommonUtilities.captchaErrorXpath,PaymentUI_CommonUtilities.captchaErrorName);
 				flag++;
 			}
-		}
-
-		catch(Exception e){
-			Reporter.log("Exception is"+e);
-		}
+		
 	}
 
 

@@ -14,7 +14,7 @@ public class PWA_AmazonPay extends PaymentUI_Common{
 	public RemoteWebDriver driver;
 	
 	@Test
-	public void PWA_PhonePeI() throws Exception {
+	public void PWA_AmazonPay() throws Exception {
 		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);

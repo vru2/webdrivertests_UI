@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Bento UI" parallel="tests" thread-count="6">
+<suite name="Bento UI" parallel="tests" thread-count="7">
 
 <listeners>
 <listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -10,13 +10,22 @@
 
 <test name="NB GW" preserve-order="true" parallel="true" >
     <classes>
-      <class name="paymentsUI_Air.NB_CITI"/> 
-	  <class name="paymentsUI_Air.NB_HDFC"/> 
+	  <class name="paymentsUI_Air.NB_HDFC"/>	   
+	  <class name="paymentsUI_Air.NB_CITI_PopularBank"/>	  
 	 <!--  <class name="paymentsUI_Air.NB_ICICI"/> 	   -->
+    <!--   <class name="paymentsUI_Air.NB_CITI"/>   --> 
     </classes>
 </test>
 
-<test name="CC GW"  preserve-order="true" parallel="true" >
+
+<test name="NB Retry" preserve-order="true">
+    <classes>
+      <class name="paymentsUI_Air.NB_CITI_Retry"/> 
+    </classes>
+</test>
+
+
+<test name="CC GW"  preserve-order="true" >
     <classes>
       <class name="paymentsUI_Air.CC_IN_PayU"/>
       <class name="paymentsUI_Air.CC_IN_Amex"/>      
@@ -35,7 +44,7 @@
       <class name="paymentsUI_Air.CC_KW"/>      
       <class name="paymentsUI_Air.CC_OM"/>      
       <class name="paymentsUI_Air.CC_QA"/>    
-<!--       <class name="paymentsUI_Air.CC_SA"/>      
+<!--  <class name="paymentsUI_Air.CC_SA"/>      
       <class name="paymentsUI_Air.CC_US"/>        
  -->    </classes>
 </test>
@@ -44,7 +53,8 @@
     <classes>
       <class name="paymentsUI_Air.PWA_IN_AMEX"/>   
       <class name="paymentsUI_Air.PWA_IN_Master"/>   
-      <class name="paymentsUI_Air.PWA_NB_CITI"/>   
+ 	  <!--  <class name="paymentsUI_Air.PWA_NB_CITI"/>    -->
+      <class name="paymentsUI_Air.PWA_NB_PopularBank_CITI"/>
       <class name="paymentsUI_Air.PWA_NB_HDFC"/>   
       <class name="paymentsUI_Air.PWA_PhonePe"/>
       <class name="paymentsUI_Air.PWA_AmazonPay"/>
@@ -81,7 +91,7 @@
     </classes>
 </test>
 
-<test name="Validation"  preserve-order="true" parallel="true" >
+<test name="Validation"  preserve-order="true"  >
     <classes>
       <class name="paymentsUI_Air.Validate_Text_Messages"/>
       <class name="paymentsUI_Air.Validate_Images_Links"/> 

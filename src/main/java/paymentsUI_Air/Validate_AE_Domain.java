@@ -96,7 +96,7 @@ public class Validate_AE_Domain extends PaymentUI_Common{
 	public void Validate_AE_Itinerary() throws Exception {
 		String ItineraryDetails = getText(driver, getObjectPayment("PayUI_Itinerary_Details"));
 		if(!(ItineraryDetails.contains("Flight Itinerary")&&ItineraryDetails.contains("New Delhi")&&ItineraryDetails.contains("Mumbai")&&ItineraryDetails.contains("Travellers (5)")&&ItineraryDetails.contains("+1 travellers"))) {
-			Reporter.log("Flight Itinerary and other detail text not diplayed");
+			Reporter.log("Flight Itinerary");
 			Assert.assertTrue(false);
 		}
 		safeClick(driver, getObjectPayment("PayUI_Hide_Traveller_Link"));

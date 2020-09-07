@@ -120,7 +120,7 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 		elementPresent_log(driver, errorMessagePopUP, "error Popup", 5);
 		String ErrorMessage = getText(driver, errorMessagePopUP);
 
-		System.out.println("Error message is "+ErrorMessage+" instead of "+ErrorText);
+		//System.out.println("Error message is "+ErrorMessage+" instead of "+ErrorText);
 		if(!ErrorMessage.contains(ErrorText)) {
 			Reporter.log("Error message is "+ErrorMessage+" instead of "+ErrorText);
 			Assert.assertTrue(false);
@@ -270,7 +270,11 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 		safeType(driver, getObjectPayment("PaymentPage_ADCB_CardName"), "test");
 		safeType(driver, getObjectPayment("PaymentPage_ADCB_CVV"), platform.value("ADCBCard_CVV"));
 		safeClick(driver, getObjectPayment("PaymentPage_ADCB_CheckBlance_Btn"));		
-		elementVisible(driver, getObjectPayment("PaymentPage_ADCB_Redeem_Amount_TextBox"), 30);
+		if(textPresent(driver, "You have provided incorrect card details", 10)) {
+			Reporter.log("You have provided incorrect card details");
+			Assert.assertTrue(false);
+		}
+		elementVisible(driver, getObjectPayment("PaymentPage_ADCB_Redeem_Amount_TextBox"), 20);		
 		textPresent_Log(driver, "A minimum amount of AED", 10);
 		textPresent_Log(driver, "Available Balance", 1);
 		textPresent_Log(driver, "Balance TouchPoints", 1);
@@ -352,7 +356,7 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 	public void payUI_BankPage(RemoteWebDriver driver, String BankName) throws Exception {		
 		elementNotVisible(driver, getObjectPayment("PayUI_Pay_Tabs"), 10);		
 		if(BankName.equalsIgnoreCase("MASTER")) {
-			if (textPresent(driver, "AXIS SIMULATOR", 10)) {
+			if (textPresent(driver, "AXIS SIMULATOR", 10)|| textPresent(driver, "CYBER SIMULATOR", 10)) {
 				Reporter.log("PayU OTP page is displayed");
 				smartType(driver, By.id("password"), "123456");
 				smartClick(driver, By.id("submitBtn"));	
@@ -366,12 +370,14 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 			textPresent(driver, "ACS Emulator", 1);
 			Reporter.log("Amex Auth page is displayed");
 			safeClick(driver, getObjectPayment("MakePayment_NB_Bank_Amex3DPage_Submit_Btn"));
-		}else if(BankName.equalsIgnoreCase("Citibank")) {
-			elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"), "Citi Bank  ", 30);
+		}else if(BankName.equalsIgnoreCase("Citibank")||BankName.equalsIgnoreCase("CitibankPopular")) {
+			elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"), 20);
+			elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"), "Citi Bank  ", 1);
 			Reporter.log("CitiBank Auth page is displayed");
 			safeClick(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"));
 		}else if(BankName.equalsIgnoreCase("Hdfc Bank")) {
-			elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_UserName"), "Tech Process Bank ", 30);
+			elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_UserName"), 20);
+			elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_UserName"), "Tech Process Bank ", 1);
 			Reporter.log("HDFCBank Auth page is displayed");
 			safeType(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_UserName"), "test");
 			safeType(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_Password"), "test");
@@ -380,13 +386,15 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 			elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_IntermitentText"), 5);
 			safeClick(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_Submit_Btn2"));
 		}else if(BankName.equalsIgnoreCase("ICICI Bank")) {
-			elementPresent_log(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Logo"), "Razorpay Bank ", 30);
+			elementVisible(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Logo"), 20);
+			elementPresent_log(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Logo"), "Razorpay Bank ", 1);
 			textPresent(driver, "Welcome to Razorpay Bank", 1);
 			Reporter.log("RazorPay Auth page is displayed");
 			safeClick(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Submit"));	
 		}
 		else if(BankName.equalsIgnoreCase("CAPTCHA")) {
-			elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"), "Citi Bank ", 30);
+			elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"), 20);
+			elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"), "Citi Bank ", 1);
 			Reporter.log("CitiBank Auth page is displayed");
 			safeSelect(driver, By.cssSelector("select[name=\"PAID\"]"), "N");
 			safeClick(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"));
@@ -408,7 +416,10 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 			textPresent(driver, "If You Are Not Redirected Automatically In 30 Seconds", 10);
 			smartClick(driver, getObjectPayment("MakePayment_NB_Bank_Knet_RedirectionPage"));
 		}else if(BankName.equalsIgnoreCase("PhonePE")) {
-			elementPresent_log(driver, By.id("mobileNumber"), "PhonePe homepage", 30);
+			if(!(textPresent(driver, "9986696785", 10)||elementPresent_log(driver, By.id("mobileNumber"), "PhonePe homepage", 30))) {
+				Reporter.log("phonepe page is not displayed");
+				Assert.assertTrue(false);	
+			}
 			Reporter.log("PhonePE page is displayed");
 		}else if(BankName.equalsIgnoreCase("AmazonPay")) {
 			/*elementPresent_log(driver, By.id("mobileNumber"), "PhonePe homepage", 30);
@@ -454,6 +465,9 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 			if(BankName.contains("CAPTCHA")) {
 				safeSelect(driver, getObjectPayment("PayUI_NB_DropDown"), "Citibank");
 			}
+			else if(BankName.contains("CitibankPopular")) {
+				safeClick(driver, getObjectPayment("PaymentPage_NB_PopularBanks_Citi"));
+			}
 			else safeSelect(driver, getObjectPayment("PayUI_NB_DropDown"), BankName);
 			safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 			payUI_BankPage(driver, BankName);
@@ -479,6 +493,14 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 				textPresent(driver, "All Other Banks", 5);
 				safeType(driver, getObjectPayment("PWA_NETBANKING_Page_NB_TextBox"), "Citibank");
 				safeClick(driver, getObjectPayment("PWA_NETBANKING_Page_NB_AJAX"));
+				Thread.sleep(1000);				
+			}
+			
+			else if(BankName.equalsIgnoreCase("CitibankPopular")) {
+				/*safeClick(driver, getObjectPayment("PWA_PaymentPage_Select_NB"));
+				textPresent(driver, "All Other Banks", 5);
+				safeType(driver, getObjectPayment("PWA_NETBANKING_Page_NB_TextBox"), "Citibank");*/
+				safeClick(driver, getObjectPayment("PWA_PaymentPage_NB_Popularbank_CITI"));
 				Thread.sleep(1000);				
 			}
 			else 
@@ -524,29 +546,31 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 	
 	
 	public void payUI_Mock_ConfirmationPage(RemoteWebDriver driver, String PayUrl) throws InterruptedException {
+		
 		for (int i = 0; i <=10; i++) {
 			String returnUrl  = getURL(driver);
 			if(returnUrl.contains("paymentservice/return")) {
 				Reporter.log("Refreshing PayUI page to check the Payment Status");
 				driver.get(PayUrl);	
-				textPresent_Log(driver, "Payment successful", 10); 
-				textPresent_Log(driver, "view your booking details and Trip ID", 5);
+				textPresent_Log(driver, "Payment successful", 20); 
+				Reporter.log("Payment successful");			
 				break;
-			}else if(i==10) {
-				if(textPresent(driver, "Oops! Your payment failed.", 1))	{
-					Reporter.log("Oops! Your payment failed.");
-					Assert.assertTrue(false);
+			}
+			else if(i!=10) {
+				driver.get(PayUrl);
+				if(textPresent(driver, "Payment successful", 1)) {
+					Reporter.log("Payment successful");					
+					break;
 				}
-			}else if(i!=10) {
-				driver.get(PayUrl);	
-				textPresent_Log(driver, "Payment successful", 10);
-				break;
+			}
+			else if(textPresent_Log(driver, "Oops, Something went wrong", 1)) {
+				Reporter.log("Oops! Your payment failed.");
+				Assert.assertTrue(false);
 			}			
+			else Assert.assertTrue(false);
+					
 			Thread.sleep(1000);
 			}
 	}
-	
-
-	
 	
 }

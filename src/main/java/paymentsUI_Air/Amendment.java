@@ -40,9 +40,7 @@ public class Amendment extends PaymentUI_Common{
 		if(textPresent(driver, "Includes a convenience fee of", 1)){
 			Reporter.log("convenience fee text is displayed");
 			Assert.assertTrue(false);
-		}	
-
-		
+		}		
 		payUI_Select_PaymentType(driver, "NB");
 		if(textPresent(driver, "Includes a convenience fee of", 1)){
 			Reporter.log("convenience fee text is displayed");

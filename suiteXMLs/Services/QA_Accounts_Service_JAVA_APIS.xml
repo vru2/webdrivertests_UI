@@ -12,7 +12,7 @@
 
 	<test name="Accounts-Service-PWA" parallel="true">
 		<classes>
-			<class name="accountsAPI.Accounts_Service_PWA_Fetch_DA_Details" />
+			<!-- <class name="accountsAPI.Accounts_Service_PWA_Fetch_DA_Details" /> -->
 			<class name="accountsAPI.Accounts_Service_PWA_register" />
 			<class name="accountsAPI.Account_Service_PWA_SignIn_API" />
 			<class name="accountsAPI.Account_Service_PWA_GetUser_Byemail" />

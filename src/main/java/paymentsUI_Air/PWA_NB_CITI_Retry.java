@@ -5,36 +5,26 @@ package paymentsUI_Air;
 
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
-import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class PWA_Captcha extends PaymentUI_Common{
+public class PWA_NB_CITI_Retry extends PaymentUI_Common{
 	public RemoteWebDriver driver;
 	
 	@Test
-	public void PWA_Captcha_Validation() throws Exception {
+	public void PWA_CITI_Retry() throws Exception {
 		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
 		payUI_Select_PaymentType_PWA(driver, "NET BANKING");
-		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 10);
-		for (int i = 0; i <=4; i++) {
-		if(i==1) {
-			textPresent(driver, "Oops! Your payment failed. If you were charged, any amount deducted will be reversed automatically", 1);
-		}	
+		payUI_Enter_PaymentDetails_PWA(driver, "NET BANKING", "CAPTCHA");		
+		//payUI_Error_Validation_PWA(driver, getObjectPayment("PWA_Error_ValidCard"), getObjectPayment("PWA_Error_PopUp_Screen"), "Oops! Your payment failed.");
+		//payUI_Error_Validation_PWA(driver, getObjectPayment("PWA_Error_ValidCard"), getObjectPayment("PWA_Error_PopUp_Screen"), "Oops! Your payment failed. If you were charged, any amount deducted will be reversed automatically");	
 		payUI_Select_PaymentType_PWA(driver, "NET BANKING");
-
-		payUI_Enter_PaymentDetails_PWA(driver, "NET BANKING", "CAPTCHA"); // CITIBANK
-		//payUI_Enter_PaymentDetails_PWA(driver, "NB", "CAPTCHA" );		
-		}
-		Thread.sleep(5000);
-		//	elementPresent_log(driver, getObjectPayment("PWA_Paymentpage_Captcha"),"Captcha" ,10);
-		//safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
-		textPresent_Log(driver, "Please validate captcha", 5);
-		Reporter.log("Captch error mesage is displayed");
+		payUI_Enter_PaymentDetails_PWA(driver, "NET BANKING", "CITIBANK");
+		payUI_Mock_ConfirmationPage(driver, PayUrl);
 	}
 
 	@BeforeClass

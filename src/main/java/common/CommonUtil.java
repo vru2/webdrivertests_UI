@@ -14,11 +14,13 @@ import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Random;
 
 import static common.CachedProperties.objectReportInstancePlatform;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.time.StopWatch;
+import org.apache.commons.math3.genetics.RandomKeyMutation;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -154,9 +156,11 @@ public class CommonUtil {
 	
 	
 	public String getNewDate_TripID() throws Exception {
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("hhmmss");
+		Random random = new Random();		
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("hhmmSSS");
 		LocalDateTime now =  LocalDateTime.now();
-		String TripID = "Q230977"+dtf.format(now);
+		String TripID = "Q2020"+random.nextInt(100)+dtf.format(now);
+		System.out.println("TripID : "+TripID); 
 		return TripID;
 	}
 	

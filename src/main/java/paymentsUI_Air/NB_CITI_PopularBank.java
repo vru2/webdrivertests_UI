@@ -10,33 +10,37 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class UPI_PhonePe extends PaymentUI_Common{
+import io.restassured.response.Response;
+
+public class NB_CITI_PopularBank extends PaymentUI_Common{
 	public RemoteWebDriver driver;
 	
 	@Test
-	public void PhonePe_UPI() throws Exception {
+	public void NB_Citi_Pay() throws Exception {
 		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
-		driver.get(PayUrl);
-		payUI_Select_PaymentType(driver, "UPI");
-		safeClick(driver, getObjectPayment("PayUI_UPI_Radio_Btn"));
-		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
-		textPresent_Log(driver, "Login to PhonePe", 30);
-	}
+		driver.get(PayUrl);	   
+		payUI_Select_PaymentType(driver, "NB");
+		//validate_Currency(driver, "", "INR");
+		payUI_Enter_PaymentDetails(driver, "NB", "CitibankPopular");
+		payUI_Mock_ConfirmationPage(driver, PayUrl);
+	}	
 
 	@BeforeClass
 	public void setUp() throws Exception {
 		driver=(RemoteWebDriver) getDriver(driver);
-	}
+	}		
 
 	@AfterMethod (alwaysRun = true)
 	public void afterMethod(ITestResult _result) throws Exception {
 		afterMethod(driver, _result);
 	}
-	
+	  
 	@AfterClass
 	public void tearDown() throws Exception {
 		browserClose(driver);
 	}
+
+	
 	
 }

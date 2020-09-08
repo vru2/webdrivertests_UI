@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Payment QA" parallel="tests" thread-count="10">
+<suite name="Payment QA" parallel="tests" thread-count="5">
 
 		<listeners>
 			<listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -7,13 +7,13 @@
 			<listener class-name="common.RetryListener"/>
 		</listeners>	
 
-		<suite-files>
-			<suite-file path="QA_Payment_API.xml"></suite-file>
-		</suite-files>
-		
 		 <suite-files>
 			<suite-file path="QA_Payment_Bento_PayUI.xml"></suite-file>
 		</suite-files> 
+		
+		<suite-files>
+			<suite-file path="QA_Payment_API.xml"></suite-file>
+		</suite-files>		
 		
 		 <suite-files>		 
 			<suite-file path="QA_Payment_TestApp.xml"></suite-file>

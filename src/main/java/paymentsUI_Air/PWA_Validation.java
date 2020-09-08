@@ -74,7 +74,7 @@ public class PWA_Validation extends PaymentUI_Common{
 		}
 		textPresent_Log(driver, "FLIGHT ITINERARY", 1);
 		textPresent_Log(driver, "TRAVELLERS", 1);
-		textPresent_Log(driver, "John Miller", 1);
+		//textPresent_Log(driver, "John Miller", 1);
 		String FlightDetails = getText(driver, getObjectPayment("PWA_PaymentPage_Itineray_FlightDetails"));
 		if(!(FlightDetails.contains("1 stop")&&FlightDetails.contains("Non stop")&&FlightDetails.contains("BOM"))) {
 			Reporter.log("Flight details text is not displayed");

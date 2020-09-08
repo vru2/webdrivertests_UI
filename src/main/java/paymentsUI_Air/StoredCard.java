@@ -26,6 +26,7 @@ public class StoredCard extends PaymentUI_Common{
 		textPresent_Log(driver, "Pay with your stored cards", 20);
 		textPresent_Log(driver, "Enter CVV here", 1);
 		textPresent_Log(driver, "You card details are stored as part of your Express Checkout profile", 1);
+		textPresent_Log(driver, "Includes a convenience fee of", 1);
 		elementAssert(driver, getObjectPayment("PayUI_StoredCard_Image"), 1);
 		//elementAssert(driver, getObjectPayment("PayUI_StoredCard_Complete_CSS"), 1);
 		elementAssert(driver, getObjectPayment("PayUI_StoredCard_Number"), 1);

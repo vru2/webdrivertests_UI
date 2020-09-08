@@ -558,7 +558,7 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 			}
 			else if(i!=10) {
 				driver.get(PayUrl);
-				if(textPresent(driver, "Payment successful", 1)) {
+				if(textPresent(driver, "Payment successful", 5)) {
 					Reporter.log("Payment successful");					
 					break;
 				}

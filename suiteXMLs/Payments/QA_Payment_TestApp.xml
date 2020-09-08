@@ -17,7 +17,7 @@
 
 <test name="NB GW" preserve-order="true" >
     <classes>
-      <class name="paymentsUI.Payment_NodeJS_NB_TechProcess"/>
+<!--       <class name="paymentsUI.Payment_NodeJS_NB_TechProcess"/> -->
       <class name="paymentsUI.Payment_NodeJS_NB_CitiBank"/>
       <class name="paymentsUI.Payment_NodeJS_NB_RazorPay"/>      
     </classes>
@@ -89,11 +89,11 @@
     <classes>
       <class name="paymentsUI.Payment_NodeJS_CC_AE"/> 
       <class name="paymentsUI.Payment_NodeJS_CC_SA"/>   
-      <class name="paymentsUI.Payment_NodeJS_CC_BH"/>
+<!--       <class name="paymentsUI.Payment_NodeJS_CC_BH"/>
       <class name="paymentsUI.Payment_NodeJS_CC_KW"/>
       <class name="paymentsUI.Payment_NodeJS_CC_OM"/>
       <class name="paymentsUI.Payment_NodeJS_CC_QA"/>
-      <class name="paymentsUI.Payment_NodeJS_CC_US"/>
+      <class name="paymentsUI.Payment_NodeJS_CC_US"/> -->
     </classes>
 </test>
 
@@ -114,11 +114,11 @@
 <test name="Hotel" preserve-order="true">
     <classes>
       <class name="paymentsUI.Payment_NodeJS_Hotels_B2C_CC"/> 
-      <class name="paymentsUI.Payment_NodeJS_Hotels_B2C_CC_AE"/>
+<!--       <class name="paymentsUI.Payment_NodeJS_Hotels_B2C_CC_AE"/>
       <class name="paymentsUI.Payment_NodeJS_Hotels_B2C_DC"/> 
       <class name="paymentsUI.Payment_NodeJS_Hotels_Agency_CC"/>
       <class name="paymentsUI.Payment_NodeJS_Hotels_Corp_CC"/>
-      <class name="paymentsUI.Payment_NodeJS_Hotels_Mobile_CC"/>      
+      <class name="paymentsUI.Payment_NodeJS_Hotels_Mobile_CC"/>  -->     
     </classes>
 </test>
 
@@ -137,8 +137,8 @@
     <classes>
       <class name="paymentsUI.Payment_NodeJS_Activity_B2C_CC_AE"/> 
       <class name="paymentsUI.Payment_NodeJS_Activity_B2C_CC"/>
-      <class name="paymentsUI.Payment_NodeJS_Activity_B2C_DC"/> 
-      <class name="paymentsUI.Payment_NodeJS_Activity_Mobile_CC"/>
+<!--       <class name="paymentsUI.Payment_NodeJS_Activity_B2C_DC"/> 
+      <class name="paymentsUI.Payment_NodeJS_Activity_Mobile_CC"/> -->
    </classes>
 </test>
 

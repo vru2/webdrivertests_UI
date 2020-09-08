@@ -10,7 +10,7 @@
 
 <test name="NB GW" preserve-order="true" parallel="true" >
     <classes>
-	  <class name="paymentsUI_Air.NB_HDFC"/>	   
+	  <!-- <class name="paymentsUI_Air.NB_HDFC"/>	    -->
 	  <class name="paymentsUI_Air.NB_CITI_PopularBank"/>	  
 	 <!--  <class name="paymentsUI_Air.NB_ICICI"/> 	   -->
     <!--   <class name="paymentsUI_Air.NB_CITI"/>   --> 

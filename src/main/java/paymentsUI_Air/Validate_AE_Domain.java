@@ -95,14 +95,14 @@ public class Validate_AE_Domain extends PaymentUI_Common{
 	@Test(priority=6)
 	public void Validate_AE_Itinerary() throws Exception {
 		String ItineraryDetails = getText(driver, getObjectPayment("PayUI_Itinerary_Details"));
-		if(!(ItineraryDetails.contains("Flight Itinerary")&&ItineraryDetails.contains("New Delhi")&&ItineraryDetails.contains("Mumbai")&&ItineraryDetails.contains("Travellers (5)")&&ItineraryDetails.contains("+1 travellers"))) {
+		if(!(ItineraryDetails.contains("Flight Itinerary")&&ItineraryDetails.contains("Bangalore")&&ItineraryDetails.contains("Mumbai")&&ItineraryDetails.contains("Travellers (1)"))) {
 			Reporter.log("Flight Itinerary");
 			Assert.assertTrue(false);
 		}
-		safeClick(driver, getObjectPayment("PayUI_Hide_Traveller_Link"));
+		/*safeClick(driver, getObjectPayment("PayUI_Hide_Traveller_Link"));
 		textPresent(driver, "+1 travellers", 2);
 		safeClick(driver, getObjectPayment("PayUI_Hide_Traveller_Link"));
-		textPresent(driver, "Sachin Reddy", 2); 
+		textPresent(driver, "Sachin Reddy", 2); */
 	}
 	
 	@Test(priority=7)

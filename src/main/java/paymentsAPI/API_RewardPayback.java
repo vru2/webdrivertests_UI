@@ -38,25 +38,26 @@ public class API_RewardPayback extends API_PaymentCommon1  {
 		validation_RewardPayback("PAYBACK_CheckBalance_card", res);
 	}
 
-	@Test(priority=5)
+	@Test(dependsOnMethods= {"RewardPayback_CheckBalance_Card"})
 	public void RewardPayback_ValidateCardDetails() throws Exception{
         Response res = reward("PAYBACK_Validate", "");
         validation_RewardPayback("PAYBACK_Validate", res);
 	}
 
-	@Test(priority=6)
+
+	@Test(dependsOnMethods= {"RewardPayback_ValidateCardDetails"})
 	public void RewardPayback_redeemPoints() throws Exception{
 		Response res = reward("PAYBACK_RedeemPoints", "");
 		validation_RewardPayback("PAYBACK_RedeemPoints", res);
 	}
-	
-	@Test(priority=7)
+
+	@Test(dependsOnMethods= {"RewardPayback_redeemPoints"})
 	public void RewardPayback_CheckEarnPoints() throws Exception{
 		Response res = reward("PAYBACK_CheckEarnPoints", "");
 		validation_RewardPayback("PAYBACK_CheckEarnPoints", res);
 	}
 
-	@Test(priority=8, dependsOnMethods = { "RewardPayback_redeemPoints" })
+	@Test(dependsOnMethods = { "RewardPayback_redeemPoints" })
 	public void RewardPayback_refundPoints() throws Exception{
 		Response res = reward("PAYBACK_RefundPoints", "");
 		validation_RewardPayback("PAYBACK_RefundPoints", res);
@@ -74,10 +75,10 @@ public class API_RewardPayback extends API_PaymentCommon1  {
 		validation_RewardPayback("PAYBACK_Reverseearn", res);	
 	}
 
-	@Test(priority=11, enabled=false)
+	/*@Test(priority=11, enabled=false)
 	public void RewardPayback_forgotPassword() throws Exception{
 		Response res = reward("PAYBACK_Forgotpassword", "");
 		validation_RewardPayback("PAYBACK_Forgotpassword", res);
-	}
+	}*/
 
 }

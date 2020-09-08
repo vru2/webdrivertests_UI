@@ -54,7 +54,7 @@ public class PWA_Validation extends PaymentUI_Common{
 		safeClick(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_Icon"));
 		elementPresent(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_closeIcon"));
 		textPresent_Log(driver, "Fare BreakUp", 5);
-		textPresent_Log(driver, "Discounts", 5);
+		//textPresent_Log(driver, "Discounts", 5);
 		textPresent_Log(driver, "Convenience Fee", 1);	
 		textPresent_Log(driver, "Total", 5);
 		textPresent_Log(driver, "You pay", 5);

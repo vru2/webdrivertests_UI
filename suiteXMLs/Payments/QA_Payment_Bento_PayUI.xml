@@ -129,9 +129,11 @@
     </classes>
 </test>
 
-<test name="PayBack"  preserve-order="true" parallel="true" >
+<test name="PayBack"  preserve-order="true">
     <classes>
-      <class name="paymentsUI_Air.RP_PayBack_NB"/>
+      <class name="paymentsUI_Air.RP_PayBack_NB"/>      
+      <class name="paymentsUI_Air.RP_PayBack_Full_Validation_Only"/>
+      
     </classes>
 </test>
 

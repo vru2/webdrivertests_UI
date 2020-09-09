@@ -17,7 +17,7 @@ public class GV_Full extends PaymentUI_Common{
 	public RemoteWebDriver driver;
 	
 	@Test
-	public void NB_GV_Pay() throws Exception {
+	public void GVFull() throws Exception {
 		String PayUrl = getPayUI("AirGVFull", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);	  
@@ -30,12 +30,32 @@ public class GV_Full extends PaymentUI_Common{
 			Reporter.log("for full GV aother pay options are displayed - Enter your credit card details");
 			Assert.assertTrue(false);
 		}
+		if(elementVisible(driver, getObjectPayment("PayUI_Pay_Tabs"), 1)) {
+			Reporter.log("CC tab is displayed");
+			Assert.assertTrue(false);
+		}
 		textPresent_Log(driver, "I understand and agree to the rules and restrictions of this fare", 2);
+		textPresent_Log(driver, "Includes a convenience fee of ", 1);
+		String YouPay = getText(driver, By.cssSelector("p.fw-700.fs-5.flex.flex-end"));
+		if (!YouPay.contains("0")) {
+			Reporter.log("Youpay doesn't contain 0 rs");
+			Assert.assertTrue(false);
+		}	
+		String ConvFee = getText(driver, By.cssSelector("p.note-block__message.fs-2"));
+		if (!ConvFee.contains("150")) {
+			Reporter.log("ConvFee doesn't contain 150 rs");
+			Assert.assertTrue(false);
+		}	
+		String Total = getText(driver, By.cssSelector("span.fs-20.fw-700"));
+		if (!Total.contains("0")) {
+			Reporter.log("Total doesn't contain 0 rs");
+			Assert.assertTrue(false);
+		}	
+
 		Assert.assertEquals("Complete Booking", getText(driver, getObjectPayment("PayUI_Make_Payment_Btn")));
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		Reporter.log("Scripts should be fixed after Air integration");
-		//Assert.assertTrue(false);
-		Thread.sleep(5000);
+		Thread.sleep(10000);
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
 	}	
 

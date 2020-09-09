@@ -127,8 +127,22 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 		}
 		elementPresent_log(driver, errorMessage, "error text", 5);	
 		textPresent(driver, ErrorText, 1);
+		textPresent_Log(driver, ErrorText, 1);
 	}
-		
+	
+	public void payUI_Error_Validation(RemoteWebDriver driver,  By errorMessagePopUP, String ErrorText) throws Exception {
+		elementPresent_log(driver, errorMessagePopUP, "error Popup", 5);
+		String ErrorMessage = getText(driver, errorMessagePopUP);
+
+		//System.out.println("Error message is "+ErrorMessage+" instead of "+ErrorText);
+		if(!ErrorMessage.contains(ErrorText)) {
+			Reporter.log("Error message is "+ErrorMessage+" instead of "+ErrorText);
+			Reporter.log("Error message banner not shown");
+			Assert.assertTrue(false);
+		}
+		elementPresent_log(driver, errorMessagePopUP, "error text", 5);	
+		textPresent_Log(driver, ErrorText, 1);
+	}
 	
 	public void payUI_PageLoader(RemoteWebDriver driver) throws Exception {
 		elementNotVisible(driver, getObjectPayment("PayUI_PageLoader_Spinner"), 10);

@@ -30,6 +30,13 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 		textPresent_Log(driver, "Please enter a valid cvv", 1);				
 		textPresent_Log(driver, "Save this card and make single-click payments", 1);		
 		textPresent_Log(driver, "Includes a convenience fee of", 5);
+		payUI_Error_Validation(driver, getObjectPayment("PaymentPage_Error_Banner"), "Enter valid credit card number");
+		safeClick(driver, getObjectPayment("PaymentPage_Error_Banner_Close_Btn"));
+		if(elementNotPresent_Time(driver, getObjectPayment("PaymentPage_Error_Banner"), 10)) {
+			Reporter.log("Error banner is not closed");	
+			Assert.assertTrue(false);
+		}
+		
 	}
 
 	@Test(priority=2)
@@ -42,6 +49,7 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 		textPresent_Log(driver, "Please enter a valid expiry year", 1);		
 		textPresent_Log(driver, "Please enter a valid cvv", 1);
 		textPresent_Log(driver, "Includes a convenience fee of", 1);
+		payUI_Error_Validation(driver, getObjectPayment("PaymentPage_Error_Banner"), "Enter valid debit card number");
 	}
 
 	@Test(priority=3)
@@ -146,7 +154,9 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 		Enter_CC_Details(driver, platform.value("ADCBCard_Number"), platform.value("ADCBCard_Expiry_Month"), platform.value("ADCBCard_Expiry_Year"), platform.value("ADCBCard_CVV"));
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		textPresent_Log(driver, "Enter valid credit card number", 2);
+
 	}
+		
 		
 	@BeforeClass
 	public void setUp() throws Exception {

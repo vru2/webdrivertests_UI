@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="APIs" parallel="tests" thread-count="2">
+<suite name="APIs" parallel="tests" thread-count="1">
 
 <listeners>
 <listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -150,7 +150,7 @@
 
 <test name="API PayBack" preserve-order="true" parallel="true">
     <classes>
-      <class name="paymentsAPI.API_RewardPayback"/> 
+<!--       <class name="paymentsAPI.API_RewardPayback"/>  -->
     </classes>
 </test>
 
@@ -174,13 +174,13 @@
 
 <test name="API ROR Writes" preserve-order="true" parallel="true">
     <classes>
-      <class name="paymentsAPI.API_ROR_Writes"/>  
+     <!--  <class name="paymentsAPI.API_ROR_Writes"/> -->  
     </classes>
 </test>
 
 <test name="API Payment Reads" preserve-order="true" parallel="true">
     <classes>
-      <class name="paymentsAPI.API_ROR_Reads"/>  
+     <!--  <class name="paymentsAPI.API_ROR_Reads"/>   -->
     </classes>
 </test>
 
@@ -195,8 +195,8 @@
 
 <test name="API Reporting"  preserve-order="true" parallel="true" >
     <classes>
-		<class name="paymentsAPI.API_Reporting"/>
-		<class name="paymentsAPI.API_Reporting_TS_V3"/>
+	<!-- 	<class name="paymentsAPI.API_Reporting"/> -->
+		<!-- <class name="paymentsAPI.API_Reporting_TS_V3"/> -->
     </classes>
 </test>
 

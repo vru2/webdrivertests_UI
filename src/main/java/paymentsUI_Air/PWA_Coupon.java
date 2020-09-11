@@ -3,7 +3,6 @@
 
 package paymentsUI_Air;
 
-import org.junit.Assert;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
@@ -24,7 +23,7 @@ public class PWA_Coupon extends PaymentUI_Common{
 		textPresent(driver, "All Other Banks", 5);
 		safeType(driver, getObjectPayment("PWA_NETBANKING_Page_NB_TextBox"), "Citibank");
 		safeClick(driver, getObjectPayment("PWA_NETBANKING_Page_NB_AJAX"));
-		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
+		//safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 	}
 
 	@BeforeClass

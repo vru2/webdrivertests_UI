@@ -31,12 +31,15 @@ public class Wallet_Full extends PaymentUI_Common{
 			Reporter.log("CT_WalletImage_Text : "+CT_WalletImage_Text);
 			Assert.assertTrue(false);
 		}
+		if(common.value("Bento_Payment").equalsIgnoreCase("true")) {
+			
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		if(textPresent(driver, "Error in credentials entered. Verify your details and try again", 5)) {
 			Reporter.log("Error in credentials entered. Verify your details and try again message is displayed");
 			Assert.assertTrue(false);
 		}
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
+		}
 	}
 
 	@BeforeClass

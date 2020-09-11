@@ -30,9 +30,10 @@ public class NB_CITI_Retry extends PaymentUI_Common{
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
 		
 		
-
+		if(common.value("Bento_Payment").equalsIgnoreCase("true")) {
+			
 		payUI_Error_Validation(driver, getObjectPayment("PaymentPage_Error_Banner"), "Oops! Your payment failed. If you were charged, any amount deducted will be reversed automatically.");
-		
+		}
 	}	
 
 	@BeforeClass

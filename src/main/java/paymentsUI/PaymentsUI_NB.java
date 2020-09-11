@@ -27,14 +27,12 @@ public class PaymentsUI_NB extends PaymentNodeJS{
 		Url = qaUrl+ fetchPaymentURL(resp);
 	}
 
+	
+
 	@Test(priority=1)
-	public void getPayURL() throws Exception{
-		validation_PaymentUI("BookApp/GetPay", resp);
-
-	}
-
-	@Test(priority=2, dependsOnMethods={"getPayURL"})
 	public void cancelNBPayment() throws Exception{
+			validation_PaymentUI("BookApp/GetPay", resp);
+
 			driver=(RemoteWebDriver) getDriver(driver);
 			driver.manage().deleteAllCookies(); 
 			driver.get(Url);

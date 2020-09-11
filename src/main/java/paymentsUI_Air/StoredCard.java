@@ -3,6 +3,9 @@
 
 package paymentsUI_Air;
 
+import static org.junit.Assert.assertTrue;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.Reporter;
@@ -23,6 +26,11 @@ public class StoredCard extends PaymentUI_Common{
 		driver.get(PayUrl);
 		driver.manage().addCookie(cookie_Stored_Card);
 		refreshPage(driver);
+		String storedCard = getText(driver, By.xpath("//li/p"));
+		if(!storedCard.equals("Stored Card")) {
+			Reporter.log("Stored Card tab text is not displayed");
+			Assert.assertTrue(false);
+		}
 		textPresent_Log(driver, "Pay with your stored cards", 20);
 		textPresent_Log(driver, "Enter CVV here", 1);
 		textPresent_Log(driver, "You card details are stored as part of your Express Checkout profile", 1);

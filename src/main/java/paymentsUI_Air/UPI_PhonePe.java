@@ -20,9 +20,10 @@ public class UPI_PhonePe extends PaymentUI_Common{
 		driver.get(PayUrl);
 		payUI_Select_PaymentType(driver, "UPI");
 		safeClick(driver, getObjectPayment("PayUI_UPI_Radio_Btn"));
+		/*
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		textPresent_Log(driver, "Login to PhonePe", 30);
-	}
+	*/}
 
 	@BeforeClass
 	public void setUp() throws Exception {

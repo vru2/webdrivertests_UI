@@ -20,6 +20,8 @@ public class TW_AmazonPay extends PaymentUI_Common{
 		driver.get(PayUrl);
 		payUI_Select_PaymentType(driver, "TW");
 		safeClick(driver, getObjectPayment("PaymentPage_Wallet_AmazonPay"));
+		
+		if(common.value("Bento_Payment").equalsIgnoreCase("true")) {
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		textPresent_Log(driver, "Login with your Amazon account", 30);
 		safeType(driver, getObjectPayment("MakePayment_Amazon_Page_Signin_Email"), "kiran.kumar@cleartrip.com");
@@ -31,6 +33,7 @@ public class TW_AmazonPay extends PaymentUI_Common{
 		safeClick(driver, getObjectPayment("MakePayment_Amazon_Page_Pay_Button"));
 		Thread.sleep(5000);
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
+		}
 	}
 
 	@BeforeClass

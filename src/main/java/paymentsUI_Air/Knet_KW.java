@@ -10,6 +10,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import junit.framework.Assert;
+
 public class Knet_KW extends PaymentUI_Common{
 	public RemoteWebDriver driver;
 	
@@ -19,6 +21,7 @@ public class Knet_KW extends PaymentUI_Common{
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
 		payUI_Select_PaymentType(driver, "NB");
+		Assert.assertTrue(false);// validate the Knet logo
 		payUI_Enter_PaymentDetails(driver, "NB", "Knet");
 		Thread.sleep(5000);
 		payUI_Mock_ConfirmationPage(driver, PayUrl);

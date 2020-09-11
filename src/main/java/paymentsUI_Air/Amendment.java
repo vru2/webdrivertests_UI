@@ -46,6 +46,7 @@ public class Amendment extends PaymentUI_Common{
 			Reporter.log("convenience fee text is displayed");
 			Assert.assertTrue(false);
 		}	
+		textPresent_Log(driver, "Paid Before", 1);
 		payUI_Enter_PaymentDetails(driver, "NB", "Citibank");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
 	}

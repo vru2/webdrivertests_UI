@@ -33,8 +33,8 @@ public class Wallet_NB extends PaymentUI_Common{
 			Assert.assertTrue(false);
 		}
 		elementVisible(driver, getObjectPayment("PaymentPage_Utilize_WalletBalance_CheckBox"), 10);
-		safeClick(driver, getObjectPayment("PaymentPage_Utilize_WalletBalance_CheckBox"));
 		textPresent_Log(driver, "Utilize the balance", 5);
+		safeClick(driver, getObjectPayment("PaymentPage_Utilize_WalletBalance_CheckBox"));
 		textPresent_Log(driver, " in your wallet as a partial payment for this booking.", 2);
 		textPresent_Log(driver, "Total payable", 1);
 		textPresent_Log(driver, "Deduction from wallet", 1);

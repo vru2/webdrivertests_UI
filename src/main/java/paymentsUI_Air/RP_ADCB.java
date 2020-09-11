@@ -19,9 +19,10 @@ public class RP_ADCB extends PaymentUI_Common{
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
 		payUI_Select_PaymentType(driver, "ADCB");
+		textPresent_Log(driver, "Enter your ADCB card details", 5);
 		validate_Currency(driver, "", "AED");
 		payUI_Enter_PaymentDetails(driver, "ADCB", "");
-		payUI_Mock_ConfirmationPage(driver, PayUrl);
+		//payUI_Mock_ConfirmationPage(driver, PayUrl);
 	}
 
 	@BeforeClass

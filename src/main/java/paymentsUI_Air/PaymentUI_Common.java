@@ -242,16 +242,27 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 			Enter_CC_Details(driver, platform.value("RazorPay_Number"), platform.value("RazorPay_Month_UI"), platform.value("RazorPay_Year"), platform.value("RazorPay_CVV"));
 			break;
 		}
-		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
+		if(common.value("Bento_Payment").equalsIgnoreCase("true")) {			
+			safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
+		
 		Reporter.log("Make Payment button is Clicked");
 		if(textPresent(driver, "Internal server error", 5)) {
 			Reporter.log("Internal server error is displayed after Clicking Make Payment");
 			Assert.assertTrue(false);
 		}
+		if(textPresent(driver, "Hmm, something's not right", 1)) {
+			Reporter.log("Hmm, something's not right. is displayed after Clicking Make Payment");
+			Assert.assertTrue(false);
+		}		
+
+		if(textPresent(driver, "Error in credentials entered. Verify your details and try again", 1)) {
+			Reporter.log("Error in credentials entered. Verify your details and try again is displayed after Clicking Make Payment");
+			Assert.assertTrue(false);
+		}
 		if(!BankName.contains("CAPTCHA")) {
 		payUI_BankPage(driver, BankName);
 		}
-
+		}
 	}
 
 	public void payUI_Select_DC(RemoteWebDriver driver, String BankName) throws Exception {		
@@ -262,6 +273,8 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 			Enter_CC_Details(driver, platform.value("MasterCard_Number"), platform.value("MasterCard_Month"), platform.value("MasterCard_Year"), platform.value("MasterCard_CVV"));
 			break;	
 		}
+
+		if(common.value("Bento_Payment").equalsIgnoreCase("true")) {
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		Reporter.log("Make Payment button is Clicked");
 		if(textPresent(driver, "Internal server error", 5)) {
@@ -270,6 +283,7 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 		}
 		if(!BankName.contains("CAPTCHA")) {
 		payUI_BankPage(driver, BankName);
+		}
 		}
 }
 	public void payUI_Select_ADCB(RemoteWebDriver driver, String BankName) throws Exception {		
@@ -297,7 +311,9 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 		textPresent_Log(driver, "Amount redeemed", 1);
 		textPresent_Log(driver, "Balance payable", 1);
 		
-		safeType(driver, getObjectPayment("PaymentPage_ADCB_Redeem_Amount_TextBox"), "AED 50");
+		safeType(driver, getObjectPayment("PaymentPage_ADCB_Redeem_Amount_TextBox"), "50");
+
+		if(common.value("Bento_Payment").equalsIgnoreCase("true")) {
 	//	safeType(driver, getObjectPayment("PaymentPage_ADCB_OTP"), platform.value("ADCBCard_OTP"));
 		
 		//safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
@@ -309,7 +325,8 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 		if(!BankName.contains("CAPTCHA")) {
 		payUI_BankPage(driver, BankName);
 		}
-}
+		}
+		}
 	
 	public void payUI_Select_CARD_PWA(RemoteWebDriver driver, String BankName) throws Exception {		
 		elementVisible(driver, getObjectPayment("PWA_PaymentPage_CC_Number"), 5);
@@ -326,6 +343,8 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 				Enter_CARD_Details_PWA(driver, "512345678901234", platform.value("MasterCard_EXP_PWA"), platform.value("MasterCard_CVV"));
 			break;
 		}
+
+		if(common.value("Bento_Payment").equalsIgnoreCase("true")) {
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		Reporter.log("Make Payment button is Clicked");
 		if(textPresent(driver, "Internal server error", 5)) {
@@ -334,6 +353,7 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 		}
 		if(!BankName.contains("CAPTCHA")) {
 		payUI_BankPage(driver, BankName);
+		}
 		}
 }
 	
@@ -483,8 +503,11 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 				safeClick(driver, getObjectPayment("PaymentPage_NB_PopularBanks_Citi"));
 			}
 			else safeSelect(driver, getObjectPayment("PayUI_NB_DropDown"), BankName);
+
+			if(common.value("Bento_Payment").equalsIgnoreCase("true")) {
 			safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 			payUI_BankPage(driver, BankName);
+			}
 	}	
 	
 	public void payUI_Select_UPI(RemoteWebDriver driver, String BankName) throws Exception {	
@@ -492,8 +515,11 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 		textPresent(driver, "Select UPI partner to make your payment", 5);
 		elementVisible(driver, getObjectPayment("SelectPayment_UPI_PhonePe"), 5);
 		safeClick(driver, getObjectPayment("SelectPayment_UPI_PhonePe"));		
+
+		if(common.value("Bento_Payment").equalsIgnoreCase("true")) {
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		payUI_BankPage(driver, BankName);
+		}
 	}	
 	
 	
@@ -530,9 +556,12 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 					Assert.assertTrue(false);;
 				}
 			}
+
+			if(common.value("Bento_Payment").equalsIgnoreCase("true")) {
 			safeClick(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"));
 			Thread.sleep(5000);
 			payUI_BankPage(driver, BankName);
+			}
 	}
 
 	public void payUI_Select_UPI_PWA(RemoteWebDriver driver, String BankName) throws Exception {		
@@ -540,10 +569,12 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 		Reporter.log("Phonepe is displayed");		
 		safeClick(driver, getObjectPayment("PWA_PaymentPage_SelectPhonePe"));
 
+		if(common.value("Bento_Payment").equalsIgnoreCase("true")) {
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		Reporter.log("Make Payment button is Clicked");
 		Thread.sleep(5000);
 		payUI_BankPage(driver, BankName);
+		}
 }
 
 	public void payUI_Select_TW_PWA(RemoteWebDriver driver, String TWType) throws Exception {		
@@ -552,15 +583,18 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 
 		scrollSmooth(driver, 100);
 		safeClick(driver, getObjectPayment("PWA_PaymentPage_AmazonPay"));
+		if(common.value("Bento_Payment").equalsIgnoreCase("true")) {
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		Reporter.log("Make Payment button is Clicked");
 		Thread.sleep(5000);
 		payUI_BankPage(driver, TWType);
+		}
 }
 	
 	
 	public void payUI_Mock_ConfirmationPage(RemoteWebDriver driver, String PayUrl) throws InterruptedException {
-		
+
+		if(common.value("Bento_Payment").equalsIgnoreCase("true")) {
 		for (int i = 0; i <=10; i++) {
 			String returnUrl  = getURL(driver);
 			if(returnUrl.contains("paymentservice/return")) {
@@ -585,6 +619,7 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 					
 			Thread.sleep(1000);
 			}
+		}
 	}
 	
 }

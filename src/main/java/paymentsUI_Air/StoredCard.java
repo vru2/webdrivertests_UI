@@ -45,10 +45,13 @@ public class StoredCard extends PaymentUI_Common{
 			Assert.assertTrue(false);
 		safeType(driver, getObjectPayment("PayUI_StoredCard_CVV"), "123");
 		}
+
+		if(common.value("Bento_Payment").equalsIgnoreCase("true")) {
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		Reporter.log("Make Payment button is Clicked");
 		payUI_BankPage(driver, "MASTER");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
+		}
 	}
 
 	@BeforeClass

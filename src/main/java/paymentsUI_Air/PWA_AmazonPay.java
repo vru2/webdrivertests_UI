@@ -19,9 +19,9 @@ public class PWA_AmazonPay extends PaymentUI_Common{
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
 		payUI_Select_PaymentType_PWA(driver, "TW");
-
+		
 		payUI_Enter_PaymentDetails_PWA(driver, "TW", "AmazonPay");
-		Thread.sleep(2000);
+		if(common.value("Bento_Payment").equalsIgnoreCase("true")) {
 		elementPresent(driver, getObjectPayment("MakePayment_Amazon_Page_Signin_Email"));
 		textPresent_Log(driver, "Login with your Amazon account", 20);
 		safeType(driver, getObjectPayment("MakePayment_Amazon_Page_Signin_Email"), "kiran.kumar@cleartrip.com");
@@ -31,8 +31,10 @@ public class PWA_AmazonPay extends PaymentUI_Common{
 		scrollSmooth(driver, 1000);
 		safeClick(driver, getObjectPayment("MakePayment_Amazon_Page_SelectCard"));
 		safeType(driver, getObjectPayment("MakePayment_Amazon_Page_SelectCard_CVV"), "123");
+		
 		safeClick(driver, getObjectPayment("MakePayment_Amazon_Page_Pay_Button"));
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
+		}
 	}
 
 	@BeforeClass

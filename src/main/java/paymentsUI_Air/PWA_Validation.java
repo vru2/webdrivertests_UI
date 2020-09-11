@@ -3,6 +3,7 @@
 
 package paymentsUI_Air;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.ITestResult;
@@ -20,25 +21,30 @@ public class PWA_Validation extends PaymentUI_Common{
 		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 5);
 		payUI_Select_PaymentType_PWA(driver, "DEBIT/CREDIT CARDS");
 		safeClick(driver, getObjectPayment("PWA_PaymentPage_SaveCard"));
 		safeType(driver, getObjectPayment("PWA_PaymentPage_CC_Number"),  platform.value("MasterCard_Number"));
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		payUI_Error_Validation_PWA(driver, getObjectPayment("PWA_Error_ValidCard"), getObjectPayment("PWA_Error_PopUp_Screen"), "Please enter valid card details");	
 		refreshPage(driver);
+		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 5);
 		safeType(driver, getObjectPayment("PWA_PaymentPage_CC_Number"),  platform.value("MasterCard_Number"));
 		safeType(driver, getObjectPayment("PWA_PaymentPage_CC_Expiry"), platform.value("MasterCard_EXP_PWA"));
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		payUI_Error_Validation_PWA(driver, getObjectPayment("PWA_Error_ValidCard"), getObjectPayment("PWA_Error_PopUp_Screen"), "Please enter valid card details");
 		refreshPage(driver);
+		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 5);
 		safeClickList(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), "NET BANKING");
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn2"));
 		payUI_Error_Validation_PWA(driver, getObjectPayment("PWA_Error_ValidCard"), getObjectPayment("PWA_Error_PopUp_Screen"), "Please select your bank");	
 		refreshPage(driver);
+		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 5);
 		safeClickList(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), "WALLETS");
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		payUI_Error_Validation_PWA(driver, getObjectPayment("PWA_Error_ValidCard"), getObjectPayment("PWA_Error_PopUp_Screen"), "Please select any wallet");	
 		refreshPage(driver);
+		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 5);
 		safeClickList(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), "UPI");
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		payUI_Error_Validation_PWA(driver, getObjectPayment("PWA_Error_ValidCard"), getObjectPayment("PWA_Error_PopUp_Screen"), "Please select any UPI payment method");
@@ -74,12 +80,19 @@ public class PWA_Validation extends PaymentUI_Common{
 		}
 		textPresent_Log(driver, "FLIGHT ITINERARY", 1);
 		textPresent_Log(driver, "TRAVELLERS", 1);
-		//textPresent_Log(driver, "John Miller", 1);
+		textPresent_Log(driver, "John Miller", 1);
+		textPresent_Log(driver, "Mohit Verma", 1);
 		String FlightDetails = getText(driver, getObjectPayment("PWA_PaymentPage_Itineray_FlightDetails"));
-		if(!(FlightDetails.contains("1 stop")&&FlightDetails.contains("Non stop")&&FlightDetails.contains("BOM"))) {
+		if(!(FlightDetails.contains("BLR")&&FlightDetails.contains("Non stop")&&FlightDetails.contains("BOM"))) {
 			Reporter.log("Flight details text is not displayed");
 			Assert.assertTrue(false);
 		}		
+		elementPresent_log(driver, By.xpath("//div[2]/div/img"), "Flight Logo", 1);
+		safeClick(driver, By.cssSelector("svg.c-pointer"));
+		if(elementVisible(driver, By.xpath("//div[2]/div/img"),1)) {
+			Assert.assertTrue(false);
+		}
+		//elementPresent_log(driver, By.xpath("//div[2]/div/img"), "Flight Logo", 1);
 	}
 		
 	@BeforeClass

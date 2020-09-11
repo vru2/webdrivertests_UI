@@ -27,6 +27,7 @@ public class PWA_Amendment extends PaymentUI_Common{
 		textPresent_Log(driver, "Amend Charges", 1);	
 		textPresent_Log(driver, "Total", 1);
 		textPresent_Log(driver, "You pay", 1);
+		textPresent_Log(driver, "Paid Before", 1);
 		if(textPresent(driver, "Convenience Fee", 1)) {
 			Assert.assertTrue(false);
 		}

@@ -46,6 +46,11 @@ public class GV_Full extends PaymentUI_Common{
 			Reporter.log("ConvFee doesn't contain 150 rs");
 			Assert.assertTrue(false);
 		}	
+		if (!ConvFee.contains("Includes a convenience fee of")) {
+			Reporter.log("ConvFee doesn't contain 150 rs");
+			Assert.assertTrue(false);
+		}
+	
 		String Total = getText(driver, By.cssSelector("span.fs-20.fw-700"));
 		if (!Total.contains("0")) {
 			Reporter.log("Total doesn't contain 0 rs");
@@ -53,10 +58,14 @@ public class GV_Full extends PaymentUI_Common{
 		}	
 
 		Assert.assertEquals("Complete Booking", getText(driver, getObjectPayment("PayUI_Make_Payment_Btn")));
+		
+		if(common.value("Bento_Payment").equalsIgnoreCase("true")) {
+			
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		Reporter.log("Scripts should be fixed after Air integration");
 		Thread.sleep(10000);
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
+		}
 	}	
 
 	@BeforeClass

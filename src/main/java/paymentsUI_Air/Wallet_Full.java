@@ -22,6 +22,10 @@ public class Wallet_Full extends PaymentUI_Common{
 		driver.manage().addCookie(cookie_Full_Wallet);
 		refreshPage(driver);
 		textPresent_Log(driver, "Paying completely via Cleartrip wallet", 20);
+		if(elementVisible(driver, getObjectPayment("PayUI_Pay_Tabs"), 1)) {
+			Reporter.log("CC tab is displayed");
+			Assert.assertTrue(false);
+		}
 		textPresent_Log(driver, "Total payable", 1);
 		textPresent_Log(driver, "Deduction from wallet", 1);
 		textPresent_Log(driver, "Balance payable", 	1);
@@ -31,6 +35,8 @@ public class Wallet_Full extends PaymentUI_Common{
 			Reporter.log("CT_WalletImage_Text : "+CT_WalletImage_Text);
 			Assert.assertTrue(false);
 		}
+		
+		
 		if(common.value("Bento_Payment").equalsIgnoreCase("true")) {
 			
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));

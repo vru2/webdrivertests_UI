@@ -17,16 +17,16 @@
 
 
 <test name="API Refunds Count" preserve-order="true" parallel="true">
-    <classes><!-- 
+    <classes>
       <class name="paymentsAPI.API_Navison_CC"/>
-      <class name="paymentsAPI.API_Navison_Air"/>      --> 
+      <class name="paymentsAPI.API_Navison_Air"/>      
     </classes>
 </test>
 
 
 <test name="API Refunds ROR Counts" preserve-order="true" parallel="true">
     <classes>
-     <!--  <class name="paymentsAPI.API_ROR_RefundQ_Count"/> -->
+      <class name="paymentsAPI.API_ROR_RefundQ_Count"/>
     </classes>
 </test>
 
@@ -174,13 +174,13 @@
 
 <test name="API ROR Writes" preserve-order="true" parallel="true">
     <classes>
-     <!--  <class name="paymentsAPI.API_ROR_Writes"/> -->  
+      <class name="paymentsAPI.API_ROR_Writes"/>  
     </classes>
 </test>
 
 <test name="API Payment Reads" preserve-order="true" parallel="true">
     <classes>
-     <!--  <class name="paymentsAPI.API_ROR_Reads"/>   -->
+      <class name="paymentsAPI.API_ROR_Reads"/>  
     </classes>
 </test>
 
@@ -195,8 +195,8 @@
 
 <test name="API Reporting"  preserve-order="true" parallel="true" >
     <classes>
-	<!-- 	<class name="paymentsAPI.API_Reporting"/> -->
-		<!-- <class name="paymentsAPI.API_Reporting_TS_V3"/> -->
+		<class name="paymentsAPI.API_Reporting"/>
+		<class name="paymentsAPI.API_Reporting_TS_V3"/>
     </classes>
 </test>
 

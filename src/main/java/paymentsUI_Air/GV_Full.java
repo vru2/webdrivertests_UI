@@ -34,8 +34,10 @@ public class GV_Full extends PaymentUI_Common{
 			Reporter.log("CC tab is displayed");
 			Assert.assertTrue(false);
 		}
+		Reporter.log("Non of the payment types are displayed for full GV");
 		textPresent_Log(driver, "I understand and agree to the rules and restrictions of this fare", 2);
 		textPresent_Log(driver, "Includes a convenience fee of ", 1);
+		Reporter.log("Includes a convenience fee of text is displayed");
 		String YouPay = getText(driver, By.cssSelector("p.fw-700.fs-5.flex.flex-end"));
 		if (!YouPay.contains("0")) {
 			Reporter.log("Youpay doesn't contain 0 rs");
@@ -59,8 +61,7 @@ public class GV_Full extends PaymentUI_Common{
 
 		Assert.assertEquals("Complete Booking", getText(driver, getObjectPayment("PayUI_Make_Payment_Btn")));
 		
-		if(common.value("Bento_Payment").equalsIgnoreCase("true")) {
-			
+		if(common.value("Bento_Payment").equalsIgnoreCase("true")) {			
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		Reporter.log("Scripts should be fixed after Air integration");
 		Thread.sleep(10000);

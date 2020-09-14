@@ -17,6 +17,13 @@
     </classes>
 </test>
 
+<test name="RT Multipay" preserve-order="true" parallel="true" >
+    <classes>
+	  <class name="paymentsUI_Air.CC_IN_Multipay"/>	  
+      <class name="paymentsUI_Air.CC_IN_RT"/>	  
+    </classes>
+</test>
+
 
 <test name="NB Retry" preserve-order="true">
     <classes>

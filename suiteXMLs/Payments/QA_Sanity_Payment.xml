@@ -6,13 +6,13 @@
 <listener class-name="common.RemoveDuplicateResults"/>
 <listener class-name="common.RetryListener"/>
 </listeners>
-<!-- 
+
 <test name="UI"  preserve-order="true" parallel="true" >
     <classes>
       <class name="paymentsUI_Air.NB_CITI"/>
     </classes>
 </test>
- -->
+
 
 <test name="DA" preserve-order="true" parallel="true">
     <classes>

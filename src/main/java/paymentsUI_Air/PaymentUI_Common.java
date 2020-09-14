@@ -302,15 +302,18 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 			Reporter.log("You have provided incorrect card details");
 			Assert.assertTrue(false);
 		}
-		elementVisible(driver, getObjectPayment("PaymentPage_ADCB_Redeem_Amount_TextBox"), 20);		
-		textPresent_Log(driver, "A minimum amount of AED", 10);
+		if(textPresent(driver, "Unable to process your request. Please try again later", 1)) {
+			Reporter.log("Unable to process your request. Please try again later");
+			Assert.assertTrue(false);
+		}
+		elementVisible(driver, getObjectPayment("PaymentPage_ADCB_Redeem_Amount_TextBox"), 10);
+		textPresent_Log(driver, "A minimum amount of AED", 1);
 		textPresent_Log(driver, "Available Balance", 1);
 		textPresent_Log(driver, "Balance TouchPoints", 1);
 		textPresent_Log(driver, "Amount to redeem", 1);
 		textPresent_Log(driver, "Total payable", 1);
 		textPresent_Log(driver, "Amount redeemed", 1);
-		textPresent_Log(driver, "Balance payable", 1);
-		
+		textPresent_Log(driver, "Balance payable", 1);		
 		safeType(driver, getObjectPayment("PaymentPage_ADCB_Redeem_Amount_TextBox"), "50");
 
 		if(common.value("Bento_Payment").equalsIgnoreCase("true")) {

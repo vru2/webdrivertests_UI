@@ -42,22 +42,21 @@ public class GV_Full extends PaymentUI_Common{
 		if (!YouPay.contains("0")) {
 			Reporter.log("Youpay doesn't contain 0 rs");
 			Assert.assertTrue(false);
-		}	
+		}else Reporter.log("Youpay  contain 0 rs");
 		String ConvFee = getText(driver, By.cssSelector("p.note-block__message.fs-2"));
 		if (!ConvFee.contains("150")) {
 			Reporter.log("ConvFee doesn't contain 150 rs");
 			Assert.assertTrue(false);
-		}	
+		}else Reporter.log("ConvFee contain 150 rs");
 		if (!ConvFee.contains("Includes a convenience fee of")) {
-			Reporter.log("ConvFee doesn't contain 150 rs");
+			Reporter.log("Includes a convenience fee of text not displayed");
 			Assert.assertTrue(false);
-		}
-	
+		}else Reporter.log("Includes a convenience fee of text is displayed");
 		String Total = getText(driver, By.cssSelector("span.fs-20.fw-700"));
 		if (!Total.contains("0")) {
 			Reporter.log("Total doesn't contain 0 rs");
 			Assert.assertTrue(false);
-		}	
+		}else Reporter.log("Total contain 0 rs");
 
 		Assert.assertEquals("Complete Booking", getText(driver, getObjectPayment("PayUI_Make_Payment_Btn")));
 		

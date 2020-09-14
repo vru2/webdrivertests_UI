@@ -10,8 +10,6 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import io.restassured.response.Response;
-
 public class CC_SA_Checkout extends PaymentUI_Common{
 	public RemoteWebDriver driver;
 	

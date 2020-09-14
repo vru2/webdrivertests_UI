@@ -10,8 +10,6 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import io.restassured.response.Response;
-
 public class NB_CITI_PopularBank extends PaymentUI_Common{
 	public RemoteWebDriver driver;
 	

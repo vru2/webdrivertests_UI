@@ -2211,7 +2211,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 			}
 		}		
 		else if (payType.equalsIgnoreCase("PHONEPE")) {
-		Thread.sleep(3000);
+		Thread.sleep(10000);
 		boolean toggle=	driver.findElement(By.xpath("//label[contains(@class,'pwa-radio-toggle')]")).isEnabled();
 			if (toggle=true)
 					{

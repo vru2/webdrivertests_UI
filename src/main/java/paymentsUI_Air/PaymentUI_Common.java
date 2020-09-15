@@ -9,11 +9,12 @@ import org.openqa.selenium.Cookie;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Reporter;
 
+import domains.PaymentNodeJS;
 import io.restassured.response.Response;
 import paymentsAPI.API_PaymentCommon1;
 
 
-public class PaymentUI_Common extends API_PaymentCommon1{
+public class PaymentUI_Common extends PaymentNodeJS{
 	public RemoteWebDriver driver;
 	protected String Url;
 	protected String paymentUrl;
@@ -218,12 +219,15 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 		
 	public void payUI_Select_CC(RemoteWebDriver driver, String BankName) throws Exception {		
 		elementVisible(driver, getObjectPayment("PaymentPage_CreditCard_Number"), 5);
-		textPresent_Log(driver, "Enter your credit card details.", 1);
+		textPresent_Log(driver, "Enter your credit card details", 1);
 		switch (BankName) {
 			case "MASTER":
 			Enter_CC_Details(driver, platform.value("MasterCard_Number"), platform.value("MasterCard_Month"), platform.value("MasterCard_Year"), platform.value("MasterCard_CVV"));
 			break;	
 			case "AMEX":
+			Enter_CC_Details(driver, platform.value("AmexCard_Number"), platform.value("AmexCard_Month_New"), platform.value("AmexCard_Year"), platform.value("AmexCard_CVV"));
+			break;			
+			case "AMEXTRAIN":
 			Enter_CC_Details(driver, platform.value("AmexCard_Number"), platform.value("AmexCard_Month_New"), platform.value("AmexCard_Year"), platform.value("AmexCard_CVV"));
 			break;
 			case "CAPTCHA":
@@ -242,7 +246,7 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 			Enter_CC_Details(driver, platform.value("RazorPay_Number"), platform.value("RazorPay_Month_UI"), platform.value("RazorPay_Year"), platform.value("RazorPay_CVV"));
 			break;
 		}
-		if(common.value("Bento_Payment").equalsIgnoreCase("true")) {			
+		if(common.value("Bento_Payment").equalsIgnoreCase("true")||BankName.contains("TRAIN")) {			
 			safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		
 		Reporter.log("Make Payment button is Clicked");
@@ -402,7 +406,7 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 				Reporter.log("Payment is not sucessfull");
 				Assert.assertTrue(false);
 		}
-		}else if(BankName.equalsIgnoreCase("AMEX")) {
+		}else if(BankName.equalsIgnoreCase("AMEX")||BankName.equalsIgnoreCase("AMEXTRAIN")) {
 			elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_Amex3DPage_Submit_Btn"), "Amex Bank ", 20);
 			textPresent(driver, "ACS Emulator", 1);
 			Reporter.log("Amex Auth page is displayed");
@@ -623,6 +627,35 @@ public class PaymentUI_Common extends API_PaymentCommon1{
 			Thread.sleep(1000);
 			}
 		}
+	}
+	
+	public void payUI_Mock_ConfirmationPage_Train(RemoteWebDriver driver, String PayUrl) throws InterruptedException {
+
+		for (int i = 0; i <=10; i++) {
+			String returnUrl  = getURL(driver);
+			if(returnUrl.contains("paymentservice/return")) {
+				Reporter.log("Refreshing PayUI page to check the Payment Status");
+				driver.get(PayUrl);	
+				textPresent_Log(driver, "Payment successful", 20); 
+				Reporter.log("Payment successful");			
+				break;
+			}
+			else if(i!=10) {
+				driver.get(PayUrl);
+				if(textPresent(driver, "Payment successful", 5)) {
+					Reporter.log("Payment successful");					
+					break;
+				}
+			}
+			else if(textPresent_Log(driver, "Oops, Something went wrong", 1)) {
+				Reporter.log("Oops! Your payment failed.");
+				Assert.assertTrue(false);
+			}			
+			else Assert.assertTrue(false);
+					
+			Thread.sleep(1000);
+			}
+		
 	}
 	
 }

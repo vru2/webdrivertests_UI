@@ -40,12 +40,12 @@ public class StoredCard extends PaymentUI_Common{
 		String StoredCard_Number= getText(driver, getObjectPayment("PayUI_StoredCard_Number"));
 		String StoredCard_Name= getText(driver, getObjectPayment("PayUI_StoredCard_Name"));
 		String Profile_EmailID= getText(driver, getObjectPayment("PayUI_Profile_EmailID"));		
-		if(!StoredCard_Number.contains("512345XXXXXX2346")) {
+		if(!StoredCard_Number.contains("340000XXXXXX009")) {
 			Reporter.log("Stored card number is : "+StoredCard_Number);
 			Assert.assertTrue(false);
-		}if(!StoredCard_Name.contains("MasterCard")) {
+		}if(!StoredCard_Name.contains("Amex")) {
 			Reporter.log("Stored card name is : "+StoredCard_Name);
-			//Assert.assertTrue(false);
+			Assert.assertTrue(false);
 		}if(!Profile_EmailID.contains("ct_wallet_partial@cleartrip.com")) {
 			Reporter.log("Profile_EmailID is : "+Profile_EmailID);
 			Assert.assertTrue(false);

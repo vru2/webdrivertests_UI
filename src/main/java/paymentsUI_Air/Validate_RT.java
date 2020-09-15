@@ -12,12 +12,12 @@ import org.testng.annotations.Test;
 
 import junit.framework.Assert;
 
-public class CC_IN_RT extends PaymentUI_Common{
+public class Validate_RT extends PaymentUI_Common{
 	public RemoteWebDriver driver;
 	
 	@Test
-	public void CC_RT_Validate() throws Exception {
-		String PayUrl = getPayUI("Air", "");
+	public void RT_Validate() throws Exception {
+		String PayUrl = getPayUI("AirRT", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
 		Assert.assertTrue(false);

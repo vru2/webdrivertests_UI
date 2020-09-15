@@ -41,7 +41,6 @@ public class Wallet_NB extends PaymentUI_Common{
 		textPresent_Log(driver, "Balance payable", 	1);
 		textPresent_Log(driver, "Includes a convenience fee of", 1);
 		payUI_Select_PaymentType(driver, "NB");
-		payUI_Enter_PaymentDetails(driver, "NB", "Citibank");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
 	}
 

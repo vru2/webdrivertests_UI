@@ -17,10 +17,10 @@
     </classes>
 </test>
 
-<test name="RT Multipay" preserve-order="true" parallel="true" >
+<test name="RT MultiCity" preserve-order="true" parallel="true" >
     <classes>
-	  <class name="paymentsUI_Air.CC_IN_Multipay"/>	  
-      <class name="paymentsUI_Air.CC_IN_RT"/>	  
+	  <class name="paymentsUI_Air.Validate_RT"/>	  
+      <class name="paymentsUI_Air.Validate_MultiCity"/>	  
     </classes>
 </test>
 
@@ -94,7 +94,7 @@
 <test name="PWA Validation and Captcha"  preserve-order="true" >
     <classes>
       <class name="paymentsUI_Air.PWA_Validation"/> 
-      <class name="paymentsUI_Air.PWA_Captcha"/> 
+<!--       <class name="paymentsUI_Air.PWA_Captcha"/>  -->
     </classes>
 </test>
 
@@ -179,7 +179,7 @@
 
 <test name="Captcha Validation"  preserve-order="true" >
     <classes>
-      <class name="paymentsUI_Air.Validation_Captcha"/> 	  
+      <!-- <class name="paymentsUI_Air.Validation_Captcha"/> 	   -->
     </classes>
 </test>
 	

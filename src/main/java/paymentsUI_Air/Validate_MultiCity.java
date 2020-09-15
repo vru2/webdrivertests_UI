@@ -12,12 +12,12 @@ import org.testng.annotations.Test;
 
 import junit.framework.Assert;
 
-public class CC_IN_Multipay extends PaymentUI_Common{
+public class Validate_MultiCity extends PaymentUI_Common{
 	public RemoteWebDriver driver;
 	
 	@Test
-	public void CC_Multipay() throws Exception {
-		String PayUrl = getPayUI("Air", "");
+	public void MultiCity_Validate() throws Exception {
+		String PayUrl = getPayUI("AirMC", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
 		Assert.assertTrue(false);

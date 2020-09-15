@@ -528,8 +528,8 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 
 			} else if (bankType.equalsIgnoreCase("Mobikwik")) {
 				elementVisible(driver, By.cssSelector("font.flR > img"), 5, "Mobikwik App");
-				if (!textPresent(driver, "Enter Mobile Number", 20)) {
-					Reporter.log("Enter Mobile Number text is not displayed");
+				if (!textPresent(driver, "We will send a six digit OTP to verify your account", 10)) {
+					Reporter.log("We will send a six digit OTP to verify your account");
 					Assert.assertTrue(false);
 				}
 			} else if (bankType.equalsIgnoreCase("HDFC PayZapp")) {

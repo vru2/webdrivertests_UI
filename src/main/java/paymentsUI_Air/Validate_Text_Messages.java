@@ -144,7 +144,7 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 		}
 	}
 	
-	@Test(priority=11)
+	/*@Test(priority=11)
 	public void Validate_CCDC_Text() throws Exception {
 		payUI_Select_PaymentType(driver, "DC");
 		Enter_CC_Details(driver, platform.value("AmexCard_Number"), platform.value("AmexCard_Month_New"), platform.value("AmexCard_Year"), platform.value("AmexCard_CVV"));
@@ -155,7 +155,7 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		textPresent_Log(driver, "Enter valid credit card number", 2);
 
-	}
+	}*/
 		
 		
 	@BeforeClass

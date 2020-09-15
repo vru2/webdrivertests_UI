@@ -26,7 +26,7 @@
 
 <test name="API Refunds ROR Counts" preserve-order="true" parallel="true">
     <classes>
-      <class name="paymentsAPI.API_ROR_RefundQ_Count"/>
+      <class name="paymentsAPI.API_ROR_RefundQ_Count"/> // not live
     </classes>
 </test>
 

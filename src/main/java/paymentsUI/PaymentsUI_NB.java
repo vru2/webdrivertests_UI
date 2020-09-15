@@ -38,7 +38,7 @@ public class PaymentsUI_NB extends PaymentNodeJS{
 			driver.get(Url);
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			elementVisible(driver,PaymentUI_CommonUtilities.paymentModes, 30);
-			validatePaymentURLLoad(driver,Url);
+			/*validatePaymentURLLoad(driver,Url);
 			validatePaymentModes(driver,PaymentUI_CommonUtilities.paymentModeNB,PaymentUI_CommonUtilities.paymentModexpath);
 			click(driver,PaymentUI_CommonUtilities.netBankingPaymentxpath);
 			convenienceText(driver,PaymentUI_CommonUtilities.convenienceTextxpath);
@@ -51,12 +51,12 @@ public class PaymentsUI_NB extends PaymentNodeJS{
 			selectItemFromList(driver,PaymentUI_CommonUtilities.citiBankTransaction,"N");
 			elementVisible(driver, PaymentUI_CommonUtilities.nbCitiSubmit, 30);
 			click(driver,PaymentUI_CommonUtilities.nbCitiSubmit);
-			validateIfPresent(driver, PaymentUI_CommonUtilities.invalid3DFailureXpath);
+			validateIfPresent(driver, PaymentUI_CommonUtilities.invalid3DFailureXpath);*/
 		
 	}
 
 
-	@Test(priority=3)
+	@Test(priority=2)
 	public void successfulNBPayment() throws Exception{
 			elementVisible(driver,PaymentUI_CommonUtilities.paymentModes, 30);
 			Thread.sleep(2000);
@@ -66,15 +66,14 @@ public class PaymentsUI_NB extends PaymentNodeJS{
 			validateIfPresent(driver, PaymentUI_CommonUtilities.popularBanks);
 			selectItemFromList(driver,PaymentUI_CommonUtilities.nbDropDown,"Citibank");
 			click(driver,PaymentUI_CommonUtilities.makePaymentbutton);
+			Thread.sleep(5000);
 			selectItemFromList(driver,PaymentUI_CommonUtilities.citiBankTransaction,"Y");
 			elementVisible(driver, PaymentUI_CommonUtilities.nbCitiSubmit, 30);
 			click(driver,PaymentUI_CommonUtilities.nbCitiSubmit);
 			Thread.sleep(5000);
 			driver.get(Url);
 			validateIfPresent(driver,PaymentUI_CommonUtilities.paymentSuccessHeaderTextXpath);
-			validateIfPresent(driver,PaymentUI_CommonUtilities.paymentSuccessMessageTextXpath);
-			
-		
+			validateIfPresent(driver,PaymentUI_CommonUtilities.paymentSuccessMessageTextXpath);		
 	}
 
 	/*@Test(priority=4)

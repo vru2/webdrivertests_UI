@@ -962,6 +962,33 @@ public boolean GDS_Flight, B2B_GDS_Flight = false;
 		}
 
 	}
+	
+	public void textNotPresent_List(RemoteWebDriver driver, By by, String Text) throws Exception {
+		elementVisible(driver, by, 5);
+		boolean elementAvailable = false;
+		List<WebElement> we = driver.findElements(by);
+		for (WebElement WebEle : we) {
+			String elementText = WebEle.getText();
+			if (elementText.equalsIgnoreCase(Text)) {
+				if (!WebEle.isDisplayed()) {
+					Thread.sleep(1000);
+				}
+
+				JavascriptExecutor jse = (JavascriptExecutor) driver;
+				jse.executeScript("window.scrollBy(0, 150)", "");
+				elementAvailable = true;
+				Thread.sleep(1000);
+				addLog(Text + " : is not displayed in the List");
+				Assert.assertTrue(false);
+				break;
+			}
+		}
+		if (!elementAvailable) {
+			addLog(Text + " : is not displayed in the List");
+			//Assert.assertTrue(false);
+		}
+
+	}
 
 	public void scrollToPageTop(RemoteWebDriver driver) throws Exception {
 		((JavascriptExecutor) driver).executeScript("window.scrollBy(0,-1000)", "");

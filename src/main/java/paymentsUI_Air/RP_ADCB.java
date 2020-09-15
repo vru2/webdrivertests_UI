@@ -18,8 +18,10 @@ public class RP_ADCB extends PaymentUI_Common{
 		String PayUrl = getPayUI("AirAE", "AE");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		textNotPresent_List(driver, getObjectPayment("PayUI_Pay_Tabs"), "Net banking");
 		payUI_Select_PaymentType(driver, "ADCB");
-		textPresent_Log(driver, "Enter your ADCB card details", 5);
+		textPresent_Log(driver, "Enter your ADCB card details", 5);		
+		textPresent_Log(driver, "ADCB card no.", 5);
 		validate_Currency(driver, "", "AED");
 		payUI_Enter_PaymentDetails(driver, "ADCB", "");
 		//payUI_Mock_ConfirmationPage(driver, PayUrl);

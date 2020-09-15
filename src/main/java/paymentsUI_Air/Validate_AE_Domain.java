@@ -57,18 +57,9 @@ public class Validate_AE_Domain extends PaymentUI_Common{
 		textPresent_Log(driver, "Includes a convenience fee of", 5);
 	}
 
-	@Test(priority=3)
-	public void Validate_AE_Text_NB() throws Exception {
-		payUI_Select_PaymentType(driver, "NB");
-		textPresent_Log(driver, "Popular Banks", 5);	
-		textPresent_Log(driver, "All Other Banks", 1);	
-		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));		
-		textPresent_Log(driver, "Please select your bank", 5);	
-		textPresentInElement(driver, getObjectPayment("PayUI_Convinence_Fee"), "Includes a convenience fee of ₹ 200.00", 1);
-		textPresent_Log(driver, "Includes a convenience fee of", 5);
-	}
 
-	@Test(priority=4)
+
+	@Test(priority=3)
 	public void Validate_AE_TermandCondition() throws Exception {
 		safeClick(driver, getObjectPayment("PayUI_I_Agree_CheckBox"));
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));		
@@ -80,7 +71,7 @@ public class Validate_AE_Domain extends PaymentUI_Common{
 		}
 	}
 		
-	@Test(priority=5)
+	@Test(priority=4)
 	public void Validate_AE_Text_Conv_Fee_Pricing() throws Exception {
 		payUI_Select_PaymentType(driver, "CC");
 		textPresentInElement(driver, getObjectPayment("PayUI_Convinence_Fee"), "Includes a convenience fee of ₹ 200.00", 1);
@@ -92,10 +83,10 @@ public class Validate_AE_Domain extends PaymentUI_Common{
 		}
 	}
 
-	@Test(priority=6)
+	@Test(priority=5)
 	public void Validate_AE_Itinerary() throws Exception {
 		String ItineraryDetails = getText(driver, getObjectPayment("PayUI_Itinerary_Details"));
-		if(!(ItineraryDetails.contains("Flight Itinerary")&&ItineraryDetails.contains("Bangalore")&&ItineraryDetails.contains("Mumbai")&&ItineraryDetails.contains("Travellers (1)"))) {
+		if(!(ItineraryDetails.contains("Flight itinerary")&&ItineraryDetails.contains("Bangalore")&&ItineraryDetails.contains("Mumbai")&&ItineraryDetails.contains("Travellers (1)"))) {
 			Reporter.log("Flight Itinerary");
 			Assert.assertTrue(false);
 		}
@@ -105,14 +96,14 @@ public class Validate_AE_Domain extends PaymentUI_Common{
 		textPresent(driver, "Sachin Reddy", 2); */
 	}
 	
-	@Test(priority=7)
+	@Test(priority=6)
 	public void Validate_AE_Expressway() throws Exception {		
 		safeClick(driver, getObjectPayment("PayUI_Expressway_CheckBox"));
 		textPresent_Log(driver, "2006–2020 Cleartrip Pvt. Ltd", 1);		
 		textPresent_Log(driver, "Save this card and make single-click payments", 1);	
 	}
 	
-	@Test(priority=8)
+	@Test(priority=7)
 	public void Validate_AE_Misc() throws Exception {		
 		elementPresent_log(driver, getObjectPayment("PayUI_Cleartrip_Logo"), "Cleartrip ", 2);
 		textPresent_Log(driver, "2006–2020 Cleartrip Pvt. Ltd", 1);	

@@ -61,10 +61,13 @@ public class PaymentUI_Common extends PaymentNodeJS{
 			PayType = "UPI";
 			break;
 		case "ADCB":
-			PayType = "ADCB TouchPoints";
+			PayType = "ADCB touchPoints";
 			break;
 		case "SC":
 			PayType = "Stored Card";
+			break;
+		case "KNET":
+			PayType = "KNET";
 			break;
 		default:
 			PayType = "Credit Card";
@@ -189,6 +192,9 @@ public class PaymentUI_Common extends PaymentNodeJS{
 			break;
 		case "ADCB":
 			payUI_Select_ADCB(driver, BankName);
+			break;
+		case "KNET":
+			payUI_Select_KNET(driver, BankName);
 			break;
 		default:
 			break;
@@ -323,7 +329,7 @@ public class PaymentUI_Common extends PaymentNodeJS{
 		if(common.value("Bento_Payment").equalsIgnoreCase("true")) {
 	//	safeType(driver, getObjectPayment("PaymentPage_ADCB_OTP"), platform.value("ADCBCard_OTP"));
 		
-		//safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
+		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		Reporter.log("Make Payment button is Clicked");
 		if(textPresent(driver, "Internal server error", 5)) {
 			Reporter.log("Internal server error is displayed after Clicking Make Payment");
@@ -334,6 +340,18 @@ public class PaymentUI_Common extends PaymentNodeJS{
 		}
 		}
 		}
+	
+	public void payUI_Select_KNET(RemoteWebDriver driver, String BankName) throws Exception {		
+		elementVisible(driver, getObjectPayment("PaymentPage_Knet_RadioButton"), 5);
+		safeClick(driver, getObjectPayment("PaymentPage_Knet_RadioButton"));
+		elementPresent_log(driver, getObjectPayment("PaymentPage_Knet_Image"), "", 1);
+
+		if(common.value("Bento_Payment").equalsIgnoreCase("true")) {		
+		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
+		Reporter.log("Make Payment button is Clicked");
+		}
+		
+	}
 	
 	public void payUI_Select_CARD_PWA(RemoteWebDriver driver, String BankName) throws Exception {		
 		elementVisible(driver, getObjectPayment("PWA_PaymentPage_CC_Number"), 5);

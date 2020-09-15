@@ -36,7 +36,6 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 			Reporter.log("Error banner is not closed");	
 			Assert.assertTrue(false);
 		}
-		
 	}
 
 	@Test(priority=2)
@@ -55,8 +54,8 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 	@Test(priority=3)
 	public void Validate_Text_NB() throws Exception {
 		payUI_Select_PaymentType(driver, "NB");
-		textPresent_Log(driver, "Popular Banks", 2);	
-		textPresent_Log(driver, "All Other Banks", 1);	
+		textPresent_Log(driver, "Popular banks", 2);	
+		textPresent_Log(driver, "All other banks", 1);	
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));		
 		textPresent_Log(driver, "Please select your bank", 5);	
 		textPresent_Log(driver, "Includes a convenience fee of", 1);
@@ -111,7 +110,7 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 	public void Validate_Itinerary() throws Exception {
 		payUI_Select_PaymentType(driver, "CC");
 		String ItineraryDetails = getText(driver, getObjectPayment("PayUI_Itinerary_Details"));
-		if(!(ItineraryDetails.contains("Flight Itinerary")&&ItineraryDetails.contains("Bangalore")&&ItineraryDetails.contains("Mumbai")&&ItineraryDetails.contains("Travellers (5)")&&ItineraryDetails.contains("+1 travellers"))) {
+		if(!(ItineraryDetails.contains("Flight itinerary")&&ItineraryDetails.contains("Bangalore")&&ItineraryDetails.contains("Mumbai")&&ItineraryDetails.contains("Travellers (5)")&&ItineraryDetails.contains("+1 travellers"))) {
 			Reporter.log("Flight Itinerary and other detail text not diplayed");
 			Assert.assertTrue(false);
 		}

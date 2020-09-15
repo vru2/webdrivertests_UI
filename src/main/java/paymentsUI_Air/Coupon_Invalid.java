@@ -28,7 +28,7 @@ public class Coupon_Invalid extends PaymentUI_Common{
 			Assert.assertTrue(false);
 		}
 		elementVisible(driver, getObjectPayment("PayUI_NB_DropDown"), 20);
-		textPresent_Log(driver, "Popular Banks", 1);
+		textPresent_Log(driver, "Popular banks", 1);
 		safeSelect(driver, getObjectPayment("PayUI_NB_DropDown"), "Citibank");
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		/*textPresent_Log(driver, "Hmm, something's not right", 5);
@@ -47,15 +47,15 @@ public class Coupon_Invalid extends PaymentUI_Common{
 		}
 		safeClickList(driver, getObjectPayment("PayUI_Pay_Tabs"), "Net Banking");
 		elementVisible(driver, getObjectPayment("PayUI_NB_DropDown"), 20);
-		textPresent_Log(driver, "Popular Banks", 1);
+		textPresent_Log(driver, "Popular banks", 1);
 		safeSelect(driver, getObjectPayment("PayUI_NB_DropDown"), "Citibank");
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		if(elementVisible(driver, By.xpath("//div[@id='root']/main/div/section/div/div/div/div/div/div/div/div/div"), 10)) {
 			//Assert.assertTrue(false);
 		}
 		safeClick(driver, By.xpath("//div[@id='root']/main/div/section/div/div/div/div/div/div/div/div[2]/button"));
-		payUI_BankPage(driver, "Citibank");
-		payUI_Mock_ConfirmationPage(driver, PayUrl); 
+		/*payUI_BankPage(driver, "Citibank");
+		payUI_Mock_ConfirmationPage(driver, PayUrl); */
 	}
 	
 	@BeforeClass

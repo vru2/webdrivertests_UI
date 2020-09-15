@@ -20,10 +20,10 @@ public class Knet_KW extends PaymentUI_Common{
 		String PayUrl = getPayUI("AirKW", "KW");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
-		payUI_Select_PaymentType(driver, "NB");
-		Assert.assertTrue(false);// validate the Knet logo
-		payUI_Enter_PaymentDetails(driver, "NB", "Knet");
-		Thread.sleep(5000);
+		//payUI_Select_PaymentType(driver, "NB");
+		//Assert.assertTrue(false);// validate the Knet logo
+		payUI_Select_PaymentType(driver, "KNET");
+		payUI_Enter_PaymentDetails(driver, "KNET", "KNET");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
 	}
 

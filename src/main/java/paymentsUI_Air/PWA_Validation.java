@@ -21,7 +21,9 @@ public class PWA_Validation extends PaymentUI_Common{
 		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
-		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 5);
+
+		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 20);
+		textPresent_Log(driver, "Select payment option", 1);
 		payUI_Select_PaymentType_PWA(driver, "DEBIT/CREDIT CARDS");
 		safeClick(driver, getObjectPayment("PWA_PaymentPage_SaveCard"));
 		safeType(driver, getObjectPayment("PWA_PaymentPage_CC_Number"),  platform.value("MasterCard_Number"));
@@ -59,12 +61,19 @@ public class PWA_Validation extends PaymentUI_Common{
 		elementPresent(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_Icon"));
 		safeClick(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_Icon"));
 		elementPresent(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_closeIcon"));
-		textPresent_Log(driver, "Fare BreakUp", 5);
+		textPresent_Log(driver, "Fare breakUp", 5);
 		//textPresent_Log(driver, "Discounts", 5);
 		textPresent_Log(driver, "Convenience Fee", 1);	
+		textPresent_Log(driver, "Flexifly", 1);	
+		textPresent_Log(driver, "Travel insurance", 1);	
 		textPresent_Log(driver, "Total", 5);
 		textPresent_Log(driver, "You pay", 5);
 		safeClick(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_closeIcon"));		
+		if(textPresent(driver, "Convenience Fee", 1)) {
+			Reporter.log("Close button is clicked");
+			Assert.assertTrue(false);
+		}
+		
 	}
 	
 	@Test (priority=3)

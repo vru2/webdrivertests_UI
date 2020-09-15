@@ -22,6 +22,7 @@ public class Coupon extends PaymentUI_Common{
 		textPresent_Log(driver, "Coupon code (DOMOW)", 5);
 		payUI_Enter_PaymentDetails(driver, "CC", "MASTER");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
+	
 	}
 	
 	@BeforeClass

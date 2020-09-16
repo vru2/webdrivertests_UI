@@ -26,7 +26,7 @@ public class RP_PayBack_Full_Validation_Only extends PaymentUI_Common{
 
 	
 		textPresent_Log(driver, "Includes a convenience fee of ", 1);
-		String YouPay = getText(driver, By.cssSelector("p.fw-700.fs-5.flex.flex-end"));
+		String YouPay = getText(driver, By.cssSelector("p.fw-700.fs-6.flex.flex-end"));
 
 		
 		if (!YouPay.contains("150")) {
@@ -34,7 +34,7 @@ public class RP_PayBack_Full_Validation_Only extends PaymentUI_Common{
 			Assert.assertTrue(false);
 		}else Reporter.log("Youpay - contain 150 rs");
 		
-		String Total = getText(driver, By.cssSelector("span.fs-20.fw-700"));
+		String Total = getText(driver, By.cssSelector("span.fs-6.fw-700"));
 		if (!Total.contains("150")) {
 			Reporter.log("Total doesn't contain 150 rs");
 			Assert.assertTrue(false);
@@ -44,6 +44,7 @@ public class RP_PayBack_Full_Validation_Only extends PaymentUI_Common{
 			Reporter.log("ConvFee doesn't contain 150 rs");
 			Assert.assertTrue(false);
 		}else Reporter.log("ConvFee - contain 150 rs");
+		textPresent_Log(driver, "Enter your credit card details"	, 1);
 		payUI_Select_PaymentType(driver, "NB");
 		payUI_Select_PaymentType(driver, "CC");
 		payUI_Select_PaymentType(driver, "DC");

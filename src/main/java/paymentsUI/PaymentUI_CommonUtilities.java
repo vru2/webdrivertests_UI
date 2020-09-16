@@ -98,9 +98,9 @@ public class PaymentUI_CommonUtilities {
 	public static String validAmexCvv= "1234";
 	public static String invalidAmexCvv= "4321";
 	protected static String paymentModexpath= "//p[text()='paymentmode']";
-	protected static String paymentModeCC= "Credit Card";
-	protected static String paymentModeDC= "Debit Card";
-	protected static String paymentModeNB= "Net Banking";
+	protected static String paymentModeCC= "Credit card";
+	protected static String paymentModeDC= "Debit card";
+	protected static String paymentModeNB= "Net banking";
 	protected static String paymentModeUPI= "UPI";
 	protected static String paymentModeWallet="Wallets";
 	protected static String paymentModes="//ul[@id='paymentModeTab']";

@@ -18,6 +18,8 @@ public class PWA_CC_US extends PaymentUI_Common{
 		String PayUrl = getPayUI("AirUS", "US");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 20);
+		textNotPresent_List(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), "NET BANKING");	
 		payUI_Select_PaymentType_PWA(driver, "DEBIT/CREDIT CARDS");
 		validate_Currency_PWA(driver, "US", "USD");
 		payUI_Enter_PaymentDetails_PWA(driver, "DEBIT/CREDIT CARDS", "MASTER");		

@@ -24,12 +24,12 @@ public class PWA_Amendment extends PaymentUI_Common{
 		elementPresent(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_Icon"));
 		safeClick(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_Icon"));
 		elementPresent(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_closeIcon"));
-		textPresent_Log(driver, "Fare BreakUp", 5);
-		textPresent_Log(driver, "Amend Charges", 1);	
+		textPresent_Log(driver, "Fare breakUp", 5);
+		textPresent_Log(driver, "Amend charges", 1);	
 		textPresent_Log(driver, "Total", 1);
 		textPresent_Log(driver, "You pay", 1);
-		textPresent_Log(driver, "Paid Before", 1);
-		if(textPresent(driver, "Convenience Fee", 1)) {
+		textPresent_Log(driver, "Paid before", 1);
+		if(textPresent(driver, "Convenience fee", 1)) {
 			Reporter.log("Conv fee is displayed");
 			Assert.assertTrue(false);
 		}

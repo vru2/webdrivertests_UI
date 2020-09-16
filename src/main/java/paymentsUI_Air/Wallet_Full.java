@@ -22,7 +22,7 @@ public class Wallet_Full extends PaymentUI_Common{
 		driver.get(PayUrl);
 		driver.manage().addCookie(cookie_Full_Wallet);
 		refreshPage(driver);
-		textPresent_Log(driver, "Paying completely via Cleartrip wallet", 20);
+		textPresent_Log(driver, "Paying completely via Cleartrip wallet!", 20);
 		textPresent_Log(driver, "Utilize the balance", 1);
 		textPresent_Log(driver, " in your wallet as a complete payment for this booking", 1);
 		if(elementVisible(driver, getObjectPayment("PayUI_Pay_Tabs"), 1)) {
@@ -44,7 +44,7 @@ public class Wallet_Full extends PaymentUI_Common{
 			Reporter.log("Cleartrip Wallet text is not displayed in price breakup : "+CT_WalletPrice_Text);
 			Assert.assertTrue(false);
 		}else Reporter.log("Cleartrip Wallet text is  displayed in price breakup : ");
-		String YouPay = getText(driver, By.cssSelector("p.fw-700.fs-5.flex.flex-end"));
+		String YouPay = getText(driver, By.cssSelector("p.fw-700.fs-6.flex.flex-end"));
 		if (!YouPay.contains("0")) {
 			Reporter.log("Youpay doesn't contain 0 rs");
 			Assert.assertTrue(false);
@@ -59,7 +59,7 @@ public class Wallet_Full extends PaymentUI_Common{
 			Assert.assertTrue(false);
 		}else Reporter.log("Includes a convenience fee of is displayed");
 	
-		String Total = getText(driver, By.cssSelector("span.fs-20.fw-700"));
+		String Total = getText(driver, By.cssSelector("span.fs-6.fw-700"));
 		if (!Total.contains("0")) {
 			Reporter.log("Total doesn't contain 0 rs");
 			Assert.assertTrue(false);

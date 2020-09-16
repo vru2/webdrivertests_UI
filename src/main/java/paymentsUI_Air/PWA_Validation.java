@@ -80,6 +80,12 @@ public class PWA_Validation extends PaymentUI_Common{
 	public void PWA_Validate_ItineraryValidation() throws Exception {
 		refreshPage(driver);
 		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Itineray"),10);
+		String ItineraryDetails_TripText = getText(driver, getObjectPayment("PWA_PaymentPage_Itineray_YourTrip_text"));
+		Assert.assertEquals(ItineraryDetails_TripText, "Your trip details");
+		
+		String ItineraryDetails_DateText = getText(driver, getObjectPayment("PWA_PaymentPage_Itineray_TravelDate_text"));
+		Assert.assertEquals(ItineraryDetails_DateText, "24 Oct - 24 Oct | John Miller+4");
+		
 		safeClick(driver, getObjectPayment("PWA_PaymentPage_Itineray"));
 		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Itineray_Header"),10);
 		String itineraryText=getText(driver, getObjectPayment("PWA_PaymentPage_Itineray_Header"));

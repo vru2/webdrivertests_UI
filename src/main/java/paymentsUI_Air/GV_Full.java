@@ -34,15 +34,22 @@ public class GV_Full extends PaymentUI_Common{
 			Reporter.log("CC tab is displayed");
 			Assert.assertTrue(false);
 		}
+		
 		Reporter.log("Non of the payment types are displayed for full GV");
 		textPresent_Log(driver, "I understand and agree to the rules and restrictions of this fare", 2);
+		textPresent_Log(driver, "Booking policy the Privacy Policy and the Terms & Conditions of Cleartrip", 2);
 		textPresent_Log(driver, "Includes a convenience fee of ", 1);
 		Reporter.log("Includes a convenience fee of text is displayed");
-		String YouPay = getText(driver, By.cssSelector("p.fw-700.fs-5.flex.flex-end"));
+		String YouPay = getText(driver, By.cssSelector("p.fw-700.fs-6.flex.flex-end")); 
 		if (!YouPay.contains("0")) {
 			Reporter.log("Youpay doesn't contain 0 rs");
 			Assert.assertTrue(false);
-		}else Reporter.log("Youpay  contain 0 rs");
+		}
+		if (YouPay.contains("150")) {
+			Reporter.log("Youpay does contain 150 rs");
+			Assert.assertTrue(false);
+		}
+		 Reporter.log("Youpay  contain 0 rs");
 		String ConvFee = getText(driver, By.cssSelector("p.note-block__message.fs-2"));
 		if (!ConvFee.contains("150")) {
 			Reporter.log("ConvFee doesn't contain 150 rs");
@@ -52,13 +59,13 @@ public class GV_Full extends PaymentUI_Common{
 			Reporter.log("Includes a convenience fee of text not displayed");
 			Assert.assertTrue(false);
 		}else Reporter.log("Includes a convenience fee of text is displayed");
-		String Total = getText(driver, By.cssSelector("span.fs-20.fw-700"));
+		String Total = getText(driver, By.cssSelector("span.fs-6.fw-700"));
 		if (!Total.contains("0")) {
 			Reporter.log("Total doesn't contain 0 rs");
 			Assert.assertTrue(false);
 		}else Reporter.log("Total contain 0 rs");
 
-		Assert.assertEquals("Complete Booking", getText(driver, getObjectPayment("PayUI_Make_Payment_Btn")));
+		Assert.assertEquals("Complete booking", getText(driver, getObjectPayment("PayUI_Make_Payment_Btn")));
 		
 		if(common.value("Bento_Payment").equalsIgnoreCase("true")) {			
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));

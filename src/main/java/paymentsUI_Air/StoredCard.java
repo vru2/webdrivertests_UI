@@ -25,13 +25,14 @@ public class StoredCard extends PaymentUI_Common{
 		driver.manage().addCookie(cookie_Parl_Wallet);
 		refreshPage(driver);
 		String storedCard = getText(driver, By.xpath("//li/p"));
-		if(!storedCard.equals("Stored Card")) {
+		if(!storedCard.equals("Stored card")) {
 			Reporter.log("Stored Card tab text is not displayed");
 			Assert.assertTrue(false);
 		}
 		textPresent_Log(driver, "Pay with your stored cards", 20);
 		textPresent_Log(driver, "Enter CVV here", 1);
-		textPresent_Log(driver, "You card details are stored as part of your Express Checkout profile", 1);
+		textPresent_Log(driver, "You card details are stored as part of your Express Checkout profile.", 1);
+		textPresent_Log(driver, "Continue with payment by simply entering CVV.", 1);		
 		textPresent_Log(driver, "Includes a convenience fee of", 1);
 		elementAssert(driver, getObjectPayment("PayUI_StoredCard_Image"), 1);
 		//elementAssert(driver, getObjectPayment("PayUI_StoredCard_Complete_CSS"), 1);
@@ -49,9 +50,10 @@ public class StoredCard extends PaymentUI_Common{
 		}if(!Profile_EmailID.contains("ct_wallet_partial@cleartrip.com")) {
 			Reporter.log("Profile_EmailID is : "+Profile_EmailID);
 			Assert.assertTrue(false);
-		safeType(driver, getObjectPayment("PayUI_StoredCard_CVV"), "123");
 		}
-
+		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
+		textPresent_Log(driver, "Please enter a valid cvv", 5);
+		safeType(driver, getObjectPayment("PayUI_StoredCard_CVV"), "123");
 		if(common.value("Bento_Payment").equalsIgnoreCase("true")) {
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		Reporter.log("Make Payment button is Clicked");

@@ -18,6 +18,7 @@ public class CC_OM extends PaymentUI_Common{
 		String PayUrl = getPayUI("AirOM", "OM");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		textNotPresent_List( driver, getObjectPayment("PayUI_Pay_Tabs"), "Net banking");
 		payUI_Select_PaymentType(driver, "CC");
 		validate_Currency(driver, "", "OMR");
 		payUI_Enter_PaymentDetails(driver, "CC", "MASTER");

@@ -37,27 +37,27 @@ public class API_RewardPayback extends API_PaymentCommon1  {
 		Response res = reward("PAYBACK_CheckBalance_card", "");
 		validation_RewardPayback("PAYBACK_CheckBalance_card", res);
 	}
-
-	@Test(dependsOnMethods= {"RewardPayback_CheckBalance_Card"})
+	
+	@Test(priority=5, dependsOnMethods= {"RewardPayback_CheckBalance_Card"})
 	public void RewardPayback_ValidateCardDetails() throws Exception{
         Response res = reward("PAYBACK_Validate", "");
         validation_RewardPayback("PAYBACK_Validate", res);
 	}
 
 
-	@Test(dependsOnMethods= {"RewardPayback_ValidateCardDetails"})
+	@Test(priority=6, dependsOnMethods= {"RewardPayback_ValidateCardDetails"})
 	public void RewardPayback_redeemPoints() throws Exception{
 		Response res = reward("PAYBACK_RedeemPoints", "");
 		validation_RewardPayback("PAYBACK_RedeemPoints", res);
 	}
 
-	@Test(dependsOnMethods= {"RewardPayback_redeemPoints"})
+	@Test(priority=7, dependsOnMethods= {"RewardPayback_redeemPoints"})
 	public void RewardPayback_CheckEarnPoints() throws Exception{
 		Response res = reward("PAYBACK_CheckEarnPoints", "");
 		validation_RewardPayback("PAYBACK_CheckEarnPoints", res);
 	}
 
-	@Test(dependsOnMethods = { "RewardPayback_redeemPoints" })
+	@Test(priority=8, dependsOnMethods = { "RewardPayback_redeemPoints" })
 	public void RewardPayback_refundPoints() throws Exception{
 		Response res = reward("PAYBACK_RefundPoints", "");
 		validation_RewardPayback("PAYBACK_RefundPoints", res);

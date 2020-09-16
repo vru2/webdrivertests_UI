@@ -108,7 +108,8 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 
 	@Test(priority=8)
 	public void Validate_Itinerary() throws Exception {
-		payUI_Select_PaymentType(driver, "CC");
+		payUI_Select_PaymentType(driver, "CC");	
+		
 		String ItineraryDetails = getText(driver, getObjectPayment("PayUI_Itinerary_Details"));
 		if(!(ItineraryDetails.contains("Flight itinerary")&&ItineraryDetails.contains("Bangalore")&&ItineraryDetails.contains("Mumbai")&&ItineraryDetails.contains("Travellers (5)")&&ItineraryDetails.contains("+1 travellers"))) {
 			Reporter.log("Flight Itinerary and other detail text not diplayed");

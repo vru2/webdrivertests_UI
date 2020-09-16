@@ -37,6 +37,15 @@ public class Coupon_Invalid extends PaymentUI_Common{
 			Reporter.log("Hmm, something's not right - Coupin api not working");
 			Assert.assertTrue(false);
 		}*/
+
+		textPresent_Log(driver, "Coupon not applicable", 10);
+		String Coupon_Invalid_Price = getText(driver, By.xpath("//div/div/div/div/div/div/div/div/div[2]"));
+		
+		if(!Coupon_Invalid_Price.contains("800")) {
+			Reporter.log("800 rs is not displayed");
+			Assert.assertTrue(false);
+		}	
+
 		textPresent_Log(driver, "Coupon code DOMOW is not applicable on the chosen payment mode. Please update card details to avail benefits or proceed without coupon. Your updated price is", 5);
 		safeClick(driver, By.xpath("//div[@id='root']/main/div/section/div/div/div/div/div/div/div/div[2]/div"));
 		if(!elementVisible(driver, getObjectPayment("PayUI_Pay_Tabs"), 10)) {
@@ -49,7 +58,13 @@ public class Coupon_Invalid extends PaymentUI_Common{
 		elementVisible(driver, getObjectPayment("PayUI_NB_DropDown"), 20);
 		textPresent_Log(driver, "Popular banks", 1);
 		safeSelect(driver, getObjectPayment("PayUI_NB_DropDown"), "Citibank");
+		String ChangePayment_Text= getText(driver, By.cssSelector("div.c-blue.fs-body.fw-500.ml-6.mr-6.c-pointer"));
+
+		String ContinueWithout_Text= getText(driver, By.xpath("//button"));
+
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
+		Assert.assertEquals(ChangePayment_Text, "Change payment mode");
+		Assert.assertEquals(ContinueWithout_Text, "Book without Coupon");
 		if(elementVisible(driver, By.xpath("//div[@id='root']/main/div/section/div/div/div/div/div/div/div/div/div"), 10)) {
 			//Assert.assertTrue(false);
 		}

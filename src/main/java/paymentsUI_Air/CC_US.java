@@ -18,6 +18,7 @@ public class CC_US extends PaymentUI_Common{
 		String PayUrl = getPayUI("AirUS", "US");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		textNotPresent_List( driver, getObjectPayment("PayUI_Pay_Tabs"), "Net banking");
 		payUI_Select_PaymentType(driver, "CC");
 		validate_Currency(driver, "", "USD");
 		payUI_Enter_PaymentDetails(driver, "CC", "MASTER");

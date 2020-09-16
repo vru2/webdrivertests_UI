@@ -551,7 +551,7 @@ public class PaymentUI_Common extends PaymentNodeJS{
 
 	public void payUI_Select_NB_PWA(RemoteWebDriver driver, String BankName) throws Exception {		
 			elementVisible(driver, getObjectPayment("PWA_PaymentPage_Select_NB"), 5);
-			textPresent_Log(driver, "Choose Another Bank", 1);
+			textPresent_Log(driver, "Choose another bank", 1);
 			//textPresent_Log(driver, "", 1);
 			if(BankName.contains("CAPTCHA")) {
 				safeClick(driver, getObjectPayment("PWA_PaymentPage_Select_NB"));

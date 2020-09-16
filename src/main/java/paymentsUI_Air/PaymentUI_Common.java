@@ -519,7 +519,7 @@ public class PaymentUI_Common extends PaymentNodeJS{
 
 	public void payUI_Select_NB(RemoteWebDriver driver, String BankName) throws Exception {		
 			elementVisible(driver, getObjectPayment("PayUI_NB_DropDown"), 5);
-			textPresent_Log(driver, "Popular Banks", 1);
+			textPresent_Log(driver, "Popular banks", 1);
 			//textPresent_Log(driver, "", 1);
 			if(BankName.contains("CAPTCHA")) {
 				safeSelect(driver, getObjectPayment("PayUI_NB_DropDown"), "Citibank");

@@ -28,7 +28,7 @@ public class CC_KW extends PaymentUI_Common{
 			Assert.assertTrue(false);			
 		}
 		validate_Currency(driver, "", "KWD");
-		payUI_Enter_PaymentDetails(driver, "CC", "MASTER");
+		payUI_Enter_PaymentDetails(driver, "CC", "MASTER","");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
 	}
 

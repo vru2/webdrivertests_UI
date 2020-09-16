@@ -29,7 +29,7 @@ public class PWA_Coupon extends PaymentUI_Common{
 		payUI_Select_PaymentType_PWA(driver, "NET BANKING");
 		textPresent(driver, "Choose another bank", 5);
 		safeClick(driver, getObjectPayment("PWA_PaymentPage_Select_NB"));
-		safeType(driver, getObjectPayment("PWA_NETBANKING_Page_NB_TextBox"), "Citibank");
+		safeType(driver, getObjectPayment("PWA_NETBANKING_Page_NB_TextBox"), "Axis Bank");
 		safeClick(driver, getObjectPayment("PWA_NETBANKING_Page_NB_AJAX"));
 		Thread.sleep(5000);
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn2"));

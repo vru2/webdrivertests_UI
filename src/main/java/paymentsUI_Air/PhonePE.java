@@ -20,7 +20,7 @@ public class PhonePE extends PaymentUI_Common{
 		driver.get(PayUrl);
 		payUI_Select_PaymentType(driver, "UPI");
 		textPresent(driver, "Select UPI partner to make your payment", 5);
-		payUI_Enter_PaymentDetails(driver, "UPI", "PhonePE");
+		payUI_Enter_PaymentDetails(driver, "UPI", "PhonePE","");
 		//payUI_Mock_ConfirmationPage(driver, PayUrl);
 	}
 

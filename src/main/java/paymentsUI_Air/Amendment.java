@@ -47,7 +47,7 @@ public class Amendment extends PaymentUI_Common{
 			Assert.assertTrue(false);
 		}	
 		textPresent_Log(driver, "Paid before", 1);
-		payUI_Enter_PaymentDetails(driver, "NB", "Citibank");
+		payUI_Enter_PaymentDetails(driver, "NB", "Axis Bank","");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
 	}
 

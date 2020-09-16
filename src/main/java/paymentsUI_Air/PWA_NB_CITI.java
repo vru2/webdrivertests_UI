@@ -19,7 +19,7 @@ public class PWA_NB_CITI extends PaymentUI_Common{
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
 		payUI_Select_PaymentType_PWA(driver, "NET BANKING");
-		payUI_Enter_PaymentDetails_PWA(driver, "NET BANKING", "CITIBANK");
+		payUI_Enter_PaymentDetails_PWA(driver, "NET BANKING", "Axis Bank");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
 	}
 

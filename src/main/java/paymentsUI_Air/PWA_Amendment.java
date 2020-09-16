@@ -35,7 +35,7 @@ public class PWA_Amendment extends PaymentUI_Common{
 		}
 		safeClick(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_closeIcon"));	
 		payUI_Select_PaymentType_PWA(driver, "NET BANKING");
-		payUI_Enter_PaymentDetails_PWA(driver, "NET BANKING", "CITIBANK");
+		payUI_Enter_PaymentDetails_PWA(driver, "NET BANKING", "Axis Bank");
 	}
 
 	@BeforeClass

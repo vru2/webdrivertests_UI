@@ -19,7 +19,7 @@ public class NB_HDFC extends PaymentUI_Common{
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);	   
 		payUI_Select_PaymentType(driver, "NB");
-		payUI_Enter_PaymentDetails(driver, "NB", "HDFC Bank");
+		payUI_Enter_PaymentDetails(driver, "NB", "HDFC Bank","");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
 	}	
 

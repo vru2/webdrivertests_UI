@@ -37,7 +37,9 @@ public class GV_Full extends PaymentUI_Common{
 		
 		Reporter.log("Non of the payment types are displayed for full GV");
 		textPresent_Log(driver, "I understand and agree to the rules and restrictions of this fare", 2);
-		textPresent_Log(driver, "Booking policy the Privacy Policy and the Terms & Conditions of Cleartrip", 2);
+		textPresent_Log(driver, "Booking policy", 2);
+		textPresent_Log(driver, "Privacy Policy", 1);
+		textPresent_Log(driver, "Terms", 1);		
 		textPresent_Log(driver, "Includes a convenience fee of ", 1);
 		Reporter.log("Includes a convenience fee of text is displayed");
 		String YouPay = getText(driver, By.cssSelector("p.fw-700.fs-6.flex.flex-end")); 

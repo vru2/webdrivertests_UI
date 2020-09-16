@@ -20,7 +20,7 @@ public class NB_CITI_PopularBank extends PaymentUI_Common{
 		driver.get(PayUrl);	   
 		payUI_Select_PaymentType(driver, "NB");
 		//validate_Currency(driver, "", "INR");
-		payUI_Enter_PaymentDetails(driver, "NB", "CitibankPopular");
+		payUI_Enter_PaymentDetails(driver, "NB", "AxisbankPopular","");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
 	}	
 

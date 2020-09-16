@@ -32,7 +32,7 @@ public class PaymentUI_ErrorValidationUPIWalletAndNB extends PaymentNodeJS {
 
 	@Test
 	public void errorValidations() throws Exception{
-		try{
+	
 			driver=(RemoteWebDriver) getDriver(driver);
 			driver.manage().deleteAllCookies(); 
 			driver.get(Url);		
@@ -43,11 +43,7 @@ public class PaymentUI_ErrorValidationUPIWalletAndNB extends PaymentNodeJS {
 			click(driver,PaymentUI_CommonUtilities.nbModeXpath);
 			click(driver,PaymentUI_CommonUtilities.makePaymentbutton);
 			validateIfPresent(driver,PaymentUI_CommonUtilities.nbErrorTextXpath);
-		}
-		catch(Exception e){
-			Reporter.log("Exception is"+e);
-			Assert.assertTrue(false);
-		}
+		
 	}
 
 	@AfterMethod (alwaysRun = true)

@@ -20,7 +20,7 @@ public class Coupon extends PaymentUI_Common{
 		driver.get(PayUrl);
 		payUI_Select_PaymentType(driver, "CC");
 		textPresent_Log(driver, "Coupon code (DOMOW)", 5);
-		payUI_Enter_PaymentDetails(driver, "CC", "MASTER");
+		payUI_Enter_PaymentDetails(driver, "CC", "MASTER","");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
 	
 	}

@@ -20,11 +20,11 @@ public class NB_CITI_Retry extends PaymentUI_Common{
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);	   
 		payUI_Select_PaymentType(driver, "NB");
-		payUI_Enter_PaymentDetails(driver, "NB", "CAPTCHA" );
+		payUI_Enter_PaymentDetails(driver, "NB", "CAPTCHA","" );
 		//textPresent_Log(driver, "Oops! Your payment failed", 20);		
 		Reporter.log("Oops! Your payment failed text is displayed");
 		payUI_Select_PaymentType(driver, "NB");				
-		payUI_Enter_PaymentDetails(driver, "NB", "Citibank");
+		payUI_Enter_PaymentDetails(driver, "NB", "Citibank","");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
 		
 		

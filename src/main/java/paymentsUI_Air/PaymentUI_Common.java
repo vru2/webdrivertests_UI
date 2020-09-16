@@ -106,11 +106,11 @@ public class PaymentUI_Common extends PaymentNodeJS{
 		case "UPI":
 			PayType = "UPI";
 			break;
-		case "ADCB":
-			PayType = "";
-			break;
 		case "SC":
 			PayType = "Stored Card";
+			break;
+		case "ADCB":
+			PayType = "ADCB touchpoints";
 			break;
 		default:
 			break;
@@ -174,27 +174,27 @@ public class PaymentUI_Common extends PaymentNodeJS{
 	
 	
 	
-	public void payUI_Enter_PaymentDetails(RemoteWebDriver driver, String PayType, String BankName) throws Exception {
+	public void payUI_Enter_PaymentDetails(RemoteWebDriver driver, String PayType, String BankName, String BookingType) throws Exception {
 		switch (PayType) {
 		case "CC":
-			payUI_Select_CC(driver, BankName);
+			payUI_Select_CC(driver, BankName, BookingType);
 			break;
 		case "DC":
-			payUI_Select_DC(driver, BankName);
+			payUI_Select_DC(driver, BankName, BookingType);
 			break;
 		case "NB":
-			payUI_Select_NB(driver, BankName);
+			payUI_Select_NB(driver, BankName, BookingType);
 			break;
 		case "TW":
 			break;
 		case "UPI":
-			payUI_Select_UPI(driver, BankName);
+			payUI_Select_UPI(driver, BankName, BookingType);
 			break;
 		case "ADCB":
-			payUI_Select_ADCB(driver, BankName);
+			payUI_Select_ADCB(driver, BankName, BookingType);
 			break;
 		case "KNET":
-			payUI_Select_KNET(driver, BankName);
+			payUI_Select_KNET(driver, BankName, BookingType);
 			break;
 		default:
 			break;
@@ -217,13 +217,14 @@ public class PaymentUI_Common extends PaymentNodeJS{
 			payUI_Select_UPI_PWA(driver, BankName);
 			break;
 		case "ADCB":
+			payUI_Select_ADCB_PWA(driver, BankName);
 			break;
 		default:
 			break;
 		}		
 	}
 		
-	public void payUI_Select_CC(RemoteWebDriver driver, String BankName) throws Exception {		
+	public void payUI_Select_CC(RemoteWebDriver driver, String BankName, String BookingType) throws Exception {		
 		elementVisible(driver, getObjectPayment("PaymentPage_CreditCard_Number"), 5);
 		textPresent_Log(driver, "Enter your credit card details", 1);
 		switch (BankName) {
@@ -252,7 +253,7 @@ public class PaymentUI_Common extends PaymentNodeJS{
 			Enter_CC_Details(driver, platform.value("RazorPay_Number"), platform.value("RazorPay_Month_UI"), platform.value("RazorPay_Year"), platform.value("RazorPay_CVV"));
 			break;
 		}
-		if(common.value("Bento_Payment").equalsIgnoreCase("true")||BankName.contains("TRAIN")) {			
+		if(common.value("Bento_Payment").equalsIgnoreCase("true")||BookingType.contains("TRAINS")) {			
 			safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		
 		Reporter.log("Make Payment button is Clicked");
@@ -275,7 +276,7 @@ public class PaymentUI_Common extends PaymentNodeJS{
 		}
 	}
 
-	public void payUI_Select_DC(RemoteWebDriver driver, String BankName) throws Exception {		
+	public void payUI_Select_DC(RemoteWebDriver driver, String BankName, String BookingType) throws Exception {		
 		elementVisible(driver, getObjectPayment("PaymentPage_CreditCard_Number"), 5);
 		textPresent_Log(driver, "Enter your debit card details.", 1);
 		switch (BankName) {
@@ -296,7 +297,7 @@ public class PaymentUI_Common extends PaymentNodeJS{
 		}
 		}
 }
-	public void payUI_Select_ADCB(RemoteWebDriver driver, String BankName) throws Exception {		
+	public void payUI_Select_ADCB(RemoteWebDriver driver, String BankName, String BookingType) throws Exception {		
 		elementVisible(driver, getObjectPayment("PaymentPage_CreditCard_Number"), 5);
 		textPresent_Log(driver, "Enter your ADCB card details", 1);		
 		Reporter.log("Card Details +\n"+ platform.value("ADCBCard_Number") +"\n " + platform.value("ADCBCard_Expiry_Month")  +" " + platform.value("ADCBCard_Expiry_Year") +" " + platform.value("ADCBCard_CVV"));
@@ -326,7 +327,7 @@ public class PaymentUI_Common extends PaymentNodeJS{
 		textPresent_Log(driver, "Balance payable", 1);		
 		safeType(driver, getObjectPayment("PaymentPage_ADCB_Redeem_Amount_TextBox"), "50");
 
-		if(common.value("Bento_Payment").equalsIgnoreCase("true")) {
+		if(common.value("Bento_Payment").equalsIgnoreCase("true")||BookingType.contains("TRAINS")) {
 	//	safeType(driver, getObjectPayment("PaymentPage_ADCB_OTP"), platform.value("ADCBCard_OTP"));
 		
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
@@ -341,12 +342,12 @@ public class PaymentUI_Common extends PaymentNodeJS{
 		}
 		}
 	
-	public void payUI_Select_KNET(RemoteWebDriver driver, String BankName) throws Exception {		
+	public void payUI_Select_KNET(RemoteWebDriver driver, String BankName, String BookingType) throws Exception {		
 		elementVisible(driver, getObjectPayment("PaymentPage_Knet_RadioButton"), 5);
 		safeClick(driver, getObjectPayment("PaymentPage_Knet_RadioButton"));
 		elementPresent_log(driver, getObjectPayment("PaymentPage_Knet_Image"), "", 1);
 
-		if(common.value("Bento_Payment").equalsIgnoreCase("true")) {		
+		if(common.value("Bento_Payment").equalsIgnoreCase("true")|| BookingType.contains("TRAINS")) {		
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		Reporter.log("Make Payment button is Clicked");
 		}
@@ -434,7 +435,14 @@ public class PaymentUI_Common extends PaymentNodeJS{
 			elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"), "Citi Bank  ", 1);
 			Reporter.log("CitiBank Auth page is displayed");
 			safeClick(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"));
-		}else if(BankName.equalsIgnoreCase("Hdfc Bank")) {
+		}else if(BankName.equalsIgnoreCase("Axis Bank")||BankName.equalsIgnoreCase("AxisBankPopular")) {
+			elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"), 20);
+			elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"), "Citi Bank  ", 1);
+			Reporter.log("CitiBank Auth page is displayed");
+			safeClick(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"));
+		}
+		
+		else if(BankName.equalsIgnoreCase("Hdfc Bank")) {
 			elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_UserName"), 20);
 			elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_UserName"), "Tech Process Bank ", 1);
 			Reporter.log("HDFCBank Auth page is displayed");
@@ -513,11 +521,11 @@ public class PaymentUI_Common extends PaymentNodeJS{
 			elementVisible(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Logo"), 1);
 			safeClick(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Submit"));	
 		}
-	
+	System.out.println("Bank");
 	}
 		
 
-	public void payUI_Select_NB(RemoteWebDriver driver, String BankName) throws Exception {		
+	public void payUI_Select_NB(RemoteWebDriver driver, String BankName, String BookingType) throws Exception {		
 			elementVisible(driver, getObjectPayment("PayUI_NB_DropDown"), 5);
 			textPresent_Log(driver, "Popular banks", 1);
 			//textPresent_Log(driver, "", 1);
@@ -527,21 +535,25 @@ public class PaymentUI_Common extends PaymentNodeJS{
 			else if(BankName.contains("CitibankPopular")) {
 				safeClick(driver, getObjectPayment("PaymentPage_NB_PopularBanks_Citi"));
 			}
+			else if(BankName.contains("AxisbankPopular")) {
+				safeClick(driver, getObjectPayment("PaymentPage_NB_PopularBanks_Axis"));
+			}
 			else safeSelect(driver, getObjectPayment("PayUI_NB_DropDown"), BankName);
 
-			if(common.value("Bento_Payment").equalsIgnoreCase("true")) {
+			if(common.value("Bento_Payment").equalsIgnoreCase("true")||BookingType.contains("TRAINS")) {
 			safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 			payUI_BankPage(driver, BankName);
 			}
+			
 	}	
 	
-	public void payUI_Select_UPI(RemoteWebDriver driver, String BankName) throws Exception {	
+	public void payUI_Select_UPI(RemoteWebDriver driver, String BankName, String BookingType) throws Exception {	
 
 		textPresent(driver, "Select UPI partner to make your payment", 5);
 		elementVisible(driver, getObjectPayment("SelectPayment_UPI_PhonePe"), 5);
 		safeClick(driver, getObjectPayment("SelectPayment_UPI_PhonePe"));		
 
-		if(common.value("Bento_Payment").equalsIgnoreCase("true")) {
+		if(common.value("Bento_Payment").equalsIgnoreCase("true")||BookingType.contains("TRAINS")) {
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		payUI_BankPage(driver, BankName);
 		}
@@ -567,7 +579,16 @@ public class PaymentUI_Common extends PaymentNodeJS{
 				safeType(driver, getObjectPayment("PWA_NETBANKING_Page_NB_TextBox"), "Citibank");*/
 				safeClick(driver, getObjectPayment("PWA_PaymentPage_NB_Popularbank_CITI"));
 				Thread.sleep(1000);				
+			}else if(BankName.equalsIgnoreCase("AxisbankPopular")) {
+				/*safeClick(driver, getObjectPayment("PWA_PaymentPage_Select_NB"));
+				textPresent(driver, "All Other Banks", 5);
+				safeType(driver, getObjectPayment("PWA_NETBANKING_Page_NB_TextBox"), "Citibank");*/
+				safeClick(driver, getObjectPayment("PWA_PaymentPage_NB_Popularbank_AXIS"));
+				Thread.sleep(1000);				
 			}
+			
+			
+			
 			else 
 			{
 				safeClick(driver, getObjectPayment("PWA_PaymentPage_Select_NB"));
@@ -597,10 +618,14 @@ public class PaymentUI_Common extends PaymentNodeJS{
 		if(common.value("Bento_Payment").equalsIgnoreCase("true")) {
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		Reporter.log("Make Payment button is Clicked");
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		payUI_BankPage(driver, BankName);
 		}
-}
+	}
+	
+	public void payUI_Select_ADCB_PWA(RemoteWebDriver driver, String BankName) throws Exception {		
+		Assert.assertTrue(false);
+	}
 
 	public void payUI_Select_TW_PWA(RemoteWebDriver driver, String TWType) throws Exception {		
 		elementVisible(driver, getObjectPayment("PWA_PaymentPage_AmazonPay"), 5);

@@ -10,25 +10,24 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class CC_AE extends PaymentUI_Common{
+public class NB_Axis extends PaymentUI_Common{
 	public RemoteWebDriver driver;
 	
 	@Test
-	public void CCAE() throws Exception {
-		String PayUrl = getPayUI("AirAE", "AE");
+	public void NB_Citi_Pay() throws Exception {
+		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
-		driver.get(PayUrl);
-		textNotPresent_List( driver, getObjectPayment("PayUI_Pay_Tabs"), "Net banking");
-		payUI_Select_PaymentType(driver, "CC");
-		validate_Currency(driver, "", "AED");
-		payUI_Enter_PaymentDetails(driver, "CC", "MASTER","");
+		driver.get(PayUrl);	   
+		payUI_Select_PaymentType(driver, "NB");
+		//validate_Currency(driver, "", "INR");
+		payUI_Enter_PaymentDetails(driver, "NB", "Axis Bank","");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
-	}
+	}	
 
 	@BeforeClass
 	public void setUp() throws Exception {
 		driver=(RemoteWebDriver) getDriver(driver);
-	}
+	}		
 
 	@AfterMethod (alwaysRun = true)
 	public void afterMethod(ITestResult _result) throws Exception {
@@ -39,5 +38,7 @@ public class CC_AE extends PaymentUI_Common{
 	public void tearDown() throws Exception {
 		browserClose(driver);
 	}
+
+	
 	
 }

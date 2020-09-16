@@ -19,7 +19,7 @@ public class CC_IN_RazorPay extends PaymentUI_Common{
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
 		payUI_Select_PaymentType(driver, "CC");
-		payUI_Enter_PaymentDetails(driver, "CC", "RAZORPAY");
+		payUI_Enter_PaymentDetails(driver, "CC", "RAZORPAY","");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
 	}
 

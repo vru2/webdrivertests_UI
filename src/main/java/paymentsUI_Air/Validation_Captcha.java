@@ -27,7 +27,7 @@ public class Validation_Captcha extends PaymentUI_Common{
 		else {
 			//Assert.assertTrue(false);
 		}		payUI_Select_PaymentType(driver, "NB");
-		payUI_Enter_PaymentDetails(driver, "NB", "CAPTCHA" );// CITIBANK		
+		payUI_Enter_PaymentDetails(driver, "NB", "CAPTCHA" ,"");// CITIBANK		
 		}
 		Thread.sleep(5000);
 		elementPresent(driver, getObjectPayment("PayUI_Captcha_CheckBox"), 10);

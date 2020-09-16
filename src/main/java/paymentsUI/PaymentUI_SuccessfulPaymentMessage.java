@@ -30,7 +30,7 @@ public class PaymentUI_SuccessfulPaymentMessage  extends PaymentUI_Common{
 			driver.manage().deleteAllCookies(); 
 			driver.get(Url);
 			payUI_Select_PaymentType(driver, "CC");
-			payUI_Enter_PaymentDetails(driver, "CC", "AMEXTRAIN");
+			payUI_Enter_PaymentDetails(driver, "CC", "AMEXTRAIN", "TRAINS");
 			payUI_Mock_ConfirmationPage_Train(driver, Url);
 			
 			/*driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

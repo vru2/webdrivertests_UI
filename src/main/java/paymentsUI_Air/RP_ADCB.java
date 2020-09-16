@@ -23,7 +23,7 @@ public class RP_ADCB extends PaymentUI_Common{
 		textPresent_Log(driver, "Enter your ADCB card details", 5);		
 		textPresent_Log(driver, "ADCB card no.", 5);
 		validate_Currency(driver, "", "AED");
-		payUI_Enter_PaymentDetails(driver, "ADCB", "");
+		payUI_Enter_PaymentDetails(driver, "ADCB", "","");
 		//payUI_Mock_ConfirmationPage(driver, PayUrl);
 	}
 

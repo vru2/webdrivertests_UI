@@ -19,7 +19,7 @@ public class CC_IN_Amex extends PaymentUI_Common{
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
 		payUI_Select_PaymentType(driver, "CC");
-		payUI_Enter_PaymentDetails(driver, "CC", "AMEX");
+		payUI_Enter_PaymentDetails(driver, "CC", "AMEX","");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
 	}
 

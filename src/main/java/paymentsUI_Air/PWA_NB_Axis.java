@@ -10,24 +10,22 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class CC_AE extends PaymentUI_Common{
+public class PWA_NB_Axis extends PaymentUI_Common{
 	public RemoteWebDriver driver;
 	
 	@Test
-	public void CCAE() throws Exception {
-		String PayUrl = getPayUI("AirAE", "AE");
+	public void PWA_CITI() throws Exception {
+		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
-		textNotPresent_List( driver, getObjectPayment("PayUI_Pay_Tabs"), "Net banking");
-		payUI_Select_PaymentType(driver, "CC");
-		validate_Currency(driver, "", "AED");
-		payUI_Enter_PaymentDetails(driver, "CC", "MASTER","");
+		payUI_Select_PaymentType_PWA(driver, "NET BANKING");
+		payUI_Enter_PaymentDetails_PWA(driver, "NET BANKING", "Axis Bank");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
 	}
 
 	@BeforeClass
 	public void setUp() throws Exception {
-		driver=(RemoteWebDriver) getDriver(driver);
+		driver=(RemoteWebDriver) getMobileDriver(driver);
 	}
 
 	@AfterMethod (alwaysRun = true)

@@ -19,7 +19,7 @@ public class DC_IN_PayU extends PaymentUI_Common{
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
 		payUI_Select_PaymentType(driver, "DC");
-		payUI_Enter_PaymentDetails(driver, "DC", "MASTER");
+		payUI_Enter_PaymentDetails(driver, "DC", "MASTER","");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
 	}
 

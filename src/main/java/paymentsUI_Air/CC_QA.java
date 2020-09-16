@@ -21,7 +21,7 @@ public class CC_QA extends PaymentUI_Common{
 		textNotPresent_List( driver, getObjectPayment("PayUI_Pay_Tabs"), "Net banking");
 		payUI_Select_PaymentType(driver, "CC");
 		validate_Currency(driver, "", "QAR");
-		payUI_Enter_PaymentDetails(driver, "CC", "MASTER");
+		payUI_Enter_PaymentDetails(driver, "CC", "MASTER","");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
 	}
 

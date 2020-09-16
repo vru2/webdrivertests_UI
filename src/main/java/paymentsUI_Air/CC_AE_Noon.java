@@ -20,7 +20,7 @@ public class CC_AE_Noon extends PaymentUI_Common{
 		driver.get(PayUrl);
 		payUI_Select_PaymentType(driver, "CC");
 		validate_Currency(driver, "", "AED");
-		payUI_Enter_PaymentDetails(driver, "CC", "NOON");
+		payUI_Enter_PaymentDetails(driver, "CC", "NOON","");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
 	}
 

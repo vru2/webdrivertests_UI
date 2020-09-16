@@ -20,7 +20,7 @@ public class CC_SA_PayFort extends PaymentUI_Common{
 		driver.get(PayUrl);
 		payUI_Select_PaymentType(driver, "CC");
 		validate_Currency(driver, "SA", "SAR");
-		payUI_Enter_PaymentDetails(driver, "CC", "PAYFORT");
+		payUI_Enter_PaymentDetails(driver, "CC", "PAYFORT","");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
 	}
 

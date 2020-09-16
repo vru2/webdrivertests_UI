@@ -41,9 +41,9 @@ public class PaymentUI_CommonUtilities {
 	protected static String errortextCvv= "Please enter a valid cvv";
 	public static String errortextCvvXpath= "//p[text()='Please enter a valid cvv']";
 	public static String makePaymentbutton= "//button[text()='Make Payment']";
-	protected static String debitCardPaymentxpath= "//p[text()='Debit Card']";
-	protected static String creditCardPaymentxpath= "//p[text()='Credit Card']";
-	protected static String netBankingPaymentxpath= "//p[text()='Net Banking']";
+	protected static String debitCardPaymentxpath= "//p[text()='Debit card']";
+	protected static String creditCardPaymentxpath= "//p[text()='Credit card']";
+	protected static String netBankingPaymentxpath= "//p[text()='Net banking']";
 	protected static String nbHDFCSelectXpath = "//ul[@class='Datalist radioList radio-item-list bt-0 bb-0 ']/li[2]";
 	protected static String nbCitiSelectXpath = "//ul[@class='Datalist radioList radio-item-list bt-0 bb-0 ']/li[5]";
 	protected static String phonePeMobileNo="//input[@name='mobileNumber']";
@@ -106,13 +106,13 @@ public class PaymentUI_CommonUtilities {
 	protected static String paymentModes="//ul[@id='paymentModeTab']";
 	protected static String paymentModeADCB= "ADCB TouchPoints";
 	protected static String paymentModeAP= "Apple Pay";
-	protected static String paymentModeStoredCard= "Stored Cards.";
+	protected static String paymentModeStoredCard= "Stored cards.";
 	public static String nbOption1= "//p[text()='Please enter a valid cvv']";
 	protected static String nbDropDown="//select[@name='bankId']";
 	protected static String nbHdfcSubmit="//input[@name='proceed']";
 	protected static String nbCitiSubmit="//input[@value='Return To the Merchant Site']";
 	protected static String nbHdfcCancel="//input[@name='cancel']";
-	public static String popularBanks="//p[text()='Popular Banks']";
+	public static String popularBanks="//p[text()='Popular banks']";
 	public static String errortextSelectBank="Please select your bank";
 	public static String errorSelectBankxpath="//p[text()='Please select your bank']";
 	protected static String errorTextInvalidCCDetailsxpath= "//div[contains(@class,'retry')]";
@@ -156,8 +156,8 @@ public class PaymentUI_CommonUtilities {
     public static String amazonPaySubmitButtonXpath="//input[@id='signInSubmit']";
     public static String amazonPayOTPPageXpath="//h1[contains(text(),'Authentication required')]";
    
-    public static String nbModeXpath= "//p[text()='Net Banking']";
-    public static String storedCardXpath= "//p[text()='Stored Cards']";
+    public static String nbModeXpath= "//p[text()='Net banking']";
+    public static String storedCardXpath= "//p[text()='Stored cards']";
     public static String storedCardNewXpath= "//p[text()='Stored Card']";
     public static String nbErrorTextXpath="//p[text()='Please select your bank']";
     public static String amexCardIsPresentEndingWithSeven= "//p[contains(text(),'Amex')]";

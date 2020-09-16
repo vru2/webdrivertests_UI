@@ -20,7 +20,7 @@ public class CC_SA_Checkout extends PaymentUI_Common{
 		driver.get(PayUrl);
 		payUI_Select_PaymentType(driver, "CC");
 		validate_Currency(driver, "SA", "SAR");
-		payUI_Enter_PaymentDetails(driver, "CC", "CHECKOUT");
+		payUI_Enter_PaymentDetails(driver, "CC", "CHECKOUT","");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
 	}
 

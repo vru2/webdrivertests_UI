@@ -29,7 +29,7 @@ public class GV_NB extends PaymentUI_Common{
 		textPresent_Log(driver, "Gift card", 1);
 		Reporter.log("Gift card (3000331035955930) text is displayed");
 		payUI_Select_PaymentType(driver, "NB");
-		payUI_Enter_PaymentDetails(driver, "NB", "Citibank");
+		payUI_Enter_PaymentDetails(driver, "NB", "Axis Bank","");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
 	}	
 

@@ -16,7 +16,7 @@ public class TS_TripLockExpiry extends TripserviceCommon {
 	public void Trip_LockExpiry() throws Exception{
 		
 		Response resp;
-		String url="http://172.17.26.11:9031/trips/delay-lock-expiry/Q191218623804/200";
+		String url="http://172.17.51.86:9031/trips/delay-lock-expiry/Q191218623804/200";
 		String prod="http://trip-service.cltp.com:9001/trips/delay-lock-expiry/191218163562/200";
 		String Host = common.value("host");
 		if(Host.equalsIgnoreCase("qa2")) {

@@ -11,7 +11,7 @@ public class EmailPost extends EmailCommon{
 	@Test(groups={"Regression"})		
 	public void message() throws IOException {
 		Response resp;
-		String url = "http://172.17.26.11:8001/email";
+		String url = "http://172.17.51.86:8001/email";
 		resp=EmailPostAPI(params,headersForEmailpostcall(), url);
 		validation(resp);
 		

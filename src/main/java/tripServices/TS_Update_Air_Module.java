@@ -23,7 +23,7 @@ public class TS_Update_Air_Module extends TripserviceCommon {
 		String params11=(params8+db_AirBookingId(tripref))+params9+randNum+params10;
 		String Host = common.value("host");
 		if((Host.equalsIgnoreCase("qa2"))) {
-		String url1=("http://172.17.26.11:9031/trips");
+		String url1=("http://172.17.51.86:9031/trips");
 		Reporter.log(url1);
 		resp1=TripserviceUpdateModule(params11,headersForTripserviceputtripscall(),url1);
 		Thread.sleep(2000);

@@ -17,10 +17,10 @@ public class Accounts_FetchtripdetailsByTripid extends TripserviceCommon {
 		Response resp1;
 		Response resp2;
 		Response resp3;
-		String url_air=" http://172.17.26.11:9031/api/trips/fetch-trip-details?tripId=46201038&size=1";
-		String url_hotel="http://172.17.26.11:9031/api/trips/fetch-trip-details?tripId=46202808&size=1";
-		String url_local="http://172.17.26.11:9031/api/trips/fetch-trip-details?tripId=46089500&size=1";
-		String url_train="http://172.17.26.11:9031/api/trips/fetch-trip-details?tripId=45967650&size=1";
+		String url_air=" http://172.17.51.86:9031/api/trips/fetch-trip-details?tripId=46201038&size=1";
+		String url_hotel="http://172.17.51.86:9031/api/trips/fetch-trip-details?tripId=46202808&size=1";
+		String url_local="http://172.17.51.86:9031/api/trips/fetch-trip-details?tripId=46089500&size=1";
+		String url_train="http://172.17.51.86:9031/api/trips/fetch-trip-details?tripId=45967650&size=1";
 			Reporter.log(url_air);
 	    resp=RestAssured.get(url_air);
 	    if(resp.statusCode()==200){

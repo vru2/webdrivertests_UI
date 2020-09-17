@@ -17,12 +17,12 @@ public class TS_GET_CancelledInsurance extends TripserviceCommon {
 	public void getCancelledInsurance(){
 		String Host = common.value("host");
 		if(Host.equalsIgnoreCase("qa2")) {
-		Reporter.log("http://172.17.26.11:9031/trips/cancelledInsurances?date=09-26-2019");
+		Reporter.log("http://172.17.51.86:9031/trips/cancelledInsurances?date=09-26-2019");
 		Response resp=RestAssured.given().
 				      when().
 				      log().all().
 				      headers(headersForTripservicepostcall()).
-				      get("http://172.17.26.11:9031/trips/cancelledInsurances?date=09-26-2019");
+				      get("http://172.17.51.86:9031/trips/cancelledInsurances?date=09-26-2019");
 		    System.out.println(resp.asString());
 			if(resp.statusCode()==200){
 			Assert.assertNotNull("refund_id");
@@ -45,7 +45,7 @@ public class TS_GET_CancelledInsurance extends TripserviceCommon {
 				      when().
 				      log().all().
 				      headers(headersForTripservicepostcall()).
-				      get("http://172.17.26.11:9031/trips/cancelledInsurances?date=09-26-2019");
+				      get("http://172.17.51.86:9031/trips/cancelledInsurances?date=09-26-2019");
 		    System.out.println(resp.asString());
 			if(resp.statusCode()==200){
 			Assert.assertNotNull("refund_id");

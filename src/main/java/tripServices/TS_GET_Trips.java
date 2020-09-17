@@ -15,8 +15,8 @@ public class TS_GET_Trips extends TripserviceCommon {
 	public void getTripService(){
 		String Host = common.value("host");
 		if(Host.equalsIgnoreCase("qa2")) {
-		Reporter.log("http://172.17.26.11:9031/trips?tripID=Q1902050303");
-		Response resp=RestAssured.get("http://172.17.26.11:9031/trips?tripID=Q1902050303");
+		Reporter.log("http://172.17.51.86:9031/trips?tripID=Q1902050303");
+		Response resp=RestAssured.get("http://172.17.51.86:9031/trips?tripID=Q1902050303");
 		if(resp.statusCode()==200){
 			ResponseBody body= resp.getBody();
 			String bodyAsString = body.asString();

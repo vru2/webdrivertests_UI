@@ -13,8 +13,8 @@ import io.restassured.response.ResponseBody;
 public class TS_Affiliated_TxnID extends TripserviceCommon {
 	@Test(groups={"Regression"})
 	public void getTripService(){
-		Reporter.log("http://172.17.26.11:9031/trips/affiliate-txn-id?affiliateTxnId=1");
-		Response resp=RestAssured.get("http://172.17.26.11:9031/trips/affiliate-txn-id?affiliateTxnId=1");
+		Reporter.log("http://172.17.51.86:9031/trips/affiliate-txn-id?affiliateTxnId=1");
+		Response resp=RestAssured.get("http://172.17.51.86:9031/trips/affiliate-txn-id?affiliateTxnId=1");
 		if(resp.statusCode()==200){
 			ResponseBody body= resp.getBody();
 			String bodyAsString = body.asString();

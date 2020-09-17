@@ -20,7 +20,7 @@ public class TS_Cancel_Hotel extends TripserviceCommon{
 		Response resp1;
 		String Host = common.value("host");
 		if(Host.equalsIgnoreCase("qa2")) {
-		String url1=("http://172.17.26.11:9031/trips/"+tripref+"/hotel-bookings/update-booking");
+		String url1=("http://172.17.51.86:9031/trips/"+tripref+"/hotel-bookings/update-booking");
 		Thread.sleep(2000);
 		resp1=TripserviceHotelsPutcall(params4,headersForTripserviceputcall(),url1);
 		validationforput(resp1);
@@ -58,7 +58,7 @@ public class TS_Cancel_Hotel extends TripserviceCommon{
         String param9=",\"stay_date\": \"2019-08-03T14:00:00.000+0530\",\"booking_status\": \"Q\",\"created_at\": \"2019-07-10T12:31:59.000+0530\",\"updated_at\": \"2019-07-10T12:31:59.000+0530\",\"seq_no\": 1,\"room_seq_no\": 1,\"room_rate_seq_no\": 1,\"status_reason\": null,\"external_refs\": null,\"voucher_number\": \"340047694#1234;MOD\",\"status_history\": 0,\"room_type\": \"Standard Room\",\"nri\": \"false\",\"upd_res_url\": null,\"inventory_remaining\": null,\"auto_refill_inventory_count\": null,\"base_rate_id\": null,\"is_deal_of_the_day\": \"N\",\"orig_cost_rate\": 0,\"external_references\": [],\"refund_records\": []}]}";
         String cancelparams=param1+hotelbookingid+param2+hotelbookinginfoid+param3+tripid+param4+userid+param5+hotelbookinginfoid+param6+hotelbookingid+param7+roomid+param8+roomrateid+param9;
 	    System.out.println(cancelparams); 
-        String url2=("http://172.17.26.11:9031/trips/"+tripref+"/cancel");
+        String url2=("http://172.17.51.86:9031/trips/"+tripref+"/cancel");
         Response resp3=TripservicePostcancelcall(cancelparams,headersForTripservicepostcancelcall(),url2);
         Reporter.log(resp3.asString());
         cancelValidation(resp3);   

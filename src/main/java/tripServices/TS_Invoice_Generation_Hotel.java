@@ -21,7 +21,7 @@ public class TS_Invoice_Generation_Hotel extends TripserviceCommon {
 		Response resp1;
 		String Host = common.value("host");
 		if(Host.equalsIgnoreCase("qa2")) {
-			String url1=("http://172.17.26.11:9031/trips/"+tripref+"/hotel-bookings/update-booking");
+			String url1=("http://172.17.51.86:9031/trips/"+tripref+"/hotel-bookings/update-booking");
 			Reporter.log(url1);
 			resp1=TripserviceHotelsPutcall(params4,headersForTripserviceputcall(),url1);
 			validationforput(resp1);
@@ -44,8 +44,8 @@ public class TS_Invoice_Generation_Hotel extends TripserviceCommon {
 		
 		String Host1 = common.value("host");
 		if(Host.equalsIgnoreCase("qa2")) {
-		Reporter.log("http://172.17.26.11:9031/trips?tripID="+tripref);
-		Response resp2=RestAssured.get("http://172.17.26.11:9031/trips?tripID="+tripref);
+		Reporter.log("http://172.17.51.86:9031/trips?tripID="+tripref);
+		Response resp2=RestAssured.get("http://172.17.51.86:9031/trips?tripID="+tripref);
 		invoiceValidation(resp2);
 		}else if(Host.equalsIgnoreCase("www")) {
 			Reporter.log("http://trip-service.cltp.com:9001/trips?tripID="+tripref);

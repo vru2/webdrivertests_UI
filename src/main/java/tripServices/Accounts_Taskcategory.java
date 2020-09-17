@@ -15,8 +15,8 @@ public class Accounts_Taskcategory extends TripserviceCommon {
 	public void Accounts_Taskcategory() throws Exception{
 		Response resp;
 		Response resp1;
-		String url_qa="http://172.17.26.11:9031/api/trips/task-category?id=5159615";
-		String url1_qa="http://172.17.26.11:9031/api/trips/task-category?companyId=140329";
+		String url_qa="http://172.17.51.86:9031/api/trips/task-category?id=5159615";
+		String url1_qa="http://172.17.51.86:9031/api/trips/task-category?companyId=140329";
 		Reporter.log(url_qa);
 	    resp=RestAssured.get(url_qa);
 	    if(resp.statusCode()==200){

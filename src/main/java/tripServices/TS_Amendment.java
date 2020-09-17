@@ -18,11 +18,12 @@ public class TS_Amendment extends TripserviceCommon {
 		String url =  Service_Url("TRIPSERVICE_POST_CALL");
 		Reporter.log(url);
 		resp=TripservicePostcall(params,headersForTripservicepostcall(),url);
+		System.err.println(resp.asString());
 		validationforputcall(resp);		
 		Response resp1;
 		String Host = common.value("host");
 		if(Host.equalsIgnoreCase("qa2")) {
-		String url1 = ("http://172.17.26.11:9031/trips/"+tripref+"/air-bookings/update-booking");
+		String url1 = ("http://172.17.51.86:9031/trips/"+tripref+"/air-bookings/update-booking");
 		Reporter.log(url1);
 		resp1=TripserviceHotelsPutcall(params3,headersForTripserviceputcall(),url1);
 		validationforput(resp1);	
@@ -62,13 +63,13 @@ public class TS_Amendment extends TripserviceCommon {
 		String amendupdatebooking="{\"air_booking_infos\":[{\"agent_pcc\":\"OTAINCLEAN\",\"auto_refund\":\"N\",\"booking_class\":\"K\",\"booking_status\":\"P\",\"cabin_type\":\"E\",\"pax_info_seq_no\":1,\"pricing_object_seq_no\":2,\"segment_seq_no\":2,\"seq_no\":2,\"status_history\":16,\"ticket_type\":\"E\",\"external_references\":[{\"name\":\"journeyId_DEL_HYD\",\"value\":\"AIR_ASIA__OWDELHYD100I55041e1c5661e9fe140caa97c5834724dca66exp1574945823153\"},{\"name\":\"connectorReturnedCurrency_DEL_HYD\",\"value\":\"INR\"},{\"name\":\"total_fare_DEL_HYD\",\"value\":\"2997.0\"},{\"name\":\"promiseId_DEL_HYD\",\"value\":\"AIR_ASIA__b914c2b16027948c5d7a909e90fbf7890db1209800a1af962612f1252d3f957eV2__100D1577511000I55041DELHYDOW__DC_dc1\"},{\"name\":\"fareId_DEL_HYD\",\"value\":\"K01H00EP_BA157_MNINR\"}]}]}";
 		Reporter.log(amendlogbooking);
 		if(Host.equalsIgnoreCase("qa2")) {
-			String url1 = ("http://172.17.26.11:9031/trips/amend");
+			String url1 = ("http://172.17.51.86:9031/trips/amend");
 			Reporter.log(url1);
 			resp2=TripservicePostcall(amendlogbooking,headersForTripserviceputcall(),url1);
 			System.out.println(resp2.asString());
 			validationforput(resp2);
 			Thread.sleep(2000);
-			String url2 = ("http://172.17.26.11:9031/trips/amend/"+tripref+"/air-bookings/update-booking");
+			String url2 = ("http://172.17.51.86:9031/trips/amend/"+tripref+"/air-bookings/update-booking");
 			Reporter.log(url2);
 			resp3=TripserviceHotelsPutcall(amendupdatebooking,headersForTripserviceputcall(),url2);
 			System.out.println(resp3.asString());

@@ -9,7 +9,7 @@ public class DomesticSMS extends SMSCommon{
 	@Test(groups={"Regression"})
 	public void smsservice() throws IOException{
 		Response resp ;
-		String url = "http://172.17.26.11:8222/sms";	
+		String url = "http://172.17.51.86:8222/sms";	
         resp=paramsForSMSservice(headersForsms(),params, url);
     		validation(resp);
 		

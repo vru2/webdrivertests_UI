@@ -15,8 +15,8 @@ public class Accounts_FetchtripdetailsByPersonid extends TripserviceCommon{
 	public void Accounts_FetchByPersonid() throws Exception{
 		Response resp;
 		Response resp1;
-		String url_qa="http://172.17.26.11:9031/api/trips/fetch-trip-details?personId=41690278&size=1";
-		String url1_qa="http://172.17.26.11:9031/api/trips/fetch-trip-details?personId=41690278&size=10";
+		String url_qa="http://172.17.51.86:9031/api/trips/fetch-trip-details?personId=41690278&size=1";
+		String url1_qa="http://172.17.51.86:9031/api/trips/fetch-trip-details?personId=41690278&size=10";
 		String Host = common.value("host");
 	    resp=RestAssured.get(url_qa);
 	    if(resp.statusCode()==200){

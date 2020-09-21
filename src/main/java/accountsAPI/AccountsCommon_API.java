@@ -43,7 +43,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 
 	String url_Acct_Service="http://accounts-service-api.cltp.com:9001";
 
-	String url_userclassification="http://172.17.26.11:8017";
+	String url_userclassification="http://172.17.51.86:8017";
 
 	String url_flyin="http://user-accounts.cltp.com:9001";
 

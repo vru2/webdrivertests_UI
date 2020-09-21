@@ -65,6 +65,7 @@
 			<class
 				name="accountsAPI.Account_Service_Travellercontroller_UpdateTraveller" />
 			<class name="accountsAPI.Account_Service_Peoplecontroller_GetuserById_V2" />
+			<class name="accountsAPI.Account_Service_EmailVerification_API" />
 
 		</classes>
 	</test>

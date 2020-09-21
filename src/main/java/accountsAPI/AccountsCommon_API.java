@@ -136,6 +136,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String url_peoplecontroller_getuserbyid="account/people/7707500017642?docRequired=false&partner=1&travellersRequired=false&userPreference=false";
 	String url_Account_Service_PWA_GetUserbyID="/account/people/v2/14029546?docRequired=false&savedCards=true&travellersRequired=true&userPreference=true";
 	String url_Account_Service_PWA_GetUser_Byemail="/account/people?docRequired=true&email=priyankapukale259@gmail.com&partner=0&savedCards=true&travellersRequired=true&userPreference=false";
+	String url_Account_Service_EmailVerification_API="/user/v2/email_verified_status?username=ns.likhitha@cleartrip.com";
 	String url_peoplecontroller_getuserbyid_v2="/account/people/v2/41623980?docRequired=true&savedCards=true&travellersRequired=true&userPreference=true";
 	String url_apiConfig_APIkey="/account/api_config?api_key=d4beada793e93d93fcd432141709400f";
 	String  url_b2bgetTravelerURL="/companies/b2b/101/travellers?sourceType=corp&titleType=adult";
@@ -160,7 +161,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String params_FetchPeople = "{\"email_ids\":[\"vinay.raj@cleartrip.com\",\"sathianarayanan.s@cleartrip.com\",\"kiran.kumar@cleartrip.com\",\"xyz1\"]}";
 	String params_Feedbackemail="{\"email_id\":\"ns.likhitha@cleartrip.com\",\"msg\":\"test\",\"subject\":\"working\",\"email_type\":\"default\"}";
 	String params_Signinpostcall="{\"email\":\"ns.likhitha@cleartrip.com\",\"password\":\"cleartrip123\",\"persistent_login\":\"t\",\"service\":\"\",\"caller\":\"homepage\",\"source\":\"ui\",\"action_type\":\"\",\"trip_ref\":\"\",\"_\": \"\"}";
-	String params_Account_Service_AppleSignin="{\"appleId\":\"12\",\"emailId\":\"hihitest1@gmail.com\",\"firstName\":\"abcd\",\"lastName\":\"sai\",\"title\":\"Mr.\"}";
+	String params_Account_Service_AppleSignin="{\"appleId\":\"12::00\",\"emailId\":\"hihitest901@gmail.com\",\"firstName\":\"abcd\",\"lastName\":\"sai\",\"title\":\"Mr.\"}";
 
 	String params_b2csignin="{\"email\":\"ns.likhitha@cleartrip.com\",\"password\":\"cleartrip123\",\"persistent_login\":\"t\",\"service\":\"\",\"caller\":\"homepage\",\"source\":\"ui\",\"action_type\":\"\",\"trip_ref\":\"\",\"_\": \"\"}";
 	String params_b2csignin_prod="{\"email\":\"ns.likhitha@cleartrip.com\",\"password\":\"Likhitha@143\",\"persistent_login\":\"t\",\"service\":\"\",\"caller\":\"homepage\",\"source\":\"ui\",\"action_type\":\"\",\"trip_ref\":\"\",\"_\": \"\"}";
@@ -316,6 +317,15 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		headers.put("Content-Type", "application/json");
 		headers.put("AUTH_KEY", "7GHT#@D65yhgder4R");
 		headers.put("accept", "application/json");
+		//GCP -- headers.put("AUTH_KEY", "H67f$we&HGTR34clQ");
+
+		return headers;
+	}
+	
+	public HashMap<String, Object> headersFormpwaemailverification(){
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("AUTH_KEY", "7GHT#@D65yhgder4R");
+		headers.put("referer", "www.cleartrip.com");
 		//GCP -- headers.put("AUTH_KEY", "H67f$we&HGTR34clQ");
 
 		return headers;
@@ -1319,6 +1329,13 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			Reporter.log(url_Acct_Service+url);
 
 		}
+		else if (Type.equals("Account_Service_EmailVerification_API")){
+			RestAssured.baseURI=url_Acct_Service;
+			url = url_Account_Service_EmailVerification_API;
+			headers = headersFormpwaemailverification();
+			Reporter.log(url_Acct_Service+url);
+
+		}
 
 		else if (Type.equals("peoplecontroller_getuserbyid_v2")){
 			RestAssured.baseURI=url_Acct_Service;
@@ -1468,7 +1485,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		else if(Type.equalsIgnoreCase("Account_Service_AppleSignin")) {
 
 			String ReponseStr = resp.body().asString();
-			if(!ReponseStr.contains("hihitest1@gmail.com")){
+			if(!ReponseStr.contains("hihitest901@gmail.com")){
 				Assert.assertTrue(false);
 			}
 		}
@@ -1669,6 +1686,17 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			String emailId = jsonPathEvaluator.getString("emailId");
 
 			if(!emailId.contains("priyankapukale259@gmail.com")) {
+				Assert.assertTrue(false);						
+			}
+
+
+		}
+		
+		else if(Type.equalsIgnoreCase("Account_Service_EmailVerification_API")) {
+
+			String isVerified = jsonPathEvaluator.getString("isVerified");
+
+			if(!isVerified.contains("true")) {
 				Assert.assertTrue(false);						
 			}
 

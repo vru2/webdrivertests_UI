@@ -4,3 +4,5 @@
 [0916/102528.396:ERROR:process_info.cc(329)] VirtualQueryEx: Access is denied. (0x5)
 [0916/102528.396:ERROR:process_info.cc(556)] ReadMemoryInfo failed
 [0916/102528.396:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: An attempt was made to access an exiting process. (0xc000010a)
+[0918/073423.041:ERROR:prune_crash_reports.cc(36)] PruneCrashReportDatabase: Failed to get pending reports
+[0921/085227.982:ERROR:prune_crash_reports.cc(36)] PruneCrashReportDatabase: Failed to get pending reports

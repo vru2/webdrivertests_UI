@@ -20,6 +20,7 @@ public class Validate_RT extends PaymentUI_Common{
 		String PayUrl = getPayUI("AirRT", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		Thread.sleep(5000);
 		Assert.assertTrue(false);
 	}
 

@@ -64,7 +64,7 @@ public class PaymentsUI_NB extends PaymentNodeJS{
 			click(driver,PaymentUI_CommonUtilities.netBankingPaymentxpath);
 			convenienceText(driver,PaymentUI_CommonUtilities.convenienceTextxpath);
 			validateIfPresent(driver, PaymentUI_CommonUtilities.popularBanks);
-			selectItemFromList(driver,PaymentUI_CommonUtilities.nbDropDown,"Citibank");
+			selectItemFromList(driver,PaymentUI_CommonUtilities.nbDropDown,"Axis Bank");
 			click(driver,PaymentUI_CommonUtilities.makePaymentbutton);
 			Thread.sleep(5000);
 			selectItemFromList(driver,PaymentUI_CommonUtilities.citiBankTransaction,"Y");

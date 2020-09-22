@@ -105,8 +105,8 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 		}		
 		else {
 			Thread.sleep(500);
-			safeType(driver, getObjectPayment("HomePage_Host_ServerIp_Txt"), "172.17.26.11:8070/paymentservice");
-			Reporter.log("Oracle payment 172.17.26.11:8070/paymentservice"); 
+			safeType(driver, getObjectPayment("HomePage_Host_ServerIp_Txt"), "172.17.51.86:8070/paymentservice");
+			Reporter.log("172.17.51.86:8070/paymentservice"); 
 		}
 		safeClick(driver, getObjectPayment("HomePage_Confirm_Btn"));
 	}
@@ -133,7 +133,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 
 				} else {
 					Thread.sleep(500);
-					//smartType(driver, getObjectPayment("HomePage_Host_ServerIp_Txt"), "172.17.8.218:9001/paymentservice");
+					smartType(driver, getObjectPayment("HomePage_Host_ServerIp_Txt"), "172.17.51.86:8070/paymentservice");
 				}
 				smartClick(driver, getObjectPayment("HomePage_Confirm_Btn"));
 			}

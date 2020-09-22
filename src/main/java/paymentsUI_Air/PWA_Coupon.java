@@ -31,7 +31,7 @@ public class PWA_Coupon extends PaymentUI_Common{
 		safeClick(driver, getObjectPayment("PWA_PaymentPage_Select_NB"));
 		safeType(driver, getObjectPayment("PWA_NETBANKING_Page_NB_TextBox"), "Axis Bank");
 		safeClick(driver, getObjectPayment("PWA_NETBANKING_Page_NB_AJAX"));
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn2"));
 		Thread.sleep(5000);		
 		String Coupon_Invalid_Text = getText(driver, getObjectPayment("PWA_PaymentPage_Invalid_Coupon_Text"));

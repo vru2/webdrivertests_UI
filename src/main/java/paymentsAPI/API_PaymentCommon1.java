@@ -63,12 +63,12 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String promoURL = "http://172.17.51.86:7999";
 	String urlRewards = "http://172.17.56.51:9080";
 	String urlWallet = "http://172.17.51.86:8071";
-	String urlCardInfo_Service="http://172.17.26.11:8331";
+	String urlCardInfo_Service="http://172.17.51.86:8331";
 
-	String urlrewards_validate = "http://172.17.26.11:8070";
-	String urlrewards_URI = "http://172.17.12.83:9080";
+	String urlrewards_validate = "http://172.17.51.86:8070";
+	String urlrewards_URI = "http://172.17.56.51:9080";
 	String urlPromo_Used = "http://172.17.51.86:8071";
-	String urlReporting ="http://172.17.28.21:8272";
+	String urlReporting ="http://172.17.51.86:8272";
 	String urlReportingTS ="http://172.17.51.86:9031";		
 	String url_Binmanager = "https://qa2.cleartrip.com/binmanager/v1/payment/cards?bin=534977";
 	public String url_TestApp = "";

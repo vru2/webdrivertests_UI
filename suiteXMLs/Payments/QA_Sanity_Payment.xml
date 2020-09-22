@@ -43,6 +43,7 @@
 <test name="Reporting" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsAPI.API_FetchPay_Details"/> 
+      <class name="paymentsAPI.API_Reporting"/>
     </classes>
 </test>
 

@@ -21,7 +21,7 @@ import domains.PaymentNodeJS;
 	   driver.manage().deleteAllCookies(); 
 	   driver.get(baseUrl);	   
 	   paymentNodeJS_Select_Payment(driver, "DC", "", "DC");
-	   paymentNodeJS_Make_Payment(driver, "DC", "");
+	   paymentNodeJS_Make_Payment(driver, "DC", "DC");
 	   paymentNodeJS_ConfirmationPage(driver, "DC", "","DC ");
   }
 

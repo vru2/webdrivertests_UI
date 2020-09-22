@@ -10,7 +10,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class PWA_RP_ADCB extends PaymentUI_Common{
+public class PWA_RP_ADCB_Partial extends PaymentUI_Common{
 	public RemoteWebDriver driver;
 	
 	@Test
@@ -22,7 +22,7 @@ public class PWA_RP_ADCB extends PaymentUI_Common{
 		//textNotPresent_List(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), "NET BANKING");	
 		validate_Currency_PWA(driver, "AE", "AED");
 		payUI_Select_PaymentType_PWA(driver, "ADCB");
-		payUI_Enter_PaymentDetails_PWA(driver, "ADCB", "MASTER");		
+		payUI_Enter_PaymentDetails_PWA(driver, "ADCB", "ADCBPARTIAL");		
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
 	}
 

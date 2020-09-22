@@ -23,7 +23,7 @@ public class PWA_Validation extends PaymentUI_Common{
 		driver.get(PayUrl);
 
 		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 20);
-		textPresent_Log(driver, "Select payment option", 1);
+		//textPresent_Log(driver, "Select payment option", 1);
 		payUI_Select_PaymentType_PWA(driver, "DEBIT/CREDIT CARDS");
 		safeClick(driver, getObjectPayment("PWA_PaymentPage_SaveCard"));
 		safeType(driver, getObjectPayment("PWA_PaymentPage_CC_Number"),  platform.value("MasterCard_Number"));

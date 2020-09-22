@@ -53,7 +53,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	*/
 	public RemoteWebDriver driver;
 	
-	String urlFlyin = "http://172.17.26.11:8406"; // ORACLE
+	String urlFlyin = "http://172.17.51.86:8406"; // ORACLE
 	String urlPay = "http://172.17.51.86:8070";
 	String urlRefundNew = "http://172.17.51.86:8070";
 	String urlrewards_payURI ="http://172.17.51.86:8070";
@@ -937,7 +937,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		else if(payType.equalsIgnoreCase("CreatePromo")){
 			url = promoURL + endPointCreatePromo;
 			String trip_ref =trip_refPromo.get(0);
-			String paramCreatePromo = "{\"user_id\":41649008,\"trip_ref\": \"" +trip_ref+ "\",\"type\":\"AIR_BOOKING\",\"promotions\":[{\"amount\":336,\"currency\":\"INR\",\"expiry_date\":\"22-1-2021\",\"trigger_date\":\"22-10-2019\"},{\"amount\":500,\"currency\":\"INR\",\"expiry_date\":\"26-03-2021\",\"trigger_date\":\"25-12-2019\"},{\"amount\":120,\"currency\":\"INR\",\"expiry_date\":\"14-09-2020\",\"trigger_date\":\"04-04-2020\",\"wallet\":\"OLA\",\"mobile\":\"9986696785\",\"email\":\"test@test.com\"}]}";
+			String paramCreatePromo = "{\"user_id\":41649008,\"trip_ref\": \"" +trip_ref+ "\",\"type\":\"AIR_BOOKING\",\"promotions\":[{\"amount\":336,\"currency\":\"INR\",\"expiry_date\":\"11-12-2020\",\"trigger_date\":\"22-10-2020\"},{\"amount\":500,\"currency\":\"INR\",\"expiry_date\":\"11-12-2021\",\"trigger_date\":\"22-10-2020\"},{\"amount\":120,\"currency\":\"INR\",\"expiry_date\":\"11-12-2021\",\"trigger_date\":\"22-10-2021\",\"wallet\":\"OLA\",\"mobile\":\"9986696785\",\"email\":\"test@test.com\"}]}";
 			params = paramCreatePromo;
 			headers = headersForms();
 			resp=RestAssured.given().when().log().all().body(params).headers(headers).post(url);

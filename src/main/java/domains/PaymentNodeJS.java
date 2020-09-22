@@ -643,9 +643,10 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 			elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_Amex3DPage_Submit_Btn"), 20);
 			safeClick(driver, getObjectPayment("MakePayment_NB_Bank_Amex3DPage_Submit_Btn"));
 		}else if (bankType.equalsIgnoreCase("DC")) {
-			textPresent(driver, "Password", 10);
-			elementVisible(driver, By.xpath("//input[@type='image']"), 20);
-			safeClick(driver, By.xpath("//input[@type='image']"));
+			textPresent(driver, "Please enter your MasterCard", 10);
+			elementVisible(driver, By.xpath("//td[2]/input[@class='monospace']"), 20);
+			//safeType(driver, By.xpath("//td[2]/input[@class='monospace']"), "");
+			safeClick(driver, By.xpath("//tr[9]/td/input"));
 		} else if (bankType.equalsIgnoreCase("CHECKOUT")) {
 			if (platform.value("CheckOut_3D").equals("true")) {
 				elementVisible(driver, getObjectPayment("MakePayment_PgCred_SA_Checkout_Password_Txt"), 30);

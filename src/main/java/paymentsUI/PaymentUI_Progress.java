@@ -36,7 +36,7 @@ public class PaymentUI_Progress extends PaymentNodeJS{
 	@Test(priority=1)
 	public void firePaymentURLandValidatePaymentModes() throws Exception{		
 		validation_PaymentUI("BookApp/GetPay", resp);
-		try{
+		
 			driver=(RemoteWebDriver) getDriver(driver);
 			driver.manage().deleteAllCookies(); 
 			driver.get(Url);
@@ -52,16 +52,11 @@ public class PaymentUI_Progress extends PaymentNodeJS{
 				driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			}
 
-		}
-		catch(Exception e){
-			Reporter.log("Exception is"+e);
-			Assert.assertTrue(false);
-		}
+		
 	}
 
 	@Test(priority=2)
 	public void inProgressPayment() throws Exception{
-		try{
 			boolean storedCard = driver.findElementByXPath("//p[text()='Stored Card']").isDisplayed();
 			if(storedCard==true)
 			{
@@ -88,11 +83,7 @@ public class PaymentUI_Progress extends PaymentNodeJS{
 			validateIfPresent(driver, PaymentUI_CommonUtilities.paymentInProgressHeaderXpath);
 			validateIfPresent(driver, PaymentUI_CommonUtilities.paymentInProgressMessageXpath);*/
 
-		}
-		catch(Exception e){
-			Reporter.log("Exception is"+e);
-			Assert.assertTrue(false);
-		}
+		
 	}
 
 	@AfterMethod (alwaysRun = true)

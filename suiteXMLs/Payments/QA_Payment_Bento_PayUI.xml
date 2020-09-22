@@ -59,11 +59,11 @@
 
 <test name="PWA ADCB"  preserve-order="true">
     <classes>   
-      <class name="paymentsUI_Air.PWA_RP_ADCB"/>  
+      <class name="paymentsUI_Air.PWA_RP_ADCB_Error"/>  
+      <class name="paymentsUI_Air.PWA_RP_ADCB_Full"/>  
+      <class name="paymentsUI_Air.PWA_RP_ADCB_Partial"/>  
     </classes>
 </test>
-
-
 
 <test name="PWA Pay"  preserve-order="true" >
     <classes>
@@ -131,7 +131,9 @@
 
 <test name="ADCB Pay"  preserve-order="true" parallel="true" >
     <classes>
-      <class name="paymentsUI_Air.RP_ADCB"/>   
+      <class name="paymentsUI_Air.RP_ADCB_Full"/> 
+      <class name="paymentsUI_Air.RP_ADCB_Partial"/>   
+      <class name="paymentsUI_Air.RP_ADCB_Error"/>   
     </classes>
 </test>
 

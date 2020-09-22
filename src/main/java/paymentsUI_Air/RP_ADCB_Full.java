@@ -10,11 +10,11 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class RP_ADCB extends PaymentUI_Common{
+public class RP_ADCB_Full extends PaymentUI_Common{
 	public RemoteWebDriver driver;
 	
 	@Test
-	public void AE_ADCB() throws Exception {
+	public void AE_ADCB_Full() throws Exception {
 		String PayUrl = getPayUI("AirAE", "AE");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
@@ -23,7 +23,7 @@ public class RP_ADCB extends PaymentUI_Common{
 		textPresent_Log(driver, "Enter your ADCB card details", 5);		
 		textPresent_Log(driver, "ADCB card no.", 5);
 		validate_Currency(driver, "", "AED");
-		payUI_Enter_PaymentDetails(driver, "ADCB", "","");
+		payUI_Enter_PaymentDetails(driver, "ADCB", "","ADCBFULL");
 		//payUI_Mock_ConfirmationPage(driver, PayUrl);
 	}
 

@@ -63,7 +63,7 @@ public class Validate_AE_Domain extends PaymentUI_Common{
 	public void Validate_AE_TermandCondition() throws Exception {
 		safeClick(driver, getObjectPayment("PayUI_I_Agree_CheckBox"));
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));		
-		textPresent_Log(driver, "Please accept the terms and conditions to proceed with this booking.", 5);
+		textPresent_Log(driver, "Please accept the terms and conditions to proceed with this booking", 5);
 		boolean button = driver.findElement(By.xpath("//button")).isEnabled();
 		if(!button) {
 			Reporter.log("Make Pament Button is not disabled");

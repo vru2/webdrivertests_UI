@@ -3,6 +3,9 @@
 
 package paymentsUI_Air;
 
+import static org.junit.Assert.assertTrue;
+import static org.testng.Assert.assertEquals;
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
@@ -648,20 +651,55 @@ public class PaymentUI_Common extends PaymentNodeJS{
 		if(BankName.contains("ADCBFULL")||BankName.contains("ADCBPARTIAL")) {
 
 			Enter_CARD_Details_PWA(driver, platform.value("ADCBCard_Number"), platform.value("PWA_ADCBCard_Expiry"), platform.value("ADCBCard_CVV"));
-		
-			Thread.sleep(5000);
+
+			safeClick(driver, getObjectPayment("PWA_PaymentPage_ADCB_CheckBalance_Button"));
+			Thread.sleep(20000);
 			textPresent_Log(driver, "A minimum amount of AED", 10);
 			textPresent_Log(driver, "Amount to redeem", 1);
 			textPresent_Log(driver, "50 must be redeemed", 1);		
 			textPresent_Log(driver, "Available", 1);
 			elementPresent_log(driver, getObjectPayment("PWA_PaymentPage_ADCB_Redeem_TextBox"), "Redeem textbox", 10);
-			
+
+			String TotalPrice = getText(driver, getObjectPayment("PWA_PaymentPage_TotalPrice1"));
+						
+			Assert.assertEquals(TotalPrice, "AED  0");
+						
 		}
 		if(BankName.contains("ADCBPARTIAL")) {
+			
+			safeType(driver, getObjectPayment("PWA_PaymentPage_ADCB_Redeem_TextBox"),  "AED 40");
+			Thread.sleep(5000);
+			String MinAmt_text = getText(driver, getObjectPayment("PWA_PaymentPage_ADCB_Minumum_Error_text"));
+			
+			Assert.assertEquals(MinAmt_text, "A minimum amount of AED  50 must be redeemed");
+			
 			safeType(driver, getObjectPayment("PWA_PaymentPage_ADCB_Redeem_TextBox"),  "AED 50");
+			Thread.sleep(5000);
+
+			String TotalPrice = getText(driver, getObjectPayment("PWA_PaymentPage_TotalPrice1"));
+						
+			Assert.assertEquals(TotalPrice, "AED  460");
+			
 		}
-		else if(BankName.contains("ADCBPARTIAL")) {
-			safeType(driver, getObjectPayment("PWA_PaymentPage_ADCB_Redeem_TextBox"),  "AED 50");
+		
+		else if(BankName.contains("ADCBFULL")) {
+			safeClick(driver, By.xpath("//button/p"));
+			textPresent_Log(driver, "Please enter the OTP(One Time Password) sent by your bank on your registered mobile number to confirm payment", 10);
+			textPresent_Log(driver, "you can request OTP once more if you haven't received the OTP", 1);
+			textPresent_Log(driver, "Complete payment", 1);
+			
+			
+			elementPresent_log(driver, getObjectPayment("PWA_PaymentPage_ADCB_Resend_OTP"), "Resend OTP", 1);
+			safeClick(driver, getObjectPayment("PWA_PaymentPage_ADCB_Resend_OTP"));
+//			payUI_Error_Validation_PWA(driver, getObjectPayment("PWA_Error_ADCB_ResendOTP"), getObjectPayment("PWA_Error_PopUp_Screen1"), "OTP sent sucessfully");	
+			
+			Thread.sleep(2000);
+			safeType(driver, By.id("OTP"),"10101010");
+			String ConfirmPayment = getText(driver, By.xpath("//button"));
+			
+			Assert.assertEquals(ConfirmPayment, "Confirm payment");
+	//		safeClick(driver, By.xpath("//button"));
+			
 		}
 		else if(BankName.contains("ADCBERROR")) {
 			safeClick(driver, getObjectPayment("PWA_PaymentPage_ADCB_CheckBalance_Button"));

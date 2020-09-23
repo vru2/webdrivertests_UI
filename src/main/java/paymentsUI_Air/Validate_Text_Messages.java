@@ -84,7 +84,7 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 		payUI_Select_PaymentType(driver, "CC");
 		safeClick(driver, getObjectPayment("PayUI_I_Agree_CheckBox"));
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));		
-		textPresent_Log(driver, "Please accept the terms and conditions to proceed with this booking.", 2);
+		textPresent_Log(driver, "Please accept the terms and conditions to proceed with this booking", 2);
 		boolean button = driver.findElement(By.xpath("//button")).isEnabled();
 		safeClick(driver, getObjectPayment("PayUI_I_Agree_CheckBox"));
 		if(!button) {

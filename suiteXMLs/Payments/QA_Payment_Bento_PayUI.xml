@@ -65,6 +65,12 @@
     </classes>
 </test>
 
+<test name="PWA KW Knet"  preserve-order="true">
+    <classes>   
+      <class name="paymentsUI_Air.PWA_KW_Knet"/>  
+    </classes>
+</test>
+
 <test name="PWA Pay"  preserve-order="true" >
     <classes>
       <class name="paymentsUI_Air.PWA_IN_AMEX"/>   <!-- 

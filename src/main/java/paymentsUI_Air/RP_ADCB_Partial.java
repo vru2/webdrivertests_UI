@@ -22,7 +22,7 @@ public class RP_ADCB_Partial extends PaymentUI_Common{
 		payUI_Select_PaymentType(driver, "ADCB");
 		textPresent_Log(driver, "Enter your ADCB card details", 5);		
 		textPresent_Log(driver, "ADCB card no.", 5);
-		textPresent_Log(driver, "ADCB TouchPoints", 5);
+		//textPresent_Log(driver, "ADCB TouchPoints", 5);
 		validate_Currency(driver, "", "AED");
 		payUI_Enter_PaymentDetails(driver, "ADCB", "","ADCBPARTIAL");
 		//payUI_Mock_ConfirmationPage(driver, PayUrl);

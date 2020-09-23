@@ -14,7 +14,7 @@ public class PWA_RP_ADCB_Full extends PaymentUI_Common{
 	public RemoteWebDriver driver;
 	
 	@Test
-	public void PWA_AE_MASTER() throws Exception {
+	public void PWA_ADCBFull() throws Exception {
 		String PayUrl = getPayUI("AirAE", "AE");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);

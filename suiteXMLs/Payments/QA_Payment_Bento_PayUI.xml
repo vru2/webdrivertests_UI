@@ -103,6 +103,34 @@
     </classes>
 </test>
 
+
+<test name="PWA GV"  preserve-order="true" parallel="true" >
+    <classes>
+      <class name="paymentsUI_Air.PWA_GV_Full"/>
+      <class name="paymentsUI_Air.PWA_GV_NB"/>      
+    </classes>
+</test>
+
+<test name="PWA RT"  preserve-order="true" parallel="true" >
+    <classes>
+      <class name="paymentsUI_Air.PWA_IN_Multicity"/>
+      <class name="paymentsUI_Air.PWA_IN_RT"/>      
+    </classes>
+</test>
+
+<test name="PWA Arabic"  preserve-order="true" parallel="true" >
+    <classes>
+      <class name="paymentsUI_Air.PWA_Arabic"/>      
+    </classes>
+</test>
+
+<test name="PWA Wallet"  preserve-order="true" parallel="true" >
+    <classes>
+      <class name="paymentsUI_Air.PWA_WalletFull"/>    
+      <class name="paymentsUI_Air.PWA_WalletPartial"/>      
+    </classes>
+</test>
+
 <test name="Validation"  preserve-order="true"  >
     <classes>
       <class name="paymentsUI_Air.Validate_Text_Messages"/>

@@ -4,26 +4,22 @@
 package paymentsUI_Air;
 
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class PWA_RP_ADCB_Partial extends PaymentUI_Common{
+public class PWA_KW_Knet extends PaymentUI_Common{
 	public RemoteWebDriver driver;
 	
 	@Test
-	public void PWA_ADCBPart() throws Exception {
-		String PayUrl = getPayUI("AirAE", "AE");
+	public void PWA_KW_MASTER() throws Exception {
+		String PayUrl = getPayUI("AirKW", "KW");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
-		//textPresent_Log(driver, "NET BANKING", 5);
-		//textNotPresent_List(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), "NET BANKING");	
-		validate_Currency_PWA(driver, "AE", "AED");
-		payUI_Select_PaymentType_PWA(driver, "ADCB");
-		payUI_Enter_PaymentDetails_PWA(driver, "ADCB", "ADCBPARTIAL");		
-		payUI_Mock_ConfirmationPage(driver, PayUrl);
+		Assert.assertTrue(false);
 	}
 
 	@BeforeClass

@@ -13,7 +13,7 @@ public class API_GV_Get extends API_PaymentCommon1
 	@Test
 	public void API_GVGet() throws ClassNotFoundException, SQLException  {
 		Response resp ;		
-		resp = rearchGV("GET","");	
+		resp = rearchGV1("GET","");	
 		validation("GV_GET", resp);
 		}
 	

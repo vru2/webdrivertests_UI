@@ -19,7 +19,6 @@ public class Wallet_NB extends PaymentUI_Common{
 	
 	@Test
 	public void Wallet_Part_Pay() throws Exception {
-		Response resp = null;
 		resp  = addWalletAmt(resp, "ct_wallet_partial@cleartrip.com", 10, "INR");
 		String PayUrl = getPayUI("Air", "");
 		driver.get(PayUrl);

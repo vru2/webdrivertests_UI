@@ -3,11 +3,10 @@
 
 package paymentsUI_Air;
 
-import static org.testng.Assert.assertTrue;
-
 import org.junit.Assert;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
+import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -21,7 +20,25 @@ public class PWA_GV_Full extends PaymentUI_Common{
 		String PayUrl = getPayUI("AirGVFull", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);				
-		Assert.assertTrue(false);
+		elementPresent(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_Icon"));
+		safeClick(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_Icon"));
+		elementPresent(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_closeIcon"));
+		textPresent_Log(driver, "Gift card", 1);
+		Reporter.log("Gift card (3000331035955930) text is displayed");
+		Thread.sleep(2000);
+		safeClick(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_closeIcon"));
+		Thread.sleep(2000);
+		String TotalPrice = getText(driver, getObjectPayment("PWA_PaymentPage_TotalPriceGV"));
+		Assert.assertEquals(TotalPrice, "₹ 0");
+		/*if(elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 1)) {
+			Reporter.log("CC tab is displayed");
+			Assert.assertTrue(false);
+		}
+		if(textPresent(driver, "DEBIT/CREDIT", 1)) {
+			Reporter.log("for full GV other pay options are displayed - DEBIT/CREDIT CARDS");
+			Assert.assertTrue(false);
+		}*/
+		
 	}
 
 	@BeforeClass

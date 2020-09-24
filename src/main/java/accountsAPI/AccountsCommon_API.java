@@ -137,6 +137,9 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String url_Account_Service_PWA_GetUserbyID="/account/people/v2/14029546?docRequired=false&savedCards=true&travellersRequired=true&userPreference=true";
 	String url_Account_Service_PWA_GetUser_Byemail="/account/people?docRequired=true&email=priyankapukale259@gmail.com&partner=0&savedCards=true&travellersRequired=true&userPreference=false";
 	String url_Account_Service_EmailVerification_API="/user/v2/email_verified_status?username=ns.likhitha@cleartrip.com";
+	String url_IdentityService_PeopleController_gt_token_for_userBy_ID="/user/token?userId=14029546";
+	String url_IdentityService_PeopleController_gt_token_for_userBy_Email="/user/token?username=testtoken@flyin.com";
+	String url_IdentityService_PeopleController_gt_token_for_userBy_Private_EmailandID="/user/token?username=testtoken@privaterelay.appleid.com.com&userId=65203482";
 	String url_peoplecontroller_getuserbyid_v2="/account/people/v2/41623980?docRequired=true&savedCards=true&travellersRequired=true&userPreference=true";
 	String url_apiConfig_APIkey="/account/api_config?api_key=d4beada793e93d93fcd432141709400f";
 	String  url_b2bgetTravelerURL="/companies/b2b/101/travellers?sourceType=corp&titleType=adult";
@@ -330,7 +333,26 @@ public class AccountsCommon_API extends PlatformCommonUtil
 
 		return headers;
 	}
+	
+	public HashMap<String, Object> headersFormget_token_for_user(){
+		HashMap<String, Object> headers = new HashMap<>();
+		
+		headers.put("referer", "www.cleartrip.com");
+		//GCP -- headers.put("AUTH_KEY", "H67f$we&HGTR34clQ");
 
+		return headers;
+	}
+	public HashMap<String, Object> headersFormget_token_for_user_flyin(){
+		HashMap<String, Object> headers = new HashMap<>();
+		
+		headers.put("referer", "www.flyin.com");
+		//GCP -- headers.put("AUTH_KEY", "H67f$we&HGTR34clQ");
+
+		return headers;
+	}
+
+	
+	
 
 	/*public HashMap<String, Object> headersFormsscreencaptureInitiate(){
 		HashMap<String, Object> headers = new HashMap<>();
@@ -1332,10 +1354,34 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		else if (Type.equals("Account_Service_EmailVerification_API")){
 			RestAssured.baseURI=url_Acct_Service;
 			url = url_Account_Service_EmailVerification_API;
-			headers = headersFormpwaemailverification();
+			headers = headersFormpwaemailverification ();
 			Reporter.log(url_Acct_Service+url);
 
 		}
+		else if (Type.equals("IdentityService_PeopleController_gt_token_for_userBy_ID")){
+			RestAssured.baseURI=url_Identitymicro_service;
+			url = url_IdentityService_PeopleController_gt_token_for_userBy_ID;
+			headers = headersFormget_token_for_user();
+			Reporter.log(url_Identitymicro_service+url);
+
+		}
+		
+		else if (Type.equals("IdentityService_PeopleController_gt_token_for_userBy_Email")){
+			RestAssured.baseURI=url_Identitymicro_service;
+			url = url_IdentityService_PeopleController_gt_token_for_userBy_Email;
+			headers = headersFormget_token_for_user_flyin();
+			Reporter.log(url_Identitymicro_service+url);
+
+		}
+		
+		else if (Type.equals("IdentityService_PeopleController_gt_token_for_userBy_Private_EmailandID")){
+			RestAssured.baseURI=url_Identitymicro_service;
+			url = url_IdentityService_PeopleController_gt_token_for_userBy_Private_EmailandID;
+			headers = headersFormget_token_for_user_flyin();
+			Reporter.log(url_Identitymicro_service+url);
+
+		}
+
 
 		else if (Type.equals("peoplecontroller_getuserbyid_v2")){
 			RestAssured.baseURI=url_Acct_Service;
@@ -1702,6 +1748,40 @@ public class AccountsCommon_API extends PlatformCommonUtil
 
 
 		}
+		
+		else if(Type.equalsIgnoreCase("IdentityService_PeopleController_gt_token_for_userBy_ID")) {
+
+			String token = jsonPathEvaluator.getString("token");
+
+			if(!token.contains("1566811020")) {
+				Assert.assertTrue(false);						
+			}
+
+
+		}
+		
+		else if(Type.equalsIgnoreCase("IdentityService_PeopleController_gt_token_for_userBy_Email")) {
+
+			String token = jsonPathEvaluator.getString("token");
+
+			if(!token.contains("1600408390")) {
+				Assert.assertTrue(false);						
+			}
+
+
+		}
+		
+		else if(Type.equalsIgnoreCase("IdentityService_PeopleController_gt_token_for_userBy_Private_EmailandID")) {
+
+			String token = jsonPathEvaluator.getString("token");
+
+			if(!token.contains("1600408422")) {
+				Assert.assertTrue(false);						
+			}
+
+
+		}
+
 
 		else if(Type.equalsIgnoreCase("peoplecontroller_getuserbyid_v2")) {
 

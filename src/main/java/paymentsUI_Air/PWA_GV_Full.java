@@ -29,7 +29,11 @@ public class PWA_GV_Full extends PaymentUI_Common{
 		safeClick(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_closeIcon"));
 		Thread.sleep(2000);
 		String TotalPrice = getText(driver, getObjectPayment("PWA_PaymentPage_TotalPriceGV"));
-		Assert.assertEquals(TotalPrice, "₹ 0");
+		System.out.println(TotalPrice);
+		if(!TotalPrice.contains(" 0")) {
+			Reporter.log("Total prce is not 0");
+			Assert.assertTrue(false);
+		}
 		/*if(elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 1)) {
 			Reporter.log("CC tab is displayed");
 			Assert.assertTrue(false);

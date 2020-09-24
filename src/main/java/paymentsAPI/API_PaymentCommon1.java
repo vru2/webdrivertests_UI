@@ -565,6 +565,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 
 	protected String qaurl = "https://qa2.cleartrip.com";
+	protected String qaurlFlyin = "https://qa2.flyin.com";
 	protected String qaurlae = "https://www.cleartrip.ae";
 	protected String qaurlbh = "https://bh.cleartrip.com";
 	protected String qaurlkw = "https://kw.cleartrip.com";
@@ -3181,6 +3182,10 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			qaurl=qaurlus;
 		}
 		Url = qaurl+ fetchPaymentURL(resp);
+		if(Domain.contains("FLYIN")) {
+			Url = qaurlFlyin+ fetchPaymentURL(resp);
+			
+		}
 		Reporter.log("Payment URL : " +Url);
 		String TripID = fetchPaymentTripID(resp);
 		Reporter.log("TripID : "+TripID);

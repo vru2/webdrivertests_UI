@@ -1499,6 +1499,31 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 	}
 
+	public Response rearchGV1(String payType, String payType1) throws ClassNotFoundException, SQLException{
+		
+		RestAssured.baseURI =urlWallet;
+		Reporter.log(urlWallet);
+		String url = null;
+		String params = null;
+		HashMap<String, Object> headers = new HashMap<>();
+		headers = headersForms();
+		Response request = null;	 
+		if(payType.equalsIgnoreCase("GET")) {
+			url= urlEndPoint_GV_Get;
+			request = RestAssured.given().
+					when().
+					log().all().
+					headers(headers).
+					get(url);
+		}
+
+		Reporter.log(urlWallet+url);
+		Reporter.log("Params : "+params);
+		return request;
+
+
+	}
+
 	public Response rearchPaymentOTP(String payType, String payType1, String paymentID){
 		RestAssured.baseURI =urlPay;
 		String params = null;

@@ -6,6 +6,7 @@ package paymentsUI_Air;
 import org.junit.Assert;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
+import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -16,11 +17,31 @@ public class PWA_Arabic extends PaymentUI_Common{
 	
 	@Test
 	public void PWAArabic() throws Exception {
-		String PayUrl = getPayUI("AirAmend", "");
+		String PayUrl = getPayUI("AirAEAR", "AE");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
-
-		Assert.assertTrue(false);
+		elementPresent_log(driver, getObjectPayment("PayUI_Make_Payment_Btn"), "MakePayment Button", 5);
+		if(textPresent(driver, "DEBIT/CREDIT CARDS", 1)) {
+			Reporter.log("DEBIT/CREDIT CARDS : text is displayed in English");
+			Assert.assertTrue(false);
+		}
+		if(textPresent(driver, "Your trip details", 1)) {
+			Reporter.log("Your trip details : text is displayed in English");
+			Assert.assertTrue(false);
+		}
+		if(textPresent(driver, "NET BANKING", 1)) {
+			Reporter.log("NET BANKING : text is displayed in English");
+			Assert.assertTrue(false);
+		}
+		if(textPresent(driver, "WALLETS", 1)) {
+			Reporter.log("WALLETS : text is displayed in English");
+			Assert.assertTrue(false);
+		}
+		if(textPresent(driver, "UPI", 1)) {
+			Reporter.log("UPI : text is displayed in English");
+		//	Assert.assertTrue(false);
+		}
+	
 	}
 
 	@BeforeClass

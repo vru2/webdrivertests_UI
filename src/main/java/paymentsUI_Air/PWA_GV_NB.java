@@ -3,11 +3,10 @@
 
 package paymentsUI_Air;
 
-import static org.testng.Assert.assertTrue;
-
 import org.junit.Assert;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
+import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -21,9 +20,16 @@ public class PWA_GV_NB extends PaymentUI_Common{
 		String PayUrl = getPayUI("AirGV", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);				
+		elementPresent(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_Icon"));
+		safeClick(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_Icon"));
+		elementPresent(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_closeIcon"));
+		textPresent_Log(driver, "Gift card", 1);
+		Reporter.log("Gift card (3000331035955930) text is displayed");
+		Thread.sleep(2000);
+		safeClick(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_closeIcon"));
+		Thread.sleep(2000);
 		payUI_Select_PaymentType_PWA(driver, "NET BANKING");
 		payUI_Enter_PaymentDetails_PWA(driver, "NET BANKING", "Axis Bank");
-		Assert.assertTrue(false);
 	}
 
 	@BeforeClass

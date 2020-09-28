@@ -12,9 +12,9 @@
 <test name="API Deposit Account DA" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsAPI.API_DA_PayV3"/>
-      <class name="paymentsAPI.API_DA_ValidateV3"/>
+      <class name="paymentsAPI.API_DA_ValidateV3"/><!-- 
       <class name="paymentsAPI.API_DA_APP_Refund"/>
-      <class name="paymentsAPI.API_DA_APP_Balance"/> 
+      <class name="paymentsAPI.API_DA_APP_Balance"/>  -->
     </classes>
 </test>
 

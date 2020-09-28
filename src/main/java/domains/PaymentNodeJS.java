@@ -102,12 +102,17 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 			Thread.sleep(500);
 			safeType(driver, getObjectPayment("HomePage_Host_ServerIp_Txt"), "172.17.26.11:8250:/paymentservice");
 			Reporter.log("DEV payment 172.17.26.11:8250:9001/paymentservice"); 
+			safeType(driver, By.id("test_ip"), "172.17.56.41:9080/");
+				
+			
 		}		
 		else {
 			Thread.sleep(500);
 			safeType(driver, getObjectPayment("HomePage_Host_ServerIp_Txt"), "172.17.51.86:8070/paymentservice");
 			Reporter.log("172.17.51.86:8070/paymentservice"); 
 		}
+
+		safeType(driver, By.id("test_ip"), "172.17.56.41:9080");			
 		safeClick(driver, getObjectPayment("HomePage_Confirm_Btn"));
 	}
 

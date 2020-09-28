@@ -18,8 +18,7 @@
 
 <test name="API Refunds Count" preserve-order="true" parallel="true">
     <classes>
-      <class name="paymentsAPI.API_Navison_CC"/>
-      <class name="paymentsAPI.API_Navison_Air"/>      
+   
     </classes>
 </test>
 
@@ -35,8 +34,8 @@
 <test name="API Deposit Account DA" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsAPI.API_DA_PayV3"/>
-      <class name="paymentsAPI.API_DA_ValidateV3"/>
-      <class name="paymentsAPI.API_DA_APP_Refund"/>
+      <class name="paymentsAPI.API_DA_ValidateV3"/><!-- 
+      <class name="paymentsAPI.API_DA_APP_Refund"/> -->
       <class name="paymentsAPI.API_DA_APP_Balance"/> 
     </classes>
 </test>
@@ -49,7 +48,7 @@
     </classes>
 </test>
 
-<test name="AAPI Pay Calls" preserve-order="true">
+<test name="API Pay Calls" preserve-order="true">
     <classes>
       <class name="paymentsAPI.API_Validate"/>
       <class name="paymentsAPI.API_CC_Visa_Type"/>
@@ -86,9 +85,9 @@
 </test>
 
 <test name="API Promo service" preserve-order="true" parallel="true">
-    <classes>
+    <classes><!-- 
       <class name="paymentsAPI.API_PromoService"/> 
-      <class name="paymentsAPI.API_Promo_Activate"/>  
+      <class name="paymentsAPI.API_Promo_Activate"/> -->  
       <!-- <class name="paymentsAPI.API_Promo_Used"/>  -->
     </classes>
 </test>
@@ -203,13 +202,13 @@
 
 <test name="API Reporting Archived"  preserve-order="true" parallel="true" >
     <classes>
-	<!-- 	<class name="paymentsAPI.API_Reporting_TS_Archived_V3"/> -->
+		<class name="paymentsAPI.API_Reporting_TS_Archived_V3"/>
     </classes>
 </test>
 
 <test name="API FetchRefunds New"  preserve-order="true" parallel="true" >
     <classes>
-		<!-- <class name="paymentsAPI.API_Refunds_Fetch"/> -->
+		<class name="paymentsAPI.API_Refunds_Fetch"/>
 	 </classes>
 </test>
 

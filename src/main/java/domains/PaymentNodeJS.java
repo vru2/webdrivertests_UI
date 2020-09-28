@@ -140,6 +140,8 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 					Thread.sleep(500);
 					smartType(driver, getObjectPayment("HomePage_Host_ServerIp_Txt"), "172.17.51.86:8070/paymentservice");
 				}
+
+				smartType(driver, By.id("test_ip"), "172.17.56.41:9080");
 				smartClick(driver, getObjectPayment("HomePage_Confirm_Btn"));
 			}
 		}
@@ -679,12 +681,45 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 			safeClick(driver, getObjectPayment("MakePayment_NB_Bank_Noon_Submit_Btn"));
 
 			//safeClick(driver, "");
-		}		
+		}	
+		/*else if (bankType.equalsIgnoreCase("")) {
+			for (int i = 0; i < 10; i++) {
+				if (textPresent(driver, "AXIS SIMULATOR", 1)) {
+					smartType(driver, By.id("password"), "123456");
+					smartClick(driver, By.id("submitBtn"));	
+					break;
+				}
+			if(elementVisible(driver, By.id("payu_logo"), 1)) {
+				safeClick(driver, By.id("creditlink"));
+				Thread.sleep(500);
+				safeType(driver, getObjectPayment("PayU_Page_CC_Number"), "5123456789012346");
+				Thread.sleep(500);
+				safeType(driver, getObjectPayment("PayU_Page_CC_Name"), "TestPayU");
+				Thread.sleep(500);
+				safeSelect(driver,getObjectPayment("PayU_Page_CC_EXP_Month") , "Sep (9)");
+				Thread.sleep(500);
+				safeSelect(driver,getObjectPayment("PayU_Page_CC_EXP_Year") , "2021");
+				safeType(driver, getObjectPayment("PayU_Page_CC_CVV"), "123");
+				Thread.sleep(1000);
+				safeClick(driver, getObjectPayment("PayU_Page_CC_Pay_Btn"));
+				Thread.sleep(1000);
+			}
+			if (textPresent(driver, "AXIS SIMULATOR", 1)) {
+				smartType(driver, By.id("password"), "123456");
+				smartClick(driver, By.id("submitBtn"));	
+				break;
+			}
+			}
+		}*/
 	}
 
 	public String paymentNodeJS_ConfirmationPage(RemoteWebDriver driver, String payType, String Confirm_Msg, String LoggerMsg) throws Exception {
-		for (int i = 0; i < 5; i++) {
-			if(elementVisible(driver, By.id("payu_logo"), 5)) {
+		for (int i = 0; i < 10; i++) {
+			if (textPresent(driver, "AXIS SIMULATOR", 1)) {
+				smartType(driver, By.id("password"), "123456");
+				smartClick(driver, By.id("submitBtn"));	
+			}
+			else if(elementVisible(driver, By.id("payu_logo"), 1)) {
 				safeClick(driver, By.id("creditlink"));
 				Thread.sleep(500);
 				safeType(driver, getObjectPayment("PayU_Page_CC_Number"), "5123456789012346");
@@ -703,7 +738,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 				smartType(driver, By.id("password"), "123456");
 				smartClick(driver, By.id("submitBtn"));	
 			}
-			else if (textPresent(driver,"Payment successful", 1)){
+			if (textPresent(driver,"Payment successful", 1)){
 				break;
 			}
 			else if (textPresent(driver, "This site can’t be reached", 1)) {

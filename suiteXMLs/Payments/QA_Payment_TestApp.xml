@@ -3,9 +3,9 @@
 
 <listeners>
 <listener class-name="org.uncommons.reportng.HTMLReporter" />
-<listener class-name="common.RemoveDuplicateResults"/>
-<listener class-name="common.RetryListener"/>
-       <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+<listener class-name="common.RemoveDuplicateResults"/><!-- 
+<listener class-name="common.RetryListener"/> -->
+<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
 
 <test name="PhonePe"  preserve-order="true" parallel="true" >
@@ -85,15 +85,15 @@
     </classes>
 </test>
 	
-<test name="ME CC" preserve-order="true">
+<test name="ME CC" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsUI.Payment_NodeJS_CC_AE"/> 
       <class name="paymentsUI.Payment_NodeJS_CC_SA"/>   
-<!--       <class name="paymentsUI.Payment_NodeJS_CC_BH"/>
+      <class name="paymentsUI.Payment_NodeJS_CC_BH"/>
       <class name="paymentsUI.Payment_NodeJS_CC_KW"/>
       <class name="paymentsUI.Payment_NodeJS_CC_OM"/>
       <class name="paymentsUI.Payment_NodeJS_CC_QA"/>
-      <class name="paymentsUI.Payment_NodeJS_CC_US"/> -->
+      <class name="paymentsUI.Payment_NodeJS_CC_US"/>
     </classes>
 </test>
 
@@ -114,22 +114,17 @@
 <test name="Hotel" preserve-order="true">
     <classes>
       <class name="paymentsUI.Payment_NodeJS_Hotels_B2C_CC"/> 
-<!--       <class name="paymentsUI.Payment_NodeJS_Hotels_B2C_CC_AE"/>
-      <class name="paymentsUI.Payment_NodeJS_Hotels_B2C_DC"/> 
-      <class name="paymentsUI.Payment_NodeJS_Hotels_Agency_CC"/>
-      <class name="paymentsUI.Payment_NodeJS_Hotels_Corp_CC"/>
-      <class name="paymentsUI.Payment_NodeJS_Hotels_Mobile_CC"/>  -->     
     </classes>
 </test>
 
-<test name="Air" preserve-order="true">
+<test name="Air" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsUI.Payment_NodeJS_Air_Agency_CC"/> 
       <class name="paymentsUI.Payment_NodeJS_Air_Corp_CC"/>
       <class name="paymentsUI.Payment_NodeJS_AirIntl_Mobile_CC_AE"/> 
-      <class name="paymentsUI.Payment_NodeJS_Air_Mobile_CC"/> 
-      <class name="paymentsUI.Payment_NodeJS_Air_Mobile_DC"/>
-      <class name="paymentsUI.Payment_NodeJS_AirIntl_B2C_CC"/>    
+      <class name="paymentsUI.Payment_NodeJS_Air_Mobile_CC"/>
+<!--       <class name="paymentsUI.Payment_NodeJS_AirIntl_B2C_CC"/>
+      <class name="paymentsUI.Payment_NodeJS_Air_Mobile_DC"/> -->
     </classes>
 </test>
 
@@ -137,10 +132,7 @@
     <classes>
       <class name="paymentsUI.Payment_NodeJS_Activity_B2C_CC_AE"/> 
       <class name="paymentsUI.Payment_NodeJS_Activity_B2C_CC"/>
-<!--       <class name="paymentsUI.Payment_NodeJS_Activity_B2C_DC"/> 
-      <class name="paymentsUI.Payment_NodeJS_Activity_Mobile_CC"/> -->
    </classes>
 </test>
-
 
 </suite> 

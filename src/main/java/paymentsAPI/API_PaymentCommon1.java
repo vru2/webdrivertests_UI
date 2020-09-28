@@ -55,7 +55,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	
 	String urlFlyin = "http://172.17.51.86:8406"; // ORACLE
 	String urlPay = "http://172.17.51.86:8070";
-	String urlRefundNew = "http://172.17.51.86:8070";
+	String urlRefundNew1 = "http://172.17.51.86:8070";
 	String urlrewards_payURI ="http://172.17.51.86:8070";
 	String urladcb_validat = "http://172.17.51.86:8070";
 	String urlFetchRefunds="http://172.17.51.86:8070";
@@ -64,7 +64,6 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String urlRewards = "http://172.17.56.51:9080";
 	String urlWallet = "http://172.17.51.86:8071";
 	String urlCardInfo_Service="http://172.17.51.86:8331";
-
 	String urlrewards_validate = "http://172.17.51.86:8070";
 	String urlrewards_URI = "http://172.17.56.51:9080";
 	String urlPromo_Used = "http://172.17.51.86:8071";

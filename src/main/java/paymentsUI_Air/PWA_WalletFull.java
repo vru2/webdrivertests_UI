@@ -24,7 +24,10 @@ public class PWA_WalletFull extends PaymentUI_Common{
 		refreshPage(driver);
 		elementVisible(driver, getObjectPayment("PWA_PaymentPage_TotalPriceGV"), 10);
 		String Total = getText(driver, getObjectPayment("PWA_PaymentPage_TotalPriceGV"));
-		Assert.assertEquals(Total, "₹ 0");
+		if(!Total.contains(" 0")) {
+			Assert.assertEquals(Total, "₹  0");
+			Assert.assertTrue(false);
+		}
 		elementPresent_log(driver, getObjectPayment("PWA_PaymentPage_SaveCard"), "Wallet toggle btn", 5);
 
 		String Wallet_Message = getText(driver, By.xpath("//div[@id='root']/main/div/section/div[3]/div/div"));

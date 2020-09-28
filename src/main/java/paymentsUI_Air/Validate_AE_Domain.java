@@ -39,7 +39,6 @@ public class Validate_AE_Domain extends PaymentUI_Common{
 		textPresent_Log(driver, "Please enter a valid expiry month", 1);		
 		textPresent_Log(driver, "Please enter a valid expiry year", 1);		
 		textPresent_Log(driver, "Please enter a valid cvv", 1);				
-		textPresent_Log(driver, "Save this card and make single-click payments", 1);
 		textPresentInElement(driver, getObjectPayment("PayUI_Convinence_Fee"), "Includes a convenience fee of ₹ 200.00", 1);
 		textPresent_Log(driver, "Includes a convenience fee of", 5);
 	}

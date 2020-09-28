@@ -30,7 +30,10 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 		textPresent_Log(driver, "Card holder", 1);	
 		textPresent_Log(driver, "CVV", 1);			
 		textPresent_Log(driver, "I understand and agree to the rules and restrictions of this fare", 1);			
-		textPresent_Log(driver, "Booking policy the Privacy Policy and the Terms & Conditions of Cleartrip", 1);	
+		textPresent_Log(driver, "Booking policy", 1);	
+	//	textPresent_Log(driver, "the Privacy Policy", 1);	
+	//	textPresent_Log(driver, "and the Terms", 1);	
+		textPresent_Log(driver, "Conditions of Cleartrip", 1);	
 		textPresent_Log(driver, "Please enter a valid expiry month", 1);		
 		textPresent_Log(driver, "Please enter a valid expiry year", 1);		
 		textPresent_Log(driver, "Please enter a valid name", 1);	

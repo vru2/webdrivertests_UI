@@ -3,7 +3,6 @@
 
 package paymentsUI_Air;
 
-import org.junit.Assert;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.Reporter;

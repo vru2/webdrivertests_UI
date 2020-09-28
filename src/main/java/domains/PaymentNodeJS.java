@@ -53,7 +53,7 @@ import paymentsUI.PaymentUI_CommonUtilities;
 
 public class PaymentNodeJS extends API_PaymentCommon1{
 
-	public String getPaymentNodeUrl = "http://172.17.15.176:9080";
+	public String getPaymentNodeUrl = "http://172.17.56.41:9080/";
 	public String getPaymentSummaryUrl = "http://172.17.14.217:9080/ct-logger/paymentDashboard";
 	protected String qaurl = "https://qa2.cleartrip.com";
 	//String urlgetPay = "http://172.17.26.11:8070";

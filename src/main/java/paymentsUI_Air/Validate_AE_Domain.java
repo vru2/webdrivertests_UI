@@ -98,9 +98,16 @@ public class Validate_AE_Domain extends PaymentUI_Common{
 	
 	@Test(priority=6)
 	public void Validate_AE_Expressway() throws Exception {		
+		payUI_Select_PaymentType(driver, "CC");	
+		if(elementVisible(driver, getObjectPayment("PayUI_Expressway_CheckBox"), 1)) {
+			Reporter.log("save card is displayed for unsigned User");
+			Assert.assertTrue(false);
+		}
+		
+		/*
 		safeClick(driver, getObjectPayment("PayUI_Expressway_CheckBox"));
 		textPresent_Log(driver, "2006–2020 Cleartrip Pvt. Ltd", 1);		
-		textPresent_Log(driver, "Save this card and make single-click payments", 1);	
+		textPresent_Log(driver, "Save this card and make single-click payments", 1);*/	
 	}
 	
 	@Test(priority=7)

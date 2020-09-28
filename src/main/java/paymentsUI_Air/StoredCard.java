@@ -41,16 +41,17 @@ public class StoredCard extends PaymentUI_Common{
 		String StoredCard_Number= getText(driver, getObjectPayment("PayUI_StoredCard_Number"));
 		String StoredCard_Name= getText(driver, getObjectPayment("PayUI_StoredCard_Name"));
 		String Profile_EmailID= getText(driver, getObjectPayment("PayUI_Profile_EmailID"));		
-		if(!StoredCard_Number.contains("340000XXXXXX009")) {
+		if(!StoredCard_Number.contains("512345XXXXXX2346")) {
 			Reporter.log("Stored card number is : "+StoredCard_Number);
 			Assert.assertTrue(false);
-		}if(!StoredCard_Name.contains("Amex")) {
+		}if(!StoredCard_Name.contains("MasterCard")) {
 			Reporter.log("Stored card name is : "+StoredCard_Name);
 			Assert.assertTrue(false);
 		}if(!Profile_EmailID.contains("ct_wallet_partial@cleartrip.com")) {
 			Reporter.log("Profile_EmailID is : "+Profile_EmailID);
 			Assert.assertTrue(false);
 		}
+		
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		textPresent_Log(driver, "Please enter a valid cvv", 5);
 		safeType(driver, getObjectPayment("PayUI_StoredCard_CVV"), "123");

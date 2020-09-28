@@ -3,6 +3,7 @@
 
 package paymentsUI_Air;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
@@ -10,19 +11,20 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Knet_KW extends PaymentUI_Common{
+public class Expressway_SignIN extends PaymentUI_Common{
 	public RemoteWebDriver driver;
 	
 	@Test
-	public void CC_PayU_Pay_KW() throws Exception {
-		String PayUrl = getPayUI("AirKW", "KW");
+	public void Expressway() throws Exception {
+		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
-		//payUI_Select_PaymentType(driver, "NB");
-		//Assert.assertTrue(false);// validate the Knet logo
-		payUI_Select_PaymentType(driver, "KNET");
-		payUI_Enter_PaymentDetails(driver, "KNET", "KNET","");
-		payUI_Mock_ConfirmationPage(driver, PayUrl);
+		driver.manage().addCookie(cookie_Parl_Wallet);
+		refreshPage(driver);
+		payUI_Select_PaymentType(driver, "CC");			
+		safeClick(driver, getObjectPayment("PayUI_Expressway_CheckBox"));
+		textPresent_Log(driver, "Save this card and make single-click payments", 1);	
+		elementPresent_log(driver, By.cssSelector("div.row.flex-middle.fs-2.pl-2.pr-2.sec-text-color > img"), "Expressway Logo", 1);
 	}
 
 	@BeforeClass

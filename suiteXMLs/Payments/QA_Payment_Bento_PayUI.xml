@@ -24,13 +24,11 @@
     </classes>
 </test>
 
-
 <test name="NB Retry" preserve-order="true">
     <classes>
     <!--   <class name="paymentsUI_Air.NB_CITI_Retry"/>  -->
     </classes>
 </test>
-
 
 <test name="CC GW"  preserve-order="true" >
     <classes>
@@ -105,7 +103,16 @@
 <test name="PWA Validation and Captcha"  preserve-order="true" >
     <classes>
       <class name="paymentsUI_Air.PWA_Validation"/> 
+      
 <!--       <class name="paymentsUI_Air.PWA_Captcha"/>  -->
+    </classes>
+</test>
+
+
+
+<test name="PWA StoredCard"  preserve-order="true" >
+    <classes>
+      <class name="paymentsUI_Air.PWA_StoredCard"/> 
     </classes>
 </test>
 
@@ -142,6 +149,7 @@
       <class name="paymentsUI_Air.Validate_Text_Messages"/>
       <class name="paymentsUI_Air.Validate_Images_Links"/> 
       <class name="paymentsUI_Air.Validate_AE_Domain"/>  
+      <class name="paymentsUI_Air.Expressway_SignIN"/>  
     </classes>
 </test>
 
@@ -239,6 +247,5 @@
       <!-- <class name="paymentsUI_Air.Validation_Captcha"/> 	   -->
     </classes>
 </test>
-	
 
 </suite> 

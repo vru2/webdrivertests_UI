@@ -3,9 +3,6 @@
 
 package paymentsUI_Air;
 
-import static org.junit.Assert.assertTrue;
-import static org.testng.Assert.assertEquals;
-
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;

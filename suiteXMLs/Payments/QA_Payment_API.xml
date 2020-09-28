@@ -150,7 +150,7 @@
 
 <test name="API PayBack" preserve-order="true" parallel="true">
     <classes>
-<!--       <class name="paymentsAPI.API_RewardPayback"/>  -->
+      <class name="paymentsAPI.API_RewardPayback"/> 
     </classes>
 </test>
 

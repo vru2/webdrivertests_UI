@@ -158,8 +158,8 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 		textPresent_Log(driver, "Completely safe and secure transaction", 1);
 		textPresent_Log(driver, "Total inclusive all taxes", 1);	
 		String Title = driver.getTitle();
-		if(!Title.contains("cleartrip | payment securely")) {
-			Reporter.log("cleartrip | payment securely page title is not displayed");
+		if(!Title.contains("Cleartrip | Pay securely")) {
+			Reporter.log("Cleartrip | Pay securely page title is not displayed");
 			Assert.assertEquals(Title, "cleartrip | payment securely");
 			Assert.assertTrue(false);
 		}

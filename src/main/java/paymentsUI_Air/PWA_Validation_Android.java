@@ -13,15 +13,15 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class PWA_Validation extends PaymentUI_Common{
+public class PWA_Validation_Android extends PaymentUI_Common{
 	public RemoteWebDriver driver;
 	
-	@Test (priority=1)
-	public void PWA_Validate_pay_error() throws Exception {
+	@Test
+	public void PWA_Validate_pay_error_Android() throws Exception {
 		String PayUrl = getPayUI("Air", "");
+		PayUrl = PayUrl+URL_Android;
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
-
 		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 20);
 		//textPresent_Log(driver, "Select payment option", 1);
 		payUI_Select_PaymentType_PWA(driver, "DEBIT/CREDIT CARDS");
@@ -54,7 +54,7 @@ public class PWA_Validation extends PaymentUI_Common{
 	}
 
 	@Test (priority=2)
-	public void PWA_Validate_PriceValidation() throws Exception {
+	public void PWA_Validate_PriceValidation_Android() throws Exception {
 		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
@@ -77,7 +77,7 @@ public class PWA_Validation extends PaymentUI_Common{
 	}
 	
 	@Test (priority=3)
-	public void PWA_Validate_ItineraryValidation() throws Exception {
+	public void PWA_Validate_ItineraryValidation_Android() throws Exception {
 		refreshPage(driver);
 		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Itineray"),10);
 		String ItineraryDetails_TripText = getText(driver, getObjectPayment("PWA_PaymentPage_Itineray_YourTrip_text"));

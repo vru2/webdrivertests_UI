@@ -115,8 +115,8 @@ public class Validate_AE_Domain extends PaymentUI_Common{
 		textPresent_Log(driver, "2006–2020 Cleartrip Pvt. Ltd", 1);	
 		textPresent_Log(driver, "Total inclusive all taxes", 1);	
 		String Title = driver.getTitle();
-		if(!Title.contains("cleartrip | payment securely")) {
-			Reporter.log("cleartrip | payment securely page title is not displayed");
+		if(!Title.contains("Cleartrip | Pay securely")) {
+			Reporter.log("cleartrip | Pay securely page title is not displayed");
 			Assert.assertEquals(Title, "cleartrip | payment securely");
 			Assert.assertTrue(false);
 		}

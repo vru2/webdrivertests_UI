@@ -63,6 +63,14 @@
     </classes>
 </test>
 
+
+<test name="PWA Android"  preserve-order="true">
+    <classes>   
+      <class name="paymentsUI_Air.PWA_Validation_Android"/>  
+    </classes>
+</test>
+
+
 <test name="PWA KW Knet"  preserve-order="true">
     <classes>   
       <class name="paymentsUI_Air.PWA_KW_Knet"/>  

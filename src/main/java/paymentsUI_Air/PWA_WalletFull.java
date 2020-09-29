@@ -63,7 +63,9 @@ public class PWA_WalletFull extends PaymentUI_Common{
 		safeClick(driver, getObjectPayment("PWA_PaymentPage_SaveCard"));
 		
 		Total = getText(driver, getObjectPayment("PWA_PaymentPage_TotalPriceGV"));
-		Assert.assertEquals(Total, "₹ 650");
+		if(!Total.contains("650")) {
+			Assert.assertTrue(false);
+		}
 		
 		if(!elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 1)) {
 			Reporter.log("CC tab is displayed");

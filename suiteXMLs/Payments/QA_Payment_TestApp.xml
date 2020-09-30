@@ -19,7 +19,7 @@
     <classes>
 <!--       <class name="paymentsUI.Payment_NodeJS_NB_TechProcess"/> -->
       <class name="paymentsUI.Payment_NodeJS_NB_CitiBank"/>
-      <class name="paymentsUI.Payment_NodeJS_NB_RazorPay"/>      
+ <!--      <class name="paymentsUI.Payment_NodeJS_NB_RazorPay"/>     -->  
     </classes>
 </test>
 
@@ -80,8 +80,8 @@
 		
 <test name="RazorPay UPI" preserve-order="true" parallel="true">
     <classes>
-      <class name="paymentsUI.Payment_NodeJS_RazorPay"/>
-      <class name="paymentsUI.Payment_NodeJS_RazorPay_CTWallet"/>
+     <!--  <class name="paymentsUI.Payment_NodeJS_RazorPay"/>
+      <class name="paymentsUI.Payment_NodeJS_RazorPay_CTWallet"/> -->
     </classes>
 </test>
 	

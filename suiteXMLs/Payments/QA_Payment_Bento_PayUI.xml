@@ -73,7 +73,7 @@
 
 <test name="PWA KW Knet"  preserve-order="true">
     <classes>   
-      <class name="paymentsUI_Air.PWA_KW_Knet"/>  
+   <!--    <class name="paymentsUI_Air.PWA_KW_Knet"/>   -->
     </classes>
 </test>
 
@@ -134,8 +134,8 @@
 
 <test name="PWA RT"  preserve-order="true" parallel="true" >
     <classes>
-      <class name="paymentsUI_Air.PWA_IN_Multicity"/>
-      <class name="paymentsUI_Air.PWA_IN_RT"/>      
+<!--       <class name="paymentsUI_Air.PWA_IN_Multicity"/>
+      <class name="paymentsUI_Air.PWA_IN_RT"/>  -->     
     </classes>
 </test>
 
@@ -168,8 +168,8 @@
 </test>
 
 <test name="PhonePe"  preserve-order="true" parallel="true" >
-    <classes>
-      <class name="paymentsUI_Air.UPI_PhonePe"/>   
+    <classes><!-- 
+      <class name="paymentsUI_Air.UPI_PhonePe"/>   --> 
     </classes>
 </test>
 
@@ -246,7 +246,7 @@
 
 <test name="KNet"  preserve-order="true">
     <classes>
-      <class name="paymentsUI_Air.Knet_KW"/>
+     <!--  <class name="paymentsUI_Air.Knet_KW"/> -->
     </classes>
 </test>
 

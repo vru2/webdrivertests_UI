@@ -24,6 +24,8 @@ public class Flyin_Validate_Text_Messages extends PaymentUI_Common{
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
 		payUI_Select_PaymentType(driver, "CC");
+
+		validate_Currency(driver, "", "SAR");
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));	
 		elementPresent_log(driver, By.cssSelector("div.col-8.pl-0 > svg"), "CVV help", 5);
 		textPresent_Log(driver, "Enter your credit card details", 1);	
@@ -32,7 +34,7 @@ public class Flyin_Validate_Text_Messages extends PaymentUI_Common{
 		textPresent_Log(driver, "Please enter a valid name", 1);		
 		textPresent_Log(driver, "Please enter a valid expiry year", 1);		
 		textPresent_Log(driver, "Please enter a valid cvv", 1);					
-		textPresent_Log(driver, "Includes a convenience fee of", 5);
+		textPresent_Log(driver, "Includes a convenience fee of SAR  10", 5);
 		payUI_Error_Validation(driver, getObjectPayment("PaymentPage_Error_Banner"), "Enter valid credit card number");
 		safeClick(driver, getObjectPayment("PaymentPage_Error_Banner_Close_Btn"));
 		if(elementNotPresent_Time(driver, getObjectPayment("PaymentPage_Error_Banner"), 10)) {
@@ -61,6 +63,7 @@ public class Flyin_Validate_Text_Messages extends PaymentUI_Common{
 		safeClick(driver, getObjectPayment("PayUI_I_Agree_CheckBox"));
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));		
 		textPresent_Log(driver, "Please accept the terms and conditions to proceed with this booking", 2);
+		textPresent_Log(driver, "I understand and agree to the rules and restrictions of this fare, Booking policy the Privacy Policy and the Terms & Conditions of Flyin", 2);
 		boolean button = driver.findElement(By.xpath("//button")).isEnabled();
 		safeClick(driver, getObjectPayment("PayUI_I_Agree_CheckBox"));
 		if(!button) {

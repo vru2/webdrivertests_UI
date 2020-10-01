@@ -344,6 +344,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String urlROR_GV_Details_Reads = "/paymentservice/search/gvDetails/v1?query=refundId:9367489";
 	
 	String urlROR_Refund_Reads = "/paymentservice/search/refunds/v1?query=paymentId:43410410,status:D";
+	String url_UI_Get_ConvFee = "/paymentservice/ui/fetch/convFeePriority";
+	String url_UI_Get_PayTypes = "/paymentservice/ui/fetch/paymentTypes";
 	
 	
 	String endPointgetPay = "/paymentservice/api/getPaymentURL";
@@ -795,6 +797,16 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			RestAssured.baseURI =urlReporting;			
 			url= urlROR_Refund_Reads;
 			Reporter.log(urlPay=url);
+		}
+		else if(payType.equalsIgnoreCase("GETUI_CONVFEE")) {
+			RestAssured.baseURI =urlPay;			
+			url= url_UI_Get_ConvFee;
+			//Reporter.log(urlPay=url);
+		}
+		else if(payType.equalsIgnoreCase("GETUI_PAYTYPES")) {
+			RestAssured.baseURI =urlPay;			
+			url= url_UI_Get_PayTypes;
+			//Reporter.log(urlPay=url);
 		}
 		Reporter.log(url);
 		//System.out.println(url);
@@ -3033,9 +3045,27 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		else if(payType.equalsIgnoreCase("ReportingTS_Archived_V3_True")){
 			if(!resp.body().asString().contains("40294932")) {
 				Reporter.log("40294932 is not displayed");
-				//Assert.assertTrue(false);
+				Assert.assertTrue(false);
 			}
-}
+		}
+		else if(payType.equals("GETUI_CONVFEE")) {
+			String CC = jsonPathEvaluator.getString("cc");
+			Reporter.log("cc " +CC);
+			if(!CC.equals("1")) {
+				
+					Assert.assertTrue(false);
+			}
+			
+		}
+		else if(payType.equals("GETUI_PAYTYPES")) {
+			
+			if(!resp.body().asString().contains("UPI")) {
+				Reporter.log("UPI is not displayed");
+				Assert.assertTrue(false);
+			}
+			
+		}
+		
 		
 		
 		return resp;	

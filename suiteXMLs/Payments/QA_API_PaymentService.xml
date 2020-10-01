@@ -9,6 +9,12 @@
 </listeners>
 
 
+<test name="API Pay UI get" preserve-order="true" parallel="true">
+    <classes>
+     <!--  <class name="paymentsAPI."/> -->
+    </classes>
+</test>
+
 <test name="API Deposit Account DA" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsAPI.API_DA_PayV3"/>

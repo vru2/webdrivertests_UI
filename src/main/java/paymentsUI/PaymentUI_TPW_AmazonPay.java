@@ -53,7 +53,7 @@ public class PaymentUI_TPW_AmazonPay extends PaymentNodeJS{
 			
 			click(driver,PaymentUI_CommonUtilities.walletAmazonPaySelectXpath);
 			click(driver,PaymentUI_CommonUtilities.makePaymentbutton);
-			waitForElementVisibility(driver,By.xpath("//img[contains(@alt,'Amazon Pay')]"),20);
+			waitForElementVisibility(driver,By.xpath("//img[contains(@alt,'Amazon Pay')]"),30);
 			validateIfPresent(driver,PaymentUI_CommonUtilities.amazonPayUsernameXpath);
 			validateIfPresent(driver,PaymentUI_CommonUtilities.amazonPayPasswordXpath);
 			textPresent_Log(driver, "Login with your Amazon account", 20);

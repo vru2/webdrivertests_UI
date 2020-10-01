@@ -150,7 +150,7 @@ public class PaymentUI_CommonUtilities {
     public static String walletsXpath="//p[contains(text(),'Wallets')]";
     public static String walletErrorTextSelectWallet="Please select any wallet";
     public static String walletErrorTextXpath= "//p[text()='Please select any wallet']";
-    public static String walletAmazonPaySelectXpath="//ul[contains(@class,'Datalist radioList')]/li[8]";
+    public static String walletAmazonPaySelectXpath="//ul[contains(@class,'Datalist radioList')]/li[6]";
     public static String amazonPayUsernameXpath="//input[@name='email']";
     public static String amazonPayPasswordXpath="//input[@name='password']";
     public static String amazonPaySubmitButtonXpath="//input[@id='signInSubmit']";

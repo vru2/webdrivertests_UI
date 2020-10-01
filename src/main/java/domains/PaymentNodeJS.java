@@ -86,8 +86,9 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 				driver.get(PayUrl);	
 				textPresent_Log(driver, "Payment successful", 10);
 				break;
-			}			
+			}
 			Thread.sleep(1000);
+			driver.get(PayUrl);	
 			}
 	}
 
@@ -535,7 +536,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 
 			} else if (bankType.equalsIgnoreCase("Mobikwik")) {
 				elementVisible(driver, By.cssSelector("font.flR > img"), 5, "Mobikwik App");
-				if (!textPresent(driver, "We will send a six digit OTP to verify your account", 10)) {
+				if (!textPresent(driver, "We will send a six digit OTP to verify your account", 30)) {
 					Reporter.log("We will send a six digit OTP to verify your account");
 					Assert.assertTrue(false);
 				}
@@ -557,7 +558,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 				}
 
 			} else if (bankType.equalsIgnoreCase("Ola_Money")) {
-				if (!textPresent(driver, "Enter phone number registered with Ola Money", 20)) {
+				if (!textPresent(driver, "Enter phone number registered with Ola Money", 40)) {
 					Reporter.log("Login to OlaMoney Wallet text is not displayed");
 					Assert.assertTrue(false);
 				}
@@ -653,7 +654,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 			textPresent(driver, "Please enter your MasterCard", 10);
 			elementVisible(driver, By.xpath("//td[2]/input[@class='monospace']"), 20);
 			//safeType(driver, By.xpath("//td[2]/input[@class='monospace']"), "");
-			safeClick(driver, By.xpath("//tr[9]/td/input"));
+			smartClick(driver, By.xpath("//tr[9]/td/input"));
 		} else if (bankType.equalsIgnoreCase("CHECKOUT")) {
 			if (platform.value("CheckOut_3D").equals("true")) {
 				elementVisible(driver, getObjectPayment("MakePayment_PgCred_SA_Checkout_Password_Txt"), 30);
@@ -728,7 +729,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 				Thread.sleep(500);
 				safeSelect(driver,getObjectPayment("PayU_Page_CC_EXP_Month") , "Sep (9)");
 				Thread.sleep(500);
-				safeSelect(driver,getObjectPayment("PayU_Page_CC_EXP_Year") , "2020");
+				safeSelect(driver,getObjectPayment("PayU_Page_CC_EXP_Year") , "2021");
 				safeType(driver, getObjectPayment("PayU_Page_CC_CVV"), "123");
 				Thread.sleep(1000);
 				safeClick(driver, getObjectPayment("PayU_Page_CC_Pay_Btn"));

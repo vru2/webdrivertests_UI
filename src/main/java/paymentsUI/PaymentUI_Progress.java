@@ -3,13 +3,11 @@ package paymentsUI;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
-import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -24,6 +22,8 @@ public class PaymentUI_Progress extends PaymentNodeJS{
 	protected String paymentUrl;
 	protected String qaUrl;
 	public Response resp;
+	Cookie cookie_Parl_Wallet = new Cookie("ct-auth", "g%2BN18HeWvZyEk7HQeFThJxsObDgYiHvhM4u28wBQ4BejFU9Ke4ME8Tw3kDrS%2BYaXuQmW3NiUZma8q2lELnUuyC3uAF5DaTQONdJlLn%2FO2me%2FiLCzDjUE8Mm7nMigogz0dlw4XnBuAMvrrzg32ECZZREQ3m1%2Fwdl0v8nRObVcrkLkfySvhcY68HkUF0r5u%2Bu1GYGQ%2FU5486qrW%2F0RUIlB1Q%3D%3D");
+	
 
 
 	@BeforeClass
@@ -39,6 +39,8 @@ public class PaymentUI_Progress extends PaymentNodeJS{
 		
 			driver=(RemoteWebDriver) getDriver(driver);
 			driver.manage().deleteAllCookies(); 
+			driver.get(Url);
+			driver.manage().addCookie(cookie_Parl_Wallet);
 			driver.get(Url);
 			elementVisible(driver, By.xpath("//ul[@id='paymentModeTab']"), 10);
 			validatePaymentURLLoad(driver,Url);
@@ -57,7 +59,7 @@ public class PaymentUI_Progress extends PaymentNodeJS{
 
 	@Test(priority=2)
 	public void inProgressPayment() throws Exception{
-			boolean storedCard = driver.findElementByXPath("//p[text()='Stored Card']").isDisplayed();
+			boolean storedCard = driver.findElementByXPath("//p[text()='Stored card']").isDisplayed();
 			if(storedCard==true)
 			{
 				click(driver,PaymentUI_CommonUtilities.creditCardPaymentxpath);

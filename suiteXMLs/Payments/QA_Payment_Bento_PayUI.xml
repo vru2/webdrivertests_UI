@@ -19,8 +19,8 @@
 
 <test name="RT MultiCity" preserve-order="true" parallel="true" >
     <classes>
-	  <class name="paymentsUI_Air.Validate_RT"/> 
-      <class name="paymentsUI_Air.Validate_MultiCity"/>  
+	  <class name="paymentsUI_Air.Validate_RT"/> <!-- 
+      <class name="paymentsUI_Air.Validate_MultiCity"/>   -->
     </classes>
 </test>
 
@@ -84,7 +84,7 @@
 	  <class name="paymentsUI_Air.PWA_NB_CITI"/>    -->
       <class name="paymentsUI_Air.PWA_NB_PopularBank_CITI"/>
       <class name="paymentsUI_Air.PWA_NB_HDFC"/>   
-      <class name="paymentsUI_Air.PWA_PhonePe"/>
+      <!-- <class name="paymentsUI_Air.PWA_PhonePe"/> -->
       <class name="paymentsUI_Air.PWA_AmazonPay"/>
       <class name="paymentsUI_Air.PWA_Amendment"/>  
     </classes>
@@ -133,9 +133,9 @@
 </test>
 
 <test name="PWA RT"  preserve-order="true" parallel="true" >
-    <classes>
-<!--       <class name="paymentsUI_Air.PWA_IN_Multicity"/>
-      <class name="paymentsUI_Air.PWA_IN_RT"/>  -->     
+    <classes><!-- 
+      <class name="paymentsUI_Air.PWA_IN_Multicity"/> -->
+      <class name="paymentsUI_Air.PWA_IN_RT"/>      
     </classes>
 </test>
 

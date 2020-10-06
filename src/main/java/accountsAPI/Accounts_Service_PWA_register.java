@@ -8,7 +8,6 @@ import org.testng.annotations.Test;
 
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import io.restassured.response.ResponseBody;
 import junit.framework.Assert;
 
 public class Accounts_Service_PWA_register extends AccountsCommon_API

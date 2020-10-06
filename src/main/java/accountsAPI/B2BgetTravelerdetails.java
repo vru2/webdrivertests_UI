@@ -1,11 +1,11 @@
 package accountsAPI;
 
 import java.io.IOException;
+
 import org.json.JSONException;
 import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
-import io.restassured.response.ResponseBody;
 
 public class B2BgetTravelerdetails extends AccountsCommon_API
 

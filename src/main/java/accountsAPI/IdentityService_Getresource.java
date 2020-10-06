@@ -1,22 +1,15 @@
 package accountsAPI;
 
 import java.io.IOException;
-import io.restassured.http.ContentType;
-
 
 import org.json.JSONException;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
-import com.jayway.restassured.RestAssured;
-
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
 import junit.framework.Assert;
-
-
-import static io.restassured.RestAssured.given;
 public class IdentityService_Getresource extends AccountsCommon_API
 {
 

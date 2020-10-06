@@ -1,17 +1,13 @@
 package tripServices;
 
-import static org.testng.Assert.assertTrue;
-
 import java.io.IOException;
 import java.sql.SQLException;
 
-import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import io.restassured.response.ResponseBody;
 
 public class TS_Invoice_Generation_Air extends TripserviceCommon {
 	@Test(groups={"Regression"})

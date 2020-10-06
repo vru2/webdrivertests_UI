@@ -6,7 +6,6 @@ import org.json.JSONException;
 import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
-import io.restassured.response.ResponseBody;
 
 public class Create_updatetraveller_bookstep2 extends AccountsCommon_API {
 	

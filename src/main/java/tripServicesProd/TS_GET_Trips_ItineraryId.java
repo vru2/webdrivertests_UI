@@ -3,9 +3,11 @@ package tripServicesProd;
 import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
+
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
+
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;

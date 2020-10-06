@@ -53,13 +53,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
-
-
 import org.w3c.dom.Document;
 
 import com.google.common.collect.ArrayListMultimap;
-
-
 
 //import com.google.gson.JsonObject;
 import common.WrapperMethod;

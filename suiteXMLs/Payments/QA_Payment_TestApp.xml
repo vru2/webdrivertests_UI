@@ -100,8 +100,8 @@
 
 <test name="Stored Card"  preserve-order="true" parallel="true">
     <classes>
-      <class name="paymentsUI.Payment_NodeJS_SC"/>
-      <class name="paymentsUI.Payment_NodeJS_SC_AE"/>
+     <!--  <class name="paymentsUI.Payment_NodeJS_SC"/>
+      <class name="paymentsUI.Payment_NodeJS_SC_AE"/> -->
     </classes>
 </test>
 

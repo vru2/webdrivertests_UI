@@ -2,12 +2,10 @@ package accountsAPI;
 
 import java.io.IOException;
 
-import org.eclipse.jetty.websocket.api.StatusCode;
 import org.json.JSONException;
 import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
-import io.restassured.response.ResponseBody;
 
 public class Account_Service_Travellercontroller_UpdateTraveller  extends AccountsCommon_API
 {

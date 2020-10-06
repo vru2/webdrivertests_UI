@@ -10,7 +10,6 @@ import org.json.JSONException;
 import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
-import io.restassured.response.ResponseBody;
 
 public class Expressway_register_API extends AccountsCommon_API{
 	

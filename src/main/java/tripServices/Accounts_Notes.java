@@ -8,7 +8,6 @@ import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import io.restassured.response.ResponseBody;
 
 public class Accounts_Notes extends TripserviceCommon {
 	@Test(groups={"Regression"})

@@ -4,8 +4,6 @@ import static org.testng.Assert.assertTrue;
 
 import org.testng.Assert;
 import org.testng.Reporter;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;

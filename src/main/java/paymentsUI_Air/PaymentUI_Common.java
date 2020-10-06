@@ -650,16 +650,17 @@ public class PaymentUI_Common extends PaymentNodeJS{
 			Enter_CARD_Details_PWA(driver, platform.value("ADCBCard_Number"), platform.value("PWA_ADCBCard_Expiry"), platform.value("ADCBCard_CVV"));
 
 			safeClick(driver, getObjectPayment("PWA_PaymentPage_ADCB_CheckBalance_Button"));
-			Thread.sleep(20000);
-			textPresent_Log(driver, "A minimum amount of AED", 10);
-			textPresent_Log(driver, "Amount to redeem", 1);
-			textPresent_Log(driver, "50 must be redeemed", 1);		
-			textPresent_Log(driver, "Available", 1);
-			elementPresent_log(driver, getObjectPayment("PWA_PaymentPage_ADCB_Redeem_TextBox"), "Redeem textbox", 10);
+		//	Thread.sleep(20000);
+			
+			elementPresent_log(driver, getObjectPayment("PWA_PaymentPage_ADCB_Redeem_TextBox"), "Redeem textbox", 20);
+
 
 			String TotalPrice = getText(driver, getObjectPayment("PWA_PaymentPage_TotalPrice1"));
-						
-			Assert.assertEquals(TotalPrice, "AED  0");
+		//	Assert.assertEquals(TotalPrice, "AED  0");
+			textPresent_Log(driver, "Amount to redeem", 10);
+			textPresent_Log(driver, "50 must be redeemed", 1);		
+			textPresent_Log(driver, "Available", 1);
+			textPresent_Log(driver, "A minimum amount of AED", 10);
 						
 		}
 		if(BankName.contains("ADCBPARTIAL")) {

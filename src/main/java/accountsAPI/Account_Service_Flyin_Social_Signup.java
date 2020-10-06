@@ -4,10 +4,8 @@ import java.io.IOException;
 
 import org.json.JSONException;
 import org.testng.annotations.Test;
-import io.restassured.response.Response;
-import io.restassured.response.ResponseBody;
 
-import io.restassured.response.ResponseBody;
+import io.restassured.response.Response;
 
 public class Account_Service_Flyin_Social_Signup extends AccountsCommon_API
 {

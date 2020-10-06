@@ -7,7 +7,6 @@ import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
-import junit.framework.Assert;
 
 public class Account_Service_Partnercontroller_Usersearch extends AccountsCommon_API
 {

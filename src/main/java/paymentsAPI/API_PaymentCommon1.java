@@ -3961,7 +3961,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	public Response Reporting (String payType, String PayType1) {
 		RestAssured.baseURI = urlReporting;
 
-		Reporter.log(urlReporting);	
+		//Reporter.log(urlReporting);	
 		String endPoint = null;
 		HashMap<String, Object> headers	= new HashMap<>();
 		headers = headersForms();

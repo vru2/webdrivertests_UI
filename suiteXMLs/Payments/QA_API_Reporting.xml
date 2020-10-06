@@ -40,7 +40,7 @@
 
 <test name="API Refunds New" preserve-order="true" parallel="true">
     <classes>
-      <class name="paymentsAPI.API_Refunds"/> 
+      <!-- <class name="paymentsAPI.API_Refunds"/>  -->
      </classes>
 </test>
 

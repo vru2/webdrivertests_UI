@@ -90,10 +90,16 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 	@Test(priority=5)
 	public void Validate_Text_UPI() throws Exception {
 		payUI_Select_PaymentType(driver, "UPI");
-		textPresent_Log(driver, "Select UPI partner to make your payment", 5);	
+		textPresent_Log(driver, "Pay using UPI", 5);	
+		textPresent_Log(driver, "Enter your UPI ID", 1);	
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));		
-		textPresent_Log(driver, "Please select any UPI payment method", 2);
+		textPresent_Log(driver, "Please enter a valid UPI ID", 2);
 		textPresent_Log(driver, "Includes a convenience fee of", 1);
+		safeType(driver, getObjectPayment("PWA_PaymentPage_UPI_TextBox"), "9986696785@okhdfc");
+		Thread.sleep(1000);
+		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));	
+		payUI_Error_Validation(driver, getObjectPayment("PaymentPage_Error_Banner"), "Something went wrong");
+		
 	}
 	
 	@Test(priority=6)

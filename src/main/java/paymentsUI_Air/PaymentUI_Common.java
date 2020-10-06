@@ -121,6 +121,7 @@ public class PaymentUI_Common extends PaymentNodeJS{
 	
 	
 	public void payUI_Error_Validation_PWA(RemoteWebDriver driver, By errorMessage, By errorMessagePopUP, String ErrorText) throws Exception {
+		elementVisible(driver, errorMessagePopUP, 2);		
 		elementPresent_log(driver, errorMessagePopUP, "error Popup", 5);
 		String ErrorMessage = getText(driver, errorMessagePopUP);
 
@@ -137,7 +138,6 @@ public class PaymentUI_Common extends PaymentNodeJS{
 	public void payUI_Error_Validation(RemoteWebDriver driver,  By errorMessagePopUP, String ErrorText) throws Exception {
 		elementPresent_log(driver, errorMessagePopUP, "error Popup", 5);
 		String ErrorMessage = getText(driver, errorMessagePopUP);
-
 		//System.out.println("Error message is "+ErrorMessage+" instead of "+ErrorText);
 		if(!ErrorMessage.contains(ErrorText)) {
 			Reporter.log("Error message is "+ErrorMessage+" instead of "+ErrorText);

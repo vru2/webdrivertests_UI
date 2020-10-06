@@ -152,6 +152,15 @@
     </classes>
 </test>
 
+
+<test name="PWA PayBack"  preserve-order="true" parallel="true" >
+    <classes>
+      <class name="paymentsUI_Air.PWA_RP_PayBack_Full"/>      
+      <class name="paymentsUI_Air.PWA_RP_PayBack_NB"/>      
+    </classes>
+</test>
+
+
 <test name="Validation"  preserve-order="true"  >
     <classes>
       <class name="paymentsUI_Air.Validate_Text_Messages"/>

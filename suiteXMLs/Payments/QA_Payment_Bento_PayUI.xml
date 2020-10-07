@@ -243,6 +243,7 @@
     <classes>
       <class name="paymentsUI_Air.Coupon"/>	  
       <class name="paymentsUI_Air.Coupon_Invalid"/>	  
+      <class name="paymentsUI_Air.Coupon_Type_Wallet"/>	  
     </classes>
 </test>
 

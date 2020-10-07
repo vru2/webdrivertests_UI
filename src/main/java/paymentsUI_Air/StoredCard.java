@@ -29,6 +29,8 @@ public class StoredCard extends PaymentUI_Common{
 			Reporter.log("Stored Card tab text is not displayed");
 			Assert.assertTrue(false);
 		}
+		String profileName = getText(driver, getObjectPayment("PayUI_Profile_Name"));
+		Assert.assertEquals(profileName, "partwallet");;
 		textPresent_Log(driver, "Pay with your stored cards", 20);
 		textPresent_Log(driver, "Enter CVV here", 1);
 		textPresent_Log(driver, "You card details are stored as part of your Express Checkout profile.", 1);

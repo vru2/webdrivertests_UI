@@ -98,6 +98,7 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 		safeType(driver, getObjectPayment("PWA_PaymentPage_UPI_TextBox"), "9986696785@okhdfc");
 		Thread.sleep(1000);
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));	
+		Thread.sleep(2000);
 		payUI_Error_Validation(driver, getObjectPayment("PaymentPage_Error_Banner"), "Something went wrong");
 		
 	}
@@ -170,9 +171,9 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 		textPresent_Log(driver, "Completely safe and secure transaction", 1);
 		textPresent_Log(driver, "Total inclusive all taxes", 1);	
 		String Title = driver.getTitle();
-		if(!Title.contains("cleartrip | payment securely")) {
-			Reporter.log("cleartrip | payment securely page title is not displayed");
-			Assert.assertEquals(Title, "cleartrip | payment securely");
+		if(!Title.contains("Cleartrip | Pay securely")) {
+			Reporter.log("Cleartrip | Pay securely page title is not displayed");
+			Assert.assertEquals(Title, "Cleartrip | Pay securely");
 			//Assert.assertTrue(false);
 		}
 		String emailID= getText(driver, getObjectPayment("PayUI_Profile_EmailID"));

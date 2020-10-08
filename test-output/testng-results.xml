@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[Test case passed]]>
+    </line>
+    <line>
+      <![CDATA[{
+  "id" : "08102020-2157c41b-69ad-40e0-adcb-816b1002e2a4",
+  "status" : "ACCEPTED"
+}]]>
+    </line>
+    <line>
+      <![CDATA[Status code == 202]]>
+    </line>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="5747" started-at="2020-10-08T08:45:36Z" finished-at="2020-10-08T08:45:41Z">
+    <groups>
+      <group name="Regression">
+        <method signature="EmailwithAttachments.message()[pri:0, instance:email.EmailwithAttachments@7e0b85f9]" name="message" class="email.EmailwithAttachments"/>
+      </group> <!-- Regression -->
+    </groups>
+    <test name="Default test" duration-ms="5747" started-at="2020-10-08T08:45:36Z" finished-at="2020-10-08T08:45:41Z">
+      <class name="email.EmailwithAttachments">
+        <test-method status="PASS" signature="message()[pri:0, instance:email.EmailwithAttachments@7e0b85f9]" name="message" duration-ms="5714" started-at="2020-10-08T08:45:36Z" finished-at="2020-10-08T08:45:41Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Test case passed]]>
+            </line>
+            <line>
+              <![CDATA[{
+  "id" : "08102020-2157c41b-69ad-40e0-adcb-816b1002e2a4",
+  "status" : "ACCEPTED"
+}]]>
+            </line>
+            <line>
+              <![CDATA[Status code == 202]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- message -->
+      </class> <!-- email.EmailwithAttachments -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

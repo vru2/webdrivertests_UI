@@ -8,11 +8,11 @@
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
 
-	 <test name="Ct-admin UI">
+	 <!-- <test name="Ct-admin UI">
 		<classes>
 			<class name="ct_admin.CT_Admin" />
 		</classes>
-	</test>
+	</test> -->
 	
 	 <test name="Ct-config UI">
 		<classes>

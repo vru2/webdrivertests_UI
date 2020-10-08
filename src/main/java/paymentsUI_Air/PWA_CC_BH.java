@@ -19,9 +19,9 @@ public class PWA_CC_BH extends PaymentUI_Common{
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
 		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 20);
+		validate_Currency_PWA(driver, "BH", "BHD");
 		textNotPresent_List(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), "NET BANKING");	
 		payUI_Select_PaymentType_PWA(driver, "DEBIT/CREDIT CARDS");
-		validate_Currency_PWA(driver, "BH", "BHD");
 		payUI_Enter_PaymentDetails_PWA(driver, "DEBIT/CREDIT CARDS", "MASTER");		
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
 	}

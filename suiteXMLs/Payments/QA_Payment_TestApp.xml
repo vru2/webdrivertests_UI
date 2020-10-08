@@ -10,8 +10,8 @@
 
 <test name="PhonePe"  preserve-order="true" parallel="true" >
     <classes>
-      <class name="paymentsUI.Payment_NodeJS_PhonePe"/> 
-      <class name="paymentsUI.Payment_NodeJS_PhonePe_CTWallet"/>
+      <class name="paymentsUI.Payment_NodeJS_PhonePe"/> <!-- 
+      <class name="paymentsUI.Payment_NodeJS_PhonePe_CTWallet"/> -->
     </classes>
 </test>
 
@@ -37,21 +37,22 @@
 </test>	
 
 <test name="CTpay V2" preserve-order="true" parallel="true">
-    <classes>
-      <class name="paymentsUI.Payment_NodeJS_CTPay_AE"/> 
+    <classes><!-- 
+      <class name="paymentsUI.Payment_NodeJS_CTPay_AE"/>  -->
       <class name="paymentsUI.Payment_NodeJS_CTPay"/>      
    </classes>
 </test>
 
 <test name="Third Party Wallet" preserve-order="true">
     <classes>
-      <class name="paymentsUI.Payment_NodeJS_TPW_MobiKwik"/> 
-      <class name="paymentsUI.Payment_NodeJS_TPW_OlaMoney"/>
-<!--       <class name="paymentsUI.Payment_NodeJS_TPW_PayU"/>  -->
+      <class name="paymentsUI.Payment_NodeJS_TPW_PayTM"/>     
       <class name="paymentsUI.Payment_NodeJS_TPW_FreeCharge"/>     
       <class name="paymentsUI.Payment_NodeJS_TPW_JioMoney"/>     
-    <!--   <class name="paymentsUI.Payment_NodeJS_TPW_AirtelMoney"/>      -->
-      <class name="paymentsUI.Payment_NodeJS_TPW_PayTM"/> 
+      <class name="paymentsUI.Payment_NodeJS_TPW_OlaMoney"/>
+     
+<!--  <class name="paymentsUI.Payment_NodeJS_TPW_MobiKwik"/> 
+      <class name="paymentsUI.Payment_NodeJS_TPW_PayU"/>  
+      <class name="paymentsUI.Payment_NodeJS_TPW_AirtelMoney"/>      -->
     </classes>
 </test>
 

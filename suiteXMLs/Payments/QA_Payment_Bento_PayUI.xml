@@ -79,16 +79,22 @@
 
 <test name="PWA Pay"  preserve-order="true" >
     <classes>
-      <class name="paymentsUI_Air.PWA_IN_AMEX"/>   <!-- 
-      <class name="paymentsUI_Air.PWA_IN_Master"/>    
-	  <class name="paymentsUI_Air.PWA_NB_CITI"/>    -->
-      <class name="paymentsUI_Air.PWA_NB_PopularBank_CITI"/>
-      <class name="paymentsUI_Air.PWA_NB_HDFC"/>   
-      <!-- <class name="paymentsUI_Air.PWA_PhonePe"/> -->
+      <class name="paymentsUI_Air.PWA_IN_AMEX"/>  
       <class name="paymentsUI_Air.PWA_AmazonPay"/>
       <class name="paymentsUI_Air.PWA_Amendment"/>  
     </classes>
 </test>
+
+
+<test name="PWA NB"  preserve-order="true" >
+    <classes>  
+    <class name="paymentsUI_Air.PWA_NB_PopularBank_CITI"/>
+      <class name="paymentsUI_Air.PWA_NB_HDFC"/>   
+    </classes>
+</test>
+
+
+      
 
 <test name="PWA ME Pay" preserve-order="true" >
     <classes>
@@ -102,7 +108,7 @@
     </classes>
 </test>
 
-<test name="PWA Coupon "  preserve-order="true" >
+<test name="PWA Coupon valid and Invalid "  preserve-order="true" >
     <classes>
       <class name="paymentsUI_Air.PWA_Coupon"/> 
     </classes>

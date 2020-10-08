@@ -74,11 +74,11 @@ public class API_RewardPayback extends API_PaymentCommon1  {
 		Response res = reward("PAYBACK_Reverseearn", "");
 		validation_RewardPayback("PAYBACK_Reverseearn", res);	
 	}
-
-	/*@Test(priority=11, enabled=false)
+/*
+	@Test(priority=11, enabled=true)
 	public void RewardPayback_forgotPassword() throws Exception{
 		Response res = reward("PAYBACK_Forgotpassword", "");
 		validation_RewardPayback("PAYBACK_Forgotpassword", res);
-	}*/
-
+	}
+*/
 }

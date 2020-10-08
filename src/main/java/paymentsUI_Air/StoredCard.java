@@ -29,6 +29,8 @@ public class StoredCard extends PaymentUI_Common{
 			Reporter.log("Stored Card tab text is not displayed");
 			Assert.assertTrue(false);
 		}
+
+		Reporter.log("Stored Card tab  is displayed");
 		String profileName = getText(driver, getObjectPayment("PayUI_Profile_Name"));
 		Assert.assertEquals(profileName, "partwallet");;
 		textPresent_Log(driver, "Pay with your stored cards", 20);
@@ -37,6 +39,7 @@ public class StoredCard extends PaymentUI_Common{
 		textPresent_Log(driver, "Continue with payment by simply entering CVV.", 1);		
 		textPresent_Log(driver, "Includes a convenience fee of", 1);
 		elementAssert(driver, getObjectPayment("PayUI_StoredCard_Image"), 1);
+		Reporter.log("Stored Card Image  is displayed");
 		//elementAssert(driver, getObjectPayment("PayUI_StoredCard_Complete_CSS"), 1);
 		elementAssert(driver, getObjectPayment("PayUI_StoredCard_Number"), 1);
 		elementAssert(driver, getObjectPayment("PayUI_StoredCard_Name"), 1);

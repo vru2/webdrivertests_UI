@@ -52,13 +52,13 @@ public class PWA_Validation_Android extends PaymentUI_Common{
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		payUI_Error_Validation_PWA(driver, getObjectPayment("PWA_Error_ValidCard"), getObjectPayment("PWA_Error_PopUp_Screen"), "Please enter a valid UPI ID");
 		safeType(driver, getObjectPayment("PWA_PaymentPage_UPI_TextBox"), "9986696785@okhdfc");
-		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
+		/*safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		payUI_Error_Validation_PWA(driver, getObjectPayment("PWA_Error_ValidCard"), getObjectPayment("PWA_Error_PopUp_Screen"), "Error in credentials entered");
-	
-		safeType(driver, getObjectPayment("PWA_PaymentPage_UPI_TextBox"), "111111111@okhdfc");
+	*/
+		/*safeType(driver, getObjectPayment("PWA_PaymentPage_UPI_TextBox"), "111111111@okhdfc");
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		payUI_Error_Validation_PWA(driver, getObjectPayment("PWA_Error_ValidCard"), getObjectPayment("PWA_Error_PopUp_Screen"), "Please enter a valid UPI ID");
-		
+		*/
 	}
 
 	@Test (priority=2)

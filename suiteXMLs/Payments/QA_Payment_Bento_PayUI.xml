@@ -126,7 +126,7 @@
 
 <test name="PWA StoredCard"  preserve-order="true" >
     <classes>
-      <class name="paymentsUI_Air.PWA_StoredCard"/> 
+      <class name="paymentsUI_Air.PWA_StoredCard"/>       
     </classes>
 </test>
 

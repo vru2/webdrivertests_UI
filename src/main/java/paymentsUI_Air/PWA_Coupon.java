@@ -15,9 +15,10 @@ import junit.framework.Assert;
 
 public class PWA_Coupon extends PaymentUI_Common{
 	public RemoteWebDriver driver;
+	String Coupon_Invalid_Text = null;
 	
-	@Test
-	public void PWA_Coupon1() throws Exception {
+	@Test (priority=1)
+	public void PWA_CouponInvalid() throws Exception {
 		String PayUrl = getPayUI("AirCoupon", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
@@ -35,7 +36,7 @@ public class PWA_Coupon extends PaymentUI_Common{
 		Thread.sleep(2000);
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn2"));
 		Thread.sleep(5000);		
-		String Coupon_Invalid_Text = getText(driver, getObjectPayment("PWA_PaymentPage_Invalid_Coupon_Text"));
+		Coupon_Invalid_Text = getText(driver, getObjectPayment("PWA_PaymentPage_Invalid_Coupon_Text"));
 		if(!Coupon_Invalid_Text.contains("Coupon code DOMOW is not applicable on the chosen payment mode. Please update card details to avail benefits or proceed without coupon. Your updated price is")) {
 			Reporter.log("Coupon code DOMOW is not applicable on the chosen payment mode. Please update card details to avail benefits or proceed without coupon. Your updated price is");
 			Assert.assertTrue(false);
@@ -46,6 +47,10 @@ public class PWA_Coupon extends PaymentUI_Common{
 		}
 		Thread.sleep(2000);
 		safeClick(driver, getObjectPayment("PWA_PaymentPage_Coupon_Change_Payment_Button"));
+		}
+		
+		@Test(priority=2)
+		public void PWA_CouponValid() throws Exception {
 		Thread.sleep(5000);
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn2"));
 		Coupon_Invalid_Text = getText(driver, getObjectPayment("PWA_PaymentPage_Invalid_Coupon_Text"));

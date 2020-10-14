@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="PaymentService API" parallel="tests" thread-count="1">
+<suite name="PaymentService API" parallel="tests" thread-count="2">
 
 <listeners>
 <listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -9,9 +9,9 @@
 </listeners>
 
 
-<test name="API Pay UI get" preserve-order="true" parallel="true">
+<test name="API GET Pay URL" preserve-order="true" parallel="true">
     <classes>
-     <!--  <class name="paymentsAPI."/> -->
+      <class name="paymentsUI_Air.Get_URL"/>
     </classes>
 </test>
 

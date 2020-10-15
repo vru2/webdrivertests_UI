@@ -23,13 +23,13 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 		driver.get(PayUrl);
 		payUI_Select_PaymentType(driver, "CC");
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
-		elementPresent_log(driver, By.cssSelector("div.col-8.pl-0 > svg"), "CVV help", 5);
+		elementPresent_log(driver, By.cssSelector("div.ml-3.fs-2.cvv-help-text > p"), "CVV help", 5);
 		String Terms = getText(driver, By.cssSelector("span.pl-2.pr-2.fs-1"));
 		if(!Terms.contains("I understand and agree to the rules and restrictions of this fare, Booking policy the Privacy Policy and the Terms & Conditions of Cleartrip")) {
 			Reporter.log("terms "+Terms);
 			Assert.assertTrue(false);
 		}
-	/*	textPresent_Log(driver, "Enter your credit card details", 1);	
+		textPresent_Log(driver, "Enter your credit card details", 1);	
 		textPresent_Log(driver, "Credit card no.", 1);	
 		textPresent_Log(driver, "Expiry date", 1);	
 		textPresent_Log(driver, "Card holder", 1);	
@@ -38,14 +38,17 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 		textPresent_Log(driver, "Booking policy", 1);	
 	//	textPresent_Log(driver, "the Privacy Policy", 1);	
 	//	textPresent_Log(driver, "and the Terms", 1);	
-		textPresent_Log(driver, "Conditions", 1);	*/
+		textPresent_Log(driver, "Conditions", 1);	
 		textPresent_Log(driver, "of Cleartrip", 1);	
 		textPresent_Log(driver, "Please enter a valid expiry month", 1);		
 		textPresent_Log(driver, "Please enter a valid expiry year", 1);		
 		textPresent_Log(driver, "Please enter a valid name", 1);	
 		textPresent_Log(driver, "Please enter a valid cvv", 1);					
 		textPresent_Log(driver, "Includes a convenience fee of", 5);
-	//	textPresent_Log(driver, "Save this card and make single-click payments", 1);	
+	if(textPresent(driver, "Save this card and make single-click payments", 1)) {
+		Reporter.log("Save this card and make single-click payments is present for Unsigned user");
+		Assert.assertTrue(false);
+	}
 		/*payUI_Error_Validation(driver, getObjectPayment("PaymentPage_Error_Banner"), "Enter valid credit card number");
 		safeClick(driver, getObjectPayment("PaymentPage_Error_Banner_Close_Btn"));
 		if(elementNotPresent_Time(driver, getObjectPayment("PaymentPage_Error_Banner"), 10)) {

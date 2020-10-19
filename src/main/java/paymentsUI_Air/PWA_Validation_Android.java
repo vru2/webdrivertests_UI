@@ -29,23 +29,23 @@ public class PWA_Validation_Android extends PaymentUI_Common{
 		safeType(driver, getObjectPayment("PWA_PaymentPage_CC_Number"),  platform.value("MasterCard_Number"));
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		payUI_Error_Validation_PWA(driver, getObjectPayment("PWA_Error_ValidCard"), getObjectPayment("PWA_Error_PopUp_Screen"), "Please enter valid card details");	
-		refreshPage(driver);
+		//refreshPage(driver);
 		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 5);
 		safeType(driver, getObjectPayment("PWA_PaymentPage_CC_Number"),  platform.value("MasterCard_Number"));
 		safeType(driver, getObjectPayment("PWA_PaymentPage_CC_Expiry"), platform.value("MasterCard_EXP_PWA"));
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		payUI_Error_Validation_PWA(driver, getObjectPayment("PWA_Error_ValidCard"), getObjectPayment("PWA_Error_PopUp_Screen"), "Please enter valid card details");
-		refreshPage(driver);
+		//refreshPage(driver);
 		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 5);
 		safeClickList(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), "NET BANKING");
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn2"));
 		payUI_Error_Validation_PWA(driver, getObjectPayment("PWA_Error_ValidCard"), getObjectPayment("PWA_Error_PopUp_Screen"), "Please select your bank");	
-		refreshPage(driver);
+		//refreshPage(driver);
 		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 5);
 		safeClickList(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), "WALLETS");
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		payUI_Error_Validation_PWA(driver, getObjectPayment("PWA_Error_ValidCard"), getObjectPayment("PWA_Error_PopUp_Screen"), "Please select any wallet");	
-		refreshPage(driver);
+		//refreshPage(driver);
 		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 5);
 		safeClickList(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), "UPI");
 	

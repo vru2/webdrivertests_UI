@@ -181,7 +181,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 			add_GV(driver, "");
 		} else if (payType.equalsIgnoreCase("GVCC")) {
 			add_GV(driver, "");
-			//select_Card(driver);
+			select_Card(driver);
 			paymentNodeJS_EnterCard_Details(driver, cardType);
 		} else if (payType.equalsIgnoreCase("GVCCWALL")) {
 			add_GV(driver, "");

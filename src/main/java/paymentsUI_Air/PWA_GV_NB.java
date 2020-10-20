@@ -27,8 +27,8 @@ public class PWA_GV_NB extends PaymentUI_Common{
 		Thread.sleep(2000);
 		safeClick(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_closeIcon"));
 		Thread.sleep(2000);
+		payUI_Select_PaymentType_PWA(driver, "DEBIT/CREDIT CARDS");
 		payUI_Select_PaymentType_PWA(driver, "NET BANKING");
-		textPresent_Log(driver, "NB is displayed", 1);
 		payUI_Enter_PaymentDetails_PWA(driver, "NET BANKING", "Axis Bank");
 	}
 

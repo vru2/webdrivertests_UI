@@ -10,7 +10,7 @@
 
 <test name="PhonePe"  preserve-order="true" parallel="true" >
     <classes>
-      <class name="paymentsUI.Payment_NodeJS_PhonePe"/> <!-- 
+     <!-- <class name="paymentsUI.Payment_NodeJS_PhonePe"/>  
       <class name="paymentsUI.Payment_NodeJS_PhonePe_CTWallet"/> -->
     </classes>
 </test>

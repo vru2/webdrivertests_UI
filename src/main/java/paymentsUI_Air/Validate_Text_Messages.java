@@ -33,28 +33,24 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 		textPresent_Log(driver, "Credit card no.", 1);	
 		textPresent_Log(driver, "Expiry date", 1);	
 		textPresent_Log(driver, "Card holder", 1);	
-		textPresent_Log(driver, "CVV", 1);			
-		textPresent_Log(driver, "I understand and agree to the rules and restrictions of this fare", 1);			
-		textPresent_Log(driver, "Booking policy", 1);	
-	//	textPresent_Log(driver, "the Privacy Policy", 1);	
-	//	textPresent_Log(driver, "and the Terms", 1);	
-		textPresent_Log(driver, "Conditions", 1);	
-		textPresent_Log(driver, "of Cleartrip", 1);	
+		textPresent_Log(driver, "CVV", 1);		
+		String CardPlaceHolder = driver.findElement(getObjectPayment("PaymentPage_CreditCard_Number")).getAttribute("placeholder");
+		String NamePlaceHolder = driver.findElement(getObjectPayment("PaymentPage_CreditCard_Name")).getAttribute("placeholder");
+		if(!(CardPlaceHolder.equals("Card number")&&NamePlaceHolder.equals("Name as on card"))) {
+			Reporter.log("PlaceHoder is not correct "+CardPlaceHolder+" "+NamePlaceHolder);
+			Assert.assertTrue(false);
+		}
+		textPresent_Log(driver, "CVV is mentioned at the back of your card", 1);		
 		textPresent_Log(driver, "Please enter a valid expiry month", 1);		
 		textPresent_Log(driver, "Please enter a valid expiry year", 1);		
 		textPresent_Log(driver, "Please enter a valid name", 1);	
 		textPresent_Log(driver, "Please enter a valid cvv", 1);					
 		textPresent_Log(driver, "Includes a convenience fee of", 5);
-	if(textPresent(driver, "Save this card and make single-click payments", 1)) {
-		Reporter.log("Save this card and make single-click payments is present for Unsigned user");
-		Assert.assertTrue(false);
-	}
-		/*payUI_Error_Validation(driver, getObjectPayment("PaymentPage_Error_Banner"), "Enter valid credit card number");
-		safeClick(driver, getObjectPayment("PaymentPage_Error_Banner_Close_Btn"));
-		if(elementNotPresent_Time(driver, getObjectPayment("PaymentPage_Error_Banner"), 10)) {
-			Reporter.log("Error banner is not closed");	
+		if(textPresent(driver, "Save this card and make single-click payments", 1)) {
+			Reporter.log("Save this card and make single-click payments is present for Unsigned user");
 			Assert.assertTrue(false);
-		}*/
+		}
+	
 	}
 
 	@Test(priority=2)
@@ -62,6 +58,17 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 		payUI_Select_PaymentType(driver, "DC");
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));	
 		textPresent_Log(driver, "Enter your debit card details", 2);
+		textPresent_Log(driver, "Debit card no.", 1);	
+		textPresent_Log(driver, "Expiry date", 1);	
+		textPresent_Log(driver, "Card holder", 1);	
+		textPresent_Log(driver, "CVV", 1);		
+		String CardPlaceHolder = driver.findElement(getObjectPayment("PaymentPage_CreditCard_Number")).getAttribute("placeholder");
+		String NamePlaceHolder = driver.findElement(getObjectPayment("PaymentPage_CreditCard_Name")).getAttribute("placeholder");
+		if(!(CardPlaceHolder.equals("Card number")&&NamePlaceHolder.equals("Name as on card"))) {
+			Reporter.log("PlaceHoder is not correct "+CardPlaceHolder+" "+NamePlaceHolder);
+			Assert.assertTrue(false);
+		}
+		textPresent_Log(driver, "CVV is mentioned at the back of your card", 1);		
 		textPresent_Log(driver, "Please enter a valid card number", 1);		
 		textPresent_Log(driver, "Please enter a valid expiry month", 1);		
 		textPresent_Log(driver, "Please enter a valid expiry year", 1);	
@@ -94,7 +101,13 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 	public void Validate_Text_UPI() throws Exception {
 		payUI_Select_PaymentType(driver, "UPI");
 		textPresent_Log(driver, "Pay using UPI", 5);	
+		
 		textPresent_Log(driver, "Enter your UPI ID", 1);	
+		String UPIPlaceHolder = driver.findElement(getObjectPayment("PaymentPage_CreditCard_Name")).getAttribute("placeholder");
+		if(!UPIPlaceHolder.equals("yourname@bank")) {
+			Reporter.log("PlaceHoder is not correct "+UPIPlaceHolder);
+			Assert.assertTrue(false);
+		}
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));		
 		textPresent_Log(driver, "Please enter a valid UPI ID", 2);
 		textPresent_Log(driver, "Includes a convenience fee of", 1);
@@ -120,6 +133,20 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 			Reporter.log("Make Pament Button is not disabled");
 			Assert.assertTrue(false);
 		}
+		
+		
+		safeClick(driver, getObjectPayment("PayUI_I_Agree_CheckBox_Enabled"));	
+		if(elementPresent(driver, getObjectPayment("PayUI_I_Agree_CheckBox_Enabled"), 1)) {
+			Reporter.log("Terms & condition checkbox is not disabled");
+			Assert.assertTrue(false);
+		}
+
+		safeClick(driver, getObjectPayment("PayUI_I_Agree_CheckBox"));	
+		if(textPresent(driver, "Please accept the terms and conditions to proceed with this bookiing", 1)) {
+			Reporter.log("Please accept the terms and conditions to proceed with this bookiing- error is displayed after enabling ");
+			Assert.assertTrue(false);
+		}
+		elementPresent_log(driver, getObjectPayment("PayUI_I_Agree_CheckBox_Enabled"), "Terms & Condition CheckBox is not disabled", 1);
 	}
 		
 	@Test(priority=7)
@@ -162,10 +189,6 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 			Assert.assertTrue(false);
 		}
 		
-		/*
-		safeClick(driver, getObjectPayment("PayUI_Expressway_CheckBox"));
-		textPresent_Log(driver, "2006–2020 Cleartrip Pvt. Ltd", 1);
-		textPresent_Log(driver, "Save this card and make single-click payments", 1);	*/	
 	}
 	
 	@Test(priority=10)

@@ -59,7 +59,7 @@ public class PaymentUI_Progress extends PaymentNodeJS{
 
 	@Test(priority=2)
 	public void inProgressPayment() throws Exception{
-			boolean storedCard = driver.findElementByXPath("//p[text()='Stored card']").isDisplayed();
+			boolean storedCard = driver.findElementByXPath("//p[text()='Saved card']").isDisplayed();
 			if(storedCard==true)
 			{
 				click(driver,PaymentUI_CommonUtilities.creditCardPaymentxpath);

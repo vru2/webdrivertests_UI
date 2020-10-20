@@ -73,7 +73,7 @@
 
 <test name="PWA KW Knet"  preserve-order="true">
     <classes>   
-   <!--    <class name="paymentsUI_Air.PWA_KW_Knet"/>   -->
+      <class name="paymentsUI_Air.PWA_KW_Knet"/>  
     </classes>
 </test>
 
@@ -262,7 +262,7 @@
 
 <test name="KNet"  preserve-order="true">
     <classes>
-     <!--  <class name="paymentsUI_Air.Knet_KW"/> -->
+      <class name="paymentsUI_Air.Knet_KW"/>
     </classes>
 </test>
 

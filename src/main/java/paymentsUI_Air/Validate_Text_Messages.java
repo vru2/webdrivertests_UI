@@ -103,7 +103,7 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 		textPresent_Log(driver, "Pay using UPI", 5);	
 		
 		textPresent_Log(driver, "Enter your UPI ID", 1);	
-		String UPIPlaceHolder = driver.findElement(getObjectPayment("PaymentPage_CreditCard_Name")).getAttribute("placeholder");
+		String UPIPlaceHolder = driver.findElement(getObjectPayment("PWA_PaymentPage_UPI_TextBox")).getAttribute("placeholder");
 		if(!UPIPlaceHolder.equals("yourname@bank")) {
 			Reporter.log("PlaceHoder is not correct "+UPIPlaceHolder);
 			Assert.assertTrue(false);

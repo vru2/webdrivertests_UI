@@ -3,8 +3,8 @@
 
 package paymentsUI_Air;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -19,7 +19,10 @@ public class PWA_KW_Knet extends PaymentUI_Common{
 		String PayUrl = getPayUI("AirKW", "KW");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
-		Assert.assertTrue(false);
+
+		payUI_Select_PaymentType_PWA(driver, "KNET");
+		elementPresent_log(driver, By.cssSelector("li.Datalist__item.radio-item-list__item.pwa-list-item"), "Knet Radio button", 5);
+		elementPresent_log(driver, By.cssSelector("image"), "Knet Image", 1);
 	}
 
 	@BeforeClass

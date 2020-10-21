@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Test App" parallel="tests" thread-count="7">
+<suite name="Test App" parallel="tests" thread-count="9">
 
 <listeners>
 <listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -7,13 +7,6 @@
 <listener class-name="common.RetryListener"/> -->
 <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
-
-<test name="PhonePe"  preserve-order="true" parallel="true" >
-    <classes>
-     <!-- <class name="paymentsUI.Payment_NodeJS_PhonePe"/>  
-      <class name="paymentsUI.Payment_NodeJS_PhonePe_CTWallet"/> -->
-    </classes>
-</test>
 
 <test name="NB GW" preserve-order="true" >
     <classes>
@@ -99,18 +92,7 @@
 </test>
 
 
-<test name="Stored Card"  preserve-order="true" parallel="true">
-    <classes>
-     <!--  <class name="paymentsUI.Payment_NodeJS_SC"/>
-      <class name="paymentsUI.Payment_NodeJS_SC_AE"/> -->
-    </classes>
-</test>
 
-<test name="CC S2S"  preserve-order="true" parallel="true">
-    <classes>
-      <!-- <class name="paymentsUI.Payment_NodeJS_CC_PG_PayU_S2S"/> -->
-    </classes>
-</test>
 
 <test name="Hotel" preserve-order="true">
     <classes>
@@ -135,5 +117,28 @@
       <class name="paymentsUI.Payment_NodeJS_Activity_B2C_CC"/>
    </classes>
 </test>
+<!-- 
 
+<test name="CC S2S"  preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsUI.Payment_NodeJS_CC_PG_PayU_S2S"/> 
+    </classes>
+</test>
+
+<test name="PhonePe"  preserve-order="true" parallel="true" >
+    <classes>
+     <class name="paymentsUI.Payment_NodeJS_PhonePe"/>  
+      <class name="paymentsUI.Payment_NodeJS_PhonePe_CTWallet"/>
+    </classes>
+</test>
+
+
+
+<test name="Stored Card"  preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsUI.Payment_NodeJS_SC"/>
+      <class name="paymentsUI.Payment_NodeJS_SC_AE"/>
+    </classes>
+</test>
+ -->
 </suite> 

@@ -71,6 +71,7 @@ public class API_RewardPayback extends API_PaymentCommon1  {
 
 	@Test(priority=10, dependsOnMethods = { "RewardPayback_earnNotUsed" })
 	public void RewardPayback_reverseEarnNotUsed() throws Exception{
+		Thread.sleep(7000);
 		Response res = reward("PAYBACK_Reverseearn", "");
 		validation_RewardPayback("PAYBACK_Reverseearn", res);	
 	}

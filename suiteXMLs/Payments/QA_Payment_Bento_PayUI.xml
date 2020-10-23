@@ -41,8 +41,8 @@
 <test name="CC GW"  preserve-order="true" >
     <classes>
       <class name="paymentsUI_Air.CC_IN_PayU"/>
-      <class name="paymentsUI_Air.CC_SA_Checkout"/> 
       <!-- 
+      <class name="paymentsUI_Air.CC_SA_Checkout"/> 
       <class name="paymentsUI_Air.CC_IN_Amex"/>      
       <class name="paymentsUI_Air.CC_IN_RazorPay"/>    
       <class name="paymentsUI_Air.DC_IN_PayU"/>         

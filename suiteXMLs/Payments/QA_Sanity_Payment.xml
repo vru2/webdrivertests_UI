@@ -13,7 +13,6 @@
     </classes>
 </test>
 
-
 <test name="DA" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsAPI.API_DA_PayV3"/>
@@ -26,13 +25,11 @@
     </classes>
 </test>
 
-
 <test name="Test App"  preserve-order="true" >
     <classes>
       <class name="paymentsUI.Payment_NodeJS_CC"/>
     </classes>
 </test>
-
 
 <test name="Pomo service" preserve-order="true" parallel="true">
     <classes>
@@ -61,7 +58,7 @@
 
 <test name="Bin Manager"  preserve-order="true" parallel="true" >
   <classes>
-		<class name="paymentsAPI.API_Binmanager"/>
+		<class name="paymentsAPI.API_Binmanager_Add_MC_Credit"/>
     </classes>
 </test>
 

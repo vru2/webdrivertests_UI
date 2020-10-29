@@ -56,7 +56,7 @@
 			<class name="accountsAPI.Account_Service_FlyinV2_SocialSignup" />
 			<class name="accountsAPI.Account_Service_FlyinV2_UserSearch" />
 			<class name="accountsAPI.Account_Service_Flyin_ForgotPassword" />
-			<class name="accountsAPI.Account_Service_Flyin_ResetPassword" />
+			<class name="accountsAPI.Account_Service_Flyin_ResetPassword" />			
 			<class name="accountsAPI.Account_Service_Flyin_Signin" />
 			<class name="accountsAPI.Account_Service_Flyin_Signup" />
 			<class name="accountsAPI.Account_Service_Flyin_Social_Signup" />
@@ -64,8 +64,13 @@
 			<class
 				name="accountsAPI.Account_Service_Partnercontroller_UpdateTraveller" />
 			<class name="accountsAPI.Account_Service_Partnercontroller_Usersearch" />
+			<class name="accountsAPI.Account_Service_Update_User_MobileNo_OTPValidaion" />
 			<class name="accountsAPI.Account_Service_Peoplecontroller_GetuserByEmail" />
 			<class name="accountsAPI.Account_Service_Peoplecontroller_GetuserById" />
+			<class name="accountsAPI.Account_Service_SendOTP_ToUsermobileNo" />
+			<class name="accountsAPI.Account_Service_Verify_Person" />
+			<class name="accountsAPI.Account_Service_UserController_VerifyAccount" />
+			
 			<class
 				name="accountsAPI.Account_Service_Travellercontroller_UpdateTraveller" />
 			<class name="accountsAPI.Account_Service_Peoplecontroller_GetuserById_V2" />
@@ -79,6 +84,7 @@
 			<class name="accountsAPI.Account_Service_Caching_Userprofilejson_Email" />
 			<class name="accountsAPI.Account_Service_Caching_Userprofilejson_ID" />
 			<class name="accountsAPI.Account_Service_Update_User" />
+			
 		</classes>
 
 	</test>

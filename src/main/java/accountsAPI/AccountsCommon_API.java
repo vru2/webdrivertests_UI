@@ -32,7 +32,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	//String url_NewAcct= "http://accounts-service-api.cltp.com:9001";
 
 	String url_qa2 = "https://qa2.cleartrip.com:9001";
-	
+
 	String url_Acct_Service_applesgnin = "http://172.17.28.21:8336";
 
 	String url_identity="https://qa2.cleartrip.com";
@@ -55,6 +55,8 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String url_GstDetails_Prod="/partial/account/user/gst?email_id=ns.likhitha@cleartrip.com";
 	String url_AcctHealthtestURL_Prod="/accountsR3/health_test";
 	String url_Userclassification_Health_Test_Url="/actuator/health";
+	String url_Account_Service_Verify_Person="/account/people/verify?id=14029546&emailId=ns.likhitha@cleartrip.com&domain=www.cleartrip.com&companyId=110340";
+	String url_Account_Service_UserController_VerifyAccount="/user/v1/account/verify/14029546";
 	String url_Userclassification_Userdetails_emailid="/users/detail?email_id=test@cleartrip.com";
 	String url_Userclassification_Gettripdetails_fromtripid="/users/trip?trip_id=Q200102680486";
 	String url_UserInfo_Prod="/account/api/user_info?user_id=32553048&api_product_id=1040";
@@ -101,7 +103,9 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String url_identtiyservice_getresource="/ctauth/resource";
 	String url_flyinsignup="/partners/signup";
 	String url_Account_Service_Update_User="/account/people/v2?domain=qa2.cleartrip.com";
+	String url_Account_Service_Update_User_MobileNo_OTPValidaion="/account/people/v2?domain=qa2.cleartrip.com";
 	String url_Account_Service_AppleSignin_uniqueId="/apple/signin";
+	String url_Account_Service_SendOTP_ToUsermobileNo="/account/people/send-mobile-otp";
 	String url_Userclassification_parsingcsv="/users/data";
 	String url_flyinsignupV2="/partners/v2/signup";
 	String url_flyinresetpassword="/partners/account/reset_password";
@@ -164,8 +168,8 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String params_FetchPeople = "{\"email_ids\":[\"vinay.raj@cleartrip.com\",\"sathianarayanan.s@cleartrip.com\",\"kiran.kumar@cleartrip.com\",\"xyz1\"]}";
 	String params_Feedbackemail="{\"email_id\":\"ns.likhitha@cleartrip.com\",\"msg\":\"test\",\"subject\":\"working\",\"email_type\":\"default\"}";
 	String params_Signinpostcall="{\"email\":\"ns.likhitha@cleartrip.com\",\"password\":\"cleartrip123\",\"persistent_login\":\"t\",\"service\":\"\",\"caller\":\"homepage\",\"source\":\"ui\",\"action_type\":\"\",\"trip_ref\":\"\",\"_\": \"\"}";
-	String params_Account_Service_AppleSignin="{\"appleId\":\"12::00\",\"emailId\":\"hihitest901@gmail.com\",\"firstName\":\"abcd\",\"lastName\":\"sai\",\"title\":\"Mr.\"}";
-
+	String params_Account_Service_AppleSignin="{\"appleId\":\"1:7676790:1100:009:jhjhdjdfjnfkmkggjuthgjfhghh\",\"emailId\":\"appleidt50chars@privaterelay.appleid.com\",\"firstName\":\"abcd\",\"lastName\":\"sai\",\"title\":\"Mr.\"}";
+	String params_Account_Service_SendOTP_ToUsermobileNo="{\"mobile\":\"+917799964888\",\"userId\":\"14029546\",\"countryCode\":\"91\"}";
 	String params_b2csignin="{\"email\":\"ns.likhitha@cleartrip.com\",\"password\":\"cleartrip123\",\"persistent_login\":\"t\",\"service\":\"\",\"caller\":\"homepage\",\"source\":\"ui\",\"action_type\":\"\",\"trip_ref\":\"\",\"_\": \"\"}";
 	String params_b2csignin_prod="{\"email\":\"ns.likhitha@cleartrip.com\",\"password\":\"Likhitha@143\",\"persistent_login\":\"t\",\"service\":\"\",\"caller\":\"homepage\",\"source\":\"ui\",\"action_type\":\"\",\"trip_ref\":\"\",\"_\": \"\"}";
 	String params_flyinsignin="{\"username\" : \"ok@cltp.com\",\"partner\":1,\"password\":\"cleartrip1\"}";
@@ -174,7 +178,9 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String params_cfw_active_status="{ \"cfw\":\"false\", \"user\": { \"password\": \"cleartrip1\" }, \"retype_password\": \"cleartrip1\", \"personal_data\": { \"title\": \"Mr\", \"first_name\": \"vinay\", \"last_name\": \"raj\" }, \"phone_number\": { \"phone_number_value\": \"+919743049515\", \"category\": \"mobile\" }, \"email_id\":\"ns.likhitha@cleartrip.com\" }";
 	String params_identtiyservice_getresource="access_token:rUBn829a8U4nH12Zo4uiHj9CHOSu3H5k44FyRJVERLB2rjdlOy";
 	String params_flyinsignup="{ \"username\" : \"ok@cltp.com\", \"password\" : \"cleartrip1\", \"partner\" : \"1\", \"source\" : \"homepage\", \"title\" : \"Mr>\", \"first_name\":\"test\", \"last_name\":\"testte\" }";
-	String params_Account_Service_Update_User="{\"id\":65200798,\"username\":\"byeeeee@gmail.com\",\"profilePercentCompleted\":null,\"travellerDetails\":[{\"id\":65200798,\"isRegistered\":true,\"profileData\":null,\"contactInfo\":{\"phoneNumbers\":[{\"id\":25750976,\"mobileNumber\":\"122289822222\",\"mobileCountryCode\":\"92\",\"category\":\"mobile\"}],\"whatsapp\":null,\"addresses\":[],\"otherDetails\":[],\"emails\":[]},\"ffnPreferences\":null,\"personalDetails\":{\"anniversaryDate\":null,\"companyDesignation\":null,\"concatName\":\"heyhey\",\"countryOfResidence\":null,\"countryOfResidenceId\":null,\"countryPreference\":null,\"currency\":null,\"dateOfBirth\":null,\"department\":null,\"emergencyContactName\":null,\"emergencyContactNumber\":\"1234567890\",\"firstName\":\"sujeeeeeee\",\"gender\":null,\"homeAirport\":null,\"homeAirportId\":null,\"language\":\"English\",\"lastName\":\"Gigerrrrrrr\",\"middleName\":\"Lhdhdhed\",\"nickName\":null,\"primaryEmail\":\"hihihi@gmail.com\",\"title\":\"Mr\",\"createdAt\":\"2020-06-09T07:08:39\",\"updatedAt\":\"2020-06-09T07:08:39\"},\"preferences\":null,\"docDetails\":[{\"countryIssued\":\"India\",\"dateOfBirth\":null,\"docNumber\":null,\"docType\":\"1\",\"expiryDate\":null,\"issuedDate\":\"2020-01-03T06:52:50\",\"nationality\":\"India\",\"createdAt\":\"2020-06-03T06:52:50\",\"updatedAt\":\"2020-06-03T06:52:50\"}],\"createdAt\":\"2020-06-09T07:08:39\",\"updatedAt\":\"2020-06-09T07:08:39\"}],\"companyDetails\":null,\"depositAccounts\":null,\"gstDetails\":[{\"gstHolderName\":\"Dcompany\",\"gstHolderStateCode\":\"21\",\"gstHolderStateName\":\"Andhra\",\"gstNumber\":\"21AABBB5678J1Z0\"}],\"resources\":null,\"savedCards\":null,\"registrationDate\":\"2020-06-09T07:08:39\",\"lastUpdatedOn\":\"2020-06-09T07:08:39\"}";
+	String params_Account_Service_Update_User="{\"id\":65205484,\"username\":\"otpmobilenotest@cleartrip.com\",\"profilePercentCompleted\":null,\"travellerDetails\":[{\"id\":65205510,\"profileData\":null,\"contactInfo\":{\"phoneNumbers\":[{\"mobileNumber\":\"44444444\",\"mobileCountryCode\":\"91\",\"category\":\"mobile\"}],\"whatsapp\":null,\"addresses\":[],\"otherDetails\":[],\"emails\":[]},\"ffnPreferences\":null,\"personalDetails\":{\"anniversaryDate\":null,\"companyDesignation\":null,\"concatName\":null,\"countryOfResidence\":null,\"countryOfResidenceId\":null,\"countryPreference\":null,\"currency\":null,\"dateOfBirth\":null,\"department\":null,\"emergencyContactName\":null,\"emergencyContactNumber\":null,\"firstName\":null,\"gender\":null,\"homeAirport\":null,\"homeAirportId\":null,\"language\":null,\"lastName\":null,\"middleName\":null,\"nickName\":null,\"primaryEmail\":\"otpmobilenotest@cleartrip.com\",\"title\":null,\"createdAt\":\"2020-10-27T09:15:14\",\"updatedAt\":\"2020-10-27T09:15:14\"},\"preferences\":null,\"docDetails\":null,\"createdAt\":\"2020-10-27T09:15:14\",\"updatedAt\":\"2020-10-27T09:15:14\"}],\"companyDetails\":[{\"id\":110340,\"companyName\":\"cleartrip\",\"domain\":\"www.cleartrip.com\",\"roles\":[{\"id\":1064,\"name\":\"USER\"}],\"status\":\"N\"}],\"depositAccounts\":[],\"gstDetails\":[],\"resources\":[],\"savedCards\":null,\"registrationDate\":\"2020-10-27T09:15:14\",\"lastUpdatedOn\":\"2020-10-27T09:15:14\"}";
+	String params_Account_Service_Update_User_MobileNo_OTPValidaion="{\"id\":65205484,\"username\":\"otpmobilenotest@cleartrip.com\",\"profilePercentCompleted\":null,\"travellerDetails\":[{\"id\":65205484,\"isRegistered\":true,\"profileData\":null,\"contactInfo\":{\"phoneNumbers\":[{\"mobileNumber\":\"44444444\",\"mobileCountryCode\":\"91\",\"category\":\"mobile\"}],\"whatsapp\":null,\"addresses\":[],\"otherDetails\":[],\"emails\":[]},\"ffnPreferences\":null,\"personalDetails\":{\"anniversaryDate\":null,\"companyDesignation\":null,\"concatName\":null,\"countryOfResidence\":null,\"countryOfResidenceId\":null,\"countryPreference\":null,\"currency\":null,\"dateOfBirth\":null,\"department\":null,\"emergencyContactName\":null,\"emergencyContactNumber\":null,\"firstName\":null,\"gender\":null,\"homeAirport\":null,\"homeAirportId\":null,\"language\":null,\"lastName\":null,\"middleName\":null,\"nickName\":null,\"primaryEmail\":\"otpmobilenotest@cleartrip.com\",\"title\":null,\"createdAt\":\"2020-10-27T09:15:14\",\"updatedAt\":\"2020-10-27T09:15:14\"},\"preferences\":null,\"docDetails\":null,\"createdAt\":\"2020-10-27T09:15:14\",\"updatedAt\":\"2020-10-27T09:15:14\"}],\"companyDetails\":[{\"id\":110340,\"companyName\":\"cleartrip\",\"domain\":\"www.cleartrip.com\",\"roles\":[{\"id\":1064,\"name\":\"USER\"}],\"status\":\"N\"}],\"depositAccounts\":[],\"gstDetails\":[],\"resources\":[],\"savedCards\":null,\"registrationDate\":\"2020-10-27T09:15:14\",\"lastUpdatedOn\":\"2020-10-27T09:15:14\"}";
+	
 	String params_Account_Service_AppleSignin_uniqueId="{\"appleId\":\"1:a:2:b:35\",\"emailId\":\"123@privaterelay.appleid.com\",\"firstName\":\"abcd\",\"lastName\":\"sai\",\"title\":\"Mr.\"}";
 	String params_Account_Service_AppleSignin_Entity="{\"appleId\":\"1:a:2:b:3\",\"emailId\":\"sai@privaterelay.appleid.com\",\"firstName\":\"abcd\",\"lastName\":\"sai\",\"title\":\"Mr.\"}";
 	String params_Account_Service_AppleRegister_NullEmail="{\"appleId\":\"1:a:2:b:3:00\",\"emailId\":\"\",\"firstName\":\"abcd\",\"lastName\":\"sai\",\"title\":\"Mr.\"}";
@@ -246,6 +252,19 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		headers.put("Accept", "text/json");
 		return headers;
 	}
+	public HashMap<String, Object> verifyperson(){
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("Accept", "*/*");
+		headers.put("AUTH_KEY", "7GHT#@D65yhgder4R");
+		return headers;
+	}
+	
+	public HashMap<String, Object> verifyaccount(){
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("Accept", "*/*");
+		headers.put("domain", "www.cleartrip.com");
+		return headers;
+	}
 
 	public HashMap<String, Object> userclassification(){
 		HashMap<String, Object> headers = new HashMap<>();
@@ -277,7 +296,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 
 		return headers;
 	}
-	
+
 	public HashMap<String, Object> headersFormIdentitysignin(){
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("Content-Type", "application/json");
@@ -285,7 +304,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		headers.put("X-CT-SOURCETYPE", "mobile");
 		headers.put("service", "");
 
-	
+
 		return headers;
 	}
 
@@ -324,19 +343,19 @@ public class AccountsCommon_API extends PlatformCommonUtil
 
 		return headers;
 	}
-	
+
 	public HashMap<String, Object> headersFormpwaemailverification(){
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("AUTH_KEY", "7GHT#@D65yhgder4R");
-		headers.put("referer", "www.cleartrip.com");
+		headers.put("domain", "www.cleartrip.com");
 		//GCP -- headers.put("AUTH_KEY", "H67f$we&HGTR34clQ");
 
 		return headers;
 	}
-	
+
 	public HashMap<String, Object> headersFormget_token_for_user(){
 		HashMap<String, Object> headers = new HashMap<>();
-		
+
 		headers.put("referer", "www.cleartrip.com");
 		//GCP -- headers.put("AUTH_KEY", "H67f$we&HGTR34clQ");
 
@@ -344,15 +363,15 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	}
 	public HashMap<String, Object> headersFormget_token_for_user_flyin(){
 		HashMap<String, Object> headers = new HashMap<>();
-		
+
 		headers.put("referer", "www.flyin.com");
 		//GCP -- headers.put("AUTH_KEY", "H67f$we&HGTR34clQ");
 
 		return headers;
 	}
 
-	
-	
+
+
 
 	/*public HashMap<String, Object> headersFormsscreencaptureInitiate(){
 		HashMap<String, Object> headers = new HashMap<>();
@@ -394,6 +413,15 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		headers.put("x-ct-caller-app", "x-ct-caller-app: my-app-name");
 		return headers;
 	}
+	
+	public HashMap<String, Object> headersFormsendotpmobileno(){
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("auth_key", "7GHT#@D65yhgder4R");
+		headers.put("Content-Type", "application/json");
+		headers.put("referer", "qa2.cleartrip.com");
+		
+		return headers;
+	}
 
 
 
@@ -405,8 +433,8 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		return headers;
 	}
 
-	
-	
+
+
 
 
 	public HashMap<String, Object> headersFormsapplesignin(){
@@ -417,10 +445,10 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		headers.put("User-Agent", "Apple");
 		headers.put("X-CT-AUTH-TOKEN", "test123");
 		headers.put("X-CT-TOKEN-TYPE", "JWT");
-		
+
 		return headers;
 	}
-	
+
 	public HashMap<String, Object> headersForms3(){
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("Accept", "text/json");
@@ -443,6 +471,16 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		//GCP -- headers.put("AUTH_KEY", "H67f$we&HGTR34clQ");
 		return headers;
 	}
+	public HashMap<String, Object> headersFormsupdateuser_otp(){
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("Content-Type", "application/json");
+		headers.put("AUTH_KEY", "7GHT#@D65yhgder4R");
+		headers.put("x-ct-caller-app", "mobile");
+		 headers.put("OTP", "022546");
+		return headers;
+	}
+	
+	
 	public HashMap<String, Object> headersFormspwasignin(){
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("Content-Type", "application/json");
@@ -512,7 +550,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 				log().all().
 				post(url);
 		return resp;
-		
+
 	}
 
 	public Response postCallIdentitygettokenthroughcode(String url){
@@ -575,7 +613,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 				when().
 				log().all().
 				post(url);
-		
+
 		return resp;
 	}
 
@@ -732,7 +770,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			url = url_flyinsigninV2;					
 			params =params_flyinsignin;
 			Reporter.log(url_Identitymicro_service+url);
-			
+
 		}
 
 
@@ -775,8 +813,8 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			RestAssured.baseURI =url_Acct;
 			url = url_flyinsignup;					
 			params =params_flyinsignup ;
-			
-			
+
+
 		}
 
 		if(Type.equals("flyinsignupV1")) {
@@ -787,7 +825,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			params =params_flyinsignup ;
 			Reporter.log(url_Acct_Service+url);
 		}
-		
+
 		if(Type.equals("Account_Service_Update_User")) {
 			headers = headersFormsupdateuser();
 
@@ -795,7 +833,16 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			url = url_Account_Service_Update_User;					
 			params =params_Account_Service_Update_User ;
 			Reporter.log(url_Acct_Service+url);
-			
+
+		}
+		if(Type.equals("Account_Service_Update_User_MobileNo_OTPValidaion")) {
+			headers = headersFormsupdateuser_otp();
+
+			RestAssured.baseURI =url_Acct_Service;
+			url = url_Account_Service_Update_User_MobileNo_OTPValidaion;					
+			params =params_Account_Service_Update_User_MobileNo_OTPValidaion ;
+			Reporter.log(url_Acct_Service+url);
+
 		}
 
 		if(Type.equals("Userclassification_Parsing_CSV")) {
@@ -816,7 +863,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			url = url_flyinsignupV2;					
 			params =params_flyinsignup ;
 			Reporter.log(url_Acct_Service+url);
-			
+
 		}
 
 		if(Type.equals("flyinresetpasswordV2")) {
@@ -871,7 +918,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			params =params_flyinusersearch ;
 			Reporter.log(url_Acct_Service+url);
 		}
-		
+
 
 		if(Type.equals("flyinusersearchV2")) {
 			headers = headersForms4();
@@ -984,7 +1031,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			params = params_identityserviceaddclient;
 			Reporter.log(url_identity+url);
 		} 
-		
+
 
 		if(Type.equals("identityservicesignin")) {
 			headers = headersFormIdentitysignin();
@@ -1049,8 +1096,16 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			url = url_Account_Service_AppleSignin;					
 			params =params_Account_Service_AppleSignin ;
 		}
-		
-		
+
+		if(Type.equals("Account_Service_SendOTP_ToUsermobileNo")) {
+			headers = headersFormsendotpmobileno();
+
+			RestAssured.baseURI =url_Acct_Service;
+			url = url_Account_Service_SendOTP_ToUsermobileNo;					
+			params =params_Account_Service_SendOTP_ToUsermobileNo ;
+		}
+
+
 		if(Type.equals("Account_Service_AppleSignin_uniqueId")) {
 			headers = headersFormsapplesignin();
 
@@ -1058,7 +1113,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			url = url_Account_Service_AppleSignin_uniqueId;					
 			params =params_Account_Service_AppleSignin_uniqueId ;
 		}
-		
+
 		if(Type.equals("Account_Service_AppleSignin_Entity")) {
 			headers = headersFormsapplesignin();
 
@@ -1066,7 +1121,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			url = url_Account_Service_AppleSignin_uniqueId;					
 			params =params_Account_Service_AppleSignin_Entity ;
 		}
-		
+
 		if(Type.equals("Account_Service_AppleRegister_NullEmail")) {
 			headers = headersFormsapplesignin();
 
@@ -1074,7 +1129,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			url = url_Account_Service_AppleSignin_uniqueId;					
 			params =params_Account_Service_AppleRegister_NullEmail ;
 		}
-		
+
 		Reporter.log("url  "+url);
 		request = RestAssured.given().
 				when().
@@ -1086,6 +1141,38 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		return request;
 	}
 
+	public Response putCall(String Type, String Type1){
+
+		RestAssured.baseURI =url_Acct;
+
+
+		String url = null;
+
+		String params =null;
+		Response request = null;	
+		HashMap<String, Object> headers = new HashMap<>();
+		headers = headersForms1();
+		if(Type.equals("AcctSanity")) {
+			url = url_acctSanity;
+		}
+		
+		
+		
+		else if(Type.equals("Account_Service_UserController_VerifyAccount"))
+		{
+			RestAssured.baseURI=url_Acct_Service;
+			url = url_Account_Service_UserController_VerifyAccount;
+			headers = verifyaccount();
+			Reporter.log(url_Acct_Service+url);
+		}
+		Reporter.log("url  "+url);
+		request = RestAssured.given().						
+				when().
+				log().all().
+				headers(headers).
+				put(url);
+		return request;
+	}
 	public Response getCall(String Type, String Type1){
 
 		RestAssured.baseURI =url_Acct;
@@ -1173,7 +1260,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 
 		else if(Type.equals("AcctHealthtestURL_Prod")) {
 			url = url_AcctHealthtestURL_Prod;
-			
+
 		}
 		else if(Type.equals("Userclassification_Health_Test_Url"))
 		{
@@ -1181,6 +1268,13 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			url = url_Userclassification_Health_Test_Url;
 			headers = userclassification();
 			Reporter.log(url_userclassification+url);
+		}
+		else if(Type.equals("Account_Service_Verify_Person"))
+		{
+			RestAssured.baseURI=url_Acct_Service;
+			url = url_Account_Service_Verify_Person;
+			headers = verifyperson();
+			Reporter.log(url_Acct_Service+url);
 		}
 		else if(Type.equals("Userclassification_Userdetails_emailid"))
 		{
@@ -1317,7 +1411,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			RestAssured.baseURI=url_Acct_Service;
 			url = url_Account_Service_Caching_Userprofilejson_ID;
 			headers = headersFormscfwoptinstatus();
-					Reporter.log(url_Acct_Service+url);
+			Reporter.log(url_Acct_Service+url);
 
 		}
 
@@ -1365,7 +1459,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			Reporter.log(url_Identitymicro_service+url);
 
 		}
-		
+
 		else if (Type.equals("IdentityService_PeopleController_gt_token_for_userBy_Email")){
 			RestAssured.baseURI=url_Identitymicro_service;
 			url = url_IdentityService_PeopleController_gt_token_for_userBy_Email;
@@ -1373,7 +1467,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			Reporter.log(url_Identitymicro_service+url);
 
 		}
-		
+
 		else if (Type.equals("IdentityService_PeopleController_gt_token_for_userBy_Private_EmailandID")){
 			RestAssured.baseURI=url_Identitymicro_service;
 			url = url_IdentityService_PeopleController_gt_token_for_userBy_Private_EmailandID;
@@ -1413,6 +1507,25 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		return request;
 	}
 
+	
+	public void validation_user_update_MobileOTP(Response resp, String Type, String Type2){
+		Reporter.log("Response body "+Type +" : "+ resp.body().asString());
+		//System.out.println("Response body "+Type +" : "+ resp.body().asString());
+		int statusCode = resp.getStatusCode();
+		//int statusCode1 = resp.getStatusCode();
+		Reporter.log("statusCode: " + statusCode);
+		JsonPath jsonPathEvaluator = resp.jsonPath();
+		if(statusCode!=401) {
+			Assert.assertTrue(false);
+		}
+
+		if(Type.equalsIgnoreCase("Account_Service_Update_User_MobileNo_OTPValidaion")) {
+			String message = jsonPathEvaluator.getString("message");
+			if(!message.contains("Wrong otp entered for user otpmobilenotest@cleartrip.com")) {
+				Assert.assertTrue(false);						
+			}
+		}
+	}
 	public void validation_user_update(Response resp, String Type, String Type2){
 		Reporter.log("Response body "+Type +" : "+ resp.body().asString());
 		//System.out.println("Response body "+Type +" : "+ resp.body().asString());
@@ -1426,13 +1539,13 @@ public class AccountsCommon_API extends PlatformCommonUtil
 
 		if(Type.equalsIgnoreCase("Account_Service_Update_User")) {
 			String username = jsonPathEvaluator.getString("username");
-			if(!username.contains("byeeeee@gmail.com")) {
+			if(!username.contains("otpmobilenotest@cleartrip.com")) {
 				Assert.assertTrue(false);						
 			}
 		}
 	}
-	
-	
+
+
 	public void validation_AppleRegister_NullEmail(Response resp, String Type, String Type2){
 		Reporter.log("Response body "+Type +" : "+ resp.body().asString());
 		//System.out.println("Response body "+Type +" : "+ resp.body().asString());
@@ -1451,8 +1564,8 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			}
 		}
 	}
-	
-	
+
+
 	public void validation_Apple_signin(Response resp, String Type, String Type2){
 		Reporter.log("Response body "+Type +" : "+ resp.body().asString());
 		//System.out.println("Response body "+Type +" : "+ resp.body().asString());
@@ -1471,7 +1584,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			}
 		}
 	}
-	
+
 	public void validation_Apple_signin_entity(Response resp, String Type, String Type2){
 		Reporter.log("Response body "+Type +" : "+ resp.body().asString());
 		//System.out.println("Response body "+Type +" : "+ resp.body().asString());
@@ -1527,11 +1640,22 @@ public class AccountsCommon_API extends PlatformCommonUtil
 				Assert.assertTrue(false);						
 			}
 		}
+		else if(Type.equalsIgnoreCase("Account_Service_SendOTP_ToUsermobileNo")) {
+			String message = jsonPathEvaluator.getString("message");
+			if(!message.contains("sms is queued")) {
+				Assert.assertTrue(false);						
+			}
+			String status = jsonPathEvaluator.getString("status");
+			if(!status.contains("success")) {
+				Assert.assertTrue(false);						
+			}
+			
+		}
 
 		else if(Type.equalsIgnoreCase("Account_Service_AppleSignin")) {
 
 			String ReponseStr = resp.body().asString();
-			if(!ReponseStr.contains("hihitest901@gmail.com")){
+			if(!ReponseStr.contains("appleidt50chars@privaterelay.appleid.com")){
 				Assert.assertTrue(false);
 			}
 		}
@@ -1654,6 +1778,32 @@ public class AccountsCommon_API extends PlatformCommonUtil
 
 
 		}
+		else if(Type.equalsIgnoreCase("Account_Service_Verify_Person")) {
+			String verified = jsonPathEvaluator.getString("verified");
+			String message = jsonPathEvaluator.getString("message");
+
+
+			if(!verified.contains("true")) {
+				Assert.assertTrue(false);						
+			}
+			if(!message.contains("person belongs to the given company")) {
+				Assert.assertTrue(false);						
+			}
+
+
+		}
+		else if(Type.equalsIgnoreCase("Account_Service_UserController_VerifyAccount")) {
+			String status = jsonPathEvaluator.getString("status");
+			
+
+
+			if(!status.contains("SUCCESS")) {
+				Assert.assertTrue(false);						
+			}
+			
+
+
+		}
 
 
 		else if(Type.equalsIgnoreCase("partnercontroller_usersearch")) {
@@ -1737,7 +1887,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 
 
 		}
-		
+
 		else if(Type.equalsIgnoreCase("Account_Service_EmailVerification_API")) {
 
 			String isVerified = jsonPathEvaluator.getString("isVerified");
@@ -1748,7 +1898,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 
 
 		}
-		
+
 		else if(Type.equalsIgnoreCase("IdentityService_PeopleController_gt_token_for_userBy_ID")) {
 
 			String token = jsonPathEvaluator.getString("token");
@@ -1759,7 +1909,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 
 
 		}
-		
+
 		else if(Type.equalsIgnoreCase("IdentityService_PeopleController_gt_token_for_userBy_Email")) {
 
 			String token = jsonPathEvaluator.getString("token");
@@ -1770,7 +1920,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 
 
 		}
-		
+
 		else if(Type.equalsIgnoreCase("IdentityService_PeopleController_gt_token_for_userBy_Private_EmailandID")) {
 
 			String token = jsonPathEvaluator.getString("token");

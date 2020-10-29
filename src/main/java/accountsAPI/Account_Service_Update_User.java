@@ -6,7 +6,6 @@ import org.json.JSONException;
 import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
-import io.restassured.response.ResponseBody;
 
 public class Account_Service_Update_User extends AccountsCommon_API
 {

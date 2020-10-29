@@ -25,16 +25,21 @@ public class StoredCard extends PaymentUI_Common{
 		driver.manage().addCookie(cookie_Parl_Wallet);
 		refreshPage(driver);
 		String storedCard = getText(driver, By.xpath("//li/p"));
-		if(!storedCard.equals("Stored card")) {
-			Reporter.log("Stored Card tab text is not displayed");
+		if(!storedCard.equals("Saved card")) {
+			Reporter.log("Saved Card tab text is not displayed");
 			Assert.assertTrue(false);
 		}
-		textPresent_Log(driver, "Pay with your stored cards", 20);
+
+		Reporter.log("Saved Card tab  is displayed");
+		String profileName = getText(driver, getObjectPayment("PayUI_Profile_Name"));
+		Assert.assertEquals(profileName, "partwallet");;
+		textPresent_Log(driver, "Pay with your saved cards", 1);
 		textPresent_Log(driver, "Enter CVV here", 1);
-		textPresent_Log(driver, "You card details are stored as part of your Express Checkout profile.", 1);
+		textPresent_Log(driver, "Your card details are saved as part of your Express Checkout profile.", 1);
 		textPresent_Log(driver, "Continue with payment by simply entering CVV.", 1);		
 		textPresent_Log(driver, "Includes a convenience fee of", 1);
 		elementAssert(driver, getObjectPayment("PayUI_StoredCard_Image"), 1);
+		Reporter.log("Stored Card Image  is displayed");
 		//elementAssert(driver, getObjectPayment("PayUI_StoredCard_Complete_CSS"), 1);
 		elementAssert(driver, getObjectPayment("PayUI_StoredCard_Number"), 1);
 		elementAssert(driver, getObjectPayment("PayUI_StoredCard_Name"), 1);

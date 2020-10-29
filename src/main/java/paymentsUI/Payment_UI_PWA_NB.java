@@ -1,16 +1,12 @@
 package paymentsUI;
 
-import org.openqa.selenium.Cookie;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
-import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import domains.PaymentNodeJS;
-import io.restassured.response.Response;
 
 	public class Payment_UI_PWA_NB extends PaymentNodeJS{
 	public RemoteWebDriver driver;

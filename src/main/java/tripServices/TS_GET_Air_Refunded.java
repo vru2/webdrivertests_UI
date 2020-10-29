@@ -28,19 +28,16 @@ public class TS_GET_Air_Refunded extends TripserviceCommon{
 		Reporter.log("Status code : " + resp.statusCode());
 		assertTrue(false);
 	}
-	Reporter.log("Fetching from archived db");
-	Reporter.log("http://172.17.51.86:9031/trips/air/refunded?status=D&fromDate=2019-02-02&toDate=2019-04-30&dbFetchType=ARCHIVED");
-	Response resp1=RestAssured.get("http://172.17.51.86:9031/trips/air/refunded?status=D&fromDate=2019-01-01&toDate=2019-04-30&dbFetchType=ARCHIVED");
-	System.out.println(resp1.asString());
-	if(resp1.statusCode()==200){
-		ResponseBody body= resp1.getBody();
-		String bodyAsString = body.asString();
-		Assert.assertNotNull(resp1);
-		Reporter.log(bodyAsString);
-	}else{
-		Reporter.log("Status code : " + resp1.statusCode());
-		assertTrue(false);
-	}
+			/*
+			 * Reporter.log("Fetching from archived db"); Reporter.log(
+			 * "http://172.17.51.86:9031/trips/air/refunded?status=D&fromDate=2019-02-02&toDate=2019-04-30&dbFetchType=ARCHIVED"
+			 * ); Response resp1=RestAssured.get(
+			 * "http://172.17.51.86:9031/trips/air/refunded?status=D&fromDate=2019-01-01&toDate=2019-04-30&dbFetchType=ARCHIVED"
+			 * ); System.out.println(resp1.asString()); if(resp1.statusCode()==200){
+			 * ResponseBody body= resp1.getBody(); String bodyAsString = body.asString();
+			 * Assert.assertNotNull(resp1); Reporter.log(bodyAsString); }else{
+			 * Reporter.log("Status code : " + resp1.statusCode()); assertTrue(false); }
+			 */
 		} /*
 			 * else if(Host.equalsIgnoreCase("www")) {
 			 * Reporter.log("Fetching from realtime db"); Reporter.log(

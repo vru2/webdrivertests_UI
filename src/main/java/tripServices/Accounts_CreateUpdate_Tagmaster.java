@@ -2,12 +2,9 @@ package tripServices;
 
 import static org.testng.Assert.assertTrue;
 
-import java.util.HashMap;
-
 import org.apache.commons.lang3.RandomStringUtils;
 import org.testng.Assert;
 import org.testng.Reporter;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;

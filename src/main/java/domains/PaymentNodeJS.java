@@ -19,7 +19,6 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
@@ -44,7 +43,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 import org.w3c.dom.Document;
 
-import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import junit.framework.Assert;
@@ -86,8 +84,9 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 				driver.get(PayUrl);	
 				textPresent_Log(driver, "Payment successful", 10);
 				break;
-			}			
+			}
 			Thread.sleep(1000);
+			driver.get(PayUrl);	
 			}
 	}
 
@@ -182,7 +181,10 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 			add_GV(driver, "");
 		} else if (payType.equalsIgnoreCase("GVCC")) {
 			add_GV(driver, "");
-			//select_Card(driver);
+			if(!cardType.equals("AE")) {
+				select_Card(driver);
+			}
+			
 			paymentNodeJS_EnterCard_Details(driver, cardType);
 		} else if (payType.equalsIgnoreCase("GVCCWALL")) {
 			add_GV(driver, "");
@@ -387,9 +389,10 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 		
 		else if (payType.equalsIgnoreCase("CCRazorPay")) {
 			safeClick(driver, getObjectPayment("MakePayment_Pay_Btn_CC"));
-			textPresent_Log(driver, "Welcome to Razorpay Bank", 30);
-			elementVisible(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Logo"), 1);
-			safeClick(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Submit"));		
+			elementVisible(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_OTP"), 20);
+			//textPresent_Log(driver, "ENTER OTP", 1);
+			safeType(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_OTP"), "0000");
+			safeClick(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Submit1"));		
 		}
 		
 		else if (payType.equalsIgnoreCase("CCPayFortSA")) {
@@ -425,8 +428,8 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 					Reporter.log("Payment failed");
 					Assert.assertTrue(false);
 				}
-				textPresent_Log(driver, "Welcome to Razorpay Bank", 30);
-				elementVisible(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Logo"), 1);
+				elementVisible(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Logo"), 30);
+				textPresent_Log(driver, "Welcome to Razorpay Bank", 1);
 				safeClick(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Submit"));
 			}
 			else if (bankType.equalsIgnoreCase("TECHPROCESS")) {
@@ -535,7 +538,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 
 			} else if (bankType.equalsIgnoreCase("Mobikwik")) {
 				elementVisible(driver, By.cssSelector("font.flR > img"), 5, "Mobikwik App");
-				if (!textPresent(driver, "We will send a six digit OTP to verify your account", 10)) {
+				if (!textPresent(driver, "We will send a six digit OTP to verify your account", 30)) {
 					Reporter.log("We will send a six digit OTP to verify your account");
 					Assert.assertTrue(false);
 				}
@@ -557,7 +560,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 				}
 
 			} else if (bankType.equalsIgnoreCase("Ola_Money")) {
-				if (!textPresent(driver, "Enter phone number registered with Ola Money", 20)) {
+				if (!textPresent(driver, "Enter phone number registered with Ola Money", 40)) {
 					Reporter.log("Login to OlaMoney Wallet text is not displayed");
 					Assert.assertTrue(false);
 				}
@@ -653,7 +656,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 			textPresent(driver, "Please enter your MasterCard", 10);
 			elementVisible(driver, By.xpath("//td[2]/input[@class='monospace']"), 20);
 			//safeType(driver, By.xpath("//td[2]/input[@class='monospace']"), "");
-			safeClick(driver, By.xpath("//tr[9]/td/input"));
+			smartClick(driver, By.xpath("//tr[9]/td/input"));
 		} else if (bankType.equalsIgnoreCase("CHECKOUT")) {
 			if (platform.value("CheckOut_3D").equals("true")) {
 				elementVisible(driver, getObjectPayment("MakePayment_PgCred_SA_Checkout_Password_Txt"), 30);
@@ -728,7 +731,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 				Thread.sleep(500);
 				safeSelect(driver,getObjectPayment("PayU_Page_CC_EXP_Month") , "Sep (9)");
 				Thread.sleep(500);
-				safeSelect(driver,getObjectPayment("PayU_Page_CC_EXP_Year") , "2020");
+				safeSelect(driver,getObjectPayment("PayU_Page_CC_EXP_Year") , "2021");
 				safeType(driver, getObjectPayment("PayU_Page_CC_CVV"), "123");
 				Thread.sleep(1000);
 				safeClick(driver, getObjectPayment("PayU_Page_CC_Pay_Btn"));

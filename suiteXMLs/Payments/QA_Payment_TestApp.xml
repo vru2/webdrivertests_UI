@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Test App" parallel="tests" thread-count="5">
+<suite name="Test App" parallel="tests" thread-count="9">
 
 <listeners>
 <listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -8,18 +8,11 @@
 <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
 
-<test name="PhonePe"  preserve-order="true" parallel="true" >
-    <classes>
-      <class name="paymentsUI.Payment_NodeJS_PhonePe"/> 
-      <class name="paymentsUI.Payment_NodeJS_PhonePe_CTWallet"/>
-    </classes>
-</test>
-
 <test name="NB GW" preserve-order="true" >
     <classes>
 <!--       <class name="paymentsUI.Payment_NodeJS_NB_TechProcess"/> -->
       <class name="paymentsUI.Payment_NodeJS_NB_CitiBank"/>
- <!--      <class name="paymentsUI.Payment_NodeJS_NB_RazorPay"/>     -->  
+      <class name="paymentsUI.Payment_NodeJS_NB_RazorPay"/>      
     </classes>
 </test>
 
@@ -37,21 +30,22 @@
 </test>	
 
 <test name="CTpay V2" preserve-order="true" parallel="true">
-    <classes>
-      <class name="paymentsUI.Payment_NodeJS_CTPay_AE"/> 
+    <classes><!-- 
+      <class name="paymentsUI.Payment_NodeJS_CTPay_AE"/>  -->
       <class name="paymentsUI.Payment_NodeJS_CTPay"/>      
    </classes>
 </test>
 
 <test name="Third Party Wallet" preserve-order="true">
     <classes>
-      <class name="paymentsUI.Payment_NodeJS_TPW_MobiKwik"/> 
-      <class name="paymentsUI.Payment_NodeJS_TPW_OlaMoney"/>
-<!--       <class name="paymentsUI.Payment_NodeJS_TPW_PayU"/>  -->
+      <class name="paymentsUI.Payment_NodeJS_TPW_PayTM"/>     
       <class name="paymentsUI.Payment_NodeJS_TPW_FreeCharge"/>     
       <class name="paymentsUI.Payment_NodeJS_TPW_JioMoney"/>     
-    <!--   <class name="paymentsUI.Payment_NodeJS_TPW_AirtelMoney"/>      -->
-      <class name="paymentsUI.Payment_NodeJS_TPW_PayTM"/> 
+      <class name="paymentsUI.Payment_NodeJS_TPW_OlaMoney"/>
+     
+<!--  <class name="paymentsUI.Payment_NodeJS_TPW_MobiKwik"/> 
+      <class name="paymentsUI.Payment_NodeJS_TPW_PayU"/>  
+      <class name="paymentsUI.Payment_NodeJS_TPW_AirtelMoney"/>      -->
     </classes>
 </test>
 
@@ -80,8 +74,8 @@
 		
 <test name="RazorPay UPI" preserve-order="true" parallel="true">
     <classes>
-     <!--  <class name="paymentsUI.Payment_NodeJS_RazorPay"/>
-      <class name="paymentsUI.Payment_NodeJS_RazorPay_CTWallet"/> -->
+      <class name="paymentsUI.Payment_NodeJS_RazorPay"/>
+     <!--  <class name="paymentsUI.Payment_NodeJS_RazorPay_CTWallet"/> -->
     </classes>
 </test>
 	
@@ -98,18 +92,7 @@
 </test>
 
 
-<test name="Stored Card"  preserve-order="true" parallel="true">
-    <classes>
-      <class name="paymentsUI.Payment_NodeJS_SC"/>
-      <class name="paymentsUI.Payment_NodeJS_SC_AE"/>
-    </classes>
-</test>
 
-<test name="CC S2S"  preserve-order="true" parallel="true">
-    <classes>
-      <!-- <class name="paymentsUI.Payment_NodeJS_CC_PG_PayU_S2S"/> -->
-    </classes>
-</test>
 
 <test name="Hotel" preserve-order="true">
     <classes>
@@ -134,5 +117,28 @@
       <class name="paymentsUI.Payment_NodeJS_Activity_B2C_CC"/>
    </classes>
 </test>
+<!-- 
 
+<test name="CC S2S"  preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsUI.Payment_NodeJS_CC_PG_PayU_S2S"/> 
+    </classes>
+</test>
+
+<test name="PhonePe"  preserve-order="true" parallel="true" >
+    <classes>
+     <class name="paymentsUI.Payment_NodeJS_PhonePe"/>  
+      <class name="paymentsUI.Payment_NodeJS_PhonePe_CTWallet"/>
+    </classes>
+</test>
+
+
+
+<test name="Stored Card"  preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsUI.Payment_NodeJS_SC"/>
+      <class name="paymentsUI.Payment_NodeJS_SC_AE"/>
+    </classes>
+</test>
+ -->
 </suite> 

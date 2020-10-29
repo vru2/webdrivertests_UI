@@ -1,15 +1,11 @@
 package ct_config;
 
-import static org.testng.AssertJUnit.assertTrue;
-
 import java.util.HashMap;
 import java.util.LinkedList;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.Reporter;
 
-import common.WrapperMethod;
 import domains.HQ;
 
 public class CT_CONFIG_COMMON extends HQ{

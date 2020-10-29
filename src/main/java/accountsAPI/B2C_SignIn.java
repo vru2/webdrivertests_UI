@@ -6,7 +6,6 @@ import org.json.JSONException;
 import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
-import io.restassured.response.ResponseBody;
 
 public class B2C_SignIn extends AccountsCommon_API
 {

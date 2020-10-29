@@ -2,13 +2,13 @@ package paymentsUI;
 
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
 import domains.PaymentNodeJS;
 import io.restassured.response.Response;
 
@@ -71,9 +71,11 @@ public class PaymentsUI_NB extends PaymentNodeJS{
 			elementVisible(driver, PaymentUI_CommonUtilities.nbCitiSubmit, 30);
 			click(driver,PaymentUI_CommonUtilities.nbCitiSubmit);
 			Thread.sleep(5000);
+			payUI_Mock_ConfirmationPage(driver, Url);
+			/*
 			driver.get(Url);
 			validateIfPresent(driver,PaymentUI_CommonUtilities.paymentSuccessHeaderTextXpath);
-			validateIfPresent(driver,PaymentUI_CommonUtilities.paymentSuccessMessageTextXpath);		
+			validateIfPresent(driver,PaymentUI_CommonUtilities.paymentSuccessMessageTextXpath);	*/	
 	}
 
 	/*@Test(priority=4)

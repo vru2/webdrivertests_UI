@@ -144,13 +144,13 @@ public class PaymentUI_CommonUtilities {
     public static String amexGatewayAuthenticationFailureXpath= "//select[contains(@id,'AuthResult')]";
     public static String paymentInProgressHeaderXpath="//h1[text()='Payment in progress']";
     public static String paymentInProgressMessageXpath= "//span[text()='The payment for this itinerary is already in progress. Please wait 20 minutes and visit your profile to verify the booking status.']";
-    public static String upiErrorTextXpath= "//p[text()='Please select any UPI payment method']";
+    public static String upiErrorTextXpath= "//p[text()='Please enter a valid UPI ID']";
     public static String upiErrorTextSelectUPI="Please select any UPI payment method";
     public static String upiModeXpath= "//p[text()='UPI']";
     public static String walletsXpath="//p[contains(text(),'Wallets')]";
     public static String walletErrorTextSelectWallet="Please select any wallet";
     public static String walletErrorTextXpath= "//p[text()='Please select any wallet']";
-    public static String walletAmazonPaySelectXpath="//ul[contains(@class,'Datalist radioList')]/li[8]";
+    public static String walletAmazonPaySelectXpath="//ul[contains(@class,'Datalist radioList')]/li[6]";
     public static String amazonPayUsernameXpath="//input[@name='email']";
     public static String amazonPayPasswordXpath="//input[@name='password']";
     public static String amazonPaySubmitButtonXpath="//input[@id='signInSubmit']";

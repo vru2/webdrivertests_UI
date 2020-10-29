@@ -42,8 +42,8 @@
     <classes>
       <class name="paymentsAPI.API_DA_PayV3"/>
       <class name="paymentsAPI.API_DA_ValidateV3"/><!-- 
-      <class name="paymentsAPI.API_DA_APP_Refund"/> -->
-      <class name="paymentsAPI.API_DA_APP_Balance"/> 
+      <class name="paymentsAPI.API_DA_APP_Refund"/> --><!-- 
+      <class name="paymentsAPI.API_DA_APP_Balance"/>  -->
     </classes>
 </test>
 
@@ -158,7 +158,7 @@
 
 <test name="API Refunds New" preserve-order="true" parallel="true">
     <classes>
-      <class name="paymentsAPI.API_Refunds"/> 
+     <!--  <class name="paymentsAPI.API_Refunds"/>  -->
      </classes>
 </test>
 
@@ -187,8 +187,8 @@
 </test>
 
 <test name="API Bin Manager"  preserve-order="true" parallel="true" >
-  <classes>
-		<class name="paymentsAPI.API_Binmanager"/>
+  <classes><!-- 
+		<class name="paymentsAPI.API_Binmanager"/> -->
 		<class name="paymentsAPI.API_Binmanager_Add_MC_Credit"/>
 		<class name="paymentsAPI.API_Binmanager_Get_Card"/> 
 		<!-- <class name="paymentsAPI.API_Binmanager_Get_Multiple_Cards"/> -->

@@ -1,7 +1,6 @@
 package email;
 
 import java.io.IOException;
-import java.util.HashMap;
 
 import org.testng.annotations.Test;
 

@@ -9,7 +9,6 @@ import org.json.JSONException;
 import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
-import io.restassured.response.ResponseBody;
 
 public class CreateUpdateTraveller_API extends AccountsCommon_API {
 	

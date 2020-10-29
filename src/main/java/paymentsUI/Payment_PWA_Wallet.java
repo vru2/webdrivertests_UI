@@ -13,7 +13,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import domains.PaymentNodeJS;
-
 import io.restassured.response.Response;
 import junit.framework.Assert;
 public class Payment_PWA_Wallet extends PaymentNodeJS {

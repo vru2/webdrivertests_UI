@@ -16,9 +16,9 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.testng.ITestResult;
 
+import common.CachedProperties;
 import testrail.APIClient;
 import testrail.APIException;
-import common.CachedProperties;
 @SuppressWarnings({ "rawtypes", "unchecked" })
 public class testrail_utils {
 	DefaultHttpClient httpClient=new DefaultHttpClient();

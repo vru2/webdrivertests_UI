@@ -3,7 +3,6 @@ package tripServices;
 import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
-import java.util.HashMap;
 
 import org.testng.Assert;
 import org.testng.Reporter;

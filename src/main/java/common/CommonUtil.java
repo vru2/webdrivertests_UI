@@ -5,6 +5,8 @@ import static common.CachedProperties.dataInstance;
 import static common.CachedProperties.dbInstance;
 import static common.CachedProperties.instance;
 import static common.CachedProperties.objectReportInstance;
+import static common.CachedProperties.objectReportInstancePayment;
+import static common.CachedProperties.objectReportInstancePlatform;
 import static common.CachedProperties.platformInstance;
 
 import java.io.File;
@@ -16,24 +18,16 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Random;
 
-import static common.CachedProperties.objectReportInstancePlatform;
-
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.time.StopWatch;
-import org.apache.commons.math3.genetics.RandomKeyMutation;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.remote.RemoteWebDriver;
-
-import static common.CachedProperties.objectReportInstancePayment;
 import org.testng.ITestResult;
 import org.testng.Reporter;
-import org.testng.annotations.Parameters;
-
-import testrailpoc.testrail_utils;
 
 public class CommonUtil {
 	public CachedProperties common = instance();

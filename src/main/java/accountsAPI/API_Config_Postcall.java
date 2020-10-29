@@ -6,7 +6,6 @@ import org.json.JSONException;
 import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
-import io.restassured.response.ResponseBody;
 
 public class API_Config_Postcall extends AccountsCommon_API
 {

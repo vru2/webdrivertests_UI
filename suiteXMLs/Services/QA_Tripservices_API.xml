@@ -70,6 +70,7 @@
 			<class name="tripServices.TS_ProductType_Userid_Hotel"/>
 			<class name="tripServices.TS_ProductType_Userid_Local"/>
 			<class name="tripServices.TS_ProductType_Userid_Train"/>
+			<class name="tripServices.TS_GDSPNR"/>
 			
 		</classes>
 	</test>

@@ -3,13 +3,13 @@ package tripServices;
 import static org.testng.Assert.assertTrue;
 
 import java.util.HashMap;
+
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import io.restassured.response.ResponseBody;
 
 public class TS_GET_CancelledInsurance extends TripserviceCommon {
 	

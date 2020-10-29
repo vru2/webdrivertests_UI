@@ -1,13 +1,9 @@
 package tripServicesProd;
 
-import static org.testng.Assert.assertTrue;
-
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import org.testng.Assert;
-import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;

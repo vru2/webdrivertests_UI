@@ -1,7 +1,6 @@
 package domains;
 
 import java.io.IOException;
-import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -13,13 +12,10 @@ import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 import org.testng.Reporter;
+
+import common.WrapperMethod;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-
-
-
-import common.CommonUtil;
-import common.WrapperMethod;
 
 public class PlatformCommonUtil extends WrapperMethod {
 	public String Service_Url (String Service) throws IOException {

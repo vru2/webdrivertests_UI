@@ -3,6 +3,7 @@
 
 package paymentsUI_Air;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.ITestResult;
@@ -22,6 +23,8 @@ public class Validate_Images_Links extends PaymentUI_Common{
 		driver.get(PayUrl);
 		elementPresent_log(driver, getObjectPayment("PayUI_Cleartrip_Logo"), "Cleartrip LOGO", 5);
 		payUI_Select_PaymentType(driver, "CC");
+
+		elementPresent_log(driver, By.cssSelector("span.avatar.man_24"), "Profile Image", 1);
 		String  handle= driver.getWindowHandle();
 		
 		
@@ -66,7 +69,8 @@ public class Validate_Images_Links extends PaymentUI_Common{
 			Assert.assertTrue(false);
 		}
 
-		driver.switchTo().window(handle);		
+		driver.switchTo().window(handle);	
+		
 		
 	}
 	

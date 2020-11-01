@@ -718,7 +718,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 
 	public String paymentNodeJS_ConfirmationPage(RemoteWebDriver driver, String payType, String Confirm_Msg, String LoggerMsg) throws Exception {
 		for (int i = 0; i < 10; i++) {
-			if (textPresent(driver, "AXIS SIMULATOR", 1)) {
+			if (elementVisible(driver, By.id("password"), 1)) {
 				smartType(driver, By.id("password"), "123456");
 				smartClick(driver, By.id("submitBtn"));	
 			}
@@ -737,7 +737,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 				safeClick(driver, getObjectPayment("PayU_Page_CC_Pay_Btn"));
 				Thread.sleep(1000);
 			}
-			if (textPresent(driver, "AXIS SIMULATOR", 1)) {
+			if (textPresent(driver, "CYBER SIMULATOR", 1)) {
 				smartType(driver, By.id("password"), "123456");
 				smartClick(driver, By.id("submitBtn"));	
 			}

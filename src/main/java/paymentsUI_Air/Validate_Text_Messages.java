@@ -36,8 +36,9 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 		textPresent_Log(driver, "CVV", 1);		
 		String CardPlaceHolder = driver.findElement(getObjectPayment("PaymentPage_CreditCard_Number")).getAttribute("placeholder");
 		String NamePlaceHolder = driver.findElement(getObjectPayment("PaymentPage_CreditCard_Name")).getAttribute("placeholder");
-		if(!(CardPlaceHolder.equals("Card number")&&NamePlaceHolder.equals("Name as on card"))) {
-			Reporter.log("PlaceHoder is not correct "+CardPlaceHolder+" "+NamePlaceHolder);
+		String CVVPlaceHolder = driver.findElement(getObjectPayment("PaymentPage_CreditCard_CVV")).getAttribute("placeholder");
+		if(!(CardPlaceHolder.equals("Card number")&&NamePlaceHolder.equals("Name as on card")&&CVVPlaceHolder.equals("CVV"))) {
+			Reporter.log("PlaceHoder is not correct "+CardPlaceHolder+" "+NamePlaceHolder+" "+CVVPlaceHolder);
 			Assert.assertTrue(false);
 		}
 		textPresent_Log(driver, "CVV is mentioned at the back of your card", 1);		
@@ -64,8 +65,9 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 		textPresent_Log(driver, "CVV", 1);		
 		String CardPlaceHolder = driver.findElement(getObjectPayment("PaymentPage_CreditCard_Number")).getAttribute("placeholder");
 		String NamePlaceHolder = driver.findElement(getObjectPayment("PaymentPage_CreditCard_Name")).getAttribute("placeholder");
-		if(!(CardPlaceHolder.equals("Card number")&&NamePlaceHolder.equals("Name as on card"))) {
-			Reporter.log("PlaceHoder is not correct "+CardPlaceHolder+" "+NamePlaceHolder);
+		String CVVPlaceHolder = driver.findElement(getObjectPayment("PaymentPage_CreditCard_CVV")).getAttribute("placeholder");
+		if(!(CardPlaceHolder.equals("Card number")&&NamePlaceHolder.equals("Name as on card")&&CVVPlaceHolder.equals("CVV"))) {
+			Reporter.log("PlaceHoder is not correct "+CardPlaceHolder+" "+NamePlaceHolder+" "+CVVPlaceHolder);
 			Assert.assertTrue(false);
 		}
 		textPresent_Log(driver, "CVV is mentioned at the back of your card", 1);		

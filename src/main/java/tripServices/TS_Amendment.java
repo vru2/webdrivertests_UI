@@ -71,7 +71,7 @@ public class TS_Amendment extends TripserviceCommon {
 			Thread.sleep(2000);
 			String url2 = ("http://172.17.51.86:9031/trips/amend/"+tripref+"/air-bookings/update-booking");
 			Reporter.log(url2);
-			resp3=TripserviceHotelsPutcall(amendupdatebooking,headersForTripserviceputcall(),url2);
+			resp3=TripserviceHotelsPutcall(amendupdatebooking,headersForAmendTripserviceputcall(),url2);
 			System.out.println(resp3.asString());
 			validationforput(resp3);	
 			Thread.sleep(2000);

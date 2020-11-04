@@ -57,6 +57,8 @@
 			<class name="tripServices.TS_GET_SUPPLIER" />
 			<class name="tripServices.TS_GET_TripcountbyPNR" />	
 			<class name="tripServices.TS_GET_CancelledInsurance" />	
+			<class name="tripServices.TS_GET_Cancelleddetails" />	
+			<class name="tripServices.TS_GET_Refundeddetails" />	
 			<class name="tripServices.TS_GraphQL"/>
 			<class name="tripServices.TS_TripQuery"/>
 			<class name="tripServices.TS_GET_Trips_API_Versioning"/>
@@ -88,7 +90,7 @@
 		    <class name="tripServices.Accounts_tagmaster" />
 		    <class name="tripServices.Accounts_Taskcategory" />
 		    <class name="tripServices.Accounts_Depositaccount" />
-		     <class name="tripServices.TS_Updatetag_SyncPut" />
+		    <class name="tripServices.TS_Updatetag_SyncPut" />
 		</classes>
 	</test>
 	

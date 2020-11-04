@@ -44,7 +44,16 @@ public class TripserviceCommon extends PlatformCommonUtil {
 		HashMap<String, Object>headers = new HashMap<>();
 				headers.put("Content-Type", "application/json");
 				headers.put("X-CT-CLOSE-TRANSACTION","true");
-				headers.put("trip-version", "V2");
+				headers.put("trip-version", "V1");
+				return headers;
+		
+	}	
+	
+	public HashMap<String, Object> headersForAmendTripserviceputcall(){
+		HashMap<String, Object>headers = new HashMap<>();
+				headers.put("Content-Type", "application/json");
+				headers.put("X-CT-CLOSE-TRANSACTION","true");
+				headers.put("trip-version", "V1");
 				return headers;
 		
 	}	
@@ -481,6 +490,8 @@ public class TripserviceCommon extends PlatformCommonUtil {
 			String bodyAsString = body.asString();
 			Assert.assertEquals(bodyAsString.contains("tripRef"), true ,"Response boday contains tripRef");
 			Assert.assertEquals(bodyAsString.contains("agentPcc"), true ,"Response boday contains agentPcc");
+			Assert.assertEquals(bodyAsString.contains("airline"), true ,"Response boday contains airline");
+			Assert.assertEquals(bodyAsString.contains("supplier"), true ,"Response boday contains supplier");
 		}else{
 			Reporter.log("Status code " + resp.statusCode());
 			assertTrue(false);

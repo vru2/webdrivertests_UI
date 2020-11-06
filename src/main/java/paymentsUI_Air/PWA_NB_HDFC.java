@@ -3,6 +3,11 @@
 
 package paymentsUI_Air;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
@@ -18,7 +23,21 @@ public class PWA_NB_HDFC extends PaymentUI_Common{
 		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		
+		Thread.sleep(5000);
+		
+		
+		
+		
 		payUI_Select_PaymentType_PWA(driver, "NET BANKING");
+		Thread.sleep(5000);
+		
+		
+		
+		
+		
+		
+		//safeClick(driver, getObjectPayment("PWA_PaymentPage_NB_Tab"));
 		payUI_Enter_PaymentDetails_PWA(driver, "NET BANKING", "HDFC BANK");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
 	}

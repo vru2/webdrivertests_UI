@@ -13,6 +13,12 @@
     </classes>
 </test>
 
+<test name="Test App"  preserve-order="true" >
+    <classes>
+      <class name="paymentsUI.Payment_NodeJS_CC"/>
+    </classes>
+</test>
+
 <test name="DA" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsAPI.API_DA_PayV3"/>
@@ -25,11 +31,6 @@
     </classes>
 </test>
 
-<test name="Test App"  preserve-order="true" >
-    <classes>
-      <class name="paymentsUI.Payment_NodeJS_CC"/>
-    </classes>
-</test>
 
 <test name="Pomo service" preserve-order="true" parallel="true">
     <classes>

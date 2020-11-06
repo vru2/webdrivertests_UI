@@ -53,6 +53,7 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 		}
 	
 	}
+	
 
 	@Test(priority=2)
 	public void Validate_Text_DC() throws Exception {
@@ -210,6 +211,16 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 		Assert.assertEquals(emailID, "cltppayment@gmail.com");
 	}
 	
+	@Test(priority=11)
+	public void Validate_Text_PayPal() throws Exception {
+		safeClick(driver, By.xpath("//ul[@id='paymentModeTab']/li[3]/div/p"));
+		textPresent_Log(driver, "Pay using PayPal", 10);	
+		elementPresent_log(driver, By.xpath("//ul[@id='paymentModeTab']/li[3]/div/div"), ""	, 1);
+		elementPresent_log(driver, By.id("Layer_1"), ""	, 1);
+		//elementPresent_log(driver, By.xpath("//div[@id='buttons-container']/div/div/div/div"), ""	, 1);
+	}
+
+
 	/*@Test(priority=11)
 	public void Validate_CCDC_Text() throws Exception {
 		payUI_Select_PaymentType(driver, "DC");

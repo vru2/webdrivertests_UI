@@ -24,7 +24,8 @@ public class StoredCard extends PaymentUI_Common{
 		driver.get(PayUrl);
 		driver.manage().addCookie(cookie_Parl_Wallet);
 		refreshPage(driver);
-		String storedCard = getText(driver, By.xpath("//li/p"));
+		String storedCard = getText(driver, By.xpath("//div[4]/ul/li"));
+		System.out.println(storedCard);
 		if(!storedCard.equals("Saved card")) {
 			Reporter.log("Saved Card tab text is not displayed");
 			Assert.assertTrue(false);

@@ -36,10 +36,10 @@ public class PWA_WalletFull extends PaymentUI_Common{
 			Reporter.log("Use ***** from wallet is not displayed");
 			Assert.assertTrue(false);
 		}
-		if(elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 1)) {
+		/*if(elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 1)) {
 			Reporter.log("CC tab is displayed");
 			Assert.assertTrue(false);
-		}
+		}*/
 		if(textPresent(driver, "DEBIT/CREDIT CARDS", 1)) {
 			Reporter.log("DEBIT/CREDIT CARDS : text is displayed in English");
 			Assert.assertTrue(false);
@@ -63,7 +63,12 @@ public class PWA_WalletFull extends PaymentUI_Common{
 		safeClick(driver, getObjectPayment("PWA_PaymentPage_SaveCard"));
 		
 		Total = getText(driver, getObjectPayment("PWA_PaymentPage_TotalPriceGV"));
+		System.out.println(Total);
 		if(!Total.contains("650")) {
+			System.out.println(Total);
+			System.out.println(Total);
+			System.out.println(Total);
+			System.out.println(Total);
 			Assert.assertTrue(false);
 		}
 		

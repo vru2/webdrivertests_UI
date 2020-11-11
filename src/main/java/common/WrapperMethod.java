@@ -931,6 +931,7 @@ public boolean GDS_Flight, B2B_GDS_Flight = false;
 		List<WebElement> we = driver.findElements(by);
 		for (WebElement WebEle : we) {
 			String elementText = WebEle.getText();
+			//System.out.println(elementText);
 			if (elementText.equalsIgnoreCase(Text)) {
 				if (!WebEle.isDisplayed()) {
 					Thread.sleep(1000);

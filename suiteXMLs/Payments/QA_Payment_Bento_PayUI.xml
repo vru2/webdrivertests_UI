@@ -57,8 +57,9 @@
       <class name="paymentsUI_Air.CC_BH"/>      
       <class name="paymentsUI_Air.CC_KW"/>      
       <class name="paymentsUI_Air.CC_OM"/>      
-      <class name="paymentsUI_Air.CC_QA"/>    
-<!--  <class name="paymentsUI_Air.CC_SA"/>      
+      <class name="paymentsUI_Air.CC_QA"/> 
+      <class name="paymentsUI_Air.CC_SA"/>     
+<!--      
       <class name="paymentsUI_Air.CC_US"/>        
  -->    </classes>
 </test>

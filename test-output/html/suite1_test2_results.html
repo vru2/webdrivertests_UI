@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
+<head>
+  <title>Test Results Report - Email</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="description" content="TestNG unit test results." />
+  <link href="reportng.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="reportng.js"></script>
+</head>
+<body>
+<h1>Email</h1>
+<p>
+  Test duration: 5.840s
+</p>
+
+
+
+
+
+  <table class="resultsTable">
+    <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">email.EmailPost</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  message
+      </td>
+  <td class="duration">
+    0.960s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Test case passed<br />
+                                {<br/>
+&nbsp; &quot;id&quot; : &quot;10112020-48e762c9-b0d6-4724-8fbe-9190acf328a5&quot;,<br/>
+&nbsp; &quot;status&quot; : &quot;SUCCESS&quot;<br/>
+}<br />
+                                Status code == 202<br />
+                  </div>
+    
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">email.EmailSpamScore</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  message
+      </td>
+  <td class="duration">
+    0.233s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Test case passed<br />
+                                {<br/>
+&nbsp; &quot;score&quot; : &quot;Unable to process the request&quot;<br/>
+}<br />
+                                {<br/>
+&nbsp; &quot;score&quot; : &quot;Unable to process the request&quot;<br/>
+}<br />
+                                Status code = 200<br />
+                                Status code = 200<br />
+                  </div>
+    
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">email.Email_Template_true</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  message
+      </td>
+  <td class="duration">
+    0.163s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Test case passed<br />
+                                {<br/>
+&nbsp; &quot;id&quot; : &quot;10112020-76aa1065-660a-49b7-ab28-12f371db4e12&quot;,<br/>
+&nbsp; &quot;status&quot; : &quot;The following has evaluated to null or missing:\n==&gt; name&nbsp; [in template \&quot;test\&quot; at line 1, column 17]\n\n----\nTip: If the failing expression is known to legally refer to something that&apos;s sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use &lt;#if myOptionalVar??&gt;when-present&lt;#else&gt;when-missing&lt;/#if&gt;. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??\n----\n\n----\nFTL stack trace (\&quot;~\&quot; means nesting-related):\n\t- Failed at: ${name}&nbsp; [in template \&quot;test\&quot; at line 1, column 15]\n----&quot;<br/>
+}<br />
+                                Status code == 202<br />
+                  </div>
+    
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">email.EmailwithAttachments</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  message
+      </td>
+  <td class="duration">
+    1.833s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Test case passed<br />
+                                {<br/>
+&nbsp; &quot;id&quot; : &quot;10112020-f3401c16-c9e4-4118-a6f6-d6b148308128&quot;,<br/>
+&nbsp; &quot;status&quot; : &quot;SUCCESS&quot;<br/>
+}<br />
+                                Status code == 202<br />
+                  </div>
+    
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">email.GeneratePDF</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  generatePDF
+      </td>
+  <td class="duration">
+    1.878s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Test case passed<br />
+                                {<br/>
+&nbsp; &quot;id&quot; : &quot;15cbc5c7-f068-4e07-81b3-155bafac9d17&quot;,<br/>
+&nbsp; &quot;status&quot; : &quot;SUCCESS&quot;,<br/>
+&nbsp; &quot;reason&quot; : &quot;&quot;,<br/>
+&nbsp; &quot;pdfFileName&quot; : &quot;platform-communication-for-test//usr/local/storage/platform_email/pdf-attachments//10112020/15cbc5c7-f068-4e07-81b3-155bafac9d17/farealertpdftestingqa1.pdf&quot;<br/>
+}<br />
+                                Status code == 200<br />
+                                15cbc5c7-f068-4e07-81b3-155bafac9d17<br />
+                                SUCCESS<br />
+                                platform-communication-for-test//usr/local/storage/platform_email/pdf-attachments//10112020/15cbc5c7-f068-4e07-81b3-155bafac9d17/farealertpdftestingqa1.pdf<br />
+                  </div>
+    
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">email.GeneratePKPass</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  generatePKPass
+      </td>
+  <td class="duration">
+    0.773s
+  </td>
+  <td class="result">
+        
+    
+            <div class="testOutput">
+                        Test case passed<br />
+                                {<br/>
+&nbsp; &quot;id&quot; : &quot;df386ffe-4ba4-436a-9d31-13d7ac130e35&quot;,<br/>
+&nbsp; &quot;status&quot; : &quot;SUCCESS&quot;,<br/>
+&nbsp; &quot;reason&quot; : &quot;&quot;,<br/>
+&nbsp; &quot;pkPassFileName&quot; : &quot;platform-communication-for-test//usr/local/storage/platform_email/pkpass-attachments//10112020/df386ffe-4ba4-436a-9d31-13d7ac130e35/final-test-2.pkpass&quot;<br/>
+}<br />
+                                Status code == 201<br />
+                                df386ffe-4ba4-436a-9d31-13d7ac130e35<br />
+                                SUCCESS<br />
+                                platform-communication-for-test//usr/local/storage/platform_email/pkpass-attachments//10112020/df386ffe-4ba4-436a-9d31-13d7ac130e35/final-test-2.pkpass<br />
+                  </div>
+    
+
+      </td>
+</tr>
+      </table>
+  
+</body>
+</html>

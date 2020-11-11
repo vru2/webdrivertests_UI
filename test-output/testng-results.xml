@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="13" passed="13">
+  <reporter-output>
+    <line>
+      <![CDATA[Test case passed]]>
+    </line>
+    <line>
+      <![CDATA[{"messageId":"10112020-15afa88e-a286-4264-9fb0-9f653e96ef46","status":"success"}]]>
+    </line>
+    <line>
+      <![CDATA[Test case passed]]>
+    </line>
+    <line>
+      <![CDATA[{"status":"success","smsId":"10112020-c25436cd-01a1-46de-ac6e-93633ab51974","message":"sms is queued"}]]>
+    </line>
+    <line>
+      <![CDATA[Status code == 201]]>
+    </line>
+    <line>
+      <![CDATA[ smsId == 10112020-c25436cd-01a1-46de-ac6e-93633ab51974]]>
+    </line>
+    <line>
+      <![CDATA[Status code == 202]]>
+    </line>
+    <line>
+      <![CDATA[Message Id == 10112020-15afa88e-a286-4264-9fb0-9f653e96ef46]]>
+    </line>
+    <line>
+      <![CDATA[Test case passed]]>
+    </line>
+    <line>
+      <![CDATA[{"requestId":"45176fb6-acb4-461c-a691-a55528f866a4","mobileNumber":"9663949690","isOptedin":true,"isValidWhatsappNumber":true,"optInTimeStamp":"2020-02-20T04:06:13Z","optOutTimeStamp":"2020-02-19T10:41:32Z","whatsappUsername":"919663949690","countryCode":null,"errormessage":"User already opted in"}]]>
+    </line>
+    <line>
+      <![CDATA[Status code == 200]]>
+    </line>
+    <line>
+      <![CDATA[requestId == 45176fb6-acb4-461c-a691-a55528f866a4]]>
+    </line>
+    <line>
+      <![CDATA[isOptedin == true]]>
+    </line>
+    <line>
+      <![CDATA[Test case passed]]>
+    </line>
+    <line>
+      <![CDATA[{
+  "id" : "10112020-76aa1065-660a-49b7-ab28-12f371db4e12",
+  "status" : "The following has evaluated to null or missing:\n==> name  [in template \"test\" at line 1, column 17]\n\n----\nTip: If the failing expression is known to legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??\n----\n\n----\nFTL stack trace (\"~\" means nesting-related):\n\t- Failed at: ${name}  [in template \"test\" at line 1, column 15]\n----"
+}]]>
+    </line>
+    <line>
+      <![CDATA[Status code == 202]]>
+    </line>
+    <line>
+      <![CDATA[Test case passed]]>
+    </line>
+    <line>
+      <![CDATA[{"messageId":"10112020-bb890fa6-27f3-4792-8b71-13df8d3f2a0b","status":"success"}]]>
+    </line>
+    <line>
+      <![CDATA[Status code == 202]]>
+    </line>
+    <line>
+      <![CDATA[Message Id == 10112020-bb890fa6-27f3-4792-8b71-13df8d3f2a0b]]>
+    </line>
+    <line>
+      <![CDATA[Test case passed]]>
+    </line>
+    <line>
+      <![CDATA[{
+  "score" : "Unable to process the request"
+}]]>
+    </line>
+    <line>
+      <![CDATA[{
+  "score" : "Unable to process the request"
+}]]>
+    </line>
+    <line>
+      <![CDATA[Status code = 200]]>
+    </line>
+    <line>
+      <![CDATA[Status code = 200]]>
+    </line>
+    <line>
+      <![CDATA[Test case passed]]>
+    </line>
+    <line>
+      <![CDATA[{"requestId":"45176fb6-acb4-461c-a691-a55528f866a4","mobileNumber":"9663949690","isOptedin":true,"isValidWhatsappNumber":true,"optInTimeStamp":"2020-02-20T04:06:13Z","optOutTimeStamp":"2020-02-19T10:41:32Z","whatsappUsername":"919663949690","countryCode":"91","errormessage":null}]]>
+    </line>
+    <line>
+      <![CDATA[Status code == 200]]>
+    </line>
+    <line>
+      <![CDATA[requestId == 45176fb6-acb4-461c-a691-a55528f866a4]]>
+    </line>
+    <line>
+      <![CDATA[isOptedin == true]]>
+    </line>
+    <line>
+      <![CDATA[Test case passed]]>
+    </line>
+    <line>
+      <![CDATA[{"messageId":"10112020-1a7fe6b9-3deb-463d-9706-6e4fd7969009","status":"success"}]]>
+    </line>
+    <line>
+      <![CDATA[Status code == 202]]>
+    </line>
+    <line>
+      <![CDATA[Message Id == 10112020-1a7fe6b9-3deb-463d-9706-6e4fd7969009]]>
+    </line>
+    <line>
+      <![CDATA[Test case passed]]>
+    </line>
+    <line>
+      <![CDATA[{
+  "id" : "10112020-48e762c9-b0d6-4724-8fbe-9190acf328a5",
+  "status" : "SUCCESS"
+}]]>
+    </line>
+    <line>
+      <![CDATA[Status code == 202]]>
+    </line>
+    <line>
+      <![CDATA[Test case passed]]>
+    </line>
+    <line>
+      <![CDATA[{
+  "id" : "10112020-f3401c16-c9e4-4118-a6f6-d6b148308128",
+  "status" : "SUCCESS"
+}]]>
+    </line>
+    <line>
+      <![CDATA[Status code == 202]]>
+    </line>
+    <line>
+      <![CDATA[Test case passed]]>
+    </line>
+    <line>
+      <![CDATA[{
+  "id" : "15cbc5c7-f068-4e07-81b3-155bafac9d17",
+  "status" : "SUCCESS",
+  "reason" : "",
+  "pdfFileName" : "platform-communication-for-test//usr/local/storage/platform_email/pdf-attachments//10112020/15cbc5c7-f068-4e07-81b3-155bafac9d17/farealertpdftestingqa1.pdf"
+}]]>
+    </line>
+    <line>
+      <![CDATA[Status code == 200]]>
+    </line>
+    <line>
+      <![CDATA[15cbc5c7-f068-4e07-81b3-155bafac9d17]]>
+    </line>
+    <line>
+      <![CDATA[SUCCESS]]>
+    </line>
+    <line>
+      <![CDATA[platform-communication-for-test//usr/local/storage/platform_email/pdf-attachments//10112020/15cbc5c7-f068-4e07-81b3-155bafac9d17/farealertpdftestingqa1.pdf]]>
+    </line>
+    <line>
+      <![CDATA[Test case passed]]>
+    </line>
+    <line>
+      <![CDATA[{
+  "id" : "df386ffe-4ba4-436a-9d31-13d7ac130e35",
+  "status" : "SUCCESS",
+  "reason" : "",
+  "pkPassFileName" : "platform-communication-for-test//usr/local/storage/platform_email/pkpass-attachments//10112020/df386ffe-4ba4-436a-9d31-13d7ac130e35/final-test-2.pkpass"
+}]]>
+    </line>
+    <line>
+      <![CDATA[Status code == 201]]>
+    </line>
+    <line>
+      <![CDATA[df386ffe-4ba4-436a-9d31-13d7ac130e35]]>
+    </line>
+    <line>
+      <![CDATA[SUCCESS]]>
+    </line>
+    <line>
+      <![CDATA[platform-communication-for-test//usr/local/storage/platform_email/pkpass-attachments//10112020/df386ffe-4ba4-436a-9d31-13d7ac130e35/final-test-2.pkpass]]>
+    </line>
+    <line>
+      <![CDATA[Test case passed]]>
+    </line>
+    <line>
+      <![CDATA[{"messageId":"10112020-2596d9d6-f877-4a1a-a46b-9374fa9d9ab9","status":"success"}]]>
+    </line>
+    <line>
+      <![CDATA[Status code == 202]]>
+    </line>
+    <line>
+      <![CDATA[Message Id == 10112020-2596d9d6-f877-4a1a-a46b-9374fa9d9ab9]]>
+    </line>
+    <line>
+      <![CDATA[Test case passed]]>
+    </line>
+    <line>
+      <![CDATA[Status code ==  200]]>
+    </line>
+  </reporter-output>
+  <suite name="Platform Services API" duration-ms="11959" started-at="2020-11-10T07:43:51Z" finished-at="2020-11-10T07:44:03Z">
+    <groups>
+      <group name="Regression">
+        <method signature="DomesticSMS.smsservice()[pri:0, instance:smsservice.DomesticSMS@5276e6b0]" name="smsservice" class="smsservice.DomesticSMS"/>
+        <method signature="WhatsappDeliveryFeedback.message()[pri:0, instance:whatsappService.WhatsappDeliveryFeedback@4386f16]" name="message" class="whatsappService.WhatsappDeliveryFeedback"/>
+        <method signature="WhatsappMultilanguageSupport.message()[pri:0, instance:whatsappService.WhatsappMultilanguageSupport@79b06cab]" name="message" class="whatsappService.WhatsappMultilanguageSupport"/>
+        <method signature="WhatsappOptinFlow.message()[pri:0, instance:whatsappService.WhatsappOptinFlow@4690b489]" name="message" class="whatsappService.WhatsappOptinFlow"/>
+        <method signature="WhatsappOptinFlowStatus.message()[pri:0, instance:whatsappService.WhatsappOptinFlowStatus@3eb7fc54]" name="message" class="whatsappService.WhatsappOptinFlowStatus"/>
+        <method signature="WhatsappUserMessage.message()[pri:0, instance:whatsappService.WhatsappUserMessage@363ee3a2]" name="message" class="whatsappService.WhatsappUserMessage"/>
+        <method signature="WhatsappUserMessageWithAttachment.message()[pri:0, instance:whatsappService.WhatsappUserMessageWithAttachment@7f552bd3]" name="message" class="whatsappService.WhatsappUserMessageWithAttachment"/>
+        <method signature="EmailPost.message()[pri:0, instance:email.EmailPost@10e92f8f]" name="message" class="email.EmailPost"/>
+        <method signature="EmailSpamScore.message()[pri:0, instance:email.EmailSpamScore@7ce3cb8e]" name="message" class="email.EmailSpamScore"/>
+        <method signature="Email_Template_true.message()[pri:0, instance:email.Email_Template_true@6ef888f6]" name="message" class="email.Email_Template_true"/>
+        <method signature="EmailwithAttachments.message()[pri:0, instance:email.EmailwithAttachments@78b66d36]" name="message" class="email.EmailwithAttachments"/>
+        <method signature="GeneratePDF.generatePDF()[pri:0, instance:email.GeneratePDF@5223e5ee]" name="generatePDF" class="email.GeneratePDF"/>
+        <method signature="GeneratePKPass.generatePKPass()[pri:0, instance:email.GeneratePKPass@bef2d72]" name="generatePKPass" class="email.GeneratePKPass"/>
+      </group> <!-- Regression -->
+    </groups>
+    <test name="SMS" duration-ms="3204" started-at="2020-11-10T07:43:51Z" finished-at="2020-11-10T07:43:54Z">
+      <class name="smsservice.DomesticSMS">
+        <test-method status="PASS" signature="smsservice()[pri:0, instance:smsservice.DomesticSMS@5276e6b0]" name="smsservice" duration-ms="3158" started-at="2020-11-10T07:43:51Z" finished-at="2020-11-10T07:43:54Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Test case passed]]>
+            </line>
+            <line>
+              <![CDATA[{"status":"success","smsId":"10112020-c25436cd-01a1-46de-ac6e-93633ab51974","message":"sms is queued"}]]>
+            </line>
+            <line>
+              <![CDATA[Status code == 201]]>
+            </line>
+            <line>
+              <![CDATA[ smsId == 10112020-c25436cd-01a1-46de-ac6e-93633ab51974]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- smsservice -->
+      </class> <!-- smsservice.DomesticSMS -->
+    </test> <!-- SMS -->
+    <test name="Email" duration-ms="3022" started-at="2020-11-10T07:43:54Z" finished-at="2020-11-10T07:43:57Z">
+      <class name="email.EmailSpamScore">
+        <test-method status="PASS" signature="message()[pri:0, instance:email.EmailSpamScore@7ce3cb8e]" name="message" duration-ms="233" started-at="2020-11-10T07:43:54Z" finished-at="2020-11-10T07:43:54Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Test case passed]]>
+            </line>
+            <line>
+              <![CDATA[{
+  "score" : "Unable to process the request"
+}]]>
+            </line>
+            <line>
+              <![CDATA[{
+  "score" : "Unable to process the request"
+}]]>
+            </line>
+            <line>
+              <![CDATA[Status code = 200]]>
+            </line>
+            <line>
+              <![CDATA[Status code = 200]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- message -->
+      </class> <!-- email.EmailSpamScore -->
+      <class name="email.Email_Template_true">
+        <test-method status="PASS" signature="message()[pri:0, instance:email.Email_Template_true@6ef888f6]" name="message" duration-ms="163" started-at="2020-11-10T07:43:54Z" finished-at="2020-11-10T07:43:54Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Test case passed]]>
+            </line>
+            <line>
+              <![CDATA[{
+  "id" : "10112020-76aa1065-660a-49b7-ab28-12f371db4e12",
+  "status" : "The following has evaluated to null or missing:\n==> name  [in template \"test\" at line 1, column 17]\n\n----\nTip: If the failing expression is known to legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??\n----\n\n----\nFTL stack trace (\"~\" means nesting-related):\n\t- Failed at: ${name}  [in template \"test\" at line 1, column 15]\n----"
+}]]>
+            </line>
+            <line>
+              <![CDATA[Status code == 202]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- message -->
+      </class> <!-- email.Email_Template_true -->
+      <class name="email.EmailwithAttachments">
+        <test-method status="PASS" signature="message()[pri:0, instance:email.EmailwithAttachments@78b66d36]" name="message" duration-ms="1833" started-at="2020-11-10T07:43:54Z" finished-at="2020-11-10T07:43:56Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Test case passed]]>
+            </line>
+            <line>
+              <![CDATA[{
+  "id" : "10112020-f3401c16-c9e4-4118-a6f6-d6b148308128",
+  "status" : "SUCCESS"
+}]]>
+            </line>
+            <line>
+              <![CDATA[Status code == 202]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- message -->
+      </class> <!-- email.EmailwithAttachments -->
+      <class name="email.EmailPost">
+        <test-method status="PASS" signature="message()[pri:0, instance:email.EmailPost@10e92f8f]" name="message" duration-ms="960" started-at="2020-11-10T07:43:54Z" finished-at="2020-11-10T07:43:55Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Test case passed]]>
+            </line>
+            <line>
+              <![CDATA[{
+  "id" : "10112020-48e762c9-b0d6-4724-8fbe-9190acf328a5",
+  "status" : "SUCCESS"
+}]]>
+            </line>
+            <line>
+              <![CDATA[Status code == 202]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- message -->
+      </class> <!-- email.EmailPost -->
+      <class name="email.GeneratePDF">
+        <test-method status="PASS" signature="generatePDF()[pri:0, instance:email.GeneratePDF@5223e5ee]" name="generatePDF" duration-ms="1878" started-at="2020-11-10T07:43:55Z" finished-at="2020-11-10T07:43:57Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Test case passed]]>
+            </line>
+            <line>
+              <![CDATA[{
+  "id" : "15cbc5c7-f068-4e07-81b3-155bafac9d17",
+  "status" : "SUCCESS",
+  "reason" : "",
+  "pdfFileName" : "platform-communication-for-test//usr/local/storage/platform_email/pdf-attachments//10112020/15cbc5c7-f068-4e07-81b3-155bafac9d17/farealertpdftestingqa1.pdf"
+}]]>
+            </line>
+            <line>
+              <![CDATA[Status code == 200]]>
+            </line>
+            <line>
+              <![CDATA[15cbc5c7-f068-4e07-81b3-155bafac9d17]]>
+            </line>
+            <line>
+              <![CDATA[SUCCESS]]>
+            </line>
+            <line>
+              <![CDATA[platform-communication-for-test//usr/local/storage/platform_email/pdf-attachments//10112020/15cbc5c7-f068-4e07-81b3-155bafac9d17/farealertpdftestingqa1.pdf]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- generatePDF -->
+      </class> <!-- email.GeneratePDF -->
+      <class name="email.GeneratePKPass">
+        <test-method status="PASS" signature="generatePKPass()[pri:0, instance:email.GeneratePKPass@bef2d72]" name="generatePKPass" duration-ms="773" started-at="2020-11-10T07:43:56Z" finished-at="2020-11-10T07:43:57Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Test case passed]]>
+            </line>
+            <line>
+              <![CDATA[{
+  "id" : "df386ffe-4ba4-436a-9d31-13d7ac130e35",
+  "status" : "SUCCESS",
+  "reason" : "",
+  "pkPassFileName" : "platform-communication-for-test//usr/local/storage/platform_email/pkpass-attachments//10112020/df386ffe-4ba4-436a-9d31-13d7ac130e35/final-test-2.pkpass"
+}]]>
+            </line>
+            <line>
+              <![CDATA[Status code == 201]]>
+            </line>
+            <line>
+              <![CDATA[df386ffe-4ba4-436a-9d31-13d7ac130e35]]>
+            </line>
+            <line>
+              <![CDATA[SUCCESS]]>
+            </line>
+            <line>
+              <![CDATA[platform-communication-for-test//usr/local/storage/platform_email/pkpass-attachments//10112020/df386ffe-4ba4-436a-9d31-13d7ac130e35/final-test-2.pkpass]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- generatePKPass -->
+      </class> <!-- email.GeneratePKPass -->
+    </test> <!-- Email -->
+    <test name="Whatsapp" duration-ms="11959" started-at="2020-11-10T07:43:51Z" finished-at="2020-11-10T07:44:03Z">
+      <class name="whatsappService.WhatsappDeliveryFeedback">
+        <test-method status="PASS" signature="message()[pri:0, instance:whatsappService.WhatsappDeliveryFeedback@4386f16]" name="message" duration-ms="11926" started-at="2020-11-10T07:43:51Z" finished-at="2020-11-10T07:44:03Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Test case passed]]>
+            </line>
+            <line>
+              <![CDATA[{"messageId":"10112020-2596d9d6-f877-4a1a-a46b-9374fa9d9ab9","status":"success"}]]>
+            </line>
+            <line>
+              <![CDATA[Status code == 202]]>
+            </line>
+            <line>
+              <![CDATA[Message Id == 10112020-2596d9d6-f877-4a1a-a46b-9374fa9d9ab9]]>
+            </line>
+            <line>
+              <![CDATA[Test case passed]]>
+            </line>
+            <line>
+              <![CDATA[Status code ==  200]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- message -->
+      </class> <!-- whatsappService.WhatsappDeliveryFeedback -->
+      <class name="whatsappService.WhatsappMultilanguageSupport">
+        <test-method status="PASS" signature="message()[pri:0, instance:whatsappService.WhatsappMultilanguageSupport@79b06cab]" name="message" duration-ms="150" started-at="2020-11-10T07:43:54Z" finished-at="2020-11-10T07:43:54Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Test case passed]]>
+            </line>
+            <line>
+              <![CDATA[{"messageId":"10112020-bb890fa6-27f3-4792-8b71-13df8d3f2a0b","status":"success"}]]>
+            </line>
+            <line>
+              <![CDATA[Status code == 202]]>
+            </line>
+            <line>
+              <![CDATA[Message Id == 10112020-bb890fa6-27f3-4792-8b71-13df8d3f2a0b]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- message -->
+      </class> <!-- whatsappService.WhatsappMultilanguageSupport -->
+      <class name="whatsappService.WhatsappUserMessage">
+        <test-method status="PASS" signature="message()[pri:0, instance:whatsappService.WhatsappUserMessage@363ee3a2]" name="message" duration-ms="3163" started-at="2020-11-10T07:43:51Z" finished-at="2020-11-10T07:43:54Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Test case passed]]>
+            </line>
+            <line>
+              <![CDATA[{"messageId":"10112020-15afa88e-a286-4264-9fb0-9f653e96ef46","status":"success"}]]>
+            </line>
+            <line>
+              <![CDATA[Status code == 202]]>
+            </line>
+            <line>
+              <![CDATA[Message Id == 10112020-15afa88e-a286-4264-9fb0-9f653e96ef46]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- message -->
+      </class> <!-- whatsappService.WhatsappUserMessage -->
+      <class name="whatsappService.WhatsappOptinFlow">
+        <test-method status="PASS" signature="message()[pri:0, instance:whatsappService.WhatsappOptinFlow@4690b489]" name="message" duration-ms="147" started-at="2020-11-10T07:43:54Z" finished-at="2020-11-10T07:43:54Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Test case passed]]>
+            </line>
+            <line>
+              <![CDATA[{"requestId":"45176fb6-acb4-461c-a691-a55528f866a4","mobileNumber":"9663949690","isOptedin":true,"isValidWhatsappNumber":true,"optInTimeStamp":"2020-02-20T04:06:13Z","optOutTimeStamp":"2020-02-19T10:41:32Z","whatsappUsername":"919663949690","countryCode":null,"errormessage":"User already opted in"}]]>
+            </line>
+            <line>
+              <![CDATA[Status code == 200]]>
+            </line>
+            <line>
+              <![CDATA[requestId == 45176fb6-acb4-461c-a691-a55528f866a4]]>
+            </line>
+            <line>
+              <![CDATA[isOptedin == true]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- message -->
+      </class> <!-- whatsappService.WhatsappOptinFlow -->
+      <class name="whatsappService.WhatsappUserMessageWithAttachment">
+        <test-method status="PASS" signature="message()[pri:0, instance:whatsappService.WhatsappUserMessageWithAttachment@7f552bd3]" name="message" duration-ms="330" started-at="2020-11-10T07:43:55Z" finished-at="2020-11-10T07:43:55Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Test case passed]]>
+            </line>
+            <line>
+              <![CDATA[{"messageId":"10112020-1a7fe6b9-3deb-463d-9706-6e4fd7969009","status":"success"}]]>
+            </line>
+            <line>
+              <![CDATA[Status code == 202]]>
+            </line>
+            <line>
+              <![CDATA[Message Id == 10112020-1a7fe6b9-3deb-463d-9706-6e4fd7969009]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- message -->
+      </class> <!-- whatsappService.WhatsappUserMessageWithAttachment -->
+      <class name="whatsappService.WhatsappOptinFlowStatus">
+        <test-method status="PASS" signature="message()[pri:0, instance:whatsappService.WhatsappOptinFlowStatus@3eb7fc54]" name="message" duration-ms="146" started-at="2020-11-10T07:43:54Z" finished-at="2020-11-10T07:43:55Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Test case passed]]>
+            </line>
+            <line>
+              <![CDATA[{"requestId":"45176fb6-acb4-461c-a691-a55528f866a4","mobileNumber":"9663949690","isOptedin":true,"isValidWhatsappNumber":true,"optInTimeStamp":"2020-02-20T04:06:13Z","optOutTimeStamp":"2020-02-19T10:41:32Z","whatsappUsername":"919663949690","countryCode":"91","errormessage":null}]]>
+            </line>
+            <line>
+              <![CDATA[Status code == 200]]>
+            </line>
+            <line>
+              <![CDATA[requestId == 45176fb6-acb4-461c-a691-a55528f866a4]]>
+            </line>
+            <line>
+              <![CDATA[isOptedin == true]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- message -->
+      </class> <!-- whatsappService.WhatsappOptinFlowStatus -->
+    </test> <!-- Whatsapp -->
+  </suite> <!-- Platform Services API -->
+</testng-results>

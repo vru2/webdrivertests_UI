@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Email"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="0.163">
+  <properties />
+  
+  
+            <testcase name="message" time="0.163" classname="email.Email_Template_true" />
+      
+</testsuite>

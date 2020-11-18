@@ -52,6 +52,8 @@
 	<test name="Account-service-Controllers" parallel="true">
 		<classes>
 			<class name="accountsAPI.Account_Service_FlyinV2_Signin" />
+			<class name="accountsAPI.Account_Service_FlyinV2_Signin_CleartripUser" />
+			<class name="accountsAPI.Account_Service_FlyinV2_Signin_FlyinUser" />
 			<class name="accountsAPI.Account_Service_FlyinV2_SignUP" />
 			<class name="accountsAPI.Account_Service_FlyinV2_SocialSignup" />
 			<class name="accountsAPI.Account_Service_FlyinV2_UserSearch" />
@@ -64,6 +66,7 @@
 			<class
 				name="accountsAPI.Account_Service_Partnercontroller_UpdateTraveller" />
 			<class name="accountsAPI.Account_Service_Partnercontroller_Usersearch" />
+			<class name="accountsAPI.Account_Service_FLYIN_User_Update" />
 			<class name="accountsAPI.Account_Service_Update_User_MobileNo_OTPValidaion" />
 			<class name="accountsAPI.Account_Service_Peoplecontroller_GetuserByEmail" />
 			<class name="accountsAPI.Account_Service_Peoplecontroller_GetuserById" />

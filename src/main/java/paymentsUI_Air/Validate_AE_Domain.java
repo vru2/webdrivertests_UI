@@ -121,6 +121,15 @@ public class Validate_AE_Domain extends PaymentUI_Common{
 			Assert.assertTrue(false);
 		}
 	}
+	
+	@Test(priority=8)
+	public void Validate_Text_PayPal() throws Exception {
+		safeClick(driver, By.xpath("//ul[@id='paymentModeTab']/li[3]/div/p"));
+		textPresent_Log(driver, "Pay using PayPal", 10);	
+		elementPresent_log(driver, By.xpath("//ul[@id='paymentModeTab']/li[3]/div/div"), ""	, 1);
+		elementPresent_log(driver, By.id("Layer_1"), ""	, 1);
+		//elementPresent_log(driver, By.xpath("//div[@id='buttons-container']/div/div/div/div"), ""	, 1);
+	}
 		
 	@BeforeClass
 	public void setUp() throws Exception {

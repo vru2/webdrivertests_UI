@@ -19,8 +19,9 @@ public class PaymentUI_Common extends PaymentNodeJS{
 	protected String paymentUrl;
 	protected String qaUrl;
 	public Response resp;
-	Cookie cookie_Parl_Wallet = new Cookie("ct-auth", "g%2BN18HeWvZyEk7HQeFThJxsObDgYiHvhM4u28wBQ4BejFU9Ke4ME8Tw3kDrS%2BYaXuQmW3NiUZma8q2lELnUuyC3uAF5DaTQONdJlLn%2FO2me%2FiLCzDjUE8Mm7nMigogz0dlw4XnBuAMvrrzg32ECZZREQ3m1%2Fwdl0v8nRObVcrkLkfySvhcY68HkUF0r5u%2Bu1GYGQ%2FU5486qrW%2F0RUIlB1Q%3D%3D");
-	Cookie cookie_Full_Wallet = new Cookie("ct-auth", "5zoM9zvEgPvd1fO%2BsJylFp4hvaybBzUzp2ilDBfOdXvOg%2BIVENg%2BHdsz3cA98%2B5BD3habrO078UoXdzWM34lXZaLbE1jIpkEaANLn%2BHJadeW7kll2UfWWUfOoZLsVWTER2KXP0MBz2Ucg2wdtjfomKwrrYOshnOlUWyYWat6SeV2Tt6lvwTzivgXCSht22Dws");	
+	Cookie cookie_Parl_Wallet = new Cookie("ct-auth", "EVefRmmOWPSC8c9sPGbZGwZMgfl%2FLjP6yfQQAwhPONaOOIjRmfrMO5ubb5%2FGLWzguQmW3NiUZma8q2lELnUuyC3uAF5DaTQONdJlLn%2FO2me%2FiLCzDjUE8Mm7nMigogz0z84lf%2Bili9Xzawt1KbN%2FMNpQDroZvb3Q7ub%2BLj1YfofQs%2BDG9mD5DXvLFNSWqYz93GfvGpnfyFmIRy226HjYgQ%3D%3D");
+	Cookie cookie_Full_Wallet = new Cookie("ct-auth", "kPSO4DekYXjX1NAa%2BV6x%2BPAuD85oXXc2x6ocNR2SCho5FiJNPfE0mcjCvYIvtvEzD3habrO078UoXdzWM34lXZaLbE1jIpkEaANLn%2BHJadeW7kll2UfWWUfOoZLsVWTE5e4M7AJPpksQjN%2BnOAVReuzUb6b257o%2Bo1tkm1ssHdnsn63Uy2JyxP3spA3W9e%2Fw");	
+	Cookie cookie_Stored_CardNew = new Cookie("ct-auth", "EVefRmmOWPSC8c9sPGbZGwZMgfl%2FLjP6yfQQAwhPONaOOIjRmfrMO5ubb5%2FGLWzguQmW3NiUZma8q2lELnUuyC3uAF5DaTQONdJlLn%2FO2me%2FiLCzDjUE8Mm7nMigogz0z84lf%2Bili9Xzawt1KbN%2FMNpQDroZvb3Q7ub%2BLj1YfofQs%2BDG9mD5DXvLFNSWqYz93GfvGpnfyFmIRy226HjYgQ%3D%3D");
 	Cookie cookie_Stored_Card = new Cookie("ct-auth", "3cZX3Pk7YZLQGkv5lH%2BqMisg41mHr4%2BV5LnkFlBYXSW7TbjXLYl7j8XVySMQUxQsuv18jxT4Krq%2BnZKZgt%2FgtsPPZuvu7kgJgSXq9dBmctulsdFnuefY%2Fk4K%2FkHUuDj%2BnitdvoouxVugJ172IcDxp41NeKUSgTMU9EpGlYfZJ60e5yZIWxI28YU6CxlbH7FH");
 	
 
@@ -168,7 +169,7 @@ public class PaymentUI_Common extends PaymentNodeJS{
 	
 	public void validate_Currency_PWA (RemoteWebDriver driver, String Domain, String Currency) throws Exception {
 		String Total_Price = getText(driver, getObjectPayment("PWA_PaymentPage_TotalPrice"));
-		System.out.println("Total_Price "+Total_Price);
+//		System.out.println("Total_Price "+Total_Price);
 		if(!Total_Price.contains(Currency)) {
 			Reporter.log("Total Price doesn't contain Currency : "+Currency+" : "+Total_Price);
 			Assert.assertTrue(false);			

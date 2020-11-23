@@ -29,7 +29,7 @@ public class Coupon_Invalid extends PaymentUI_Common{
 		}
 		elementVisible(driver, getObjectPayment("PayUI_NB_DropDown"), 20);
 		textPresent_Log(driver, "Popular banks", 1);
-		safeSelect(driver, getObjectPayment("PayUI_NB_DropDown"), "Axis Bank");
+		safeSelect(driver, getObjectPayment("PayUI_NB_DropDown"), "ICICI Bank");
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		/*textPresent_Log(driver, "Hmm, something's not right", 5);
 		if(!elementVisible(driver, By.xpath("//div[@id='root']/main/div/section/div/div/div/div/div/div/div/div/div"), 10)) {
@@ -57,7 +57,7 @@ public class Coupon_Invalid extends PaymentUI_Common{
 		safeClickList(driver, getObjectPayment("PayUI_Pay_Tabs"), "Net Banking");
 		elementVisible(driver, getObjectPayment("PayUI_NB_DropDown"), 20);
 		textPresent_Log(driver, "Popular banks", 1);
-		safeSelect(driver, getObjectPayment("PayUI_NB_DropDown"), "Axis Bank");
+		safeSelect(driver, getObjectPayment("PayUI_NB_DropDown"), "ICICI Bank");
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		String ChangePayment_Text= getText(driver, By.cssSelector("div.c-blue.fs-body.fw-500.ml-6.mr-6.c-pointer"));
 

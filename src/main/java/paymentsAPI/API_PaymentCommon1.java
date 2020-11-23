@@ -360,6 +360,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String urlEndpoint_GVCreate= "/payments/gv/create";
 	String urlEndPoint_Wallet_CASHBACK_Wallet = "/payments/wallet/cashback?emailId=test@test123.com&currency=INR&amount=1&tripRef=Q190812462222&expiryDate =20-09-19";
 	String urlEndPoint_Wallet_Create = "/payments/wallet/65176051/createWallet";
+	String urlEndPoint_Wallet_FetchQA = "/paymentservice/api/wallet?product=DOMESTIC-AIR&currency=INR";
 
 	String urlDA_Balance = "/account/61/balance";
 	String urlDA_Refund= "/account/46207144/trips/Q191210603834/refund";
@@ -428,10 +429,10 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String url_refundgetrecord = "/paymentservice/service/refund/info/";
 	String urlEndpoint_GV_GET = "http://172.17.26.11:8071/payments/gv/create";
 
-	String url_walletGetCards ="/paymentservice/card/get/41654864"; //  41654864 41701828
-	String url_walletValidateCards ="/paymentservice/card/validate?cardNumber=5123456789012346&name=test&cardTypeId=2&expiryMonth=5&expiryYear=2020&userId=41654864";
+	String url_walletGetCards ="/paymentservice/card/get/65206610"; //  41654864, 41654864 41701828
+	String url_walletValidateCards ="/paymentservice/card/validate?cardNumber=340000000000009&name=test&cardTypeId=2&expiryMonth=9&expiryYear=2021&userId=65206610";
 	String url_walletDeleteCards ="/paymentservice/card/delete/%s";
-	String url_walletStoreCards ="/paymentservice/card/store?cardNumber=340000000000009&name=test&cardTypeId=2&expiryMonth=09&expiryYear=2020&userId=41654864";
+	String url_walletStoreCards ="/paymentservice/card/store?cardNumber=340000000000009&name=test&cardTypeId=2&expiryMonth=09&expiryYear=2021&userId=65206610";
 
 	//String url_Binmanager = "https://qa2.cleartrip.com/binmanager/v1/payment/cards?bin=534977";
 
@@ -517,6 +518,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 	String params_PayUI_Air_AE="\",\"txn_id\":\"75719878\",\"currency\":\"AED\",\"product_type\":\"DOMESTIC-AIR\",\"source_type\":\"ACCOUNT\",\"high_risk\":false,\"country\":\"AE\",\"user_id\":\"13957750\",\"company_id\":101,\"payment_category\":\"B\",\"currency_conversion_details\":{\"displayCurrency\":\"AED\",\"conversionFactor\":379.04947607124905},\"customer_detail\":{\"user_id\":13957750,\"mobile\":\"121221212\",\"landline\":\"02240554000\",\"email\":\"cltppayment@gmail.com\",\"first_name\":\"Cleartrip\",\"last_name\":\"Booker\",\"title\":\"Mr\"},\"app_return_info\":{\"url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI681fdd54f8-2d6c-44d1-9dd6-200903182914/book/internal\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI681fdd54f8-2d6c-44d1-9dd6-200903182914/book/internal\"},\"air_booking\":{\"traveller_details\":[{\"seq_no\":1,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"test\",\"last_name\":\"test\"}],\"itinerary_details\":[{\"segment_details\":[{\"serial_number\":1,\"airline_name\":\"IndiGo\",\"airline_code\":\"6E\",\"flight_number\":5354,\"departure_date\":\"2020-10-24T13:50:00\",\"arrival_date\":\"2020-10-24T15:35:00\",\"departure_time\":\"13:50\",\"arrival_time\":\"15:35\",\"duration\":\"6300\",\"stops\":0,\"departure_code\":\"BLR\",\"arrival_code\":\"BOM\",\"departure_airport_name\":\"Bengaluru International Airport\",\"arrival_airport_name\":\"Chatrapati Shivaji Airport\",\"total_time\":\"6300\",\"departure_terminal\":\"1\",\"arrival_terminal\":\"2\",\"departure_name\":\"Bangalore\",\"arrival_name\":\"Mumbai\"}]}],\"flights_pricing_details\":{\"air_dev_fee\":0.0,\"airline_misc\":0.0,\"cute_fee\":0.0,\"airline_gst\":37.150001525878906,\"amend_charges\":0.0,\"ct_charges\":0.0,\"other_charges\":0.0,\"service_fee\":0.0,\"vas_details\":[],\"pax_pay_info\":[{\"base_fare\":159.23,\"pax_count\":1,\"pax_type\":\"ADULT\"}],\"discount\":0.0,\"psgr_service_fee\":0.0,\"currency\":\"AED\",\"total\":500.0},\"convenience_fee_details\":{\"cc\":10.0,\"dc\":10.0,\"nb\":6.37,\"kc\":0.0,\"up\":0.0,\"da\":0.0,\"tw\":0.0,\"rp\":10.0,\"ap\":0.0,\"wt\":10.0,\"gv\":0.0,\"flat_fee\":true}},\"domain\":\"AE\",\"initial_total\":0.0,\"retry_num\":0}";
 	String params_PayUI_Air_AE_AR="\",\"txn_id\":\"75719878\",\"currency\":\"AED\",\"product_type\":\"DOMESTIC-AIR\",\"source_type\":\"ACCOUNT\",\"high_risk\":false,\"country\":\"AE\",\"user_id\":\"13957750\",\"company_id\":101,\"payment_category\":\"B\",\"ui_language\":\"AR\",\"currency_conversion_details\":{\"displayCurrency\":\"AED\",\"conversionFactor\":379.04947607124905},\"customer_detail\":{\"user_id\":13957750,\"mobile\":\"121221212\",\"landline\":\"02240554000\",\"email\":\"cltppayment@gmail.com\",\"first_name\":\"Cleartrip\",\"last_name\":\"Booker\",\"title\":\"Mr\"},\"app_return_info\":{\"url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI681fdd54f8-2d6c-44d1-9dd6-200903182914/book/internal\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI681fdd54f8-2d6c-44d1-9dd6-200903182914/book/internal\"},\"air_booking\":{\"traveller_details\":[{\"seq_no\":1,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"test\",\"last_name\":\"test\"}],\"itinerary_details\":[{\"segment_details\":[{\"serial_number\":1,\"airline_name\":\"IndiGo\",\"airline_code\":\"6E\",\"flight_number\":5354,\"departure_date\":\"2020-10-24T13:50:00\",\"arrival_date\":\"2020-10-24T15:35:00\",\"departure_time\":\"13:50\",\"arrival_time\":\"15:35\",\"duration\":\"6300\",\"stops\":0,\"departure_code\":\"BLR\",\"arrival_code\":\"BOM\",\"departure_airport_name\":\"Bengaluru International Airport\",\"arrival_airport_name\":\"Chatrapati Shivaji Airport\",\"total_time\":\"6300\",\"departure_terminal\":\"1\",\"arrival_terminal\":\"2\",\"departure_name\":\"Bangalore\",\"arrival_name\":\"Mumbai\"}]}],\"flights_pricing_details\":{\"air_dev_fee\":0.0,\"airline_misc\":0.0,\"cute_fee\":0.0,\"airline_gst\":37.150001525878906,\"amend_charges\":0.0,\"ct_charges\":0.0,\"other_charges\":0.0,\"service_fee\":0.0,\"vas_details\":[],\"pax_pay_info\":[{\"base_fare\":159.23,\"pax_count\":1,\"pax_type\":\"ADULT\"}],\"discount\":0.0,\"psgr_service_fee\":0.0,\"currency\":\"AED\",\"total\":500.0},\"convenience_fee_details\":{\"cc\":10.0,\"dc\":10.0,\"nb\":6.37,\"kc\":0.0,\"up\":0.0,\"da\":0.0,\"tw\":0.0,\"rp\":10.0,\"ap\":0.0,\"wt\":10.0,\"gv\":0.0,\"flat_fee\":true}},\"domain\":\"AE\",\"initial_total\":0.0,\"retry_num\":0}";
+	String params_PayUI_Air_SA_AR="\",\"txn_id\":\"75719878\",\"currency\":\"SAR\",\"product_type\":\"DOMESTIC-AIR\",\"source_type\":\"ACCOUNT\",\"high_risk\":false,\"country\":\"SA\",\"user_id\":\"13957750\",\"company_id\":101,\"payment_category\":\"B\",\"ui_language\":\"AR\",\"currency_conversion_details\":{\"displayCurrency\":\"SAR\",\"conversionFactor\":20.04947607124905},\"customer_detail\":{\"user_id\":13957750,\"mobile\":\"121221212\",\"landline\":\"02240554000\",\"email\":\"cltppayment@gmail.com\",\"first_name\":\"Cleartrip\",\"last_name\":\"Booker\",\"title\":\"Mr\"},\"app_return_info\":{\"url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI681fdd54f8-2d6c-44d1-9dd6-200903182914/book/internal\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI681fdd54f8-2d6c-44d1-9dd6-200903182914/book/internal\"},\"air_booking\":{\"traveller_details\":[{\"seq_no\":1,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"test\",\"last_name\":\"test\"}],\"itinerary_details\":[{\"segment_details\":[{\"serial_number\":1,\"airline_name\":\"IndiGo\",\"airline_code\":\"6E\",\"flight_number\":5354,\"departure_date\":\"2020-10-24T13:50:00\",\"arrival_date\":\"2020-10-24T15:35:00\",\"departure_time\":\"13:50\",\"arrival_time\":\"15:35\",\"duration\":\"6300\",\"stops\":0,\"departure_code\":\"BLR\",\"arrival_code\":\"BOM\",\"departure_airport_name\":\"Bengaluru International Airport\",\"arrival_airport_name\":\"Chatrapati Shivaji Airport\",\"total_time\":\"6300\",\"departure_terminal\":\"1\",\"arrival_terminal\":\"2\",\"departure_name\":\"Bangalore\",\"arrival_name\":\"Mumbai\"}]}],\"flights_pricing_details\":{\"air_dev_fee\":0.0,\"airline_misc\":0.0,\"cute_fee\":0.0,\"airline_gst\":37.150001525878906,\"amend_charges\":0.0,\"ct_charges\":0.0,\"other_charges\":0.0,\"service_fee\":0.0,\"vas_details\":[],\"pax_pay_info\":[{\"base_fare\":159.23,\"pax_count\":1,\"pax_type\":\"ADULT\"}],\"discount\":0.0,\"psgr_service_fee\":0.0,\"currency\":\"SAR\",\"total\":500.0},\"convenience_fee_details\":{\"cc\":10.0,\"dc\":10.0,\"nb\":6.37,\"kc\":0.0,\"up\":0.0,\"da\":0.0,\"tw\":0.0,\"rp\":10.0,\"ap\":0.0,\"wt\":10.0,\"gv\":0.0,\"flat_fee\":true}},\"domain\":\"SA\",\"initial_total\":0.0,\"retry_num\":0}";
 	
 	String params_PayUI_Air_BH="\",\"txn_id\":\"75719878\",\"currency\":\"BHD\",\"product_type\":\"DOMESTIC-AIR\",\"source_type\":\"ACCOUNT\",\"high_risk\":false,\"country\":\"BH\",\"user_id\":\"13957750\",\"company_id\":101,\"payment_category\":\"B\",\"currency_conversion_details\":{\"displayCurrency\":\"BHD\",\"conversionFactor\":500.04947607124905},\"customer_detail\":{\"user_id\":13957750,\"mobile\":\"121221212\",\"landline\":\"02240554000\",\"email\":\"cltppayment@gmail.com\",\"first_name\":\"Cleartrip\",\"last_name\":\"Booker\",\"title\":\"Mr\"},\"app_return_info\":{\"url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI681fdd54f8-2d6c-44d1-9dd6-200903182914/book/internal\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI681fdd54f8-2d6c-44d1-9dd6-200903182914/book/internal\"},\"air_booking\":{\"traveller_details\":[{\"seq_no\":1,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"test\",\"last_name\":\"test\"}],\"itinerary_details\":[{\"segment_details\":[{\"serial_number\":1,\"airline_name\":\"IndiGo\",\"airline_code\":\"6E\",\"flight_number\":5354,\"departure_date\":\"2020-10-24T13:50:00\",\"arrival_date\":\"2020-10-24T15:35:00\",\"departure_time\":\"13:50\",\"arrival_time\":\"15:35\",\"duration\":\"6300\",\"stops\":0,\"departure_code\":\"BLR\",\"arrival_code\":\"BOM\",\"departure_airport_name\":\"Bengaluru International Airport\",\"arrival_airport_name\":\"Chatrapati Shivaji Airport\",\"total_time\":\"6300\",\"departure_terminal\":\"1\",\"arrival_terminal\":\"2\",\"departure_name\":\"Bangalore\",\"arrival_name\":\"Mumbai\"}]}],\"flights_pricing_details\":{\"air_dev_fee\":0.0,\"airline_misc\":0.0,\"cute_fee\":0.0,\"airline_gst\":37.150001525878906,\"amend_charges\":0.0,\"ct_charges\":0.0,\"other_charges\":0.0,\"service_fee\":0.0,\"vas_details\":[],\"pax_pay_info\":[{\"base_fare\":159.23,\"pax_count\":1,\"pax_type\":\"ADULT\"}],\"discount\":0.0,\"psgr_service_fee\":0.0,\"currency\":\"BHD\",\"total\":500.0},\"convenience_fee_details\":{\"cc\":10.0,\"dc\":10.0,\"nb\":6.37,\"kc\":0.0,\"up\":0.0,\"da\":0.0,\"tw\":0.0,\"rp\":10.0,\"ap\":0.0,\"wt\":10.0,\"gv\":0.0,\"flat_fee\":true}},\"domain\":\"BH\",\"initial_total\":0.0,\"retry_num\":0}";
 	String params_PayUI_Air_KW="\",\"txn_id\":\"75719878\",\"currency\":\"KWD\",\"product_type\":\"DOMESTIC-AIR\",\"source_type\":\"ACCOUNT\",\"high_risk\":false,\"country\":\"KW\",\"user_id\":\"13957750\",\"company_id\":101,\"payment_category\":\"B\",\"currency_conversion_details\":{\"displayCurrency\":\"KWD\",\"conversionFactor\":500.04947607124905},\"customer_detail\":{\"user_id\":13957750,\"mobile\":\"121221212\",\"landline\":\"02240554000\",\"email\":\"cltppayment@gmail.com\",\"first_name\":\"Cleartrip\",\"last_name\":\"Booker\",\"title\":\"Mr\"},\"app_return_info\":{\"url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI681fdd54f8-2d6c-44d1-9dd6-200903182914/book/internal\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI681fdd54f8-2d6c-44d1-9dd6-200903182914/book/internal\"},\"air_booking\":{\"traveller_details\":[{\"seq_no\":1,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"test\",\"last_name\":\"test\"}],\"itinerary_details\":[{\"segment_details\":[{\"serial_number\":1,\"airline_name\":\"IndiGo\",\"airline_code\":\"6E\",\"flight_number\":5354,\"departure_date\":\"2020-10-24T13:50:00\",\"arrival_date\":\"2020-10-24T15:35:00\",\"departure_time\":\"13:50\",\"arrival_time\":\"15:35\",\"duration\":\"6300\",\"stops\":0,\"departure_code\":\"BLR\",\"arrival_code\":\"BOM\",\"departure_airport_name\":\"Bengaluru International Airport\",\"arrival_airport_name\":\"Chatrapati Shivaji Airport\",\"total_time\":\"6300\",\"departure_terminal\":\"1\",\"arrival_terminal\":\"2\",\"departure_name\":\"Bangalore\",\"arrival_name\":\"Mumbai\"}]}],\"flights_pricing_details\":{\"air_dev_fee\":0.0,\"airline_misc\":0.0,\"cute_fee\":0.0,\"airline_gst\":37.150001525878906,\"amend_charges\":0.0,\"ct_charges\":0.0,\"other_charges\":0.0,\"service_fee\":0.0,\"vas_details\":[],\"pax_pay_info\":[{\"base_fare\":159.23,\"pax_count\":1,\"pax_type\":\"ADULT\"}],\"discount\":0.0,\"psgr_service_fee\":0.0,\"currency\":\"KWD\",\"total\":500.0},\"convenience_fee_details\":{\"cc\":10.0,\"dc\":10.0,\"nb\":6.37,\"kc\":0.0,\"up\":0.0,\"da\":0.0,\"tw\":0.0,\"rp\":10.0,\"ap\":0.0,\"wt\":10.0,\"gv\":0.0,\"flat_fee\":true}},\"domain\":\"KW\",\"initial_total\":0.0,\"retry_num\":0}";
@@ -589,6 +591,18 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		return headers;
 	}
 	
+	public HashMap<String, Object> headersFormsWallet(){		
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("Content-Type", "application/json");
+		
+		headers.put("ct-auth", "5zoM9zvEgPvd1fO%2BsJylFp4hvaybBzUzp2ilDBfOdXvOg%2BIVENg%2BHdsz3cA98%2B5BD3habrO078UoXdzWM34lXZaLbE1jIpkEaANLn%2BHJadeW7kll2UfWWUfOoZLsVWTER2KXP0MBz2Ucg2wdtjfomKwrrYOshnOlUWyYWat6SeV2Tt6lvwTzivgXCSht22Dws");
+		
+		return headers;
+	}
+	
+	
+	
+	
 	public HashMap<String, Object> headersFormspay() throws Exception{		
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("Content-Type", "application/json");
@@ -630,7 +644,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	public HashMap<String, Object> headersForms_wallet(){		
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("Content-Type", "application/json");
-		headers.put("Cookie", "ct-auth = JHuf%2BCHAT9dJA6iy3yljOA%2BJEhxSeSS6bMSVjXXjBRMEKMkFZO7FDVmoCxuK2ro9JWNRt682KuqiFuXV2whf5HObWzaif65XOuM37YyrPLX%2BaiBNwnkmSmMem2WbpgBvzIOK8AA0ICwzYBAszCVlK7Wt4vbavb4Rc9plZba2GjgZcQBlPkvWs0YEAP%2B2OXYcwxeut2x6p5X1i%2BvPjnOjN5c7bmkG62x2TeRUPL%2BcTfQ7ZtPZvYpaAQ3oRcyhXrPhCUmcbRdKxTvjY08FAtXwySBwZnpRB%2Fr6Tdc4tErNeglqJTknezoRpPhKBzjfu1gtd8ro1XIKetU3yLt3kXt9RMitRVpAKIqLA%2Bkwfued9ARpSFWPHNzcb5k%2BZjusDdQuULECGHAP00B8LK7MltV20wodXXSeczhpDpmjAwJJBWF2kulqJ%2FaQ5Oi%2BUMmQ92BEqwQ0%2FZ1GGS%2FCsh4%2Flet6bIQmTJelK7OdeSLJlOhcpan1uHwoj5PmK6CrwQl4iGe6N0IBzS8MCjon9SGgFW8uc%2B97NUe06yWRwDtxLHRrqe%2B8UfmNCT%2B9HIFFr7urccGIf09n7B1MBN2D%2F3uBsb4bR8YYXRDmXYUVm%2FXms5YZHzl1u0HRpkoj3SJCZNksleaf4%2FRMFvDNJjcW0zkxFMlzew2BiwCGms1A%2Bpuib7AbTmi3KrivJofipyqlrlOmpIFB86BH3WBORcuhJKlOSbZ88Sjk7Axf%2Bj5hS4tsbVfQlBNW%2Fn1gi1O6phXNn%2BoD%2B1RUQ2HxBmGgursB0XalVJfK1g%3D%3D");
+		//headers.put("Cookie", "ct-auth = JHuf%2BCHAT9dJA6iy3yljOA%2BJEhxSeSS6bMSVjXXjBRMEKMkFZO7FDVmoCxuK2ro9JWNRt682KuqiFuXV2whf5HObWzaif65XOuM37YyrPLX%2BaiBNwnkmSmMem2WbpgBvzIOK8AA0ICwzYBAszCVlK7Wt4vbavb4Rc9plZba2GjgZcQBlPkvWs0YEAP%2B2OXYcwxeut2x6p5X1i%2BvPjnOjN5c7bmkG62x2TeRUPL%2BcTfQ7ZtPZvYpaAQ3oRcyhXrPhCUmcbRdKxTvjY08FAtXwySBwZnpRB%2Fr6Tdc4tErNeglqJTknezoRpPhKBzjfu1gtd8ro1XIKetU3yLt3kXt9RMitRVpAKIqLA%2Bkwfued9ARpSFWPHNzcb5k%2BZjusDdQuULECGHAP00B8LK7MltV20wodXXSeczhpDpmjAwJJBWF2kulqJ%2FaQ5Oi%2BUMmQ92BEqwQ0%2FZ1GGS%2FCsh4%2Flet6bIQmTJelK7OdeSLJlOhcpan1uHwoj5PmK6CrwQl4iGe6N0IBzS8MCjon9SGgFW8uc%2B97NUe06yWRwDtxLHRrqe%2B8UfmNCT%2B9HIFFr7urccGIf09n7B1MBN2D%2F3uBsb4bR8YYXRDmXYUVm%2FXms5YZHzl1u0HRpkoj3SJCZNksleaf4%2FRMFvDNJjcW0zkxFMlzew2BiwCGms1A%2Bpuib7AbTmi3KrivJofipyqlrlOmpIFB86BH3WBORcuhJKlOSbZ88Sjk7Axf%2Bj5hS4tsbVfQlBNW%2Fn1gi1O6phXNn%2BoD%2B1RUQ2HxBmGgursB0XalVJfK1g%3D%3D");
+		headers.put("Cookie", "ct-auth = GRXX0CBrHKablQufsp9%2FhcYiZoT2pdKh2o2SJSM4DAv0fGnBwmt1pMkxNugLfXB5DJYcbofvJMD4Nq30sctwCULcQXyAJl%2BKYgmuLWYgm7XjOQ%2FPuR9e199wyxzHcyU549hC6UG6iTk6e1RRWNqDQMlQtl%2BmxKJc0mQBaAYA43f6y6VdDkld2QJCAynJJWie");
 
 		return headers;
 	}	
@@ -1262,6 +1277,9 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		String params = null;
 		HashMap<String, Object> headers = new HashMap<>();
 		headers = headersForms();
+		HashMap<String, Object> headersWallet = new HashMap<>();
+		headersWallet = headersFormsWallet();
+		
 		Response request = null;	 
 		if(payType.equalsIgnoreCase("PROMOUSED")) {
 			url= urlEndPoint_Wallet_PromoUsed;
@@ -1338,6 +1356,23 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 					headers(headers).
 					body(params).
 					post(url);
+		}else if(payType.equalsIgnoreCase("WALLET_Fetch")) {
+			RestAssured.baseURI ="http://qa2.cleartrip.com";
+			url= urlEndPoint_Wallet_FetchQA;
+			request = RestAssured.given().
+					when().
+					log().all().
+					headers(headers).
+					get(url);
+		}else if(payType.equalsIgnoreCase("WALLET_Fetch_LoggedIN")) {
+			RestAssured.baseURI ="http://qa2.cleartrip.com";
+			url= urlEndPoint_Wallet_FetchQA;
+			request = RestAssured.given().
+					when().
+					log().all().
+					headers(headersWallet).
+					cookie("ct-auth", "EVefRmmOWPSC8c9sPGbZGwZMgfl%2FLjP6yfQQAwhPONaOOIjRmfrMO5ubb5%2FGLWzguQmW3NiUZma8q2lELnUuyC3uAF5DaTQONdJlLn%2FO2me%2FiLCzDjUE8Mm7nMigogz0z84lf%2Bili9Xzawt1KbN%2FMNpQDroZvb3Q7ub%2BLj1YfofQs%2BDG9mD5DXvLFNSWqYz93GfvGpnfyFmIRy226HjYgQ%3D%3D").
+					get(url);
 		}
 
 		Reporter.log(urlWallet+url);
@@ -2620,10 +2655,10 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			}
 		}
 		else if (payType.equalsIgnoreCase("wallet_getcards")) {
-			/*if(!resp.body().asString().contains("number")) {
+			if(!resp.body().asString().contains("340000")) {
 					Reporter.log("card number is not displayed ");
-					Assert.assertTrue(false);
-				}*/
+					//Assert.assertTrue(false);
+				}
 				if(resp.body().asString().contains("Card already exist")) {
 					Reporter.log("Card already exist is not displayed ");
 					//Assert.assertTrue(false);					
@@ -3066,6 +3101,15 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			}
 			
 		}
+	else if(payType.equals("WALLET_Fetch_NotLogged")) {
+			
+			if(!resp.body().asString().contains("User not logged in")) {
+				Reporter.log("User not logged in is not displayed");
+				Assert.assertTrue(false);
+			}
+			
+		}
+		
 		
 		
 		
@@ -3213,11 +3257,15 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		}else if(Domain.equalsIgnoreCase("US")) {
 			qaurl=qaurlus;
 		}
+		
+		
 		Url = qaurl+ fetchPaymentURL(resp);
 		if(Domain.contains("FLYIN")) {
 			Url = qaurlFlyin+ fetchPaymentURL(resp);
 			
 		}
+		
+		
 		Reporter.log("Payment URL : " +Url);
 		//System.out.println("Payment URL : " +Url);
 		String TripID = fetchPaymentTripID(resp);
@@ -3436,7 +3484,14 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			RestAssured.baseURI = urlPay;
 			endPoint = endPointgetPay;	
 			params = params_PayUI_Air1+tripRef+params_PayUI_Air_SA;
-		}else if(payType.equalsIgnoreCase("AirOM")){
+		}
+		else if(payType.equalsIgnoreCase("AirSAAR")){ // Arabic
+			RestAssured.baseURI = urlPay;
+			endPoint = endPointgetPay;	
+			params = params_PayUI_Air1+tripRef+params_PayUI_Air_SA_AR;
+		}
+		
+		else if(payType.equalsIgnoreCase("AirOM")){
 			RestAssured.baseURI = urlPay;
 			endPoint = endPointgetPay;	
 			params = params_PayUI_Air1+tripRef+params_PayUI_Air_OM;

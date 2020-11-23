@@ -65,10 +65,6 @@ public class PWA_WalletFull extends PaymentUI_Common{
 		Total = getText(driver, getObjectPayment("PWA_PaymentPage_TotalPriceGV"));
 		System.out.println(Total);
 		if(!Total.contains("650")) {
-			System.out.println(Total);
-			System.out.println(Total);
-			System.out.println(Total);
-			System.out.println(Total);
 			Assert.assertTrue(false);
 		}
 		

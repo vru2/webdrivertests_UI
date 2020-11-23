@@ -25,6 +25,7 @@ public class PWA_Coupon extends PaymentUI_Common{
 		safeClick(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_Icon"));
 		elementPresent(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_closeIcon"));
 		textPresent_Log(driver, "Coupon code (DOMOW)", 5);
+		Thread.sleep(1000);
 		safeClick(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_closeIcon"));
 		Thread.sleep(2000);
 		payUI_Select_PaymentType_PWA(driver, "NET BANKING");

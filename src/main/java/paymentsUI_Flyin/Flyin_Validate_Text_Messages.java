@@ -51,7 +51,7 @@ public class Flyin_Validate_Text_Messages extends PaymentUI_Common{
 			Assert.assertTrue(false);
 		}*/
 	}
-	
+	/*
 	@Test(priority=2)
 	public void Validate_Text_DC() throws Exception {
 		payUI_Select_PaymentType(driver, "DC");
@@ -81,7 +81,7 @@ public class Flyin_Validate_Text_Messages extends PaymentUI_Common{
 	//	textPresent_Log(driver, "Booking policy the Privacy Policy ", 1);
 		//textPresent_Log(driver, "and the Terms & Conditions of Flyin", 1);
 		
-	/*	boolean button = driver.findElement(By.xpath("//button")).isEnabled();
+		boolean button = driver.findElement(By.xpath("//button")).isEnabled();
 		if(!button) {
 			Reporter.log("Make Pament Button is not disabled");
 			Assert.assertTrue(false);
@@ -91,7 +91,7 @@ public class Flyin_Validate_Text_Messages extends PaymentUI_Common{
 		if(button) {
 			Reporter.log("Make Pament Button is not enabled");
 			Assert.assertTrue(false);
-		}*/
+		}
 	}
 
 	@Test(priority=4)
@@ -125,9 +125,9 @@ public class Flyin_Validate_Text_Messages extends PaymentUI_Common{
 		textPresent_Log(driver, "Mr test test", 2); 
 		
 
-		/*safeClick(driver, getObjectPayment("PayUI_Hide_Traveller_Link"));
+		safeClick(driver, getObjectPayment("PayUI_Hide_Traveller_Link"));
 		textPresent(driver, "+1 travellers", 2);
-		safeClick(driver, getObjectPayment("PayUI_Hide_Traveller_Link"));*/
+		safeClick(driver, getObjectPayment("PayUI_Hide_Traveller_Link"));
 	}
 	
 
@@ -156,7 +156,7 @@ public class Flyin_Validate_Text_Messages extends PaymentUI_Common{
 			Reporter.log("flyin | payment securely page title is not displayed");
 			Assert.assertEquals(Title, "Flyin | Pay securely");
 		}
-	}
+	}*/
 	
 		
 		

@@ -253,6 +253,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String Params_Reporting_UpdloadQ_FetchBy_TripID="{\"tripRef\":[\"Q190722430506\",\"Q200417823668\"],\"status\":\"D\"}";
 
 	
+	
+	
 	String Params_Reporting_Refund_Status_Post="{\"refundStatus\":\"D\",\"paymentType\":[\"GV\",\"CC\"],\"tripRef\":[\"Q190722430506\",\"Q200417823774\"]}";
 	
 	String paramsCSPayvalidate="[{\"payment\":{\"seq_no\":1,\"trip_id\":106562332,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":276,\r\n" + 
@@ -266,6 +268,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	
 	String paramsCSPay="";
 	
+	String paramsWalletrevertPromo = "{\"tripRef\":\"Q201124864780\",\"amount\":100.1}";
 
 
 	String ParamsGetPayURL_Air = "{\"itinerary_id\":\"6899c725d1-a698-4978-8fa7-2001081509423\",\"ttl\":0,\"trip_id\":46314335,\"trip_ref\":\"Q10041538791\",\"txn_id\":\"75509223\",\"currency\":\"INR\",\"product_type\":\"DOMESTIC-AIR\",\"source_type\":\"ACCOUNT\",\"high_risk\":false,\"country\":\"IN\",\"user_id\":\"1876970\",\"company_id\":110340,\"payment_category\":\"A\",\"ui_language\":\"EN\",\"trip_title\":\"AMD -> BLR\",\"back_button_url\":\"/accounts\",\"customer_detail\":{\"user_id\":1876970,\"mobile\":\"911212121212\",\"email\":\"cltppayment@gmail.com\",\"first_name\":\"Cltp\",\"last_name\":\"Payment\"},\"app_return_info\":{\"url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI6826d4897a-b5af-47a5-a72e-200511165846/book/internal\",\"method\":\"POST\",\"params\":null,\"book_internal\":true,\"book_internal_url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI6826d4897a-b5af-47a5-a72e-200511165846/book/internal\"},\"air_booking\":{\"traveller_details\":[{\"seq_no\":1,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"John\",\"last_name\":\"Miller\"},{\"seq_no\":2,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"Ashish\",\"last_name\":\"Jain\"},{\"seq_no\":2,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"Rohit\",\"last_name\":\"Kumar\"},{\"seq_no\":2,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"Mohit\",\"last_name\":\"Verma\"},{\"seq_no\":2,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"Sachin\",\"last_name\":\"Reddy\"}],\"itinerary_details\":[{\"segment_details\":[{\"serial_number\":0,\"airline_name\":\"SG\",\"airline_code\":\"SG\",\"flight_number\":8169,\"departure_date\":\"2020-02-15T19:45:00\",\"arrival_date\":\"2020-02-15T22:05:00\",\"departure_time\":\"07:45\",\"arrival_time\":\"10:05\",\"duration\":\"8400\",\"stops\":1,\"departure_code\":\"DEL\",\"arrival_code\":\"BOM\",\"departure_airport_name\":\"Indira Gandhi Airport\",\"arrival_airport_name\":\"Chatrapati Shivaji Airport\",\"departure_name\":\"New Delhi\",\"arrival_name\":\"Mumbai\",\"date\":\"2020-02-15T19:45:00\"},{\"serial_number\":0,\"airline_name\":\"SG\",\"airline_code\":\"SG\",\"flight_number\":8169,\"departure_date\":\"2020-02-15T19:45:00\",\"arrival_date\":\"2020-02-16T22:05:00\",\"departure_time\":\"07:45\",\"arrival_time\":\"10:05\",\"duration\":\"8400\",\"stops\":1,\"departure_code\":\"BOM\",\"arrival_code\":\"AMD\",\"departure_airport_name\":\"Indira Gandhi Airport\",\"arrival_airport_name\":\"Chatrapati Shivaji Airport\",\"departure_name\":\"New Delhi\",\"arrival_name\":\"Mumbai\",\"date\":\"2020-02-15T19:45:00\"}]},{\"segment_details\":[{\"serial_number\":0,\"airline_name\":\"AI\",\"airline_code\":\"AI\",\"flight_number\":8169,\"departure_date\":\"2020-02-20T19:45:00\",\"arrival_date\":\"2020-02-20T22:05:00\",\"departure_time\":\"07:45\",\"arrival_time\":\"10:05\",\"duration\":\"8400\",\"stops\":0,\"departure_code\":\"AMD\",\"arrival_code\":\"DEL\",\"departure_airport_name\":\"Indira Gandhi Airport\",\"arrival_airport_name\":\"Chatrapati Shivaji Airport\",\"departure_name\":\"New Delhi\",\"arrival_name\":\"Mumbai\",\"date\":\"2020-02-15T19:45:00\"}]}],\"flights_pricing_details\":{\"pax_pay_info\":[{\"base_fare\":3000.1,\"pax_count\":1,\"pax_type\":\"ADULT\"},{\"base_fare\":3000.02,\"pax_count\":1,\"pax_type\":\"ADULT\"}],\"discount\":100,\"psgr_service_fee\":91,\"air_dev_fee\":0,\"airline_misc\":177,\"cute_fee\":65,\"airline_gst\":20.5,\"paid_before\":\"100.0\",\"amend_charges\":200.5,\"ct_charges\":10,\"currency\":\"INR\",\"other_charges\":1016,\"service_fee\":1012,\"total\":500},\"transaction_fee_details\":{\"cc\":{\"DEFAULT\":10},\"dc\":{\"DEFAULT\":0},\"nb\":{\"DEFAULT\":0},\"kc\":{\"DEFAULT\":0},\"da\":{\"DEFAULT\":0},\"tw\":{\"DEFAULT\":0},\"up\":{\"DEFAULT\":0},\"wt\":{\"DEFAULT\":0}},\"convenience_fee_details\":{\"cc\":200,\"dc\":500,\"nb\":50,\"tw\":25,\"up\":10}}}";
@@ -279,6 +282,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 	
 	
+	
 	public String AirUrl ="https://qa2.cleartrip.com/flights/results?from=BLR&to=BOM&depart_date=24/12/2020&adults=1&childs=0&infants=0&class=Economy&airline=&carrier=&intl=n";
 	
 	String urlInit = "/paymentservice/service/otp/init";
@@ -290,6 +294,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String url1_FetchPayDetails = "/trips?tripID=Q1904233450";
 	String urlpromoActivate = "/promoservice/v1/promogroups/Q190624286218";
 	String urlpromoUsed = "/payments/wallet/promo/used?tripRef=Q190702311622";
+	
 	String urlPayFlyin = "/paymentservice/gw/v1/pay";
 	String urlpayReporting= "/paymentservice/service/air/mis/detail?tripRef=Q190530193406&paymentType=CC&reqFor=refund";
 
@@ -351,6 +356,10 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String endPointgetPay = "/paymentservice/api/getPaymentURL";
 
 	String urlEndPoint_Wallet_RevertPromo ="/payments/wallet/promo/revert?tripRef=Q19050680568";
+	String urlEndPoint_Wallet_RevertPromoNew ="/payments/wallet/promo/revert/amount";
+	
+	
+	String urlEndPoint_Wallet_RevertedPromo ="/payments/wallet/promo/reverted/amount/Q201124864780";
 	String urlEndPoint_Wallet_GetDeduction = "/payments/wallet/promo/deductions?tripRef=Q190702311622";
 	String urlEndPoint_Wallet_GetWallet_Trnx = "/payments/wallet/5153602/transactions?tripRef=Q1810310049&start=1&count=1000";
 	String urlEndPoint_Wallet_CASHBACK_DETAILS = "/payments/wallet/promo/13957750/promotions/5732312";
@@ -599,6 +608,14 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		
 		return headers;
 	}
+	
+	public HashMap<String, Object> headersFormsNew(){		
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("Content-Type", "application/json;charset=UTF-8");
+		
+		return headers;
+	}
+	
 	
 	
 	
@@ -1279,7 +1296,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		headers = headersForms();
 		HashMap<String, Object> headersWallet = new HashMap<>();
 		headersWallet = headersFormsWallet();
-		
+		HashMap<String, Object> headersFormsNew = new HashMap<>();
+		headersFormsNew= headersFormsNew();
 		Response request = null;	 
 		if(payType.equalsIgnoreCase("PROMOUSED")) {
 			url= urlEndPoint_Wallet_PromoUsed;
@@ -1297,6 +1315,24 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 					headers(headers).
 					post(url);
 		}
+		else if(payType.equalsIgnoreCase("REVERTPROMONEW")) {
+			url= urlEndPoint_Wallet_RevertPromoNew;
+			request = RestAssured.given().
+					when().
+					log().all().
+					headers(headersFormsNew).
+					param(paramsWalletrevertPromo).
+					post(url);
+		}
+		else if(payType.equalsIgnoreCase("REVERTEDPROMO")) {
+			url= urlEndPoint_Wallet_RevertedPromo;
+			request = RestAssured.given().
+					when().
+					log().all().
+					headers(headers).
+					get(url);
+		}
+		
 		else if(payType.equalsIgnoreCase("GETDEDUCTION")) {
 			url= urlEndPoint_Wallet_GetDeduction;
 			request = RestAssured.given().
@@ -2686,6 +2722,12 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		}
 		else if (payType.equalsIgnoreCase("wallet_REVERTPROMO")) {
 
+		}else if (payType.equalsIgnoreCase("wallet_REVERTEDPROMO")) {
+
+			if(!resp.body().asString().contains("reverted amount fetched successfully")) {
+				Reporter.log("reverted amount fetched successfully is not displayed ");
+				Assert.assertTrue(false);
+			}
 		}else if (payType.equalsIgnoreCase("wallet_GETDEDUCTION")) {
 			String usedPromo = jsonPathEvaluator.getString("promoused");
 			if(!usedPromo.equalsIgnoreCase("10.0")) {

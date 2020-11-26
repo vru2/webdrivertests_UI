@@ -8,13 +8,13 @@ import org.testng.annotations.Test;
 import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
 
-public class Account_Service_PWA_GetUserbyID extends AccountsCommon_API
+public class Account_Service_Peoplecontroller_FindByID extends AccountsCommon_API
 {
 	@Test
-	public void Account_Service_PWA_GetUserbyID() throws IOException, JSONException{
+	public void Account_Service_Peoplecontroller_FindByID() throws IOException, JSONException{
 		Response resp ;		
-		resp =getCall("Account_Service_PWA_GetUserbyID", "");
-		validation( resp, "Account_Service_PWA_GetUserbyID", "");
+		resp =getCall("Account_Service_Peoplecontroller_FindByID", "");
+		validation( resp, "Account_Service_Peoplecontroller_FindByID", "");
 
 		/*ResponseBody body = resp.getBody();
 		System.out.println("Response of API is:" + body.asString());*/

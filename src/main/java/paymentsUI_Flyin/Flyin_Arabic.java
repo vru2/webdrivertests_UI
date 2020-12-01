@@ -24,7 +24,7 @@ public class Flyin_Arabic extends PaymentUI_Common{
 		String PayUrl = getPayUI("AirSAAR", "FLYIN");
 		driver.manage().deleteAllCookies(); 
 		
-		driver.get(PayUrl);
+		//driver.get(PayUrl);
 		payUI_Select_PaymentType(driver, "CC");
 		validate_Currency(driver, "", "SAR");
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));	

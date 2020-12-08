@@ -47,7 +47,7 @@ public class Coupon_Invalid extends PaymentUI_Common{
 		}	
 
 		//textPresent_Log(driver, "Coupon code DOMOW is not applicable on the chosen payment mode. Please update card details to avail benefits or proceed without coupon. Your updated price is", 5);
-		textPresent_Log(driver, "Coupon code DOMOW is not applicable on the chosen payment mode. Please try a different card or payment-mode to avail benefits or proceed without coupon. Updated price without coupon will be", 5);
+		textPresent_Log(driver, "Coupon code DOMOW is not applicable on the chosen payment method. Change payment mode/card details or book without coupon at", 5);
 		safeClick(driver, By.xpath("//div[@id='root']/main/div/section/div/div/div/div/div/div/div/div[2]/div"));
 		if(!elementVisible(driver, getObjectPayment("PayUI_Pay_Tabs"), 10)) {
 			Reporter.log("PayUI Page is not displayed");

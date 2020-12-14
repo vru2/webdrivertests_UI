@@ -22,7 +22,8 @@ public class GV_NB extends PaymentUI_Common{
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);	  
 		String GVText=getText(driver, By.xpath("//div[3]/div[4]/div"));
-		if(!GVText.contains("Gift card (3000331035955930)")) {
+		  if(!GVText.contains("Gift card")&&GVText.contains("3000331035955930")) {
+		//if(!GVText.contains("Gift card (3000331035955930)")) {
 			Reporter.log("GV is not displayed "+GVText);
 			Assert.assertTrue(false);
 		}

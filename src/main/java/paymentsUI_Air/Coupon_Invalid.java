@@ -22,7 +22,7 @@ public class Coupon_Invalid extends PaymentUI_Common{
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
 		safeClickList(driver, getObjectPayment("PayUI_Pay_Tabs"), "Net Banking");	
-		String CouponText = getText(driver, By.xpath("//div[4]/div"));
+		String CouponText = getText(driver, By.xpath("//div[6]/div"));
 		if(!CouponText.contains("DOMOW")) {
 			Reporter.log("Copon text is not displayed "+CouponText);
 			Assert.assertTrue(false);
@@ -48,23 +48,29 @@ public class Coupon_Invalid extends PaymentUI_Common{
 
 		//textPresent_Log(driver, "Coupon code DOMOW is not applicable on the chosen payment mode. Please update card details to avail benefits or proceed without coupon. Your updated price is", 5);
 		textPresent_Log(driver, "Coupon code DOMOW is not applicable on the chosen payment method. Change payment mode/card details or book without coupon at", 5);
-		safeClick(driver, By.xpath("//div[@id='root']/main/div/section/div/div/div/div/div/div/div/div[2]/div"));
+		
+
+		safeClick(driver, By.xpath("//button"));
+
+	//	safeClick(driver, By.xpath("//div[@id='root']/main/div/section/div/div/div/div/div/div/div/div[2]/div"));
 		if(!elementVisible(driver, getObjectPayment("PayUI_Pay_Tabs"), 10)) {
 			Reporter.log("PayUI Page is not displayed");
 			String UI_error = getText(driver, By.xpath("//h1"));
 			Reporter.log(UI_error);			
 			Assert.assertTrue(false);
 		}
+		Thread.sleep(5000);
 		safeClickList(driver, getObjectPayment("PayUI_Pay_Tabs"), "Net Banking");
 		elementVisible(driver, getObjectPayment("PayUI_NB_DropDown"), 20);
 		textPresent_Log(driver, "Popular banks", 1);
 		safeSelect(driver, getObjectPayment("PayUI_NB_DropDown"), "ICICI Bank");
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
-		String ChangePayment_Text= getText(driver, By.cssSelector("div.c-blue.fs-body.fw-500.ml-6.mr-6.c-pointer"));
+		//String ChangePayment_Text= getText(driver, By.xpath("//button"));
 
-		String ContinueWithout_Text= getText(driver, By.xpath("//button"));
-
-		Assert.assertEquals(ChangePayment_Text, "Change payment mode");
+		String ContinueWithout_Text= getText(driver, By.xpath("//button[2]"));
+		//System.out.println("ChangePayment_Text "+ChangePayment_Text);
+		//System.out.println("ContinueWithout_Text "+ContinueWithout_Text);
+	//	Assert.assertEquals(ChangePayment_Text, "Change payment mode");
 		Assert.assertEquals(ContinueWithout_Text, "Book without Coupon");
 		if(elementVisible(driver, By.xpath("//div[@id='root']/main/div/section/div/div/div/div/div/div/div/div/div"), 10)) {
 			//Assert.assertTrue(false);

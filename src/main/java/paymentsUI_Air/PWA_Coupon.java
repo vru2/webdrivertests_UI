@@ -38,8 +38,8 @@ public class PWA_Coupon extends PaymentUI_Common{
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn2"));
 		Thread.sleep(5000);		
 		Coupon_Invalid_Text = getText(driver, getObjectPayment("PWA_PaymentPage_Invalid_Coupon_Text"));
-		if(!Coupon_Invalid_Text.contains("Coupon code DOMOW is not applicable on the chosen payment mode. Please try a different card or payment-mode to avail benefits or proceed without coupon. Updated price without coupon will be")) {
-			Reporter.log("Coupon code DOMOW is not applicable on the chosen payment mode. Please update card details to avail benefits or proceed without coupon. Your updated price is");
+		if(!Coupon_Invalid_Text.contains("Coupon code DOMOW is not applicable on the chosen payment method. Change payment mode/card details or book without coupon at")) {
+			Reporter.log("Coupon code DOMOW is not applicable on the chosen payment method. Change payment mode/card details or book without coupon at is displayed instead of "+ Coupon_Invalid_Text);
 			Assert.assertTrue(false);
 		}
 		if(!Coupon_Invalid_Text.contains("800")) {
@@ -55,8 +55,8 @@ public class PWA_Coupon extends PaymentUI_Common{
 		Thread.sleep(5000);
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn2"));
 		Coupon_Invalid_Text = getText(driver, getObjectPayment("PWA_PaymentPage_Invalid_Coupon_Text"));
-		if(!Coupon_Invalid_Text.contains("Coupon code DOMOW is not applicable on the chosen payment mode. Please update card details to avail benefits or proceed without coupon. Your updated price is")) {
-			Reporter.log("Coupon code DOMOW is not applicable on the chosen payment mode. Please update card details to avail benefits or proceed without coupon. Your updated price is");
+		if(!Coupon_Invalid_Text.contains("Coupon code DOMOW is not applicable on the chosen payment method. Change payment mode/card details or book without coupon at")) {
+			Reporter.log("Coupon code DOMOW is not applicable on the chosen payment method. Change payment mode/card details or book without coupon at");
 			Assert.assertTrue(false);
 		}if(!Coupon_Invalid_Text.contains("800")) {
 			Reporter.log("800 rs is not displayed");

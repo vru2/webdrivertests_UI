@@ -20,6 +20,7 @@ public class CC_SA extends PaymentUI_Common{
 		driver.get(PayUrl);
 		textNotPresent_List( driver, getObjectPayment("PayUI_Pay_Tabs"), "Net banking");
 		payUI_Select_PaymentType(driver, "CC");
+		textPresent_Log(driver, "VAT (15 %)", 1);
 		validate_Currency(driver, "", "SAR");
 		payUI_Enter_PaymentDetails(driver, "CC", "MASTER","");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);

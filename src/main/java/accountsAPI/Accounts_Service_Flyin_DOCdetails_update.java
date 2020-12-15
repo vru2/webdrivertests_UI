@@ -19,9 +19,9 @@ public class Accounts_Service_Flyin_DOCdetails_update extends AccountsCommon_API
 		
 		validation_user_update(resp,"Accounts_Service_Flyin_DOCdetails_update","");
 				
-	ResponseBody body = resp.getBody();
+	/*ResponseBody body = resp.getBody();
 		System.out.println("Response of API is:" + body.asString());
-		System.out.println(resp.statusCode());
+		System.out.println(resp.statusCode());*/
 		
 	}
 }

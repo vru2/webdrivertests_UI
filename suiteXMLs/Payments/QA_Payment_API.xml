@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="APIs" parallel="tests" thread-count="2">
 
-<listeners> 
+<listeners>
 <listener class-name="org.uncommons.reportng.HTMLReporter" />
 <listener class-name="common.RemoveDuplicateResults"/>
 <listener class-name="common.RetryListener"/>

@@ -39,7 +39,8 @@ public class Wallet_Full extends PaymentUI_Common{
 			Assert.assertTrue(false);
 		}
 		
-		String CT_WalletPrice_Text =getText(driver, By.xpath("//div[7]/div/p"));
+		String CT_WalletPrice_Text =getText(driver, By.xpath("//div[9]/div/p"));
+		//System.out.println("CT_WalletPrice_Text "+CT_WalletPrice_Text);
 		if(!(CT_WalletPrice_Text.contains("Cleartrip Wallet"))) {
 			Reporter.log("Cleartrip Wallet text is not displayed in price breakup : "+CT_WalletPrice_Text);
 			Assert.assertTrue(false);

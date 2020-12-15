@@ -18,6 +18,7 @@ import domains.PaymentNodeJS;
 	
   @Test 
   public void paymentNodeJS_CTWALL_CC() throws Exception {
+	  System.out.println(common.value("testcardtype"));
        driver.manage().deleteAllCookies(); 
 	   driver.get(baseUrl);	   
 	   paymentNodeJS_Select_Payment(driver, "CTCC", "",common.value("testcardtype"));

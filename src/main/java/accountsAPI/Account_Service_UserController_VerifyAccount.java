@@ -16,8 +16,8 @@ public class Account_Service_UserController_VerifyAccount extends AccountsCommon
 		resp =putCall("Account_Service_UserController_VerifyAccount", "");
 		validation( resp, "Account_Service_UserController_VerifyAccount", "");
 		
-		ResponseBody body = resp.getBody();
-		System.out.println("Response of API is:" + body.asString());		
+	/*	ResponseBody body = resp.getBody();
+		System.out.println("Response of API is:" + body.asString());		*/
 		
 	}
 

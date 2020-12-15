@@ -20,9 +20,9 @@ public class Account_Service_AppleRegister_NullEmail extends AccountsCommon_API
 
 		validation_AppleRegister_NullEmail(resp,"Account_Service_AppleRegister_NullEmail","");
 
-		ResponseBody body = resp.getBody();
+		/*ResponseBody body = resp.getBody();
 		System.out.println("Response of API is:" + body.asString());
-		System.out.println(resp.statusCode());
+		System.out.println(resp.statusCode());*/
 
 	}
 }

@@ -57,6 +57,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String url_Userclassification_Health_Test_Url="/actuator/health";
 	String url_Account_Service_Verify_Person="/account/people/verify?id=14029546&emailId=ns.likhitha@cleartrip.com&domain=www.cleartrip.com&companyId=110340";
 	String url_Account_Service_UserController_VerifyAccount="/user/v1/account/verify/14029546";
+	String url_Accounts_Service_VerifynonLoggedinUser="/user/v2/auth/otp/verify?tripRef=Q200102680540&emailId=ns.likhitha@cleartrip.com&otp=123455&source=b2c&subSource=www.cleartrip.com";
 	String url_IdentityService_UpdatePassword_ForChangePasswordflow="/user/updatePassword";
 	String url_Userclassification_Userdetails_emailid="/users/detail?email_id=test@cleartrip.com";
 	String url_Userclassification_Gettripdetails_fromtripid="/users/trip?trip_id=Q200102680486";
@@ -196,8 +197,10 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String params_Account_Service_RegisterFLyinUserUpdate_OTPValidation="{\"id\":65206329,\"username\":\"otpmobilenotestfinal@flyin.com\",\"profilePercentCompleted\":null,\"travellerDetails\":[{\"id\":179861,\"profileData\":null,\"contactInfo\":{\"phoneNumbers\":[{\"mobileNumber\":\"11111111111\",\"mobileCountryCode\":\"91\",\"category\":\"test\"}],\"whatsapp\":null,\"addresses\":[],\"otherDetails\":[],\"emails\":[]},\"ffnPreferences\":null,\"personalDetails\":{\"anniversaryDate\":null,\"companyDesignation\":null,\"concatName\":null,\"countryOfResidence\":null,\"countryOfResidenceId\":null,\"countryPreference\":null,\"currency\":null,\"dateOfBirth\":null,\"department\":null,\"emergencyContactName\":null,\"emergencyContactNumber\":null,\"firstName\":null,\"gender\":null,\"homeAirport\":null,\"homeAirportId\":null,\"language\":null,\"lastName\":null,\"middleName\":null,\"nickName\":null,\"primaryEmail\":\"otpmobilenotest@cleartrip.com\",\"title\":null,\"createdAt\":\"2020-10-27T09:15:14\",\"updatedAt\":\"2020-10-27T09:15:14\"},\"preferences\":null,\"docDetails\":null,\"createdAt\":\"2020-10-27T09:15:14\",\"updatedAt\":\"2020-10-27T09:15:14\"},{\"id\":179862,\"isRegistered\":false,\"profileData\":null,\"contactInfo\":{\"phoneNumbers\":[{\"mobileNumber\":\"88888888\",\"mobileCountryCode\":\"91\",\"category\":\"mobile\"}],\"whatsapp\":null,\"addresses\":[],\"otherDetails\":[],\"emails\":[]},\"ffnPreferences\":null,\"personalDetails\":{\"anniversaryDate\":null,\"companyDesignation\":null,\"concatName\":null,\"countryOfResidence\":null,\"countryOfResidenceId\":null,\"countryPreference\":null,\"currency\":null,\"dateOfBirth\":null,\"department\":null,\"emergencyContactName\":null,\"emergencyContactNumber\":null,\"firstName\":\"HIiiiIII\",\"gender\":\"M\",\"homeAirport\":null,\"homeAirportId\":null,\"language\":\"tamil\",\"lastName\":\"HI\",\"middleName\":\"HI\",\"nickName\":\"Hhhhhhhh\",\"primaryEmail\":\"otpmobilenotest@flyin.com\",\"title\":\"MR\",\"createdAt\":\"2020-10-27T09:15:14\",\"updatedAt\":\"2020-10-27T09:15:14\"},\"preferences\":null,\"docDetails\":null,\"createdAt\":\"2020-10-27T09:15:14\",\"updatedAt\":\"2020-10-27T09:15:14\"}],\"companyDetails\":[{\"id\":5266152,\"companyName\":\"flyin\",\"domain\":\"www.flyin.com\",\"roles\":[{\"id\":1064,\"name\":\"USER\"}],\"status\":\"N\"}],\"depositAccounts\":[],\"gstDetails\":[],\"resources\":[],\"savedCards\":null,\"registrationDate\":\"2020-10-27T09:15:14\",\"lastUpdatedOn\":\"2020-10-27T09:15:14\"}";
 	String params_IdentityService_ChangePassword="";
 	String params_Account_Service_FLYIN_User_Update="{\"id\":65206329,\"username\":\"otpmobilenotestfinal@flyin.com\",\"profilePercentCompleted\":null,\"travellerDetails\":[{\"id\":179862,\"profileData\":null,\"contactInfo\":{\"phoneNumbers\":[{\"mobileNumber\":\"11111111111\",\"mobileCountryCode\":\"91\",\"category\":\"test\"}],\"whatsapp\":null,\"addresses\":[],\"otherDetails\":[],\"emails\":[]},\"ffnPreferences\":null,\"personalDetails\":{\"anniversaryDate\":null,\"companyDesignation\":null,\"concatName\":null,\"countryOfResidence\":null,\"countryOfResidenceId\":null,\"countryPreference\":null,\"currency\":null,\"dateOfBirth\":null,\"department\":null,\"emergencyContactName\":null,\"emergencyContactNumber\":null,\"firstName\":null,\"gender\":null,\"homeAirport\":null,\"homeAirportId\":null,\"language\":null,\"lastName\":null,\"middleName\":null,\"nickName\":null,\"primaryEmail\":\"otpmobilenotest@cleartrip.com\",\"title\":null,\"createdAt\":\"2020-10-27T09:15:14\",\"updatedAt\":\"2020-10-27T09:15:14\"},\"preferences\":null,\"docDetails\":null,\"createdAt\":\"2020-10-27T09:15:14\",\"updatedAt\":\"2020-10-27T09:15:14\"},{\"id\":179862,\"isRegistered\":false,\"profileData\":null,\"contactInfo\":{\"phoneNumbers\":[{\"mobileNumber\":\"88888888\",\"mobileCountryCode\":\"91\",\"category\":\"mobile\"}],\"whatsapp\":null,\"addresses\":[],\"otherDetails\":[],\"emails\":[]},\"ffnPreferences\":null,\"personalDetails\":{\"anniversaryDate\":null,\"companyDesignation\":null,\"concatName\":null,\"countryOfResidence\":null,\"countryOfResidenceId\":null,\"countryPreference\":null,\"currency\":null,\"dateOfBirth\":null,\"department\":null,\"emergencyContactName\":null,\"emergencyContactNumber\":null,\"firstName\":\"HIiiiIII\",\"gender\":\"M\",\"homeAirport\":null,\"homeAirportId\":null,\"language\":\"tamil\",\"lastName\":\"HI\",\"middleName\":\"HI\",\"nickName\":\"Hhhhhhhh\",\"primaryEmail\":\"otpmobilenotest@flyin.com\",\"title\":\"MR\",\"createdAt\":\"2020-10-27T09:15:14\",\"updatedAt\":\"2020-10-27T09:15:14\"},\"preferences\":null,\"docDetails\":null,\"createdAt\":\"2020-10-27T09:15:14\",\"updatedAt\":\"2020-10-27T09:15:14\"}],\"companyDetails\":[{\"id\":5266152,\"companyName\":\"flyin\",\"domain\":\"www.flyin.com\",\"roles\":[{\"id\":1064,\"name\":\"USER\"}],\"status\":\"N\"}],\"depositAccounts\":[],\"gstDetails\":[],\"resources\":[],\"savedCards\":null,\"registrationDate\":\"2020-10-27T09:15:14\",\"lastUpdatedOn\":\"2020-10-27T09:15:14\"}";
+	String params_Accounts_Service_Flyin_DOCdetails_update="{\"id\":65206329,\"username\":\"otpmobilenotestfinal@flyin.com\",\"profilePercentCompleted\":null,\"travellerDetails\":[{\"id\":179861,\"isRegistered\":true,\"profileData\":null,\"contactInfo\":{\"phoneNumbers\":[],\"whatsapp\":null,\"addresses\":[],\"otherDetails\":[],\"emails\":[]},\"ffnPreferences\":null,\"personalDetails\":{\"anniversaryDate\":null,\"companyDesignation\":null,\"concatName\":null,\"countryOfResidence\":null,\"countryOfResidenceId\":null,\"countryPreference\":null,\"currency\":null,\"dateOfBirth\":null,\"department\":null,\"emergencyContactName\":\"ME\",\"emergencyContactNumber\":null,\"firstName\":null,\"gender\":\"male\",\"homeAirport\":null,\"homeAirportId\":null,\"language\":null,\"lastName\":null,\"middleName\":null,\"nickName\":null,\"primaryEmail\":\"otpmobilenotest@cleartrip.com\",\"title\":null,\"createdAt\":\"2020-10-27T09:15:14\",\"updatedAt\":\"2020-10-27T09:15:14\"},\"preferences\":null,\"docDetails\":[{\"id\":23916,\"countryIssued\":\"india\",\"dateOfBirth\":\"1991-04-23T00:00:00\",\"docNumber\":\"22222222\",\"docType\":\"AUTOMATEDOC_REG\",\"expiryDate\":\"2028-02-29T00:00:00\",\"nationality\":\"india\"},{\"countryIssued\":\"india\",\"dateOfBirth\":\"1991-04-23T00:00:00\",\"docNumber\":\"222222\",\"docType\":\"TESTTEST\",\"expiryDate\":\"2028-02-29T00:00:00\",\"nationality\":\"india\"}],\"createdAt\":\"2020-10-27T09:15:14\",\"updatedAt\":\"2020-10-27T09:15:14\"},{\"id\":180256,\"isRegistered\":false,\"profileData\":null,\"contactInfo\":{\"phoneNumbers\":[{\"mobileNumber\":\"88888888\",\"mobileCountryCode\":\"91\",\"category\":\"mobile\"}],\"whatsapp\":null,\"addresses\":[],\"otherDetails\":[],\"emails\":[]},\"ffnPreferences\":null,\"personalDetails\":{\"anniversaryDate\":null,\"companyDesignation\":\"SOMETIME\",\"concatName\":\"TEST\",\"countryOfResidence\":null,\"countryOfResidenceId\":null,\"countryPreference\":null,\"currency\":null,\"dateOfBirth\":null,\"department\":null,\"emergencyContactName\":\"SOMETIME\",\"emergencyContactNumber\":null,\"firstName\":\"HIiiiIII\",\"gender\":\"M\",\"homeAirport\":null,\"homeAirportId\":null,\"language\":\"tamil\",\"lastName\":\"HI\",\"middleName\":\"HI\",\"nickName\":\"Hhhhhhhh\",\"primaryEmail\":\"otpmobilenotest@flyin.com\",\"title\":\"MR\",\"createdAt\":\"2020-10-27T09:15:14\",\"updatedAt\":\"2020-10-27T09:15:14\"},\"preferences\":null,\"docDetails\":[{\"id\":23895,\"countryIssued\":\"india\",\"dateOfBirth\":\"1991-04-23T00:00:00\",\"docNumber\":\"AAAAAA\",\"docType\":\"AUTOMATEDOC_NONREG\",\"expiryDate\":\"2028-02-29T00:00:00\",\"nationality\":\"india\"},{\"countryIssued\":\"india\",\"dateOfBirth\":\"1991-04-23T00:00:00\",\"docNumber\":\"AAAAAA\",\"docType\":\"TESTTEST\",\"expiryDate\":\"2028-02-29T00:00:00\",\"nationality\":\"india\"}],\"createdAt\":\"2020-10-27T09:15:14\",\"updatedAt\":\"2020-10-27T09:15:14\"}],\"companyDetails\":[{\"id\":5266152,\"companyName\":\"flyin\",\"domain\":\"www.flyin.com\",\"roles\":[{\"id\":1064,\"name\":\"USER\"}],\"status\":\"N\"}],\"depositAccounts\":[],\"gstDetails\":[],\"resources\":[],\"savedCards\":null,\"registrationDate\":\"2020-10-27T09:15:14\",\"lastUpdatedOn\":\"2020-10-27T09:15:14\"}";
+			
 	String params_Account_Service_Update_User_MobileNo_OTPValidaion="{\"id\":65205484,\"username\":\"otpmobilenotest@cleartrip.com\",\"profilePercentCompleted\":null,\"travellerDetails\":[{\"id\":65205484,\"isRegistered\":true,\"profileData\":null,\"contactInfo\":{\"phoneNumbers\":[{\"mobileNumber\":\"44444444\",\"mobileCountryCode\":\"91\",\"category\":\"mobile\"}],\"whatsapp\":null,\"addresses\":[],\"otherDetails\":[],\"emails\":[]},\"ffnPreferences\":null,\"personalDetails\":{\"anniversaryDate\":null,\"companyDesignation\":null,\"concatName\":null,\"countryOfResidence\":null,\"countryOfResidenceId\":null,\"countryPreference\":null,\"currency\":null,\"dateOfBirth\":null,\"department\":null,\"emergencyContactName\":null,\"emergencyContactNumber\":null,\"firstName\":null,\"gender\":null,\"homeAirport\":null,\"homeAirportId\":null,\"language\":null,\"lastName\":null,\"middleName\":null,\"nickName\":null,\"primaryEmail\":\"otpmobilenotest@cleartrip.com\",\"title\":null,\"createdAt\":\"2020-10-27T09:15:14\",\"updatedAt\":\"2020-10-27T09:15:14\"},\"preferences\":null,\"docDetails\":null,\"createdAt\":\"2020-10-27T09:15:14\",\"updatedAt\":\"2020-10-27T09:15:14\"}],\"companyDetails\":[{\"id\":110340,\"companyName\":\"cleartrip\",\"domain\":\"www.cleartrip.com\",\"roles\":[{\"id\":1064,\"name\":\"USER\"}],\"status\":\"N\"}],\"depositAccounts\":[],\"gstDetails\":[],\"resources\":[],\"savedCards\":null,\"registrationDate\":\"2020-10-27T09:15:14\",\"lastUpdatedOn\":\"2020-10-27T09:15:14\"}";
-	
+
 	String params_Account_Service_AppleSignin_uniqueId="{\"appleId\":\"1:a:2:b:35\",\"emailId\":\"123@privaterelay.appleid.com\",\"firstName\":\"abcd\",\"lastName\":\"sai\",\"title\":\"Mr.\"}";
 	String params_Account_Service_AppleSignin_Entity="{\"appleId\":\"1:a:2:b:3\",\"emailId\":\"sai@privaterelay.appleid.com\",\"firstName\":\"abcd\",\"lastName\":\"sai\",\"title\":\"Mr.\"}";
 	String params_Account_Service_AppleRegister_NullEmail="{\"appleId\":\"1:a:2:b:3:00\",\"emailId\":\"\",\"firstName\":\"abcd\",\"lastName\":\"sai\",\"title\":\"Mr.\"}";
@@ -278,7 +281,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		headers.put("AUTH_KEY", "7GHT#@D65yhgder4R");
 		return headers;
 	}
-	
+
 	public HashMap<String, Object> verifyaccount(){
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("Accept", "*/*");
@@ -293,7 +296,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		headers.put("Cookie", "ct-auth=xLkcxaKxpIdnhgUZcO%2BWiRjNDKCGySs%2F3qHQWLApkVidb3KV%2F49ubzf1Ekx1NtmzL1YjeWNmu3xY%2FpzUexWQN1w%2Fj5gAPNmv1vpKnDrAx3FoX9evvh5diDC4jtyRjOeZZJtx%2BJ31duZqrcZ2jUdJ6F4ai43jNI5aChVTEmGAfqQahvGkzHhRz5kPpCa%2F7j3utX4un4jpIzA3dx1i9UD1iDhmbaHDtVTELASCTE65iYNDav43rPHfhVjrxuJhRUe9V9J1s9EnvD%2BVObAzErSBUd%2BYomLdDuWrqqdRzGq7%2FdYA0m79Z5nuhvvWgXtLZpphBygb5DF%2BiBArg6EEGJYTRX%2BnhhaYeP8g0CEQkY6Tiy4JTEWCk4w4RPfV8FxcD5fiBiYwxcyF82ssHriGcBPoZbqcwrH37YPhmlmSgDptHRHSU4sbkK%2B1ntNdKiZtuD7S519sHoYJ20LxLarNevMhefLj6wy0K9HoNEZdzP3I6V6sfLCHbaSEDTDVfF6ZO2eL%2BY0HEOXDxFMm4qDR%2FfSwa6%2BHx%2F4do5V1cUolGYLe7LksliKRdHKdB04q2m8OnZXTH2Z4tsAXBZj47Mu0vEuTRiAH0Rp2vtFkuXiol%2Fc%2BBJD4qswYyk0D6GkqDc%2FryiGzrriKvMSxzl8ZjdP0xHKTJjDfE5MjfU2lez8Mc21eeVj4yG9Y5gNNb6MvOPOrwEDI%2FRkVukgyqFl7OJk6DNu3G%2FLNPaqxgHPoG%2Fb4MQRnyZVI9iJH8UXIBBVrkHxP0uq0KBIFqMINY881df17xzwxrP0wDfAjdIJWLC650cfnf3%2BZ8zInGGcv79tFePFr5UA0tMv7Ci9nlUUKOJuJ4P3asT%2F%2Fu6AA%2BWLog2uJ%2FY2YYqgP%2FV7P4M74%2FvZ8fgql9D8g8%2F%2F1HM9Q%2BhZwENf6sKaAU%2FkxX%2BEKCRjKf8O%2BTNUSfsuE8coUcku3YuzCaIBgM2P8Rb8sKLbSBDeyofU70uSSaMEckaUyLeYQbOVx%2F%2B7JUlOisjgFuy%2BxyJIPcX7Yv7eIVOKsnEkZCKNo2VdexAMFzV8jJWCkNJigozPGBBeEcF5L025fFK4zyLlxhOOqSrzgJ%2FV%2BKw55kneImPwOmjjTx8bKaKUlDohE7GDIWcILQ88d%2BXi7A5SMIuz2WcT5ii0Wf%2B8AovNHaAE6ks%2FCbb9HIDfkrt1RUQubPWxQct8F190iQxv9R6IFJ5ykwqipKSTD3By%2BM95FvKgObf5mq7KTh4b8T%2BeFMlESYJHyLIxZIZoHl9lVnkf7P1e8%2FtlB9wGg6ZHy9%2B0obMoFR67KLl5Gf2Fubx9%2Bu6Hxgn%2BXdJPeAfwgbb%2BQmBiXP12zCP6SuogJGXte7YQyF6Em8tznMbrROwtZON8HERSFujfxKGUlphAbOSefgP%2B7S8ROG3IPs9BT1n1utI2bh3BRC5ImSyZhXOG2sznZdCQ79pKhhufWoot4da2aQ5TFdB5HS5I82K%2BNFYkqRWdK4vmOr5j0J6GyQhEu5IsLcsngqwvuBRkhZ%2FI2BlzDhJYXPlwWKqeoicydwftbEFDnNHvr5PmogWHBoxfe612L%2FoZuaHewfiNVtslgbnGnbzo6cVZBOb0MxCSiNyccvTZ6ZeZ3IoYf5mwSBgL53KSTx%2BaaO3PBn83YSeM2dk11dlD76Dw%2Ffwp7gLIb%2F9H19TQBwMECqNmAPkW775ynG45GwhE3BA0pwhTRn%2BF4GSBlk6n2YHWpqXOktV2t3ZZwho5dU%2BaKzPeoMZcLm7nG2qmPwjWvfUgSBhOQRDOcCqRiT2EOGBgmpslREzWOrB3hyHpytZhU0J82K0I1WE%2BjcH8O%2FVdoj0Eb8tJ9rXfllmc8rC%2FXLy3f2oyrfnYDjCw0baLNpGuOehpaIsoMY5Rf5GiTwFvhXvAnYS%2B25eC0UR18ZscFbQ%2FM4rY6jOiEH0NyB%2B2zpVUqHxVKy8EA2q8%2BrZEfuQeptItz1QmCTCrG2zz535KwggZowoP32EtOqBWYhQip1WbhGbMQmAZql3Vy2xcsLuyKfwQVUtJ7iO6HxRDLIO7ZvTGTvHNX1ETbNEpyZpMgLwUjT3Qtd82ubZvhaDf0eBKLoRRS5JmntfEp5NxtVz6UwqLza%2B5jWfqwgqHy3G0T%2Fs2u0M7JwAT2wOh%2B34Xdyjuo9QT9eXMDGw3bKro5pSC2ES2LsRt06iOvAE7642f4Vz1Hu3%2BsavTJotWVhK57A3a1kzrO4fs6W1TZ164WNSXFwHHeNvILewT030Uc1nb9brw8XyF4qV3Bm%2FliftCqilrR7wJMKe%2B0bwL1b3dB19JZyR4PoUorfmRVlKTLRi36%2Fz06Maw86l5ulnZ%2FOYr0x68AzZPVKJIJgL%2FUR%2FFeMT6Z2FQgmkvN9o56uaDqljiH6EZf69ABfV0nq4kc9YcPGPRo5yJqnvzC9EySWebP15u3IQS2mOPTv%2B0EuLDC5z0TR%2FvMndyptkL3JYHxPCZ66Vd%2BVlVBbmE%2B1KNkwuStlsk8fQBPQcJVdWYRuJWwOzK%2Bgj3SRuWRkjCnDKKe8NqjkOHmdGzy1oyQ6RDiX8py1ChHoj4cjWr%2FDiVQVL7HHSTDtaEy7aJ1MyWDl56J5voX6gxsxpwT7eVQfFgWbHbKn8V%2FndnWpk6NfRBwwmzNNBnLHJgaDSiklpxQ%2B%2BOzrxb1Tox7Kq6%2FJBvLlwdghgUnsSVsjHrnbDXWQq4aEuOadeiUW2vyzpBPNOBmJmsFPmS8pOlAUMm1FILo%2B1a4hknTnPfj%2FoblSJLZSMRU95jBcoxcGvfJUFHGpmwaFOusXvBwUQItAVIqX%2B2smxWVqgEUizYO00bx2rlptTMEJwKb%2Bs4Kkul4g7WkvlpxSjq7IYISNrB1lR6oID5dw1I%3D");
 		return headers;
 	}
-	
+
 	public HashMap<String, Object> IdentityService_UpdatePassword_ForResetPasswordflow(){
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("Content-Type", "application/json");
@@ -369,8 +372,8 @@ public class AccountsCommon_API extends PlatformCommonUtil
 
 		return headers;
 	}
-	
-	
+
+
 	public HashMap<String, Object> headersFormpwaemail(){
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("Content-Type", "application/json");
@@ -380,7 +383,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 
 		return headers;
 	}
-	
+
 	public HashMap<String, Object> Account_Service_AuthorizeAPI_encodingCookie(){
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("AUTH_TYPE", "COOKIE");
@@ -460,13 +463,13 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		headers.put("x-ct-caller-app", "x-ct-caller-app: my-app-name");
 		return headers;
 	}
-	
+
 	public HashMap<String, Object> headersFormsendotpmobileno(){
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("auth_key", "7GHT#@D65yhgder4R");
 		headers.put("Content-Type", "application/json");
 		headers.put("referer", "qa2.cleartrip.com");
-		
+
 		return headers;
 	}
 
@@ -495,7 +498,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 
 		return headers;
 	}
-	
+
 	public HashMap<String, Object> headers_Formsapplesigninwrapperapi(){
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("Content-Type", "application/json");
@@ -540,7 +543,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("Referer", "qa2.cleartrip.com");
 		headers.put("Cookie", "ct-auth=xLkcxaKxpIdnhgUZcO%2BWiRjNDKCGySs%2F3qHQWLApkVidb3KV%2F49ubzf1Ekx1NtmzL1YjeWNmu3xY%2FpzUexWQN1w%2Fj5gAPNmv1vpKnDrAx3FoX9evvh5diDC4jtyRjOeZZJtx%2BJ31duZqrcZ2jUdJ6F4ai43jNI5aChVTEmGAfqQahvGkzHhRz5kPpCa%2F7j3utX4un4jpIzA3dx1i9UD1iDhmbaHDtVTELASCTE65iYNDav43rPHfhVjrxuJhRUe9V9J1s9EnvD%2BVObAzErSBUd%2BYomLdDuWrqqdRzGq7%2FdYA0m79Z5nuhvvWgXtLZpphBygb5DF%2BiBArg6EEGJYTRX%2BnhhaYeP8g0CEQkY6Tiy4JTEWCk4w4RPfV8FxcD5fiBiYwxcyF82ssHriGcBPoZbqcwrH37YPhmlmSgDptHRHSU4sbkK%2B1ntNdKiZtuD7S519sHoYJ20LxLarNevMhefLj6wy0K9HoNEZdzP3I6V6sfLCHbaSEDTDVfF6ZO2eL%2BY0HEOXDxFMm4qDR%2FfSwa6%2BHx%2F4do5V1cUolGYLe7LksliKRdHKdB04q2m8OnZXTH2Z4tsAXBZj47Mu0vEuTRiAH0Rp2vtFkuXiol%2Fc%2BBJD4qswYyk0D6GkqDc%2FryiGzrriKvMSxzl8ZjdP0xHKTJjDfE5MjfU2lez8Mc21eeVj4yG9Y5gNNb6MvOPOrwEDI%2FRkVukgyqFl7OJk6DNu3G%2FLNPaqxgHPoG%2Fb4MQRnyZVI9iJH8UXIBBVrkHxP0uq0KBIFqMINY881df17xzwxrP0wDfAjdIJWLC650cfnf3%2BZ8zInGGcv79tFePFr5UA0tMv7Ci9nlUUKOJuJ4P3asT%2F%2Fu6AA%2BWLog2uJ%2FY2YYqgP%2FV7P4M74%2FvZ8fgql9D8g8%2F%2F1HM9Q%2BhZwENf6sKaAU%2FkxX%2BEKCRjKf8O%2BTNUSfsuE8coUcku3YuzCaIBgM2P8Rb8sKLbSBDeyofU70uSSaMEckaUyLeYQbOVx%2F%2B7JUlOisjgFuy%2BxyJIPcX7Yv7eIVOKsnEkZCKNo2VdexAMFzV8jJWCkNJigozPGBBeEcF5L025fFK4zyLlxhOOqSrzgJ%2FV%2BKw55kneImPwOmjjTx8bKaKUlDohE7GDIWcILQ88d%2BXi7A5SMIuz2WcT5ii0Wf%2B8AovNHaAE6ks%2FCbb9HIDfkrt1RUQubPWxQct8F190iQxv9R6IFJ5ykwqipKSTD3By%2BM95FvKgObf5mq7KTh4b8T%2BeFMlESYJHyLIxZIZoHl9lVnkf7P1e8%2FtlB9wGg6ZHy9%2B0obMoFR67KLl5Gf2Fubx9%2Bu6Hxgn%2BXdJPeAfwgbb%2BQmBiXP12zCP6SuogJGXte7YQyF6Em8tznMbrROwtZON8HERSFujfxKGUlphAbOSefgP%2B7S8ROG3IPs9BT1n1utI2bh3BRC5ImSyZhXOG2sznZdCQ79pKhhufWoot4da2aQ5TFdB5HS5I82K%2BNFYkqRWdK4vmOr5j0J6GyQhEu5IsLcsngqwvuBRkhZ%2FI2BlzDhJYXPlwWKqeoicydwftbEFDnNHvr5PmogWHBoxfe612L%2FoZuaHewfiNVtslgbnGnbzo6cVZBOb0MxCSiNyccvTZ6ZeZ3IoYf5mwSBgL53KSTx%2BaaO3PBn83YSeM2dk11dlD76Dw%2Ffwp7gLIb%2F9H19TQBwMECqNmAPkW775ynG45GwhE3BA0pwhTRn%2BF4GSBlk6n2YHWpqXOktV2t3ZZwho5dU%2BaKzPeoMZcLm7nG2qmPwjWvfUgSBhOQRDOcCqRiT2EOGBgmpslREzWOrB3hyHpytZhU0J82K0I1WE%2BjcH8O%2FVdoj0Eb8tJ9rXfllmc8rC%2FXLy3f2oyrfnYDjCw0baLNpGuOehpaIsoMY5Rf5GiTwFvhXvAnYS%2B25eC0UR18ZscFbQ%2FM4rY6jOiEH0NyB%2B2zpVUqHxVKy8EA2q8%2BrZEfuQeptItz1QmCTCrG2zz535KwggZowoP32EtOqBWYhQip1WbhGbMQmAZql3Vy2xcsLuyKfwQVUtJ7iO6HxRDLIO7ZvTGTvHNX1ETbNEpyZpMgLwUjT3Qtd82ubZvhaDf0eBKLoRRS5JmntfEp5NxtVz6UwqLza%2B5jWfqwgqHy3G0T%2Fs2u0M7JwAT2wOh%2B34Xdyjuo9QT9eXMDGw3bKro5pSC2ES2LsRt06iOvAE7642f4Vz1Hu3%2BsavTJotWVhK57A3a1kzrO4fs6W1TZ164WNSXFwHHeNvILewT030Uc1nb9brw8XyF4qV3Bm%2FliftCqilrR7wJMKe%2B0bwL1b3dB19JZyR4PoUorfmRVlKTLRi36%2Fz06Maw86l5ulnZ%2FOYr0x68AzZPVKJIJgL%2FUR%2FFeMT6Z2FQgmkvN9o56uaDqljiH6EZf69ABfV0nq4kc9YcPGPRo5yJqnvzC9EySWebP15u3IQS2mOPTv%2B0EuLDC5z0TR%2FvMndyptkL3JYHxPCZ66Vd%2BVlVBbmE%2B1KNkwuStlsk8fQBPQcJVdWYRuJWwOzK%2Bgj3SRuWRkjCnDKKe8NqjkOHmdGzy1oyQ6RDiX8py1ChHoj4cjWr%2FDiVQVL7HHSTDtaEy7aJ1MyWDl56J5voX6gxsxpwT7eVQfFgWbHbKn8V%2FndnWpk6NfRBwwmzNNBnLHJgaDSiklpxQ%2B%2BOzrxb1Tox7Kq6%2FJBvLlwdghgUnsSVsjHrnbDXWQq4aEuOadeiUW2vyzpBPNOBmJmsFPmS8pOlAUMm1FILo%2B1a4hknTnPfj%2FoblSJLZSMRU95jBcoxcGvfJUFHGpmwaFOusXvBwUQItAVIqX%2B2smxWVqgEUizYO00bx2rlptTMEJwKb%2Bs4Kkul4g7WkvlpxSjq7IYISNrB1lR6oID5dw1I%3D");
-		
+
 		return headers;
 	}
 	public HashMap<String, Object> headersFormsupdateuser_otp(){
@@ -548,11 +551,11 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		headers.put("Content-Type", "application/json");
 		headers.put("AUTH_KEY", "7GHT#@D65yhgder4R");
 		headers.put("x-ct-caller-app", "mobile");
-		 headers.put("OTP", "022546");
+		headers.put("OTP", "022546");
 		return headers;
 	}
-	
-	
+
+
 	public HashMap<String, Object> headersFormspwasignin(){
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("Content-Type", "application/json");
@@ -844,7 +847,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			Reporter.log(url_Acct_Service+url);
 
 		}
-		
+
 		if(Type.equals("Account_Service_FlyinV2_Signin_FlyinUser")) {
 			headers = headersForms4();
 
@@ -854,8 +857,8 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			Reporter.log(url_Acct_Service+url);
 
 		}
-		
-		
+
+
 		if(Type.equals("flyinsigninV2_CleartripUser")) {
 			headers = headersForms_flyinsigninV2_CleartripUser();
 
@@ -928,7 +931,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			Reporter.log(url_Acct_Service+url);
 
 		}
-		
+
 		if(Type.equals("IdentityService_ChangePassword")) {
 			headers = headersFormschangepassword();
 
@@ -965,7 +968,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			Reporter.log(url_Acct_Service+url);
 
 		}
-		
+
 		if(Type.equals("Account_Service_FLYIN_User_Update")) {
 			headers = headersFormsupdateuser();
 
@@ -975,7 +978,16 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			Reporter.log(url_Acct_Service+url);
 
 		}
-		
+		if(Type.equals("Accounts_Service_Flyin_DOCdetails_update")) {
+			headers = headersFormsupdateuser();
+
+			RestAssured.baseURI =url_Acct_Service;
+			url = url_Account_Service_FLYIN_User_Update;					
+			params =params_Accounts_Service_Flyin_DOCdetails_update ;
+			Reporter.log(url_Acct_Service+url);
+
+		}
+
 		if(Type.equals("Account_Service_Update_User_MobileNo_OTPValidaion")) {
 			headers = headersFormsupdateuser_otp();
 
@@ -1312,9 +1324,9 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		if(Type.equals("AcctSanity")) {
 			url = url_acctSanity;
 		}
-		
-		
-		
+
+
+
 		else if(Type.equals("Account_Service_UserController_VerifyAccount"))
 		{
 			RestAssured.baseURI=url_Acct_Service;
@@ -1323,7 +1335,16 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			headers = verifyaccount();
 			Reporter.log(url_Acct_Service+url);
 		}
-		
+
+		else if(Type.equals("Accounts_Service_VerifynonLoggedinUser"))
+		{
+			RestAssured.baseURI=url_Acct_Service;
+			url = url_Accounts_Service_VerifynonLoggedinUser;
+			params= params_Account_Service_UserController_VerifyAccount;
+			headers = verifyaccount();
+			Reporter.log(url_Acct_Service+url);
+		}
+
 		else if(Type.equals("IdentityService_UpdatePassword_ForChangePasswordflow"))
 		{
 			RestAssured.baseURI=url_Identitymicro_service;
@@ -1332,7 +1353,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			headers = IdentityService_UpdatePassword_ForChangePasswordflow();
 			Reporter.log(url_Identitymicro_service+url);
 		}
-		
+
 		else if(Type.equals("IdentityService_UpdatePassword_ForResetPasswordflow"))
 		{
 			RestAssured.baseURI=url_Identitymicro_service;
@@ -1341,7 +1362,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			headers = IdentityService_UpdatePassword_ForResetPasswordflow();
 			Reporter.log(url_Identitymicro_service+url);
 		}
-		
+
 		Reporter.log("url  "+url);
 		request = RestAssured.given().						
 				when().
@@ -1614,7 +1635,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 
 			Reporter.log(url_Acct_Service+url);
 		}
-		
+
 		else if (Type.equals("Account_Service_Peoplecontroller_FindByID")){
 			RestAssured.baseURI=url_Acct_Service;
 			url = url_Account_Service_Peoplecontroller_FindByID;
@@ -1709,7 +1730,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		return request;
 	}
 
-	
+
 	public void validation_user_update_MobileOTP(Response resp, String Type, String Type2){
 		Reporter.log("Response body "+Type +" : "+ resp.body().asString());
 		//System.out.println("Response body "+Type +" : "+ resp.body().asString());
@@ -1758,7 +1779,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			}
 		}
 	}
-	
+
 	public void validation_user_update(Response resp, String Type, String Type2){
 		Reporter.log("Response body "+Type +" : "+ resp.body().asString());
 		//System.out.println("Response body "+Type +" : "+ resp.body().asString());
@@ -1781,6 +1802,18 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			if(!username.contains("otpmobilenotestfinal@flyin.com")) {
 				Assert.assertTrue(false);						
 			}
+		}
+		else if(Type.equalsIgnoreCase("Accounts_Service_Flyin_DOCdetails_update")) {
+
+
+			String ReponseStr = resp.body().asString();
+			if(!ReponseStr.contains("AUTOMATEDOC_REG")){
+				Assert.assertTrue(false);
+			}
+			if(!ReponseStr.contains("AUTOMATEDOC_NONREG")){
+				Assert.assertTrue(false);
+			}
+
 		}
 		if(Type.equalsIgnoreCase("Account_Service_ChangePassword")) {
 			String message = jsonPathEvaluator.getString("message");
@@ -1814,7 +1847,12 @@ public class AccountsCommon_API extends PlatformCommonUtil
 				Assert.assertTrue(false);						
 			}
 		}
-	}
+		else	if(Type.equalsIgnoreCase("Accounts_Service_VerifynonLoggedinUser")) {
+			String message = jsonPathEvaluator.getString("message");
+			if(!message.contains("otp verification failed -> not-found/expired/mismatch")) {
+				Assert.assertTrue(false);						
+			}
+		}	}
 
 
 	public void validation_Apple_signin(Response resp, String Type, String Type2){
@@ -1900,7 +1938,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			if(!status.contains("success")) {
 				Assert.assertTrue(false);						
 			}
-			
+
 		}
 
 		else if(Type.equalsIgnoreCase("Account_Service_AppleSignin")) {
@@ -2079,13 +2117,13 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		}
 		else if(Type.equalsIgnoreCase("Account_Service_UserController_VerifyAccount")) {
 			String status = jsonPathEvaluator.getString("status");
-			
+
 
 
 			if(!status.contains("SUCCESS")) {
 				Assert.assertTrue(false);						
 			}
-			
+
 
 
 		}
@@ -2155,14 +2193,14 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		else if(Type.equalsIgnoreCase("Account_Service_PWA_GetUserbyID")) {
 
 			String id = jsonPathEvaluator.getString("id");
-			
+
 			if(!id.contains("14029546")) {
 				Assert.assertTrue(false);						
 			}
-			
+
 
 		}
-		
+
 		else if(Type.equalsIgnoreCase("Account_Service_Peoplecontroller_FindByID")) {
 
 			String id = jsonPathEvaluator.getString("id");
@@ -2173,7 +2211,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			if(!username.contains("nakul@gmail.com")) {
 				Assert.assertTrue(false);						
 			}
-			
+
 
 		}
 		else if(Type.equalsIgnoreCase("Account_Service_AuthorizeAPI_encodingCookie")) {

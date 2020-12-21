@@ -2,6 +2,7 @@ package paymentsUI;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
@@ -64,12 +65,14 @@ public class PaymentsUI_NB extends PaymentNodeJS{
 			click(driver,PaymentUI_CommonUtilities.netBankingPaymentxpath);
 			convenienceText(driver,PaymentUI_CommonUtilities.convenienceTextxpath);
 			validateIfPresent(driver, PaymentUI_CommonUtilities.popularBanks);
-			selectItemFromList(driver,PaymentUI_CommonUtilities.nbDropDown,"Axis Bank");
+			selectItemFromList(driver,PaymentUI_CommonUtilities.nbDropDown,"ICICI Bank");
 			click(driver,PaymentUI_CommonUtilities.makePaymentbutton);
 			Thread.sleep(5000);
-			selectItemFromList(driver,PaymentUI_CommonUtilities.citiBankTransaction,"Y");
+		/*	selectItemFromList(driver,PaymentUI_CommonUtilities.citiBankTransaction,"Y");
 			elementVisible(driver, PaymentUI_CommonUtilities.nbCitiSubmit, 30);
-			click(driver,PaymentUI_CommonUtilities.nbCitiSubmit);
+			click(driver,PaymentUI_CommonUtilities.nbCitiSubmit);*/
+			textPresent(driver, "Welcome to Razorpay Bank", 20);
+			safeClick(driver, By.xpath("//button"));
 			Thread.sleep(5000);
 			payUI_Mock_ConfirmationPage(driver, Url);
 			/*

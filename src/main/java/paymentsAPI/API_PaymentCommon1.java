@@ -3299,7 +3299,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		}else if(Domain.equalsIgnoreCase("US")) {
 			qaurl=qaurlus;
 		}
-		
+		 
 		
 		Url = qaurl+ fetchPaymentURL(resp);
 		if(Domain.contains("FLYIN")) {
@@ -3321,7 +3321,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			Reporter.log("Oops, Something went wrong");
 			Assert.assertTrue(false);
 		}
-		
+		Reporter.log("URL : "+Url);
 		return Url;
 	}
 	

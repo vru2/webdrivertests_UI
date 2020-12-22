@@ -27,7 +27,7 @@ public class PaymentsUI_NB extends PaymentNodeJS{
 		qaUrl = qaurl;
 		Url = qaUrl+ fetchPaymentURL(resp);
 	}
-
+ 
 	
 
 	@Test(priority=1)
@@ -71,7 +71,8 @@ public class PaymentsUI_NB extends PaymentNodeJS{
 		/*	selectItemFromList(driver,PaymentUI_CommonUtilities.citiBankTransaction,"Y");
 			elementVisible(driver, PaymentUI_CommonUtilities.nbCitiSubmit, 30);
 			click(driver,PaymentUI_CommonUtilities.nbCitiSubmit);*/
-			textPresent(driver, "Welcome to Razorpay Bank", 20);
+			textPresent(driver, "Welcome to Razorpay", 20);
+			Thread.sleep(2000);
 			safeClick(driver, By.xpath("//button"));
 			Thread.sleep(5000);
 			payUI_Mock_ConfirmationPage(driver, Url);

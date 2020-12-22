@@ -19,7 +19,7 @@ import domains.PaymentNodeJS;
   @Test 
   public void paymentNodeJS_RazorPay() throws Exception {
 	   driver.manage().deleteAllCookies(); 
-	   if(!ProductionUrl) {
+	   if(!ProductionUrl) { 
 	       driver.get(baseUrl);	   
 		   paymentNodeJS_Select_Payment(driver, "NB", "ICICI Bank", "");
 		   paymentNodeJS_Make_Payment(driver, "NB", "ICICI Bank");

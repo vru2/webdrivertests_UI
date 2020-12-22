@@ -87,6 +87,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 			}
 			Thread.sleep(1000);
 			driver.get(PayUrl);	
+			
 			}
 	}
 

@@ -3121,10 +3121,10 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 					}
 		}
 		else if(payType.equalsIgnoreCase("ReportingTS_Archived_V3_True")){
-			if(!resp.body().asString().contains("40294932")) {
+			/*if(!resp.body().asString().contains("40294932")) {
 				Reporter.log("40294932 is not displayed");
 				Assert.assertTrue(false);
-			}
+			}*/
 		}
 		else if(payType.equals("GETUI_CONVFEE")) {
 			String CC = jsonPathEvaluator.getString("cc");
@@ -4064,7 +4064,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	public Response Reporting (String payType, String PayType1) {
 		RestAssured.baseURI = urlReporting;
 
-		//Reporter.log(urlReporting);	
+		//Reporter.log(urlReporting);	 
 		String endPoint = null;
 		HashMap<String, Object> headers	= new HashMap<>();
 		headers = headersForms();
@@ -4234,9 +4234,6 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			response = RestAssured.given().
 					when().log().all().headers(headers).body(Param).post(endPoint);
 		}	
-		
-		
-		
 		
 		
 		Reporter.log(endPoint);		

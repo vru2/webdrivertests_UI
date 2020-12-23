@@ -57,29 +57,30 @@ public class API_PromoService extends API_PaymentCommon1 {
 		Response resp = promoGet("PromoGroupsForACreatedAndUpdatedDate", "");
 		validation_PromoService("PromoGroupsForACreatedAndUpdatedDate", resp);
 	}
-	
-	@Test(priority=8)
-	public void createPromo() throws Exception{
-		Response resp = promoPost("CreatePromo","");
-		validation_PromoService("CreatePromo", resp);
-	}
-	
-	@Test(priority=10)
-	public void createPromoGroup() throws Exception{
-		Response resp = promoPost("CreatePromoGroup", "");
-		validation_PromoService("CreatePromoGroup", resp);
-	}
-	
+
 	@Test(priority=9,dependsOnMethods = { "createPromo" })
 	public void activatePromo() throws Exception{
 		Response resp = promoPost("ActivatePromo","");
 		validation_PromoService("ActivatePromo", resp);
 	}
 	
+	
+	@Test(priority=8)
+	public void createPromo() throws Exception{
+		Response resp = promoPost("CreatePromo","");
+		//validation_PromoService("CreatePromo", resp);
+	}
+	
+/*	@Test(priority=10)
+	public void createPromoGroup() throws Exception{
+		Response resp = promoPost("CreatePromoGroup", "");
+		validation_PromoService("CreatePromoGroup", resp);
+	}
+	
 	@Test(priority=11)
 	public void updatePromo() throws Exception{
 		Response resp = promoPost("UpdatePromo", "");
 		validation_PromoService("UpdatePromo", resp);
-	}
+	}*/
 
 }

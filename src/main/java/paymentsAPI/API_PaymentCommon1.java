@@ -587,7 +587,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	protected String qaurlus = "https://me.cleartrip.com";
 	protected String qaurlqa = "https://qa.cleartrip.com";
 	protected String URL_Android = "&isMobileApp=true&deviceType=android";
-	protected String URL_IOS = "&isMobileApp=true&deviceType=ios";
+	protected String URL_iOS = "&isMobileApp=true&deviceType=ios";
 	
 	List<Integer> payment_id = new ArrayList<Integer>();
 	List<String> trk_id = new ArrayList<String>();

@@ -89,9 +89,9 @@
 </test>
 
 <test name="API Promo service" preserve-order="true" parallel="true">
-    <classes><!-- 
+    <classes>
       <class name="paymentsAPI.API_PromoService"/> 
-      <class name="paymentsAPI.API_Promo_Activate"/> -->  
+    <!--   <class name="paymentsAPI.API_Promo_Activate"/> -->  
       <!-- <class name="paymentsAPI.API_Promo_Used"/>  -->
     </classes>
 </test>

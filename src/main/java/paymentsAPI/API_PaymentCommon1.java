@@ -728,6 +728,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		else if(payType.equalsIgnoreCase("FetchPayDetails")) {
 			RestAssured.baseURI =urlReportingTS;
 			url= url1_FetchPayDetails;
+			Reporter.log(urlReportingTS+url);		
 		}
 		else if(payType.equalsIgnoreCase("CreateRecord")) {
 			RestAssured.baseURI =urlPay;
@@ -958,15 +959,6 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 				post(url);
 		return request;			
 	}
-
-
-
-
-
-
-
-
-
 
 
 	public Response promoPost(String payType, String payType1) {
@@ -4234,9 +4226,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			response = RestAssured.given().
 					when().log().all().headers(headers).body(Param).post(endPoint);
 		}	
-		
-		
-		Reporter.log(endPoint);		
+			
+		Reporter.log(urlReporting+endPoint);		
 		return response;
 	}
 

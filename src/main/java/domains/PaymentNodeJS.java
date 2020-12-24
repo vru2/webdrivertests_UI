@@ -67,7 +67,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 	
 	
 	public void payUI_Mock_ConfirmationPage(RemoteWebDriver driver, String PayUrl) throws InterruptedException {
-		for (int i = 0; i <=10; i++) {
+		for (int i = 0; i <=10; i++) { 
 			String returnUrl  = getURL(driver);
 			if(returnUrl.contains("paymentservice/return")) {
 				Reporter.log("Refreshing PayUI page to check the Payment Status");
@@ -82,6 +82,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 				}
 			}else if(i!=10) {
 				driver.get(PayUrl);	
+				refreshPage(driver);
 				textPresent_Log(driver, "Payment successful", 10);
 				break;
 			}
@@ -429,7 +430,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 					Assert.assertTrue(false);
 				}
 				elementVisible(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Logo"), 30);
-				textPresent_Log(driver, "Welcome to Razorpay Bank", 1);
+				textPresent_Log(driver, "Welcome to Razorpay", 1);
 				safeClick(driver, getObjectPayment("PaymentPage_RazorPayCC_Page_Submit"));
 			}
 			else if (bankType.equalsIgnoreCase("TECHPROCESS")) {

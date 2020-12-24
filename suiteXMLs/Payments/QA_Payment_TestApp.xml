@@ -20,8 +20,8 @@
     <classes>
       <class name="paymentsUI.Payment_NodeJS_CC_PG_RazorPay"/>   
       <class name="paymentsUI.Payment_NodeJS_CC"/>
-      <class name="paymentsUI.Payment_NodeJS_CC_Default"/>
-      <class name="paymentsUI.Payment_NodeJS_DC"/>
+      <class name="paymentsUI.Payment_NodeJS_CC_Default"/><!-- 
+      <class name="paymentsUI.Payment_NodeJS_DC"/> -->
 <!--       <class name="paymentsUI.Payment_NodeJS_CC_PG_CheckOut"/>
       <class name="paymentsUI.Payment_NodeJS_CC_PG_PayFort_SA"/> -->
       <class name="paymentsUI.Payment_NodeJS_CC_PG_Amex"/>

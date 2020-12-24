@@ -76,6 +76,8 @@
 				name="accountsAPI.Account_Service_Partnercontroller_UpdateTraveller" />
 			<class name="accountsAPI.Account_Service_Partnercontroller_Usersearch" />
 			<class name="accountsAPI.Account_Service_FLYIN_User_Update" />
+			<class name="accountsAPI.Accounts_Service_DOCdetailsUpdate_cleartripuser" />
+			<class name="accountsAPI.Accounts_Service_FLyinUser_GSTdetailsUpdate" />
 			<class name="accountsAPI.Accounts_Service_Flyin_DOCdetails_update" />
 			<class
 				name="accountsAPI.Account_Service_Update_User_MobileNo_OTPValidaion" />
@@ -97,7 +99,7 @@
 			<class name="accountsAPI.Account_Service_EmailVerification_API" />
 			<class name="accountsAPI.Account_Service_AuthorizeAPI_encodingCookie" />
 			<class name="accountsAPI.Account_Service_Peoplecontroller_FindByID" />
-				<class name="accountsAPI.Accounts_Service_VerifynonLoggedinUser" />
+			<class name="accountsAPI.Accounts_Service_VerifynonLoggedinUser" />
 
 		</classes>
 	</test>

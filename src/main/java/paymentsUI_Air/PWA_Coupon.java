@@ -36,7 +36,7 @@ public class PWA_Coupon extends PaymentUI_Common{
 		safeClick(driver, getObjectPayment("PWA_NETBANKING_Page_NB_AJAX"));
 		Thread.sleep(2000);
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn2"));
-		Thread.sleep(5000);		
+		Thread.sleep(2000);		
 		Coupon_Invalid_Text = getText(driver, getObjectPayment("PWA_PaymentPage_Invalid_Coupon_Text"));
 		if(!Coupon_Invalid_Text.contains("Coupon code DOMOW is not applicable on the chosen payment method. Change payment mode/card details or book without coupon at")) {
 			Reporter.log("Coupon code DOMOW is not applicable on the chosen payment method. Change payment mode/card details or book without coupon at is displayed instead of "+ Coupon_Invalid_Text);
@@ -52,7 +52,7 @@ public class PWA_Coupon extends PaymentUI_Common{
 		
 		@Test(priority=2)
 		public void PWA_CouponValid() throws Exception {
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn2"));
 		Coupon_Invalid_Text = getText(driver, getObjectPayment("PWA_PaymentPage_Invalid_Coupon_Text"));
 		if(!Coupon_Invalid_Text.contains("Coupon code DOMOW is not applicable on the chosen payment method. Change payment mode/card details or book without coupon at")) {

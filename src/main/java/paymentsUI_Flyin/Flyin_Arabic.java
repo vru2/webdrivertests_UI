@@ -21,7 +21,7 @@ public class Flyin_Arabic extends PaymentUI_Common{
 	@Test(priority=1)
 	public void Validate_Text_CC() throws Exception {
 
-		String PayUrl = getPayUI("AirSAAR", "FLYIN");
+		String PayUrl = getPayUI("AirAR", "FLYIN");
 		driver.manage().deleteAllCookies(); 
 		
 		//driver.get(PayUrl);

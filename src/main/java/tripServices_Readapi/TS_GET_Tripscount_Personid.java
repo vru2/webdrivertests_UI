@@ -1,4 +1,4 @@
-package tripServices;
+package tripServices_Readapi;
 
 import static org.testng.Assert.assertTrue;
 
@@ -16,8 +16,7 @@ import io.restassured.response.ResponseBody;
 public class TS_GET_Tripscount_Personid extends TripserviceCommon {
 	@Test(groups={"Regression"})
 	public void getTripService() throws IOException{
-		String url=Service_Url("TRIPSERVICE_GETTRIPCOUNT_CALL");
-		System.out.println(url);
+		String url=tsendpoint+tripcount;
 		Reporter.log(url);
 		Response resp=RestAssured.get(url);
 		if(resp.statusCode()==200){

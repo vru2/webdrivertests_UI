@@ -15,7 +15,6 @@
 			<class name="tripServices.TS_LogBooking_Hotel" /> 
 			<class name="tripServices.TS_LogBooking_Local" />
 			<class name="tripServices.TS_LogBooking_Trains" />
-			<class name="tripServices.TS_LogBooking_FPH" />
 		</classes>
 	</test>
 	
@@ -25,7 +24,6 @@
 			<class name="tripServices.TS_UpdateBooking_Hotel" />
 			<class name="tripServices.TS_UpdateBooking_Local" />
 			<class name="tripServices.TS_UpdateBooking_Trains" />
-			<class name="tripServices.TS_UpdateBooking_FPH" />
 		    <class name="tripServices.TS_Update_Air_Module" />
 		    <class name="tripServices.TS_PUT_Trips" />
 		    <class name="tripServices.TS_POST_EmailByTxnId" />

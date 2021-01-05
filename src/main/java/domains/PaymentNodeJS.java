@@ -350,6 +350,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 			Reporter.log("PG Credentials : " + platform.value("SAFort_PGCred"));
 			elementVisible(driver, getObjectPayment("EnterPayment_Card_Exp_Month"), 10);
 			safeType(driver, getObjectPayment("EnterPayment_Card_Exp_Month"), "12");
+			safeType(driver, getObjectPayment("EnterPayment_Card_Exp_Year"), "2021");
 			Thread.sleep(1000);
 			safeClick(driver, getObjectPayment("EnterPayment_Card_PGCredential_Drop_Dwn"));
 			Thread.sleep(1000);

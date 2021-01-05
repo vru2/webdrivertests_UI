@@ -58,6 +58,13 @@ public class API_PromoService extends API_PaymentCommon1 {
 		validation_PromoService("PromoGroupsForACreatedAndUpdatedDate", resp);
 	}
 
+	@Test(priority=8)
+	public void createPromo() throws Exception{
+		Response resp = promoPost("CreatePromo","");
+		//validation_PromoService("CreatePromo", resp);
+	}
+	
+	
 	@Test(priority=9,dependsOnMethods = { "createPromo" })
 	public void activatePromo() throws Exception{
 		Response resp = promoPost("ActivatePromo","");
@@ -65,11 +72,6 @@ public class API_PromoService extends API_PaymentCommon1 {
 	}
 	
 	
-	@Test(priority=8)
-	public void createPromo() throws Exception{
-		Response resp = promoPost("CreatePromo","");
-		//validation_PromoService("CreatePromo", resp);
-	}
 	
 /*	@Test(priority=10)
 	public void createPromoGroup() throws Exception{

@@ -535,6 +535,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 			}
 		} else if (payType.equalsIgnoreCase("TPW")) {
 			safeClick(driver, getObjectPayment("MakePayment_Pay_Btn_Wallet"));
+			
 			if (bankType.equalsIgnoreCase("AmazonPay")) {
 
 			} else if (bankType.equalsIgnoreCase("Mobikwik")) {
@@ -547,7 +548,8 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 
 			} else if (bankType.equalsIgnoreCase("Paytm")) {
 				Thread.sleep(5000);
-				waitForElementVisibility(driver, By.xpath("//section/button"),20);
+				waitForElementVisibility(driver, By.xpath("//section/button"),30);
+				
 				/*elementVisible(driver, getObjectPayment("TW_PayTM_Proceed_Btn"), 20);				
 				elementPresent(driver, getObjectPayment("TW_PayTM_PhoneNo_Txt_Box"));*/
 				elementPresent_log(driver, By.xpath("//section/button"), "Paytm Pay Button", 5);

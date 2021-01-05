@@ -33,12 +33,12 @@ public class CC_IN_Amex extends PaymentUI_Common{
 
 
 */		
-		Actions action = new Actions(driver);
+		/*Actions action = new Actions(driver);
 	    action.sendKeys(Keys.F12);
 		
 	    Robot robot = new Robot();
 	    robot.keyPress(KeyEvent.VK_F12);
-	    robot.keyRelease(KeyEvent.VK_F12);
+	    robot.keyRelease(KeyEvent.VK_F12);*/
 		
 		driver.findElement(getObjectPayment("PaymentPage_CreditCard_Number")).sendKeys(Keys.F12);
 		payUI_Select_PaymentType(driver, "CC");

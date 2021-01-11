@@ -3,6 +3,9 @@
 
 package paymentsUI;
 
+import java.security.Timestamp;
+import java.util.Date;
+
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
@@ -18,7 +21,7 @@ import domains.PaymentNodeJS;
 	
   @Test 
   public void paymentNodeJS_Acty_B2C_CCAE() throws Exception {
-       driver.manage().deleteAllCookies(); 
+	   driver.manage().deleteAllCookies(); 
 	   driver.get(baseUrl);	   
 	   paymentNodeJS_Select_Payment(driver, "CURRENCY", "AED", "");
 	   paymentNodeJS_Select_Product(driver, "ACTIVITY", "");

@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Accounts Service JAVA API - BB " parallel="tests"
+	preserve-order="true" thread-count="5">
+
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="common.RemoveDuplicateResults" />
+		<listener class-name="common.RetryListener" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+	</listeners>
+
+	<test name="Flyin-Regression Cases" parallel="true">
+		<classes>
+
+			<class name="accountsAPI.Flyin_Regression_Partner_user_search" />
+			<class name="accountsAPI.Flyin_Regression_Partner_Social_signup" />
+			<class name="accountsAPI.Account_Service_Flyin_ForgotPassword" />
+			<class
+				name="accountsAPI.Account_Service_Travellercontroller_UpdateTraveller_FlyRegression" />
+
+		</classes>
+	</test>
+</suite>

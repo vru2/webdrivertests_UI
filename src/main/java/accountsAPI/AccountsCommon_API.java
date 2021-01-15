@@ -213,10 +213,13 @@ public class AccountsCommon_API extends PlatformCommonUtil
 
 	String params_flyinusersearch="{\"partner\":1,\"usernames\":[\"ok@cltp.com\",\"samsung@gmail.com\"],\"user_ids\":[65173245]}";
 	String params_flyinusersearchV2="{\"partner\":1,\"user_ids\":[\"65178369\", \"65178433\", \"65071986\", \"65175660\", \"65176954\", \"65178404\", \"65178384\", \"65178378\", \"65178394\", \"9077500094746\", \"1090200101187\", \"65175544\", \"65178364\", \"1003697\", \"1007777\", \"65178476\", \"65178402\", \"65072085\", \"65072566\", \"65178449\", \"1004939\", \"1007898\", \"65178352\", \"65178403\", \"65178452\", \"65178473\", \"65178405\", \"65178355\", \"65178370\"]}";
+	String params_flyinusersearchV2_regression="{\"source\":\"homepage\",\"partner\":1,\"usernames\":[\"hemakanta.sethi@cleartrip.com\"]}";
 	String params_partnercontroller_updatetraveller="{\"partnerId\":\"1008700094638\",\"action\":\"UPSERT\",\"partner\":1,\"data\":[{\"isReg\":true,\"profileData\":{\"personalData\":{\"title\":\"Mr\",\"firstName\":\"aaa\",\"middleName\":\"\",\"lastName\":\"bbb\",\"mobileNumber\":\"8792608054\",\"mobileAreaCode\":\"91\",\"contactEmailId\":\"hemakanta@flyin.com\",\"dateOfBirth\":\"2003-02-19T00:00:00\",\"address\":\"\",\"postalCode\":\"\",\"profilePic\":null,\"anniversaryDate\":\"\",\"emergencyContactNum\":\"_\",\"emergencyContactName\":\"Mr   \"}},\"docDetails\":[{\"docType\":3,\"docNumber\":\"LM123RTD\",\"expiryDate\":\"2026-03-03T00:00:00\",\"dateOfBirth\":\"2013-02-16T00:00:00\",\"nationality\":\"BS\",\"countryIssued\":\"\",\"issuedDate\":\"2018-03-04T00:00:00\"}]},{\"isReg\":true,\"profileData\":{\"personalData\":{\"title\":\"Mr\",\"firstName\":\"hi00\",\"middleName\":\"hi\",\"lastName\":\"hi\",\"mobileNumber\":\"1234567890\",\"mobileAreaCode\":\"91\",\"contactEmailId\":\"hemakanta@flyin.com\",\"dateOfBirth\":\"2003-02-19T00:00:00\",\"address\":\"\",\"postalCode\":\"\",\"profilePic\":null,\"anniversaryDate\":\"\",\"emergencyContactNum\":\"_\",\"emergencyContactName\":\"Mr   \"}},\"docDetails\":[{\"docType\":3,\"docNumber\":\"LM123RTD\",\"expiryDate\":\"2026-03-03T00:00:00\",\"dateOfBirth\":\"2013-02-16T00:00:00\",\"nationality\":\"BS\",\"countryIssued\":\"\",\"issuedDate\":\"2018-03-04T00:00:00\"}]}]}";
 	String params_travellercontroller_updatetraveller="{\"id\":65165611,\"action\":\"UPSERT\",\"partner\":1,\"data\":[{\"isReg\":true,\"profileData\":{\"personalData\":{\"title\":\"Mr\",\"firstName\":\"hemakanta\",\"middleName\":\"\",\"lastName\":\"sethi\",\"mobileNumber\":\"8792608054\",\"mobileAreaCode\":\"91\",\"contactEmailId\":\"hemakanta@flyin.com\",\"dateOfBirth\":\"2003-02-19T00:00:00\",\"address\":\"\",\"postalCode\":\"\",\"profilePic\":null,\"anniversaryDate\":\"\",\"emergencyContactNum\":\"_\",\"emergencyContactName\":\"Mr   \"}},\"docDetails\":[{\"docType\":2,\"docNumber\":\"q2423142\",\"expiryDate\":\"2026-03-03T00:00:00\",\"dateOfBirth\":\"2003-02-16T00:00:00\",\"nationality\":\"BS\",\"countryIssued\":\"\",\"issuedDate\":\"2018-03-04T00:00:00\"},{\"docType\":3,\"docNumber\":\"afsdf\",\"nationality\":\"BH\",\"countryIssued\":\"BH\"},{\"docType\":4,\"expiryDate\":\"\",\"nationality\":\"\",\"countryIssued\":\"SA\"}]}]}";
+	String params_Account_Service_Travellercontroller_UpdateTraveller_FlyRegression="{\"action\":\"UPSERT\",\"partner\":1,\"id\":\"65200972\",\"data\":[{\"id\":\"\",\"profileData\":{\"personalData\":{\"firstName\":\"test\",\"lastName\":\"user\",\"title\":\"Mr\",\"dateOfBirth\":\"2007-04-03T00:00:00\",\"mobileNumber\":\"453535353\",\"mobileAreaCode\":\"966\",\"contactEmailId\":\"yihinad483@temhuv.com\",\"address\":\"hyderabad\"}},\"docDetails\":[{\"docType\":\"3\",\"expiryDate\":\"2020-08-25T00:00:00\",\"nationality\":\"AE\",\"countryIssued\":\"AE\",\"id\":\"\",\"docNumber\":\"fgdfgdfgdf\",\"issuedDate\":\"2016-08-25T00:00:00\"}],\"isReg\":false}]}";
 	String params_flyinsocialsignup="{ \"username\" : \"ok@gmail.com\", \"partner\" : 1, \"title\" : \"Mr\", \"first_name\":\"test\", \"last_name\":\"Raj\", \"social_media_id\" : \"12345678\", \"social_media_type\":\"FaceBook\", \"key\":\"669947b54a191a94a50446db72924398f122d6ac58b349d0b163b1363b59d477\" }";
 	String params_flyinsocialsignupV2="{ \"username\" : \"samsung10@gmail.com\", \"partner\" : 1, \"title\" : \"Mr\", \"first_name\":\"test\", \"last_name\":\"Raj\", \"social_media_id\" : \"123456\", \"social_media_type\":\"FaceBook\", \"key\":\"b5fa7bdc919c5ccb3eec706c9c770bf3f1205e7e4ff60445369f79dd816d062e\" }";
+	String params_flyinsocialsignupV2_flyinregression="{\"username\":\"anilkumar9291@gmail.com\",\"source\":\"homepage\",\"partner\":1,\"first_name\":\"Anil\",\"last_name\":\" Kumar\",\"social_media_id\":\"10204548280861143\",\"social_media_type\":\"FaceBook\",\"key\":\"01b7b6001cacb343aa4a2ba283b3f24ec05710ffc5883420991641057331785d\"}";
 	String params_userprofile_externalAPI_Mobileapp="";
 	String params_IdentityService_UpdatePassword_ForChangePasswordflow="{\"emailId\":\"ns.likhitha@cleartrip.com\",\"oldPassword\":\"Cleartrip@1\",\"newPassword\":\"Cleartrip@2\",\"otp\":\"035175\"}";
 	String params_IdentityService_UpdatePassword_ForResetPasswordflow="{\"emailId\":\"ns.likhitha@cleartrip.com\",\"newPassword\":\"Cleartrip@8\",\"mailerKey\":\"aIWr1jRjfDPjXojg\"}";
@@ -1109,6 +1112,15 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			params =params_flyinusersearchV2 ;
 			Reporter.log(url_Acct_Service+url);
 		}
+		
+		if(Type.equals("flyinusersearchV2_Flyinregression")) {
+			headers = headersForms4();
+
+			RestAssured.baseURI =url_Acct_Service;
+			url = url_flyinusersearchV2;					
+			params =params_flyinusersearchV2_regression ;
+			Reporter.log(url_Acct_Service+url);
+		}
 
 		if(Type.equals("partnercontroller_updatetraveller")) {
 			headers = headersForms4();
@@ -1126,6 +1138,16 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			RestAssured.baseURI =url_Acct_Service;
 			url = url_travellercontroller_updatetraveller;					
 			params =params_travellercontroller_updatetraveller ;
+			Reporter.log(url_Acct_Service+url);
+		}
+		
+
+		if(Type.equals("Account_Service_Travellercontroller_UpdateTraveller_FlyRegression")) {
+			headers = headersFormsTCupdateTraveller();
+
+			RestAssured.baseURI =url_Acct_Service;
+			url = url_travellercontroller_updatetraveller;					
+			params =params_Account_Service_Travellercontroller_UpdateTraveller_FlyRegression ;
 			Reporter.log(url_Acct_Service+url);
 		}
 
@@ -1156,6 +1178,15 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			RestAssured.baseURI =url_Acct_Service;
 			url = url_flyinsocialsignupV2;					
 			params =params_flyinsocialsignupV2 ;
+			Reporter.log(url_Acct_Service+url);
+		}
+		
+		if(Type.equals("flyinsocialsignupV2_flyinregression")) {
+			headers = headersForms4();
+
+			RestAssured.baseURI =url_Acct_Service;
+			url = url_flyinsocialsignupV2;					
+			params =params_flyinsocialsignupV2_flyinregression ;
 			Reporter.log(url_Acct_Service+url);
 		}
 
@@ -2901,6 +2932,14 @@ public class AccountsCommon_API extends PlatformCommonUtil
 				Assert.assertTrue(false);
 			}
 		}
+		
+		else if(Type.equalsIgnoreCase("flyinusersearchV2_Flyinregression")) {
+
+			String ReponseStr = resp.body().asString();
+			if(!ReponseStr.contains("hemakanta.sethi@cleartrip.com")){
+				Assert.assertTrue(false);
+			}
+		}
 
 		else if(Type.equalsIgnoreCase("partnercontroller_updatetraveller")) {
 
@@ -2914,6 +2953,13 @@ public class AccountsCommon_API extends PlatformCommonUtil
 
 			String ReponseStr = resp.body().asString();
 			if(!ReponseStr.contains("hemakanta@flyin.com")){
+				Assert.assertTrue(false);
+			}
+		}
+		else if(Type.equalsIgnoreCase("Account_Service_Travellercontroller_UpdateTraveller_FlyRegression")) {
+
+			String ReponseStr = resp.body().asString();
+			if(!ReponseStr.contains("yihinad483@temhuv.com")){
 				Assert.assertTrue(false);
 			}
 		}
@@ -2939,6 +2985,13 @@ public class AccountsCommon_API extends PlatformCommonUtil
 
 			String ReponseStr = resp.body().asString();
 			if(!ReponseStr.contains("samsung10@gmail.com")){
+				Assert.assertTrue(false);
+			}
+		}
+		else if(Type.equalsIgnoreCase("flyinsocialsignupV2_flyinregression")) {
+
+			String ReponseStr = resp.body().asString();
+			if(!ReponseStr.contains("anilkumar9291@gmail.com")){
 				Assert.assertTrue(false);
 			}
 		}

@@ -124,6 +124,17 @@
 		</classes>
 
 	</test>
+	<test name="Flyin AND COMM -Regression Cases" parallel="true">
+		<classes>
+
+			<class name="accountsAPI.Flyin_Regression_Partner_user_search" />
+			<class name="accountsAPI.Flyin_Regression_Partner_Social_signup" />
+			<class name="accountsAPI.Account_Service_Flyin_ForgotPassword" />
+			<class
+				name="accountsAPI.Account_Service_Travellercontroller_UpdateTraveller_FlyRegression" />
+
+		</classes>
+	</test>
 
 	<!-- <test name="Account_Service_FlyinV2_Signin" parallel="true"> <classes> 
 		<class name="accountsAPI.Account_Service_FlyinV2_Signin" /> </classes> </test> 

@@ -44,10 +44,10 @@ public class API_storeCard extends API_PaymentCommon1
 		{
 			if((cardnumber.get(i).toString()).equalsIgnoreCase("340000XXXXXX009"))
 			{
-				System.out.println("Deletcard");
+				//System.out.println("Deletcard");
 				cardid = cardids.get(i).toString();
 				resp = walletEndPoints("wallet_deleteCards",cardid);	
-				validation("wallet_deleteCards", resp);
+				//validation("wallet_deleteCards", resp);
 			}
 			
 		}

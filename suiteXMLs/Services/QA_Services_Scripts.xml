@@ -15,6 +15,11 @@
 		 <suite-files>
 				<suite-file path="QA_Tripservices_API.xml"></suite-file>
 		</suite-files>
+		
+		 <suite-files>
+				<suite-file path="QA_Tripservices_ReadAPI.xml"></suite-file>
+		</suite-files> 
+		
 		<!-- <suite-files>
 				<suite-file path="QA_CT_Admin_CT_CONFIG_UI.xml"></suite-file>
 		</suite-files>  -->

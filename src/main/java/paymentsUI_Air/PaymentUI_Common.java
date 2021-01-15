@@ -318,7 +318,7 @@ public class PaymentUI_Common extends PaymentNodeJS{
 		safeType(driver, getObjectPayment("PaymentPage_ADCB_CardName"), "test");
 		safeType(driver, getObjectPayment("PaymentPage_ADCB_CVV"), platform.value("ADCBCard_CVV"));
 		String CheckBalance = getText(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
-		Assert.assertEquals(CheckBalance, "Check touchPoint balance");		
+		Assert.assertEquals(CheckBalance, "Check TouchPoint balance");		
 		safeClick(driver, getObjectPayment("PaymentPage_ADCB_CheckBlance_Btn"));		
 		Reporter.log("Check balance is Clicked");
 		if(textPresent(driver, "You have provided incorrect card details", 10)) {
@@ -332,7 +332,7 @@ public class PaymentUI_Common extends PaymentNodeJS{
 		elementVisible(driver, getObjectPayment("PaymentPage_ADCB_Redeem_Amount_TextBox"), 10);
 		textPresent_Log(driver, "A minimum amount of AED", 1);
 		textPresent_Log(driver, "Available balance", 1);
-		textPresent_Log(driver, "Balance touchPoints", 1);
+		textPresent_Log(driver, "Balance TouchPoints", 1);
 		textPresent_Log(driver, "Amount to redeem", 1);
 		textPresent_Log(driver, "A minimum amount of AED", 1);
 		textPresent_Log(driver, "50 must be redeemed", 1);		 
@@ -652,7 +652,7 @@ public class PaymentUI_Common extends PaymentNodeJS{
 
 		elementVisible(driver, getObjectPayment("PWA_PaymentPage_ADCB_CheckBalance_Button"),5);
 //		textPresent_Log(driver, "ADCB TOUCHPOINTS", 5); 
-		textPresent_Log(driver, "Check touchPoint balance", 1);
+		textPresent_Log(driver, "Check TouchPoint balance", 1);
 				
 		if(BankName.contains("ADCBFULL")||BankName.contains("ADCBPARTIAL")) {
 

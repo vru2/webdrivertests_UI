@@ -18,6 +18,7 @@ public class Coupon extends PaymentUI_Common{
 		String PayUrl = getPayUI("AirCoupon", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		refreshPage(driver);
 		payUI_Select_PaymentType(driver, "CC");
 		textPresent_Log(driver, "Coupon code (DOMOW)", 5);
 		payUI_Enter_PaymentDetails(driver, "CC", "MASTER","");

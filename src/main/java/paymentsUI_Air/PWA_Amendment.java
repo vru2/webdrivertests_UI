@@ -21,6 +21,7 @@ public class PWA_Amendment extends PaymentUI_Common{
 		String PayUrl = getPayUI("AirAmend", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		refreshPage(driver);
 		elementPresent(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_Icon"));
 		safeClick(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_Icon"));
 		elementPresent(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_closeIcon"));

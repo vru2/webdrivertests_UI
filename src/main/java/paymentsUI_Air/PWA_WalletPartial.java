@@ -21,6 +21,7 @@ public class PWA_WalletPartial extends PaymentUI_Common{
 		resp  = addWalletAmt(resp, "ct_wallet_partial@cleartrip.com", 10, "INR");
 		String PayUrl = getPayUI("Air", "");
 		driver.get(PayUrl);
+		refreshPage(driver);
 		driver.manage().addCookie(cookie_Parl_Wallet);
 		refreshPage(driver);
 

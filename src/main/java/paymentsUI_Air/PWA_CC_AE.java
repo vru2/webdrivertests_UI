@@ -18,6 +18,7 @@ public class PWA_CC_AE extends PaymentUI_Common{
 		String PayUrl = getPayUI("AirAE", "AE");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		refreshPage(driver);
 		textNotPresent_List(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), "NET BANKING");	
 		validate_Currency_PWA(driver, "AE", "AED");
 		payUI_Select_PaymentType_PWA(driver, "DEBIT/CREDIT CARDS");

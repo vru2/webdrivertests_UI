@@ -22,6 +22,7 @@ public class PWA_Validation_iOS extends PaymentUI_Common{
 		PayUrl = PayUrl+URL_iOS;
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		refreshPage(driver);
 		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 20);
 		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 5);
 		safeClickList(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), "NET BANKING");

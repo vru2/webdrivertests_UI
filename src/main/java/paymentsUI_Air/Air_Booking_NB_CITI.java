@@ -20,6 +20,7 @@ public class Air_Booking_NB_CITI extends PaymentUI_Common{
 		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(AirUrl);
+		refreshPage(driver);
 		String  handle= driver.getWindowHandle();
 		elementPresent_Time(driver, By.xpath("//div[4]/button"),30);
 		textPresent(driver, "Get fare updates via email", 10);

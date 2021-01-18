@@ -20,6 +20,7 @@ public class Validate_MultiCity extends PaymentUI_Common{
 		String PayUrl = getPayUI("AirMC", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		refreshPage(driver);
 		Assert.assertTrue(false);
 	}
 

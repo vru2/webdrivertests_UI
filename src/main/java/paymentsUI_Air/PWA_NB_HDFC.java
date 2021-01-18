@@ -23,19 +23,10 @@ public class PWA_NB_HDFC extends PaymentUI_Common{
 		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
-		
-		Thread.sleep(5000);
-		
-		
-		
+
+		refreshPage(driver);
 		
 		payUI_Select_PaymentType_PWA(driver, "NET BANKING");
-		Thread.sleep(5000);
-		
-		
-		
-		
-		
 		
 		//safeClick(driver, getObjectPayment("PWA_PaymentPage_NB_Tab"));
 		payUI_Enter_PaymentDetails_PWA(driver, "NET BANKING", "HDFC BANK");

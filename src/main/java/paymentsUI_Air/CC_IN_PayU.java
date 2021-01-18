@@ -18,6 +18,7 @@ public class CC_IN_PayU extends PaymentUI_Common{
 		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		refreshPage(driver);
 		payUI_Select_PaymentType(driver, "CC");
 		payUI_Enter_PaymentDetails(driver, "CC", "MASTER","");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);

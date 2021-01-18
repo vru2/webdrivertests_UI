@@ -21,6 +21,7 @@ public class PWA_IN_RT extends PaymentUI_Common{
 		String PayUrl = getPayUI("AirRT", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		refreshPage(driver);
 		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Itineray"),10);
 		String ItineraryDetails_TripText = getText(driver, getObjectPayment("PWA_PaymentPage_Itineray_YourTrip_text"));
 		Assert.assertEquals(ItineraryDetails_TripText, "Your trip details");

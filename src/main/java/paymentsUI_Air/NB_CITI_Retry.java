@@ -19,6 +19,7 @@ public class NB_CITI_Retry extends PaymentUI_Common{
 		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);	   
+		refreshPage(driver);
 		payUI_Select_PaymentType(driver, "NB");
 		payUI_Enter_PaymentDetails(driver, "NB", "CAPTCHA","" );
 		//textPresent_Log(driver, "Oops! Your payment failed", 20);		

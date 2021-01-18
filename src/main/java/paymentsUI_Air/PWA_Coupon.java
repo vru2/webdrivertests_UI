@@ -22,6 +22,7 @@ public class PWA_Coupon extends PaymentUI_Common{
 		String PayUrl = getPayUI("AirCoupon", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		refreshPage(driver);
 		safeClick(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_Icon"));
 		elementPresent(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_closeIcon"));
 		textPresent_Log(driver, "Coupon code (DOMOW)", 5);

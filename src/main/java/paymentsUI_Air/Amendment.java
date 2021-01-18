@@ -20,6 +20,7 @@ public class Amendment extends PaymentUI_Common{
 		String PayUrl = getPayUI("AirAmend", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		refreshPage(driver);
 		if(textPresent(driver, "Includes a convenience fee of", 1)){
 			Reporter.log("convenience fee text is displayed");
 			Assert.assertTrue(false);

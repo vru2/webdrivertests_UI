@@ -20,6 +20,7 @@ public class Coupon_Type_Wallet extends PaymentUI_Common{
 		String PayUrl = getPayUI("AirCouponWT", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		refreshPage(driver);
 		payUI_Select_PaymentType(driver, "CC");
 		if(textPresent(driver, "Coupon code (DOMOW)", 5)) {
 			Reporter.log("Wallet coupon details are shown");

@@ -22,6 +22,7 @@ public class StoredCard extends PaymentUI_Common{
 		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		refreshPage(driver);
 		driver.manage().addCookie(cookie_Parl_Wallet);
 		refreshPage(driver);
 		String storedCard = getText(driver, By.xpath("//ul[@id='paymentModeTab']/li/div/p"));

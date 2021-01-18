@@ -18,6 +18,7 @@ public class PhonePE extends PaymentUI_Common{
 		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		refreshPage(driver);
 		payUI_Select_PaymentType(driver, "UPI");
 		textPresent(driver, "Select UPI partner to make your payment", 5);
 		payUI_Enter_PaymentDetails(driver, "UPI", "PhonePE","");

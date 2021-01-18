@@ -18,7 +18,8 @@ public class PWA_GV_NB extends PaymentUI_Common{
 	public void PWA_GVPartial() throws Exception {
 		String PayUrl = getPayUI("AirGV", "");
 		driver.manage().deleteAllCookies(); 
-		driver.get(PayUrl);				
+		driver.get(PayUrl);		
+		refreshPage(driver);		
 		elementPresent(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_Icon"));
 		safeClick(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_Icon"));
 		elementPresent(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_closeIcon"));

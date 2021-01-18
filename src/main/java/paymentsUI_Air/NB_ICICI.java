@@ -18,6 +18,7 @@ public class NB_ICICI extends PaymentUI_Common{
 		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);	   
+		refreshPage(driver);
 		payUI_Select_PaymentType(driver, "NB");
 		payUI_Enter_PaymentDetails(driver, "NB", "ICICI Bank","");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);

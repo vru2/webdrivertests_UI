@@ -18,6 +18,7 @@ public class PWA_AmazonPay extends PaymentUI_Common{
 		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		refreshPage(driver);
 		payUI_Select_PaymentType_PWA(driver, "TW");
 		
 		payUI_Enter_PaymentDetails_PWA(driver, "TW", "AmazonPay");

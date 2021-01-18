@@ -18,6 +18,7 @@ public class CC_BH extends PaymentUI_Common{
 		String PayUrl = getPayUI("AirBH", "BH");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		refreshPage(driver);
 		payUI_Select_PaymentType(driver, "CC");
 		validate_Currency(driver, "", "BHD");
 		payUI_Enter_PaymentDetails(driver, "CC", "MASTER","");

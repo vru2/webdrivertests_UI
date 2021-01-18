@@ -18,6 +18,7 @@ public class PWA_NB_CITI_Retry extends PaymentUI_Common{
 		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		refreshPage(driver);
 		payUI_Select_PaymentType_PWA(driver, "NET BANKING");
 		payUI_Enter_PaymentDetails_PWA(driver, "NET BANKING", "CAPTCHA");		
 		//payUI_Error_Validation_PWA(driver, getObjectPayment("PWA_Error_ValidCard"), getObjectPayment("PWA_Error_PopUp_Screen"), "Oops! Your payment failed.");

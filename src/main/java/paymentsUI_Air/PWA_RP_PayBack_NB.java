@@ -21,6 +21,7 @@ public class PWA_RP_PayBack_NB extends PaymentUI_Common{
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);	 		
 
+		refreshPage(driver);
 		elementPresent(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_Icon"));
 		safeClick(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_Icon"));
 		elementPresent(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_closeIcon"));

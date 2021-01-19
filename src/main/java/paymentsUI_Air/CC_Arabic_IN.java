@@ -21,6 +21,7 @@ public class CC_Arabic_IN extends PaymentUI_Common{
 		String PayUrl = getPayUI("AirAEAR", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		refreshPage(driver);
 		String Arabic= getText(driver, By.cssSelector("p.payment-container-header"));
 		
 		if(textPresent(driver, "Enter your credit card details.", 2)) {

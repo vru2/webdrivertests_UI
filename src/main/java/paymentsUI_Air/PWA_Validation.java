@@ -21,6 +21,7 @@ public class PWA_Validation extends PaymentUI_Common{
 		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		refreshPage(driver);
 
 		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 20);
 		//textPresent_Log(driver, "Select payment option", 1);

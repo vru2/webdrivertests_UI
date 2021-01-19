@@ -20,6 +20,7 @@ public class PWA_Arabic extends PaymentUI_Common{
 		String PayUrl = getPayUI("AirAEAR", "AE");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		refreshPage(driver);
 		elementPresent_log(driver, getObjectPayment("PayUI_Make_Payment_Btn"), "MakePayment Button", 5);
 		if(textPresent(driver, "DEBIT/CREDIT CARDS", 1)) {
 			Reporter.log("DEBIT/CREDIT CARDS : text is displayed in English");

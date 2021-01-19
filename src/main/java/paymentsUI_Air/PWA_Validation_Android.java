@@ -22,6 +22,7 @@ public class PWA_Validation_Android extends PaymentUI_Common{
 		PayUrl = PayUrl+URL_Android;
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		refreshPage(driver);
 		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 20);
 		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 5);
 		safeClickList(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), "NET BANKING");

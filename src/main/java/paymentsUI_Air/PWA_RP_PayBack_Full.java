@@ -19,7 +19,8 @@ public class PWA_RP_PayBack_Full extends PaymentUI_Common{
 	public void PaybackFull() throws Exception {
 		String PayUrl = getPayUI("AirRPFull", "");
 		driver.manage().deleteAllCookies(); 
-		driver.get(PayUrl);	 		
+		driver.get(PayUrl);	 	
+		refreshPage(driver);	
 
 		elementPresent(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_Icon"));
 		safeClick(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_Icon"));

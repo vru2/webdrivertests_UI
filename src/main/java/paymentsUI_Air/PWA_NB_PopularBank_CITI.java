@@ -18,6 +18,7 @@ public class PWA_NB_PopularBank_CITI extends PaymentUI_Common{
 		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		refreshPage(driver);
 		payUI_Select_PaymentType_PWA(driver, "NET BANKING");
 		payUI_Enter_PaymentDetails_PWA(driver, "NET BANKING", "AxisbankPopular");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);

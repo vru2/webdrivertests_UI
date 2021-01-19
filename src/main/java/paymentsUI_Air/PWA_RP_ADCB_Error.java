@@ -18,6 +18,7 @@ public class PWA_RP_ADCB_Error extends PaymentUI_Common{
 		String PayUrl = getPayUI("AirAE", "AE");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		refreshPage(driver);
 		payUI_Select_PaymentType_PWA(driver, "ADCB");
 		payUI_Enter_PaymentDetails_PWA(driver, "ADCB", "ADCBERROR");		
 	}

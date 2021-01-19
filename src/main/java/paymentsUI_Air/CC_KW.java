@@ -20,6 +20,7 @@ public class CC_KW extends PaymentUI_Common{
 		String PayUrl = getPayUI("AirKW", "KW");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl); 
+		refreshPage(driver);
 		textNotPresent_List( driver, getObjectPayment("PayUI_Pay_Tabs"), "Net banking");
 		payUI_Select_PaymentType(driver, "CC");
 		String Total_Price = getText(driver, getObjectPayment("PayUI_Total_Pay_Value"));

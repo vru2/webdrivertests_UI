@@ -20,6 +20,7 @@ public class PWA_Qitaf_KW extends PaymentUI_Common{
 		String PayUrl = getPayUI("AirKW", "KW");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);		
+		refreshPage(driver);
 		elementPresent_log(driver, getObjectPayment("PWA_Qitaf_PaymentPage_Redeem_Btn"), "Redeem Buton", 5);
 		elementPresent_log(driver, getObjectPayment("PWA_Qitaf_PaymentPage_Text"), "Qitaf text & image", 5);
 		safeClick(driver, getObjectPayment("PWA_Qitaf_PaymentPage_Redeem_Btn"));

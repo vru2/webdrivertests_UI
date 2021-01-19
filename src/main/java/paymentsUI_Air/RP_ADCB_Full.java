@@ -18,6 +18,7 @@ public class RP_ADCB_Full extends PaymentUI_Common{
 		String PayUrl = getPayUI("AirAE", "AE");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		refreshPage(driver);
 		textNotPresent_List(driver, getObjectPayment("PayUI_Pay_Tabs"), "Net banking");
 		payUI_Select_PaymentType(driver, "ADCB");
 		textPresent_Log(driver, "Enter your ADCB card details", 5);		

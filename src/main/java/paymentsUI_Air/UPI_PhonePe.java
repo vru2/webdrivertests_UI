@@ -18,6 +18,7 @@ public class UPI_PhonePe extends PaymentUI_Common{
 		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		refreshPage(driver);
 		payUI_Select_PaymentType(driver, "UPI");
 		safeClick(driver, getObjectPayment("PayUI_UPI_Radio_Btn"));
 		/*

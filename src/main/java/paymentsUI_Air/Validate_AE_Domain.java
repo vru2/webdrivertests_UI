@@ -21,6 +21,7 @@ public class Validate_AE_Domain extends PaymentUI_Common{
 		String PayUrl = getPayUI("AirAE", "AE");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		refreshPage(driver);
 		payUI_Select_PaymentType(driver, "CC");
 		String totalPay_LeftColumn=getText(driver, getObjectPayment("PayUI_Total_Pay_Value_RightColumn"));
 		String totalPay=getText(driver, getObjectPayment("PayUI_Total_Pay_Value"));

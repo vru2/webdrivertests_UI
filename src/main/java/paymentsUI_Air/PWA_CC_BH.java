@@ -18,6 +18,7 @@ public class PWA_CC_BH extends PaymentUI_Common{
 		String PayUrl = getPayUI("AirBH", "BH");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		refreshPage(driver);
 		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 20);
 		validate_Currency_PWA(driver, "BH", "BHD");
 		textNotPresent_List(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), "NET BANKING");	

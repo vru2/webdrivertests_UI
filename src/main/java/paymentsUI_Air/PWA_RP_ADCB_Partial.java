@@ -18,6 +18,7 @@ public class PWA_RP_ADCB_Partial extends PaymentUI_Common{
 		String PayUrl = getPayUI("AirAE", "AE");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		refreshPage(driver);
 		//textPresent_Log(driver, "NET BANKING", 5);
 		//textNotPresent_List(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), "NET BANKING");	
 		validate_Currency_PWA(driver, "AE", "AED");

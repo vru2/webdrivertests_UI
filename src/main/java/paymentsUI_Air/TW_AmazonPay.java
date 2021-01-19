@@ -18,6 +18,7 @@ public class TW_AmazonPay extends PaymentUI_Common{
 		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		refreshPage(driver);
 		payUI_Select_PaymentType(driver, "TW");
 		safeClick(driver, getObjectPayment("PaymentPage_Wallet_AmazonPay"));
 		

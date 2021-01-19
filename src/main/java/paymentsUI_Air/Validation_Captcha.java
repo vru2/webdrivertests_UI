@@ -19,6 +19,7 @@ public class Validation_Captcha extends PaymentUI_Common{
 		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		refreshPage(driver);
 		elementVisible(driver, getObjectPayment("PayUI_Pay_Tabs"), 10);
 		for (int i = 0; i <=4; i++) {
 		if(i==1) {

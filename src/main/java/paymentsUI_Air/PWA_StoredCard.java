@@ -21,6 +21,7 @@ public class PWA_StoredCard extends PaymentUI_Common{
 		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		refreshPage(driver);
 		if(elementPresent_Time(driver, By.cssSelector("div.pwa-save-card > div.pwa-radio-toggle.pwa-radio-toggle__on > label.pwa-radio-toggle--btn"), 2)){
 			Reporter.log("Save Card option is displayed for unsigned user");
 			Assert.assertTrue(false);

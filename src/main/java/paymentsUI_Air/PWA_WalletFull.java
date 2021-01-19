@@ -20,6 +20,7 @@ public class PWA_WalletFull extends PaymentUI_Common{
 	public void PWA_WalletFull() throws Exception {
 		String PayUrl = getPayUI("Air", "");
 		driver.get(PayUrl);
+		refreshPage(driver);
 		driver.manage().addCookie(cookie_Full_Wallet);
 		refreshPage(driver);
 		elementVisible(driver, getObjectPayment("PWA_PaymentPage_TotalPriceGV"), 10);

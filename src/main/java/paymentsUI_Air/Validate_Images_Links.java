@@ -21,6 +21,7 @@ public class Validate_Images_Links extends PaymentUI_Common{
 		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		refreshPage(driver);
 		elementPresent_log(driver, getObjectPayment("PayUI_Cleartrip_Logo"), "Cleartrip LOGO", 5);
 		payUI_Select_PaymentType(driver, "CC");
 

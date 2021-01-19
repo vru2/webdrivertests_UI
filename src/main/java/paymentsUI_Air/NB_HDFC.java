@@ -17,7 +17,8 @@ public class NB_HDFC extends PaymentUI_Common{
 	public void NB_hdfc_Pay() throws Exception {
 		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
-		driver.get(PayUrl);	   
+		driver.get(PayUrl);	 
+		refreshPage(driver);  
 		payUI_Select_PaymentType(driver, "NB");
 		payUI_Enter_PaymentDetails(driver, "NB", "HDFC Bank","");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);

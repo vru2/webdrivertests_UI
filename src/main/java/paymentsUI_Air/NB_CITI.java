@@ -18,6 +18,7 @@ public class NB_CITI extends PaymentUI_Common{
 		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);	   
+		refreshPage(driver);
 		payUI_Select_PaymentType(driver, "NB");
 		//validate_Currency(driver, "", "INR");
 		payUI_Enter_PaymentDetails(driver, "NB", "Axis Bank","");

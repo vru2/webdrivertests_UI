@@ -17,7 +17,8 @@ public class RP_PayBack_NB extends PaymentUI_Common{
 	public void Payback() throws Exception {
 		String PayUrl = getPayUI("AirRP", "");
 		driver.manage().deleteAllCookies(); 
-		driver.get(PayUrl);	 		
+		driver.get(PayUrl);	 	
+		refreshPage(driver);	
 		textPresent_Log(driver, "PAYBACK", 5);
 		payUI_Select_PaymentType(driver, "NB");
 		payUI_Enter_PaymentDetails(driver, "NB", "Axis Bank","");

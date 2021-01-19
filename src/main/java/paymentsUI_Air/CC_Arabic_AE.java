@@ -20,6 +20,7 @@ public class CC_Arabic_AE extends PaymentUI_Common{
 		String PayUrl = getPayUI("AirAEAR", "AE");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		refreshPage(driver);
 		//String Arabic= getText(driver, By.cssSelector("p.payment-container-header"));
 		elementPresent_log(driver, getObjectPayment("PayUI_Make_Payment_Btn"), "MakePayment Button", 5);
 		

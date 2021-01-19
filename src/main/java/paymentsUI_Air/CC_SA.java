@@ -18,6 +18,7 @@ public class CC_SA extends PaymentUI_Common{
 		String PayUrl = getPayUI("AirSA", "SA");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		refreshPage(driver);
 		textNotPresent_List( driver, getObjectPayment("PayUI_Pay_Tabs"), "Net banking");
 		payUI_Select_PaymentType(driver, "CC");
 		textPresent_Log(driver, "VAT (15 %)", 1);

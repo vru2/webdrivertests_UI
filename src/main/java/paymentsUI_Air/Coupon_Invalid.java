@@ -21,6 +21,7 @@ public class Coupon_Invalid extends PaymentUI_Common{
 		String PayUrl = getPayUI("AirCoupon", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		refreshPage(driver);
 		safeClickList(driver, getObjectPayment("PayUI_Pay_Tabs"), "Net Banking");	
 		String CouponText = getText(driver, By.xpath("//div[4]/div"));
 		if(!CouponText.contains("DOMOW")) {

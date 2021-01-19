@@ -25,6 +25,7 @@ public class CC_IN_Amex extends PaymentUI_Common{
 		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		refreshPage(driver);
 		Thread.sleep(5000);
 		//Robot robot = new Robot();
 

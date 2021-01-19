@@ -20,7 +20,8 @@ public class RP_PayBack_Full_Validation_Only extends PaymentUI_Common{
 	public void PaybackFull() throws Exception {
 		String PayUrl = getPayUI("AirRPFull", "");
 		driver.manage().deleteAllCookies(); 
-		driver.get(PayUrl);	 		
+		driver.get(PayUrl);	 
+		refreshPage(driver);		
 		textPresent_Log(driver, "PAYBACK", 20);
 		Reporter.log("PAYBACK points text is displayed");
 

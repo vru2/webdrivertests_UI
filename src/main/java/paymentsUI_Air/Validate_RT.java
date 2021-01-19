@@ -22,6 +22,7 @@ public class Validate_RT extends PaymentUI_Common{
 		String PayUrl = getPayUI("AirRT", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		refreshPage(driver);
 		textPresent(driver, "Flight itinerary", 10);
 		elementPresent(driver, By.xpath("//div[2]/div[2]/div[1]"));
 		String from = getText(driver, By.xpath("//div[2]/div[2]/div[1]/div[1]/div[1]"));

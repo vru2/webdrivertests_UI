@@ -180,6 +180,9 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String params_Feedbackemail="{\"email_id\":\"ns.likhitha@cleartrip.com\",\"msg\":\"test\",\"subject\":\"working\",\"email_type\":\"default\"}";
 	String params_Signinpostcall="{\"email\":\"ns.likhitha@cleartrip.com\",\"password\":\"cleartrip123\",\"persistent_login\":\"t\",\"service\":\"\",\"caller\":\"homepage\",\"source\":\"ui\",\"action_type\":\"\",\"trip_ref\":\"\",\"_\": \"\"}";
 	String params_Account_Service_AppleSignin="{\"appleId\":\"1:7676790:1100:009:jhjhdjdfjnfkmkggjuthgjfhghh\",\"emailId\":\"appleidt50chars@privaterelay.appleid.com\",\"firstName\":\"abcd\",\"lastName\":\"sai\",\"title\":\"Mr.\"}";
+	
+	String params_Accounts_Service_Applesignin_Unauthorized="{\"appleId\":\"1:76790:1100:009:jhjhdjdfjnfkmkggjuthgjfhghh\",\"emailId\":\"appleidt50chars@privaterelay.appleid.com\",\"firstName\":\"abcd\",\"lastName\":\"sai\",\"title\":\"Mr.\"}";
+	
 	String params_Account_Service_AppleSignin_WrapperAPI="{\"appleId\":\"1:a:2:b:3:00\",\"emailId\":\"nakul@gmail.com\",\"firstName\":\"nakul\",\"lastName\":\"goyal\",\"title\":\"Mr.\"}";
 	String params_Account_Service_SendOTP_ToUsermobileNo="{\"mobile\":\"+917799964888\",\"userId\":\"14029546\",\"countryCode\":\"91\"}";
 	String params_b2csignin="{\"email\":\"ns.likhitha@cleartrip.com\",\"password\":\"cleartrip123\",\"persistent_login\":\"t\",\"service\":\"\",\"caller\":\"homepage\",\"source\":\"ui\",\"action_type\":\"\",\"trip_ref\":\"\",\"_\": \"\"}";
@@ -187,6 +190,9 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String params_IdentityService_ResetPassword="";
 	String params_flyinsignin="{\"username\" : \"ok@cltp.com\",\"partner\":1,\"password\":\"cleartrip1\"}";
 	String params_flyinsigninV2_CleartripUser="{ \"password\": \"cleartrip123\", \"partner\": 0, \"source\": \"home_page\", \"username\": \"ns.likhitha@cleartrip.com\", \"persist_login\": false}";
+	
+	String params_Accounts_Service_FLyinV2_Signin_Unauthorized="{ \"password\": \"cleatrip123\", \"partner\": 0, \"source\": \"home_page\", \"username\": \"ns.likhitha@cleartrip.com\", \"persist_login\": false}";
+	
 	String params_Account_Service_FlyinV2_Signin_FlyinUser="{ \"password\": \"Preprod@123\", \"partner\": 1, \"source\": \"home_page\", \"username\": \"flyinctuser@gmail.com\", \"persist_login\": false}";
 	String params_Account_Service_PWA_SignIn_API="{\"username\" : \"test@identityqa.com\",\"password\":\"Cleartrip@123\"}";
 	String params_Manage_trips_OTP_API="{\"trip_ref\":\"Q19050680460\",\"email_id\":\"ns.likhitha@cleartrip.com\"}";
@@ -852,6 +858,15 @@ public class AccountsCommon_API extends PlatformCommonUtil
 
 		}
 
+		if(Type.equals("Accounts_Service_FLyinV2_Signin_Unauthorized")) {
+			headers = headersForms4();
+
+			RestAssured.baseURI =url_Acct_Service;
+			url = url_flyinsigninV2;					
+			params =params_Accounts_Service_FLyinV2_Signin_Unauthorized;
+			Reporter.log(url_Acct_Service+url);
+
+		}
 		if(Type.equals("Account_Service_FlyinV2_Signin_FlyinUser")) {
 			headers = headersForms4();
 
@@ -1307,6 +1322,14 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			RestAssured.baseURI =url_Acct_Service_applesgnin;
 			url = url_Account_Service_AppleSignin;					
 			params =params_Account_Service_AppleSignin ;
+		}
+		
+		if(Type.equals("Accounts_Service_Applesignin_Unauthorized")) {
+			headers = headersFormsapplesignin();
+
+			RestAssured.baseURI =url_Acct_Service_applesgnin;
+			url = url_Account_Service_AppleSignin;					
+			params =params_Accounts_Service_Applesignin_Unauthorized ;
 		}
 		if(Type.equals("Account_Service_AppleSignin_WrapperAPI")) {
 			headers = headers_Formsapplesigninwrapperapi();
@@ -1798,6 +1821,13 @@ public class AccountsCommon_API extends PlatformCommonUtil
 				Assert.assertTrue(false);						
 			}
 		}
+		
+		if(Type.equalsIgnoreCase("Accounts_Service_FLyinV2_Signin_Unauthorized")) {
+			String message = jsonPathEvaluator.getString("message");
+			if(!message.contains("failed")) {
+				Assert.assertTrue(false);						
+			}
+		}
 		if(Type.equalsIgnoreCase("Account_Service_RegisteredCltp_UserUpdate_WithoutOTP")) {
 			String message = jsonPathEvaluator.getString("message");
 			if(!message.contains("Otp not passed for updating mobile number of user otpmobilenotest@cleartrip.com")) {
@@ -1943,6 +1973,13 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		if(Type.equalsIgnoreCase("Account_Service_AppleSignin_uniqueId")) {
 			String username = jsonPathEvaluator.getString("message");
 			if(!username.contains("Apple id unique constraint violated for private email : 123@privaterelay.appleid.com")) {
+				Assert.assertTrue(false);						
+			}
+		}
+		
+		if(Type.equalsIgnoreCase("Accounts_Service_Applesignin_Unauthorized")) {
+			String username = jsonPathEvaluator.getString("message");
+			if(!username.contains("Apple id unique constraint violated for private email : appleidt50chars@privaterelay.appleid.com")) {
 				Assert.assertTrue(false);						
 			}
 		}

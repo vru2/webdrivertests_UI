@@ -113,6 +113,16 @@
 		</classes>
 
 	</test>
+	
+	<test name="Account-service-Signin Negative Cases" parallel="true">
+		<classes>
+			<class name="accountsAPI.Accounts_Service_Applesignin_Unauthorized" />
+			<class name="accountsAPI.Accounts_Service_FLyinV2_Signin_Unauthorized" />
+			
+
+		</classes>
+
+	</test>
 
 	<test name="Account-service-Apple-Signin" parallel="true">
 		<classes>

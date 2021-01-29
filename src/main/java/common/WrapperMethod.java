@@ -500,6 +500,28 @@ public boolean GDS_Flight, B2B_GDS_Flight = false;
 		}
 		return textpresent;
 	}
+	
+	public boolean textPresentInElementAssert(RemoteWebDriver driver, By by, String text, int Time)
+			throws InterruptedException {
+		boolean textpresent = false;
+		int second;
+
+		WebElement we = driver.findElement(by);
+		for (second = 0; second < Time; second++) {
+			try {
+				if ((text.equals(we.getText()))) {
+					textpresent = true;
+					break;
+				}
+			} catch (Exception ignore) {
+			}
+			Thread.sleep(1000);
+		}
+		if(!textpresent) {
+			Assert.assertTrue(false);
+		}
+		return textpresent;
+	}
 
 	public WebElement explicitWait(RemoteWebDriver driver, By by, int Time) throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, Time);

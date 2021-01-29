@@ -1,0 +1,47 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Bento UI" parallel="tests" thread-count="2">
+
+<listeners>
+<listener class-name="org.uncommons.reportng.HTMLReporter" />
+<listener class-name="common.RemoveDuplicateResults"/>
+<listener class-name="common.RetryListener"/>
+<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+</listeners>
+
+
+<test name="Text Validation"  preserve-order="true" >
+    <classes>
+      <class name="paymentsBento_com.Validation_Text_IN"/> 	  
+    </classes>
+</test>
+
+<test name="UI Validation"  preserve-order="true" >
+    <classes>
+      <class name="paymentsBento_com.Validation_UI_IN"/> 	  
+    </classes>
+</test>
+
+<test name="Text Validation AE"  preserve-order="true" >
+    <classes>
+      <class name="paymentsBento_com.Validation_Text_AE"/> 	  
+    </classes>
+</test>
+
+<test name="UI Validation AE"  preserve-order="true" >
+    <classes>
+      <class name="paymentsBento_com.Validation_UI_AE"/> 	  
+    </classes>
+ </test>
+
+<test name="Text Validation non.com"  preserve-order="true" >
+    <classes>
+      <class name="paymentsBento_com.Validation_Text_BH"/> 	  
+      <class name="paymentsBento_com.Validation_Text_KW"/> 	  
+      <class name="paymentsBento_com.Validation_Text_ME"/> 	  
+      <class name="paymentsBento_com.Validation_Text_OM"/> 	  
+      <class name="paymentsBento_com.Validation_Text_QA"/> 	  
+      <class name="paymentsBento_com.Validation_Text_SA"/> 	  
+    </classes>
+</test>
+
+</suite> 

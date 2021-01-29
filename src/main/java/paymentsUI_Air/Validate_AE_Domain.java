@@ -113,7 +113,7 @@ public class Validate_AE_Domain extends PaymentUI_Common{
 	@Test(priority=7)
 	public void Validate_AE_Misc() throws Exception {		
 		elementPresent_log(driver, getObjectPayment("PayUI_Cleartrip_Logo"), "Cleartrip ", 2);
-		textPresent_Log(driver, "2006–2020 Cleartrip Pvt. Ltd", 1);	
+		textPresent_Log(driver, "2006–2021 Cleartrip Pvt. Ltd", 1);	
 		textPresent_Log(driver, "Total inclusive all taxes", 1);	
 		String Title = driver.getTitle();
 		if(!Title.contains("Cleartrip | Pay securely")) {

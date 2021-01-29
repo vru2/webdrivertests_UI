@@ -21,8 +21,10 @@ public class PWA_WalletFull extends PaymentUI_Common{
 		String PayUrl = getPayUI("Air", "");
 		driver.get(PayUrl);
 		refreshPage(driver);
-		driver.manage().addCookie(cookie_Full_Wallet);
+		driver.manage().addCookie(cookie_Full_Wallet);	
+		
 		refreshPage(driver);
+		Thread.sleep(50000);
 		elementVisible(driver, getObjectPayment("PWA_PaymentPage_TotalPriceGV"), 10);
 		String Total = getText(driver, getObjectPayment("PWA_PaymentPage_TotalPriceGV"));
 		if(!Total.contains(" 0")) {

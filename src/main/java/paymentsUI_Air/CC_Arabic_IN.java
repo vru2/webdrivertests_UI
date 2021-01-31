@@ -77,16 +77,6 @@ public class CC_Arabic_IN extends PaymentUI_Common{
 		
 		
 		
-
-		
-
-
-		 
-		
-		
-		
-		
-		
 		
 		//p.c-red.fs-1.col-offset-6.pl-1   (Credit Card Error)
 		

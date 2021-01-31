@@ -24,8 +24,15 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 	public Cookie cookie_Bento_Payment = new Cookie("isBentoPayment", "true");
 	public Cookie cookie_Parl_Wallet = new Cookie("ct-auth", "EVefRmmOWPSC8c9sPGbZGwZMgfl%2FLjP6yfQQAwhPONaOOIjRmfrMO5ubb5%2FGLWzguQmW3NiUZma8q2lELnUuyC3uAF5DaTQONdJlLn%2FO2me%2FiLCzDjUE8Mm7nMigogz0z84lf%2Bili9Xzawt1KbN%2FMNpQDroZvb3Q7ub%2BLj1YfofQs%2BDG9mD5DXvLFNSWqYz93GfvGpnfyFmIRy226HjYgQ%3D%3D");
 
-	
 
+	public String get_Bento_Url(RemoteWebDriver driver, String PayType, String Domain) throws Exception {
+		String PayUrl = getPayUI(PayType, Domain);
+		driver.manage().deleteAllCookies(); 
+		driver.get(PayUrl);
+		driver.manage().addCookie(cookie_Bento_Payment);	
+		refreshPage(driver);
+		return PayUrl;
+	}
 	
 	public void bento_Select_PaymentType(RemoteWebDriver driver, String PayType) throws Exception {
 		for (int i = 0; i < 10; i++) {			
@@ -76,16 +83,6 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 			break;
 		}		
 		safeClickList(driver, getObjectPayment("Bento_Pay_Tabs"), PayType);	
-	}
-	
-	
-	public String get_Bento_Url(RemoteWebDriver driver, String PayType, String Domain) throws Exception {
-		String PayUrl = getPayUI(PayType, Domain);
-		driver.manage().deleteAllCookies(); 
-		driver.get(PayUrl);
-		driver.manage().addCookie(cookie_Bento_Payment);	
-		refreshPage(driver);
-		return PayUrl;
 	}
 	
 	public void bento_Enter_PaymentDetails(RemoteWebDriver driver, String PayType, String BankName, String BookingType) throws Exception {
@@ -264,11 +261,17 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 	}
 	
 	public void bento_Select_NB(RemoteWebDriver driver, String BankName, String BookingType) throws Exception {		
-			elementVisible(driver, getObjectPayment("PayUI_NB_DropDown"), 5);
+			elementVisible(driver, getObjectPayment("Bento_Pay_NB_DropDown"), 5);
 			textPresent_Log(driver, "Popular banks", 1);
 			//textPresent_Log(driver, "", 1);
 			if(BankName.contains("CAPTCHA")) {
-				safeSelect(driver, getObjectPayment("PayUI_NB_DropDown"), "Citibank");
+				safeSelect(driver, getObjectPayment("Bento_Pay_NB_DropDown"), "Citibank");
+			}
+			else if(BankName.contains("BOI")) {
+				safeClick(driver, getObjectPayment("Bento_Pay_NB_DropDown"));
+				//safeSelect(driver, getObjectPayment("Bento_Pay_NB_DropDown"), "Bank of india");
+				safeSelectByText(driver, getObjectPayment("Bento_Pay_NB_DropDown"), "Bank of India");
+				
 			}
 			else if(BankName.contains("CitibankPopular")) {
 				safeClick(driver, getObjectPayment("PaymentPage_NB_PopularBanks_Citi"));
@@ -516,9 +519,180 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 			textPresent_Log(driver, "Please enter a valid cvv", 1);
 			
 		}
+		else if(PaymentType.equalsIgnoreCase("Expressway")) {
+			bento_Select_PaymentType(driver, "CC");		
+			textPresent(driver, "Save this card for faster checkout, we never save your CVV", 1);
+			safeClick(driver, getObjectPayment("Bento_Pay_Expressway_Radio_Btn"));
+		}
+		else if(PaymentType.equalsIgnoreCase("XYZ")) {
+			bento_Select_PaymentType(driver, "CC");		
+			
+		}
+		else if(PaymentType.equalsIgnoreCase("ABC")) {
+			bento_Select_PaymentType(driver, "CC");		
+			
+		}
 			
 	}
 	
+	public void bento_Validation_Images(RemoteWebDriver driver, String PaymentType, String Domain) throws Exception {
+		if(PaymentType.equalsIgnoreCase("CC")) {
+			bento_Select_PaymentType(driver, "CC");
+			if(Domain.endsWith("IN")) {				
+				elementPresent_log(driver, getObjectPayment("Bento_Pay_CC_MasterCard_Img"), "MasterCard", 1);
+				elementPresent_log(driver, getObjectPayment("Bento_Pay_CC_Visa_Img"), "Visa", 1);
+				elementPresent_log(driver, getObjectPayment("Bento_Pay_CC_Amex_Img"), "AMEX", 1);
+				elementPresent_log(driver, getObjectPayment("Bento_Pay_CC_TextBox_Mada_Img"), "Mada CC textbox image", 1);
+				elementPresent_log(driver, getObjectPayment("Bento_Pay_CC_TextBox_Visa_Img"), "Visa CC textbox image", 1);
+				elementPresent_log(driver, getObjectPayment("Bento_Pay_CC_TextBox_Master_Img"), "Master CC textbox image", 1);
+				elementPresent_log(driver, getObjectPayment("Bento_Pay_CC_TextBox__Maestro_Img"), "Maestro CC textbox image", 1);
+				
+				//======================================Visa image============================================//
+				String  handle= driver.getWindowHandle();			
+				safeClick(driver, getObjectPayment("Bento_Pay_CC_Visa_Img"));
+				Thread.sleep(5000);
+				for(String winHandle : driver.getWindowHandles()){
+				    driver.switchTo().window(winHandle);
+				}
+				String visaUrl = getURL(driver);
+				Reporter.log("Visa Image URL : "+visaUrl);
+				if(!visaUrl.contains("usa.visa.com/support/consumer/security.html")) {
+					Reporter.log("Visa Image URL : "+visaUrl);
+					Assert.assertTrue(false);
+				}
+				textPresent_Log(driver, "Peace of mind", 5);
+				driver.switchTo().window(handle);
+				
+				//======================================Master image============================================//
+				safeClick(driver, getObjectPayment("Bento_Pay_CC_MasterCard_Img"));
+				Thread.sleep(5000);
+				for(String winHandle : driver.getWindowHandles()){
+				    driver.switchTo().window(winHandle);
+				}
+				String masterCardUrl = getURL(driver);
+				Reporter.log("masterCardUrl Image URL : "+visaUrl);
+				if(!masterCardUrl.contains("https://www.mastercard.us/en-us.html")) {
+					Reporter.log("masterCard Image URL : "+masterCardUrl);
+					Assert.assertTrue(false);
+				}
+
+				driver.switchTo().window(handle);
+
+				//======================================AMEX image============================================//
+				safeClick(driver, getObjectPayment("Bento_Pay_CC_Amex_Img"));
+				Thread.sleep(5000);
+				for(String winHandle : driver.getWindowHandles()){
+				    driver.switchTo().window(winHandle);
+				}
+				String amexCardUrl = getURL(driver);
+				Reporter.log("amexCardUrl Image URL : "+amexCardUrl);
+				if(!amexCardUrl.contains("www.americanexpress.com")) {
+					Reporter.log("masterCard Image URL : "+amexCardUrl);
+					Assert.assertTrue(false);
+				}
+
+				driver.switchTo().window(handle);					
+
+			}
+		}
+			else if(PaymentType.equalsIgnoreCase("NB")) {
+				bento_Select_PaymentType(driver, "NB");
+				elementPresent_log(driver, getObjectPayment("Bento_Pay_NB_Popularbank_Axis_Img"), "Axis Bank", 1);
+				elementPresent_log(driver, getObjectPayment("Bento_Pay_NB_Popularbank_HDFC_Img"), "HDFC Bank", 1);
+				elementPresent_log(driver, getObjectPayment("Bento_Pay_NB_Popularbank_ICICI_Img"), "ICICI Bank", 1);
+				elementPresent_log(driver, getObjectPayment("Bento_Pay_NB_Popularbank_SBI_Img"), "SBI", 1);
+				elementPresent_log(driver, getObjectPayment("Bento_Pay_NB_Popularbank_Kotak_Img"), "Kotak Bank", 1);
+				elementPresent_log(driver, getObjectPayment("Bento_Pay_NB_Popularbank_Canara_Img"), "Canara Bank", 1);	
+				safeClick(driver, getObjectPayment("Bento_Pay_NB_Popularbank_Axis_Img"));
+				safeClick(driver, getObjectPayment("Bento_Pay_NB_Popularbank_HDFC_Img"));
+				safeClick(driver, getObjectPayment("Bento_Pay_NB_Popularbank_ICICI_Img"));
+				safeClick(driver, getObjectPayment("Bento_Pay_NB_Popularbank_SBI_Img"));
+				safeClick(driver, getObjectPayment("Bento_Pay_NB_Popularbank_Kotak_Img"));
+				safeClick(driver, getObjectPayment("Bento_Pay_NB_Popularbank_Canara_Img"));	
+			}
+			else if(PaymentType.equalsIgnoreCase("TW")) {
+				bento_Select_PaymentType(driver, "TW");
+				safeClick(driver, By.xpath("//div[1]/div[2]/div"));
+				safeClick(driver, By.xpath("//div[2]/div[2]/div"));
+				safeClick(driver, By.xpath("//div[3]/div[2]/div"));
+				safeClick(driver, By.xpath("//div[4]/div[2]/div"));
+				safeClick(driver, By.xpath("//div[5]/div[2]/div"));
+				safeClick(driver, By.xpath("//div[6]/div[2]/div"));
+				safeClick(driver, By.xpath("//div[7]/div[2]/div"));
+				safeClick(driver, By.xpath("//div[8]/div[2]/div"));
+				Thread.sleep(5000);				
+			}		
+			else if(PaymentType.equalsIgnoreCase("Summary")) {
+				elementPresent_log(driver, getObjectPayment("Bento_Pay_BookingSummary_Flight_Icon"), "Flight", 1);
+				elementPresent_log(driver, getObjectPayment("Bento_Pay_BookingSummary_Traveller_Icon"), "Traveller", 1);				
+			}
+		
+	}
+	
+	
+	public void bento_Validation_Links(RemoteWebDriver driver, String PaymentType, String Domain) throws Exception {
+		
+
+		//=============================Booking Policy==================================//
+		String  handle= driver.getWindowHandle();
+		elementPresent_log(driver, getObjectPayment("Bento_Pay_Booking_Policy"), "Booking Policy", 5);
+		safeClick(driver, getObjectPayment("Bento_Pay_Booking_Policy"));
+		Thread.sleep(5000);
+		for(String winHandle : driver.getWindowHandles()){
+		    driver.switchTo().window(winHandle);
+		}
+		String BookingPolicyUrl = getURL(driver);
+		Reporter.log("Booking Policy URL : "+BookingPolicyUrl);
+		if(!BookingPolicyUrl.contains("qa2.cleartrip.com/flights/booking-policies")) {
+			Reporter.log("BookingPolicyUrl URL : "+BookingPolicyUrl);
+			Assert.assertTrue(false);
+		}
+		textPresent_Log(driver, "Cleartrip flight booking policy", 5);
+		
+		
+		for(String winHandle : driver.getWindowHandles()){
+		    driver.switchTo().window(winHandle);
+		}
+
+		//=============================terms & condition==================================//
+		driver.switchTo().window(handle);
+		
+		elementPresent_log(driver, getObjectPayment("Bento_Pay_Terms_and_Condition"), "Terms_and_Condition", 5);
+		safeClick(driver, getObjectPayment("Bento_Pay_Terms_and_Condition"));
+		String BookingTerms = getURL(driver);
+		Reporter.log("Booking Policy URL : "+BookingTerms);
+		if(!BookingTerms.contains("https://qa2.cleartrip.com/terms/")) {
+			Reporter.log("BookingTerms URL : "+BookingTerms);
+			Assert.assertTrue(false);
+		}
+		textPresent_Log(driver, "BookingTerms", 5);		
+		
+		Thread.sleep(5000);
+		for(String winHandle : driver.getWindowHandles()){
+		    driver.switchTo().window(winHandle);
+		}
+		
+		//=============================Privacy==================================//
+		driver.switchTo().window(handle);		
+		
+
+		elementPresent_log(driver, getObjectPayment("Bento_Pay_Privacy_Policy"), "Privacy Policy", 5);
+		safeClick(driver, getObjectPayment("Bento_Pay_Privacy_Policy"));
+		Thread.sleep(5000);
+		
+		String BookingPrivacyURL = getURL(driver);
+		Reporter.log("Booking Policy URL : "+BookingPrivacyURL);
+		if(!BookingPrivacyURL.contains("/privacy/")) {
+			Reporter.log("BookingPrivacy URL : "+BookingPrivacyURL);
+			System.out.println("BookingPrivacy URL : "+BookingPrivacyURL);
+			Assert.assertTrue(false);
+		}
+	//	textPresent_Log(driver, "Cleartrip flight booking policy", 5);		
+		Thread.sleep(5000);		
+		
+		
+	}
+		
 	
 	public void bento_Validate_Currency(RemoteWebDriver driver, String Domain, String Currency) throws Exception {
 		String Total_Price = getText(driver, getObjectPayment("Bento_Pay_Total_Value"));

@@ -564,6 +564,17 @@ public boolean GDS_Flight, B2B_GDS_Flight = false;
 		}
 		return textprest;
 	}
+	
+	public boolean textNotPresent_Log(RemoteWebDriver driver, String text, int Time) throws InterruptedException {
+		boolean textNotPrest = true;
+		if(textPresent(driver, text, Time)) {
+			textNotPrest = false;
+			addLog(text + ": text is Present");
+			Assert.assertTrue(false);
+		}
+		return textNotPrest;
+	}
+		
 
 	public void textAssert(RemoteWebDriver driver, String text, int Time) throws InterruptedException {
 		int i = 0;

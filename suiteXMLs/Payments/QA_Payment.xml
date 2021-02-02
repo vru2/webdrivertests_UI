@@ -11,10 +11,10 @@
 			<suite-file path="QA_Payment_Bento_PayUI.xml"></suite-file>
 		</suite-files>  -->
 		
-
+<!-- 
 		 <suite-files>
 			<suite-file path="QA_Payment_New_Bento_PayUI.xml"></suite-file>
-		</suite-files> 
+		</suite-files>  -->
 		
 		<suite-files>
 			<suite-file path="QA_Payment_API.xml"></suite-file>

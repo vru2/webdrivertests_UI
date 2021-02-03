@@ -88,6 +88,8 @@
 			<class
 				name="accountsAPI.Account_Service_RegisterFLyinUserUpdate_WithoutOTP" />
 			<class
+			
+			
 				name="accountsAPI.Account_Service_RegisteredCltp_UserUpdate_WithoutOTP" />
 			<class name="accountsAPI.Account_Service_SendOTP_ToUsermobileNo" />
 			<class name="accountsAPI.Account_Service_Verify_Person" />
@@ -100,6 +102,8 @@
 			<class name="accountsAPI.Account_Service_AuthorizeAPI_encodingCookie" />
 			<class name="accountsAPI.Account_Service_Peoplecontroller_FindByID" />
 			<class name="accountsAPI.Accounts_Service_VerifynonLoggedinUser" />
+			<class name="accountsAPI.Accounts_Service_Cleartrip_MultipleTraveller_Updatecall" />
+			
 
 		</classes>
 	</test>

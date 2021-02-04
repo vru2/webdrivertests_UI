@@ -39,6 +39,7 @@
 			<class name="accountsAPI.IdentityService_Getresource" />
 			<class name="accountsAPI.IdentityService_AddClient" />
 			<class name="accountsAPI.IdentityService_Signin" />
+			<class name="accountsAPI.IdentityService_Signin_FlyinUser" />
 			<class name="accountsAPI.IdentityService_ctAuth_noLoginCookie" />
 			<class
 				name="accountsAPI.IdentityService_PeopleController_gt_token_for_userBy_ID" />
@@ -121,7 +122,11 @@
 	<test name="Account-service-Signin Un-authorized" parallel="true">
 		<classes>
 			<class name="accountsAPI.Accounts_Service_Applesignin_Unauthorized" />
-			<class name="accountsAPI.Accounts_Service_FLyinV2_Signin_Unauthorized" />
+			<class name="accountsAPI.Accounts_Service_CleartripV2_Signin_Unauthorized" />
+			<class name="accountsAPI.AccountsService_FlyinV2Signin_Unauthorized" />
+			<class name="accountsAPI.IdentityService_Signin_Unauthorized" />
+			<class name="accountsAPI.IdentityService_Signin_UsernotPresent" />
+			
 			
 
 		</classes>

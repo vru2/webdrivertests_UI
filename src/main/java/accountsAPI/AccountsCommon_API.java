@@ -192,7 +192,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String params_flyinsigninV2_CleartripUser="{ \"password\": \"cleartrip123\", \"partner\": 0, \"source\": \"home_page\", \"username\": \"ns.likhitha@cleartrip.com\", \"persist_login\": false}";
 	
 	String params_Accounts_Service_FLyinV2_Signin_Unauthorized="{ \"password\": \"cleatrip123\", \"partner\": 0, \"source\": \"home_page\", \"username\": \"ns.likhitha@cleartrip.com\", \"persist_login\": false}";
-	
+	String params_AccountsService_FlyinV2Signin_Unauthorized="{ \"password\": \"Pre@123\", \"partner\": 1, \"source\": \"home_page\", \"username\": \"flyinctuser@gmail.com\", \"persist_login\": false}";
 	String params_Account_Service_FlyinV2_Signin_FlyinUser="{ \"password\": \"Preprod@123\", \"partner\": 1, \"source\": \"home_page\", \"username\": \"flyinctuser@gmail.com\", \"persist_login\": false}";
 	String params_Account_Service_PWA_SignIn_API="{\"username\" : \"test@identityqa.com\",\"password\":\"Cleartrip@123\"}";
 	String params_Manage_trips_OTP_API="{\"trip_ref\":\"Q19050680460\",\"email_id\":\"ns.likhitha@cleartrip.com\"}";
@@ -248,6 +248,8 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String s=RandomStringUtils.randomAlphabetic(3);
 	String params_identityserviceaddclient1= "{ \"clientId\":\"likhithaa" +s;
 	String params_identityservicesignin="{" + " \"username\": \"automate@test.com\"," + "  \"password\": \"Cleartrip@123\"" + 	"  " + "}";
+	String params_IdentityService_Signin_FlyinUser="{\"username\":\"sandeep.shivanadhula@cleartrip.com\",\"password\":\"Preprod@123\"}";
+	String params_IdentityService_Signin_Unauthorized="{\"username\":\"sandeep.shivanadhula@cleartrip.com\",\"password\":\"Pre@123\"}";
 	String params_identityserviceaddclient2="\", \"clientSecret\":\"secret\", \"authenticated\":\"true\", \"scope\":\"all\", \"authorizedGrantTypes\":\"read,write,trust\", \"redirectUri\":[\"http://localhost:8080/ctauth/authorize\"], \"authorities\":\"authorities\" }";
 	String params_identityserviceaddclient=	params_identityserviceaddclient1+params_identityserviceaddclient2;
 	String i = generateRandomWord(4);
@@ -350,6 +352,16 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("Content-Type", "application/json");
 		headers.put("Referer", "www.cleartrip.com");
+		headers.put("X-CT-SOURCETYPE", "mobile");
+		headers.put("service", "");
+
+
+		return headers;
+	}
+	public HashMap<String, Object> headersFormIdentitysigninflyin(){
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("Content-Type", "application/json");
+		headers.put("Referer", "www.flyin.com");
 		headers.put("X-CT-SOURCETYPE", "mobile");
 		headers.put("service", "");
 
@@ -868,6 +880,15 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			Reporter.log(url_Acct_Service+url);
 
 		}
+		if(Type.equals("AccountsService_FlyinV2Signin_Unauthorized")) {
+			headers = headersForms4();
+
+			RestAssured.baseURI =url_Acct_Service;
+			url = url_flyinsigninV2;					
+			params =params_AccountsService_FlyinV2Signin_Unauthorized;
+			Reporter.log(url_Acct_Service+url);
+
+		}
 		if(Type.equals("Account_Service_FlyinV2_Signin_FlyinUser")) {
 			headers = headersForms4();
 
@@ -1277,7 +1298,30 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			params = params_identityservicesignin;
 			Reporter.log(url_Acct_Service_applesgnin+url);
 		}
+		
+		if(Type.equals("IdentityService_Signin_Unauthorized")) {
+			headers =headersFormIdentitysigninflyin ();
+			RestAssured.baseURI =url_Acct_Service_applesgnin;
+			url = url_identityservicesignin;					
+			params = params_IdentityService_Signin_Unauthorized;
+			Reporter.log(url_Acct_Service_applesgnin+url);
+		}
+		if(Type.equals("IdentityService_Signin_UsernotPresent")) {
+			headers =headersFormIdentitysignin ();
+			RestAssured.baseURI =url_Acct_Service_applesgnin;
+			url = url_identityservicesignin;					
+			params = params_IdentityService_Signin_Unauthorized;
+			Reporter.log(url_Acct_Service_applesgnin+url);
+		}
 
+
+		if(Type.equals("IdentityService_Signin_FlyinUser")) {
+			headers = headersFormIdentitysigninflyin();
+			RestAssured.baseURI =url_Acct_Service_applesgnin;
+			url = url_identityservicesignin;					
+			params = params_IdentityService_Signin_FlyinUser;
+			Reporter.log(url_Acct_Service_applesgnin+url);
+		}
 
 		if(Type.equals("registerUser")) {
 			RestAssured.baseURI =url_Acct;
@@ -1831,6 +1875,12 @@ public class AccountsCommon_API extends PlatformCommonUtil
 				Assert.assertTrue(false);						
 			}
 		}
+		if(Type.equalsIgnoreCase("IdentityService_Signin_Unauthorized")) {
+			String message = jsonPathEvaluator.getString("message");
+			if(!message.contains("username and password do not match for given user sandeep.shivanadhula@cleartrip.com")) {
+				Assert.assertTrue(false);						
+			}
+		}
 		
 		if(Type.equalsIgnoreCase("Accounts_Service_FLyinV2_Signin_Unauthorized")) {
 			String message = jsonPathEvaluator.getString("message");
@@ -1966,6 +2016,12 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		if(Type.equalsIgnoreCase("Account_Service_AppleRegister_NullEmail")) {
 			String username = jsonPathEvaluator.getString("message");
 			if(!username.contains("No user found with appleId : 1:a:2:b:3:00")) {
+				Assert.assertTrue(false);						
+			}
+		}
+		else if(Type.equalsIgnoreCase("IdentityService_Signin_UsernotPresent")) {
+			String message = jsonPathEvaluator.getString("message");
+			if(!message.contains("no user found with sandeep.shivanadhula@cleartrip.com : 0")) {
 				Assert.assertTrue(false);						
 			}
 		}
@@ -3206,6 +3262,15 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		if(Type.equalsIgnoreCase("identityservicesignin")) {
 			String ReponseStr = resp.body().asString();
 			if(!ReponseStr.contains("automate@test.com")) {
+				Assert.assertNotNull("mobileNumber");
+				Assert.assertNotNull("isRegistered");
+				Assert.assertTrue(false);						
+			}	
+
+		}
+		if(Type.equalsIgnoreCase("IdentityService_Signin_FlyinUser")) {
+			String ReponseStr = resp.body().asString();
+			if(!ReponseStr.contains("sandeep.shivanadhula@cleartrip.com")) {
 				Assert.assertNotNull("mobileNumber");
 				Assert.assertNotNull("isRegistered");
 				Assert.assertTrue(false);						

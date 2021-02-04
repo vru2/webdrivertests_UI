@@ -8,20 +8,18 @@ import org.testng.annotations.Test;
 import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
 
-public class IdentityService_Signin extends AccountsCommon_API
+public class IdentityService_Signin_Unauthorized extends AccountsCommon_API
 {
-	
-	
+
 	@Test
 	public void IdentityService_Signin() throws IOException, JSONException{	
 		
 		Response resp ;
-  		resp =postCall("identityservicesignin", "");
-		validation( resp, "identityservicesignin", "");
+  		resp =postCall("IdentityService_Signin_Unauthorized", "");
+  		validation_user_update_MobileOTP( resp, "IdentityService_Signin_Unauthorized", "");
 		/*ResponseBody body = resp.getBody();
-		System.out.println("Response of API is:" + body.asString());*/
-		
+		System.out.println("Response of API is:" + body.asString());
+		*/
 		
 	}
-
 }

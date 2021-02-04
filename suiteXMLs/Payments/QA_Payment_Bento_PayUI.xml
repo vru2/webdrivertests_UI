@@ -38,7 +38,7 @@
     </classes>
 </test>
 
-<test name="CC GW"  preserve-order="true" >
+<test name="CC GW" preserve-order="true" >
     <classes>
       <class name="paymentsUI_Air.CC_IN_PayU"/>
       <!-- 
@@ -51,7 +51,7 @@
     </classes>
 </test>
 
-<test name="ME Pay"  preserve-order="true">
+<test name="ME Pay" preserve-order="true">
     <classes>
       <class name="paymentsUI_Air.CC_AE"/>      
       <class name="paymentsUI_Air.CC_BH"/>      
@@ -64,7 +64,7 @@
  -->    </classes>
 </test>
 
-<test name="PWA ADCB"  preserve-order="true">
+<test name="PWA ADCB" preserve-order="true">
     <classes>   
       <class name="paymentsUI_Air.PWA_RP_ADCB_Error"/>  
       <class name="paymentsUI_Air.PWA_RP_ADCB_Full"/>  
@@ -72,25 +72,25 @@
     </classes>
 </test>
 
-<test name="PWA Android"  preserve-order="true">
+<test name="PWA Android" preserve-order="true">
     <classes>   
       <class name="paymentsUI_Air.PWA_Validation_Android"/>  
     </classes>
 </test>
 
-<test name="PWA iOs"  preserve-order="true">
+<test name="PWA iOs" preserve-order="true">
     <classes>   
       <class name="paymentsUI_Air.PWA_Validation_iOS"/>  
     </classes>
 </test>
 
-<test name="PWA KW Knet"  preserve-order="true">
+<test name="PWA KW Knet" preserve-order="true">
     <classes>   
       <class name="paymentsUI_Air.PWA_KW_Knet"/>  
     </classes>
 </test>
 
-<test name="PWA Pay"  preserve-order="true" >
+<test name="PWA Pay" preserve-order="true" >
     <classes>
       <class name="paymentsUI_Air.PWA_IN_AMEX"/>  
       <class name="paymentsUI_Air.PWA_AmazonPay"/>
@@ -98,7 +98,7 @@
     </classes>
 </test>
 
-<test name="PWA NB"  preserve-order="true" >
+<test name="PWA NB" preserve-order="true" >
     <classes>  
     <class name="paymentsUI_Air.PWA_NB_PopularBank_CITI"/>
       <class name="paymentsUI_Air.PWA_NB_HDFC"/>   
@@ -117,13 +117,13 @@
     </classes>
 </test>
 
-<test name="PWA Coupon valid and Invalid "  preserve-order="true" >
+<test name="PWA Coupon valid and Invalid " preserve-order="true" >
     <classes>
       <class name="paymentsUI_Air.PWA_Coupon"/> 
     </classes>
 </test>
 
-<test name="PWA Validation and Captcha"  preserve-order="true" >
+<test name="PWA Validation and Captcha" preserve-order="true" >
     <classes>
       <class name="paymentsUI_Air.PWA_Validation"/> 
       
@@ -131,33 +131,33 @@
     </classes>
 </test>
 
-<test name="PWA StoredCard"  preserve-order="true" >
+<test name="PWA StoredCard" preserve-order="true" >
     <classes>
       <class name="paymentsUI_Air.PWA_StoredCard"/>       
     </classes>
 </test>
 
-<test name="PWA GV"  preserve-order="true" parallel="true" >
+<test name="PWA GV" preserve-order="true" parallel="true" >
     <classes>
       <class name="paymentsUI_Air.PWA_GV_Full"/>
       <class name="paymentsUI_Air.PWA_GV_NB"/>      
     </classes>
 </test>
 
-<test name="PWA RT"  preserve-order="true" parallel="true" >
+<test name="PWA RT" preserve-order="true" parallel="true" >
     <classes><!-- 
       <class name="paymentsUI_Air.PWA_IN_Multicity"/> -->
       <class name="paymentsUI_Air.PWA_IN_RT"/>      
     </classes>
 </test>
 
-<test name="PWA Arabic"  preserve-order="true" parallel="true" >
+<test name="PWA Arabic" preserve-order="true" parallel="true" >
     <classes>
       <class name="paymentsUI_Air.PWA_Arabic"/>      
     </classes>
 </test>
 
-<test name="PWA Wallet"  preserve-order="true" parallel="true" >
+<test name="PWA Wallet" preserve-order="true" parallel="true" >
     <classes>
       <class name="paymentsUI_Air.PWA_WalletFull"/>    
       <class name="paymentsUI_Air.PWA_WalletPartial"/>      
@@ -165,7 +165,7 @@
 </test>
 
 
-<test name="PWA PayBack"  preserve-order="true" parallel="true" >
+<test name="PWA PayBack" preserve-order="true" parallel="true" >
     <classes>
       <class name="paymentsUI_Air.PWA_RP_PayBack_Full"/>      
       <class name="paymentsUI_Air.PWA_RP_PayBack_NB"/>      
@@ -173,7 +173,7 @@
 </test>
 
 
-<test name="Validation"  preserve-order="true"  >
+<test name="Validation" preserve-order="true"  >
     <classes>
       <class name="paymentsUI_Air.Validate_Text_Messages"/>
       <class name="paymentsUI_Air.Validate_Images_Links"/> 
@@ -182,25 +182,25 @@
     </classes>
 </test>
 
-<test name="Arabic"  preserve-order="true" parallel="true" >
+<test name="Arabic" preserve-order="true" parallel="true" >
     <classes>
       <class name="paymentsUI_Air.CC_Arabic_AE"/>   
     </classes>
 </test>
 
-<test name="PhonePe"  preserve-order="true" parallel="true" >
+<test name="PhonePe" preserve-order="true" parallel="true" >
     <classes><!-- 
       <class name="paymentsUI_Air.UPI_PhonePe"/>   --> 
     </classes>
 </test>
 
-<test name="AmazonPay"  preserve-order="true" parallel="true" >
+<test name="AmazonPay" preserve-order="true" parallel="true" >
     <classes>
       <class name="paymentsUI_Air.TW_AmazonPay"/>   
     </classes>
 </test>
 
-<test name="ADCB Pay"  preserve-order="true" parallel="true" >
+<test name="ADCB Pay" preserve-order="true" parallel="true" >
     <classes>
       <class name="paymentsUI_Air.RP_ADCB_Full"/> 
       <class name="paymentsUI_Air.RP_ADCB_Partial"/>   
@@ -208,20 +208,20 @@
     </classes>
 </test>
 
-<test name="Amendment"  preserve-order="true" parallel="true" >
+<test name="Amendment" preserve-order="true" parallel="true" >
     <classes>
       <class name="paymentsUI_Air.Amendment"/>
     </classes>
 </test>
 
-<test name="PayBack"  preserve-order="true">
+<test name="PayBack" preserve-order="true">
     <classes>
       <class name="paymentsUI_Air.RP_PayBack_NB"/>      
       <class name="paymentsUI_Air.RP_PayBack_Full_Validation_Only"/>      
     </classes>
 </test>
 
-<test name="GV"  preserve-order="true" parallel="true" >
+<test name="GV" preserve-order="true" parallel="true" >
     <classes>
       <class name="paymentsUI_Air.GV_NB"/>
       <class name="paymentsUI_Air.GV_Full"/>      
@@ -234,7 +234,7 @@
     </classes>
 </test>
 
-<test name="Train Pay"  preserve-order="true">
+<test name="Train Pay" preserve-order="true">
     <classes>
       <class name="paymentsUI.PaymentUI_Captcha"/> 
       <class name="paymentsUI.PaymentUI_SignIN"/>
@@ -243,7 +243,7 @@
     </classes>
 </test>
 	
-<test name="Train Validation"  preserve-order="true"  >
+<test name="Train Validation" preserve-order="true"  >
     <classes>
       <class name="paymentsUI.PaymentUI_ErrorValidationUPIWalletAndNB"/>
       <class name="paymentsUI.PaymentUI_SuccessfulPaymentMessage"/> 
@@ -266,13 +266,13 @@
     </classes>
 </test>
 
-<test name="KNet"  preserve-order="true">
+<test name="KNet" preserve-order="true">
     <classes>
       <class name="paymentsUI_Air.Knet_KW"/>
     </classes>
 </test>
 
-<test name="Captcha Validation"  preserve-order="true" >
+<test name="Captcha Validation" preserve-order="true" >
     <classes>
       <!-- <class name="paymentsUI_Air.Validation_Captcha"/> 	   -->
     </classes>

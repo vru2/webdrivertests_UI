@@ -23,8 +23,9 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 	public Response resp;
 	public Cookie cookie_Bento_Payment = new Cookie("isBentoPayment", "true");
 	public Cookie cookie_Parl_Wallet = new Cookie("ct-auth", "EVefRmmOWPSC8c9sPGbZGwZMgfl%2FLjP6yfQQAwhPONaOOIjRmfrMO5ubb5%2FGLWzguQmW3NiUZma8q2lELnUuyC3uAF5DaTQONdJlLn%2FO2me%2FiLCzDjUE8Mm7nMigogz0z84lf%2Bili9Xzawt1KbN%2FMNpQDroZvb3Q7ub%2BLj1YfofQs%2BDG9mD5DXvLFNSWqYz93GfvGpnfyFmIRy226HjYgQ%3D%3D");
-
-
+	//public Cookie cookie_Full_Wallet = new Cookie("ct-auth", "O2HJIm5w1xSz%2BJuS4aDuK7gVEOwk4Wtqdan6btFwj4TyQ8aSq%2BF4m20vjT%2FZugfuD3habrO078UoXdzWM34lXZaLbE1jIpkEaANLn%2BHJadeW7kll2UfWWUfOoZLsVWTEc0QAdvEUdBA%2F1nzmjBhQdfKHBynkHeYDz6XwPLe1MJiHeiMeqTJEkDsxZaWHAi%2Bv");	
+	public Cookie cookie_Full_Wallet = new Cookie("ct-auth", "kPSO4DekYXjX1NAa%2BV6x%2BPAuD85oXXc2x6ocNR2SCho5FiJNPfE0mcjCvYIvtvEzD3habrO078UoXdzWM34lXZaLbE1jIpkEaANLn%2BHJadeW7kll2UfWWUfOoZLsVWTE5e4M7AJPpksQjN%2BnOAVReuzUb6b257o%2Bo1tkm1ssHdnsn63Uy2JyxP3spA3W9e%2Fw");	
+	
 	public String get_Bento_Url(RemoteWebDriver driver, String PayType, String Domain) throws Exception {
 		String PayUrl = getPayUI(PayType, Domain);
 		driver.manage().deleteAllCookies(); 
@@ -113,32 +114,32 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 	}
 	
 	public void bento_Select_CC(RemoteWebDriver driver, String BankName, String BookingType) throws Exception {		
-		elementVisible(driver, getObjectPayment("PaymentPage_CreditCard_Number"), 5);
-		textPresent_Log(driver, "Enter your credit card details", 1);
+		elementVisible(driver, getObjectPayment("Bento_Pay_CreditCard_Number"), 5);
+		textPresent_Log(driver, "Enter card details", 1);
 		switch (BankName) {
 			case "MASTER":
-			Enter_CC_Details(driver, platform.value("MasterCard_Number"), platform.value("MasterCard_Month"), platform.value("MasterCard_Year"), platform.value("MasterCard_CVV"));
+			bento_Enter_CC_Details(driver, platform.value("MasterCard_Number"), platform.value("MasterCard_Month"), platform.value("MasterCard_Year"), platform.value("MasterCard_CVV"));
 			break;	
 			case "AMEX":
-			Enter_CC_Details(driver, platform.value("AmexCard_Number"), platform.value("AmexCard_Month_New"), platform.value("AmexCard_Year"), platform.value("AmexCard_CVV"));
+			bento_Enter_CC_Details(driver, platform.value("AmexCard_Number"), platform.value("AmexCard_Month_New"), platform.value("AmexCard_Year"), platform.value("AmexCard_CVV"));
 			break;			
 			case "AMEXTRAIN":
-			Enter_CC_Details(driver, platform.value("AmexCard_Number"), platform.value("AmexCard_Month_New"), platform.value("AmexCard_Year"), platform.value("AmexCard_CVV"));
+			bento_Enter_CC_Details(driver, platform.value("AmexCard_Number"), platform.value("AmexCard_Month_New"), platform.value("AmexCard_Year"), platform.value("AmexCard_CVV"));
 			break;
 			case "CAPTCHA":
-			Enter_CC_Details(driver, "512345678901234", platform.value("MasterCard_Month"), platform.value("MasterCard_Year"), platform.value("MasterCard_CVV"));
+			bento_Enter_CC_Details(driver, "512345678901234", platform.value("MasterCard_Month"), platform.value("MasterCard_Year"), platform.value("MasterCard_CVV"));
 			break;
 			case "CHECKOUT":
-			Enter_CC_Details(driver, platform.value("SACheckOut_Number"), platform.value("SACheckOut_Month_UI"), platform.value("SACheckOut_Year"), platform.value("SACheckOut_CVV"));
+			bento_Enter_CC_Details(driver, platform.value("SACheckOut_Number"), platform.value("SACheckOut_Month_UI"), platform.value("SACheckOut_Year"), platform.value("SACheckOut_CVV"));
 			break;
 			case "PAYFORT":
-			Enter_CC_Details(driver, platform.value("MasterCard_Number"), platform.value("MasterCard_Month"), platform.value("MasterCard_Year"), platform.value("MasterCard_CVV"));
+			bento_Enter_CC_Details(driver, platform.value("MasterCard_Number"), platform.value("MasterCard_Month"), platform.value("MasterCard_Year"), platform.value("MasterCard_CVV"));
 			break;	
 			case "NOON":
-			Enter_CC_Details(driver, platform.value("Noon_Number"), platform.value("Noon_Month_UI"), platform.value("Noon_Year"), platform.value("Noon_CVV"));
+			bento_Enter_CC_Details(driver, platform.value("Noon_Number"), platform.value("Noon_Month_UI"), platform.value("Noon_Year"), platform.value("Noon_CVV"));
 			break;
 			case "RAZORPAY":
-			Enter_CC_Details(driver, platform.value("RazorPay_Number"), platform.value("RazorPay_Month_UI"), platform.value("RazorPay_Year"), platform.value("RazorPay_CVV"));
+			bento_Enter_CC_Details(driver, platform.value("RazorPay_Number"), platform.value("RazorPay_Month_UI"), platform.value("RazorPay_Year"), platform.value("RazorPay_CVV"));
 			break;
 		}
 		if(common.value("Bento_Payment").equalsIgnoreCase("true")||BookingType.contains("TRAINS")) {			
@@ -162,6 +163,17 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 		payUI_BankPage(driver, BankName);
 		}
 		}
+	}
+	
+	public void bento_Enter_CC_Details(RemoteWebDriver driver, String CCNumber, String CCExpMonth, String CCExpYear, String CVV) throws Exception {
+		Reporter.log("Card Details +\n"+ CCNumber +"\n " + CCExpMonth  +" " + CCExpYear +" " + CVV);
+		safeType(driver, getObjectPayment("Bento_Pay_CreditCard_Number"), CCNumber);
+		safeClick(driver, getObjectPayment("Bento_Pay_CreditCard_Exp_Month"));
+		safeSelect(driver, getObjectPayment("Bento_Pay_CreditCard_Exp_Month"), CCExpMonth);
+		safeClick(driver, getObjectPayment("Bento_Pay_CreditCard_Exp_Year"));
+		safeSelect(driver, getObjectPayment("Bento_Pay_CreditCard_Exp_Year"), CCExpYear);
+		safeType(driver, getObjectPayment("Bento_Pay_CreditCard_Name"), "test");
+		safeType(driver, getObjectPayment("Bento_Pay_CreditCard_CVV"), CVV);
 	}
 
 	public void bento_Select_DC(RemoteWebDriver driver, String BankName, String BookingType) throws Exception {		

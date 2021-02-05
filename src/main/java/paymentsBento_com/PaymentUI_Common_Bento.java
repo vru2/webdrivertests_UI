@@ -24,7 +24,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 	public Cookie cookie_Bento_Payment = new Cookie("isBentoPayment", "true");
 	public Cookie cookie_Parl_Wallet = new Cookie("ct-auth", "EVefRmmOWPSC8c9sPGbZGwZMgfl%2FLjP6yfQQAwhPONaOOIjRmfrMO5ubb5%2FGLWzguQmW3NiUZma8q2lELnUuyC3uAF5DaTQONdJlLn%2FO2me%2FiLCzDjUE8Mm7nMigogz0z84lf%2Bili9Xzawt1KbN%2FMNpQDroZvb3Q7ub%2BLj1YfofQs%2BDG9mD5DXvLFNSWqYz93GfvGpnfyFmIRy226HjYgQ%3D%3D");
 	//public Cookie cookie_Full_Wallet = new Cookie("ct-auth", "O2HJIm5w1xSz%2BJuS4aDuK7gVEOwk4Wtqdan6btFwj4TyQ8aSq%2BF4m20vjT%2FZugfuD3habrO078UoXdzWM34lXZaLbE1jIpkEaANLn%2BHJadeW7kll2UfWWUfOoZLsVWTEc0QAdvEUdBA%2F1nzmjBhQdfKHBynkHeYDz6XwPLe1MJiHeiMeqTJEkDsxZaWHAi%2Bv");	
-	public Cookie cookie_Full_Wallet = new Cookie("ct-auth", "kPSO4DekYXjX1NAa%2BV6x%2BPAuD85oXXc2x6ocNR2SCho5FiJNPfE0mcjCvYIvtvEzD3habrO078UoXdzWM34lXZaLbE1jIpkEaANLn%2BHJadeW7kll2UfWWUfOoZLsVWTE5e4M7AJPpksQjN%2BnOAVReuzUb6b257o%2Bo1tkm1ssHdnsn63Uy2JyxP3spA3W9e%2Fw");	
+	public Cookie cookie_Full_Wallet = new Cookie("ct-auth", "QYqE9uech2apyQ1uZeSIm%2Biz6I1u9AiJowmGBaxiRKMqE8P953oYVntCR0SJJ7eQW%2FX9HXgO9kidldUQ8q4npkhV1B3OjqN%2Blj%2FywDNYZMjgUXM5JAnhVDA45gmzA8Pizn%2BSaRCsCJO4qK6o3WKDKpud0nmE4TDzaeJNsQHQ2mLsvmw%2FloTY%2FWDTIvGCxoTH");	
 	
 	public String get_Bento_Url(RemoteWebDriver driver, String PayType, String Domain) throws Exception {
 		String PayUrl = getPayUI(PayType, Domain);

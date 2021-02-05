@@ -18,19 +18,14 @@ public class Coupon_Valid extends PaymentUI_Common_Bento{
 	
 	@BeforeClass
 	public void setUp() throws Exception {
-		driver=(RemoteWebDriver) getDriver(driver);
-				
+		driver=(RemoteWebDriver) getDriver(driver);				
 	}
 
 	@Test
 	public void CouponValid() throws Exception {
 		get_Bento_Url(driver, "AirCoupon", "");
-		
-		driver.manage().addCookie(cookie_Full_Wallet);
-		refreshPage(driver);
-		
-		Thread.sleep(5000);
-		bento_Select_PaymentType(driver, "SC");
+		bento_Select_PaymentType(driver, "TW");
+		safeClick(driver, By.xpath(""));
 		textPresent_Log(driver, "Coupon code (DOMOW)", 5);
 		//bento_Enter_PaymentDetails(driver, "CC", "MASTER", "");
 		Thread.sleep(5000);

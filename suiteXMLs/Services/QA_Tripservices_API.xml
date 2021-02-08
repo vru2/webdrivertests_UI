@@ -32,6 +32,7 @@
 		    <class name="tripServices.TS_Invoice_Generation_Local" />
 		    <class name="tripServices.TS_UpdateBooking_Trains_Trainfare" />
 		    <class name="tripServices.TS_Amendment" />
+		     <class name="tripServices.TS_UpdateTripFields" />
 		    
 		</classes>
 

@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import com.jayway.restassured.path.json.JsonPath;
 
 import io.restassured.response.Response;
+import io.restassured.response.ResponseBody;
 
 public class TS_Update_Air_Module extends TripserviceCommon {
 	@Test(groups={"Regression"})
@@ -14,9 +15,7 @@ public class TS_Update_Air_Module extends TripserviceCommon {
 		String url =  Service_Url("TRIPSERVICE_POST_CALL");
 		Reporter.log(url);
 		resp=TripservicePostcall(params,headersForTripservicepostcall(),url);
-		Validation(resp);
-		JsonPath jsonPath = new JsonPath(resp.asString());
-		String tripref = jsonPath.getString("trip_ref");
+		validationforputcall(resp);
 		Response resp1;
 		String randNum="5";
 		String api_tp_wallet_amt=randNum;

@@ -617,6 +617,7 @@ public class TripserviceCommon extends PlatformCommonUtil {
 		}
 	}
 	
+	
 		
 	public ArrayList<String> db_airTripDetail(String TripID) throws SQLException, ClassNotFoundException, InterruptedException {
 		ArrayList<String> data = new ArrayList<String>();
@@ -948,6 +949,34 @@ public class TripserviceCommon extends PlatformCommonUtil {
 			String user = "tm";
 			String password = "tm123clear";
 			String query =  "SELECT PE.ID,PE.LINKABLE_ID FROM TRIPS T INNER JOIN TRAIN_BOOKINGS TB ON TB.TRIP_ID=T.ID INNER JOIN TRAIN_BOOKING_INFO TBI ON TBI.TRAIN_BOOKING_ID=TB.ID INNER JOIN TRAIN_FARES TF ON TF.ID=TBI.TRAIN_FARE_ID INNER JOIN PRICING_ELEMENTS PE ON PE.LINKABLE_ID=TF.ID WHERE T.TRIP_REF='" + TripID +"'";
+			Connection myCon = DriverManager.getConnection(url, user, password);
+			if (myCon != null) {
+				ResultSet myRes = myCon.createStatement().executeQuery(query);
+				while (myRes.next() == true) {
+				ResultSetMetaData result = myRes.getMetaData();
+				int noOfColumns = result.getColumnCount();
+					for (int x = 1; x <= noOfColumns; x++) {
+							String colValue = myRes.getString(x);
+							data.add(colValue);
+					}
+				}
+				myCon.close();
+			} else
+				Reporter.log("DB Connection not established");
+		}
+		return data;
+	}
+	
+	public ArrayList<String> db_UpdateTripFields(String TripID) throws SQLException, ClassNotFoundException, InterruptedException {
+		Thread.sleep(5000);
+		ArrayList<String> data = new ArrayList<String>();
+		ArrayList<String> Name = new ArrayList<String>();
+		{
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			String url = "jdbc:oracle:thin:@172.17.4.101:1521/cleardb";
+			String user = "tm";
+			String password = "tm123clear";
+			String query =  "SELECT T.TAXATION_MODEL, T.CT_GSTIN, T.HAS_REVENUE FROM TRIPS T WHERE T.TRIP_REF='" + TripID +"'";
 			Connection myCon = DriverManager.getConnection(url, user, password);
 			if (myCon != null) {
 				ResultSet myRes = myCon.createStatement().executeQuery(query);

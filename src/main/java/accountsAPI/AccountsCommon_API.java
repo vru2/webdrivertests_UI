@@ -1881,6 +1881,12 @@ public class AccountsCommon_API extends PlatformCommonUtil
 				Assert.assertTrue(false);						
 			}
 		}
+		if(Type.equalsIgnoreCase("Accounts_Service_CleartripV2_Signin_Unauthorized")) {
+			String message = jsonPathEvaluator.getString("message");
+			if(!message.contains("Failed")) {
+				Assert.assertTrue(false);						
+			}
+		}
 		
 		if(Type.equalsIgnoreCase("Accounts_Service_FLyinV2_Signin_Unauthorized")) {
 			String message = jsonPathEvaluator.getString("message");

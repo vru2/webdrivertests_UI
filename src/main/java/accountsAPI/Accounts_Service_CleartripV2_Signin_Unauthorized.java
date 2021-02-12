@@ -16,7 +16,7 @@ public class Accounts_Service_CleartripV2_Signin_Unauthorized extends AccountsCo
 		
 		Response resp ;		
 		resp =postCall("Accounts_Service_FLyinV2_Signin_Unauthorized", "");
-		validation_user_update_MobileOTP( resp, "Accounts_Service_FLyinV2_Signin_Unauthorized", "");
+		validation_user_update_MobileOTP( resp, "Accounts_Service_CleartripV2_Signin_Unauthorized", "");
 
 		/*ResponseBody body = resp.getBody();
 		System.out.println("Response of API is:" + body.asString());*/

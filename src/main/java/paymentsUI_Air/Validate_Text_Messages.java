@@ -199,7 +199,7 @@ public class Validate_Text_Messages extends PaymentUI_Common{
 	public void Validate_Misc() throws Exception {		
 		payUI_Select_PaymentType(driver, "CC");
 		elementPresent_log(driver, getObjectPayment("PayUI_Cleartrip_Logo"), "Cleartrip ", 2);
-		textPresent_Log(driver, "2006–2020 Cleartrip Pvt. Ltd", 1);
+		textPresent_Log(driver, "2006–2021 Cleartrip Pvt. Ltd", 1);
 		textPresent_Log(driver, "Completely safe and secure transaction", 1);
 		textPresent_Log(driver, "Total inclusive all taxes", 1);	
 		String Title = driver.getTitle();

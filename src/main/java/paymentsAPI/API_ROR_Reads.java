@@ -67,4 +67,26 @@ public class API_ROR_Reads extends API_PaymentCommon1
 		resp = Reporting("ReportingPAYID","");	
 		validation("ReportingPAYID", resp); 
 	}
+
+	@Test(alwaysRun=true)
+	public void ROR_MultiSearch_Pay() throws Exception{
+		Response resp ;		
+		resp = payGet1("ROR_MultiSearch","");	
+		validation("ROR_MultiSearch", resp); 
+	}
+
+	@Test(alwaysRun=true)
+	public void ROR_MIS() throws Exception{
+		Response resp ;		
+		resp = payGet1("ROR_Mis_expreports","");	
+		validation("ROR_Mis_expreports", resp); 
+	}
+		
+	@Test(alwaysRun=true)
+	public void ROR_CashUpdate() throws Exception{
+		Response resp ;		
+		resp = payPut("ROR_CashUpdate","");	
+		validation("ROR_CashUpdate", resp); 
+	}
+	
 }

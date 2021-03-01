@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Bento UI" parallel="tests" thread-count="2">
+<suite name="Bento UI" parallel="tests" thread-count="5">
 
 <listeners>
 <listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -109,23 +109,25 @@
 
 <test name="Coupon" preserve-order="true" >
     <classes>
+      <class name="paymentsBento_com.Coupon_Invalid"/>
     </classes>
 </test>
 
 <test name="ADCB" preserve-order="true" >
     <classes>
-    </classes>
+   </classes>
 </test>
 
-
-<test name="Stored Card" preserve-order="true" >
+<test name="Flyin" preserve-order="true" >
     <classes>
-    </classes>
+   </classes>
 </test>
 
 
 <test name="payback" preserve-order="true" >
     <classes>
+      <class name="paymentsBento_com.PayBack_Full"/><!-- 
+      <class name="paymentsBento_com.PayBack_Partial"/> -->
     </classes>
 </test>
 

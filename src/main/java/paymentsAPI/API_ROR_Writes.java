@@ -92,7 +92,7 @@ public class API_ROR_Writes extends API_PaymentCommon1
 		resp = payPost("ROR_Recon","");	
 		validation("ROR_Recon", resp); 
 	}
-	
+	/*
 	@Test(alwaysRun=true)
 	public void ROR_MultiSearch_Pay() throws Exception{
 		Response resp ;		
@@ -100,7 +100,7 @@ public class API_ROR_Writes extends API_PaymentCommon1
 		validation("ROR_MultiSearch", resp); 
 	}
 	
-	
+	*/
 	
 	
 }

@@ -20,6 +20,9 @@
 <test name="Flyin" preserve-order="true" parallel="true" >
     <classes>
   <class name="paymentsUI_Air.PWA_Qitaf_KW"/> 
+  <class name="paymentsUI_Air.Flyin_Wallet_Full"/> 
+  
+  
 <!-- 		  <class name="paymentsUI_Flyin.Flyin_Validate_Text_Messages"/> 
 	  <class name="paymentsUI_Flyin.Flyin_Validation"/>	  --> 
     </classes>

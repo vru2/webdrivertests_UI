@@ -158,8 +158,10 @@
     </classes>
 </test>
 
-<test name="API Refunds New" preserve-order="true" parallel="true">
+<test name="API Refunds redis enque" preserve-order="true" parallel="true">
     <classes>
+    
+      <class name="paymentsAPI.API_Refunds_Enque_redis"/> 
      <!--  <class name="paymentsAPI.API_Refunds"/>  -->
      </classes>
 </test>

@@ -3,17 +3,14 @@
 
 package paymentsBento_com;
 
-import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
-import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Coupon_Valid extends PaymentUI_Common_Bento{
+public class Coupon_Cashback extends PaymentUI_Common_Bento{
 	public RemoteWebDriver driver;	
 	
 	@BeforeClass
@@ -22,14 +19,14 @@ public class Coupon_Valid extends PaymentUI_Common_Bento{
 	}
 
 	@Test
-	public void CouponValid() throws Exception {
-		get_Bento_Url(driver, "AirCoupon", "");
-		bento_Select_PaymentType(driver, "TW");
-		safeClick(driver, By.xpath(""));
-		textPresent_Log(driver, "Coupon code (DOMOW)", 5);
-		//bento_Enter_PaymentDetails(driver, "CC", "MASTER", "");
-		Thread.sleep(5000);
-	}
+	public void Couponcashback() throws Exception {
+		get_Bento_Url(driver, "AirCouponCash", "");
+		bento_Select_PaymentType(driver, "NB");
+		elementPresent_log(driver, getObjectPayment("Bento_Pay_Coupon_Cashback_Icon"), "Cashback Icon", 20);
+		elementPresent_log(driver, getObjectPayment("Bento_Pay_Coupon_Cashback_Text"), "Cashback text", 1);
+		elementPresent_log(driver, getObjectPayment("Bento_Pay_Coupon_Cashback_Details"), "Cashback details", 1);
+		textPresent_Log(driver, "Earn ₹ 100 cashback with this booking", 1);
+		}
 			
 	@AfterMethod (alwaysRun = true)
 	public void afterMethod(ITestResult _result) throws Exception {

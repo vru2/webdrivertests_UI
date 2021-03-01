@@ -22,7 +22,7 @@ public class Wallet_Partial extends PaymentUI_Common_Bento{
 	}
 
 	@Test
-	public void GVPart() throws Exception {
+	public void WalletPart() throws Exception {
 		get_Bento_Url(driver, "Air", "");
 		driver.manage().addCookie(cookie_Parl_Wallet);
 		refreshPage(driver);

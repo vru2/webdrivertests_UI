@@ -4,6 +4,12 @@
 
 package accountsAPI;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import org.apache.commons.lang3.RandomStringUtils;
@@ -180,9 +186,9 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String params_Feedbackemail="{\"email_id\":\"ns.likhitha@cleartrip.com\",\"msg\":\"test\",\"subject\":\"working\",\"email_type\":\"default\"}";
 	String params_Signinpostcall="{\"email\":\"ns.likhitha@cleartrip.com\",\"password\":\"cleartrip123\",\"persistent_login\":\"t\",\"service\":\"\",\"caller\":\"homepage\",\"source\":\"ui\",\"action_type\":\"\",\"trip_ref\":\"\",\"_\": \"\"}";
 	String params_Account_Service_AppleSignin="{\"appleId\":\"1:7676790:1100:009:jhjhdjdfjnfkmkggjuthgjfhghh\",\"emailId\":\"appleidt50chars@privaterelay.appleid.com\",\"firstName\":\"abcd\",\"lastName\":\"sai\",\"title\":\"Mr.\"}";
-	
+
 	String params_Accounts_Service_Applesignin_Unauthorized="{\"appleId\":\"1:76790:1100:009:jhjhdjdfjnfkmkggjuthgjfhghh\",\"emailId\":\"appleidt50chars@privaterelay.appleid.com\",\"firstName\":\"abcd\",\"lastName\":\"sai\",\"title\":\"Mr.\"}";
-	
+
 	String params_Account_Service_AppleSignin_WrapperAPI="{\"appleId\":\"1:a:2:b:3:00\",\"emailId\":\"nakul@gmail.com\",\"firstName\":\"nakul\",\"lastName\":\"goyal\",\"title\":\"Mr.\"}";
 	String params_Account_Service_SendOTP_ToUsermobileNo="{\"mobile\":\"+917799964888\",\"userId\":\"14029546\",\"countryCode\":\"91\"}";
 	String params_b2csignin="{\"email\":\"ns.likhitha@cleartrip.com\",\"password\":\"cleartrip123\",\"persistent_login\":\"t\",\"service\":\"\",\"caller\":\"homepage\",\"source\":\"ui\",\"action_type\":\"\",\"trip_ref\":\"\",\"_\": \"\"}";
@@ -190,7 +196,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String params_IdentityService_ResetPassword="";
 	String params_flyinsignin="{\"username\" : \"ok@cltp.com\",\"partner\":1,\"password\":\"cleartrip1\"}";
 	String params_flyinsigninV2_CleartripUser="{ \"password\": \"cleartrip123\", \"partner\": 0, \"source\": \"home_page\", \"username\": \"ns.likhitha@cleartrip.com\", \"persist_login\": false}";
-	
+
 	String params_Accounts_Service_FLyinV2_Signin_Unauthorized="{ \"password\": \"cleatrip123\", \"partner\": 0, \"source\": \"home_page\", \"username\": \"ns.likhitha@cleartrip.com\", \"persist_login\": false}";
 	String params_AccountsService_FlyinV2Signin_Unauthorized="{ \"password\": \"Pre@123\", \"partner\": 1, \"source\": \"home_page\", \"username\": \"flyinctuser@gmail.com\", \"persist_login\": false}";
 	String params_Account_Service_FlyinV2_Signin_FlyinUser="{ \"password\": \"Preprod@123\", \"partner\": 1, \"source\": \"home_page\", \"username\": \"flyinctuser@gmail.com\", \"persist_login\": false}";
@@ -1158,7 +1164,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			params =params_flyinusersearchV2 ;
 			Reporter.log(url_Acct_Service+url);
 		}
-		
+
 		if(Type.equals("flyinusersearchV2_Flyinregression")) {
 			headers = headersForms4();
 
@@ -1186,7 +1192,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			params =params_travellercontroller_updatetraveller ;
 			Reporter.log(url_Acct_Service+url);
 		}
-		
+
 
 		if(Type.equals("Account_Service_Travellercontroller_UpdateTraveller_FlyRegression")) {
 			headers = headersFormsTCupdateTraveller();
@@ -1226,7 +1232,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			params =params_flyinsocialsignupV2 ;
 			Reporter.log(url_Acct_Service+url);
 		}
-		
+
 		if(Type.equals("flyinsocialsignupV2_flyinregression")) {
 			headers = headersForms4();
 
@@ -1298,7 +1304,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			params = params_identityservicesignin;
 			Reporter.log(url_Acct_Service_applesgnin+url);
 		}
-		
+
 		if(Type.equals("IdentityService_Signin_Unauthorized")) {
 			headers =headersFormIdentitysigninflyin ();
 			RestAssured.baseURI =url_Acct_Service_applesgnin;
@@ -1377,7 +1383,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			url = url_Account_Service_AppleSignin;					
 			params =params_Account_Service_AppleSignin ;
 		}
-		
+
 		if(Type.equals("Accounts_Service_Applesignin_Unauthorized")) {
 			headers = headersFormsapplesignin();
 
@@ -1856,7 +1862,55 @@ public class AccountsCommon_API extends PlatformCommonUtil
 				get(url);
 		return request;
 	}
+	public ArrayList<String> db_TripTxn(String id) throws SQLException, ClassNotFoundException {
+		ArrayList<String> data = new ArrayList<String>();
+		ArrayList<String> Name = new ArrayList<String>();
+		{
+			Class.forName("com.mysql.jdbc.Driver");
+			String user = "cleartrip";
+			String password = "1nterl3av3";
+			String url = "jdbc:mysql:@//172.17.64.165:3306";
+			String query =  "select * from person_traveller_details where person_id= '" + id +"'";
+			Connection myCon = DriverManager.getConnection(url,user,password);
+			if (myCon != null) {
+				ResultSet myRes = myCon.createStatement().executeQuery(query);
+				while (myRes.next() == true) {
+				ResultSetMetaData result = myRes.getMetaData();
+				int noOfColumns = result.getColumnCount();
+				int noOfRows  = myRes.getRow();
+				for (int x = 1; x <= noOfColumns; x++) {
+						
+							String colValue = myRes.getString(x);
+							data.add(colValue);
+							
+					}
+				}
+				myCon.close();
+			} else
+				Reporter.log("DB Connection not established");
+		}
+		return data;
+	}
 
+	public void DBValidation_Txn(Response resp, String Status) throws ClassNotFoundException, SQLException, InterruptedException {
+		Thread.sleep(5000);
+		Reporter.log("Database validation Started");
+		String Host = common.value("host");
+		if(Host.equalsIgnoreCase("qa2")) {
+			JsonPath jsonPathEvaluator = resp.jsonPath();
+			String DBTripID = jsonPathEvaluator.getString("id");
+			ArrayList<String> db_TripTxn = db_TripTxn(DBTripID);
+			if(!db_TripTxn.get(0).equals(DBTripID)) {
+				Reporter.log(" Trip details are not added in DB");
+				Assert.assertTrue(false);
+			}
+			if(!db_TripTxn.get(1).equals(Status)) {
+				Reporter.log(" Status is displayed as "+db_TripTxn.get(1));
+				Assert.assertTrue(false);
+			}
+			Reporter.log("Database validation Passed");
+		}
+	}
 
 	public void validation_user_update_MobileOTP(Response resp, String Type, String Type2){
 		Reporter.log("Response body "+Type +" : "+ resp.body().asString());
@@ -1883,11 +1937,11 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		}
 		if(Type.equalsIgnoreCase("Accounts_Service_CleartripV2_Signin_Unauthorized")) {
 			String message = jsonPathEvaluator.getString("message");
-			if(!message.contains("Failed")) {
+			if(!message.contains("failed")) {
 				Assert.assertTrue(false);						
 			}
 		}
-		
+
 		if(Type.equalsIgnoreCase("Accounts_Service_FLyinV2_Signin_Unauthorized")) {
 			String message = jsonPathEvaluator.getString("message");
 			if(!message.contains("failed")) {
@@ -2056,7 +2110,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 				Assert.assertTrue(false);						
 			}
 		}
-		
+
 		if(Type.equalsIgnoreCase("Accounts_Service_Applesignin_Unauthorized")) {
 			String username = jsonPathEvaluator.getString("message");
 			if(!username.contains("Apple id unique constraint violated for private email : appleidt50chars@privaterelay.appleid.com")) {
@@ -3049,7 +3103,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 				Assert.assertTrue(false);
 			}
 		}
-		
+
 		else if(Type.equalsIgnoreCase("flyinusersearchV2_Flyinregression")) {
 
 			String ReponseStr = resp.body().asString();

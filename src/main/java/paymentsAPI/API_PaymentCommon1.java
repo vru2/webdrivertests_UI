@@ -75,59 +75,6 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String url_QA2 = "https://qa2.cleartrip.com/";
 	public String url_TestApp = "";
 	
-	
-
-/*		String urlFlyin = "http://172.17.26.11:8406"; // ORACLE
-		String urlPay = "http://172.17.26.11:8070";
-		String urlDA = "http://172.17.28.21:8403";
-		String urlRefundNew = "http://172.17.26.11:8070";
-		String promoURL = "http://172.17.26.11:7999";
-		String urlRewards = "http://172.17.12.82:9080";
-		String urlWallet = "http://172.17.26.11:8071";
-		String urladcb_validat = "http://172.17.26.11:8070";
-		String urlCardInfo_Service="http://172.17.26.11:8331";
-
-		String urlrewards_validate = "http://172.17.26.11:8070";
-		String urlrewards_payURI ="http://172.17.26.11:8070";
-		String urlrewards_URI = "http://172.17.12.83:9080";
-		String urlPromo_Used = "http://172.17.26.11:8071";
-		String urlReporting ="http://172.17.28.21:8272";
-		String urlReportingTS ="http://172.17.26.11:9031";		
-		String url_Binmanager = "https://qa2.cleartrip.com/binmanager/v1/payment/cards?bin=534977";
-		public String url_TestApp = "";
-		String urlFetchRefunds="http://172.17.26.11:8070";
-		
-		*/
-		//String urlFetchRefunds="http://172.17.26.11:8070";
-		//String urlCS="http://172.17.26.11:8070";
-	/*
-	
-	String urlFlyin = "http://flyin-paymentservice.gcp-cltp.com"; 
-	String urlPay = "http://payment-service.gcp-cltp.com";
-	String urlRefundNew = "http://payment-service.gcp-cltp.com";
-	String promoURL = "http://promoservice.gcp-cltp.com";
-	String urlWallet = "http://wallet-service.gcp-cltp.com";
-	String urladcb_validat = "http://payment-service.gcp-cltp.com";
-	String urlCardInfo_Service="http://card-info-service.gcp-cltp.com";
-	String urlrewards_validate = "http://payment-service.gcp-cltp.com";
-	String urlrewards_payURI ="http://payment-service.gcp-cltp.com";
-	String urlPromo_Used = "http://wallet-service.gcp-cltp.com";
-	String urlReporting ="http://paymentservicereporting.gcp-cltp.com";
-	String urlReportingTS ="http://trip-service-api.gcp-cltp.com";		
-	public String url_TestApp = "";
-	String urlFetchRefunds="http://paymentservicereporting.gcp-cltp.com";
-	String urlDA = "http://pay-deposit-account-r3.gcp-cltp.com";
-	String urlrewards_URI = "http://10.163.15.236:9080";
-	String urlRewards = "http://rewardsservice.gcp-cltp.com:9080";
-	String url_Binmanager = "https://www.cleartrip.com/binmanager/v1/payment/cards?bin=534977";
-
-*/
-
-/*//OLD mysql apps
-	String urlPay = "http://172.17.26.11:8358";
-	String urlReporting ="http://172.17.26.11:8272";*/
-	
-	
 	String paramsCC ="[{\"payment\":{\"seq_no\":1,\"trip_id\":106562332,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":276,\"payment_category\":\"B\",\"fraud_system_invocation\":\"Y\",\"ui_version\":\"v2\",\"customer_detail\":{\"ip_address\":\"119.82.73.123\",\"mobile\":\"9986696785\",\"email\":\"cltppayment@gmail.com\",\"firstName\":\"test\"},\"app_ref1\":\"Q18110926800\",\"app_ref2\":\"167823462\",\"itinerary_id\":\"683a3a6bec-4e58-422a-a2c9-90707b1e5a12\",\"payment_type\":\"CC\",\"amount\":100.99,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"9W/362/DEL/BOM/201811XXXXXX00\",\"order_info2\":\"Kiran Kumar\",\"source_type\":\"ACCOUNT\",\"user_id\":85721640,\"company_id\":110340,\"app_return_info\":{\"url\":\"https://www.cleartrip.com/flights/itinerary/683a3a6bec-4e58-422a-a2c9-90707b1e5a12/book\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://book-flights.cltp.com:9001/r3/book/flights/itinerary/683a3a6bec-4e58-422a-a2c9-90707b1e5a12/book-internal?ll=INFO\"},\"host_name\":\"qa2.cleartrip.com\",\"card_detail\":{\"card_number\":\"340000000000009\",\"card_type_id\":1,\"expiry_month\":\"12\",\"expiry_year\":\"2021\",\"cvv\":\"123\",\"name\":\"CleartripCard\",\"billto_detail\":{\"firstname\":\"test\",\"lastname\":\"test\",\"address1\":\"Cleartrip JP Nagar\",\"city_name\":\"Bangalore\",\"state_name\":\"Karnataka\",\"country_name\":\"India\",\"postal_code\":\"560076\"}},\"user_agent\":\"Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko\"}}]";
 	String paramsCCVISA ="[{\"payment\":{\"seq_no\":1,\"trip_id\":106562332,\"app_userid\":10001,\"product_type\":\"VISA\",\"high_risk\":false,\"d_plus_x_in_hours\":276,\"payment_category\":\"B\",\"fraud_system_invocation\":\"Y\",\"ui_version\":\"v2\",\"customer_detail\":{\"ip_address\":\"119.82.73.123\",\"mobile\":\"9986696785\",\"email\":\"cltppayment@gmail.com\",\"firstName\":\"test\"},\"app_ref1\":\"Q18110926800\",\"app_ref2\":\"167823462\",\"itinerary_id\":\"683a3a6bec-4e58-422a-a2c9-90707b1e5a12\",\"payment_type\":\"CC\",\"amount\":100.99,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"9W/362/DEL/BOM/201811XXXXXX00\",\"order_info2\":\"Kiran Kumar\",\"source_type\":\"ACCOUNT\",\"user_id\":85721640,\"company_id\":110340,\"app_return_info\":{\"url\":\"https://www.cleartrip.com/flights/itinerary/683a3a6bec-4e58-422a-a2c9-90707b1e5a12/book\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://book-flights.cltp.com:9001/r3/book/flights/itinerary/683a3a6bec-4e58-422a-a2c9-90707b1e5a12/book-internal?ll=INFO\"},\"host_name\":\"qa2.cleartrip.com\",\"card_detail\":{\"card_number\":\"5123456789012346\",\"card_type_id\":1,\"expiry_month\":\"05\",\"expiry_year\":\"2020\",\"cvv\":\"123\",\"name\":\"CleartripCard\",\"billto_detail\":{\"firstname\":\"test\",\"lastname\":\"test\",\"address1\":\"Cleartrip JP Nagar\",\"city_name\":\"Bangalore\",\"state_name\":\"Karnataka\",\"country_name\":\"India\",\"postal_code\":\"560076\"}},\"user_agent\":\"Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko\"}}]";
 
@@ -484,9 +431,14 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	
 
 	String url_Singlebincard="/v1/payment/card";
-
-
-
+	
+	String url_EMI_Cache_Refresh ="/paymentservice/ui/refresh/emiCache?domain=IN"; 
+	String url_EMI_Cache_ResourcesRefresh ="/paymentservice/ui/refresh/cachedEmiResources"; 
+	String url_EMI_GW_Razorpay = "/paymentservice/ui/fetch/emiCache?domain=IN&gateway=RAZORPAYV2";
+	String url_EMI_GW_Noon = "/paymentservice/ui/fetch/emiCache?domain=AE&gateway=NOON";
+	String url_EMI_Fetch = "/paymentservice/api/fetchEmi";
+	
+	
 	/*String Prod_Url_PaymentService="http://172.21.65.21:8070";
 	//String Prod_Url_Rewards1="http://rewardsservice.cltp.com:9001";
 	String Prod_Url_Rewards="http://172.21.3.122:9080";
@@ -590,6 +542,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	
 	//"140471948,\"ui_language\":\"EN\",\"client\":\"Cleartrip\",\"trip_ref\":\"200531806440\",\"txn_id\":\"227577296\",\"currency\":\"INR\",\"product_type\":\"DOMESTIC-AIR\",\"source_type\":\"MOBILE\",\"high_risk\":false,\"country\":\"IN\",\"user_id\":\"77925412\",\"company_id\":110340,\"back_button_url\":\"/amendments/itinerary\",\"trip_title\":\"Bangalore ? New Delhi\",\"payment_category\":\"A\",\"customer_detail\":{\"user_id\":77925412,\"mobile\":\"9971867476\",\"email\":\"shubham.bansal@cleartrip.com\",\"first_name\":\"Shubham\",\"last_name\":\"Bansal\"},\"app_return_info\":{\"url\":\"http://amendtool.gcp-cltp.com/amend/book/680e1794b8-87a7-40b9-a8d6-200614005232\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://amendtool.gcp-cltp.com/amend/book/680e1794b8-87a7-40b9-a8d6-200614005232\"},\"air_booking\":{\"traveller_details\":[{\"seq_no\":1,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"Shubham\",\"last_name\":\"Bansal\"}],\"itinerary_details\":[{\"segment_details\":[{\"serial_number\":0,\"airline_name\":\"UK\",\"airline_code\":\"UK\",\"flight_number\":816,\"departure_date\":\"2020-06-22T12:15:00\",\"arrival_date\":\"2020-06-22T15:05:00\",\"departure_time\":\"12:15\",\"arrival_time\":\"15:05\",\"duration\":\"10200\",\"stops\":0,\"departure_code\":\"BLR\",\"arrival_code\":\"DEL\",\"departure_airport_name\":\"Kempegowda International Airport\",\"arrival_airport_name\":\"Indira Gandhi Airport\",\"departure_name\":\"Bangalore\",\"arrival_name\":\"New Delhi\",\"date\":\"2020-06-22T12:15:00\"}]}],\"flights_pricing_details\":{\"pax_pay_info\":[{\"base_fare\":4970.0,\"pax_count\":1,\"pax_type\":\"ADULT\"}],\"discount\":0.0,\"psgr_service_fee\":0.0,\"air_dev_fee\":0.0,\"airline_misc\":177.0,\"cute_fee\":0.0,\"airline_gst\":255.0,\"paid_before\":\"5223.0\",\"amend_charges\":1350.0,\"ct_charges\":0.0,\"currency\":\"INR\",\"other_charges\":348.0,\"service_fee\":0.0,\"total\":1877},\"transaction_fee_details\":{\"cc\":{\"DEFAULT\":0.0},\"dc\":{\"DEFAULT\":0.0},\"nb\":{\"DEFAULT\":0.0},\"kc\":{\"DEFAULT\":0.0},\"da\":{\"DEFAULT\":0.0},\"tw\":{\"DEFAULT\":0.0},\"up\":{\"DEFAULT\":0.0}}}}"
 	
+	
+	String param_EMI_Fetch = "{\"tripRef\":\"Q2020990339303\",\"amount\":1000}";
 	
 
 	public String tripRef = null;

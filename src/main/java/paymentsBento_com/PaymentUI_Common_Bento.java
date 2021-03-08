@@ -608,9 +608,64 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 					Reporter.log("masterCard Image URL : "+amexCardUrl);
 					Assert.assertTrue(false);
 				}
+				driver.switchTo().window(handle);
+			}
+			else if(Domain.endsWith("AE")) {
+				
+				elementPresent_log(driver, getObjectPayment("Bento_Pay_CC_MasterCard_Img"), "MasterCard", 1);
+				elementPresent_log(driver, getObjectPayment("Bento_Pay_CC_Visa_Img"), "Visa", 1);
+				elementPresent_log(driver, getObjectPayment("Bento_Pay_CC_Amex_Img"), "AMEX", 1);
+				//elementPresent_log(driver, getObjectPayment("Bento_Pay_CC_TextBox_Mada_Img"), "Mada CC textbox image", 1);
+				elementPresent_log(driver, getObjectPayment("Bento_Pay_CC_TextBox_Visa_Img"), "Visa CC textbox image", 1);
+				elementPresent_log(driver, getObjectPayment("Bento_Pay_CC_TextBox_Master_Img"), "Master CC textbox image", 1);
+				elementPresent_log(driver, getObjectPayment("Bento_Pay_CC_TextBox__Maestro_Img"), "Maestro CC textbox image", 1);
+				
+				//======================================Visa image============================================//
+				String  handle= driver.getWindowHandle();			
+				safeClick(driver, getObjectPayment("Bento_Pay_CC_Visa_Img"));
+				Thread.sleep(5000);
+				for(String winHandle : driver.getWindowHandles()){
+				    driver.switchTo().window(winHandle);
+				}
+				String visaUrl = getURL(driver);
+				Reporter.log("Visa Image URL : "+visaUrl);
+				if(!visaUrl.contains("usa.visa.com/support/consumer/security.html")) {
+					Reporter.log("Visa Image URL : "+visaUrl);
+					Assert.assertTrue(false);
+				}
+				textPresent_Log(driver, "Peace of mind", 5);
+				driver.switchTo().window(handle);
+				
+				//======================================Master image============================================//
+				safeClick(driver, getObjectPayment("Bento_Pay_CC_MasterCard_Img"));
+				Thread.sleep(5000);
+				for(String winHandle : driver.getWindowHandles()){
+				    driver.switchTo().window(winHandle);
+				}
+				String masterCardUrl = getURL(driver);
+				Reporter.log("masterCardUrl Image URL : "+visaUrl);
+				if(!masterCardUrl.contains("https://www.mastercard.us/en-us.html")) {
+					Reporter.log("masterCard Image URL : "+masterCardUrl);
+					Assert.assertTrue(false);
+				}
 
-				driver.switchTo().window(handle);					
+				driver.switchTo().window(handle);
 
+				//======================================AMEX image============================================//
+				safeClick(driver, getObjectPayment("Bento_Pay_CC_Amex_Img"));
+				Thread.sleep(5000);
+				for(String winHandle : driver.getWindowHandles()){
+				    driver.switchTo().window(winHandle);
+				}
+				String amexCardUrl = getURL(driver);
+				Reporter.log("amexCardUrl Image URL : "+amexCardUrl);
+				if(!amexCardUrl.contains("www.americanexpress.com")) {
+					Reporter.log("masterCard Image URL : "+amexCardUrl);
+					Assert.assertTrue(false);
+				}
+				driver.switchTo().window(handle);
+				
+				
 			}
 		}
 			else if(PaymentType.equalsIgnoreCase("NB")) {
@@ -643,6 +698,22 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 			else if(PaymentType.equalsIgnoreCase("Summary")) {
 				elementPresent_log(driver, getObjectPayment("Bento_Pay_BookingSummary_Flight_Icon"), "Flight", 1);
 				elementPresent_log(driver, getObjectPayment("Bento_Pay_BookingSummary_Traveller_Icon"), "Traveller", 1);				
+			}
+			else if(PaymentType.equalsIgnoreCase("ADCB")) {
+				bento_Select_PaymentType(driver, "ADCB");
+				safeClick(driver, getObjectPayment("Bento_Pay_ADCB_Logo"));
+				Thread.sleep(5000);
+				for(String winHandle : driver.getWindowHandles()){
+				    driver.switchTo().window(winHandle);
+				}
+				String ADCBUrl = getURL(driver);
+				Reporter.log("ADCB Image URL : "+ADCBUrl);
+				if(!ADCBUrl.contains("www.adcb.com")) {
+					Reporter.log("ADCBUrl Image URL : "+ADCBUrl);
+					Assert.assertTrue(false);
+				}
+
+				System.out.println("ADCBUrl Image URL : "+ADCBUrl);
 			}
 		
 	}

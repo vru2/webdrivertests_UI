@@ -3,14 +3,8 @@
 
 package paymentsUI_Air;
 
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.remote.server.handler.SendKeys;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;

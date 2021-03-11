@@ -22,6 +22,17 @@
 </test>
 
 
+<test name="EMI" preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_EMI_Cache"/>
+      <class name="paymentsAPI.API_EMI_Fetch"/>
+      <class name="paymentsAPI.API_EMI_NoonPlans"/>
+      <class name="paymentsAPI.API_EMI_RazorpayPlans"/>
+      <class name="paymentsAPI.API_EMI_Resources"/>     
+    </classes>
+</test>
+
+
 
 <test name="API Refunds Count" preserve-order="true" parallel="true">
     <classes>
@@ -84,7 +95,8 @@
 
 <test name="API Fetch Payment Details" preserve-order="true" parallel="true">
     <classes>
-      <class name="paymentsAPI.API_FetchPay_Details"/> 
+      <class name="paymentsAPI.API_FetchPay_Details"/>
+      <class name="paymentsAPI.API_Fetch_TripStatus"/> 
     </classes>
 </test>
 

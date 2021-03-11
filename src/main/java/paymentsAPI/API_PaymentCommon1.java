@@ -68,8 +68,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String urlrewards_URI = "http://172.17.56.51:9080";
 	String urlPromo_Used = "http://172.17.51.86:8071";
 
-	String urlReporting = "http://172.17.51.86:8070";
-	//String urlReporting ="http://172.17.51.86:8272";
+	String urlReporting_TS = "http://172.17.51.86:8282";
+	String urlReporting ="http://172.17.51.86:8272";
 	String urlReportingTS ="http://172.17.51.86:9031";		
 	String url_Binmanager = "https://qa2.cleartrip.com/binmanager/v1/payment/cards?bin=534977";		
 	String url_QA2 = "https://qa2.cleartrip.com/";
@@ -96,6 +96,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String paramsctPay_ADD1 = ",\"s2s_url\":\"wwww.123.com\",\"payment_types\":\"CC,DC,TW\"}";
 
 
+	String paramsEMI1 = "{\"tripRef\":\"";
+	String paramsEMI2 = "\",\"amount\":30000}";
 	String paramsctPay_CreateURL = "{\"order_id\":\"T2021069300\",\"client_id\":1125,\"amount\":1234.52,\"currency\":\"INR\",\"country\":\"IN\",\"return_url\":\"http://qa2.cleartrip.com\",\"udf\":{\"udf1\":\"Air ()\",\"udf2\":\"Air - ()\",\"udf3\":\"Hotel ()\",\"udf4\":\"Local & ()\",\"udf5\":\"Trains ()\"},\"customer_detail\":{\"ip_address\":\"217.164.159.242\",\"address1\":\"Unit No 001, Ground Floor, DTC Bldg, Sitaram mills compound, N.M.joshi Marg, Lower parel (E)\",\"address2\":\"Cleartrip JP Nagar\",\"address3\":null,\"city_name\":\"Bangalore\",\"postal_code\":\"560085\",\"state_name\":\"Karnataka\",\"country_name\":\"India\",\"mobile\":\"1212121112\",\"landline\":\"121212121221\",\"other_phone\":null,\"email\":\"cltppayment@gmail.com\"}}";
 	String paramsFlyIN = "{\"amount\":10.10,\"currency\":\"SAR\",\"country\":\"SA\",\"txnid\":\"110119042057CTK3ZG2\",\"payment_type\":\"CC\",\"product_info\":\"Flight_Flyin\",\"source_type\":\"ACCOUNT\",\"host_name\":\"preproduction.flyin.com\",\"udf\":{\"udf1\":\"vkY25EH\",\"udf2\":\"F booking txn amount 10.10\"},\"company_id\":205,\"customer_detail\":{\"ip_address\":\"119.82.106.204\",\"mobile\":\"12121121212\",\"email\":\"123@flyin.com\"},\"card_detail\":{\"card_number\":\"4242424242424242\",\"card_type_id\":1,\"expiry_month\":\"05\",\"expiry_year\":\"2021\",\"cvv\":\"100\",\"name\":\"test test\"},\"return_url\":\"http://payments.fly.in/payment/finalresponse/ct?pid=vkY25EH\"}";
 	String paramWalletCreate = "{\"currency\":\"AED\",\"createdBy\":\"13957750\",\"amount\":\"100\",\"paymentId\":\"43188350\",\"tripRef\":\"Q190822469836\",\"eventType\":\"CREATION\",\"expiryDate\":\"2020-12-21\"}";
@@ -247,8 +249,12 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String url1_FetchPayDetails = "/trips?tripID=Q1904233450";
 	String urlpromoActivate = "/promoservice/v1/promogroups/Q190624286218";
 	String urlpromoUsed = "/payments/wallet/promo/used?tripRef=Q190702311622";
+	String urlFetchTripStatus = "/paymentservice/service/status/xml/Q210302910382.ref";
 	
 	String urlPayFlyin = "/paymentservice/gw/v1/pay";
+
+	String urlEMI_Banks = "/paymentservice/service/emibanks";
+	String urlEMI_Interest = "/paymentservice/service/emiinterests";
 	String urlpayReporting= "/paymentservice/service/air/mis/detail?tripRef=Q190530193406&paymentType=CC&reqFor=refund";
 
 	String urlEndPoint_Wallet_PromoUsed="/payments/wallet/promo/used?tripRef=Q19050680568"; 	
@@ -405,10 +411,11 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 	String url_Reportingendpoint ="/paymentservice/service/air/mis/detail?tripRef=Q200109687244&paymentType=CC&reqFor=refund";
 	String url_ReportingPaymentID ="/paymentservice/payments/43911126";
-
+	
 	String url_ReportingTS_V3 ="/trips?tripID=Q191014530470&refundRequired=true&historyRequired=true&paymentsRequired=true&apiVersion=V3";
 	String url_ReportingTS_Archived_V3_False ="/paymentservice/payments/42752096?isArchived=false";
 	String url_ReportingTS_Archived_V3_True ="/paymentservice/payments/42752096?isArchived=true";
+	String url_ReportingTS_Archived_V_New ="/trips?tripID=Q190620284526&refundRequired=true&historyRequired=true&paymentsRequired=true&apiVersion=V3";
 
 	String urlRefundsTrip="/paymentservice/refund/data/fetch";
 	String urlRefundsTripRef="/paymentservice/refund/data/fetchByTripRef";
@@ -696,6 +703,34 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			url= urlpromoActivate;
 		}
 
+		else if(payType.equalsIgnoreCase("EMIBanks")) {
+			RestAssured.baseURI =urlPay;
+			
+			Reporter.log(urlPay);	
+			url= urlpromoUsed;
+		}
+
+		else if(payType.equalsIgnoreCase("FetchTripStatus")) {
+			RestAssured.baseURI =urlPay;
+			
+			Reporter.log(urlPay);	
+			url= urlFetchTripStatus;
+		}
+
+		else if(payType.equalsIgnoreCase("EMIRazorpay")) {
+			RestAssured.baseURI =urlPay;
+			
+			Reporter.log(urlPay);	
+			url= url_EMI_GW_Razorpay;
+		}
+		else if(payType.equalsIgnoreCase("EMINoon")) {
+			RestAssured.baseURI =urlPay;
+			
+			Reporter.log(urlPay);	
+			url= url_EMI_GW_Noon;
+		}
+		
+		
 		else if(payType.equalsIgnoreCase("PromoUsed")) {
 
 			Reporter.log(urlReportingTS);	
@@ -852,6 +887,24 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 		}
 
+
+		else if(payType.equalsIgnoreCase("EMICache")) {
+			RestAssured.baseURI =urlPay;
+
+			url= url_EMI_Cache_Refresh;
+			params= "";
+		} 
+		
+
+		else if(payType.equalsIgnoreCase("EMIResources")) {
+			RestAssured.baseURI =urlPay;
+
+			url= url_EMI_Cache_ResourcesRefresh;
+			params= "";
+		} 
+		
+		
+		
 		else if(payType.equalsIgnoreCase("RORUpdate_Refund_List")) {
 			RestAssured.baseURI =urlReporting;
 			Random rand = new Random(); 
@@ -1138,6 +1191,10 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		else if(payType.equalsIgnoreCase("DAPay")) {
 			url = urlPayV3;
 			params = paramsDAPayV3;
+		}
+		else if(payType.equalsIgnoreCase("EMIFetch")) {
+			url = url_EMI_Fetch;
+			params = paramsEMI1+payType1+paramsEMI2;
 		}
 		
 
@@ -1825,7 +1882,6 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		if(payType.equalsIgnoreCase("ROR_CashUpdate")) {
 			String id = jsonPathEvaluator.getString("id");
 			String company_id = jsonPathEvaluator.getString("company_id");
-			System.out.println(" iD "+id);
 			System.out.println(" iD "+company_id);
 			if(!id.equals("5116412")) {
 				Assert.assertTrue(false);
@@ -1863,6 +1919,15 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 				if(!description.equals("[Payment successful]")) {
 					Assert.assertTrue(false);
 				}
+				Assert.assertTrue(false);
+			}
+		}
+
+		else if(payType.equalsIgnoreCase("FetchTripStatus")) {
+		if(!resp.body().asString().contains("Payment Successful")){
+				Assert.assertTrue(false);
+			}
+			if(!resp.body().asString().contains("44653436")){
 				Assert.assertTrue(false);
 			}
 		}
@@ -3144,6 +3209,14 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 				Assert.assertTrue(false);
 			}*/
 		}
+		else if(payType.equalsIgnoreCase("ReportingTS_Archived_V_New")){
+			if(!resp.body().asString().contains("SessionID_1569885600000BLR_DEL")) {
+				Reporter.log("SessionID_1569885600000BLR_DEL is not displayed");
+				Assert.assertTrue(false);
+			}
+		}
+		
+		
 		else if(payType.equals("GETUI_CONVFEE")) {
 			String CC = jsonPathEvaluator.getString("cc");
 			Reporter.log("cc " +CC);
@@ -3158,19 +3231,53 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			if(!resp.body().asString().contains("UPI")) {
 				Reporter.log("UPI is not displayed");
 				Assert.assertTrue(false);
-			}
-			
+			}		
 		}
 	else if(payType.equals("WALLET_Fetch_NotLogged")) {
 			
 			if(!resp.body().asString().contains("User not logged in")) {
 				Reporter.log("User not logged in is not displayed");
 				Assert.assertTrue(false);
-			}
-			
-		
-		
+			}		
 		}
+	else if(payType.equals("EMICache")) {
+		if(!resp.body().asString().contains("success")) {
+			Reporter.log("success is not displayed");
+			Assert.assertTrue(false);
+		}
+	}
+	else if(payType.equals("EMICache")) {
+		if(!resp.body().asString().contains("success")) {
+			Reporter.log("success is not displayed");
+			Assert.assertTrue(false);
+		}
+	}
+	else if(payType.equals("EMIResources")) {
+		if(!resp.body().asString().contains("success")) {
+			Reporter.log("success is not displayed");
+			Assert.assertTrue(false);
+		}
+	}		
+		
+	else if(payType.equals("EMIRazorpay")) {
+		if(!resp.body().asString().contains("CT_EMI_PLAN_25_48_3_13")) {
+			Reporter.log("CT_EMI_PLAN_24_107_3_0");
+			Assert.assertTrue(false);
+		}
+	}
+		
+	else if(payType.equals("EMINoon")) {
+		if(!resp.body().asString().contains("CT_EMI_PLAN_24_107_3_0")) {
+			Reporter.log("Plan is not displayed");
+			Assert.assertTrue(false);
+		}
+	}
+	else if(payType.equals("EMIFetch")) {
+		if(!resp.body().asString().contains("Invalid trip")) {
+			Reporter.log("Invalid trip is not displayed");
+			Assert.assertTrue(false);
+		}
+	}
 		
 		
 		return resp;	
@@ -3285,9 +3392,16 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 				Assert.assertTrue(false);
 			}
 		}
-
-
-
+		
+		else if(payType.equalsIgnoreCase("EMICache")) {
+			String str_resp = resp.body().asString();
+			if(!str_resp.contains("success")) {
+				Assert.assertTrue(false);
+			}	
+			if(!str_resp.contains("success1")) {
+				Assert.assertTrue(false);
+			}	
+		}
 		return resp;
 	}
 
@@ -3317,20 +3431,14 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		}else if(Domain.equalsIgnoreCase("US")) {
 			qaurl=qaurlus;
 		}
-		 
-		
 		Url = qaurl+ fetchPaymentURL(resp);
 		if(Domain.contains("FLYIN")) {
-			Url = qaurlFlyin+ fetchPaymentURL(resp);
-			
-		}
-		
-		
+			Url = qaurlFlyin+ fetchPaymentURL(resp);			
+		}		
 		Reporter.log("Payment URL : " +Url);
 		//System.out.println("Payment URL : " +Url);
 		String TripID = fetchPaymentTripID(resp);
-		Reporter.log("TripID : "+TripID);
-			
+		Reporter.log("TripID : "+TripID);	
 		if(!Url.contains("pay")) {
 			Reporter.log("Pay URL is not created - Failing the script");
 			System.out.println("Pay URL is not created - Failing the script"+Url);
@@ -4109,6 +4217,13 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			response = RestAssured.given().
 					when().log().all().headers(headers).get(endPoint);
 		}
+		else if(payType.equalsIgnoreCase("ReportingPAYID")) {
+			endPoint = url_ReportingPaymentID;
+
+			Reporter.log(endPoint);
+			response = RestAssured.given().
+					when().log().all().headers(headers).get(endPoint);
+		}
 		else if(payType.equalsIgnoreCase("ReportingTS_V3")) {
 			RestAssured.baseURI =urlReportingTS;
 
@@ -4134,7 +4249,17 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			response = RestAssured.given().
 					when().log().all().headers(headers).get(endPoint);
 		}	
-				
+			
+		else if(payType.equalsIgnoreCase("ReportingTS_Archived_V_New")) {
+			RestAssured.baseURI =urlReporting_TS; //==============================//
+
+			Reporter.log(urlReportingTS);	
+			endPoint = url_ReportingTS_Archived_V_New;
+			response = RestAssured.given().
+					when().log().all().headers(headers).get(endPoint);
+		}	
+		
+		
 		
 		else if(payType.equalsIgnoreCase("ReportingPaginate")) {
 			RestAssured.baseURI =urlReporting;

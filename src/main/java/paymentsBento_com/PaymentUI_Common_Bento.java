@@ -436,7 +436,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 			textPresent_Log(driver, "Taxes and fees", 1);
 			if(Domain.equals("IN")) {
 			textPresent_Log(driver, "Flexifly", 1);
-			textPresent_Log(driver, "TRAVEL_INSURANCE", 1);
+			textPresent_Log(driver, "Travel Insurance", 1);
 			}
 			textPresent_Log(driver, "Convenience fee", 1);
 			//textPresent_Log(driver, "Cleartrip wallet", 1);

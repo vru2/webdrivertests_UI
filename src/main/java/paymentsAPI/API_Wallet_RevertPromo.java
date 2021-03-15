@@ -14,6 +14,5 @@ public class API_Wallet_RevertPromo extends API_PaymentCommon1
 		Response resp ;		
 		resp = rearchWallet("REVERTPROMO","");	
 		validation("wallet_REVERTPROMO", resp);
-		}
-	
+		}	
 }

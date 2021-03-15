@@ -182,6 +182,10 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String Params_RORCreate_Refund = "{\"isFullWalletRefund\":false,\"tripRef\":\"Q200818843434\",\"amount\":10,\"description\":\"Autaomtion REFUND\",\"txnid\":";
 	String ParamsROR_Recon = "{\"tripRef\":\"Q191203587976\",\"txnId\":";
 
+	String ParamsQitaf_SendOTP = "{\"rewardsType\":\"QITAF\",\"rewardsRequestType\":\"OTP\",\"params\":{\"mobile\":\"555021516\"},\"trackId\":\"1280431506701\"}";
+	String ParamsQitaf_Redeem = "{\"rewardsType\":\"QITAF\",\"rewardsRequestType\":\"REDEEM\",\"params\":{\"mobile\":\"555021515\",\"pin\":\"2118\"},\"trackId\":\"1280431506700\",\"paymentId\":\"123456106700\",\"amount\":300,\"currency\":\"SAR\",\"otp\":\"1235\"}";
+	String ParamsROR_Reverse= "{\"rewardsType\":\"QITAF\",\"rewardsRequestType\":\"REVERSE\",\"trackId\":\"123454\",\"amount\":5000,\"paymentId\":44619522,\"currency\":\"SAR\",\"params\":{\"tripRef\":\"Q210129886298\"}}";
+
 	String ParamsFetchRefund="{\"refundIds\":[9387165,9387150,9387149,9387190,9387357"
 			+ ",9387405],\"txnIds\": null,"+"\"status\": [\"D\",\"P\",\"S\",\"T\",\"F\"]}";
 	
@@ -300,7 +304,13 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String urlRORCreate_Profile_List ="/paymentservice/service/profileList";
 	String urlRORSearch_Profile_List ="/paymentservice/service/profileList/search";
 	String urlRORCreate_Refunds="/paymentservice/service/refund";
+	
 
+	String urlQitaf_Reverse = "/payments/rewards/reverse";
+	String urlQitaf_Redeem = "/payments/rewards/redeem";
+	String urlQitaf_SendOTP = "/payments/rewards/sendOtp";
+	
+	
 	String urlRORRecon="/paymentservice/service/refund/recon";
 
 	String urlROR_WalletFetch_Reads="/payments/wallet/fetch/v2?userId=13957750&currency=AED";
@@ -973,7 +983,27 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		else if(payType.equalsIgnoreCase("RORCreate_Payment")) {
 			params = Params_RORCreate_Payment;
 			url= urlRORCreate_Payments;
-		}		/*
+		}
+		else if(payType.equalsIgnoreCase("Qitaf_SendOTP")) {
+			RestAssured.baseURI =urlRewards;
+			params = ParamsQitaf_SendOTP;
+			url= urlQitaf_SendOTP;
+			Reporter.log(urlPay+url);
+		}
+		else if(payType.equalsIgnoreCase("Qitaf_Redeem")) {
+			RestAssured.baseURI =urlRewards;
+			params = ParamsQitaf_Redeem;
+			url= urlQitaf_Redeem;
+			Reporter.log(urlPay+url);
+		}
+		else if(payType.equalsIgnoreCase("Qitaf_Reverse")) {
+			RestAssured.baseURI =urlRewards;
+			params = ParamsROR_Reverse;
+			url= urlQitaf_Reverse;
+			Reporter.log(urlPay+url);
+		}
+		
+		/*
 		else if(payType.equalsIgnoreCase("RORCreate_ProfileList")) {
 			params = Params_RORCreate_Profile_List;
 			url= urlRORCreate_Profile_List;
@@ -1891,7 +1921,40 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			}  
 			
 		}
+		else if(payType.equalsIgnoreCase("Qitaf_Reverse")) {
+			String status = jsonPathEvaluator.getString("status");
+			String description = jsonPathEvaluator.getString("description");
+			if(!description.equals("success")) {
+				Assert.assertTrue(false);
+			}  
+			if(!status.equals("S")) {
+				Assert.assertTrue(false);
+			}  
+			
+		}
+		else if(payType.equalsIgnoreCase("Qitaf_SendOTP")) {
+			String status = jsonPathEvaluator.getString("status");
+			String description = jsonPathEvaluator.getString("description");
+			if(!description.equals("QitafNot Found Or Available")) {
+				Assert.assertTrue(false);
+			}  
+			if(!status.equals("F")) {
+				Assert.assertTrue(false);
+			}  
+			
+		}
 		
+		else if(payType.equalsIgnoreCase("Qitaf_Redeem")) {
+			String status = jsonPathEvaluator.getString("status");
+			String description = jsonPathEvaluator.getString("description");
+			if(!description.equals("Invalid Pin")) {
+				Assert.assertTrue(false);
+			}  
+			if(!status.equals("F")) {
+				Assert.assertTrue(false);
+			}  
+			
+		}
 		
 		else if(payType.equalsIgnoreCase("refund_Enque")) {
 			if(!(resp.body().asString().contains("SUCCESS"))){

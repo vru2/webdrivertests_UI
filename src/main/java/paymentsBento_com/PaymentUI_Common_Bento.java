@@ -3,6 +3,8 @@
 
 package paymentsBento_com;
 
+import static org.testng.Assert.assertTrue;
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
@@ -350,6 +352,21 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 	
 	public void bento_Validation_Text(RemoteWebDriver driver, String PaymentType, String Domain) throws Exception {
 		if(PaymentType.equalsIgnoreCase("CC")) {
+			if(Domain.equals("FLYIN")) {
+				elementPresent_log(driver, getObjectPayment("FlyIN_Logo"), "FlyIN_Logo"	, 5);
+				String title = driver.getTitle();
+				if(!title.contains("Flyin | Pay securely")) {
+					Reporter.log("Page title "+title);
+					Assert.assertTrue(false);
+				}
+			}
+			else {
+				String title = driver.getTitle();
+				if(!title.contains("Cleartrip | Pay securely")) {
+					Reporter.log("Page title "+title);
+					Assert.assertTrue(false);
+				}
+			}
 			bento_Select_PaymentType(driver, "CC");
 			textPresent_Log(driver, "Pay to complete your booking", 1);
 			textPresent_Log(driver, "Enter card details", 1);
@@ -438,7 +455,11 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 			textPresent_Log(driver, "Flexifly", 1);
 			textPresent_Log(driver, "Travel Insurance", 1);
 			}
-			textPresent_Log(driver, "Convenience fee", 1);
+			if(Domain.equals("FLYIN")) {
+
+				textPresent_Log(driver, "Other fee", 1);
+			}
+			else textPresent_Log(driver, "Convenience fee", 1);
 			//textPresent_Log(driver, "Cleartrip wallet", 1);
 			WebElement ele= driver.findElement(getObjectPayment("Bento_Pay_PriceBreakup_ConvFee_Image"));
 			Actions action = new Actions(driver);
@@ -450,6 +471,11 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 			if(Domain.equals("AE")) {
 				textPresent_Log(driver, "Includes a non-refundable convenience fee of AED", 1);
 				textPresent_Log(driver, "10 per traveller", 1);
+				
+			}
+			else if(Domain.equals("FLYIN")) {
+				textPresent_Log(driver, "Includes a non-refundable other fee of SAR", 1);
+				textPresent_Log(driver, "12 per traveller", 1);
 				
 			}
 			
@@ -475,8 +501,10 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 				textPresent_Log(driver, "1 traveller", 1);
 				textPresent_Log(driver, "test test (M)", 1);
 			}		
-			
-			textPresent_Log(driver, "© 2006–2021 Cleartrip Pvt. Ltd.", 1);
+			if(Domain.endsWith("FLYIN")) {
+				textPresent_Log(driver, "© 2006–2021 Saudi Ebreez Company", 1);
+				
+			}else textPresent_Log(driver, "© 2006–2021 Cleartrip Pvt. Ltd.", 1);
 			textPresent_Log(driver, "Completely safe and secure transactions", 1);
 		}
 		else if(PaymentType.equalsIgnoreCase("KNET")) {
@@ -732,11 +760,20 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 		}
 		String BookingPolicyUrl = getURL(driver);
 		Reporter.log("Booking Policy URL : "+BookingPolicyUrl);
+		if(Domain.equals("FLYIN")) {
+			if(!BookingPolicyUrl.contains("https://www.flyin.com/termsOfUse.en.html#btc")) {
+				Reporter.log("BookingPolicyUrl URL : "+BookingPolicyUrl);
+				Assert.assertTrue(false);
+			}
+			textPresent_Log(driver, "The agreement between the client and Flyin.com", 5);
+		}
+		else {
 		if(!BookingPolicyUrl.contains("qa2.cleartrip.com/flights/booking-policies")) {
 			Reporter.log("BookingPolicyUrl URL : "+BookingPolicyUrl);
 			Assert.assertTrue(false);
 		}
 		textPresent_Log(driver, "Cleartrip flight booking policy", 5);
+		}
 		
 		
 		for(String winHandle : driver.getWindowHandles()){
@@ -751,11 +788,19 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 		Thread.sleep(5000);
 		String BookingTerms = getURL(driver);
 		Reporter.log("Booking Policy URL : "+BookingTerms);
-		if(!BookingTerms.contains("qa2.cleartrip.com/terms")) {
+		System.out.println("Booking Policy URL : "+BookingTerms);
+		if(Domain.equals("FLYIN")) {
+		if(!BookingTerms.contains(".flyin.com/termsOfUse.en.html")) {
 			Reporter.log("BookingTerms URL : "+BookingTerms);
 			//Assert.assertTrue(false);
 		}
-		//textPresent_Log(driver, "BookingTerms", 5);		
+		}
+		else { if(!BookingTerms.contains("qa2.cleartrip.com/terms")) {
+			Reporter.log("BookingTerms URL : "+BookingTerms);
+			    //Assert.assertTrue(false);
+		}
+		}
+		
 		
 		Thread.sleep(5000);
 		for(String winHandle : driver.getWindowHandles()){
@@ -770,9 +815,16 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 		
 		String BookingPrivacyURL = getURL(driver);
 		Reporter.log("Booking Policy URL : "+BookingPrivacyURL);
-		if(!BookingPrivacyURL.contains("/privacy/")) {
+		if(Domain.equals("FLYIN")) {
+			if(!BookingTerms.contains(".flyin.com/termsOfUse.en.html")) {
+				Reporter.log("BookingTerms URL : "+BookingTerms);
+				//Assert.assertTrue(false);
+			}
+			}
+		else {if(!BookingPrivacyURL.contains("/privacy/")) {
 			Reporter.log("BookingPrivacy URL : "+BookingPrivacyURL);
 			//Assert.assertTrue(false);
+		}
 		}
 	//	textPresent_Log(driver, "Cleartrip flight booking policy", 5);		
 		

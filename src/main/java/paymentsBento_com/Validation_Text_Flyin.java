@@ -21,34 +21,29 @@ public class Validation_Text_Flyin extends PaymentUI_Common_Bento{
 	@Test (priority=1)
 	public void CC_Validation_Text() throws Exception {
 		get_Bento_Url(driver, "AirSA", "FLYIN");
-		bento_Validation_Text(driver, "CC", "");
+		bento_Validation_Text(driver, "CC", "FLYIN");
+		bento_Validate_Currency(driver, "SA", "SAR");
 	}
-	
+		
 	@Test (priority=2)
-	public void SavedCard_Validation_Text() throws Exception {
-		bento_Validation_Text(driver, "SC", "");
+	public void PriceBreakUP_Validation_Text() throws Exception {
+		bento_Validation_Text(driver, "PRICE_BREAKUP", "FLYIN");
 	}	
 	
 	@Test (priority=3)
-	public void PriceBreakUP_Validation_Text() throws Exception {
-		bento_Validation_Text(driver, "PRICE_BREAKUP", "AE");
-	}	
+	public void BookingSummary_Validation_Text() throws Exception {
+		bento_Validation_Text(driver, "Booking_SUMMARY", "FLYIN");	
+	}
 	
 	@Test (priority=4)
-	public void BookingSummary_Validation_Text() throws Exception {
-		bento_Validation_Text(driver, "Booking_SUMMARY", "AE");	
-	}
-	
-	@Test (priority=6)
 	public void PayPal_Validation_Text() throws Exception {
-		bento_Validation_Text(driver, "PayPal", "AE");
+		bento_Validation_Text(driver, "PayPal", "SA");
 	}
-	
-	@Test (priority=7)
-	public void ADCB_Validation_Text() throws Exception {
-		bento_Validation_Text(driver, "ADCB", "AE");
-		
-	}
+
+	@Test (priority=5)
+	public void SavedCard_Validation_Text() throws Exception {
+		bento_Validation_Text(driver, "SC", "");
+	}	
 	
 	@AfterMethod (alwaysRun = true)
 	public void afterMethod(ITestResult _result) throws Exception {

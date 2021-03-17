@@ -20,6 +20,13 @@
     </classes>
 </test>
 
+<test name="UI FLYIN" preserve-order="true" >
+    <classes>
+      <class name="paymentsBento_com.Validation_Images_Flyin"/> 	
+      <class name="paymentsBento_com.Validation_Text_Flyin"/> 	  
+    </classes>
+</test>
+
 <test name="UI Validation AE" preserve-order="true" >
     <classes>
       <class name="paymentsBento_com.Validation_UI_AE"/> 	  

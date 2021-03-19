@@ -10,7 +10,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Validation_Images_Flyin extends PaymentUI_Common_Bento{
+public class Validation_Text_Flyin_AR extends PaymentUI_Common_Bento{
 	public RemoteWebDriver driver;	
 	
 	@BeforeClass
@@ -19,24 +19,32 @@ public class Validation_Images_Flyin extends PaymentUI_Common_Bento{
 	}
 
 	@Test (priority=1)
-	public void CC_Validation_Images() throws Exception {
-		get_Bento_Url(driver, "AirFlyin", "FLYIN");
-		bento_Validation_Images(driver, "CC", "IN");
+	public void CC_Validation_Text() throws Exception {
+		get_Bento_Url(driver, "AirFlyinAR", "FLYIN");
+		bento_Validation_Text(driver, "CC", "FLYIN");
+		bento_Validate_Currency(driver, "SA", "SAR");
 	}
-	
 		
 	@Test (priority=2)
-	public void Summary_Validation_Images() throws Exception {
-		bento_Validation_Images(driver, "Summary", "");
+	public void PriceBreakUP_Validation_Text() throws Exception {
+		bento_Validation_Text(driver, "PRICE_BREAKUP", "FLYIN");
 	}	
 	
 	@Test (priority=3)
-	public void Summary_Validation_Links() throws Exception {
-		bento_Validation_Links(driver, "", "FLYIN");
+	public void BookingSummary_Validation_Text() throws Exception {
+		bento_Validation_Text(driver, "Booking_SUMMARY", "FLYIN");	
 	}
 	
-	
+	@Test (priority=4)
+	public void PayPal_Validation_Text() throws Exception {
+		bento_Validation_Text(driver, "PayPal", "SA");
+	}
 
+	@Test (priority=5)
+	public void SavedCard_Validation_Text() throws Exception {
+		bento_Validation_Text(driver, "SC", "");
+	}	
+	
 	@AfterMethod (alwaysRun = true)
 	public void afterMethod(ITestResult _result) throws Exception {
 		afterMethod(driver, _result);

@@ -23,7 +23,9 @@
 <test name="UI FLYIN" preserve-order="true" >
     <classes>
       <class name="paymentsBento_com.Validation_Images_Flyin"/> 	
-      <class name="paymentsBento_com.Validation_Text_Flyin"/> 	  
+      <class name="paymentsBento_com.Validation_Text_Flyin"/> 	 
+      <class name="paymentsBento_com.Validation_Text_Flyin_AR"/> 	
+       
     </classes>
 </test>
 

@@ -20,11 +20,9 @@ public class Flyin_Arabic extends PaymentUI_Common{
 	
 	@Test(priority=1)
 	public void Validate_Text_CC() throws Exception {
-
-		String PayUrl = getPayUI("AirAR", "FLYIN");
+		String PayUrl = getPayUI("AirFlyinAR", "FLYIN");
 		driver.manage().deleteAllCookies(); 
-		
-		//driver.get(PayUrl);
+		driver.get(PayUrl);
 		payUI_Select_PaymentType(driver, "CC");
 		validate_Currency(driver, "", "SAR");
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));	

@@ -21,8 +21,9 @@ public class Validation_Text_Flyin_AR extends PaymentUI_Common_Bento{
 	@Test (priority=1)
 	public void CC_Validation_Text() throws Exception {
 		get_Bento_Url(driver, "AirFlyinAR", "FLYIN");
-		bento_Validation_Text(driver, "CC", "FLYIN");
-		bento_Validate_Currency(driver, "SA", "SAR");
+		bento_Validation_Text(driver, "CC", "FLYINAR");
+		bento_Validation_Text(driver, "PayPal", "FLYINAR");
+		//bento_Validate_Currency(driver, "SA", "SAR");
 	}
 		
 	@Test (priority=2)

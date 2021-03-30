@@ -94,6 +94,43 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 		safeClickList(driver, getObjectPayment("Bento_Pay_Tabs"), PayType);	
 	}
 	
+	
+	public void bento_Select_PaymentType_AR(RemoteWebDriver driver, String PayType) throws Exception {
+		for (int i = 0; i < 2; i++) {			
+			if(textPresent(driver, "System error", 1)) {
+			Reporter.log("There's something wrong with our system");			
+			Assert.assertTrue(false);
+		} else if(textPresent(driver, "Oops, Something went wrong", 1)) {
+			Reporter.log("Oops something wrong with our system");			
+			Assert.assertTrue(false);
+		}
+		if(elementVisible(driver, getObjectPayment("Bento_Pay_Tabs_AR"), 1)) {
+			break;
+		}
+		}
+		if(!elementVisible(driver, getObjectPayment("Bento_Pay_Tabs_AR"), 5)) {
+			Reporter.log("PayUI Page is not displayed");
+			String UI_error = getText(driver, By.xpath("//h1"));
+			Reporter.log(UI_error);			
+			Assert.assertTrue(false);
+		}
+		switch (PayType) {
+		case "CC":
+			PayType = "بطاقة مدى / البطاقة الإئتمانية";
+			break;
+		case "ADCB":
+			PayType = "ADCB TouchPoints";
+			break;
+		case "PayPal":
+			PayType = "باي بال";
+			break;
+		default:
+			PayType = "Debit/Credit card";
+			break;
+		}		
+		safeClickList(driver, getObjectPayment("Bento_Pay_Tabs_AR"), PayType);	
+	}
+	
 	public void bento_Enter_PaymentDetails(RemoteWebDriver driver, String PayType, String BankName, String BookingType) throws Exception {
 		switch (PayType) {
 		case "CC":
@@ -360,6 +397,14 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 					Assert.assertTrue(false);
 				}
 			}
+			else if(Domain.contains("FLYINAR")) {
+				elementPresent_log(driver, getObjectPayment("FlyIN_Logo"), "FlyIN_Logo"	, 5);
+				String title = driver.getTitle();
+				if(title.contains("Flyin | Pay securely")) {
+					Reporter.log("Page title "+title);
+					Assert.assertTrue(false);
+				}
+			}
 			else {
 				String title = driver.getTitle();
 				if(!title.contains("Cleartrip | Pay securely")) {
@@ -367,6 +412,23 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 					Assert.assertTrue(false);
 				}
 			}
+			if(Domain.equals("FLYINAR")) {
+				bento_Select_PaymentType_AR(driver, "CC");
+				textPresent_Log(driver, "ادفع لإتمام الحجز", 1);
+				textPresent_Log(driver, "ستبدال نقاط قطاف لهذا الحجز", 1);
+				textPresent_Log(driver, "بطاقة مدى / البطاقة", 1);
+				textPresent_Log(driver, "الدفع بالبطاقة", 1);
+				textPresent_Log(driver, "رقم البطاق", 1);
+				textPresent_Log(driver, "تاريخ الانتهاء", 1);
+				textPresent_Log(driver, "إسم صاحب البطاقة", 1);
+				textPresent_Log(driver, "رمز التحقق من البطاقة", 1);
+				textPresent_Log(driver, "السعر الإجمالي، شامل جميع الضرائب", 1);
+				textPresent_Log(driver, "ر.س.", 1);
+				textPresent_Log(driver, "المبلغ المطلوب", 1);
+				textPresent_Log(driver, "ملخص الحجز", 1);
+				textPresent_Log(driver, "استبدال نقاط قطاف لهذا الحجز", 1);
+			}			
+			else {
 			bento_Select_PaymentType(driver, "CC");
 			textPresent_Log(driver, "Pay to complete your booking", 1);
 			textPresent_Log(driver, "Enter card details", 1);
@@ -386,6 +448,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 		//	textPresent_Log(driver, "and the terms and conditions of Cleartrip", 1);
 			textPresent_Log(driver, "Total, inclusive of all taxes", 1);
 			textPresentInElementAssert(driver, getObjectPayment("Bento_Pay_Button"), "Pay now", 2);
+			}
 		}
 		else if(PaymentType.equalsIgnoreCase("NB")) {
 			bento_Select_PaymentType(driver, "NB");

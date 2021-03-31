@@ -143,6 +143,28 @@
 		</classes>
 
 	</test>
+	<test name="Account-service-Deposit Account" parallel="true">
+		<classes>
+			 <class name="accountsAPI.Account_Service_FetchcompanyBy_depositaccountID" />
+			<class name="accountsAPI.Account_Service_Depositaccountsearch_WOTlinkedparam" />
+			<class name="accountsAPI.Account_Service_Depositaccountsearch_Withlinkedparam" />
+			
+			
+		</classes>
+
+	</test>
+	<test name="Account-service-GST Details" parallel="true">
+		<classes>
+			 <class name="accountsAPI.Account_Service_GSTV2_SearchAPIwithGstNo" />
+			 <class name="accountsAPI.Account_Service_GSTV2_SearchAPIwithGstNoAndGstID" />
+			 <class name="accountsAPI.Account_Service_GstSearch_WithoutSubString" />
+			 <class name="accountsAPI.Account_Service_GstSearch_WithSubString" />
+			
+			
+			
+		</classes>
+
+	</test>
 	<test name="Flyin AND COMM -Regression Cases" parallel="true">
 		<classes>
 

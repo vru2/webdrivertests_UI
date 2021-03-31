@@ -153,6 +153,13 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String url_peoplecontroller_getuserbyemail="/account/people?docRequired=false&email=kirti.pandey@cleartrip.com&partner=1&travellersRequired=false&userPreference=false";
 	String url_peoplecontroller_getuserbyid="account/people/7707500017642?docRequired=false&partner=1&travellersRequired=false&userPreference=false";
 	String url_Account_Service_PWA_GetUserbyID="/account/people/v2/14029546?docRequired=false&savedCards=true&travellersRequired=true&userPreference=true";
+	String url_Account_Service_FetchcompanyBy_depositaccountID="/company/v2/deposit-account/121";
+	String url_Account_Service_Depositaccountsearch_WOTlinkedparam="/account/v2/depositAccount/search?domainName=demo.cleartripforbusiness.com&linkableType=Company";
+	String url_Account_Service_Depositaccountsearch_Withlinkedparam="/account/v2/depositAccount/search?linkableType=Company&linked=true&domainName=manjunathdj20-09-2017 12:49";
+	String url_Account_Service_GSTV2_SearchAPIwithGstNo_ID="/gst/v2?gstNumber=29AAAAA0000A1Z5&linkableType=Person";
+	String url_Account_Service_GstSearch_WithoutSubString="/gst/v2/autocomplete?domainName=demo.cleartripforbusiness.com";
+	String url_Account_Service_GstSearch_WithSubString="/gst/v2/autocomplete?domainName=demo.cleartripforbusiness.com&gstNumberSubString=7";
+	String url_Account_Service_GSTV2_SearchAPIwithGstNoAndGstID="/gst/v2?id=203&gstNumber=29aaaaa0000a1Z5&linkableType=Person";
 	String url_Account_Service_Peoplecontroller_FindByID="/account/people/entity/65206686";
 	String url_Account_Service_AuthorizeAPI_encodingCookie="/account/people/authorize";
 	String url_IdentityService_ctAuth_noLoginCookie="/user/ct-auth-no-login?email=testtoken@privaterelay.appleid.com.com&tripRef=Q200302760880";
@@ -397,6 +404,27 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		HashMap<String, Object> headers = new HashMap<>();
 		//headers.put("Content-Type", "application/json");
 		headers.put("AUTH_KEY", "7GHT#@D65yhgder4R");
+		//GCP -- headers.put("AUTH_KEY", "H67f$we&HGTR34clQ");
+
+		return headers;
+	}
+	public HashMap<String, Object> headersFormdepoist(){
+		HashMap<String, Object> headers = new HashMap<>();
+		//headers.put("Content-Type", "application/json");
+		headers.put("AUTH_KEY", "7GHT#@D65yhgder4R");
+		headers.put("caller", "b2c");
+		headers.put("accept", "*/*");
+		//GCP -- headers.put("AUTH_KEY", "H67f$we&HGTR34clQ");
+
+		return headers;
+	}
+
+	public HashMap<String, Object> headersFormdepoistwithoutlinkedparam(){
+		HashMap<String, Object> headers = new HashMap<>();
+		//headers.put("Content-Type", "application/json");
+		headers.put("auth_key", "weurimdjfoewpremkcuwpermauthkeyy");
+		headers.put("caller", "b2c");
+		headers.put("accept", "*/*");
 		//GCP -- headers.put("AUTH_KEY", "H67f$we&HGTR34clQ");
 
 		return headers;
@@ -1768,6 +1796,57 @@ public class AccountsCommon_API extends PlatformCommonUtil
 
 			Reporter.log(url_Acct_Service+url);
 		}
+		else if (Type.equals("Account_Service_FetchcompanyBy_depositaccountID")){
+			RestAssured.baseURI=url_Acct_Service;
+			url = url_Account_Service_FetchcompanyBy_depositaccountID;
+			headers = headersFormdepoist();
+
+			Reporter.log(url_Acct_Service+url);
+		}
+		else if (Type.equals("Account_Service_Depositaccountsearch_WOTlinkedparam")){
+			RestAssured.baseURI=url_Acct_Service;
+			url = url_Account_Service_Depositaccountsearch_WOTlinkedparam;
+			headers = headersFormdepoistwithoutlinkedparam();
+
+			Reporter.log(url_Acct_Service+url);
+		}
+		else if (Type.equals("Account_Service_Depositaccountsearch_Withlinkedparam")){
+			RestAssured.baseURI=url_Acct_Service;
+			url = url_Account_Service_Depositaccountsearch_Withlinkedparam;
+			headers = headersFormdepoistwithoutlinkedparam();
+
+			Reporter.log(url_Acct_Service+url);
+		}
+		else if (Type.equals("Account_Service_GSTV2_SearchAPIwithGstNo_ID")){
+			RestAssured.baseURI=url_Acct_Service;
+			url = url_Account_Service_GSTV2_SearchAPIwithGstNo_ID;
+			headers = headersFormdepoist();
+
+			Reporter.log(url_Acct_Service+url);
+		}
+
+		else if (Type.equals("Account_Service_GstSearch_WithoutSubString")){
+			RestAssured.baseURI=url_Acct_Service;
+			url = url_Account_Service_GstSearch_WithoutSubString;
+			headers = headersFormdepoist();
+
+			Reporter.log(url_Acct_Service+url);
+		}
+		else if (Type.equals("Account_Service_GstSearch_WithSubString")){
+			RestAssured.baseURI=url_Acct_Service;
+			url = url_Account_Service_GstSearch_WithSubString;
+			headers = headersFormdepoist();
+
+			Reporter.log(url_Acct_Service+url);
+		}
+
+		else if (Type.equals("Account_Service_GSTV2_SearchAPIwithGstNoAndGstID")){
+			RestAssured.baseURI=url_Acct_Service;
+			url = url_Account_Service_GSTV2_SearchAPIwithGstNoAndGstID;
+			headers = headersFormdepoist();
+
+			Reporter.log(url_Acct_Service+url);
+		}
 
 		else if (Type.equals("Account_Service_Peoplecontroller_FindByID")){
 			RestAssured.baseURI=url_Acct_Service;
@@ -1875,14 +1954,14 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			if (myCon != null) {
 				ResultSet myRes = myCon.createStatement().executeQuery(query);
 				while (myRes.next() == true) {
-				ResultSetMetaData result = myRes.getMetaData();
-				int noOfColumns = result.getColumnCount();
-				int noOfRows  = myRes.getRow();
-				for (int x = 1; x <= noOfColumns; x++) {
-						
-							String colValue = myRes.getString(x);
-							data.add(colValue);
-							
+					ResultSetMetaData result = myRes.getMetaData();
+					int noOfColumns = result.getColumnCount();
+					int noOfRows  = myRes.getRow();
+					for (int x = 1; x <= noOfColumns; x++) {
+
+						String colValue = myRes.getString(x);
+						data.add(colValue);
+
 					}
 				}
 				myCon.close();
@@ -2440,6 +2519,90 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			String id = jsonPathEvaluator.getString("id");
 
 			if(!id.contains("14029546")) {
+				Assert.assertTrue(false);						
+			}
+
+
+		}
+		else if(Type.equalsIgnoreCase("Account_Service_FetchcompanyBy_depositaccountID")) {
+
+			String domainName = jsonPathEvaluator.getString("domainName");
+
+			if(!domainName.contains("nidhishct.cleartripforbusiness.com")) {
+				Assert.assertTrue(false);						
+			}
+
+
+		}
+		else if(Type.equalsIgnoreCase("Account_Service_Depositaccountsearch_WOTlinkedparam")) {
+
+			String id = jsonPathEvaluator.getString("id");
+
+			if(!id.contains("46207144")) {
+				Assert.assertTrue(false);						
+			}
+
+
+		}
+		else if(Type.equalsIgnoreCase("Account_Service_Depositaccountsearch_Withlinkedparam")) {
+
+			String id = jsonPathEvaluator.getString("id");
+
+			if(!id.contains("44605354")) {
+				Assert.assertTrue(false);						
+			}
+
+
+		}
+		else if(Type.equalsIgnoreCase("Account_Service_GSTV2_SearchAPIwithGstNo_ID")) {
+
+			String id = jsonPathEvaluator.getString("id");
+			String gstNumber = jsonPathEvaluator.getString("gstNumber");
+
+			if(!id.contains("203")) {
+				Assert.assertTrue(false);						
+			}
+			if(!gstNumber.contains("29aaaaa0000a1Z5")) {
+				Assert.assertTrue(false);						
+			}
+
+
+		}
+
+		else if(Type.equalsIgnoreCase("Account_Service_GstSearch_WithoutSubString")) {
+
+			String ReponseStr = resp.body().asString();
+			if(!ReponseStr.contains("26ALOEMXLUGQ991")){
+				Assert.assertTrue(false);
+			}
+
+			if(!ReponseStr.contains("33SAXLXFLEBV762")){
+				Assert.assertTrue(false);
+			}
+		}
+		else if(Type.equalsIgnoreCase("Account_Service_GstSearch_WithSubString")) {
+
+			String ReponseStr = resp.body().asString();
+			if(!ReponseStr.contains("7GZZMRHXKNT243")){
+				Assert.assertTrue(false);
+			}
+
+			if(!ReponseStr.contains("7UIWVTEXIDT299")){
+				Assert.assertTrue(false);
+			}
+		}
+
+
+
+		else if(Type.equalsIgnoreCase("Account_Service_GSTV2_SearchAPIwithGstNoAndGstID")) {
+
+			String id = jsonPathEvaluator.getString("id");
+			String gstNumber = jsonPathEvaluator.getString("gstNumber");
+
+			if(!id.contains("203")) {
+				Assert.assertTrue(false);						
+			}
+			if(!gstNumber.contains("29aaaaa0000a1Z5")) {
 				Assert.assertTrue(false);						
 			}
 

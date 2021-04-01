@@ -279,6 +279,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 			elementVisible(driver, getObjectPayment("EnterPayment_Card_Exp_Month"),5);
 			Thread.sleep(2000);
 			safeType(driver, getObjectPayment("EnterPayment_Card_Exp_Month"), "12");
+			safeType(driver, getObjectPayment("EnterPayment_Card_Exp_Year"), "2022");
 		}
 		if (cardType.equalsIgnoreCase("AMEX")) {
 			Reporter.log("Card No : " + platform.value("AmexCard_Number"));

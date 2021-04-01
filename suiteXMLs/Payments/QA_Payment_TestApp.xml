@@ -89,8 +89,8 @@
 <test name="Wallet Combo" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsUI.Payment_NodeJS_CTWallet_CC"/>
-      <class name="paymentsUI.Payment_NodeJS_CTWallet_CC_AE"/>
-      <class name="paymentsUI.Payment_NodeJS_CTWallet_SC"/>
+      <class name="paymentsUI.Payment_NodeJS_CTWallet_CC_AE"/><!-- 
+      <class name="paymentsUI.Payment_NodeJS_CTWallet_SC"/> -->
       <class name="paymentsUI.Payment_NodeJS_CTWallet_Full"/>
       <class name="paymentsUI.Payment_NodeJS_CTWallet_Full_AE"/>
     </classes>

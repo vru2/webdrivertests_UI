@@ -89,8 +89,8 @@
 			<class
 				name="accountsAPI.Account_Service_RegisterFLyinUserUpdate_WithoutOTP" />
 			<class
-			
-			
+
+
 				name="accountsAPI.Account_Service_RegisteredCltp_UserUpdate_WithoutOTP" />
 			<class name="accountsAPI.Account_Service_SendOTP_ToUsermobileNo" />
 			<class name="accountsAPI.Account_Service_Verify_Person" />
@@ -103,8 +103,14 @@
 			<class name="accountsAPI.Account_Service_AuthorizeAPI_encodingCookie" />
 			<class name="accountsAPI.Account_Service_Peoplecontroller_FindByID" />
 			<class name="accountsAPI.Accounts_Service_VerifynonLoggedinUser" />
-			<class name="accountsAPI.Accounts_Service_Cleartrip_MultipleTraveller_Updatecall" />
-			
+			<class
+				name="accountsAPI.Accounts_Service_Cleartrip_MultipleTraveller_Updatecall" />
+			<class name="accountsAPI.Account_Service_FetchPersonalData" />
+			<class name="accountsAPI.Account_Service_GetActivationKey" />
+			<class name="accountsAPI.Account_Service_AuthforNonLoggedinUser" />
+			<class name="accountsAPI.Account_Service_FetchCustomer_number" />
+			<class name="accountsAPI.Account_Service_CFW_GetUserStatus" />
+			<class name="accountsAPI.Account_Service_CFW_StatusUpdateCall" />
 
 		</classes>
 	</test>
@@ -118,7 +124,7 @@
 		</classes>
 
 	</test>
-	
+
 	<test name="Account-service-Signin Un-authorized" parallel="true">
 		<classes>
 			<class name="accountsAPI.Accounts_Service_Applesignin_Unauthorized" />
@@ -126,8 +132,8 @@
 			<class name="accountsAPI.AccountsService_FlyinV2Signin_Unauthorized" />
 			<class name="accountsAPI.IdentityService_Signin_Unauthorized" />
 			<class name="accountsAPI.IdentityService_Signin_UsernotPresent" />
-			
-			
+
+
 
 		</classes>
 
@@ -145,23 +151,25 @@
 	</test>
 	<test name="Account-service-Deposit Account" parallel="true">
 		<classes>
-			 <class name="accountsAPI.Account_Service_FetchcompanyBy_depositaccountID" />
-			<class name="accountsAPI.Account_Service_Depositaccountsearch_WOTlinkedparam" />
-			<class name="accountsAPI.Account_Service_Depositaccountsearch_Withlinkedparam" />
-			
-			
+			<class name="accountsAPI.Account_Service_FetchcompanyBy_depositaccountID" />
+			<class
+				name="accountsAPI.Account_Service_Depositaccountsearch_WOTlinkedparam" />
+			<class
+				name="accountsAPI.Account_Service_Depositaccountsearch_Withlinkedparam" />
+
+
 		</classes>
 
 	</test>
 	<test name="Account-service-GST Details" parallel="true">
 		<classes>
-			 <class name="accountsAPI.Account_Service_GSTV2_SearchAPIwithGstNo" />
-			 <class name="accountsAPI.Account_Service_GSTV2_SearchAPIwithGstNoAndGstID" />
-			 <class name="accountsAPI.Account_Service_GstSearch_WithoutSubString" />
-			 <class name="accountsAPI.Account_Service_GstSearch_WithSubString" />
-			
-			
-			
+			<class name="accountsAPI.Account_Service_GSTV2_SearchAPIwithGstNo" />
+			<class name="accountsAPI.Account_Service_GSTV2_SearchAPIwithGstNoAndGstID" />
+			<class name="accountsAPI.Account_Service_GstSearch_WithoutSubString" />
+			<class name="accountsAPI.Account_Service_GstSearch_WithSubString" />
+
+
+
 		</classes>
 
 	</test>

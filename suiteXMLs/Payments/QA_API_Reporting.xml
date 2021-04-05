@@ -64,6 +64,15 @@
     </classes>
 </test>
 
+<test name="API Refund report"  preserve-order="true" parallel="true" >
+    <classes>
+		<class name="paymentsAPI.API_Reporting_Refund_Status"/>
+    </classes>
+</test>
+
+
+
+
 
 <test name="API Reporting Archived"  preserve-order="true" parallel="true" >
     <classes>

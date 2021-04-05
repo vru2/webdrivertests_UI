@@ -422,6 +422,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 	String url_Reportingendpoint ="/paymentservice/service/air/mis/detail?tripRef=Q200109687244&paymentType=CC&reqFor=refund";
 	String url_ReportingPaymentID ="/paymentservice/payments/43911126";
+	String url_ReportingRefund_StatusReport ="/paymentservice/script/refund/details?status=D&startDate=05/01/2021&endDate=06/01/2021";
 	
 	String url_ReportingTS_V3 ="/trips?tripID=Q191014530470&refundRequired=true&historyRequired=true&paymentsRequired=true&apiVersion=V3";
 	String url_ReportingTS_Archived_V3_False ="/paymentservice/payments/42752096?isArchived=false";
@@ -2296,6 +2297,18 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			}
 			if(!resp.body().asString().contains("debit_amount")) {
 				Reporter.log("debit_amount text is not displayed");
+				Assert.assertTrue(false);
+			}
+
+
+		}
+		else if (payType.equalsIgnoreCase("ReportingRefundStatus")) {	
+			if(!resp.body().asString().contains("Q191203587976")) {
+				Reporter.log("TripID is not displayed");
+				Assert.assertTrue(false);
+			}
+			if(!resp.body().asString().contains("CREDENTIAL_NAME")) {
+				Reporter.log("CREDENTIAL_NAME text is not displayed");
 				Assert.assertTrue(false);
 			}
 
@@ -4284,6 +4297,13 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		}
 		else if(payType.equalsIgnoreCase("ReportingPAYID")) {
 			endPoint = url_ReportingPaymentID;
+
+			Reporter.log(endPoint);
+			response = RestAssured.given().
+					when().log().all().headers(headers).get(endPoint);
+		}
+		else if(payType.equalsIgnoreCase("ReportingRefundStatus")) {
+			endPoint = url_ReportingRefund_StatusReport;
 
 			Reporter.log(endPoint);
 			response = RestAssured.given().

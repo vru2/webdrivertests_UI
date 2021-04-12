@@ -1482,6 +1482,28 @@ public boolean GDS_Flight, B2B_GDS_Flight = false;
 		}
 
 	}
+	
+	public String getText1(RemoteWebDriver driver, By by) throws Exception {
+		elementVisible(driver, by, 1);
+		boolean element = isElementPresent(driver, by);
+		if (element) {
+
+			if(isAlertPresent(driver)) {
+				driver.switchTo().alert().accept();
+			}
+			WebElement we = driver.findElement(by);
+			WebDriverWait wait = new WebDriverWait(driver, 10);
+
+			we = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+			String text = null;
+			text = we.getText();
+			return text;
+		} else {
+			addLog("Element " + by + " is not displayed in " + driver.getCurrentUrl());
+			return null;
+		}
+
+	}
 
 	public String logURL(RemoteWebDriver driver) throws Exception {
 		String Url = driver.getCurrentUrl();

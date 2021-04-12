@@ -25,8 +25,8 @@ public class Validate_RT extends PaymentUI_Common{
 		refreshPage(driver);
 		textPresent(driver, "Flight itinerary", 10);
 		elementPresent(driver, By.xpath("//div[2]/div[2]/div[1]"));
-		String from = getText(driver, By.xpath("//div[2]/div[2]/div[1]/div[1]/div[1]"));
-		String to = getText(driver, By.xpath("//div[2]/div[2]/div[2]/div[1]/div[1]"));
+		String from = getText(driver, By.xpath("//div[@id='root']/div/main/div/div[2]/div[2]/div[3]/div[7]"));
+		String to = getText(driver, By.xpath("//div[@id='root']/div/main/div/div[2]/div[2]/div[3]/div[2]"));
 		if(!(to.contains("Bangalore")&&to.contains("Chennai"))) {
 			Reporter.log("to "+to);
 			Assert.assertTrue(false);

@@ -25,35 +25,42 @@ public class PWA_Validation_Android extends PaymentUI_Common{
 		refreshPage(driver);
 		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 20);
 		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 5);
+		Thread.sleep(5000);
 		safeClickList(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), "NET BANKING");
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn2"));
-		payUI_Error_Validation_PWA(driver, getObjectPayment("PWA_Error_ValidCard"), getObjectPayment("PWA_Error_PopUp_Screen"), "Please select your bank");	
+		//payUI_Error_Validation_PWA(driver, getObjectPayment("PWA_Error_ValidCard"), getObjectPayment("PWA_Error_PopUp_Screen"), "Please select your bank");	
+		textPresent_Log(driver, "Please select your bank", 2);
 
 		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 5);
 		Thread.sleep(5000);
 		safeClickList(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), "WALLETS");
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
-		payUI_Error_Validation_PWA(driver, getObjectPayment("PWA_Error_ValidCard"), getObjectPayment("PWA_Error_PopUp_Screen"), "Please select any wallet");	
+		//payUI_Error_Validation_PWA(driver, getObjectPayment("PWA_Error_ValidCard"), getObjectPayment("PWA_Error_PopUp_Screen"), "Please select any wallet");	
+		textPresent_Log(driver, "Please select any wallet", 2);
 		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 5);
 		safeClickList(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), "UPI");
 		Thread.sleep(5000);	
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
-		payUI_Error_Validation_PWA(driver, getObjectPayment("PWA_Error_ValidCard"), getObjectPayment("PWA_Error_PopUp_Screen"), "Please enter a valid UPI ID");
+		//payUI_Error_Validation_PWA(driver, getObjectPayment("PWA_Error_ValidCard"), getObjectPayment("PWA_Error_PopUp_Screen"), "Please enter a valid UPI ID");
+		textPresent_Log(driver, "Please enter a valid UPI ID", 2);
+		
 		safeType(driver, getObjectPayment("PWA_PaymentPage_UPI_TextBox"), "9986696785@okhdfc");
 		Thread.sleep(5000);
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		//payUI_Error_Validation_PWA(driver, getObjectPayment("PWA_Error_ValidCard"), getObjectPayment("PWA_Error_PopUp_Screen"), "Error in credentials entered");
-	
+		textPresent_Log(driver, "Error in credentials entered", 2);
+		
 		payUI_Select_PaymentType_PWA(driver, "DEBIT/CREDIT CARDS");
 		safeType(driver, getObjectPayment("PWA_PaymentPage_CC_Number"),  platform.value("MasterCard_Number"));
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 //		payUI_Error_Validation_PWA(driver, getObjectPayment("PWA_Error_ValidCard"), getObjectPayment("PWA_Error_PopUp_Screen"), "Please enter valid card details");	
+	//	textPresent_Log(driver, "Please enter valid card details", 2);
 		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 5);
 		safeType(driver, getObjectPayment("PWA_PaymentPage_CC_Number"),  platform.value("MasterCard_Number"));
 		safeType(driver, getObjectPayment("PWA_PaymentPage_CC_Expiry"), platform.value("MasterCard_EXP_PWA"));
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 	//	payUI_Error_Validation_PWA(driver, getObjectPayment("PWA_Error_ValidCard"), getObjectPayment("PWA_Error_PopUp_Screen"), "Please enter valid card details");
-	
+	//	textPresent_Log(driver, "Please enter valid card details", 2);
 	}
 
 	@Test (priority=2)
@@ -66,16 +73,19 @@ public class PWA_Validation_Android extends PaymentUI_Common{
 		elementPresent(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_closeIcon"));
 		textPresent_Log(driver, "Fare breakUp", 5);
 		//textPresent_Log(driver, "Discounts", 5);
-		textPresent_Log(driver, "Convenience Fee", 1);	
+		textPresent_Log(driver, "Base fare", 1);	
+		textPresent_Log(driver, "Taxes and fees", 1);	
+		textPresent_Log(driver, "Convenience fee", 1);	
 		textPresent_Log(driver, "Flexifly", 1);	
 		textPresent_Log(driver, "Travel insurance", 1);	
 		textPresent_Log(driver, "Total", 5);
 		textPresent_Log(driver, "You pay", 5);
 		safeClick(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_closeIcon"));		
-		if(textPresent(driver, "Convenience Fee", 1)) {
+		if(textPresent(driver, "Convenience fee", 1)) {
 			Reporter.log("Close button is clicked");
 			Assert.assertTrue(false);
 		}
+		
 		
 	}
 	

@@ -46,7 +46,7 @@ public class PaymentUI_Common extends PaymentNodeJS{
 		}
 		switch (PayType) {
 		case "CC":
-			PayType = "Credit Card";
+			PayType = "Debit/Credit card";
 			break;
 		case "DC":
 			PayType = "Debit Card";
@@ -84,8 +84,8 @@ public class PaymentUI_Common extends PaymentNodeJS{
 	
 	
 	public void payUI_Select_PaymentType_PWA(RemoteWebDriver driver, String PayType) throws Exception {
-		for (int i = 0; i < 10; i++) {		
-			if(textPresent(driver, "Your trip details", 1)) {
+		for (int i = 0; i < 2; i++) {		
+			if(textPresent(driver, "PAYMENT MODES", 1)) {
 				break;
 			}
 			else if(textPresent(driver, "System error", 1)) {
@@ -129,11 +129,9 @@ public class PaymentUI_Common extends PaymentNodeJS{
 	
 	
 	public void payUI_Error_Validation_PWA(RemoteWebDriver driver, By errorMessage, By errorMessagePopUP, String ErrorText) throws Exception {
-		elementVisible(driver, errorMessagePopUP, 2);		
-		elementPresent_log(driver, errorMessagePopUP, "error Popup", 5);
-		String ErrorMessage = getText(driver, errorMessagePopUP);
-
-		//System.out.println("Error message is "+ErrorMessage+" instead of "+ErrorText);
+		//elementVisible(driver, errorMessagePopUP, 2);		
+		//elementPresent_log(driver, errorMessagePopUP, "error Popup", 1);
+		String ErrorMessage = getText1(driver, errorMessagePopUP);
 		if(!ErrorMessage.contains(ErrorText)) {
 			Reporter.log("Error message is "+ErrorMessage+" instead of "+ErrorText);
 			Assert.assertTrue(false);
@@ -173,7 +171,7 @@ public class PaymentUI_Common extends PaymentNodeJS{
 	
 	public void validate_Currency_PWA (RemoteWebDriver driver, String Domain, String Currency) throws Exception {
 		String Total_Price = getText(driver, getObjectPayment("PWA_PaymentPage_TotalPrice"));
-//		System.out.println("Total_Price "+Total_Price);
+		System.out.println("Total_Price "+Total_Price);
 		if(!Total_Price.contains(Currency)) {
 			Reporter.log("Total Price doesn't contain Currency : "+Currency+" : "+Total_Price);
 			Assert.assertTrue(false);			
@@ -235,7 +233,7 @@ public class PaymentUI_Common extends PaymentNodeJS{
 		
 	public void payUI_Select_CC(RemoteWebDriver driver, String BankName, String BookingType) throws Exception {		
 		elementVisible(driver, getObjectPayment("PaymentPage_CreditCard_Number"), 5);
-		textPresent_Log(driver, "Enter your credit card details", 1);
+		textPresent_Log(driver, "Enter card details", 1);
 		switch (BankName) {
 			case "MASTER":
 			Enter_CC_Details(driver, platform.value("MasterCard_Number"), platform.value("MasterCard_Month"), platform.value("MasterCard_Year"), platform.value("MasterCard_CVV"));
@@ -563,7 +561,12 @@ public class PaymentUI_Common extends PaymentNodeJS{
 			else if(BankName.contains("AxisbankPopular")) {
 				safeClick(driver, getObjectPayment("PaymentPage_NB_PopularBanks_Axis"));
 			}
-			else safeSelect(driver, getObjectPayment("PayUI_NB_DropDown"), BankName);
+			else {
+				safeClick(driver, getObjectPayment("PayUI_NB_DropDown"));
+				Thread.sleep(5000);
+				safeSelect(driver, getObjectPayment("PayUI_NB_DropDown"), BankName);
+			
+			}
 
 			if(common.value("Bento_Payment").equalsIgnoreCase("true")||BookingType.contains("TRAINS")) {
 			safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
@@ -659,7 +662,7 @@ public class PaymentUI_Common extends PaymentNodeJS{
 			Enter_CARD_Details_PWA(driver, platform.value("ADCBCard_Number"), platform.value("PWA_ADCBCard_Expiry"), platform.value("ADCBCard_CVV"));
 
 			safeClick(driver, getObjectPayment("PWA_PaymentPage_ADCB_CheckBalance_Button"));
-		//	Thread.sleep(20000);
+			Thread.sleep(20000);
 			
 			elementPresent_log(driver, getObjectPayment("PWA_PaymentPage_ADCB_Redeem_TextBox"), "Redeem textbox", 20);
 

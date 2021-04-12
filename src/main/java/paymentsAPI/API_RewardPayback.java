@@ -51,13 +51,13 @@ public class API_RewardPayback extends API_PaymentCommon1  {
 		validation_RewardPayback("PAYBACK_RedeemPoints", res);
 	}
 
-	@Test(priority=7, dependsOnMethods= {"RewardPayback_redeemPoints"})
+	@Test(priority=7)
 	public void RewardPayback_CheckEarnPoints() throws Exception{
 		Response res = reward("PAYBACK_CheckEarnPoints", "");
 		validation_RewardPayback("PAYBACK_CheckEarnPoints", res);
 	}
 
-	@Test(priority=8, dependsOnMethods = { "RewardPayback_redeemPoints" })
+	@Test(priority=8)
 	public void RewardPayback_refundPoints() throws Exception{
 		Response res = reward("PAYBACK_RefundPoints", "");
 		validation_RewardPayback("PAYBACK_RefundPoints", res);

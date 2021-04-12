@@ -3,8 +3,6 @@
 
 package paymentsBento_com;
 
-import static org.testng.Assert.assertTrue;
-
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
@@ -24,6 +22,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 	protected String qaUrl;
 	public Response resp;
 	public Cookie cookie_Bento_Payment = new Cookie("isBentoPayment", "true");
+	public Cookie cookie_Bento_Payment_EMI = new Cookie("payment_cc_emi_desktop", "true");
 	public Cookie cookie_Parl_Wallet = new Cookie("ct-auth", "EVefRmmOWPSC8c9sPGbZGwZMgfl%2FLjP6yfQQAwhPONaOOIjRmfrMO5ubb5%2FGLWzguQmW3NiUZma8q2lELnUuyC3uAF5DaTQONdJlLn%2FO2me%2FiLCzDjUE8Mm7nMigogz0z84lf%2Bili9Xzawt1KbN%2FMNpQDroZvb3Q7ub%2BLj1YfofQs%2BDG9mD5DXvLFNSWqYz93GfvGpnfyFmIRy226HjYgQ%3D%3D");
 	//public Cookie cookie_Full_Wallet = new Cookie("ct-auth", "O2HJIm5w1xSz%2BJuS4aDuK7gVEOwk4Wtqdan6btFwj4TyQ8aSq%2BF4m20vjT%2FZugfuD3habrO078UoXdzWM34lXZaLbE1jIpkEaANLn%2BHJadeW7kll2UfWWUfOoZLsVWTEc0QAdvEUdBA%2F1nzmjBhQdfKHBynkHeYDz6XwPLe1MJiHeiMeqTJEkDsxZaWHAi%2Bv");	
 	public Cookie cookie_Full_Wallet = new Cookie("ct-auth", "QYqE9uech2apyQ1uZeSIm%2Biz6I1u9AiJowmGBaxiRKMqE8P953oYVntCR0SJJ7eQW%2FX9HXgO9kidldUQ8q4npkhV1B3OjqN%2Blj%2FywDNYZMjgUXM5JAnhVDA45gmzA8Pizn%2BSaRCsCJO4qK6o3WKDKpud0nmE4TDzaeJNsQHQ2mLsvmw%2FloTY%2FWDTIvGCxoTH");
@@ -75,6 +74,9 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 		case "UPI":
 			PayType = "UPI";
 			break;
+		case "EMI":
+				PayType = "EMI";
+				break;
 		case "ADCB":
 			PayType = "ADCB TouchPoints";
 			break;
@@ -450,6 +452,21 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 			textPresentInElementAssert(driver, getObjectPayment("Bento_Pay_Button"), "Pay now", 2);
 			}
 		}
+		else if (PaymentType.equalsIgnoreCase("EMI")) 
+		{
+			bento_Select_PaymentType(driver, "EMI");
+			textPresent_Log(driver, "Pay to complete your booking", 1);
+			textPresent_Log(driver, "Choose an EMI option", 1);
+			textPresent_Log(driver, "Cleartrip does not levy any charges for availing EMI. Charges, if any, are levied by the bank. Please check with your bank for charges related to interest, processing fees, refund or pre-closure", 1);
+			textPresent_Log(driver, "EMI type", 1);
+			textPresent_Log(driver, "Popular banks", 1);
+			textPresent_Log(driver, "View all banks", 1);			
+			textPresent_Log(driver, "I understand and agree to the rules and restrictions of this fare, the", 1);
+			textPresent_Log(driver, "Total, inclusive of all taxes", 1);
+			//textPresentInElementAssert(driver, getObjectPayment("Bento_Pay_Button"), "Enter card details", 2);
+			textPresentInElementAssert(driver, getObjectPayment("PaymentPage_EMI_Pay_Btn"), "Pay now", 1);
+			}
+		
 		else if(PaymentType.equalsIgnoreCase("NB")) {
 			bento_Select_PaymentType(driver, "NB");
 			textPresent_Log(driver, "Pay to complete your booking", 1);		

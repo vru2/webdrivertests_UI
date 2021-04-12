@@ -20,7 +20,7 @@ public class NB_ICICI extends PaymentUI_Common{
 		driver.get(PayUrl);	   
 		refreshPage(driver);
 		payUI_Select_PaymentType(driver, "NB");
-		payUI_Enter_PaymentDetails(driver, "NB", "ICICI Bank","");
+		payUI_Enter_PaymentDetails(driver, "NB", "DBS Bank","");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
 		Thread.sleep(5000);
 	}	

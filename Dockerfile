@@ -1,4 +1,4 @@
-FROM cleartrip/javabase:selenium_mail
+FROM cleartrip/javabase:selenium_mail_chrome_88
 MAINTAINER "MallikarunaVeepuru" <veepuru.mallikarjuna@cleartrip.com>
 WORKDIR /opt/app
 ENV NLS_LANG="AMERICAN_AMERICA.UTF8"

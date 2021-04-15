@@ -180,12 +180,12 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String Params_RORCreate_Payment = "[{\"payment\":{\"id\":null,\"trip_id\":46198930,\"txn_id\":75300328,\"payment_type\":\"IV\",\"amount\":\"1000.0\",\"created_at\":\"2019-11-20T18:40:29+05:30\",\"updated_at\":\"2019-11-20T18:40:29+05:30\",\"seq_no\":3,\"status\":\"S\",\"description\":\"created by API\",\"currency\":\"INR\",\"order_info1\":123,\"order_info2\":345,\"app_ref1\":\"Q191109570525\",\"app_ref2\":75300328,\"neglist_id\":\"y\",\"poslist_id\":109,\"linkable_id\":null,\"linkable_type\":null,\"user_message\":null,\"pan_number\":null,\"payment_category\":\"B\",\"merchant_txn_ref\":\"12312\",\"payment_subtype\":\"ADCB\",\"express_checkout\":null,\"emi_count\":null,\"emi_fee\":null,\"ref_payment_id\":null,\"ivr_detail\":{\"id\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"seq_no\":null,\"payment_id\":null,\"transaction_ref_no\":\"Q234334\",\"card_number\":\"1234 2344 3434\",\"response_message\":\"testmsg\",\"gateway_txn_id\":12345,\"gateway\":\"ivr_gateway\",\"status\":null,\"credential_name\":\"test\"}}}]";
 	String Params_RORCreate_Profile_List = "{\"card_number_prefix\":\"12345679\",\"ip_address\":\"12.34.56.81\",\"phone_number\":\"121212121221\",\"booked_by_email_id\":\"123@1223.com\",\"card_holder_email_id\":\"123@1223.com\",\"status\":\"T\",\"list_type\":0,\"temporary\":1,\"user_id\":\"123456543\"}";
 	String Params_RORSearch_Profile_List = "{\"list_type\":0,\"page_number\":2911}";
-	String Params_RORCreate_Refund = "{\"isFullWalletRefund\":false,\"tripRef\":\"Q200818843434\",\"amount\":10,\"description\":\"Autaomtion REFUND\",\"txnid\":";
+	String Params_RORCreate_Refund = "{\"isFullWalletRefund\":false,\"tripRef\":\"Q210331930780\",\"amount\":1,\"description\":\"Autaomtion REFUND\",\"txnid\":";
 	String ParamsROR_Recon = "{\"tripRef\":\"Q191203587976\",\"txnId\":";
 
 	String ParamsQitaf_SendOTP = "{\"rewardsType\":\"QITAF\",\"rewardsRequestType\":\"OTP\",\"params\":{\"mobile\":\"555021516\"},\"trackId\":\"1280431506701\"}";
 	String ParamsQitaf_Redeem = "{\"rewardsType\":\"QITAF\",\"rewardsRequestType\":\"REDEEM\",\"params\":{\"mobile\":\"555021515\",\"pin\":\"2118\"},\"trackId\":\"1280431506700\",\"paymentId\":\"123456106700\",\"amount\":300,\"currency\":\"SAR\",\"otp\":\"1235\"}";
-	String ParamsROR_Reverse= "{\"rewardsType\":\"QITAF\",\"rewardsRequestType\":\"REVERSE\",\"trackId\":\"44633552\",\"amount\":5000,\"paymentId\":44619522,\"currency\":\"SAR\",\"params\":{\"tripRef\":\"Q210218897302\"}}";
+	String ParamsROR_Reverse= "{\"rewardsType\":\"QITAF\",\"rewardsRequestType\":\"REVERSE\",\"trackId\":\"1222234\",\"amount\":10,\"paymentId\":44695226,\"currency\":\"SAR\",\"params\":{\"tripRef\":\"Q210218897302\"}}";
 
 	String ParamsFetchRefund="{\"refundIds\":[9387165,9387150,9387149,9387190,9387357"
 			+ ",9387405],\"txnIds\": null,"+"\"status\": [\"D\",\"P\",\"S\",\"T\",\"F\"]}";
@@ -272,6 +272,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String urlPay_CreateRecord = "/paymentservice/service/createrecord?company-name=Fwd+Tourism+Pvt+Ltd&payment-type=cre&deposit-acct-id=124652522&amount=4819.5";
 	String urlROR_Fetch_PayByID= "/paymentservice/payments/fetchById?id=43363994&field=paymentId";
 	String urlROR_Fetch_RefundByID ="/paymentservice/service/refund/info/9373548";
+	String urlROR_TripID_Status ="/paymentservice/service/status/xml/Q210322925952.ref";
 	String urlROR_Fetch_ProfileList= "/paymentservice/service/profileList/info/5071366";
 	String urlROR_MultiSearch_Pay= "/paymentservice/search/payments/v1?query=id:43621536,paymentType:CC";
 
@@ -804,6 +805,11 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			url= urlROR_Fetch_RefundByID;
 			Reporter.log(urlReporting+url);
 		}
+		else if(payType.equalsIgnoreCase("ROR_TripStatus")) {
+			RestAssured.baseURI =urlReporting;
+			url= urlROR_TripID_Status;
+			Reporter.log(urlReporting+url);
+		}
 		else if(payType.equalsIgnoreCase("RORFetch_Profile_List")) {
 			RestAssured.baseURI =urlReporting;
 			url= urlROR_Fetch_ProfileList;
@@ -1016,6 +1022,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			params = ParamsROR_Reverse;
 			url= urlQitaf_Reverse;
 			Reporter.log(urlPay+url);
+			System.out.println(urlRewards+url);
 		}
 		
 		/*
@@ -2005,6 +2012,15 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 				Assert.assertTrue(false);
 			}
 		}
+		
+		else if(payType.equalsIgnoreCase("ROR_TripStatus")) {
+			if(!resp.body().asString().contains("kiran.kumar@cleartrip.com")){
+					Assert.assertTrue(false);
+				}
+				if(!resp.body().asString().contains("Approved")){
+					Assert.assertTrue(false);
+				}
+			}
 		
 		else if(payType.equalsIgnoreCase("DA")) {
 			if(!resp.body().asString().contains("Payment successful")){
@@ -3353,10 +3369,10 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	}
 		
 	else if(payType.equals("EMINoon")) {
-		if(!resp.body().asString().contains("CT_EMI_PLAN_24_107_3_0")) {
+		/*if(!resp.body().asString().contains("CT_EMI_PLAN_24_107_3_0")) {
 			Reporter.log("Plan is not displayed");
 			Assert.assertTrue(false);
-		}
+		}*/
 	}
 	else if(payType.equals("EMIFetch")) {
 		if(!resp.body().asString().contains("Invalid trip")) {
@@ -4220,7 +4236,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			String str_uid_new = str_uid + random_num;
 			long uid = Long.parseLong(str_uid_new);
 			int payment_id_refund = payment_id.get(0);
-			params = "{\"rewardsType\":\"PAYBACK\",\"rewardsRequestType\":\"REFUND\",\"paymentId\": " +payment_id_refund+ ",\"uid\": " + uid + ","+ "\"amount\":1,\"currency\":\"INR\",\"params\":{\"customerName\":\"test\",\"tripRef\":\"Q191014530822\"}}";
+			//params = "{\"rewardsType\":\"PAYBACK\",\"rewardsRequestType\":\"REFUND\",\"paymentId\": " +payment_id_refund+ ",\"uid\": " + uid + ","+ "\"amount\":1,\"currency\":\"INR\",\"params\":{\"customerName\":\"test\",\"tripRef\":\"Q191014530822\"}}";
+			params = "{\"rewardsType\":\"PAYBACK\",\"rewardsRequestType\":\"REFUND\",\"paymentId\":43317987691,\"uid\":93314865678786346,\"amount\":1,\"currency\":\"INR\",\"params\":{\"customerName\":\"test\",\"tripRef\":\"Q191014530822\"}}";
 			response = RestAssured.given().
 					when().log().all().body(params).headers(headers).post(endPoint);
 

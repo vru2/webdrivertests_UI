@@ -34,7 +34,10 @@
 
 <test name="API Fetch Payment Details" preserve-order="true" parallel="true">
     <classes>
-      <class name="paymentsAPI.API_FetchPay_Details"/> 
+      <class name="paymentsAPI.API_FetchPay_Details"/>
+      
+      <class name="paymentsAPI.API_ROR_TripID_Status"/>
+       
     </classes>
 </test>
 

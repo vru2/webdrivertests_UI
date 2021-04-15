@@ -22,4 +22,14 @@
 </test>
 
 
+
+<test name="API Qitaf" preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_Qitaf_Redeem"/>
+      <class name="paymentsAPI.API_Qitaf_Reverse"/>    
+      <class name="paymentsAPI.API_Qitaf_SendOTP"/>      
+    </classes>
+</test>
+
+
 </suite> 

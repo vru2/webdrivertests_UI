@@ -109,6 +109,7 @@
     <classes>
       <class name="paymentsAPI.API_FetchPay_Details"/>
       <class name="paymentsAPI.API_Fetch_TripStatus"/> 
+      <class name="paymentsAPI.API_ROR_TripID_Status"/>
     </classes>
 </test>
 

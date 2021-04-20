@@ -1129,7 +1129,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 	    Reporter.log(driver.getCurrentUrl());
 	  if(PaymentType=="storedcard")
 	  {
-		if(textPresent_Log(driver,"Cleartrip wallet",10))
+		if(textPresent(driver,"Cleartrip wallet",10))
 	    {
 			safeClick(driver,getObjectPayment("Bento_Payment_Deselect_Wallet"));
 			Reporter.log("Deselected wallet");
@@ -1154,7 +1154,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 	 }
 	if(PaymentType=="wallet")
 	{
-		if(textPresent_Log(driver,"Cleartrip wallet",10))
+		if(textPresent(driver,"Cleartrip wallet",10))
 	    {
 			textPresent_Log(driver,"Your wallet balance is sufficient to pay for this booking",10);
 			safeClick(driver,getObjectPayment("Bento_Payment_Paynow"));
@@ -1165,7 +1165,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 	}
 	if(PaymentType=="nb")
 	{
-		if(textPresent_Log(driver,"Cleartrip wallet",10))
+		if(textPresent(driver,"Cleartrip wallet",10))
 	    {
 			safeClick(driver,getObjectPayment("Bento_Payment_Deselect_Wallet"));
 			 Reporter.log("Deselected wallet");
@@ -1189,7 +1189,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 	}
 	if(PaymentType=="UPI")
 	{
-		if(textPresent_Log(driver,"Cleartrip wallet",30))
+		if(textPresent(driver,"Cleartrip wallet",30))
 	    {
 			safeClick(driver,getObjectPayment("Bento_Payment_Deselect_Wallet"));
 			Reporter.log("Deselected wallet");
@@ -1221,7 +1221,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 	if(PaymentType=="Coupon")
 	{
 		textPresent_Log(driver,"Coupon code (DOMOW)",40);
-		if(textPresent_Log(driver,"Cleartrip wallet",30))
+		if(textPresent(driver,"Cleartrip wallet",30))
 		{
 			safeClick(driver,getObjectPayment("Bento_Payment_Deselect_Wallet"));
 			Reporter.log("Deselected wallet");

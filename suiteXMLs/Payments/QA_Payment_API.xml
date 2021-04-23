@@ -231,6 +231,12 @@
     </classes>
 </test>
 
+<test name="API Refund Wallet stopped Cron"  preserve-order="true" parallel="true" >
+    <classes>
+		<class name="paymentsAPI.API_Reporting_Cron_Get_Wallet_Refund_Stop_Tnx"/>
+    </classes>
+</test>
+
 <test name="API Refund report"  preserve-order="true" parallel="true" >
     <classes>
 		<class name="paymentsAPI.API_Reporting_Refund_Status"/>

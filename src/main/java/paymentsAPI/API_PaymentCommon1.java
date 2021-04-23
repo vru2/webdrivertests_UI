@@ -332,6 +332,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String endPointgetPay = "/paymentservice/api/getPaymentURL";
 
 	String urlEndPoint_Wallet_RevertPromo ="/payments/wallet/promo/revert?tripRef=Q19050680568";
+	String urlEndPoint_Wallet_Refund_Stop_Trnx ="/paymentservice/walletStoppedTxns?fromDate=20-04-2021&toDate=21-04-2021";
 	String urlEndPoint_Wallet_RevertPromoNew ="/payments/wallet/promo/revert/amount";
 	
 	
@@ -1409,6 +1410,18 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 					headers(headers).
 					get(url);
 		}
+		
+
+		else if(payType.equalsIgnoreCase("GETWALLET_Refund_Stop_Tnx")) {
+			RestAssured.baseURI =urlReporting;
+			//RestAssured.baseURI =urlPay;
+			url= urlEndPoint_Wallet_Refund_Stop_Trnx;
+			request = RestAssured.given().
+					when().
+					log().all().
+					headers(headers).
+					get(url);
+		}
 		else if(payType.equalsIgnoreCase("REVERTPROMO")) {
 			url= urlEndPoint_Wallet_RevertPromo;
 			request = RestAssured.given().
@@ -1941,6 +1954,11 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 				Assert.assertTrue(false);
 			}  
 			if(!company_id.equals("198348")) {
+				Assert.assertTrue(false);
+			}
+		}
+		else if(payType.equalsIgnoreCase("GETWALLET_Refund_Stop_Tnx")) {
+			if(!(resp.body().asString().contains("Q210419967300"))){
 				Assert.assertTrue(false);
 			}
 		}

@@ -119,8 +119,8 @@
 
 <test name="Wallet" preserve-order="true" >
     <classes>
-      <class name="paymentsBento_com.GV_Partial"/>
-      <class name="paymentsBento_com.GV_Full"/>
+      <class name="paymentsBento_com.Wallet_Full"/>
+      <class name="paymentsBento_com.Wallet_Partial"/>
     </classes>
 </test>
 

@@ -23,18 +23,20 @@ public class Coupon_Invalid extends PaymentUI_Common_Bento{
 	public void CouponInvalid() throws Exception {
 		get_Bento_Url(driver, "AirCoupon", "");
 		bento_Select_PaymentType(driver, "NB");
-		safeClick(driver, By.xpath("//div[3]/div[2]/div/label/div/span"));
+		safeClick(driver, By.xpath("//div[2]/div[2]/div/label/div/span"));
 		textPresent_Log(driver, "Coupon code (DOMOW)", 5);
 		safeClick(driver, getObjectPayment("Bento_Pay_Button"));
 		Thread.sleep(5000);
 		textPresent_Log(driver, "Coupon not applicable", 5);
 		elementPresent_log(driver, getObjectPayment("Bento_Pay_Coupon_Popup_Close_Btn"), "",	1);
 		safeClick(driver, getObjectPayment("Bento_Pay_Coupon_Popup_Close_Btn"));
+		/*textPresent_Log(driver, "Coupon code DOMOW is not applicable on the selected", 1);
+		textPresent_Log(driver, "payment mode. Please select another payment mode to get", 1);
+		textPresent_Log(driver, "an instant discount of ₹ 150.", 1);*/
+		
 		/*elementPresent_log(driver, getObjectPayment("Bento_Pay_Coupon_Popup_Book_Anyway_Btn"), "Book anyway Btn", 5);
 		elementPresent_log(driver, getObjectPayment("Bento_Pay_Coupon_Popup_Changepayment_Btn"), "Change payment", 5);
-		textPresent_Log(driver, "Coupon code DOMOW is not applicable on the selected", 1);
-		textPresent_Log(driver, "payment mode. Please select another payment mode to get", 1);
-		textPresent_Log(driver, "an instant discount of ₹ 150.", 1);	*/	
+			*/	
 		}
 			
 	@AfterMethod (alwaysRun = true)

@@ -54,10 +54,10 @@ public class Validation_Text_IN extends PaymentUI_Common_Bento{
 		bento_Validation_Text(driver, "Booking_SUMMARY", "IN");		
 	}
 	
-	@Test (priority=8)
+	/*@Test (priority=8)
 	public void PayPal_Validation_Text() throws Exception {
 		bento_Validation_Text(driver, "PayPal", "");
-	}	
+	}	*/
 	
 	@AfterMethod (alwaysRun = true)
 	public void afterMethod(ITestResult _result) throws Exception {

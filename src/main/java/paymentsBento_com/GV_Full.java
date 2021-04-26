@@ -64,7 +64,7 @@ public class GV_Full extends PaymentUI_Common_Bento{
 			Assert.assertTrue(false);
 		}else Reporter.log("Total contain 0 rs");
 
-		Assert.assertEquals("Pay now", getText(driver, getObjectPayment("Bento_Pay_Button")));
+		Assert.assertEquals("Complete booking", getText(driver, getObjectPayment("Bento_Pay_Button")));
 		
 		
 	}

@@ -39,7 +39,13 @@ public class Validation_Text_SA extends PaymentUI_Common_Bento{
 	public void BookingSummary_Validation_Text() throws Exception {
 		bento_Validation_Text(driver, "Booking_SUMMARY", "SA");	
 	}
-			
+	
+
+	@Test (priority=6)
+	public void PayPal_Validation_Text() throws Exception {
+		bento_Validation_Text(driver, "PayPal", "SA");
+	}
+	
 	@AfterMethod (alwaysRun = true)
 	public void afterMethod(ITestResult _result) throws Exception {
 		afterMethod(driver, _result);

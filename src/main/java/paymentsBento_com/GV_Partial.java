@@ -27,8 +27,7 @@ public class GV_Partial extends PaymentUI_Common_Bento{
 		textPresent_Log(driver, "Pay to complete your booking", 5);
 		bento_Select_PaymentType(driver, "CC");
 		bento_Select_PaymentType(driver, "NB");
-		bento_Select_PaymentType(driver, "PayPal");
-		bento_Select_PaymentType(driver, "TW");
+		//bento_Select_PaymentType(driver, "PayPal");
 		bento_Select_PaymentType(driver, "TW");
 		String GVText=getText(driver, By.xpath("//div[2]/div[2]/div[1]/div[10]/p[1]"));
 		if(!GVText.contains("Gift card")&&GVText.contains("3000331035955930")) {

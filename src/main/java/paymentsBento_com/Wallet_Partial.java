@@ -54,6 +54,7 @@ public class Wallet_Partial extends PaymentUI_Common_Bento{
 			Assert.assertTrue(false);
 		}
 		textPresent_Log(driver, "from your wallet", 1);
+		Thread.sleep(5000);
 	}
 			
 	@AfterMethod (alwaysRun = true)

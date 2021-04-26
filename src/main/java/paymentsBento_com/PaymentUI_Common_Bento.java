@@ -443,7 +443,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 			else {
 			bento_Select_PaymentType(driver, "CC");
 			textPresent_Log(driver, "Pay to complete your booking", 1);
-			textPresent_Log(driver, "Enter card details", 1);
+			textPresent_Log(driver, "Card Payment", 1);
 			textPresent_Log(driver, "Card number", 1);
 			textPresent_Log(driver, "Expiry date", 1);
 			textPresent_Log(driver, "Card holder Name", 1);
@@ -514,6 +514,8 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 		else if(PaymentType.equalsIgnoreCase("SC")) {
 			driver.manage().addCookie(cookie_Parl_Wallet);
 			refreshPage(driver);
+			Thread.sleep(5000);
+			smartClick(driver, By.cssSelector("span.checkbox__mark.bs-border.bc-neutral-500.bw-1.ba"));			
 			bento_Select_PaymentType(driver, "SC");
 			textPresent_Log(driver, "Pay to complete your booking", 1);
 			textPresent_Log(driver, "Select a saved card", 1);
@@ -565,7 +567,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 			}
 			else if(Domain.equals("FLYIN")) {
 				textPresent_Log(driver, "Includes a non-refundable other fee of SAR", 1);
-				textPresent_Log(driver, "12 per traveller", 1);
+				textPresent_Log(driver, "11 per traveller", 1);
 				
 			}
 			
@@ -641,6 +643,8 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 		else if(PaymentType.equalsIgnoreCase("SC")) {
 			driver.manage().addCookie(cookie_Parl_Wallet);
 			refreshPage(driver);		
+			Thread.sleep(5000);
+			smartClick(driver, By.cssSelector("span.checkbox__mark.bs-border.bc-neutral-500.bw-1.ba"));
 			bento_Select_PaymentType(driver, "SC");		
 			safeClick(driver, getObjectPayment("Bento_Pay_Button"));
 			textPresent_Log(driver, "Enter CVV number", 1);

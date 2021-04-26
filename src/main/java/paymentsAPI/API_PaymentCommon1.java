@@ -583,12 +583,12 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	protected String qaurl = "https://qa2.cleartrip.com";
 	protected String qaurlFlyin = "https://qa2.flyin.com";
 	protected String qaurlae = "https://qa2.cleartrip.ae";
-	protected String qaurlbh = "https://bh.cleartrip.com";
-	protected String qaurlkw = "https://kw.cleartrip.com";
-	protected String qaurlom = "https://om.cleartrip.com";
+	protected String qaurlbh = "https://qa2bh.cleartrip.com";
+	protected String qaurlkw = "https://qa2kw.cleartrip.com";
+	protected String qaurlom = "https://qa2om.cleartrip.com";
 	protected String qaurlsa = "https://qa2.cleartrip.sa";
-	protected String qaurlus = "https://me.cleartrip.com";
-	protected String qaurlqa = "https://qa.cleartrip.com";
+	protected String qaurlus = "https://qa2me.cleartrip.com";
+	protected String qaurlqa = "https://qa2qa.cleartrip.com";
 	protected String URL_Android = "&isMobileApp=true&deviceType=android";
 	protected String URL_iOS = "&isMobileApp=true&deviceType=ios";
 	

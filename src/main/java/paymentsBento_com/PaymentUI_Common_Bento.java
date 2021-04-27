@@ -439,11 +439,55 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 				textPresent_Log(driver, "المبلغ المطلوب", 1);
 				textPresent_Log(driver, "ملخص الحجز", 1);
 				textPresent_Log(driver, "استبدال نقاط قطاف لهذا الحجز", 1);
+				
+				
+				textPresent_Log(driver, "استبدل الآن", 1);
+				
+				//  price BREAKUP
+				textPresent_Log(driver, "المبلغ المطلوب", 1);
+				textPresent_Log(driver, "السعر الأساسي (1 مسافر", 1);
+				textPresent_Log(driver, "الضرائب والرسوم", 1);
+				textPresent_Log(driver, "رسوم أخرى", 1);
+				
+				//  booking Summary
+				
+				textPresent_Log(driver, "ملخص الحجز", 1);
+				textPresent_Log(driver, "1 مسافر", 1);
+				
+			//  Terms & conditions
+				textPresent_Log(driver, "لسعر الإجمالي، شامل جميع", 1);
+				textPresent_Log(driver, "الضرائب", 1);
+				textPresent_Log(driver, "© 2006–2021 Saudi Ebreez Company", 1);
+				
+				
+				
+				
+				
+				textNotPresent_Log(driver, "You pay", 1);
+				textNotPresent_Log(driver, "Base fare (1 traveller)", 1);
+				textNotPresent_Log(driver, "Taxes and fees", 1);
+				textNotPresent_Log(driver, "Flexifly", 1);
+				textNotPresent_Log(driver, "Travel Insurance", 1);
+
+				textNotPresent_Log(driver, "Pay to complete your booking", 1);
+				textNotPresent_Log(driver, "Enter card details", 1);
+				textNotPresent_Log(driver, "Card number", 1);
+				textNotPresent_Log(driver, "Expiry date", 1);
+				textNotPresent_Log(driver, "Card holder Name", 1);
+				textNotPresent_Log(driver, "Pay to complete your booking", 1);
+				//textNotPresent_Log(driver, "CVV", 1);
+				
+				//paypal
+				
+
+				safeClick(driver, By.xpath("//nav/div[3]"));
+				textPresent_Log(driver, "الدفع بواسطة باي بال", 1);
+				
 			}			
 			else {
 			bento_Select_PaymentType(driver, "CC");
 			textPresent_Log(driver, "Pay to complete your booking", 1);
-			textPresent_Log(driver, "Card Payment", 1);
+			textPresent_Log(driver, "Enter card details", 1);
 			textPresent_Log(driver, "Card number", 1);
 			textPresent_Log(driver, "Expiry date", 1);
 			textPresent_Log(driver, "Card holder Name", 1);
@@ -476,6 +520,41 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 			//textPresentInElementAssert(driver, getObjectPayment("Bento_Pay_Button"), "Enter card details", 2);
 			textPresentInElementAssert(driver, getObjectPayment("PaymentPage_EMI_Pay_Btn"), "Pay now", 1);
 			}
+		else if (PaymentType.equalsIgnoreCase("QITAF")) 
+		{
+			elementPresent_log(driver, getObjectPayment("PaymentPage_QITAF_Redeem_Link"), "Redeem link", 10);
+			elementPresent_log(driver, getObjectPayment("PaymentPage_QITAF_Logo"), "Qitaf logo", 10);	
+			textPresent_Log(driver, "Redeem Qitaf reward points for this booking.", 1);		
+			safeClick(driver, getObjectPayment("PaymentPage_QITAF_Redeem_Link"));
+			elementPresent_log(driver, getObjectPayment("PaymentPage_QITAF_Mobile_Number_Text"), "Redeem link", 10);
+			safeClick(driver, getObjectPayment("PaymentPage_QITAF_Redeem_Link"));  // Clicking on cancel link
+			elementNotPresent_Time(driver, getObjectPayment("PaymentPage_QITAF_Mobile_Number_Text"), 5);
+			safeClick(driver, getObjectPayment("PaymentPage_QITAF_Redeem_Link"));// Clicking on redeem link
+			safeType(driver, getObjectPayment("PaymentPage_QITAF_Mobile_Number_Text"), "9986696785");
+			Thread.sleep(2000);
+			safeClick(driver, getObjectPayment("PaymentPage_QITAF_Request_Passcode_Btn"));
+			elementPresent_log(driver, getObjectPayment("PaymentPage_QITAF_Invalid_Mobile_Error"), "error mesage", 5);
+			textPresent_Log(driver, "Powered by STC.", 1);
+			textPresent_Log(driver, "Invalid mobile number", 1);
+			textPresent_Log(driver, "Registered Qitaf number", 1);
+			Thread.sleep(2000);
+			safeClick(driver, getObjectPayment("PaymentPage_QITAF_KnowMore_Link"));			
+			Thread.sleep(5000);
+			for(String winHandle : driver.getWindowHandles()){
+			    driver.switchTo().window(winHandle);
+			}
+			String KnowMoreURL = getURL(driver);
+			Reporter.log("Booking Policy URL : "+KnowMoreURL);
+			if(Domain.equals("FLYIN")) {
+				if(!KnowMoreURL.contains("https://www.flyin.com/qitaf")) {
+					Reporter.log("Know more URL : "+KnowMoreURL);
+					Assert.assertTrue(false);
+				}
+				textPresent_Log(driver, "Redeem your Qitaf points", 5);
+			}
+			
+				
+		}
 		
 		else if(PaymentType.equalsIgnoreCase("NB")) {
 			bento_Select_PaymentType(driver, "NB");
@@ -793,7 +872,6 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 			else if(PaymentType.equalsIgnoreCase("NB")) {
 				bento_Select_PaymentType(driver, "NB");
 				elementPresent_log(driver, getObjectPayment("Bento_Pay_NB_Popularbank_Axis_Img"), "Axis Bank", 1);
-				elementPresent_log(driver, getObjectPayment("Bento_Pay_NB_Popularbank_HDFC_Img"), "HDFC Bank", 1);
 				elementPresent_log(driver, getObjectPayment("Bento_Pay_NB_Popularbank_ICICI_Img"), "ICICI Bank", 1);
 				elementPresent_log(driver, getObjectPayment("Bento_Pay_NB_Popularbank_SBI_Img"), "SBI", 1);
 				elementPresent_log(driver, getObjectPayment("Bento_Pay_NB_Popularbank_Kotak_Img"), "Kotak Bank", 1);
@@ -804,6 +882,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 				safeClick(driver, getObjectPayment("Bento_Pay_NB_Popularbank_SBI_Img"));
 				safeClick(driver, getObjectPayment("Bento_Pay_NB_Popularbank_Kotak_Img"));
 				safeClick(driver, getObjectPayment("Bento_Pay_NB_Popularbank_Canara_Img"));	
+				elementPresent_log(driver, getObjectPayment("Bento_Pay_NB_Popularbank_HDFC_Img"), "HDFC Bank", 1);
 			}
 			else if(PaymentType.equalsIgnoreCase("TW")) {
 				bento_Select_PaymentType(driver, "TW");

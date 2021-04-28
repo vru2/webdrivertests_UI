@@ -23,7 +23,7 @@ public class Bento_Full_GV_Booking extends PaymentUI_Common_Bento{
 		driver.navigate().to(searchurl);
 		System.out.println(searchurl);
 		Reporter.log(searchurl);
-	    Searchpagebook(driver);
+	    Searchpagebook(driver,"");
 	    book_itnnew(driver,"GV");
 	    if(textPresent(driver,"Sorry, our servers are stumped with your request",30)||textPresent(driver,"Flight not available",30))
 	    {

@@ -34,6 +34,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 	public Cookie cookie_StoredCard = new Cookie("ct-auth", "rbvyqtMD%2B%2B2D4IuzY4zuIRBY6YkAlHcLGjbPfY7%2FLBY2N%2F%2Buerv4PZWlJbAGD5wwbiqurLmLCTGawNuDxccW8ULcQXyAJl%2BKYgmuLWYgm7W8d3Cxpy9U3hwGuorQpT8%2ByP6ob0oI8PorTkCfLhoyGqJzZb9f1us8iRaXyQVLiLFXlVEbS%2BIomnNuo9OG71wq");	
 	protected String username="varalakshmi.venkateshaiah@cleartrip.com";
 	public Cookie ctauth=new Cookie("ct-auth","4eObn84%2Bk5aM7fqBP2kNvawrXVhbqTQbDGfyKoLD2KQOSQQpBHfijuyU%2FYJUc9OL8%2BbG%2BmR3IqzUF2rTzN7I5piHO4MxT9yU5Yto9sTx1rJfUfqwCOnfM5iisxvTtMxNphvkpCTs7Lhtzd44BCgvhDWsk5vS5U1OMMj3SmUJHCIJILOSPzhSOmPPD5DhsrFodefKYF%2FCGsqt2Jc5Neqc5eNslyD2knSAOhkndq4nRwdZcWFYlbS35tLLNHllptE3xY971Hav33t3IplfVZtxHyhQzFkkJlykZg0H%2Fu3zyt06tRi4rH7PPBC312VJneKDw%2FEnV%2FDTUW%2B%2FeKpKXG5Kls4al6piN%2Bbl7nn5pwjx0oT5Zv6fyW1WUEmtAlz3EDevQWOQ7N9ZaGtMfLQipc6G1JAQ3tYq%2FssUg6PQCwg%2B%2FeYJcA%2B1hpZo5%2BFbJz7QvrKoAQ0IvA7vEBDcKqzSKc3KUqCVTE%2B7vHyTj%2FPJ%2FnA2hEVDGDwCHr03QOhwwinKGMiVEXVIdSKo%2FFeskPXPTykpeWPZe%2BJ023nxHctXj2%2F1%2B9D%2FOLN5WXwkfmrzccdGByGgnju4QG5kcHvQZEYAoIHAKiiwrwKV7Ur%2FJZaW5lkRI%2B1VH8jWTdkSi3DV8IEVatWIYbHPxx5j8tGLTYvXyqa3GyGooJsBQGPrhYqSqttcFfCmllmQBvGGM%2FUBA02WuW%2B2%2By4L702JOuUbaS8cYCj92Jr946W5OVM%2B7BkTPuRhiv6a1umTXrxNoMIOPb5QKcEE3ziHnIiEIRJxv%2F3ov6iOZSoTqPCX0RTS2u2dGysRaY8IvwklhUIQrMMkC5iXqTFIOMcjpKJad%2FkktMiYmnIHokswV%2BuQoLK9RKIjReGFMlEhoadqhVIXczaZBYfQyW2WJZLB0%2BKY6qkiR7%2FdZ2ZdgKlRjfpDzM%2FSaJ7uLgu9co4H28DyHFPlv8VKHuyExhLe4200vlQVSlGINGubzED6jFKRDhCYDomMa7mU4aR%2BBFbBP0MoxTzQP7r8AuAEw44rfCcRJ7Sa0BFosw6zlKV%2FPVcZhVDeZhQlIHhVrn5mK1KYsbM54wrT4IOeuGEwVtJ2sh94UhlIgwQvE3RBvxmTAaJQhjp9%2FF0FQXZmOmg9QWShAhytzglleNq9FAsKyd8pWGJP28o42jsMz9GlJD75u%2BSX0zwsC%2Fh0Gq5hkf9X0B2u5KK4EfEoWtekR7Z7mXqUG8vigwDzk0LiGJmRFOeBKGCAh6drrlmpx%2BWlxikxm1q6vK4TiPMm3Pvy9HZMLEFU%2FbyG%2BuduJD%2BpNy06UlKdWfWn7N6rz0pV9ERPnA%2Fzxik1vK%2BlbxoIkTOxeVMYoTzx%2BRDEyo9MjCQlcI5K%2BXqy75cBiovhF%2FKcf00zq%2B4kHLbNgQWHsPxU03SG2PnNTTKvShsNtANjRoE31K8EhQCUxAy0RKUSZCsC9rC3NzCyiZQTvrXnMEr6FjJXE5K4ROWHnDjlNnuMOHjui7YmOJO2C5PBPoPgrJ%2B1aIzT21%2FzQzLiRo7keRlxWOHKbmV4hFcfNX%2FDY4ntaQ96pwUizeqbjD5p5svT%2BJUcF%2BcG8pmd8%2FIBe%2FhGz3kmIV4qcAxe1djoRcJom5g8g%2FfWWSBE8Rvhr3ZsFai68ZMULGQ4s1tKqJbnbr780dn%2FOSPEknKZPIv8dkfL3J%2B23%2FA1YIzFy95ByZvIgaTx5P5F8Hpykik9vgS9K%2FjiW0WH3IXVWki88SCUVi%2BVta4slJgS%2Be6rODov4AqGe9JHHmx4bSxUoOEdz%2BJeBexeeQ4x9jCiGxA%2BzgjmiBpgBO3HtA9aqWZN4q3J2ixi3GIqBCVEajm6X7f5eySokE%2FtnVhY4lE2NV91AmgTC9JPxlx29Cr0ngYx6%2FJR4sTtmeG9ZTFO6IxpJES3HaACXGG8iuQ7nT3DU%2BghAjFBd5HKozcaZuGOsw%2FxsSHcxCg3j9ehv%2Fk8%2BkWf%2FsxFfhjznpXvBUxH5gkp%2BsOErD2Q5NMWuyFdqg2Mei5Lvxe%2B2TobhYvcM6zkOqi%2B4%2F46qni8Dj4YppjJwoHqDuMu1qnOYRElc4aMUh6y%2B3X0VtqUQcKWMtV4GI1Hd1YXWkV4EHF80ojK%2FD%2Bm2NfEQuwtcwP5RlqZAjhYi%2BhaZbQm4THN1jIac%2BQMVECcA5YG78D9s%2BkvudTrT70vGXB09xwiz7KkbTzvVu8WKEAabfp0qI2DLe06E6%2BFEw%2Bb297hoRaUJOjNBMxFWnWNGEhNmjiNuK%2FT%2BFbl7FpgUg%2Bu057vX4zqbOrAC2P5zmLq3NP1zw5DUpM59SknIYnb8Ce9K2MTXDmfGnRDkkGOp2fhQ0%2BAw%2BzTy2NHSoFWgdaU2fw2pfPVBzVhjF0xUke73S8VOWyc2uO%2FEX9sg%2BRpvAlrZSVMY%2BTb8xy0l%2FT6WFPss44ETRQw6Ig66G%2F%2FMhEf4RmbIwovgQwOVIlAJR8a12guJZRrnk5mZ2AENQtzgUUeO%2FaWOYyAdL5UExD%2BfeJ8NdKorIczoq2at1mFoIGgnEk7t8KnGkImFah05R%2Boj1pg%2BzSqDApBxv%2BnKRPkddAWNPfmAMwe3%2By4vaCnp%2B%2BNOc1Sv6lKOkuuzCBY%2Budso0wBpKq9nyyBi8C%2F6cqt56zT%2BBzMGFfNBYVCik03cY4b7SWx6mz%2F2qGuZlSQx9iC3js%2BSiuUJ4PW6y8sWB6BqDCSoTW5tYtPJsndsgv7ZU4DjPkTdvAepvEbdIzFMJqF0fhPH7a1nVlHJvlFn1DKUmqJ0bCyMRPWFpH2q7DXnrq33hkOE1hVMVVE%2FJkKOw66J7UuK5HT1gHExMkIQ7OJUxhsPngckMCt19XGmirQSeV7Q4pgHJp97ptBoqcv9tQLnl4xkpjdddZi%2BfFlWWZSLKP8NNjGbIkjQdlq70uw9tQBU2QT4JTnqP%2FZp1PEdlsnbKyx3Mit36uLkaKB7geFSLzivGtYGbNlodU0SfQ0s%2FOgvfn1naVGf7viIjP1Q9Ds%2Fyk4VK%2FfP%2FsFAQpAyOWUJ8mCGDzIPb2EMK1DIhiN2T06YXg%2BZQxV7MgDzg%3D%3D");
+	public Cookie ctauth_partial_wallet=new Cookie("ct-auth","x%2F4IqrYI2rGRmYUEgqsFyJtuH64oYn%2FF9ao%2FFN%2BfplBVjyBPJv6PHh1sAW0TIa%2BBH8YOfEGj8AeevvMX%2F4QnQu5pne5K5EHLAFvUZ60PN8K8qX%2FBnweQFNfqHv2MpXaBrz1TDJgcj3KYoQs86tYYOkxbSn4KngmhppaUHjGty5%2F5GK2NTQEX8p2y7NWfDr9%2F");
 	public Cookie bentoitn=new Cookie("forcedBentoItn","true");
 	String GV_number="3000331039198274";
 	String GV_pin="266685";
@@ -1016,26 +1017,33 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 	}
 	
 	// Booking via search page
-	public void Searchpagebook(RemoteWebDriver driver) throws Exception
+	public void Searchpagebook(RemoteWebDriver driver, String wallettype) throws Exception
 	{
 		 driver.manage().addCookie(bentoitn);
-		 driver.manage().addCookie(ctauth);
+		 if(wallettype=="Partial")
+		 {
+			 driver.manage().addCookie(ctauth_partial_wallet);
+		 }
+		 else
+		 {
+		  driver.manage().addCookie(ctauth);
+		 }
 		 driver.navigate().refresh();
 		 Thread.sleep(3000);
-		elementPresent_log(driver,getObjectPayment("Bento_Book_Button"),"Book",40);
-		if(elementVisible(driver,getObjectPayment("Bento_Indigo_Logo"),30))
+		 elementPresent_log(driver,getObjectPayment("Bento_Book_Button"),"Book",10);
+		if(elementVisible(driver,getObjectPayment("Bento_Indigo_Logo"),3))
 		{
 			smartClick(driver,getObjectPayment("Bento_Book_Button"));
 		}
-		else if(elementVisible(driver,getObjectPayment("Bento_Spicejet_Logo"),20))
+		else if(elementVisible(driver,getObjectPayment("Bento_Spicejet_Logo"),3))
 		{
 			smartClick(driver,getObjectPayment("Bento_Book_Button"));
 		}
-		else if(elementVisible(driver,getObjectPayment("Bento_Airindia_Logo"),20))
+		else if(elementVisible(driver,getObjectPayment("Bento_Airindia_Logo"),3))
 		{
 			smartClick(driver,getObjectPayment("Bento_Book_Button"));
 		}
-		else if(elementVisible(driver,getObjectPayment("Bento_Vistara_Logo"),20))
+		else if(elementVisible(driver,getObjectPayment("Bento_Vistara_Logo"),3))
 		{
 			smartClick(driver,getObjectPayment("Bento_Book_Button"));
 		}
@@ -1072,7 +1080,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 	{
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		Reporter.log("Itinerary page loaded");
-		if(elementVisible(driver,getObjectPayment("Bento_Itn_Standard_Fee"),90))
+		if(elementVisible(driver,getObjectPayment("Bento_Itn_Standard_Fee"),10))
 		{
 			safeClick(driver,getObjectPayment("Bento_Itn_Standard_Fee"));
 			Reporter.log("Selected itn fee");
@@ -1090,7 +1098,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 			  safeType(driver,getObjectPayment("Bento_Itn_GV_Pin"),GV_pin);
 			  Reporter.log("Entered GV pin");
 			  safeClick(driver,getObjectPayment("Bento_Itn_GV_Apply"));
-			  textPresent_Log(driver,"has been redeemed for this booking",10);
+			  textPresent_Log(driver,"has been redeemed for this booking",3);
 			  Reporter.log("GV applied Successfully");
 			 }
 			else if(gv_coupon=="Coupon")
@@ -1103,7 +1111,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 				ele.sendKeys("DOMOW");
 				Reporter.log("Entered Coupon details");
 			   safeClick(driver,getObjectPayment("Bento_Itn_Coupon_Apply"));
-			   textPresent_Log(driver,"Great! You just saved",10);
+			   textPresent_Log(driver,"Great! You just saved",3);
 			   Reporter.log("Successfully applied coupon");
 			}
 			WebElement ele2=driver.findElement(getObjectPayment("Bento_Itn_Fare_Continue"));
@@ -1133,7 +1141,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 		  safeType(driver,getObjectPayment("Bento_Itn_GV_Pin"),GV_pin);
 		  Reporter.log("Entered GV pin");
 		  safeClick(driver,getObjectPayment("Bento_Itn_GV_Apply"));
-		  textPresent_Log(driver,"has been redeemed for this booking",10);
+		  textPresent_Log(driver,"has been redeemed for this booking",3);
 		  Reporter.log("GV applied Successfully");
 		 }
 		else if(gv_coupon=="Coupon")
@@ -1146,26 +1154,26 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 			ele.sendKeys("DOMOW");
 			Reporter.log("Entered Coupon details");
 		   safeClick(driver,getObjectPayment("Bento_Itn_GV_Apply"));
-		   textPresent_Log(driver,"Great! You just saved",10);
+		   textPresent_Log(driver,"Great! You just saved",3);
 		   Reporter.log("Successfully applied coupon");
 		 }
 	   // driver.findElement(By.xpath("//div[18]/div[1]/button[1]")).click();
 		Thread.sleep(2000);
-		if(elementVisible(driver,getObjectPayment("Bento_Itn_Meal_Continue"),20))
+		if(elementVisible(driver,getObjectPayment("Bento_Itn_Meal_Continue"),5))
 		{
 		 WebElement ele1=driver.findElement(getObjectPayment("Bento_Itn_Meal_Continue"));
 		 jse.executeScript("arguments[0].click()",ele1);
 		 Reporter.log("Clicked on meal continue");
 		}
 	}
-		if(elementVisible(driver,getObjectPayment("Bento_Itn_Add_On_Skip"),60))
+		if(elementVisible(driver,getObjectPayment("Bento_Itn_Add_On_Skip"),5))
 		{
 			WebElement ele1=driver.findElement(getObjectPayment("Bento_Itn_Add_On_Skip"));
 		    jse.executeScript("arguments[0].click()",ele1);
 		    Reporter.log("Clicked on skip addons");
 			//safeClick(driver,getObjectPayment("Bento_Itn_Add_On_Skip"));
 		}
-		elementVisible(driver,getObjectPayment("Bento_Itn_Contact_Number"),20);
+		elementVisible(driver,getObjectPayment("Bento_Itn_Contact_Number"),5);
 		safeClick(driver,getObjectPayment("Bento_Itn_Contact_Number"));
 		safeType(driver,getObjectPayment("Bento_Itn_Contact_Number"),"1234567890");
 		Reporter.log("Entered mobile number");
@@ -1183,7 +1191,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 		safeClick(driver,getObjectPayment("Bento_Itn_Select_Gender"));
 		safeClick(driver,getObjectPayment("Bento_Itn_Select_Female"));
 		Reporter.log("Selected gender");
-		if(elementVisible(driver,getObjectPayment("Bento_Itn_Nationality"),20))
+		if(elementVisible(driver,getObjectPayment("Bento_Itn_Nationality"),5))
 		{
 			safeClick(driver,getObjectPayment("Bento_Itn_Nationality"));
 			safeType(driver,getObjectPayment("Bento_Itn_Nationality"),"india");
@@ -1207,12 +1215,12 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 	    driver.manage().addCookie(cookie_Bento_Payment);
 	    driver.navigate().refresh();
 	    Thread.sleep(5000);
-	    textPresent_Log(driver,"Pay to complete your booking",60);
+	    textPresent_Log(driver,"Pay to complete your booking",10);
 	    System.out.println(driver.getCurrentUrl());
 	    Reporter.log(driver.getCurrentUrl());
 	  if(PaymentType=="storedcard")
 	  {
-		if(textPresent(driver,"Cleartrip wallet",10))
+		if(textPresent(driver,"Cleartrip wallet",3))
 	    {
 			safeClick(driver,getObjectPayment("Bento_Payment_Deselect_Wallet"));
 			Reporter.log("Deselected wallet");
@@ -1228,27 +1236,28 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 	    Reporter.log("Entered CVV");
 	    safeClick(driver,getObjectPayment("Bento_Payment_Paynow"));
 	    Reporter.log("Clicked on paynow");
-	    textPresent_Log(driver,"Please wait...",10);
-	    textPresent_Log(driver,"American",20);
-	    textPresent_Log(driver,"ACS Emulator",20);
+	    textPresent_Log(driver,"Please wait...",2);
+	    textPresent_Log(driver,"American",2);
+	    textPresent_Log(driver,"ACS Emulator",2);
 	    safeClick(driver,getObjectPayment("Bento_Payment_AMC_SUBMIT"));
-	    textPresent_Log(driver,"Your booking is done",50);
+	    textPresent_Log(driver,"Your booking is done",5);
 	    Reporter.log("Payment done successfully");
 	 }
 	if(PaymentType=="wallet")
 	{
-		if(textPresent(driver,"Cleartrip wallet",10))
+		if(textPresent(driver,"Cleartrip wallet",2))
 	    {
-			textPresent_Log(driver,"Your wallet balance is sufficient to pay for this booking",10);
+			elementVisible(driver,getObjectPayment("Bento_Payment_Paynow"),2);
+			textPresent_Log(driver,"Your wallet balance is sufficient to pay for this booking",2);
 			safeClick(driver,getObjectPayment("Bento_Payment_Paynow"));
 			 Reporter.log("Clicked on paynow");
-			textPresent_Log(driver,"Please wait...",10);
+			textPresent_Log(driver,"Please wait...",2);
 			Reporter.log("Payment done successfully");
 		}
 	}
 	if(PaymentType=="nb")
 	{
-		if(textPresent(driver,"Cleartrip wallet",10))
+		if(textPresent(driver,"Cleartrip wallet",2))
 	    {
 			safeClick(driver,getObjectPayment("Bento_Payment_Deselect_Wallet"));
 			 Reporter.log("Deselected wallet");
@@ -1264,15 +1273,15 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 		Reporter.log("Selected ICIC Bank");
 		safeClick(driver,getObjectPayment("Bento_Payment_Paynow"));
 		Reporter.log("Clicked on paynow");
-		textPresent_Log(driver,"Please wait...",10);
-		textPresent_Log(driver,"Welcome to Razorpay Software Private Ltd Bank",20);
+		textPresent_Log(driver,"Please wait...",2);
+		textPresent_Log(driver,"Welcome to Razorpay Software Private Ltd Bank",5);
 		safeClick(driver,getObjectPayment("Bento_Payment_NB_Payment_Success"));
 		Reporter.log("Payment done successfully");
 		
 	}
 	if(PaymentType=="UPI")
 	{
-		if(textPresent(driver,"Cleartrip wallet",30))
+		if(textPresent(driver,"Cleartrip wallet",2))
 	    {
 			safeClick(driver,getObjectPayment("Bento_Payment_Deselect_Wallet"));
 			Reporter.log("Deselected wallet");
@@ -1289,22 +1298,41 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 		 Reporter.log("Entered UPI Details");
 		safeClick(driver,getObjectPayment("Bento_Payment_Paynow"));
 		 Reporter.log("Clicked on paynow");
-		textPresent_Log(driver,"Please wait...",10);
-		textPresent_Log(driver,"Please accept the collect request sent to your UPI app",40);
+		textPresent_Log(driver,"Please wait...",2);
+		textPresent_Log(driver,"Please accept the collect request sent to your UPI app",5);
 		 Reporter.log("Payment done successfully");
 	}
 	if(PaymentType=="GV")
 	{
-		textPresent_Log(driver,"Gift card",40);
+		elementVisible(driver,getObjectPayment("Bento_Payment_Paynow"),2);
+		textPresent_Log(driver,"Gift card",2);
 		safeClick(driver,getObjectPayment("Bento_Payment_Paynow"));
 		 Reporter.log("Clicked on paynow");
-		textPresent_Log(driver,"Please wait...",10);
+		textPresent_Log(driver,"Please wait...",2);
 		 Reporter.log("Payment done successfully");
+	}
+	if(PaymentType=="partial_wallet")
+	{
+		 elementVisible(driver,getObjectPayment("Bento_Payment_Paynow"),2);
+		 safeClick(driver,getObjectPayment("Bento_Payment_Select_Storedcard1"));
+		 Reporter.log("Clicked on SC");
+		  safeClick(driver,getObjectPayment("Bento_Payment_SC1_CVV"));
+		    safeType(driver,getObjectPayment("Bento_Payment_SC1_CVV"),"1234");
+		    Reporter.log("Entered CVV details");
+		    safeClick(driver,getObjectPayment("Bento_Payment_Paynow"));
+		    Reporter.log("Clicked on paynow");
+		    textPresent_Log(driver,"Please wait...",2);
+		    textPresent_Log(driver,"American",5);
+		    textPresent_Log(driver,"ACS Emulator",10);
+		    safeClick(driver,getObjectPayment("Bento_Payment_AMC_SUBMIT"));
+		    textPresent_Log(driver,"Your booking is done",5);
+		    Reporter.log("Payment done successfully");
 	}
 	if(PaymentType=="Coupon")
 	{
-		textPresent_Log(driver,"Coupon code (DOMOW)",40);
-		if(textPresent(driver,"Cleartrip wallet",30))
+		elementVisible(driver,getObjectPayment("Bento_Payment_Paynow"),2);
+		textPresent_Log(driver,"Coupon code (DOMOW)",2);
+		if(textPresent(driver,"Cleartrip wallet",2))
 		{
 			safeClick(driver,getObjectPayment("Bento_Payment_Deselect_Wallet"));
 			Reporter.log("Deselected wallet");
@@ -1320,27 +1348,27 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 	    Reporter.log("Entered CVV details");
 	    safeClick(driver,getObjectPayment("Bento_Payment_Paynow"));
 	    Reporter.log("Clicked on paynow");
-	    textPresent_Log(driver,"Please wait...",10);
-	    textPresent_Log(driver,"American",20);
-	    textPresent_Log(driver,"ACS Emulator",20);
+	    textPresent_Log(driver,"Please wait...",2);
+	    textPresent_Log(driver,"American",2);
+	    textPresent_Log(driver,"ACS Emulator",2);
 	    safeClick(driver,getObjectPayment("Bento_Payment_AMC_SUBMIT"));
-	    textPresent_Log(driver,"Your booking is done",50);
+	    textPresent_Log(driver,"Your booking is done",5);
 	    Reporter.log("Payment done successfully");
 	}
 	}
 
 	public void confirmation_page(RemoteWebDriver driver) throws Exception
 	{
-		 elementPresent_log(driver,By.linkText("Get your ticket"),"Get your ticket",10);
-		 textPresent_Log(driver,"You just booked",5);
-		 textPresent_Log(driver,"Travelers in this trip",5);
-		 textPresent_Log(driver,"Itinerary sent",5);
-		 textPresent_Log(driver,"PAYMENT RECEIPT",5);
-		 textPresent_Log(driver,"TOTAL CHARGE",5);
-		 textPresent_Log(driver,"RATE BREAK UP",5);
-		 textPresent_Log(driver,"Convenience Fee",5);
-		 textPresent_Log(driver,"Total",5);
-		 textPresent_Log(driver,"Travel plans change often.",5);
+		 elementPresent_log(driver,By.linkText("Get your ticket"),"Get your ticket",5);
+		 textPresent_Log(driver,"You just booked",2);
+		 textPresent_Log(driver,"Travelers in this trip",2);
+		 textPresent_Log(driver,"Itinerary sent",2);
+		 textPresent_Log(driver,"PAYMENT RECEIPT",2);
+		 textPresent_Log(driver,"TOTAL CHARGE",2);
+		 textPresent_Log(driver,"RATE BREAK UP",2);
+		 textPresent_Log(driver,"Convenience Fee",2);
+		 textPresent_Log(driver,"Total",2);
+		 textPresent_Log(driver,"Travel plans change often.",2);
 		 String tripid=driver.findElement(getObjectPayment("Bento_Confirmation_Page_Gettrip")).getText();
 	     System.out.println(tripid);
 	     Reporter.log(tripid);

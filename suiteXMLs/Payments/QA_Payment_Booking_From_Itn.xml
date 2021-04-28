@@ -15,7 +15,9 @@
         <class name="paymentsBento_com.Bento_NB_ICICI_Booking"/> 
          <class name="paymentsBento_com.Bento_StoredCard_Booking"/> 
           <class name="paymentsBento_com.Bento_UPI_Booking"/> 
-           <class name="paymentsBento_com.Bento_Wallet_Booking"/> 	  
+           <class name="paymentsBento_com.Bento_Wallet_Booking"/> 
+           <class name="paymentsBento_com.Bento_Partial_Wallet_Booking"/>
+           	  
     </classes>
 </test>
 

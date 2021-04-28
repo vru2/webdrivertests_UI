@@ -10,7 +10,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Bento_Coupon_Booking extends PaymentUI_Common_Bento {
+public class Bento_Coupon_StoredCard_Booking extends PaymentUI_Common_Bento {
 
 	@BeforeClass
 	public void startSelenium() throws Exception {

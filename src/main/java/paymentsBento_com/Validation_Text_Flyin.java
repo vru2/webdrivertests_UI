@@ -40,10 +40,17 @@ public class Validation_Text_Flyin extends PaymentUI_Common_Bento{
 		bento_Validation_Text(driver, "PayPal", "SA");
 	}
 
+	
 	@Test (priority=5)
 	public void SavedCard_Validation_Text() throws Exception {
 		bento_Validation_Text(driver, "SC", "");
 	}	
+	
+
+	@Test (priority=6)
+	public void Qitaf_Validation_Text() throws Exception {
+		bento_Validation_Text(driver, "QITAF", "SA");
+	}
 	
 	@AfterMethod (alwaysRun = true)
 	public void afterMethod(ITestResult _result) throws Exception {

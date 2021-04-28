@@ -9,12 +9,6 @@
 </listeners>
 
 
-<test name="Bento UI -------- Validation" preserve-order="true" >
-    <classes>
-      <class name="paymentsBento_com.Validation_UI_IN"/> 	  
-    </classes>
-</test>
-
 
 <test name="RazorPay - NB GW" preserve-order="true" >
     <classes>

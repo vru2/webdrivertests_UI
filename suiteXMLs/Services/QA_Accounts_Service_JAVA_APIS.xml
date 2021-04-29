@@ -32,6 +32,28 @@
 		</classes>
 	</test>
 
+	<test name="Accounts-Service-Companysearch" parallel="true">
+		<classes>
+			<class name="accountsAPI.Account_Service_CompanySearchAPI_withDomainname" />
+			<class
+				name="accountsAPI.Account_Service_CompanySearchAPI_internalDomainSearch" />
+			<class
+				name="accountsAPI.Account_Service_CompanySearchAPIwithAPIkey_Companyusersandtravelers" />
+			<class name="accountsAPI.Account_Service_CompanySearchAPIwithAPIkey" />
+			<class name="accountsAPI.Account_Service_CompanySearchAPIwithTagID" />
+			<class
+				name="accountsAPI.Account_Service_CompanySearchAPIwithTagID_UsersandTravellers" />
+			<class name="accountsAPI.Account_Service_CompanyConfig_GSTdetailswithID" />
+			<class
+				name="accountsAPI.Account_Service_CompanyConfig_GSTdetailswithDomainName" />
+			<class name="accountsAPI.Account_Service_CompanyConfig_GetCompanybyID" />
+			<class
+				name="accountsAPI.Account_Service_CompanyConfig_GetCompanyConfigsbyID" />
+			<class name="accountsAPI.Account_Service_CompanyVendorMapping" />
+
+		</classes>
+	</test>
+
 	<test name="Identity-service" parallel="true">
 		<classes>
 			<class name="accountsAPI.Identtiyservice_get_tokenthroughrefreshToken" />
@@ -111,7 +133,9 @@
 			<class name="accountsAPI.Account_Service_FetchCustomer_number" />
 			<class name="accountsAPI.Account_Service_CFW_GetUserStatus" />
 			<class name="accountsAPI.Account_Service_CFW_StatusUpdateCall" />
-
+			<class name="accountsAPI.Account_Service_FetchContactData" />
+			<class name="accountsAPI.Account_Service_Cleartrip_confirmedtravlerwithActivestatus" />
+			<class name="accountsAPI.Account_Service_GetuserdetailsbyAPIKey" />
 		</classes>
 	</test>
 

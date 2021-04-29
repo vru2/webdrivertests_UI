@@ -252,7 +252,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String urlPayV3 = "/paymentservice/service/pay/v3";
 	String urlPayV2 = "/paymentservice/service/pay";
 	String url1_FetchPayDetails = "/trips?tripID=Q1904233450";
-	String urlpromoActivate = "/promoservice/v1/promogroups/Q190624286218";
+	String urlpromoActivate = "/promoservice/v1/promogroups/Q210428976934";
 	String urlpromoUsed = "/payments/wallet/promo/used?tripRef=Q190702311622";
 	String urlFetchTripStatus = "/paymentservice/service/status/xml/Q210302910382.ref";
 	

@@ -5,9 +5,11 @@ import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
+import org.apache.commons.codec.binary.Base64;
 
+/*import sun.misc.BASE64Decoder;
+import sun.misc.BASE64Encoder;
+*/
 public class API_Smiles_Decription {
 
     private static final String key = "BDFHJLNPpnljhfdb";
@@ -22,7 +24,8 @@ public class API_Smiles_Decription {
             cipher.init(Cipher.ENCRYPT_MODE, skeySpec, iv);
 
             byte[] encrypted = cipher.doFinal(value.getBytes());
-            return new BASE64Encoder().encode(encrypted);
+			/* return new BASE64Encoder().encode(encrypted); */
+            return Base64.encodeBase64String(encrypted);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -36,7 +39,7 @@ public class API_Smiles_Decription {
 
             Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5PADDING");
             cipher.init(Cipher.DECRYPT_MODE, skeySpec, iv);
-            byte[] original = cipher.doFinal(new BASE64Decoder().decodeBuffer(encrypted));
+            byte[] original = cipher.doFinal(Base64.decodeBase64(encrypted));
 
             return new String(original);
         } catch (Exception ex) {

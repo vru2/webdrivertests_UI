@@ -105,6 +105,7 @@ public boolean GDS_Flight, B2B_GDS_Flight = false;
 	      options.addArguments("window-size=1200,1100");
 	      options.addArguments("--no-sandbox");
 	      options.addArguments("--disable-dev-shm-usage");
+	      options.addArguments("--allowed-ips");
 	      Map<String, Object> prefs = new HashMap();
 	      File file = new File(".");
 	      String filepath = file.getCanonicalPath() + "\\exe\\chromedriver.exe";
@@ -123,6 +124,7 @@ public boolean GDS_Flight, B2B_GDS_Flight = false;
 	      options.addArguments("--no-sandbox");
 	      options.addArguments("--disable-dev-shm-usage");
 	      options.addArguments("--user-agent=Mozilla/5.0 (iPhone; U; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5");
+	      options.addArguments("--allowed-ips");
 	      Map<String, Object> prefs = new HashMap();
 	      
 
@@ -183,6 +185,7 @@ public boolean GDS_Flight, B2B_GDS_Flight = false;
 			
 		 ChromeOptions chromeOptions = new ChromeOptions();
 		 chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
+		 chromeOptions.addArguments("--allowed-ips");
 		 if(common.value("headlessbrowser").equalsIgnoreCase("false") ){
 			 driver = new ChromeDriver(chromeOptions);
 		 }

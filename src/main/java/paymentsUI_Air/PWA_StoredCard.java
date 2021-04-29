@@ -28,8 +28,8 @@ public class PWA_StoredCard extends PaymentUI_Common{
 		}
 		driver.manage().addCookie(cookie_Parl_Wallet);
 		refreshPage(driver);
-		elementVisible(driver, By.cssSelector("p.w-100p.c-blue.fs-4.lh-title.ta-center"), 5);
-		safeClick(driver, By.cssSelector("p.w-100p.c-blue.fs-4.lh-title.ta-center"));
+		elementVisible(driver, By.cssSelector("rect"), 10);
+		safeClick(driver, By.cssSelector("rect"));
 		String saveCard = getText(driver, By.xpath("//div[3]/div/p"));
 		String saveCVV = getText(driver, By.xpath("//div[3]/div/p[2]"));
 		Assert.assertEquals(saveCard, "Save card for faster bookings");	
@@ -39,7 +39,8 @@ public class PWA_StoredCard extends PaymentUI_Common{
 		if(elementVisible(driver, By.cssSelector("div.pwa-save-card > div.pwa-radio-toggle.pwa-radio-toggle__on > label.pwa-radio-toggle--btn"),2)) {
 			Reporter.log("Toggle button is not clicked");
 			Assert.assertTrue(false);
-		}safeClick(driver, By.xpath("//div[2]/label"));
+		}
+		safeClick(driver, By.xpath("//div[2]/label"));
 		if(elementNotVisible(driver, By.cssSelector("div.pwa-save-card > div.pwa-radio-toggle.pwa-radio-toggle__on > label.pwa-radio-toggle--btn"),2)) {
 			Reporter.log("Toggle button is not clicked");
 			Assert.assertTrue(false);

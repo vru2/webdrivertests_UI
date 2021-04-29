@@ -29,7 +29,7 @@ public class PWA_NB_HDFC extends PaymentUI_Common{
 		payUI_Select_PaymentType_PWA(driver, "NET BANKING");
 		
 		//safeClick(driver, getObjectPayment("PWA_PaymentPage_NB_Tab"));
-		payUI_Enter_PaymentDetails_PWA(driver, "NET BANKING", "HDFC BANK");
+		payUI_Enter_PaymentDetails_PWA(driver, "NET BANKING", "ICICI BANK");
 		payUI_Mock_ConfirmationPage(driver, PayUrl);
 	}
 

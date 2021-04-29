@@ -17,9 +17,10 @@ public class PWA_Coupon extends PaymentUI_Common{
 	public RemoteWebDriver driver;
 	String Coupon_Invalid_Text = null;
 	
-	@Test (priority=1)
+	@Test (priority=0)
 	public void PWA_CouponInvalid() throws Exception {
 		String PayUrl = getPayUI("AirCoupon", "");
+		System.out.println(PayUrl);
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
 		refreshPage(driver);
@@ -33,14 +34,15 @@ public class PWA_Coupon extends PaymentUI_Common{
 		textPresent(driver, "Choose another bank", 5);
 		safeClick(driver, getObjectPayment("PWA_PaymentPage_Select_NB"));
 		safeType(driver, getObjectPayment("PWA_NETBANKING_Page_NB_TextBox"), "Axis Bank");
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		safeClick(driver, getObjectPayment("PWA_NETBANKING_Page_NB_AJAX"));
 		Thread.sleep(2000);
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn2"));
 		Thread.sleep(2000);		
 		Coupon_Invalid_Text = getText(driver, getObjectPayment("PWA_PaymentPage_Invalid_Coupon_Text"));
-		if(!Coupon_Invalid_Text.contains("Coupon code DOMOW is not applicable on the chosen payment method. Change payment mode/card details or book without coupon at")) {
-			Reporter.log("Coupon code DOMOW is not applicable on the chosen payment method. Change payment mode/card details or book without coupon at is displayed instead of "+ Coupon_Invalid_Text);
+		System.out.println(Coupon_Invalid_Text);
+		if(!Coupon_Invalid_Text.contains("Coupon code DOMOW is not applicable on the selected payment mode. Please select another payment mode to get an instant discount of ")) {
+			Reporter.log("Coupon code DOMOW is not applicable on the selected payment mode. Please select another payment mode to get an instant discount of "+ Coupon_Invalid_Text);
 			Assert.assertTrue(false);
 		}
 		if(!Coupon_Invalid_Text.contains("800")) {
@@ -49,17 +51,20 @@ public class PWA_Coupon extends PaymentUI_Common{
 		}
 		Thread.sleep(2000);
 		safeClick(driver, getObjectPayment("PWA_PaymentPage_Coupon_Change_Payment_Button"));
+		Thread.sleep(2000);
 		}
 		
-		@Test(priority=2)
+		@Test(priority=1)
 		public void PWA_CouponValid() throws Exception {
 		Thread.sleep(2000);
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn2"));
+		Thread.sleep(2000);
 		Coupon_Invalid_Text = getText(driver, getObjectPayment("PWA_PaymentPage_Invalid_Coupon_Text"));
-		if(!Coupon_Invalid_Text.contains("Coupon code DOMOW is not applicable on the chosen payment method. Change payment mode/card details or book without coupon at")) {
-			Reporter.log("Coupon code DOMOW is not applicable on the chosen payment method. Change payment mode/card details or book without coupon at");
+		if(!Coupon_Invalid_Text.contains("Coupon code DOMOW is not applicable on the selected payment mode. Please select another payment mode to get an instant discount of ")) {
+			Reporter.log("Coupon code DOMOW is not applicable on the selected payment mode. Please select another payment mode to get an instant discount of "+ Coupon_Invalid_Text);
 			Assert.assertTrue(false);
-		}if(!Coupon_Invalid_Text.contains("800")) {
+		}
+		if(!Coupon_Invalid_Text.contains("800")) {
 			Reporter.log("800 rs is not displayed");
 			Assert.assertTrue(false);
 		}

@@ -27,13 +27,13 @@ public class PWA_WalletFull extends PaymentUI_Common{
 		Thread.sleep(50000);
 		elementVisible(driver, getObjectPayment("PWA_PaymentPage_TotalPriceGV"), 10);
 		String Total = getText(driver, getObjectPayment("PWA_PaymentPage_TotalPriceGV"));
-		if(!Total.contains(" 0")) {
-			Assert.assertEquals(Total, "₹  0");
+		if(!Total.contains("₹ 0")) {
+			Assert.assertEquals(Total, "₹ 0");
 			Assert.assertTrue(false);
 		}
 		elementPresent_log(driver, getObjectPayment("PWA_PaymentPage_SaveCard"), "Wallet toggle btn", 5);
 
-		String Wallet_Message = getText(driver, By.xpath("//div[@id='root']/main/div/section/div[3]/div/div"));
+		String Wallet_Message = getText(driver, By.xpath("//div[2]/div/div/p"));
 		if(Wallet_Message.contains("Use")&&Wallet_Message.contains("from wallet")) {
 		}else {
 			Reporter.log("Use ***** from wallet is not displayed");
@@ -61,8 +61,10 @@ public class PWA_WalletFull extends PaymentUI_Common{
 		elementPresent(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_closeIcon"));
 		textPresent_Log(driver, "Cleartrip Wallet", 1);
 		Thread.sleep(2000);
-		safeClick(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_closeIcon"));
-		Thread.sleep(2000);
+		
+		  safeClick(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_closeIcon"));
+		  Thread.sleep(2000);
+		 
 		safeClick(driver, getObjectPayment("PWA_PaymentPage_SaveCard"));
 		
 		Total = getText(driver, getObjectPayment("PWA_PaymentPage_TotalPriceGV"));

@@ -23,8 +23,11 @@ public class PWA_IN_RT extends PaymentUI_Common{
 		driver.get(PayUrl);
 		refreshPage(driver);
 		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Itineray"),10);
-		String ItineraryDetails_TripText = getText(driver, getObjectPayment("PWA_PaymentPage_Itineray_YourTrip_text"));
-		Assert.assertEquals(ItineraryDetails_TripText, "Your trip details");
+		/*
+		 * String ItineraryDetails_TripText = getText(driver,
+		 * getObjectPayment("PWA_PaymentPage_Itineray_YourTrip_text"));
+		 * Assert.assertEquals(ItineraryDetails_TripText, "Trip summary");
+		 */
 
 		safeClick(driver, getObjectPayment("PWA_PaymentPage_Itineray"));
 		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Itineray_Header"),10);

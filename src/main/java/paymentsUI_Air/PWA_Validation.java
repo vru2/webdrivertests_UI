@@ -25,29 +25,36 @@ public class PWA_Validation extends PaymentUI_Common{
 
 		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 20);
 		//textPresent_Log(driver, "Select payment option", 1);
-		payUI_Select_PaymentType_PWA(driver, "DEBIT/CREDIT CARDS");
-		//safeClick(driver, getObjectPayment("PWA_PaymentPage_SaveCard"));
-		safeType(driver, getObjectPayment("PWA_PaymentPage_CC_Number"),  platform.value("MasterCard_Number"));
-		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
-		payUI_Error_Validation_PWA(driver, getObjectPayment("PWA_Error_ValidCard"), getObjectPayment("PWA_Error_PopUp_Screen"), "Please enter valid card details");	
-		refreshPage(driver);
-		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 5);
-		safeType(driver, getObjectPayment("PWA_PaymentPage_CC_Number"),  platform.value("MasterCard_Number"));
-		safeType(driver, getObjectPayment("PWA_PaymentPage_CC_Expiry"), platform.value("MasterCard_EXP_PWA"));
-		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
-		payUI_Error_Validation_PWA(driver, getObjectPayment("PWA_Error_ValidCard"), getObjectPayment("PWA_Error_PopUp_Screen"), "Please enter valid card details");
-		refreshPage(driver);
-		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 5);
+		/*
+		 * payUI_Select_PaymentType_PWA(driver, "DEBIT/CREDIT CARDS");
+		 * //safeClick(driver, getObjectPayment("PWA_PaymentPage_SaveCard"));
+		 * safeType(driver, getObjectPayment("PWA_PaymentPage_CC_Number"),
+		 * platform.value("MasterCard_Number")); safeClick(driver,
+		 * getObjectPayment("PayUI_Make_Payment_Btn"));
+		 * payUI_Error_Validation_PWA(driver, getObjectPayment("PWA_Error_ValidCard"),
+		 * getObjectPayment("PWA_Error_PopUp_Screen"),
+		 * "Please enter valid card details"); refreshPage(driver);
+		 * elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 5);
+		 * safeType(driver, getObjectPayment("PWA_PaymentPage_CC_Number"),
+		 * platform.value("MasterCard_Number")); safeType(driver,
+		 * getObjectPayment("PWA_PaymentPage_CC_Expiry"),
+		 * platform.value("MasterCard_EXP_PWA")); safeClick(driver,
+		 * getObjectPayment("PayUI_Make_Payment_Btn"));
+		 * payUI_Error_Validation_PWA(driver, getObjectPayment("PWA_Error_ValidCard"),
+		 * getObjectPayment("PWA_Error_PopUp_Screen"),
+		 * "Please enter valid card details"); refreshPage(driver);
+		 * elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 5);
+		 */
 		safeClickList(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), "NET BANKING");
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn2"));
 		payUI_Error_Validation_PWA(driver, getObjectPayment("PWA_Error_ValidCard"), getObjectPayment("PWA_Error_PopUp_Screen"), "Please select your bank");	
 		refreshPage(driver);
-		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 5);
+		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 10);
 		safeClickList(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), "WALLETS");
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		payUI_Error_Validation_PWA(driver, getObjectPayment("PWA_Error_ValidCard"), getObjectPayment("PWA_Error_PopUp_Screen"), "Please select any wallet");	
 		refreshPage(driver);
-		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 5);
+		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 10);
 		safeClickList(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), "UPI");
 		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		payUI_Error_Validation_PWA(driver, getObjectPayment("PWA_Error_ValidCard"), getObjectPayment("PWA_Error_PopUp_Screen"), "Please enter a valid UPI ID");
@@ -66,7 +73,7 @@ public class PWA_Validation extends PaymentUI_Common{
 		//textPresent_Log(driver, "Discounts", 5);
 		textPresent_Log(driver, "Convenience Fee", 1);	
 		textPresent_Log(driver, "Flexifly", 1);	
-		textPresent_Log(driver, "Travel insurance", 1);	
+		textPresent_Log(driver, "Travel Insurance", 1);	
 		textPresent_Log(driver, "Total", 5);
 		textPresent_Log(driver, "You pay", 5);
 		safeClick(driver, getObjectPayment("PWA_PaymentPage_FareBreakup_closeIcon"));		
@@ -81,11 +88,19 @@ public class PWA_Validation extends PaymentUI_Common{
 	public void PWA_Validate_ItineraryValidation() throws Exception {
 		refreshPage(driver);
 		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Itineray"),10);
-		String ItineraryDetails_TripText = getText(driver, getObjectPayment("PWA_PaymentPage_Itineray_YourTrip_text"));
-		Assert.assertEquals(ItineraryDetails_TripText, "Your trip details");
+		/*
+		 * String ItineraryDetails_TripText = getText(driver,
+		 * getObjectPayment("PWA_PaymentPage_Itineray_YourTrip_text"));
+		 * Assert.assertEquals(ItineraryDetails_TripText, "Your trip details");
+		 */
 		
 		String ItineraryDetails_DateText = getText(driver, getObjectPayment("PWA_PaymentPage_Itineray_TravelDate_text"));
-		Assert.assertEquals(ItineraryDetails_DateText, "24 Oct - 24 Oct | John Miller+4");
+		Assert.assertEquals(ItineraryDetails_DateText, "BLR → BOM\n" + 
+				"24 Oct\n" + 
+				" - \n" + 
+				"24 Oct\n" + 
+				" | \n" + 
+				"John Miller+4");
 		
 		safeClick(driver, getObjectPayment("PWA_PaymentPage_Itineray"));
 		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Itineray_Header"),10);
@@ -99,10 +114,10 @@ public class PWA_Validation extends PaymentUI_Common{
 		textPresent_Log(driver, "John Miller", 1);
 		textPresent_Log(driver, "Mohit Verma", 1);
 		String FlightDetails = getText(driver, getObjectPayment("PWA_PaymentPage_Itineray_FlightDetails"));
-		if(!(FlightDetails.contains("BLR")&&FlightDetails.contains("Non stop")&&FlightDetails.contains("BOM"))) {
+		if(!(FlightDetails.contains("BLR")&&FlightDetails.contains("Non Stop")&&FlightDetails.contains("BOM"))) {
 			Reporter.log("Flight details text is not displayed");
 			Assert.assertTrue(false);
-		}		
+		}			
 		elementPresent_log(driver, By.xpath("//div[2]/div/img"), "Flight Logo", 1);
 		safeClick(driver, By.cssSelector("svg.c-pointer"));
 		if(elementVisible(driver, By.xpath("//div[2]/div/img"),1)) {

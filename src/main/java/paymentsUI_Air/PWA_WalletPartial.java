@@ -35,7 +35,7 @@ public class PWA_WalletPartial extends PaymentUI_Common{
 		}
 		elementPresent_log(driver, getObjectPayment("PWA_PaymentPage_SaveCard"), "Wallet toggle btn", 5);
 
-		String Wallet_Message = getText(driver, By.xpath("//div[@id='root']/main/div/section/div[3]/div/div"));
+		String Wallet_Message = getText(driver, By.xpath("//div[2]/div/div/p"));
 		if(Wallet_Message.contains("Use")&&Wallet_Message.contains("from wallet")) {
 		}else {
 			Reporter.log("Use ***** from wallet is not displayed");

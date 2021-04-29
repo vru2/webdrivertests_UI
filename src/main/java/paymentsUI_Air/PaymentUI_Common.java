@@ -23,8 +23,7 @@ public class PaymentUI_Common extends PaymentNodeJS{
 	Cookie cookie_Full_Wallet = new Cookie("ct-auth", "kPSO4DekYXjX1NAa%2BV6x%2BPAuD85oXXc2x6ocNR2SCho5FiJNPfE0mcjCvYIvtvEzD3habrO078UoXdzWM34lXZaLbE1jIpkEaANLn%2BHJadeW7kll2UfWWUfOoZLsVWTE5e4M7AJPpksQjN%2BnOAVReuzUb6b257o%2Bo1tkm1ssHdnsn63Uy2JyxP3spA3W9e%2Fw");	
 	Cookie cookie_Stored_CardNew = new Cookie("ct-auth", "EVefRmmOWPSC8c9sPGbZGwZMgfl%2FLjP6yfQQAwhPONaOOIjRmfrMO5ubb5%2FGLWzguQmW3NiUZma8q2lELnUuyC3uAF5DaTQONdJlLn%2FO2me%2FiLCzDjUE8Mm7nMigogz0z84lf%2Bili9Xzawt1KbN%2FMNpQDroZvb3Q7ub%2BLj1YfofQs%2BDG9mD5DXvLFNSWqYz93GfvGpnfyFmIRy226HjYgQ%3D%3D");
 	Cookie cookie_Stored_Card = new Cookie("ct-auth", "3cZX3Pk7YZLQGkv5lH%2BqMisg41mHr4%2BV5LnkFlBYXSW7TbjXLYl7j8XVySMQUxQsuv18jxT4Krq%2BnZKZgt%2FgtsPPZuvu7kgJgSXq9dBmctulsdFnuefY%2Fk4K%2FkHUuDj%2BnitdvoouxVugJ172IcDxp41NeKUSgTMU9EpGlYfZJ60e5yZIWxI28YU6CxlbH7FH");
-	
-
+	Cookie cookie_Add_SC=new Cookie("ct-auth","CcNCE1HeA9xi0zLBvdgyipMrHyjrTOVaxM0bGlOeHZozx7q0nRs8lpmI1Yj3mhsDmKAAIK983rJHezZppJTjL%2Buyt1YsWGAmZnjGtzjP9wxHHXyajC%2Bt%2B1aDMXmoRrDZhqYD5As3rJQDNFIGCYzSR0PRSgXTL404cS4HrO2fJkk%3D");
 	public void payUI_Select_PaymentType(RemoteWebDriver driver, String PayType) throws Exception {
 		for (int i = 0; i < 10; i++) {			
 			if(textPresent(driver, "System error", 1)) {

@@ -18,6 +18,7 @@ public class PWA_RP_PayBack_NB extends PaymentUI_Common{
 	@Test
 	public void Payback() throws Exception {
 		String PayUrl = getPayUI("AirRP", "");
+		System.out.println(PayUrl);
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);	 		
 
@@ -38,13 +39,16 @@ public class PWA_RP_PayBack_NB extends PaymentUI_Common{
 		safeClickList(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), "WALLETS");
 		safeClickList(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), "NET BANKING");	
 		elementPresent(driver, getObjectPayment("PWA_PaymentPage_Total_Price"));
-		String YouPay = getText(driver, getObjectPayment("PWA_PaymentPage_Total_Price"));
-		System.out.println(YouPay);
+		 String YouPay = getText(driver, getObjectPayment("PWA_PaymentPage_Total_Price"));
 		
-		if (!YouPay.contains("650")) {
-			Reporter.log("Youpay doesn't contain 650 rs");
+		if (!YouPay.contains("₹ 150")) {
+			Reporter.log("Youpay doesn't contain 150 rs");
 			Assert.assertTrue(false);
-		}else Reporter.log("Youpay - contain 650 rs");
+		}
+		else
+		{
+			Reporter.log("Youpay - contain 150 rs");
+		}
 	}	
 
 	@BeforeClass

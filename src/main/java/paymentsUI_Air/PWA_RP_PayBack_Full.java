@@ -39,7 +39,7 @@ public class PWA_RP_PayBack_Full extends PaymentUI_Common{
 		String YouPay = getText(driver, getObjectPayment("PWA_PaymentPage_Total_Price"));
 		System.out.println(YouPay);
 		
-		if (!YouPay.contains("150")) {
+		if (!YouPay.contains("₹ 150")) {
 			Reporter.log("Youpay doesn't contain 150 rs");
 			Assert.assertTrue(false);
 		}else Reporter.log("Youpay - contain 150 rs");

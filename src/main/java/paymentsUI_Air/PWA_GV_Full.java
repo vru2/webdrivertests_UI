@@ -31,8 +31,8 @@ public class PWA_GV_Full extends PaymentUI_Common{
 		Thread.sleep(2000);
 		String TotalPrice = getText(driver, getObjectPayment("PWA_PaymentPage_TotalPriceGV"));
 		//System.out.println(TotalPrice);
-		if(!TotalPrice.contains(" 0")) {
-			Reporter.log("Total prce is not 0");
+		if(!TotalPrice.contains("₹ 0")) {
+			Reporter.log("Total price is not 0");
 			Assert.assertTrue(false);
 		}
 		/*if(elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), 1)) {

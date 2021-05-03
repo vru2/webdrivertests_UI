@@ -272,6 +272,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String urlPay_CreateRecord = "/paymentservice/service/createrecord?company-name=Fwd+Tourism+Pvt+Ltd&payment-type=cre&deposit-acct-id=124652522&amount=4819.5";
 	String urlROR_Fetch_PayByID= "/paymentservice/payments/fetchById?id=43363994&field=paymentId";
 	String urlROR_Fetch_RefundByID ="/paymentservice/service/refund/info/9373548";
+	String urlReporting_Disabled_Refunds = "/paymentservice/disabledRefundRecords?toDate=03-05-2021&fromDate=02-05-2021";
 	String urlROR_TripID_Status ="/paymentservice/service/status/xml/Q210322925952.ref";
 	String urlROR_Fetch_ProfileList= "/paymentservice/service/profileList/info/5071366";
 	String urlROR_MultiSearch_Pay= "/paymentservice/search/payments/v1?query=id:43621536,paymentType:CC";
@@ -1962,6 +1963,16 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 				Assert.assertTrue(false);
 			}
 		}
+		else if(payType.equalsIgnoreCase("Reporting_Disabled_Refunds")) {
+			System.out.println("dfghjklsads");
+			if(!(resp.body().asString().contains("Q210502977324"))){
+				Assert.assertTrue(false);
+			}if(!(resp.body().asString().contains("kiran.kumar@cleartrip.com"))){
+				Assert.assertTrue(false);
+			}
+		}
+		
+		
 		else if(payType.equalsIgnoreCase("Qitaf_Reverse")) {
 			String status = jsonPathEvaluator.getString("status");
 			String description = jsonPathEvaluator.getString("description");
@@ -4366,6 +4377,15 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		else if(payType.equalsIgnoreCase("ReportingPAYID")) {
 			endPoint = url_ReportingPaymentID;
 
+			Reporter.log(endPoint);
+			response = RestAssured.given().
+					when().log().all().headers(headers).get(endPoint);
+		}
+
+		else if(payType.equalsIgnoreCase("Reporting_Disabled_Refunds")) {
+			RestAssured.baseURI =urlReporting;
+			endPoint= urlReporting_Disabled_Refunds;
+			Reporter.log(urlReporting+endPoint);
 			Reporter.log(endPoint);
 			response = RestAssured.given().
 					when().log().all().headers(headers).get(endPoint);

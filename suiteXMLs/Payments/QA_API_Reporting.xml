@@ -64,7 +64,9 @@
     <classes>
 		<class name="paymentsAPI.API_Reporting"/>
 		<class name="paymentsAPI.API_Reporting_TS_V3"/>
-		<class name="paymentsAPI.API_Reporting_Cron_Get_Wallet_Refund_Stop_Tnx"/>
+		<class name="paymentsAPI.API_Reporting_Disabled_Refunds"/>
+		
+		
     </classes>
 </test>
 

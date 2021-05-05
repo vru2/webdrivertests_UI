@@ -4,6 +4,8 @@
 package paymentsUI_Air;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.ITestResult;
@@ -21,6 +23,7 @@ public class PWA_StoredCard extends PaymentUI_Common{
 		String PayUrl = getPayUI("Air", "");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
+		System.out.println(PayUrl);
 		refreshPage(driver);
 		if(elementPresent_Time(driver, By.cssSelector("div.pwa-save-card > div.pwa-radio-toggle.pwa-radio-toggle__on > label.pwa-radio-toggle--btn"), 2)){
 			Reporter.log("Save Card option is displayed for unsigned user");
@@ -28,47 +31,19 @@ public class PWA_StoredCard extends PaymentUI_Common{
 		}
 		driver.manage().addCookie(cookie_Parl_Wallet);
 		refreshPage(driver);
-		elementVisible(driver, By.cssSelector("rect"), 10);
-		safeClick(driver, By.cssSelector("rect"));
-		String saveCard = getText(driver, By.xpath("//div[3]/div/p"));
-		String saveCVV = getText(driver, By.xpath("//div[3]/div/p[2]"));
-		Assert.assertEquals(saveCard, "Save card for faster bookings");	
-		Assert.assertEquals(saveCVV, "We never save your CVV");
-		safeClick(driver, By.cssSelector("div.pwa-save-card > div.pwa-radio-toggle.pwa-radio-toggle__on > label.pwa-radio-toggle--btn"));
-		Thread.sleep(2000);
-		if(elementVisible(driver, By.cssSelector("div.pwa-save-card > div.pwa-radio-toggle.pwa-radio-toggle__on > label.pwa-radio-toggle--btn"),2)) {
-			Reporter.log("Toggle button is not clicked");
-			Assert.assertTrue(false);
-		}
-		safeClick(driver, By.xpath("//div[2]/label"));
-		if(elementNotVisible(driver, By.cssSelector("div.pwa-save-card > div.pwa-radio-toggle.pwa-radio-toggle__on > label.pwa-radio-toggle--btn"),2)) {
-			Reporter.log("Toggle button is not clicked");
-			Assert.assertTrue(false);
-		}
-		elementPresent_log(driver, By.cssSelector("div.pwa-save-card > div.pwa-radio-toggle.pwa-radio-toggle__on > label.pwa-radio-toggle--btn"), "save card button", 2);
-		safeClick(driver, By.cssSelector("g > path"));
-		String savedCardNumber = getText(driver, By.cssSelector("p.c-black.lh-title.fs-4.pb-1"));
-		String savedCardName = getText(driver, By.cssSelector("span.c-gray.lh-title.fs-2.pt-1"));
-		Assert.assertEquals(savedCardNumber, "5123 45XX XXXX 2346");	
-		Assert.assertEquals(savedCardName, "credit");
-		elementPresent_log(driver, By.cssSelector("div.cardFadeIn > img"), "card image", 1);
-		elementPresent_log(driver, By.cssSelector("g > path"), "Radio button", 1);
-		if(!driver.findElement(By.cssSelector("g > path")).isEnabled()) {
-			Assert.assertTrue(false);
-		}
-		safeClick(driver, By.xpath("//li[2]/div[2]"));
-		Thread.sleep(2000);
-		if(!driver.findElement(By.cssSelector("g > path")).isEnabled()) {
-			Assert.assertTrue(false);
-		}
-		safeClick(driver, By.cssSelector("g > path"));
-
-		Thread.sleep(2000);
-		if(!driver.findElement(By.cssSelector("g > path")).isEnabled()) {
-			Assert.assertTrue(false);
-		}
-		safeType(driver, By.name("cvv"), "123");
-		
+		elementVisible(driver, By.cssSelector("//li/div/div/p"), 10);
+		//safeClick(driver, By.cssSelector("//li/div/div/p"));
+		WebElement ele1 = driver.findElement(By.xpath("//div[6]/li/div[2]/div/div[2]"));
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].scrollIntoView(true);",ele1);
+		Thread.sleep(1000);
+		elementPresent_log(driver,By.cssSelector("#amex > #Shape"),"American Express Logo",2);
+		elementPresent_log(driver,By.cssSelector("li.Datalist__item.RadioList__item.bb.h-60.flex-row-reverse.flex.flex-top.flex-between.py-2.px-2.is-active > div > div.pt-2 > svg.mr-2"),"Check Box",2);
+		safeClick(driver,By.xpath("//div[6]/li/div[2]/div/div[2]"));
+		elementPresent_log(driver,By.id("CVV_4143"),"Amex CVV Box",2);
+		safeClick(driver,By.id("CVV_4143"));
+		safeType(driver,By.id("CVV_4143"),"1234");
+		safeClick(driver,By.xpath("//button/p"));		
 	}
 
 	@BeforeClass

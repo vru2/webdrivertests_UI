@@ -231,9 +231,9 @@
     </classes>
 </test>
 
-<test name="API Refund Wallet stopped Cron"  preserve-order="true" parallel="true" >
+<test name="API Refund stopped"  preserve-order="true" parallel="true" >
     <classes>
-		<class name="paymentsAPI.API_Reporting_Cron_Get_Wallet_Refund_Stop_Tnx"/>
+		<class name="paymentsAPI.API_Reporting_Disabled_Refunds"/>
     </classes>
 </test>
 

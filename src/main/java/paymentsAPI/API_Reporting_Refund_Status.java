@@ -14,8 +14,7 @@ public class API_Reporting_Refund_Status extends API_PaymentCommon1
 	public void reporting_refundStatus_reportAPI () throws Exception{
 		Response resp ;		
 		resp = Reporting ("ReportingRefundStatus","");	
-		validation("ReportingRefundStatus", resp);
-								
+		validation("ReportingRefundStatus", resp);								
 	}
 	
 		

@@ -39,7 +39,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 
 	String url_qa2 = "https://qa2.cleartrip.com:9001";
 
-	String url_Acct_Service_applesgnin = "htt://172.17.64.185:8336";
+	String url_Acct_Service_applesgnin = "http://172.17.64.185:8336";
 
 	String url_identity="https://qa2.cleartrip.com";
 

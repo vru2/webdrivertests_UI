@@ -44,7 +44,7 @@ public class PWA_RP_PayBack_Full extends PaymentUI_Common{
 			Assert.assertTrue(false);
 		}else Reporter.log("Youpay - contain 150 rs");
 		
-	
+	    Thread.sleep(2000);
 		safeClickList(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), "DEBIT/CREDIT CARDS");
 		safeClickList(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), "WALLETS");
 		safeClickList(driver, getObjectPayment("PWA_PaymentPage_Pay_Tabs"), "NET BANKING");		

@@ -661,7 +661,7 @@ public class PaymentUI_Common extends PaymentNodeJS{
 			Enter_CARD_Details_PWA(driver, platform.value("ADCBCard_Number"), platform.value("PWA_ADCBCard_Expiry"), platform.value("ADCBCard_CVV"));
 
 			safeClick(driver, getObjectPayment("PWA_PaymentPage_ADCB_CheckBalance_Button"));
-			Thread.sleep(20000);
+			Thread.sleep(30000);
 			
 			elementPresent_log(driver, getObjectPayment("PWA_PaymentPage_ADCB_Redeem_TextBox"), "Redeem textbox", 20);
 

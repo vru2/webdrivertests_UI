@@ -281,6 +281,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String endPointCardMulti = "/v1/payment/common/json?country=Palau&issuerType=MASTER";
 	String endPointPromotriprefandid = "/promoservice/v1/promogroups/Q0806201815/promotions/22899";
 	String endPointPromoGroupPromoRef = "/promoservice/v1/promogroups/Q1901160033";
+	String endPointPromo_Cron = "/promoservice/v1/promotions?status=ACTIVE&triggerDate=04-11-2019";
 	String endPointPromoGroupTripRef = "/promoservice/v1/promogroups/Q191115575604/promotions";
 	String endPointPromoFromPromoId = "/promoservice/v1/promogroups/Q191115575604/";
 	String endPointPromoGroupsFromCreatedDate= "/promoservice/v1/promogroups?createdDate=15-11-2019";
@@ -1187,6 +1188,10 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 		else if(payType.equalsIgnoreCase("PromoGroupFromPromoRef")){
 			url = promoURL + endPointPromoGroupPromoRef;
+		}
+		
+		else if(payType.equalsIgnoreCase("Promo_Active_Cron")){
+			url = promoURL + endPointPromo_Cron;
 		}
 
 		else if(payType.equalsIgnoreCase("PromoFromTripRef")){
@@ -4246,7 +4251,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			String random_num = Integer.toString(rand_num);
 			String track_id = "pay123419823" + random_num;
 			int payment_id_redeem = payment_id.get(0);
-			params = "{\"rewardsType\":\"PAYBACK\",\"rewardsRequestType\":\"REDEEM\",\"paymentId\": " +payment_id_redeem+ ",\"trackId\": \"" + track_id + "\","+ "\"amount\":1,\"currency\":\"INR\",\"params\":{\"mobile\":\"9986696785\",\"tripRef\":\"Q191014530822\",\"pin\":\"1432\"}}";
+			params = "{\"rewardsType\":\"PAYBACK\",\"rewardsRequestType\":\"REDEEM\",\"paymentId\": " +payment_id_redeem+ ",\"trackId\": \"" + track_id + "\","+ "\"amount\":1,\"currency\":\"INR\",\"params\":{\"mobile\":\"9986696785\",\"tripRef\":\"Q191014530822\",\"pin\":\"0563\"}}";
 
 			System.out.println("params : "+params);
 
@@ -5061,9 +5066,9 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			status= jsonPathEvaluator.getString("status");
 			description= jsonPathEvaluator.getString("description");
 
-			if(status.equalsIgnoreCase("S") && description.equalsIgnoreCase("Successfully refunded points")){
+			if(status.equalsIgnoreCase("F") && description.contains("INSUFFICIENT POINTS for Refund")){
 				Reporter.log("status is : "+status);
-				Reporter.log("Successfully refunded points");
+				Reporter.log("INSUFFICIENT POINTS for Refund");
 				isMatching=true;
 			}
 			else{
@@ -5305,9 +5310,16 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 				}
 			}
 		}
+		
+		if(payType.equalsIgnoreCase("Promo_Active_Cron")){
+			if(!(resp.body().asString().contains("09986696785"))){
+				Assert.assertTrue(false);
+			}if(!(resp.body().asString().contains("kiran.kumar@cleartrip.com"))){
+				Assert.assertTrue(false);
+			}
+		}
 
 
-		Assert.assertTrue(isMatching);
 		return resp;
 	}
 

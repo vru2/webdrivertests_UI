@@ -17,7 +17,7 @@ public class Knet_KW extends PaymentUI_Common{
 	public RemoteWebDriver driver;
 	
 	@Test
-	public void CC_PayU_Pay_KW() throws Exception {
+	public void KNETKW() throws Exception {
 		String PayUrl = getPayUI("AirKW", "KW");
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);

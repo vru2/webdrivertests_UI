@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
 
-public class API_PromoService extends API_PaymentCommon1 {
+public class API_PromoService_Cron extends API_PaymentCommon1 {
 
 	@Test(priority=1)
 	public void get_PromotionFromTripRefAndPromoId() throws Exception{
@@ -57,21 +57,15 @@ public class API_PromoService extends API_PaymentCommon1 {
 		Response resp = promoGet("PromoGroupsForACreatedAndUpdatedDate", "");
 		validation_PromoService("PromoGroupsForACreatedAndUpdatedDate", resp);
 	}
-	
-	@Test(priority=8)
-	public void get_Promo_Cron() throws Exception{
-		Response resp = promoGet("Promo_Active_Cron", "");
-		validation_PromoService("Promo_Active_Cron", resp);
-	}
 
-	@Test(priority=9)
+	@Test(priority=8)
 	public void createPromo() throws Exception{
 		Response resp = promoPost("CreatePromo","");
 		//validation_PromoService("CreatePromo", resp);
 	}
 	
 	
-	@Test(priority=10,dependsOnMethods = { "createPromo" })
+	@Test(priority=9,dependsOnMethods = { "createPromo" })
 	public void activatePromo() throws Exception{
 		Response resp = promoPost("ActivatePromo","");
 		validation_PromoService("ActivatePromo", resp);

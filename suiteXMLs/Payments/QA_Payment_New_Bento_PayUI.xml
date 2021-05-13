@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Bento UI" parallel="tests" thread-count="5">
+<suite name="Bento UI" parallel="tests" thread-count="3">
 
 <listeners>
 <listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -11,6 +11,14 @@
 <test name="UI Validation" preserve-order="true" >
     <classes>
       <class name="paymentsBento_com.Validation_UI_IN"/> 	  
+    </classes>
+</test>
+
+<test name="UI Domains" preserve-order="true" >
+    <classes>  
+      <class name="paymentsBento_com.CC_US"/> 
+      <class name="paymentsBento_com.PayPal_AE"/> 	  
+      <class name="paymentsBento_com.KNET_KW"/>   	  
     </classes>
 </test>
 
@@ -65,7 +73,7 @@
     </classes>
  </test>
 
-<test name="Text Validation om" preserve-order="true" >
+<test name="Text Validation OM" preserve-order="true" >
     <classes>  
       <class name="paymentsBento_com.Validation_Text_OM"/> 	  
     </classes>
@@ -132,14 +140,9 @@
 
 <test name="ADCB" preserve-order="true" >
     <classes>
+      <class name="paymentsBento_com.ADCB_AE"/>   
    </classes>
 </test>
-
-<test name="Flyin" preserve-order="true" >
-    <classes>
-   </classes>
-</test>
-
 
 <test name="payback" preserve-order="true" >
     <classes>

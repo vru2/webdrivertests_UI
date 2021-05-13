@@ -3,6 +3,7 @@
 
 package paymentsBento_com;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
@@ -39,7 +40,8 @@ public class Amendment extends PaymentUI_Common_Bento{
 
 		driver.manage().addCookie(cookie_Parl_Wallet);
 		refreshPage(driver);
-		bento_Select_PaymentType(driver, "SC");
+		smartClick(driver, By.cssSelector("span.checkbox__mark.bs-border.bc-neutral-500.bw-1.ba"));
+		bento_Select_PaymentType(driver, "SC");		
 		textNotPresent_Log(driver, "Includes a convenience fee of", 1);
 		textPresent_Log(driver, "Paid before", 1);
 		}

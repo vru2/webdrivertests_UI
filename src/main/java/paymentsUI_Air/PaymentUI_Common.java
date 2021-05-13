@@ -305,7 +305,7 @@ public class PaymentUI_Common extends PaymentNodeJS{
 }
 	public void payUI_Select_ADCB(RemoteWebDriver driver, String BankName, String BookingType) throws Exception {		
 		elementVisible(driver, getObjectPayment("PaymentPage_CreditCard_Number"), 5);
-		textPresent_Log(driver, "Enter your ADCB card details", 1);		
+		textPresent_Log(driver, "Enter ADCB card details", 1);		
 		Reporter.log("Card Details +\n"+ platform.value("ADCBCard_Number") +"\n " + platform.value("ADCBCard_Expiry_Month")  +" " + platform.value("ADCBCard_Expiry_Year") +" " + platform.value("ADCBCard_CVV"));
 		safeType(driver, getObjectPayment("PaymentPage_ADCB_Number"), platform.value("ADCBCard_Number"));
 		safeClick(driver, getObjectPayment("PaymentPage_ADCB_EXP_Month"));

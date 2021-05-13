@@ -488,7 +488,10 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 			else {
 			bento_Select_PaymentType(driver, "CC");
 			textPresent_Log(driver, "Pay to complete your booking", 1);
-			textPresent_Log(driver, "Enter card details", 1);
+			if(!Domain.equals("FLYIN")) {
+				textPresent_Log(driver, "Enter card details", 1);
+				}
+			else textPresent_Log(driver, "Card Payment", 1);
 			textPresent_Log(driver, "Card number", 1);
 			textPresent_Log(driver, "Expiry date", 1);
 			textPresent_Log(driver, "Card holder Name", 1);
@@ -878,12 +881,12 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 				elementPresent_log(driver, getObjectPayment("Bento_Pay_NB_Popularbank_Kotak_Img"), "Kotak Bank", 1);
 				elementPresent_log(driver, getObjectPayment("Bento_Pay_NB_Popularbank_Canara_Img"), "Canara Bank", 1);	
 				safeClick(driver, getObjectPayment("Bento_Pay_NB_Popularbank_Axis_Img"));
-				safeClick(driver, getObjectPayment("Bento_Pay_NB_Popularbank_HDFC_Img"));
+				//safeClick(driver, getObjectPayment("Bento_Pay_NB_Popularbank_HDFC_Img"));
 				safeClick(driver, getObjectPayment("Bento_Pay_NB_Popularbank_ICICI_Img"));
 				safeClick(driver, getObjectPayment("Bento_Pay_NB_Popularbank_SBI_Img"));
 				safeClick(driver, getObjectPayment("Bento_Pay_NB_Popularbank_Kotak_Img"));
 				safeClick(driver, getObjectPayment("Bento_Pay_NB_Popularbank_Canara_Img"));	
-				elementPresent_log(driver, getObjectPayment("Bento_Pay_NB_Popularbank_HDFC_Img"), "HDFC Bank", 1);
+				elementPresent_log(driver, getObjectPayment("Bento_Pay_NB_Popularbank_SBI_Img"), "SBI Bank", 1);
 			}
 			else if(PaymentType.equalsIgnoreCase("TW")) {
 				bento_Select_PaymentType(driver, "TW");

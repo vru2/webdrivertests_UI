@@ -83,7 +83,7 @@
       <class name="paymentsUI.Payment_NodeJS_GV_CC"/>
       <class name="paymentsUI.Payment_NodeJS_GV_CTWallet"/> 
       <class name="paymentsUI.Payment_NodeJS_GV_CC_CTWallet"/>
-      <class name="paymentsUI.Payment_NodeJS_GV_SC"/> 
+     <!--  <class name="paymentsUI.Payment_NodeJS_GV_SC"/>  -->
       <class name="paymentsUI.Payment_NodeJS_GV_CC_AE"/> 
     </classes>
 </test>

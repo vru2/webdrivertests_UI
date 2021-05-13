@@ -1,7 +1,7 @@
 // Framework - Cleartrip Automation
 // Author - Kiran Kumar
 
-package paymentsUI_Air;
+package paymentsBento_com;
 
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
@@ -10,21 +10,22 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class CC_US extends PaymentUI_Common{
+public class ADCB_AE extends PaymentUI_Common_Bento{
 	public RemoteWebDriver driver;
 	
 	@Test
-	public void CC_PayU_Pay_US() throws Exception {
-		String PayUrl = getPayUI("AirUS", "US");
-		driver.manage().deleteAllCookies(); 
-		driver.get(PayUrl);
-		refreshPage(driver);
-		textNotPresent_List( driver, getObjectPayment("PayUI_Pay_Tabs"), "Net banking");
-		validate_Currency(driver, "", "$");
-		payUI_Select_PaymentType(driver, "CC");
-		payUI_Enter_PaymentDetails(driver, "CC", "MASTER","");
-		payUI_Mock_ConfirmationPage(driver, PayUrl);
-	}
+	public void ADCB() throws Exception {
+		get_Bento_Url(driver, "AirAE", "AE");
+		bento_Select_PaymentType(driver, "ADCB");
+		textPresent(driver, "Pay to complete your booking", 5);	
+		textPresent(driver, "Enter ADCB card details", 1);		
+		textPresent_Log(driver, "ADCB card number", 1);
+		textPresent_Log(driver, "Expiry date", 1);
+		textPresent_Log(driver, "Card holder Name", 1);
+		textPresent_Log(driver, "CVV", 1);
+		validate_Currency(driver, "", "AED");
+		payUI_Enter_PaymentDetails(driver, "ADCB", "","ADCBPARTIAL");
+		}
 
 	@BeforeClass
 	public void setUp() throws Exception {

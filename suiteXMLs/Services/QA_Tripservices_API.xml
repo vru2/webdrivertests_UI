@@ -72,6 +72,8 @@
 			<class name="tripServices.TS_ProductType_Userid_Local"/>
 			<class name="tripServices.TS_ProductType_Userid_Train"/>
 			<class name="tripServices.TS_GDSPNR"/>
+			<class name="tripServices.TS_GET_BookingStatus"/>
+			<class name="tripServices.TS_GET_PartnerTrips"/>
 			
 		</classes>
 	</test>

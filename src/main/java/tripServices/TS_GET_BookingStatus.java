@@ -23,6 +23,7 @@ public class TS_GET_BookingStatus extends TripserviceCommon {
 				Reporter.log(url);
 				resp=TripservicePostcall(params,headersForTripservicepostcall(),url);
 				validationforputcall(resp);	
+				Thread.sleep(2000);
 				Response resp2;
 				String url2="http://172.17.51.86:9031/trips/fetch-booking-status?tripRef="+tripref;
 				Reporter.log(url2);
@@ -46,6 +47,7 @@ public class TS_GET_BookingStatus extends TripserviceCommon {
 				Reporter.log(url1);
 				resp1=TripserviceHotelsPutcall(params3,headersForTripserviceputcall(),url1);
 				validationforput(resp1);	
+				Thread.sleep(2000);
 				Reporter.log(url2);
 				resp2=RestAssured.get(url2);
 				if(resp2.statusCode()==200)

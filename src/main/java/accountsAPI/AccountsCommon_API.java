@@ -232,7 +232,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String params_Account_Service_Company_AddGSTwith_DomainName="{\"gstHolderAddress\":\"okdomainautomation\",\"gstHolderName\":\"okdomainautomation\",\"gstHolderStateCode\":\"21\",\"gstHolderStateName\":\"okdomainautomation\",\"gstNumber\":\"1domainautomat\"}";
 	String params_Account_Service_Company_AddGSTwith_CompanyID="{\"gstHolderAddress\":\"okdomainautomation\",\"gstHolderName\":\"okdomainautomation\",\"gstHolderStateCode\":\"21\",\"gstHolderStateName\":\"okdomainautomation\",\"gstNumber\":\"1domainautomat\"}";
 	String params_Account_Service_Company_AddGSTwith_CompanyID_DomainName="{\"gstHolderAddress\":\"okdomainautomation\",\"gstHolderName\":\"okdomainautomation\",\"gstHolderStateCode\":\"21\",\"gstHolderStateName\":\"okdomainautomation\",\"gstNumber\":\"1domainautomat\"}";
-	
+
 	String params_Accounts_Service_Applesignin_Unauthorized="{\"appleId\":\"1:76790:1100:009:jhjhdjdfjnfkmkggjuthgjfhghh\",\"emailId\":\"appleidt50chars@privaterelay.appleid.com\",\"firstName\":\"abcd\",\"lastName\":\"sai\",\"title\":\"Mr.\"}";
 
 	String params_Account_Service_AppleSignin_WrapperAPI="{\"appleId\":\"1:a:2:b:3:00\",\"emailId\":\"nakul@gmail.com\",\"firstName\":\"nakul\",\"lastName\":\"goyal\",\"title\":\"Mr.\"}";
@@ -1632,7 +1632,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 
 		return request;
 	}
-	
+
 	public Response deleteCall(String Type, String Type1){
 
 		RestAssured.baseURI =url_Acct;
@@ -1675,8 +1675,8 @@ public class AccountsCommon_API extends PlatformCommonUtil
 				delete(url);
 		return request;
 	}
-	
-	
+
+
 	public Response putCall(String Type, String Type1){
 
 		RestAssured.baseURI =url_Acct;
@@ -2673,33 +2673,33 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			}
 		}
 
-		
-	
-	if(Type.equalsIgnoreCase("Account_Service_Company_AddGSTwith_CompanyID_DomainName")) {
-		String id = jsonPathEvaluator.getString("id");
-		String gstNumber = jsonPathEvaluator.getString("gstNumber");
-		String gstHolderName = jsonPathEvaluator.getString("gstHolderName");
-		String linkableType = jsonPathEvaluator.getString("linkableType");
-		String createdAt = jsonPathEvaluator.getString("createdAt");
-		if(!id.contains("12440")) {
-			Assert.assertTrue(false);						
-		}
-		if(!gstNumber.contains("1domainautomat")) {
-			Assert.assertTrue(false);						
-		}
-		if(!gstHolderName.contains("okdomainautomation")) {
-			Assert.assertTrue(false);						
-		}
-		if(!linkableType.contains("Company")) {
-			Assert.assertTrue(false);						
-		}
-		if(!createdAt.contains("1621846955000")) {
-			Assert.assertTrue(false);						
-		}
-	}
 
-	
-}
+
+		if(Type.equalsIgnoreCase("Account_Service_Company_AddGSTwith_CompanyID_DomainName")) {
+			String id = jsonPathEvaluator.getString("id");
+			String gstNumber = jsonPathEvaluator.getString("gstNumber");
+			String gstHolderName = jsonPathEvaluator.getString("gstHolderName");
+			String linkableType = jsonPathEvaluator.getString("linkableType");
+			String createdAt = jsonPathEvaluator.getString("createdAt");
+			if(!id.contains("12440")) {
+				Assert.assertTrue(false);						
+			}
+			if(!gstNumber.contains("1domainautomat")) {
+				Assert.assertTrue(false);						
+			}
+			if(!gstHolderName.contains("okdomainautomation")) {
+				Assert.assertTrue(false);						
+			}
+			if(!linkableType.contains("Company")) {
+				Assert.assertTrue(false);						
+			}
+			if(!createdAt.contains("1621846955000")) {
+				Assert.assertTrue(false);						
+			}
+		}
+
+
+	}
 	public void validation_Apple_signin_entity(Response resp, String Type, String Type2){
 		Reporter.log("Response body "+Type +" : "+ resp.body().asString());
 		//System.out.println("Response body "+Type +" : "+ resp.body().asString());

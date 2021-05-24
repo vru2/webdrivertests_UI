@@ -50,6 +50,8 @@
 			<class
 				name="accountsAPI.Account_Service_CompanyConfig_GetCompanyConfigsbyID" />
 			<class name="accountsAPI.Account_Service_CompanyVendorMapping" />
+			<class name="accountsAPI.Account_Service_Fetchdomain_nameByID" />
+			<class name="accountsAPI.Account_Service_Company_DomainName_Autocomplete" />
 
 		</classes>
 	</test>
@@ -134,7 +136,8 @@
 			<class name="accountsAPI.Account_Service_CFW_GetUserStatus" />
 			<class name="accountsAPI.Account_Service_CFW_StatusUpdateCall" />
 			<class name="accountsAPI.Account_Service_FetchContactData" />
-			<class name="accountsAPI.Account_Service_Cleartrip_confirmedtravlerwithActivestatus" />
+			<class
+				name="accountsAPI.Account_Service_Cleartrip_confirmedtravlerwithActivestatus" />
 			<class name="accountsAPI.Account_Service_GetuserdetailsbyAPIKey" />
 		</classes>
 	</test>
@@ -180,6 +183,7 @@
 				name="accountsAPI.Account_Service_Depositaccountsearch_WOTlinkedparam" />
 			<class
 				name="accountsAPI.Account_Service_Depositaccountsearch_Withlinkedparam" />
+			<class name="accountsAPI.Account_Service_LinkDepositAccount" />
 
 
 		</classes>
@@ -191,6 +195,13 @@
 			<class name="accountsAPI.Account_Service_GSTV2_SearchAPIwithGstNoAndGstID" />
 			<class name="accountsAPI.Account_Service_GstSearch_WithoutSubString" />
 			<class name="accountsAPI.Account_Service_GstSearch_WithSubString" />
+			<class name="accountsAPI.Account_Service_Company_AddGSTwith_DomainName" />
+			<class name="accountsAPI.Account_Service_Company_AddGSTwith_CompanyID" />
+			<class
+				name="accountsAPI.Account_Service_Company_AddGSTwith_CompanyID_DomainName" />
+			<class name="accountsAPI.Accounts_service_Company_DeleteGST" />
+			<class
+				name="accountsAPI.Accounts_service_Company_DeleteGST_CompanyID_DomainName" />
 
 
 
@@ -205,6 +216,17 @@
 			<class name="accountsAPI.Account_Service_Flyin_ForgotPassword" />
 			<class
 				name="accountsAPI.Account_Service_Travellercontroller_UpdateTraveller_FlyRegression" />
+
+		</classes>
+	</test>
+	<test name="Flipkart-Accounts-Service" parallel="true">
+		<classes>
+			<class name="accountsAPI.Flipkart_Accounts_Service_CreateUser" />
+			<class
+				name="accountsAPI.Flipkart_Accounts_service_CreateUser_ExistingUser" />
+			<class name="accountsAPI.Flipkart_Accounts_service_Updateuser" />
+			<class name="accountsAPI.Flipkart_Accounts_service_GetUserDetails" />
+
 
 		</classes>
 	</test>

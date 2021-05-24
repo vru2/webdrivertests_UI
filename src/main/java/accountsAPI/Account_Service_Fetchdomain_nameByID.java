@@ -8,18 +8,16 @@ import org.testng.annotations.Test;
 import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
 
-public class IdentityService_AddClient extends AccountsCommon_API
+public class Account_Service_Fetchdomain_nameByID extends AccountsCommon_API
 {
 	@Test
-	public void identityserviceaddclient() throws IOException, JSONException{	
-		
-		Response resp ;
-  		resp =postCall("identityserviceaddclient", "");
-		validation( resp, "identityserviceaddclient", "");
+	public void fetchdomainname() throws IOException, JSONException{
+		Response resp ;		
+		resp =getCall("Account_Service_Fetchdomain_nameByID", "");
+		validation( resp, "Account_Service_Fetchdomain_nameByID", "");
+
 		/*ResponseBody body = resp.getBody();
 		System.out.println("Response of API is:" + body.asString());*/
-		
-		
+
 	}
-	
 }

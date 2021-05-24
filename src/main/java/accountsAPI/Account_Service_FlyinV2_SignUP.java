@@ -6,6 +6,7 @@ import org.json.JSONException;
 import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
+import io.restassured.response.ResponseBody;
 
 public class Account_Service_FlyinV2_SignUP extends AccountsCommon_API
 {
@@ -16,9 +17,9 @@ public class Account_Service_FlyinV2_SignUP extends AccountsCommon_API
 
 		Response resp ;		
 		resp =postCall("flyinsignupV2", "");
-		validation( resp, "flyinsignupV2", "");/*
+		validation( resp, "flyinsignupV2", "");
 		ResponseBody body = resp.getBody();
 		System.out.println("Response of API is:" + body.asString());
-*/
+
 	}
 }

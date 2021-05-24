@@ -8,18 +8,19 @@ import org.testng.annotations.Test;
 import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
 
-public class IdentityService_AddClient extends AccountsCommon_API
+public class Flipkart_Accounts_service_CreateUser_ExistingUser  extends AccountsCommon_API
 {
+
 	@Test
-	public void identityserviceaddclient() throws IOException, JSONException{	
+	public void flipkartcreateuser() throws IOException, JSONException{	
 		
 		Response resp ;
-  		resp =postCall("identityserviceaddclient", "");
-		validation( resp, "identityserviceaddclient", "");
+  		resp =postCall("Flipkart_Accounts_service_CreateUser_ExistingUser", "");
+  		validation_Flipkart_existuser( resp, "Flipkart_Accounts_service_CreateUser_ExistingUser", "");
 		/*ResponseBody body = resp.getBody();
 		System.out.println("Response of API is:" + body.asString());*/
 		
 		
 	}
-	
+
 }

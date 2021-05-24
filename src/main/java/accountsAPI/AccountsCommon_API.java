@@ -63,6 +63,9 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String url_Userclassification_Health_Test_Url="/actuator/health";
 	String url_Account_Service_Verify_Person="/account/people/verify?id=14029546&emailId=ns.likhitha@cleartrip.com&domain=www.cleartrip.com&companyId=110340";
 	String url_Account_Service_UserController_VerifyAccount="/user/v1/account/verify/14029546";
+	String url_Accounts_service_Company_DeleteGST="/company/v2/gst?id=836674&gstNumber=123459898";
+	String url_Accounts_service_Company_DeleteGST_CompanyID_DomainName="/company/v2/gst?id=836674&domainName=expedia.travelbox99.com&gstNumber=hihi&gstId=123";
+	String url_Flipkart_Accounts_service_Updateuser="/accounts/v3/people?partner=FLIPKART&referenceId=me123testing";
 	String url_Account_Service_AuthforNonLoggedinUser="http://accounts-service-api.cltp.com:9001/user/v2/auth/otp?tripRef=Q210317918852&emailId=ns.likhitha@cleartrip.com&source=www.cleartrip.com";
 
 	String url_Accounts_Service_VerifynonLoggedinUser="/user/v2/auth/otp/verify?tripRef=Q200102680540&emailId=ns.likhitha@cleartrip.com&otp=123455&source=b2c&subSource=www.cleartrip.com";
@@ -123,6 +126,10 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String url_Account_Service_Update_User_MobileNo_OTPValidaion="/account/people/v2?domain=qa2.cleartrip.com";
 	String url_Account_Service_AppleSignin_uniqueId="/apple/signin";
 	String url_Account_Service_FetchContactData="/account/people/v2/fetch/contactData";
+	String url_Account_Service_LinkDepositAccount="/account/v2/depositAccount/link?email=sai@test.com&depositAccountId=10367339&partner=CLEARTRIP";
+	String url_Account_Service_Company_AddGSTwith_DomainName="/company/v2/gst?domainName=test.cleartripforbusiness.com";
+	String url_Account_Service_Company_AddGSTwith_CompanyID="/company/v2/gst?id=110340";
+	String url_Account_Service_Company_AddGSTwith_CompanyID_DomainName="/company/v2/gst?domainName=test.cleartripforbusiness.com&id=110340";
 	String url_Account_Service_FetchPersonalData="/account/people/v2/fetch/personalData";
 	String url_Account_Service_AppleSignin_WrapperAPI="/partners/signin/apple";
 	String url_Account_Service_SendOTP_ToUsermobileNo="/account/people/send-mobile-otp";
@@ -179,6 +186,9 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String url_Account_Service_GstSearch_WithSubString="/gst/v2/autocomplete?domainName=demo.cleartripforbusiness.com&gstNumberSubString=7";
 	String url_Account_Service_FetchCustomer_number="/external-api/customer-no?domain=agencydemo3.agentbox.com";
 	String url_Account_Service_CFW_GetUserStatus="/user/v2/cfw/optIn?userId=14029546";
+	String url_Flipkart_Accounts_service_GetUserDetails="/accounts/v3/people?partner=FLIPKART&referenceId=me123testing8&travellersRequired=true&gstDetailsRequired=true";
+	String url_Account_Service_Fetchdomain_nameByID="/company/v2/110342/domain-name";
+	String url_Account_Service_Company_DomainName_Autocomplete="/company/v2/domain-auto-completer?domain=test";
 	String url_Account_Service_GetActivationKey="/user/v2/activation-key/65213401";
 	String url_Account_Service_GSTV2_SearchAPIwithGstNoAndGstID="/gst/v2?id=203&gstNumber=29aaaaa0000a1Z5&linkableType=Person";
 	String url_Account_Service_Peoplecontroller_FindByID="/account/people/entity/65206686";
@@ -199,6 +209,9 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String url_screencaptureInitiate="/sc_external_api/initiate";
 	String url_cfwgstdocstatusupdate="/account/cfw/gst_doc_status";
 	String url_identityserviceaddclient="/ctauth/client";
+	String flip=RandomStringUtils.randomAlphabetic(3);
+	String url_Flipkart_Accounts_Service_CreateUser="/accounts/v3/people?partner=FLIPKART&referenceId=nakkjultestqa"+flip;
+	String url_Flipkart_Accounts_service_CreateUser_ExistingUser="/accounts/v3/people?partner=FLIPKART&referenceId=nakultestqa";
 	String url_identityservicesignin="/signin";
 	String url_registerUser="/expressway-register";
 	String url_externalApi_Refreshtoken="/r3/account/external_api/refresh_token";
@@ -215,6 +228,11 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String params_Signinpostcall="{\"email\":\"ns.likhitha@cleartrip.com\",\"password\":\"cleartrip123\",\"persistent_login\":\"t\",\"service\":\"\",\"caller\":\"homepage\",\"source\":\"ui\",\"action_type\":\"\",\"trip_ref\":\"\",\"_\": \"\"}";
 	String params_Account_Service_AppleSignin="{\"appleId\":\"1:7676790:1100:009:jhjhdjdfjnfkmkggjuthgjfhghh\",\"emailId\":\"appleidt50chars@privaterelay.appleid.com\",\"firstName\":\"abcd\",\"lastName\":\"sai\",\"title\":\"Mr.\"}";
 	String params_Account_Service_FetchContactData="[1,2,3,4]";
+	String params_Account_Service_LinkDepositAccount="";
+	String params_Account_Service_Company_AddGSTwith_DomainName="{\"gstHolderAddress\":\"okdomainautomation\",\"gstHolderName\":\"okdomainautomation\",\"gstHolderStateCode\":\"21\",\"gstHolderStateName\":\"okdomainautomation\",\"gstNumber\":\"1domainautomat\"}";
+	String params_Account_Service_Company_AddGSTwith_CompanyID="{\"gstHolderAddress\":\"okdomainautomation\",\"gstHolderName\":\"okdomainautomation\",\"gstHolderStateCode\":\"21\",\"gstHolderStateName\":\"okdomainautomation\",\"gstNumber\":\"1domainautomat\"}";
+	String params_Account_Service_Company_AddGSTwith_CompanyID_DomainName="{\"gstHolderAddress\":\"okdomainautomation\",\"gstHolderName\":\"okdomainautomation\",\"gstHolderStateCode\":\"21\",\"gstHolderStateName\":\"okdomainautomation\",\"gstNumber\":\"1domainautomat\"}";
+	
 	String params_Accounts_Service_Applesignin_Unauthorized="{\"appleId\":\"1:76790:1100:009:jhjhdjdfjnfkmkggjuthgjfhghh\",\"emailId\":\"appleidt50chars@privaterelay.appleid.com\",\"firstName\":\"abcd\",\"lastName\":\"sai\",\"title\":\"Mr.\"}";
 
 	String params_Account_Service_AppleSignin_WrapperAPI="{\"appleId\":\"1:a:2:b:3:00\",\"emailId\":\"nakul@gmail.com\",\"firstName\":\"nakul\",\"lastName\":\"goyal\",\"title\":\"Mr.\"}";
@@ -267,6 +285,8 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String params_IdentityService_UpdatePassword_ForChangePasswordflow="{\"emailId\":\"ns.likhitha@cleartrip.com\",\"oldPassword\":\"Cleartrip@1\",\"newPassword\":\"Cleartrip@2\",\"otp\":\"035175\"}";
 	String params_IdentityService_UpdatePassword_ForResetPasswordflow="{\"emailId\":\"ns.likhitha@cleartrip.com\",\"newPassword\":\"Cleartrip@8\",\"mailerKey\":\"aIWr1jRjfDPjXojg\"}";
 	String params_Account_Service_UserController_VerifyAccount="";
+	String params_Accounts_service_Company_DeleteGST="";
+	String params_Flipkart_Accounts_service_Updateuser="{\"travellerDetails\":[{\"id\":182197,\"isRegistered\":true,\"personalDetails\":{\"dateOfBirth\":739650600000,\"firstName\":\"automationtest\",\"lastName\":\"testing\",\"title\":\"Mr.\",\"nationality\":\"IN\"},\"docDetails\":[{\"id\":1,\"docNumber\":\"2345\",\"docType\":\"automationtest\",\"expiryDate\":\"2020-09-11T00:00:00\",\"issuedDate\":\"2009-05-11T00:00:00\"}]},{\"id\":182189,\"isRegistered\":false,\"personalDetails\":{\"dateOfBirth\":739650600000,\"firstName\":\"automationtest2\",\"lastName\":\"testing2\",\"title\":\"Mr.\",\"nationality\":\"Indian\"},\"docDetails\":[{\"id\":6,\"docNumber\":\"7878\",\"docType\":\"PASSPORT\",\"expiryDate\":\"2020-09-11T00:00:00\",\"issuedDate\":\"2009-05-11T00:00:00\"}]}],\"gstDetails\":[{\"gstNumber\":\"12automation\",\"gstHolderCompanyName\":\"flipkart\",\"gstHolderCompanyAddress\":\"address\",\"gstHolderStateName\":\"Karnataka\",\"pinCode\":\"12345\",\"city\":\"bangalore\"}]}";
 	String params_b2bAddtraveler="{ \"person\": { \"contact_data\": { \"emails\": [ { \"seq_no\": 0, \"email_id\": \"ns.likhitha@cleartrip.com\", \"category\": \"work\" } ] }, \"id\": 0, \"company_details\": [ { \"company_id\": 186462, \"company_people_roles\": [ { \"role_id\": 1073 } ], \"status\": \"0\" } ], \"personal_data\": { \"title\": \"Miss\", \"first_name\": \"sai\", \"last_name\": \"test\" }, \"recentlyBooked\": false, \"travel_profile\": { } } }";
 	String params_RoleInfo= "{\"role_ids\":[1069]}";
 	String params_FetchUserV2 = "{\"person_ids\":[13941098,13941098],\"usernames\":[\"vinay.raj@cleartrip.com\"],\"query\":[\"personal_data\"]}";
@@ -287,6 +307,8 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String params_IdentityService_Signin_FlyinUser="{\"username\":\"sandeep.shivanadhula@cleartrip.com\",\"password\":\"Preprod@123\"}";
 	String params_IdentityService_Signin_Unauthorized="{\"username\":\"sandeep.shivanadhula@cleartrip.com\",\"password\":\"Pre@123\"}";
 	String params_identityserviceaddclient2="\", \"clientSecret\":\"secret\", \"authenticated\":\"true\", \"scope\":\"all\", \"authorizedGrantTypes\":\"read,write,trust\", \"redirectUri\":[\"http://localhost:8080/ctauth/authorize\"], \"authorities\":\"authorities\" }";
+	String params_Flipkart_Accounts_Service_CreateUser="{\"travellerDetails\":[{\"isRegistered\":true,\"personalDetails\":{\"dateOfBirth\":739650600000,\"firstName\":\"name for\",\"lastName\":\"testingautomate\",\"title\":\"Mr.\",\"nationality\":\"Indian\"},\"docDetails\":[{\"docNumber\":\"2345\",\"docType\":\"PASSPORTautomate\",\"expiryDate\":\"2020-09-11T00:00:00\",\"issuedDate\":\"2009-05-11T00:00:00\"}]}],\"gstDetails\":[{\"gstNumber\":\"12345automate\",\"gstHolderCompanyName\":\"flipkart\",\"gstHolderCompanyAddress\":\"address\",\"gstHolderStateName\":\"Karnataka\",\"pinCode\":\"12345\",\"city\":\"bangalore\"}]}";
+	String params_Flipkart_Accounts_service_CreateUser_ExistingUser="{\"travellerDetails\":[{\"isRegistered\":true,\"personalDetails\":{\"dateOfBirth\":739650600000,\"firstName\":\"name for\",\"lastName\":\"testingautomate\",\"title\":\"Mr.\",\"nationality\":\"Indian\"},\"docDetails\":[{\"docNumber\":\"2345\",\"docType\":\"PASSPORTautomate\",\"expiryDate\":\"2020-09-11T00:00:00\",\"issuedDate\":\"2009-05-11T00:00:00\"}]}],\"gstDetails\":[{\"gstNumber\":\"12345automate\",\"gstHolderCompanyName\":\"flipkart\",\"gstHolderCompanyAddress\":\"address\",\"gstHolderStateName\":\"Karnataka\",\"pinCode\":\"12345\",\"city\":\"bangalore\"}]}";		
 	String params_identityserviceaddclient=	params_identityserviceaddclient1+params_identityserviceaddclient2;
 	String i = generateRandomWord(4);
 	//expressway-register API POST body
@@ -384,6 +406,14 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		return headers;
 	}
 
+	public HashMap<String, Object> headersFormflipkart(){
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("caller", "automation");
+		headers.put("Content-Type", "application/json");
+
+		return headers;
+	}
+
 	public HashMap<String, Object> headersFormIdentitysignin(){
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("Content-Type", "application/json");
@@ -463,6 +493,17 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		headers.put("auth_key", "weurimdjfoewpremkcuwpermauthkeyy");
 		headers.put("caller", "b2c");
 		headers.put("accept", "*/*");
+		//GCP -- headers.put("AUTH_KEY", "H67f$we&HGTR34clQ");
+
+		return headers;
+	}
+	public HashMap<String, Object> headersFormgst(){
+		HashMap<String, Object> headers = new HashMap<>();
+		//headers.put("Content-Type", "application/json");
+		headers.put("auth_key", "7GHT#@D65yhgder4R1234");
+		headers.put("caller", "b2c");
+		headers.put("accept", "*/*");
+		headers.put("Content-Type", "application/json");
 		//GCP -- headers.put("AUTH_KEY", "H67f$we&HGTR34clQ");
 
 		return headers;
@@ -1387,6 +1428,20 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			params = params_identityserviceaddclient;
 			Reporter.log(url_identity+url);
 		} 
+		if(Type.equals("Flipkart_Accounts_Service_CreateUser")) {
+			headers = headersFormflipkart();
+			RestAssured.baseURI =url_Acct_Service;
+			url = url_Flipkart_Accounts_Service_CreateUser;					
+			params = params_Flipkart_Accounts_Service_CreateUser;
+			Reporter.log(url_Acct_Service+url);
+		} 
+		if(Type.equals("Flipkart_Accounts_service_CreateUser_ExistingUser")) {
+			headers = headersFormflipkart();
+			RestAssured.baseURI =url_Acct_Service;
+			url = url_Flipkart_Accounts_service_CreateUser_ExistingUser;					
+			params = params_Flipkart_Accounts_service_CreateUser_ExistingUser;
+			Reporter.log(url_Acct_Service+url);
+		} 
 
 
 		if(Type.equals("identityservicesignin")) {
@@ -1475,7 +1530,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			url = url_Account_Service_AppleSignin;					
 			params =params_Account_Service_AppleSignin ;
 		}
-		
+
 		if(Type.equals("Account_Service_FetchPersonalData")) {
 			headers = headersFormsfetchpersonaldata();
 
@@ -1489,6 +1544,34 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			RestAssured.baseURI =url_Acct_Service;
 			url = url_Account_Service_FetchContactData;					
 			params =params_Account_Service_FetchContactData ;
+		}
+		if(Type.equals("Account_Service_LinkDepositAccount")) {
+			headers = headersFormdepoistwithoutlinkedparam();
+
+			RestAssured.baseURI =url_Acct_Service;
+			url = url_Account_Service_LinkDepositAccount;					
+			params =params_Account_Service_LinkDepositAccount ;
+		}
+		if(Type.equals("Account_Service_Company_AddGSTwith_DomainName")) {
+			headers = headersFormgst();
+
+			RestAssured.baseURI =url_Acct_Service;
+			url = url_Account_Service_Company_AddGSTwith_DomainName;					
+			params =params_Account_Service_Company_AddGSTwith_DomainName ;
+		}
+		if(Type.equals("Account_Service_Company_AddGSTwith_CompanyID")) {
+			headers = headersFormgst();
+
+			RestAssured.baseURI =url_Acct_Service;
+			url = url_Account_Service_Company_AddGSTwith_CompanyID;					
+			params =params_Account_Service_Company_AddGSTwith_CompanyID ;
+		}
+		if(Type.equals("Account_Service_Company_AddGSTwith_CompanyID_DomainName")) {
+			headers = headersFormgst();
+
+			RestAssured.baseURI =url_Acct_Service;
+			url = url_Account_Service_Company_AddGSTwith_CompanyID_DomainName;					
+			params =params_Account_Service_Company_AddGSTwith_CompanyID_DomainName ;
 		}
 
 		if(Type.equals("Accounts_Service_Applesignin_Unauthorized")) {
@@ -1549,7 +1632,51 @@ public class AccountsCommon_API extends PlatformCommonUtil
 
 		return request;
 	}
+	
+	public Response deleteCall(String Type, String Type1){
 
+		RestAssured.baseURI =url_Acct;
+
+
+		String url = null;
+
+		String params =null;
+		Response request = null;	
+		HashMap<String, Object> headers = new HashMap<>();
+		headers = headersForms1();
+		if(Type.equals("AcctSanity")) {
+			url = url_acctSanity;
+		}
+
+
+
+		else if(Type.equals("Accounts_service_Company_DeleteGST"))
+		{
+			RestAssured.baseURI=url_Acct_Service;
+			url = url_Accounts_service_Company_DeleteGST;
+			params= params_Accounts_service_Company_DeleteGST;
+			headers = headersFormdepoist();
+			Reporter.log(url_Acct_Service+url);
+		}
+		else if(Type.equals("Accounts_service_Company_DeleteGST_CompanyID_DomainName"))
+		{
+			RestAssured.baseURI=url_Acct_Service;
+			url = url_Accounts_service_Company_DeleteGST_CompanyID_DomainName;
+			params= params_Accounts_service_Company_DeleteGST;
+			headers = headersFormdepoist();
+			Reporter.log(url_Acct_Service+url);
+		}
+		Reporter.log("url  "+url);
+		request = RestAssured.given().						
+				when().
+				log().all().
+				body(params).
+				headers(headers).
+				delete(url);
+		return request;
+	}
+	
+	
 	public Response putCall(String Type, String Type1){
 
 		RestAssured.baseURI =url_Acct;
@@ -1573,6 +1700,14 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			url = url_Account_Service_UserController_VerifyAccount;
 			params= params_Account_Service_UserController_VerifyAccount;
 			headers = verifyaccount();
+			Reporter.log(url_Acct_Service+url);
+		}
+		else if(Type.equals("Flipkart_Accounts_service_Updateuser"))
+		{
+			RestAssured.baseURI=url_Acct_Service;
+			url = url_Flipkart_Accounts_service_Updateuser;
+			params= params_Flipkart_Accounts_service_Updateuser;
+			headers = headersFormflipkart();
 			Reporter.log(url_Acct_Service+url);
 		}
 
@@ -2025,6 +2160,27 @@ public class AccountsCommon_API extends PlatformCommonUtil
 
 			Reporter.log(url_Acct_Service+url);
 		}
+		else if (Type.equals("Flipkart_Accounts_service_GetUserDetails")){
+			RestAssured.baseURI=url_Acct_Service;
+			url = url_Flipkart_Accounts_service_GetUserDetails;
+			headers = headersFormflipkart();
+
+			Reporter.log(url_Acct_Service+url);
+		}
+		else if (Type.equals("Account_Service_Fetchdomain_nameByID")){
+			RestAssured.baseURI=url_Acct_Service;
+			url = url_Account_Service_Fetchdomain_nameByID;
+			headers = headersFormdepoist();
+
+			Reporter.log(url_Acct_Service+url);
+		}
+		else if (Type.equals("Account_Service_Company_DomainName_Autocomplete")){
+			RestAssured.baseURI=url_Acct_Service;
+			url = url_Account_Service_Company_DomainName_Autocomplete;
+			headers = headersFormdepoist();
+
+			Reporter.log(url_Acct_Service+url);
+		}
 		else if (Type.equals("Account_Service_GetActivationKey")){
 			RestAssured.baseURI=url_Acct_Service;
 			url = url_Account_Service_GetActivationKey;
@@ -2277,6 +2433,34 @@ public class AccountsCommon_API extends PlatformCommonUtil
 				Assert.assertTrue(false);						
 			}
 		}
+		if(Type.equalsIgnoreCase("Flipkart_Accounts_Service_CreateUser")) {
+			String domain = jsonPathEvaluator.getString("domain");
+			if(!domain.contains("www.flipkart.com")) {
+				Assert.assertTrue(false);						
+			}
+			if(!resp.body().asString().contains("testingautomate")) {
+				Assert.assertTrue(false);						
+			}
+			else if(!resp.body().asString().contains("PASSPORTautomate")) {
+				Assert.assertTrue(false);						
+			}
+			else if(!resp.body().asString().contains("12345automate")) {
+				Assert.assertTrue(false);						
+			}
+			/*String isRegistered = jsonPathEvaluator.getString("isRegistered");
+			if(!isRegistered.contains("true")) {
+				Assert.assertTrue(false);						
+			}
+			String docType = jsonPathEvaluator.getString("docType");
+			if(!docType.contains("PASSPORT")) {
+				Assert.assertTrue(false);						
+			}
+			String gstNumber = jsonPathEvaluator.getString("gstNumber");
+			if(!gstNumber.contains("12345automatetest")) {
+				Assert.assertTrue(false);						
+			}*/
+		}
+
 		if(Type.equalsIgnoreCase("Accounts_Service_Cleartrip_MultipleTraveller_Updatecall")) {
 			if(!resp.body().asString().contains("SITEISSUEStestinginqa")) {
 				Assert.assertTrue(false);						
@@ -2340,7 +2524,23 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			}
 		}
 	}
-
+	public void validation_Flipkart_existuser(Response resp, String Type, String Type2){
+		Reporter.log("Response body "+Type +" : "+ resp.body().asString());
+		//System.out.println("Response body "+Type +" : "+ resp.body().asString());
+		int statusCode = resp.getStatusCode();
+		//int statusCode1 = resp.getStatusCode();
+		Reporter.log("statusCode: " + statusCode);
+		JsonPath jsonPathEvaluator = resp.jsonPath();
+		if(statusCode!=403) {
+			Assert.assertTrue(false);
+		}
+		if(Type.equalsIgnoreCase("Flipkart_Accounts_service_CreateUser_ExistingUser")) {
+			String message = jsonPathEvaluator.getString("message");
+			if(!message.contains("User with referenceId nakultestqa and domain www.flipkart.com already exists")) {
+				Assert.assertTrue(false);						
+			}
+		}
+	}
 
 	public void validation_AppleRegister_NullEmail(Response resp, String Type, String Type2){
 		Reporter.log("Response body "+Type +" : "+ resp.body().asString());
@@ -2356,6 +2556,18 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		if(Type.equalsIgnoreCase("Account_Service_AppleRegister_NullEmail")) {
 			String username = jsonPathEvaluator.getString("message");
 			if(!username.contains("No user found with appleId : 1:a:2:b:3:00")) {
+				Assert.assertTrue(false);						
+			}
+		}
+		if(Type.equalsIgnoreCase("Accounts_service_Company_DeleteGST")) {
+			String username = jsonPathEvaluator.getString("message");
+			if(!username.contains("GstDetail not found for, gstNumber : 123459898")) {
+				Assert.assertTrue(false);						
+			}
+		}
+		if(Type.equalsIgnoreCase("Accounts_service_Company_DeleteGST_CompanyID_DomainName")) {
+			String username = jsonPathEvaluator.getString("message");
+			if(!username.contains("GstDetail not found for id : 123, gstNumber : hihi")) {
 				Assert.assertTrue(false);						
 			}
 		}
@@ -2399,6 +2611,95 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		}
 	}
 
+	public void validation_Linkdepositaccount(Response resp, String Type, String Type2){
+		Reporter.log("Response body "+Type +" : "+ resp.body().asString());
+		//System.out.println("Response body "+Type +" : "+ resp.body().asString());
+		int statusCode = resp.getStatusCode();
+		//int statusCode1 = resp.getStatusCode();
+		Reporter.log("statusCode: " + statusCode);
+		JsonPath jsonPathEvaluator = resp.jsonPath();
+		if(statusCode!=201) {
+			Assert.assertTrue(false);
+		}
+
+		if(Type.equalsIgnoreCase("Account_Service_LinkDepositAccount")) {
+			String status = jsonPathEvaluator.getString("status");
+			if(!status.contains("SUCCESS")) {
+				Assert.assertTrue(false);						
+			}
+		}
+		if(Type.equalsIgnoreCase("Account_Service_Company_AddGSTwith_DomainName")) {
+			String id = jsonPathEvaluator.getString("id");
+			String gstNumber = jsonPathEvaluator.getString("gstNumber");
+			String gstHolderName = jsonPathEvaluator.getString("gstHolderName");
+			String linkableType = jsonPathEvaluator.getString("linkableType");
+			String createdAt = jsonPathEvaluator.getString("createdAt");
+			if(!id.contains("12438")) {
+				Assert.assertTrue(false);						
+			}
+			if(!gstNumber.contains("1domainautomat")) {
+				Assert.assertTrue(false);						
+			}
+			if(!gstHolderName.contains("okdomainautomation")) {
+				Assert.assertTrue(false);						
+			}
+			if(!linkableType.contains("Company")) {
+				Assert.assertTrue(false);						
+			}
+			if(!createdAt.contains("1621841696000")) {
+				Assert.assertTrue(false);						
+			}
+		}
+		if(Type.equalsIgnoreCase("Account_Service_Company_AddGSTwith_CompanyID")) {
+			String id = jsonPathEvaluator.getString("id");
+			String gstNumber = jsonPathEvaluator.getString("gstNumber");
+			String gstHolderName = jsonPathEvaluator.getString("gstHolderName");
+			String linkableType = jsonPathEvaluator.getString("linkableType");
+			String createdAt = jsonPathEvaluator.getString("createdAt");
+			if(!id.contains("12440")) {
+				Assert.assertTrue(false);						
+			}
+			if(!gstNumber.contains("1domainautomat")) {
+				Assert.assertTrue(false);						
+			}
+			if(!gstHolderName.contains("okdomainautomation")) {
+				Assert.assertTrue(false);						
+			}
+			if(!linkableType.contains("Company")) {
+				Assert.assertTrue(false);						
+			}
+			if(!createdAt.contains("1621846955000")) {
+				Assert.assertTrue(false);						
+			}
+		}
+
+		
+	
+	if(Type.equalsIgnoreCase("Account_Service_Company_AddGSTwith_CompanyID_DomainName")) {
+		String id = jsonPathEvaluator.getString("id");
+		String gstNumber = jsonPathEvaluator.getString("gstNumber");
+		String gstHolderName = jsonPathEvaluator.getString("gstHolderName");
+		String linkableType = jsonPathEvaluator.getString("linkableType");
+		String createdAt = jsonPathEvaluator.getString("createdAt");
+		if(!id.contains("12440")) {
+			Assert.assertTrue(false);						
+		}
+		if(!gstNumber.contains("1domainautomat")) {
+			Assert.assertTrue(false);						
+		}
+		if(!gstHolderName.contains("okdomainautomation")) {
+			Assert.assertTrue(false);						
+		}
+		if(!linkableType.contains("Company")) {
+			Assert.assertTrue(false);						
+		}
+		if(!createdAt.contains("1621846955000")) {
+			Assert.assertTrue(false);						
+		}
+	}
+
+	
+}
 	public void validation_Apple_signin_entity(Response resp, String Type, String Type2){
 		Reporter.log("Response body "+Type +" : "+ resp.body().asString());
 		//System.out.println("Response body "+Type +" : "+ resp.body().asString());
@@ -2469,7 +2770,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 				Assert.assertTrue(false);						
 			}
 			String status = jsonPathEvaluator.getString("status");
-			if(!status.contains("success")) {
+			if(!status.contains("SUCCESS")) {
 				Assert.assertTrue(false);						
 			}
 
@@ -2688,6 +2989,28 @@ public class AccountsCommon_API extends PlatformCommonUtil
 
 
 		}
+		else if(Type.equalsIgnoreCase("Flipkart_Accounts_service_Updateuser")) {
+			String referenceId = jsonPathEvaluator.getString("referenceId");
+
+			if(!referenceId.contains("me123testing")) {
+				Assert.assertTrue(false);						
+			}
+			String ReponseStr = resp.body().asString();
+
+			if(!ReponseStr.contains("automationtest2")) {
+				Assert.assertTrue(false);						
+			}
+			if(!ReponseStr.contains("automationtest")) {
+				Assert.assertTrue(false);						
+			}
+			if(!ReponseStr.contains("12automation")) {
+				Assert.assertTrue(false);						
+			}
+
+
+		}
+
+
 		else if(Type.equalsIgnoreCase("Account_Service_AuthforNonLoggedinUser")) {
 			String emailSent = jsonPathEvaluator.getString("emailSent");
 
@@ -2917,10 +3240,10 @@ public class AccountsCommon_API extends PlatformCommonUtil
 				Assert.assertTrue(false);
 			}
 
-			if(!ReponseStr.contains("7602")){
+			if(!ReponseStr.contains("11961")){
 				Assert.assertTrue(false);
 			}
-			if(!ReponseStr.contains("12345")){
+			if(!ReponseStr.contains("12378")){
 				Assert.assertTrue(false);
 			}
 			if(!ReponseStr.contains("qa2.cleartrip.com")){
@@ -3065,6 +3388,51 @@ public class AccountsCommon_API extends PlatformCommonUtil
 				Assert.assertTrue(false);						
 			}
 
+
+		}
+		else if(Type.equalsIgnoreCase("Flipkart_Accounts_service_GetUserDetails")) {
+			String ReponseStr = resp.body().asString();
+			String referenceId = jsonPathEvaluator.getString("referenceId");
+
+			if(!referenceId.contains("me123testing8")) {
+				Assert.assertTrue(false);						
+			}
+
+
+			if(!ReponseStr.contains("testing")) {
+				Assert.assertTrue(false);						
+			}
+
+			if(!ReponseStr.contains("2345")) {
+				Assert.assertTrue(false);						
+			}
+			if(!ReponseStr.contains("12345")) {
+				Assert.assertTrue(false);						
+			}
+
+
+
+		}
+		else if(Type.equalsIgnoreCase("Account_Service_Fetchdomain_nameByID")) {
+
+			String domainName = jsonPathEvaluator.getString("domainName");
+
+			if(!domainName.contains("expedia.travelbox99.com")) {
+				Assert.assertTrue(false);						
+			}
+
+		}
+		else if(Type.equalsIgnoreCase("Account_Service_Company_DomainName_Autocomplete")) {
+			String ReponseStr = resp.body().asString();
+			if(!ReponseStr.contains("test12347653.cleartripforbusiness.com")){
+				Assert.assertTrue(false);
+			}
+			if(!ReponseStr.contains("test.cleartripforbusiness.com")){
+				Assert.assertTrue(false);
+			}
+			if(!ReponseStr.contains("testcleartrp.cleartripforbusiness.com")){
+				Assert.assertTrue(false);
+			}
 
 		}
 		else if(Type.equalsIgnoreCase("Account_Service_GetActivationKey")) {

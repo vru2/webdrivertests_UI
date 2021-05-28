@@ -226,6 +226,13 @@
 				name="accountsAPI.Flipkart_Accounts_service_CreateUser_ExistingUser" />
 			<class name="accountsAPI.Flipkart_Accounts_service_Updateuser" />
 			<class name="accountsAPI.Flipkart_Accounts_service_GetUserDetails" />
+			<class
+				name="accountsAPI.Flipkart_Accounts_service_GetUserDetailsBy_ReferenceID_withoutparams" />
+
+			<class
+				name="accountsAPI.Flipkart_Accounts_service_GetUserDetailsBy_UserID" />
+			<class
+				name="accountsAPI.Flipkart_Accounts_service_GetUserDetailsBy_UserID_withoutparams" />
 
 
 		</classes>

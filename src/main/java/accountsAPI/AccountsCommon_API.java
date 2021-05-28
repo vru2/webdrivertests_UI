@@ -187,6 +187,9 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String url_Account_Service_FetchCustomer_number="/external-api/customer-no?domain=agencydemo3.agentbox.com";
 	String url_Account_Service_CFW_GetUserStatus="/user/v2/cfw/optIn?userId=14029546";
 	String url_Flipkart_Accounts_service_GetUserDetails="/accounts/v3/people?partner=FLIPKART&referenceId=me123testing8&travellersRequired=true&gstDetailsRequired=true";
+	String url_Flipkart_Accounts_service_GetUserDetailsBy_UserID="/accounts/v3/people/65214414?travellersRequired=true&gstDetailsRequired=true";
+	String url_Flipkart_Accounts_service_GetUserDetailsBy_UserID_withoutparams="/accounts/v3/people/65214414?travellersRequired=false&gstDetailsRequired=false";
+	String url_Flipkart_Accounts_service_GetUserDetailsBy_ReferenceID_withoutparams="/accounts/v3/people?partner=FLIPKART&referenceId=me123testing8&travellersRequired=false&gstDetailsRequired=false";
 	String url_Account_Service_Fetchdomain_nameByID="/company/v2/110342/domain-name";
 	String url_Account_Service_Company_DomainName_Autocomplete="/company/v2/domain-auto-completer?domain=test";
 	String url_Account_Service_GetActivationKey="/user/v2/activation-key/65213401";
@@ -2167,6 +2170,27 @@ public class AccountsCommon_API extends PlatformCommonUtil
 
 			Reporter.log(url_Acct_Service+url);
 		}
+		else if (Type.equals("Flipkart_Accounts_service_GetUserDetailsBy_UserID")){
+			RestAssured.baseURI=url_Acct_Service;
+			url = url_Flipkart_Accounts_service_GetUserDetailsBy_UserID;
+			headers = headersFormflipkart();
+
+			Reporter.log(url_Acct_Service+url);
+		}
+		else if (Type.equals("Flipkart_Accounts_service_GetUserDetailsBy_UserID_withoutparams")){
+			RestAssured.baseURI=url_Acct_Service;
+			url = url_Flipkart_Accounts_service_GetUserDetailsBy_UserID_withoutparams;
+			headers = headersFormflipkart();
+
+			Reporter.log(url_Acct_Service+url);
+		}
+		else if (Type.equals("Flipkart_Accounts_service_GetUserDetailsBy_ReferenceID_withoutparams")){
+			RestAssured.baseURI=url_Acct_Service;
+			url = url_Flipkart_Accounts_service_GetUserDetailsBy_ReferenceID_withoutparams;
+			headers = headersFormflipkart();
+
+			Reporter.log(url_Acct_Service+url);
+		}
 		else if (Type.equals("Account_Service_Fetchdomain_nameByID")){
 			RestAssured.baseURI=url_Acct_Service;
 			url = url_Account_Service_Fetchdomain_nameByID;
@@ -3409,6 +3433,73 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			if(!ReponseStr.contains("12345")) {
 				Assert.assertTrue(false);						
 			}
+
+
+
+		}
+		else if(Type.equalsIgnoreCase("Flipkart_Accounts_service_GetUserDetailsBy_UserID")) {
+			String ReponseStr = resp.body().asString();
+			String referenceId = jsonPathEvaluator.getString("referenceId");
+
+			if(!referenceId.contains("me123testing8")) {
+				Assert.assertTrue(false);						
+			}
+
+
+			if(!ReponseStr.contains("testing")) {
+				Assert.assertTrue(false);						
+			}
+
+			if(!ReponseStr.contains("PASSPORT")) {
+				Assert.assertTrue(false);						
+			}
+			if(!ReponseStr.contains("12345")) {
+				Assert.assertTrue(false);						
+			}
+
+
+
+		}
+		else if(Type.equalsIgnoreCase("Flipkart_Accounts_service_GetUserDetailsBy_UserID_withoutparams")) {
+			String ReponseStr = resp.body().asString();
+			String referenceId = jsonPathEvaluator.getString("referenceId");
+
+			if(!referenceId.contains("me123testing8")) {
+				Assert.assertTrue(false);						
+			}
+
+			String travellerDetails = jsonPathEvaluator.getString("travellerDetails");
+			if((travellerDetails !=null)) {
+				Assert.assertTrue(false);						
+			}
+			String gstDetails = jsonPathEvaluator.getString("gstDetails");
+			if((gstDetails !=null)) {
+				Assert.assertTrue(false);						
+			}
+
+			
+
+
+
+		}
+		else if(Type.equalsIgnoreCase("Flipkart_Accounts_service_GetUserDetailsBy_ReferenceID_withoutparams")) {
+			String ReponseStr = resp.body().asString();
+			String referenceId = jsonPathEvaluator.getString("referenceId");
+
+			if(!referenceId.contains("me123testing8")) {
+				Assert.assertTrue(false);						
+			}
+
+			String travellerDetails = jsonPathEvaluator.getString("travellerDetails");
+			if((travellerDetails !=null)) {
+				Assert.assertTrue(false);						
+			}
+			String gstDetails = jsonPathEvaluator.getString("gstDetails");
+			if((gstDetails !=null)) {
+				Assert.assertTrue(false);						
+			}
+
+			
 
 
 

@@ -605,6 +605,13 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		return headers;
 	}
 	
+	public HashMap<String, Object> headersForms_Json(){		
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("Accept", "application/json");
+		
+		return headers;
+	}
+	
 	public HashMap<String, Object> headersFormsWallet(){		
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("Content-Type", "application/json");
@@ -4371,7 +4378,9 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		//Reporter.log(urlReporting);	 
 		String endPoint = null;
 		HashMap<String, Object> headers	= new HashMap<>();
+		HashMap<String, Object> headers1	= new HashMap<>();
 		headers = headersForms();
+		headers1 = headersForms_Json();
 		Response response = null;
 		if(payType.equalsIgnoreCase("Reporting")) {
 			endPoint = url_Reportingendpoint;
@@ -4394,6 +4403,15 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			Reporter.log(endPoint);
 			response = RestAssured.given().
 					when().log().all().headers(headers).get(endPoint);
+		}
+		
+		else if(payType.equalsIgnoreCase("Reporting_Disabled_Refunds_Json")) {
+			RestAssured.baseURI =urlReporting;
+			endPoint= urlReporting_Disabled_Refunds;
+			Reporter.log(urlReporting+endPoint);
+			Reporter.log(endPoint);
+			response = RestAssured.given().
+					when().log().all().headers(headers1).get(endPoint);
 		}
 		else if(payType.equalsIgnoreCase("ReportingRefundStatus")) {
 			endPoint = url_ReportingRefund_StatusReport;

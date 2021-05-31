@@ -234,6 +234,7 @@
 <test name="API Refund stopped"  preserve-order="true" parallel="true" >
     <classes>
 		<class name="paymentsAPI.API_Reporting_Disabled_Refunds"/>
+		<class name="paymentsAPI.API_Reporting_Disabled_Refunds_Json"/>
     </classes>
 </test>
 

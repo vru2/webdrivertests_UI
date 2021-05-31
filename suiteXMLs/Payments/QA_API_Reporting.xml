@@ -65,6 +65,9 @@
 		<class name="paymentsAPI.API_Reporting"/>
 		<class name="paymentsAPI.API_Reporting_TS_V3"/>
 		<class name="paymentsAPI.API_Reporting_Disabled_Refunds"/>
+		<class name="paymentsAPI.API_Reporting_Disabled_Refunds_Json"/>
+		
+		
 		
 		
     </classes>

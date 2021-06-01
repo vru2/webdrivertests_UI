@@ -25,18 +25,22 @@ public class Bento_Full_GV_Booking extends PaymentUI_Common_Bento{
 		Reporter.log(searchurl);
 	    Searchpagebook(driver,"");
 	    book_itnnew(driver,"GV");
-	    if(textPresent(driver,"Sorry, our servers are stumped with your request",30)||textPresent(driver,"Flight not available",30))
+	   if(elementVisible(driver,getObjectPayment("Bento_Payment_PayText"),30)) {
+
+		    bento_paymentpage(driver,"GV");
+		    confirmation_page(driver);
+		    
+	   }
+	   else if(textPresent(driver,"Sorry, our servers are stumped with your request",30)||textPresent(driver,"Flight not available",1))
 	    {
 	    	System.out.println("Booking failed due to itn page issue");
 	    	Reporter.log("Booking failed due to itn page issue");
 	    	assertTrue(false);
 	    }
-	    else
-	    {
-	    bento_paymentpage(driver,"GV");
-	    confirmation_page(driver);
-	    }
-	    
+	   else {
+		   bento_paymentpage(driver,"GV");
+		    confirmation_page(driver);
+	   }
 	}
 	
 	 @AfterClass

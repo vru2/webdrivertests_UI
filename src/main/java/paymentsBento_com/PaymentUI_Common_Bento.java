@@ -1218,7 +1218,8 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 	    driver.manage().addCookie(cookie_Bento_Payment);
 	    driver.navigate().refresh();
 	    Thread.sleep(5000);
-	    textPresent_Log(driver,"Pay to complete your booking",10);
+	    elementVisible(driver,getObjectPayment("Bento_Payment_PayText"),10);
+	    textPresent_Log(driver,"Pay to complete your booking",1);
 	    System.out.println(driver.getCurrentUrl());
 	    Reporter.log(driver.getCurrentUrl());
 	  if(PaymentType=="storedcard")
@@ -1246,7 +1247,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 	    textPresent_Log(driver,"Your booking is done",5);
 	    Reporter.log("Payment done successfully");
 	 }
-	if(PaymentType=="wallet")
+	  else if(PaymentType=="wallet")
 	{
 		if(textPresent(driver,"Cleartrip wallet",2))
 	    {
@@ -1258,7 +1259,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 			Reporter.log("Payment done successfully");
 		}
 	}
-	if(PaymentType=="nb")
+	  else if(PaymentType=="nb")
 	{
 		if(textPresent(driver,"Cleartrip wallet",2))
 	    {
@@ -1282,7 +1283,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 		Reporter.log("Payment done successfully");
 		
 	}
-	if(PaymentType=="UPI")
+	  else if(PaymentType=="UPI")
 	{
 		if(textPresent(driver,"Cleartrip wallet",2))
 	    {
@@ -1305,7 +1306,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 		textPresent_Log(driver,"Please accept the collect request sent to your UPI app",5);
 		 Reporter.log("Payment done successfully");
 	}
-	if(PaymentType=="GV")
+	  else if(PaymentType=="GV")
 	{
 		elementVisible(driver,getObjectPayment("Bento_Payment_Paynow"),2);
 		textPresent_Log(driver,"Gift card",2);
@@ -1331,7 +1332,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 		    textPresent_Log(driver,"Your booking is done",5);
 		    Reporter.log("Payment done successfully");
 	}
-	if(PaymentType=="Coupon")
+	else if(PaymentType=="Coupon")
 	{
 		elementVisible(driver,getObjectPayment("Bento_Payment_Paynow"),2);
 		textPresent_Log(driver,"Coupon code (DOMOW)",2);

@@ -125,6 +125,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String url_Account_Service_FLYIN_User_Update="/account/people/v2?domain=www.flyin.com";
 	String url_Account_Service_Update_User_MobileNo_OTPValidaion="/account/people/v2?domain=qa2.cleartrip.com";
 	String url_Account_Service_AppleSignin_uniqueId="/apple/signin";
+	String url_Identity_service_RecaptchaAPI="/user/verify/captcha?domain=cleartrip.ae&g-recaptcha-response=test";
 	String url_Account_Service_FetchContactData="/account/people/v2/fetch/contactData";
 	String url_Account_Service_LinkDepositAccount="/account/v2/depositAccount/link?email=sai@test.com&depositAccountId=10367339&partner=CLEARTRIP";
 	String url_Account_Service_Company_AddGSTwith_DomainName="/company/v2/gst?domainName=test.cleartripforbusiness.com";
@@ -246,7 +247,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String params_flyinsignin="{\"username\" : \"ok@cltp.com\",\"partner\":1,\"password\":\"cleartrip1\"}";
 	String params_Account_Service_CFW_StatusUpdateCall="";
 	String params_flyinsigninV2_CleartripUser="{ \"password\": \"cleartrip123\", \"partner\": 0, \"source\": \"home_page\", \"username\": \"ns.likhitha@cleartrip.com\", \"persist_login\": false}";
-
+	String params_Identity_service_RecaptchaAPI="";
 	String params_Accounts_Service_FLyinV2_Signin_Unauthorized="{ \"password\": \"cleatrip123\", \"partner\": 0, \"source\": \"home_page\", \"username\": \"ns.likhitha@cleartrip.com\", \"persist_login\": false}";
 	String params_AccountsService_FlyinV2Signin_Unauthorized="{ \"password\": \"Pre@123\", \"partner\": 1, \"source\": \"home_page\", \"username\": \"flyinctuser@gmail.com\", \"persist_login\": false}";
 	String params_Account_Service_FlyinV2_Signin_FlyinUser="{ \"password\": \"Preprod@123\", \"partner\": 1, \"source\": \"home_page\", \"username\": \"flyinctuser@gmail.com\", \"persist_login\": false}";
@@ -1533,7 +1534,13 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			url = url_Account_Service_AppleSignin;					
 			params =params_Account_Service_AppleSignin ;
 		}
+		if(Type.equals("Identity_service_RecaptchaAPI")) {
+			headers = headersFormgetactivationkey();
 
+			RestAssured.baseURI =url_Acct_Service_applesgnin;
+			url = url_Identity_service_RecaptchaAPI;					
+			params =params_Identity_service_RecaptchaAPI ;
+		}
 		if(Type.equals("Account_Service_FetchPersonalData")) {
 			headers = headersFormsfetchpersonaldata();
 
@@ -2776,6 +2783,17 @@ public class AccountsCommon_API extends PlatformCommonUtil
 				Assert.assertTrue(false);						
 			}
 			if(!resp.body().asString().contains("deposit_account_details")) {
+				Assert.assertTrue(false);						
+			}
+		}
+		else if(Type.equalsIgnoreCase("Identity_service_RecaptchaAPI")) {
+
+			String status = jsonPathEvaluator.getString("status");
+
+			if(!status.contains("FAILURE")) {
+				Assert.assertTrue(false);						
+			}
+			if(!resp.body().asString().contains("trace")) {
 				Assert.assertTrue(false);						
 			}
 		}

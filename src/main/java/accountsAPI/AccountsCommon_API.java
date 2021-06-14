@@ -119,6 +119,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String url_Account_Service_Update_User="/account/people/v2?domain=qa2.cleartrip.com";
 	String url_Account_Service_Cleartrip_confirmedtravlerwithActivestatus="/account/people/v2?domain=www.cleartrip.com";
 	String url_IdentityService_ChangePassword="/user/changePassword?email=ns.likhitha@cleartrip.com";
+	String url_IdentityService_RecaptchaAPI="/user/verify/captcha?domain=qa2.cleartrip.com&g-recaptcha-response=test";
 	String url_Account_Service_CFW_StatusUpdateCall="/user/v2/cfw/optIn?emailId=ns.likhitha@cleartrip.com&userId=14029546&status=ENABLED";
 	String url_IdentityService_ResetPassword="/user/resetPassword?email=ns.likhitha@cleartrip.com";
 	String url_Account_Service_RegisterFLyinUserUpdate_OTPValidation="/account/people/v2?domain=www.flyin.com";
@@ -129,6 +130,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String url_Account_Service_FetchContactData="/account/people/v2/fetch/contactData";
 	String url_Account_Service_LinkDepositAccount="/account/v2/depositAccount/link?email=sai@test.com&depositAccountId=10367339&partner=CLEARTRIP";
 	String url_Account_Service_Company_AddGSTwith_DomainName="/company/v2/gst?domainName=test.cleartripforbusiness.com";
+	String url_Account_Service_CreateWalletAPI="/account/people/createWallet";
 	String url_Account_Service_Company_AddGSTwith_CompanyID="/company/v2/gst?id=110340";
 	String url_Account_Service_Company_AddGSTwith_CompanyID_DomainName="/company/v2/gst?domainName=test.cleartripforbusiness.com&id=110340";
 	String url_Account_Service_FetchPersonalData="/account/people/v2/fetch/personalData";
@@ -234,6 +236,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String params_Account_Service_FetchContactData="[1,2,3,4]";
 	String params_Account_Service_LinkDepositAccount="";
 	String params_Account_Service_Company_AddGSTwith_DomainName="{\"gstHolderAddress\":\"okdomainautomation\",\"gstHolderName\":\"okdomainautomation\",\"gstHolderStateCode\":\"21\",\"gstHolderStateName\":\"okdomainautomation\",\"gstNumber\":\"1domainautomat\"}";
+	String params_Account_Service_CreateWalletAPI="{\"userId\":65204276,\"currency\":\"BHD\"}";
 	String params_Account_Service_Company_AddGSTwith_CompanyID="{\"gstHolderAddress\":\"okdomainautomation\",\"gstHolderName\":\"okdomainautomation\",\"gstHolderStateCode\":\"21\",\"gstHolderStateName\":\"okdomainautomation\",\"gstNumber\":\"1domainautomat\"}";
 	String params_Account_Service_Company_AddGSTwith_CompanyID_DomainName="{\"gstHolderAddress\":\"okdomainautomation\",\"gstHolderName\":\"okdomainautomation\",\"gstHolderStateCode\":\"21\",\"gstHolderStateName\":\"okdomainautomation\",\"gstNumber\":\"1domainautomat\"}";
 
@@ -1143,6 +1146,15 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			Reporter.log(url_Identitymicro_service+url);
 
 		}
+		if(Type.equals("IdentityService_RecaptchaAPI")) {
+			headers = headersFormgetactivationkey();
+
+			RestAssured.baseURI =url_Identitymicro_service;
+			url = url_IdentityService_RecaptchaAPI;	
+			params =params_IdentityService_ChangePassword ;
+			Reporter.log(url_Identitymicro_service+url);
+
+		}
 		if(Type.equals("IdentityService_ResetPassword")) {
 			headers = headersFormschangepassword();
 
@@ -1568,6 +1580,13 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			RestAssured.baseURI =url_Acct_Service;
 			url = url_Account_Service_Company_AddGSTwith_DomainName;					
 			params =params_Account_Service_Company_AddGSTwith_DomainName ;
+		}
+		if(Type.equals("Account_Service_CreateWalletAPI")) {
+			headers = headersFormgst();
+
+			RestAssured.baseURI =url_Acct_Service;
+			url = url_Account_Service_CreateWalletAPI;					
+			params =params_Account_Service_CreateWalletAPI ;
 		}
 		if(Type.equals("Account_Service_Company_AddGSTwith_CompanyID")) {
 			headers = headersFormgst();
@@ -2775,6 +2794,12 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			}
 		}
 
+		else if(Type.equalsIgnoreCase("IdentityService_RecaptchaAPI")) {
+			String status = jsonPathEvaluator.getString("status");
+			if(!status.contains("FAILURE")) {
+				Assert.assertTrue(false);						
+			}
+		}
 		else if(Type.equalsIgnoreCase("depositAccount_search")) {
 
 			String status = jsonPathEvaluator.getString("status");
@@ -2802,6 +2827,15 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			String status = jsonPathEvaluator.getString("status");
 
 			if(!status.contains("SUCCESS")) {
+				Assert.assertTrue(false);						
+			}
+
+		}
+		else if(Type.equalsIgnoreCase("Account_Service_CreateWalletAPI")) {
+
+			String message = jsonPathEvaluator.getString("message");
+
+			if(!message.contains("Wallet created successfully")) {
 				Assert.assertTrue(false);						
 			}
 

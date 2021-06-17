@@ -1211,6 +1211,15 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 		 */
 		  
 	}
+	
+	public void bento_Deselect_Wallet() throws InterruptedException, Exception 
+	{
+		if(textPresent(driver,"Cleartrip wallet",1))
+	    {
+			safeClick(driver,getObjectPayment("Bento_Payment_Deselect_Wallet"));
+			Reporter.log("Deselected wallet");
+	    }
+	}
 
 	public void bento_paymentpage(RemoteWebDriver driver,String PaymentType) throws Exception
 	{
@@ -1224,32 +1233,24 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 	    Reporter.log(driver.getCurrentUrl());
 	  if(PaymentType=="storedcard")
 	  {
-		if(textPresent(driver,"Cleartrip wallet",3))
-	    {
-			safeClick(driver,getObjectPayment("Bento_Payment_Deselect_Wallet"));
-			Reporter.log("Deselected wallet");
-	    	safeClick(driver,getObjectPayment("Bento_Payment_Select_Storedcard"));
-	    	Reporter.log("Clicked on SC");
-	    }
-		else
-		{
-			safeClick(driver,getObjectPayment("Bento_Payment_Select_Storedcard"));
-		}
+		bento_Deselect_Wallet();
+		safeClick(driver,getObjectPayment("Bento_Payment_Select_Storedcard"));
+    	Reporter.log("Clicked on SC");
 		safeClick(driver,getObjectPayment("Bento_Payment_SC_CVV"));
 	    safeType(driver,getObjectPayment("Bento_Payment_SC_CVV"),"1234");
 	    Reporter.log("Entered CVV");
 	    safeClick(driver,getObjectPayment("Bento_Payment_Paynow"));
 	    Reporter.log("Clicked on paynow");
-	    textPresent_Log(driver,"Please wait...",2);
-	    textPresent_Log(driver,"American",2);
-	    textPresent_Log(driver,"ACS Emulator",2);
+	    /*textPresent_Log(driver,"Please wait...",2);
+	    textPresent_Log(driver,"American",2);*/
+	    textPresent_Log(driver,"ACS Emulator",20);
 	    safeClick(driver,getObjectPayment("Bento_Payment_AMC_SUBMIT"));
 	    textPresent_Log(driver,"Your booking is done",5);
 	    Reporter.log("Payment done successfully");
 	 }
 	  else if(PaymentType=="wallet")
 	{
-		if(textPresent(driver,"Cleartrip wallet",2))
+		if(textPresent_Log(driver,"Cleartrip wallet", 2))
 	    {
 			elementVisible(driver,getObjectPayment("Bento_Payment_Paynow"),2);
 			textPresent_Log(driver,"Your wallet balance is sufficient to pay for this booking",2);
@@ -1258,45 +1259,30 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 			textPresent_Log(driver,"Please wait...",2);
 			Reporter.log("Payment done successfully");
 		}
+		
 	}
 	  else if(PaymentType=="nb")
 	{
-		if(textPresent(driver,"Cleartrip wallet",2))
-	    {
-			safeClick(driver,getObjectPayment("Bento_Payment_Deselect_Wallet"));
-			 Reporter.log("Deselected wallet");
-	    	safeClick(driver,getObjectPayment("Bento_Payment_NB"));
-	    	 Reporter.log("Clicked on NB");
-	    }
-		else
-		{
+
+		 bento_Deselect_Wallet();
 		 safeClick(driver,getObjectPayment("Bento_Payment_NB"));
 		 Reporter.log("Clicked on NB");
-		}
 		safeClick(driver,getObjectPayment("Bento_Payment_NB_ICIC"));
 		Reporter.log("Selected ICIC Bank");
 		safeClick(driver,getObjectPayment("Bento_Payment_Paynow"));
 		Reporter.log("Clicked on paynow");
-		textPresent_Log(driver,"Please wait...",2);
-		textPresent_Log(driver,"Welcome to Razorpay Software Private Ltd Bank",5);
+		//textPresent_Log(driver,"Please wait...",2);
+		textPresent_Log(driver,"Welcome to Razorpay Software Private Ltd Bank",10);
 		safeClick(driver,getObjectPayment("Bento_Payment_NB_Payment_Success"));
 		Reporter.log("Payment done successfully");
 		
 	}
 	  else if(PaymentType=="UPI")
 	{
-		if(textPresent(driver,"Cleartrip wallet",2))
-	    {
-			safeClick(driver,getObjectPayment("Bento_Payment_Deselect_Wallet"));
-			Reporter.log("Deselected wallet");
-	    	safeClick(driver,getObjectPayment("Bento_Payment_UPI"));
-	    	 Reporter.log("Clicked on UPI");
-	    }
-		else
-		{
+
+			bento_Deselect_Wallet();
 			safeClick(driver,getObjectPayment("Bento_Payment_UPI"));
 			 Reporter.log("Clicked on UPI");
-		}
 		safeClick(driver,getObjectPayment("Bento_Payment_UPI_ID"));
 		safeType(driver,getObjectPayment("Bento_Payment_UPI_ID"),"9986696785@ybl");
 		 Reporter.log("Entered UPI Details");
@@ -1308,6 +1294,8 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 	}
 	  else if(PaymentType=="GV")
 	{
+
+		bento_Deselect_Wallet();
 		elementVisible(driver,getObjectPayment("Bento_Payment_Paynow"),2);
 		textPresent_Log(driver,"Gift card",2);
 		safeClick(driver,getObjectPayment("Bento_Payment_Paynow"));
@@ -1336,17 +1324,10 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 	{
 		elementVisible(driver,getObjectPayment("Bento_Payment_Paynow"),2);
 		textPresent_Log(driver,"Coupon code (DOMOW)",2);
-		if(textPresent(driver,"Cleartrip wallet",2))
-		{
-			safeClick(driver,getObjectPayment("Bento_Payment_Deselect_Wallet"));
-			Reporter.log("Deselected wallet");
-			safeClick(driver,getObjectPayment("Bento_Payment_Select_Storedcard"));
-			 Reporter.log("Clicked on SC");
-		}
-		else {
-			safeClick(driver,getObjectPayment("Bento_Payment_Select_Storedcard"));
-			 Reporter.log("Clicked on SC");
-		}
+
+		bento_Deselect_Wallet();
+		safeClick(driver,getObjectPayment("Bento_Payment_Select_Storedcard"));
+		Reporter.log("Clicked on SC");
 		safeClick(driver,getObjectPayment("Bento_Payment_SC_CVV"));
 	    safeType(driver,getObjectPayment("Bento_Payment_SC_CVV"),"1234");
 	    Reporter.log("Entered CVV details");
@@ -1364,18 +1345,18 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 	public void confirmation_page(RemoteWebDriver driver) throws Exception
 	{
 		 elementPresent_log(driver,By.linkText("Get your ticket"),"Get your ticket",5);
-		 textPresent_Log(driver,"You just booked",2);
-		 textPresent_Log(driver,"Travelers in this trip",2);
-		 textPresent_Log(driver,"Itinerary sent",2);
-		 textPresent_Log(driver,"PAYMENT RECEIPT",2);
-		 textPresent_Log(driver,"TOTAL CHARGE",2);
-		 textPresent_Log(driver,"RATE BREAK UP",2);
-		 textPresent_Log(driver,"Convenience Fee",2);
-		 textPresent_Log(driver,"Total",2);
-		 textPresent_Log(driver,"Travel plans change often.",2);
+		 textPresent_Log(driver,"You just booked",1);
+		 textPresent_Log(driver,"Travelers in this trip",1);
+		 textPresent_Log(driver,"Itinerary sent",1);
+		 textPresent_Log(driver,"PAYMENT RECEIPT",1);
+		 textPresent_Log(driver,"TOTAL CHARGE",1);
+		 textPresent_Log(driver,"RATE BREAK UP",1);
+		 textPresent_Log(driver,"Convenience Fee",1);
+		 textPresent_Log(driver,"Total",1);
+		 textPresent_Log(driver,"Travel plans change often.",1);
 		 String tripid=driver.findElement(getObjectPayment("Bento_Confirmation_Page_Gettrip")).getText();
-	     System.out.println(tripid);
-	     Reporter.log(tripid);
+	     System.out.println("Trip ID is : "+tripid);
+	     Reporter.log("Trip ID is : "+tripid);
 	     
 	}
 			

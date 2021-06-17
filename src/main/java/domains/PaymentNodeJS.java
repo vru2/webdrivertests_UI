@@ -665,7 +665,7 @@ public class PaymentNodeJS extends API_PaymentCommon1{
 		} else if (bankType.equalsIgnoreCase("CHECKOUT")) {
 			if (platform.value("CheckOut_3D").equals("true")) {
 				elementVisible(driver, getObjectPayment("MakePayment_PgCred_SA_Checkout_Password_Txt"), 30);
-				elementVisible(driver, getObjectPayment("MakePayment_PgCred_SA_Checkout_Logo"), 20);
+				elementVisible(driver, getObjectPayment("MakePayment_PgCred_SA_Checkout_Logo"), 1);
 				Thread.sleep(2000);
 				safeType(driver, getObjectPayment("MakePayment_PgCred_SA_Checkout_Password_Txt"), "Checkout1!");
 				Thread.sleep(2000);

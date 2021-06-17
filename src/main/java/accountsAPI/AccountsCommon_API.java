@@ -254,7 +254,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String params_Accounts_Service_FLyinV2_Signin_Unauthorized="{ \"password\": \"cleatrip123\", \"partner\": 0, \"source\": \"home_page\", \"username\": \"ns.likhitha@cleartrip.com\", \"persist_login\": false}";
 	String params_AccountsService_FlyinV2Signin_Unauthorized="{ \"password\": \"Pre@123\", \"partner\": 1, \"source\": \"home_page\", \"username\": \"flyinctuser@gmail.com\", \"persist_login\": false}";
 	String params_Account_Service_FlyinV2_Signin_FlyinUser="{ \"password\": \"Preprod@123\", \"partner\": 1, \"source\": \"home_page\", \"username\": \"flyinctuser@gmail.com\", \"persist_login\": false}";
-	String params_Account_Service_PWA_SignIn_API="{\"username\" : \"test@identityqa.com\",\"password\":\"Cleartrip@123\"}";
+	String params_Account_Service_PWA_SignIn_API="{\"username\" : \"ns.likhitha@cleartrip.com\",\"password\":\"cleartrip123\"}";
 	String params_Manage_trips_OTP_API="{\"trip_ref\":\"Q19050680460\",\"email_id\":\"ns.likhitha@cleartrip.com\"}";
 	String params_cfw_active_status="{ \"cfw\":\"false\", \"user\": { \"password\": \"cleartrip1\" }, \"retype_password\": \"cleartrip1\", \"personal_data\": { \"title\": \"Mr\", \"first_name\": \"vinay\", \"last_name\": \"raj\" }, \"phone_number\": { \"phone_number_value\": \"+919743049515\", \"category\": \"mobile\" }, \"email_id\":\"ns.likhitha@cleartrip.com\" }";
 	String params_identtiyservice_getresource="access_token:rUBn829a8U4nH12Zo4uiHj9CHOSu3H5k44FyRJVERLB2rjdlOy";
@@ -4154,7 +4154,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		}
 		else if(Type.equalsIgnoreCase("Account_Service_PWA_SignIn_API")) {
 			String ReponseStr = resp.body().asString();
-			if(!ReponseStr.contains("test@identityqa.com")){
+			if(!ReponseStr.contains("ns.likhitha@cleartrip.com")){
 				Assert.assertTrue(false);
 			}
 		}

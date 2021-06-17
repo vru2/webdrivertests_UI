@@ -63,6 +63,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String url_Userclassification_Health_Test_Url="/actuator/health";
 	String url_Account_Service_Verify_Person="/account/people/verify?id=14029546&emailId=ns.likhitha@cleartrip.com&domain=www.cleartrip.com&companyId=110340";
 	String url_Account_Service_UserController_VerifyAccount="/user/v1/account/verify/14029546";
+	String url_Account_Service_People_UpdateUserRoles="/accounts/people/roles?userId=65214457";
 	String url_Accounts_service_Company_DeleteGST="/company/v2/gst?id=836674&gstNumber=123459898";
 	String url_Accounts_service_Company_DeleteGST_CompanyID_DomainName="/company/v2/gst?id=836674&domainName=expedia.travelbox99.com&gstNumber=hihi&gstId=123";
 	String url_Flipkart_Accounts_service_Updateuser="/accounts/v3/people?partner=FLIPKART&referenceId=me123testing";
@@ -292,6 +293,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String params_IdentityService_UpdatePassword_ForChangePasswordflow="{\"emailId\":\"ns.likhitha@cleartrip.com\",\"oldPassword\":\"Cleartrip@1\",\"newPassword\":\"Cleartrip@2\",\"otp\":\"035175\"}";
 	String params_IdentityService_UpdatePassword_ForResetPasswordflow="{\"emailId\":\"ns.likhitha@cleartrip.com\",\"newPassword\":\"Cleartrip@8\",\"mailerKey\":\"aIWr1jRjfDPjXojg\"}";
 	String params_Account_Service_UserController_VerifyAccount="";
+	String params_Account_Service_People_UpdateUserRoles="{\"userId\":3863174,\"companyPeopleDetails\":[{\"companyId\":87321,\"companyPeopleId\":58963,\"role\":{\"id\":1,\"accessLevel\":0}},{\"companyId\":87321,\"role\":{\"id\":1064,\"accessLevel\":0}},{\"companyId\":87321,\"role\":{\"id\":10000,\"accessLevel\":0}},{\"companyId\":21,\"role\":{\"id\":2,\"name\":\"Finance \",\"accessLevel\":0}}]}";
 	String params_Accounts_service_Company_DeleteGST="";
 	String params_Flipkart_Accounts_service_Updateuser="{\"travellerDetails\":[{\"id\":182197,\"isRegistered\":true,\"personalDetails\":{\"dateOfBirth\":739650600000,\"firstName\":\"automationtest\",\"lastName\":\"testing\",\"title\":\"Mr.\",\"nationality\":\"IN\"},\"docDetails\":[{\"id\":1,\"docNumber\":\"2345\",\"docType\":\"automationtest\",\"expiryDate\":\"2020-09-11T00:00:00\",\"issuedDate\":\"2009-05-11T00:00:00\"}]},{\"id\":182189,\"isRegistered\":false,\"personalDetails\":{\"dateOfBirth\":739650600000,\"firstName\":\"automationtest2\",\"lastName\":\"testing2\",\"title\":\"Mr.\",\"nationality\":\"Indian\"},\"docDetails\":[{\"id\":6,\"docNumber\":\"7878\",\"docType\":\"PASSPORT\",\"expiryDate\":\"2020-09-11T00:00:00\",\"issuedDate\":\"2009-05-11T00:00:00\"}]}],\"gstDetails\":[{\"gstNumber\":\"12automation\",\"gstHolderCompanyName\":\"flipkart\",\"gstHolderCompanyAddress\":\"address\",\"gstHolderStateName\":\"Karnataka\",\"pinCode\":\"12345\",\"city\":\"bangalore\"}]}";
 	String params_b2bAddtraveler="{ \"person\": { \"contact_data\": { \"emails\": [ { \"seq_no\": 0, \"email_id\": \"ns.likhitha@cleartrip.com\", \"category\": \"work\" } ] }, \"id\": 0, \"company_details\": [ { \"company_id\": 186462, \"company_people_roles\": [ { \"role_id\": 1073 } ], \"status\": \"0\" } ], \"personal_data\": { \"title\": \"Miss\", \"first_name\": \"sai\", \"last_name\": \"test\" }, \"recentlyBooked\": false, \"travel_profile\": { } } }";
@@ -437,6 +439,17 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		headers.put("Referer", "www.flyin.com");
 		headers.put("X-CT-SOURCETYPE", "mobile");
 		headers.put("service", "");
+
+
+		return headers;
+	}
+
+	public HashMap<String, Object> headersFormroles(){
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("Content-Type", "application/json");
+		headers.put("accept", "*/*");
+		headers.put("x-ct-caller-app", "automation");
+		headers.put("auth_key", "7GHT#@D65yhgder4R1234");
 
 
 		return headers;
@@ -1729,6 +1742,14 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			url = url_Account_Service_UserController_VerifyAccount;
 			params= params_Account_Service_UserController_VerifyAccount;
 			headers = verifyaccount();
+			Reporter.log(url_Acct_Service+url);
+		}
+		else if(Type.equals("Account_Service_People_UpdateUserRoles"))
+		{
+			RestAssured.baseURI=url_Acct_Service;
+			url = url_Account_Service_People_UpdateUserRoles;
+			params= params_Account_Service_People_UpdateUserRoles;
+			headers = headersFormroles();
 			Reporter.log(url_Acct_Service+url);
 		}
 		else if(Type.equals("Flipkart_Accounts_service_Updateuser"))
@@ -3061,7 +3082,23 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			if(!status.contains("SUCCESS")) {
 				Assert.assertTrue(false);						
 			}
+		}
 
+		else if(Type.equalsIgnoreCase("Account_Service_People_UpdateUserRoles")) {
+			String ReponseStr = resp.body().asString();
+			if(!ReponseStr.contains("Finance - Refund")){
+				Assert.assertTrue(false);
+			}
+
+			if(!ReponseStr.contains("87321")){
+				Assert.assertTrue(false);
+			}
+			if(!ReponseStr.contains("10000")){
+				Assert.assertTrue(false);
+			}
+			if(!ReponseStr.contains("3863174")){
+				Assert.assertTrue(false);
+			}
 
 
 		}
@@ -3529,7 +3566,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 				Assert.assertTrue(false);						
 			}
 
-			
+
 
 
 
@@ -3551,7 +3588,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 				Assert.assertTrue(false);						
 			}
 
-			
+
 
 
 

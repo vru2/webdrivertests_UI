@@ -131,6 +131,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String url_Account_Service_FetchContactData="/account/people/v2/fetch/contactData";
 	String url_Account_Service_LinkDepositAccount="/account/v2/depositAccount/link?email=sai@test.com&depositAccountId=10367339&partner=CLEARTRIP";
 	String url_Account_Service_Company_AddGSTwith_DomainName="/company/v2/gst?domainName=test.cleartripforbusiness.com";
+	String url_Account_Service_Express_Checkout="/account/people/expressCheckout/enable?userId=65214677";
 	String url_Account_Service_CreateWalletAPI="/account/people/createWallet";
 	String url_Account_Service_Company_AddGSTwith_CompanyID="/company/v2/gst?id=110340";
 	String url_Account_Service_Company_AddGSTwith_CompanyID_DomainName="/company/v2/gst?domainName=test.cleartripforbusiness.com&id=110340";
@@ -220,6 +221,8 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String url_Flipkart_Accounts_Service_CreateUser="/accounts/v3/people?partner=FLIPKART&referenceId=nakkjultestqa"+flip;
 	String url_Flipkart_Accounts_service_CreateUser_ExistingUser="/accounts/v3/people?partner=FLIPKART&referenceId=nakultestqa";
 	String url_identityservicesignin="/signin";
+	String url_IdentityService_Signin_Userauthentication_B2C_B2B="/user/authenticate?docRequired=true&savedCards=true&travellersRequired=true&userPreference=true";
+	String url_IdentityService_Signin_Userauthentication_B2C_B2B_b2cUserwithoutParams="/user/authenticate";
 	String url_registerUser="/expressway-register";
 	String url_externalApi_Refreshtoken="/r3/account/external_api/refresh_token";
 	String url_createUpdateTraveller="/people/externalapi/41623878/create_update_travellers?caller=Android%20App%2017.11.2";
@@ -325,8 +328,9 @@ public class AccountsCommon_API extends PlatformCommonUtil
 
 	String params_externalApi_Refreshtoken="{\"refresh_token\":\"a0646154-7d20-4808-b73a-f1e100be1387\",\"company_id\":\"5363218\",\"expiry_date\":\"Tue Jun 02 14:57:37 IST 2020\",\"geolocation\":\"https://lik.api.concursolutios.com\"}";
 	//create update traveller
-
+String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\"ns.likhitha@cleartrip.com\",\"password\":\"cleartrip123\",\"companyId\":110340}";
 	String params_createUpdateTraveller="{\"update_travellers\":{\"adultId1\":{\"user\":{\"personal_data\":{\"first_name\":\"new\",\"last_name\":\"userz\",\"date_of_birth\":\"\",\"title\":\"Mr\"},\"id\":\"41699808\",\"company_id\":110340,\"travel_profile\":{\"passport_no\":\"\",\"passport_date_of_expiry\":\"\",\"passport_issuing_country_id\":\"\",\"meal_preference\":\"0\",\"frequent_flyer_numbers\":[{\"frequent_flyer_number_value\":\"this is 145"+i+"4dfd10\",\"airline_code\":\"AI\",\"airline\":\"Air India [AI]\"}]}}}}}";
+	String params_IdentityService_Signin_Userauthentication_B2C_B2B_b2bUser="{\"username\":\"ns.likhitha@cleartrip.com\",\"password\":\"cleartrip123\",\"companyId\":5266208}";
 	String params_createTraveller="{\"create_travellers\":{\"adultId1\":{\"person\":{\"personal_data\":{\"first_name\":\"hahaha\",\"last_name\":\"ThisIsWorking\",\"date_of_birth\":\"\",\"title\":\"Mr\"},\"id\":0,\"company_id\":110340,\"travel_profile\":{\"passport_no\":\"\",\"passport_date_of_expiry\":\"\",\"passport_issuing_country_id\":\"\",\"meal_preference\":\"0\",\"frequent_flyer_numbers\":[]}}}}}";
 	String c = generateRandomWord(4);
 	String params_createCompanyTags="{\"company_tags\":[ { \"coupon_expiry_date\": \"2018-11-04T23:59:59+05:30\", \"source_type\": \"SYNC\", \"tag_description\": \"Reward program coupon for trip Q1809051040\", \"tag_name\": \"Coupon:CTRP58"+c+"28df\", \"user_id\": 36348 }]}";
@@ -625,6 +629,15 @@ public class AccountsCommon_API extends PlatformCommonUtil
 		headers.put("auth_key", "7GHT#@D65yhgder4R");
 		headers.put("Content-Type", "application/json");
 		headers.put("referer", "qa2.cleartrip.com");
+
+		return headers;
+	}
+
+	public HashMap<String, Object> headersFormsauthenticate(){
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("accept", "*/*");
+		headers.put("Content-Type", "application/json");
+		headers.put("caller", "automation");
 
 		return headers;
 	}
@@ -1480,6 +1493,27 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			params = params_identityservicesignin;
 			Reporter.log(url_Acct_Service_applesgnin+url);
 		}
+		if(Type.equals("IdentityService_Signin_Userauthentication_B2C_B2B")) {
+			headers = headersFormsauthenticate();
+			RestAssured.baseURI =url_Identitymicro_service;
+			url = url_IdentityService_Signin_Userauthentication_B2C_B2B;					
+			params = params_IdentityService_Signin_Userauthentication_B2C_B2B;
+			Reporter.log(url_Identitymicro_service+url);
+		}
+		if(Type.equals("IdentityService_Signin_Userauthentication_B2C_B2B_b2cUserwithoutParams")) {
+			headers = headersFormsauthenticate();
+			RestAssured.baseURI =url_Identitymicro_service;
+			url = url_IdentityService_Signin_Userauthentication_B2C_B2B_b2cUserwithoutParams;					
+			params = params_IdentityService_Signin_Userauthentication_B2C_B2B;
+			Reporter.log(url_Identitymicro_service+url);
+		}
+		if(Type.equals("IdentityService_Signin_Userauthentication_B2C_B2B_b2bUser")) {
+			headers = headersFormsauthenticate();
+			RestAssured.baseURI =url_Identitymicro_service;
+			url = url_IdentityService_Signin_Userauthentication_B2C_B2B;					
+			params = params_IdentityService_Signin_Userauthentication_B2C_B2B_b2bUser;
+			Reporter.log(url_Identitymicro_service+url);
+		}
 
 		if(Type.equals("IdentityService_Signin_Unauthorized")) {
 			headers =headersFormIdentitysigninflyin ();
@@ -1593,6 +1627,13 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			RestAssured.baseURI =url_Acct_Service;
 			url = url_Account_Service_Company_AddGSTwith_DomainName;					
 			params =params_Account_Service_Company_AddGSTwith_DomainName ;
+		}
+		if(Type.equals("Account_Service_Express_Checkout")) {
+			headers = headersFormdepoist();
+
+			RestAssured.baseURI =url_Acct_Service;
+			url = url_Account_Service_Express_Checkout;					
+			params =params_Account_Service_LinkDepositAccount ;
 		}
 		if(Type.equals("Account_Service_CreateWalletAPI")) {
 			headers = headersFormgst();
@@ -2852,6 +2893,16 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			}
 
 		}
+		else if(Type.equalsIgnoreCase("Account_Service_Express_Checkout")) {
+
+			String message = jsonPathEvaluator.getString("message");
+
+			if(!message.contains("Express checkout flag changed successfully")) {
+				Assert.assertTrue(false);						
+			}
+
+		}
+
 		else if(Type.equalsIgnoreCase("Account_Service_CreateWalletAPI")) {
 
 			String message = jsonPathEvaluator.getString("message");
@@ -4520,6 +4571,34 @@ public class AccountsCommon_API extends PlatformCommonUtil
 			if(!ReponseStr.contains("automate@test.com")) {
 				Assert.assertNotNull("mobileNumber");
 				Assert.assertNotNull("isRegistered");
+				Assert.assertTrue(false);						
+			}	
+
+		}
+		if(Type.equalsIgnoreCase("IdentityService_Signin_Userauthentication_B2C_B2B")) {
+			String ReponseStr = resp.body().asString();
+			if(!ReponseStr.contains("ns.likhitha@cleartrip.com")) {
+				Assert.assertNotNull("1234567890");
+				Assert.assertNotNull("no.cleartripforbusiness.com");
+				Assert.assertNotNull("340000XXXXXX009");
+				Assert.assertNotNull("hq_trips_close_txn_tab");
+				Assert.assertNotNull("111test111");
+				
+				
+				Assert.assertTrue(false);						
+			}	
+
+		}
+		if(Type.equalsIgnoreCase("IdentityService_Signin_Userauthentication_B2C_B2B_b2bUser")) {
+			String ReponseStr = resp.body().asString();
+			if(!ReponseStr.contains("ns.likhitha@cleartrip.com")) {
+				Assert.assertNotNull("1234567890");
+				Assert.assertNotNull("no.cleartripforbusiness.com");
+				Assert.assertNotNull("340000XXXXXX009");
+				Assert.assertNotNull("hq_trips_close_txn_tab");
+				Assert.assertNotNull("111test111");
+				
+				
 				Assert.assertTrue(false);						
 			}	
 

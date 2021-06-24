@@ -79,6 +79,12 @@
 				name="accountsAPI.IdentityService_UpdatePassword_ForResetPasswordflow" />
 				<class
 				name="accountsAPI.Identity_service_RecaptchaAPI" />
+				<class
+				name="accountsAPI.IdentityService_Signin_Userauthentication_B2C_B2B_b2cUserwithoutParams" />
+				<class
+				name="accountsAPI.IdentityService_Signin_Userauthentication_B2C_B2B_b2cUser" />
+				<class
+				name="accountsAPI.IdentityService_Signin_Userauthentication_B2C_B2B_b2bUser" />
 				
 
 		</classes>
@@ -132,6 +138,7 @@
 			<class name="accountsAPI.Account_Service_AuthorizeAPI_encodingCookie" />
 			<class name="accountsAPI.Account_Service_Peoplecontroller_FindByID" />
 			<class name="accountsAPI.Accounts_Service_VerifynonLoggedinUser" />
+			<class name="accountsAPI.Account_Service_Express_Checkout" />
 			<class
 				name="accountsAPI.Accounts_Service_Cleartrip_MultipleTraveller_Updatecall" />
 			<class name="accountsAPI.Account_Service_FetchPersonalData" />

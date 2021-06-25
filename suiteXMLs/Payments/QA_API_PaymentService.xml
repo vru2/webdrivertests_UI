@@ -15,6 +15,13 @@
     </classes>
 </test>
 
+<test name="API GW Failure Banner" preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_Fetch_GW_Failure"/>
+    </classes>
+</test>
+
+
 <test name="API Deposit Account DA" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsAPI.API_DA_PayV3"/>

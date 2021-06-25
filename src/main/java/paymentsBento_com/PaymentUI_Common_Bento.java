@@ -418,6 +418,8 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 					Assert.assertTrue(false);
 				}
 			}
+			
+			
 			else {
 				String title = driver.getTitle();
 				if(!title.contains("Cleartrip | Pay securely")) {
@@ -687,6 +689,11 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 			textPresent_Log(driver, "Select a bank", 1);
 			elementPresent_log(driver, getObjectPayment("Bento_KNET_Radio_Button"), "Knet Radio button", 1);
 			
+		}
+		else if(PaymentType.equalsIgnoreCase("Failure_Banner")) {
+			textPresent_Log(driver, "UPI payments are having high failure rate, try other payment modes", 1);
+			elementPresent_log(driver, By.xpath("//div[@id='root']/div/main/div/div[2]/div/div/div[2]"), "Note", 1);
+			elementPresent_log(driver, By.xpath("//div[@id='root']/div/main/div/div[2]/div/div/div/div"), "Text G/W failure", 1);
 		}
 			
 	}
@@ -1038,15 +1045,15 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 		{
 			smartClick(driver,getObjectPayment("Bento_Book_Button"));
 		}
-		else if(elementVisible(driver,getObjectPayment("Bento_Spicejet_Logo"),3))
+		else if(elementVisible(driver,getObjectPayment("Bento_Spicejet_Logo"),1))
 		{
 			smartClick(driver,getObjectPayment("Bento_Book_Button"));
 		}
-		else if(elementVisible(driver,getObjectPayment("Bento_Airindia_Logo"),3))
+		else if(elementVisible(driver,getObjectPayment("Bento_Airindia_Logo"),1))
 		{
 			smartClick(driver,getObjectPayment("Bento_Book_Button"));
 		}
-		else if(elementVisible(driver,getObjectPayment("Bento_Vistara_Logo"),3))
+		else if(elementVisible(driver,getObjectPayment("Bento_Vistara_Logo"),1))
 		{
 			smartClick(driver,getObjectPayment("Bento_Book_Button"));
 		}
@@ -1068,7 +1075,6 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 		    driver.switchTo().window(child_window);
 		    Thread.sleep(5000);
 		    driver.navigate().to(driver.getCurrentUrl());
-		    Thread.sleep(2000);
 		    textPresent_Log(driver,"Review your itinerary",160);
 		    System.out.println(driver.switchTo().window(child_window).getCurrentUrl());
 		    Reporter.log(driver.switchTo().window(child_window).getCurrentUrl());
@@ -1101,7 +1107,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 			  safeType(driver,getObjectPayment("Bento_Itn_GV_Pin"),GV_pin);
 			  Reporter.log("Entered GV pin");
 			  safeClick(driver,getObjectPayment("Bento_Itn_GV_Apply"));
-			  textPresent_Log(driver,"has been redeemed for this booking",3);
+			  textPresent_Log(driver,"has been redeemed for this booking",10);
 			  Reporter.log("GV applied Successfully");
 			 }
 			else if(gv_coupon=="Coupon")
@@ -1114,7 +1120,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 				ele.sendKeys("DOMOW");
 				Reporter.log("Entered Coupon details");
 			   safeClick(driver,getObjectPayment("Bento_Itn_Coupon_Apply"));
-			   textPresent_Log(driver,"Great! You just saved",3);
+			   textPresent_Log(driver,"Great! You just saved",10);
 			   Reporter.log("Successfully applied coupon");
 			}
 			WebElement ele2=driver.findElement(getObjectPayment("Bento_Itn_Fare_Continue"));

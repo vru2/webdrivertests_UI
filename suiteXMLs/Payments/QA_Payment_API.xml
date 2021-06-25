@@ -14,6 +14,16 @@
       <class name="paymentsAPI.API_Navison_Air"/>      
     </classes>
 </test>
+
+<test name="API GW Failure Banner" preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_Fetch_GW_Failure"/>
+    </classes>
+</test>
+
+
+
+
 <test name="API UI config" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsAPI.API_UI_GetConfig_ConvFee"/>

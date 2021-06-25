@@ -255,6 +255,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String urlpromoActivate = "/promoservice/v1/promogroups/Q210428976934";
 	String urlpromoUsed = "/payments/wallet/promo/used?tripRef=Q190702311622";
 	String urlFetchTripStatus = "/paymentservice/service/status/xml/Q210302910382.ref";
+	String urlFetchGWFailure = "/paymentservice/bannerDetails";
 	
 	String urlPayFlyin = "/paymentservice/gw/v1/pay";
 
@@ -758,6 +759,12 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			
 			Reporter.log(urlPay);	
 			url= urlFetchTripStatus;
+		}
+		else if(payType.equalsIgnoreCase("FetchGWFailure")) {
+			RestAssured.baseURI =urlPay;
+			
+			Reporter.log(urlPay);	
+			url= urlFetchGWFailure;
 		}
 
 		else if(payType.equalsIgnoreCase("EMIRazorpay")) {
@@ -2032,6 +2039,14 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			
 			}
 		}
+		else if(payType.equalsIgnoreCase("FetchGWFailure")) {
+			if(!(resp.body().asString().contains("UPI payments are having high failure rate, try other payment modes"))){
+				Assert.assertTrue(false);
+			
+			}
+		}
+		
+		
 		
 		else if(payType.equalsIgnoreCase("ROR_Mis_expreports")) {
 			if(!(resp.body().asString().contains("Q1903221094")&&resp.body().asString().contains("settlement_date"))){

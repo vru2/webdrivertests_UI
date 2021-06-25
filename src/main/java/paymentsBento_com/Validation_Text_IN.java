@@ -52,6 +52,11 @@ public class Validation_Text_IN extends PaymentUI_Common_Bento{
 	@Test (priority=7)
 	public void BookingSummary_Validation_Text() throws Exception {
 		bento_Validation_Text(driver, "Booking_SUMMARY", "IN");		
+	}	
+	
+	@Test (priority=8)
+	public void gateWay_Failure_Banner_Validation_Text() throws Exception {
+		bento_Validation_Text(driver, "Failure_Banner", "IN");		
 	}
 	
 	/*@Test (priority=8)

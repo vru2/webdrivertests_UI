@@ -29,7 +29,7 @@ public class GV_Partial extends PaymentUI_Common_Bento{
 		bento_Select_PaymentType(driver, "NB");
 		//bento_Select_PaymentType(driver, "PayPal");
 		bento_Select_PaymentType(driver, "TW");
-		String GVText=getText(driver, By.xpath("//div[2]/div[2]/div[1]/div[10]/p[1]"));
+		String GVText=getText(driver, By.xpath("//div[@id='root']/div/main/div/div[3]/div[2]/div/div[10]/p"));
 		if(!GVText.contains("Gift card")&&GVText.contains("3000331035955930")) {
 			Reporter.log("GV is not displayed"+GVText);
 			Assert.assertTrue(false);

@@ -22,7 +22,7 @@ public class GV_Full extends PaymentUI_Common{
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);	  
 		refreshPage(driver);
-		String GVText=getText(driver, By.xpath("//div[3]/div[4]/div"));
+		String GVText=getText(driver, By.xpath("//div[@id='root']/div/main/div/div[3]/div[2]/div/div[10]/p"));
 		  if(!GVText.contains("Gift card")&&GVText.contains("3000331035955930")) {
 			Reporter.log("GV is not displayed"+GVText);
 			Assert.assertTrue(false);
@@ -38,12 +38,13 @@ public class GV_Full extends PaymentUI_Common{
 		
 		Reporter.log("Non of the payment types are displayed for full GV");
 		textPresent_Log(driver, "I understand and agree to the rules and restrictions of this fare", 2);
-		textPresent_Log(driver, "Booking policy", 2);
-		textPresent_Log(driver, "Privacy Policy", 1);
-		textPresent_Log(driver, "Terms", 1);		
-		textPresent_Log(driver, "Includes a convenience fee of ", 1);
-		Reporter.log("Includes a convenience fee of text is displayed");
-		String YouPay = getText(driver, By.cssSelector("p.fw-700.fs-6.flex.flex-end")); 
+		textPresent_Log(driver, "booking policy", 2);
+		textPresent_Log(driver, "privacy policy", 1);
+		textPresent_Log(driver, "terms", 1);		
+		//textPresent_Log(driver, "Includes a convenience fee of ", 1);
+		//Reporter.log("Includes a convenience fee of text is displayed");
+		//String YouPay = getText(driver, By.cssSelector("p.fw-700.fs-6.flex.flex-end")); 
+		String YouPay = getText(driver, By.xpath("//div[@id='root']/div/main/div/div[3]/div[2]/div/div/p[2]/span")); 
 		if (!YouPay.contains("0")) {
 			Reporter.log("Youpay doesn't contain 0 rs");
 			Assert.assertTrue(false);
@@ -53,16 +54,18 @@ public class GV_Full extends PaymentUI_Common{
 			Assert.assertTrue(false);
 		}
 		 Reporter.log("Youpay  contain 0 rs");
-		String ConvFee = getText(driver, By.cssSelector("p.note-block__message.fs-2"));
+			//String ConvFee = getText(driver, By.cssSelector("p.note-block__message.fs-2"));
+			String ConvFee = getText(driver, By.xpath("//div[@id='root']/div/main/div/div[3]/div[2]/div/div[8]/p"));
 		if (!ConvFee.contains("150")) {
 			Reporter.log("ConvFee doesn't contain 150 rs");
 			Assert.assertTrue(false);
 		}else Reporter.log("ConvFee contain 150 rs");
-		if (!ConvFee.contains("Includes a convenience fee of")) {
+		/*if (!ConvFee.contains("Includes a convenience fee of")) {
 			Reporter.log("Includes a convenience fee of text not displayed");
 			Assert.assertTrue(false);
-		}else Reporter.log("Includes a convenience fee of text is displayed");
-		String Total = getText(driver, By.cssSelector("span.fs-6.fw-700"));
+		}else Reporter.log("Includes a convenience fee of text is displayed");*/
+		String Total = getText(driver, By.xpath("//div[@id='root']/div/main/div/div[3]/div/main/div[3]/div[3]/div/div/div/span"));
+		//String Total = getText(driver, By.cssSelector("span.fs-6.fw-700"));
 		if (!Total.contains("0")) {
 			Reporter.log("Total doesn't contain 0 rs");
 			Assert.assertTrue(false);

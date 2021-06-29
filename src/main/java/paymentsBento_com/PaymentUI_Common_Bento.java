@@ -429,7 +429,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 			}
 			if(Domain.equals("FLYINAR")) {
 				bento_Select_PaymentType_AR(driver, "CC");
-				textPresent_Log(driver, "ادفع لإتمام الحجز", 1);
+				textPresent_Log(driver, "ادفع لإتمام الحجز", 1); 
 				textPresent_Log(driver, "ستبدال نقاط قطاف لهذا الحجز", 1);
 				textPresent_Log(driver, "بطاقة مدى / البطاقة", 1);
 				textPresent_Log(driver, "الدفع بالبطاقة", 1);
@@ -691,7 +691,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 			
 		}
 		else if(PaymentType.equalsIgnoreCase("Failure_Banner")) {
-			textPresent_Log(driver, "UPI payments are having high failure rate, try other payment modes", 1);
+			textPresent_Log(driver, "UPI payments are having high failure rate, try other payment mode", 1);
 			elementPresent_log(driver, By.xpath("//div[@id='root']/div/main/div/div[2]/div/div/div[2]"), "Note", 1);
 			elementPresent_log(driver, By.xpath("//div[@id='root']/div/main/div/div[2]/div/div/div/div"), "Text G/W failure", 1);
 		}
@@ -702,7 +702,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 		if(PaymentType.equalsIgnoreCase("CC")) {
 			bento_Select_PaymentType(driver, "CC");		
 			safeClick(driver, getObjectPayment("Bento_Pay_Button"));
-			textPresent_Log(driver, "Please enter a valid card number", 1);
+			textPresent_Log(driver, "Please enter a valid card number", 5);
 			textPresent_Log(driver, "Please enter a valid expiry month", 1);
 			textPresent_Log(driver, "Please enter a valid expiry year", 1);
 			textPresent_Log(driver, "Please enter a valid name", 1);
@@ -733,8 +733,9 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 		else if(PaymentType.equalsIgnoreCase("SC")) {
 			driver.manage().addCookie(cookie_Parl_Wallet);
 			refreshPage(driver);		
-			Thread.sleep(5000);
-			smartClick(driver, By.cssSelector("span.checkbox__mark.bs-border.bc-neutral-500.bw-1.ba"));
+			Thread.sleep(1000);
+			bento_Deselect_Wallet();
+			//smartClick(driver, By.cssSelector("span.checkbox__mark.bs-border.bc-neutral-500.bw-1.ba"));
 			bento_Select_PaymentType(driver, "SC");		
 			safeClick(driver, getObjectPayment("Bento_Pay_Button"));
 			textPresent_Log(driver, "Enter CVV number", 1);
@@ -898,7 +899,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 			else if(PaymentType.equalsIgnoreCase("TW")) {
 				bento_Select_PaymentType(driver, "TW");
 				safeClick(driver, By.xpath("//div[1]/div[2]/div"));
-				safeClick(driver, By.xpath("//div[2]/div[2]/div"));
+				safeClick(driver, By.xpath("//div[2]/div[2]/div")); 
 				safeClick(driver, By.xpath("//div[3]/div[2]/div"));
 				safeClick(driver, By.xpath("//div[4]/div[2]/div"));
 				safeClick(driver, By.xpath("//div[5]/div[2]/div"));
@@ -956,7 +957,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 			Reporter.log("BookingPolicyUrl URL : "+BookingPolicyUrl);
 			Assert.assertTrue(false);
 		}
-		textPresent_Log(driver, "Cleartrip flight booking policy", 5);
+		//textPresent_Log(driver, "Cleartrip flight booking policy", 5);
 		}
 		
 		

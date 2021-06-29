@@ -314,9 +314,10 @@ public class PaymentUI_Common extends PaymentNodeJS{
 		safeSelect(driver, getObjectPayment("PaymentPage_ADCB_EXP_Year"), platform.value("ADCBCard_Expiry_Year"));
 		safeType(driver, getObjectPayment("PaymentPage_ADCB_CardName"), "test");
 		safeType(driver, getObjectPayment("PaymentPage_ADCB_CVV"), platform.value("ADCBCard_CVV"));
-		String CheckBalance = getText(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
-		Assert.assertEquals(CheckBalance, "Check TouchPoint balance");		
 		safeClick(driver, getObjectPayment("PaymentPage_ADCB_CheckBlance_Btn"));		
+		Thread.sleep(5000);
+		String CheckBalance = getText(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
+		Assert.assertEquals(CheckBalance, "Check TouchPoint balance");		 
 		Reporter.log("Check balance is Clicked");
 		if(textPresent(driver, "You have provided incorrect card details", 10)) {
 			Reporter.log("You have provided incorrect card details");

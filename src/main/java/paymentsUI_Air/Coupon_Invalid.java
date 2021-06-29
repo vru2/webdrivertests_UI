@@ -22,8 +22,9 @@ public class Coupon_Invalid extends PaymentUI_Common{
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
 		refreshPage(driver);
-		safeClickList(driver, getObjectPayment("PayUI_Pay_Tabs"), "Net Banking");	
-		String CouponText = getText(driver, By.xpath("//div[4]/div"));
+		elementVisible(driver, getObjectPayment("PayUI_Pay_Tabs"), 20);
+		safeClickList(driver, getObjectPayment("PayUI_Pay_Tabs"), "Net banking");	
+		String CouponText = getText(driver, By.xpath("//div[10]/p"));
 		if(!CouponText.contains("DOMOW")) {
 			Reporter.log("Copon text is not displayed "+CouponText);
 			Assert.assertTrue(false);

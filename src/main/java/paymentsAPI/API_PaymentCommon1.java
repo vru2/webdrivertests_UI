@@ -749,40 +749,34 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 		else if(payType.equalsIgnoreCase("EMIBanks")) {
 			RestAssured.baseURI =urlPay;
-			
 			Reporter.log(urlPay);	
 			url= urlpromoUsed;
 		}
 
 		else if(payType.equalsIgnoreCase("FetchTripStatus")) {
-			RestAssured.baseURI =urlPay;
-			
+			RestAssured.baseURI =urlPay;			
 			Reporter.log(urlPay);	
 			url= urlFetchTripStatus;
 		}
 		else if(payType.equalsIgnoreCase("FetchGWFailure")) {
-			RestAssured.baseURI =urlPay;
-			
+			RestAssured.baseURI =urlPay;			
 			Reporter.log(urlPay);	
 			url= urlFetchGWFailure;
 		}
 
 		else if(payType.equalsIgnoreCase("EMIRazorpay")) {
-			RestAssured.baseURI =urlPay;
-			
+			RestAssured.baseURI =urlPay;			
 			Reporter.log(urlPay);	
 			url= url_EMI_GW_Razorpay;
 		}
 		else if(payType.equalsIgnoreCase("EMINoon")) {
-			RestAssured.baseURI =urlPay;
-			
+			RestAssured.baseURI =urlPay;			
 			Reporter.log(urlPay);	
 			url= url_EMI_GW_Noon;
 		}
 		
 		
 		else if(payType.equalsIgnoreCase("PromoUsed")) {
-
 			Reporter.log(urlReportingTS);	
 			RestAssured.baseURI =urlPromo_Used;
 			url= urlpromoUsed;
@@ -803,7 +797,6 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			url = urlFlyin_Wallet;
 		}
 		Reporter.log(url);	
-
 		request = RestAssured.given().
 				when().
 				log().all().
@@ -853,23 +846,17 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			RestAssured.baseURI =urlReporting;
 			url= urlROR_MultiSearch_Pay;
 			Reporter.log(urlReporting+url);
-		}	
-		
-		
-
+		}
 		else if(payType.equalsIgnoreCase("ROR_WalletFetch")) {
 			RestAssured.baseURI =urlWallet;
 			url= urlROR_MultiSearch_TripRef_Reads;
 			Reporter.log(urlReporting+url);
 		}
-
-
 		else if(payType.equalsIgnoreCase("ROR_MultiSearch_TripRef_Reads")) {
 			RestAssured.baseURI =urlReporting;
 			url= urlROR_MultiSearch_TripRef_Reads;
 			Reporter.log(urlReporting+url);
 		}
-		
 		else if(payType.equalsIgnoreCase("ROR_WalletGetV2_Reads")) {
 			RestAssured.baseURI =urlPay;
 			Reporter.log(urlWallet);
@@ -894,10 +881,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		else if(payType.equalsIgnoreCase("ROR_GV_Details")) {
 			RestAssured.baseURI =urlReporting;
 			url= urlROR_GV_Details_Reads;
-			Reporter.log(urlPay+url);
-			
+			Reporter.log(urlPay+url);	
 		}
-
 		else if(payType.equalsIgnoreCase("ROR_Refund_Details")) {
 			RestAssured.baseURI =urlReporting;			
 			url= urlROR_Refund_Reads;
@@ -917,9 +902,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			RestAssured.baseURI =urlReporting;			
 			url= urlROR_Mis_ExpReports;
 			//Reporter.log(urlPay=url);
-		}
-		
-		
+		}		
 		Reporter.log(url);
 		System.out.println(url);
 		request = RestAssured.get(url);

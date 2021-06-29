@@ -30,7 +30,7 @@ public class Validation_Images_IN extends PaymentUI_Common_Bento{
 	}
 	
 	@Test (priority=3)
-	public void TW_sValidation_Images() throws Exception {
+	public void TW_Validation_Images() throws Exception {
 		bento_Validation_Images(driver, "TW", "");
 	}
 	

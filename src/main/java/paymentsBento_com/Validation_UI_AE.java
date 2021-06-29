@@ -34,7 +34,7 @@ public class Validation_UI_AE extends PaymentUI_Common_Bento{
 	@Test (priority=3)
 	public void ADCB_Validation_Text() throws Exception {
 		bento_Validation_UI(driver,"ADCB");		
-	}
+	} 
 	
 	@AfterMethod (alwaysRun = true)
 	public void afterMethod(ITestResult _result) throws Exception {

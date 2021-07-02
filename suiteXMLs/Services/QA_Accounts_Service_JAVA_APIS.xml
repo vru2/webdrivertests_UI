@@ -151,6 +151,11 @@
 			<class
 				name="accountsAPI.Account_Service_Cleartrip_confirmedtravlerwithActivestatus" />
 			<class name="accountsAPI.Account_Service_GetuserdetailsbyAPIKey" />
+			<class name="accountsAPI.Account_Service_GET_UserbyCookie_CleartripUser" />
+			<class name="accountsAPI.Account_Service_GET_UserbyCookie_FlyinUser" />
+			<class name="accountsAPI.Account_Service_UserExistence_withEmailIDandDomain" />
+			<class name="accountsAPI.Account_Service_UserExistence_withID" />
+			<class name="accountsAPI.Account_Service_Update_User_Cleartrip_B2Buser" />
 		</classes>
 	</test>
 

@@ -46,13 +46,13 @@ public class GV_Partial extends PaymentUI_Common_Bento{
 		textPresent_Log(driver, "terms", 1);		
 		textPresent_Log(driver, "Convenience fee", 1);
 		Reporter.log("Includes a convenience fee of text is displayed");
-		String YouPay = getText(driver, By.xpath("//div[2]/div/div[1]/div[1]/p[2]")); 
+		String YouPay = getText(driver, By.xpath("//div[@id='root']/div/main/div/div[3]/div[2]/div/div/p[2]/span")); 
 		if (!YouPay.contains("650")) {
 			Reporter.log("Youpay doesn't contain 650 rs");
 			Assert.assertTrue(false);
 		}
 	
-		String ConvFee = getText(driver, By.xpath("//div[2]/div/div[1]/div[8]/p"));
+		String ConvFee = getText(driver, By.xpath("//div[@id='root']/div/main/div/div[3]/div[2]/div/div[8]/p"));
 		if (!ConvFee.contains("150")) {
 			Reporter.log("ConvFee doesn't contain 150 rs");
 			Assert.assertTrue(false);

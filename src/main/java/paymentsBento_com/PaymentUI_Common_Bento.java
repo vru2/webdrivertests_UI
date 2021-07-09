@@ -1228,8 +1228,9 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 	    }
 	}
 
-	public void bento_paymentpage(RemoteWebDriver driver,String PaymentType) throws Exception
+	public String bento_paymentpage(RemoteWebDriver driver,String PaymentType) throws Exception
 	{
+		String payURL = driver.getCurrentUrl();
 		Thread.sleep(2000);
 	    driver.manage().addCookie(cookie_Bento_Payment);
 	    driver.navigate().refresh();
@@ -1347,6 +1348,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 	    textPresent_Log(driver,"Your booking is done",5);
 	    Reporter.log("Payment done successfully");
 	}
+	return payURL;
 	}
 
 	public void confirmation_page(RemoteWebDriver driver) throws Exception

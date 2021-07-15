@@ -1,5 +1,6 @@
 package common;
 
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -16,6 +17,7 @@ public class CachedProperties {
 	private static CachedProperties platformInstance;
 	private static CachedProperties rubyAPIProperties;
 	
+//	FileReader iStream = new FileReader(file);
 	public static CachedProperties instance() {
 		if (cachedProperties == null) {
 			try {
@@ -118,7 +120,8 @@ public class CachedProperties {
 		// injection
 		// and we do not care about testing it should be fine. <Nilesh>
 		properties = new Properties();
-		InputStream iStream = this.getClass().getClassLoader().getResourceAsStream("common.properties");
+		FileReader iStream = new FileReader("/Webdrivertests/resources/common.properties");
+		//InputStream iStream = this.getClass().getClassLoader().getResourceAsStream("common.properties");
 		properties.load(iStream);
 		overrideFromEnvironment();
 	}
@@ -128,7 +131,8 @@ public class CachedProperties {
 		// injection
 		// and we do not care about testing it should be fine. <Nilesh>
 		properties = new Properties();
-		InputStream iStream = this.getClass().getClassLoader().getResourceAsStream(resource);
+		FileReader iStream = new FileReader("/Webdrivertests/resources/"+resource); 
+		//InputStream iStream = this.getClass().getClassLoader().getResourceAsStream(resource);
 		properties.load(iStream);
 	}
 

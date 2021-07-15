@@ -518,6 +518,7 @@ String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\
 		//headers.put("Content-Type", "application/json");
 
 		headers.put("caller", "b2c");
+		headers.put("domain", "www.cleartrip.com");
 		headers.put("accept", "*/*");
 		headers.put("Cookie", "ct-auth=14h3Zwm%2B2m0fBzyQeQn%2FXqcUty%2BoqBDt9L7dwOwvlyGZAQCex3ZJyQerOck3bjIm5p2O26DIi0XAcAs6ZeqDZXHPxuPqa7Swl2cHA4l7jDj88LkU8NW15kjEmK7K1l%2BXA6Y%2Fqd7EJrWN8g%2BPa1oE9BFiELwqjHk3JbjfBjVgq%2Bg%3D'");
 
@@ -529,6 +530,7 @@ String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\
 
 		headers.put("caller", "b2c");
 		headers.put("accept", "*/*");
+		headers.put("domain", "www.flyin.com");
 		headers.put("Cookie", "ct-auth=mkj8MS2%2BTapJE24Ajwku9e8Xq6TcL%2FyGWqlnfqeeTaPzcX1SLH%2F03hAR1UXNy2v6c2e%2BBGsdeZxOJgBsje5fJYVyNCbywxI5ag1Otp408SU6DjET1jbgCiH9PrcmEa%2BNSUdVO8JyTgDwm1ibfyU4aLvAMYjzA1Mz368EugAeJD5JbZQnUHw78LKUbmBcJ3KV");
 		return headers;
 	}

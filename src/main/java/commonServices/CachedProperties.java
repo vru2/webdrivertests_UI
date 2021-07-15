@@ -249,8 +249,8 @@ public class CachedProperties {
 		// injection
 		// and we do not care about testing it should be fine. <Nilesh>
 		properties = new Properties();
-		FileReader iStream = new FileReader("/Webdrivertests/resources/common.properties");
-//		InputStream iStream = this.getClass().getClassLoader().getResourceAsStream("common.properties");
+		//FileReader iStream = new FileReader("/Webdrivertests/resources/common.properties");
+	InputStream iStream = this.getClass().getClassLoader().getResourceAsStream("common.properties");
 		properties.load(iStream);
 		overrideFromEnvironment();
 	}
@@ -260,8 +260,8 @@ public class CachedProperties {
 		// injection
 		// and we do not care about testing it should be fine. <Nilesh>
 		properties = new Properties();
-		FileReader iStream = new FileReader("/Webdrivertests/resources/"+resource);
-//		InputStream iStream = this.getClass().getClassLoader().getResourceAsStream("/Webdrivertests/resources/"+resource);
+	//	FileReader iStream = new FileReader("/Webdrivertests/resources/"+resource);
+		InputStream iStream = this.getClass().getClassLoader().getResourceAsStream("/Webdrivertests/resources/"+resource);
 		properties.load(iStream);
 	}
 

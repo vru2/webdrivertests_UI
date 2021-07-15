@@ -5,32 +5,32 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-public class CachedProperties {
+public class CachedPropertiesTemp {
 
-	private static CachedProperties cachedProperties;
-	private static CachedProperties dataProperties;
-	private static CachedProperties dbProperties;
-	private static CachedProperties cacheUrlProperties;
-	private static CachedProperties ORProperties;
-	private static CachedProperties ORPropertiesAir;
-	private static CachedProperties ORPropertiesHotels;
-	private static CachedProperties ORPropertiesHotelsPWA;
-	private static CachedProperties ORPropertiesLocals;
-	private static CachedProperties ORPropertiesTrains;
-	private static CachedProperties ORPropertiesPayment;	
-	private static CachedProperties ORPropertiesPlatform;	
-	private static CachedProperties rubyAPIProperties;
-	private static CachedProperties apiPayloadProperties;
-	private static CachedProperties campLocalProperties;
-	private static CachedProperties platformInstance;
-	private static CachedProperties ctSuiteProperties;
-	private static CachedProperties orCtSuiteProperties;
+	private static CachedPropertiesTemp cachedProperties;
+	private static CachedPropertiesTemp dataProperties;
+	private static CachedPropertiesTemp dbProperties;
+	private static CachedPropertiesTemp cacheUrlProperties;
+	private static CachedPropertiesTemp ORProperties;
+	private static CachedPropertiesTemp ORPropertiesAir;
+	private static CachedPropertiesTemp ORPropertiesHotels;
+	private static CachedPropertiesTemp ORPropertiesHotelsPWA;
+	private static CachedPropertiesTemp ORPropertiesLocals;
+	private static CachedPropertiesTemp ORPropertiesTrains;
+	private static CachedPropertiesTemp ORPropertiesPayment;	
+	private static CachedPropertiesTemp ORPropertiesPlatform;	
+	private static CachedPropertiesTemp rubyAPIProperties;
+	private static CachedPropertiesTemp apiPayloadProperties;
+	private static CachedPropertiesTemp campLocalProperties;
+	private static CachedPropertiesTemp platformInstance;
+	private static CachedPropertiesTemp ctSuiteProperties;
+	private static CachedPropertiesTemp orCtSuiteProperties;
 
 	// currently not capable of handling multithreaded scenarios.
-	public static CachedProperties instance() {
+	public static CachedPropertiesTemp instance() {
 		if (cachedProperties == null) {
 			try {
-				cachedProperties = new CachedProperties();
+				cachedProperties = new CachedPropertiesTemp();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -38,10 +38,10 @@ public class CachedProperties {
 		return cachedProperties;
 	}
 
-	public static CachedProperties dataInstance() {
+	public static CachedPropertiesTemp dataInstance() {
 		if (dataProperties == null) {
 			try {
-				dataProperties = new CachedProperties("dataFile.properties");
+				dataProperties = new CachedPropertiesTemp("dataFile.properties");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -49,10 +49,10 @@ public class CachedProperties {
 		return dataProperties;
 	}
 
-	public static CachedProperties dbInstance() {
+	public static CachedPropertiesTemp dbInstance() {
 		if (dbProperties == null) {
 			try {
-				dbProperties = new CachedProperties("db.properties");
+				dbProperties = new CachedPropertiesTemp("db.properties");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -60,10 +60,10 @@ public class CachedProperties {
 		return dbProperties;
 	}
 
-	public static CachedProperties cacheUrlInstance() {
+	public static CachedPropertiesTemp cacheUrlInstance() {
 		if (cacheUrlProperties == null) {
 			try {
-				cacheUrlProperties = new CachedProperties("cacheUrl.properties");
+				cacheUrlProperties = new CachedPropertiesTemp("cacheUrl.properties");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -71,10 +71,10 @@ public class CachedProperties {
 		return cacheUrlProperties;
 	}
 
-	public static CachedProperties objectReportInstance() {
+	public static CachedPropertiesTemp objectReportInstance() {
 		if (ORProperties == null) {
 			try {
-				ORProperties = new CachedProperties("objectRepository.properties");
+				ORProperties = new CachedPropertiesTemp("objectRepository.properties");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -82,10 +82,10 @@ public class CachedProperties {
 		return ORProperties;
 	}
 
-	public static CachedProperties objectReportInstanceAir() {
+	public static CachedPropertiesTemp objectReportInstanceAir() {
 		if (ORPropertiesAir == null) {
 			try {
-				ORPropertiesAir = new CachedProperties("objectRepositoryAir.properties");
+				ORPropertiesAir = new CachedPropertiesTemp("objectRepositoryAir.properties");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -93,10 +93,10 @@ public class CachedProperties {
 		return ORPropertiesAir;
 	}
 
-	public static CachedProperties objectReportInstanceHotels() {
+	public static CachedPropertiesTemp objectReportInstanceHotels() {
 		if (ORPropertiesHotels == null) {
 			try {
-				ORPropertiesHotels = new CachedProperties("objectRepositoryHotels.properties");
+				ORPropertiesHotels = new CachedPropertiesTemp("objectRepositoryHotels.properties");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -104,10 +104,10 @@ public class CachedProperties {
 		return ORPropertiesHotels;
 	}
 
-	public static CachedProperties objectReportInstanceHotelsPWA() {
+	public static CachedPropertiesTemp objectReportInstanceHotelsPWA() {
 		if (ORPropertiesHotelsPWA == null) {
 			try {
-				ORPropertiesHotelsPWA = new CachedProperties("objectRepositoryHotelsPWA.properties");
+				ORPropertiesHotelsPWA = new CachedPropertiesTemp("objectRepositoryHotelsPWA.properties");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -115,10 +115,10 @@ public class CachedProperties {
 		return ORPropertiesHotelsPWA;
 	}
 
-	public static CachedProperties objectReportInstanceLocals() {
+	public static CachedPropertiesTemp objectReportInstanceLocals() {
 		if (ORPropertiesLocals == null) {
 			try {
-				ORPropertiesLocals = new CachedProperties("objectRepositoryLocals.properties");
+				ORPropertiesLocals = new CachedPropertiesTemp("objectRepositoryLocals.properties");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -126,10 +126,10 @@ public class CachedProperties {
 		return ORPropertiesLocals;
 	}
 
-	public static CachedProperties objectReportInstanceTrains() {
+	public static CachedPropertiesTemp objectReportInstanceTrains() {
 		if (ORPropertiesTrains == null) {
 			try {
-				ORPropertiesTrains = new CachedProperties("objectRepositoryTrains.properties");
+				ORPropertiesTrains = new CachedPropertiesTemp("objectRepositoryTrains.properties");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -137,10 +137,10 @@ public class CachedProperties {
 		return ORPropertiesTrains;
 	}
 	
-	public static CachedProperties objectReportInstancePayment() {
+	public static CachedPropertiesTemp objectReportInstancePayment() {
 		if (ORPropertiesPayment== null) {
 			try {
-				ORPropertiesPayment = new CachedProperties("objectRepositoryPayment.properties");
+				ORPropertiesPayment = new CachedPropertiesTemp("objectRepositoryPayment.properties");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -149,10 +149,10 @@ public class CachedProperties {
 	}
 	
 
-	public static CachedProperties objectReportInstancePlatform() {
+	public static CachedPropertiesTemp objectReportInstancePlatform() {
 		if (ORPropertiesPlatform== null) {
 			try {
-				ORPropertiesPlatform = new CachedProperties("objectRepositoryPlatform.properties");
+				ORPropertiesPlatform = new CachedPropertiesTemp("objectRepositoryPlatform.properties");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -163,10 +163,10 @@ public class CachedProperties {
 	
 	
 
-	public static CachedProperties getTrip() {
+	public static CachedPropertiesTemp getTrip() {
 		if (rubyAPIProperties == null) {
 			try {
-				rubyAPIProperties = new CachedProperties("rubyAPITripId.properties");
+				rubyAPIProperties = new CachedPropertiesTemp("rubyAPITripId.properties");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -174,10 +174,10 @@ public class CachedProperties {
 		return rubyAPIProperties;
 	}
 
-	public static CachedProperties getapiPayload() {
+	public static CachedPropertiesTemp getapiPayload() {
 		if (apiPayloadProperties == null) {
 			try {
-				apiPayloadProperties = new CachedProperties("apiPayload.properties");
+				apiPayloadProperties = new CachedPropertiesTemp("apiPayload.properties");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -186,10 +186,10 @@ public class CachedProperties {
 	}
 
 	// currently not capable of handling multithreaded scenarios.
-	public static CachedProperties instance(InputStream stream) {
+	public static CachedPropertiesTemp instance(InputStream stream) {
 		if (cachedProperties == null) {
 			try {
-				cachedProperties = new CachedProperties(stream);
+				cachedProperties = new CachedPropertiesTemp(stream);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -197,10 +197,10 @@ public class CachedProperties {
 		return cachedProperties;
 	}
 
-	public static CachedProperties campLocalInstance() {
+	public static CachedPropertiesTemp campLocalInstance() {
 		if (campLocalProperties == null) {
 			try {
-				campLocalProperties = new CachedProperties("campLocal.properties");
+				campLocalProperties = new CachedPropertiesTemp("campLocal.properties");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -208,10 +208,10 @@ public class CachedProperties {
 		return campLocalProperties;
 	}
 	
-	public static CachedProperties platformInstance() {
+	public static CachedPropertiesTemp platformInstance() {
 		if (platformInstance == null) {
 			try {
-				platformInstance = new CachedProperties("platform.properties");
+				platformInstance = new CachedPropertiesTemp("platform.properties");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -220,10 +220,10 @@ public class CachedProperties {
 	}
 	
 	
-	public static CachedProperties ctsuite() {
+	public static CachedPropertiesTemp ctsuite() {
 		if (ctSuiteProperties == null) {
 			try {
-				ctSuiteProperties = new CachedProperties("ctSuite.properties");
+				ctSuiteProperties = new CachedPropertiesTemp("ctSuite.properties");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -231,10 +231,10 @@ public class CachedProperties {
 		return ctSuiteProperties;
 	}
 	
-	public static CachedProperties objectReposCtSuite() {
+	public static CachedPropertiesTemp objectReposCtSuite() {
 		if (orCtSuiteProperties == null) {
 			try {
-				orCtSuiteProperties = new CachedProperties("objectRepositoryCtSuite.properties");
+				orCtSuiteProperties = new CachedPropertiesTemp("objectRepositoryCtSuite.properties");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -244,28 +244,28 @@ public class CachedProperties {
 	
 	private Properties properties;
 
-	private CachedProperties() throws IOException {
+	private CachedPropertiesTemp() throws IOException {
 		// Bad way of doing things in constructor but since we do not use any
 		// injection
 		// and we do not care about testing it should be fine. <Nilesh>
 		properties = new Properties();
-		//FileReader iStream = new FileReader("/Webdrivertests/resources/common.properties");
-	InputStream iStream = this.getClass().getClassLoader().getResourceAsStream("common.properties");
+		FileReader iStream = new FileReader("/Webdrivertests/resources/common.properties");
+	//InputStream iStream = this.getClass().getClassLoader().getResourceAsStream("common.properties");
 		properties.load(iStream);
 		overrideFromEnvironment();
 	}
 
-	private CachedProperties(String resource) throws IOException {
+	private CachedPropertiesTemp(String resource) throws IOException {
 		// Bad way of doing things in constructor but since we do not use any
 		// injection
 		// and we do not care about testing it should be fine. <Nilesh>
 		properties = new Properties();
-	//	FileReader iStream = new FileReader("/Webdrivertests/resources/"+resource);
-		InputStream iStream = this.getClass().getClassLoader().getResourceAsStream("/Webdrivertests/resources/"+resource);
+		FileReader iStream = new FileReader("/Webdrivertests/resources/"+resource);
+	//	InputStream iStream = this.getClass().getClassLoader().getResourceAsStream("/Webdrivertests/resources/"+resource);
 		properties.load(iStream);
 	}
 
-	private CachedProperties(InputStream stream) throws IOException {
+	private CachedPropertiesTemp(InputStream stream) throws IOException {
 		properties = new Properties();
 		properties.load(stream);
 		overrideFromEnvironment();

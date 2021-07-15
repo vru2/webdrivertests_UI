@@ -21,7 +21,6 @@ public class PWA_Coupon extends PaymentUI_Common{
 	@Test (priority=0)
 	public void PWA_CouponInvalid() throws Exception {
 		String PayUrl = getPayUI("AirCoupon", "");
-		System.out.println(PayUrl);
 		driver.manage().deleteAllCookies(); 
 		driver.get(PayUrl);
 		refreshPage(driver);

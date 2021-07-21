@@ -447,8 +447,8 @@ public class Mobile extends IndiaHotels {
 
 	public void pwa_Air_Homepage(RemoteWebDriver driver, String FromCity, String ToCity, String From_Date,
 			String To_Date, String Adult1, String Child1, String Infants, String triptype) throws Exception {
-		safeClick(driver, By.xpath("//a/div[2]/h5[contains(text(),'Flights')]"));
-		System.out.println("Clicked on flights");
+		//safeClick(driver, By.xpath("//a/div[2]/h5[contains(text(),'Flights')]"));
+		//System.out.println("Clicked on flights");
 		int x = 0;
 		if (triptype.equalsIgnoreCase("rt")) { 
 			//	safeClick(driver, By.xpath("//*[text()='Round trip']"));

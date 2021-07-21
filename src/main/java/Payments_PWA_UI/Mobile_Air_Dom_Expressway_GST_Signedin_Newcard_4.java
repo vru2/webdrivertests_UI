@@ -30,7 +30,7 @@ public class Mobile_Air_Dom_Expressway_GST_Signedin_Newcard_4 extends Mobile{
 		  safeClick(driver,By.xpath("//div[@id='branch-banner-close1']"));
 	  }*/
 		
-    mobileCom_SignIn(driver);
+   // mobileCom_SignIn(driver);
     driver.get(baseUrl);
     pwa_Air_Homepage(driver, FromCity, ToCity, From_Date, To_Date, Adults, Childrens,Infants,"");
    // mobileCom_Air_HomepageSearch_Oneway(driver, FromCity, ToCity, From_Date, To_Date, Adults, Childrens,Infants);

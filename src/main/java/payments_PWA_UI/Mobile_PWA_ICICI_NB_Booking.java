@@ -1,4 +1,4 @@
-package Payments_PWA_UI;
+package payments_PWA_UI;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

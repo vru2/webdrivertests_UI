@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PWA " parallel="tests"
+	preserve-order="true" thread-count="5">
+
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="common.RemoveDuplicateResults" />
+		<listener class-name="common.RetryListener" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+	</listeners>
+	<test name="PWA" parallel="true">
+		<classes>
+			
+			<class name="payments_PWA_UI.Mobile_Air_Dom_Expressway_GST_Signedin_Newcard_4" />
+			<class name="payments_PWA_UI.Mobile_PWA_ICICI_NB_Booking" />
+
+		</classes>
+	</test>
+</suite>

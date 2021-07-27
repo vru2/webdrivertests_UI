@@ -254,14 +254,7 @@
 
 		</classes>
 	</test>
-	<test name="PWA" parallel="true">
-		<classes>
-
-			<class name="Payments_PWA_UI.Mobile_Air_Dom_Expressway_GST_Signedin_Newcard_4" />
-			<class name="Payments_PWA_UI.Mobile_PWA_ICICI_NB_Booking" />
-			
-		</classes>
-	</test>
+	
 
 	<!-- <test name="Account_Service_FlyinV2_Signin" parallel="true"> <classes> 
 		<class name="accountsAPI.Account_Service_FlyinV2_Signin" /> </classes> </test> 

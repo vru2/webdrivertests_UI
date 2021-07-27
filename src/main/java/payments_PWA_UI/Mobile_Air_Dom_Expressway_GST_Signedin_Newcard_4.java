@@ -1,4 +1,4 @@
-package Payments_PWA_UI;
+package payments_PWA_UI;
 import domainServices.Mobile;
 
 import org.openqa.selenium.By;

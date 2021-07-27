@@ -99,7 +99,7 @@ public class Trains extends WrapperMethod {
 				safeType(driver, getObject("CorpCom_SignIN_Password"), dataFile.value("TrainsPassword"));
 			} else if (common.value("host").contains("stg1")) {
 				safeType(driver, getObject("CorpCom_SignIN_EmailID"), dataFile.value("TrainsEmailID"));
-				safeType(driver, getObject("CorpCom_SignIN_Password"), dataFile.value("TrainsPassword"));
+				safeType(driver, getObject("CorpCom_SignIN_Password"), dataFile.value("cTrainsPassword"));
 
 			}
 			safeClick(driver, getObject("CorpCom_SignIN_SignIN_Button"));
@@ -1410,8 +1410,8 @@ public void B2cTrains_CalendraAvailability(RemoteWebDriver driver, String Dstati
 			Assert.assertTrue(false);
 		}
 		
-	if(textPresent(driver,"Oops! Railways’ online service is having hiccups",2)){
-			Reporter.log("Oops! Railways’ online service is having hiccups");
+	if(textPresent(driver,"Oops! Railwaysï¿½ online service is having hiccups",2)){
+			Reporter.log("Oops! Railwaysï¿½ online service is having hiccups");
 			Assert.assertTrue(false);
 	}
 		
@@ -1432,8 +1432,8 @@ public void B2cTrains_CalendraAvailability(RemoteWebDriver driver, String Dstati
 			Assert.assertTrue(false);
 		}
 		
-		if(textPresent(driver,"Oops! Railways’ online service is having hiccups",2)){
-			Reporter.log("Oops! Railways’ online service is having hiccups");
+		if(textPresent(driver,"Oops! Railwaysï¿½ online service is having hiccups",2)){
+			Reporter.log("Oops! Railwaysï¿½ online service is having hiccups");
 			Assert.assertTrue(false);
 		}
 		if(BoardStation != "Same")
@@ -2587,7 +2587,7 @@ public void B2cTrains_CalendraAvailability(RemoteWebDriver driver, String Dstati
 		//driver.get(driver.getCurrentUrl());
 		//driver.navigate().toString();
 
-		textPresent(driver, "Oops, your booking didn’t go through", 50);
+		textPresent(driver, "Oops, your booking didnï¿½t go through", 50);
 		elementVisible(driver, getObject("bookFailureTripID"), 5);
 		TripID = getText(driver,getObject("bookFailureTripID"));
 		//Reporter.log("Payment Success , Booking Cancelled . Trip ID = "+TripID);

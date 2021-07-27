@@ -10,8 +10,8 @@
 	</listeners>
 	<test name="PWA" parallel="true">
 		<classes>
-			
-			<class name="payments_PWA_UI.Mobile_Air_Dom_Expressway_GST_Signedin_Newcard_4" />
+			<!-- 
+			<class name="payments_PWA_UI.Mobile_Air_Dom_Expressway_GST_Signedin_Newcard_4" /> -->
 			<class name="payments_PWA_UI.Mobile_PWA_ICICI_NB_Booking" />
 
 		</classes>

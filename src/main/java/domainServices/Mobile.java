@@ -1,8 +1,4 @@
-// Framework - cleartrip Automation
-// Version -Web Driver 2.0
-// Creation Date - June, 2016
-// Author - Mohamed Faisal
-// Copyright © 2016 Cleartrip Travel. All rights reserved.
+
 package domainServices;
 
 import static org.testng.Assert.assertEquals;
@@ -41,6 +37,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.Point;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -369,7 +366,7 @@ public class Mobile extends IndiaHotels {
 					  * String convertedDate = dateFormat.format(c.getTime());
 					  */
 					 String a = Month.of(Integer.parseInt(convertedDate.split("-")[1])).name().toLowerCase();
-					 String b = String.valueOf(a.charAt(0)).toUpperCase();
+				String b = String.valueOf(a.charAt(0)).toUpperCase();
 					 System.out.println("b value=" + b);
 					 String z = a.replaceFirst(String.valueOf(a.charAt(0)), b);
 					 System.out.println("--------" + z + " " + convertedDate.split("-")[2]);
@@ -447,8 +444,9 @@ public class Mobile extends IndiaHotels {
 
 	public void pwa_Air_Homepage(RemoteWebDriver driver, String FromCity, String ToCity, String From_Date,
 			String To_Date, String Adult1, String Child1, String Infants, String triptype) throws Exception {
-		//safeClick(driver, By.xpath("//a/div[2]/h5[contains(text(),'Flights')]"));
-		//System.out.println("Clicked on flights");
+		driver.findElement(By.xpath("//div[@class='Sticky Sticky--top']/div/div[1]")).click();
+		safeClick(driver, By.xpath("//a/div[2]/h5[contains(text(),'Flights')]"));
+		System.out.println("Clicked on flights");
 		int x = 0;
 		if (triptype.equalsIgnoreCase("rt")) { 
 			//	safeClick(driver, By.xpath("//*[text()='Round trip']"));
@@ -1568,7 +1566,7 @@ public class Mobile extends IndiaHotels {
 		else 
 			Thread.sleep(3000);
 		{
-			if (elementPresent(driver, By.xpath("//div/ul//div/li[@role='menuitem'][4]"), 3)) {
+			if (elementPresent(driver, By.xpath("//div/ul//div/li[@role='menuitem'][4]"), 10)) {
 				driver.findElement(By.xpath("//div/ul//div/li[@role='menuitem'][2]")).click();
 			}
 			//driver.findElement(By.xpath("//li[@role='menuitem'][1]")).click();
@@ -2840,6 +2838,14 @@ public class Mobile extends IndiaHotels {
 			if(driver.findElement(By.xpath("//h5[contains(text(),'Booking confirmed')]")).isDisplayed())
 			{
 				System.out.println("Payment is Success and booking is confirmed");
+				Thread.sleep(4000);
+				waitForElement(driver, 10, By.xpath("//ul/li[3][1]/p[2]"));
+				WebElement  driver1 = driver.findElement(By.xpath("//ul/li[3][1]/p[2]"));
+				String Tripref = driver1.getText();
+				System.out.println("The Tripref is : "+Tripref);
+				
+				//String getText = driver1.findElement(By.xpath("//ul/li[3][1]/p[2]")).getText(); 
+				//System.out.println("TripID : " + getText);
 			}
 			else
 			{

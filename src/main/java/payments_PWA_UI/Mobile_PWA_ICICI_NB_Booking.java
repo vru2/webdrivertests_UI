@@ -1,5 +1,10 @@
 package payments_PWA_UI;
 
+import static common.CachedProperties.instance;
+import static common.CachedProperties.cacheUrlInstance;
+
+import java.io.File;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.Month;
@@ -24,16 +29,36 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import common.CachedProperties;
+
 @Test
 public class Mobile_PWA_ICICI_NB_Booking 
 {
 	WebDriver driver;
+	public CachedProperties common = instance();
 	@BeforeClass
-	public void getMobileDriver()
+	public void getMobileDriver() throws IOException
 	{
-
-		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/exe/chromedriver.exe");
+		
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "//exe//chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
+		 if (common.value("browser").equalsIgnoreCase("CHROME")
+				&& common.value("mode").equalsIgnoreCase("local")&&common.value("headlessbrowser").equalsIgnoreCase("true")) {
+			// System.out.println("-------------"+System.getProperty("os.name"));
+			if (System.getProperty("os.name").contains("Windows")) {
+				File file = new File(".");
+				String filepath = file.getCanonicalPath() + "//exe//chromedriver.exe";
+				System.setProperty("webdriver.chrome.driver", filepath);
+			}else if(System.getProperty("os.name").contains("Linux")){
+				File file = new File(".");
+				String filepath = file.getCanonicalPath() + "//exe//chromedriver";
+				System.setProperty("webdriver.chrome.driver", filepath);
+			} else {
+				File file = new File(".");
+				String filepath = file.getCanonicalPath() + "//exe//chromedriver_mac";
+				System.setProperty("webdriver.chrome.driver", filepath);
+			}
+		}
 		options.addArguments("user-agent=Mozilla/5.0 (Windows Phone 10.0; Android 4.2.1; Microsoft; Lumia 640 XL LTE) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Mobile Safari/537.36 Edge/12.10166");
 		driver = new ChromeDriver(options);
 		driver.manage().deleteAllCookies();	

@@ -32,33 +32,19 @@ import org.testng.annotations.Test;
 import common.CachedProperties;
 
 @Test
-public class Mobile_PWA_ICICI_NB_Booking 
+public class Mobile_PWA_ICICI_NB_Booking  extends Mobile_PWA_Common
 {
-	WebDriver driver;
+	
 	public CachedProperties common = instance();
+	public RemoteWebDriver driver = null;
+	
 	@BeforeClass
-	public void getMobileDriver() throws IOException
+	public void getMobileDriver() throws IOException, InterruptedException
 	{
-		
+		this.driver = getDriver(driver);
+		baseUrl = getBaseUrl("com");		
 		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "//exe//chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
-		 if (common.value("browser").equalsIgnoreCase("CHROME")
-				&& common.value("mode").equalsIgnoreCase("local")&&common.value("headlessbrowser").equalsIgnoreCase("true")) {
-			// System.out.println("-------------"+System.getProperty("os.name"));
-			if (System.getProperty("os.name").contains("Windows")) {
-				File file = new File(".");
-				String filepath = file.getCanonicalPath() + "//exe//chromedriver.exe";
-				System.setProperty("webdriver.chrome.driver", filepath);
-			}else if(System.getProperty("os.name").contains("Linux")){
-				File file = new File(".");
-				String filepath = file.getCanonicalPath() + "//exe//chromedriver";
-				System.setProperty("webdriver.chrome.driver", filepath);
-			} else {
-				File file = new File(".");
-				String filepath = file.getCanonicalPath() + "//exe//chromedriver_mac";
-				System.setProperty("webdriver.chrome.driver", filepath);
-			}
-		}
 		options.addArguments("user-agent=Mozilla/5.0 (Windows Phone 10.0; Android 4.2.1; Microsoft; Lumia 640 XL LTE) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Mobile Safari/537.36 Edge/12.10166");
 		driver = new ChromeDriver(options);
 		driver.manage().deleteAllCookies();	
@@ -74,8 +60,9 @@ public class Mobile_PWA_ICICI_NB_Booking
 		System.out.println("We are currently on the following URL" +driver.getCurrentUrl());
 	}
 
-	public void mobilePWA_NB_bookflow() throws InterruptedException
+	public void mobilePWA_NB_bookflow() throws Exception
 	{
+		
 		driver.findElement(By.xpath("//div[@class='Sticky Sticky--top']/div/div[1]")).click();
 		driver.findElement(By.xpath("//a/div[2]/h5[contains(text(),'Flights')]")).click();
 		System.out.println("Clicked on flights");

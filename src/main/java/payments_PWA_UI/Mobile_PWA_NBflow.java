@@ -48,7 +48,7 @@ public class Mobile_PWA_NBflow extends Mobile_PWA_Common
 	}
 	@BeforeClass
 	public void startSelenium() throws Exception {
-		this.driver = getMobileDriver1(driver);
+		this.driver = getPWA(driver);
 		baseUrl = getBaseUrl("com");
 		driver.manage().window().maximize();
 		

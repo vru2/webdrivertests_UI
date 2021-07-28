@@ -156,6 +156,7 @@ public class Mobile_PWA_Common extends WrapperMethod
 			} 
 			else 
 			{
+				
 				Reporter.log("Payemnt page not loaded.Redirected to SRP "); 
 			}
 			driver.findElement(By.xpath("//button[contains(text(),'Choose another bank')]")).click();
@@ -188,7 +189,7 @@ public class Mobile_PWA_Common extends WrapperMethod
 			waitForElement(driver, 50, By.xpath("//h5[contains(text(),'Booking confirmed')]"));
 			Thread.sleep(5000);
 			String url = driver.getCurrentUrl();
-			System.out.println("---------" + url.split("itinerary")[1]);
+			//System.out.println("---------" + url.split("itinerary")[1]);
 		}
 	}		
 	private void waitForElement(RemoteWebDriver driver2, int i, By xpath) {

@@ -47,7 +47,7 @@ public class Mobile_PWA_Common extends WrapperMethod
 			driver.findElement(By.xpath("//*[text()='From']/parent::*/*[2]")).click();
 		}		
 		driver.findElement(By.xpath("//div[@class='Sticky Sticky--top']/div[2]/div[2]/input")).sendKeys("Bangalore");
-		Thread.sleep(1000);
+		Thread.sleep(4000);
 		driver.findElement(By.xpath("//li/p[1]")).click();
 		Thread.sleep(1000);
 		if (elementPresent(driver, By.xpath("//p[text()='To']"), 3)) {
@@ -57,7 +57,6 @@ public class Mobile_PWA_Common extends WrapperMethod
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//li/p[1]")).click();
 		Thread.sleep(1000);
-
 		if (elementPresent(driver, By.xpath("//*[text()='Depart']/parent::*/*[2]"), 10)){
 
 			driver.findElement(By.xpath("//*[text()='Depart']/parent::*/*[2]")).click();

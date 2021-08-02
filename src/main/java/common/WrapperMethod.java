@@ -384,6 +384,19 @@ public boolean GDS_Flight, B2B_GDS_Flight = false;
 				driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), createHeadlessChromeMobile());
 				driver.manage().deleteAllCookies();
 			}
+			
+			else if(System.getProperty("os.name").contains("Linux")){
+				File file = new File(".");
+				String filepath = file.getCanonicalPath() + "//exe//chromedriver";
+				System.setProperty("webdriver.chrome.driver", filepath);
+				ChromeOptions options = new ChromeOptions();
+				options.addArguments(
+						"--user-agent=Mozilla/5.0 (iPhone; U; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5");
+				driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), createHeadlessChromeMobile());
+				driver = new ChromeDriver(options);
+				driver.manage().deleteAllCookies();
+				
+			}
 			if (common.value("mobilebrowser").equalsIgnoreCase("firefox")
 					&& common.value("mode").equalsIgnoreCase("local")) {
 				String userAgent = "--user-agent=Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_3_2 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5";

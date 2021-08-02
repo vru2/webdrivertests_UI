@@ -16,7 +16,7 @@ import org.testng.annotations.Test;
 public class Mobile_PWA_NBflow extends Mobile_PWA_Common
 {
 	public RemoteWebDriver driver = null;
-	
+
 
 	@Test
 	public void pwa_flow() throws Exception 
@@ -27,9 +27,9 @@ public class Mobile_PWA_NBflow extends Mobile_PWA_Common
 		pwa_review_travellers(driver);
 		pwa_select_Payment_option(driver, "NB", "ICICI", "");
 		pwa_booking_confirmation_page(driver, "", "","");
-		
+
 	}
-	
+
 	@BeforeMethod
 	public void openBrowser()
 	{
@@ -39,7 +39,7 @@ public class Mobile_PWA_NBflow extends Mobile_PWA_Common
 
 	@AfterClass
 	public void closeSelenium() throws Exception {
-	browserClose(driver);
+		browserClose(driver);
 	}
 
 	@AfterMethod(alwaysRun = true)
@@ -51,8 +51,8 @@ public class Mobile_PWA_NBflow extends Mobile_PWA_Common
 		driver=(RemoteWebDriver) getMobileDriver1(driver);
 		baseUrl = getBaseUrl("com");
 		driver.manage().window().maximize();
-		
-		
+
+
 	}
 
 }

@@ -67,7 +67,7 @@ public class Mobile_PWA_Common extends WrapperMethod
 
 			driver.findElement(By.xpath("//*[text()='Depart']/parent::*/*[2]")).click();
 			Thread.sleep(2000);
-			driver.findElement(By.xpath("//div[@class='react-calendar__month-view'][2]/div/div/div/div[12]")).click();
+			driver.findElement(By.xpath("//div[@class='react-calendar__month-view'][4]/div/div/div/div[20]")).click();
 			Thread.sleep(2000);
 		}
 		waitForElementVisibility(driver,getObjectPlatform("PWA_travellers_select"),10);
@@ -95,12 +95,16 @@ public class Mobile_PWA_Common extends WrapperMethod
 
 	public void pwa_srpflight_select(RemoteWebDriver driver) throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 40);
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div/ul//div/li[@role='menuitem'][4]"))); 
-		if 	(elementPresent(driver, getObjectPlatform("PWA_SRP_select_flight"),20))
+
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//p[contains(text(),'IndiGo')]"))); 
+		waitForElementVisibility(driver,By.xpath("//p[contains(text(),'IndiGo')]"),10);		
+		if(elementPresent(driver, By.xpath("//p[contains(text(),'IndiGo')]"), 10))
 		{
-			driver.findElement(By.xpath("//div/ul//div/li[@role='menuitem'][3]")).click();
-			Thread.sleep(2000);
-		} 
+
+			List<WebElement> li = driver.findElements(By.xpath("//p[contains(text(),'IndiGo')]"));;
+			li.get(1).click();				
+
+		}
 		else 
 		{
 			Reporter.log("Flights SRP is not loading");
@@ -114,7 +118,6 @@ public class Mobile_PWA_Common extends WrapperMethod
 		waitForElementVisibility(driver,getObjectPlatform("PWA_reviewtotal_price"),10);
 		String totalfare=getText(driver,  getObjectPlatform("PWA_ITIPage_totalfare"));
 		System.out.println(totalfare);
-		//driver.findElement(By.xpath("//*[text()='Total']//..//../*[3]/*[2]")).getText();
 		waitForElementVisibility(driver,getObjectPlatform("PWA_Standard_fare"),10);
 		safeClick(driver,getObjectPlatform("PWA_Standard_fare"));
 		waitForElementVisibility(driver,getObjectPlatform("PWA_review_itinerary_continue_button"),10);
@@ -168,8 +171,7 @@ public class Mobile_PWA_Common extends WrapperMethod
 			safeType(driver, getObjectPlatform("PWA_traveller_emailid"), platform.value("PWA_traveller_emailid"));
 		}
 		waitForElementVisibility(driver,getObjectPlatform("PWA_traveller_continuebutton"),5);
-		safeClick(driver,  getObjectPlatform("PWA_traveller_continuebutton"));
-		//driver.findElement(By.xpath("//button[contains(text(),'Continue')]")).click();
+		safeClick(driver,  getObjectPlatform("PWA_traveller_continuebutton"));		
 		if (textPresent(driver, "Flights not available", 5)) {
 			Reporter.log("Flights not available text is displayed");
 			assertTrue(false);
@@ -191,43 +193,28 @@ public class Mobile_PWA_Common extends WrapperMethod
 		if (payType.equalsIgnoreCase("NB")) {
 
 			waitForElementVisibility(driver,getObjectPlatform("PWA_Paymentpage"),5);
-			//waitForElement(driver, 5, By.xpath("//p[contains(text(),'Payment')]"));
-			//Thread.sleep(4000);	
-
-			if 	(elementPresent(driver, getObjectPlatform("PWA_Paymentpage"), 10))
-				//(elementPresent(driver, By.xpath("//p[contains(text(),'Payment')]"),20))
+			if 	(elementPresent(driver, getObjectPlatform("PWA_Paymentpage"), 10))				
 			{
-				waitForElementVisibility(driver, getObjectPlatform("PWA_PaymentPage_NB_Tab"), 5);
-				//safeClick(driver, getObjectPayment("PWA_PaymentPage_NB_Tab"));
-				driver.findElement(By.xpath("//p[contains(text(),'Net banking')]")).click();
-				//Thread.sleep(2000);
-
+				waitForElementVisibility(driver, getObjectPlatform("PWA_PaymentPage_NB_Tab"), 5);				
+				driver.findElement(By.xpath("//p[contains(text(),'Net banking')]")).click();				
 				if (!textPresentInElement(driver,getObjectPlatform("PWA_PaymentPage_SelectNBPage"),"Choose another bank", 2)) {
 					Reporter.log("Choose another bank text is not displayed");
 					assertTrue(false);
 				}
-
 			} 
 
 			waitForElementVisibility(driver, getObjectPlatform("PWA_PaymentPage_SelectNBPage"), 10);
-			safeClick(driver,  getObjectPlatform("PWA_PaymentPage_SelectNBPage"));
-			//driver.findElement(By.xpath("//button[contains(text(),'Choose another bank')]")).click();
-			//Thread.sleep(1000);
-			waitForElementVisibility(driver, getObjectPlatform("PWA_PaymentPage_NB_Name"), 10);
-			//waitForElement(driver, 10, By.xpath("//div[@class='pwa-bank--search-wrapper bg-white']"));
-			//Thread.sleep(3000);
+			safeClick(driver,  getObjectPlatform("PWA_PaymentPage_SelectNBPage"));			
+			waitForElementVisibility(driver, getObjectPlatform("PWA_PaymentPage_NB_Name"), 10);			
 			driver.switchTo().activeElement();
 			Thread.sleep(2000);
-			safeClick(driver,  getObjectPlatform("PWA_PaymentPage_NB_Name"));
-			//	driver.findElement(By.xpath("//div[@class='pwa-bank--search-wrapper bg-white']")).click();
+			safeClick(driver,  getObjectPlatform("PWA_PaymentPage_NB_Name"));			
 			Thread.sleep(1000);
 			waitForElementVisibility(driver, getObjectPlatform("PWA_PaymentPage_NB_bankName"), 10);
-			safeType(driver, getObjectPlatform("PWA_PaymentPage_NB_bankName"), platform.value("PWA_PaymentPage_NB_bankName"));
-			//	driver.findElement(By.xpath("//input[@class='fs-3 cardFadeIn']")).sendKeys("ICICI Bank");
+			safeType(driver, getObjectPlatform("PWA_PaymentPage_NB_bankName"), platform.value("PWA_PaymentPage_NB_bankName"));			
 			Thread.sleep(2000);
 			waitForElementVisibility(driver, getObjectPlatform("PWA_paymentPage_selectBank"), 10);
-			safeClick(driver,  getObjectPlatform("PWA_paymentPage_selectBank"));
-			//	driver.findElement(By.xpath("//p[contains(text(),'ICICI Bank')]")).click();
+			safeClick(driver,  getObjectPlatform("PWA_paymentPage_selectBank"));		
 			List<WebElement> we = driver.findElements(By.xpath("//li/p"));
 			for (int i = 1; i < we.size(); i++) {
 				System.out.println("-------------------------------" + we.get(i).getText());
@@ -270,7 +257,7 @@ public class Mobile_PWA_Common extends WrapperMethod
 			Reporter.log("Payment successful your Booking is Confirmed.");
 			assertTrue(true);
 		}
-		
+
 		else
 		{
 

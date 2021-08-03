@@ -102,13 +102,16 @@ public class Mobile_PWA_Common extends WrapperMethod
 		{
 
 			List<WebElement> li = driver.findElements(By.xpath("//p[contains(text(),'IndiGo')]"));;
-			li.get(1).click();				
-
+			li.get(1).click();	
 		}
 		else 
 		{
-			Reporter.log("Flights SRP is not loading");
-			assertTrue(false);
+			if (elementPresent(driver, By.xpath("//div/ul//div/li[@role='menuitem'][4]"), 4)) {
+				driver.findElement(By.xpath("//div/ul//div/li[@role='menuitem'][2]")).click();
+			}
+			waitForElement(driver,20,By.xpath("//*[text()='Total']//..//../*[3]/*[2]"));
+			Reporter.log("Flights selected");
+			assertTrue(true);
 		}
 		waitForElementVisibility(driver,getObjectPlatform("PWA_reviewtotal_price"),10);
 		assertTrue(true);

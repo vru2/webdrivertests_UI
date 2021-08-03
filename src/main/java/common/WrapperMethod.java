@@ -51,15 +51,15 @@ public class WrapperMethod extends CommonUtil {
 	public static Logger logger = Logger.getLogger("");
 	protected String baseUrl;
 
-	
-	  public Boolean MakePaymentTrue = common.value("makePayment").equals("true"),
-	  NetBanking = common.value("makePayment").contains("true"), ProductionUrl =
-	  common.value("host").contains("www"), BetaURL =
-	  common.value("host").contains("beta"), MakePaymentOnlyInQA2 = MakePaymentTrue
-	  && !(ProductionUrl || BetaURL),MakePaymentOnlyInProd = MakePaymentTrue && ProductionUrl;
-	 
 
-public boolean GDS_Flight, B2B_GDS_Flight = false;
+	public Boolean MakePaymentTrue = common.value("makePayment").equals("true"),
+			NetBanking = common.value("makePayment").contains("true"), ProductionUrl =
+			common.value("host").contains("www"), BetaURL =
+			common.value("host").contains("beta"), MakePaymentOnlyInQA2 = MakePaymentTrue
+			&& !(ProductionUrl || BetaURL),MakePaymentOnlyInProd = MakePaymentTrue && ProductionUrl;
+
+
+	public boolean GDS_Flight, B2B_GDS_Flight = false;
 
 	public String getBaseUrl(String domain) {
 		// addLog("Domain: " + domain + " Host: " + common.value("host"),true);
@@ -84,7 +84,7 @@ public boolean GDS_Flight, B2B_GDS_Flight = false;
 		driver.quit();
 	}
 
-	
+
 
 
 	public DesiredCapabilities createChromeConfig() throws IOException, InterruptedException {
@@ -98,108 +98,108 @@ public boolean GDS_Flight, B2B_GDS_Flight = false;
 		cap.setCapability(ChromeOptions.CAPABILITY, options);
 		return cap;
 	}
-	
-	 public DesiredCapabilities createHeadlessChrome() throws IOException {
-	      ChromeOptions options = new ChromeOptions();
-	      options.addArguments("--headless");
-	      options.addArguments("window-size=1200,1100");
-	      options.addArguments("--no-sandbox");
-	      options.addArguments("--disable-dev-shm-usage");
-	      options.addArguments("--allowed-ips");
-	      Map<String, Object> prefs = new HashMap();
-	      File file = new File(".");
-	      String filepath = file.getCanonicalPath() + "\\exe\\chromedriver.exe";
-	      //this.printInfo(filepath);
-	      prefs.put("profile.default_content_settings.popups", 0);
-	      options.setExperimentalOption("prefs", prefs);
-	      DesiredCapabilities cap = DesiredCapabilities.chrome();
-	      cap.setCapability("goog:chromeOptions", options);
-	      return cap;
-	   }
-	 
-	 public DesiredCapabilities createHeadlessChromeMobile() throws IOException {
-	      ChromeOptions options = new ChromeOptions();
-	      options.addArguments("--headless");
-	      options.addArguments("window-size=1200,1100");
-	      options.addArguments("--no-sandbox");
-	      options.addArguments("--disable-dev-shm-usage");
-	      options.addArguments("--user-agent=Mozilla/5.0 (iPhone; U; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5");
-	      options.addArguments("--allowed-ips");
-	      Map<String, Object> prefs = new HashMap();
-	      
 
-		 	if (System.getProperty("os.name").contains("Windows")) {
-				File file = new File(".");
-				String filepath = file.getCanonicalPath() + "//exe//chromedriver.exe";
-				System.setProperty("webdriver.chrome.driver", filepath);
-			}else if(System.getProperty("os.name").contains("Linux")){
-				File file = new File(".");
-				String filepath = file.getCanonicalPath() + "//exe//chromedriver";
-				System.setProperty("webdriver.chrome.driver", filepath);
-			} else {
-				File file = new File(".");
-				String filepath = file.getCanonicalPath() + "//exe//chromedriver_mac";
-				System.setProperty("webdriver.chrome.driver", filepath);
-			}
-	      
-	      prefs.put("profile.default_content_settings.popups", 0);
-	      options.setExperimentalOption("prefs", prefs);
-	      DesiredCapabilities cap = DesiredCapabilities.chrome();
-	      cap.setCapability("goog:chromeOptions", options);
-	      return cap;
-	   }
-	 
-	 public WebDriver getMobileDriver(WebDriver driver) throws IOException {
+	public DesiredCapabilities createHeadlessChrome() throws IOException {
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--headless");
+		options.addArguments("window-size=1200,1100");
+		options.addArguments("--no-sandbox");
+		options.addArguments("--disable-dev-shm-usage");
+		options.addArguments("--allowed-ips");
+		Map<String, Object> prefs = new HashMap();
+		File file = new File(".");
+		String filepath = file.getCanonicalPath() + "\\exe\\chromedriver.exe";
+		//this.printInfo(filepath);
+		prefs.put("profile.default_content_settings.popups", 0);
+		options.setExperimentalOption("prefs", prefs);
+		DesiredCapabilities cap = DesiredCapabilities.chrome();
+		cap.setCapability("goog:chromeOptions", options);
+		return cap;
+	}
 
-		 Map<String, Object> deviceMetrics = new HashMap<>();
-		 // Added individual deviceMetrices & useragent
-		 deviceMetrics.put("width", 360); 
-		 deviceMetrics.put("height", 560);
-		 deviceMetrics.put("pixelRatio", 4.0);/*
+	public DesiredCapabilities createHeadlessChromeMobile() throws IOException {
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--headless");
+		options.addArguments("window-size=1200,1100");
+		options.addArguments("--no-sandbox");
+		options.addArguments("--disable-dev-shm-usage");
+		options.addArguments("--user-agent=Mozilla/5.0 (iPhone; U; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5");
+		options.addArguments("--allowed-ips");
+		Map<String, Object> prefs = new HashMap();
+
+
+		if (System.getProperty("os.name").contains("Windows")) {
+			File file = new File(".");
+			String filepath = file.getCanonicalPath() + "//exe//chromedriver.exe";
+			System.setProperty("webdriver.chrome.driver", filepath);
+		}else if(System.getProperty("os.name").contains("Linux")){
+			File file = new File(".");
+			String filepath = file.getCanonicalPath() + "//exe//chromedriver";
+			System.setProperty("webdriver.chrome.driver", filepath);
+		} else {
+			File file = new File(".");
+			String filepath = file.getCanonicalPath() + "//exe//chromedriver_mac";
+			System.setProperty("webdriver.chrome.driver", filepath);
+		}
+
+		prefs.put("profile.default_content_settings.popups", 0);
+		options.setExperimentalOption("prefs", prefs);
+		DesiredCapabilities cap = DesiredCapabilities.chrome();
+		cap.setCapability("goog:chromeOptions", options);
+		return cap;
+	}
+
+	public WebDriver getMobileDriver(WebDriver driver) throws IOException {
+
+		Map<String, Object> deviceMetrics = new HashMap<>();
+		// Added individual deviceMetrices & useragent
+		deviceMetrics.put("width", 360); 
+		deviceMetrics.put("height", 560);
+		deviceMetrics.put("pixelRatio", 4.0);/*
 		 Dimension dimension = new Dimension(800, 600);
 		 driver.manage().window().setSize(dimension);*/
-		 
-		 //Map<String, String> mobileEmulation = new HashMap<>(); -- revert incase mobile agent doesn't work
-		 //mobileEmulation.put("deviceName", "Nexus 5"); 
-		 
-		 // Added individual deviceMetrices & useragent
-		 Map<String, Object> mobileEmulation = new HashMap<>();
 
-		 mobileEmulation.put("deviceName", "Nexus 5");
+		//Map<String, String> mobileEmulation = new HashMap<>(); -- revert incase mobile agent doesn't work
+		//mobileEmulation.put("deviceName", "Nexus 5"); 
+
+		// Added individual deviceMetrices & useragent
+		Map<String, Object> mobileEmulation = new HashMap<>();
+
+		mobileEmulation.put("deviceName", "Nexus 5");
 		// mobileEmulation.put("deviceMetrics", deviceMetrics);
-		 //mobileEmulation.put("userAgent", "Mozilla/5.0 (Linux; Android 4.2.1; en-us; Nexus 5 Build/JOP40D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19");
-		 	if (System.getProperty("os.name").contains("Windows")) {
-				File file = new File(".");
-				String filepath = file.getCanonicalPath() + "//exe//chromedriver.exe";
-				System.setProperty("webdriver.chrome.driver", filepath);
-			}else if(System.getProperty("os.name").contains("Linux")){
-				File file = new File(".");
-				String filepath = file.getCanonicalPath() + "//exe//chromedriver";
-				System.setProperty("webdriver.chrome.driver", filepath);
-			} else {
-				File file = new File(".");
-				String filepath = file.getCanonicalPath() + "//exe//chromedriver_mac";
-				//System.setProperty("webdriver.chrome.driver", filepath);
-			}
-		 
-			
-		 ChromeOptions chromeOptions = new ChromeOptions();
-		 chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
-		 chromeOptions.addArguments("--allowed-ips");
-		 if(common.value("headlessbrowser").equalsIgnoreCase("false") ){
-			 driver = new ChromeDriver(chromeOptions);
-		 }
-			
-		 else driver = new ChromeDriver(this.createHeadlessChromeMobile());
-		 
-		 Dimension dimension = new Dimension(220, 1000);
-		 driver.manage().window().setSize(dimension);
+		//mobileEmulation.put("userAgent", "Mozilla/5.0 (Linux; Android 4.2.1; en-us; Nexus 5 Build/JOP40D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19");
+		if (System.getProperty("os.name").contains("Windows")) {
+			File file = new File(".");
+			String filepath = file.getCanonicalPath() + "//exe//chromedriver.exe";
+			System.setProperty("webdriver.chrome.driver", filepath);
+		}else if(System.getProperty("os.name").contains("Linux")){
+			File file = new File(".");
+			String filepath = file.getCanonicalPath() + "//exe//chromedriver";
+			System.setProperty("webdriver.chrome.driver", filepath);
+		} else {
+			File file = new File(".");
+			String filepath = file.getCanonicalPath() + "//exe//chromedriver_mac";
+			//System.setProperty("webdriver.chrome.driver", filepath);
+		}
+
+
+		ChromeOptions chromeOptions = new ChromeOptions();
+		chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
+		chromeOptions.addArguments("--allowed-ips");
+		if(common.value("headlessbrowser").equalsIgnoreCase("false") ){
+			driver = new ChromeDriver(chromeOptions);
+		}
+
+		else driver = new ChromeDriver(this.createHeadlessChromeMobile());
+
+		Dimension dimension = new Dimension(220, 1000);
+		driver.manage().window().setSize(dimension);
 		return driver;
-		 
-	 }
-	 
-	 
-	 public RemoteWebDriver getDriver(RemoteWebDriver driver) throws IOException, InterruptedException {
+
+	}
+
+
+	public RemoteWebDriver getDriver(RemoteWebDriver driver) throws IOException, InterruptedException {
 		if (driver == null) {
 			if (common.value("browser").equalsIgnoreCase("IE") && common.value("mode").equalsIgnoreCase("local")) {
 				File file;
@@ -258,7 +258,7 @@ public boolean GDS_Flight, B2B_GDS_Flight = false;
 				 * f.getAbsolutePath(); System.setProperty("webdriver.chrome.driver", path);
 				 */
 				driver = new ChromeDriver(this.createHeadlessChrome());
-				 ((RemoteWebDriver)driver).manage().window().setSize(new Dimension(1200, 1100));
+				((RemoteWebDriver)driver).manage().window().setSize(new Dimension(1200, 1100));
 				// driver = new ChromeDriver();
 				// TimeUnit.SECONDS.sleep(2);
 				// driver.manage().timeouts().setScriptTimeout(100, TimeUnit.SECONDS);
@@ -309,7 +309,7 @@ public boolean GDS_Flight, B2B_GDS_Flight = false;
 					String filepath = file.getCanonicalPath() + "//exe//chromedriver.exe";
 					System.setProperty("webdriver.chrome.driver", filepath);
 
-					
+
 					driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), createHeadlessChrome());
 
 					TimeUnit.SECONDS.sleep(1);
@@ -340,17 +340,17 @@ public boolean GDS_Flight, B2B_GDS_Flight = false;
 		// driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 		return driver;
 	}
-	
+
 
 	public RemoteWebDriver Chrome_Config(RemoteWebDriver driver) throws Exception {
-	      if (this.common.value("mode").equalsIgnoreCase("local") && this.common.value("headlessbrowser").equalsIgnoreCase("false")) {
-	         driver = new ChromeDriver(this.createChromeConfig());
-	      } else if (this.common.value("mode").equalsIgnoreCase("local") && this.common.value("headlessbrowser").equalsIgnoreCase("true")) {
-	         driver = new ChromeDriver(this.createHeadlessChrome());
-	         ((RemoteWebDriver)driver).manage().window().setSize(new Dimension(1200, 1100));
-	      } else {
-	         driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), this.createChromeConfig());
-	      }
+		if (this.common.value("mode").equalsIgnoreCase("local") && this.common.value("headlessbrowser").equalsIgnoreCase("false")) {
+			driver = new ChromeDriver(this.createChromeConfig());
+		} else if (this.common.value("mode").equalsIgnoreCase("local") && this.common.value("headlessbrowser").equalsIgnoreCase("true")) {
+			driver = new ChromeDriver(this.createHeadlessChrome());
+			((RemoteWebDriver)driver).manage().window().setSize(new Dimension(1200, 1100));
+		} else {
+			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), this.createChromeConfig());
+		}
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		// driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
@@ -367,7 +367,7 @@ public boolean GDS_Flight, B2B_GDS_Flight = false;
 				ChromeOptions options = new ChromeOptions();
 				options.addArguments(
 						"--user-agent=Mozilla/5.0 (iPhone; U; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5");
-			
+
 				driver = new ChromeDriver(options);
 
 				driver.manage().deleteAllCookies();
@@ -375,6 +375,7 @@ public boolean GDS_Flight, B2B_GDS_Flight = false;
 				// driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 				// driver.navigate().refresh();
 			}
+			
 			else if (common.value("mobilebrowser").equalsIgnoreCase("CHROME")
 					&& common.value("mode").equalsIgnoreCase("local") || common.value("mode").equalsIgnoreCase("Grid")) {
 				System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
@@ -384,19 +385,21 @@ public boolean GDS_Flight, B2B_GDS_Flight = false;
 				driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), createHeadlessChromeMobile());
 				driver.manage().deleteAllCookies();
 			}
-			
-			else if(System.getProperty("os.name").contains("Linux")){
+			if (System.getProperty("os.name").contains("Windows")) {
+				File file = new File(".");
+				String filepath = file.getCanonicalPath() + "//exe//chromedriver.exe";
+				System.setProperty("webdriver.chrome.driver", filepath);
+			}else if(System.getProperty("os.name").contains("Linux")){
 				File file = new File(".");
 				String filepath = file.getCanonicalPath() + "//exe//chromedriver";
 				System.setProperty("webdriver.chrome.driver", filepath);
-				ChromeOptions options = new ChromeOptions();
-				options.addArguments(
-						"--user-agent=Mozilla/5.0 (iPhone; U; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5");
-				driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), createHeadlessChromeMobile());
-				driver = new ChromeDriver(options);
-				driver.manage().deleteAllCookies();
+			} else {
+				File file = new File(".");
+				String filepath = file.getCanonicalPath() + "//exe//chromedriver_mac";
 				
 			}
+			
+
 			if (common.value("mobilebrowser").equalsIgnoreCase("firefox")
 					&& common.value("mode").equalsIgnoreCase("local")) {
 				String userAgent = "--user-agent=Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_3_2 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5";
@@ -516,7 +519,7 @@ public boolean GDS_Flight, B2B_GDS_Flight = false;
 		}
 		return textpresent;
 	}
-	
+
 	public boolean textPresentInElementAssert(RemoteWebDriver driver, By by, String text, int Time)
 			throws InterruptedException {
 		boolean textpresent = false;
@@ -580,7 +583,7 @@ public boolean GDS_Flight, B2B_GDS_Flight = false;
 		}
 		return textprest;
 	}
-	
+
 	public boolean textNotPresent_Log(RemoteWebDriver driver, String text, int Time) throws InterruptedException {
 		boolean textNotPrest = true;
 		if(textPresent(driver, text, Time)) {
@@ -590,7 +593,7 @@ public boolean GDS_Flight, B2B_GDS_Flight = false;
 		}
 		return textNotPrest;
 	}
-		
+
 
 	public void textAssert(RemoteWebDriver driver, String text, int Time) throws InterruptedException {
 		int i = 0;
@@ -1000,7 +1003,7 @@ public boolean GDS_Flight, B2B_GDS_Flight = false;
 		}
 
 	}
-	
+
 	public void textNotPresent_List(RemoteWebDriver driver, By by, String Text) throws Exception {
 		elementVisible(driver, by, 5);
 		boolean elementAvailable = false;
@@ -1498,7 +1501,7 @@ public boolean GDS_Flight, B2B_GDS_Flight = false;
 		}
 
 	}
-	
+
 	public String getText1(RemoteWebDriver driver, By by) throws Exception {
 		elementVisible(driver, by, 1);
 		boolean element = isElementPresent(driver, by);
@@ -1603,7 +1606,7 @@ public boolean GDS_Flight, B2B_GDS_Flight = false;
 		String browserversion = browser_version.substring(0, browser_version.indexOf("."));
 		return browsername + " " + browserversion;
 	}
-	
+
 	public void dragAndDrop(RemoteWebDriver driver, String Str_sourceElement, String Str_destinationElement) {
 		WebElement sourceElement = driver.findElement(By.xpath(Str_sourceElement));
 		WebElement destinationElement = driver.findElement(By.xpath(Str_destinationElement));
@@ -1672,9 +1675,9 @@ public boolean GDS_Flight, B2B_GDS_Flight = false;
 	public static boolean isElementSelected(RemoteWebDriver driver, By by) {
 		return driver.findElement(by).isSelected();
 	}
-	
-	
-	
+
+
+
 
 	public void javaExecutorClick(RemoteWebDriver driver, By by) {
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(by));
@@ -1685,7 +1688,7 @@ public boolean GDS_Flight, B2B_GDS_Flight = false;
 			((JavascriptExecutor) driver).executeScript("window.scrollBy(0,4)", "");
 		}
 	}
-	
+
 	public void pwascrollSmooth(RemoteWebDriver driver,final int y) {
 		for (int i = 0; i < y; i++) {
 			((JavascriptExecutor) driver).executeScript("window.scrollBy(0,700)", "");
@@ -1759,6 +1762,6 @@ public boolean GDS_Flight, B2B_GDS_Flight = false;
 		}		
 		driver.get(newUrl);					
 	}
-	
+
 }
 

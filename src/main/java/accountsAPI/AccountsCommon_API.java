@@ -194,6 +194,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String url_Flipkart_Accounts_service_GetUserDetails="/accounts/v3/people?partner=FLIPKART&referenceId=me123testing8&travellersRequired=true&gstDetailsRequired=true";
 	String url_Flipkart_Accounts_service_GetUserDetailsBy_UserID="/accounts/v3/people/65214414?travellersRequired=true&gstDetailsRequired=true";
 	String url_Flipkart_Accounts_service_GetUserDetailsBy_UserID_withoutparams="/accounts/v3/people/65214414?travellersRequired=false&gstDetailsRequired=false";
+	String url_Flipkart_Accounts_service_JWTtoken_flipkart="/auth/jwt/token?partner=FLIPKART";
 	String url_Flipkart_Accounts_service_GetUserDetailsBy_ReferenceID_withoutparams="/accounts/v3/people?partner=FLIPKART&referenceId=me123testing8&travellersRequired=false&gstDetailsRequired=false";
 	String url_Account_Service_Fetchdomain_nameByID="/company/v2/110342/domain-name";
 	String url_Account_Service_Company_DomainName_Autocomplete="/company/v2/domain-auto-completer?domain=test";
@@ -2315,6 +2316,13 @@ String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\
 
 			Reporter.log(url_Acct_Service+url);
 		}
+		else if (Type.equals("Flipkart_Accounts_service_JWTtoken_flipkart")){
+			RestAssured.baseURI=url_Acct_Service_applesgnin;
+			url = url_Flipkart_Accounts_service_JWTtoken_flipkart;
+			headers = headersFormgetactivationkey();
+
+			Reporter.log(url_Acct_Service_applesgnin+url);
+		}
 		else if (Type.equals("Flipkart_Accounts_service_GetUserDetailsBy_ReferenceID_withoutparams")){
 			RestAssured.baseURI=url_Acct_Service;
 			url = url_Flipkart_Accounts_service_GetUserDetailsBy_ReferenceID_withoutparams;
@@ -3707,6 +3715,13 @@ String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\
 
 
 		}
+		else if(Type.equalsIgnoreCase("Flipkart_Accounts_service_JWTtoken_flipkart")) {
+			String ReponseStr = resp.body().asString();
+			if(!ReponseStr.contains("token")){
+				Assert.assertTrue(false);
+			}
+
+	}
 		else if(Type.equalsIgnoreCase("Flipkart_Accounts_service_GetUserDetailsBy_ReferenceID_withoutparams")) {
 			String ReponseStr = resp.body().asString();
 			String referenceId = jsonPathEvaluator.getString("referenceId");

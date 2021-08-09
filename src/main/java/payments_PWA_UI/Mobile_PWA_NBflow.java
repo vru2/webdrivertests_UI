@@ -16,14 +16,14 @@ import org.testng.annotations.Test;
 public class Mobile_PWA_NBflow extends Mobile_PWA_Common
 {
 	public RemoteWebDriver driver = null;
-
+	public RemoteWebDriver arg1 = null;
 
 	@Test
 	public void pwa_flow() throws Exception 
 	{
-		pwahomepageseach(driver);		
-		pwa_srpflight_select(driver);
-		pwa_review_itinerary(driver);
+		pwahomepageseach(driver);			
+		pwa_srpflights_select(driver);
+		pwa_review_itinerarypage(driver);
 		pwa_review_travellers(driver);
 		pwa_select_Payment_option(driver, "NB", "ICICI", "");
 		pwa_booking_confirmation_page(driver, "", "","");
@@ -48,7 +48,7 @@ public class Mobile_PWA_NBflow extends Mobile_PWA_Common
 	}
 	@BeforeClass
 	public void startSelenium() throws Exception {
-		driver=(RemoteWebDriver) getMobileDriver1(driver);
+		driver=(RemoteWebDriver) getMobileDriver(driver);
 		baseUrl = getBaseUrl("com");
 		driver.manage().window().maximize();
 

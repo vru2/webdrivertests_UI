@@ -67,7 +67,7 @@ public class Mobile_PWA_Common extends WrapperMethod
 
 			driver.findElement(By.xpath("//*[text()='Depart']/parent::*/*[2]")).click();
 			Thread.sleep(2000);
-			driver.findElement(By.xpath("//div[@class='react-calendar__month-view'][4]/div/div/div/div[20]")).click();
+			driver.findElement(By.xpath("//div[@class='react-calendar__month-view'][4]/div/div/div/div[4]")).click();
 			Thread.sleep(2000);
 		}
 		waitForElementVisibility(driver,getObjectPlatform("PWA_travellers_select"),10);
@@ -93,16 +93,20 @@ public class Mobile_PWA_Common extends WrapperMethod
 		assertTrue(true);
 	}
 
-	public void pwa_srpflight_select(RemoteWebDriver driver) throws Exception {
-		WebDriverWait wait = new WebDriverWait(driver, 40);
+	public void pwa_srpflights_select(RemoteWebDriver driver) throws Exception {
 
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//p[contains(text(),'IndiGo')]"))); 
-		waitForElementVisibility(driver,By.xpath("//p[contains(text(),'IndiGo')]"),10);		
+		Thread thread = new Thread();
+		thread.start();
+		WebDriverWait wait = new WebDriverWait(driver, 40);		 
+		waitForElementVisibility(driver,By.xpath("//p[contains(text(),'IndiGo')]"),20);		
 		if(elementPresent(driver, By.xpath("//p[contains(text(),'IndiGo')]"), 10))
 		{
-
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//p[contains(text(),'IndiGo')]")));
 			List<WebElement> li = driver.findElements(By.xpath("//p[contains(text(),'IndiGo')]"));;
+			Thread.sleep(1000);
 			li.get(1).click();	
+			Reporter.log("Selected IndiGO Flight");
+
 		}
 		else 
 		{
@@ -116,32 +120,58 @@ public class Mobile_PWA_Common extends WrapperMethod
 		waitForElementVisibility(driver,getObjectPlatform("PWA_reviewtotal_price"),10);
 		assertTrue(true);
 	}
-	public void pwa_review_itinerary(RemoteWebDriver driver) throws Exception {
-
-		waitForElementVisibility(driver,getObjectPlatform("PWA_reviewtotal_price"),10);
+	
+	
+	public void pwa_review_itinerarypage(RemoteWebDriver driver) throws Exception {	
+		
+		WebDriverWait wait = new WebDriverWait(driver, 40);		
+		waitForElementVisibility(driver,getObjectPlatform("PWA_Standard_fare"),10);
+		textPresent_Log(driver, "Standard fare", 5);
+		driver.findElement(By.xpath("//*[text()='Standard fare']")).click();
+		//safeClick(driver,getObjectPlatform("PWA_Standard_fare"));
+		Reporter.log("Selected Standard_fare");
+		System.out.println("selected standed fare");
+		scrollSmooth(driver, 400);
+		waitForElementVisibility(driver,getObjectPlatform("PWA_reviewtotal_price"),10);		
 		String totalfare=getText(driver,  getObjectPlatform("PWA_ITIPage_totalfare"));
 		System.out.println(totalfare);
-		waitForElementVisibility(driver,getObjectPlatform("PWA_Standard_fare"),10);
-		safeClick(driver,getObjectPlatform("PWA_Standard_fare"));
+		
+		
+		/*JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebElement Element = driver.findElement(By.xpath("//button[contains(text(),'Continue')]"));	
+		js.executeScript("arguments[0].scrollIntoView();", Element);*/
+		scrollSmooth(driver, 600);
+		scrollToElement(driver, By.xpath("//button[contains(text(),'Continue')]"));
+		elementVisible(driver, getObjectPlatform("PWA_review_itinerary_continue_button"), 10);
 		waitForElementVisibility(driver,getObjectPlatform("PWA_review_itinerary_continue_button"),10);
 		safeClick(driver,getObjectPlatform("PWA_review_itinerary_continue_button"));
 		waitForElementVisibility(driver,getObjectPlatform("PWA_itinerary_addons"),10);
+		
 		if (elementPresent(driver, getObjectPlatform("PWA_itinerary_addons"),40)) {
+			textPresent_Log(driver, "Next", 5);
 			safeClick(driver,By.xpath("//button[contains(text(),'Next')]"));
+			textPresent_Log(driver, "Next", 5);
 			safeClick(driver,By.xpath("//button[contains(text(),'Next')]"));
+			textPresent_Log(driver, "Done", 5);	
+			
 			safeClick(driver,By.xpath("//button[contains(text(),'Done')]"));
+			
 
 		}
 		else {
 
 			waitForElementVisibility(driver,getObjectPlatform("PWA_review_itinerary_reviewTravellers"),10);
 			assertTrue(true);
+			
 		}
 
 	}
+	
 	public void pwa_review_travellers(RemoteWebDriver driver) throws Exception {
+		
+		WebDriverWait wait = new WebDriverWait(driver, 60);
 
-		waitForElementVisibility(driver,getObjectPlatform("PWA_review_itinerary_reviewTravellers"),10);
+		waitForElementVisibility(driver,getObjectPlatform("PWA_review_itinerary_reviewTravellers"),20);
 		Select title = new Select(driver.findElement(By.name("title")));
 		title.selectByVisibleText("Mr");
 

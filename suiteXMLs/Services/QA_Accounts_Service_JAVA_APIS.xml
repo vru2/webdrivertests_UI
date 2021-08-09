@@ -77,15 +77,14 @@
 				name="accountsAPI.IdentityService_UpdatePassword_ForChangePasswordflow" />
 			<class
 				name="accountsAPI.IdentityService_UpdatePassword_ForResetPasswordflow" />
-				<class
-				name="accountsAPI.Identity_service_RecaptchaAPI" />
-				<class
+			<class name="accountsAPI.Identity_service_RecaptchaAPI" />
+			<class
 				name="accountsAPI.IdentityService_Signin_Userauthentication_B2C_B2B_b2cUserwithoutParams" />
-				<class
+			<class
 				name="accountsAPI.IdentityService_Signin_Userauthentication_B2C_B2B_b2cUser" />
-				<class
+			<class
 				name="accountsAPI.IdentityService_Signin_Userauthentication_B2C_B2B_b2bUser" />
-				
+
 
 		</classes>
 	</test>
@@ -153,7 +152,8 @@
 			<class name="accountsAPI.Account_Service_GetuserdetailsbyAPIKey" />
 			<class name="accountsAPI.Account_Service_GET_UserbyCookie_CleartripUser" />
 			<class name="accountsAPI.Account_Service_GET_UserbyCookie_FlyinUser" />
-			<class name="accountsAPI.Account_Service_UserExistence_withEmailIDandDomain" />
+			<class
+				name="accountsAPI.Account_Service_UserExistence_withEmailIDandDomain" />
 			<class name="accountsAPI.Account_Service_UserExistence_withID" />
 			<class name="accountsAPI.Account_Service_Update_User_Cleartrip_B2Buser" />
 		</classes>
@@ -251,10 +251,13 @@
 			<class
 				name="accountsAPI.Flipkart_Accounts_service_GetUserDetailsBy_UserID_withoutparams" />
 
+			<class
+				name="accountsAPI.Flipkart_Accounts_service_JWTtoken_flipkart" />
+
 
 		</classes>
 	</test>
-	
+
 
 	<!-- <test name="Account_Service_FlyinV2_Signin" parallel="true"> <classes> 
 		<class name="accountsAPI.Account_Service_FlyinV2_Signin" /> </classes> </test> 

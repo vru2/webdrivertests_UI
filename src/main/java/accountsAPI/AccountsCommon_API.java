@@ -68,7 +68,8 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String url_Accounts_service_Company_DeleteGST_CompanyID_DomainName="/company/v2/gst?id=836674&domainName=expedia.travelbox99.com&gstNumber=hihi&gstId=123";
 	String url_Flipkart_Accounts_service_Updateuser="/accounts/v3/people?partner=FLIPKART&referenceId=me123testing";
 	String url_Account_Service_AuthforNonLoggedinUser="http://accounts-service-api.cltp.com:9001/user/v2/auth/otp?tripRef=Q210317918852&emailId=ns.likhitha@cleartrip.com&source=www.cleartrip.com";
-
+	String url_Account_Service_AuthforNonLoggedinUser_InvalidTripID="/user/v2/auth/otp?tripRef=Q210318852&emailId=ns.likhitha@cleartrip.com&source=www.cleartrip.com";
+	String url_Account_Service_AuthforNonLoggedinUser_VerifyOTP="/user/v2/auth/otp/verify?tripRef=Q210317918852&emailId=ns.likhitha@cleartrip.com&otp=76989&source=b2c&subSource=www.cleartrip.com";
 	String url_Accounts_Service_VerifynonLoggedinUser="/user/v2/auth/otp/verify?tripRef=Q200102680540&emailId=ns.likhitha@cleartrip.com&otp=123455&source=b2c&subSource=www.cleartrip.com";
 	String url_IdentityService_UpdatePassword_ForChangePasswordflow="/user/updatePassword";
 	String url_Userclassification_Userdetails_emailid="/users/detail?email_id=test@cleartrip.com";
@@ -195,6 +196,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String url_Flipkart_Accounts_service_GetUserDetailsBy_UserID="/accounts/v3/people/65214414?travellersRequired=true&gstDetailsRequired=true";
 	String url_Flipkart_Accounts_service_GetUserDetailsBy_UserID_withoutparams="/accounts/v3/people/65214414?travellersRequired=false&gstDetailsRequired=false";
 	String url_Flipkart_Accounts_service_JWTtoken_flipkart="/auth/jwt/token?partner=FLIPKART";
+	String url_Flipkart_Accounts_service_JWTtoken_Cleartrip="/auth/jwt/token?partner=CLEARTRIP";
 	String url_Flipkart_Accounts_service_GetUserDetailsBy_ReferenceID_withoutparams="/accounts/v3/people?partner=FLIPKART&referenceId=me123testing8&travellersRequired=false&gstDetailsRequired=false";
 	String url_Account_Service_Fetchdomain_nameByID="/company/v2/110342/domain-name";
 	String url_Account_Service_Company_DomainName_Autocomplete="/company/v2/domain-auto-completer?domain=test";
@@ -377,7 +379,7 @@ String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\
 		headers.put("domain", "www.cleartrip.com");
 		return headers;
 	}
-
+	
 	public HashMap<String, Object> IdentityService_UpdatePassword_ForChangePasswordflow(){
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("Content-Type", "application/json");
@@ -1854,6 +1856,22 @@ String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\
 			headers = verifyaccount();
 			Reporter.log(url_Acct_Service+url);
 		}
+		else if(Type.equals("Account_Service_AuthforNonLoggedinUser_InvalidTripID"))
+		{
+			RestAssured.baseURI=url_Acct_Service;
+			url = url_Account_Service_AuthforNonLoggedinUser_InvalidTripID;
+			params= params_Account_Service_UserController_VerifyAccount;
+			headers = verifyaccount();
+			Reporter.log(url_Acct_Service+url);
+		}
+		else if(Type.equals("Account_Service_AuthforNonLoggedinUser_VerifyOTP"))
+		{
+			RestAssured.baseURI=url_Acct_Service;
+			url = url_Account_Service_AuthforNonLoggedinUser_VerifyOTP;
+			params= params_Account_Service_UserController_VerifyAccount;
+			headers = verifyaccount();
+			Reporter.log(url_Acct_Service+url);
+		}
 
 		else if(Type.equals("Accounts_Service_VerifynonLoggedinUser"))
 		{
@@ -2323,6 +2341,14 @@ String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\
 
 			Reporter.log(url_Acct_Service_applesgnin+url);
 		}
+		else if (Type.equals("Flipkart_Accounts_service_JWTtoken_Cleartrip")){
+			RestAssured.baseURI=url_Acct_Service_applesgnin;
+			url = url_Flipkart_Accounts_service_JWTtoken_Cleartrip;
+			headers = headersFormgetactivationkey();
+
+			Reporter.log(url_Acct_Service_applesgnin+url);
+		}
+		
 		else if (Type.equals("Flipkart_Accounts_service_GetUserDetailsBy_ReferenceID_withoutparams")){
 			RestAssured.baseURI=url_Acct_Service;
 			url = url_Flipkart_Accounts_service_GetUserDetailsBy_ReferenceID_withoutparams;
@@ -2764,9 +2790,23 @@ String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\
 				Assert.assertTrue(false);						
 			}
 		}
+		
+		if(Type.equalsIgnoreCase("Account_Service_AuthforNonLoggedinUser_VerifyOTP")) {
+			String message = jsonPathEvaluator.getString("message");
+			if(!message.contains("otp verification failed -> not-found/expired/mismatch")) {
+				Assert.assertTrue(false);						
+			}
+		}
+		
 		if(Type.equalsIgnoreCase("Accounts_service_Company_DeleteGST")) {
 			String username = jsonPathEvaluator.getString("message");
 			if(!username.contains("GstDetail not found for, gstNumber : 123459898")) {
+				Assert.assertTrue(false);						
+			}
+		}
+		if(Type.equalsIgnoreCase("Account_Service_AuthforNonLoggedinUser_InvalidTripID")) {
+			String message = jsonPathEvaluator.getString("message");
+			if(!message.contains("Received status code 404 NOT_FOUND for trip ref Q210318852")) {
 				Assert.assertTrue(false);						
 			}
 		}
@@ -2814,6 +2854,27 @@ String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\
 				Assert.assertTrue(false);						
 			}
 		}
+	}
+	
+	public void validationjwt(Response resp, String Type, String Type2){
+		Reporter.log("Response body "+Type +" : "+ resp.body().asString());
+		//System.out.println("Response body "+Type +" : "+ resp.body().asString());
+		int statusCode = resp.getStatusCode();
+		//int statusCode1 = resp.getStatusCode();
+		Reporter.log("statusCode: " + statusCode);
+		JsonPath jsonPathEvaluator = resp.jsonPath();
+		if(statusCode!=400) {
+			Assert.assertTrue(false);
+		}
+
+		if(Type.equalsIgnoreCase("Flipkart_Accounts_service_JWTtoken_Cleartrip")) {
+			String message = jsonPathEvaluator.getString("message");
+			if(!message.contains("Partner CLEARTRIP not supported")) {
+				Assert.assertTrue(false);						
+			}
+		}
+
+		
 	}
 
 	public void validation_Linkdepositaccount(Response resp, String Type, String Type2){

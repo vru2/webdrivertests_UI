@@ -267,11 +267,10 @@ public class Mobile_PWA_Common extends WrapperMethod
 			safeClick(driver,  getObjectPlatform("PWA_payment_pay_page"));
 			//driver.findElement(By.xpath("//button[contains(text(),'Success')]")).click();
 			waitForElementVisibility(driver, getObjectPlatform("PWA_payment_confirmation_page"), 10);
-
 			//	waitForElement(driver, 50, By.xpath("//h5[contains(text(),'Booking confirmed')]"));
 			Thread.sleep(5000);
 			String url = driver.getCurrentUrl();
-			System.out.println("---------" + url.split("itinerary")[1]);
+			//System.out.println("---------" + url.split("itinerary")[1]);
 		}
 		assertTrue(true);
 	}		

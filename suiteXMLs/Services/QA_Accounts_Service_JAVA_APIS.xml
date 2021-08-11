@@ -143,6 +143,8 @@
 			<class name="accountsAPI.Account_Service_FetchPersonalData" />
 			<class name="accountsAPI.Account_Service_GetActivationKey" />
 			<class name="accountsAPI.Account_Service_AuthforNonLoggedinUser" />
+			<class name="accountsAPI.Account_Service_AuthforNonLoggedinUser_InvalidTripID" />
+			<class name="accountsAPI.Account_Service_AuthforNonLoggedinUser_VerifyOTP" />
 			<class name="accountsAPI.Account_Service_FetchCustomer_number" />
 			<class name="accountsAPI.Account_Service_CFW_GetUserStatus" />
 			<class name="accountsAPI.Account_Service_CFW_StatusUpdateCall" />
@@ -253,6 +255,9 @@
 
 			<class
 				name="accountsAPI.Flipkart_Accounts_service_JWTtoken_flipkart" />
+				
+				<class
+				name="accountsAPI.Flipkart_Accounts_service_JWTtoken_Cleartrip" />
 
 
 		</classes>

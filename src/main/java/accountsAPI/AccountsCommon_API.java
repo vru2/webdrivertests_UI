@@ -63,6 +63,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String url_Userclassification_Health_Test_Url="/actuator/health";
 	String url_Account_Service_Verify_Person="/account/people/verify?id=14029546&emailId=ns.likhitha@cleartrip.com&domain=www.cleartrip.com&companyId=110340";
 	String url_Account_Service_UserController_VerifyAccount="/user/v1/account/verify/14029546";
+	String url_Account_Service_UserController_VerifyAccount_UsernotPresent="/user/v1/account/verify/1402954698";
 	String url_Account_Service_People_UpdateUserRoles="/accounts/people/roles?userId=65214457";
 	String url_Accounts_service_Company_DeleteGST="/company/v2/gst?id=836674&gstNumber=123459898";
 	String url_Accounts_service_Company_DeleteGST_CompanyID_DomainName="/company/v2/gst?id=836674&domainName=expedia.travelbox99.com&gstNumber=hihi&gstId=123";
@@ -286,7 +287,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String params_Account_Service_AppleRegister_NullEmail="{\"appleId\":\"1:a:2:b:3:00\",\"emailId\":\"\",\"firstName\":\"abcd\",\"lastName\":\"sai\",\"title\":\"Mr.\"}";
 	String params_flyinresetpassword="{ \"username\" : \"ok@cltp.com\", \"old_password\" : \"cleartrip1\", \"new_password\" : \"cleartrip1\", \"partner\" : 1, \"source\":\"homepage\" }";
 	String params_flyinresetpasswordV2="{ \"username\" : \"ok@cltp.com\", \"old_password\" : \"cleartrip1\", \"new_password\" : \"cleartrip1\", \"partner\" : 1, \"source\":\"homepage\" }";
-
+String params_Account_Service_Cleartrip_ResetPassword="{\"partner\":0,\"source\":\"homepage\",\"key\":\"33e0ee9e7b833ece75ad55aee3269e627b95638e5dd5828f8d4e9ad81cc7ae3c\",\"username\":\"nakul@test.com\",\"new_password\":\"Cleartrip@1234\",\"old_password\":\"Cleartrip@123\"}";
 	String params_flyinforgetpassword="{ \"username\" : \"samsung@gmail.com\", \"key\" : \"bb54068cfd0f08459f85ce394a53caeef2feb56efa779ea9f512c3ed33d31e31\", \"new_password\" : \"cleartrip1\", \"partner\" : 1 }";
 	String params_flyinforgetpasswordV2="{ \"username\" : \"samsung@gmail.com\", \"key\" : \"bb54068cfd0f08459f85ce394a53caeef2feb56efa779ea9f512c3ed33d31e31\", \"new_password\" : \"cleartrip1\", \"partner\" : 1 }";
 
@@ -1331,6 +1332,14 @@ String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\
 			params =params_flyinresetpasswordV2 ;
 			Reporter.log(url_Acct_Service+url);
 		}
+		if(Type.equals("Account_Service_Cleartrip_ResetPassword")) {
+			headers = headersForms4();
+
+			RestAssured.baseURI =url_Acct_Service;
+			url = url_flyinresetpasswordV2;					
+			params =params_Account_Service_Cleartrip_ResetPassword ;
+			Reporter.log(url_Acct_Service+url);
+		}
 
 		if(Type.equals("flyinresetpassword")) {
 			headers = headersForms4();
@@ -1827,6 +1836,14 @@ String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\
 		{
 			RestAssured.baseURI=url_Acct_Service;
 			url = url_Account_Service_UserController_VerifyAccount;
+			params= params_Account_Service_UserController_VerifyAccount;
+			headers = verifyaccount();
+			Reporter.log(url_Acct_Service+url);
+		}
+		else if(Type.equals("Account_Service_UserController_VerifyAccount_UsernotPresent"))
+		{
+			RestAssured.baseURI=url_Acct_Service;
+			url = url_Account_Service_UserController_VerifyAccount_UsernotPresent;
 			params= params_Account_Service_UserController_VerifyAccount;
 			headers = verifyaccount();
 			Reporter.log(url_Acct_Service+url);
@@ -2574,6 +2591,12 @@ String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\
 				Assert.assertTrue(false);						
 			}
 		}
+		if(Type.equalsIgnoreCase("Account_Service_Cleartrip_ResetPassword")) {
+			String message = jsonPathEvaluator.getString("message");
+			if(!message.contains("failed")) {
+				Assert.assertTrue(false);						
+			}
+		}
 		if(Type.equalsIgnoreCase("IdentityService_Signin_Unauthorized")) {
 			String message = jsonPathEvaluator.getString("message");
 			if(!message.contains("username and password do not match for given user sandeep.shivanadhula@cleartrip.com")) {
@@ -2790,7 +2813,12 @@ String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\
 				Assert.assertTrue(false);						
 			}
 		}
-		
+		if(Type.equalsIgnoreCase("Account_Service_UserController_VerifyAccount_UsernotPresent")) {
+			String message = jsonPathEvaluator.getString("message");
+			if(!message.contains("User not found with id : 1402954698")) {
+				Assert.assertTrue(false);						
+			}
+		}
 		if(Type.equalsIgnoreCase("Account_Service_AuthforNonLoggedinUser_VerifyOTP")) {
 			String message = jsonPathEvaluator.getString("message");
 			if(!message.contains("otp verification failed -> not-found/expired/mismatch")) {

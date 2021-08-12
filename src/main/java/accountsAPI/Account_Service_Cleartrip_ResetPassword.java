@@ -8,19 +8,17 @@ import org.testng.annotations.Test;
 import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
 
-public class Account_Service_Flyin_ResetPassword extends AccountsCommon_API
+public class Account_Service_Cleartrip_ResetPassword extends AccountsCommon_API
 {
 	@Test
-	public void flyinresetpasswordV2() throws IOException, JSONException{
+	public void clrtpnresetpasswordV2() throws IOException, JSONException{
 
 		Response resp ;		
-		resp =postCall("flyinresetpasswordV2", "");
-		validation( resp, "flyinresetpasswordV2", "");
+		resp =postCall("Account_Service_Cleartrip_ResetPassword", "");
+		validation_user_update_MobileOTP( resp, "Account_Service_Cleartrip_ResetPassword", "");
 		
 		/*ResponseBody body = resp.getBody();
 		System.out.println("Response of API is:" + body.asString());*/
 
 	}
-
-
 }

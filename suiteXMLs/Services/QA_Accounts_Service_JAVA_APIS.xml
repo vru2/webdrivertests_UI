@@ -149,8 +149,11 @@
 			<class name="accountsAPI.Account_Service_CFW_GetUserStatus" />
 			<class name="accountsAPI.Account_Service_CFW_StatusUpdateCall" />
 			<class name="accountsAPI.Account_Service_FetchContactData" />
+			<class name="accountsAPI.Account_Service_Cleartrip_ResetPassword" />
 			<class
 				name="accountsAPI.Account_Service_Cleartrip_confirmedtravlerwithActivestatus" />
+				<class
+				name="accountsAPI.Account_Service_UserController_VerifyAccount_UsernotPresent" />
 			<class name="accountsAPI.Account_Service_GetuserdetailsbyAPIKey" />
 			<class name="accountsAPI.Account_Service_GET_UserbyCookie_CleartripUser" />
 			<class name="accountsAPI.Account_Service_GET_UserbyCookie_FlyinUser" />

@@ -23,18 +23,11 @@
     </classes>
 </test>
 
-
-
 <test name="API Wallets"  preserve-order="true" parallel="true" >
     <classes>
 		<class name="paymentsAPI.API_Wallet_Promo_CashBackDetails"/>
 		<class name="paymentsAPI.API_Wallet_RevertedPromo_info"/>
-		<class name="paymentsAPI.API_Wallet_RevertPromoNew"/>
-		
-				
-		<class name="paymentsAPI.API_Wallet_Create"/>			
-		<class name="paymentsAPI.API_Wallet_Get_Wallet_Trnx"/>
-		<class name="paymentsAPI.API_Wallet_GetDeduction"/>
+		<class name="paymentsAPI.API_Wallet_RevertPromoNew"/>	
 		<class name="paymentsAPI.API_Wallet_PromoUsed"/>
 		<class name="paymentsAPI.API_Wallet_RevertPromo"/>
     </classes>
@@ -42,9 +35,13 @@
 
 <test name="API Wallet App Only"  preserve-order="true" parallel="true" >
     <classes>
+		<class name="paymentsAPI.API_Wallet_Create"/>			
+		<class name="paymentsAPI.API_Wallet_Get_Wallet_Trnx"/>
+		<class name="paymentsAPI.API_Wallet_GetDeduction"/>
 		<class name="paymentsAPI.API_Wallet_CashBackDetails"/>
 		<class name="paymentsAPI.API_Wallet_Get_Wallet_All"/>
 		<class name="paymentsAPI.API_Wallet_Get_Wallet_INR"/>	
+		<class name="paymentsAPI.API_Wallet_Get_Wallet_INR_V2"/>			
     </classes>
 </test>
 

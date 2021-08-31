@@ -21,7 +21,6 @@ import javax.lang.model.element.Element;
 
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.junit.Assert;
-import org.omg.CORBA.Current;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;

@@ -345,6 +345,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String urlEndPoint_Wallet_CASHBACK_DETAILS = "/payments/wallet/promo/13957750/promotions/5732312";
 	String urlEndPoint_Wallet_GETWALLET_ALL = "/payments/wallet/65179937/getWallet";
 	String urlEndPoint_Wallet_GETWALLET_INR = "/payments/wallet/fetch?userId=13957750&currency=INR";
+	String urlEndPoint_Wallet_GETWALLET_V2_INR = "/payments/wallet/fetch/v2?userId=13957750&currency=INR";
 	String urlEndPoint_Wallet_CASHBACK_DETAILS14 = "";
 	String urlEndpoint_GVCreate= "/payments/gv/create";
 	String urlEndPoint_Wallet_CASHBACK_Wallet = "/payments/wallet/cashback?emailId=test@test123.com&currency=INR&amount=1&tripRef=Q190812462222&expiryDate =20-09-19";
@@ -1500,6 +1501,14 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 					log().all().
 					headers(headers).
 					get(url);
+		}else if(payType.equalsIgnoreCase("GETWALLET_V2_INR")) {
+			url= urlEndPoint_Wallet_GETWALLET_V2_INR;
+			Reporter.log(url);
+			request = RestAssured.given().
+					when().
+					log().all().
+					headers(headers).
+					post(url);
 		}	
 		else if(payType.equalsIgnoreCase("CASHBACK_DETAILS_WALLET")) {
 			url= urlEndPoint_Wallet_CASHBACK_Wallet;
@@ -2181,6 +2190,22 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 				Assert.assertTrue(false);
 			}
 		}
+		
+		else if(payType.equalsIgnoreCase("GETWALLET_V2_INR")) {
+			String wallet_number = jsonPathEvaluator.getString("wallet_number");
+			String id = jsonPathEvaluator.getString("id");
+			if(!wallet_number.equalsIgnoreCase("3000331040000001")) {
+				Reporter.log("transactionType is : "+wallet_number);
+				Assert.assertTrue(false);
+			}
+			if(!id.equalsIgnoreCase("5153572")) {
+				Reporter.log("description is : "+id);
+				Assert.assertTrue(false);
+			}
+		}
+		
+		
+		
 		else if(payType.equalsIgnoreCase("GVWL")) {
 			if(!resp.body().asString().contains("Wallet payment success")){
 				Assert.assertTrue(false);

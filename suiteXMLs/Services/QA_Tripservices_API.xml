@@ -74,6 +74,14 @@
 			<class name="tripServices.TS_GDSPNR"/>
 			<class name="tripServices.TS_GET_BookingStatus"/>
 			<class name="tripServices.TS_GET_PartnerTrips"/>
+			<class name="tripServices.TS_CheckPNR"/>
+			<class name="tripServices.TS_Get_TripCount"/>
+			<class name="tripServices.TS_FetchUserID_on_txnidandtripid"/>
+			<class name="tripServices.TS_Fetch_PeopleDetails"/>
+			<class name="tripServices.TS_Get_RefundInfo"/>
+			<class name="tripServices.TS_Save_InternationFareRules"/>
+			<class name="tripServices.TS_Save_TripPDF"/>
+			
 			
 		</classes>
 	</test>

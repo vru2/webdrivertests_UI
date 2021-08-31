@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Bento UI" parallel="tests" thread-count="2">
+<suite name="Bento UI" parallel="tests" thread-count="1">
 
 <listeners>
 <listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -10,13 +10,19 @@
 
 <test name="Booking From Itinerary" preserve-order="true" >
     <classes>
-     <class name="paymentsBento_com.Bento_Coupon_StoredCard_Booking"/> 
+    <!--  <class name="paymentsBento_com.Bento_Coupon_StoredCard_Booking"/> 
        <class name="paymentsBento_com.Bento_Full_GV_Booking"/> 
         <class name="paymentsBento_com.Bento_NB_ICICI_Booking"/> 
-       <!--   <class name="paymentsBento_com.Bento_StoredCard_Booking"/>  -->
+         <class name="paymentsBento_com.Bento_StoredCard_Booking"/> 
           <class name="paymentsBento_com.Bento_UPI_Booking"/> 
-           <class name="paymentsBento_com.Bento_Wallet_Booking"/> 
-           <class name="paymentsBento_com.Bento_Partial_Wallet_Booking"/>
+           <class name="paymentsBento_com.Bento_Wallet_Booking"/>  -->
+           <class name="paymentsBento_Itn.Bento_AE_Booking"/>
+            <class name="paymentsBento_Itn.Bento_BH_Booking"/>
+             <class name="paymentsBento_Itn.Bento_KW_Booking"/>
+              <class name="paymentsBento_Itn.Bento_ME_Booking"/>
+               <class name="paymentsBento_Itn.Bento_OM_Booking"/>
+                <class name="paymentsBento_Itn.Bento_QA_Booking"/>
+                <class name="paymentsBento_Itn.Bento_SA_Booking"/>
     </classes>
 </test>
 

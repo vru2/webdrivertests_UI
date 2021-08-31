@@ -117,6 +117,8 @@
 			<class name="accountsAPI.Account_Service_Peoplecontroller_GetuserByEmail" />
 			<class name="accountsAPI.Account_Service_Peoplecontroller_GetuserById" />
 			<class name="accountsAPI.Account_Service_People_UpdateUserRoles" />
+			<class name="accountsAPI.Accounts_Service_fetchuserdetails_withoutReferer" />
+			<class name="accountsAPI.Accounts_Service_fetchuserdetails_withReferer" />
 			<class name="accountsAPI.Account_Service_CreateWalletAPI" />
 			<class
 				name="accountsAPI.Account_Service_RegisterFLyinUserUpdate_OTPValidation" />

@@ -48,6 +48,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String url_Identitymicro_service="http://identity-microservice.cltp.com:9001";
 
 	String url_Acct_Service="http://accounts-service-api.cltp.com:9001";
+	String 	url_Acct_Service_gateway="https://platformqa2.cleartrip.com";
 
 	String url_userclassification="http://172.17.51.86:8017";
 
@@ -187,6 +188,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String url_Account_Service_CompanyConfig_GSTdetailswithDomainName="/company/v2/configs?domain=qa.amexindiatravel.com";
 	String url_Account_Service_CompanyConfig_GetCompanybyID="/company/v2/profile/110340";
 	String url_Account_Service_GetuserdetailsbyAPIKey="/account/people/v2/api-key/111test111?docRequired=true&savedCards=true&travellersRequired=true&userPreference=true";
+	String url_Accounts_Service_fetchuserdetails_withoutReferer="/people/v2/fetch/details?docRequired=true&savedCards=true&travellersRequired=true&userPreference=true";
 	String url_Account_Service_CompanyConfig_GetCompanyConfigsbyID="/company/v2/configs?id=181";
 	String url_Account_Service_CompanyVendorMapping="/company/v2/196440/vendor-mapping";
 	String url_Account_Service_CompanySearchAPIwithAPIkey="/company/v2/search?apiKey=test";
@@ -503,7 +505,24 @@ String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\
 
 		return headers;
 	}
-
+	
+	public HashMap<String, Object> headersFormgateway(){
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("Cookie", "ct-auth=sbTuCPZ9yEzXX%2BSA555pKda4jfUbXgF94ZK6unK06HZaLPh%2FF6uVOeCbTJQrZzxIXZb27r3UOV1Ev4bGezupkT9NkrM3bjdx950UgAiLoV8S0AggCjlwZfdk%2Bjg1KnyMcbQHip4k08psln12Hs3t5AhSz5Tm3nNmMqN834TxTk0mlTLdQtcneofIN7sZPYNGlKVNg6A8UssolSYFtPQtk3fxj2tZC0kkiOjLYRx4gUteBkTlW4pERzPjBkpSwhJgt0lF%2BdyWypfeXZj9%2B8TMdEnggXuZ5XUsVKDqRk3TP0c5XMXN%2FfUwAaQvdO%2FQJtfy; ct-auth=Z9Qsvxu31QrtFuL%2BZIh%2F%2BsDuBJDZy0eSblQmod1yZKJ7c6rVBubK%2BdJHVFMciSL%2BXZb27r3UOV1Ev4bGezupkTKIW7Ph8auaXeltEIimttWSWebd679fDwPYXdaakyixiDpipnRoFNlVipI%2BI2po%2FBMGjptfaAemLzLHI223cK4a6rZslrcV47Tjzb9c7EYbSu7ZSu%2Baz7wYWabrSTP97AYG0Ny%2B1LR%2BhpT9NU4%2F9g9CbhWX3UMhf28JnJzBlWq88gYU49L8K80L3Mr8UYKXvQ%3D%3D; userid=nakul.goyal%40cleartrip.com%7CNakul%2Bgoyal%7CMale%7C%7C65200719%7C; usermisc=SIGNED_IN|");
+		headers.put("caller", "caller");
+		headers.put("accept", "*/*");
+		return headers;
+	}
+	
+	public HashMap<String, Object> headersFormgatewayref(){
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("Cookie", "ct-auth=sbTuCPZ9yEzXX%2BSA555pKda4jfUbXgF94ZK6unK06HZaLPh%2FF6uVOeCbTJQrZzxIXZb27r3UOV1Ev4bGezupkT9NkrM3bjdx950UgAiLoV8S0AggCjlwZfdk%2Bjg1KnyMcbQHip4k08psln12Hs3t5AhSz5Tm3nNmMqN834TxTk0mlTLdQtcneofIN7sZPYNGlKVNg6A8UssolSYFtPQtk3fxj2tZC0kkiOjLYRx4gUteBkTlW4pERzPjBkpSwhJgt0lF%2BdyWypfeXZj9%2B8TMdEnggXuZ5XUsVKDqRk3TP0c5XMXN%2FfUwAaQvdO%2FQJtfy; ct-auth=Z9Qsvxu31QrtFuL%2BZIh%2F%2BsDuBJDZy0eSblQmod1yZKJ7c6rVBubK%2BdJHVFMciSL%2BXZb27r3UOV1Ev4bGezupkTKIW7Ph8auaXeltEIimttWSWebd679fDwPYXdaakyixiDpipnRoFNlVipI%2BI2po%2FBMGjptfaAemLzLHI223cK4a6rZslrcV47Tjzb9c7EYbSu7ZSu%2Baz7wYWabrSTP97AYG0Ny%2B1LR%2BhpT9NU4%2F9g9CbhWX3UMhf28JnJzBlWq88gYU49L8K80L3Mr8UYKXvQ%3D%3D; userid=nakul.goyal%40cleartrip.com%7CNakul%2Bgoyal%7CMale%7C%7C65200719%7C; usermisc=SIGNED_IN|");
+		headers.put("caller", "caller");
+		headers.put("accept", "*/*");
+		headers.put("Referer", "qa2.cleartrip.com");
+		return headers;
+	}
+	
 
 
 
@@ -2288,6 +2307,22 @@ String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\
 
 			Reporter.log(url_Acct_Service+url);
 		}
+		
+		else if (Type.equals("Accounts_Service_fetchuserdetails_withoutReferer")){
+			RestAssured.baseURI=url_Acct_Service_gateway;
+			url = url_Accounts_Service_fetchuserdetails_withoutReferer;
+			headers = headersFormgateway();
+
+			Reporter.log(url_Acct_Service+url);
+		}
+		
+		else if (Type.equals("Accounts_Service_fetchuserdetails_withReferer")){
+			RestAssured.baseURI=url_Acct_Service_gateway;
+			url = url_Accounts_Service_fetchuserdetails_withoutReferer;
+			headers = headersFormgatewayref();
+
+			Reporter.log(url_Acct_Service+url);
+		}
 		else if (Type.equals("Account_Service_CompanyConfig_GetCompanyConfigsbyID")){
 			RestAssured.baseURI=url_Acct_Service;
 			url = url_Account_Service_CompanyConfig_GetCompanyConfigsbyID;
@@ -3655,6 +3690,28 @@ String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\
 			}
 
 		}
+		else if(Type.equalsIgnoreCase("Accounts_Service_fetchuserdetails_withoutReferer")) {
+
+			String ReponseStr = resp.body().asString();
+			if(!ReponseStr.contains("nakul.goyal@cleartrip.com")){
+				Assert.assertTrue(false);
+			}
+			if(!ReponseStr.contains("90639452")){
+				Assert.assertTrue(false);
+			}
+
+			if(!ReponseStr.contains("65200719")){
+				Assert.assertTrue(false);
+			}
+			if(!ReponseStr.contains("110340")){
+				Assert.assertTrue(false);
+			}
+			if(!ReponseStr.contains("ACTIVE_USER")){
+				Assert.assertTrue(false);
+			}
+
+		}
+		
 		else if(Type.equalsIgnoreCase("Account_Service_CompanyConfig_GetCompanyConfigsbyID")) {
 
 			String ReponseStr = resp.body().asString();

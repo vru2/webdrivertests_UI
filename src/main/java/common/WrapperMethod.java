@@ -148,6 +148,7 @@ public class WrapperMethod extends CommonUtil {
 		cap.setCapability("goog:chromeOptions", options);
 		return cap;
 	}
+	
 
 	public WebDriver getMobileDriver(WebDriver driver) throws IOException {
 
@@ -363,7 +364,10 @@ public class WrapperMethod extends CommonUtil {
 		if (driver == null) {
 			if (common.value("mobilebrowser").equalsIgnoreCase("Chrome")
 					&& common.value("mode").equalsIgnoreCase("local")&&common.value("headlessbrowser").equalsIgnoreCase("true")) { 
-				System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
+				File file = new File(".");
+				String filepath = file.getCanonicalPath() + "//exe//chromedriver.exe";
+				System.setProperty("webdriver.chrome.driver", filepath);
+				//System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
 				ChromeOptions options = new ChromeOptions();
 				options.addArguments(
 						"--user-agent=Mozilla/5.0 (iPhone; U; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5");
@@ -378,7 +382,12 @@ public class WrapperMethod extends CommonUtil {
 			
 			else if (common.value("mobilebrowser").equalsIgnoreCase("CHROME")
 					&& common.value("mode").equalsIgnoreCase("local") || common.value("mode").equalsIgnoreCase("Grid")) {
-				System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
+			//	System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
+				
+				File file = new File(".");
+				String filepath = file.getCanonicalPath() + "//exe//chromedriver.exe";
+				System.setProperty("webdriver.chrome.driver", filepath);			
+				
 				ChromeOptions options = new ChromeOptions();
 				options.addArguments(
 						"--user-agent=Mozilla/5.0 (iPhone; U; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5");

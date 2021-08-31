@@ -216,10 +216,10 @@ public class Mobile_PWA_Common extends WrapperMethod
 
 		if (payType.equalsIgnoreCase("NB")) {
 
-			waitForElementVisibility(driver,getObjectPlatform("PWA_Paymentpage"),5);
+			waitForElementVisibility(driver,getObjectPlatform("PWA_Paymentpage"),10);
 			if 	(elementPresent(driver, getObjectPlatform("PWA_Paymentpage"), 10))				
 			{
-				waitForElementVisibility(driver, getObjectPlatform("PWA_PaymentPage_NB_Tab"), 5);				
+			//	waitForElementVisibility(driver, getObjectPlatform("PWA_PaymentPage_NB_Tab"), 5);				
 				driver.findElement(By.xpath("//p[contains(text(),'Net banking')]")).click();				
 				if (!textPresentInElement(driver,getObjectPlatform("PWA_PaymentPage_SelectNBPage"),"Choose another bank", 2)) {
 					Reporter.log("Choose another bank text is not displayed");

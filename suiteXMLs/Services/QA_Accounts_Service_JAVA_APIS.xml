@@ -20,8 +20,6 @@
 
 		</classes>
 	</test>
-
-
 	<test name="Accounts-Service-Userclassification" parallel="true">
 		<classes>
 			<class name="accountsAPI.Userclassification_Parsing_CSV" />
@@ -145,7 +143,8 @@
 			<class name="accountsAPI.Account_Service_FetchPersonalData" />
 			<class name="accountsAPI.Account_Service_GetActivationKey" />
 			<class name="accountsAPI.Account_Service_AuthforNonLoggedinUser" />
-			<class name="accountsAPI.Account_Service_AuthforNonLoggedinUser_InvalidTripID" />
+			<class
+				name="accountsAPI.Account_Service_AuthforNonLoggedinUser_InvalidTripID" />
 			<class name="accountsAPI.Account_Service_AuthforNonLoggedinUser_VerifyOTP" />
 			<class name="accountsAPI.Account_Service_FetchCustomer_number" />
 			<class name="accountsAPI.Account_Service_CFW_GetUserStatus" />
@@ -154,7 +153,7 @@
 			<class name="accountsAPI.Account_Service_Cleartrip_ResetPassword" />
 			<class
 				name="accountsAPI.Account_Service_Cleartrip_confirmedtravlerwithActivestatus" />
-				<class
+			<class
 				name="accountsAPI.Account_Service_UserController_VerifyAccount_UsernotPresent" />
 			<class name="accountsAPI.Account_Service_GetuserdetailsbyAPIKey" />
 			<class name="accountsAPI.Account_Service_GET_UserbyCookie_CleartripUser" />
@@ -258,11 +257,9 @@
 			<class
 				name="accountsAPI.Flipkart_Accounts_service_GetUserDetailsBy_UserID_withoutparams" />
 
-			<class
-				name="accountsAPI.Flipkart_Accounts_service_JWTtoken_flipkart" />
-				
-				<class
-				name="accountsAPI.Flipkart_Accounts_service_JWTtoken_Cleartrip" />
+			<class name="accountsAPI.Flipkart_Accounts_service_JWTtoken_flipkart" />
+
+			<class name="accountsAPI.Flipkart_Accounts_service_JWTtoken_Cleartrip" />
 
 
 		</classes>

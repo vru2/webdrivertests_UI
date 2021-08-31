@@ -39,7 +39,7 @@ public class Mobile_PWA_NBflow extends Mobile_PWA_Common
 
 	@AfterClass
 	public void closeSelenium() throws Exception {
-		browserClose(driver);
+	browserClose(driver);
 	}
 
 	@AfterMethod(alwaysRun = true)

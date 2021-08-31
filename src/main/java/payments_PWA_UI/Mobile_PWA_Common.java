@@ -102,9 +102,10 @@ public class Mobile_PWA_Common extends WrapperMethod
 		if(elementPresent(driver, By.xpath("//p[contains(text(),'IndiGo')]"), 10))
 		{
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//p[contains(text(),'IndiGo')]")));
+		//	waitForElementVisibility(driver,By.xpath("//p[contains(text(),'IndiGo')]"),20);	
 			List<WebElement> li = driver.findElements(By.xpath("//p[contains(text(),'IndiGo')]"));;
-			Thread.sleep(1000);
-			li.get(1).click();	
+			Thread.sleep(2000);
+			li.get(2).click();	
 			Reporter.log("Selected IndiGO Flight");
 
 		}
@@ -212,16 +213,6 @@ public class Mobile_PWA_Common extends WrapperMethod
 		assertTrue(true);
 	}
 	public void pwa_select_Payment_option(RemoteWebDriver driver, String payType, String payType1, String cardType) throws Exception {
-
-		if (cardType.equalsIgnoreCase("MASTER")||cardType.equalsIgnoreCase("")) {
-			cardType = "MASTER";
-		}else if (cardType.equalsIgnoreCase("AMEX")) {
-			cardType = "AMEX";
-		}
-		String Country = null;
-		if (!payType1.equals("")) {
-			Country = payType1.substring(0, 2);
-		}
 
 		if (payType.equalsIgnoreCase("NB")) {
 

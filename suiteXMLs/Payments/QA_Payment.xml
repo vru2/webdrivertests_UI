@@ -15,4 +15,8 @@
 			<suite-file path="QA_Payment_TestApp.xml"></suite-file>
 		</suite-files> 
 		
+		 <suite-files>		 
+			<suite-file path="QA_Payment_TestApp.xml"></suite-file>
+		</suite-files> 
+		
 </suite>

@@ -27,6 +27,8 @@ public class CC_AE_Noon extends PaymentUI_Common{
 
 	@BeforeClass
 	public void setUp() throws Exception {
+		String date = putSRPDate(10);
+		System.out.println("Date "+date);
 		driver=(RemoteWebDriver) getDriver(driver);
 	}
 

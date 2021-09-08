@@ -148,13 +148,20 @@ public class CommonUtil {
 		return dateString;
 	}
 	
+	public String putSRPDate(int toDate) throws Exception {
+		Calendar c = new GregorianCalendar();
+		c.add(Calendar.DATE, +toDate);
+		Date s = c.getTime();
+		String dateString = new SimpleDateFormat("dd/MM/yyyy").format(s);
+		return dateString;
+	}
+	
 	
 	public String getNewDate_TripID() throws Exception {
 		Random random = new Random();		
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("hhmmSSS");
 		LocalDateTime now =  LocalDateTime.now();
 		String TripID = "Q2020"+random.nextInt(100)+dtf.format(now);
-		System.out.println("TripID : "+TripID); 
 		return TripID;
 	}
 	

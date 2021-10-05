@@ -23,7 +23,6 @@
 
 
 
-
 <test name="API UI config" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsAPI.API_UI_GetConfig_ConvFee"/>
@@ -64,8 +63,6 @@
       <class name="paymentsAPI.API_DA_PayV3"/>
       <class name="paymentsAPI.API_DA_ValidateV3"/>
       <class name="paymentsAPI.API_DA_Pay_Async"/>
-      
-      
       <!-- 
       <class name="paymentsAPI.API_DA_APP_Refund"/> --><!-- 
       <class name="paymentsAPI.API_DA_APP_Balance"/>  -->

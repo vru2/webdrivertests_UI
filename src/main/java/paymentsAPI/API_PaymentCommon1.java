@@ -187,6 +187,13 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String ParamsQitaf_Redeem = "{\"rewardsType\":\"QITAF\",\"rewardsRequestType\":\"REDEEM\",\"params\":{\"mobile\":\"555021515\",\"pin\":\"2118\"},\"trackId\":\"1280431506700\",\"paymentId\":\"123456106700\",\"amount\":300,\"currency\":\"SAR\",\"otp\":\"1235\"}";
 	String ParamsROR_Reverse= "{\"rewardsType\":\"QITAF\",\"rewardsRequestType\":\"REVERSE\",\"trackId\":\"1222234\",\"amount\":10,\"paymentId\":44695226,\"currency\":\"SAR\",\"params\":{\"tripRef\":\"Q210218897302\"}}";
 
+	String ParamsSuperCoins_SendOTP = "{\"rewardsType\":\"SUPERCOINS\",\"rewardsRequestType\":\"OTP\",\"trackId\":\"CTS01021\",\"amount\":10,\"params\":{\"mobile\":\"+918884094547\",\"itineraryId\":\"681f6b756d-67de-4efc-b3-5a7ac1bd9fa1\"}}";
+	String ParamsSuperCoins_ValidateOTP = "{\"rewardsType\":\"SUPERCOINS\",\"rewardsRequestType\":\"VALIDATE_OTP\",\"trackId\":\"CTS01021\",\"otp\":\"";
+	String ParamsSuperCoins_ValidateOTP1 = "\",\"params\":{\"mobile\":\"+918884094547\",\"itineraryId\":\"681f6b756d-67de-4efc-b3-5a7ac1bd9fa1\"}}";
+	
+	String ParamsSuperCoins_Unhold = "{\"rewardsType\":\"SUPERCOINS\",\"rewardsRequestType\":\"UNHOLD\",\"trackId\":\"CTS01021\",\"params\":{\"mobile\":\"+918884094547\",\"itineraryId\":\"681f6b756d-67de-4efc-b3-5a7ac1bd9fa1\"}}";
+	
+	
 	String ParamsFetchRefund="{\"refundIds\":[9387165,9387150,9387149,9387190,9387357"
 			+ ",9387405],\"txnIds\": null,"+"\"status\": [\"D\",\"P\",\"S\",\"T\",\"F\"]}";
 	
@@ -256,6 +263,16 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String urlpromoUsed = "/payments/wallet/promo/used?tripRef=Q190702311622";
 	String urlFetchTripStatus = "/paymentservice/service/status/xml/Q210302910382.ref";
 	String urlFetchGWFailure = "/paymentservice/bannerDetails";
+	
+	
+	String urlSuperCoins_MobileLinked= "/payments/rewards/supercoins/checkAccountLinked?mobileNumber=+919986696785";
+	
+	String urlSuperCoins_Info = "/api/supercoinsInfo/Q210917152782";
+	
+	String urlSuperCoins_SendOTP="/payments/rewards/sendOtp";
+
+	String urlSuperCoins_ValidateOTP = "/payments/rewards/supercoins/validateOtp";
+	String urlSuperCoins_Unhold = "/payments/rewards/supercoins/unhold";
 	
 	String urlPayFlyin = "/paymentservice/gw/v1/pay";
 
@@ -516,6 +533,9 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String params_PayUI_Air2="\",\"txn_id\":\"75719816\",\"currency\":\"INR\",\"product_type\":\"DOMESTIC-AIR\",\"source_type\":\"ACCOUNT\",\"high_risk\":false,\"country\":\"IN\",\"user_id\":\"13957750\",\"company_id\":101,\"payment_category\":\"B\",\"gift_voucher_details\":[],\"currency_conversion_details\":{\"displayCurrency\":\"Rs.\",\"conversionFactor\":1.0},\"customer_detail\":{\"user_id\":13957750,\"mobile\":\"1211212122\",\"landline\":\"02240554000\",\"email\":\"cltppayment@gmail.com\",\"first_name\":\"Cleartrip\",\"last_name\":\"Booker\",\"title\":\"Mr\"},\"app_return_info\":{\"url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI68d317ae5b-ef5e-49e5-a2cc-200903170504/book/internal\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI68d317ae5b-ef5e-49e5-a2cc-200903170504/book/internal\"},\"air_booking\":{\"traveller_details\":[{\"seq_no\":1,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"John\",\"last_name\":\"Miller\"},{\"seq_no\":2,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"Ashish\",\"last_name\":\"Jain\"},{\"seq_no\":3,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"Rohit\",\"last_name\":\"Kumar\"},{\"seq_no\":4,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"Mohit\",\"last_name\":\"Verma\"},{\"seq_no\":5,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"Sachin\",\"last_name\":\"Reddy\"}],\"itinerary_details\":[{\"segment_details\":[{\"serial_number\":1,\"airline_name\":\"IndiGo\",\"airline_code\":\"6E\",\"flight_number\":734,\"departure_date\":\"2020-10-24T09:20:00\",\"arrival_date\":\"2020-10-24T11:05:00\",\"departure_time\":\"09:20\",\"arrival_time\":\"11:05\",\"duration\":\"6300\",\"stops\":0,\"departure_code\":\"BLR\",\"arrival_code\":\"BOM\",\"departure_airport_name\":\"Bengaluru International Airport\",\"arrival_airport_name\":\"Chatrapati Shivaji Airport\",\"total_time\":\"6300\",\"departure_terminal\":\"1\",\"arrival_terminal\":\"1\",\"departure_name\":\"Bangalore\",\"arrival_name\":\"Mumbai\"}]}],\"flights_pricing_details\":{\"air_dev_fee\":0.0,\"airline_misc\":0.0,\"cute_fee\":0.0,\"airline_gst\":723.0,\"amend_charges\":0.0,\"ct_charges\":0.0,\"other_charges\":0.0,\"service_fee\":0.0,\"total_vat\":0.0,\"vat_percentage\":0.0,\"vas_details\":[{\"amount\":229.0,\"provider\":\"DIGIT\",\"title\":\"Flexifly\",\"vas_type\":\"AMEND_INSURANCE\"},{\"amount\":279.0,\"provider\":\"DIGIT\",\"title\":\"TRAVEL_INSURANCE\",\"vas_type\":\"TRAVEL_INSURANCE\"}],\"pax_pay_info\":[{\"base_fare\":3100.0,\"pax_count\":1,\"pax_type\":\"ADULT\"}],\"discount\":0.0,\"psgr_service_fee\":0.0,\"currency\":\"INR\",\"total\":500.0},\"convenience_fee_details\":{\"cc\":150.0,\"dc\":150.0,\"nb\":150.0,\"kc\":0.0,\"up\":150.0,\"da\":0.0,\"tw\":150.0,\"rp\":150.0,\"ap\":0.0,\"wt\":150.0,\"gv\":150.0,\"flat_fee\":true}},\"domain\":\"IN\",\"initial_total\":0.0,\"retry_num\":0,\"cfw_amount\":0.0,\"supplier_currency\":\"INR\",\"new_bento\":false}";
 	String params_PayUI_Air2_New="\",\"txn_id\":\"75872776\",\"currency\":\"INR\",\"product_type\":\"DOMESTIC-AIR\",\"source_type\":\"ACCOUNT\",\"high_risk\":false,\"country\":\"IN\",\"user_id\":\"13957750\",\"company_id\":110340,\"payment_category\":\"B\",\"gift_voucher_details\":[],\"currency_conversion_details\":{\"displayCurrency\":\"INR\",\"conversionFactor\":1.0},\"customer_detail\":{\"user_id\":13957750,\"mobile\":\"1111111111\",\"landline\":\"1111111111\",\"email\":\"kiran.kumar@cleartrip.com\",\"first_name\":\"kiran\",\"last_name\":\"kumar\",\"title\":\"Mr\"},\"app_return_info\":{\"url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI6847f117db-6f00-4624-a0a0-210405140001/book/internal\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI6847f117db-6f00-4624-a0a0-210405140001/book/internal\"},\"air_booking\":{\"traveller_details\":[{\"seq_no\":1,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"kiran\",\"last_name\":\"kumar\"}],\"itinerary_details\":[{\"segment_details\":[{\"serial_number\":1,\"airline_name\":\"IndiGo\",\"airline_code\":\"6E\",\"flight_number\":258,\"departure_date\":\"2021-06-03T13:35:00\",\"arrival_date\":\"2021-06-03T14:40:00\",\"departure_time\":\"13:35\",\"arrival_time\":\"14:40\",\"duration\":\"3900\",\"stops\":0,\"departure_code\":\"BLR\",\"arrival_code\":\"MAA\",\"departure_airport_name\":\"Bengaluru International Airport\",\"arrival_airport_name\":\"Chennai Airport\",\"total_time\":\"3900\",\"departure_terminal\":\"1\",\"arrival_terminal\":\"1\",\"departure_name\":\"Bangalore\",\"arrival_name\":\"Chennai\"},{\"serial_number\":2,\"airline_name\":\"IndiGo\",\"airline_code\":\"6E\",\"flight_number\":302,\"departure_date\":\"2021-06-03T16:25:00\",\"arrival_date\":\"2021-06-03T17:45:00\",\"departure_time\":\"16:25\",\"arrival_time\":\"17:45\",\"duration\":\"4800\",\"stops\":0,\"departure_code\":\"MAA\",\"arrival_code\":\"HYD\",\"departure_airport_name\":\"Chennai Airport\",\"arrival_airport_name\":\"Rajiv Gandhi International\",\"total_time\":\"4800\",\"departure_terminal\":\"1\",\"arrival_terminal\":\"\",\"departure_name\":\"Chennai\",\"arrival_name\":\"Hyderabad\"}]}],\"flights_pricing_details\":{\"air_dev_fee\":0.0,\"airline_misc\":0.0,\"cute_fee\":0.0,\"airline_gst\":793.0,\"amend_charges\":0.0,\"ct_charges\":0.0,\"other_charges\":0.0,\"service_fee\":0.0,\"total_vat\":0.0,\"vat_percentage\":0.0,\"vas_details\":[{\"amount\":149.0,\"provider\":\"DIGIT\",\"title\":\"Flexifly\",\"vas_type\":\"AMEND_INSURANCE\"}],\"pax_pay_info\":[{\"base_fare\":2102.0,\"pax_count\":1,\"pax_type\":\"ADULT\"}],\"discount\":0.0,\"psgr_service_fee\":0.0,\"currency\":\"INR\",\"total\":500.0,\"baggage_charges\":0.0,\"meal_charges\":0.0,\"seat_charges\":0.0},\"convenience_fee_details\":{\"cc\":150.0,\"dc\":100.0,\"nb\":150.0,\"kc\":0.0,\"up\":150.0,\"da\":0.0,\"tw\":150.0,\"rp\":150.0,\"ap\":0.0,\"wt\":150.0,\"gv\":150.0,\"emi\":0.0,\"flat_fee\":true}},\"domain\":\"IN\",\"initial_total\":0.0,\"retry_num\":0,\"cfw_amount\":0.0,\"supplier_currency\":\"INR\",\"dx_value\":58,\"new_bento\":false}";
 	String params_PayUI_Air2_EMI="\",\"txn_id\":\"75872776\",\"currency\":\"INR\",\"product_type\":\"DOMESTIC-AIR\",\"source_type\":\"ACCOUNT\",\"high_risk\":false,\"country\":\"IN\",\"user_id\":\"13957750\",\"company_id\":110340,\"payment_category\":\"B\",\"gift_voucher_details\":[],\"currency_conversion_details\":{\"displayCurrency\":\"INR\",\"conversionFactor\":1.0},\"customer_detail\":{\"user_id\":13957750,\"mobile\":\"1111111111\",\"landline\":\"1111111111\",\"email\":\"kiran.kumar@cleartrip.com\",\"first_name\":\"kiran\",\"last_name\":\"kumar\",\"title\":\"Mr\"},\"app_return_info\":{\"url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI6847f117db-6f00-4624-a0a0-210405140001/book/internal\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI6847f117db-6f00-4624-a0a0-210405140001/book/internal\"},\"air_booking\":{\"traveller_details\":[{\"seq_no\":1,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"kiran\",\"last_name\":\"kumar\"}],\"itinerary_details\":[{\"segment_details\":[{\"serial_number\":1,\"airline_name\":\"IndiGo\",\"airline_code\":\"6E\",\"flight_number\":258,\"departure_date\":\"2021-06-03T13:35:00\",\"arrival_date\":\"2021-06-03T14:40:00\",\"departure_time\":\"13:35\",\"arrival_time\":\"14:40\",\"duration\":\"3900\",\"stops\":0,\"departure_code\":\"BLR\",\"arrival_code\":\"MAA\",\"departure_airport_name\":\"Bengaluru International Airport\",\"arrival_airport_name\":\"Chennai Airport\",\"total_time\":\"3900\",\"departure_terminal\":\"1\",\"arrival_terminal\":\"1\",\"departure_name\":\"Bangalore\",\"arrival_name\":\"Chennai\"},{\"serial_number\":2,\"airline_name\":\"IndiGo\",\"airline_code\":\"6E\",\"flight_number\":302,\"departure_date\":\"2021-06-03T16:25:00\",\"arrival_date\":\"2021-06-03T17:45:00\",\"departure_time\":\"16:25\",\"arrival_time\":\"17:45\",\"duration\":\"4800\",\"stops\":0,\"departure_code\":\"MAA\",\"arrival_code\":\"HYD\",\"departure_airport_name\":\"Chennai Airport\",\"arrival_airport_name\":\"Rajiv Gandhi International\",\"total_time\":\"4800\",\"departure_terminal\":\"1\",\"arrival_terminal\":\"\",\"departure_name\":\"Chennai\",\"arrival_name\":\"Hyderabad\"}]}],\"flights_pricing_details\":{\"air_dev_fee\":0.0,\"airline_misc\":0.0,\"cute_fee\":0.0,\"airline_gst\":793.0,\"amend_charges\":0.0,\"ct_charges\":0.0,\"other_charges\":0.0,\"service_fee\":0.0,\"total_vat\":0.0,\"vat_percentage\":0.0,\"vas_details\":[{\"amount\":149.0,\"provider\":\"DIGIT\",\"title\":\"Flexifly\",\"vas_type\":\"AMEND_INSURANCE\"}],\"pax_pay_info\":[{\"base_fare\":2102.0,\"pax_count\":1,\"pax_type\":\"ADULT\"}],\"discount\":0.0,\"psgr_service_fee\":0.0,\"currency\":\"INR\",\"total\":5000.0,\"baggage_charges\":0.0,\"meal_charges\":0.0,\"seat_charges\":0.0},\"convenience_fee_details\":{\"cc\":150.0,\"dc\":100.0,\"nb\":150.0,\"kc\":0.0,\"up\":150.0,\"da\":0.0,\"tw\":150.0,\"rp\":150.0,\"ap\":0.0,\"wt\":150.0,\"gv\":150.0,\"emi\":0.0,\"flat_fee\":true}},\"domain\":\"IN\",\"initial_total\":0.0,\"retry_num\":0,\"cfw_amount\":0.0,\"supplier_currency\":\"INR\",\"dx_value\":58,\"new_bento\":false}";
+	String params_PayUI_SUPERCOINS="\",\"txn_id\":\"76266182\",\"currency\":\"INR\",\"product_type\":\"DOMESTIC-AIR\",\"source_type\":\"ACCOUNT\",\"high_risk\":false,\"country\":\"IN\",\"user_id\":\"41695136\",\"company_id\":110340,\"payment_category\":\"B\",\"reward_point_details\":[{\"reward_points_detail\":{\"uid\":\"NI68d2b19783-ebf0-47bb-8e00-210915092614\",\"otp\":\"249971\",\"params\":{\"mobile\":\"+917483912960\"}},\"rewards_type\":\"SUPERCOINS\",\"amount\":1000.0,\"total_balance\":1000.0,\"earned_amount\":0.0}],\"gift_voucher_details\":[],\"currency_conversion_details\":{\"displayCurrency\":\"INR\",\"conversionFactor\":1.0},\"customer_detail\":{\"user_id\":41695136,\"mobile\":\"9985123464\",\"landline\":\"9985123464\",\"email\":\"sindhu.gummadi@cleartrip.com\",\"first_name\":\"Sindhu\",\"last_name\":\"Gummadi\",\"title\":\"Ms\"},\"app_return_info\":{\"url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI68d2b19783-ebf0-47bb-8e00-210915092614/book/internal\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI68d2b19783-ebf0-47bb-8e00-210915092614/book/internal\"},\"air_booking\":{\"traveller_details\":[{\"seq_no\":1,\"type\":\"ADT\",\"title\":\"Ms\",\"first_name\":\"Sindhu\",\"last_name\":\"Gummadi\"}],\"itinerary_details\":[{\"segment_details\":[{\"serial_number\":1,\"airline_name\":\"SpiceJet\",\"airline_code\":\"SG\",\"flight_number\":456,\"departure_date\":\"2021-11-10T20:35:00\",\"arrival_date\":\"2021-11-10T22:45:00\",\"departure_time\":\"20:35\",\"arrival_time\":\"22:45\",\"duration\":\"7800\",\"stops\":0,\"departure_code\":\"BLR\",\"arrival_code\":\"BOM\",\"departure_airport_name\":\"Bengaluru International Airport\",\"arrival_airport_name\":\"Chatrapati Shivaji Airport\",\"total_time\":\"7800\",\"departure_terminal\":\"1\",\"arrival_terminal\":\"2\",\"departure_name\":\"Bangalore\",\"arrival_name\":\"Mumbai\"}]}],\"flights_pricing_details\":{\"air_dev_fee\":0.0,\"airline_misc\":0.0,\"cute_fee\":0.0,\"airline_gst\":670.0,\"amend_charges\":0.0,\"ct_charges\":0.0,\"other_charges\":0.0,\"service_fee\":0.0,\"total_vat\":0.0,\"vat_percentage\":0.0,\"vas_details\":[],\"pax_pay_info\":[{\"base_fare\":2880.0,\"pax_count\":1,\"pax_type\":\"ADULT\"}],\"discount\":0.0,\"psgr_service_fee\":0.0,\"currency\":\"INR\",\"total\":2550.0,\"baggage_charges\":0.0,\"meal_charges\":0.0,\"seat_charges\":0.0},\"convenience_fee_details\":{\"cc\":110.0,\"dc\":100.0,\"nb\":110.0,\"kc\":0.0,\"up\":0.0,\"da\":0.0,\"tw\":110.0,\"rp\":110.0,\"ap\":0.0,\"wt\":110.0,\"gv\":110.0,\"emi\":0.0,\"flat_fee\":true}},\"domain\":\"IN\",\"initial_total\":0.0,\"retry_num\":0,\"cfw_amount\":0.0,\"supplier_currency\":\"INR\",\"dx_value\":56,\"new_bento\":false}";
+
+	String params_PayUI_SUPERCOINS1 ="{\"itinerary_id\":\"NI685a33347e-464c-4a27-86c9-200710101330\",\"ttl\":0,\"trip_id\":46314335,\"trip_ref\":\"";
 
 	String params_PayUI_Air224="\",\"txn_id\":\"75719816\",\"currency\":\"INR\",\"product_type\":\"DOMESTIC-AIR\",\"source_type\":\"ACCOUNT\",\"high_risk\":false,\"country\":\"IN\",\"user_id\":\"13957750\",\"company_id\":101,\"payment_category\":\"B\",\"currency_conversion_details\":{\"displayCurrency\":\"Rs.\",\"conversionFactor\":1.0},\"customer_detail\":{\"user_id\":13957750,\"mobile\":\"1211212122\",\"landline\":\"02240554000\",\"email\":\"cltppayment@gmail.com\",\"first_name\":\"Cleartrip\",\"last_name\":\"Booker\",\"title\":\"Mr\"},\"app_return_info\":{\"url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI68d317ae5b-ef5e-49e5-a2cc-200903170504/book/internal\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI68d317ae5b-ef5e-49e5-a2cc-200903170504/book/internal\"},\"air_booking\":{\"traveller_details\":[{\"seq_no\":1,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"John\",\"last_name\":\"Miller\"},{\"seq_no\":2,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"Ashish\",\"last_name\":\"Jain\"},{\"seq_no\":2,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"Rohit\",\"last_name\":\"Kumar\"},{\"seq_no\":2,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"Mohit\",\"last_name\":\"Verma\"},{\"seq_no\":2,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"Sachin\",\"last_name\":\"Reddy\"}],\"itinerary_details\":[{\"segment_details\":[{\"serial_number\":1,\"airline_name\":\"IndiGo\",\"airline_code\":\"6E\",\"flight_number\":734,\"departure_date\":\"2020-10-24T09:20:00\",\"arrival_date\":\"2020-10-24T11:05:00\",\"departure_time\":\"09:20\",\"arrival_time\":\"11:05\",\"duration\":\"6300\",\"stops\":0,\"departure_code\":\"BLR\",\"arrival_code\":\"BOM\",\"departure_airport_name\":\"Bengaluru International Airport\",\"arrival_airport_name\":\"Chatrapati Shivaji Airport\",\"total_time\":\"6300\",\"departure_terminal\":\"1\",\"arrival_terminal\":\"1\",\"departure_name\":\"Bangalore\",\"arrival_name\":\"Mumbai\"}]}],\"flights_pricing_details\":{\"air_dev_fee\":0.0,\"airline_misc\":0.0,\"cute_fee\":0.0,\"airline_gst\":723.0,\"amend_charges\":0.0,\"ct_charges\":0.0,\"other_charges\":0.0,\"service_fee\":0.0,\"vas_details\":[{\"amount\":229.0,\"provider\":\"DIGIT\",\"title\":\"Flexifly\",\"vas_type\":\"AMEND_INSURANCE\"},{\"amount\":279.0,\"provider\":\"DIGIT\",\"title\":\"TRAVEL_INSURANCE\",\"vas_type\":\"TRAVEL_INSURANCE\"}],\"pax_pay_info\":[{\"base_fare\":3100.0,\"pax_count\":1,\"pax_type\":\"ADULT\"}],\"discount\":0.0,\"psgr_service_fee\":0.0,\"currency\":\"INR\",\"total\":500.0},\"convenience_fee_details\":{\"cc\":150.0,\"dc\":150.0,\"nb\":150.0,\"kc\":0.0,\"up\":150.0,\"da\":0.0,\"tw\":150.0,\"rp\":150.0,\"ap\":0.0,\"wt\":150.0,\"gv\":150.0,\"flat_fee\":true}},\"domain\":\"IN\",\"initial_total\":0.0,\"retry_num\":0}";
 
@@ -648,12 +668,20 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		headers.put("pay-auth", paygetAuth());
 		return headers;
 	}
-	
+
 	public HashMap<String, Object> headersFormspay_FullGV() throws Exception{		
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("Content-Type", "application/json");
 		
 		headers.put("pay-auth", paygetAuth_FullGV());
+		return headers;
+	}
+	
+	public HashMap<String, Object> headersFormspay_Supercoins() throws Exception{		
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("Content-Type", "application/json");
+		
+		headers.put("pay-auth", paygetAuth_SuperCoins());
 		return headers;
 	}
 	
@@ -818,6 +846,20 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			url= urlROR_Fetch_PayByID;
 			Reporter.log(urlReporting+url);
 		}
+		else if(payType.equalsIgnoreCase("SuperCoins_MobileLinked")) {
+			RestAssured.baseURI =urlrewards_URI;
+			url= urlSuperCoins_MobileLinked;
+			Reporter.log(urlrewards_URI+url);
+		}
+		else if(payType.equalsIgnoreCase("SuperCoins_Info")) {
+			RestAssured.baseURI ="http://172.17.51.86:8061";
+			url= urlSuperCoins_Info;
+			Reporter.log("http://172.17.51.86:8061"+url);
+		}
+		
+		
+		
+		
 		else if(payType.equalsIgnoreCase("RORFetch_Refund_BY_ID")) {
 			RestAssured.baseURI =urlReporting;
 			url= urlROR_Fetch_RefundByID;
@@ -1053,7 +1095,32 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			params = ParamsROR_Recon+"6"+ranno+"}";	
 			url= urlRORRecon;
 		}
+		
+		else if(payType.equalsIgnoreCase("SuperCoins_SendOTP")) {
 
+			RestAssured.baseURI =urlRewards;
+			params = ParamsSuperCoins_SendOTP;	
+			url= urlSuperCoins_SendOTP;
+			Reporter.log(urlRewards+url);
+		}
+
+		else if(payType.equalsIgnoreCase("SuperCoins_ValidateOTP")) {
+
+			RestAssured.baseURI =urlRewards;
+			params = ParamsSuperCoins_ValidateOTP+payType1+ParamsSuperCoins_ValidateOTP1;	
+			url= urlSuperCoins_ValidateOTP;
+			Reporter.log(urlRewards+url);
+		}
+		
+		else if(payType.equalsIgnoreCase("SuperCoins_Unhold")) {
+
+			RestAssured.baseURI =urlRewards;
+			params = ParamsSuperCoins_Unhold;	
+			url= urlSuperCoins_Unhold;
+			Reporter.log(urlRewards+url);
+		}
+		
+		
 
 		Reporter.log(urlPay+url);
 		Reporter.log("Params :" +params);
@@ -3453,6 +3520,86 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			Assert.assertTrue(false);
 		}
 	}
+	else if(payType.equals("SuperCoins_CheckBalance")) {
+		/*if(!resp.body().asString().contains("Invalid trip")) {
+			Reporter.log("Invalid trip is not displayed");
+			Assert.assertTrue(false);
+		}*/
+		
+		String Status= jsonPathEvaluator.getString("status");
+		Reporter.log("Status " +Status);
+		if(!Status.equals("S")) {
+				Assert.assertTrue(false);
+		}
+		boolean isAccountLinked= jsonPathEvaluator.getBoolean("isAccountLinked");
+		Reporter.log("isAccountLinked " +isAccountLinked);
+		if(!isAccountLinked) {
+				Assert.assertTrue(false);
+		}
+	}
+	else if(payType.equals("SuperCoins_Info")) {
+		String Status= jsonPathEvaluator.getString("status");
+		Reporter.log("Status " +Status);
+		if(!Status.equals("ACTIVE")) {
+				Assert.assertTrue(false);
+		}
+	}
+	else if(payType.equals("SuperCoins_SendOTP")) {
+		String Status= jsonPathEvaluator.getString("status");
+		Reporter.log("Status " +Status);
+		if(!Status.equals("S")) {
+				Assert.assertTrue(false);
+		}
+		String Description= jsonPathEvaluator.getString("description");
+		Reporter.log("description " +Description);
+		if(!Description.equals("OTP sent successfully")) {
+				Assert.assertTrue(false);
+		}
+	}
+		
+	else if(payType.equals("SuperCoins_ValidateOTP")) {
+		String Status= jsonPathEvaluator.getString("status");
+		Reporter.log("Status " +Status);
+		if(!Status.equals("S")) {
+				Assert.assertTrue(false);
+		}
+		String Description= jsonPathEvaluator.getString("description");
+		Reporter.log("description " +Description);
+		if(!Description.equals("Otp validated successfully")) {
+				Assert.assertTrue(false);
+		}
+	}
+	else if(payType.equals("SuperCoins_Unhold")) {
+		String Status= jsonPathEvaluator.getString("status");
+		Reporter.log("Status " +Status);
+		if(!Status.equals("S")) {
+				Assert.assertTrue(false);
+		}
+		String Description= jsonPathEvaluator.getString("description");
+		Reporter.log("description " +Description);
+		if(!Description.equals("Unhold successful")) {
+				Assert.assertTrue(false);
+		}
+		
+	}
+		
+	else if(payType.equals("SuperCoins_ValidateOTP_Invalid")) {
+		String Status= jsonPathEvaluator.getString("status");
+		Reporter.log("Status " +Status);
+		if(!Status.equals("F")) {
+			Assert.assertTrue(false);
+		}
+		String Description= jsonPathEvaluator.getString("description");
+		Reporter.log("description " +Description);
+		if(!Description.equals("OTP verification failed")) {
+			Assert.assertTrue(false);
+		}
+		String Error= jsonPathEvaluator.getString("errorCode");
+		Reporter.log("Error " +Error);
+		if(!Error.equals("OTP_VERIFICATION_FAILED")) {
+			Assert.assertTrue(false);
+		}
+	}	
 		
 		
 		return resp;	
@@ -3725,6 +3872,20 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		String payAuth = response.asString();
 		return payAuth;
 	}
+	
+	public String paygetAuth_SuperCoins() throws Exception {
+		/*int randomNumber= PaymentUI_CommonUtilities.generateFiveDigitRandomNumber();
+		String randNumber= Integer.toString(randomNumber);
+		String tripRef= "Q201" + randNumber;
+		*/
+		String URL = "/paymentservice/test/getHash?tripRef="+tripRef+"&itineraryId=NI685a33347e-464c-4a27-86c9-200710101330&amount=110";
+		RestAssured.baseURI = urlPay;
+		String endPoint = URL;		
+		Response response = null;
+		response = RestAssured.given().when().log().all().get(endPoint);
+		String payAuth = response.asString();
+		return payAuth;
+	}
 		
 	public String paygetAuth_EMI() throws Exception {
 		/*int randomNumber= PaymentUI_CommonUtilities.generateFiveDigitRandomNumber();
@@ -3784,6 +3945,12 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			RestAssured.baseURI = urlPay;
 			endPoint = endPointgetPay;	
 			params = params_PayUI_Air1_new+tripRef+params_PayUI_Air2_EMI;
+		}
+		else if(payType.equalsIgnoreCase("AirSUPERCOINS")){
+			headers = headersFormspay_Supercoins();
+			RestAssured.baseURI = urlPay;
+			endPoint = endPointgetPay;	
+			params = params_PayUI_SUPERCOINS1+tripRef+params_PayUI_SUPERCOINS;
 		}
 		else if(payType.equalsIgnoreCase("AirRT")){
 			RestAssured.baseURI = urlPay;

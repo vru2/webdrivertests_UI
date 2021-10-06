@@ -67,6 +67,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String url_Account_Service_UserController_VerifyAccount_UsernotPresent="/user/v1/account/verify/1402954698";
 	String url_Account_Service_People_UpdateUserRoles="/accounts/people/roles?userId=65214457";
 	String url_Accounts_service_Company_DeleteGST="/company/v2/gst?id=836674&gstNumber=123459898";
+	String url_Account_Service_Mongo_CacheReset="/user/v2/cache/1234";
 	String url_Accounts_service_Company_DeleteGST_CompanyID_DomainName="/company/v2/gst?id=836674&domainName=expedia.travelbox99.com&gstNumber=hihi&gstId=123";
 	String url_Flipkart_Accounts_service_Updateuser="/accounts/v3/people?partner=FLIPKART&referenceId=me123testing";
 	String url_Account_Service_AuthforNonLoggedinUser="http://accounts-service-api.cltp.com:9001/user/v2/auth/otp?tripRef=Q210317918852&emailId=ns.likhitha@cleartrip.com&source=www.cleartrip.com";
@@ -505,7 +506,13 @@ String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\
 
 		return headers;
 	}
-	
+	public HashMap<String, Object> headersFormcachereset(){
+		HashMap<String, Object> headers = new HashMap<>();
+		
+		headers.put("AUTH_KEY", "7GHT#@D65yhgder4R1234");
+		headers.put("x-ct-caller-app", "automation");	
+		return headers;
+	}
 	public HashMap<String, Object> headersFormgateway(){
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("Cookie", "ct-auth=sbTuCPZ9yEzXX%2BSA555pKda4jfUbXgF94ZK6unK06HZaLPh%2FF6uVOeCbTJQrZzxIXZb27r3UOV1Ev4bGezupkT9NkrM3bjdx950UgAiLoV8S0AggCjlwZfdk%2Bjg1KnyMcbQHip4k08psln12Hs3t5AhSz5Tm3nNmMqN834TxTk0mlTLdQtcneofIN7sZPYNGlKVNg6A8UssolSYFtPQtk3fxj2tZC0kkiOjLYRx4gUteBkTlW4pERzPjBkpSwhJgt0lF%2BdyWypfeXZj9%2B8TMdEnggXuZ5XUsVKDqRk3TP0c5XMXN%2FfUwAaQvdO%2FQJtfy; ct-auth=Z9Qsvxu31QrtFuL%2BZIh%2F%2BsDuBJDZy0eSblQmod1yZKJ7c6rVBubK%2BdJHVFMciSL%2BXZb27r3UOV1Ev4bGezupkTKIW7Ph8auaXeltEIimttWSWebd679fDwPYXdaakyixiDpipnRoFNlVipI%2BI2po%2FBMGjptfaAemLzLHI223cK4a6rZslrcV47Tjzb9c7EYbSu7ZSu%2Baz7wYWabrSTP97AYG0Ny%2B1LR%2BhpT9NU4%2F9g9CbhWX3UMhf28JnJzBlWq88gYU49L8K80L3Mr8UYKXvQ%3D%3D; userid=nakul.goyal%40cleartrip.com%7CNakul%2Bgoyal%7CMale%7C%7C65200719%7C; usermisc=SIGNED_IN|");
@@ -1815,6 +1822,14 @@ String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\
 			headers = headersFormdepoist();
 			Reporter.log(url_Acct_Service+url);
 		}
+		else if(Type.equals("Account_Service_Mongo_CacheReset"))
+		{
+			RestAssured.baseURI=url_Acct_Service;
+			url = url_Account_Service_Mongo_CacheReset;
+			params= params_Accounts_service_Company_DeleteGST;
+			headers = headersFormcachereset();
+			Reporter.log(url_Acct_Service+url);
+		}
 		else if(Type.equals("Accounts_service_Company_DeleteGST_CompanyID_DomainName"))
 		{
 			RestAssured.baseURI=url_Acct_Service;
@@ -2721,6 +2736,12 @@ String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\
 			else if(!resp.body().asString().contains("ACTIVE_USER")) {
 				Assert.assertTrue(false);						
 			}
+		}
+		if(Type.equalsIgnoreCase("Account_Service_Mongo_CacheReset")) {
+			if(!resp.body().asString().contains("Cache reset done")) {
+				Assert.assertTrue(false);						
+			}
+			
 		}
 		if(Type.equalsIgnoreCase("Flipkart_Accounts_Service_CreateUser")) {
 			String domain = jsonPathEvaluator.getString("domain");

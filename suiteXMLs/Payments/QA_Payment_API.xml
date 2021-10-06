@@ -8,22 +8,33 @@
 <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
 
-<test name="API Navison" preserve-order="true" parallel="true">
+<test name="Navison" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsAPI.API_Navison_CC"/>
       <class name="paymentsAPI.API_Navison_Air"/>      
     </classes>
 </test>
 
-<test name="API GW Failure Banner" preserve-order="true" parallel="true">
+<test name="Supercoins" preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_SuperCoins_CheckBalance"/>
+      <class name="paymentsAPI.API_SuperCoins_CheckEarnPoints"/>   
+      <class name="paymentsAPI.API_SuperCoins_Info"/>   
+      <class name="paymentsAPI.API_SuperCoins_MobileLinked"/>   
+      <class name="paymentsAPI.API_SuperCoins_OTP_Validation_Unhold"/>   
+      <class name="paymentsAPI.API_SuperCoins_PromoActivate"/>   
+      <class name="paymentsAPI.API_SuperCoins_PromoCreate"/>      
+      <class name="paymentsAPI.API_SuperCoins_PromoUpdate"/>      
+    </classes>
+</test>
+
+<test name="GW Failure Banner" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsAPI.API_Fetch_GW_Failure"/>
     </classes>
 </test>
 
-
-
-<test name="API UI config" preserve-order="true" parallel="true">
+<test name="UI config" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsAPI.API_UI_GetConfig_ConvFee"/>
       <class name="paymentsAPI.API_UI_GetConfig_PayTypes"/>      
@@ -43,14 +54,14 @@
 
 
 
-<test name="API Refunds Count" preserve-order="true" parallel="true">
+<test name="Refunds Count" preserve-order="true" parallel="true">
     <classes>
    
     </classes>
 </test>
 
 
-<test name="API Refunds ROR Counts" preserve-order="true" parallel="true">
+<test name="Refunds ROR Counts" preserve-order="true" parallel="true">
     <classes>
     <!--   <class name="paymentsAPI.API_ROR_RefundQ_Count"/>  //not live -->
     </classes>
@@ -58,7 +69,7 @@
 
 
 
-<test name="API Deposit Account DA" preserve-order="true" parallel="true">
+<test name="Deposit Account DA" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsAPI.API_DA_PayV3"/>
       <class name="paymentsAPI.API_DA_ValidateV3"/>
@@ -69,7 +80,7 @@
     </classes>
 </test>
 
-<test name="API Credit Shell" preserve-order="true" parallel="true">
+<test name="Credit Shell" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsAPI.API_CS_Pay"/>
       <class name="paymentsAPI.API_CS_Validate"/>
@@ -77,7 +88,7 @@
     </classes>
 </test>
 
-<test name="API Pay Calls" preserve-order="true">
+<test name="Pay Calls" preserve-order="true">
     <classes>
       <class name="paymentsAPI.API_Validate"/>
       <class name="paymentsAPI.API_CC_Visa_Type"/>
@@ -89,7 +100,7 @@
     </classes>
 </test>
 
-<test name="API Qitaf" preserve-order="true" parallel="true">
+<test name="Qitaf" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsAPI.API_Qitaf_Redeem"/>
       <class name="paymentsAPI.API_Qitaf_Reverse"/>    
@@ -97,7 +108,7 @@
     </classes>
 </test>
 
-<test name="API CTPay V2" preserve-order="true" parallel="true">
+<test name="CTPay V2" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsAPI.API_CTpay_GetUrl"/>
       <class name="paymentsAPI.API_CTpay_Status"/>
@@ -106,13 +117,13 @@
     </classes>
 </test>
 
-<test name="API OLA" preserve-order="true" parallel="true">
+<test name="OLA" preserve-order="true" parallel="true">
     <classes>
   <!--     <class name="paymentsAPI.API_OLA_Validate_Pay"/>   -->
     </classes>
 </test>
 
-<test name="API Fetch Payment Details" preserve-order="true" parallel="true">
+<test name="Fetch Payment Details" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsAPI.API_FetchPay_Details"/>
       <class name="paymentsAPI.API_Fetch_TripStatus"/> 
@@ -120,7 +131,7 @@
     </classes>
 </test>
 
-<test name="API Promo service" preserve-order="true" parallel="true">
+<test name="Promo service" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsAPI.API_PromoService"/> 
     <!--   <class name="paymentsAPI.API_Promo_Activate"/> -->  
@@ -128,13 +139,13 @@
     </classes>
 </test>
 
-<test name="API Flyin" preserve-order="true" >
+<test name="Flyin" preserve-order="true" >
     <classes>
        <class name="paymentsAPI.API_FlyinPay"/> 
      </classes>
 </test>
 
-<test name="API Expressway" preserve-order="true" parallel="true">
+<test name="Expressway" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsAPI.API_EW_GetOutstanding"/> 
       <class name="paymentsAPI.API_EW_UserDetails"/> 
@@ -150,7 +161,7 @@
    </classes>
 </test>
 
-<test name="API Wallets"  preserve-order="true" parallel="true" >
+<test name="Wallets"  preserve-order="true" parallel="true" >
     <classes>
 		<class name="paymentsAPI.API_Wallet_RevertedPromo_info"/>		
 		<class name="paymentsAPI.API_Wallet_Promo_CashBackDetails"/>
@@ -168,7 +179,7 @@
     </classes>
 </test>
 
-<test name="API Wallet App Only"  preserve-order="true" parallel="true" >
+<test name="Wallet App Only"  preserve-order="true" parallel="true" >
     <classes>
 		<class name="paymentsAPI.API_Wallet_CashBackDetails"/>
 		<class name="paymentsAPI.API_Wallet_Get_Wallet_All"/>
@@ -177,20 +188,20 @@
     </classes>
 </test>
 
-<test name="API ADCB" preserve-order="true" parallel="true">
+<test name="ADCB" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsAPI.API_Reward_ADCB_CheckBalance"/> 
       <class name="paymentsAPI.API_Reward_ADCB_Pay"/> 
     </classes>
 </test>
 
-<test name="API PayBack" preserve-order="true" parallel="true">
+<test name="PayBack" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsAPI.API_RewardPayback"/> 
     </classes>
 </test>
 
-<test name="API Refunds redis enque" preserve-order="true" parallel="true">
+<test name="Refunds redis enque" preserve-order="true" parallel="true">
     <classes>
     
       <class name="paymentsAPI.API_Refunds_Enque_redis"/> 
@@ -198,31 +209,31 @@
      </classes>
 </test>
 
-<test name="API Stored Card" preserve-order="true" parallel="true">
+<test name="Stored Card" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsAPI.API_storeCard"/> 
    </classes>
 </test>
 
-<test name="API Create Insert record" preserve-order="true" parallel="true">
+<test name="Create Insert record" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsAPI.API_CreateRecord"/>  
          </classes>
 </test>
 
-<test name="API ROR Writes" preserve-order="true" parallel="true">
+<test name="ROR Writes" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsAPI.API_ROR_Writes"/>  
     </classes>
 </test>
 
-<test name="API Payment Reads" preserve-order="true" parallel="true">
+<test name="Payment Reads" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsAPI.API_ROR_Reads"/>  
     </classes>
 </test>
 
-<test name="API Bin Manager"  preserve-order="true" parallel="true" >
+<test name="Bin Manager"  preserve-order="true" parallel="true" >
   <classes><!-- 
 		<class name="paymentsAPI.API_Binmanager"/> -->
 		<class name="paymentsAPI.API_Binmanager_Add_MC_Credit"/>
@@ -231,33 +242,33 @@
     </classes>
 </test>
 
-<test name="API Reporting"  preserve-order="true" parallel="true" >
+<test name="Reporting"  preserve-order="true" parallel="true" >
     <classes>
 		<class name="paymentsAPI.API_Reporting"/>
 		<class name="paymentsAPI.API_Reporting_TS_V3"/>
     </classes>
 </test>
 
-<test name="API Refund stopped"  preserve-order="true" parallel="true" >
+<test name="Refund stopped"  preserve-order="true" parallel="true" >
     <classes>
 		<class name="paymentsAPI.API_Reporting_Disabled_Refunds"/>
 		<class name="paymentsAPI.API_Reporting_Disabled_Refunds_Json"/>
     </classes>
 </test>
 
-<test name="API Refund report"  preserve-order="true" parallel="true" >
+<test name="Refund report"  preserve-order="true" parallel="true" >
     <classes>
 		<class name="paymentsAPI.API_Reporting_Refund_Status"/>
     </classes>
 </test>
 
-<test name="API Reporting Archived"  preserve-order="true" parallel="true" >
+<test name="Reporting Archived"  preserve-order="true" parallel="true" >
     <classes>
 		<class name="paymentsAPI.API_Reporting_TS_Archived_V3"/>
     </classes>
 </test>
 
-<test name="API FetchRefunds New"  preserve-order="true" parallel="true" >
+<test name="FetchRefunds New"  preserve-order="true" parallel="true" >
     <classes>
 		<!-- <class name="paymentsAPI.API_Refunds_Fetch"/> -->
 	 </classes>

@@ -192,7 +192,16 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String ParamsSuperCoins_ValidateOTP1 = "\",\"params\":{\"mobile\":\"+918884094547\",\"itineraryId\":\"681f6b756d-67de-4efc-b3-5a7ac1bd9fa1\"}}";
 	
 	String ParamsSuperCoins_Unhold = "{\"rewardsType\":\"SUPERCOINS\",\"rewardsRequestType\":\"UNHOLD\",\"trackId\":\"CTS01021\",\"params\":{\"mobile\":\"+918884094547\",\"itineraryId\":\"681f6b756d-67de-4efc-b3-5a7ac1bd9fa1\"}}";
+	String ParamsSuperCoins_CheckBalance = "{\"rewardsType\":\"SUPERCOINS\",\"rewardsRequestType\":\"BALANCE_CHECK\",\"trackId\":\"CLRP1000232\",\"currency\":\"INR\",\"params\":{\"mobile\":\"+918884094547\"}}";
 	
+	
+	String ParamsSuperCoins_CheckEarnPoints = "{\"rewardsType\":\"SUPERCOINS\",\"rewardsRequestType\":\"EARN_CHECK\",\"trackId\":\"SAL1011122ghfj1\",\"amount\":2449,\"currency\":\"INR\",\"params\":{\"source\":\"MOBILE\",\"isPwa\":true,\"tripRef\":\"Q191014530821\"}}";
+
+	String ParamsSuperCoins_CreatePromo = "{\"user_id\":41649009,\"trip_ref\":\"";
+	String ParamsSuperCoins_CreatePromo1 = "\",\"type\":\"AIR_BOOKING\",\"promotions\":[{\"amount\":10,\"currency\":\"INR\",\"expiry_date\":\"11-12-2021\",\"trigger_date\":\"14-09-2021\",\"wallet\":\"SUPERCOINS\",\"mobile\":\"+917483912960\",\"email\":\"test@test.com\"}]}";
+
+	String ParamsSuperCoins_UpdatePromo = "{\"amount\":20,\"currency\":\"INR\",\"expiry_date\":\"24-12-2021\",\"trigger_date\":\"";
+	String ParamsSuperCoins_UpdatePromo1 = "\",\"status\":\"ACTIVE\"}";
 	
 	String ParamsFetchRefund="{\"refundIds\":[9387165,9387150,9387149,9387190,9387357"
 			+ ",9387405],\"txnIds\": null,"+"\"status\": [\"D\",\"P\",\"S\",\"T\",\"F\"]}";
@@ -273,6 +282,14 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 	String urlSuperCoins_ValidateOTP = "/payments/rewards/supercoins/validateOtp";
 	String urlSuperCoins_Unhold = "/payments/rewards/supercoins/unhold";
+	String urlSuperCoins_CheckBalance = "/payments/rewards/checkBalance";
+	
+	String urlSuperCoins_CheckEarnPoints = "/payments/rewards/checkEarnPoints";
+	
+	String urlSuperCoins_CreatePromo = "/promoservice/v1/promogroups";
+
+	String urlSuperCoins_UpdatePromo = "/promoservice/v1/promogroups/Q2109156655/promotions/64905";
+	String urlSuperCoins_ActivatePromo = "/promoservice/v1/promogroups/Q210921153722/promotions/65253";
 	
 	String urlPayFlyin = "/paymentservice/gw/v1/pay";
 
@@ -622,44 +639,48 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 	public HashMap<String, Object> headersForms(){		
 		HashMap<String, Object> headers = new HashMap<>();
-		headers.put("Content-Type", "application/json");
-		
+		headers.put("Content-Type", "application/json");		
 		return headers;
 	}
 	
 	public HashMap<String, Object> headersForms_Json(){		
 		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("Accept", "application/json");		
+		return headers;
+	}	
+
+	public HashMap<String, Object> headersForms_Promo_Update(){		
+		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("Accept", "application/json");
-		
+		headers.put("x-action", "UPDATE");	
+		return headers;
+	}
+	
+	public HashMap<String, Object> headersForms_Promo_Activate(){		
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("Accept", "application/json");
+		headers.put("x-action", "ACTIVATE");	
 		return headers;
 	}
 	
 	public HashMap<String, Object> headersFormsWallet(){		
 		HashMap<String, Object> headers = new HashMap<>();
-		headers.put("Content-Type", "application/json");
-		
+		headers.put("Content-Type", "application/json");		
 		headers.put("ct-auth", "5zoM9zvEgPvd1fO%2BsJylFp4hvaybBzUzp2ilDBfOdXvOg%2BIVENg%2BHdsz3cA98%2B5BD3habrO078UoXdzWM34lXZaLbE1jIpkEaANLn%2BHJadeW7kll2UfWWUfOoZLsVWTER2KXP0MBz2Ucg2wdtjfomKwrrYOshnOlUWyYWat6SeV2Tt6lvwTzivgXCSht22Dws");
-		
 		return headers;
 	}
 	
 	public HashMap<String, Object> headersFormsNew(){		
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("Content-Type", "application/json;charset=UTF-8");
-		
 		return headers;
 	}
 	
 	public HashMap<String, Object> headersFormsNew1(){		
 		HashMap<String, Object> headers = new HashMap<>();
-		headers.put("Content-Type", "application/json");
-		
+		headers.put("Content-Type", "application/json");		
 		return headers;
 	}
-	
-	
-	
-	
 	
 	public HashMap<String, Object> headersFormspay() throws Exception{		
 		HashMap<String, Object> headers = new HashMap<>();
@@ -703,6 +724,13 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("Content-Type", "application/json");
 		headers.put("x-action", "ACTIVATE");
+		return headers;
+	}
+	
+	public HashMap<String,Object> headerFormsPromoService_Supercoins_Update(){
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("Content-Type", "application/json");
+		headers.put("x-action", "UPDATE");
 		return headers;
 	}
 
@@ -751,6 +779,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		setCookies.put("usermisc", "SIGNED_IN%7C");
 		return setCookies;
 	}
+	
 	public String returnParamForBin_CC(){
 		String t=RandomStringUtils.randomNumeric(6);
 		String Param1="{\"bank\":\" "+s;
@@ -764,7 +793,6 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 		return Params_Singlebincard_Credit;
 	}
-	
 	
 	public Response payGet(String payType, String payType1) {
 		RestAssured.baseURI =promoURL;
@@ -833,7 +861,6 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 				get(url);
 		return request;			
 	}
-
 
 	public Response payGet1(String payType, String payType1) {
 		RestAssured.baseURI =urlPay;
@@ -1030,7 +1057,6 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		return request;			
 	}
 
-
 	public Response payPost(String payType, String payType1) throws Exception {
 		RestAssured.baseURI =urlPay;
 		String url = null;
@@ -1119,9 +1145,45 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			url= urlSuperCoins_Unhold;
 			Reporter.log(urlRewards+url);
 		}
-		
-		
+		else if(payType.equalsIgnoreCase("SuperCoins_CheckBalance")) {
 
+			RestAssured.baseURI =urlRewards;
+			params = ParamsSuperCoins_CheckBalance;	
+			url= urlSuperCoins_CheckBalance;
+			Reporter.log(urlRewards+url);
+		}
+		else if(payType.equalsIgnoreCase("SuperCoins_CheckEarnPoints")) {
+
+			RestAssured.baseURI =urlRewards;
+			params = ParamsSuperCoins_CheckEarnPoints;	
+			url= urlSuperCoins_CheckEarnPoints;
+			Reporter.log(urlRewards+url);
+		}
+		
+		else if(payType.equalsIgnoreCase("SuperCoins_CreatePromo")) {
+
+			RestAssured.baseURI =promoURL;
+			params = ParamsSuperCoins_CreatePromo+payType1+ParamsSuperCoins_CreatePromo1;	
+			url= urlSuperCoins_CreatePromo;
+			Reporter.log(promoURL+url);
+		}
+		else if(payType.equalsIgnoreCase("SuperCoins_UpdatePromo")) {
+
+			RestAssured.baseURI =promoURL;
+			params = ParamsSuperCoins_UpdatePromo+payType1+ParamsSuperCoins_UpdatePromo1;	
+			url= urlSuperCoins_UpdatePromo;
+			Reporter.log(promoURL+url);
+		}
+		
+		else if(payType.equalsIgnoreCase("SuperCoins_ActivatePromo")) {
+
+			RestAssured.baseURI =promoURL;
+			params = "";	
+			url= urlSuperCoins_ActivatePromo;
+			Reporter.log(promoURL+url);
+			//headersForms_Promo_Activate
+		}
+		
 		Reporter.log(urlPay+url);
 		Reporter.log("Params :" +params);
 
@@ -1134,7 +1196,6 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 				post(url);
 		return request;			
 	}
-
 
 	public Response promoPost(String payType, String payType1) {
 		RestAssured.baseURI =promoURL;
@@ -1192,8 +1253,6 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		return resp;			
 	}
 
-
-
 	public Response DAGet(String Type, String Type1){
 		RestAssured.baseURI = urlDA;
 		String url = null;
@@ -1242,8 +1301,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 				post(url);
 		return request;
 	}
-	
-	
+		
 	public Response promoGet(String payType, String payType1){
 		RestAssured.baseURI = promoURL;
 		String url = null;
@@ -1295,7 +1353,6 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 		return request;
 	}
-
 
 	public Response rearchPayment(String payType, String payType1){
 		RestAssured.baseURI =urlPay;
@@ -1412,7 +1469,6 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 	}
 
-
 	@SuppressWarnings("deprecation")
 	public Response rearch_SmilesAuth(String payType, String payType1){
 		RestAssured.baseURI =URL_SmilesDev;
@@ -1481,6 +1537,17 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		headersFormsNew= headersFormsNew();
 		HashMap<String, Object> headersFormsNew1 = new HashMap<>();
 		headersFormsNew1= headersFormsNew1();
+
+		HashMap<String, Object> headersFormsPromoUpdate = new HashMap<>();
+		headersFormsPromoUpdate= headersForms_Promo_Update();
+		
+		HashMap<String, Object> headersFormsPromoActivate = new HashMap<>();
+		headersFormsPromoActivate= headersForms_Promo_Activate();
+		
+		
+		
+		
+		
 		Response request = null;	 
 		if(payType.equalsIgnoreCase("PROMOUSED")) {
 			url= urlEndPoint_Wallet_PromoUsed;
@@ -1502,6 +1569,30 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 					headers(headers).
 					get(url);
 		}
+		else if(payType.equalsIgnoreCase("SuperCoins_UpdatePromo")) {
+			RestAssured.baseURI =promoURL;
+			params = ParamsSuperCoins_UpdatePromo+payType1+ParamsSuperCoins_UpdatePromo1;	
+			url= urlSuperCoins_UpdatePromo;
+			Reporter.log(promoURL+url);
+			request = RestAssured.given().
+					when().
+					log().all().
+					headers(headersFormsPromoUpdate).
+					get(url);
+		}
+		else if(payType.equalsIgnoreCase("SuperCoins_ActivatePromo")) {
+			RestAssured.baseURI =promoURL;
+			params = "";	
+			url= urlSuperCoins_ActivatePromo;
+			Reporter.log(promoURL+url);
+			request = RestAssured.given().
+					when().
+					log().all().
+					headers(headersFormsPromoActivate).
+					get(url);
+		}
+	
+		
 		else if(payType.equalsIgnoreCase("REVERTPROMO")) {
 			url= urlEndPoint_Wallet_RevertPromo;
 			request = RestAssured.given().
@@ -3520,12 +3611,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			Assert.assertTrue(false);
 		}
 	}
-	else if(payType.equals("SuperCoins_CheckBalance")) {
-		/*if(!resp.body().asString().contains("Invalid trip")) {
-			Reporter.log("Invalid trip is not displayed");
-			Assert.assertTrue(false);
-		}*/
-		
+	else if(payType.equals("SuperCoins_MobileLinked")) {
 		String Status= jsonPathEvaluator.getString("status");
 		Reporter.log("Status " +Status);
 		if(!Status.equals("S")) {
@@ -3536,14 +3622,9 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		if(!isAccountLinked) {
 				Assert.assertTrue(false);
 		}
+		
 	}
-	else if(payType.equals("SuperCoins_Info")) {
-		String Status= jsonPathEvaluator.getString("status");
-		Reporter.log("Status " +Status);
-		if(!Status.equals("ACTIVE")) {
-				Assert.assertTrue(false);
-		}
-	}
+	
 	else if(payType.equals("SuperCoins_SendOTP")) {
 		String Status= jsonPathEvaluator.getString("status");
 		Reporter.log("Status " +Status);
@@ -3600,8 +3681,73 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			Assert.assertTrue(false);
 		}
 	}	
-		
-		
+	else if(payType.equals("SuperCoins_Info")) {
+		String Status= jsonPathEvaluator.getString("status");
+		Reporter.log("Status " +Status);
+		if(!Status.equals("ACTIVE")) {
+			Assert.assertTrue(false);
+		}
+		String coins= jsonPathEvaluator.getString("coins");
+		Reporter.log("coins " +coins);
+		if(!coins.equals("5")) {
+			Assert.assertTrue(false);
+		}		
+	}
+	else if(payType.equals("SuperCoins_CheckBalance")) {
+		String Status= jsonPathEvaluator.getString("status");
+		Reporter.log("Status " +Status);
+		if(!Status.equals("S")) {
+			Assert.assertTrue(false);
+		}
+		String Description= jsonPathEvaluator.getString("description");
+		Reporter.log("Description " +Description);
+		if(!Description.equals("Successfully fetched supercoin balance")) {
+			Assert.assertTrue(false);
+		}		
+	}
+	else if(payType.equals("SuperCoins_CheckEarnPoints")) {
+		String Status= jsonPathEvaluator.getString("status");
+		Reporter.log("Status " +Status);
+		if(!Status.equals("S")) {
+			Assert.assertTrue(false);
+		}
+		String Description= jsonPathEvaluator.getString("description");
+		Reporter.log("Description " +Description);
+		if(!Description.equals("Successfully calculated earn points")) {
+			Assert.assertTrue(false);
+		}		
+	
+	}
+	else if(payType.equals("SuperCoins_CreatePromo")) {
+		if(!resp.body().asString().contains("SUPERCOINS")) {
+			Reporter.log("SUPERCOINS is not displayed");
+			Assert.assertTrue(false);
+		}	
+		if(!resp.body().asString().contains("DEACTIVE")) {
+			Reporter.log("DEACTIVE is not displayed");
+			Assert.assertTrue(false);
+		}
+		if(!resp.body().asString().contains("41649009")) {
+			Reporter.log("41649009 is not displayed");
+			Assert.assertTrue(false);
+		}
+	}
+	
+	else if(payType.equals("SuperCoins_UpdatePromo")) {			
+		String Status= jsonPathEvaluator.getString("status");
+		Reporter.log("Status " +Status);
+		if(!Status.equals("ACTIVE")) {
+			Assert.assertTrue(false);
+		}
+	}
+
+	else if(payType.equals("SuperCoins_ActivatePromo")) {			
+		String Status= jsonPathEvaluator.getString("status");
+		Reporter.log("Status " +Status);
+		if(!Status.equals("ACTIVE")) {
+			Assert.assertTrue(false);
+		}
+	}
 		return resp;	
 	}
 

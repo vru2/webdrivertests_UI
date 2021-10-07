@@ -72,6 +72,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String url_Flipkart_Accounts_service_Updateuser="/accounts/v3/people?partner=FLIPKART&referenceId=me123testing";
 	String url_Account_Service_AuthforNonLoggedinUser="http://accounts-service-api.cltp.com:9001/user/v2/auth/otp?tripRef=Q210317918852&emailId=ns.likhitha@cleartrip.com&source=www.cleartrip.com";
 	String url_Account_Service_AuthforNonLoggedinUser_InvalidTripID="/user/v2/auth/otp?tripRef=Q210318852&emailId=ns.likhitha@cleartrip.com&source=www.cleartrip.com";
+	String url_Account_Service_AuthforNonLoggedinUser_HotelTrip="/user/v2/auth/otp?tripRef=Q210929161450&emailId=ns.likhitha@cleartrip.com&source=www.cleartrip.com";
 	String url_Account_Service_AuthforNonLoggedinUser_VerifyOTP="/user/v2/auth/otp/verify?tripRef=Q210317918852&emailId=ns.likhitha@cleartrip.com&otp=76989&source=b2c&subSource=www.cleartrip.com";
 	String url_Accounts_Service_VerifynonLoggedinUser="/user/v2/auth/otp/verify?tripRef=Q200102680540&emailId=ns.likhitha@cleartrip.com&otp=123455&source=b2c&subSource=www.cleartrip.com";
 	String url_IdentityService_UpdatePassword_ForChangePasswordflow="/user/updatePassword";
@@ -1907,6 +1908,14 @@ String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\
 			headers = verifyaccount();
 			Reporter.log(url_Acct_Service+url);
 		}
+		else if(Type.equals("Account_Service_AuthforNonLoggedinUser_HotelTrip"))
+		{
+			RestAssured.baseURI=url_Acct_Service;
+			url = url_Account_Service_AuthforNonLoggedinUser_HotelTrip;
+			params= params_Account_Service_UserController_VerifyAccount;
+			headers = verifyaccount();
+			Reporter.log(url_Acct_Service+url);
+		}
 		else if(Type.equals("Account_Service_AuthforNonLoggedinUser_InvalidTripID"))
 		{
 			RestAssured.baseURI=url_Acct_Service;
@@ -3417,6 +3426,25 @@ String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\
 			String emailSent = jsonPathEvaluator.getString("emailSent");
 
 			if(!emailSent.contains("SUCCESS")) {
+				Assert.assertTrue(false);						
+			}
+			String ReponseStr = resp.body().asString();
+
+			if(!ReponseStr.contains("sms is queued")) {
+				Assert.assertTrue(false);						
+			}
+
+
+		}
+		else if(Type.equalsIgnoreCase("Account_Service_AuthforNonLoggedinUser_HotelTrip")) {
+			String emailSent = jsonPathEvaluator.getString("emailSent");
+
+			if(!emailSent.contains("SUCCESS")) {
+				Assert.assertTrue(false);						
+			}
+			String tripRef = jsonPathEvaluator.getString("tripRef");
+
+			if(!tripRef.contains("Q210929161450")) {
 				Assert.assertTrue(false);						
 			}
 			String ReponseStr = resp.body().asString();

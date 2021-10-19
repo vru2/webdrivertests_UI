@@ -26,7 +26,7 @@ public class Bento_SA_Booking extends PaymentsBento_Itn_Common {
 		driver.navigate().to(saurl+searchurl);
 		System.out.println(saurl+searchurl);
 		Reporter.log(saurl+searchurl);
-		Searchpagebook(driver,"");
+		Searchpagebook(driver,"","");
 		noncom_itnpage(driver,"","sa");
 	    if(textPresent(driver,"Sorry, our servers are stumped with your request",30)||textPresent(driver,"Flight not available",30))
 	    {

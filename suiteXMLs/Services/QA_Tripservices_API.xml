@@ -80,8 +80,6 @@
 			<class name="tripServices.TS_Fetch_PeopleDetails"/>
 			<class name="tripServices.TS_Get_RefundInfo"/>
 			<class name="tripServices.TS_Save_InternationFareRules"/>
-			<class name="tripServices.TS_Save_TripPDF"/>
-			
 			
 		</classes>
 	</test>

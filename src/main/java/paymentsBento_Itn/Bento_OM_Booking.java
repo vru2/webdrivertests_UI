@@ -18,7 +18,7 @@ public class Bento_OM_Booking extends PaymentsBento_Itn_Common {
 	}
 
 	@Test
-	public void bento_qa_booking() throws Exception {
+	public void bento_om_booking() throws Exception {
 		driver.manage().deleteAllCookies();
 		/*
 		 * driver.navigate().to(aeurl); Thread.sleep(2000);
@@ -26,7 +26,7 @@ public class Bento_OM_Booking extends PaymentsBento_Itn_Common {
 		driver.navigate().to(omurl+searchurl);
 		System.out.println(omurl+searchurl);
 		Reporter.log(omurl+searchurl);
-		Searchpagebook(driver,"");
+		Searchpagebook(driver,"","");
 		noncom_itnpage(driver,"","");
 	    if(textPresent(driver,"Sorry, our servers are stumped with your request",30)||textPresent(driver,"Flight not available",30))
 	    {

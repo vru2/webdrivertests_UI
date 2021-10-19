@@ -102,7 +102,7 @@ public class WrapperMethod extends CommonUtil {
 	public DesiredCapabilities createHeadlessChrome() throws IOException {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--headless");
-		options.addArguments("window-size=1200,1100");
+		options.addArguments("--start-maximized", "--disable-cache");
 		options.addArguments("--no-sandbox");
 		options.addArguments("--disable-dev-shm-usage");
 		options.addArguments("--allowed-ips");

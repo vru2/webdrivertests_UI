@@ -23,7 +23,7 @@ public class Bento_StoredCard_Booking extends PaymentsBento_Itn_Common{
 		driver.navigate().to(searchurl);
 		System.out.println(searchurl);
 		Reporter.log(searchurl);
-	    Searchpagebook(driver,"");
+	    Searchpagebook(driver,"","com");
 	    book_itnnew(driver,"");
 	    if(elementVisible(driver,getObjectPayment("Bento_Payment_PayText"),30)) {
 	    	 bento_paymentpage(driver,"storedcard","");

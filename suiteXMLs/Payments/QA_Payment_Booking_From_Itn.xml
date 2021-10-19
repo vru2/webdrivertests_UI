@@ -8,15 +8,9 @@
 <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
 
-<test name="Booking From Itinerary" preserve-order="true" >
+<test name="Booking From Itinerary Non Com Domain" preserve-order="true" >
     <classes>
-    <!--  <class name="paymentsBento_com.Bento_Coupon_StoredCard_Booking"/> 
-       <class name="paymentsBento_com.Bento_Full_GV_Booking"/> 
-        <class name="paymentsBento_com.Bento_NB_ICICI_Booking"/> 
-         <class name="paymentsBento_com.Bento_StoredCard_Booking"/> 
-          <class name="paymentsBento_com.Bento_UPI_Booking"/> 
-           <class name="paymentsBento_com.Bento_Wallet_Booking"/>  -->
-           <class name="paymentsBento_Itn.Bento_AE_Booking"/>
+     <class name="paymentsBento_Itn.Bento_AE_Booking"/>
             <class name="paymentsBento_Itn.Bento_BH_Booking"/>
              <class name="paymentsBento_Itn.Bento_KW_Booking"/>
               <class name="paymentsBento_Itn.Bento_ME_Booking"/>
@@ -25,5 +19,21 @@
                 <class name="paymentsBento_Itn.Bento_SA_Booking"/>
     </classes>
 </test>
+<test name="Booking From Itinerary Com Domain" preserve-order="true" >
+    <classes>
+     <class name="paymentsBento_Itn.Bento_Coupon_StoredCard_Booking"/> 
+       <class name="paymentsBento_Itn.Bento_Full_GV_Booking"/> 
+        <class name="paymentsBento_Itn.Bento_NB_ICICI_Booking"/> 
+          <class name="paymentsBento_Itn.Bento_UPI_Booking"/> 
+           <class name="paymentsBento_Itn.Bento_Wallet_Booking"/> 
+           <class name="paymentsBento_Itn.Bento_Partial_Wallet_Booking"/> 
+           <class name="paymentsBento_Itn.Bento_Phonepe_Booking"/> 
+    </classes>
+</test>
+
+
+
+
+   
 
 </suite> 

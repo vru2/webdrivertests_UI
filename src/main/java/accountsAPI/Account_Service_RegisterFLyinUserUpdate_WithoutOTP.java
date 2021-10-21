@@ -17,7 +17,7 @@ public class Account_Service_RegisterFLyinUserUpdate_WithoutOTP extends Accounts
 		Response resp;
 		resp = postCall("Account_Service_RegisterFLyinUserUpdate_WithoutOTP","");
 		
-		validation_user_update_MobileOTP(resp,"Account_Service_RegisterFLyinUserUpdate_WithoutOTP","");
+		validation_user_update(resp,"Account_Service_RegisterFLyinUserUpdate_WithoutOTP","");
 				
 		ResponseBody body = resp.getBody();
 		System.out.println("Response of API is:" + body.asString());

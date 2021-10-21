@@ -16,7 +16,7 @@ public class Account_Service_RegisterFLyinUserUpdate_OTPValidation extends Accou
 		Response resp;
 		resp = postCall("Account_Service_RegisterFLyinUserUpdate_OTPValidation","");
 		
-		validation_user_update_MobileOTP(resp,"Account_Service_RegisterFLyinUserUpdate_OTPValidation","");
+		validation_user_update(resp,"Account_Service_RegisterFLyinUserUpdate_OTPValidation","");
 				
 		/*ResponseBody body = resp.getBody();
 		System.out.println("Response of API is:" + body.asString());

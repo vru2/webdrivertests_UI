@@ -2681,18 +2681,8 @@ String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\
 				Assert.assertTrue(false);						
 			}
 		}
-		if(Type.equalsIgnoreCase("Account_Service_RegisterFLyinUserUpdate_OTPValidation")) {
-			String message = jsonPathEvaluator.getString("message");
-			if(!message.contains("Wrong otp entered for user otpmobilenotestfinal@flyin.com")) {
-				Assert.assertTrue(false);						
-			}
-		}
-		if(Type.equalsIgnoreCase("Account_Service_RegisterFLyinUserUpdate_WithoutOTP")) {
-			String message = jsonPathEvaluator.getString("message");
-			if(!message.contains("Otp not passed for updating mobile number of user otpmobilenotestfinal@flyin.com")) {
-				Assert.assertTrue(false);						
-			}
-		}
+		
+		
 		if(Type.equalsIgnoreCase("IdentityService_UpdatePassword_ForChangePasswordflow")) {
 			String message = jsonPathEvaluator.getString("message");
 			if(!message.contains("OTP is not valid for email id : ns.likhitha@cleartrip.com")) {
@@ -2721,6 +2711,31 @@ String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\
 		if(Type.equalsIgnoreCase("Account_Service_Update_User")) {
 			String username = jsonPathEvaluator.getString("username");
 			if(!username.contains("otpmobilenotest@cleartrip.com")) {
+				Assert.assertTrue(false);						
+			}
+		}
+		
+		if(Type.equalsIgnoreCase("Account_Service_RegisterFLyinUserUpdate_WithoutOTP")) {
+			if(!resp.body().asString().contains("65206329")) {
+				Assert.assertTrue(false);						
+			}
+			else if(!resp.body().asString().contains("otpmobilenotestfinal@flyin.com")) {
+				Assert.assertTrue(false);						
+			}
+			else if(!resp.body().asString().contains("11111111111")) {
+				Assert.assertTrue(false);						
+			}
+			
+		}
+		
+		if(Type.equalsIgnoreCase("Account_Service_RegisterFLyinUserUpdate_OTPValidation")) {
+			if(!resp.body().asString().contains("otpmobilenotestfinal@flyin.com")) {
+				Assert.assertTrue(false);						
+			}
+			else if(!resp.body().asString().contains("88888888")) {
+				Assert.assertTrue(false);						
+			}
+			else if(!resp.body().asString().contains("65206329")) {
 				Assert.assertTrue(false);						
 			}
 		}

@@ -20,13 +20,13 @@ public class Bento_StoredCard_Booking extends PaymentsBento_Itn_Common{
 	@Test
 	public void bento_storedcard() throws Exception {
 		driver.manage().deleteAllCookies();
-		driver.navigate().to(searchurl);
-		System.out.println(searchurl);
-		Reporter.log(searchurl);
-	    Searchpagebook(driver,"","com");
+		driver.navigate().to(qa2url+searchurl);
+		System.out.println(qa2url+searchurl);
+		Reporter.log(qa2url+searchurl);
+	    Searchpagebook(driver,"","com","");
 	    book_itnnew(driver,"");
 	    if(elementVisible(driver,getObjectPayment("Bento_Payment_PayText"),30)) {
-	    	 bento_paymentpage(driver,"storedcard","");
+	    	 bento_paymentpage(driver,"storedcard","","");
 	 	     confirmation_page(driver);
 	   }
 	   else if(textPresent(driver,"Sorry, our servers are stumped with your request",30)||textPresent(driver,"Flight not available",30))

@@ -17,6 +17,10 @@
                <class name="paymentsBento_Itn.Bento_OM_Booking"/>
                 <class name="paymentsBento_Itn.Bento_QA_Booking"/>
                 <class name="paymentsBento_Itn.Bento_SA_Booking"/>
+                 <class name="paymentsBento_Itn.Bento_AE_SC_Noon_Booking"/>
+                 <class name="paymentsBento_Itn.Bento_AE_SC_Payfort_Booking"/>
+                 <class name="paymentsBento_Itn.Bento_SA_SC_Payfort_Booking"/>
+                 <class name="paymentsBento_Itn.Bento_SA_SC_Checkout_Booking"/>
     </classes>
 </test>
 
@@ -29,6 +33,8 @@
            <class name="paymentsBento_Itn.Bento_Wallet_Booking"/> 
            <class name="paymentsBento_Itn.Bento_Partial_Wallet_Booking"/> 
            <class name="paymentsBento_Itn.Bento_Phonepe_Booking"/> 
+            <class name="paymentsBento_Itn.Bento_DC_Booking"/> 
+            <class name="paymentsBento_Itn.Bento_Storedcard_Razorpaycard_Booking"/> 
     </classes>
 </test>
 

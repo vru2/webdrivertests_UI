@@ -9,7 +9,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Bento_Coupon_StoredCard_Booking extends PaymentsBento_Itn_Common {
+public class Bento_Storedcard_Razorpaycard_Booking extends PaymentsBento_Itn_Common {
 
 	@BeforeClass
 	public void startSelenium() throws Exception {
@@ -18,17 +18,17 @@ public class Bento_Coupon_StoredCard_Booking extends PaymentsBento_Itn_Common {
 	}
 
 	@Test
-	public void bento_coupon() throws Exception {
+	public void bento_sc_razorpay() throws Exception {
 		driver.manage().deleteAllCookies();
 		driver.navigate().to(qa2url + searchurl);
 		System.out.println(qa2url + searchurl);
 		Reporter.log(qa2url + searchurl);
-		Searchpagebook(driver, "","com","amex");
-		 book_itnnew(driver,"Coupon"); 
+		Searchpagebook(driver, "","com","");
+		 book_itnnew(driver,""); 
 		  Thread.sleep(1000);
 		 if(textPresent(driver,"Pay to complete your booking",20)) 
 		 {
-		  bento_paymentpage(driver,"Coupon","",""); 
+		  bento_paymentpage(driver,"storedcard","5241",""); 
 		  confirmation_page(driver); 
 		  }
 		  

@@ -22,10 +22,10 @@ public class Bento_UPI_Booking extends PaymentsBento_Itn_Common {
 		driver.navigate().to(qa2url+searchurl);
 		System.out.println(qa2url+searchurl);
 		Reporter.log(qa2url+searchurl);
-	    Searchpagebook(driver,"","com");
+	    Searchpagebook(driver,"","com","");
 	    book_itnnew(driver,"");
 	    if(textPresent(driver,"Pay to complete your booking",20)){
-	    	 bento_paymentpage(driver,"UPI","");
+	    	 bento_paymentpage(driver,"UPI","","");
 	 	     confirmation_page(driver);
 	    }
 	    else if(textPresent(driver,"Sorry, our servers are stumped with your request",30)||textPresent(driver,"Flight not available",30))

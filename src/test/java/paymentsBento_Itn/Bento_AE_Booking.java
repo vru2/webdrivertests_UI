@@ -26,7 +26,7 @@ public class Bento_AE_Booking extends PaymentsBento_Itn_Common {
 		driver.navigate().to(aeurl+searchurl);
 		System.out.println(aeurl+searchurl);
 		Reporter.log(aeurl+searchurl);
-		Searchpagebook(driver,"","");
+		Searchpagebook(driver,"","","");
 		noncom_itnpage(driver,"","ae");
 	    if(textPresent(driver,"Sorry, our servers are stumped with your request",30)||textPresent(driver,"Flight not available",30))
 	    {
@@ -36,7 +36,7 @@ public class Bento_AE_Booking extends PaymentsBento_Itn_Common {
 	    }
 	    else
 	    {
-	    bento_paymentpage(driver,"AE-SC","");
+	    bento_paymentpage(driver,"AE-SC","","");
 	    confirmation_page(driver);
 	    }
 	    

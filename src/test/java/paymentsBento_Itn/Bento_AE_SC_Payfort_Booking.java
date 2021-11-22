@@ -10,7 +10,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Bento_QA_Booking extends PaymentsBento_Itn_Common {
+public class Bento_AE_SC_Payfort_Booking extends PaymentsBento_Itn_Common {
 
 	@BeforeClass
 	public void setUp() throws Exception {
@@ -18,16 +18,13 @@ public class Bento_QA_Booking extends PaymentsBento_Itn_Common {
 	}
 
 	@Test
-	public void bento_qa_booking() throws Exception {
+	public void bento_ae_booking() throws Exception {
 		driver.manage().deleteAllCookies();
-		/*
-		 * driver.navigate().to(aeurl); Thread.sleep(2000);
-		 */
-		driver.navigate().to(qaurl+searchurl);
-		System.out.println(qaurl+searchurl);
-		Reporter.log(qaurl+searchurl);
+		driver.navigate().to(aeurl+searchurl);
+		System.out.println(aeurl+searchurl);
+		Reporter.log(aeurl+searchurl);
 		Searchpagebook(driver,"","","");
-		noncom_itnpage(driver,"","");
+		noncom_itnpage(driver,"","ae");
 	    if(textPresent(driver,"Sorry, our servers are stumped with your request",30)||textPresent(driver,"Flight not available",30))
 	    {
 	    	System.out.println("Booking failed due to itn page issue");
@@ -36,7 +33,7 @@ public class Bento_QA_Booking extends PaymentsBento_Itn_Common {
 	    }
 	    else
 	    {
-	    bento_paymentpage(driver,"OTH","","");
+	    bento_paymentpage(driver,"AE-SC","4557","");
 	    confirmation_page(driver);
 	    }
 	    
@@ -51,6 +48,5 @@ public class Bento_QA_Booking extends PaymentsBento_Itn_Common {
 		public void afterMethod(ITestResult _result) throws Exception {
 			afterMethod(driver, _result);
 		}
-
 
 }

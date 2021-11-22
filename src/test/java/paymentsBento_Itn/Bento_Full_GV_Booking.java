@@ -23,11 +23,11 @@ public class Bento_Full_GV_Booking extends PaymentsBento_Itn_Common{
 		driver.navigate().to(qa2url+searchurl);
 		System.out.println(qa2url+searchurl);
 		Reporter.log(qa2url+searchurl);
-	    Searchpagebook(driver,"","com");
+	    Searchpagebook(driver,"","com","");
 	    book_itnnew(driver,"GV");
 	    if(textPresent(driver,"Pay to complete your booking",20)) {
 
-		    bento_paymentpage(driver,"GV","");
+		    bento_paymentpage(driver,"GV","","");
 		    confirmation_page(driver);
 		    
 	   }
@@ -38,7 +38,7 @@ public class Bento_Full_GV_Booking extends PaymentsBento_Itn_Common{
 	    	assertTrue(false);
 	    }
 	   else {
-		   bento_paymentpage(driver,"GV","");
+		   bento_paymentpage(driver,"GV","","");
 		    confirmation_page(driver);
 	   }
 	}

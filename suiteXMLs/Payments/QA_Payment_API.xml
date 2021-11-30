@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="APIs" parallel="tests" thread-count="2">
+<suite name="APIs" parallel="tests" thread-count="5">
 
 <listeners>
 <listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -28,6 +28,20 @@
     </classes>
 </test>
 
+<test name="FK Deposit Account DA" preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_DA_FK_FetchBy_PaymentID"/>
+      <class name="paymentsAPI.API_DA_FK_FetchBy_TripID"/>
+      <class name="paymentsAPI.API_DA_FK_PayV3_6000"/>
+      <class name="paymentsAPI.API_DA_FK_PayV3_Amend"/>
+      <class name="paymentsAPI.API_DA_FK_PayV3_ZeroAmt"/>
+      <class name="paymentsAPI.API_DA_FK_PayV3"/>
+      <class name="paymentsAPI.API_DA_FK_Refund_Create"/>
+      <class name="paymentsAPI.API_DA_FK_Refund_Status_Update"/>
+      <class name="paymentsAPI.API_DA_FK_Refund_Update_PartnerInfo"/>
+    </classes>
+</test>
+
 <test name="GW Failure Banner" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsAPI.API_Fetch_GW_Failure"/>
@@ -52,22 +66,17 @@
     </classes>
 </test>
 
-
-
 <test name="Refunds Count" preserve-order="true" parallel="true">
     <classes>
    
     </classes>
 </test>
 
-
 <test name="Refunds ROR Counts" preserve-order="true" parallel="true">
     <classes>
     <!--   <class name="paymentsAPI.API_ROR_RefundQ_Count"/>  //not live -->
     </classes>
 </test>
-
-
 
 <test name="Deposit Account DA" preserve-order="true" parallel="true">
     <classes>
@@ -274,20 +283,5 @@
 	 </classes>
 </test>
 
-<!-- 
-<test name="API PayU OTP" preserve-order="true" parallel="true">
-    <classes>
-      <class name="paymentsAPI.API_PayU_OTPProcess"/>
-      <class name="paymentsAPI.API_PayU_OTPResend"/> 
-    </classes>
-</test>
-
-<test name="API Refund"  preserve-order="true" parallel="true">
-    <classes>
-      <class name="paymentsAPI.API_Refund_CC"/>
-    </classes>
-</test>
-
- -->
 
 </suite> 

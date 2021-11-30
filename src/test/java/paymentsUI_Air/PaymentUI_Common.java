@@ -19,6 +19,7 @@ public class PaymentUI_Common extends PaymentNodeJS{
 	protected String paymentUrl;
 	protected String qaUrl;
 	public Response resp;
+
 	Cookie cookie_Parl_Wallet = new Cookie("ct-auth", "EVefRmmOWPSC8c9sPGbZGwZMgfl%2FLjP6yfQQAwhPONaOOIjRmfrMO5ubb5%2FGLWzguQmW3NiUZma8q2lELnUuyC3uAF5DaTQONdJlLn%2FO2me%2FiLCzDjUE8Mm7nMigogz0z84lf%2Bili9Xzawt1KbN%2FMNpQDroZvb3Q7ub%2BLj1YfofQs%2BDG9mD5DXvLFNSWqYz93GfvGpnfyFmIRy226HjYgQ%3D%3D");
 	Cookie cookie_Full_Wallet = new Cookie("ct-auth", "kPSO4DekYXjX1NAa%2BV6x%2BPAuD85oXXc2x6ocNR2SCho5FiJNPfE0mcjCvYIvtvEzD3habrO078UoXdzWM34lXZaLbE1jIpkEaANLn%2BHJadeW7kll2UfWWUfOoZLsVWTE5e4M7AJPpksQjN%2BnOAVReuzUb6b257o%2Bo1tkm1ssHdnsn63Uy2JyxP3spA3W9e%2Fw");	
 	Cookie cookie_Stored_CardNew = new Cookie("ct-auth", "EVefRmmOWPSC8c9sPGbZGwZMgfl%2FLjP6yfQQAwhPONaOOIjRmfrMO5ubb5%2FGLWzguQmW3NiUZma8q2lELnUuyC3uAF5DaTQONdJlLn%2FO2me%2FiLCzDjUE8Mm7nMigogz0z84lf%2Bili9Xzawt1KbN%2FMNpQDroZvb3Q7ub%2BLj1YfofQs%2BDG9mD5DXvLFNSWqYz93GfvGpnfyFmIRy226HjYgQ%3D%3D");

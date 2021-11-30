@@ -27,30 +27,6 @@ import paymentsUI.PaymentUI_CommonUtilities;
 public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 
 {	
-	
-	//  https://qa2.cleartrip.com/paymentservice/api/wallet?product=DOMESTIC-AIR&currency=INR 
-	
-	/*
-	
-	String urlPay = "http://172.17.28.21:8358";// Mysql
-	String urlWallet = "http://172.17.26.11:8359";
-	String promoURL = "http://172.17.26.11:8360";
-	String urlDA = "http://172.17.28.21:8403";
-	String urlRewards = "http://172.17.12.83:9080";
-	String urlCardInfo_Service="http://172.17.26.11:8331";
-	String urlFlyin = "http://172.17.26.11:8406";
-	String urlrewards_validate = "http://172.17.28.21:8358";
-	String urlrewards_validate1 = "http://172.17.28.21:8358";
-	String urlrewards_payURI1 ="http://172.17.28.21:8358";
-	String urlrewards_URI1 = "http://172.17.12.83:9080/";
-	String urlPromo_Used = "http://172.17.26.11:8359";
-	String urlReporting ="http://172.17.28.21:8272";
-	String urlReportingTS ="http://172.17.26.11:9031";
-	public String url_TestApp = "172.17.28.21:8358/paymentservice";
-	String urlFetchRefunds="http://172.17.28.21:8358";
-	String url_Binmanager = "https://qa2.cleartrip.com/binmanager/v1/payment/cards?bin=534977";
-
-	*/
 	public RemoteWebDriver driver;
 	
 	String urlFlyin = "http://172.17.51.86:8406"; // ORACLE
@@ -86,7 +62,12 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String paramsDAValidateV3 = "[{\"payment\":{\"seq_no\":1,\"high_risk\":false,\"d_plus_x_in_hours\":633,\"payment_category\":\"B\",\"fraud_system_invocation\":\"N\",\"ui_version\":\"v1\",\"customer_detail\":{\"address1\":\"test\",\"city_name\":\"test\",\"postal_code\":\"121212\",\"state_name\":\"test\",\"country_name\":\"india\",\"mobile\":\"121221211\",\"landline\":\"\",\"email\":\"testcthotel@gmail.com\"},\"payment_type\":\"DA\",\"amount\":10.0,\"currency\":\"INR\",\"order_info1\":\"SG/8161/DEL/BOM/20200426155000\",\"order_info2\":\"test booking\",\"source_type\":\"CORP\",\"user_id\":13939735,\"company_id\":101,\"app_return_info\":{\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://corporate.cltp.com:9001/r3/corp/air-book-internal?itineraryId\\u003d689a209bce-a21e-49ac-a0f9-200330145310\\u0026corpPageId\\u003d\"},\"deposit_account_detail\":{\"id\":46207144,\"transaction_password\":\"test123\"}}}]";
 	String paramsDAPayV3 = "[{\"payment\":{\"seq_no\":1,\"trip_id\":43453224,\"high_risk\":false,\"d_plus_x_in_hours\":633,\"payment_category\":\"B\",\"fraud_system_invocation\":\"N\",\"ui_version\":\"v1\",\"customer_detail\":{\"address1\":\"test\",\"city_name\":\"test\",\"postal_code\":\"121212\",\"state_name\":\"test\",\"country_name\":\"india\",\"mobile\":\"121221211\",\"landline\":\"\",\"email\":\"testcthotel@gmail.com\"},\"app_ref1\":\"Q200330788702\",\"app_ref2\":\"75629492\",\"payment_type\":\"DA\",\"amount\":1.0,\"currency\":\"INR\",\"order_info1\":\"SG/8161/DEL/BOM/20200426155000\",\"order_info2\":\"test booking\",\"source_type\":\"CORP\",\"user_id\":790982,\"company_id\":101,\"app_return_info\":{\"url\":\"https://demo.cleartripforbusiness.com/airConfirmNetBanking?itineraryId\\u003d689a209bce-a21e-49ac-a0f9-200330145310\\u0026corpPageId\\u003db8d196f8-af63-45cd-9516-d4c91f7821f2\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://corporate.cltp.com:9001/r3/corp/air-book-internal?itineraryId\\u003d689a209bce-a21e-49ac-a0f9-200330145310\\u0026corpPageId\\u003db8d196f8-af63-45cd-9516-d4c91f7821f2\"},\"deposit_account_detail\":{\"id\":46207144,\"transaction_password\":\"test123\"}}}]";
 	String paramsDAPayV3Async = "[{\"payment\":{\"seq_no\":1,\"trip_id\":43453224,\"high_risk\":false,\"d_plus_x_in_hours\":633,\"payment_category\":\"B\",\"fraud_system_invocation\":\"N\",\"ui_version\":\"v1\",\"customer_detail\":{\"address1\":\"test\",\"city_name\":\"test\",\"postal_code\":\"121212\",\"state_name\":\"test\",\"country_name\":\"india\",\"mobile\":\"121221211\",\"landline\":\"\",\"email\":\"testcthotel@gmail.com\"},\"app_ref1\":\"Q200330788702\",\"app_ref2\":\"75629492\",\"payment_type\":\"DA\",\"amount\":1.0,\"currency\":\"INR\",\"order_info1\":\"SG/8161/DEL/BOM/20200426155000\",\"order_info2\":\"test booking\",\"source_type\":\"CORP\",\"user_id\":1876970,\"company_id\":101,\"app_return_info\":{\"url\":\"https://demo.cleartripforbusiness.com/airConfirmNetBanking?itineraryId\\u003d689a209bce-a21e-49ac-a0f9-200330145310\\u0026corpPageId\\u003db8d196f8-af63-45cd-9516-d4c91f7821f2\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://corporate.cltp.com:9001/r3/corp/air-book-internal?itineraryId\\u003d689a209bce-a21e-49ac-a0f9-200330145310\\u0026corpPageId\\u003db8d196f8-af63-45cd-9516-d4c91f7821f2\"},\"deposit_account_detail\":{\"id\":46207144,\"transaction_password\":\"test123\"}}}]";
-
+	
+	String paramsDAPayV3FK = "[{\"payment\":{\"seq_no\":1,\"trip_id\":43453224,\"high_risk\":false,\"d_plus_x_in_hours\":633,\"payment_category\":\"B\",\"fraud_system_invocation\":\"N\",\"ui_version\":\"v1\",\"customer_detail\":{\"address1\":\"test\",\"city_name\":\"test\",\"postal_code\":\"121212\",\"state_name\":\"test\",\"country_name\":\"india\",\"mobile\":\"121221211\",\"landline\":\"\",\"email\":\"test987@gmail.com\"},\"app_ref1\":\"Q211112349\",\"app_ref2\":\"75629492\",\"payment_type\":\"DA\",\"amount\":0.9,\"currency\":\"INR\",\"order_info1\":\"SG/8161/DEL/BOM/20200426155000\",\"order_info2\":\"test booking\",\"source_type\":\"API\",\"user_id\":1876970,\"company_id\":101,\"app_return_info\":{\"url\":\"\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"\"},\"deposit_account_detail\":{\"id\":44980178,\"transaction_password\":\"test\"},\"partner_reference_data\":{\"reference_id\":\"Q211112345\",\"reference_data\":{\"adjustments\":[{\"adjustments\":[{\"type\":\"SUPER_COINS\",\"adjustment_id\":\"Q211112349\",\"amount\":12821.0,\"units\":12821}],\"payment_instrument_breakup\":[{\"payment_instrument_name\":\"Net Banking\",\"amount\":592.0,\"bank_name\":\"HDFC\"}],\"amount\":13413.0,\"final_pg_amount\":592.0}]}}}}]";
+	String paramsDAPayV3FK6000 = "[{\"payment\":{\"tripId\":4580505011,\"seqNo\":8,\"appRef1\":\"Q21091012345\",\"appRef2\":\"7629376500\",\"paymentType\":\"DA\",\"amount\":1.0,\"currency\":\"INR\",\"sourceType\":\"API\",\"userId\":1876970,\"companyId\":110340,\"paymentCategory\":\"B\",\"newBento\":false,\"deposit_account_detail\":{\"id\":44980178,\"transaction_password\":\"test\"},\"partner_reference_data\":{\"reference_id\":\"212223445\",\"reference_data\":{\"adjustments\":[{\"type\":\"SUPER_COINS\",\"adjustment_id\":\"34563278132\",\"amount\":2.34,\"units\":1}],\"payment_instrument_breakup\":[{\"payment_instrument_name\":\"CC / DC. String\",\"amount\":234.56,\"bank_name\":\"hdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"}]}},\"isPWA\":false}}]";
+	String paramsDAPayV3Amend = "[{\"payment\":{\"seq_no\":1,\"trip_id\":43453224,\"high_risk\":false,\"d_plus_x_in_hours\":633,\"payment_category\":\"A\",\"fraud_system_invocation\":\"N\",\"ui_version\":\"v1\",\"customer_detail\":{\"address1\":\"test\",\"city_name\":\"test\",\"postal_code\":\"121212\",\"state_name\":\"test\",\"country_name\":\"india\",\"mobile\":\"121221211\",\"landline\":\"\",\"email\":\"test987@gmail.com\"},\"app_ref1\":\"Q2111009812\",\"app_ref2\":\"75629492\",\"payment_type\":\"DA\",\"amount\":1.0,\"currency\":\"INR\",\"order_info1\":\"SG/8161/DEL/BOM/20200426155000\",\"order_info2\":\"test booking\",\"source_type\":\"API\",\"user_id\":1876970,\"company_id\":101,\"app_return_info\":{\"url\":\"\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"\"},\"deposit_account_detail\":{\"id\":44980178,\"transaction_password\":\"test\"},\"partner_reference_data\":{\"reference_id\":\"123\",\"reference_data\":{\"adjustments\":[{\"adjustmentId\":\"Id for the adjustment\",\"amount\":\"discount amount\",\"offerId\":\"will be couponId for instant discount\",\"type\":\"INSTANT / BANK / FK_COIN\",\"units\":\"no. of coin units. For other cases, it will be null\"}]}}}}]";
+	String paramsDAPayV3ZeroAmt = "[{\"payment\":{\"seq_no\":1,\"trip_id\":43453224,\"high_risk\":false,\"d_plus_x_in_hours\":633,\"payment_category\":\"B\",\"fraud_system_invocation\":\"N\",\"ui_version\":\"v1\",\"customer_detail\":{\"address1\":\"test\",\"city_name\":\"test\",\"postal_code\":\"121212\",\"state_name\":\"test\",\"country_name\":\"india\",\"mobile\":\"121221211\",\"landline\":\"\",\"email\":\"test987@gmail.com\"},\"app_ref1\":\"Q211112349\",\"app_ref2\":\"75629492\",\"payment_type\":\"DA\",\"amount\":0.0,\"currency\":\"INR\",\"order_info1\":\"SG/8161/DEL/BOM/20200426155000\",\"order_info2\":\"test booking\",\"source_type\":\"API\",\"user_id\":1876970,\"company_id\":101,\"app_return_info\":{\"url\":\"\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"\"},\"deposit_account_detail\":{\"id\":44980178,\"transaction_password\":\"test\"},\"partner_reference_data\":{\"reference_id\":\"Q211112345\",\"reference_data\":{\"adjustments\":[{\"adjustments\":[{\"type\":\"SUPER_COINS\",\"adjustment_id\":\"Q211112349\",\"amount\":12821.0,\"units\":12821}],\"payment_instrument_breakup\":[{\"payment_instrument_name\":\"Net Banking\",\"amount\":592.0,\"bank_name\":\"HDFC\"}],\"amount\":13413.0,\"final_pg_amount\":592.0}]}}}}]";
+	
 	String paramsGV  = "[{\"payment\":{\"seq_no\":2,\"trip_id\":106562332,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":1618,\"payment_category\":\"B\",\"fraud_system_invocation\":\"N\",\"ui_version\":\"v2\",\"customer_detail\":{\"ip_address\":\"119.82.106.202\",\"mobile\":\"9986696785\",\"email\":\"cltppayment@gmail.com\"},\"app_ref1\":\"Q18110930000\",\"app_ref2\":\"167823462\",\"itinerary_id\":\"684fe048c7-cde3-4c20-9b73-a70e3c43bc9d\",\"payment_type\":\"GV\",\"amount\":1.0,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"SG/8481/PAT/DEL/201812XXXXXX00\",\"order_info2\":\"Cleartrip tester\",\"source_type\":\"WL\",\"user_id\":51351954,\"company_id\":5291262,\"app_return_info\":{\"url\":\"dummy\",\"method\":\"POST\"},\"gift_voucher_detail\":{\"card_number\":\"3000331036066705\",\"card_pin\":\"454598\",\"amount\":1,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"SG/8481/PAT/DEL/201812XXXXXX00\",\"order_info2\":\"Cleartrip Tester\",\"source_type\":\"WL\",\"user_id\":51351954,\"company_id\":5291262,\"app_return_info\":{\"url\":\"dummy\",\"method\":\"POST\"},\"gift_voucher_detail\":{\"card_number\":\"3000331038457035\",\"card_pin\":\"825008\",\"card_category\":\"\"}}}}]";
 	String paramsWallet ="[{\"payment\":{\"seq_no\":1,\"trip_id\":54808092,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":1618,\"payment_category\":\"B\",\"fraud_system_invocation\":\"N\",\"ui_version\":\"v2\",\"customer_detail\":{\"ip_address\":\"119.82.106.202\",\"mobile\":\"9986696785\",\"email\":\"cltppayment@gmail.com\"},\"app_ref1\":\"Q1809140000\",\"app_ref2\":\"74049672\",\"itinerary_id\":\"681f6b756d-67de-4efc-b663-5a7ac1bd9fa1\",\"payment_type\":\"WT\",\"amount\":0.1,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"6E\\/233\\/BLR\\/MAA\\/20181125062500\",\"order_info2\":\"Test Booking\",\"source_type\":\"ACCOUNT\",\"user_id\":41654864,\"company_id\":110340,\"app_return_info\":{\"url\":\"https://qa2.cleartrip.com/flights/itinerary/681f6b756d-67de-4efc-b663-5a7ac1bd9fa1/book\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://book-flights.cltp.com:9001/r3/book/flights/itinerary/681f6b756d-67de-4efc-b663-5a7ac1bd9fa1/book-internal?ll=INFO\"},\"user_agent\":\"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrom/69.0.3497.100 Safari/537.36\"}}]";
 	String paramsCCGVWL ="[{\"payment\":{\"seq_no\":1,\"trip_id\":106562332,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":276,\"payment_category\":\"B\",\"fraud_system_invocation\":\"Y\",\"ui_version\":\"v2\",\"customer_detail\":{\"ip_address\":\"119.82.73.123\",\"mobile\":\"9986696785\",\"email\":\"cltppayment@gmail.com\",\"firstName\":\"test\"},\"app_ref1\":\"Q18110926800\",\"app_ref2\":\"167823462\",\"itinerary_id\":\"683a3a6bec-4e58-422a-a2c9-90707b1e5a12\",\"payment_type\":\"CC\",\"amount\":10.99,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"9W/362/DEL/BOM/201811XXXXXX00\",\"order_info2\":\"Kiran Kumar\",\"source_type\":\"ACCOUNT\",\"user_id\":85721640,\"company_id\":110340,\"app_return_info\":{\"url\":\"https://www.cleartrip.com/flights/itinerary/683a3a6bec-4e58-422a-a2c9-90707b1e5a12/book\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://book-flights.cltp.com:9001/r3/book/flights/itinerary/683a3a6bec-4e58-422a-a2c9-90707b1e5a12/book-internal?ll=INFO\"},\"host_name\":\"qa2.cleartrip.com\",\"card_detail\":{\"card_number\":\"5123456789012346\",\"card_type_id\":1,\"expiry_month\":\"05\",\"expiry_year\":\"2020\",\"cvv\":\"123\",\"name\":\"CleartripCard\",\"billto_detail\":{\"firstname\":\"test\",\"lastname\":\"test\",\"address1\":\"Cleartrip JP Nagar\",\"city_name\":\"Bangalore\",\"state_name\":\"Karnataka\",\"country_name\":\"India\",\"postal_code\":\"560076\"}},\"user_agent\":\"Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko\"}},{\"payment\":{\"seq_no\":2,\"trip_id\":54808092,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":1618,\"payment_category\":\"B\",\"fraud_system_invocation\":\"N\",\"ui_version\":\"v2\",\"customer_detail\":{\"ip_address\":\"119.82.106.202\",\"mobile\":\"12121221212\",\"email\":\"cltppayment@gmail.com\"},\"app_ref1\":\"Q1809140000\",\"app_ref2\":\"74049672\",\"itinerary_id\":\"681f6b756d-67de-4efc-b663-5a7ac1bd9fa1\",\"payment_type\":\"WT\",\"amount\":10,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"6E\\/233\\/BLR\\/MAA\\/20181125062500\",\"order_info2\":\"Test Booking\",\"source_type\":\"ACCOUNT\",\"user_id\":41654864,\"company_id\":110340,\"app_return_info\":{\"url\":\"https://qa2.cleartrip.com/flights/itinerary/681f6b756d-67de-4efc-b663-5a7ac1bd9fa1/book\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://book-flights.cltp.com:9001/r3/book/flights/itinerary/681f6b756d-67de-4efc-b663-5a7ac1bd9fa1/book-internal?ll=INFO\"},\"user_agent\":\"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrom/69.0.3497.100 Safari/537.36\"}},{\"payment\":{\"seq_no\":2,\"trip_id\":106562332,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":1618,\"payment_category\":\"B\",\"fraud_system_invocation\":\"N\",\"ui_version\":\"v2\",\"customer_detail\":{\"ip_address\":\"119.82.106.202\",\"mobile\":\"12121221212\",\"email\":\"cltppayment@gmail.com\"},\"app_ref1\":\"Q18110930000\",\"app_ref2\":\"167823462\",\"itinerary_id\":\"684fe048c7-cde3-4c20-9b73-a70e3c43bc9d\",\"payment_type\":\"GV\",\"amount\":10.0,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"SG/8481/PAT/DEL/201812XXXXXX00\",\"order_info2\":\"Cleartrip tester\",\"source_type\":\"WL\",\"user_id\":51351954,\"company_id\":5291262,\"app_return_info\":{\"url\":\"dummy\",\"method\":\"POST\"},\"gift_voucher_detail\":{\"card_number\":\"3000331031424400\",\"card_pin\":\"198024\",\"amount\":1,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"SG/8481/PAT/DEL/201812XXXXXX00\",\"order_info2\":\"Cleartrip Tester\",\"source_type\":\"WL\",\"user_id\":51351954,\"company_id\":5291262,\"app_return_info\":{\"url\":\"dummy\",\"method\":\"POST\"},\"gift_voucher_detail\":{\"card_number\":\"3000331038475131\",\"card_pin\":\"152123\",\"card_category\":\"\"}}}}]";
@@ -242,6 +223,14 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			"\"book_internal_url\":\"http://book-flights.cltp.com:9001/r3/book/flights/itinerary/683a3a6bec-4e58-422a-a2c9-90707b1e5a12/book-internal?ll=INFO\"\r\n" + 
 			"},\"host_name\":\"qa2.cleartrip.com\",\"user_agent\":\"Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko\"}}]";
 	
+	
+	String params_FK_Refund1="{\"amount\":0.1,\"description\":\"1 Segment\",\"isFullWalletRefund\":false,\"disableAutoRefundProcessing\":true,\"source\":\"FK_Refund_Automation\",\"tripRef\":\"Q211130188952\",\"txnid\":";
+
+	String params_FK_Refund_Update_PartnerInfo ="[{\"refund_id\":\"10042072\",\"trip_ref\":\"Q210323926516\",\"partner_reference_data\":{\"reference_id\":\"123456\",\"reference_data\":{\"adjustments\":[{\"adjustmentId\":\"Id for the adjustmentssssfff\",\"amount\":\"discount amountssss\",\"offerId\":\"will be couponId for instant discountttt\",\"type\":\"INSTANT / BANK / FK_COINNN\",\"units\":\"no. of coin units. For other cases, it will be null\"}]}},\"override_partner_ref_data\":true},{\"refund_id\":\"9876543\",\"trip_ref\":\"208765432\",\"partner_reference_data\":{\"reference_id\":\"123456\",\"reference_data\":{\"adjustments\":[{\"adjustmentId\":\"Id for the adjustmentssssdd\",\"amount\":\"discount amountssss\",\"offerId\":\"will be couponId for instant discountttt\",\"type\":\"INSTANT / BANK / FK_COINNN\",\"units\":\"no. of coin units. For other cases, it will be nulllllll\"}]}},\"override_partner_ref_data\":true}]";
+			
+	
+	String params_FK_Refund_Status_Update = "{\"refundIds\":[10148042],\"toStatus\":\"F\"}";
+	
 	String paramsCSPay="";
 	
 	String paramsWalletrevertPromo = "{\"tripRef\":\"Q201124864780\",\"amount\":100.1}";
@@ -390,6 +379,9 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String urlDA_Refund= "/account/46207144/trips/Q191210603834/refund";
 	String urlDA_Status = "/account/387212870";
 	
+	String urlDA_FK_FetchBy_TripID = "/paymentservice/payments/44951548";
+	String urlDA_FK_FetchBy_PaymentID = "/paymentservice/payments/fetchById?id=44948256";
+	
 	
 	String urlCTPay = "https://qa2.cleartrip.com";
 	
@@ -533,7 +525,10 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String urlCS_Pay="/paymentservice/service/pay/v3";
 	String urlCS_Validate="/paymentservice/service/validate/v3";
 
-
+	String urlFKRefundCreate= "/paymentservice/service/refund";
+	String urlFKRefundUpdatePartnerInfo= "/paymentservice/service/refund/updatePartnerInfo";
+	String urlFKRefundStatusUpdate= "/paymentservice/service/refund/updateStatus";
+	
 	String MySQL_URL = "jdbc:mysql://172.17.4.15:3306/payment";
 	String MySQL_User = "payment";
 	String MySQL_Password = "P@yment@123";
@@ -1264,7 +1259,16 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		}else if(Type.equalsIgnoreCase("DAStatus")){
 			url = urlDA_Status;
 		}
-
+		else if(Type.equalsIgnoreCase("DAFK_FetchBy_TripID")){
+			RestAssured.baseURI = urlPay;
+			url = urlDA_FK_FetchBy_TripID;
+		}
+		else if(Type.equalsIgnoreCase("DAFK_FetchBy_PaymentID")){
+			RestAssured.baseURI = urlPay;
+			url = urlDA_FK_FetchBy_PaymentID;
+		}
+		
+		
 		request = RestAssured.given().
 				when().
 				log().all().
@@ -1380,10 +1384,49 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			url = urlPayV3;
 			params = paramsDAPayV3;
 		}
+		else if(payType.equalsIgnoreCase("DAPayFK")) {
+			url = urlPayV3;
+			params = paramsDAPayV3FK;
+		}
+		else if(payType.equalsIgnoreCase("DAPayFK6000")) {
+			url = urlPayV3;
+			params = paramsDAPayV3FK6000;
+		}
+		else if(payType.equalsIgnoreCase("DAPayFKAmend")) {
+			url = urlPayV3;
+			params = paramsDAPayV3Amend;
+		}
+		else if(payType.equalsIgnoreCase("DAPayFKZeroAmt")) {
+			url = urlPayV3;
+			params = paramsDAPayV3ZeroAmt;
+		}
 		else if(payType.equalsIgnoreCase("DAPayAsync")) {
 			url = urlPayV3;
 			params = paramsDAPayV3Async;
 		}
+		else if(payType.equalsIgnoreCase("DAFKRefundCreate")) {
+			Random rand = new Random();
+			int rand_int = rand.nextInt(999999);
+			RestAssured.baseURI =urlPay;
+			url = urlFKRefundCreate;
+			params = params_FK_Refund1+rand_int+"}";
+		}
+		else if(payType.equalsIgnoreCase("DAFKRefundUpdatePartnerinfo")) {
+			RestAssured.baseURI =urlReporting;
+			url = urlFKRefundUpdatePartnerInfo;
+			params = params_FK_Refund_Update_PartnerInfo;
+		}
+		else if(payType.equalsIgnoreCase("DAFKRefundStatusUpdate")) {
+			RestAssured.baseURI =urlReporting;
+			url = urlFKRefundStatusUpdate;
+			params = params_FK_Refund_Status_Update;
+		}
+		
+		
+		
+		
+		
+		
 		else if(payType.equalsIgnoreCase("EMIFetch")) {
 			url = url_EMI_Fetch;
 			params = paramsEMI1+payType1+paramsEMI2;
@@ -2128,7 +2171,6 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		if(payType.equalsIgnoreCase("ROR_CashUpdate")) {
 			String id = jsonPathEvaluator.getString("id");
 			String company_id = jsonPathEvaluator.getString("company_id");
-			System.out.println(" iD "+company_id);
 			if(!id.equals("5116412")) {
 				Assert.assertTrue(false);
 			}  
@@ -2141,8 +2183,36 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 				Assert.assertTrue(false);
 			}
 		}
+		else if(payType.equalsIgnoreCase("DAFK_FetchBy_TripID")) {
+			if(!(resp.body().asString().contains("no. of coin units. For other cases, it will be null"))){
+				Assert.assertTrue(false);
+			}
+		}
+		else if(payType.equalsIgnoreCase("DAFK_FetchBy_PaymentID")) {
+			if(!(resp.body().asString().contains("FK deposit account"))){
+				Assert.assertTrue(false);
+			}
+		}
+		else if(payType.equalsIgnoreCase("DAFKRefundCreate")) {
+			String Status = jsonPathEvaluator.getString("status");
+		if(!Status.equals("S")) {
+			Assert.assertTrue(false);
+		}
+		}
+		else if(payType.equalsIgnoreCase("DAFKRefundUpdatePartnerinfo")) {
+		String Status = jsonPathEvaluator.getString("10042072");
+		if(!Status.equals("S")) {
+			Assert.assertTrue(false);
+		}
+		}
+		else if(payType.equalsIgnoreCase("DAFKRefundStatusUpdate")) {
+			if(!(resp.body().asString().contains("1 rows updated"))){
+				Assert.assertTrue(false);
+			}
+		}
+		
+		
 		else if(payType.equalsIgnoreCase("Reporting_Disabled_Refunds")) {
-			System.out.println("dfghjklsads");
 			if(!(resp.body().asString().contains("Q210502977324"))){
 				Assert.assertTrue(false);
 			}if(!(resp.body().asString().contains("kiran.kumar@cleartrip.com"))){
@@ -2247,6 +2317,13 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 				Assert.assertTrue(false);
 			}
 		}
+		else if(payType.equalsIgnoreCase("DAPayFKZeroAmt")) {
+			if(!resp.body().asString().contains("Partner reference data saved successfully")){
+				Assert.assertTrue(false);
+			}
+		}
+		
+		
 		else if(payType.equalsIgnoreCase("DABalance")) {
 			String Balance = jsonPathEvaluator.getString("balance");
 			String CreditLimit = jsonPathEvaluator.getString("credit_limit");

@@ -6,6 +6,7 @@ import org.json.JSONException;
 import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
+import io.restassured.response.ResponseBody;
 
 public class Account_Service_PWA_SignIn_API extends AccountsCommon_API
 {
@@ -15,6 +16,9 @@ public class Account_Service_PWA_SignIn_API extends AccountsCommon_API
 	Response resp ;		
 	resp =postCall("Account_Service_PWA_SignIn_API", "");
 	validation( resp, "Account_Service_PWA_SignIn_API", "");
+	
+	/*ResponseBody body = resp.getBody();
+	System.out.println("Response of API is:" + body.asString());*/
 	
 }
 

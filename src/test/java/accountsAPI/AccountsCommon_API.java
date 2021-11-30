@@ -805,7 +805,7 @@ String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\
 		headers.put("Content-Type", "application/json");
 		//headers.put("Content-Type", "text/plain");
 		headers.put("X-CT-SOURCETYPE", "mobile");
-		headers.put("Referer", "cleartrip");
+		headers.put("Referer", "www.cleartrip.com");
 		return headers;
 	}
 

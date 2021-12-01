@@ -91,7 +91,7 @@
 
 <test name="Credit Shell" preserve-order="true" parallel="true">
     <classes>
-      <class name="paymentsAPI.API_CS_Pay"/>
+      <!-- <class name="paymentsAPI.API_CS_Pay"/> -->
       <class name="paymentsAPI.API_CS_Validate"/>
      
     </classes>
@@ -165,7 +165,7 @@
       <class name="paymentsAPI.API_EW_Pay_V3"/>        -->
       <class name="paymentsAPI.API_EW_Add_Amount"/>       <!-- 
       <class name="paymentsAPI.API_EW_Pay_AutoDebit"/>     -->
-      <class name="paymentsAPI.API_EW_Summary"/>  
+      <!-- <class name="paymentsAPI.API_EW_Summary"/>   -->
          
    </classes>
 </test>
@@ -213,7 +213,7 @@
 <test name="Refunds redis enque" preserve-order="true" parallel="true">
     <classes>
     
-      <class name="paymentsAPI.API_Refunds_Enque_redis"/> 
+      <!-- <class name="paymentsAPI.API_Refunds_Enque_redis"/>  -->
      <!--  <class name="paymentsAPI.API_Refunds"/>  -->
      </classes>
 </test>

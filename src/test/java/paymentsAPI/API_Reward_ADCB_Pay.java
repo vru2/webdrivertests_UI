@@ -16,7 +16,7 @@ public class API_Reward_ADCB_Pay extends API_PaymentCommon1
 	Random rand = new Random();
 	int n = rand.nextInt(9999999);
 	String trackid = Integer.toString(n);
-	String track = "CLR"+ trackid;
+	String track = "CLTP"+ trackid;
 		
 	@Test(priority = 1, alwaysRun = true)
 	public void adcb_CheckBalance() throws Exception{
@@ -53,7 +53,7 @@ public class API_Reward_ADCB_Pay extends API_PaymentCommon1
 
 		resp = adcb("pay",track);	
 		validation("adcb_pay", resp);
-		}
+		} 
 
 
 		@Test(priority = 5, alwaysRun = true)

@@ -29,8 +29,8 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common {
 	public Cookie bentoitn = new Cookie("forcedBentoItn", "true");
 	public Cookie bento = new Cookie("isBento", "true");
 
-	String GV_number = "3000331039198274";
-	String GV_pin = "266685";
+	String GV_number = "3000331032706754";
+	String GV_pin = "161652";
 
 	JavascriptExecutor jse = (JavascriptExecutor) driver;
 	String contactnumber = "12345678";

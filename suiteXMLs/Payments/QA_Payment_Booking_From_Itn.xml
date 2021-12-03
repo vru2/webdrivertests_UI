@@ -37,10 +37,4 @@
             <class name="paymentsBento_Itn.Bento_Storedcard_Razorpaycard_Booking"/> 
     </classes>
 </test>
-
-
-
-
-   
-
 </suite> 

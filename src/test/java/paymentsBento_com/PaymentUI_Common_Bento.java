@@ -68,7 +68,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 		}
 		if(!elementVisible(driver, getObjectPayment("Bento_Pay_Tabs"), 5)) {
 			Reporter.log("PayUI Page is not displayed");
-			String UI_error = getText(driver, By.xpath("//h1"));
+			String UI_error = getText(driver, By.xpath("//nav/div/p"));
 			Reporter.log(UI_error);			
 			Assert.assertTrue(false);
 		}

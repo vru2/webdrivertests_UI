@@ -17,9 +17,10 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 
+import paymentsBento_com.PaymentUI_Common_Bento;
 import paymentsUI_Air.PaymentUI_Common;
 
-public class PaymentsBento_Itn_Common extends PaymentUI_Common {
+public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	public Cookie ctauth = new Cookie("ct-auth","kQqdrcVR8t4znRp8uzBQJgaacI%2B5mUEhQsXqP%2BGvCv9Sca3PAxik9%2FDoNKFAEq5S6nDr3dyz0gFHshmzL9GNaG4e8msn1sCvUt92FE1Hxz%2B449dUBXvxJapPKHtcbOExsOm%2BE43PNH%2FbzMr%2Bgv0v9PZIafGsbWEbtoycPG3UjA%2BzcqiD2kXHlH7Tnnt7Xdd%2B");
 	public RemoteWebDriver driver;
 	public Cookie cookie_Bento_Payment = new Cookie("isBentoPayment", "true");
@@ -790,6 +791,34 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common {
 			Reporter.log("Clicked on paynow");
 			textPresent_Log(driver, "Please wait...", 2);
 			Reporter.log("Payment done successfully");
+		}
+		if (PaymentType == "KNET") {
+
+			bento_Select_PaymentType(driver, "KNET");
+			elementVisible(driver, getObjectPayment("Bento_Payment_Paynow"), 2);
+			safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
+			Reporter.log("Clicked on paynow");
+			elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_Knet_DropDown"), 30); 
+			Reporter.log("KNet Bank Page displayed");
+			textPresent_Log(driver, "Cleartrip Mea Fz Llc", 2);
+			safeSelect(driver, getObjectPayment("MakePayment_NB_Bank_Knet_DropDown"), "Knet Test Card [KNET1]");
+			Thread.sleep(5000);
+			elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_Knet_CardNumber"), 10);
+			safeClick(driver, getObjectPayment("MakePayment_NB_Bank_Knet_CardNumber"));
+			safeType(driver, getObjectPayment("MakePayment_NB_Bank_Knet_CardNumber"), "0000000001");
+			safeClick(driver, getObjectPayment("MakePayment_NB_Bank_Knet_Exp_Month"));
+			safeSelect(driver, getObjectPayment("MakePayment_NB_Bank_Knet_Exp_Month"), "09");
+
+			safeClick(driver, getObjectPayment("MakePayment_NB_Bank_Knet_Exp_Year"));
+			safeSelect(driver, getObjectPayment("MakePayment_NB_Bank_Knet_Exp_Year"), "2025");
+			safeType(driver, getObjectPayment("MakePayment_NB_Bank_Knet_CVV"), "1234");
+			elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_Knet_Proceed"), 10);
+			safeClick(driver, getObjectPayment("MakePayment_NB_Bank_Knet_Proceed"));
+			elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_Knet_Confirm"), 10);
+			safeClick(driver, getObjectPayment("MakePayment_NB_Bank_Knet_Confirm"));
+			elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_Knet_RedirectionPage"), 10);
+			safeClick(driver, getObjectPayment("MakePayment_NB_Bank_Knet_RedirectionPage"));
+			
 		}
 		if (PaymentType == "partial_wallet") {
 			elementVisible(driver, getObjectPayment("Bento_Payment_Paynow"), 2);

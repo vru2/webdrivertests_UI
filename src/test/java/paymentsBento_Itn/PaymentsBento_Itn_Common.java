@@ -30,8 +30,8 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	public Cookie bentoitn = new Cookie("forcedBentoItn", "true");
 	public Cookie bento = new Cookie("isBento", "true");
 
-	String GV_number = "3000331039198274";
-	String GV_pin = "266685";
+	String GV_number = "3000331032706754";
+	String GV_pin = "161652";
 
 	JavascriptExecutor jse = (JavascriptExecutor) driver;
 	String contactnumber = "12345678";
@@ -181,12 +181,12 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 				WebElement ele = driver.findElement(getObjectPayment("Bento_Itn_GV_Number"));
 				ele.sendKeys(Keys.PAGE_DOWN);
 				Thread.sleep(1000);
-				ele.sendKeys("DOMOW");
+				ele.sendKeys("WALLET3");
 				Thread.sleep(1000);
 				Reporter.log("Entered Coupon details");
 				smartClick(driver, getObjectPayment("Bento_Itn_Coupon_Apply"));
-				if (textPresent_Log(driver, "Great! You just saved", 3) || textPresent_Log(driver,"Great! You just saved 184 on your booking. Discount will be applied on the payments page.",
-						3)) {
+				if (textPresent_Log(driver, "Great! You just saved", 3) || textPresent_Log(driver,"Great! We'll add ₹179 in your Cleartrip Wallet",3))
+				{	
 					Reporter.log("Successfully applied coupon");
 				}
 			}
@@ -219,11 +219,11 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 				WebElement ele = driver.findElement(getObjectPayment("Bento_Itn_GV_Number"));
 				ele.sendKeys(Keys.PAGE_DOWN);
 				Thread.sleep(1000);
-				ele.sendKeys("DOMCC");
+				ele.sendKeys("WALLET3");
 				Thread.sleep(1000);
 				Reporter.log("Entered Coupon details");
 				smartClick(driver, getObjectPayment("Bento_Itn_Coupon_Apply"));
-			if (textPresent_Log(driver, "Great! You just saved", 3) || textPresent_Log(driver,"Great! You just saved 184 on your booking. Discount will be applied on the payments page.",3)) 
+			if (textPresent_Log(driver, "Great! You just saved", 3) || textPresent_Log(driver,"Great! We'll add ₹179 in your Cleartrip Wallet",3)) 
 				{
 					Reporter.log("Successfully applied coupon");
 				}
@@ -259,7 +259,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		  WebElement ele4 =driver.findElement(getObjectPayment("Bento_Itn_GV_Number"));
 		  ele4.sendKeys(Keys.PAGE_DOWN); 
 		  Thread.sleep(1000); 
-		  ele4.sendKeys("DOMCC");
+		  ele4.sendKeys("WALLET3");
 		  Thread.sleep(1000); 
 		  Reporter.log("Entered Coupon details");
 		  smartClick(driver,getObjectPayment("Bento_Itn_Coupon_Apply"));
@@ -330,7 +330,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		  WebElement ele4 =driver.findElement(getObjectPayment("Bento_Itn_GV_Number"));
 		  ele4.sendKeys(Keys.PAGE_DOWN); 
 		  Thread.sleep(1000); 
-		  ele4.sendKeys("DOMOW");
+		  ele4.sendKeys("WALLET3");
 		  Thread.sleep(1000); 
 		  Reporter.log("Entered Coupon details");
 		  smartClick(driver,getObjectPayment("Bento_Itn_Coupon_Apply"));
@@ -848,7 +848,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		}
 		if (PaymentType == "Coupon") {
 			elementVisible(driver, getObjectPayment("Bento_Payment_Paynow"), 2);
-			textPresent_Log(driver, "Coupon code (DOMOW)", 2);
+			textPresent_Log(driver, "Coupon code (WALLET3)", 2);
 			if (textPresent(driver, "Cleartrip wallet", 2)) {
 				safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
 				Reporter.log("Deselected wallet");

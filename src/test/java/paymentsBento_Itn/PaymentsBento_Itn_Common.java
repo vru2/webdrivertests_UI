@@ -120,8 +120,6 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 					Reporter.log("LDAP was displayed");
 				}
 	   }
-     
-	  Thread.sleep(6000);
 		Reporter.log("Clicked on Book");
 		String parent = driver.getWindowHandle();
 		Set<String> s1 = driver.getWindowHandles();
@@ -133,7 +131,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 				driver.switchTo().window(child_window);
 				Thread.sleep(5000);
 				driver.navigate().to(driver.getCurrentUrl());
-				if(!elementVisible(driver,By.cssSelector("h2.fs-7.px-4.c-neutral-900.fw-600"), 10)) {
+				if(!elementVisible(driver,By.cssSelector("h2.fs-7.px-4.c-neutral-900.fw-600"), 5)) {
 					textPresent_Log(driver, "Review your itinerary", 100);					
 				}
 				System.out.println(driver.switchTo().window(child_window).getCurrentUrl());
@@ -469,7 +467,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			}
 		} else {
 
-			if (elementVisible(driver, getObjectPayment("Bento_aeitn_continue1"), 20)) {
+			if (elementVisible(driver, getObjectPayment("Bento_aeitn_continue1"), 5)) {
 				safeClick(driver, getObjectPayment("Bento_aeitn_continue1"));
 			} else {
 				Thread.sleep(3000);
@@ -898,7 +896,8 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 					safeClick(driver, getObjectPayment("Bento_sc_noon_cvv"));
 					safeType(driver, getObjectPayment("Bento_sc_noon_cvv"), "123");
 					safeClick(driver, getObjectPayment("Bento_paynow"));
-					elementVisible(driver, getObjectPayment("Bento_sc_noon_password"), 5);
+					
+					elementVisible(driver, getObjectPayment("Bento_sc_noon_password"), 10);
 					safeClick(driver, getObjectPayment("Bento_sc_noon_password"));
 					Thread.sleep(1000);
 					safeType(driver, getObjectPayment("Bento_sc_noon_password"), "1234");
@@ -1018,8 +1017,9 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 					safeType(driver, getObjectPayment("Bento_sa_sc_checkout_cvv"), "100");
 					safeClick(driver, getObjectPayment("Bento_paynow"));
 					elementVisible(driver,getObjectPayment("Bento_sa_sc_checkout_password_submit"),5);
+
+					Thread.sleep(10000);
 					driver.switchTo().frame(0);
-					Thread.sleep(1000);
 					safeClick(driver,getObjectPayment("Bento_sa_sc_checkout_password"));
 					Thread.sleep(1000);
 					safeType(driver, getObjectPayment("Bento_sa_sc_checkout_password"), "Checkout1!");

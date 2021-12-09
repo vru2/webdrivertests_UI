@@ -36,24 +36,27 @@ public class Bento_Partial_Wallet_Booking extends PaymentsBento_Itn_Common{
 	    	bento_paymentpage(driver,"partial_wallet","","");
 		    confirmation_page(driver);    
 	   }
-	   else if(textPresent(driver,"Sorry, our servers are stumped with your request",30)||textPresent(driver,"Flight not available",30))
+	   else if(textPresent(driver,"Sorry, our servers are stumped with your request",1)||textPresent(driver,"Flight not available",1))
 	    {
 	    	System.out.println("Booking failed due to itn page issue");
 	    	Reporter.log("Booking failed due to itn page issue");
 	    	assertTrue(false);
 	    }
+	   else
+		  {
+			  Reporter.log("Booking failed due to itn page issue");
+			  assertTrue(false);
+		  }
 	    
 	}
 	
-	 @AfterClass
-		public void closeSelenium() throws Exception {
-		 browserClose(driver);
-		}
+	@AfterClass
+	public void closeSelenium() throws Exception {
+	 	browserClose(driver);
+	}
 
-		@AfterMethod(alwaysRun = true)
-		public void afterMethod(ITestResult _result) throws Exception {
-			afterMethod(driver, _result);
-		}
-
+	@AfterMethod(alwaysRun = true)
+	public void afterMethod(ITestResult _result) throws Exception {
+		afterMethod(driver, _result);
+	}
 }
-

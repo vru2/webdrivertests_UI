@@ -28,31 +28,32 @@ public class Bento_KW_KNet_Booking extends PaymentsBento_Itn_Common {
 		Reporter.log(kwurl+searchurl);
 		Searchpagebook(driver,"","","");
 		noncom_itnpage(driver,"","");
-	    if(textPresent(driver,"Sorry, our servers are stumped with your request",30)||textPresent(driver,"Flight not available",30))
-	    {
-	    	System.out.println("Booking failed due to itn page issue");
-	    	Reporter.log("Booking failed due to itn page issue");
-	    	assertTrue(false);
-	    }
-	    else
-	    {
-
-		bento_Validation_Text(driver, "KNET", "");	
-	    bento_paymentpage(driver,"KNET","","");
-	    confirmation_page(driver);
-	    }
-			    
+		 if(textPresent(driver,"Pay to complete your booking", 30))
+		    {
+				bento_Validation_Text(driver, "KNET", "");	
+			    bento_paymentpage(driver,"KNET","","");
+			    confirmation_page(driver);
+		   }
+		   else if(textPresent(driver,"Sorry, our servers are stumped with your request",1)||textPresent(driver,"Flight not available",1))
+		    {
+		    	System.out.println("Booking failed due to itn page issue");
+		    	Reporter.log("Booking failed due to itn page issue");
+		    	assertTrue(false);
+		    }
+		   else
+			  {
+				  Reporter.log("Booking failed due to itn page issue");
+				  assertTrue(false);
+			  }		 
 	}
 	
-	 @AfterClass
-		public void closeSelenium() throws Exception {
-		 browserClose(driver);
-		}
+	@AfterClass
+	public void closeSelenium() throws Exception {
+	 	browserClose(driver);
+	}
 
-		@AfterMethod(alwaysRun = true)
-		public void afterMethod(ITestResult _result) throws Exception {
-			afterMethod(driver, _result);
-		}
-
-
+	@AfterMethod(alwaysRun = true)
+	public void afterMethod(ITestResult _result) throws Exception {
+		afterMethod(driver, _result);
+	}
 }

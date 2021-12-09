@@ -32,13 +32,17 @@ public class Bento_Coupon_StoredCard_Booking extends PaymentsBento_Itn_Common {
 		  confirmation_page(driver); 
 		  }
 		  
-		  else if(textPresent(driver,"Sorry, our servers are stumped with your request",30)||textPresent(driver,"Flight not available",30)) 
+		  else if(textPresent(driver,"Sorry, our servers are stumped with your request",1)||textPresent(driver,"Flight not available",1)) 
 		  {
 		  System.out.println("Booking failed due to itn page issue");
 		  Reporter.log("Booking failed due to itn page issue"); 
 		  assertTrue(false); 
 		  }
-		 
+		  else
+		  {
+			  Reporter.log("Booking failed due to itn page issue");
+			  assertTrue(false);
+		  }	 
 
 	}
 

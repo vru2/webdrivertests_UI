@@ -33,17 +33,21 @@ public class Bento_UPI_Booking extends PaymentsBento_Itn_Common {
 	    	System.out.println("Booking failed due to itn page issue");
 	    	Reporter.log("Booking failed due to itn page issue");
 	    	assertTrue(false);
-	    }	    
+	    }
+	    else
+		{
+			Reporter.log("Booking failed due to itn page issue");
+			assertTrue(false);
+		}
 	}
 	
 	 @AfterClass
-		public void closeSelenium() throws Exception {
+	 public void closeSelenium() throws Exception {
 		 browserClose(driver);
-		}
+	 }
 
-		@AfterMethod(alwaysRun = true)
-		public void afterMethod(ITestResult _result) throws Exception {
-			afterMethod(driver, _result);
-		}
-
+	 @AfterMethod(alwaysRun = true)
+	 public void afterMethod(ITestResult _result) throws Exception {
+		 afterMethod(driver, _result);
+	 }
 }

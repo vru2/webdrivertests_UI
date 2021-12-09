@@ -26,20 +26,23 @@ public class Bento_DC_Booking extends PaymentsBento_Itn_Common {
 		Searchpagebook(driver, "","com","");
 		 book_itnnew(driver,""); 
 		  Thread.sleep(1000);
-		 if(textPresent(driver,"Pay to complete your booking",20)) 
+		 if(textPresent(driver,"Pay to complete your booking", 30)) 
 		 {
 		  bento_paymentpage(driver,"storedcard","4111",""); 
 		  confirmation_page(driver); 
 		  }
 		  
-		  else if(textPresent(driver,"Sorry, our servers are stumped with your request",30)||textPresent(driver,"Flight not available",30)) 
+		  else if(textPresent(driver,"Sorry, our servers are stumped with your request",1)||textPresent(driver,"Flight not available",1)) 
 		  {
 		  System.out.println("Booking failed due to itn page issue");
 		  Reporter.log("Booking failed due to itn page issue"); 
 		  assertTrue(false); 
 		  }
-		 
-
+		  else
+		  {
+			  Reporter.log("Booking failed due to itn page issue");
+			  assertTrue(false);
+		  }
 	}
 
 	@AfterClass

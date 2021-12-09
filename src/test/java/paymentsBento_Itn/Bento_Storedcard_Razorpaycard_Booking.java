@@ -27,7 +27,7 @@ public class Bento_Storedcard_Razorpaycard_Booking extends PaymentsBento_Itn_Com
 		 book_itnnew(driver,""); 
 		  Thread.sleep(1000);
 		 if(textPresent(driver,"Pay to complete your booking",20)) 
-		 {
+		  {
 		  bento_paymentpage(driver,"storedcard","5241",""); 
 		  confirmation_page(driver); 
 		  }
@@ -38,18 +38,20 @@ public class Bento_Storedcard_Razorpaycard_Booking extends PaymentsBento_Itn_Com
 		  Reporter.log("Booking failed due to itn page issue"); 
 		  assertTrue(false); 
 		  }
-		 
-
+		  else
+		  {
+			  Reporter.log("Booking failed due to itn page issue");
+			  assertTrue(false);
+		  }
 	}
 
-	@AfterClass
-	public void closeSelenium() throws Exception {
-		browserClose(driver);
-	}
+	 @AfterClass
+	 public void closeSelenium() throws Exception {
+		 browserClose(driver);
+	 }
 
-	@AfterMethod(alwaysRun = true)
-	public void afterMethod(ITestResult _result) throws Exception {
-		afterMethod(driver, _result);
-	}
-
+	 @AfterMethod(alwaysRun = true)
+	 public void afterMethod(ITestResult _result) throws Exception {
+		 afterMethod(driver, _result);
+	 }
 }

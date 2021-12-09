@@ -36,7 +36,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	JavascriptExecutor jse = (JavascriptExecutor) driver;
 	String contactnumber = "12345678";
 
-	String searchurl = "/flights/results?adults=1&childs=0&infants=0&class=Economy&depart_date=31/05/2022&from=BLR&to=HYD&intl=n&origin=BLR - Bangalore, IN &destination=HYD - Hyderabad, IN &sd=1629707401889&rnd_one=O&sourceCountry=Hyderabad&destinationCountry=Bangalore";
+	String searchurl = "/flights/results?adults=1&childs=0&infants=0&class=Economy&depart_date=28/05/2022&from=BLR&to=HYD&intl=n&origin=BLR - Bangalore, IN &destination=HYD - Hyderabad, IN &sd=1629707401889&rnd_one=O&sourceCountry=Hyderabad&destinationCountry=Bangalore";
 	String qa2url = "https://qa2.cleartrip.com";
 	String aeurl = "https://qa2.cleartrip.ae";
 	String bhurl = "https://qa2bh.cleartrip.com";
@@ -1059,7 +1059,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	}
 
 	public void confirmation_page(RemoteWebDriver driver) throws Exception {
-		elementPresent_log(driver, By.linkText("Get your ticket"), "Get your ticket", 10);
+		elementPresent_log(driver, By.linkText("Get your ticket"), "Get your ticket", 30);
 		textPresent_Log(driver, "You just booked", 2);
 		textPresent_Log(driver, "Travelers in this trip", 2);
 		textPresent_Log(driver, "Itinerary sent", 2);

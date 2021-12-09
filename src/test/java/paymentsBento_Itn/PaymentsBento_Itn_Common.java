@@ -133,10 +133,12 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 				driver.switchTo().window(child_window);
 				Thread.sleep(5000);
 				driver.navigate().to(driver.getCurrentUrl());
-				textPresent_Log(driver, "Review your itinerary", 160);
+				if(!elementVisible(driver,By.cssSelector("h2.fs-7.px-4.c-neutral-900.fw-600"), 10)) {
+					textPresent_Log(driver, "Review your itinerary", 100);					
+				}
 				System.out.println(driver.switchTo().window(child_window).getCurrentUrl());
 				Reporter.log(driver.switchTo().window(child_window).getCurrentUrl());
-	     if (textPresent(driver, "Sorry, our servers are stumped with your request", 5)|| textPresent(driver, "Flight not available", 5)) 
+	     if (textPresent(driver, "Sorry, our servers are stumped with your request", 5)|| textPresent(driver, "Flight not available", 1)) 
 	     {
 					System.out.println("Booking failed due to itn page issue");
 					Reporter.log("Booking failed due to itn page issue");
@@ -512,6 +514,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			   safeType(driver, getObjectPayment("Bento_aeitn_lastname"), "Test");
 			   Reporter.log("Entered last name");
 			}
+			
 			if(elementVisible(driver, getObjectPayment("Bento_aeitn_select_Gender"),1))
 			{
 				safeClick(driver, getObjectPayment("Bento_aeitn_select_Gender"));
@@ -558,6 +561,12 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			   safeType(driver, getObjectPayment("Bento_aeitn_Lastname"), "Test");
 			   Reporter.log("Entered last name");
 			}
+			if(elementVisible(driver,By.xpath("//div[3]/div/input"),1))
+			{
+				safeClick(driver,By.xpath("//div[3]/div/input"));
+				safeType(driver,By.xpath("//div[3]/div/input"),"Test");
+				Reporter.log("Entered last name");
+			}
 			if(elementVisible(driver, getObjectPayment("Bento_aeitn_select_Gender"),2))
 			{
 				safeClick(driver, getObjectPayment("Bento_aeitn_select_Gender"));
@@ -572,14 +581,14 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			}
 			
 			
-			if (elementVisible(driver, getObjectPayment("Bento_ae_nationality"), 2)) {
+			if (elementVisible(driver, getObjectPayment("Bento_ae_nationality"), 1)) {
 				safeClick(driver, getObjectPayment("Bento_ae_nationality"));
 				safeType(driver, getObjectPayment("Bento_ae_type_nationality"), "India");
 				safeClick(driver, getObjectPayment("Bento_ae_select_india"));
 			}
-			if (elementVisible(driver, getObjectPayment("Bento_ae_Continuetopayments1"), 2)) {
+			if (elementVisible(driver, getObjectPayment("Bento_ae_Continuetopayments1"), 1)) {
 				safeClick(driver, getObjectPayment("Bento_ae_Continuetopayments1"));
-			} else if (elementVisible(driver, getObjectPayment("Bento_ae_continuetopayment"), 2)) {
+			} else if (elementVisible(driver, getObjectPayment("Bento_ae_continuetopayment"), 1)) {
 				safeClick(driver, getObjectPayment("Bento_ae_continuetopayment"));
 			}
 		}

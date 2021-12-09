@@ -43,15 +43,13 @@ public class Bento_OM_Booking extends PaymentsBento_Itn_Common {
 			  }
 	}
 	
-	 @AfterClass
-		public void closeSelenium() throws Exception {
-		 browserClose(driver);
-		}
+	@AfterClass
+	public void closeSelenium() throws Exception {
+	 	browserClose(driver);
+	}
 
-		@AfterMethod(alwaysRun = true)
-		public void afterMethod(ITestResult _result) throws Exception {
-			afterMethod(driver, _result);
-		}
-
-
+	@AfterMethod(alwaysRun = true)
+	public void afterMethod(ITestResult _result) throws Exception {
+		afterMethod(driver, _result);
+	}
 }

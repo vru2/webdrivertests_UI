@@ -133,11 +133,10 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 				driver.switchTo().window(child_window);
 				Thread.sleep(5000);
 				driver.navigate().to(driver.getCurrentUrl());
-				Thread.sleep(2000);
 				textPresent_Log(driver, "Review your itinerary", 160);
 				System.out.println(driver.switchTo().window(child_window).getCurrentUrl());
 				Reporter.log(driver.switchTo().window(child_window).getCurrentUrl());
-	     if (textPresent(driver, "Sorry, our servers are stumped with your request", 30)|| textPresent(driver, "Flight not available", 30)) 
+	     if (textPresent(driver, "Sorry, our servers are stumped with your request", 5)|| textPresent(driver, "Flight not available", 5)) 
 	     {
 					System.out.println("Booking failed due to itn page issue");
 					Reporter.log("Booking failed due to itn page issue");
@@ -445,18 +444,20 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	}
 
 	public void noncom_itnpage(RemoteWebDriver driver, String gv_coupon, String domain) throws Exception {
-		if(elementVisible(driver,By.xpath("//div[5]/button"),3))
-		{
-			safeClick(driver,By.xpath("//div[5]/button"));
-			Thread.sleep(1000);
+		if(!textPresent(driver, "Review your itinerary", 5)) {
+				if(elementVisible(driver,By.xpath("//div[5]/button"),1))
+				{
+					smartClick(driver,By.xpath("//div[5]/button"));
+				}
 		}
 		Actions actions = new Actions(driver);
 		if (domain == "ae" || domain == "sa") {
-			if (elementVisible(driver, getObjectPayment("Bento_aeitn_continue1"), 20)) {
+		/*	if (elementVisible(driver, getObjectPayment("Bento_aeitn_continue1"), 5)) {
 				safeClick(driver, getObjectPayment("Bento_aeitn_continue1"));
-			} else if (elementVisible(driver, getObjectPayment("Bento_aeitn_removeinsurance"), 20)) {
-				Thread.sleep(3000);
-
+			} else*/ 
+			smartClick(driver, getObjectPayment("Bento_aeitn_continue1"));
+			
+			if (elementVisible(driver, getObjectPayment("Bento_aeitn_removeinsurance"), 1)) {
 				safeClick(driver, getObjectPayment("Bento_aeitn_removeinsurance"));
 				Thread.sleep(3000);
 				actions.keyDown(Keys.CONTROL).sendKeys(Keys.END).perform();
@@ -473,19 +474,16 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 				actions.keyDown(Keys.CONTROL).sendKeys(Keys.END).perform();
 				Thread.sleep(1000);
 				safeClick(driver, getObjectPayment("Bento_aeitn_continue"));
-				Thread.sleep(3000);
 			}
 		}
 
-		Thread.sleep(3000);
-		if(elementVisible(driver,getObjectPayment("Bento_aeitn_skip"),2))
+		if(elementVisible(driver,getObjectPayment("Bento_aeitn_skip"),10))
 		{
 		actions.keyDown(Keys.CONTROL).sendKeys(Keys.END).perform();
 		Thread.sleep(1000);
 		smartClick(driver, getObjectPayment("Bento_aeitn_skip"));
-		Thread.sleep(3000);
 		}
-		elementVisible(driver, getObjectPayment("Bento_Itn_Contact_Number"), 5);
+		elementVisible(driver, getObjectPayment("Bento_Itn_Contact_Number"), 10);
 		safeClick(driver, getObjectPayment("Bento_Itn_Contact_Number"));
 		safeType(driver, getObjectPayment("Bento_Itn_Contact_Number"), "1");
 		if (domain == "ae" || domain == "sa") {
@@ -514,7 +512,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			   safeType(driver, getObjectPayment("Bento_aeitn_lastname"), "Test");
 			   Reporter.log("Entered last name");
 			}
-			if(elementVisible(driver, getObjectPayment("Bento_aeitn_select_Gender"),2))
+			if(elementVisible(driver, getObjectPayment("Bento_aeitn_select_Gender"),1))
 			{
 				safeClick(driver, getObjectPayment("Bento_aeitn_select_Gender"));
 				safeClick(driver, getObjectPayment("Bento_ae_itn_select_Female"));

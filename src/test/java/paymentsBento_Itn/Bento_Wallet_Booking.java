@@ -41,7 +41,7 @@ public class Bento_Wallet_Booking extends PaymentsBento_Itn_Common {
 			Reporter.log("Booking failed due to itn page issue");
 			assertTrue(false);
 		}
-	}
+	
 	}
 	
 	 @AfterClass

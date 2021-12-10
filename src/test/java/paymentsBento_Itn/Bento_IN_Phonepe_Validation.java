@@ -1,0 +1,54 @@
+package paymentsBento_Itn;
+
+import static org.testng.Assert.assertTrue;
+
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.ITestResult;
+import org.testng.Reporter;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+public class Bento_IN_Phonepe_Validation extends PaymentsBento_Itn_Common {
+
+	@BeforeClass
+	public void setUp() throws Exception {
+		driver=(RemoteWebDriver) getDriver(driver);
+	}
+
+	@Test
+	public void bento_nb() throws Exception {
+		driver.manage().deleteAllCookies();
+		driver.navigate().to(qa2url+searchurl);
+		System.out.println(qa2url+searchurl);
+		Reporter.log(qa2url+searchurl);
+		Searchpagebook(driver,"","com","");
+	    book_itnnew(driver,"");
+	    if(textPresent(driver,"Pay to complete your booking", 30)) {
+	    	bento_paymentpage(driver,"Phonepe","","");    
+	   }
+	   else if(textPresent(driver,"Sorry, our servers are stumped with your request",1)||textPresent(driver,"Flight not available",1))
+	    {
+	    	System.out.println("Booking failed due to itn page issue");
+	    	Reporter.log("Booking failed due to itn page issue");
+	    	assertTrue(false);
+	    }
+	   else
+		  {
+			  Reporter.log("Booking failed due to itn page issue");
+			  assertTrue(false);
+		  }
+	    
+	}
+	
+	@AfterClass
+	public void closeSelenium() throws Exception {
+	 	browserClose(driver);
+	}
+
+	@AfterMethod(alwaysRun = true)
+	public void afterMethod(ITestResult _result) throws Exception {
+		afterMethod(driver, _result);
+	}
+}

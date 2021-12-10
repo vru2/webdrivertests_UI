@@ -10,7 +10,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Bento_ME_Booking extends PaymentsBento_Itn_Common {
+public class Bento_ME_PayU_Booking extends PaymentsBento_Itn_Common {
 
 	@BeforeClass
 	public void setUp() throws Exception {

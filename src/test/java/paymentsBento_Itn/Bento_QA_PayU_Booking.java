@@ -10,7 +10,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Bento_OM_Booking extends PaymentsBento_Itn_Common {
+public class Bento_QA_PayU_Booking extends PaymentsBento_Itn_Common {
 
 	@BeforeClass
 	public void setUp() throws Exception {
@@ -18,14 +18,14 @@ public class Bento_OM_Booking extends PaymentsBento_Itn_Common {
 	}
 
 	@Test
-	public void bento_om_booking() throws Exception {
+	public void bento_qa_booking() throws Exception {
 		driver.manage().deleteAllCookies();
-		driver.navigate().to(omurl+searchurl);
-		System.out.println(omurl+searchurl);
-		Reporter.log(omurl+searchurl);
+		driver.navigate().to(qaurl+searchurl);
+		System.out.println(qaurl+searchurl);
+		Reporter.log(qaurl+searchurl);
 		Searchpagebook(driver,"","","");
 		noncom_itnpage(driver,"","");
-		 if(textPresent(driver,"Pay to complete your booking", 30))
+		  if(textPresent(driver,"Pay to complete your booking", 30))
 		    {
 			    bento_paymentpage(driver,"OTH","","");
 			    confirmation_page(driver);
@@ -40,7 +40,7 @@ public class Bento_OM_Booking extends PaymentsBento_Itn_Common {
 			  {
 				  Reporter.log("Booking failed due to itn page issue");
 				  assertTrue(false);
-			  }
+			  }        
 	}
 	
 	@AfterClass

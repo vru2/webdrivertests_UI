@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Bento UI" parallel="tests" thread-count="7">
+<suite name="Bento UI" parallel="tests" thread-count="5">
 
 <listeners>
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -10,14 +10,15 @@
 
 <test name="Booking From Itinerary Non Com Domain" preserve-order="true" >
     <classes>
-     <class name="paymentsBento_Itn.Bento_AE_Booking"/>
-            <class name="paymentsBento_Itn.Bento_BH_Booking"/>
-            <class name="paymentsBento_Itn.Bento_KW_Booking"/>
+     <class name="paymentsBento_Itn.Bento_AE_PayU_Booking"/>
+      <class name="paymentsBento_Itn.Bento_AE_ADCB_Validation"/>
+            <class name="paymentsBento_Itn.Bento_BH_PayU_Booking"/>
+            <class name="paymentsBento_Itn.Bento_KW_PayU_Booking"/>
             <class name="paymentsBento_Itn.Bento_KW_KNet_Booking"/>
-            <class name="paymentsBento_Itn.Bento_ME_Booking"/>
-            <class name="paymentsBento_Itn.Bento_OM_Booking"/>
-            <class name="paymentsBento_Itn.Bento_QA_Booking"/>
-            <class name="paymentsBento_Itn.Bento_SA_Booking"/>
+            <class name="paymentsBento_Itn.Bento_ME_PayU_Booking"/>
+            <class name="paymentsBento_Itn.Bento_OM_PayU_Booking"/>
+            <class name="paymentsBento_Itn.Bento_QA_PayU_Booking"/>
+            <class name="paymentsBento_Itn.Bento_SA_PayU_Booking"/>
             <class name="paymentsBento_Itn.Bento_AE_SC_Noon_Booking"/>
             <class name="paymentsBento_Itn.Bento_AE_SC_Payfort_Booking"/>
             <class name="paymentsBento_Itn.Bento_SA_SC_Payfort_Booking"/>
@@ -27,15 +28,15 @@
 
 <test name="Booking From Itinerary Com Domain" preserve-order="true" >
     <classes>
-	     	<class name="paymentsBento_Itn.Bento_Coupon_StoredCard_Booking"/> 
-	       	<class name="paymentsBento_Itn.Bento_Full_GV_Booking"/> 
-	        <class name="paymentsBento_Itn.Bento_NB_ICICI_Booking"/> 
-	        <class name="paymentsBento_Itn.Bento_UPI_Booking"/> 
-	        <class name="paymentsBento_Itn.Bento_Wallet_Booking"/> 
-	        <class name="paymentsBento_Itn.Bento_Partial_Wallet_Booking"/> 
-	        <class name="paymentsBento_Itn.Bento_Phonepe_Booking"/> 
-	        <class name="paymentsBento_Itn.Bento_DC_Booking"/> 
-	        <class name="paymentsBento_Itn.Bento_Storedcard_Razorpaycard_Booking"/> 
+	     	<class name="paymentsBento_Itn.Bento_IN_Coupon_SC_PayU_Booking"/> 
+	       	<class name="paymentsBento_Itn.Bento_IN_Full_GV_Booking"/> 
+	        <class name="paymentsBento_Itn.Bento_IN_NB_ICICI_Booking"/> 
+	        <class name="paymentsBento_Itn.Bento_IN_UPI_Booking"/> 
+	        <class name="paymentsBento_Itn.Bento_IN_Wallet_Booking"/> 
+	        <class name="paymentsBento_Itn.Bento_IN_PartialWallet_AMEX_Booking"/> 
+	        <class name="paymentsBento_Itn.Bento_IN_Phonepe_Validation"/> 
+	        <class name="paymentsBento_Itn.Bento_IN_DC_Booking"/> 
+	        <class name="paymentsBento_Itn.Bento_IN_Storedcard_Razorpaycard_Booking"/> 
     </classes>
 </test>
 </suite> 

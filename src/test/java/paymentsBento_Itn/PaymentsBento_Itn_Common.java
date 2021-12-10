@@ -67,7 +67,8 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		 {
 			 if (elementVisible(driver, getObjectPayment("Bento_Indigo_Logo"), 5)) 
 	      {
-			      smartClick(driver,By.xpath("//div[4]/button"));
+			     Thread.sleep(1000); 
+				 smartClick(driver,By.xpath("//div[4]/button"));
 			  }
 			 else if (elementVisible(driver, getObjectPayment("Bento_Spicejet_Logo"), 3))
 	      {
@@ -103,7 +104,8 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	  else
 	  {
 	       if (elementVisible(driver, getObjectPayment("Bento_Indigo_Logo"), 5)) 
-	       {
+	       {      
+	    	      Thread.sleep(1000);
 			      smartClick(driver,By.xpath("//div[4]/button"));
 			   }
 			   else if (elementVisible(driver, getObjectPayment("Bento_Spicejet_Logo"), 3))
@@ -479,8 +481,9 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 
 		if(elementVisible(driver,getObjectPayment("Bento_aeitn_skip"),10))
 		{
+		Thread.sleep(2000);
 		actions.keyDown(Keys.CONTROL).sendKeys(Keys.END).perform();
-		Thread.sleep(1000);
+		Thread.sleep(4000);
 		smartClick(driver, getObjectPayment("Bento_aeitn_skip"));
 		}
 		elementVisible(driver, getObjectPayment("Bento_Itn_Contact_Number"), 10);
@@ -728,12 +731,15 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			if (textPresent(driver, "Cleartrip wallet", 2)) {
 				safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
 				Reporter.log("Deselected wallet");
+				Thread.sleep(1000);
 				safeClick(driver, getObjectPayment("Bento_Payment_NB"));
 				Reporter.log("Clicked on NB");
 			} else {
+				Thread.sleep(1000);
 				safeClick(driver, getObjectPayment("Bento_Payment_NB"));
 				Reporter.log("Clicked on NB");
 			}
+			Thread.sleep(1000);
 			safeClick(driver, getObjectPayment("Bento_Payment_NB_ICIC"));
 			Reporter.log("Selected ICIC Bank");
 			safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
@@ -829,25 +835,19 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			elementVisible(driver, getObjectPayment("Bento_Payment_Paynow"), 2);
 			safeClick(driver, getObjectPayment("Bento_Payment_Select_Storedcard1"));
 			Reporter.log("Clicked on SC");
-			/*
-			 * safeClick(driver, getObjectPayment("Bento_Payment_SC1_CVV"));
-			 * safeType(driver, getObjectPayment("Bento_Payment_SC1_CVV"), "1234");
-			 * Reporter.log("Entered CVV details"); safeClick(driver,
-			 * getObjectPayment("Bento_Payment_Paynow")); Reporter.log("Clicked on paynow");
-			 * textPresent_Log(driver, "Please wait...", 2); textPresent_Log(driver,
-			 * "American", 5); textPresent_Log(driver, "ACS Emulator", 10);
-			 * safeClick(driver, getObjectPayment("Bento_Payment_AMC_SUBMIT"));
-			 */
-			safeClick(driver, getObjectPayment("Bento_Payment_select_sc"));
-			safeClick(driver, getObjectPayment("Bento_Payment_select_sc_cvv"));
-			safeType(driver, getObjectPayment("Bento_Payment_select_sc_cvv"), "111");
-			safeClick(driver, getObjectPayment("Bento_paynow"));
-			elementVisible(driver, getObjectPayment("Bento_card_password"), 5);
-			  safeClick(driver, getObjectPayment("Bento_card_password"));
-			  Thread.sleep(1000); 
-			  safeType(driver, getObjectPayment("Bento_card_password"),"123456"); 
-			  safeClick(driver, getObjectPayment("Bento_submit"));
-			 
+			safeClick(driver, getObjectPayment("Bento_Payment_Select_Storedcard"));
+			Reporter.log("Clicked on SC");
+			safeClick(driver, getObjectPayment("Bento_sc_amex_cvv"));
+			Reporter.log("Clicked on SC");
+			safeClick(driver, getObjectPayment("Bento_sc_amex_cvv"));
+			safeType(driver, getObjectPayment("Bento_sc_amex_cvv"), "0000");
+			Reporter.log("Entered CVV");
+			safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
+			Reporter.log("Clicked on paynow");
+			textPresent_Log(driver, "Please wait...", 5);
+			textPresent_Log(driver, "American", 5);
+			textPresent_Log(driver, "ACS Emulator", 10);
+			safeClick(driver, getObjectPayment("Bento_Payment_AMC_SUBMIT"));
 			textPresent_Log(driver, "Your booking is done", 5);
 			Reporter.log("Payment done successfully");
 		}
@@ -896,11 +896,13 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 					safeClick(driver, getObjectPayment("Bento_sc_noon_cvv"));
 					safeType(driver, getObjectPayment("Bento_sc_noon_cvv"), "123");
 					safeClick(driver, getObjectPayment("Bento_paynow"));
-					
 					elementVisible(driver, getObjectPayment("Bento_sc_noon_password"), 10);
-					safeClick(driver, getObjectPayment("Bento_sc_noon_password"));
+					driver.switchTo().frame(0);
 					Thread.sleep(1000);
-					safeType(driver, getObjectPayment("Bento_sc_noon_password"), "1234");
+					smartClick(driver, getObjectPayment("Bento_sc_noon_password"));
+					Thread.sleep(1000);
+					smartType(driver, getObjectPayment("Bento_sc_noon_password"), "1234");
+					Thread.sleep(2000);
 					safeClick(driver, getObjectPayment("Bento_sc_noon_password_submit"));
 					textPresent_Log(driver, "Your booking is done", 5);
 					Reporter.log("Payment done successfully");
@@ -918,7 +920,45 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 					safeClick(driver, getObjectPayment("Bento_sc_payfort_submit"));
 					textPresent_Log(driver, "Your booking is done", 10);
 					Reporter.log("Payment done successfully");
-			
+				}
+				else if(CardNumber=="ABCB")
+				{
+				  safeClick(driver,getObject("Bento_ae_adcb_select"));
+				  Reporter.log("Clicked on ADCB");
+				  System.out.println("Clicked on ADCB");
+				  Thread.sleep(1000);
+				  safeClick(driver,getObject("Bento_ae_adcb_cardnumber"));
+				  safeType(driver,getObject("Bento_ae_adcb_cardnumber"),"5264083966400083");
+				  Reporter.log("Entered on ADCB card");
+				  System.out.println("Entered on ADCB card");
+				  safeClick(driver,getObject("Bento_ae_adcb_expirymonth"));
+				  safeClick(driver,getObject("Bento_ae_adcb_expirymonth_select"));
+				  Reporter.log("Selected on ADCB card month");
+				  System.out.println("Selected on ADCB card month");
+				  safeClick(driver,getObject("Bento_ae_adcb_expiryyear"));
+				  safeClick(driver,getObject("Bento_ae_adcb_expiryyear_select"));
+				  Reporter.log("Selected on ADCB card year");
+				  System.out.println("Selected on ADCB card year");
+				  safeClick(driver,getObject("Bento_ae_adcb_name"));
+				  safeType(driver,getObject("Bento_ae_adcb_name"),"test");
+				  Reporter.log("Entered on ADCB card name");
+				  System.out.println("Entered on ADCB card name");
+				  safeClick(driver,getObject("Bento_ae_adcb_cvv"));
+				  safeType(driver,getObject("Bento_ae_adcb_cvv"),"123");
+				  Reporter.log("Entered on ADCB card cvv");
+				  System.out.println("Entered on ADCB card cvv");
+				  safeClick(driver,getObject("Bento_ae_adcb_checkbalance"));
+				  textPresent_Log(driver,"You will redeem AED",5);
+				  Reporter.log("Verified ADCB balance");
+				  System.out.println("Verified ADCB balance");
+				  safeClick(driver,getObject("Bento_ae_adcb_pay"));
+				  Thread.sleep(1000);
+				  elementVisible(driver,getObject("Bento_ae_adcb_otp"),5);
+				  textPresent_Log(driver,"Enter one time password",2);
+				  textPresent_Log(driver,"You pay AED",2);
+				  Reporter.log("Verified ADCB flow");
+				  System.out.println("Verified ADCB flow");		  
+				  
 				}
 				else
 				{
@@ -945,6 +985,8 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 					safeType(driver, getObjectPayment("Bento_sc_noon_cvv"), "123");
 					safeClick(driver, getObjectPayment("Bento_paynow"));
 					elementVisible(driver, getObjectPayment("Bento_sc_noon_password"), 5);
+					driver.switchTo().frame(0);
+					Thread.sleep(1000);
 					safeClick(driver, getObjectPayment("Bento_sc_noon_password"));
 					Thread.sleep(1000);
 					safeType(driver, getObjectPayment("Bento_sc_noon_password"), "1234");
@@ -1034,6 +1076,8 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 					safeType(driver, getObjectPayment("Bento_sa_sc_checkout2d_cvv"), "956");
 					safeClick(driver, getObjectPayment("Bento_paynow"));
 					elementVisible(driver,getObjectPayment("Bento_sa_sc_checkout_password_submit"),5);
+					driver.switchTo().frame(0);
+					Thread.sleep(2000);
 					safeClick(driver, getObjectPayment("Bento_sa_sc_checkout_password"));
 					Thread.sleep(1000);
 					safeType(driver, getObjectPayment("Bento_sa_sc_checkout_password"), "Checkout1!");

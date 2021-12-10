@@ -9,11 +9,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import io.restassured.RestAssured;
-import io.restassured.response.Response;
+public class Bento_IN_Full_GV_Booking extends PaymentsBento_Itn_Common{
 
-public class Bento_Partial_Wallet_Booking extends PaymentsBento_Itn_Common{
-	
 	@BeforeClass
 	public void startSelenium() throws Exception {
 		this.driver = getDriver(driver);
@@ -21,20 +18,18 @@ public class Bento_Partial_Wallet_Booking extends PaymentsBento_Itn_Common{
 	}
 	
 	@Test
-	public void bento_partial_wallet() throws Exception {
-		Response resp;
-		resp=RestAssured.get("http://172.17.51.86:8071/payments/wallet/cashback?emailId=varalakshmivaru29@gmail.com&currency=INR&amount=150&tripRef=Q190729442390&expiryDate%20=31/12/21");
-		System.out.println(resp.asString());
-		Reporter.log(resp.asString());
+	public void bento_gv() throws Exception {
 		driver.manage().deleteAllCookies();
 		driver.navigate().to(qa2url+searchurl);
-	    System.out.println(qa2url+searchurl);
-	    Reporter.log(qa2url+searchurl);
-		Searchpagebook(driver,"Partial","com","");
-	    book_itnnew(driver,"");
-	    if(textPresent(driver,"Pay to complete your booking",20)) {
-	    	bento_paymentpage(driver,"partial_wallet","","");
-		    confirmation_page(driver);    
+		System.out.println(qa2url+searchurl);
+		Reporter.log(qa2url+searchurl);
+	    Searchpagebook(driver,"","com","");
+	    book_itnnew(driver,"GV");
+	    if(textPresent(driver,"Pay to complete your booking", 30)) {
+
+		    bento_paymentpage(driver,"GV","","");
+		    confirmation_page(driver);
+		    
 	   }
 	   else if(textPresent(driver,"Sorry, our servers are stumped with your request",1)||textPresent(driver,"Flight not available",1))
 	    {
@@ -47,7 +42,6 @@ public class Bento_Partial_Wallet_Booking extends PaymentsBento_Itn_Common{
 			  Reporter.log("Booking failed due to itn page issue");
 			  assertTrue(false);
 		  }
-	    
 	}
 	
 	@AfterClass

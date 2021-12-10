@@ -9,7 +9,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Bento_DC_Booking extends PaymentsBento_Itn_Common {
+public class Bento_IN_DC_Booking extends PaymentsBento_Itn_Common {
 
 	@BeforeClass
 	public void startSelenium() throws Exception {

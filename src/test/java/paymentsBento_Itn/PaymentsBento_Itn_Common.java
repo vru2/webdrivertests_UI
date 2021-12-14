@@ -4,21 +4,17 @@ import static org.testng.Assert.assertTrue;
 
 import java.util.Iterator;
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 
 import paymentsBento_com.PaymentUI_Common_Bento;
-import paymentsUI_Air.PaymentUI_Common;
 
 public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	public Cookie ctauth = new Cookie("ct-auth","kQqdrcVR8t4znRp8uzBQJgaacI%2B5mUEhQsXqP%2BGvCv9Sca3PAxik9%2FDoNKFAEq5S6nDr3dyz0gFHshmzL9GNaG4e8msn1sCvUt92FE1Hxz%2B449dUBXvxJapPKHtcbOExsOm%2BE43PNH%2FbzMr%2Bgv0v9PZIafGsbWEbtoycPG3UjA%2BzcqiD2kXHlH7Tnnt7Xdd%2B");
@@ -599,6 +595,26 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 
 	}
 
+	public void paymentPage(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain) throws Exception {
+			if(elementVisible(driver, getObjectPayment("Bento_Pay_PayToCompleteBooking_Txt"), 30))
+			   {
+			    bento_paymentpage(driver,PaymentType, CardNumber,domain);
+			    confirmation_page(driver);
+			   }
+			else if(textPresent(driver,"Sorry, our servers are stumped with your request",1)||textPresent(driver,"Flight not available",1))
+			   {
+			   	System.out.println("Booking failed due to itn page issue");
+			   	Reporter.log("Booking failed due to itn page issue");
+			   	assertTrue(false);
+			   }
+			else 
+				{
+				Reporter.log("Booking failed due to itn page issue");
+				assertTrue(false);
+				}
+	}
+		
+	
 	public void bento_paymentpage(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain) throws Exception {
 		Thread.sleep(2000);
 		/*driver.manage().addCookie(cookie_Bento_Payment);

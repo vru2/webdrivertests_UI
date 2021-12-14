@@ -1,7 +1,5 @@
 package paymentsBento_Itn;
 
-import static org.testng.Assert.assertTrue;
-
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.Reporter;
@@ -25,22 +23,7 @@ public class Bento_SA_SC_Payfort_Booking extends PaymentsBento_Itn_Common {
 		Reporter.log(saurl+searchurl);
 		Searchpagebook(driver,"","","");
 		noncom_itnpage(driver,"","sa");
-		if(textPresent(driver,"Pay to complete your booking", 30))
-	    {
-		    bento_paymentpage(driver,"OTH","4557","sa");
-		    confirmation_page(driver);
-	   }
-	   else if(textPresent(driver,"Sorry, our servers are stumped with your request",1)||textPresent(driver,"Flight not available",1))
-	    {
-	    	System.out.println("Booking failed due to itn page issue");
-	    	Reporter.log("Booking failed due to itn page issue");
-	    	assertTrue(false);
-	    }
-	   else
-		  {
-			  Reporter.log("Booking failed due to itn page issue");
-			  assertTrue(false);
-		  }    
+		paymentPage(driver,"OTH","4557","sa");
 	}
 
 	@AfterClass

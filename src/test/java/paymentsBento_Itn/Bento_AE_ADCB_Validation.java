@@ -28,6 +28,7 @@ public class Bento_AE_ADCB_Validation extends PaymentsBento_Itn_Common {
 		Reporter.log(aeurl+searchurl);
 		Searchpagebook(driver,"","","");
 		noncom_itnpage(driver,"","ae");
+		
 	   if(elementVisible(driver, getObjectPayment("Bento_Pay_PayToCompleteBooking_Txt"), 30))
 	    {
 	    bento_paymentpage(driver,"AE-SC","ADCB","");

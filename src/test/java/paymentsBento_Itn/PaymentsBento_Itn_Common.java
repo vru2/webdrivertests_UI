@@ -921,39 +921,41 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 					textPresent_Log(driver, "Your booking is done", 10);
 					Reporter.log("Payment done successfully");
 				}
-				else if(CardNumber=="ABCB")
+				else if(CardNumber=="ADCB")
 				{
-				  safeClick(driver,getObject("Bento_ae_adcb_select"));
+				  safeClick(driver,getObjectPayment("Bento_ae_adcb_select"));
 				  Reporter.log("Clicked on ADCB");
 				  System.out.println("Clicked on ADCB");
 				  Thread.sleep(1000);
-				  safeClick(driver,getObject("Bento_ae_adcb_cardnumber"));
-				  safeType(driver,getObject("Bento_ae_adcb_cardnumber"),"5264083966400083");
+				  safeClick(driver,getObjectPayment("Bento_ae_adcb_cardnumber"));
+				  safeType(driver,getObjectPayment("Bento_ae_adcb_cardnumber"),"5264083966400083");
 				  Reporter.log("Entered on ADCB card");
 				  System.out.println("Entered on ADCB card");
-				  safeClick(driver,getObject("Bento_ae_adcb_expirymonth"));
-				  safeClick(driver,getObject("Bento_ae_adcb_expirymonth_select"));
+				  safeClick(driver,getObjectPayment("Bento_ae_adcb_expirymonth"));
+				  Thread.sleep(1000);
+				  safeSelectByIndex(driver,getObjectPayment("Bento_ae_adcb_expirymonth"),6);
 				  Reporter.log("Selected on ADCB card month");
 				  System.out.println("Selected on ADCB card month");
-				  safeClick(driver,getObject("Bento_ae_adcb_expiryyear"));
-				  safeClick(driver,getObject("Bento_ae_adcb_expiryyear_select"));
+				  safeClick(driver,getObjectPayment("Bento_ae_adcb_expiryyear"));
+				  Thread.sleep(1000);
+				  safeSelectByIndex(driver,getObjectPayment("Bento_ae_adcb_expiryyear"),4);
 				  Reporter.log("Selected on ADCB card year");
 				  System.out.println("Selected on ADCB card year");
-				  safeClick(driver,getObject("Bento_ae_adcb_name"));
-				  safeType(driver,getObject("Bento_ae_adcb_name"),"test");
+				  safeClick(driver,getObjectPayment("Bento_ae_adcb_name"));
+				  safeType(driver,getObjectPayment("Bento_ae_adcb_name"),"test");
 				  Reporter.log("Entered on ADCB card name");
 				  System.out.println("Entered on ADCB card name");
-				  safeClick(driver,getObject("Bento_ae_adcb_cvv"));
-				  safeType(driver,getObject("Bento_ae_adcb_cvv"),"123");
+				  safeClick(driver,getObjectPayment("Bento_ae_adcb_cvv"));
+				  safeType(driver,getObjectPayment("Bento_ae_adcb_cvv"),"123");
 				  Reporter.log("Entered on ADCB card cvv");
 				  System.out.println("Entered on ADCB card cvv");
-				  safeClick(driver,getObject("Bento_ae_adcb_checkbalance"));
+				  safeClick(driver,getObjectPayment("Bento_ae_adcb_checkbalance"));
 				  textPresent_Log(driver,"You will redeem AED",5);
 				  Reporter.log("Verified ADCB balance");
 				  System.out.println("Verified ADCB balance");
-				  safeClick(driver,getObject("Bento_ae_adcb_pay"));
+				  safeClick(driver,getObjectPayment("Bento_ae_adcb_pay"));
 				  Thread.sleep(1000);
-				  elementVisible(driver,getObject("Bento_ae_adcb_otp"),5);
+				  elementVisible(driver,getObjectPayment("Bento_ae_adcb_otp"),5);
 				  textPresent_Log(driver,"Enter one time password",2);
 				  textPresent_Log(driver,"You pay AED",2);
 				  Reporter.log("Verified ADCB flow");

@@ -17,6 +17,8 @@ public class TS_GET_Finance extends TripserviceCommon {
 	public void getTripService() throws IOException{
 		String url=Service_Url("TRIPSERVICE_GETFINANCE_CALL");
 		Reporter.log(url);
+		System.out.println(url);
+		System.out.println(resp.asString());
 		Response resp=RestAssured.get(url);
 		if(resp.statusCode()==200){
 			ResponseBody body= resp.getBody();

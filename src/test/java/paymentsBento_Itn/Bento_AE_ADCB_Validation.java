@@ -30,7 +30,7 @@ public class Bento_AE_ADCB_Validation extends PaymentsBento_Itn_Common {
 		noncom_itnpage(driver,"","ae");
 	   if(textPresent(driver,"Pay to complete your booking", 30))
 	    {
-	    bento_paymentpage(driver,"AE-SC","ADCB","");
+	      bento_paymentpage(driver,"AE-SC","ADCB","");
 	   //  confirmation_page(driver);
 	    }
 	    else if(textPresent(driver,"Sorry, our servers are stumped with your request",1)||textPresent(driver,"Flight not available",1))

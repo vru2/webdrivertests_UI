@@ -17,7 +17,10 @@ public class TS_GET_Trips_ItineraryId extends TripserviceCommon {
 	public void getTripsbyItineraryId() throws IOException{
 		String url=Service_Url("TRIPSERVICE_GETTRIPS_ITINERARYID");
 		Reporter.log(url);
+		
 		Response resp=RestAssured.get(url);
+		System.out.println(url);
+		System.out.println(resp.asString());
 		if(resp.statusCode()==200){
 			ResponseBody body= resp.getBody();
 			String bodyAsString = body.asString();

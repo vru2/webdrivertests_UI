@@ -17,8 +17,10 @@ public class TS_GET_Finance_AIR extends TripserviceCommon {
 	public void getTripService() throws IOException, InterruptedException{
 		String url=Service_Url("TRIPSERVICE_GETFINANCE_AIR_CALL");
 		Reporter.log(url);
+		System.out.println(url);
 		Response resp=RestAssured.get(url);
 		Thread.sleep(6000);
+		System.out.println(resp.asString());
 		if(resp.statusCode()==200){
 			ResponseBody body= resp.getBody();
 			String bodyAsString = body.asString();

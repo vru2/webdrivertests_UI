@@ -1,7 +1,5 @@
 package paymentsBento_Itn;
 
-import static org.testng.Assert.assertTrue;
-
 import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
@@ -24,25 +22,8 @@ public class Bento_IN_Storedcard_Razorpaycard_Booking extends PaymentsBento_Itn_
 		System.out.println(qa2url + searchurl);
 		Reporter.log(qa2url + searchurl);
 		Searchpagebook(driver, "","com","");
-		 book_itnnew(driver,""); 
-		  Thread.sleep(1000);
-		 if(textPresent(driver,"Pay to complete your booking",20)) 
-		  {
-		  bento_paymentpage(driver,"storedcard","5241",""); 
-		  confirmation_page(driver); 
-		  }
-		  
-		  else if(textPresent(driver,"Sorry, our servers are stumped with your request",30)||textPresent(driver,"Flight not available",30)) 
-		  {
-		  System.out.println("Booking failed due to itn page issue");
-		  Reporter.log("Booking failed due to itn page issue"); 
-		  assertTrue(false); 
-		  }
-		  else
-		  {
-			  Reporter.log("Booking failed due to itn page issue");
-			  assertTrue(false);
-		  }
+		book_itnnew(driver,""); 
+		paymentPage(driver,"storedcard","5241",""); 
 	}
 
 	 @AfterClass

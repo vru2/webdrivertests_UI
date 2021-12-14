@@ -1,7 +1,5 @@
 package paymentsBento_Itn;
 
-import static org.testng.Assert.assertTrue;
-
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.Reporter;
@@ -20,31 +18,13 @@ public class Bento_KW_KNet_Booking extends PaymentsBento_Itn_Common {
 	@Test
 	public void bento_kw_booking() throws Exception {
 		driver.manage().deleteAllCookies();
-		
-		 // driver.navigate().to(aeurl); Thread.sleep(2000);
-		 
 		driver.navigate().to(kwurl+searchurl);
 		System.out.println(kwurl+searchurl);
 		Reporter.log(kwurl+searchurl);
 		Searchpagebook(driver,"","","");
 		noncom_itnpage(driver,"","");
-		 if(textPresent(driver,"Pay to complete your booking", 30))
-		    {
-				bento_Validation_Text(driver, "KNET", "");	
-			    bento_paymentpage(driver,"KNET","","");
-			    confirmation_page(driver);
-		   }
-		   else if(textPresent(driver,"Sorry, our servers are stumped with your request",1)||textPresent(driver,"Flight not available",1))
-		    {
-		    	System.out.println("Booking failed due to itn page issue");
-		    	Reporter.log("Booking failed due to itn page issue");
-		    	assertTrue(false);
-		    }
-		   else
-			  {
-				  Reporter.log("Booking failed due to itn page issue");
-				  assertTrue(false);
-			  }		 
+		bento_Validation_Text(driver, "KNET", "");
+   	 	paymentPage(driver,"KNET","","");
 	}
 	
 	@AfterClass

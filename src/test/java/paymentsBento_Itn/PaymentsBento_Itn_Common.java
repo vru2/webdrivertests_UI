@@ -601,10 +601,9 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 
 	public void bento_paymentpage(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain) throws Exception {
 		Thread.sleep(2000);
-		driver.manage().addCookie(cookie_Bento_Payment);
-		driver.navigate().refresh();
-		Thread.sleep(5000);
-		textPresent_Log(driver, "Pay to complete your booking", 10);
+		/*driver.manage().addCookie(cookie_Bento_Payment);
+		driver.navigate().refresh();*/
+		textPresent_Log(driver, "Pay to complete your booking", 5);
 		System.out.println(driver.getCurrentUrl());
 		Reporter.log(driver.getCurrentUrl());
 		Thread.sleep(1000);

@@ -28,22 +28,7 @@ public class Bento_AE_ADCB_Validation extends PaymentsBento_Itn_Common {
 		Reporter.log(aeurl+searchurl);
 		Searchpagebook(driver,"","","");
 		noncom_itnpage(driver,"","ae");
-		
-	   if(elementVisible(driver, getObjectPayment("Bento_Pay_PayToCompleteBooking_Txt"), 30))
-	    {
-	      bento_paymentpage(driver,"AE-SC","ADCB","");
-	   //  confirmation_page(driver);
-	    }
-	    else if(textPresent(driver,"Sorry, our servers are stumped with your request",1)||textPresent(driver,"Flight not available",1))
-	    {
-	    	System.out.println("Booking failed due to itn page issue");
-	    	Reporter.log("Booking failed due to itn page issue");
-	    	assertTrue(false);
-	    }
-	 else {
-		   Reporter.log("Booking failed due to itn page issue");
-	    	assertTrue(false);
-	   }
+		paymentPage(driver,"AE-SC","ADCB","");
 	 }
 
  	@AfterClass

@@ -61,6 +61,13 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		elementPresent_log(driver, getObjectPayment("Bento_Book_Button"), "Book", 30);
 		 if(domain=="com")
 		 {
+			 if(elementVisible(driver,By.xpath("//img[@alt='Air India']"),5))
+			 {
+				 Actions actions=new Actions(driver);
+	           	 actions.keyDown(Keys.CONTROL).sendKeys(Keys.END).perform();
+				 smartClick(driver,By.xpath("//div[5]/div[2]/div/label[2]/div/span"));
+			 }
+			 Thread.sleep(1000);
 			 if (elementVisible(driver, getObjectPayment("Bento_Indigo_Logo"), 5)) 
 	      {
 			     Thread.sleep(1000); 
@@ -74,28 +81,18 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	      {
 	        smartClick(driver, getObjectPayment("Bento_Book_Button"));
 			  }
-		   else
-	      {
-	         if (textPresent(driver,"Air India",5))
-			     {
-	             Actions actions=new Actions(driver);
-	           	 actions.keyDown(Keys.CONTROL).sendKeys(Keys.END).perform();
-				       smartClick(driver,By.xpath("//div[5]/div[2]/div/label[2]/div/span"));
-			     }
-	         Thread.sleep(1000);
-	         if (elementVisible(driver, getObjectPayment("Bento_Indigo_Logo"), 5)) 
-	         {
-			       smartClick(driver,By.xpath("//div[4]/button"));
-			     }
-			     else if (elementVisible(driver, getObjectPayment("Bento_Spicejet_Logo"), 3)) 
-	         {
-	           smartClick(driver, getObjectPayment("Bento_Book_Button"));
-			     } 
-			     else if (elementVisible(driver, getObjectPayment("Bento_Vistara_Logo"), 3)) 
-	         {
-	           smartClick(driver, getObjectPayment("Bento_Book_Button"));
-	         }
-	     }
+				/*
+				 * else { if (textPresent(driver,"Air India",5)) { Actions actions=new
+				 * Actions(driver); actions.keyDown(Keys.CONTROL).sendKeys(Keys.END).perform();
+				 * smartClick(driver,By.xpath("//div[5]/div[2]/div/label[2]/div/span")); }
+				 * Thread.sleep(1000); if (elementVisible(driver,
+				 * getObjectPayment("Bento_Indigo_Logo"), 5)) {
+				 * smartClick(driver,By.xpath("//div[4]/button")); } else if
+				 * (elementVisible(driver, getObjectPayment("Bento_Spicejet_Logo"), 3)) {
+				 * smartClick(driver, getObjectPayment("Bento_Book_Button")); } else if
+				 * (elementVisible(driver, getObjectPayment("Bento_Vistara_Logo"), 3)) {
+				 * smartClick(driver, getObjectPayment("Bento_Book_Button")); } }
+				 */
 		 }
 	  else
 	  {
@@ -479,8 +476,9 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 
 		if(elementVisible(driver,getObjectPayment("Bento_aeitn_skip"), 5))
 		{
+		Thread.sleep(1000);
 		actions.keyDown(Keys.CONTROL).sendKeys(Keys.END).perform();
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		smartClick(driver, getObjectPayment("Bento_aeitn_skip"));
 		}
 		elementVisible(driver, getObjectPayment("Bento_Itn_Contact_Number"), 10);
@@ -599,8 +597,15 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	public void paymentPage(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain) throws Exception {
 		if(elementVisible(driver, getObjectPayment("Bento_Pay_PayToCompleteBooking_Txt"), 30))
 			{
-			bento_paymentpage(driver,PaymentType, CardNumber,domain);
-			confirmation_page(driver);
+			 if(CardNumber=="ADCB"||PaymentType=="Phonepe")
+			 {
+				 bento_paymentpage(driver,PaymentType, CardNumber,domain);
+			 }
+			else
+			{
+			  bento_paymentpage(driver,PaymentType, CardNumber,domain);
+				confirmation_page(driver);
+			}
 			}
 		else if(textPresent(driver,"Sorry, our servers are stumped with your request",1)||textPresent(driver,"Flight not available",1))
 			{

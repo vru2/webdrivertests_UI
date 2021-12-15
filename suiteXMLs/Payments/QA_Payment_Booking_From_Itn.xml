@@ -10,8 +10,12 @@
 
 <test name="Booking From Itinerary Non Com Domain" preserve-order="true" parallel="methods" >
     <classes>
-     <class name="paymentsBento_Itn.Bento_AE_PayU_Booking"/>
-      <class name="paymentsBento_Itn.Bento_AE_ADCB_Validation"/>
+      		<class name="paymentsBento_Itn.Bento_AE_ADCB_Validation"/>
+            <class name="paymentsBento_Itn.Bento_AE_SC_Noon_Booking"/>
+            <class name="paymentsBento_Itn.Bento_AE_SC_Payfort_Booking"/>
+            <class name="paymentsBento_Itn.Bento_SA_SC_Payfort_Booking"/>
+            <class name="paymentsBento_Itn.Bento_SA_SC_Checkout_Booking"/>
+     		<class name="paymentsBento_Itn.Bento_AE_PayU_Booking"/>
             <class name="paymentsBento_Itn.Bento_BH_PayU_Booking"/>
             <class name="paymentsBento_Itn.Bento_KW_PayU_Booking"/>
             <class name="paymentsBento_Itn.Bento_KW_KNet_Booking"/>
@@ -19,10 +23,6 @@
             <class name="paymentsBento_Itn.Bento_OM_PayU_Booking"/>
             <class name="paymentsBento_Itn.Bento_QA_PayU_Booking"/>
             <class name="paymentsBento_Itn.Bento_SA_PayU_Booking"/>
-            <class name="paymentsBento_Itn.Bento_AE_SC_Noon_Booking"/>
-            <class name="paymentsBento_Itn.Bento_AE_SC_Payfort_Booking"/>
-            <class name="paymentsBento_Itn.Bento_SA_SC_Payfort_Booking"/>
-            <class name="paymentsBento_Itn.Bento_SA_SC_Checkout_Booking"/>
     </classes>
 </test>
 

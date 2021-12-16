@@ -23,7 +23,7 @@ public class Bento_SA_SC_Payfort_Booking extends PaymentsBento_Itn_Common {
 		Reporter.log(saurl+searchurl);
 		Searchpagebook(driver,"","","");
 		noncom_itnpage(driver,"","sa");
-		paymentPage(driver,"OTH","4557","sa");
+		paymentPage(driver,"OTH","4557","sa","","");
 	}
 
 	@AfterClass

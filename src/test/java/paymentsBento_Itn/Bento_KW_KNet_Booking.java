@@ -24,7 +24,7 @@ public class Bento_KW_KNet_Booking extends PaymentsBento_Itn_Common {
 		Searchpagebook(driver,"","","");
 		noncom_itnpage(driver,"","");
 		bento_Validation_Text(driver, "KNET", "");
-   	 	paymentPage(driver,"KNET","","");
+   	 	paymentPage(driver,"KNET","","","","");
 	}
 	
 	@AfterClass

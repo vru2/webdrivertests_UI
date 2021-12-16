@@ -23,7 +23,7 @@ public class Bento_IN_NB_ICICI_Booking extends PaymentsBento_Itn_Common {
 		Reporter.log(qa2url+searchurl);
 		Searchpagebook(driver,"","com","");
 	    book_itnnew(driver,"");
-		paymentPage(driver,"nb","","");
+		paymentPage(driver,"nb","","","","");
 	}
 	
 	@AfterClass

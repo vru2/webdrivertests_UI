@@ -23,7 +23,7 @@ public class Bento_KW_PayU_Booking extends PaymentsBento_Itn_Common {
 		Reporter.log(kwurl+searchurl);
 		Searchpagebook(driver,"","","");
 		noncom_itnpage(driver,"","");
-   	 	paymentPage(driver,"OTH","","");
+   	 	paymentPage(driver,"OTH","","","","");
   }
 	
 	@AfterClass

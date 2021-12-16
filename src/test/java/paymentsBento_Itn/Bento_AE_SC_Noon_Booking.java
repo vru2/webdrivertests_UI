@@ -23,7 +23,7 @@ public class Bento_AE_SC_Noon_Booking extends PaymentsBento_Itn_Common {
 		Reporter.log(aeurl+searchurl);
 		Searchpagebook(driver,"","","");
 		noncom_itnpage(driver,"","ae");
-		paymentPage(driver,"AE-SC","4000","");    
+		paymentPage(driver,"AE-SC","4000","","","");    
 	}
 	
 	@AfterClass

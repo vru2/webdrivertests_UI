@@ -9,7 +9,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Bento_StoredCard_Booking extends PaymentsBento_Itn_Common{
+public class Bento_IN_PayUCard_Booking extends PaymentsBento_Itn_Common{
 	@BeforeClass
 	public void setUp() throws Exception {
 		driver=(RemoteWebDriver) getDriver(driver);
@@ -23,7 +23,7 @@ public class Bento_StoredCard_Booking extends PaymentsBento_Itn_Common{
 		Reporter.log(qa2url+searchurl);
 	    Searchpagebook(driver,"","com","");
 	    book_itnnew(driver,"");
-	    paymentPage(driver,"storedcard","","");
+	    paymentPage(driver,"sc","5123","","CC","MASTER");
 	}
 
 	 @AfterClass

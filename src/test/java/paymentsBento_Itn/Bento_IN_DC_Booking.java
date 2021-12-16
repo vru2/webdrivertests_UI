@@ -23,7 +23,7 @@ public class Bento_IN_DC_Booking extends PaymentsBento_Itn_Common {
 		Reporter.log(qa2url + searchurl);
 		Searchpagebook(driver, "","com","");
 		book_itnnew(driver,""); 
-		paymentPage(driver,"storedcard","4111",""); 
+		paymentPage(driver,"storedcard","4111","","",""); 
 	}
 
 	@AfterClass

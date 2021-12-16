@@ -22,7 +22,7 @@ public class Bento_IN_UPI_Booking extends PaymentsBento_Itn_Common {
 		Reporter.log(qa2url+searchurl);
 	    Searchpagebook(driver,"","com","");
 	    book_itnnew(driver,"");
-   	 	paymentPage(driver,"UPI","","");
+   	 	paymentPage(driver,"UPI","","","","");
 	}
 	
 	 @AfterClass

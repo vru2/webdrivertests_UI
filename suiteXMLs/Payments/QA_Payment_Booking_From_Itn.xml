@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Bento UI" parallel="tests" thread-count="3">
+<suite name="Bento UI" parallel="tests" thread-count="2">
 
 <listeners>
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -7,7 +7,6 @@
 		<listener class-name="common.RetryListener"/>
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
-
 
 <test name="IN Wallet GV" preserve-order="true" parallel="methods" >
     <classes>
@@ -17,16 +16,16 @@
     </classes>
 </test>
 
+<test name="IN Coupon" preserve-order="true" parallel="methods" >
+    <classes>
+	     	<class name="paymentsBento_Itn.Bento_IN_Coupon_SC_PayU_Booking"/> 
+    </classes>
+</test>
+
 <test name="IN UPI" preserve-order="true" parallel="methods" >
     <classes>
 	        <class name="paymentsBento_Itn.Bento_IN_UPI_Booking"/> 
 	        <class name="paymentsBento_Itn.Bento_IN_Phonepe_Validation"/> 
-    </classes>
-</test>
-
-<test name="IN Coupon" preserve-order="true" parallel="methods" >
-    <classes>
-	     	<class name="paymentsBento_Itn.Bento_IN_Coupon_SC_PayU_Booking"/> 
     </classes>
 </test>
 
@@ -38,7 +37,7 @@
     </classes>
 </test>
 
-<test name="AE Domain" preserve-order="true" parallel="methods" >
+<test name="AE Domain" preserve-order="true" >
     <classes>
       		<class name="paymentsBento_Itn.Bento_AE_ADCB_Validation"/>
             <class name="paymentsBento_Itn.Bento_AE_SC_Noon_Booking"/>
@@ -62,7 +61,7 @@
     </classes>
 </test>
 
-<test name="BH ME OM QA Domain" preserve-order="true" parallel="methods" >
+<test name="BH ME OM QA Domain" preserve-order="true" >
     <classes>
             <class name="paymentsBento_Itn.Bento_BH_PayU_Booking"/>
             <class name="paymentsBento_Itn.Bento_ME_PayU_Booking"/>

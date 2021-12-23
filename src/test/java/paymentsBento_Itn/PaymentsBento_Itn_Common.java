@@ -607,7 +607,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			else
 			{
 			  bento_paymentpage(driver,PaymentType, CardNumber,domain,PayType,BankName);
-				confirmation_page(driver);
+				confirmation_page(driver, PaymentType, CardNumber);
 			}
 			}
 		else if(textPresent(driver,"Sorry, our servers are stumped with your request",1)||textPresent(driver,"Flight not available",1))
@@ -1160,7 +1160,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			}
 	}
 
-	public void confirmation_page(RemoteWebDriver driver) throws Exception {
+	public void confirmation_page(RemoteWebDriver driver, String PaymentType, String CardNumber) throws Exception {
 		elementPresent_log(driver, By.linkText("Get your ticket"), "Get your ticket", 30);
 		textPresent_Log(driver, "You just booked", 2);
 		textPresent_Log(driver, "Travelers in this trip", 2);
@@ -1172,8 +1172,8 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		textPresent_Log(driver, "Total", 2);
 		textPresent_Log(driver, "Travel plans change often.", 2);
 		String tripid = driver.findElement(getObjectPayment("Bento_Confirmation_Page_Gettrip")).getText();
-		System.out.println(tripid);
-		Reporter.log(tripid);
+		System.out.println(PaymentType+" CardNumber "+" : "+tripid);
+		Reporter.log(PaymentType+" CardNumber "+" : "+tripid);
 
 	}
 

@@ -147,7 +147,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	}
 
 	public void book_itnnew(RemoteWebDriver driver, String gv_coupon) throws Exception {
-		if(!textPresent(driver, "Review your itinerary", 1))  {			
+		if(!textPresent(driver, "Review your itinerary", 1))  {
 		if(elementVisible(driver,By.xpath("//div[5]/button"), 2))
 		{
 			safeClick(driver,By.xpath("//div[5]/button"));
@@ -187,9 +187,10 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 				}
 			}
 			elementVisible(driver, getObjectPayment("Bento_Itn_Fare_Continue"), 2);
-			WebElement ele2 = driver.findElement(getObjectPayment("Bento_Itn_Fare_Continue"));
+			/*WebElement ele2 = driver.findElement(getObjectPayment("Bento_Itn_Fare_Continue"));
 			ele2.sendKeys(Keys.ARROW_DOWN);
-			ele2.sendKeys(Keys.ARROW_DOWN);
+			ele2.sendKeys(Keys.ARROW_DOWN);*/
+			scrollToElement(driver, getObjectPayment("Bento_Itn_Fare_Continue"));
 			elementVisible(driver, getObjectPayment("Bento_Itn_Fare_Continue"), 2);
 			safeClick(driver, getObjectPayment("Bento_Itn_Fare_Continue"));
 			Reporter.log("Clicked on fare continue");
@@ -225,9 +226,11 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 				}
 			}
 			elementVisible(driver, getObjectPayment("Bento_Itn_fare_continue"), 2);
-			WebElement ele2 = driver.findElement(getObjectPayment("Bento_Itn_fare_continue"));
+		/*	WebElement ele2 = driver.findElement(getObjectPayment("Bento_Itn_fare_continue"));
 			ele2.sendKeys(Keys.ARROW_DOWN);
 			Thread.sleep(2000);
+*/
+			scrollToElement(driver, getObjectPayment("Bento_Itn_fare_continue"));
 			smartClick(driver, getObjectPayment("Bento_Itn_fare_continue"));
 			Reporter.log("Clicked on fare continue");
 		}
@@ -798,8 +801,8 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
 			Reporter.log("Clicked on paynow");
 			textPresent_Log(driver, "Please wait...", 5);
-			textPresent_Log(driver, "Login to PhonePe", 5);
-			textPresent(driver, "SEND OTP TO LOGIN", 5);
+			textPresent(driver, "Login to PhonePe", 5);
+			textPresent_Log(driver, "SEND OTP TO LOGIN", 5);
 			textPresent(driver, "Scan&Pay via PhonePe App", 2);
 			textPresent(driver, "PhonePe QR", 2);	
 			Reporter.log("PhonePe Page Validated");
@@ -821,10 +824,11 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			safeClick(driver, getObjectPayment("Bento_Payment_UPI_ID"));
 			safeType(driver, getObjectPayment("Bento_Payment_UPI_ID"), "9986696785@ybl");
 			Reporter.log("Entered UPI Details");
-			safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
+			safeClick(driver, getObjectPayment("Bento_Payment_Paynow_UPI"));
+			System.out.println("---------------------");
 			Reporter.log("Clicked on paynow");
-			textPresent_Log(driver, "Please wait...", 2);
-			textPresent_Log(driver, "Please accept the collect request sent to your UPI app", 5);
+			textPresent(driver, "Please wait...", 2);
+			textPresent(driver, "Please accept the collect request sent to your UPI app", 5);
 			Reporter.log("Payment done successfully");
 		}
 		if (PaymentType == "GV") {

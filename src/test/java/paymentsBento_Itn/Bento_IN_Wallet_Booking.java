@@ -22,7 +22,7 @@ public class Bento_IN_Wallet_Booking extends PaymentsBento_Itn_Common {
 		System.out.println(qa2url+searchurl);
 		Reporter.log(qa2url+searchurl);
 	    Searchpagebook(driver,"","com","");
-	    book_itnnew(driver,"");
+		book_itnnew(driver,"");
    	 	paymentPage(driver,"wallet","","","","");
 	}
 	

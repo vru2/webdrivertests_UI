@@ -32,7 +32,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	JavascriptExecutor jse = (JavascriptExecutor) driver;
 	String contactnumber = "12345678";
 
-	String searchurl = "/flights/results?adults=1&childs=0&infants=0&class=Economy&depart_date=28/05/2022&from=BLR&to=HYD&intl=n&origin=BLR - Bangalore, IN &destination=HYD - Hyderabad, IN &sd=1629707401889&rnd_one=O&sourceCountry=Hyderabad&destinationCountry=Bangalore";
+	String searchurl = "/flights/results?adults=1&childs=0&infants=0&class=Economy&depart_date=29/05/2022&from=BLR&to=HYD&intl=n&origin=BLR - Bangalore, IN &destination=HYD - Hyderabad, IN &sd=1629707401889&rnd_one=O&sourceCountry=Hyderabad&destinationCountry=Bangalore";
 	String qa2url = "https://qa2.cleartrip.com";
 	String aeurl = "https://qa2.cleartrip.ae";
 	String bhurl = "https://qa2bh.cleartrip.com";
@@ -147,18 +147,19 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	}
 
 	public void book_itnnew(RemoteWebDriver driver, String gv_coupon) throws Exception {
-
-		if(elementVisible(driver,By.xpath("//div[5]/button"),3))
+		if(!textPresent(driver, "Review your itinerary", 1))  {			
+		if(elementVisible(driver,By.xpath("//div[5]/button"), 2))
 		{
 			safeClick(driver,By.xpath("//div[5]/button"));
 			Thread.sleep(1000);
+		}
 		}
 		Reporter.log("Itinerary page loaded");
 		if (elementVisible(driver, getObjectPayment("Bento_Itn_Standard_Fee"), 3)) {
 			safeClick(driver, getObjectPayment("Bento_Itn_Standard_Fee"));
 			Reporter.log("Selected itn fee");
-			Thread.sleep(1000);
 			if (gv_coupon == "GV") {
+				Thread.sleep(1000);
 				WebElement ele = driver.findElement(getObjectPayment("Bento_Itn_GV_Number"));
 				ele.sendKeys(Keys.PAGE_DOWN);
 				Thread.sleep(2000);
@@ -172,6 +173,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 				textPresent_Log(driver, "has been redeemed for this booking", 3);
 				Reporter.log("GV applied Successfully");
 			} else if (gv_coupon == "Coupon") {
+				Thread.sleep(1000);
 				WebElement ele = driver.findElement(getObjectPayment("Bento_Itn_GV_Number"));
 				ele.sendKeys(Keys.PAGE_DOWN);
 				Thread.sleep(1000);
@@ -184,58 +186,57 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 					Reporter.log("Successfully applied coupon");
 				}
 			}
-			Thread.sleep(2000);
+			elementVisible(driver, getObjectPayment("Bento_Itn_Fare_Continue"), 2);
 			WebElement ele2 = driver.findElement(getObjectPayment("Bento_Itn_Fare_Continue"));
 			ele2.sendKeys(Keys.ARROW_DOWN);
 			ele2.sendKeys(Keys.ARROW_DOWN);
-			Thread.sleep(3000);
+			elementVisible(driver, getObjectPayment("Bento_Itn_Fare_Continue"), 2);
 			safeClick(driver, getObjectPayment("Bento_Itn_Fare_Continue"));
 			Reporter.log("Clicked on fare continue");
-			Thread.sleep(3000);
 		}
 		else if(elementVisible(driver,getObjectPayment("Bento_Itn_fare_continue"),5))
 		{
-			Thread.sleep(1000);
 			if (gv_coupon == "GV") {
+				elementVisible(driver, getObjectPayment("Bento_Itn_GV_Number"), 2);
 				WebElement ele = driver.findElement(getObjectPayment("Bento_Itn_GV_Number"));
 				ele.sendKeys(Keys.PAGE_DOWN);
 				Thread.sleep(2000);
 				ele.sendKeys(GV_number);
 				Reporter.log("Entered GV number");
-				Thread.sleep(1000);
-				// smartClick(driver,getObjectPayment("Bento_Itn_GV_Pin"));
+				elementVisible(driver, getObjectPayment("Bento_Itn_GV_Pin"), 2);
 				safeType(driver, getObjectPayment("Bento_Itn_GV_Pin"), GV_pin);
 				Reporter.log("Entered GV pin");
+				elementVisible(driver, getObjectPayment("Bento_Itn_GV_Apply"), 2);
 				safeClick(driver, getObjectPayment("Bento_Itn_GV_Apply"));
 				textPresent_Log(driver, "has been redeemed for this booking", 3);
 				Reporter.log("GV applied Successfully");
 			} else if (gv_coupon == "Coupon") {
+				elementVisible(driver, getObjectPayment("Bento_Itn_GV_Number"), 2);
 				WebElement ele = driver.findElement(getObjectPayment("Bento_Itn_GV_Number"));
 				ele.sendKeys(Keys.PAGE_DOWN);
 				Thread.sleep(1000);
 				ele.sendKeys("WALLET3");
-				Thread.sleep(1000);
 				Reporter.log("Entered Coupon details");
+				elementVisible(driver, getObjectPayment("Bento_Itn_Coupon_Apply"), 2);
 				smartClick(driver, getObjectPayment("Bento_Itn_Coupon_Apply"));
 			if (textPresent_Log(driver, "Great! You just saved", 3) || textPresent_Log(driver,"Great! We'll add ₹179 in your Cleartrip Wallet",3)) 
 				{
 					Reporter.log("Successfully applied coupon");
 				}
 			}
-			Thread.sleep(2000);
+			elementVisible(driver, getObjectPayment("Bento_Itn_fare_continue"), 2);
 			WebElement ele2 = driver.findElement(getObjectPayment("Bento_Itn_fare_continue"));
 			ele2.sendKeys(Keys.ARROW_DOWN);
-			Thread.sleep(5000);
+			Thread.sleep(2000);
 			smartClick(driver, getObjectPayment("Bento_Itn_fare_continue"));
 			Reporter.log("Clicked on fare continue");
-			Thread.sleep(3000);
 		}
 		else if(elementVisible(driver,getObjectPayment("Bento_Itn_Standard_Fee1"),5))
 		{ 
 		  safeClick(driver,getObjectPayment("Bento_Itn_Standard_Fee1"));
-		  Thread.sleep(1000); 
 		  Reporter.log("Selected itn fee"); 
 		  if(gv_coupon=="GV") {
+		  elementVisible(driver, getObjectPayment("Bento_Itn_GV_Number"), 2);
 		  WebElement ele3 =driver.findElement(getObjectPayment("Bento_Itn_GV_Number"));
 		  ele3.sendKeys(Keys.PAGE_DOWN); 
 		  Thread.sleep(2000); 
@@ -243,6 +244,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		  Reporter.log("Entered GV number"); 
 		  Thread.sleep(1000);
 		  //smartClick(driver,getObjectPayment("Bento_Itn_GV_Pin"));
+		  elementVisible(driver, getObjectPayment("Bento_Itn_GV_Pin"), 2);
 		  safeType(driver,getObjectPayment("Bento_Itn_GV_Pin"),GV_pin);
 		  Reporter.log("Entered GV pin");
 		  safeClick(driver,getObjectPayment("Bento_Itn_GV_Apply"));
@@ -270,7 +272,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		  ele2.sendKeys(Keys.ARROW_DOWN); 
 		  Thread.sleep(3000);
 		  driver.executeScript("return arguments[0].scrollIntoView();", ele2);
-		  Thread.sleep(1000);
+		  elementVisible(driver, getObjectPayment("Bento_Itn_Fare1_Continue"), 2);		  
 		  smartClick(driver,getObjectPayment("Bento_Itn_Fare1_Continue"));
 		  Reporter.log("Clicked on fare continue"); 
 		  Thread.sleep(3000); 
@@ -285,7 +287,6 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		  Thread.sleep(2000);
 		  ele2.click(); 
 		  Reporter.log("Clicked on fare continue"); 
-		  Thread.sleep(3000); 
 		  }
 		  
 		  if(elementVisible(driver,getObjectPayment("Bento_Itn_Meal_Continue"),5)) 
@@ -312,8 +313,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		  Thread.sleep(2000); 
 		  ele3.sendKeys(GV_number);
 		  Reporter.log("Entered GV number"); 
-		  Thread.sleep(1000);
-		  //smartClick(driver,getObjectPayment("Bento_Itn_GV_Pin"));
+		  elementVisible(driver, getObjectPayment("Bento_Itn_GV_Pin"), 2);	
 		  safeType(driver,getObjectPayment("Bento_Itn_GV_Pin"),GV_pin);
 		  Reporter.log("Entered GV pin");
 		  safeClick(driver,getObjectPayment("Bento_Itn_GV_Apply"));
@@ -343,10 +343,10 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		  Thread.sleep(1000);
 		  smartClick(driver,getObjectPayment("Bento_Itn_Fare2_Continue"));
 		  Reporter.log("Clicked on fare continue"); 
-		  Thread.sleep(2000); 
 		  }
 		  else 
 		  {
+		  elementVisible(driver, getObjectPayment("Bento_Itn_Fare_Continue"), 2);	
 		  WebElement ele2=driver.findElement(getObjectPayment("Bento_Itn_Fare_Continue"));
 		  Thread.sleep(2000); 
 		  ele2.sendKeys(Keys.ARROW_DOWN); 
@@ -360,6 +360,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		  
 		  if(elementVisible(driver,getObjectPayment("Bento_Itn_Meal_Continue"),5)) 
 		  {
+		   elementVisible(driver, getObjectPayment("Bento_Itn_Meal_Continue"), 2);	
 		   WebElement ele4=driver.findElement(getObjectPayment("Bento_Itn_Meal_Continue"));
 		   Thread.sleep(2000);
 		   ele4.sendKeys(Keys.ARROW_DOWN);
@@ -368,7 +369,6 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		   Thread.sleep(2000);
 		   ele4.click();
 		   Reporter.log("Clicked on meal continue"); 
-		   Thread.sleep(2000);
 		  }
 		  
 		  
@@ -681,39 +681,50 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 				textPresent_Log(driver, "Your booking is done", 5);
 				Reporter.log("Payment done successfully");
 				}
-			} else {
-				if(CardNumber=="4111")
+			} 
+         }
+			
+			if (PaymentType == "CC")	
 				{
+				smartClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
+				if(CardNumber=="4111") {	
+
+					payUI_Enter_PaymentDetails(driver, "CC", "RAZORPAYDC","");
+					/*
 					safeClick(driver, getObjectPayment("Bento_Payment_Select_DC_Storedcard"));
 					Reporter.log("Clicked on SC");
 					Thread.sleep(1000);
 					safeClick(driver, getObjectPayment("Bento_Payment_SC_DC_CVV"));
 					safeType(driver, getObjectPayment("Bento_Payment_SC_DC_CVV"), "111");
-					Reporter.log("Entered CVV");
+					Reporter.log("Entered CVV");*/
 					safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
 					Reporter.log("Clicked on paynow");
-					textPresent_Log(driver, "Please wait...", 2);
-					textPresent_Log(driver, "Welcome to Razorpay Software Private Ltd Bank", 2);
+					textPresent(driver, "Please wait...", 2);
+					textPresent(driver, "Welcome to Razorpay Software Private Ltd Bank", 2);
+					elementVisible(driver, getObjectPayment("Bento_Payment_DC_Payment_Success"), 10);
 					safeClick(driver, getObjectPayment("Bento_Payment_DC_Payment_Success"));
-					textPresent_Log(driver, "Your booking is done", 5);
+					textPresent_Log(driver, "Your booking is done",10);
 					Reporter.log("Payment done successfully");
 				}
 				else if(CardNumber=="5241")
 				{
-					safeClick(driver, getObjectPayment("Bento_Payment_SC_Razropay"));
+					/*safeClick(driver, getObjectPayment("Bento_Payment_SC_Razropay"));
 						Reporter.log("Clicked on SC");
 						Thread.sleep(1000);
 						safeClick(driver, getObjectPayment("Bento_Payment_SC_Razropay_CVV"));
 						safeType(driver, getObjectPayment("Bento_Payment_SC_Razropay_CVV"), "123");
-						Reporter.log("Entered CVV");
+						Reporter.log("Entered CVV");*/
+					
+
+						payUI_Enter_PaymentDetails(driver, "CC", "RAZORPAY","");
 						safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
 						Reporter.log("Clicked on paynow");
-						textPresent_Log(driver, "Please wait...", 5);
-						textPresent_Log(driver, "One Time Password (OTP) successfully sent to the phone number linked to your card ending with 0000.", 5);
+						textPresent(driver, "Please wait...", 5);
+						textPresent(driver, "One Time Password (OTP) successfully sent to the phone number linked to your card ending with 0000.", 5);
 						safeClick(driver, getObjectPayment("Bento_Payment_Razropay_Pin"));
 						safeType(driver,getObjectPayment("Bento_Payment_Razropay_Pin"),"0000");
 						safeClick(driver,getObjectPayment("Bento_Payment_Razropay_Submit"));
-						textPresent_Log(driver, "Your booking is done", 5);
+						textPresent_Log(driver, "Your booking is done", 10);
 						Reporter.log("Payment done successfully");
 				}
 				else
@@ -732,7 +743,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 				Reporter.log("Payment done successfully");
 				}	
 				}
-		}
+		
 		if (PaymentType == "wallet") {
 			if (textPresent(driver, "Cleartrip wallet", 2)) {
 				elementVisible(driver, getObjectPayment("Bento_Payment_Paynow"), 2);
@@ -746,10 +757,14 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		}
 		if (PaymentType == "nb") {
 			if (textPresent(driver, "Cleartrip wallet", 2)) {
+				
 				safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
 				Reporter.log("Deselected wallet");
 				Thread.sleep(1000);
-				safeClick(driver, getObjectPayment("Bento_Payment_NB"));
+
+				bento_Select_PaymentType(driver, "NB");
+				
+				//safeClick(driver, getObjectPayment("Bento_Payment_NB"));
 				Reporter.log("Clicked on NB");
 			} else {
 				Thread.sleep(1000);
@@ -874,27 +889,17 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			if (textPresent(driver, "Cleartrip wallet", 2)) {
 				safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
 				Reporter.log("Deselected wallet");
-				safeClick(driver, getObjectPayment("Bento_Payment_Select_Storedcard"));
+				smartClick(driver, getObjectPayment("Bento_Payment_Select_Storedcard"));
 				Reporter.log("Clicked on SC");
 			} else {
-				safeClick(driver, getObjectPayment("Bento_Payment_Select_Storedcard"));
+				smartClick(driver, getObjectPayment("Bento_Payment_Select_Storedcard"));
 				Reporter.log("Clicked on SC");
 			}
-			/*
-			 * safeClick(driver, getObjectPayment("Bento_select_amex")); safeClick(driver,
-			 * getObjectPayment("Bento_Payment_SC_CVV")); safeType(driver,
-			 * getObjectPayment("Bento_Payment_SC_CVV"), "1234");
-			 * Reporter.log("Entered CVV details"); safeClick(driver,
-			 * getObjectPayment("Bento_Payment_Paynow")); Reporter.log("Clicked on paynow");
-			 * textPresent_Log(driver, "Please wait...", 2); textPresent_Log(driver,
-			 * "American", 10); textPresent_Log(driver, "ACS Emulator", 15);
-			 * safeClick(driver, getObjectPayment("Bento_Payment_AMC_SUBMIT"));
-			 * textPresent_Log(driver, "Your booking is done", 10);
-			 * Reporter.log("Payment done successfully");
-			 */
-			safeClick(driver, getObjectPayment("Bento_select_sc"));
+		/*	safeClick(driver, getObjectPayment("Bento_select_sc"));
 			safeClick(driver, getObjectPayment("Bento_sc_cvv"));
 			safeType(driver, getObjectPayment("Bento_sc_cvv"), "111");
+		*/
+			payUI_Enter_PaymentDetails(driver, "CC", "MASTER","");
 			safeClick(driver, getObjectPayment("Bento_paynow"));
 			elementVisible(driver, getObjectPayment("Bento_card_password"), 5);
 			  safeClick(driver, getObjectPayment("Bento_card_password"));

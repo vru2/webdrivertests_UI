@@ -238,6 +238,7 @@ public class PaymentUI_Common extends PaymentNodeJS{
 			case "MASTER":
 			Enter_CC_Details(driver, platform.value("MasterCard_Number"), platform.value("MasterCard_Month"), platform.value("MasterCard_Year"), platform.value("MasterCard_CVV"));
 			break;	
+			
 			case "AMEX":
 			Enter_CC_Details(driver, platform.value("AmexCard_Number"), platform.value("AmexCard_Month_New"), platform.value("AmexCard_Year"), platform.value("AmexCard_CVV"));
 			break;			
@@ -258,6 +259,9 @@ public class PaymentUI_Common extends PaymentNodeJS{
 			break;
 			case "RAZORPAY":
 			Enter_CC_Details(driver, platform.value("RazorPay_Number"), platform.value("RazorPay_Month_UI"), platform.value("RazorPay_Year"), platform.value("RazorPay_CVV"));
+			break;
+			case "RAZORPAYDC":
+			Enter_CC_Details(driver, platform.value("RazorPay_Number_DC"), platform.value("RazorPay_Month_UI_DC"), platform.value("RazorPay_Year_DC"), platform.value("RazorPay_CVV_DC"));
 			break;
 		}
 		if(common.value("Bento_Payment").equalsIgnoreCase("true")||BookingType.contains("TRAINS")) {			

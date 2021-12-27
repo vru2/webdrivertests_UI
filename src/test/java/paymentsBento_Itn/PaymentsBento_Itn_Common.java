@@ -71,6 +71,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			 if (elementVisible(driver, getObjectPayment("Bento_Indigo_Logo"), 5)) 
 	      {
 			     Thread.sleep(1000); 
+			     elementVisible(driver,By.xpath("//div[4]/button"), 5);
 				 smartClick(driver,By.xpath("//div[4]/button"));
 			  }
 			 else if (elementVisible(driver, getObjectPayment("Bento_Spicejet_Logo"), 3))
@@ -127,16 +128,18 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 				Thread.sleep(5000);
 				driver.navigate().to(driver.getCurrentUrl());
 				if(!elementVisible(driver,By.cssSelector("h2.fs-7.px-4.c-neutral-900.fw-600"), 5)) {
-					textPresent_Log(driver, "Review your itinerary", 100);					
+					textPresent_Log(driver, "Review your itinerary", 30);					
 				}
 				System.out.println(driver.switchTo().window(child_window).getCurrentUrl());
 				Reporter.log(driver.switchTo().window(child_window).getCurrentUrl());
+		if(!textPresent(driver, "Review your itinerary", 1)) {
 	     if (textPresent(driver, "Sorry, our servers are stumped with your request", 5)|| textPresent(driver, "Flight not available", 1)) 
 	     {
 					System.out.println("Booking failed due to itn page issue");
 					Reporter.log("Booking failed due to itn page issue");
 					assertTrue(false);
 	     } 
+		}
       }
     }
  }
@@ -801,8 +804,8 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
 			Reporter.log("Clicked on paynow");
 			textPresent_Log(driver, "Please wait...", 5);
-			textPresent(driver, "Login to PhonePe", 5);
-			textPresent_Log(driver, "SEND OTP TO LOGIN", 5);
+			textPresent_Log(driver, "Login to PhonePe", 5);
+			//textPresent_Log(driver, "SEND OTP TO LOGIN", 5);
 			textPresent(driver, "Scan&Pay via PhonePe App", 2);
 			textPresent(driver, "PhonePe QR", 2);	
 			Reporter.log("PhonePe Page Validated");
@@ -1172,8 +1175,8 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		textPresent_Log(driver, "Total", 2);
 		textPresent_Log(driver, "Travel plans change often.", 2);
 		String tripid = driver.findElement(getObjectPayment("Bento_Confirmation_Page_Gettrip")).getText();
-		System.out.println(PaymentType+" CardNumber "+" : "+tripid);
-		Reporter.log(PaymentType+" CardNumber "+" : "+tripid);
+		System.out.println(PaymentType+" "+CardNumber+" : "+tripid);
+		Reporter.log(PaymentType+" "+CardNumber+" : "+tripid);
 
 	}
 

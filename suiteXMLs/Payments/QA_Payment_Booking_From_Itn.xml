@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Bento UI" parallel="tests" thread-count="5">
+<suite name="Bento UI" parallel="tests" thread-count="3">
 
 <listeners>
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -30,7 +30,7 @@
     </classes>
 </test>
 
-<test name="In Others" preserve-order="true">
+<test name="In Others" preserve-order="true" parallel="methods">
     <classes>
 	        <class name="paymentsBento_Itn.Bento_IN_NB_ICICI_Booking"/> 
 	        <class name="paymentsBento_Itn.Bento_IN_DC_Booking"/> 
@@ -56,7 +56,7 @@
     </classes>
 </test>
 
-<test name="SA Domain" preserve-order="true">
+<test name="SA Domain" preserve-order="true" parallel="methods">
     <classes>
             <class name="paymentsBento_Itn.Bento_SA_SC_Payfort_Booking"/>
             <class name="paymentsBento_Itn.Bento_SA_SC_Checkout_Booking"/>

@@ -11,6 +11,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.MoveTargetOutOfBoundsException;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Reporter;
 
@@ -69,10 +70,10 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			 }
 			 Thread.sleep(1000);
 			 if (elementVisible(driver, getObjectPayment("Bento_Indigo_Logo"), 5)) 
-	      {
-			     Thread.sleep(1000); 
-			     elementVisible(driver,By.xpath("//div[4]/button"), 5);
-				 smartClick(driver,By.xpath("//div[4]/button"));
+	      { 
+			     elementVisible(driver, getObjectPayment("Bento_Book_Button"), 5);
+			     Thread.sleep(1000);
+			     smartClick(driver, getObjectPayment("Bento_Book_Button"));
 			  }
 			 else if (elementVisible(driver, getObjectPayment("Bento_Spicejet_Logo"), 3))
 	      {

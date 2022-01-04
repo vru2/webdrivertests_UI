@@ -604,13 +604,13 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	public void paymentPage(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType,String BankName) throws Exception {
 		if(elementVisible(driver, getObjectPayment("Bento_Pay_PayToCompleteBooking_Txt"), 30))
 			{
-			 if(CardNumber=="ADCB"||PaymentType=="Phonepe")
+			 if(CardNumber=="ADCB"||PaymentType=="Phonepe"||PaymentType=="UPIScan")
 			 {
-				 bento_paymentpage(driver,PaymentType, CardNumber,domain,PayType,BankName);
+				bento_paymentpage(driver,PaymentType, CardNumber,domain,PayType,BankName);
 			 }
 			else
 			{
-			  bento_paymentpage(driver,PaymentType, CardNumber,domain,PayType,BankName);
+				bento_paymentpage(driver,PaymentType, CardNumber,domain,PayType,BankName);
 				confirmation_page(driver, PaymentType, CardNumber);
 			}
 			}
@@ -628,6 +628,15 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	}
 		
 	
+	/**
+	 * @param driver
+	 * @param PaymentType
+	 * @param CardNumber
+	 * @param domain
+	 * @param PayType
+	 * @param BankName
+	 * @throws Exception
+	 */
 	public void bento_paymentpage(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
 		textPresent_Log(driver, "Pay to complete your booking", 5);
 		System.out.println(driver.getCurrentUrl());
@@ -811,6 +820,51 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			textPresent(driver, "PhonePe QR", 2);	
 			Reporter.log("PhonePe Page Validated");
 			System.out.println("PhonePe Page Validated");
+		}
+		if (PaymentType == "UPIScan") {
+			if (textPresent(driver, "Cleartrip wallet", 2)) {
+				safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
+				Reporter.log("Deselected wallet");
+				Thread.sleep(1000);
+				smartClick(driver, getObjectPayment("Bento_Payment_UPI"));
+				Reporter.log("Clicked on UPI");
+				Thread.sleep(2000);
+			} else {
+				safeClick(driver, getObjectPayment("Bento_Payment_UPI"));
+				Reporter.log("Clicked on UPI");
+				Thread.sleep(2000);
+			}
+			String Price = getText(driver, getObjectPayment("Bento_Pay_Total_Value"));
+			System.out.println("PRICE "+Price);
+			textPresent_Log(driver, "SCAN QR CODE", 5);
+			elementPresent_log(driver, getObjectPayment("Bento_Payment_Paynow"), "Show QR Code", 5);
+			elementPresent_log(driver, getObjectPayment("Bento_Pay_UPIScan_QRCode"), "QR Image in Payment Page", 5);	
+			safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));  //Click Show QR Code Button
+			textPresent_Log(driver, "Powered by", 10);
+			elementPresent_log(driver, getObjectPayment("Bento_Pay_UPIScan_Page_PoweredBy_Text"), "Powered by", 1);
+			elementPresent_log(driver, getObjectPayment("Bento_Pay_UPIScan_Page_RazorPay_Image"), "Razorpay Image", 1);
+			elementPresent_log(driver, getObjectPayment("Bento_Pay_UPIScan_Page_Price"), "Price", 1);
+			String QR_Price = getText(driver, getObjectPayment("Bento_Pay_UPIScan_Page_Price"));
+			if(!QR_Price.equals(Price)) {
+				Reporter.log("Price in Payment page "+Price+" Price in QR page "+QR_Price);
+				assertTrue(false);
+			}
+			String QRPage_URL = getURL(driver);
+			Reporter.log(QRPage_URL);
+			elementPresent_log(driver, getObjectPayment("Bento_Pay_UPIScan_Page_Do_Not_Refresh_Text"), "Do not refresh text", 1);
+			textPresent_Log(driver, "Scan here to pay with any UPI app", 1);
+			textPresent_Log(driver, "Do not refresh this page", 1);
+			textPresent_Log(driver, "while we check your payment status", 1);
+			textPresent_Log(driver, "Cancel payment", 1);
+			elementPresent_log(driver, getObjectPayment("Bento_Pay_UPIScan_Page_QRCODE_Image"), "QR Code image", 1);
+			elementPresent_log(driver, getObjectPayment("Bento_Pay_UPIScan_Page_Gpay_Image"), "GPay Image", 1);
+			elementPresent_log(driver, getObjectPayment("Bento_Pay_UPIScan_Page_PhonePe_Image"), "GPay Image", 1);
+			elementPresent_log(driver, getObjectPayment("Bento_Pay_UPIScan_Page_PayTM_Image"), "PayTM Image", 1);
+			elementPresent_log(driver, getObjectPayment("Bento_Pay_UPIScan_Page_CleartripLogo"), "Cleartrip logo", 1);
+			elementPresent_log(driver, getObjectPayment("Bento_Pay_UPIScan_Page_CancelPay_Link"), "Cancel Payment link", 1);
+			safeClick(driver, getObjectPayment("Bento_Pay_UPIScan_Page_CancelPay_Link"));
+			textPresent_Log(driver, "Payment cancelled! If you have already paid, please wait for a few minutes before trying again", 10);
+			
 		}
 		if (PaymentType == "UPI") {
 			if (textPresent(driver, "Cleartrip wallet", 2)) {

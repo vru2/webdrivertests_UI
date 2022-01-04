@@ -3997,6 +3997,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		return Url;
 	}
 	
+
 	public String fetchPaymentURL(Response resp){
 		String payurl="";
 		JsonPath jsonPathEvaluator = resp.jsonPath();

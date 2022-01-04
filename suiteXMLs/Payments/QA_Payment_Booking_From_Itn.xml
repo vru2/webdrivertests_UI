@@ -26,6 +26,7 @@
 <test name="IN UPI" preserve-order="true" >
     <classes>
 	        <class name="paymentsBento_Itn.Bento_IN_UPI_Booking"/> 
+	        <class name="paymentsBento_Itn.Bento_IN_UPI_Scan_Validation"/> 
 	        <class name="paymentsBento_Itn.Bento_IN_Phonepe_Validation"/> 
     </classes>
 </test>

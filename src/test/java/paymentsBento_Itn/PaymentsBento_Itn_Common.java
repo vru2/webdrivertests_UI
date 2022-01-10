@@ -34,6 +34,8 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	String contactnumber = "12345678";
 
 	String searchurl = "/flights/results?adults=1&childs=0&infants=0&class=Economy&depart_date=29/05/2022&from=BLR&to=HYD&intl=n&origin=BLR - Bangalore, IN &destination=HYD - Hyderabad, IN &sd=1629707401889&rnd_one=O&sourceCountry=Hyderabad&destinationCountry=Bangalore";
+	
+	String searchurl1 ="/flights/results?adults=1&childs=0&infants=0&depart_date=05/05/2022&return_date=&intl=n&from=BLR&to=CCU&airline=&carrier=&sd=1641801867427&page=&sellingCountry=IN&ssfi=&flexi_search=&ssfc=&origin=BLR%20-%20Bangalore,%20IN&destination=CCU%20-%20Kolkata,%20IN&class=Economy";
 	String qa2url = "https://qa2.cleartrip.com";
 	String aeurl = "https://qa2.cleartrip.ae";
 	String bhurl = "https://qa2bh.cleartrip.com";
@@ -433,14 +435,20 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		 safeClick(driver, getObjectPayment("Bento_Itn_Select_Female"));
 		 Reporter.log("Selected gender");
 		}
-		 if (elementVisible(driver, getObjectPayment("Bento_Itn_Nationality"), 2)) {
+		if(textPresent(driver, "Nationality", 2)||elementVisible(driver, getObjectPayment("Bento_Itn_Nationality"), 2)) {
 			safeClick(driver, getObjectPayment("Bento_Itn_Nationality"));
-			Thread.sleep(2000);
+			Thread.sleep(2000);/*
 			safeType(driver, getObjectPayment("Bento_Itn_Nationality"), "india");
+			safeClick(driver, getObjectPayment("Bento_Itin_Select_India"));*/
+			mouseHover(driver, getObjectPayment("Bento_Itin_Select_India"));
 			safeClick(driver, getObjectPayment("Bento_Itin_Select_India"));
 			Reporter.log("Selected nationality");
 		}
-		safeClick(driver, getObjectPayment("Bento_Itn_Continue_Booking"));
+		System.out.println("CLick=====================");
+		Thread.sleep(2000);
+		mouseHover(driver, getObjectPayment("Bento_Itn_Continue_Booking"));		
+		//safeClick(driver, getObjectPayment("Bento_Itn_Continue_Booking"));
+		driver.findElement(getObjectPayment("Bento_Itn_Continue_Booking")).click();
 		Thread.sleep(2000);
 		Reporter.log("Clicked on continue button to navigate to payments page");
 	}
@@ -772,6 +780,29 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 				Reporter.log("Payment done successfully");
 				}	
 				}
+			
+		if (PaymentType == "EMI")	{
+				safeClick(driver, getObjectPayment("PaymentPage_EMI_ICICIBank_Radio_Btn"));
+				elementVisible(driver, getObjectPayment("PaymentPage_EMI_EnterCard_Details_btn"), 10);
+				scrollToElement(driver, getObjectPayment("PaymentPage_EMI_EnterCard_Details_btn"));
+				safeClick(driver, getObjectPayment("PaymentPage_EMI_EnterCard_Details_btn"));
+				textPresent_Log(driver, "Selected EMI option", 5);
+				
+				textPresent_Log(driver, "Interest (Charged by Bank)", 5);
+
+				elementVisible(driver, getObjectPayment("PaymentPage_EMI_Change_Plan_Button"), 5);		
+				textPresent_Log(driver, "Enter credit card details", 5);
+				Enter_CC_Details(driver, platform.value("RazorPay_Number"), platform.value("RazorPay_Month_UI"), platform.value("RazorPay_Year"), platform.value("RazorPay_CVV"));
+				safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
+				Reporter.log("Clicked on paynow");
+				
+				textPresent(driver, "One Time Password (OTP) successfully sent to the phone number linked to your card ending with 0000.", 5);
+				safeClick(driver, getObjectPayment("Bento_Payment_Razropay_Pin"));
+				safeType(driver,getObjectPayment("Bento_Payment_Razropay_Pin"),"0000");
+				safeClick(driver,getObjectPayment("Bento_Payment_Razropay_Submit"));
+				textPresent_Log(driver, "Your booking is done", 10);
+				Reporter.log("Payment done successfully");
+			}
 		
 		if (PaymentType == "wallet") {
 			if (textPresent(driver, "Cleartrip wallet", 2)) {

@@ -7,7 +7,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Bento_IN_EMI extends PaymentsBento_Itn_Common {
+public class Bento_IN_EMI_Razorpay extends PaymentsBento_Itn_Common {
 
 	@BeforeClass
 	public void startSelenium() throws Exception {
@@ -16,14 +16,16 @@ public class Bento_IN_EMI extends PaymentsBento_Itn_Common {
 	}
 
 	@Test
-	public void bento_dc() throws Exception {
+	public void bento_EMI() throws Exception {
 		driver.manage().deleteAllCookies();
-		driver.navigate().to(qa2url + searchurl);
-		System.out.println(qa2url + searchurl);
-		Reporter.log(qa2url + searchurl);
+		driver.navigate().to(qa2url + searchurl1);
+		driver.manage().addCookie(cookie_Bento_Payment_EMI);	
+		System.out.println(qa2url + searchurl1);
+		Reporter.log(qa2url + searchurl1);
 		Searchpagebook(driver, "","com","");
 		book_itnnew(driver,"");
-		paymentPage(driver,"CC","4111","","",""); 
+		bento_Validation_Text(driver, "EMI", "");
+		paymentPage(driver,"EMI","RAZORPAY","","",""); 
 	}
 
 	@AfterClass

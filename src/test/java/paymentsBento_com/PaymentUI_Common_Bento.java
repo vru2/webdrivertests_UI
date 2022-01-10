@@ -514,17 +514,21 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 		}
 		else if (PaymentType.equalsIgnoreCase("EMI")) 
 		{
+
+			textPresent_Log(driver, "Pay to complete your booking", 5);
+			smartClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
 			bento_Select_PaymentType(driver, "EMI");
 			textPresent_Log(driver, "Pay to complete your booking", 1);
 			textPresent_Log(driver, "Choose an EMI option", 1);
 			textPresent_Log(driver, "Cleartrip does not levy any charges for availing EMI. Charges, if any, are levied by the bank. Please check with your bank for charges related to interest, processing fees, refund or pre-closure", 1);
 			textPresent_Log(driver, "EMI type", 1);
 			textPresent_Log(driver, "Popular banks", 1);
-			textPresent_Log(driver, "View all banks", 1);			
 			textPresent_Log(driver, "I understand and agree to the rules and restrictions of this fare, the", 1);
 			textPresent_Log(driver, "Total, inclusive of all taxes", 1);
 			//textPresentInElementAssert(driver, getObjectPayment("Bento_Pay_Button"), "Enter card details", 2);
 			textPresentInElementAssert(driver, getObjectPayment("PaymentPage_EMI_Pay_Btn"), "Pay now", 1);
+			elementPresent_log(driver, getObjectPayment("PaymentPage_EMI_ICICIBank_Radio_Btn"), "EMI radio btn", 1);
+			
 			}
 		else if (PaymentType.equalsIgnoreCase("QITAF")) 
 		{

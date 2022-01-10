@@ -9,6 +9,17 @@
 </listeners>
 
 
+
+<test name="In Others" preserve-order="true" parallel="methods">
+    <classes>
+	        <class name="paymentsBento_Itn.Bento_IN_NB_ICICI_Booking"/> 
+	        <class name="paymentsBento_Itn.Bento_IN_DC_Booking"/> 
+	        <class name="paymentsBento_Itn.Bento_IN_Storedcard_Razorpaycard_Booking"/>
+	        <class name="paymentsBento_Itn.Bento_IN_Amex_Booking"/>
+	        <class name="paymentsBento_Itn.Bento_IN_EMI_Razorpay"/>
+    </classes>
+</test>
+
 <test name="IN Coupon" preserve-order="true">
     <classes>
 	     	<class name="paymentsBento_Itn.Bento_IN_Coupon_SC_PayU_Booking"/> 
@@ -28,15 +39,6 @@
 	        <class name="paymentsBento_Itn.Bento_IN_UPI_Booking"/> 
 	        <class name="paymentsBento_Itn.Bento_IN_UPI_Scan_Validation"/> 
 	        <class name="paymentsBento_Itn.Bento_IN_Phonepe_Validation"/> 
-    </classes>
-</test>
-
-<test name="In Others" preserve-order="true" parallel="methods">
-    <classes>
-	        <class name="paymentsBento_Itn.Bento_IN_NB_ICICI_Booking"/> 
-	        <class name="paymentsBento_Itn.Bento_IN_DC_Booking"/> 
-	        <class name="paymentsBento_Itn.Bento_IN_Storedcard_Razorpaycard_Booking"/>
-	        <class name="paymentsBento_Itn.Bento_IN_Amex_Booking"/>
     </classes>
 </test>
 

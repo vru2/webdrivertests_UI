@@ -8,8 +8,6 @@
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
 
-
-
 <test name="In Others" preserve-order="true" parallel="methods">
     <classes>
 	        <class name="paymentsBento_Itn.Bento_IN_NB_ICICI_Booking"/> 

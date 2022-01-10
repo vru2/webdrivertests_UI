@@ -35,7 +35,8 @@
     <classes>
 	        <class name="paymentsBento_Itn.Bento_IN_NB_ICICI_Booking"/> 
 	        <class name="paymentsBento_Itn.Bento_IN_DC_Booking"/> 
-	        <class name="paymentsBento_Itn.Bento_IN_Storedcard_Razorpaycard_Booking"/> 
+	        <class name="paymentsBento_Itn.Bento_IN_Storedcard_Razorpaycard_Booking"/>
+	        <class name="paymentsBento_Itn.Bento_IN_Amex_Booking"/>
     </classes>
 </test>
 

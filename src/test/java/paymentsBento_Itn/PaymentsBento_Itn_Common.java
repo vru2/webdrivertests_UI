@@ -743,6 +743,19 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 						textPresent_Log(driver, "Your booking is done", 10);
 						Reporter.log("Payment done successfully");
 				}
+				else if(CardNumber=="3456")
+				{				
+						payUI_Enter_PaymentDetails(driver, "CC", "AMEX","");
+						safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
+						Reporter.log("Clicked on paynow");						
+						elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_Amex3DPage_Submit_Btn"), "Amex Bank ", 20);
+						textPresent(driver, "ACS Emulator", 1);
+						Reporter.log("Amex Auth page is displayed");
+						safeClick(driver, getObjectPayment("MakePayment_NB_Bank_Amex3DPage_Submit_Btn"));
+						textPresent_Log(driver, "Your booking is done", 30);
+						Reporter.log("Payment done successfully");
+				}
+				
 				else
 				{
 				safeClick(driver, getObjectPayment("Bento_Payment_Select_Storedcard"));

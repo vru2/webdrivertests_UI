@@ -444,7 +444,6 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			safeClick(driver, getObjectPayment("Bento_Itin_Select_India"));
 			Reporter.log("Selected nationality");
 		}
-		System.out.println("CLick=====================");
 		Thread.sleep(2000);
 		mouseHover(driver, getObjectPayment("Bento_Itn_Continue_Booking"));		
 		//safeClick(driver, getObjectPayment("Bento_Itn_Continue_Booking"));

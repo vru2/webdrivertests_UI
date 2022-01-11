@@ -179,7 +179,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String ParamsSuperCoins_CheckEarnPoints = "{\"rewardsType\":\"SUPERCOINS\",\"rewardsRequestType\":\"EARN_CHECK\",\"trackId\":\"SAL1011122ghfj1\",\"amount\":2449,\"currency\":\"INR\",\"params\":{\"source\":\"MOBILE\",\"isPwa\":true,\"tripRef\":\"Q191014530821\"}}";
 
 	String ParamsSuperCoins_CreatePromo = "{\"user_id\":41649009,\"trip_ref\":\"";
-	String ParamsSuperCoins_CreatePromo1 = "\",\"type\":\"AIR_BOOKING\",\"promotions\":[{\"amount\":10,\"currency\":\"INR\",\"expiry_date\":\"11-12-2021\",\"trigger_date\":\"14-09-2021\",\"wallet\":\"SUPERCOINS\",\"mobile\":\"+917483912960\",\"email\":\"test@test.com\"}]}";
+	String ParamsSuperCoins_CreatePromo1 = "\",\"type\":\"AIR_BOOKING\",\"promotions\":[{\"amount\":10,\"currency\":\"INR\",\"expiry_date\":\"11-12-2022\",\"trigger_date\":\"14-01-2022\",\"wallet\":\"SUPERCOINS\",\"mobile\":\"+917483912960\",\"email\":\"test@test.com\"}]}";
 
 	String ParamsSuperCoins_UpdatePromo = "{\"amount\":20,\"currency\":\"INR\",\"expiry_date\":\"24-12-2021\",\"trigger_date\":\"";
 	String ParamsSuperCoins_UpdatePromo1 = "\",\"status\":\"ACTIVE\"}";
@@ -2209,8 +2209,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			if(!(resp.body().asString().contains("1 rows updated"))){
 				Assert.assertTrue(false);
 			}
-		}
-		
+		}		
 		
 		else if(payType.equalsIgnoreCase("Reporting_Disabled_Refunds")) {
 			if(!(resp.body().asString().contains("Q210502977324"))){
@@ -2218,8 +2217,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			}if(!(resp.body().asString().contains("kiran.kumar@cleartrip.com"))){
 				Assert.assertTrue(false);
 			}
-		}
-		
+		}		
 		
 		else if(payType.equalsIgnoreCase("Qitaf_Reverse")) {
 			String status = jsonPathEvaluator.getString("status");
@@ -2260,13 +2258,10 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			}
 		}
 		else if(payType.equalsIgnoreCase("FetchGWFailure")) {
-			if(!(resp.body().asString().contains("Experiencing high failure rate on HDFC Net Banking. Please try a different bank."))){
+			if(!(resp.body().asString().contains("UPI payments are having high failure rate, try other payment modes"))){
 				Assert.assertTrue(false);
-			
 			}
-		}
-		
-		
+		}		
 		
 		else if(payType.equalsIgnoreCase("ROR_Mis_expreports")) {
 			if(!(resp.body().asString().contains("Q1903221094")&&resp.body().asString().contains("settlement_date"))){

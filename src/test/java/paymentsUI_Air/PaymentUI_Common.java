@@ -233,7 +233,7 @@ public class PaymentUI_Common extends PaymentNodeJS{
 		
 	public void payUI_Select_CC(RemoteWebDriver driver, String BankName, String BookingType) throws Exception {		
 		elementVisible(driver, getObjectPayment("PaymentPage_CreditCard_Number"), 5);
-		textPresent_Log(driver, "Enter card details", 1);
+		textPresent(driver, "Enter card details", 1);
 		switch (BankName) {
 			case "MASTER":
 			Enter_CC_Details(driver, platform.value("MasterCard_Number"), platform.value("MasterCard_Month"), platform.value("MasterCard_Year"), platform.value("MasterCard_CVV"));

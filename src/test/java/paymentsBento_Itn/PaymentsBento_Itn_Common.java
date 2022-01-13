@@ -27,8 +27,8 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	public Cookie bentoitn = new Cookie("forcedBentoItn", "true");
 	public Cookie bento = new Cookie("isBento", "true");
 
-	String GV_number = "3000331032706754";
-	String GV_pin = "161652";
+	String GV_number = "3000331031462255";
+	String GV_pin = "124736";
 
 	JavascriptExecutor jse = (JavascriptExecutor) driver;
 	String contactnumber = "12345678";
@@ -68,12 +68,12 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	           	 actions.keyDown(Keys.CONTROL).sendKeys(Keys.END).perform();
 				 smartClick(driver,By.xpath("//div[5]/div[2]/div/label[2]/div/span"));
 			 }
-			 Thread.sleep(1000);
+			 Thread.sleep(4000);
 			 if (elementVisible(driver, getObjectPayment("Bento_Indigo_Logo"), 5)) 
 	      { 
 			     elementVisible(driver, getObjectPayment("Bento_Book_Button"), 5);
-			     Thread.sleep(1000);
-			     smartClick(driver, getObjectPayment("Bento_Book_Button"));
+			     Thread.sleep(4000);
+			     safeClick(driver, getObjectPayment("Bento_Book_Button"));
 			  }
 			 else if (elementVisible(driver, getObjectPayment("Bento_Spicejet_Logo"), 3))
 	      {
@@ -287,11 +287,12 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		  else 
 		  {
 		  WebElement ele2=driver.findElement(getObjectPayment("Bento_Itn_Fare_Continue"));
-		  Thread.sleep(2000); 
-		  ele2.sendKeys(Keys.ARROW_DOWN); 
-		  Thread.sleep(3000);
+		  Thread.sleep(5000); 
+		  ele2.sendKeys(Keys.ARROW_DOWN); 		  	  
+		  Thread.sleep(2000);
 		  driver.executeScript("return arguments[0].scrollIntoView();", ele2);
 		  Thread.sleep(2000);
+		  elementVisible(driver, getObjectPayment("Bento_Itn_Fare_Continue"), 2);		  
 		  ele2.click(); 
 		  Reporter.log("Clicked on fare continue"); 
 		  }
@@ -695,15 +696,10 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 				{
 				smartClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
 				if(CardNumber=="4111") {	
-
+                          
+					safeClick(driver,getObjectPayment("Bento_select_cardsec"));
 					payUI_Enter_PaymentDetails(driver, "CC", "RAZORPAYDC","");
-					/*
-					safeClick(driver, getObjectPayment("Bento_Payment_Select_DC_Storedcard"));
-					Reporter.log("Clicked on SC");
-					Thread.sleep(1000);
-					safeClick(driver, getObjectPayment("Bento_Payment_SC_DC_CVV"));
-					safeType(driver, getObjectPayment("Bento_Payment_SC_DC_CVV"), "111");
-					Reporter.log("Entered CVV");*/
+					
 					safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
 					Reporter.log("Clicked on paynow");
 					textPresent(driver, "Please wait...", 2);
@@ -715,15 +711,8 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 				}
 				else if(CardNumber=="5241")
 				{
-					/*safeClick(driver, getObjectPayment("Bento_Payment_SC_Razropay"));
-						Reporter.log("Clicked on SC");
-						Thread.sleep(1000);
-						safeClick(driver, getObjectPayment("Bento_Payment_SC_Razropay_CVV"));
-						safeType(driver, getObjectPayment("Bento_Payment_SC_Razropay_CVV"), "123");
-						Reporter.log("Entered CVV");*/
-					
-
-						payUI_Enter_PaymentDetails(driver, "CC", "RAZORPAY","");
+					safeClick(driver,getObjectPayment("Bento_select_cardsec"));
+                     payUI_Enter_PaymentDetails(driver, "CC", "RAZORPAY","");
 						safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
 						Reporter.log("Clicked on paynow");
 						textPresent(driver, "Please wait...", 5);
@@ -873,15 +862,8 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		}
 		if (PaymentType == "partial_wallet") {
 			elementVisible(driver, getObjectPayment("Bento_Payment_Paynow"), 2);
-			safeClick(driver, getObjectPayment("Bento_Payment_Select_Storedcard1"));
-			Reporter.log("Clicked on SC");
-			safeClick(driver, getObjectPayment("Bento_Payment_Select_Storedcard"));
-			Reporter.log("Clicked on SC");
-			safeClick(driver, getObjectPayment("Bento_sc_amex_cvv"));
-			Reporter.log("Clicked on SC");
-			safeClick(driver, getObjectPayment("Bento_sc_amex_cvv"));
-			safeType(driver, getObjectPayment("Bento_sc_amex_cvv"), "0000");
-			Reporter.log("Entered CVV");
+			safeClick(driver,getObjectPayment("Bento_select_cardsec"));
+			 payUI_Enter_PaymentDetails(driver, "CC", "AMEX","");
 			safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
 			Reporter.log("Clicked on paynow");
 			textPresent_Log(driver, "Please wait...", 5);
@@ -903,10 +885,8 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 				smartClick(driver, getObjectPayment("Bento_Payment_Select_Storedcard"));
 				Reporter.log("Clicked on SC");
 			}
-		/*	safeClick(driver, getObjectPayment("Bento_select_sc"));
-			safeClick(driver, getObjectPayment("Bento_sc_cvv"));
-			safeType(driver, getObjectPayment("Bento_sc_cvv"), "111");
-		*/
+			
+			safeClick(driver,getObjectPayment("Bento_select_cardsec"));
 			payUI_Enter_PaymentDetails(driver, "CC", "MASTER","");
 			safeClick(driver, getObjectPayment("Bento_paynow"));
 			elementVisible(driver, getObjectPayment("Bento_card_password"), 5);

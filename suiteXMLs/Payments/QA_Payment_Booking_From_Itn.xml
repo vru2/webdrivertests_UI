@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Bento UI" parallel="tests" thread-count="3">
+<suite name="Bento UI" parallel="tests" thread-count="2">
 
 <listeners>
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -19,6 +19,11 @@
     <classes>
 	        <class name="paymentsBento_Itn.Bento_IN_Wallet_Booking"/> 
 	        <class name="paymentsBento_Itn.Bento_IN_PartialWallet_AMEX_Booking"/> 
+    </classes>
+</test>
+
+<test name="IN GV" preserve-order="true">
+    <classes>
 	       	<class name="paymentsBento_Itn.Bento_IN_Full_GV_Booking"/> 
     </classes>
 </test>
@@ -30,7 +35,7 @@
     </classes>
 </test>
 
-<test name="In Others" preserve-order="true" parallel="methods">
+<test name="In Others" preserve-order="true" >
     <classes>
 	        <class name="paymentsBento_Itn.Bento_IN_NB_ICICI_Booking"/> 
 	        <class name="paymentsBento_Itn.Bento_IN_DC_Booking"/> 
@@ -56,7 +61,7 @@
     </classes>
 </test>
 
-<test name="SA Domain" preserve-order="true" parallel="methods">
+<test name="SA Domain" preserve-order="true" >
     <classes>
             <class name="paymentsBento_Itn.Bento_SA_SC_Payfort_Booking"/>
             <class name="paymentsBento_Itn.Bento_SA_SC_Checkout_Booking"/>
@@ -64,7 +69,7 @@
     </classes>
 </test>
 
-<test name="KW Domain" preserve-order="true" parallel="methods" >
+<test name="KW Domain" preserve-order="true" >
     <classes>
             <class name="paymentsBento_Itn.Bento_KW_PayU_Booking"/>
             <class name="paymentsBento_Itn.Bento_KW_KNet_Booking"/>

@@ -45,14 +45,6 @@
     </classes>
 </test>
 
-<test name="In Others" preserve-order="true" >
-    <classes>
-	        <class name="paymentsBento_Itn.Bento_IN_NB_ICICI_Booking"/> 
-	        <class name="paymentsBento_Itn.Bento_IN_DC_Booking"/> 
-	        <class name="paymentsBento_Itn.Bento_IN_Storedcard_Razorpaycard_Booking"/> 
-    </classes>
-</test>
-
 <test name="AE Domain" preserve-order="true" >
     <classes>
       		<class name="paymentsBento_Itn.Bento_AE_ADCB_Validation"/>

@@ -56,7 +56,7 @@ public class API_Reward_ADCB_Pay extends API_PaymentCommon1
 		} 
 
 
-		@Test(priority = 5, alwaysRun = true)
+	/*	@Test(priority = 5, alwaysRun = true)
 		public void ADCBPayDuplicate ()throws Exception{
 		Reporter.log("------ Pay  Started cwith same trackID payment should not go through-------");
 		
@@ -64,5 +64,5 @@ public class API_Reward_ADCB_Pay extends API_PaymentCommon1
 		validation("adcb_pay2", resp);	
 
 		Reporter.log("------ Pay 2nd time validation Passed -------");
-	}
+		}*/
 }

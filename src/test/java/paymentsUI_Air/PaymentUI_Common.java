@@ -238,7 +238,6 @@ public class PaymentUI_Common extends PaymentNodeJS{
 			case "MASTER":
 			Enter_CC_Details(driver, platform.value("MasterCard_Number"), platform.value("MasterCard_Month"), platform.value("MasterCard_Year"), platform.value("MasterCard_CVV"));
 			break;	
-			
 			case "AMEX":
 			Enter_CC_Details(driver, platform.value("AmexCard_Number"), platform.value("AmexCard_Month_New"), platform.value("AmexCard_Year"), platform.value("AmexCard_CVV"));
 			break;			

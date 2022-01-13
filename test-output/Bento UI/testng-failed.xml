@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="tests" name="Failed suite [Bento UI]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="common.RemoveDuplicateResults"/>
+    <listener class-name="common.RetryListener"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+  </listeners>
+  <test thread-count="2" parallel="tests" name="IN Coupon(failed)">
+    <classes>
+      <class name="paymentsBento_Itn.Bento_IN_Coupon_SC_PayU_Booking">
+        <methods>
+          <include name="startSelenium"/>
+          <include name="bento_coupon"/>
+          <include name="afterMethod"/>
+          <include name="closeSelenium"/>
+        </methods>
+      </class> <!-- paymentsBento_Itn.Bento_IN_Coupon_SC_PayU_Booking -->
+    </classes>
+  </test> <!-- IN Coupon(failed) -->
+  <test thread-count="2" parallel="methods" name="In Others(failed)">
+    <classes>
+      <class name="paymentsBento_Itn.Bento_IN_EMI_Razorpay">
+        <methods>
+          <include name="bento_EMI"/>
+          <include name="afterMethod"/>
+          <include name="startSelenium"/>
+          <include name="closeSelenium"/>
+        </methods>
+      </class> <!-- paymentsBento_Itn.Bento_IN_EMI_Razorpay -->
+      <class name="paymentsBento_Itn.Bento_IN_NB_ICICI_Booking">
+        <methods>
+          <include name="bento_nb"/>
+          <include name="setUp"/>
+          <include name="afterMethod"/>
+          <include name="closeSelenium"/>
+        </methods>
+      </class> <!-- paymentsBento_Itn.Bento_IN_NB_ICICI_Booking -->
+      <class name="paymentsBento_Itn.Bento_IN_DC_Booking">
+        <methods>
+          <include name="closeSelenium"/>
+          <include name="afterMethod"/>
+          <include name="bento_dc"/>
+          <include name="startSelenium"/>
+        </methods>
+      </class> <!-- paymentsBento_Itn.Bento_IN_DC_Booking -->
+      <class name="paymentsBento_Itn.Bento_IN_Amex_Booking">
+        <methods>
+          <include name="closeSelenium"/>
+          <include name="bento_AMEX"/>
+          <include name="startSelenium"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- paymentsBento_Itn.Bento_IN_Amex_Booking -->
+      <class name="paymentsBento_Itn.Bento_IN_Storedcard_Razorpaycard_Booking">
+        <methods>
+          <include name="bento_sc_razorpay"/>
+          <include name="startSelenium"/>
+          <include name="closeSelenium"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- paymentsBento_Itn.Bento_IN_Storedcard_Razorpaycard_Booking -->
+    </classes>
+  </test> <!-- In Others(failed) -->
+  <test thread-count="2" parallel="tests" name="IN Wallet GV(failed)">
+    <classes>
+      <class name="paymentsBento_Itn.Bento_IN_Wallet_Booking">
+        <methods>
+          <include name="bento_wallet"/>
+          <include name="afterMethod"/>
+          <include name="setUp"/>
+          <include name="closeSelenium"/>
+        </methods>
+      </class> <!-- paymentsBento_Itn.Bento_IN_Wallet_Booking -->
+      <class name="paymentsBento_Itn.Bento_IN_PartialWallet_AMEX_Booking">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="closeSelenium"/>
+          <include name="startSelenium"/>
+          <include name="bento_partial_wallet"/>
+        </methods>
+      </class> <!-- paymentsBento_Itn.Bento_IN_PartialWallet_AMEX_Booking -->
+    </classes>
+  </test> <!-- IN Wallet GV(failed) -->
+  <test thread-count="2" parallel="tests" name="IN GV(failed)">
+    <classes>
+      <class name="paymentsBento_Itn.Bento_IN_Full_GV_Booking">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="startSelenium"/>
+          <include name="bento_gv"/>
+          <include name="closeSelenium"/>
+        </methods>
+      </class> <!-- paymentsBento_Itn.Bento_IN_Full_GV_Booking -->
+    </classes>
+  </test> <!-- IN GV(failed) -->
+  <test thread-count="2" parallel="tests" name="IN UPI(failed)">
+    <classes>
+      <class name="paymentsBento_Itn.Bento_IN_UPI_Scan_Validation">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="setUp"/>
+          <include name="closeSelenium"/>
+          <include name="bento_upi_Scan"/>
+        </methods>
+      </class> <!-- paymentsBento_Itn.Bento_IN_UPI_Scan_Validation -->
+      <class name="paymentsBento_Itn.Bento_IN_UPI_Booking">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="setUp"/>
+          <include name="closeSelenium"/>
+          <include name="bento_upi"/>
+        </methods>
+      </class> <!-- paymentsBento_Itn.Bento_IN_UPI_Booking -->
+      <class name="paymentsBento_Itn.Bento_IN_Phonepe_Validation">
+        <methods>
+          <include name="bento_nb"/>
+          <include name="afterMethod"/>
+          <include name="setUp"/>
+          <include name="closeSelenium"/>
+        </methods>
+      </class> <!-- paymentsBento_Itn.Bento_IN_Phonepe_Validation -->
+    </classes>
+  </test> <!-- IN UPI(failed) -->
+  <test thread-count="2" parallel="tests" name="AE Domain(failed)">
+    <classes>
+      <class name="paymentsBento_Itn.Bento_AE_SC_Noon_Booking">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="setUp"/>
+          <include name="bento_ae_booking"/>
+          <include name="closeSelenium"/>
+        </methods>
+      </class> <!-- paymentsBento_Itn.Bento_AE_SC_Noon_Booking -->
+      <class name="paymentsBento_Itn.Bento_AE_SC_Payfort_Booking">
+        <methods>
+          <include name="bento_ae_booking"/>
+          <include name="afterMethod"/>
+          <include name="setUp"/>
+          <include name="closeSelenium"/>
+        </methods>
+      </class> <!-- paymentsBento_Itn.Bento_AE_SC_Payfort_Booking -->
+      <class name="paymentsBento_Itn.Bento_AE_ADCB_Validation">
+        <methods>
+          <include name="bento_ae_booking"/>
+          <include name="afterMethod"/>
+          <include name="setUp"/>
+          <include name="closeSelenium"/>
+        </methods>
+      </class> <!-- paymentsBento_Itn.Bento_AE_ADCB_Validation -->
+      <class name="paymentsBento_Itn.Bento_AE_PayU_Booking">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="setUp"/>
+          <include name="bento_ae_booking"/>
+          <include name="closeSelenium"/>
+        </methods>
+      </class> <!-- paymentsBento_Itn.Bento_AE_PayU_Booking -->
+    </classes>
+  </test> <!-- AE Domain(failed) -->
+  <test thread-count="2" parallel="tests" name="BH ME OM QA Domain(failed)">
+    <classes>
+      <class name="paymentsBento_Itn.Bento_QA_PayU_Booking">
+        <methods>
+          <include name="bento_qa_booking"/>
+          <include name="closeSelenium"/>
+          <include name="afterMethod"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- paymentsBento_Itn.Bento_QA_PayU_Booking -->
+      <class name="paymentsBento_Itn.Bento_ME_PayU_Booking">
+        <methods>
+          <include name="closeSelenium"/>
+          <include name="bento_me_booking"/>
+          <include name="afterMethod"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- paymentsBento_Itn.Bento_ME_PayU_Booking -->
+      <class name="paymentsBento_Itn.Bento_BH_PayU_Booking">
+        <methods>
+          <include name="bento_bh_booking"/>
+          <include name="afterMethod"/>
+          <include name="setUp"/>
+          <include name="closeSelenium"/>
+        </methods>
+      </class> <!-- paymentsBento_Itn.Bento_BH_PayU_Booking -->
+      <class name="paymentsBento_Itn.Bento_OM_PayU_Booking">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="setUp"/>
+          <include name="closeSelenium"/>
+          <include name="bento_om_booking"/>
+        </methods>
+      </class> <!-- paymentsBento_Itn.Bento_OM_PayU_Booking -->
+    </classes>
+  </test> <!-- BH ME OM QA Domain(failed) -->
+  <test thread-count="2" parallel="tests" name="SA Domain(failed)">
+    <classes>
+      <class name="paymentsBento_Itn.Bento_SA_SC_Checkout_Booking">
+        <methods>
+          <include name="bento_sa_checkout_booking"/>
+          <include name="closeSelenium"/>
+          <include name="afterMethod"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- paymentsBento_Itn.Bento_SA_SC_Checkout_Booking -->
+      <class name="paymentsBento_Itn.Bento_SA_SC_Payfort_Booking">
+        <methods>
+          <include name="bento_sa_payfort_booking"/>
+          <include name="afterMethod"/>
+          <include name="setUp"/>
+          <include name="closeSelenium"/>
+        </methods>
+      </class> <!-- paymentsBento_Itn.Bento_SA_SC_Payfort_Booking -->
+      <class name="paymentsBento_Itn.Bento_SA_PayU_Booking">
+        <methods>
+          <include name="bento_sa_booking"/>
+          <include name="afterMethod"/>
+          <include name="setUp"/>
+          <include name="closeSelenium"/>
+        </methods>
+      </class> <!-- paymentsBento_Itn.Bento_SA_PayU_Booking -->
+    </classes>
+  </test> <!-- SA Domain(failed) -->
+  <test thread-count="2" parallel="tests" name="KW Domain(failed)">
+    <classes>
+      <class name="paymentsBento_Itn.Bento_KW_PayU_Booking">
+        <methods>
+          <include name="bento_kw_booking"/>
+          <include name="afterMethod"/>
+          <include name="setUp"/>
+          <include name="closeSelenium"/>
+        </methods>
+      </class> <!-- paymentsBento_Itn.Bento_KW_PayU_Booking -->
+      <class name="paymentsBento_Itn.Bento_KW_KNet_Booking">
+        <methods>
+          <include name="bento_kw_booking"/>
+          <include name="afterMethod"/>
+          <include name="setUp"/>
+          <include name="closeSelenium"/>
+        </methods>
+      </class> <!-- paymentsBento_Itn.Bento_KW_KNet_Booking -->
+    </classes>
+  </test> <!-- KW Domain(failed) -->
+</suite> <!-- Failed suite [Bento UI] -->

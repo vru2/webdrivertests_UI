@@ -45,7 +45,6 @@
     </classes>
 </test>
 
-<<<<<<< HEAD
 <test name="In Others" preserve-order="true" >
     <classes>
 	        <class name="paymentsBento_Itn.Bento_IN_NB_ICICI_Booking"/> 
@@ -54,8 +53,6 @@
     </classes>
 </test>
 
-=======
->>>>>>> bf120c96eb8da14948fcfc734c668393e8bc2512
 <test name="AE Domain" preserve-order="true" >
     <classes>
       		<class name="paymentsBento_Itn.Bento_AE_ADCB_Validation"/>

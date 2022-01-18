@@ -8,7 +8,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Bento_IN_InvalidCoupoon_NB_ICICI_Booking extends PaymentsBento_Itn_Common {
+public class Bento_IN_InvalidCoupon_NB_ICICI_Booking extends PaymentsBento_Itn_Common {
 
 	@BeforeClass
 	public void setUp() throws Exception {

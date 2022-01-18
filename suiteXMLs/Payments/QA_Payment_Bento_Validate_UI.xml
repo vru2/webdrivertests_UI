@@ -38,10 +38,10 @@
     </classes>
 </test>
 
-<test name="Image Validation AE" preserve-order="true" >
-    <classes><!-- 
-      <class name="paymentsBento_Itn.Validation_Images_AE"/> 	        
-      <class name="paymentsBento_Itn.Validation_Text_AE_Arabic"/> -->
+<test name="AE Images and links" preserve-order="true" >
+    <classes> 
+      <class name="paymentsBento_Itn.Bento_Validation_AE_Images_Links"/> 	        
+      <!--<class name="paymentsBento_Itn.Validation_Text_AE_Arabic"/> -->
     </classes>
 </test>
 
@@ -52,17 +52,10 @@
     </classes>
 </test>
 
-<test name="Coupon" preserve-order="true" >
-    <classes><!-- 
-      <class name="paymentsBento_Itn.Coupon_Invalid"/> -->
-    </classes>
-</test>
-
 <test name="ADCB" preserve-order="true" >
     <classes><!-- 
       <class name="paymentsBento_Itn.ADCB_AE"/>    -->
    </classes>
 </test>
-
 
 </suite> 

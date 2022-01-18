@@ -22,7 +22,6 @@ public class Bento_Validation_AE_Text extends PaymentsBento_Itn_Common {
 		Reporter.log(aeurl+searchurl);
 		Searchpagebook(driver,"","","");
 		noncom_itnpage(driver,"","ae");	
-		Thread.sleep(5000);
 		bento_Validation_Text(driver, "CC", "");
 	}
 	

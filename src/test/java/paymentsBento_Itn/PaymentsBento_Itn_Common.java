@@ -366,7 +366,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			  safeClick(driver,getObjectPayment("Bento_Itn_GV_Apply"));
 			  textPresent_Log(driver,"has been redeemed for this booking",3);
 			  Reporter.log("GV applied Successfully"); 
-			  } 
+		} 
 		else if(gv_coupon=="Coupon") {
 			  WebElement ele4 =driver.findElement(getObjectPayment("Bento_Itn_GV_Number"));
 			  ele4.sendKeys(Keys.PAGE_DOWN); 
@@ -376,9 +376,25 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			  Reporter.log("Entered Coupon details");
 			  smartClick(driver,getObjectPayment("Bento_Itn_Coupon_Apply"));
 			  Thread.sleep(2000);
-		if(textPresent_Log(driver,"Great! You just saved",3)) 
-		  { 
-		    Reporter.log("Successfully applied coupon"); 
+		if(!textPresent_Log(driver,"Great! You just saved",3)) 
+		  {			
+			Reporter.log("Coupon not working"); 
+			Assert.assertTrue(false);
+		  }
+		}
+		else if(gv_coupon=="DOMCC") {
+			  WebElement ele4 =driver.findElement(getObjectPayment("Bento_Itn_GV_Number"));
+			  ele4.sendKeys(Keys.PAGE_DOWN); 
+			  Thread.sleep(1000); 
+			  ele4.sendKeys("DOMCC");
+			  Thread.sleep(1000); 
+			  Reporter.log("Entered Coupon details");
+			  smartClick(driver,getObjectPayment("Bento_Itn_Coupon_Apply"));
+			  Thread.sleep(2000);
+		if(!textPresent_Log(driver,"Great! You just saved",3)) 
+		  {			
+			Reporter.log("Coupon not working"); 
+			Assert.assertTrue(false);
 		  }
 		}
 	}
@@ -550,7 +566,6 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			}
 		else if(textPresent(driver,"Sorry, our servers are stumped with your request",1)||textPresent(driver,"Flight not available",1))
 			{
-			System.out.println("Booking failed due to itn page issue");
 			Reporter.log("Booking failed due to itn page issue");
 			assertTrue(false);
 			}
@@ -729,26 +744,41 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 				Thread.sleep(3000);
 			}
 		}
-		if (PaymentType == "nb") {
+		if (PaymentType == "NB") {
 			if (textPresent(driver, "Cleartrip wallet", 2)) {
 				
 				safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
 				Reporter.log("Deselected wallet");
 				Thread.sleep(1000);
-
-				bento_Select_PaymentType(driver, "NB");
-				
-				//safeClick(driver, getObjectPayment("Bento_Payment_NB"));
+				bento_Select_PaymentType(driver, "NB");	
 				Reporter.log("Clicked on NB");
 			} else {
 				Thread.sleep(1000);
-				safeClick(driver, getObjectPayment("Bento_Payment_NB"));
+				bento_Select_PaymentType(driver, "NB");	
 				Reporter.log("Clicked on NB");
 			}
 			Thread.sleep(1000);
 			safeClick(driver, getObjectPayment("Bento_Payment_NB_ICIC"));
 			Reporter.log("Selected ICIC Bank");
 			safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
+			
+			// Invalid Coupon Validation
+
+			textPresent_Log(driver, "Coupon not applicable", 5);
+			elementPresent_log(driver, getObjectPayment("Bento_Pay_Coupon_Popup_Close_Btn"), "invaid coupon Pop Up not displayed",	1);
+			safeClick(driver, By.xpath("//button[2]")); // Clicking on Change paymentMode
+			
+			Thread.sleep(2000);
+			textNotPresent_Log(driver, "Coupon not applicable", 5);
+			bento_Select_PaymentType(driver, "CC");			
+			bento_Select_PaymentType(driver, "NB");
+			safeClick(driver, getObjectPayment("Bento_Payment_NB_ICIC"));
+			safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
+			textPresent_Log(driver, "Coupon not applicable", 5);
+			
+			
+			elementPresent_log(driver, getObjectPayment("Bento_Pay_Coupon_Popup_Close_Btn"), "",	1);
+			safeClick(driver, By.xpath("//form/button")); // Clicking on Continue without coupon paymentMode
 			Reporter.log("Clicked on paynow");
 			textPresent_Log(driver, "Please wait...", 2);
 			textPresent_Log(driver, "Welcome to Razorpay Software Private Ltd Bank", 5);
@@ -894,11 +924,6 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			}else Reporter.log("Total contain 0 rs");
 
 			Assert.assertEquals("Complete booking", getText(driver, getObjectPayment("Bento_Pay_Button")));
-			
-			
-			
-			
-			
 			safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
 			Reporter.log("Clicked on paynow");
 			if(!PaymentType.contains("GV")) {
@@ -937,7 +962,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		if (PaymentType == "partial_wallet") {
 			elementVisible(driver, getObjectPayment("Bento_Payment_Paynow"), 2);
 			safeClick(driver,getObjectPayment("Bento_select_cardsec"));
-			 payUI_Enter_PaymentDetails(driver, "CC", "AMEX","");
+			payUI_Enter_PaymentDetails(driver, "CC", "AMEX","");
 			safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
 			Reporter.log("Clicked on paynow");
 			textPresent_Log(driver, "Please wait...", 5);
@@ -1024,27 +1049,35 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 				  Thread.sleep(1000);
 				  safeSelectByIndex(driver,getObjectPayment("Bento_ae_adcb_expiryyear"),4);
 				  Reporter.log("Selected on ADCB card year");
-				  System.out.println("Selected on ADCB card year");
 				  safeClick(driver,getObjectPayment("Bento_ae_adcb_name"));
 				  safeType(driver,getObjectPayment("Bento_ae_adcb_name"),"test");
 				  Reporter.log("Entered on ADCB card name");
-				  System.out.println("Entered on ADCB card name");
 				  safeClick(driver,getObjectPayment("Bento_ae_adcb_cvv"));
 				  safeType(driver,getObjectPayment("Bento_ae_adcb_cvv"),"123");
 				  Reporter.log("Entered on ADCB card cvv");
-				  System.out.println("Entered on ADCB card cvv");
 				  safeClick(driver,getObjectPayment("Bento_ae_adcb_checkbalance"));
-				  textPresent_Log(driver,"You will redeem AED",5);
+				  textPresent_Log(driver,"Redeem ADCB TouchPoints",1);
+				  textPresent_Log(driver,"Available balance",1);
+				  textPresent_Log(driver,"A minimum amount of AED  50 must be redeemed",1);
+				  textPresent_Log(driver,"You will redeem AED",1);
+				  textPresent_Log(driver,"Your ADCB card details",1);
+				  textPresent_Log(driver,"You will redeem AED",1);
+				  elementPresent_log(driver, By.xpath("//a[contains(@href, 'https://adcbtouchpoints.com/tnc')]"), "ADCB View T&C", 1);
+				  String ADCB_Card = getText(driver, By.cssSelector("p.fs-3.c-neutral-900"));
+				  if(!ADCB_Card.contains("5264 XXXX XXXX 0083")) {
+					  Reporter.log("5264 XXXX XXXX 0083 card details not shown after Check Balance");
+					  Assert.assertTrue(false);
+				  }
+				  
+				  
+
 				  Reporter.log("Verified ADCB balance");
-				  System.out.println("Verified ADCB balance");
 				  safeClick(driver,getObjectPayment("Bento_ae_adcb_pay"));
 				  Thread.sleep(1000);
 				  elementVisible(driver,getObjectPayment("Bento_ae_adcb_otp"),5);
 				  textPresent_Log(driver,"Enter one time password",2);
 				  textPresent_Log(driver,"You pay AED",2);
-				  Reporter.log("Verified ADCB flow");
-				  System.out.println("Verified ADCB flow");		  
-				  
+				  Reporter.log("Verified ADCB flow");				  
 				}
 				else
 				{

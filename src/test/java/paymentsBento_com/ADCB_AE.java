@@ -24,8 +24,8 @@ public class ADCB_AE extends PaymentUI_Common_Bento{
 		textPresent_Log(driver, "Card holder Name", 1);
 		textPresent_Log(driver, "CVV", 1);
 		validate_Currency(driver, "", "AED");
-		payUI_Enter_PaymentDetails(driver, "ADCB", "","ADCBPARTIAL");
-		}
+		payUI_Enter_PaymentDetails(driver, "ADCB", "","");
+	}
 
 	@BeforeClass
 	public void setUp() throws Exception {

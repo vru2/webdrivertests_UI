@@ -26,18 +26,18 @@ public class Bento_IN_PartialWallet_AMEX_Booking extends PaymentsBento_Itn_Commo
 		Reporter.log(resp.asString());
 		driver.manage().deleteAllCookies();
 		driver.navigate().to(qa2url+searchurl);
-	    System.out.println(qa2url+searchurl);
+		System.out.println(qa2url+searchurl);
 	    Reporter.log(qa2url+searchurl);
 		Searchpagebook(driver,"Partial","com","");
 	    book_itnnew(driver,"");
-		paymentPage(driver,"partial_wallet","","","","");    
+		paymentPage(driver,"partial_wallet","","","","");
 	}
 	
 	@AfterClass
 	public void closeSelenium() throws Exception {
 	 	browserClose(driver);
 	}
-
+	
 	@AfterMethod(alwaysRun = true)
 	public void afterMethod(ITestResult _result) throws Exception {
 		afterMethod(driver, _result);

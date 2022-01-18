@@ -307,10 +307,37 @@ public class PaymentUI_Common extends PaymentNodeJS{
 		}
 		}
 }
-	public void payUI_Select_ADCB(RemoteWebDriver driver, String BankName, String BookingType) throws Exception {		
-		elementVisible(driver, getObjectPayment("PaymentPage_CreditCard_Number"), 5);
-		textPresent_Log(driver, "Enter ADCB card details", 1);		
+	public void payUI_Select_ADCB(RemoteWebDriver driver, String BankName, String BookingType) throws Exception {
+		bento_Select_PaymentType(driver, "ADCB");
+		elementVisible(driver, getObjectPayment("PaymentPage_CreditCard_Number"), 20);
+		textPresent(driver, "Pay to complete your booking", 1);	
+		textPresent(driver, "Enter ADCB card details", 1);		
+		textPresent_Log(driver, "ADCB card number", 1);
+		textPresent_Log(driver, "Expiry date", 1);
+		textPresent_Log(driver, "Card holder Name", 1);
+		textPresent_Log(driver, "CVV", 1);
+		validate_Currency(driver, "", "AED");		
 		Reporter.log("Card Details +\n"+ platform.value("ADCBCard_Number") +"\n " + platform.value("ADCBCard_Expiry_Month")  +" " + platform.value("ADCBCard_Expiry_Year") +" " + platform.value("ADCBCard_CVV"));
+		safeType(driver, getObjectPayment("PaymentPage_ADCB_Number"), "5264083966400011");
+		safeClick(driver, getObjectPayment("PaymentPage_ADCB_EXP_Month"));
+		safeSelect(driver, getObjectPayment("PaymentPage_ADCB_EXP_Month"), platform.value("ADCBCard_Expiry_Month"));
+		safeClick(driver, getObjectPayment("PaymentPage_ADCB_EXP_Year"));
+		safeSelect(driver, getObjectPayment("PaymentPage_ADCB_EXP_Year"), platform.value("ADCBCard_Expiry_Year"));
+		safeType(driver, getObjectPayment("PaymentPage_ADCB_CardName"), "test");
+		safeType(driver, getObjectPayment("PaymentPage_ADCB_CVV"), platform.value("ADCBCard_CVV"));
+		String CheckBalance = getText(driver, getObjectPayment("PaymentPage_ADCB_CheckBlance_Btn"));	
+		Assert.assertEquals(CheckBalance, "Check balance");		 
+		safeClick(driver, getObjectPayment("PaymentPage_ADCB_CheckBlance_Btn"));	
+		Thread.sleep(5000);
+		Reporter.log("Check balance is Clicked");
+		if(!textPresent(driver, "You have provided incorrect card details", 10)) {
+			Reporter.log("You have provided incorrect card details message not displayed");
+			Assert.assertTrue(false);
+		}
+		if(!textPresent(driver, "Please provide valid ADCB card details to redeem TouchPoints", 1)) {
+			Reporter.log("Please provide valid ADCB card details to redeem TouchPoints message not displayed");
+			Assert.assertTrue(false);
+		}
 		safeType(driver, getObjectPayment("PaymentPage_ADCB_Number"), platform.value("ADCBCard_Number"));
 		safeClick(driver, getObjectPayment("PaymentPage_ADCB_EXP_Month"));
 		safeSelect(driver, getObjectPayment("PaymentPage_ADCB_EXP_Month"), platform.value("ADCBCard_Expiry_Month"));
@@ -318,56 +345,74 @@ public class PaymentUI_Common extends PaymentNodeJS{
 		safeSelect(driver, getObjectPayment("PaymentPage_ADCB_EXP_Year"), platform.value("ADCBCard_Expiry_Year"));
 		safeType(driver, getObjectPayment("PaymentPage_ADCB_CardName"), "test");
 		safeType(driver, getObjectPayment("PaymentPage_ADCB_CVV"), platform.value("ADCBCard_CVV"));
-		safeClick(driver, getObjectPayment("PaymentPage_ADCB_CheckBlance_Btn"));		
-		Thread.sleep(5000);
-		String CheckBalance = getText(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
-		Assert.assertEquals(CheckBalance, "Check TouchPoint balance");		 
-		Reporter.log("Check balance is Clicked");
-		if(textPresent(driver, "You have provided incorrect card details", 10)) {
-			Reporter.log("You have provided incorrect card details");
-			Assert.assertTrue(false);
-		}
-		if(textPresent(driver, "Unable to process your request. Please try again later", 1)) {
-			Reporter.log("Unable to process your request. Please try again later");
-			Assert.assertTrue(false);
-		}
+		safeClick(driver, getObjectPayment("PaymentPage_ADCB_CheckBlance_Btn"));
+		textPresent_Log(driver,"You will redeem AED",5);
+		String MakePay = getText(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
+		Assert.assertEquals(MakePay, "Redeem");		
+		textPresent_Log(driver,"Your ADCB card details",1);
+		textPresent_Log(driver,"Redeem ADCB TouchPoints",1);
+		textPresent_Log(driver,"Available balance",1);
+		textPresent_Log(driver,"Amount to redeem",1);
+		textPresent_Log(driver,"A minimum amount of AED",1);
+		textPresent_Log(driver,"50 must be redeemed",1);
+		textPresent_Log(driver, "ADCB TouchPoints", 1);
+		elementPresent_log(driver, By.xpath("//a[contains(@href, 'https://adcbtouchpoints.com/tnc')]"), "ADCB View T&C", 1);
 		elementVisible(driver, getObjectPayment("PaymentPage_ADCB_Redeem_Amount_TextBox"), 10);
-		textPresent_Log(driver, "A minimum amount of AED", 1);
-		textPresent_Log(driver, "Available balance", 1);
-		textPresent_Log(driver, "Balance TouchPoints", 1);
-		textPresent_Log(driver, "Amount to redeem", 1);
-		textPresent_Log(driver, "A minimum amount of AED", 1);
-		textPresent_Log(driver, "50 must be redeemed", 1);		 
-		textPresent_Log(driver, "Total payable", 1);
-		textPresent_Log(driver, "Amount redeemed", 1);
-		textPresent_Log(driver, "Balance payable", 1);
+		String TotalAmt = getValue(driver, getObjectPayment("PaymentPage_ADCB_Redeem_Amount_TextBox"));
+		Thread.sleep(5000);
+		safeType(driver, getObjectPayment("PaymentPage_ADCB_Redeem_Amount_TextBox"), "40");
+		textPresent_Log(driver,"The amount is insufficient for redemption", 5);
+		safeType(driver, getObjectPayment("PaymentPage_ADCB_Redeem_Amount_TextBox"), TotalAmt);
+		textPresent_Log(driver,"You will redeem AED", 5);		
 		if(BookingType.contains("ADCBPARTIAL")) {
 			safeType(driver, getObjectPayment("PaymentPage_ADCB_Redeem_Amount_TextBox"), "AED 50");
 			elementVisible(driver, By.xpath("//li[3]/p[2]"),20);
 			String AED50 = getText(driver, By.xpath("//li[3]/p[2]"));
 			Assert.assertEquals(AED50, "AED  50");
 		}
-		if(BookingType.contains("ADCBFULL")) {		
-			String Total = getText(driver, By.cssSelector("span.fs-6.fw-700"));
-			String Balance = getText(driver, By.xpath("//li[5]/p[2]"));
-			Assert.assertEquals(Total, "AED  0");
-			Assert.assertEquals(Balance, "AED  0");
-			String RedeemBtn = getText(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
-			Assert.assertEquals(RedeemBtn, "Redeem");			
-			safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));		
-			Reporter.log("Redeem button is Clicked");
-			elementPresent_log(driver, By.id("OTP"), "OTP", 20);
-			textPresent_Log(driver, "Enter One-Time Password", 1);
-			textPresent_Log(driver, "Booking amount", 1);
-			textPresent_Log(driver, "Enter the OTP sent to your registered mobile number", 1);
-			textPresent_Log(driver, "Haven't received the OTP?", 1);
-			elementPresent_log(driver, By.linkText("Resend"), "resend OTP link", 1);
-			safeType(driver, By.id("OTP"), "101010");
-			elementPresent_log(driver, By.xpath("//form/button"), "Confirm OTP", 2);
-			Reporter.log("Confirm OTP button is displayed");
-			String ConfirmBt = getText(driver, By.xpath("//form/button"));
-			Assert.assertEquals(ConfirmBt, "Confirm OTP");		
-		}
+		String ADCB_Card = getText(driver, By.cssSelector("p.fs-3.c-neutral-900"));
+		if(!ADCB_Card.contains("5264 XXXX XXXX 0083")) {
+			Reporter.log("5264 XXXX XXXX 0083 card details not shown after check balance");
+			Assert.assertTrue(false);
+		}		
+		
+		//-------- Checking Full Payment in ADCB-----------------------//
+		safeClick(driver, By.cssSelector("span.c-secondary-500.fs-3.c-pointer"));
+		textPresent_Log(driver, "Enter ADCB card details", 5);
+		safeType(driver, getObjectPayment("PaymentPage_ADCB_Number"), platform.value("ADCBCard_Number"));
+		safeClick(driver, getObjectPayment("PaymentPage_ADCB_EXP_Month"));
+		safeSelect(driver, getObjectPayment("PaymentPage_ADCB_EXP_Month"), platform.value("ADCBCard_Expiry_Month"));
+		safeClick(driver, getObjectPayment("PaymentPage_ADCB_EXP_Year"));
+		safeSelect(driver, getObjectPayment("PaymentPage_ADCB_EXP_Year"), platform.value("ADCBCard_Expiry_Year"));
+		safeType(driver, getObjectPayment("PaymentPage_ADCB_CardName"), "test");
+		safeType(driver, getObjectPayment("PaymentPage_ADCB_CVV"), platform.value("ADCBCard_CVV"));
+		safeClick(driver, getObjectPayment("PaymentPage_ADCB_CheckBlance_Btn"));
+		textPresent_Log(driver,"You will redeem AED",5);		
+		String Total = getText(driver, By.cssSelector("span.fs-6.fw-700"));
+		Assert.assertEquals(Total, "AED  0");
+		String RedeemBtn = getText(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
+		Assert.assertEquals(RedeemBtn, "Redeem");			
+		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));		
+		Reporter.log("Redeem button is Clicked");
+		elementPresent_log(driver, By.id("OTP"), "OTP", 20);
+		textPresent_Log(driver, "Enter one time password", 1);
+		textPresent_Log(driver, "Enter OTP sent to your registered mobile number", 1);
+		textPresent_Log(driver, "OTP has been successfully sent to above mobile number", 5);
+		safeClick(driver, By.id("OTP"));
+		textPresent_Log(driver, "Haven't received OTP?", 5);
+		elementPresent_log(driver, By.xpath("//div[4]/p/span"), "resend OTP link", 5);
+		safeType(driver, By.id("OTP"), "101010");
+		elementPresent_log(driver, By.xpath("//form/button"), "Confirm OTP", 2);
+		Reporter.log("Confirm OTP button is displayed");
+		String ConfirmBt = getText(driver, By.xpath("//form/button"));
+		Assert.assertEquals(ConfirmBt, "Confirm OTP");
+		safeClick(driver, By.cssSelector("svg.c-neutral-900.c-pointer"));// click on close popup
+
+		//-------- Checking Partial Payment in ADCB-----------------------//
+		
+		safeType(driver, getObjectPayment("PaymentPage_ADCB_Redeem_Amount_TextBox"), "AED 50");
+		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));		
+		textPresent_Log(driver, "Choose a payment option", 10);		// payu bank page
 		}
 	
 	public void payUI_Select_KNET(RemoteWebDriver driver, String BankName, String BookingType) throws Exception {		

@@ -1,7 +1,5 @@
 package paymentsBento_Itn;
 
-import static org.testng.Assert.assertTrue;
-
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.Reporter;
@@ -18,17 +16,15 @@ public class Bento_AE_ADCB_Validation extends PaymentsBento_Itn_Common {
 	}
 
 	@Test
-	public void bento_ae_booking() throws Exception {
+	public void bento_ae_ADCB_Validate() throws Exception {
 		driver.manage().deleteAllCookies();
-		/*
-		 * driver.navigate().to(aeurl); Thread.sleep(2000);
-		 */
 		driver.navigate().to(aeurl+searchurl);
 		System.out.println(aeurl+searchurl);
 		Reporter.log(aeurl+searchurl);
 		Searchpagebook(driver,"","","");
 		noncom_itnpage(driver,"","ae");
-		paymentPage(driver,"AE-SC","ADCB","", "", "");
+		//paymentPage(driver,"AE-SC","ADCB","", "", "");		
+		payUI_Enter_PaymentDetails(driver, "ADCB", "",""); //ADCB validation 
 	 }
 
  	@AfterClass

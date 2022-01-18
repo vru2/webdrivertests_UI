@@ -8,7 +8,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Bento_IN_NB_ICICI_Booking extends PaymentsBento_Itn_Common {
+public class Bento_IN_InvalidCoupoon_NB_ICICI_Booking extends PaymentsBento_Itn_Common {
 
 	@BeforeClass
 	public void setUp() throws Exception {
@@ -22,8 +22,8 @@ public class Bento_IN_NB_ICICI_Booking extends PaymentsBento_Itn_Common {
 		System.out.println(qa2url+searchurl);
 		Reporter.log(qa2url+searchurl);
 		Searchpagebook(driver,"","com","");
-	    book_itnnew(driver,"");
-		paymentPage(driver,"nb","","","","");
+	    book_itnnew(driver,"DOMCC");
+		paymentPage(driver,"NB","","","","");// Invalid Coupon Validation
 	}
 	
 	@AfterClass

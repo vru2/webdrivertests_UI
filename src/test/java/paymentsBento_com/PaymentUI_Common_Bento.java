@@ -418,8 +418,6 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 					Assert.assertTrue(false);
 				}
 			}
-			
-			
 			else {
 				String title = driver.getTitle();
 				if(!title.contains("Cleartrip | Pay securely")) {
@@ -919,6 +917,8 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 				elementPresent_log(driver, getObjectPayment("Bento_Pay_BookingSummary_Traveller_Icon"), "Traveller", 1);				
 			}
 			else if(PaymentType.equalsIgnoreCase("ADCB")) {
+				String  handle= driver.getWindowHandle();
+				driver.switchTo().window(handle);
 				bento_Select_PaymentType(driver, "ADCB");
 				safeClick(driver, getObjectPayment("Bento_Pay_ADCB_Logo"));
 				Thread.sleep(5000);
@@ -931,8 +931,8 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 					Reporter.log("ADCBUrl Image URL : "+ADCBUrl);
 					Assert.assertTrue(false);
 				}
-
-				System.out.println("ADCBUrl Image URL : "+ADCBUrl);
+				Reporter.log("ADCBUrl Image URL : "+ADCBUrl);
+				driver.switchTo().window(handle);
 			}
 		
 	}
@@ -957,7 +957,14 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 			//Assert.assertTrue(false);
 		}
 		}
-		else { if(!BookingTerms.contains("qa2.cleartrip.com/terms")) { 
+		else if (Domain.equals("AE")) {
+		if(!BookingTerms.contains("qa2.cleartrip.ae/terms")) { 
+			Reporter.log("BookingTerms URL : "+BookingTerms);
+			Assert.assertTrue(false);
+		}
+		}
+		else {
+			if(!BookingTerms.contains("qa2.cleartrip.com/terms")) { 
 			Reporter.log("BookingTerms URL : "+BookingTerms);
 			Assert.assertTrue(false);
 		}
@@ -1010,13 +1017,19 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 			}
 			textPresent_Log(driver, "The agreement between the client and Flyin.com", 5);
 		}
+		else if(Domain.equals("AE")) {
+			if(!BookingPolicyUrl.contains("qa2.cleartrip.ae/flights/booking-policies")) {
+				Reporter.log("BookingPolicyUrl URL : "+BookingPolicyUrl);
+				Assert.assertTrue(false);
+			}
+		}
 		else {
 		if(!BookingPolicyUrl.contains("qa2.cleartrip.com/flights/booking-policies")) {
 			Reporter.log("BookingPolicyUrl URL : "+BookingPolicyUrl);
 			Assert.assertTrue(false);
 		}
-		textPresent_Log(driver, "Cleartrip flight booking policy - blank Page in QA", 5);
 		}	
+		textPresent_Log(driver, "Cleartrip flight booking policy - blank Page in QA", 5);
 		for(String winHandle : driver.getWindowHandles()){
 		    driver.switchTo().window(winHandle);
 		}

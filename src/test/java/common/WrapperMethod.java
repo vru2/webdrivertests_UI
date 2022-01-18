@@ -1510,6 +1510,29 @@ public class WrapperMethod extends CommonUtil {
 		}
 
 	}
+	
+	public String getValue(RemoteWebDriver driver, By by) throws Exception {
+		elementVisible(driver, by, 5);
+		elementPresent(driver, by);
+		boolean element = isElementPresent(driver, by);
+		if (element) {
+
+			if(isAlertPresent(driver)) {
+				driver.switchTo().alert().accept();
+			}
+			WebElement we = driver.findElement(by);
+			WebDriverWait wait = new WebDriverWait(driver, 10);
+
+			we = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+			String text = null;
+			text = we.getAttribute("value");
+			return text;
+		} else {
+			addLog("Element " + by + " is not displayed in " + driver.getCurrentUrl());
+			return null;
+		}
+
+	}
 
 	public String getText1(RemoteWebDriver driver, By by) throws Exception {
 		elementVisible(driver, by, 1);

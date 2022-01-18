@@ -14,10 +14,68 @@
     </classes>
 </test>
 
+<test name="Text Validation" preserve-order="true" >
+    <classes>
+      <class name="paymentsBento_com.Validation_Text_IN"/> 	  
+    </classes>
+</test>
+
+<test name="UI Validation AE" preserve-order="true" >
+    <classes>
+      <class name="paymentsBento_com.Validation_UI_AE"/> 	  
+    </classes>
+</test> 
+
+<test name="Text Validation AE" preserve-order="true" >
+    <classes>
+      <class name="paymentsBento_com.Validation_Text_AE"/> 	  
+    </classes>
+</test>
+
+<test name="Image Validation IN" preserve-order="true" >
+    <classes>
+      <class name="paymentsBento_com.Validation_Images_IN"/> 	  
+    </classes>
+</test>
+
+<test name="Image Validation AE" preserve-order="true" >
+    <classes>
+      <class name="paymentsBento_com.Validation_Images_AE"/> 	        
+      <class name="paymentsBento_com.Validation_Text_AE_Arabic"/>
+    </classes>
+</test>
+
+<test name="GV" preserve-order="true" >
+    <classes> 
+      <class name="paymentsBento_com.GV_Full"/>
+      <class name="paymentsBento_com.GV_Partial"/>      
+    </classes>
+</test>
+
+<test name="Wallet" preserve-order="true" >
+    <classes>
+      <class name="paymentsBento_com.Wallet_Full"/>
+      <class name="paymentsBento_com.Wallet_Partial"/>
+    </classes>
+</test>
+
+<test name="Coupon" preserve-order="true" >
+    <classes>
+      <class name="paymentsBento_com.Coupon_Invalid"/>
+    </classes>
+</test>
+
+<test name="ADCB" preserve-order="true" >
+    <classes>
+      <class name="paymentsBento_com.ADCB_AE"/>   
+   </classes>
+</test>
+
+
 <test name="UI Domains" preserve-order="true" >
     <classes>  
       <class name="paymentsBento_com.CC_US"/> 
-      <class name="paymentsBento_com.PayPal_AE"/> 	  
+    <!--   <class name="paymentsBento_com.PayPal_AE"/> 	   -->
       <class name="paymentsBento_com.KNET_KW"/>   	  
     </classes>
 </test>
@@ -32,28 +90,10 @@
     <classes>
       <class name="paymentsBento_com.Validation_Images_Flyin"/> 	
       <class name="paymentsBento_com.Validation_Text_Flyin"/> 	 
-      <class name="paymentsBento_com.Validation_Text_Flyin_AR"/> 	
-       
+      <class name="paymentsBento_com.Validation_Text_Flyin_AR"/>       
     </classes>
 </test>
 
-<test name="UI Validation AE" preserve-order="true" >
-    <classes>
-      <class name="paymentsBento_com.Validation_UI_AE"/> 	  
-    </classes>
-</test>
- 
-<test name="Text Validation" preserve-order="true" >
-    <classes>
-      <class name="paymentsBento_com.Validation_Text_IN"/> 	  
-    </classes>
-</test>
-
-<test name="Text Validation AE" preserve-order="true" >
-    <classes>
-      <class name="paymentsBento_com.Validation_Text_AE"/> 	  
-    </classes>
-</test>
 
 <test name="Text Validation BH" preserve-order="true" >
     <classes>
@@ -92,20 +132,6 @@
     </classes>
 </test>
 
-<test name="Image Validation IN" preserve-order="true" >
-    <classes>
-      <class name="paymentsBento_com.Validation_Images_IN"/> 	  
-    </classes>
-</test>
-
-<test name="Image Validation AE" preserve-order="true" >
-    <classes>
-      <class name="paymentsBento_com.Validation_Images_AE"/> 	        
-      <class name="paymentsBento_com.Validation_Text_AE_Arabic"/> 	  
-      
-    </classes>
-</test>
-
 <test name="Amendment" preserve-order="true" >
     <classes>
       <class name="paymentsBento_com.Amendment"/> 	  
@@ -116,32 +142,6 @@
     <classes>
       <class name="paymentsBento_com.NB_BOI"/> 	  
     </classes>
-</test>
-
-<test name="GV" preserve-order="true" >
-    <classes> 
-      <class name="paymentsBento_com.GV_Full"/>
-      <class name="paymentsBento_com.GV_Partial"/>      
-    </classes>
-</test>
-
-<test name="Wallet" preserve-order="true" >
-    <classes>
-      <class name="paymentsBento_com.Wallet_Full"/>
-      <class name="paymentsBento_com.Wallet_Partial"/>
-    </classes>
-</test>
-
-<test name="Coupon" preserve-order="true" >
-    <classes>
-      <class name="paymentsBento_com.Coupon_Invalid"/>
-    </classes>
-</test>
-
-<test name="ADCB" preserve-order="true" >
-    <classes>
-      <class name="paymentsBento_com.ADCB_AE"/>   
-   </classes>
 </test>
 
 <test name="payback" preserve-order="true" >

@@ -22,7 +22,7 @@ public class Bento_AE_PayU_Booking extends PaymentsBento_Itn_Common {
 		System.out.println(aeurl+searchurl);
 		Reporter.log(aeurl+searchurl);
 		Searchpagebook(driver,"","","");
-		noncom_itnpage(driver,"","ae");		
+		noncom_itnpage(driver,"","ae");	
 		paymentPage(driver,"AE-SC","","","","");
 	}
 	

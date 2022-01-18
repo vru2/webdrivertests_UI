@@ -14,8 +14,8 @@ public class API_DA_PayV3 extends API_PaymentCommon1
 {
 	@Test
 	public void paymentDA_API() throws IOException, JSONException{
-		Response resp ;		
-		resp = rearchPayment("DAPay","");	
+		Response resp ;
+		resp = rearchPayment("DAPay","");
 		validation("DAPay", resp);
 		}
 }

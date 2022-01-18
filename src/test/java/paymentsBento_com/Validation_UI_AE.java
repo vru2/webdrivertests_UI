@@ -21,7 +21,8 @@ public class Validation_UI_AE extends PaymentUI_Common_Bento{
 
 	@Test (priority=1)
 	public void CC_Validation() throws Exception {
-		get_Bento_Url(driver, "AirAE", "AE");
+		//get_Bento_Url(driver, "AirAE", "AE");
+		driver.get("https://qa2.cleartrip.ae/pay/air/VVhdcEtGRRBBMDIyUQ==?lang=en");
 		bento_Validation_UI(driver,"CC");
 		bento_Validate_Currency(driver, "AE", "AED");
 	}

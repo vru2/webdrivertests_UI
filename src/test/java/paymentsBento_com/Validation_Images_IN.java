@@ -43,9 +43,7 @@ public class Validation_Images_IN extends PaymentUI_Common_Bento{
 	@Test (priority=5)
 	public void Summary_Validation_Links() throws Exception {
 		bento_Validation_Links(driver, "", "");
-
-	}
-	
+	}	
 	
 
 	@AfterMethod (alwaysRun = true)

@@ -9,24 +9,9 @@
 </listeners>
 
 
-<!-- <test name="IN Coupon" preserve-order="true">
+<test name="IN Coupon" preserve-order="true">
     <classes>
 	     	<class name="paymentsBento_Itn.Bento_IN_Coupon_SC_PayU_Booking"/> 
-    </classes>
-</test> -->
-
-
-
-<test name="Supercoins" preserve-order="true" parallel="true">
-    <classes>
-      <class name="paymentsAPI.API_SuperCoins_CheckBalance"/>
-      <class name="paymentsAPI.API_SuperCoins_CheckEarnPoints"/>   
-      <class name="paymentsAPI.API_SuperCoins_Info"/>   
-      <class name="paymentsAPI.API_SuperCoins_MobileLinked"/>   
-      <class name="paymentsAPI.API_SuperCoins_OTP_Validation_Unhold"/>   
-      <class name="paymentsAPI.API_SuperCoins_PromoActivate"/>   
-      <class name="paymentsAPI.API_SuperCoins_PromoCreate"/>      
-      <class name="paymentsAPI.API_SuperCoins_PromoUpdate"/>      
     </classes>
 </test>
 

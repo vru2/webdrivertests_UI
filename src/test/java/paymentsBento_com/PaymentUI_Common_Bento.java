@@ -489,7 +489,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 			}			
 			else {
 			bento_Select_PaymentType(driver, "CC");
-			textPresent_Log(driver, "Pay to complete your booking", 1);
+			textPresent_Log(driver, "Pay to complete your booking", 5);
 			if(!Domain.equals("FLYIN")) {
 				textPresent_Log(driver, "Enter card details", 1);
 				}
@@ -593,7 +593,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 			textPresent_Log(driver, "Payment request will be sent to the phone no. linked to your UPI ID", 1);
 			textPresent_Log(driver, "I understand and agree to the rules and restrictions of this fare, the", 1);
 			textPresent_Log(driver, "Total, inclusive of all taxes", 1);
-			textPresentInElementAssert(driver, getObjectPayment("Bento_Pay_Button"), "Pay now", 2);
+			textPresentInElementAssert(driver, getObjectPayment("Bento_Pay_Button"), "Show QR Code", 2);
 			String UPIIDPlaceholder = driver.findElement(getObjectPayment("Bento_Pay_UPI")).getAttribute("placeholder");
 			if(!(UPIIDPlaceholder.equals("Enter your UPI ID"))) {
 				Reporter.log("PlaceHoder is not correct "+UPIIDPlaceholder);
@@ -633,8 +633,8 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 			textPresent_Log(driver, "Base fare (1 traveller)", 1);
 			textPresent_Log(driver, "Taxes and fees", 1);
 			if(Domain.equals("IN")) {
-			textPresent_Log(driver, "Flexifly", 1);
-			textPresent_Log(driver, "Travel Insurance", 1);
+			/*textPresent_Log(driver, "Flexifly", 1);
+			textPresent_Log(driver, "Travel Insurance", 1);*/
 			}
 			if(Domain.equals("FLYIN")) {
 
@@ -646,7 +646,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 			Actions action = new Actions(driver);
 			action.moveToElement(ele).perform();
 			if(Domain.equals("IN")) {
-				textPresent_Log(driver, "Includes a non-refundable convenience fee of ₹ 30 per traveller", 1);
+				textPresent_Log(driver, "Includes a non-refundable convenience fee of ₹ 100 per traveller", 1);
 				Reporter.log("Includes a non-refundable convenience fee of ₹ 30 per traveller -popup is displayed");
 			}
 			if(Domain.equals("AE")) {
@@ -667,25 +667,24 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 			textPresent_Log(driver, "Booking summary" ,1);
 			textPresent_Log(driver, "Bangalore", 1);
 			textPresent_Log(driver, "(BLR)", 1);
-			textPresent_Log(driver, "(BOM)", 1);
+			textPresent_Log(driver, "(HYD)", 1);
 			if(Domain.equals("IN")) {
-			textPresent_Log(driver, "09:20, Sat 24 Oct - 11:05, Sat 24 Oct", 1);
-			textPresent_Log(driver, "5 travellers", 1);
-			textPresent_Log(driver, "John Miller (M)", 1);
-			textPresent_Log(driver, "Ashish Jain (M)", 1);
-			textPresent_Log(driver, "Rohit Kumar (M)", 1);
-			textPresent_Log(driver, "Mohit Verma (M)", 1);
-			textPresent_Log(driver, "Sachin Reddy (M)", 1);
+			//textPresent_Log(driver, "09:20, Sat 24 Oct - 11:05, Sat 24 Oct", 1);
+			textPresent_Log(driver, "1 traveller", 1);
+			textPresent_Log(driver, "(F)", 1);
+		/*	textPresent_Log(driver, "Tester Test", 1);
+			textPresent_Log(driver, "(F)", 1);*/
 			}
 			if(Domain.equals("AE")||Domain.equals("KW")||Domain.equals("QA")||Domain.equals("SA")||Domain.equals("OM")||Domain.equals("ME")||Domain.equals("BH")) {
-				textPresent_Log(driver, "13:50, Sat 24 Oct - 15:35, Sat 24 Oct", 1);
+				//textPresent_Log(driver, "13:50, Sat 24 Oct - 15:35, Sat 24 Oct", 1);
 				textPresent_Log(driver, "1 traveller", 1);
-				textPresent_Log(driver, "test test (M)", 1);
+				textPresent_Log(driver, "(F)", 1);
+				//textPresent_Log(driver, "test test (M)", 1);
 			}		
 			if(Domain.endsWith("FLYIN")) {
-				textPresent_Log(driver, "© 2006–2021 Saudi Ebreez Company", 1);
+				textPresent_Log(driver, "© 2006–2022 Saudi Ebreez Company", 1);
 				
-			}else textPresent_Log(driver, "© 2006–2021 Cleartrip Pvt. Ltd.", 1);
+			}else textPresent_Log(driver, "© 2006–2022 Cleartrip Pvt. Ltd.", 1);
 			textPresent_Log(driver, "Completely safe and secure transactions", 1);
 		}
 		else if(PaymentType.equalsIgnoreCase("KNET")) {
@@ -731,7 +730,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 			}
 		else if(PaymentType.equalsIgnoreCase("UPI")) {
 			bento_Select_PaymentType(driver, "UPI");		
-			safeClick(driver, getObjectPayment("Bento_Pay_Button"));
+			safeClick(driver, getObjectPayment("Bento_Payment_Paynow_UPI"));
 			textPresent_Log(driver, "Please enter valid UPI id", 1);
 		}
 		else if(PaymentType.equalsIgnoreCase("SC")) {
@@ -810,7 +809,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 					Reporter.log("masterCard Image URL : "+masterCardUrl);
 					Assert.assertTrue(false);
 				}
-
+				elementPresent_log(driver, By.xpath("//div[@id='onetrust-consent-sdk']/div"), "MasterCard Webpage element", 10);
 				driver.switchTo().window(handle);
 
 				//======================================AMEX image============================================//
@@ -825,6 +824,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 					Reporter.log("masterCard Image URL : "+amexCardUrl);
 					Assert.assertTrue(false);
 				}
+				elementPresent_log(driver, By.xpath("//img[@alt='American Express']"), "Amex Logo", 10);
 				driver.switchTo().window(handle);
 			}
 			else if(Domain.endsWith("AE")) {
@@ -865,7 +865,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 					Reporter.log("masterCard Image URL : "+masterCardUrl);
 					Assert.assertTrue(false);
 				}
-
+				elementPresent_log(driver, By.xpath("//div[@id='onetrust-consent-sdk']/div"), "MasterCard Webpage element", 10);
 				driver.switchTo().window(handle);
 
 				//======================================AMEX image============================================//
@@ -880,6 +880,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 					Reporter.log("masterCard Image URL : "+amexCardUrl);
 					Assert.assertTrue(false);
 				}
+				elementPresent_log(driver, By.xpath("//img[@alt='American Express']"), "Amex Logo", 10);
 				driver.switchTo().window(handle);
 				
 				
@@ -899,6 +900,8 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 				safeClick(driver, getObjectPayment("Bento_Pay_NB_Popularbank_Kotak_Img"));
 				safeClick(driver, getObjectPayment("Bento_Pay_NB_Popularbank_Canara_Img"));	
 				elementPresent_log(driver, getObjectPayment("Bento_Pay_NB_Popularbank_SBI_Img"), "SBI Bank", 1);
+				safeClick(driver, By.name("bankId"));
+				safeSelect(driver, By.name("bankId"),"Bank of India");
 			}
 			else if(PaymentType.equalsIgnoreCase("TW")) {
 				bento_Select_PaymentType(driver, "TW");
@@ -910,7 +913,6 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 				safeClick(driver, By.xpath("//div[6]/div[2]/div"));
 				safeClick(driver, By.xpath("//div[7]/div[2]/div"));
 				safeClick(driver, By.xpath("//div[8]/div[2]/div"));
-				Thread.sleep(5000);				
 			}		
 			else if(PaymentType.equalsIgnoreCase("Summary")) {
 				elementPresent_log(driver, getObjectPayment("Bento_Pay_BookingSummary_Flight_Icon"), "Flight", 1);
@@ -937,18 +939,70 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 	
 	
 	public void bento_Validation_Links(RemoteWebDriver driver, String PaymentType, String Domain) throws Exception {
+
+		//=============================terms & condition==================================//
+		String  handle= driver.getWindowHandle();
+		driver.switchTo().window(handle);		
+		elementPresent_log(driver, getObjectPayment("Bento_Pay_Terms_and_Condition"), "Terms_and_Condition", 5);
+		safeClick(driver, getObjectPayment("Bento_Pay_Terms_and_Condition"));
+		Thread.sleep(2000);
+		for(String winHandle : driver.getWindowHandles()){
+		    driver.switchTo().window(winHandle);
+		}
+		String BookingTerms = getURL(driver);
+		Reporter.log("Booking Terms URL : "+BookingTerms);
+		if(Domain.equals("FLYIN")) {
+		if(!BookingTerms.contains(".flyin.com/termsOfUse.en.html")) {
+			Reporter.log("BookingTerms URL : "+BookingTerms);
+			//Assert.assertTrue(false);
+		}
+		}
+		else { if(!BookingTerms.contains("qa2.cleartrip.com/terms")) { 
+			Reporter.log("BookingTerms URL : "+BookingTerms);
+			Assert.assertTrue(false);
+		}
+		textPresent_Log(driver, "Cleartrip Terms of Service", 5);
+		}
+		for(String winHandle : driver.getWindowHandles()){
+		    driver.switchTo().window(winHandle);
+		}
 		
+		//=============================Privacy==================================//
+		driver.switchTo().window(handle);		
+		elementPresent_log(driver, getObjectPayment("Bento_Pay_Privacy_Policy"), "Privacy Policy", 5);
+		safeClick(driver, getObjectPayment("Bento_Pay_Privacy_Policy"));
+		Thread.sleep(2000);
+		for(String winHandle : driver.getWindowHandles()){
+		    driver.switchTo().window(winHandle);
+		}		
+		String BookingPrivacyURL = getURL(driver);
+		Reporter.log("Booking Privacy URL : "+BookingPrivacyURL);
+		if(Domain.equals("FLYIN")) {
+			if(!BookingTerms.contains(".flyin.com/termsOfUse.en.html")) {
+				Reporter.log("BookingTerms URL : "+BookingTerms);
+				//Assert.assertTrue(false);
+			}
+			}
+		else {if(!BookingPrivacyURL.contains("/privacy/")) {
+			Reporter.log("BookingPrivacy URL : "+BookingPrivacyURL);
+			Assert.assertTrue(false);
+		}
+		textPresent_Log(driver, "Cleartrip is fanatical about protecting your privacy", 5);
+		}
+		for(String winHandle : driver.getWindowHandles()){
+		    driver.switchTo().window(winHandle);
+		}
 
 		//=============================Booking Policy==================================//
-		String  handle= driver.getWindowHandle();
+		driver.switchTo().window(handle);				
 		elementPresent_log(driver, getObjectPayment("Bento_Pay_Booking_Policy"), "Booking Policy", 5);
 		safeClick(driver, getObjectPayment("Bento_Pay_Booking_Policy"));
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		for(String winHandle : driver.getWindowHandles()){
 		    driver.switchTo().window(winHandle);
 		}
 		String BookingPolicyUrl = getURL(driver);
-		Reporter.log("Booking Policy URL : "+BookingPolicyUrl);
+		System.out.println(BookingPolicyUrl + " BookingPolicyUrl");
 		if(Domain.equals("FLYIN")) {
 			if(!BookingPolicyUrl.contains("https://www.flyin.com/termsOfUse.en.html#btc")) {
 				Reporter.log("BookingPolicyUrl URL : "+BookingPolicyUrl);
@@ -961,63 +1015,11 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 			Reporter.log("BookingPolicyUrl URL : "+BookingPolicyUrl);
 			Assert.assertTrue(false);
 		}
-		//textPresent_Log(driver, "Cleartrip flight booking policy", 5);
-		}
-		
-		
+		textPresent_Log(driver, "Cleartrip flight booking policy - blank Page in QA", 5);
+		}	
 		for(String winHandle : driver.getWindowHandles()){
 		    driver.switchTo().window(winHandle);
 		}
-
-		//=============================terms & condition==================================//
-		driver.switchTo().window(handle);
-		
-		elementPresent_log(driver, getObjectPayment("Bento_Pay_Terms_and_Condition"), "Terms_and_Condition", 5);
-		safeClick(driver, getObjectPayment("Bento_Pay_Terms_and_Condition"));
-		Thread.sleep(5000);
-		String BookingTerms = getURL(driver);
-		Reporter.log("Booking Policy URL : "+BookingTerms);
-		System.out.println("Booking Policy URL : "+BookingTerms);
-		if(Domain.equals("FLYIN")) {
-		if(!BookingTerms.contains(".flyin.com/termsOfUse.en.html")) {
-			Reporter.log("BookingTerms URL : "+BookingTerms);
-			//Assert.assertTrue(false);
-		}
-		}
-		else { if(!BookingTerms.contains("qa2.cleartrip.com/terms")) {
-			Reporter.log("BookingTerms URL : "+BookingTerms);
-			    //Assert.assertTrue(false);
-		}
-		}
-		
-		
-		Thread.sleep(5000);
-		for(String winHandle : driver.getWindowHandles()){
-		    driver.switchTo().window(winHandle);
-		}
-		
-		//=============================Privacy==================================//
-		driver.switchTo().window(handle);		
-		elementPresent_log(driver, getObjectPayment("Bento_Pay_Privacy_Policy"), "Privacy Policy", 5);
-		safeClick(driver, getObjectPayment("Bento_Pay_Privacy_Policy"));
-		Thread.sleep(5000);
-		
-		String BookingPrivacyURL = getURL(driver);
-		Reporter.log("Booking Policy URL : "+BookingPrivacyURL);
-		if(Domain.equals("FLYIN")) {
-			if(!BookingTerms.contains(".flyin.com/termsOfUse.en.html")) {
-				Reporter.log("BookingTerms URL : "+BookingTerms);
-				//Assert.assertTrue(false);
-			}
-			}
-		else {if(!BookingPrivacyURL.contains("/privacy/")) {
-			Reporter.log("BookingPrivacy URL : "+BookingPrivacyURL);
-			//Assert.assertTrue(false);
-		}
-		}
-	//	textPresent_Log(driver, "Cleartrip flight booking policy", 5);		
-		
-		
 	}
 		
 	

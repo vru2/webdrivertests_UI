@@ -1,27 +1,28 @@
-// Framework - Cleartrip Automation
-// Author - Kiran Kumar
-
-package paymentsBento_com;
+package paymentsBento_Itn;
 
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
+import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Validation_Text_IN extends PaymentUI_Common_Bento{
-	public RemoteWebDriver driver;	
-	
+public class Bento_Validation_IN_Text extends PaymentsBento_Itn_Common {
+
 	@BeforeClass
 	public void setUp() throws Exception {
 		driver=(RemoteWebDriver) getDriver(driver);
 	}
 
 	@Test (priority=1)
-	public void CC_Validation_Text() throws Exception {
-		//get_Bento_Url(driver, "Air", "");
-		driver.get("https://qa2.cleartrip.com/pay/air/U1hdcEtGRRBBMDIyUQ==?lang=en");
+	public void CC_Text_Validation() throws Exception {
+		driver.manage().deleteAllCookies();
+		driver.navigate().to(qa2url+searchurl);
+		Reporter.log(qa2url+searchurl);
+		Searchpagebook(driver,"","com","");
+	    book_itnnew(driver,"");	
+		driver.manage().deleteAllCookies(); // Deleting login details
 		bento_Validation_Text(driver, "CC", "");
 	}
 	
@@ -58,21 +59,16 @@ public class Validation_Text_IN extends PaymentUI_Common_Bento{
 	@Test (priority=8)
 	public void gateWay_Failure_Banner_Validation_Text() throws Exception {
 		bento_Validation_Text(driver, "Failure_Banner", "IN");		
+	}	 
+	
+	@AfterClass
+	public void closeSelenium() throws Exception {
+	 	browserClose(driver);
 	}
-	
-	/*@Test (priority=8)
-	public void PayPal_Validation_Text() throws Exception {
-		bento_Validation_Text(driver, "PayPal", "");
-	}	*/
-	
-	@AfterMethod (alwaysRun = true)
+
+	@AfterMethod(alwaysRun = true)
 	public void afterMethod(ITestResult _result) throws Exception {
 		afterMethod(driver, _result);
 	}
-	
-	@AfterClass
-	public void tearDown() throws Exception {
-		browserClose(driver);
-	}
-	
+
 }

@@ -16,15 +16,7 @@ public class ADCB_AE extends PaymentUI_Common_Bento{
 	@Test
 	public void ADCB() throws Exception {
 		get_Bento_Url(driver, "AirAE", "AE");
-		bento_Select_PaymentType(driver, "ADCB");
-		textPresent(driver, "Pay to complete your booking", 5);	
-		textPresent(driver, "Enter ADCB card details", 1);		
-		textPresent_Log(driver, "ADCB card number", 1);
-		textPresent_Log(driver, "Expiry date", 1);
-		textPresent_Log(driver, "Card holder Name", 1);
-		textPresent_Log(driver, "CVV", 1);
-		validate_Currency(driver, "", "AED");
-		payUI_Enter_PaymentDetails(driver, "ADCB", "","");
+		payUI_Enter_PaymentDetails(driver, "ADCB", "","API");
 	}
 
 	@BeforeClass

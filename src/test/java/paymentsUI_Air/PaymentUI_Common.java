@@ -411,8 +411,10 @@ public class PaymentUI_Common extends PaymentNodeJS{
 		//-------- Checking Partial Payment in ADCB-----------------------//
 		
 		safeType(driver, getObjectPayment("PaymentPage_ADCB_Redeem_Amount_TextBox"), "AED 50");
-		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));		
+		safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
+		if(!BookingType.contains("API")) {
 		textPresent_Log(driver, "Choose a payment option", 10);		// payu bank page
+		}
 		}
 	
 	public void payUI_Select_KNET(RemoteWebDriver driver, String BankName, String BookingType) throws Exception {		

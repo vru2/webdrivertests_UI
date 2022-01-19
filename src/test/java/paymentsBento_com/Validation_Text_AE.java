@@ -36,7 +36,7 @@ public class Validation_Text_AE extends PaymentUI_Common_Bento{
 	
 	@Test (priority=4)
 	public void BookingSummary_Validation_Text() throws Exception {
-		bento_Validation_Text(driver, "Booking_SUMMARY", "AE");	
+		//bento_Validation_Text(driver, "Booking_SUMMARY", "AE");	
 	}
 	
 	@Test (priority=6)

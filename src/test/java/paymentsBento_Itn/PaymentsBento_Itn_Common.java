@@ -34,9 +34,9 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	JavascriptExecutor jse = (JavascriptExecutor) driver;
 	String contactnumber = "12345678";
 
-	String searchurl = "/flights/results?adults=1&childs=0&infants=0&class=Economy&depart_date=29/05/2022&from=BLR&to=HYD&intl=n&origin=BLR - Bangalore, IN &destination=HYD - Hyderabad, IN &sd=1629707401889&rnd_one=O&sourceCountry=Hyderabad&destinationCountry=Bangalore";
+	String searchurl = "/flights/results?adults=1&childs=0&infants=0&class=Economy&depart_date=29/12/2022&from=BLR&to=HYD&intl=n&origin=BLR - Bangalore, IN &destination=HYD - Hyderabad, IN &sd=1629707401889&rnd_one=O&sourceCountry=Hyderabad&destinationCountry=Bangalore";
 	
-	String searchurl1 ="/flights/results?adults=1&childs=0&infants=0&depart_date=05/05/2022&return_date=&intl=n&from=BLR&to=CCU&airline=&carrier=&sd=1641801867427&page=&sellingCountry=IN&ssfi=&flexi_search=&ssfc=&origin=BLR%20-%20Bangalore,%20IN&destination=CCU%20-%20Kolkata,%20IN&class=Economy";
+	String searchurl1 ="/flights/results?adults=1&childs=0&infants=0&depart_date=29/12/2022&return_date=&intl=n&from=BLR&to=CCU&airline=&carrier=&sd=1642563217292&page=&sellingCountry=IN&ssfi=&flexi_search=&ssfc=&origin=BLR - Bangalore, IN&destination=CCU - Kolkata, IN&class=Economy";
 	String qa2url = "https://qa2.cleartrip.com";
 	String aeurl = "https://qa2.cleartrip.ae";
 	String bhurl = "https://qa2bh.cleartrip.com";

@@ -1,0 +1,47 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Bento IN UI" parallel="tests" thread-count="2">
+
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="common.RemoveDuplicateResults"/>
+		<listener class-name="common.RetryListener"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+</listeners>
+
+<test name="In Others" preserve-order="true" parallel="methods">
+    <classes>
+	        <class name="paymentsBento_Itn.Bento_IN_DC_Booking"/> 
+	        <class name="paymentsBento_Itn.Bento_IN_Storedcard_Razorpaycard_Booking"/>
+	        <class name="paymentsBento_Itn.Bento_IN_Amex_Booking"/>
+	        <class name="paymentsBento_Itn.Bento_IN_EMI_Razorpay"/>
+    </classes>
+</test>
+
+<test name="IN Coupon" preserve-order="true">
+    <classes>
+	     	<class name="paymentsBento_Itn.Bento_IN_Coupon_SC_PayU_Booking"/> 
+	        <class name="paymentsBento_Itn.Bento_IN_InvalidCoupon_NB_ICICI_Booking"/> 
+    </classes>
+</test>
+
+<test name="IN Wallet GV" preserve-order="true">
+    <classes>
+	        <class name="paymentsBento_Itn.Bento_IN_Wallet_Booking"/> 
+	        <class name="paymentsBento_Itn.Bento_IN_PartialWallet_AMEX_Booking"/> 
+    </classes>
+</test>
+
+<test name="IN GV" preserve-order="true">
+    <classes>
+	       	<class name="paymentsBento_Itn.Bento_IN_Full_GV_Booking"/> 
+    </classes>
+</test>
+
+<test name="IN UPI" preserve-order="true" >
+    <classes>
+	        <class name="paymentsBento_Itn.Bento_IN_UPI_Booking"/> 
+	        <class name="paymentsBento_Itn.Bento_IN_UPI_Scan_Validation"/> 
+	        <class name="paymentsBento_Itn.Bento_IN_Phonepe_Validation"/> 
+    </classes>
+</test>
+</suite> 

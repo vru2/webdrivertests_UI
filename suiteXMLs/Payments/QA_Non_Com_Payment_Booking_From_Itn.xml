@@ -1,0 +1,44 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Bento Non Com UI" parallel="tests" thread-count="2">
+
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="common.RemoveDuplicateResults"/>
+		<listener class-name="common.RetryListener"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+</listeners>
+
+<test name="AE Domain" preserve-order="true" >
+    <classes>
+      		<class name="paymentsBento_Itn.Bento_AE_ADCB_Validation"/>
+            <class name="paymentsBento_Itn.Bento_AE_SC_Noon_Booking"/>
+            <class name="paymentsBento_Itn.Bento_AE_SC_Payfort_Booking"/>   
+     		<class name="paymentsBento_Itn.Bento_AE_PayU_Booking"/> 
+    </classes>
+</test>
+
+<test name="BH ME OM QA Domain" preserve-order="true" >
+    <classes>
+            <class name="paymentsBento_Itn.Bento_BH_PayU_Booking"/>
+            <class name="paymentsBento_Itn.Bento_ME_PayU_Booking"/>
+            <class name="paymentsBento_Itn.Bento_OM_PayU_Booking"/>
+            <class name="paymentsBento_Itn.Bento_QA_PayU_Booking"/>
+    </classes>
+</test>
+
+<test name="SA Domain" preserve-order="true" >
+    <classes>
+            <class name="paymentsBento_Itn.Bento_SA_SC_Payfort_Booking"/>
+            <class name="paymentsBento_Itn.Bento_SA_SC_Checkout_Booking"/>
+            <class name="paymentsBento_Itn.Bento_SA_PayU_Booking"/>
+    </classes>
+</test>
+
+<test name="KW Domain" preserve-order="true" >
+    <classes>
+            <class name="paymentsBento_Itn.Bento_KW_PayU_Booking"/>
+            <class name="paymentsBento_Itn.Bento_KW_KNet_Booking"/>
+    </classes>
+</test>
+
+</suite> 

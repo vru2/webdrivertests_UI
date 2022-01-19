@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Bento IN UI" parallel="tests" thread-count="2">
+<suite name="Bento IN UI" parallel="tests" thread-count="1">
 
 <listeners>
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -8,11 +8,26 @@
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
 
-<test name="In Others" preserve-order="true" parallel="methods">
+<test name="In DC" preserve-order="true">
     <classes>
 	        <class name="paymentsBento_Itn.Bento_IN_DC_Booking"/> 
+    </classes>
+</test>
+
+<test name="In Razorpay" preserve-order="true">
+    <classes>
 	        <class name="paymentsBento_Itn.Bento_IN_Storedcard_Razorpaycard_Booking"/>
+    </classes>
+</test>
+
+<test name="In Amex" preserve-order="true">
+    <classes>
 	        <class name="paymentsBento_Itn.Bento_IN_Amex_Booking"/>
+    </classes>
+</test>
+
+<test name="In EMI" preserve-order="true">
+    <classes>
 	        <class name="paymentsBento_Itn.Bento_IN_EMI_Razorpay"/>
     </classes>
 </test>
@@ -24,7 +39,7 @@
     </classes>
 </test>
 
-<test name="IN Wallet GV" preserve-order="true">
+<test name="IN Wallet" preserve-order="true">
     <classes>
 	        <class name="paymentsBento_Itn.Bento_IN_Wallet_Booking"/> 
 	        <class name="paymentsBento_Itn.Bento_IN_PartialWallet_AMEX_Booking"/> 
@@ -44,4 +59,5 @@
 	        <class name="paymentsBento_Itn.Bento_IN_Phonepe_Validation"/> 
     </classes>
 </test>
-</suite> 
+
+</suite>

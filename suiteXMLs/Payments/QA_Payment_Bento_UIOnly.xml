@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Bento UI" parallel="tests" thread-count="7">
+<suite name="Bento UI" parallel="tests" thread-count="5">
 
 <listeners>
 <listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -95,35 +95,16 @@
 </test>
 
 
-<test name="Text Validation BH" preserve-order="true" >
+<test name="Text Validation BH KW ME OM QA" preserve-order="true" >
     <classes>
-      <class name="paymentsBento_com.Validation_Text_BH"/> 	  
+      <class name="paymentsBento_com.Validation_Text_BH"/> 	 
+      <class name="paymentsBento_com.Validation_Text_KW"/> 
+      <class name="paymentsBento_com.Validation_Text_ME"/> 	 
+      <class name="paymentsBento_com.Validation_Text_OM"/> 	
+      <class name="paymentsBento_com.Validation_Text_QA"/> 	   
     </classes>
   </test>
 
-<test name="Text Validation KW" preserve-order="true" >
-    <classes>
-      <class name="paymentsBento_com.Validation_Text_KW"/> 	  
-    </classes>
-</test>
-
-<test name="Text Validation ME" preserve-order="true" >
-    <classes>  
-      <class name="paymentsBento_com.Validation_Text_ME"/> 	 
-    </classes>
- </test>
-
-<test name="Text Validation OM" preserve-order="true" >
-    <classes>  
-      <class name="paymentsBento_com.Validation_Text_OM"/> 	  
-    </classes>
-</test>
-
-<test name="Text Validation QA" preserve-order="true" >
-    <classes>  
-      <class name="paymentsBento_com.Validation_Text_QA"/> 	   
-    </classes>
-</test>
 
 <test name="Text Validation SA" preserve-order="true" >
     <classes>
@@ -144,12 +125,13 @@
     </classes>
 </test>
 
+<!-- 
 <test name="payback" preserve-order="true" >
     <classes>
-      <class name="paymentsBento_com.PayBack_Full"/><!-- 
-      <class name="paymentsBento_com.PayBack_Partial"/> -->
+      <class name="paymentsBento_com.PayBack_Full"/>
+      <class name="paymentsBento_com.PayBack_Partial"/>
     </classes>
 </test>
-
+ -->
 
 </suite> 

@@ -17,7 +17,7 @@ public class Bento_IN_Wallet_Booking extends PaymentsBento_Itn_Common {
 	}
 	
 	@Test
-	public void bento_wallet() throws Exception 
+	public void bento_full_wallet() throws Exception 
 	{
 		driver.manage().deleteAllCookies();
 		driver.navigate().to(qa2url+searchurl);

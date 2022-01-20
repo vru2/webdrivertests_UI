@@ -1,6 +1,5 @@
 package paymentsBento_Itn_Hotels;
 
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -23,7 +22,7 @@ public class IN_PayU extends PaymentsBento_Itn_Hotels_Common {
 		hotelItn_Details(driver, "", "");
 		hotelItn_SignIN(driver, "", "");
 		hotelItn_Contact(driver, "", "");
-		hotelPayment_Page(driver, "", "", "");		
+		hotelPayment_Page(driver, "", "", "", "", "");
 	}
 
 	@AfterClass

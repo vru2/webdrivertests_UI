@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Bento Non Com UI" parallel="tests" thread-count="2">
+<suite name="Bento Non Com UI" parallel="tests" thread-count="1">
 
 <listeners>
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -19,10 +19,10 @@
 
 <test name="BH ME OM QA Domain" preserve-order="true" >
     <classes>
-            <class name="paymentsBento_Itn.Bento_BH_PayU_Booking"/>
+         <!--    <class name="paymentsBento_Itn.Bento_BH_PayU_Booking"/>
             <class name="paymentsBento_Itn.Bento_ME_PayU_Booking"/>
             <class name="paymentsBento_Itn.Bento_OM_PayU_Booking"/>
-            <class name="paymentsBento_Itn.Bento_QA_PayU_Booking"/>
+            <class name="paymentsBento_Itn.Bento_QA_PayU_Booking"/> -->
     </classes>
 </test>
 

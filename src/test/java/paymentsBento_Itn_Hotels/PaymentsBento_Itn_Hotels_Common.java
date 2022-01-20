@@ -10,7 +10,7 @@ import org.testng.Reporter;
 import paymentsBento_Itn.PaymentsBento_Itn_Common;
 
 public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
-	String URL = "";
+	String Hotel_URL = "";
 	String inurl = "https://qa2.cleartrip.com";
 	String aeurl = "https://qa2.cleartrip.ae";
 	String bhurl = "https://qa2bh.cleartrip.com";
@@ -22,10 +22,10 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 	
 	public String hotelSearchUrl(String Domain)  throws Exception
 	{	
-		URL= "/hotels/results?city=Bangalore&state=Karnataka&country=IN&poi=&hotelId=&dest_code=32550&chk_in="+getDateTime(10, "dd/MM/yyyy")+"&chk_out="+getDateTime(11, "dd/MM/yyyy")+"&adults=2&childs=0&num_rooms=1&adults1=2&children1=0&";
+		Hotel_URL= "/hotels/results?city=Bangalore&state=Karnataka&country=IN&poi=&hotelId=&dest_code=32550&chk_in="+getDateTime(10, "dd/MM/yyyy")+"&chk_out="+getDateTime(11, "dd/MM/yyyy")+"&adults=2&childs=0&num_rooms=1&adults1=2&children1=0&";
 		String SearchUrl = "";
 		if(Domain=="IN") {
-			SearchUrl=inurl+URL;
+			SearchUrl=inurl+Hotel_URL;
 		}
 		return SearchUrl;
 	}
@@ -73,7 +73,13 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		
 	}
 	
-	public void hotelPayment_Page(RemoteWebDriver driver, String PayType, String BankType, String CardType) throws Exception {
+	public void hotelPayment_Page_Validation(RemoteWebDriver driver, String PayType, String Domain) throws Exception {
 		
+	}
+	
+	public void hotelPayment_Page(RemoteWebDriver driver, String PaymentType, String CardNumber, String Domain, String PayType, String BankName) throws Exception {
+		hotelPayment_Page_Validation(driver, PayType, Domain);
+		paymentPage(driver, PaymentType, CardNumber, Domain, PayType, BankName);
+		confirmation_page(driver, PaymentType, CardNumber);
 	}
 }

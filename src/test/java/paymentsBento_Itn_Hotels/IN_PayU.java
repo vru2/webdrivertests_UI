@@ -17,22 +17,22 @@ public class IN_PayU extends PaymentsBento_Itn_Hotels_Common {
 	public void Hotel_IN_PayU() throws Exception {
 		driver.manage().deleteAllCookies();
 		driver.get(hotelSearchUrl("IN"));
-		hotelSearchPage(driver, "Fabhotel Corporate Crown Koramangala", "");
+		hotelSearchPage(driver, "", "");
 		hotelDetailsPage(driver, "", "");
 		hotelItn_Details(driver, "", "");
 		hotelItn_SignIN(driver, "", "");
 		hotelItn_Contact(driver, "", "");
 		hotelPayment_Page(driver, "", "", "", "", "");
-	}
+	} 
 
-	@AfterClass
-	public void closeSelenium() throws Exception {
-		browserClose(driver);
-	}
+ 		@AfterClass
+		public void closeSelenium() throws Exception {
+		 	browserClose(driver);
+		}
 
-	@AfterMethod(alwaysRun = true)
-	public void afterMethod(ITestResult _result) throws Exception {
-		afterMethod(driver, _result);
-	}
+		@AfterMethod(alwaysRun = true)
+		public void afterMethod(ITestResult _result) throws Exception {
+			afterMethod(driver, _result);
+		}
 
 }

@@ -17,6 +17,9 @@ public class KNET_KW extends PaymentUI_Common_Bento{
 	@Test
 	public void Knet() throws Exception {
 		get_Bento_Url(driver, "AirKW", "KW");
+
+		driver.manage().addCookie(ctauth_partial_wallet);
+		refreshPage(driver);
 		bento_Select_PaymentType(driver, "KNET");
 		textPresent(driver, "Select a bank"	, 5);
 		elementPresent(driver, By.xpath("//form/div/div/div[2]/div"));

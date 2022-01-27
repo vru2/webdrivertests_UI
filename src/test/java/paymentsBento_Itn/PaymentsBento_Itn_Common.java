@@ -34,7 +34,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	JavascriptExecutor jse = (JavascriptExecutor) driver;
 	String contactnumber = "12345678";
 
-	String searchurl = "/flights/results?adults=1&childs=0&infants=0&class=Economy&depart_date=29/12/2022&from=BLR&to=HYD&intl=n&origin=BLR - Bangalore, IN &destination=HYD - Hyderabad, IN &sd=1629707401889&rnd_one=O&sourceCountry=Hyderabad&destinationCountry=Bangalore";
+	String searchurl = "/flights/results?adults=1&childs=0&infants=0&class=Economy&depart_date=20/06/2022&from=BLR&to=MAA&intl=n&origin=BLR%20-%20Bangalore,%20IN&destination=MAA%20-%20Chennai,%20IN&sd=1643265410611&rnd_one=O&sourceCountry=Bangalore&destinationCountry=Chennai";
 	
 	String searchurl1 ="/flights/results?adults=1&childs=0&infants=0&depart_date=29/12/2022&return_date=&intl=n&from=BLR&to=CCU&airline=&carrier=&sd=1642563217292&page=&sellingCountry=IN&ssfi=&flexi_search=&ssfc=&origin=BLR - Bangalore, IN&destination=CCU - Kolkata, IN&class=Economy";
 	String qa2url = "https://qa2.cleartrip.com";
@@ -283,11 +283,19 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 				Reporter.log("Entered mobile number");
 				break;
 			}
-			else if(elementVisible(driver,getObjectPayment("Bento_Itn_Contact_Number1"),1))
+			else if(elementVisible(driver,getObjectPayment("Bento_Itn_Contact_Number"),1))
 			{
 				elementVisible(driver, getObjectPayment("Bento_Itn_Contact_Number"), 1);
 				safeClick(driver, getObjectPayment("Bento_Itn_Contact_Number"));
 				safeType(driver, getObjectPayment("Bento_Itn_Contact_Number"), "1234567890");
+				Reporter.log("Entered mobile number");
+				break;
+			}
+			else if(elementVisible(driver,getObjectPayment("Bento_Itn_Contact_Number2"),1))
+			{
+				elementVisible(driver, getObjectPayment("Bento_Itn_Contact_Number2"), 1);
+				safeClick(driver, getObjectPayment("Bento_Itn_Contact_Number2"));
+				safeType(driver, getObjectPayment("Bento_Itn_Contact_Number2"), "1234567890");
 				Reporter.log("Entered mobile number");
 				break;
 			}
@@ -332,6 +340,12 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			mouseHover(driver, getObjectPayment("Bento_Itin_Select_India"));
 			safeClick(driver, getObjectPayment("Bento_Itin_Select_India"));
 			Reporter.log("Selected nationality");
+			
+		}
+		if(elementVisible(driver, getObjectPayment("Bento_Itn_Nationality_DOB_Date"), 1)) {
+			smartSelect(driver, getObjectPayment("Bento_Itn_Nationality_DOB_Date"), "01");
+			smartSelect(driver, getObjectPayment("Bento_Itn_Nationality_DOB_Month"), "Jan");
+			smartSelect(driver, getObjectPayment("Bento_Itn_Nationality_DOB_Year"), "2000");
 		}
 		Thread.sleep(2000);
 		mouseHover(driver, getObjectPayment("Bento_Itn_Continue_Booking"));		
@@ -695,6 +709,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		payUI_Select_PaymentType(driver, "CC");
 		if(CardNumber=="4111") {	
            	payUI_Enter_PaymentDetails(driver, "CC", "RAZORPAYDC","");
+           	smartClick(driver, getObjectPayment("PayUI_Expressway_CheckBox_New"));
 			safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
 			Reporter.log("Clicked on paynow");
 			textPresent(driver, "Please wait...", 2);
@@ -708,6 +723,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		{
 
 			payUI_Enter_PaymentDetails(driver, "CC", "RAZORPAY","");
+           	smartClick(driver, getObjectPayment("PayUI_Expressway_CheckBox_New"));
 			safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
 			Reporter.log("Clicked on paynow");
 			textPresent(driver, "Please wait...", 5);
@@ -721,6 +737,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		else if(CardNumber=="3456")
 		{				
 			payUI_Enter_PaymentDetails(driver, "CC", "AMEX","");
+           	smartClick(driver, getObjectPayment("PayUI_Expressway_CheckBox_New"));
 			safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
 			Reporter.log("Clicked on paynow");						
 			elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_Amex3DPage_Submit_Btn"), "Amex Bank ", 20);

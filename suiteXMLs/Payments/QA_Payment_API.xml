@@ -28,20 +28,6 @@
     </classes>
 </test>
 
-<test name="FK Deposit Account DA" preserve-order="true" parallel="true">
-    <classes>
-      <class name="paymentsAPI.API_DA_FK_FetchBy_PaymentID"/>
-      <class name="paymentsAPI.API_DA_FK_FetchBy_TripID"/>
-      <class name="paymentsAPI.API_DA_FK_PayV3_6000"/>
-      <class name="paymentsAPI.API_DA_FK_PayV3_Amend"/>
-      <class name="paymentsAPI.API_DA_FK_PayV3_ZeroAmt"/>
-      <class name="paymentsAPI.API_DA_FK_PayV3"/>
-      <class name="paymentsAPI.API_DA_FK_Refund_Create"/>
-      <class name="paymentsAPI.API_DA_FK_Refund_Status_Update"/>
-      <class name="paymentsAPI.API_DA_FK_Refund_Update_PartnerInfo"/>
-    </classes>
-</test>
-
 <test name="GW Failure Banner" preserve-order="true" parallel="true">
     <classes>
       <class name="paymentsAPI.API_Fetch_GW_Failure"/>
@@ -154,18 +140,34 @@
      </classes>
 </test>
 
+<test name="FK Deposit Account DA" preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_DA_FK_FetchBy_PaymentID"/>
+      <class name="paymentsAPI.API_DA_FK_FetchBy_TripID"/>
+      <class name="paymentsAPI.API_DA_FK_PayV3_6000"/>
+      <class name="paymentsAPI.API_DA_FK_PayV3_Amend"/>
+      <class name="paymentsAPI.API_DA_FK_PayV3_ZeroAmt"/>
+      <class name="paymentsAPI.API_DA_FK_PayV3"/>
+      <class name="paymentsAPI.API_DA_FK_Refund_Create"/>
+      <class name="paymentsAPI.API_DA_FK_Refund_Status_Update"/>
+      <class name="paymentsAPI.API_DA_FK_Refund_Update_PartnerInfo"/>
+    </classes>
+</test>
+
+
 <test name="Expressway" preserve-order="true" parallel="true">
     <classes>
-      <class name="paymentsAPI.API_EW_GetOutstanding"/> 
+      <!-- <class name="paymentsAPI.API_EW_GetOutstanding"/> 
       <class name="paymentsAPI.API_EW_UserDetails"/> 
       <class name="paymentsAPI.API_EW_Validate"/>  
       <class name="paymentsAPI.API_EW_OptIN"/>    
-<!--       <class name="paymentsAPI.API_EW_Pay_Multi"/>    
+      <class name="paymentsAPI.API_EW_Add_Amount"/>   -->
+           
+<!--  <class name="paymentsAPI.API_EW_Pay_Multi"/>    
       <class name="paymentsAPI.API_EW_Pay_Multi_V3"/>    
-      <class name="paymentsAPI.API_EW_Pay_V3"/>        -->
-      <class name="paymentsAPI.API_EW_Add_Amount"/>       <!-- 
-      <class name="paymentsAPI.API_EW_Pay_AutoDebit"/>     -->
-      <!-- <class name="paymentsAPI.API_EW_Summary"/>   -->
+      <class name="paymentsAPI.API_EW_Pay_V3"/>        
+      <class name="paymentsAPI.API_EW_Pay_AutoDebit"/>    
+      <class name="paymentsAPI.API_EW_Summary"/>   -->
          
    </classes>
 </test>
@@ -179,12 +181,6 @@
 		<class name="paymentsAPI.API_Wallet_GetDeduction"/>
 		<class name="paymentsAPI.API_Wallet_PromoUsed"/>
 		<class name="paymentsAPI.API_Wallet_RevertPromo"/>
-		<!-- <class name="paymentsAPI.API_Wallet_RevertPromoNew"/> -->
-<!-- 		<class name="paymentsAPI.API_GV_Capture"/> -->
-		<!-- <class name="paymentsAPI.API_GV_Refund"/>	 -->
-		
-		<!-- <class name="paymentsAPI.API"/> create wallet
-		<class name="paymentsAPI.API_Wallet_RevertPromo"/  > Perform wallet transactions -->
     </classes>
 </test>
 
@@ -206,7 +202,7 @@
 
 <test name="PayBack" preserve-order="true" parallel="true">
     <classes>
-      <class name="paymentsAPI.API_RewardPayback"/> 
+    <!--   <class name="paymentsAPI.API_RewardPayback"/>  -->
     </classes>
 </test>
 

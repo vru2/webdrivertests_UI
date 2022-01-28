@@ -750,7 +750,10 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
            	smartClick(driver, getObjectPayment("PayUI_Expressway_CheckBox_New"));
 			safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
 			Reporter.log("Clicked on paynow");
+			if(elementVisible(driver,getObjectPayment("Bento_Payment_Skip_Securecard"),2))
+			{
 			safeClick(driver,getObjectPayment("Bento_Payment_Skip_Securecard"));
+			}
 			textPresent(driver, "Please wait...", 2);
 			textPresent(driver, "Welcome to Razorpay Software Private Ltd Bank", 2);
 			elementVisible(driver, getObjectPayment("Bento_Payment_DC_Payment_Success"), 10);
@@ -765,7 +768,10 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
            	smartClick(driver, getObjectPayment("PayUI_Expressway_CheckBox_New"));
 			safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
 			Reporter.log("Clicked on paynow");
+			if(elementVisible(driver,getObjectPayment("Bento_Payment_Skip_Securecard"),2))
+			{
 			safeClick(driver,getObjectPayment("Bento_Payment_Skip_Securecard"));
+			}
 			textPresent(driver, "Please wait...", 5);
 			textPresent(driver, "One Time Password (OTP) successfully sent to the phone number linked to your card ending with 0000.", 5);
 			safeClick(driver, getObjectPayment("Bento_Payment_Razropay_Pin"));
@@ -780,7 +786,10 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
            	smartClick(driver, getObjectPayment("PayUI_Expressway_CheckBox_New"));
 			safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
 			Reporter.log("Clicked on paynow");		
+			if(elementVisible(driver,getObjectPayment("Bento_Payment_Skip_Securecard"),2))
+			{
 			safeClick(driver,getObjectPayment("Bento_Payment_Skip_Securecard"));
+			}
 			elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_Amex3DPage_Submit_Btn"), "Amex Bank ", 20);
 			textPresent(driver, "ACS Emulator", 1);
 			Reporter.log("Amex Auth page is displayed");
@@ -797,7 +806,10 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		Reporter.log("Entered CVV");
 		safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
 		Reporter.log("Clicked on paynow");
+		if(elementVisible(driver,getObjectPayment("Bento_Payment_Skip_Securecard"),2))
+		{
 		safeClick(driver,getObjectPayment("Bento_Payment_Skip_Securecard"));
+		}
 		textPresent_Log(driver, "Please wait...", 2);
 		textPresent_Log(driver, "American", 2);
 		textPresent_Log(driver, "ACS Emulator", 2);
@@ -1046,7 +1058,10 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		payUI_Enter_PaymentDetails(driver, "CC", "AMEX","");
 		safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
 		Reporter.log("Clicked on paynow");
+		if(elementVisible(driver,getObjectPayment("Bento_Payment_Skip_Securecard"),2))
+		{
 		safeClick(driver,getObjectPayment("Bento_Payment_Skip_Securecard"));
+		}
 		textPresent_Log(driver, "Please wait...", 5);
 		textPresent_Log(driver, "American", 5);
 		textPresent_Log(driver, "ACS Emulator", 10);
@@ -1065,7 +1080,10 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		payUI_Select_PaymentType(driver, "CC");
 		payUI_Enter_PaymentDetails(driver, "CC", "MASTER","");
 		safeClick(driver, getObjectPayment("Bento_paynow"));
+		if(elementVisible(driver,getObjectPayment("Bento_Payment_Skip_Securecard"),2))
+		{
 		safeClick(driver,getObjectPayment("Bento_Payment_Skip_Securecard"));
+		}
 		elementVisible(driver, getObjectPayment("Bento_card_password"), 5);
 		  safeClick(driver, getObjectPayment("Bento_card_password"));
 		  Thread.sleep(1000); 

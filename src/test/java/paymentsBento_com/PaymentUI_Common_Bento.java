@@ -732,7 +732,9 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 			textPresent_Log(driver, "Please enter valid UPI id", 1);
 		}
 		else if(PaymentType.equalsIgnoreCase("SC")) {
-			driver.manage().addCookie(cookie_Parl_Wallet);
+			//driver.manage().addCookie(cookie_Parl_Wallet);
+			driver.manage().addCookie(ctauth_partial_wallet);
+			
 			refreshPage(driver);		
 			Thread.sleep(1000);
 			bento_Deselect_Wallet();
@@ -740,6 +742,16 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 			bento_Select_PaymentType(driver, "SC");		
 			safeClick(driver, getObjectPayment("Bento_Pay_Button"));
 			textPresent_Log(driver, "Enter CVV number", 1);
+			textPresent_Log(driver, "Save my card as per the RBI guidelines", 1);
+			elementPresent_log(driver, By.xpath("//span/div"), "RBI Know More link", 5);
+			safeClick(driver, By.xpath("//span/div"));
+			//elementPresent_log(driver, By.xpath("//div[7]/div/div/div"), "Secure your card as per RBI guide lines", 5);
+			textPresent_Log(driver, "Secure your card as per RBI guidelines", 5);
+			textPresent_Log(driver, "When you opt-in your card is secured and you get faster checkout in future transactions", 1);
+			textPresent_Log(driver, "Transact faster without entering card details every time", 1);
+			textPresent_Log(driver, "As per RBI, Starting 1st Jan’22 all your card information will be secured with card", 1);
+			//textPresent_Log(driver, "networks (VISA, Mastercard & Rupay) ensuring your card number is not misused", 1);
+			refreshPage(driver);
 		}
 		else if(PaymentType.equalsIgnoreCase("ADCB")) {
 			bento_Select_PaymentType(driver, "ADCB");	
@@ -752,10 +764,13 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 			
 		}
 		else if(PaymentType.equalsIgnoreCase("Expressway")) {
-			bento_Select_PaymentType(driver, "CC");		
-			textPresent(driver, "Save this card for faster checkout, we never save your CVV", 1);
-			safeClick(driver, getObjectPayment("Bento_Pay_Expressway_Radio_Btn"));
+			bento_Select_PaymentType(driver, "CC");
+			safeType(driver, getObjectPayment("PaymentPage_CreditCard_Number"), "4761360075863216");
+			mouseHoverClick(driver, getObjectPayment("PaymentPage_CreditCard_Number"));
+			elementVisible(driver, By.cssSelector("span.checkbox__mark.bs-border.bc-neutral-500.bw-1.ba"), 10);
+			textPresent_Log(driver, "Save my card as per the RBI guidelines", 1);
 		}
+		
 		else if(PaymentType.equalsIgnoreCase("XYZ")) {
 			bento_Select_PaymentType(driver, "CC");		
 			

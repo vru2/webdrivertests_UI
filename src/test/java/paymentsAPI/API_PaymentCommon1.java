@@ -3972,6 +3972,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			qaurl=qaurlus;
 		}
 		Url = qaurl+ fetchPaymentURL(resp);
+		System.out.println(fetchPaymentURL(resp));
 		if(Domain.contains("FLYIN")) {
 			Url = qaurlFlyin+ fetchPaymentURL(resp);			
 		}		
@@ -3981,7 +3982,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		Reporter.log("TripID : "+TripID);	
 		if(!Url.contains("pay")) {
 			Reporter.log("Pay URL is not created - Failing the script");
-			System.out.println("Pay URL is not created - Failing the script"+Url);
+			//System.out.println("Pay URL is not created - Failing the script"+Url);
 			Assert.assertTrue(false);			
 		}
 		if(textPresent(driver, "Oops, Something went wrong", 5)) {
@@ -3989,6 +3990,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			Assert.assertTrue(false);
 		}
 		Reporter.log("URL : "+Url);
+		//System.out.println("URL : "+Url);
 		return Url;
 	}
 	
@@ -3997,6 +3999,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		String payurl="";
 		JsonPath jsonPathEvaluator = resp.jsonPath();
 		payurl = jsonPathEvaluator.getString("payment_url");
+		System.out.println(resp);
 		if(payurl.equals(null)) {
 			Reporter.log("Pay URL is not created - Failing the script");
 			Assert.assertTrue(false);			
@@ -4069,7 +4072,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		String randNumber= Integer.toString(randomNumber);
 		String tripRef= "Q201" + randNumber;
 		*/
-		String URL = "/paymentservice/test/getHash?tripRef="+tripRef+"&itineraryId=NI685a33347e-464c-4a27-86c9-200710101330&amount=500";
+		String URL = "/paymentservice/test/getHash?tripRef="+tripRef+"&itineraryId=NI685a33347e-464c-4a27-86c9-200710101330&amount=500&productType=DOMESTIC_AIR";
 		RestAssured.baseURI = urlPay;
 		String endPoint = URL;		
 		Response response = null;
@@ -4083,7 +4086,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		String randNumber= Integer.toString(randomNumber);
 		String tripRef= "Q201" + randNumber;
 		*/
-		String URL = "/paymentservice/test/getHash?tripRef="+tripRef+"&itineraryId=NI685a33347e-464c-4a27-86c9-200710101330&amount=0";
+		String URL = "/paymentservice/test/getHash?tripRef="+tripRef+"&itineraryId=NI685a33347e-464c-4a27-86c9-200710101330&amount=0&productType=DOMESTIC_AIR";
 		RestAssured.baseURI = urlPay;
 		String endPoint = URL;		
 		Response response = null;
@@ -4097,7 +4100,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		String randNumber= Integer.toString(randomNumber);
 		String tripRef= "Q201" + randNumber;
 		*/
-		String URL = "/paymentservice/test/getHash?tripRef="+tripRef+"&itineraryId=NI685a33347e-464c-4a27-86c9-200710101330&amount=110";
+		String URL = "/paymentservice/test/getHash?tripRef="+tripRef+"&itineraryId=NI685a33347e-464c-4a27-86c9-200710101330&amount=110&productType=DOMESTIC_AIR";
 		RestAssured.baseURI = urlPay;
 		String endPoint = URL;		
 		Response response = null;
@@ -4111,7 +4114,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		String randNumber= Integer.toString(randomNumber);
 		String tripRef= "Q201" + randNumber;
 		*/
-		String URL = "/paymentservice/test/getHash?tripRef="+tripRef+"&itineraryId=NI685a33347e-464c-4a27-86c9-200710101330&amount=5000";
+		String URL = "/paymentservice/test/getHash?tripRef="+tripRef+"&itineraryId=NI685a33347e-464c-4a27-86c9-200710101330&amount=5000&productType=DOMESTIC_AIR";
 		RestAssured.baseURI = urlPay;
 		String endPoint = URL;		
 		Response response = null;
@@ -4276,7 +4279,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		}
 			response = RestAssured.given().
 				when().log().all().body(params).headers(headers).post(endPoint);
-			//Reporter.log("URL : "+urlPay+endPoint);
+			System.out.println("URL : "+urlPay+endPoint);
 			//Reporter.log("Params : "+params);
 			return response;
 	}

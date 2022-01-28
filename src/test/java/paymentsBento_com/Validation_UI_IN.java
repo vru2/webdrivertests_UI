@@ -21,8 +21,8 @@ public class Validation_UI_IN extends PaymentUI_Common_Bento{
 
 	@Test (priority=1)
 	public void CC_Validation() throws Exception {
-	//	get_Bento_Url(driver, "Air", "");
-		driver.get("https://qa2.cleartrip.com/pay/air/U1hdcEtGRRBBMDIyUQ==?lang=en");
+		get_Bento_Url(driver, "Air", "");
+		//driver.get("https://qa2.cleartrip.com/pay/air/UV1UcUBHRhNBMDIyUQ==?lang=en");
 		bento_Validation_UI(driver,"CC");
 	}
 	

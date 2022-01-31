@@ -12,7 +12,7 @@
 		</suite-files>		
 		
 		 <suite-files>		 
-			<suite-file path="QA_Non_Com_Payment_Booking_From_Itn.xml"></suite-file>
+			<suite-file path="QA_ME_Payment_Booking_From_Itn.xml"></suite-file>
 		</suite-files> 
 		
 </suite>

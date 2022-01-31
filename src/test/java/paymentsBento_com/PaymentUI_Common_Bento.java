@@ -644,7 +644,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 			Actions action = new Actions(driver);
 			action.moveToElement(ele).perform();
 			if(Domain.equals("IN")) {
-				textPresent_Log(driver, "Includes a non-refundable convenience fee of ₹ 100 per traveller", 1);
+				textPresent_Log(driver, "Includes a non-refundable convenience fee of ₹ 100 per traveller", 1); 
 				Reporter.log("Includes a non-refundable convenience fee of ₹ 30 per traveller -popup is displayed");
 			}
 			if(Domain.equals("AE")) {
@@ -766,20 +766,37 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 		else if(PaymentType.equalsIgnoreCase("Expressway")) {
 			bento_Select_PaymentType(driver, "CC");
 			safeType(driver, getObjectPayment("PaymentPage_CreditCard_Number"), "4761360075863216");
-			mouseHoverClick(driver, getObjectPayment("PaymentPage_CreditCard_Number"));
-			elementVisible(driver, By.cssSelector("span.checkbox__mark.bs-border.bc-neutral-500.bw-1.ba"), 10);
+			//mouseHoverClick(driver, getObjectPayment("PaymentPage_CreditCard_Number"));
+			elementPresent_log(driver, By.xpath("//div[15]/div/label/div/span"),"Save Card check box", 10);
 			textPresent_Log(driver, "Save my card as per the RBI guidelines", 1);
 		}
 		
-		else if(PaymentType.equalsIgnoreCase("XYZ")) {
+		else if(PaymentType.equalsIgnoreCase("Expressway_Popup")) {
 			bento_Select_PaymentType(driver, "CC");		
+			Enter_CC_Details(driver, platform.value("MasterCard_Number"), platform.value("MasterCard_Month"), platform.value("MasterCard_Year"), platform.value("MasterCard_CVV"));
+			safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
+			elementPresent_log(driver, By.xpath("//div[5]/div/div/div"), "Secure your card as per RBI guildelines", 5);
+			String No = getText(driver, By.xpath("//div[10]/button"));
 			
+			String Yes = getText(driver, By.xpath("//button[2]"));
+			
+			if(!No.contains("No, skip")) {
+				Reporter.log("No, skip text not displayed");
+				Assert.assertTrue(false);
+			} 
+			if(!Yes.contains("Yes, secure")) {
+				Reporter.log("Yes, secure text not displayed");
+				Assert.assertTrue(false);				
+			}
+			
+				elementPresent_log(driver, By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='No, skip'])[1]/preceding::*[name()='svg'][1]"), "", 5);
+						
 		}
 		else if(PaymentType.equalsIgnoreCase("ABC")) {
 			bento_Select_PaymentType(driver, "CC");		
 			
 		}
-			
+		
 	}
 	
 	public void bento_Validation_Images(RemoteWebDriver driver, String PaymentType, String Domain) throws Exception {
@@ -1009,7 +1026,9 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 			Reporter.log("BookingPrivacy URL : "+BookingPrivacyURL);
 			Assert.assertTrue(false);
 		}
-		textPresent_Log(driver, "Cleartrip is fanatical about protecting your privacy", 5);
+		//textPresent_Log(driver, "Cleartrip is fanatical about protecting your privacy", 5); 
+		
+		textPresent_Log(driver, "We value the trust you place in us and recognize the importance of secure transactions and information privacy", 5);
 		}
 		for(String winHandle : driver.getWindowHandles()){
 		    driver.switchTo().window(winHandle);

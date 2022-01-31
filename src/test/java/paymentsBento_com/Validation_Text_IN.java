@@ -20,8 +20,7 @@ public class Validation_Text_IN extends PaymentUI_Common_Bento{
 
 	@Test (priority=1)
 	public void CC_Validation_Text() throws Exception {
-		//get_Bento_Url(driver, "Air", "");
-		driver.get("https://qa2.cleartrip.com/pay/air/U1hdcEtGRRBBMDIyUQ==?lang=en");
+		get_Bento_Url(driver, "Air", "");
 		bento_Validation_Text(driver, "CC", "");
 	}
 	

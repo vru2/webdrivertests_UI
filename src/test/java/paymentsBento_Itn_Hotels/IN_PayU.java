@@ -26,7 +26,7 @@ public class IN_PayU extends PaymentsBento_Itn_Hotels_Common {
 	} 
 
  		@AfterClass
-		public void closeSelenium() throws Exception {
+		public void closeSelenium() throws Exception { 
 		 	browserClose(driver);
 		}
 

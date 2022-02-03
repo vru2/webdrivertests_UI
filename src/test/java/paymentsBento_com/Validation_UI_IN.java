@@ -49,6 +49,7 @@ public class Validation_UI_IN extends PaymentUI_Common_Bento{
 	
 	@Test (priority=6)
 	public void Expressway_Validation_Text() throws Exception {
+		refreshPage(driver);
 		bento_Validation_UI(driver,"Expressway");
 	}
 	

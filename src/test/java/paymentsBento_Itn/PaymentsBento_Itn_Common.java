@@ -1080,6 +1080,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		payUI_Select_PaymentType(driver, "CC");
 		payUI_Enter_PaymentDetails(driver, "CC", "MASTER","");
 		safeClick(driver, getObjectPayment("Bento_paynow"));
+		//Save Card RBI popup
 		if(elementVisible(driver,getObjectPayment("Bento_Payment_Skip_Securecard"),2))
 		{
 		safeClick(driver,getObjectPayment("Bento_Payment_Skip_Securecard"));

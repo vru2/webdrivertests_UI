@@ -20,6 +20,12 @@
     </classes>
 </test>
 
+<test name="Image Validation IN" preserve-order="true" >
+    <classes>
+      <class name="paymentsBento_com.Validation_Images_IN"/> 	  
+    </classes>
+</test>
+
 <test name="UI Validation AE" preserve-order="true" >
     <classes>
       <class name="paymentsBento_com.Validation_UI_AE"/> 	  
@@ -29,12 +35,6 @@
 <test name="Text Validation AE" preserve-order="true" >
     <classes>
       <class name="paymentsBento_com.Validation_Text_AE"/> 	  
-    </classes>
-</test>
-
-<test name="Image Validation IN" preserve-order="true" >
-    <classes>
-      <class name="paymentsBento_com.Validation_Images_IN"/> 	  
     </classes>
 </test>
 

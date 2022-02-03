@@ -26,8 +26,6 @@ public class PaymentUI_Captcha extends domains.PaymentNodeJS{
 	}
 
 
-
-
 	@Test
 	public void retryCaptcha() throws Exception{
 		driver=(RemoteWebDriver) getDriver(driver);

@@ -459,14 +459,17 @@ public class PaymentUI_Common extends PaymentNodeJS{
 }
 	
 	public void Enter_CC_Details(RemoteWebDriver driver, String CCNumber, String CCExpMonth, String CCExpYear, String CVV) throws Exception {
+		Thread.sleep(1000);
 		Reporter.log("Card Details +\n"+ CCNumber +"\n " + CCExpMonth  +" " + CCExpYear +" " + CVV);
 		safeType(driver, getObjectPayment("PaymentPage_CreditCard_Number"), CCNumber);
 		safeClick(driver, getObjectPayment("PaymentPage_CreditCard_Exp_Month"));
 		safeSelect(driver, getObjectPayment("PaymentPage_CreditCard_Exp_Month"), CCExpMonth);
 		safeClick(driver, getObjectPayment("PaymentPage_CreditCard_Exp_Year"));
+		Thread.sleep(1000);
 		safeSelect(driver, getObjectPayment("PaymentPage_CreditCard_Exp_Year"), CCExpYear);
 		safeType(driver, getObjectPayment("PaymentPage_CreditCard_Name"), "test");
 		safeType(driver, getObjectPayment("PaymentPage_CreditCard_CVV"), CVV);
+		Thread.sleep(1000);
 	}
 	
 	public void Enter_CARD_Details_PWA(RemoteWebDriver driver, String CCNumber, String CCExp, String CVV) throws Exception {

@@ -97,9 +97,9 @@
 
 <test name="Qitaf" preserve-order="true" parallel="true">
     <classes>
-      <class name="paymentsAPI.API_Qitaf_Redeem"/>
+      <!-- <class name="paymentsAPI.API_Qitaf_Redeem"/>
       <class name="paymentsAPI.API_Qitaf_Reverse"/>    
-      <class name="paymentsAPI.API_Qitaf_SendOTP"/>      
+      <class name="paymentsAPI.API_Qitaf_SendOTP"/>       -->
     </classes>
 </test>
 
@@ -194,9 +194,9 @@
 </test>
 
 <test name="ADCB" preserve-order="true" parallel="true">
-    <classes>
+    <classes><!-- 
       <class name="paymentsAPI.API_Reward_ADCB_CheckBalance"/> 
-      <class name="paymentsAPI.API_Reward_ADCB_Pay"/> 
+      <class name="paymentsAPI.API_Reward_ADCB_Pay"/>  -->
     </classes>
 </test>
 

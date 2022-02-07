@@ -325,8 +325,12 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		safeClick(driver, getObjectPayment("Bento_Itn_Username"));
 		safeType(driver, getObjectPayment("Bento_Itn_Username"), username);
 		Reporter.log("Entered user name");
-		safeClick(driver, getObjectPayment("Bento_Itn_Contactinfo_Continue"));
+		if(elementVisible(driver, getObjectPayment("Bento_Itn_Contactinfo_Continue"), 5)) {
+			smartClick(driver, getObjectPayment("Bento_Itn_Contactinfo_Continue"));			
+		}
+		else smartClick(driver, By.xpath("//div[6]/button"));		
 		Reporter.log("Clicked on continue");
+		elementVisible(driver, getObjectPayment("Bento_Itn_User_Firstname"), 10);
 		safeClick(driver, getObjectPayment("Bento_Itn_User_Firstname"));
 		safeType(driver, getObjectPayment("Bento_Itn_User_Firstname"), "Tester");
 		Reporter.log("Entered first name");

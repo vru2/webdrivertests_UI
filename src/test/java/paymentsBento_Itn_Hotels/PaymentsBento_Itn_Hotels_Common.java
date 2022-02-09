@@ -80,7 +80,7 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 	}
 	
 	public void hotelItn_Details(RemoteWebDriver driver, String CouponGV, String PayType) throws Exception {
-		
+		textPresent(driver, "Book in three simple steps", 5);
 	}
 	
 	public void hotelItn_SignIN(RemoteWebDriver driver, String SignIN, String PayType) throws Exception {
@@ -98,6 +98,6 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 	public void hotelPayment_Page(RemoteWebDriver driver, String PaymentType, String CardNumber, String Domain, String PayType, String BankName) throws Exception {
 		hotelPayment_Page_Validation(driver, PayType, Domain);
 		//paymentPage(driver, PaymentType, CardNumber, Domain, PayType, BankName);
-		//confirmation_page(driver, PaymentType, CardNumber);
+		//confirmation_page_hotel(driver, PaymentType, CardNumber);
 	}
 }

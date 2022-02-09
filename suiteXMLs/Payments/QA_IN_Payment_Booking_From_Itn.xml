@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Bento IN UI" parallel="tests" thread-count="2">
+<suite name="Bento India Domain Bookings" parallel="tests" thread-count="1">
 
 <listeners>
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -32,7 +32,7 @@
     </classes>
 </test>
 
-<test name="IN Coupon" preserve-order="true">
+<test name="IN Coupon PayU NB" preserve-order="true">
     <classes>
 	     	<class name="paymentsBento_Itn.Bento_IN_Coupon_SC_PayU_Booking"/> 
 	        <class name="paymentsBento_Itn.Bento_IN_InvalidCoupon_NB_ICICI_Booking"/> 
@@ -48,7 +48,8 @@
 
 <test name="IN GV" preserve-order="true">
     <classes>
-	       	<class name="paymentsBento_Itn.Bento_IN_Full_GV_Booking"/> 
+	       	<class name="paymentsBento_Itn.Bento_IN_Full_GV_Booking"/>
+	       	<class name="paymentsBento_Itn.Bento_IN_Partial_GV_Booking"/>
     </classes>
 </test>
 
@@ -59,5 +60,16 @@
 	        <class name="paymentsBento_Itn.Bento_IN_Phonepe_Validation"/> 
     </classes>
 </test>
+
+
+<test name="TW AmazonPay UPI" preserve-order="true" >
+    <classes>
+	        <class name="paymentsBento_Itn.Bento_IN_AmazonPay"/> 
+    </classes>
+</test>
+
+
+
+
 
 </suite>

@@ -197,7 +197,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			}
 			Reporter.log("Itinerary page loaded");		
 			
-			if(elementVisible(driver,getObjectPayment("Bento_Itn_Standard_Fee1"), 5))
+			if(elementVisible(driver,getObjectPayment("Bento_Itn_Standard_Fee1"), 2))
 			{
 			  safeClick(driver,getObjectPayment("Bento_Itn_Standard_Fee1"));
 			  Reporter.log("Selected itn fee"); 
@@ -272,7 +272,14 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			else
 			{
 			book_Apply_Coupon_GV(driver, gv_coupon);
-			if(elementVisible(driver,getObjectPayment("Bento_Itn_Fare2_Continue"),2)) 
+			if(elementVisible(driver,getObjectPayment("Bento_Itn_Fare3_Continue"),1)) {
+				  mouseHover(driver, getObjectPayment("Bento_Itn_Fare3_Continue"));
+				  safeClick(driver,getObjectPayment("Bento_Itn_Fare3_Continue"));
+				  Reporter.log("Clicked on fare continue"); 
+				  Thread.sleep(2000);
+			}
+			
+			else if(elementVisible(driver,getObjectPayment("Bento_Itn_Fare2_Continue"),1)) 
 			 {
 			  WebElement ele2=driver.findElement(getObjectPayment("Bento_Itn_Fare2_Continue"));
 			  Thread.sleep(2000); 
@@ -283,9 +290,8 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			  smartClick(driver,getObjectPayment("Bento_Itn_Fare2_Continue"));
 			  Reporter.log("Clicked on fare continue"); 
 			  }
-			  else 
-			  {
-			  elementVisible(driver, getObjectPayment("Bento_Itn_Fare_Continue"), 2);	
+			  else if(elementVisible(driver, getObjectPayment("Bento_Itn_Fare_Continue"), 1))
+			  {			  	
 			  WebElement ele2=driver.findElement(getObjectPayment("Bento_Itn_Fare_Continue"));
 			  Thread.sleep(2000); 
 			  ele2.sendKeys(Keys.ARROW_DOWN); 
@@ -297,7 +303,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			  Thread.sleep(2000); 
 			  }
 			  
-			  if(elementVisible(driver,getObjectPayment("Bento_Itn_Meal_Continue"),5)) 
+			  if(elementVisible(driver,getObjectPayment("Bento_Itn_Meal_Continue"), 1)) 
 			  {
 			   elementVisible(driver, getObjectPayment("Bento_Itn_Meal_Continue"), 2);	
 			   WebElement ele4=driver.findElement(getObjectPayment("Bento_Itn_Meal_Continue"));
@@ -434,7 +440,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			  safeType(driver,getObjectPayment("Bento_Itn_GV_Pin"),GV_pin);
 			  Reporter.log("Entered GV pin");
 			  safeClick(driver,getObjectPayment("Bento_Itn_GV_Apply"));
-			  textPresent_Log(driver,"has been redeemed for this booking",3);
+			  //textPresent_Log(driver,"has been redeemed for this booking",3);
 			  Reporter.log("GV applied Successfully"); 
 		} 
 		 
@@ -451,8 +457,9 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			  safeType(driver,getObjectPayment("Bento_Itn_GV_Pin"),GV[1]);
 			  Reporter.log("Entered GV pin");
 			  safeClick(driver,getObjectPayment("Bento_Itn_GV_Apply"));
-			  textPresent_Log(driver,"has been redeemed for this booking",3);
+			//  textPresent_Log(driver,"has been redeemed for this booking",3);
 			  Reporter.log("GV applied Successfully"); 
+			  Thread.sleep(20000);
 		} 
 		else if(gv_coupon=="Coupon") {
 			  WebElement ele4 =driver.findElement(getObjectPayment("Bento_Itn_GV_Number"));
@@ -962,28 +969,31 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	}
 	
 	public void bento_pay_NB(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
-		bento_Select_PaymentType(driver, "NB");	
+		textPresent(driver, "Pay to complete your booking", 5);
+		payUI_Select_PaymentType(driver, "NB");		
 		Reporter.log("Clicked on NB");
 		Thread.sleep(1000);
 		safeClick(driver, getObjectPayment("Bento_Payment_NB_ICIC"));
 		Reporter.log("Selected ICIC Bank");
 		safeClick(driver, getObjectPayment("Bento_Payment_Paynow")); 
 		
-		// Invalid Coupon Validation
-
-		textPresent_Log(driver, "Coupon not applicable", 5);
-		elementPresent_log(driver, getObjectPayment("Bento_Pay_Coupon_Popup_Close_Btn"), "invaid coupon Pop Up not displayed",	1);
-		safeClick(driver, By.xpath("//button[2]")); // Clicking on Change paymentMode
-		Thread.sleep(2000);
-		textNotPresent_Log(driver, "Coupon not applicable", 5);
-		bento_Select_PaymentType(driver, "CC");			
-		bento_Select_PaymentType(driver, "NB");
-		safeClick(driver, getObjectPayment("Bento_Payment_NB_ICIC"));
-		safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
-		textPresent_Log(driver, "Coupon not applicable", 5);		
-		elementPresent_log(driver, getObjectPayment("Bento_Pay_Coupon_Popup_Close_Btn"), "",	1);
-		safeClick(driver, By.xpath("//form/button")); // Clicking on Continue without coupon paymentMode
-		Reporter.log("Clicked on paynow");
+		if(PayType.contains("Coupon")) {
+			// Invalid Coupon Validation	
+			textPresent_Log(driver, "Coupon not applicable", 5);
+			elementPresent_log(driver, getObjectPayment("Bento_Pay_Coupon_Popup_Close_Btn"), "invaid coupon Pop Up not displayed",	1);
+			safeClick(driver, By.xpath("//button[2]")); // Clicking on Change paymentMode
+			Thread.sleep(2000);
+			textNotPresent_Log(driver, "Coupon not applicable", 5);
+			bento_Select_PaymentType(driver, "CC");			
+			bento_Select_PaymentType(driver, "NB");
+			safeClick(driver, getObjectPayment("Bento_Payment_NB_ICIC"));
+			safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
+			textPresent_Log(driver, "Coupon not applicable", 5);		
+			elementPresent_log(driver, getObjectPayment("Bento_Pay_Coupon_Popup_Close_Btn"), "",	1);
+			safeClick(driver, By.xpath("//form/button")); // Clicking on Continue without coupon paymentMode
+			Reporter.log("Clicked on paynow");
+			
+		}
 		textPresent_Log(driver, "Please wait...", 2);
 		textPresent_Log(driver, "Welcome to Razorpay Software Private Ltd Bank", 5);
 		safeClick(driver, getObjectPayment("Bento_Payment_NB_Payment_Success"));
@@ -1161,16 +1171,16 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	
 	public void bento_pay_GV_Partial(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
 		textPresent_Log(driver, "Pay to complete your booking", 10);
-		textPresent_Log(driver, "Gift card", 1);
-		bento_Select_PaymentType(driver, "NB");
+		//textPresent_Log(driver, "Gift card", 1);
+		/*bento_Select_PaymentType(driver, "NB");
 		Reporter.log("Clicked on NB");
 		Thread.sleep(1000);
 		safeClick(driver, getObjectPayment("Bento_Payment_NB_ICIC"));
 		Reporter.log("Selected ICIC Bank");
 		safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
 		textPresent_Log(driver, "Welcome to Razorpay Software Private Ltd Bank", 5);
-		safeClick(driver, getObjectPayment("Bento_Payment_NB_Payment_Success"));
-		
+		safeClick(driver, getObjectPayment("Bento_Payment_NB_Payment_Success"));*/
+		bento_pay_NB(driver, PaymentType, CardNumber, domain, PayType, BankName);
 	}
 
 	

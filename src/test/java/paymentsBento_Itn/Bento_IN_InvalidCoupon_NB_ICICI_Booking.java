@@ -22,7 +22,7 @@ public class Bento_IN_InvalidCoupon_NB_ICICI_Booking extends PaymentsBento_Itn_C
 		Reporter.log(searchurl("IN"));
 		Searchpagebook(driver,"","com","");
 	    book_itnnew(driver,"DOMCC");
-		paymentPage(driver,"NB","","","","");// Invalid Coupon Validation
+		paymentPage(driver,"NB","","","Coupon","");// Invalid Coupon Validation
 	}
 	
 	@AfterClass

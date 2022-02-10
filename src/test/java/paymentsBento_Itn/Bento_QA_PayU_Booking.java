@@ -18,9 +18,8 @@ public class Bento_QA_PayU_Booking extends PaymentsBento_Itn_Common {
 	@Test
 	public void bento_qa_booking() throws Exception {
 		driver.manage().deleteAllCookies();
-		driver.navigate().to(qaurl+searchurl);
-		System.out.println(qaurl+searchurl);
-		Reporter.log(qaurl+searchurl);
+		driver.navigate().to(searchurl("QA"));
+		Reporter.log(searchurl("QA"));
 		Searchpagebook(driver,"","","");
 		noncom_itnpage(driver,"","");
    	 	paymentPage(driver,"OTH","","","","");

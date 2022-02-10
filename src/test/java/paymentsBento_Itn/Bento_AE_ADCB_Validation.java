@@ -18,9 +18,9 @@ public class Bento_AE_ADCB_Validation extends PaymentsBento_Itn_Common {
 	@Test
 	public void bento_ae_ADCB_Validate() throws Exception {
 		driver.manage().deleteAllCookies();
-		driver.navigate().to(aeurl+searchurl);
-		System.out.println(aeurl+searchurl);
-		Reporter.log(aeurl+searchurl);
+		driver.navigate().to(searchurl("AE"));
+		System.out.println(searchurl("AE"));
+		Reporter.log(searchurl("AE"));
 		Searchpagebook(driver,"","","");
 		noncom_itnpage(driver,"","ae");
 		//paymentPage(driver,"AE-SC","ADCB","", "", "");		

@@ -18,9 +18,8 @@ public class Bento_IN_Full_GV_Booking extends PaymentsBento_Itn_Common{
 	@Test
 	public void bento_fullgv() throws Exception {
 		driver.manage().deleteAllCookies();
-		driver.navigate().to(qa2url+searchurl);
-		System.out.println(qa2url+searchurl);
-		Reporter.log(qa2url+searchurl);
+		driver.navigate().to(searchurl("IN"));
+		Reporter.log(searchurl("IN"));
 	    Searchpagebook(driver,"","com","");
 	    book_itnnew(driver,"GV");
 	    paymentPage(driver,"GV","","","",""); // GV page validation is added 

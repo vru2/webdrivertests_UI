@@ -36,7 +36,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	String contactnumber = "12345678";
 
 
-	String searchurl = "/flights/results?adults=1&childs=0&infants=0&depart_date=29/12/2022&return_date=&intl=n&from=BLR&to=MAA&airline=&carrier=&sd=1643253708293&page=&sellingCountry=IN&ssfi=&flexi_search=&ssfc=&origin=BLR - Bangalore, IN&destination=MAA - Chennai, IN&class=Economy";
+	String searchurl2= "/flights/results?adults=1&childs=0&infants=0&depart_date=29/12/2022&return_date=&intl=n&from=BLR&to=MAA&airline=&carrier=&sd=1643253708293&page=&sellingCountry=IN&ssfi=&flexi_search=&ssfc=&origin=BLR - Bangalore, IN&destination=MAA - Chennai, IN&class=Economy";
 	String searchurl1 ="/flights/results?adults=1&childs=0&infants=0&depart_date=29/12/2022&return_date=&intl=n&from=BLR&to=DEL&airline=&carrier=&sd=1643253708293&page=&sellingCountry=IN&ssfi=&flexi_search=&ssfc=&origin=BLR - Bangalore, IN&destination=DEL - New Delhi, IN&class=Economy";
 	//String searchurl = "/flights/results?adults=1&childs=0&infants=0&class=Economy&depart_date=20/06/2022&from=BLR&to=MAA&intl=n&origin=BLR%20-%20Bangalore,%20IN&destination=MAA%20-%20Chennai,%20IN&sd=1643265410611&rnd_one=O&sourceCountry=Bangalore&destinationCountry=Chennai";
 	//String searchurl1 ="/flights/results?adults=1&childs=0&infants=0&depart_date=29/12/2022&return_date=&intl=n&from=BLR&to=CCU&airline=&carrier=&sd=1642563217292&page=&sellingCountry=IN&ssfi=&flexi_search=&ssfc=&origin=BLR - Bangalore, IN&destination=CCU - Kolkata, IN&class=Economy";
@@ -49,6 +49,42 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	String omurl = "https://qa2om.cleartrip.com";
 	String meurl = "https://qa2me.cleartrip.com";
 
+
+	public String searchurl(String Domain)  throws Exception
+	{
+		String Domain_URL= null;
+		String Air_URL= "/flights/results?adults=1&childs=0&infants=0&depart_date="+getDateTime(30, "dd/MM/yyyy")+"&return_date=&intl=n&from=BLR&to=MAA&airline=&carrier=&sd=1643253708293&page=&sellingCountry=IN&ssfi=&flexi_search=&ssfc=&origin=BLR - Bangalore, IN&destination=MAA - Chennai, IN&class=Economy";
+		switch (Domain) {
+		case "IN":
+			Domain_URL = qa2url;
+			break;
+		case "AE":
+			Domain_URL = aeurl;
+			break;
+		case "BH":
+			Domain_URL = bhurl;
+			break;
+		case "QA":
+			Domain_URL = qaurl;
+			break;
+		case "KW":
+			Domain_URL = kwurl;
+			break;
+		case "SA":
+			Domain_URL = saurl;
+			break;
+		case "OM":
+			Domain_URL = omurl;
+			break;
+		case "ME":
+			Domain_URL = meurl;
+			break;
+		default:
+			Domain_URL = qa2url;
+		}
+		return Domain_URL+Air_URL;
+	}
+	
 	// Booking via search page
 	public void Searchpagebook(RemoteWebDriver driver,String wallettype, String domain, String cardtype) throws Exception 
 	{

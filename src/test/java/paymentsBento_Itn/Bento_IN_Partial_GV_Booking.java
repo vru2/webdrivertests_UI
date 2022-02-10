@@ -18,9 +18,8 @@ public class Bento_IN_Partial_GV_Booking extends PaymentsBento_Itn_Common{
 	@Test
 	public void bento_partialgv() throws Exception {
 		driver.manage().deleteAllCookies();
-		driver.navigate().to(qa2url+searchurl);
-		System.out.println(qa2url+searchurl);
-		Reporter.log(qa2url+searchurl);
+		driver.navigate().to(searchurl("IN"));
+		Reporter.log(searchurl("IN"));
 	    Searchpagebook(driver,"","com","");
 	    book_itnnew(driver,"GV_Partial");
 	    paymentPage(driver,"GV_Partial","","","",""); 

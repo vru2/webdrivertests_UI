@@ -18,9 +18,8 @@ public class Bento_SA_SC_Checkout2D_Booking extends PaymentsBento_Itn_Common {
 	@Test
 	public void bento_sa_checkout2d_booking() throws Exception {
 		driver.manage().deleteAllCookies();
-		driver.navigate().to(saurl+searchurl);
-		System.out.println(saurl+searchurl);
-		Reporter.log(saurl+searchurl);
+		driver.navigate().to(searchurl("SA"));
+		Reporter.log(searchurl("SA"));
 		Searchpagebook(driver,"","","");
 		noncom_itnpage(driver,"","sa");
 		paymentPage(driver,"OTH","4543","sa","","");

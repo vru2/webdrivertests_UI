@@ -18,8 +18,8 @@ public class Bento_IN_AmazonPay extends PaymentsBento_Itn_Common {
 	@Test
 	public void bento_AmazonPay() throws Exception {
 		driver.manage().deleteAllCookies();
-		driver.navigate().to(qa2url + searchurl);
-		Reporter.log(qa2url + searchurl);
+		driver.navigate().to(searchurl("IN"));
+		Reporter.log(searchurl("IN"));
 		Searchpagebook(driver, "","com","");
 		book_itnnew(driver,"");
 		paymentPage(driver,"TW","AmazonPay","","",""); 

@@ -18,9 +18,8 @@ public class Bento_IN_InvalidCoupon_NB_ICICI_Booking extends PaymentsBento_Itn_C
 	@Test
 	public void bento_nb() throws Exception {
 		driver.manage().deleteAllCookies();
-		driver.navigate().to(qa2url+searchurl);
-		System.out.println(qa2url+searchurl);
-		Reporter.log(qa2url+searchurl);
+		driver.navigate().to(searchurl("IN"));
+		Reporter.log(searchurl("IN"));
 		Searchpagebook(driver,"","com","");
 	    book_itnnew(driver,"DOMCC");
 		paymentPage(driver,"NB","","","","");// Invalid Coupon Validation

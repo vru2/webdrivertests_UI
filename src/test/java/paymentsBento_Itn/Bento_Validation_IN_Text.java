@@ -18,8 +18,8 @@ public class Bento_Validation_IN_Text extends PaymentsBento_Itn_Common {
 	@Test (priority=1)
 	public void CC_Text_Validation() throws Exception {
 		driver.manage().deleteAllCookies();
-		driver.navigate().to(qa2url+searchurl);
-		Reporter.log(qa2url+searchurl);
+		driver.navigate().to(searchurl("IN"));
+		Reporter.log(searchurl("IN"));
 		Searchpagebook(driver,"","com","");
 	    book_itnnew(driver,"");	
 		driver.manage().deleteAllCookies(); // Deleting login details

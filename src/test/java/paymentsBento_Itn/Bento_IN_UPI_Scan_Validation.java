@@ -17,9 +17,8 @@ public class Bento_IN_UPI_Scan_Validation extends PaymentsBento_Itn_Common {
 	@Test
 	public void bento_upi_Scan() throws Exception {
 		driver.manage().deleteAllCookies();
-		driver.navigate().to(qa2url+searchurl);
-		System.out.println(qa2url+searchurl);
-		Reporter.log(qa2url+searchurl);
+		driver.navigate().to(searchurl("IN"));
+		Reporter.log(searchurl("IN"));
 	    Searchpagebook(driver,"","com","");
 	    book_itnnew(driver,"");
 	    paymentPage(driver,"UPIScan","","","","");

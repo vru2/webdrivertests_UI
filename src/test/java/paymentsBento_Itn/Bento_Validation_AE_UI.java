@@ -18,8 +18,8 @@ public class Bento_Validation_AE_UI extends PaymentsBento_Itn_Common {
 		@Test
 		public void bento_ae_booking() throws Exception {
 			driver.manage().deleteAllCookies();
-			driver.navigate().to(aeurl+searchurl);
-			Reporter.log(aeurl+searchurl);
+			driver.navigate().to(searchurl("AE"));
+			Reporter.log(searchurl("AE"));
 			Searchpagebook(driver,"","","");
 			noncom_itnpage(driver,"","ae");
 			driver.manage().deleteAllCookies();

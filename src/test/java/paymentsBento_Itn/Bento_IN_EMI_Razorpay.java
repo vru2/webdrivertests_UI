@@ -20,7 +20,6 @@ public class Bento_IN_EMI_Razorpay extends PaymentsBento_Itn_Common {
 		driver.manage().deleteAllCookies();
 		driver.navigate().to(qa2url + searchurl1);
 		driver.manage().addCookie(cookie_Bento_Payment_EMI);	
-		System.out.println(qa2url + searchurl1);
 		Reporter.log(qa2url + searchurl1);
 		Searchpagebook(driver, "","com","");
 		book_itnnew(driver,"");

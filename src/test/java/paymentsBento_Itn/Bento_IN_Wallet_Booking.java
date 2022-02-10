@@ -20,9 +20,9 @@ public class Bento_IN_Wallet_Booking extends PaymentsBento_Itn_Common {
 	public void bento_full_wallet() throws Exception 
 	{
 		driver.manage().deleteAllCookies();
-		driver.navigate().to(qa2url+searchurl);
-		System.out.println(qa2url+searchurl);
-		Reporter.log(qa2url+searchurl);
+		driver.navigate().to(searchurl("IN"));
+		System.out.println(qa2url+searchurl("IN"));
+		Reporter.log(qa2url+searchurl("IN"));
 	    Searchpagebook(driver,"","com","");
 		book_itnnew(driver,"");
    	 	paymentPage(driver,"wallet","","","","");

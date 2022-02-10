@@ -18,8 +18,8 @@ public class Bento_Validation_AE_Text extends PaymentsBento_Itn_Common {
 	@Test
 	public void CC_Validation_Text() throws Exception {
 		driver.manage().deleteAllCookies();
-		driver.navigate().to(aeurl+searchurl);
-		Reporter.log(aeurl+searchurl);
+		driver.navigate().to(searchurl("AE"));
+		Reporter.log(searchurl("AE"));
 		Searchpagebook(driver,"","","");
 		noncom_itnpage(driver,"","ae");	
 		bento_Validation_Text(driver, "CC", "");

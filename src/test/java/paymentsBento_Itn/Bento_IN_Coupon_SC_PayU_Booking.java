@@ -18,9 +18,8 @@ public class Bento_IN_Coupon_SC_PayU_Booking extends PaymentsBento_Itn_Common {
 	@Test
 	public void bento_coupon() throws Exception {
 		driver.manage().deleteAllCookies();
-		driver.navigate().to(qa2url + searchurl);
-		System.out.println(qa2url + searchurl);
-		Reporter.log(qa2url + searchurl);
+		driver.navigate().to(searchurl("IN"));
+		Reporter.log(searchurl("IN"));
 		Searchpagebook(driver, "","com","amex");
 		book_itnnew(driver,"Coupon");
 		paymentPage(driver,"Coupon","","","",""); 

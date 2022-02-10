@@ -18,9 +18,8 @@ public class Bento_IN_PayUCard_Booking extends PaymentsBento_Itn_Common{
 	@Test
 	public void bento_storedcard() throws Exception {
 		driver.manage().deleteAllCookies();
-		driver.navigate().to(qa2url+searchurl);
-		System.out.println(qa2url+searchurl);
-		Reporter.log(qa2url+searchurl);
+		driver.navigate().to(searchurl("IN"));
+		Reporter.log(searchurl("IN"));
 	    Searchpagebook(driver,"","com","");
 	    book_itnnew(driver,"");
 	    paymentPage(driver,"sc","5123","","CC","MASTER");

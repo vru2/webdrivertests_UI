@@ -24,8 +24,8 @@ public class Bento_IN_PartialWallet_AMEX_Booking extends PaymentsBento_Itn_Commo
 		resp=RestAssured.get("http://172.17.51.86:8071/payments/wallet/cashback?emailId=varalakshmivaru29@gmail.com&currency=INR&amount=10&tripRef=Q190729442390&expiryDate%20=31/12/21");
 		Reporter.log(resp.asString());
 		driver.manage().deleteAllCookies();
-		driver.navigate().to(qa2url+searchurl);
-	    Reporter.log(qa2url+searchurl);
+		driver.navigate().to(searchurl("IN"));
+		Reporter.log(searchurl("IN"));
 		Searchpagebook(driver,"Partial","com","");
 	    book_itnnew(driver,"");
 	    paymentPage(driver,"partial_wallet","","","","");

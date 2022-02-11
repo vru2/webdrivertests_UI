@@ -17,11 +17,10 @@ public class Bento_IN_DC_Booking extends PaymentsBento_Itn_Common {
 
 	@Test
 	public void bento_dc() throws Exception {
-		driver.manage().deleteAllCookies();/*
+		driver.manage().deleteAllCookies();
 		driver.navigate().to(searchurl("IN"));
 		Reporter.log(searchurl("IN"));
-		Searchpagebook(driver, "","com","");*/
-		driver.navigate().to("https://qa2.cleartrip.com/flights/itinerary/NI68593971eb-4994-45f6-8373-220211095238/info?ancillaryEnabled=true");
+		Searchpagebook(driver, "","com","");
 		book_itnnew(driver,"");
 		paymentPage(driver,"CC","4111","","",""); 
 	}

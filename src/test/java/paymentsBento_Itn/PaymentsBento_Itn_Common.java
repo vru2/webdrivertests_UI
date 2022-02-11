@@ -202,13 +202,32 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			  Reporter.log("Selected itn fee"); 
 			  book_Apply_Coupon_GV(driver, gv_coupon);
 			  if(elementVisible(driver,getObjectPayment("Bento_Itn_Fare_Continue"),1)){
-				  mouseHover(driver, getObjectPayment("Bento_Itn_Fare_Continue"));
-				  safeClick(driver, getObjectPayment("Bento_Itn_Fare_Continue"));
-				  Reporter.log("Clicked on fare continue"); 
+				safeClick_JS(driver,getObjectPayment("Bento_Itn_Fare_Continue"));
+				Reporter.log("Clicked on continue"); 
+			  }
+		}
+	}
+		
+	public void itinerary_Block1(RemoteWebDriver driver, String gv_coupon) throws Exception {
+		if(!textPresent(driver, "Review your itinerary", 1))  {
+			if(elementVisible(driver,By.xpath("//div[5]/button"), 5))
+			{
+				safeClick(driver,By.xpath("//div[5]/button"));
+				Thread.sleep(1000);
+			}
+			}
+		Reporter.log("Itinerary page loaded");
+		
+		if(elementVisible(driver,getObjectPayment("Bento_Itn_Standard_Fee1"), 2)){
+			  safeClick(driver,getObjectPayment("Bento_Itn_Standard_Fee1"));
+			  Reporter.log("Selected itn fee"); 
+			  book_Apply_Coupon_GV(driver, gv_coupon);
+			  if(elementVisible(driver,getObjectPayment("Bento_Itn_Fare_Continue"),1)){
+				safeClick_JS(driver,getObjectPayment("Bento_Itn_Fare_Continue"));
+				Reporter.log("Clicked on continue"); 
 			  }
 			  else if(elementVisible(driver,getObjectPayment("Bento_Itn_Fare1_Continue"),1)){
-				  mouseHover(driver, getObjectPayment("Bento_Itn_Fare1_Continue"));
-				  safeClick(driver, getObjectPayment("Bento_Itn_Fare1_Continue"));
+				  safeClick_JS(driver,getObjectPayment("Bento_Itn_Fare1_Continue"));
 				  Reporter.log("Clicked on fare continue"); 
 				  Thread.sleep(3000); 
 			  }			  
@@ -220,13 +239,13 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			   Thread.sleep(2000);
 			   driver.executeScript("return arguments[0].scrollIntoView();", ele4);
 			   Thread.sleep(2000);
-			   ele4.click();
+			   ele4.click(); 
 			   */
-			   mouseHover(driver, getObjectPayment("Bento_Itn_Meal_Continue"));
-			   safeClick(driver, getObjectPayment("Bento_Itn_Meal_Continue"));
+			   safeClick_JS(driver,getObjectPayment("Bento_Itn_Meal_Continue"));
 			   Reporter.log("Clicked on meal continue"); 
 			   Thread.sleep(2000);
 			  }			  
+			  
 			  
 			  }
 			else if(elementVisible(driver, getObjectPayment("Bento_Itn_Standard_Fee"), 1)) {
@@ -243,13 +262,28 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 				Reporter.log("Clicked on fare continue");
 				}
 				
-				else
-				{
-					scrollToElement(driver, getObjectPayment("Bento_Itn_Continue"));
-					Thread.sleep(1000);
-					smartClick(driver, getObjectPayment("Bento_Itn_Continue"));
-					Reporter.log("Clicked on fare continue");
-				}
+				
+				else if(elementVisible(driver, getObjectPayment("Bento_Itn_Fare_Continue"), 1))
+				  {	
+					safeClick_JS(driver,getObjectPayment("Bento_Itn_Fare_Continue"));
+					
+				/*  WebElement ele2=driver.findElement(getObjectPayment("Bento_Itn_Fare_Continue"));
+				  Thread.sleep(2000); 
+				  ele2.sendKeys(Keys.ARROW_DOWN); 
+				  Thread.sleep(2000);
+				  driver.executeScript("return arguments[0].scrollIntoView();", ele2);
+				  Thread.sleep(2000);
+				  ele2.click(); */
+				  Reporter.log("Clicked on fare continue"); 
+				  Thread.sleep(2000); 
+				  }
+				else 
+					{
+						scrollToElement(driver, getObjectPayment("Bento_Itn_Continue"));
+						Thread.sleep(1000);
+						smartClick(driver, getObjectPayment("Bento_Itn_Continue"));
+						Reporter.log("Clicked on fare continue");
+					}
 				
 			}
 			
@@ -257,24 +291,20 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			{
 			book_Apply_Coupon_GV(driver, gv_coupon);
 			if(elementVisible(driver,getObjectPayment("Bento_Itn_Fare3_Continue"),1)) {
-				  mouseHover(driver, getObjectPayment("Bento_Itn_Fare3_Continue"));
-				  safeClick(driver,getObjectPayment("Bento_Itn_Fare3_Continue"));
+				safeClick_JS(driver,getObjectPayment("Bento_Itn_Fare3_Continue"));
 				  Reporter.log("Clicked on fare continue"); 
 				  Thread.sleep(2000);
 			}
 			
 			else if(elementVisible(driver,getObjectPayment("Bento_Itn_Fare2_Continue"),1)) 
 			 {
-				mouseHover(driver, getObjectPayment("Bento_Itn_Fare2_Continue"));
-				safeClick(driver, getObjectPayment("Bento_Itn_Fare2_Continue"));
+				safeClick_JS(driver,getObjectPayment("Bento_Itn_Fare2_Continue"));
 				Reporter.log("Clicked on fare continue"); 
 			  }
 			  else if(elementVisible(driver, getObjectPayment("Bento_Itn_Fare_Continue"), 1))
-			  {			  	
+			  {
+				safeClick_JS(driver,getObjectPayment("Bento_Itn_Fare_Continue"));	  	
 				  
-
-				mouseHover(driver, getObjectPayment("Bento_Itn_Fare_Continue"));
-				safeClick(driver, getObjectPayment("Bento_Itn_Fare_Continue"));
 			/*  WebElement ele2=driver.findElement(getObjectPayment("Bento_Itn_Fare_Continue"));
 			  Thread.sleep(2000); 
 			  ele2.sendKeys(Keys.ARROW_DOWN); 
@@ -285,6 +315,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			  Reporter.log("Clicked on fare continue"); 
 			  Thread.sleep(2000); 
 			  }
+			
 			  
 			  if(elementVisible(driver,getObjectPayment("Bento_Itn_Meal_Continue"), 1)) 
 			  {
@@ -305,11 +336,13 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	public void addOns_Block(RemoteWebDriver driver) throws Exception {
 		textPresent(driver, "Choose add-ons", 1);			 
 		if (elementVisible(driver, getObjectPayment("Bento_Itn_Add_On_Skip"), 5)) {
-			Actions action = new Actions(driver);
-			WebElement we = driver.findElement(getObjectPayment("Bento_Itn_Add_On_Skip"));
-			action.moveToElement(we).moveToElement(driver.findElement(getObjectPayment("Bento_Itn_Add_On_Skip")));
-			Thread.sleep(1000);
-			safeClick(driver, getObjectPayment("Bento_Itn_Add_On_Skip"));
+			   WebElement ele4=driver.findElement(getObjectPayment("Bento_Itn_Add_On_Skip"));
+			   Thread.sleep(2000);
+			   ele4.sendKeys(Keys.ARROW_DOWN);
+			   Thread.sleep(2000);
+			   driver.executeScript("return arguments[0].scrollIntoView();", ele4);
+			   Thread.sleep(2000);
+			   ele4.click();
 			Reporter.log("Clicked on skip addons");
 		}
 	}
@@ -376,6 +409,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 				safeType(driver, getObjectPayment("Bento_Itn_User_lastname"), "Test");
 				Reporter.log("Entered last name");
 			}
+				smartSelect(driver, getObjectPayment("Bento_Itn_Select_gender"), "Female");
 				safeClick(driver, getObjectPayment("Bento_Itn_Select_gender"));
 				safeClick(driver, getObjectPayment("Bento_Itn_Select_Female"));
 				Reporter.log("Selected gender");

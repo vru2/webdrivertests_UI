@@ -896,6 +896,20 @@ public class WrapperMethod extends CommonUtil {
 			return false;
 		}
 	}
+	
+	public void safeClick_JS(RemoteWebDriver driver, By by) throws Exception {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebElement we=driver.findElement(by);
+		Actions a = new Actions(driver);
+		a.moveToElement(we);
+		a.perform();
+		we = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+		we = wait.until(ExpectedConditions.elementToBeClickable(by));
+		we = wait.until(ExpectedConditions.visibilityOf(we));
+		driver.executeScript("return arguments[0].scrollIntoView();", we);
+		Thread.sleep(2000);
+		we.click();
+	}
 
 	public void safeClick(RemoteWebDriver driver, By by) throws Exception {
 

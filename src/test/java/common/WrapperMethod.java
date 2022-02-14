@@ -906,6 +906,11 @@ public class WrapperMethod extends CommonUtil {
 		we = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 		we = wait.until(ExpectedConditions.elementToBeClickable(by));
 		we = wait.until(ExpectedConditions.visibilityOf(we));
+/*
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", we);
+		System.out.println("First element JS");*/
+		Thread.sleep(2000);
+		
 		driver.executeScript("return arguments[0].scrollIntoView();", we);
 		Thread.sleep(2000);
 		we.click();

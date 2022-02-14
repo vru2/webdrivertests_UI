@@ -12,7 +12,7 @@ public class Bento_IN_DC_Booking extends PaymentsBento_Itn_Common {
 	@BeforeClass
 	public void startSelenium() throws Exception {
 		this.driver = getDriver(driver);
-		baseUrl = getBaseUrl("com");
+		baseUrl = getBaseUrl("com"); 
 	}
 
 	@Test

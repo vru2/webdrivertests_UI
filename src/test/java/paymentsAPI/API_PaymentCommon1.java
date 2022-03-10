@@ -156,6 +156,14 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String Params_ROR_Create_Profile_List = "{\"card_number_prefix\":\"12345679\",\"ip_address\":\"12.34.56.81\",\"phone_number\":\"121212121221\",\"booked_by_email_id\":\"123@1223.com\",\"card_holder_email_id\":\"123@1223.com\",\"status\":\"T\",\"list_type\":0,\"temporary\":1,\"user_id\":\"123456543\"}";
 	String Params_ROR_Update_Payments = "{\"id\":43327334,\"trip_id\":106562333,\"txn_id\":167823463,\"payment_type\":\"DC\",\"amount\":3.955111,\"created_at\":1571291019000,\"updated_at\":1578889867935,\"seq_no\":1,\"status\":\"S\",\"description\":\"Initializing the payment\",\"currency\":\"INR\",\"order_info1\":null,\"order_info2\":null,\"app_ref1\":\"167823462\",\"app_ref2\":167823462,\"neglist_id\":null,\"pos_list_id\":null,\"linkable_id\":null,\"linkable_type\":null,\"user_message\":null,\"pan_number\":null,\"payment_category\":\"B\",\"merchant_txn_ref\":\"43327334\",\"payment_subtype\":null,\"express_checkout\":null,\"emi_count\":null,\"emi_fee\":null,\"ref_payment_id\":null,\"payment_cards_gateway_accesses\":[{\"id\":389967720,\"payment_id\":43327334,\"trip_ref\":\"TPOtpK34\",\"txn_id\":167823462,\"payment_mode\":\"D\",\"gateway_id\":52,\"card_number\":\"458546XXXXXX5964\",\"name_on_card\":\"test\",\"amount\":1.0,\"status\":\"S\",\"description\":\"Initializing\",\"tran_type\":\"INIT\",\"seq_no\":1,\"created_at\":1571291061000,\"updated_at\":1571291061000,\"credential_name\":\"IN_TECH_PROCESS_OTP_QA\",\"retry_count\":0,\"card_number_hash\":\"d1e0bef8e70b9968ac037aa1d0b0b0242d4a3203836f0822d75a0c3267c37bf1\"},{\"id\":389967722,\"payment_id\":43327334,\"trip_ref\":\"TPOtpK34\",\"txn_id\":167823462,\"payment_mode\":\"D\",\"gateway_id\":52,\"card_number\":\"458546XXXXXX5964\",\"name_on_card\":\"test\",\"amount\":1.0,\"status\":\"F\",\"description\":\"OTP Flag is not present in TP response : Error Code :ERROR082\",\"gateway_response1\":\"0399\",\"gateway_response2\":\"failed\",\"gateway_response4\":\"1180\",\"gateway_response5\":\"43327334\",\"gateway_response8\":\"ERROR082\",\"gateway_response9\":\"NA\",\"gateway_response11\":\"b1029d24a0b8a9fe2ae7b00a815bb453d5c4d55f\",\"tran_type\":\"PAUT\",\"seq_no\":1,\"created_at\":1571291065000,\"updated_at\":1571291303000,\"credential_name\":\"IN_TECH_PROCESS_OTP_QA\",\"retry_count\":0,\"card_number_hash\":\"d1e0bef8e70b9968ac037aa1d0b0b0242d4a3203836f0822d75a0c3267c37bf1\"},{\"id\":389967724,\"payment_id\":43327334,\"trip_ref\":\"TPOtpK34\",\"txn_id\":167823462,\"payment_mode\":\"D\",\"gateway_id\":14,\"card_number\":\"458546XXXXXX5964\",\"name_on_card\":\"test\",\"amount\":1.0,\"status\":\"S\",\"description\":\"Initializing\",\"tran_type\":\"INIT\",\"seq_no\":1,\"created_at\":1571291303000,\"updated_at\":1571291303000,\"credential_name\":\"IN_TECH_PROCESS\",\"retry_count\":0,\"card_number_hash\":\"d1e0bef8e70b9968ac037aa1d0b0b0242d4a3203836f0822d75a0c3267c37bf1\"}],\"payment_cash_details\":null,\"payment_gift_voucher_txns\":[],\"payment_tp_wallet_txns\":[],\"payment_upi_txns\":[],\"payment_redirect_timings\":[{\"payment_id\":43327334,\"redirection_out\":1571291305948,\"created_at\":1571291305951,\"updated_at\":1571291305951,\"retry_count\":0,\"id\":34678514}],\"payment_card_details\":[{\"id\":30780182,\"payment_id\":43327334,\"card_number\":\"458546XXXX445964\",\"card_type_id\":1,\"payment_mode\":\"D\",\"bank_id\":6,\"created_at\":1571291061000,\"updated_at\":1571291061000,\"bin_id\":0,\"country\":\"INDIA\"}],\"payment_cash_card_detail\":null,\"payment_net_banking_details\":null,\"payment_ivr_detail\":null,\"payment_techpro_detail\":null,\"payment_third_party_da_details\":[],\"payment_third_party_details\":[],\"payment_ap_txns\":[],\"payment_da_transactions\":[],\"payment_da_details\":[],\"payment_wallet_transactions\":[],\"reward_points_txns\":null}";
 
+	String Params_IR_Valid_VPA= "{\"accountType\":\"VPA\",\"vpa\":\"kirank@okhdfcbank\",\"bankAccountNumber\":\"51248779\",\"ifsc\":\"HDFC0000531\"}";
+	String Params_IR_InValid_VPA= "{\"accountType\":\"VPA\",\"vpa\":\"kirankokhdfcbank\",\"bankAccountNumber\":\"51248779\",\"ifsc\":\"HDFC0000531\"}";
+	
+	String Params_IR_Save_VPA_Details= "{\"accountType\":\"VPA\",\"vpa\":\"3212467@okhdfcbank\",\"accountHolderName\":\"kiran Kumar\",\"cancellationTxnId\":\"2022020947\",\"isConsentAvailable\":true,\"savedDetailsId\":0,\"tripRef\":\"Q211223200042\",\"userDetails\":{\"userId\":\"65201137\"}}";
+	String Params_IR_Create_Refund1= "{\"isFullWalletRefund\":false,\"refundVersion\":\"INSTANT\",\"tripRef\":\"Q220223384658\",\"description\":\"Refund cron\",\"amount\":1.0,\"txnid\":";
+	String Params_IR_Create_Refund2= "{\"isFullWalletRefund\":false,\"refundVersion\":\"NORMAL\",\"tripRef\":\"Q220223384658\",\"description\":\"Refund cron\",\"amount\":1.0,\"txnid\":";
+	String Params_IR_Create_Refund3= ",\"cancellationTxnId\":1234567,\"disableAutoRefundProcessing\":false}";
+	
 	String Params_RORUpdate_GW_Status = "{\"currentStatus\":\"P\",\"status\":\"I\",\"gatewayId\":14}";
 	String Params_Enque_refunds = "[\"Q210203887410\",\"Q210225908308\"]";
 	String Params_RORCreate_Payment = "[{\"payment\":{\"id\":null,\"trip_id\":46198930,\"txn_id\":75300328,\"payment_type\":\"IV\",\"amount\":\"1000.0\",\"created_at\":\"2019-11-20T18:40:29+05:30\",\"updated_at\":\"2019-11-20T18:40:29+05:30\",\"seq_no\":3,\"status\":\"S\",\"description\":\"created by API\",\"currency\":\"INR\",\"order_info1\":123,\"order_info2\":345,\"app_ref1\":\"Q191109570525\",\"app_ref2\":75300328,\"neglist_id\":\"y\",\"poslist_id\":109,\"linkable_id\":null,\"linkable_type\":null,\"user_message\":null,\"pan_number\":null,\"payment_category\":\"B\",\"merchant_txn_ref\":\"12312\",\"payment_subtype\":\"ADCB\",\"express_checkout\":null,\"emi_count\":null,\"emi_fee\":null,\"ref_payment_id\":null,\"ivr_detail\":{\"id\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"seq_no\":null,\"payment_id\":null,\"transaction_ref_no\":\"Q234334\",\"card_number\":\"1234 2344 3434\",\"response_message\":\"testmsg\",\"gateway_txn_id\":12345,\"gateway\":\"ivr_gateway\",\"status\":null,\"credential_name\":\"test\"}}}]";
@@ -313,8 +321,18 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String endPointPromoGroupsForACreatedAndUpdatedDate= "/promoservice/v1/promogroups?createdDate=15-11-2019&updatedDate=15-11-2019";
 	String urlFlyin_Wallet = "/paymentservice/api/wallet?product=DOMESTIC-AIR&currency=SAR&tripRef=Q210219897402";
 	
-
-
+	String urlIR_Eligibility_NB = "/paymentservice/service/refund/eligibility?tripRef=Q220222384004";
+	String urlIR_Eligibility_CC = "/paymentservice/service/refund/eligibility?tripRef=Q211227200550";
+	String urlIR_Eligibility_DC = "/paymentservice/service/refund/eligibility?tripRef=Q220225385534";
+	String urlIR_Non_Eligibility_CC = "/paymentservice/service/refund/eligibility?tripRef=Q220228386398";
+	String urlIR_Non_Eligibility_GV = "/paymentservice/service/refund/eligibility?tripRef=Q220304387832";
+	
+	String urlIR_Validate_VPA = "/paymentservice/ba/verify/Q211223200042";
+	String urlIR_Save_VPA = "/paymentservice/ba/save";
+	String urlIR_Get_VPA_Cancel_Details =	"/paymentservice/ba/details?cancellationTxnId=2022020947";
+	String urlIR_Get_VPA_Cancel_Details_UserID = "/paymentservice/ba/details?userId=65201137";
+	String urlIR_Create_Refund = "/paymentservice/service/refund";
+	
 	String url_NavisonCC = "/paymentservice/service/mis/detail?tripRef=Q200117692102&paymentType=CC";
 	String url_NavisonAir = "/paymentservice/service/air/mis/detail?tripRef=Q191226667766&paymentType=UP";
 
@@ -638,6 +656,13 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		return headers;
 	}
 	
+	public HashMap<String, Object> headersForms_IR(){		
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("Content-Type", "application/json");	
+		headers.put("Cookie", "ct-auth=kHJ9m9EZ5FnYbC9M%2BUy3p2Op7Lwt%2F2TACwQ7J1Zh5vTvKMlBDLe8dGg0f5k%2FKxm5uQmW3NiUZma8q2lELnUuyC3uAF5DaTQONdJlLn%2FO2md2nbUa45ssUlijxS%2BlNzPHs1E8yeZEP1o8qe0ANvv609qkekjA1i1%2Boi%2Bn9cegRH96COXmEO6znXR7hdWPSF2Je64UQLp1AMFGUq5JNjib0Q%3D%3D");		
+		return headers;
+	}
+	
 	public HashMap<String, Object> headersForms_Json(){		
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("Accept", "application/json");		
@@ -804,7 +829,22 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			Reporter.log(urlPay);	
 			url= urlpromoUsed;
 		}
+		
+		else if(payType.equalsIgnoreCase("IR_Fetch_Cancel_Details_CancelTnx")) {
+			RestAssured.baseURI =urlPay;
+			Reporter.log(urlPay);	
+			url= urlIR_Get_VPA_Cancel_Details;
+		}
+		
+		else if(payType.equalsIgnoreCase("IR_Fetch_Cancel_Details_UserID")) {
 
+			headers = headersForms_IR();
+			RestAssured.baseURI =urlPay;
+			Reporter.log(urlPay);	
+			url= urlIR_Get_VPA_Cancel_Details_UserID;
+		}
+		
+		
 		else if(payType.equalsIgnoreCase("FetchTripStatus")) {
 			RestAssured.baseURI =urlPay;			
 			Reporter.log(urlPay);	
@@ -845,8 +885,39 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		}
 		else if(payType.equalsIgnoreCase("FlyinWallet")) {
 			RestAssured.baseURI =url_QA2;
-			Reporter.log(urlPay);			
+			Reporter.log(url_QA2);			
 			url = urlFlyin_Wallet;
+		}
+
+		else if(payType.equalsIgnoreCase("IR_Eligibility_NB")) {
+
+			RestAssured.baseURI =urlPay;
+			Reporter.log(urlPay);			
+			url = urlIR_Eligibility_NB;
+		}
+		else if(payType.equalsIgnoreCase("IR_Eligibility_CC")) {
+
+			RestAssured.baseURI =urlPay;
+			Reporter.log(urlPay);			
+			url = urlIR_Eligibility_CC;
+		}
+		else if(payType.equalsIgnoreCase("IR_Eligibility_DC")) {
+
+			RestAssured.baseURI =urlPay;
+			Reporter.log(urlPay);			
+			url = urlIR_Eligibility_DC;
+		}
+		else if(payType.equalsIgnoreCase("IR_Eligibility_CC_Non")) {
+
+			RestAssured.baseURI =urlPay;
+			Reporter.log(urlPay);			
+			url = urlIR_Non_Eligibility_CC;
+		}
+		else if(payType.equalsIgnoreCase("IR_Eligibility_GV")) {
+
+			RestAssured.baseURI =urlPay;
+			Reporter.log(urlPay);			
+			url = urlIR_Non_Eligibility_GV;
 		}
 		Reporter.log(url);	
 		request = RestAssured.given().
@@ -1058,10 +1129,37 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		String params = null;
 		HashMap<String, Object> headers = new HashMap<>();
 		headers = headersForms();
-		Response request;	
+		Response request;
 		if(payType.equalsIgnoreCase("ROR_Create_ProfileList")) {
 			params = Params_ROR_Create_Profile_List;
 			url= urlROR_Create_ProfileList;
+		}
+		else if(payType.equalsIgnoreCase("IR_Valid_VPA")) {
+			params = Params_IR_Valid_VPA;
+			url= urlIR_Validate_VPA;
+		}
+		else if(payType.equalsIgnoreCase("IR_Save_VPA")) {
+			headers=headersForms_IR();
+			params = Params_IR_Save_VPA_Details;
+			url= urlIR_Save_VPA;
+		}
+		else if(payType.equalsIgnoreCase("IR_Create_Refund")) {
+
+			headers=headersForms_IR();
+			params = Params_IR_Create_Refund1+getRandomNumber()+Params_IR_Create_Refund3;
+			url= urlIR_Create_Refund;
+		}
+		else if(payType.equalsIgnoreCase("IR_Create_Refund_Normal")) {
+
+			headers=headersForms_IR();
+			params = Params_IR_Create_Refund2+getRandomNumber()+Params_IR_Create_Refund3;
+			url= urlIR_Create_Refund;
+		}
+		
+		
+		else if(payType.equalsIgnoreCase("IR_InValid_VPA")) {
+			params = Params_IR_InValid_VPA;
+			url= urlIR_Validate_VPA;
 		}
 		else if(payType.equalsIgnoreCase("RORUpdate_GW_Status")) {
 			params = Params_RORUpdate_GW_Status;
@@ -1181,8 +1279,6 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		
 		Reporter.log(urlPay+url);
 		Reporter.log("Params :" +params);
-
-
 		request = RestAssured.given().
 				when().
 				log().all().
@@ -2151,7 +2247,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		int statusCode = resp.getStatusCode();	
 		Reporter.log("statusCode: " + statusCode);
 		JsonPath jsonPathEvaluator = resp.jsonPath();
-		if(!payType.equals("WALLET_CREATE")) {
+		if(!(payType.equals("WALLET_CREATE")||(payType.equals("IR_Save_VPA")))) {
 			if(statusCode!=200) {
 				Assert.assertTrue(false);
 			}
@@ -2168,7 +2264,94 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 				Assert.assertTrue(false);
 			}
 		}
-		if(payType.equalsIgnoreCase("ROR_CashUpdate")) {
+		else if(payType.equalsIgnoreCase("IR_Save_VPA")) {
+			String errorMessage = jsonPathEvaluator.getString("errorMessage");
+			Reporter.log("errorMessage " +errorMessage);
+			
+			if(!errorMessage.equals("duplicate request")) {
+				Assert.assertTrue(false);
+			}
+		}
+		else if(payType.equalsIgnoreCase("IR_Create_Refund")) {
+			
+			if(!(resp.body().asString().contains("Refund Initiated"))){
+				Assert.assertTrue(false);
+			}
+		}
+		else if(payType.equalsIgnoreCase("IR_Fetch_Cancel_Details_CancelTnx")) {
+			if(!(resp.body().asString().contains("65201137"))){
+				Assert.assertTrue(false);
+			}
+		}
+		else if(payType.equalsIgnoreCase("IR_Fetch_Cancel_Details_UserID")) {
+			if(!(resp.body().asString().contains("65201137"))){
+				Assert.assertTrue(false);
+			}
+		}
+		else if(payType.equalsIgnoreCase("IR_Valid_VPA")) {
+			String accountHolderName = jsonPathEvaluator.getString("accountHolderName");
+			String valid = jsonPathEvaluator.getString("valid");
+			Reporter.log("valid " +valid);
+			Reporter.log("accountHolderName " +accountHolderName);
+			
+			if(!valid.equals("true")) {
+				Assert.assertTrue(false);
+			}
+		}
+		else if(payType.equalsIgnoreCase("IR_InValid_VPA")) {
+			String accountHolderName = jsonPathEvaluator.getString("accountHolderName");
+			String valid = jsonPathEvaluator.getString("valid");
+			Reporter.log("valid " +valid);
+			Reporter.log("accountHolderName " +accountHolderName);
+			if(!valid.equals("false")) {
+				Assert.assertTrue(false);
+			}
+		}
+		
+		else if(payType.equalsIgnoreCase("IR_Eligibility_NB")) {
+			String OS = jsonPathEvaluator.getString("eligibleForOriginalSource");
+			String AS = jsonPathEvaluator.getString("eligibleForAlternativeSource");
+			Reporter.log("AS " +AS);
+			Reporter.log("OS " +OS);
+			if(!OS.equals("true")) {
+				Assert.assertTrue(false);
+			} 
+			if(!AS.equals("true")) {
+				Assert.assertTrue(false);
+			}  
+			
+		}
+		else if(payType.equalsIgnoreCase("IR_Eligibility_CC")) {
+			String OS = jsonPathEvaluator.getString("eligibleForOriginalSource");
+			String AS = jsonPathEvaluator.getString("eligibleForAlternativeSource");
+			Reporter.log("AS " +AS);
+			Reporter.log("OS " +OS);
+			if(!OS.equals("false")) {
+				Assert.assertTrue(false);
+			} 
+			if(!AS.equals("true")) {
+				Assert.assertTrue(false);
+			}  
+			
+		}
+		
+		else if(payType.equalsIgnoreCase("IR_Eligibility_CC_Non")) {
+			String OS = jsonPathEvaluator.getString("eligibleForOriginalSource");
+			String AS = jsonPathEvaluator.getString("eligibleForAlternativeSource");
+			Reporter.log("AS " +AS);
+			Reporter.log("OS " +OS);
+			if(!OS.equals("true")) {
+				Assert.assertTrue(false);
+			} 
+			if(!AS.equals("false")) {
+				Assert.assertTrue(false);
+			}  
+			
+		}
+		
+		
+		
+		else if(payType.equalsIgnoreCase("ROR_CashUpdate")) {
 			String id = jsonPathEvaluator.getString("id");
 			String company_id = jsonPathEvaluator.getString("company_id");
 			if(!id.equals("5116412")) {
@@ -4123,10 +4306,6 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		return payAuth;
 	}
 	
-	
-	
-	
-	
 	public Response payUIget(String payType, String PayType1, String tripRef) throws Exception {
 		String endPoint = null;
 		String params = null; 
@@ -5041,8 +5220,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		}
 		return data;
 	}
-	
-	
+		
 	public ArrayList<String> db_Refund_Common_MySQL(String RefundType) throws SQLException, ClassNotFoundException {
 		ArrayList<String> data = new ArrayList<String>();
 		ArrayList<String> Name = new ArrayList<String>();
@@ -5069,8 +5247,6 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		}
 		return data;
 	}
-
-
 
 	public ArrayList<String> MySQL_DB(String RefundType) throws SQLException, ClassNotFoundException {
 		ArrayList<String> data = new ArrayList<String>();
@@ -5181,9 +5357,6 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		return data;
 	}
 	
-	
-
-
 	public ArrayList<String> db_Refund_Delete_ID(String TripID) throws SQLException, ClassNotFoundException {
 		ArrayList<String> data = new ArrayList<String>();
 		if (common.value("PaymentDB").equalsIgnoreCase("ORACLE")) {
@@ -5278,8 +5451,6 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		return data;
 	}
 	
-	
-
 	public ArrayList<String> db_Refund_Status(String RefundID) throws SQLException, ClassNotFoundException {
 		ArrayList<String> data = new ArrayList<String>();
 		if (common.value("PaymentDB").equalsIgnoreCase("ORACLE")) {
@@ -5293,7 +5464,6 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		
 	}
 	
-
 	public ArrayList<String> db_GV() throws SQLException, ClassNotFoundException {
 		ArrayList<String> data = new ArrayList<String>();
 		if (common.value("PaymentDB").equalsIgnoreCase("ORACLE")) {
@@ -5306,8 +5476,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		return data;
 		
 	}
-	
-	
+		
 	public ArrayList<String> db_CC() throws SQLException, ClassNotFoundException {
 		ArrayList<String> data = new ArrayList<String>();
 		if (common.value("PaymentDB").equalsIgnoreCase("ORACLE")) {
@@ -5320,10 +5489,6 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		return data;
 		
 	}
-	
-	
-	
-	
 	
 	public ArrayList<String> db_GV_Oracle() throws SQLException, ClassNotFoundException {
 		ArrayList<String> data = new ArrayList<String>();
@@ -5352,8 +5517,6 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		return data;
 	}
 	
-	
-
 	public ArrayList<String> db_GV_MySQL() throws SQLException, ClassNotFoundException {
 		ArrayList<String> data = new ArrayList<String>();
 		ArrayList<String> Name = new ArrayList<String>();

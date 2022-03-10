@@ -15,16 +15,27 @@
     </classes>
 </test>
 
+
+<test name="Instant Refund" preserve-order="true" parallel="true">
+    <classes>    
+      <class name="paymentsAPI.API_IR_Get_Eligibility"/> 
+      <class name="paymentsAPI.API_IR_Validate_VPA"/>   
+      <class name="paymentsAPI.API_IR_Save_VPA_Details"/> 
+      <class name="paymentsAPI.API_IR_Get_Cancelation_Details"/>  
+      <class name="paymentsAPI.API_IR_Create_Refund"/>
+    </classes>
+</test>
+
 <test name="Supercoins" preserve-order="true" parallel="true">
     <classes>
-<!--       <class name="paymentsAPI.API_SuperCoins_CheckBalance"/>
+      <class name="paymentsAPI.API_SuperCoins_CheckBalance"/>
       <class name="paymentsAPI.API_SuperCoins_CheckEarnPoints"/>   
       <class name="paymentsAPI.API_SuperCoins_Info"/>   
       <class name="paymentsAPI.API_SuperCoins_MobileLinked"/>   
       <class name="paymentsAPI.API_SuperCoins_OTP_Validation_Unhold"/>   
       <class name="paymentsAPI.API_SuperCoins_PromoActivate"/>   
       <class name="paymentsAPI.API_SuperCoins_PromoCreate"/>      
-      <class name="paymentsAPI.API_SuperCoins_PromoUpdate"/>   -->    
+      <class name="paymentsAPI.API_SuperCoins_PromoUpdate"/>      
     </classes>
 </test>
 

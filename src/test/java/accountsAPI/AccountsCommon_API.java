@@ -64,6 +64,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String url_Userclassification_Health_Test_Url="/actuator/health";
 	String url_Account_Service_Verify_Person="/account/people/verify?id=14029546&emailId=ns.likhitha@cleartrip.com&domain=www.cleartrip.com&companyId=110340";
 	String url_Account_Service_UserController_VerifyAccount="/user/v1/account/verify/14029546";
+	String url_Account_Service_MobileLoginUpdatePersonaldetailsApi="/external-api/user";
 	String url_Account_Service_UserController_VerifyAccount_UsernotPresent="/user/v1/account/verify/1402954698";
 	String url_Account_Service_People_UpdateUserRoles="/accounts/people/roles?userId=65214457";
 	String url_Accounts_service_Company_DeleteGST="/company/v2/gst?id=836674&gstNumber=123459898";
@@ -118,6 +119,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String url_Account_Service_PWA_SignIn_API="/signin";
 	String url_flyinsigninV2="/partners/v2/signin";
 	String url_flyinsigninV2_CleartripUser="/partners/v2/signin";	
+	String url_Account_Service_MobileLogin_sendOTP_SIGNIN="/external-api/otp";
 	String url_Manage_trips_OTP_API="/account/auth/otp?trip_ref=Q190827475876&email_id=ns.likhitha@cleartrip.com";
 	String url_cfw_active_status="/activate/vOCNSWKS2uLqsDVH";
 	String url_identtiyservice_getresource="/ctauth/resource";
@@ -131,6 +133,9 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String url_Account_Service_RegisterFLyinUserUpdate_OTPValidation="/account/people/v2?domain=www.flyin.com";
 	String url_Account_Service_FLYIN_User_Update="/account/people/v2?domain=www.flyin.com";
 	String url_Account_Service_Update_User_MobileNo_OTPValidaion="/account/people/v2?domain=qa2.cleartrip.com";
+	String url_Account_Service_MobileLogin_verifyOTP_SignIn="/external-api/otp/verify-action";
+	String url_Account_Service_MobileLogin_NudgePersonaldetails="/external-api/nudge?type=PERSONAL_DETAILS";
+	String url_Account_Service_MobileLogin_NudgeUpdateMobile="/external-api/nudge?type=UPDATE_MOBILE";
 	String url_Account_Service_AppleSignin_uniqueId="/apple/signin";
 	String url_Identity_service_RecaptchaAPI="/user/verify/captcha?domain=cleartrip.ae&g-recaptcha-response=test";
 	String url_Account_Service_FetchContactData="/account/people/v2/fetch/contactData";
@@ -195,6 +200,8 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String url_Account_Service_CompanyVendorMapping="/company/v2/196440/vendor-mapping";
 	String url_Account_Service_CompanySearchAPIwithAPIkey="/company/v2/search?apiKey=test";
 	String url_Account_Service_GstSearch_WithSubString="/gst/v2/autocomplete?domainName=demo.cleartripforbusiness.com&gstNumberSubString=7";
+	String url_Account_Service_MobileLogin_UserexistenceByMobileNo="/external-api/user-exists?mobile=7799964888&countryCode=+91&domain=www.cleartrip.com";
+	String url_Account_Service_MobileLogin_FetchOldCTusersApi="/external-api/users";
 	String url_Account_Service_FetchCustomer_number="/external-api/customer-no?domain=agencydemo3.agentbox.com";
 	String url_Account_Service_CFW_GetUserStatus="/user/v2/cfw/optIn?userId=14029546";
 	String url_Flipkart_Accounts_service_GetUserDetails="/accounts/v3/people?partner=FLIPKART&referenceId=me123testing8&travellersRequired=true&gstDetailsRequired=true";
@@ -265,6 +272,9 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String params_flyinsignin="{\"username\" : \"ok@cltp.com\",\"partner\":1,\"password\":\"cleartrip1\"}";
 	String params_Account_Service_CFW_StatusUpdateCall="";
 	String params_flyinsigninV2_CleartripUser="{ \"password\": \"cleartrip123\", \"partner\": 0, \"source\": \"home_page\", \"username\": \"ns.likhitha@cleartrip.com\", \"persist_login\": false}";
+	String params_Account_Service_MobileLogin_sendOTP_SIGNIN="{\"type\":\"MOBILE\",\"value\":\"7799964888\",\"countryCode\":\"+91\",\"action\":\"SIGNIN\"}";
+	String params_Account_Service_MobileLogin_sendOTP_UPDATE_MOBILE="{\"type\":\"MOBILE\",\"value\":\"7799964888\",\"countryCode\":\"+91\",\"action\":\"UPDATE_MOBILE\"}";
+	String params_Account_Service_MobileLogin_sendEmail_SIGNUP_MERGE="{\"type\":\"EMAIL\",\"value\":\"ns.likhitha@cleartrip.com\",\"action\":\"SIGNUP_MERGE\"}";
 	String params_Identity_service_RecaptchaAPI="";
 	String params_Accounts_Service_FLyinV2_Signin_Unauthorized="{ \"password\": \"cleatrip123\", \"partner\": 0, \"source\": \"home_page\", \"username\": \"ns.likhitha@cleartrip.com\", \"persist_login\": false}";
 	String params_AccountsService_FlyinV2Signin_Unauthorized="{ \"password\": \"Pre@123\", \"partner\": 1, \"source\": \"home_page\", \"username\": \"flyinctuser@gmail.com\", \"persist_login\": false}";
@@ -286,12 +296,16 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String params_Accounts_Service_FLyinUser_GSTdetailsUpdate="{\"id\":65206329,\"username\":\"otpmobilenotestfinal@flyin.com\",\"profilePercentCompleted\":null,\"travellerDetails\":[{\"id\":179861,\"profileData\":null,\"contactInfo\":{\"phoneNumbers\":[],\"whatsapp\":null,\"addresses\":[],\"otherDetails\":[],\"emails\":[]},\"ffnPreferences\":null,\"personalDetails\":{\"anniversaryDate\":null,\"companyDesignation\":null,\"concatName\":null,\"countryOfResidence\":null,\"countryOfResidenceId\":null,\"countryPreference\":null,\"currency\":null,\"dateOfBirth\":null,\"department\":null,\"emergencyContactName\":\"ME\",\"emergencyContactNumber\":null,\"firstName\":null,\"gender\":\"male\",\"homeAirport\":null,\"homeAirportId\":null,\"language\":null,\"lastName\":null,\"middleName\":null,\"nickName\":null,\"primaryEmail\":\"otpmobilenotest@cleartrip.com\",\"title\":null,\"createdAt\":\"2020-10-27T09:15:14\",\"updatedAt\":\"2020-10-27T09:15:14\"},\"preferences\":null,\"docDetails\":[{\"id\":23916,\"countryIssued\":\"india\",\"dateOfBirth\":\"1991-04-23T00:00:00\",\"docNumber\":\"22222222\",\"docType\":\"TIkkME\",\"expiryDate\":\"2028-02-29T00:00:00\",\"nationality\":\"india\"},{\"countryIssued\":\"india\",\"dateOfBirth\":\"1991-04-23T00:00:00\",\"docNumber\":\"222222\",\"docType\":\"TESTTEST\",\"expiryDate\":\"2028-02-29T00:00:00\",\"nationality\":\"india\"}],\"createdAt\":\"2020-10-27T09:15:14\",\"updatedAt\":\"2020-10-27T09:15:14\"},{\"id\":180256,\"isRegistered\":false,\"profileData\":null,\"contactInfo\":{\"phoneNumbers\":[{\"mobileNumber\":\"88888888\",\"mobileCountryCode\":\"91\",\"category\":\"mobile\"}],\"whatsapp\":null,\"addresses\":[],\"otherDetails\":[],\"emails\":[]},\"ffnPreferences\":null,\"personalDetails\":{\"anniversaryDate\":null,\"companyDesignation\":\"SOMETIME\",\"concatName\":\"TEST\",\"countryOfResidence\":null,\"countryOfResidenceId\":null,\"countryPreference\":null,\"currency\":null,\"dateOfBirth\":null,\"department\":null,\"emergencyContactName\":\"SOMETIME\",\"emergencyContactNumber\":null,\"firstName\":\"HIiiiIII\",\"gender\":\"M\",\"homeAirport\":null,\"homeAirportId\":null,\"language\":\"tamil\",\"lastName\":\"HI\",\"middleName\":\"HI\",\"nickName\":\"Hhhhhhhh\",\"primaryEmail\":\"otpmobilenotest@flyin.com\",\"title\":\"MR\",\"createdAt\":\"2020-10-27T09:15:14\",\"updatedAt\":\"2020-10-27T09:15:14\"},\"preferences\":null,\"docDetails\":[{\"id\":23895,\"countryIssued\":\"india\",\"dateOfBirth\":\"1991-04-23T00:00:00\",\"docNumber\":\"AAAAAA\",\"docType\":\"TESTTEST\",\"expiryDate\":\"2028-02-29T00:00:00\",\"nationality\":\"india\"},{\"countryIssued\":\"india\",\"dateOfBirth\":\"1991-04-23T00:00:00\",\"docNumber\":\"AAAAAA\",\"docType\":\"TESTTEST\",\"expiryDate\":\"2028-02-29T00:00:00\",\"nationality\":\"india\"}],\"createdAt\":\"2020-10-27T09:15:14\",\"updatedAt\":\"2020-10-27T09:15:14\"}],\"companyDetails\":[{\"id\":5266152,\"companyName\":\"flyin\",\"domain\":\"www.flyin.com\",\"roles\":[{\"id\":1064,\"name\":\"USER\"}],\"status\":\"N\"}],\"depositAccounts\":[],\"gstDetails\":[{\"id\":9164,\"gstHolderAddress\":\"test\",\"gstHolderName\":\"test\",\"gstHolderStateCode\":\"91\",\"gstHolderStateName\":\"test\",\"gstNumber\":\"28SAILI1234H1SO\"},{\"gstHolderAddress\":\"test\",\"gstHolderName\":\"test\",\"gstHolderStateCode\":\"91\",\"gstHolderStateName\":\"test\",\"gstNumber\":\"28SAILI1234H1Y\"}],\"resources\":[],\"savedCards\":null,\"registrationDate\":\"2020-10-27T09:15:14\",\"lastUpdatedOn\":\"2020-10-27T09:15:14\"}";		
 	String params_Account_Service_Update_User_MobileNo_OTPValidaion="{\"id\":65205484,\"username\":\"otpmobilenotest@cleartrip.com\",\"profilePercentCompleted\":null,\"travellerDetails\":[{\"id\":65205484,\"isRegistered\":true,\"profileData\":null,\"contactInfo\":{\"phoneNumbers\":[{\"mobileNumber\":\"44444444\",\"mobileCountryCode\":\"91\",\"category\":\"mobile\"}],\"whatsapp\":null,\"addresses\":[],\"otherDetails\":[],\"emails\":[]},\"ffnPreferences\":null,\"personalDetails\":{\"anniversaryDate\":null,\"companyDesignation\":null,\"concatName\":null,\"countryOfResidence\":null,\"countryOfResidenceId\":null,\"countryPreference\":null,\"currency\":null,\"dateOfBirth\":null,\"department\":null,\"emergencyContactName\":null,\"emergencyContactNumber\":null,\"firstName\":null,\"gender\":null,\"homeAirport\":null,\"homeAirportId\":null,\"language\":null,\"lastName\":null,\"middleName\":null,\"nickName\":null,\"primaryEmail\":\"otpmobilenotest@cleartrip.com\",\"title\":null,\"createdAt\":\"2020-10-27T09:15:14\",\"updatedAt\":\"2020-10-27T09:15:14\"},\"preferences\":null,\"docDetails\":null,\"createdAt\":\"2020-10-27T09:15:14\",\"updatedAt\":\"2020-10-27T09:15:14\"}],\"companyDetails\":[{\"id\":110340,\"companyName\":\"cleartrip\",\"domain\":\"www.cleartrip.com\",\"roles\":[{\"id\":1064,\"name\":\"USER\"}],\"status\":\"N\"}],\"depositAccounts\":[],\"gstDetails\":[],\"resources\":[],\"savedCards\":null,\"registrationDate\":\"2020-10-27T09:15:14\",\"lastUpdatedOn\":\"2020-10-27T09:15:14\"}";
 	String params_Account_Service_FetchPersonalData="[14029546,65201340,65180937]";
+	String params_Account_Service_MobileLogin_verifyOTP_SignIn="{\"type\":\"MOBILE\",\"value\":\"7799964888\",\"countryCode\":\"+91\",\"action\":\"SIGNIN\",\"otp\":\"404780\"}";
+	String params_Account_Service_MobileLogin_verifyOTP_UPDATE_MOBILE="{\"type\":\"MOBILE\",\"value\":\"7799964888\",\"countryCode\":\"+91\",\"action\":\"UPDATE_MOBILE\",\"otp\":\"117758\"}";
+    String params_Account_Service_MobileLogin_NudgePersonaldetails="";
+	String params_Account_Service_MobileLogin_verifyOTP_SIGNUP_MERGE="{\"type\":\"EMAIL\",\"value\":\"sai@gmail.com\",\"action\":\"SIGNUP_MERGE\",\"otp\":\"284262\"}";
 	String params_Account_Service_AppleSignin_uniqueId="{\"appleId\":\"1:a:2:b:35\",\"emailId\":\"123@privaterelay.appleid.com\",\"firstName\":\"abcd\",\"lastName\":\"sai\",\"title\":\"Mr.\"}";
 	String params_Account_Service_AppleSignin_Entity="{\"appleId\":\"1:a:2:b:3\",\"emailId\":\"sai@privaterelay.appleid.com\",\"firstName\":\"abcd\",\"lastName\":\"sai\",\"title\":\"Mr.\"}";
 	String params_Account_Service_AppleRegister_NullEmail="{\"appleId\":\"1:a:2:b:3:00\",\"emailId\":\"\",\"firstName\":\"abcd\",\"lastName\":\"sai\",\"title\":\"Mr.\"}";
 	String params_flyinresetpassword="{ \"username\" : \"ok@cltp.com\", \"old_password\" : \"cleartrip1\", \"new_password\" : \"cleartrip1\", \"partner\" : 1, \"source\":\"homepage\" }";
 	String params_flyinresetpasswordV2="{ \"username\" : \"ok@cltp.com\", \"old_password\" : \"cleartrip1\", \"new_password\" : \"cleartrip1\", \"partner\" : 1, \"source\":\"homepage\" }";
-String params_Account_Service_Cleartrip_ResetPassword="{\"partner\":0,\"source\":\"homepage\",\"key\":\"33e0ee9e7b833ece75ad55aee3269e627b95638e5dd5828f8d4e9ad81cc7ae3c\",\"username\":\"nakul@test.com\",\"new_password\":\"Cleartrip@1234\",\"old_password\":\"Cleartrip@123\"}";
+    String params_Account_Service_Cleartrip_ResetPassword="{\"partner\":0,\"source\":\"homepage\",\"key\":\"33e0ee9e7b833ece75ad55aee3269e627b95638e5dd5828f8d4e9ad81cc7ae3c\",\"username\":\"nakul@test.com\",\"new_password\":\"Cleartrip@1234\",\"old_password\":\"Cleartrip@123\"}";
 	String params_flyinforgetpassword="{ \"username\" : \"samsung@gmail.com\", \"key\" : \"bb54068cfd0f08459f85ce394a53caeef2feb56efa779ea9f512c3ed33d31e31\", \"new_password\" : \"cleartrip1\", \"partner\" : 1 }";
 	String params_flyinforgetpasswordV2="{ \"username\" : \"samsung@gmail.com\", \"key\" : \"bb54068cfd0f08459f85ce394a53caeef2feb56efa779ea9f512c3ed33d31e31\", \"new_password\" : \"cleartrip1\", \"partner\" : 1 }";
 
@@ -308,6 +322,7 @@ String params_Account_Service_Cleartrip_ResetPassword="{\"partner\":0,\"source\"
 	String params_IdentityService_UpdatePassword_ForChangePasswordflow="{\"emailId\":\"ns.likhitha@cleartrip.com\",\"oldPassword\":\"Cleartrip@1\",\"newPassword\":\"Cleartrip@2\",\"otp\":\"035175\"}";
 	String params_IdentityService_UpdatePassword_ForResetPasswordflow="{\"emailId\":\"ns.likhitha@cleartrip.com\",\"newPassword\":\"Cleartrip@8\",\"mailerKey\":\"aIWr1jRjfDPjXojg\"}";
 	String params_Account_Service_UserController_VerifyAccount="";
+	String params_Account_Service_MobileLoginUpdatePersonaldetailsApi="{\"marketingSubscription\":1,\"personalData\":{\"firstName\":\"cool\",\"lastName\":\"oktest\",\"gender\":\"male\"}}";
 	String params_Account_Service_People_UpdateUserRoles="{\"userId\":3863174,\"companyPeopleDetails\":[{\"companyId\":87321,\"companyPeopleId\":58963,\"role\":{\"id\":1,\"accessLevel\":0}},{\"companyId\":87321,\"role\":{\"id\":1064,\"accessLevel\":0}},{\"companyId\":87321,\"role\":{\"id\":10000,\"accessLevel\":0}},{\"companyId\":21,\"role\":{\"id\":2,\"name\":\"Finance \",\"accessLevel\":0}}]}";
 	String params_Accounts_service_Company_DeleteGST="";
 	String params_Flipkart_Accounts_service_Updateuser="{\"travellerDetails\":[{\"id\":182197,\"isRegistered\":true,\"personalDetails\":{\"dateOfBirth\":739650600000,\"firstName\":\"automationtest\",\"lastName\":\"testing\",\"title\":\"Mr.\",\"nationality\":\"IN\"},\"docDetails\":[{\"id\":1,\"docNumber\":\"2345\",\"docType\":\"automationtest\",\"expiryDate\":\"2020-09-11T00:00:00\",\"issuedDate\":\"2009-05-11T00:00:00\"}]},{\"id\":182189,\"isRegistered\":false,\"personalDetails\":{\"dateOfBirth\":739650600000,\"firstName\":\"automationtest2\",\"lastName\":\"testing2\",\"title\":\"Mr.\",\"nationality\":\"Indian\"},\"docDetails\":[{\"id\":6,\"docNumber\":\"7878\",\"docType\":\"PASSPORT\",\"expiryDate\":\"2020-09-11T00:00:00\",\"issuedDate\":\"2009-05-11T00:00:00\"}]}],\"gstDetails\":[{\"gstNumber\":\"12automation\",\"gstHolderCompanyName\":\"flipkart\",\"gstHolderCompanyAddress\":\"address\",\"gstHolderStateName\":\"Karnataka\",\"pinCode\":\"12345\",\"city\":\"bangalore\"}]}";
@@ -555,6 +570,15 @@ String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\
 
 		return headers;
 	}
+	public HashMap<String, Object> headersFormsoldctusers(){
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("caller", "b2c");
+		headers.put("referer", "www.cleartrip.com");
+		headers.put("accept", "*/*");
+		headers.put("Cookie", "ct-auth=ejk962bJ9td7F6NJ5oaKms8clBvyltgSrBzKVBjPiZI28FaaAmYGYp0F1jMboIpKL1YjeWNmu3xY%2FpzUexWQN1w%2Fj5gAPNmv1vpKnDrAx3FoX9evvh5diDC4jtyRjOeZZJtx%2BJ31duZqrcZ2jUdJ6F4ai43jNI5aChVTEmGAfqQahvGkzHhRz5kPpCa%2F7j3utX4un4jpIzA3dx1i9UD1iDhmbaHDtVTELASCTE65iYNDav43rPHfhVjrxuJhRUe9V9J1s9EnvD%2BVObAzErSBUd%2BYomLdDuWrqqdRzGq7%2FdYA0m79Z5nuhvvWgXtLZpphBygb5DF%2BiBArg6EEGJYTRX%2BnhhaYeP8g0CEQkY6Tiy4JTEWCk4w4RPfV8FxcD5fiBiYwxcyF82ssHriGcBPoZbqcwrH37YPhmlmSgDptHRHSU4sbkK%2B1ntNdKiZtuD7S519sHoYJ20LxLarNevMhefLj6wy0K9HoNEZdzP3I6V6sfLCHbaSEDTDVfF6ZO2eL%2BY0HEOXDxFMm4qDR%2FfSwa6%2BHx%2F4do5V1cUolGYLe7LksliKRdHKdB04q2m8OnZXTH2Z4tsAXBZj47Mu0vEuTRiAH0Rp2vtFkuXiol%2Fc%2BBJD4qswYyk0D6GkqDc%2FryiGzrriKvMSxzl8ZjdP0xHKTJjDfE5MjfU2lez8Mc21eeVj4yG9Y5gNNb6MvOPOrwEDI%2FRkVukgyqFl7OJk6DNu3G%2FLNPaqxgHPoG%2Fb4MQRnyZVI9iJH8UXIBBVrkHxP0uq0KBIFqMINY881df17xzwxrP0wDfAjdIJWLC650cfnf3%2BZ8zInGGcv79tFePFr5UA0tMv7Ci9nlUUKOJuJ4P3asT%2F%2Fu6AA%2BWLog2uJ%2FY2YYqgP%2FV7P4M74%2FvZ8fgql9D8g8%2F%2F1HM9Q%2BhZwENf6sKaAU%2FkxX%2BEKCRjKf8O%2BTNUSfsuE8coUcku3YuzCaIBgM2P8Rb8sKLbSBDeyofU70uSSaMEckaUyLeYQbOVx%2F%2B7JUlOisjgFuy%2BxyJIPcX7Yv7eIVOKsnEkZCKNo2VdexAMFzV8jJWCkNJigozPGBBeEcF5L025fFK4zyLlxhOOqSrzgJ%2FV%2BKw55kneImPwOmjjTx8bKaKUlDohE7GDIWcILQ88d%2BXi7A5SMIuz2WcT5ii0Wf%2B8AovNHaAE6ks%2FCbb9HIDfkrt1RUQubPWxQct8F190iQxv9R6IFJ5ykwqipKSTD3By%2BM95FvKgObf5mq7KTh4b8T%2BeFMlESYJHyLIxZIZoHl9lVnkf7P1e8%2FtlB9wGg6ZHy9%2B0obMoFR67KLl5Gf2Fubx9%2Bu6Hxgn%2BXdJPeAfwgbb%2BQmBiXP12zCP6SuogJGXte7YQyF6Em8tznMbrROwtZON8HERSFujfxKGUlphAbOSefgP%2B7S8ROG3IPs9BT1n1utI2bh3BRC5ImSyZhXOG2sznZdCQ79pKhhufWoot4da2aQ5TFdB5HS5I82K%2BNFYkqRWdK4vmOr5j0J6GyQhEu5IsLcsngqwvuBRkhZ%2FI2BlzDhJYXPlwWKqeoicydwftbEFDnNHvr5PmogWHBoxfe612L%2FoZuaHewfiNVtslgbnGnbzo6cVZBOb0MxCSiNyccvTZ6ZeZ3IoYf5mwSBgL53KSTx%2BaaO3PBn83YSeM2dk11dlD76Dw%2Ffwp7gLIb%2F9H19TQBwMECqNmAPkW775ynG45GwhE3BA0pwhTRn%2BF4GSBlk6n2YHWpqXOktV2t3ZZwho5dU%2BaKzPeoMZcLm7nG2qmPwjWvfUgSBhOQRDPJ61KK3h5ergANs990ONktGgcLZYX2%2BIxZ9xI1klDHJPz7%2BeYK897D6e8DnoSNBhvjYjYzQuL%2By5YdcXuhuUAaPS3B0LiNYWPPf3SS4gefEp%2BQ40JgSgcx8SLEb95cVnFoD0sKNB8uYVJl5ohpszJa6mBaxNhGU1RL1YhOeovU4suwQDEuABnc5MQSummToQmdXNnaHxT7Ov2so1y7%2FPnneMjzNY8sdZ2kFdHVk%2BuTdBA0JS%2FrUwuBCgPYAp%2F34FIBxAOcBPcjb4vvsOvmJbQXK54VRVd2nZiTWwABPF2NWmXab3x4qsw9QQRYosZDipKPqPctGMEddEdpAkKVCHyJXviVgFH88%2BfNp7T6gmE4eMMOJp7ILx2NuHdBy3qhIf%2Bu6HCpuRwiD%2F26zBxjGaodd9ADMhOdh7E6oqbmaxQ%2Bk5eEMFejtYCLGvPa1i2IaBVWN1enquXtBF%2Bn9vuEdhiApol%2FeTCav6nkyuZW1lK%2ByPwh2P7mNdL%2Fn0Pfjjvx5XQfj9SL7apVRfdsMga53PTGnVHicRFg%2BK5bQoeF0ZFI7orzMEKwXYrPfAii3OQ1TX8%2B5TSW9z4Ig3TmP3b0wdCiqYcymMHG04O98x06XWcc%2BYlyhemglioA0jpqkpXq9bHXsDBULpfz6oOOp1288b2MXAPiye9YwWq2%2B8ordohPUY4f2Tcd88ByzZeLOOe%2FjdKEK%2Bix0VBJ39OL2248SwHZywIFeum80mCLl3yGH61eP%2FuvEiZu3NR3b4ck27CDyxgM9Gmspd2ES%2F%2BkX0IpHU%2FeQFEPWFOGhsGPcjQvqypuqq%2F4bN4Tbj8woPmqXvNbyuxqTNxi0nZwiYurOUSgiSqJTLJ08nAN%2BqA1389YEJphlTusioKzH0eIHcgQyRq7JrcOrONtyiQdw0PrQBxRnau5t5aLQg%2FLJ1dQxQx7x4qXeDPIMG4Me4geUZT217ldBH9JNMdOqbl%2B8BNdDj6tM55mGLE4PJlWgGodAgKbiSOSTbnVm2E7F4THMgFFbQpgNv%2Bf4%2BfRVXTLdOtNlEEbhwmSpK1cn1iLwo1IQvqFQHpQ2w%2FII90qaBIB5sIGN2%2FYYMQ%3D'");
+	    return headers;
+	}
+	
 	public HashMap<String, Object> headersFormgetuserbycookieflyin(){
 		HashMap<String, Object> headers = new HashMap<>();
 		//headers.put("Content-Type", "application/json");
@@ -775,6 +799,16 @@ String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\
 		//GCP -- headers.put("AUTH_KEY", "H67f$we&HGTR34clQ");
 		return headers;
 	}
+	
+	public HashMap<String, Object> headersForms_MobileLoginsendotp(){
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("Content-Type", "application/json");
+		headers.put("referer", "www.cleartrip.com");
+		headers.put("Accept", "*/*");
+		headers.put("caller", "b2c");
+		return headers;
+	}
+	
 	public HashMap<String, Object> headersFormsupdateuser(){
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("Content-Type", "application/json");
@@ -798,7 +832,22 @@ String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\
 		headers.put("OTP", "022546");
 		return headers;
 	}
-
+	public HashMap<String, Object> headersFormsverifymobilelogin_otp(){
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("Content-Type", "application/json");
+		headers.put("caller", "b2c");
+		headers.put("referer", "www.cleartrip.com");
+		return headers;
+	}
+	public HashMap<String, Object> headersFormsverifymobileloginupdatemobile_otp(){
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("Content-Type", "application/json");
+		headers.put("caller", "b2c");
+		headers.put("referer", "www.cleartrip.com");
+		headers.put("Cookie", "ct-auth=q0c5C5xINFFHGTPUAPpN%2BlcbFn5%2FSoi%2FT1stwolXY0CbxYy7BDeEm9%2BsQIKpVwtJL1YjeWNmu3xY%2FpzUexWQN1w%2Fj5gAPNmv1vpKnDrAx3FoX9evvh5diDC4jtyRjOeZZJtx%2BJ31duZqrcZ2jUdJ6F4ai43jNI5aChVTEmGAfqQahvGkzHhRz5kPpCa%2F7j3utX4un4jpIzA3dx1i9UD1iDhmbaHDtVTELASCTE65iYNDav43rPHfhVjrxuJhRUe9V9J1s9EnvD%2BVObAzErSBUd%2BYomLdDuWrqqdRzGq7%2FdYA0m79Z5nuhvvWgXtLZpphBygb5DF%2BiBArg6EEGJYTRX%2BnhhaYeP8g0CEQkY6Tiy4JTEWCk4w4RPfV8FxcD5fiBiYwxcyF82ssHriGcBPoZbqcwrH37YPhmlmSgDptHRHSU4sbkK%2B1ntNdKiZtuD7S519sHoYJ20LxLarNevMhefLj6wy0K9HoNEZdzP3I6V6sfLCHbaSEDTDVfF6ZO2eL%2BY0HEOXDxFMm4qDR%2FfSwa6%2BHx%2F4do5V1cUolGYLe7LksliKRdHKdB04q2m8OnZXTH2Z4tsAXBZj47Mu0vEuTRiAH0Rp2vtFkuXiol%2Fc%2BBJD4qswYyk0D6GkqDc%2FryiGzrriKvMSxzl8ZjdP0xHKTJjDfE5MjfU2lez8Mc21eeVj4yG9Y5gNNb6MvOPOrwEDI%2FRkVukgyqFl7OJk6DNu3G%2FLNPaqxgHPoG%2Fb4MQRnyZVI9iJH8UXIBBVrkHxP0uq0KBIFqMINY881df17xzwxrP0wDfAjdIJWLC650cfnf3%2BZ8zInGGcv79tFePFr5UA0tMv7Ci9nlUUKOJuJ4P3asT%2F%2Fu6AA%2BWLog2uJ%2FY2YYqgP%2FV7P4M74%2FvZ8fgql9D8g8%2F%2F1HM9Q%2BhZwENf6sKaAU%2FkxX%2BEKCRjKf8O%2BTNUSfsuE8coUcku3YuzCaIBgM2P8Rb8sKLbSBDeyofU70uSSaMEckaUyLeYQbOVx%2F%2B7JUlOisjgFuy%2BxyJIPcX7Yv7eIVOKsnEkZCKNo2VdexAMFzV8jJWCkNJigozPGBBeEcF5L025fFK4zyLlxhOOqSrzgJ%2FV%2BKw55kneImPwOmjjTx8bKaKUlDohE7GDIWcILQ88d%2BXi7A5SMIuz2WcT5ii0Wf%2B8AovNHaAE6ks%2FCbb9HIDfkrt1RUQubPWxQct8F190iQxv9R6IFJ5ykwqipKSTD3By%2BM95FvKgObf5mq7KTh4b8T%2BeFMlESYJHyLIxZIZoHl9lVnkf7P1e8%2FtlB9wGg6ZHy9%2B0obMoFR67KLl5Gf2Fubx9%2Bu6Hxgn%2BXdJPeAfwgbb%2BQmBiXP12zCP6SuogJGXte7YQyF6Em8tznMbrROwtZON8HERSFujfxKGUlphAbOSefgP%2B7S8ROG3IPs9BT1n1utI2bh3BRC5ImSyZhXOG2sznZdCQ79pKhhufWoot4da2aQ5TFdB5HS5I82K%2BNFYkqRWdK4vmOr5j0J6GyQhEu5IsLcsngqwvuBRkhZ%2FI2BlzDhJYXPlwWKqeoicydwftbEFDnNHvr5PmogWHBoxfe612L%2FoZuaHewfiNVtslgbnGnbzo6cVZBOb0MxCSiNyccvTZ6ZeZ3IoYf5mwSBgL53KSTx%2BaaO3PBn83YSeM2dk11dlD76Dw%2Ffwp7gLIb%2F9H19TQBwMECqNmAPkW775ynG45GwhE3BA0pwhTRn%2BF4GSBlk6n2YHWpqXOktV2t3ZZwho5dU%2BaKzPeoMZcLm7nG2qmPwjWvfUgSBhOQRDPJ61KK3h5ergANs990ONktGgcLZYX2%2BIxZ9xI1klDHJPz7%2BeYK897D6e8DnoSNBhvjYjYzQuL%2By5YdcXuhuUAaPS3B0LiNYWPPf3SS4gefEp%2BQ40JgSgcx8SLEb95cVnFoD0sKNB8uYVJl5ohpszJa6mBaxNhGU1RL1YhOeovU4suwQDEuABnc5MQSummToQmdXNnaHxT7Ov2so1y7%2FPnneMjzNY8sdZ2kFdHVk%2BuTdBA0JS%2FrUwuBCgPYAp%2F34FIBxAOcBPcjb4vvsOvmJbQXK54VRVd2nZiTWwABPF2NWmXab3x4qsw9QQRYosZDipKPqPctGMEddEdpAkKVCHyJXviVgFH88%2BfNp7T6gmE4eMMOJp7ILx2NuHdBy3qhIf%2Bu6HCpuRwiD%2F26zBxjGaodd9ADMhOdh7E6oqbmaxQ%2Bk5eEMFejtYCLGvPa1i2IaBVWN1enquXtBF%2Bn9vuEdhiApol%2FeTCav6nkyuZW1lK%2ByPwh2P7mNdL%2Fn0Pfjjvx5XQfj9SL7apVRfdsMga53PTGnVHicRFg%2BK5bQoeF0ZFI7orzMEKwXYrPfAii3OQ1TX8%2B5TSW9z4Ig3TmP3b0wdCiqYcymMHG04O98x06XWcc%2BYlyhemglioA0jpqkpXq9bHXsDBULpfz6oOOp1288b2MXAPiye9YwWq2%2B8ordohPUY4f2Tcd88ByzZeLOOe%2FjdKEK%2Bix0VBJ39OL2248SwHZywIFeum80mCLl3yGH61eP%2FuvEiZu3NR3b4ck27CDyxgM9Gmspd2ES%2F%2BkX0IpHU%2FeQFEPWFOGhsGPcjQvqypuqq%2F4bN4Tbj8woPmqXvNbyuxqTNxi0nZwiYurOUSgiSqJTLJ08nAN%2BqA1389YEJphlTusioKzH0eIHcgQyRq7JrcOrONtyiQdw0PrQBxRnau5t5aLQg%2FLJ1dQxQx7x4qXeDPIMG4Me4geUZT217ldBH9JNMdOqbl%2B8BNdDj6tM55mGLE4PJlWgGodAgKbiSOSTbnVm2E7F4THMgFFbQpgNv%2Bx7MyVZR5hw24YlqugQ4cvYE%2FtI63CDVzTd%2BjRUgL4B0My8YuH1DxZbuE9DPkCy%2B8%3D");
+		return headers;
+	}
+	
 
 	public HashMap<String, Object> headersFormspwasignin(){
 		HashMap<String, Object> headers = new HashMap<>();
@@ -1139,8 +1188,35 @@ String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\
 			Reporter.log(url_Acct_Service+url);
 
 		}
+		if(Type.equals("Account_Service_MobileLogin_sendOTP_SIGNIN")) {
+			headers = headersForms_MobileLoginsendotp();
 
+			RestAssured.baseURI =url_Acct_Service;
+			url = url_Account_Service_MobileLogin_sendOTP_SIGNIN;					
+			params =params_Account_Service_MobileLogin_sendOTP_SIGNIN;
+			Reporter.log(url_Acct_Service+url);
 
+		}
+		
+		if(Type.equals("Account_Service_MobileLogin_sendOTP_UPDATE_MOBILE")) {
+			headers = headersForms_MobileLoginsendotp();
+
+			RestAssured.baseURI =url_Acct_Service;
+			url = url_Account_Service_MobileLogin_sendOTP_SIGNIN;					
+			params =params_Account_Service_MobileLogin_sendOTP_UPDATE_MOBILE;
+			Reporter.log(url_Acct_Service+url);
+
+		}
+		if(Type.equals("Account_Service_MobileLogin_sendEmail_SIGNUP_MERGE")) {
+			headers = headersForms_MobileLoginsendotp();
+
+			RestAssured.baseURI =url_Acct_Service;
+			url = url_Account_Service_MobileLogin_sendOTP_SIGNIN;					
+			params =params_Account_Service_MobileLogin_sendEmail_SIGNUP_MERGE;
+			Reporter.log(url_Acct_Service+url);
+
+		}
+		
 		if(Type.equals("Manage_trips_OTP_API")) {
 			headers = headersForms4();
 
@@ -1317,6 +1393,51 @@ String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\
 			RestAssured.baseURI =url_Acct_Service;
 			url = url_Account_Service_Update_User_MobileNo_OTPValidaion;					
 			params =params_Account_Service_Update_User_MobileNo_OTPValidaion ;
+			Reporter.log(url_Acct_Service+url);
+
+		}
+		if(Type.equals("Account_Service_MobileLogin_verifyOTP_SignIn")) {
+			headers = headersFormsverifymobilelogin_otp();
+
+			RestAssured.baseURI =url_Acct_Service;
+			url = url_Account_Service_MobileLogin_verifyOTP_SignIn;					
+			params =params_Account_Service_MobileLogin_verifyOTP_SignIn ;
+			Reporter.log(url_Acct_Service+url);
+
+		}
+		if(Type.equals("Account_Service_MobileLogin_verifyOTP_UPDATE_MOBILE")) {
+			headers = headersFormsverifymobileloginupdatemobile_otp();
+
+			RestAssured.baseURI =url_Acct_Service;
+			url = url_Account_Service_MobileLogin_verifyOTP_SignIn;					
+			params =params_Account_Service_MobileLogin_verifyOTP_UPDATE_MOBILE ;
+			Reporter.log(url_Acct_Service+url);
+
+		}
+		if(Type.equals("Account_Service_MobileLogin_NudgePersonaldetails")) {
+			headers = headersFormsverifymobileloginupdatemobile_otp();
+
+			RestAssured.baseURI =url_Acct_Service;
+			url = url_Account_Service_MobileLogin_NudgePersonaldetails;					
+			params =params_Account_Service_MobileLogin_NudgePersonaldetails ;
+			Reporter.log(url_Acct_Service+url);
+
+		}
+		if(Type.equals("Account_Service_MobileLogin_NudgeUpdateMobile")) {
+			headers = headersFormsverifymobileloginupdatemobile_otp();
+
+			RestAssured.baseURI =url_Acct_Service;
+			url = url_Account_Service_MobileLogin_NudgeUpdateMobile;					
+			params =params_Account_Service_MobileLogin_NudgePersonaldetails ;
+			Reporter.log(url_Acct_Service+url);
+
+		}
+		if(Type.equals("Account_Service_MobileLogin_verifyOTP_SIGNUP_MERGE")) {
+			headers = headersFormsverifymobileloginupdatemobile_otp();
+
+			RestAssured.baseURI =url_Acct_Service;
+			url = url_Account_Service_MobileLogin_verifyOTP_SignIn;					
+			params =params_Account_Service_MobileLogin_verifyOTP_SIGNUP_MERGE ;
 			Reporter.log(url_Acct_Service+url);
 
 		}
@@ -1875,6 +1996,15 @@ String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\
 			headers = verifyaccount();
 			Reporter.log(url_Acct_Service+url);
 		}
+		
+		else if(Type.equals("Account_Service_MobileLoginUpdatePersonaldetailsApi"))
+		{
+			RestAssured.baseURI=url_Acct_Service;
+			url = url_Account_Service_MobileLoginUpdatePersonaldetailsApi;
+			params= params_Account_Service_MobileLoginUpdatePersonaldetailsApi;
+			headers = headersFormsverifymobileloginupdatemobile_otp();
+			Reporter.log(url_Acct_Service+url);
+		}
 		else if(Type.equals("Account_Service_UserController_VerifyAccount_UsernotPresent"))
 		{
 			RestAssured.baseURI=url_Acct_Service;
@@ -2375,6 +2505,20 @@ String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\
 
 			Reporter.log(url_Acct_Service+url);
 		}
+		else if (Type.equals("Account_Service_MobileLogin_UserexistenceByMobileNo")){
+			RestAssured.baseURI=url_Acct_Service;
+			url = url_Account_Service_MobileLogin_UserexistenceByMobileNo;
+			headers = headersFormgetactivationkey();
+
+			Reporter.log(url_Acct_Service+url);
+		}
+		else if (Type.equals("Account_Service_MobileLogin_FetchOldCTusersApi")){
+			RestAssured.baseURI=url_Acct_Service;
+			url = url_Account_Service_MobileLogin_FetchOldCTusersApi;
+			headers = headersFormsoldctusers();
+
+			Reporter.log(url_Acct_Service+url);
+		}
 		else if (Type.equals("Account_Service_FetchCustomer_number")){
 			RestAssured.baseURI=url_Acct_Service;
 			url = url_Account_Service_FetchCustomer_number;
@@ -2650,6 +2794,18 @@ String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\
 				Assert.assertTrue(false);						
 			}
 		}
+		if(Type.equalsIgnoreCase("Account_Service_MobileLogin_verifyOTP_SignIn")) {
+			String message = jsonPathEvaluator.getString("message");
+			if(!message.contains("INVALID_OTP")) {
+				
+				Assert.assertTrue(true);						
+			}
+			
+			else if(!message.contains("NO_SAVED_OTP_FOUND"))
+			{
+				Assert.assertTrue(true);
+			}
+		}
 		if(Type.equalsIgnoreCase("Account_Service_Cleartrip_ResetPassword")) {
 			String message = jsonPathEvaluator.getString("message");
 			if(!message.contains("failed")) {
@@ -2726,6 +2882,45 @@ String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\
 				Assert.assertTrue(false);						
 			}
 			
+		}
+		else if(Type.equalsIgnoreCase("Account_Service_MobileLogin_sendOTP_SIGNIN")) {
+			String ReponseStr = resp.body().asString();
+
+			String status = jsonPathEvaluator.getString("status");
+			String action = jsonPathEvaluator.getString("action");
+
+			if(!status.contains("SUCCESS")) {
+				Assert.assertTrue(false);						
+			}
+			if(!action.contains("SIGNIN")) {
+				Assert.assertTrue(false);						
+			}
+		}
+		else if(Type.equalsIgnoreCase("Account_Service_MobileLogin_sendOTP_UPDATE_MOBILE")) {
+			String ReponseStr = resp.body().asString();
+
+			String status = jsonPathEvaluator.getString("status");
+			String action = jsonPathEvaluator.getString("action");
+
+			if(!status.contains("SUCCESS")) {
+				Assert.assertTrue(false);						
+			}
+			if(!action.contains("UPDATE_MOBILE")) {
+				Assert.assertTrue(false);						
+			}
+		}
+		else if(Type.equalsIgnoreCase("Account_Service_MobileLogin_sendEmail_SIGNUP_MERGE")) {
+			String ReponseStr = resp.body().asString();
+
+			String status = jsonPathEvaluator.getString("status");
+			String action = jsonPathEvaluator.getString("action");
+
+			if(!status.contains("ACCEPTED")) {
+				Assert.assertTrue(false);						
+			}
+			if(!action.contains("SIGNUP_MERGE")) {
+				Assert.assertTrue(false);						
+			}
 		}
 		
 		if(Type.equalsIgnoreCase("Account_Service_RegisterFLyinUserUpdate_OTPValidation")) {
@@ -3185,6 +3380,15 @@ String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\
 			}
 
 		}
+		else if(Type.equalsIgnoreCase("Account_Service_MobileLogin_NudgePersonaldetails")) {
+			
+			String status = jsonPathEvaluator.getString("status");
+			if(!status.contains("SUCCESS")) {
+				Assert.assertTrue(false);						
+			}
+
+		}
+		
 
 		else if(Type.equalsIgnoreCase("Account_Service_AppleSignin")) {
 
@@ -3332,6 +3536,7 @@ String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\
 			}
 
 		}
+		
 		else if(Type.equalsIgnoreCase("Account_Service_FlyinV2_Signin_FlyinUser")) {
 			String ReponseStr = resp.body().asString();
 
@@ -3834,6 +4039,30 @@ String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\
 			}
 
 			if(!ReponseStr.contains("7UIWVTEXIDT299")){
+				Assert.assertTrue(false);
+			}
+		}
+		else if(Type.equalsIgnoreCase("Account_Service_MobileLogin_UserexistenceByMobileNo")) {
+
+			String status = jsonPathEvaluator.getString("status");
+
+			if(!status.contains("SUCCESS")) {
+				Assert.assertTrue(false);						
+			}
+
+			
+		}
+		else if(Type.equalsIgnoreCase("Account_Service_MobileLogin_FetchOldCTusersApi")) {
+
+			String ReponseStr = resp.body().asString();
+			if(!ReponseStr.contains("likhitha@narukulla.com")){
+				Assert.assertTrue(false);
+			}
+
+			if(!ReponseStr.contains("test0123@cltp.com")){
+				Assert.assertTrue(false);
+			}
+			if(!ReponseStr.contains("pudateapicontactinfo@cleartrip.com")){
 				Assert.assertTrue(false);
 			}
 		}

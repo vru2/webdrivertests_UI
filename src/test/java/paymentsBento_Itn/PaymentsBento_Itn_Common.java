@@ -12,8 +12,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.interactions.MoveMouseAction;
-import org.openqa.selenium.interactions.MoveTargetOutOfBoundsException;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Reporter;
 
@@ -25,7 +23,11 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	public Cookie cookie_Bento_Payment = new Cookie("isBentoPayment", "true");
     public Cookie ctauth_amex=new Cookie("ct-auth","2%2BtU1cPb8lJr0jvLEAtykB9OU0fk%2F%2BykRqo7fqGZ%2FgNdUi7dMNUxWo%2BLayLyBmIQH8YOfEGj8AeevvMX%2F4QnQkvAnTTp9N%2FfevCUsB0kyv34RHOgDXRfdndn%2FWd0KOXhimPy3b9gj7V56t4fbK1hHoIzQYBzwMa%2Fi72%2FqTSKtPUlKo9yE91%2BeAEj2Bi%2FZIx%2FcqFKCJETXpAxsR3%2FhUWMrg%3D%3D");
     protected String username = "varalakshmi.venkateshaiah@cleartrip.com";
-	public Cookie ctauth_partial_wallet = new Cookie("ct-auth","FPFASUH3u8BIfPi6n5SA9LXbDIclCp0%2BkRN%2Fw9pKarLL3y3qdEGiZQIuqxIl9f3EH8YOfEGj8AeevvMX%2F4QnQu5pne5K5EHLAFvUZ60PN8K8qX%2FBnweQFNfqHv2MpXaBWdVRYJKk4obdFibGNlCsKQmjgQzzYO8qxSqmDKTEZk5nFNSZ6oZBVnN8BGz7Phhf");
+	//public Cookie ctauth_partial_wallet = new Cookie("ct-auth","FPFASUH3u8BIfPi6n5SA9LXbDIclCp0%2BkRN%2Fw9pKarLL3y3qdEGiZQIuqxIl9f3EH8YOfEGj8AeevvMX%2F4QnQu5pne5K5EHLAFvUZ60PN8K8qX%2FBnweQFNfqHv2MpXaBWdVRYJKk4obdFibGNlCsKQmjgQzzYO8qxSqmDKTEZk5nFNSZ6oZBVnN8BGz7Phhf");
+
+    public Cookie ctauth_partial_wallet = new Cookie("ct-auth","Z%2FfqEo%2FlSIUo2k%2FTgXj6nYmv9%2BvNsT8%2BDAn%2Bh0HGI15md%2F6HiX4VtDrXHvXjARZLuQmW3NiUZma8q2lELnUuyC3uAF5DaTQONdJlLn%2FO2md2nbUa45ssUlijxS%2BlNzPHOwS99dGemy2IQP232BHiets8QNnEll1tMV0a%2BqYXYe4eGH%2Bx2Ia1v%2Be9QkHxMGhkMZUn5z1e1Bmsmw4OYW7cgw%3D%3D");
+    public Cookie ctauth_partial_wallet1 = new Cookie("ct-auth","Bk7N%2FtlW6UIM9%2Fv06RR0lzYwI2Wr5NoY6shicJ7wSEglXjP2rTXj7vKCCjzDFS1EH8YOfEGj8AeevvMX%2F4QnQkvAnTTp9N%2FfevCUsB0kyv34RHOgDXRfdndn%2FWd0KOXh%2F2AX0kdZPIqgx5R%2FHygKQrR425YROepvP0SdSctCUtkcciwXF7FvVYKJizsM6Az33Pdp0Z8op1wWr79u2xWoxw%3D%3D");
+
 	public Cookie bentoitn = new Cookie("forcedBentoItn", "true");
 	public Cookie bento = new Cookie("isBento", "true");
 
@@ -50,7 +52,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	String meurl = "https://qa2me.cleartrip.com";
 
 
-	public String searchurl(String Domain)  throws Exception
+	protected String searchurl(String Domain)  throws Exception
 	{
 		String Domain_URL= null;
 		String Air_URL= "/flights/results?adults=1&childs=0&infants=0&depart_date="+getDateTime(30, "dd/MM/yyyy")+"&return_date=&intl=n&from=BLR&to=MAA&airline=&carrier=&sd=1643253708293&page=&sellingCountry=IN&ssfi=&flexi_search=&ssfc=&origin=BLR - Bangalore, IN&destination=MAA - Chennai, IN&class=Economy";
@@ -98,7 +100,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		{
 			driver.manage().addCookie(ctauth);
 		}
-		//driver.navigate().refresh();
+		driver.navigate().refresh();
 		elementPresent_log(driver, getObjectPayment("Bento_Book_Button"), "Book", 30);
 		 if(domain=="com")
 		 {
@@ -107,7 +109,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			 {
 				 Actions actions=new Actions(driver);
 	           	 actions.keyDown(Keys.CONTROL).sendKeys(Keys.END).perform();
-				 smartClick(driver,By.xpath("//div[5]/div[2]/div/label[2]/div/span"));
+				// smartClick(driver,By.xpath("//div[5]/div[2]/div/label[2]/div/span"));
 			 }
 			 if (elementVisible(driver, getObjectPayment("Bento_Indigo_Logo"), 5)) 
 			 {
@@ -268,7 +270,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	}
 	
 	public void itinerary_Block(RemoteWebDriver driver, String gv_coupon) throws Exception {
-		Actions act=new Actions(driver);
+		//Actions act=new Actions(driver);
 		if(!textPresent(driver, "Review your itinerary", 1))  {
 			if(elementVisible(driver,By.xpath("//div[5]/button"), 5))
 			{
@@ -483,6 +485,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 				}
 		safeClick(driver, getObjectPayment("Bento_Itn_Username"));
 		safeType(driver, getObjectPayment("Bento_Itn_Username"), username);
+
 		Reporter.log("Entered user name");
 		if(elementVisible(driver, getObjectPayment("Bento_Itn_Contactinfo_Continue"), 1)) {
 			smartClick(driver, getObjectPayment("Bento_Itn_Contactinfo_Continue"));			
@@ -1271,7 +1274,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		}
 	
 		 Reporter.log("Youpay  contain 0 rs");
-		String ConvFee = getText(driver, By.xpath("//div[2]/div/div[1]/div[8]/p"));
+		//String ConvFee = getText(driver, By.xpath("//div[2]/div/div[1]/div[8]/p"));
 		/*
 		 * if (!ConvFee.contains("100")) {
 		 * Reporter.log("ConvFee doesn't contain 100 rs"); Assert.assertTrue(false); }

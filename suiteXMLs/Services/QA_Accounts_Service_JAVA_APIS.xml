@@ -265,6 +265,22 @@
 
 		</classes>
 	</test>
+	<test name="Accounts-Service-MobileLogin" parallel="true">
+		<classes>
+			<class name="accountsAPI.Account_Service_MobileLogin_sendOTP_SIGNIN" />
+			<class name="accountsAPI.Account_Service_MobileLogin_sendOTP_UPDATE_MOBILE" />
+			<class name="accountsAPI.Account_Service_MobileLogin_sendEmail_SIGNUP_MERGE" />
+			<class name="accountsAPI.Account_Service_MobileLogin_verifyOTP_SignIn" />
+			<class name="accountsAPI.Account_Service_MobileLogin_verifyOTP_SIGNUP_MERGE" />
+			<class name="accountsAPI.Account_Service_MobileLogin_verifyOTP_UPDATE_MOBILE" />
+			<class name="accountsAPI.Account_Service_MobileLogin_NudgePersonaldetails" />
+			<class name="accountsAPI.Account_Service_MobileLogin_NudgeUpdateMobile" />
+			<class name="accountsAPI.Account_Service_MobileLoginUpdatePersonaldetailsApi" />
+			<class name="accountsAPI.Account_Service_MobileLogin_UserexistenceByMobileNo" />
+			<class name="accountsAPI.Account_Service_MobileLogin_FetchOldCTusersApi" />
+			
+		</classes>
+	</test>
 
 
 	<!-- <test name="Account_Service_FlyinV2_Signin" parallel="true"> <classes> 

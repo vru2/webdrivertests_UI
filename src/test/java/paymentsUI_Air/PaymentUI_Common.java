@@ -318,7 +318,7 @@ public class PaymentUI_Common extends PaymentNodeJS{
 		textPresent_Log(driver, "CVV", 1);
 		validate_Currency(driver, "", "AED");		
 		Reporter.log("Card Details +\n"+ platform.value("ADCBCard_Number") +"\n " + platform.value("ADCBCard_Expiry_Month")  +" " + platform.value("ADCBCard_Expiry_Year") +" " + platform.value("ADCBCard_CVV"));
-		safeType(driver, getObjectPayment("PaymentPage_ADCB_Number"), "5264083966400011");
+		safeType(driver, getObjectPayment("PaymentPage_ADCB_Number"), "5264083966400083");
 		safeClick(driver, getObjectPayment("PaymentPage_ADCB_EXP_Month"));
 		safeSelect(driver, getObjectPayment("PaymentPage_ADCB_EXP_Month"), platform.value("ADCBCard_Expiry_Month"));
 		safeClick(driver, getObjectPayment("PaymentPage_ADCB_EXP_Year"));
@@ -328,24 +328,16 @@ public class PaymentUI_Common extends PaymentNodeJS{
 		String CheckBalance = getText(driver, getObjectPayment("PaymentPage_ADCB_CheckBlance_Btn"));	
 		Assert.assertEquals(CheckBalance, "Check balance");		 
 		safeClick(driver, getObjectPayment("PaymentPage_ADCB_CheckBlance_Btn"));	
-		Thread.sleep(5000);
+		Thread.sleep(10000);
 		Reporter.log("Check balance is Clicked");
-		if(!textPresent(driver, "You have provided incorrect card details", 10)) {
+		if(textPresent(driver, "You have provided incorrect card details", 10)) {
 			Reporter.log("You have provided incorrect card details message not displayed");
 			Assert.assertTrue(false);
 		}
-		if(!textPresent(driver, "Please provide valid ADCB card details to redeem TouchPoints", 1)) {
+		if(textPresent(driver, "Please provide valid ADCB card details to redeem TouchPoints", 1)) {
 			Reporter.log("Please provide valid ADCB card details to redeem TouchPoints message not displayed");
 			Assert.assertTrue(false);
 		}
-		safeType(driver, getObjectPayment("PaymentPage_ADCB_Number"), platform.value("ADCBCard_Number"));
-		safeClick(driver, getObjectPayment("PaymentPage_ADCB_EXP_Month"));
-		safeSelect(driver, getObjectPayment("PaymentPage_ADCB_EXP_Month"), platform.value("ADCBCard_Expiry_Month"));
-		safeClick(driver, getObjectPayment("PaymentPage_ADCB_EXP_Year"));
-		safeSelect(driver, getObjectPayment("PaymentPage_ADCB_EXP_Year"), platform.value("ADCBCard_Expiry_Year"));
-		safeType(driver, getObjectPayment("PaymentPage_ADCB_CardName"), "test");
-		safeType(driver, getObjectPayment("PaymentPage_ADCB_CVV"), platform.value("ADCBCard_CVV"));
-		safeClick(driver, getObjectPayment("PaymentPage_ADCB_CheckBlance_Btn"));
 		textPresent_Log(driver,"You will redeem AED",5);
 		String MakePay = getText(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 		Assert.assertEquals(MakePay, "Redeem");		

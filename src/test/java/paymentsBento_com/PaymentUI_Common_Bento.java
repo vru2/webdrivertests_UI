@@ -512,7 +512,7 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 		}
 		else if (PaymentType.equalsIgnoreCase("EMI")) 
 		{
-
+            Thread.sleep(3000);
 			textPresent_Log(driver, "Pay to complete your booking", 20);
 			smartClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
 			bento_Select_PaymentType(driver, "EMI");

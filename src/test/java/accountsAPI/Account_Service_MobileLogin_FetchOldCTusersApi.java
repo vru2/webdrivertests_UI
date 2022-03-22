@@ -16,8 +16,8 @@ public class Account_Service_MobileLogin_FetchOldCTusersApi extends AccountsComm
 		resp =getCall("Account_Service_MobileLogin_FetchOldCTusersApi", "");
 		validation( resp, "Account_Service_MobileLogin_FetchOldCTusersApi", "");
 
-		/*ResponseBody body = resp.getBody();
-		System.out.println("Response of API is:" + body.asString());*/
+		ResponseBody body = resp.getBody();
+		System.out.println("Response of API is:" + body.asString());
 
 
 	}

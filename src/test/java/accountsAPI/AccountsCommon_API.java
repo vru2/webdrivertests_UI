@@ -214,6 +214,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String url_Account_Service_Company_DomainName_Autocomplete="/company/v2/domain-auto-completer?domain=test";
 	String url_Account_Service_GetActivationKey="/user/v2/activation-key/65213401";
 	String url_Account_Service_GET_UserbyCookie_CleartripUser="/external-api/v2/user";
+	String url_Account_Service_AgencyLogo="/company/logo?id=100161";
 	String url_Account_Service_UserExistence_withEmailIDandDomain="/external-api/user-exists?emailId=ns.likhitha@cleartrip.com&domain=www.cleartrip.com";
 	String url_Account_Service_UserExistence_withID="/external-api/user-exists?id=6510909";
 	String url_Account_Service_GSTV2_SearchAPIwithGstNoAndGstID="/gst/v2?id=203&gstNumber=29aaaaa0000a1Z5&linkableType=Person";
@@ -570,12 +571,20 @@ String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\
 
 		return headers;
 	}
+	public HashMap<String, Object> headersFormgetagencylogo(){
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("accept", "*/*");
+		headers.put("AUTH_KEY", "7GHT#@D65yhgder4R1234");
+
+		return headers;
+	}
+	
 	public HashMap<String, Object> headersFormsoldctusers(){
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("caller", "b2c");
 		headers.put("referer", "www.cleartrip.com");
 		headers.put("accept", "*/*");
-		headers.put("Cookie", "ct-auth=ejk962bJ9td7F6NJ5oaKms8clBvyltgSrBzKVBjPiZI28FaaAmYGYp0F1jMboIpKL1YjeWNmu3xY%2FpzUexWQN1w%2Fj5gAPNmv1vpKnDrAx3FoX9evvh5diDC4jtyRjOeZZJtx%2BJ31duZqrcZ2jUdJ6F4ai43jNI5aChVTEmGAfqQahvGkzHhRz5kPpCa%2F7j3utX4un4jpIzA3dx1i9UD1iDhmbaHDtVTELASCTE65iYNDav43rPHfhVjrxuJhRUe9V9J1s9EnvD%2BVObAzErSBUd%2BYomLdDuWrqqdRzGq7%2FdYA0m79Z5nuhvvWgXtLZpphBygb5DF%2BiBArg6EEGJYTRX%2BnhhaYeP8g0CEQkY6Tiy4JTEWCk4w4RPfV8FxcD5fiBiYwxcyF82ssHriGcBPoZbqcwrH37YPhmlmSgDptHRHSU4sbkK%2B1ntNdKiZtuD7S519sHoYJ20LxLarNevMhefLj6wy0K9HoNEZdzP3I6V6sfLCHbaSEDTDVfF6ZO2eL%2BY0HEOXDxFMm4qDR%2FfSwa6%2BHx%2F4do5V1cUolGYLe7LksliKRdHKdB04q2m8OnZXTH2Z4tsAXBZj47Mu0vEuTRiAH0Rp2vtFkuXiol%2Fc%2BBJD4qswYyk0D6GkqDc%2FryiGzrriKvMSxzl8ZjdP0xHKTJjDfE5MjfU2lez8Mc21eeVj4yG9Y5gNNb6MvOPOrwEDI%2FRkVukgyqFl7OJk6DNu3G%2FLNPaqxgHPoG%2Fb4MQRnyZVI9iJH8UXIBBVrkHxP0uq0KBIFqMINY881df17xzwxrP0wDfAjdIJWLC650cfnf3%2BZ8zInGGcv79tFePFr5UA0tMv7Ci9nlUUKOJuJ4P3asT%2F%2Fu6AA%2BWLog2uJ%2FY2YYqgP%2FV7P4M74%2FvZ8fgql9D8g8%2F%2F1HM9Q%2BhZwENf6sKaAU%2FkxX%2BEKCRjKf8O%2BTNUSfsuE8coUcku3YuzCaIBgM2P8Rb8sKLbSBDeyofU70uSSaMEckaUyLeYQbOVx%2F%2B7JUlOisjgFuy%2BxyJIPcX7Yv7eIVOKsnEkZCKNo2VdexAMFzV8jJWCkNJigozPGBBeEcF5L025fFK4zyLlxhOOqSrzgJ%2FV%2BKw55kneImPwOmjjTx8bKaKUlDohE7GDIWcILQ88d%2BXi7A5SMIuz2WcT5ii0Wf%2B8AovNHaAE6ks%2FCbb9HIDfkrt1RUQubPWxQct8F190iQxv9R6IFJ5ykwqipKSTD3By%2BM95FvKgObf5mq7KTh4b8T%2BeFMlESYJHyLIxZIZoHl9lVnkf7P1e8%2FtlB9wGg6ZHy9%2B0obMoFR67KLl5Gf2Fubx9%2Bu6Hxgn%2BXdJPeAfwgbb%2BQmBiXP12zCP6SuogJGXte7YQyF6Em8tznMbrROwtZON8HERSFujfxKGUlphAbOSefgP%2B7S8ROG3IPs9BT1n1utI2bh3BRC5ImSyZhXOG2sznZdCQ79pKhhufWoot4da2aQ5TFdB5HS5I82K%2BNFYkqRWdK4vmOr5j0J6GyQhEu5IsLcsngqwvuBRkhZ%2FI2BlzDhJYXPlwWKqeoicydwftbEFDnNHvr5PmogWHBoxfe612L%2FoZuaHewfiNVtslgbnGnbzo6cVZBOb0MxCSiNyccvTZ6ZeZ3IoYf5mwSBgL53KSTx%2BaaO3PBn83YSeM2dk11dlD76Dw%2Ffwp7gLIb%2F9H19TQBwMECqNmAPkW775ynG45GwhE3BA0pwhTRn%2BF4GSBlk6n2YHWpqXOktV2t3ZZwho5dU%2BaKzPeoMZcLm7nG2qmPwjWvfUgSBhOQRDPJ61KK3h5ergANs990ONktGgcLZYX2%2BIxZ9xI1klDHJPz7%2BeYK897D6e8DnoSNBhvjYjYzQuL%2By5YdcXuhuUAaPS3B0LiNYWPPf3SS4gefEp%2BQ40JgSgcx8SLEb95cVnFoD0sKNB8uYVJl5ohpszJa6mBaxNhGU1RL1YhOeovU4suwQDEuABnc5MQSummToQmdXNnaHxT7Ov2so1y7%2FPnneMjzNY8sdZ2kFdHVk%2BuTdBA0JS%2FrUwuBCgPYAp%2F34FIBxAOcBPcjb4vvsOvmJbQXK54VRVd2nZiTWwABPF2NWmXab3x4qsw9QQRYosZDipKPqPctGMEddEdpAkKVCHyJXviVgFH88%2BfNp7T6gmE4eMMOJp7ILx2NuHdBy3qhIf%2Bu6HCpuRwiD%2F26zBxjGaodd9ADMhOdh7E6oqbmaxQ%2Bk5eEMFejtYCLGvPa1i2IaBVWN1enquXtBF%2Bn9vuEdhiApol%2FeTCav6nkyuZW1lK%2ByPwh2P7mNdL%2Fn0Pfjjvx5XQfj9SL7apVRfdsMga53PTGnVHicRFg%2BK5bQoeF0ZFI7orzMEKwXYrPfAii3OQ1TX8%2B5TSW9z4Ig3TmP3b0wdCiqYcymMHG04O98x06XWcc%2BYlyhemglioA0jpqkpXq9bHXsDBULpfz6oOOp1288b2MXAPiye9YwWq2%2B8ordohPUY4f2Tcd88ByzZeLOOe%2FjdKEK%2Bix0VBJ39OL2248SwHZywIFeum80mCLl3yGH61eP%2FuvEiZu3NR3b4ck27CDyxgM9Gmspd2ES%2F%2BkX0IpHU%2FeQFEPWFOGhsGPcjQvqypuqq%2F4bN4Tbj8woPmqXvNbyuxqTNxi0nZwiYurOUSgiSqJTLJ08nAN%2BqA1389YEJphlTusioKzH0eIHcgQyRq7JrcOrONtyiQdw0PrQBxRnau5t5aLQg%2FLJ1dQxQx7x4qXeDPIMG4Me4geUZT217ldBH9JNMdOqbl%2B8BNdDj6tM55mGLE4PJlWgGodAgKbiSOSTbnVm2E7F4THMgFFbQpgNv%2Bf4%2BfRVXTLdOtNlEEbhwmSpK1cn1iLwo1IQvqFQHpQ2w%2FII90qaBIB5sIGN2%2FYYMQ%3D'");
+		headers.put("Cookie", "ct-auth=yCyF1aO2x2QY59DZwxDHQobySAkzHGvlB3TZ2AktInAHY3pLSXF9AFlNtmyBfupMt3THK21PZyGXoShVpB1iXIbh2v9juGTl1LpaQlGKdJn8SDyjhEPYdlIgBgKU3g1QoQuc8d5jhtWtnFNRYJF8lNz3adGfKKdcFq%2B%2FbtsVqMc%3D; Domain=qa2.cleartrip.com; Expires=Fri, 06-May-2022 04:35:17 GMT; Path=/; Secure");
 	    return headers;
 	}
 	
@@ -2604,6 +2613,13 @@ String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\
 
 			Reporter.log(url_Acct_Service+url);
 		}
+		else if (Type.equals("Account_Service_AgencyLogo")){
+			RestAssured.baseURI=url_Acct_Service;
+			url = url_Account_Service_AgencyLogo;
+			headers = headersFormgetagencylogo();
+
+			Reporter.log(url_Acct_Service+url);
+		}
 		else if (Type.equals("Account_Service_GET_UserbyCookie_FlyinUser")){
 			RestAssured.baseURI=url_Acct_Service;
 			url = url_Account_Service_GET_UserbyCookie_CleartripUser;
@@ -4228,6 +4244,10 @@ String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\
 			if(!ReponseStr.contains("saisaisai@cltp.com")){
 				Assert.assertTrue(false);
 			}
+
+		}
+		else if(Type.equalsIgnoreCase("Account_Service_AgencyLogo")) {
+			
 
 		}
 		else if(Type.equalsIgnoreCase("Account_Service_GET_UserbyCookie_FlyinUser")) {

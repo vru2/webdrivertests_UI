@@ -142,6 +142,7 @@
 				name="accountsAPI.Accounts_Service_Cleartrip_MultipleTraveller_Updatecall" />
 			<class name="accountsAPI.Account_Service_FetchPersonalData" />
 			<class name="accountsAPI.Account_Service_GetActivationKey" />
+			<class name="accountsAPI.Account_Service_AgencyLogo" />
 			<class name="accountsAPI.Account_Service_AuthforNonLoggedinUser" />
 			<class name="accountsAPI.Account_Service_AuthforNonLoggedinUser_HotelTrip" />
 			<class

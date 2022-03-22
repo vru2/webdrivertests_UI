@@ -109,7 +109,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			 {
 				 Actions actions=new Actions(driver);
 	           	 actions.keyDown(Keys.CONTROL).sendKeys(Keys.END).perform();
-				// smartClick(driver,By.xpath("//div[5]/div[2]/div/label[2]/div/span"));
+				smartClick(driver,By.xpath("//div[5]/div[2]/div/label[2]/div/span"));
 			 }
 			 if (elementVisible(driver, getObjectPayment("Bento_Indigo_Logo"), 5)) 
 			 {

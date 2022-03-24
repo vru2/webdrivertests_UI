@@ -71,8 +71,10 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 	public void hotelsDetailsPage(RemoteWebDriver driver, String HotelName, String Price) throws Exception {
 		refreshPage(driver);
 		elementPresent_log(driver, getObjectPayment("Hotel_Details_HotelName"), "Hotel name in details page", 30);
+		Thread.sleep(2000);
 		safeClick(driver, getObjectPayment("Hotel_Details_SelectRoom_Btn"));
 		elementVisible(driver, getObjectPayment("Hotel_Details_Book_Btn"), 5);
+		Thread.sleep(2000);
 		safeClick(driver, getObjectPayment("Hotel_Details_Book_Btn"));
 		String parent=driver.getWindowHandle();
 		Set<String>s=driver.getWindowHandles();
@@ -98,33 +100,35 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		
 	
 	public void hotelsItnDetails(RemoteWebDriver driver, String CouponGV, String PayType) throws Exception {
-		refreshPage(driver);
-		elementPresent_log(driver, By.xpath("//div[16]/button"), "Itinerary page button", 30);
+		elementPresent_log(driver, getObjectPayment("Hotel_ItnPage_Continue_Btn"), "Itinerary page button", 30);
 		textPresent(driver, "Review your itinerary", 1);
 		mouseHover(driver, By.xpath("//div[16]/button"));
+		Thread.sleep(5000);
 		safeClick(driver, By.xpath("//div[16]/button"));
-		//safeClick(driver, By.xpath("//div[@id='root']/div/main/div[2]/div/div/article/div[2]/div/div/div[16]/button"));
 	}
 	
 	public void hotelsItnSignIN(RemoteWebDriver driver, String SignIN, String PayType) throws Exception {
-		elementPresent_log(driver, By.xpath("//div[7]/button"), "Signin Step button", 30);
+		elementPresent_log(driver, getObjectPayment("Hotel_SignINPage_Continue_Btn"), "Signin Step button", 30);
 		textPresent(driver, "Add contact details", 1);
-		safeType(driver,By.xpath("//div[2]/div/input"), "1211212121");
-		safeType(driver,By.xpath("//div[4]/div/div/input"), "ct_wallet_patial@cleartrip.com");
-		
-		safeClick(driver, By.xpath("//div[7]/button"));
+		mouseHover(driver,getObjectPayment("Hotel_SignINPage_PhoneNo_TextBox"));
+		safeType(driver,getObjectPayment("Hotel_SignINPage_PhoneNo_TextBox"), "1211212121");
+		safeType(driver,getObjectPayment("Hotel_SignINPage_EmailID_TextBox"), "ct_wallet_patial@cleartrip.com");
+		mouseHover(driver, getObjectPayment("Hotel_SignINPage_Continue_Btn"));
+		Thread.sleep(2000);
+		safeClick(driver, getObjectPayment("Hotel_SignINPage_Continue_Btn"));
 	}
 	
 	public void hotelsItnContact(RemoteWebDriver driver, String Contact, String PayType) throws Exception {
-		elementPresent_log(driver, By.xpath("//div[10]/div/button"), "Traveller Contine button", 2);
+		elementPresent_log(driver, getObjectPayment("Hotel_ContactPage_Continue_Btn"), "Traveller Contine button", 2);
 		textPresent(driver, "Add traveller details", 1);
-		mouseHover(driver, By.xpath("//div[3]/div/div/div/button"));
-		safeClick(driver, By.xpath("//div[3]/div/div/div/button"));
-		safeClick(driver, By.xpath("//li"));
-		safeType(driver, By.name("firstName"), "Kiran");
-		safeType(driver, By.name("lastName"), "Kumar");
-		mouseHover(driver, By.xpath("//div[10]/div/button"));
-		safeClick(driver, By.xpath("//div[10]/div/button"));
+		mouseHover(driver, getObjectPayment("Hotel_ContactPage_Salutation_Dropdown"));
+		safeClick(driver, getObjectPayment("Hotel_ContactPage_Salutation_Dropdown"));
+		safeClick(driver, getObjectPayment("Hotel_ContactPage_Salutation_Mr"));
+		safeType(driver, getObjectPayment("Hotel_ContactPage_FirstName_TextBox"), "Kiran");
+		safeType(driver, getObjectPayment("Hotel_ContactPage_LastName_TextBox"), "Kumar");
+		mouseHover(driver, getObjectPayment("Hotel_ContactPage_Continue_Btn"));
+		Thread.sleep(2000);
+		safeClick(driver, getObjectPayment("Hotel_ContactPage_Continue_Btn"));
 	}
 	
 	public void hotelsPayment_Page_Validation(RemoteWebDriver driver, String PayType, String Domain) throws Exception {

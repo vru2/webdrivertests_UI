@@ -6,7 +6,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class IN_UPI extends PaymentsBento_Itn_Hotels_Common {
+public class IN_AmazonPay extends PaymentsBento_Itn_Hotels_Common {
 
 	@BeforeClass
 	public void startSelenium() throws Exception {
@@ -14,13 +14,15 @@ public class IN_UPI extends PaymentsBento_Itn_Hotels_Common {
 	}
 
 	@Test
-	public void Hotel_IN_UPI() throws Exception {
+	public void Hotel_IN_AmazonPay() throws Exception {
 		driver.manage().deleteAllCookies();
 		driver.get(hotelDetailsUrl("IN","sri-balaji-paradise-2626774"));
+		/*driver.get(hotelSearchUrl("IN"));
+		hotelSearchPage(driver, "", "");*/
 		hotelsDetailsPage(driver, "", "");
 		refreshPage(driver);
 		hotelsItnPage(driver, "", "", "", "");
-		hotelsPaymentPage(driver, "UPI", "", "", "", "");
+		hotelsPaymentPage(driver,"TW","AmazonPay","","",""); 
 	} 
 
  		@AfterClass

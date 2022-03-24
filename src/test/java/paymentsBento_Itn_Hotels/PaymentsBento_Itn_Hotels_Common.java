@@ -86,7 +86,7 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		if(!parent.equals(child_window))
 		{driver.switchTo().window(child_window);}
 		}
-		textPresent_Log(driver, "Book in four simple steps", 30);
+		textPresent(driver, "Book in four simple steps", 20);
 		Child_URLs = driver.getCurrentUrl();
 		driver.switchTo().window(parent);		
 		driver.get(Child_URLs);

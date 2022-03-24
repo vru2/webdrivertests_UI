@@ -1172,7 +1172,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			
 		}
 		textPresent_Log(driver, "Please wait...", 2);
-		textPresent_Log(driver, "Welcome to Razorpay Software Private Ltd Bank", 5);
+		textPresent_Log(driver, "Welcome to Razorpay Software Private Ltd Bank", 20);
 		safeClick(driver, getObjectPayment("Bento_Payment_NB_Payment_Success"));
 		Reporter.log("Payment done successfully");
 	}

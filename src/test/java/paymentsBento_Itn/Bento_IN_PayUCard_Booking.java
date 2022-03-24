@@ -22,7 +22,7 @@ public class Bento_IN_PayUCard_Booking extends PaymentsBento_Itn_Common{
 		Reporter.log(searchurl("IN"));
 	    Searchpagebook(driver,"","com","");
 	    book_itnnew(driver,"");
-	    paymentPage(driver,"sc","5123","","CC","MASTER");
+		paymentPage(driver,"CC","5123","","",""); 
 	}
 
 	 @AfterClass

@@ -771,7 +771,28 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			bento_paymentpage(driver,PaymentType, CardNumber,domain,PayType,BankName);
 			if(!(CardNumber=="ADCB"||PaymentType=="Phonepe"||PaymentType=="UPIScan"))
 		{
-			confirmation_page(driver, PaymentType, CardNumber);
+			confirmation_page_air(driver, PaymentType, CardNumber);
+		}
+		}
+		else if(textPresent(driver,"Sorry, our servers are stumped with your request",1)||textPresent(driver,"Flight not available",1))
+		{
+			Reporter.log("Booking failed due to itn page issue");
+			assertTrue(false);
+		}
+		else 
+		{
+			Reporter.log("Booking failed due to itn page issue");
+			assertTrue(false);
+		}
+	}
+	
+	public void paymentPageHotels(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType,String BankName) throws Exception {
+		if(elementVisible(driver, getObjectPayment("Bento_Pay_PayToCompleteBooking_Txt"), 30))
+		{
+			bento_paymentpage(driver,PaymentType, CardNumber,domain,PayType,BankName);
+			if(!(CardNumber=="ADCB"||PaymentType=="Phonepe"||PaymentType=="UPIScan"))
+		{
+			confirmation_page_hotel(driver, PaymentType, CardNumber);
 		}
 		}
 		else if(textPresent(driver,"Sorry, our servers are stumped with your request",1)||textPresent(driver,"Flight not available",1))
@@ -787,6 +808,15 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	}
 	
 	public void confirmation_page(RemoteWebDriver driver, String PaymentType, String CardNumber) throws Exception {
+		Thread.sleep(5000);
+		if(getURL(driver).contains("flights")) {
+			confirmation_page_air(driver, PaymentType, CardNumber);
+		} else if(getURL(driver).contains("hotels")) {
+			confirmation_page_hotel(driver, PaymentType, CardNumber);
+		}
+	}
+	
+	public void confirmation_page_air(RemoteWebDriver driver, String PaymentType, String CardNumber) throws Exception {
 		elementPresent_log(driver, By.linkText("Get your ticket"), "Get your ticket", 30);
 		textPresent_Log(driver, "You just booked", 2);
 		textPresent_Log(driver, "Travelers in this trip", 2);
@@ -804,7 +834,10 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	}
 
 	public void confirmation_page_hotel(RemoteWebDriver driver, String PaymentType, String CardNumber) throws Exception {
-		
+		elementPresent_log(driver, By.xpath("//strong"), "TripID", 30);
+		textPresent_Log(driver, "Your booking is done", 1);
+		String tripid = getText(driver, By.xpath("//strong"));
+		Reporter.log(PaymentType+" "+CardNumber+" : "+tripid);
 	}
 	
 	public void bento_paymentpage(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
@@ -812,7 +845,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		System.out.println(driver.getCurrentUrl());
 		Reporter.log(driver.getCurrentUrl());
 		Thread.sleep(1000);
-		if (textPresent(driver, "Cleartrip wallet", 5)) 
+		if (textPresent(driver, "Cleartrip wallet", 1)) 
 		{
 			safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
 			Reporter.log("Deselected wallet");
@@ -976,6 +1009,22 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			}
 			textPresent_Log(driver, "Your booking is done",10);
 			Reporter.log("Payment done successfully");
+		}
+		else if(CardNumber=="5123") {
+
+			payUI_Enter_PaymentDetails(driver, "CC", "MASTER","");
+           	smartClick(driver, getObjectPayment("PayUI_Expressway_CheckBox_New"));
+			safeClick(driver, getObjectPayment("Bento_paynow"));
+			//Save Card RBI popup
+			if(elementVisible(driver,getObjectPayment("Bento_Payment_Skip_Securecard"),2))
+			{
+			safeClick(driver,getObjectPayment("Bento_Payment_Skip_Securecard"));
+			}
+			elementVisible(driver, getObjectPayment("Bento_card_password"), 5);
+			  safeClick(driver, getObjectPayment("Bento_card_password"));
+			  Thread.sleep(1000); 
+			  safeType(driver, getObjectPayment("Bento_card_password"),"123456"); 
+			  safeClick(driver, getObjectPayment("Bento_submit"));
 		}
 		else if(CardNumber=="5241")
 		{
@@ -1224,7 +1273,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	}
 			
 	public void bento_pay_UPI(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
-
+		payUI_Select_PaymentType(driver, "CC");
 		payUI_Select_PaymentType(driver, "UPI");
 		Reporter.log("Clicked on UPI");
 		Thread.sleep(2000);

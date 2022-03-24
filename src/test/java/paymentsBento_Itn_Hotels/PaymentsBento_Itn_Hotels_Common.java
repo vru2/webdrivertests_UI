@@ -29,6 +29,16 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		}
 		return SearchUrl;
 	}
+	
+	public String hotelDetailsUrl(String Domain, String HotelID)  throws Exception
+	{	
+		Hotel_URL= "/hotels/details/"+HotelID+"?c="+getDateTime(30, "ddMMyy")+"|"+getDateTime(31, "ddMMyy")+"&r=2,0";
+		String SearchUrl = "";
+		if(Domain=="IN") {
+			SearchUrl=inurl+Hotel_URL;
+		}
+		return SearchUrl;
+	}
 
 	public void hotelSearchPage(RemoteWebDriver driver, String HotelName, String Price) throws Exception {
 		elementVisible(driver, getObjectPayment("Hotel_SRP_Book_Btn"), 20);
@@ -58,7 +68,8 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		textPresent_Log(driver, "View all hotels in Bangalore", 10);
 		}
 	
-	public void hotelDetailsPage(RemoteWebDriver driver, String HotelName, String Price) throws Exception {
+	public void hotelsDetailsPage(RemoteWebDriver driver, String HotelName, String Price) throws Exception {
+		refreshPage(driver);
 		elementPresent_log(driver, getObjectPayment("Hotel_Details_HotelName"), "Hotel name in details page", 30);
 		safeClick(driver, getObjectPayment("Hotel_Details_SelectRoom_Btn"));
 		elementVisible(driver, getObjectPayment("Hotel_Details_Book_Btn"), 5);
@@ -79,25 +90,49 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		driver.get(Child_URLs);
 	}
 	
-	public void hotelItn_Details(RemoteWebDriver driver, String CouponGV, String PayType) throws Exception {
-		textPresent(driver, "Book in three simple steps", 5);
+	public void hotelsItnPage(RemoteWebDriver driver, String CouponGV, String PayType, String SignIN, String Contact) throws Exception {
+		hotelsItnDetails(driver, CouponGV, PayType);
+		hotelsItnSignIN(driver, SignIN, PayType);
+		hotelsItnContact(driver, Contact, PayType);
+	}
+		
+	
+	public void hotelsItnDetails(RemoteWebDriver driver, String CouponGV, String PayType) throws Exception {
+		refreshPage(driver);
+		elementPresent_log(driver, By.xpath("//div[16]/button"), "Itinerary page button", 30);
+		textPresent(driver, "Review your itinerary", 1);
+		mouseHover(driver, By.xpath("//div[16]/button"));
+		safeClick(driver, By.xpath("//div[16]/button"));
+		//safeClick(driver, By.xpath("//div[@id='root']/div/main/div[2]/div/div/article/div[2]/div/div/div[16]/button"));
 	}
 	
-	public void hotelItn_SignIN(RemoteWebDriver driver, String SignIN, String PayType) throws Exception {
+	public void hotelsItnSignIN(RemoteWebDriver driver, String SignIN, String PayType) throws Exception {
+		elementPresent_log(driver, By.xpath("//div[7]/button"), "Signin Step button", 30);
+		textPresent(driver, "Add contact details", 1);
+		safeType(driver,By.xpath("//div[2]/div/input"), "1211212121");
+		safeType(driver,By.xpath("//div[4]/div/div/input"), "ct_wallet_patial@cleartrip.com");
+		
+		safeClick(driver, By.xpath("//div[7]/button"));
+	}
+	
+	public void hotelsItnContact(RemoteWebDriver driver, String Contact, String PayType) throws Exception {
+		elementPresent_log(driver, By.xpath("//div[10]/div/button"), "Traveller Contine button", 2);
+		textPresent(driver, "Add traveller details", 1);
+		mouseHover(driver, By.xpath("//div[3]/div/div/div/button"));
+		safeClick(driver, By.xpath("//div[3]/div/div/div/button"));
+		safeClick(driver, By.xpath("//li"));
+		safeType(driver, By.name("firstName"), "Kiran");
+		safeType(driver, By.name("lastName"), "Kumar");
+		mouseHover(driver, By.xpath("//div[10]/div/button"));
+		safeClick(driver, By.xpath("//div[10]/div/button"));
+	}
+	
+	public void hotelsPayment_Page_Validation(RemoteWebDriver driver, String PayType, String Domain) throws Exception {
 		
 	}
 	
-	public void hotelItn_Contact(RemoteWebDriver driver, String Contact, String PayType) throws Exception {
-		
-	}
-	
-	public void hotelPayment_Page_Validation(RemoteWebDriver driver, String PayType, String Domain) throws Exception {
-		
-	}
-	
-	public void hotelPayment_Page(RemoteWebDriver driver, String PaymentType, String CardNumber, String Domain, String PayType, String BankName) throws Exception {
-		hotelPayment_Page_Validation(driver, PayType, Domain);
-		//paymentPage(driver, PaymentType, CardNumber, Domain, PayType, BankName);
-		//confirmation_page_hotel(driver, PaymentType, CardNumber);
+	public void hotelsPaymentPage(RemoteWebDriver driver, String PaymentType, String CardNumber, String Domain, String PayType, String BankName) throws Exception {
+		hotelsPayment_Page_Validation(driver, PayType, Domain);
+		paymentPageHotels(driver, PaymentType, CardNumber, Domain, PayType, BankName);
 	}
 }

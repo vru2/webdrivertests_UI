@@ -15,6 +15,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Reporter;
 
+import common.CommonUtil;
 import paymentsBento_com.PaymentUI_Common_Bento;
 
 public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
@@ -30,6 +31,15 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 
 	public Cookie bentoitn = new Cookie("forcedBentoItn", "true");
 	public Cookie bento = new Cookie("isBento", "true");
+	public String itn_totalfare;
+	public String itn_basefare;
+	public String itn_taxandfee;
+	public String itn_convfee;
+	public String pay_totalprice;
+	public String pay_basefare;
+	public String pay_taxandfee;
+	public String pay_convfee;
+
 
 	String GV_number = "3000331036453430";
 	String GV_pin = "152279";
@@ -118,10 +128,18 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 					 Thread.sleep(2000);
 					 safeClick(driver,By.xpath("//div[4]/div/button"));
 					 Thread.sleep(1000);
-					 elementVisible(driver, getObjectPayment("Bento_Book_Button1"), 5);
-				     Thread.sleep(5000);
-				     driver.findElement(getObjectPayment("Bento_Book_Button1")).sendKeys(Keys.ARROW_DOWN);
-				     safeClick(driver, getObjectPayment("Bento_Book_Button1"));
+					 if(elementVisible(driver, getObjectPayment("Bento_Book_Button1"), 5))
+					 {
+				       Thread.sleep(5000);
+				       driver.findElement(getObjectPayment("Bento_Book_Button1")).sendKeys(Keys.ARROW_DOWN);
+				       safeClick(driver, getObjectPayment("Bento_Book_Button1"));
+					 }
+					 else
+					 {
+						 Thread.sleep(5000);
+					       driver.findElement(getObjectPayment("Bento_Book_Button2")).sendKeys(Keys.ARROW_DOWN);
+					       safeClick(driver, getObjectPayment("Bento_Book_Button2")); 
+					 }
 				 }
 				 else
 				 {
@@ -139,7 +157,18 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 				 {
 					 safeClick(driver,By.xpath("//div[4]/div/button"));
 					 Thread.sleep(1000);
-					 smartClick(driver,getObjectPayment("Bento_Book_Button1"));
+					 if(elementVisible(driver, getObjectPayment("Bento_Book_Button1"), 5))
+					 {
+				       Thread.sleep(5000);
+				       driver.findElement(getObjectPayment("Bento_Book_Button1")).sendKeys(Keys.ARROW_DOWN);
+				       safeClick(driver, getObjectPayment("Bento_Book_Button1"));
+					 }
+					 else
+					 {
+						 Thread.sleep(5000);
+					       driver.findElement(getObjectPayment("Bento_Book_Button2")).sendKeys(Keys.ARROW_DOWN);
+					       safeClick(driver, getObjectPayment("Bento_Book_Button2")); 
+					 }
 				 }
 				 else
 				 {
@@ -152,7 +181,18 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 				 {
 					 safeClick(driver,By.xpath("//div[4]/div/button"));
 					 Thread.sleep(1000);
-					 smartClick(driver,getObjectPayment("Bento_Book_Button1"));
+					 if(elementVisible(driver, getObjectPayment("Bento_Book_Button1"), 5))
+					 {
+				       Thread.sleep(5000);
+				       driver.findElement(getObjectPayment("Bento_Book_Button1")).sendKeys(Keys.ARROW_DOWN);
+				       safeClick(driver, getObjectPayment("Bento_Book_Button1"));
+					 }
+					 else
+					 {
+						 Thread.sleep(5000);
+					       driver.findElement(getObjectPayment("Bento_Book_Button2")).sendKeys(Keys.ARROW_DOWN);
+					       safeClick(driver, getObjectPayment("Bento_Book_Button2")); 
+					 }
 				 }
 				 else
 				 {
@@ -165,7 +205,18 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 				 {
 					 safeClick(driver,By.xpath("//div[4]/div/button"));
 					 Thread.sleep(1000);
-					 smartClick(driver,getObjectPayment("Bento_Book_Button1"));
+					 if(elementVisible(driver, getObjectPayment("Bento_Book_Button1"), 5))
+					 {
+				       Thread.sleep(5000);
+				       driver.findElement(getObjectPayment("Bento_Book_Button1")).sendKeys(Keys.ARROW_DOWN);
+				       safeClick(driver, getObjectPayment("Bento_Book_Button1"));
+					 }
+					 else
+					 {
+						 Thread.sleep(5000);
+					       driver.findElement(getObjectPayment("Bento_Book_Button2")).sendKeys(Keys.ARROW_DOWN);
+					       safeClick(driver, getObjectPayment("Bento_Book_Button2")); 
+					 }
 				 }
 				 else
 				 {
@@ -181,7 +232,18 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 				 {
 					 safeClick(driver,By.xpath("//div[4]/div/button"));
 					 Thread.sleep(1000);
-					 smartClick(driver,getObjectPayment("Bento_Book_Button1"));
+					 if(elementVisible(driver, getObjectPayment("Bento_Book_Button1"), 5))
+					 {
+				       Thread.sleep(5000);
+				       driver.findElement(getObjectPayment("Bento_Book_Button1")).sendKeys(Keys.ARROW_DOWN);
+				       safeClick(driver, getObjectPayment("Bento_Book_Button1"));
+					 }
+					 else
+					 {
+						 Thread.sleep(5000);
+					       driver.findElement(getObjectPayment("Bento_Book_Button2")).sendKeys(Keys.ARROW_DOWN);
+					       safeClick(driver, getObjectPayment("Bento_Book_Button2")); 
+					 }
 				 }
 	    	   else
 	    	   {
@@ -195,7 +257,18 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 					 {
 						 safeClick(driver,By.xpath("//div[4]/div/button"));
 						 Thread.sleep(1000);
-						 smartClick(driver,getObjectPayment("Bento_Book_Button1"));
+						 if(elementVisible(driver, getObjectPayment("Bento_Book_Button1"), 5))
+						 {
+					       Thread.sleep(5000);
+					       driver.findElement(getObjectPayment("Bento_Book_Button1")).sendKeys(Keys.ARROW_DOWN);
+					       safeClick(driver, getObjectPayment("Bento_Book_Button1"));
+						 }
+						 else
+						 {
+							 Thread.sleep(5000);
+						       driver.findElement(getObjectPayment("Bento_Book_Button2")).sendKeys(Keys.ARROW_DOWN);
+						       safeClick(driver, getObjectPayment("Bento_Book_Button2")); 
+						 }
 					 }
 				   else
 				   {
@@ -208,7 +281,18 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 					 {
 						 safeClick(driver,By.xpath("//div[4]/div/button"));
 						 Thread.sleep(1000);
-						 smartClick(driver,getObjectPayment("Bento_Book_Button1"));
+						 if(elementVisible(driver, getObjectPayment("Bento_Book_Button1"), 5))
+						 {
+					       Thread.sleep(5000);
+					       driver.findElement(getObjectPayment("Bento_Book_Button1")).sendKeys(Keys.ARROW_DOWN);
+					       safeClick(driver, getObjectPayment("Bento_Book_Button1"));
+						 }
+						 else
+						 {
+							 Thread.sleep(5000);
+						       driver.findElement(getObjectPayment("Bento_Book_Button2")).sendKeys(Keys.ARROW_DOWN);
+						       safeClick(driver, getObjectPayment("Bento_Book_Button2")); 
+						 }
 					 }
 					 else
 					 {
@@ -221,7 +305,18 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 					 {
 						 safeClick(driver,By.xpath("//div[4]/div/button"));
 						 Thread.sleep(1000);
-						 smartClick(driver,getObjectPayment("Bento_Book_Button1"));
+						 if(elementVisible(driver, getObjectPayment("Bento_Book_Button1"), 5))
+						 {
+					       Thread.sleep(5000);
+					       driver.findElement(getObjectPayment("Bento_Book_Button1")).sendKeys(Keys.ARROW_DOWN);
+					       safeClick(driver, getObjectPayment("Bento_Book_Button1"));
+						 }
+						 else
+						 {
+							 Thread.sleep(5000);
+						       driver.findElement(getObjectPayment("Bento_Book_Button2")).sendKeys(Keys.ARROW_DOWN);
+						       safeClick(driver, getObjectPayment("Bento_Book_Button2")); 
+						 }
 					 }
 					 else
 					 {
@@ -541,7 +636,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 				}
 			   }			
 			  }
-				
+			itn_fares(driver);
 			safeClick(driver, getObjectPayment("Bento_Itn_Continue_Booking"));
 			Thread.sleep(2000);
 			Reporter.log("Clicked on travel details continue button");
@@ -768,6 +863,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	public void paymentPage(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType,String BankName) throws Exception {
 		if(elementVisible(driver, getObjectPayment("Bento_Pay_PayToCompleteBooking_Txt"), 30))
 		{
+			pay_fares(driver);
 			bento_paymentpage(driver,PaymentType, CardNumber,domain,PayType,BankName);
 			if(!(CardNumber=="ADCB"||PaymentType=="Phonepe"||PaymentType=="UPIScan"))
 		{
@@ -1690,6 +1786,58 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		textPresent_Log(driver, "Your booking is done", 10);
 		Reporter.log("Payment done successfully");
 		
+	}
+	
+	public void itn_fares(RemoteWebDriver driver) throws Exception
+	{
+		itn_totalfare=driver.findElement(getObjectPayment("Bento_itn_totalprice")).getText();
+		System.out.println(itn_totalfare);
+		Reporter.log(itn_totalfare);
+		itn_basefare=driver.findElement(getObjectPayment("Bento_itn_basefare")).getText();
+		System.out.println(itn_basefare);
+		Reporter.log(itn_basefare);
+		itn_taxandfee=driver.findElement(getObjectPayment("Bento_itn_tax&fee")).getText();
+		System.out.println(itn_taxandfee);
+		Reporter.log(itn_taxandfee);
+		itn_convfee=driver.findElement(getObjectPayment("Bento_itn_convfee")).getText();
+		System.out.println(itn_convfee);
+		Reporter.log(itn_convfee);
+	}
+	
+	public void pay_fares(RemoteWebDriver driver) throws Exception
+	{
+		pay_basefare=driver.findElement(getObjectPayment("Bento_pay_basefare")).getText();
+		System.out.println(pay_basefare);
+		Reporter.log(pay_basefare);
+		pay_totalprice=driver.findElement(getObjectPayment("Bento_pay_totalprice")).getText();		System.out.println(pay_totalprice);
+		Reporter.log(pay_totalprice);
+		pay_basefare=driver.findElement(getObjectPayment("Bento_pay_basefare")).getText();
+		System.out.println(pay_basefare);
+		Reporter.log(pay_basefare);
+		pay_taxandfee=driver.findElement(getObjectPayment("Bento_pay_tax&fee")).getText();
+		System.out.println(pay_taxandfee);
+		Reporter.log(pay_taxandfee);
+		pay_convfee=driver.findElement(getObjectPayment("Bento_pay_convfee")).getText();
+		System.out.println(pay_convfee);
+		Reporter.log(pay_convfee);
+	}
+	
+	public void compare_fares(RemoteWebDriver driver)
+	{   if(itn_totalfare==pay_totalprice&&itn_basefare==pay_basefare&&itn_taxandfee==pay_taxandfee&&itn_convfee==pay_convfee)
+	   {
+		Assert.assertEquals(itn_totalfare, pay_totalprice);
+		Assert.assertEquals(itn_basefare, pay_basefare);
+		Assert.assertEquals(itn_taxandfee,pay_taxandfee);
+		Assert.assertEquals(itn_convfee,pay_convfee);
+		Reporter.log("Itn page fares match with pay fares");
+		System.out.println("Itn page fares match with pay fares");
+	   }
+	else
+	{
+		Reporter.log("Itn page fares doesn't match with pay fares");
+		System.out.println("Itn page fares doesn't match with pay fares");
+		Assert.assertTrue(false);
+	}
 	}
 	
 }

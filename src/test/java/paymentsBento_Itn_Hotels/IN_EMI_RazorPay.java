@@ -17,8 +17,6 @@ public class IN_EMI_RazorPay extends PaymentsBento_Itn_Hotels_Common {
 	public void Hotel_IN_EMI() throws Exception {
 		driver.manage().deleteAllCookies();
 		driver.get(hotelDetailsUrl("IN","sri-balaji-paradise-2626774"));
-		/*driver.get(hotelSearchUrl("IN"));
-		hotelSearchPage(driver, "", "");*/
 		hotelsDetailsPage(driver, "", "");
 		refreshPage(driver);
 		hotelsItnPage(driver, "", "", "", "");

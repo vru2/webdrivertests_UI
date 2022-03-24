@@ -6,7 +6,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class IN_UPI extends PaymentsBento_Itn_Hotels_Common {
+public class IN_UPIScan_Validation extends PaymentsBento_Itn_Hotels_Common {
 
 	@BeforeClass
 	public void startSelenium() throws Exception {
@@ -20,7 +20,7 @@ public class IN_UPI extends PaymentsBento_Itn_Hotels_Common {
 		hotelsDetailsPage(driver, "", "");
 		refreshPage(driver);
 		hotelsItnPage(driver, "", "", "", "");
-		hotelsPaymentPage(driver, "UPI", "", "", "", "");
+		hotelsPaymentPage(driver,"UPIScan","","","","");
 	} 
 
  		@AfterClass

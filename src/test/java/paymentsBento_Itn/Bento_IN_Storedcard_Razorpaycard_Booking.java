@@ -23,6 +23,7 @@ public class Bento_IN_Storedcard_Razorpaycard_Booking extends PaymentsBento_Itn_
 		Searchpagebook(driver, "","com","");
 		book_itnnew(driver,""); 
 		paymentPage(driver,"CC","5241","","",""); 
+		compare_fares(driver);	
 	}
 
 	 @AfterClass

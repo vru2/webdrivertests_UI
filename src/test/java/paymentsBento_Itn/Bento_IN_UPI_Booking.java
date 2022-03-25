@@ -22,6 +22,7 @@ public class Bento_IN_UPI_Booking extends PaymentsBento_Itn_Common {
 	    Searchpagebook(driver,"","com","");
 	    book_itnnew(driver,"");
    	 	paymentPage(driver,"UPI","","","","");
+   	    compare_fares(driver);	
 	}
 	
 	 @AfterClass

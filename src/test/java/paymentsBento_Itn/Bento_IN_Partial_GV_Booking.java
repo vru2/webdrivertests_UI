@@ -22,7 +22,7 @@ public class Bento_IN_Partial_GV_Booking extends PaymentsBento_Itn_Common{
 		Reporter.log(searchurl("IN"));
 	    Searchpagebook(driver,"","com","");
 	    book_itnnew(driver,"GV_Partial");	    
-	    paymentPage(driver,"GV_Partial","","","",""); 
+	    paymentPage(driver,"GV_Partial","","","",""); 	
 	}
 	
 	@AfterClass

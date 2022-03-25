@@ -22,6 +22,7 @@ public class Bento_IN_UPI_Scan_Validation extends PaymentsBento_Itn_Common {
 	    Searchpagebook(driver,"","com","");
 	    book_itnnew(driver,"");
 	    paymentPage(driver,"UPIScan","","","","");
+	    compare_fares(driver);	
 	}
 	
 	 @AfterClass

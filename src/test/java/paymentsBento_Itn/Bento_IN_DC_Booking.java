@@ -23,6 +23,7 @@ public class Bento_IN_DC_Booking extends PaymentsBento_Itn_Common {
 		Searchpagebook(driver, "","com","");
 		book_itnnew(driver,"");
 		paymentPage(driver,"CC","4111","","",""); 
+		compare_fares(driver);	
 	}
 
 	@AfterClass

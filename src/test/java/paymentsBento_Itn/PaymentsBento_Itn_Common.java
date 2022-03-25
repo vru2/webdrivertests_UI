@@ -3,6 +3,7 @@ package paymentsBento_Itn;
 import static org.testng.Assert.assertTrue;
 
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 
 import org.junit.Assert;
@@ -36,14 +37,8 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
     
 	public Cookie bentoitn = new Cookie("forcedBentoItn", "true");
 	public Cookie bento = new Cookie("isBento", "true");
-	public String itn_totalfare;
-	public String itn_basefare;
-	public String itn_taxandfee;
-	public String itn_convfee;
-	public String pay_totalfare;
-	public String pay_basefare;
-	public String pay_taxandfee;
-	public String pay_convfee;
+	public String itn_totalprice;
+	public String pay_totalprice;
 
 
 	String GV_number = "3000331036453430";
@@ -141,7 +136,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 				 {
 					 Thread.sleep(2000);
 					 safeClick(driver,By.xpath("//div[4]/div/button"));
-					 Thread.sleep(1000);
+					 Thread.sleep(5000);
 					 if(elementVisible(driver, getObjectPayment("Bento_Book_Button1"), 5))
 					 {
 				       Thread.sleep(5000);
@@ -877,8 +872,6 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	public void paymentPage(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType,String BankName) throws Exception {
 		if(elementVisible(driver, getObjectPayment("Bento_Pay_PayToCompleteBooking_Txt"), 30))
 		{
-			Thread.sleep(2000);
-			pay_fares(driver);
 			bento_paymentpage(driver,PaymentType, CardNumber,domain,PayType,BankName);
 			if(!(CardNumber=="ADCB"||PaymentType=="Phonepe"||PaymentType=="UPIScan"))
 		{
@@ -962,6 +955,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			Reporter.log("Deselected wallet");
 			Thread.sleep(2000);
 		}
+		pay_fares(driver);
 		switch (PaymentType) {
 		case "storedcard":
 			bento_pay_StoredCard(driver, PaymentType, CardNumber, domain, PayType, BankName);
@@ -1806,50 +1800,31 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	
 	public void itn_fares(RemoteWebDriver driver) throws Exception
 	{
-		itn_totalfare=driver.findElement(getObjectPayment("Bento_itn_totalprice")).getText();
-		System.out.println(itn_totalfare);
-		Reporter.log(itn_totalfare);
-		itn_basefare=driver.findElement(getObjectPayment("Bento_itn_basefare")).getText();
-		System.out.println(itn_basefare);
-		Reporter.log(itn_basefare);
-		itn_taxandfee=driver.findElement(getObjectPayment("Bento_itn_tax&fee")).getText();
-		System.out.println(itn_taxandfee);
-		Reporter.log(itn_taxandfee);
-		itn_convfee=driver.findElement(getObjectPayment("Bento_itn_convfee")).getText();
-		System.out.println(itn_convfee);
-		Reporter.log(itn_convfee);
+		itn_totalprice=driver.findElement(getObjectPayment("Bento_itn_totalprice")).getText();
+		System.out.println("Itinerary page price:"+ itn_totalprice);
+		Reporter.log("Itinerary page price:"+ itn_totalprice);
 	}
 	
 	public void pay_fares(RemoteWebDriver driver) throws Exception
 	{
-		pay_basefare=driver.findElement(getObjectPayment("Bento_pay_basefare")).getText();
-		System.out.println(pay_basefare);
-		Reporter.log(pay_basefare);
-		pay_totalfare=driver.findElement(getObjectPayment("Bento_pay_totalfare")).getText();
-		System.out.println(pay_totalfare);
-		Reporter.log(pay_totalfare);
-		pay_taxandfee=driver.findElement(getObjectPayment("Bento_pay_tax&fee")).getText();
-		System.out.println(pay_taxandfee);
-		Reporter.log(pay_taxandfee);
-		pay_convfee=driver.findElement(getObjectPayment("Bento_pay_convfee")).getText();
-		System.out.println(pay_convfee);
-		Reporter.log(pay_convfee);
+		WebElement pay_fare=driver.findElement(getObjectPayment("Bento_pay_totalprice"));
+		pay_totalprice=pay_fare.getText();
+		pay_totalprice=pay_totalprice.replaceAll(" ","");
+		System.out.println("Payment page price:"+ pay_totalprice);
+		Reporter.log("Payment page price:"+ pay_totalprice);
 	}
 	
 	public void compare_fares(RemoteWebDriver driver)
-	{   if(itn_totalfare==pay_totalfare&&itn_basefare==pay_basefare&&itn_taxandfee==pay_taxandfee&&itn_convfee==pay_convfee)
+	{   if(itn_totalprice.equals(pay_totalprice))
 	   {
-		Assert.assertEquals(itn_totalfare, pay_totalfare);
-		Assert.assertEquals(itn_basefare, pay_basefare);
-		Assert.assertEquals(itn_taxandfee,pay_taxandfee);
-		Assert.assertEquals(itn_convfee,pay_convfee);
-		Reporter.log("Itn page fares match with pay fares");
-		System.out.println("Itn page fares match with pay fares");
+		Assert.assertEquals(itn_totalprice, pay_totalprice);
+		Reporter.log("Itn page fare match with pay fare");
+		System.out.println("Itn page fare match with pay fare");
 	   }
-	else
+	 else
 	{
-		Reporter.log("Itn page fares doesn't match with pay fares");
-		System.out.println("Itn page fares doesn't match with pay fares");
+		Reporter.log("Itn page fare doesn't match with pay fare");
+		System.out.println("Itn page fare doesn't match with pay fare");
 		Assert.assertTrue(false);
 	}
 	}

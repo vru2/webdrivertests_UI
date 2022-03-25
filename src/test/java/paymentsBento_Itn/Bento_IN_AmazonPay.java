@@ -23,6 +23,7 @@ public class Bento_IN_AmazonPay extends PaymentsBento_Itn_Common {
 		Searchpagebook(driver, "","com","");
 		book_itnnew(driver,"");
 		paymentPage(driver,"TW","AmazonPay","","",""); 
+		compare_fares(driver);	
 	}
 
 	@AfterClass

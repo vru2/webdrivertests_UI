@@ -27,7 +27,7 @@ public class Bento_IN_PartialWallet_AMEX_Booking extends PaymentsBento_Itn_Commo
 		  addwalletamount(10);
 		  Searchpagebook(driver,"Partial","com","");
 		  book_itnnew(driver,""); 
-		  paymentPage(driver,"partial_wallet","","","","");
+		  paymentPage(driver,"partial_wallet","","","","");	
 		 
 	}
 	

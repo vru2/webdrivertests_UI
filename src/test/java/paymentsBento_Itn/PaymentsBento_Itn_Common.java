@@ -40,7 +40,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	public String itn_basefare;
 	public String itn_taxandfee;
 	public String itn_convfee;
-	public String pay_totalprice;
+	public String pay_totalfare;
 	public String pay_basefare;
 	public String pay_taxandfee;
 	public String pay_convfee;
@@ -877,6 +877,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	public void paymentPage(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType,String BankName) throws Exception {
 		if(elementVisible(driver, getObjectPayment("Bento_Pay_PayToCompleteBooking_Txt"), 30))
 		{
+			Thread.sleep(2000);
 			pay_fares(driver);
 			bento_paymentpage(driver,PaymentType, CardNumber,domain,PayType,BankName);
 			if(!(CardNumber=="ADCB"||PaymentType=="Phonepe"||PaymentType=="UPIScan"))
@@ -1824,11 +1825,9 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		pay_basefare=driver.findElement(getObjectPayment("Bento_pay_basefare")).getText();
 		System.out.println(pay_basefare);
 		Reporter.log(pay_basefare);
-		pay_totalprice=driver.findElement(getObjectPayment("Bento_pay_totalprice")).getText();		System.out.println(pay_totalprice);
-		Reporter.log(pay_totalprice);
-		pay_basefare=driver.findElement(getObjectPayment("Bento_pay_basefare")).getText();
-		System.out.println(pay_basefare);
-		Reporter.log(pay_basefare);
+		pay_totalfare=driver.findElement(getObjectPayment("Bento_pay_totalfare")).getText();
+		System.out.println(pay_totalfare);
+		Reporter.log(pay_totalfare);
 		pay_taxandfee=driver.findElement(getObjectPayment("Bento_pay_tax&fee")).getText();
 		System.out.println(pay_taxandfee);
 		Reporter.log(pay_taxandfee);
@@ -1838,9 +1837,9 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	}
 	
 	public void compare_fares(RemoteWebDriver driver)
-	{   if(itn_totalfare==pay_totalprice&&itn_basefare==pay_basefare&&itn_taxandfee==pay_taxandfee&&itn_convfee==pay_convfee)
+	{   if(itn_totalfare==pay_totalfare&&itn_basefare==pay_basefare&&itn_taxandfee==pay_taxandfee&&itn_convfee==pay_convfee)
 	   {
-		Assert.assertEquals(itn_totalfare, pay_totalprice);
+		Assert.assertEquals(itn_totalfare, pay_totalfare);
 		Assert.assertEquals(itn_basefare, pay_basefare);
 		Assert.assertEquals(itn_taxandfee,pay_taxandfee);
 		Assert.assertEquals(itn_convfee,pay_convfee);

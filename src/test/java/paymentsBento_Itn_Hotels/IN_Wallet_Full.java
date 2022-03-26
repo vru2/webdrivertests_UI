@@ -21,23 +21,15 @@ public class IN_Wallet_Full extends PaymentsBento_Itn_Hotels_Common {
 	public void Hotel_IN_Wallet_Full() throws Exception {
 		driver.manage().deleteAllCookies();
 		driver.get(hotelDetailsUrl("IN","sri-balaji-paradise-2626774"));
-		//driver.manage().addCookie(ctauth_partial_wallet);
-		driver.manage().addCookie(hotelLogin);
-		addwalletamount(1500);
+		//addwalletamount(2000);
+		driver.manage().addCookie(fullwallet);
 		hotelsDetailsPage(driver, "", "");
 		refreshPage(driver);
 		hotelsItnPage(driver, "", "", "", "");
-		hotelsPaymentPage(driver, "WALLET", "", "", "", "");
+		refreshPage(driver);
+		hotelsPaymentPage(driver, "wallet", "", "", "", "");
 	} 
 
-
-	public void addwalletamount1(int amount) throws Exception
-	{
-		Response resp;
-		String url="http://172.17.51.86:8071/payments/wallet/cashback?emailId=c_wallet_partial@cleartrip.com&currency=INR&amount="+amount+"&tripRef=Q190729442390&expiryDate%20=31/12/22";
-		resp=RestAssured.get(url);
-		Reporter.log(resp.asString());
-	}
  		@AfterClass
 		public void closeSelenium() throws Exception { 
 		 	browserClose(driver); 

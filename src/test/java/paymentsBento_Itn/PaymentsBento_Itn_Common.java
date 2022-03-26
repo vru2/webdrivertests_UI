@@ -31,7 +31,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
     public Cookie ctauth_partial_wallet1 = new Cookie("ct-auth","Bk7N%2FtlW6UIM9%2Fv06RR0lzYwI2Wr5NoY6shicJ7wSEglXjP2rTXj7vKCCjzDFS1EH8YOfEGj8AeevvMX%2F4QnQkvAnTTp9N%2FfevCUsB0kyv34RHOgDXRfdndn%2FWd0KOXh%2F2AX0kdZPIqgx5R%2FHygKQrR425YROepvP0SdSctCUtkcciwXF7FvVYKJizsM6Az33Pdp0Z8op1wWr79u2xWoxw%3D%3D");
     public Cookie hotelLogin = new Cookie("ct-auth","wXRMsuJtL9WgArSZlNMx0zMrAAXuo%2Fx75FAjg9yx7%2BaP3TmjQOZ3nIiLDZWVzahbuQmW3NiUZma8q2lELnUuyC3uAF5DaTQONdJlLn%2FO2mdq5YlcDpr1NhocHCzFUnhnFzQr4qtRb2xhSWwELLVrIm931R0DjQqCU3guA6McTHvxrx7uoG8MaIjFbgrbUFuLCIQVMwmZPuPWYE%2BZcIe2iQcBlNEUA6TPhFqzPj5kdtXzYYtxjGgBPls1FJB9t5ULG6UU2B4lpfRPn7nlPGDL%2Bh8wYo5RkzDxKQKqfs%2BRQNZv8wYRhTyYEQWZZEKWQzfg");
 
-    public Cookie fullwallet = new Cookie("ct-auth","hKwjyiG6n5mCIMFiYa8BE73b38GHF142zLs8fYv9JH6a9SG3iMLCXmqD9dBVCvpVL5w%2BfbtxsaW%2BbtdHrc%2BWsScG24OcK1SPJLWfpxAcYSUZ%2BDPJWIpT6PozXecbENnMvrpx3EcElSt8IxAixuU3Wx1urIG%2BJIXXp1dllo9UaxruwmmL4%2Fl%2BZmNgLOEFFQEHIBmo7ujFj4IR251LE1REPIl0hD%2BOGrq3TzykZUx%2BW0wEWrlcwiuBMyRp%2FjW2ZkBtsCH0dQMu8eNGLFfYURLEzxWteZk4kgVCTdhW8xwshOSRXS16FEAEuu%2F0%2BY4jXzpsD%2BBMWmzm2HjhJN3LrqPmJl%2BPb%2BtRIDeSJJ8B3pwqUtovU9euu0zuyj4pUK7H7Exfn3xsb72VU1fgZGUiAqGNjlr4i1%2BstEIodrXyWaIerOwsliKRdHKdB04q2m8OnZXTH2Z4tsAXBZj47Mu0vEuTRiAH0Rp2vtFkuXiol%2Fc%2BBJD4qswYyk0D6GkqDc%2FryiGzrriKvMSxzl8ZjdP0xHKTJjDfE5MjfU2lez8Mc21eeVj4yG9Y5gNNb6MvOPOrwEDI%2FRkVukgyqFl7OJk6DNu3G%2FLNPaqxgHPoG%2Fb4MQRnyZVI9iJH8UXIBBVrkHxP0uq0KBIFqMINY881df17xzwxrP0wDfAjdIJWLC650cfnf3%2BZ8zInGGcv79tFePFr5UA0tMv7Ci9nlUUKOJuJ4P3asT%2F%2Fu6AA%2BWLog2uJ%2FY2YYqgP%2FV7P4M74%2FvZ8fgql9D8g8%2F%2F1HM9Q%2BhZwENf6sKaAU%2FkxX%2BEKCRjKf8O%2BTNUSfsuE8coUcku3YuzCaIBgM2P8Rb8sKLbSBDeyofU70uSSaPMHgCym1TRbOwe4kMI3sC%2BxNY2SNpWEXNL%2B8qnJRC3izkqTBVx8eUSmCMEROlIxUX3V3khzmrd4HsCxqs0QPfyV377s8BRI51ht8oyW%2FzMrKpsxMHx8GV2Wrz8SXH%2BJ4L7k2DAeId6CWMfLGEE76GmqZ7oItSHv5%2F5UO3DEKBLdNgJ6hCK8jDxka%2F19EfaquJ%2FSxkyRZqMldWabWMA8RFSkXBqexHhTLDzmgQVTrTtMzlNFPfPmCegfz2VJg5y%2Bh8C6ZuqGprbV9JxNvdZWfas1vK%2BlbxoIkTOxeVMYoTzx%2BRDEyo9MjCQlcI5K%2BXqy75cBiovhF%2FKcf00zq%2B4kHLbNgQWHsPxU03SG2PnNTTKvShsNtANjRoE31K8EhQCUxAy0RKUSZCsC9rC3NzCyiZQ8OMPyxuJe8aT3kw6b6Vr5W6ItDyb4p912T8y4Fmb%2BkWvTbYc3Gs6r0RfKxtBdJ7XZo8xSwXirQmVaFYJIN9SOYihXgvoe0tBEocfUYUUWT%2B21WjlsPFl3GqgqbnhOpQnwu4MuBFLJXP%2FGwt5epuyxkim5u3c1uLqpdlcKqTiJklaTM5EIWuxV%2BaxHXwh%2BX0x6JaS%2BJVI%2FViRLDjDvQxUjikuijAL%2BCIze%2BR0CONXQZwkQogOIBXtmmoU7CXBduaNzsLsrm0xPzTZjAvB1t1bEN8iIA9Fm3g2V6y48Pcv105jPZVUlHdmY23RZfCeQ1rEKEhCIlamft0AOmOuRl8SPDuLQOakmpNI7rITA2IEiJRPFla%2Ff0%2B1PlsafPwPxQqWsBHrD5uWQ%2Fwoa%2Fpe28cFJL%2F07Y6BBPX53jwNSD65onCdSMDSx3kB63QGP7K50NbGbzX9uIuQ855NzPYv1E0Uw833%2BkDFo2QW%2BWU3VZkdYbiZVpVgTEqqFlXC81ARJjUON0o9Wm8zRAp0MLp1baL9pw5vzIJrXBmjDejWXiS%2BCwTcxJpwr8weNXyFA1NPKAeSIffGsdJtCOxNKJi2t9Kf7PJPtZuWmZVFdd0%2FAS5nYgQcesCmqLvB4DnqTDEU5IuzRmOL4gsL8bLA8DYYTc21X8a8RDi%2BcNFdGhgLWSX8kZt9w12BDIgb1u6mYMFvUSbVOaztTQMFsyf8%2B8Af9X3z3r%2BDrm5gqRrLsOKAtJyvMOIRXXzzYXuRPy%2FrozOxwprHfc4YoA6PpO85WcWz9%2BoQs%2FBYk6ISB5L0M2kchEHrXe3IxhRW8NL47Ml1uAgTU%2Fix6vhOUq1aWdXGYIwmscvutr80PrenPiJyIak0Gi4UD%2BnkvXp%2FX9SLPkkvE2aGc4prcRlMvVaPCEWlX4cnEt8f91KIu%2BSx7hp8ZQZJ1%2B6DxO%2B%2F2sfVP9M7NbLbIcOJkOIa5bfi433sHV9GRGAFeQYDsa3Cp7JiHdAtQ2yL5pMnl98D15txLOJ4cdRN2yGJ%2BfMU%3D");
+    public Cookie fullwallet = new Cookie("ct-auth","z7vg1sM48HEjFW9N692PP3%2BBAQImU3T7VEKmjKxHY0%2B%2BHyeB618%2FVR4PAm6LS4PjL5w%2BfbtxsaW%2BbtdHrc%2BWsScG24OcK1SPJLWfpxAcYSUZ%2BDPJWIpT6PozXecbENnMvrpx3EcElSt8IxAixuU3Wx1urIG%2BJIXXp1dllo9UaxruwmmL4%2Fl%2BZmNgLOEFFQEHIBmo7ujFj4IR251LE1REPIl0hD%2BOGrq3TzykZUx%2BW0wEWrlcwiuBMyRp%2FjW2ZkBtsCH0dQMu8eNGLFfYURLEzxWteZk4kgVCTdhW8xwshOSRXS16FEAEuu%2F0%2BY4jXzpsD%2BBMWmzm2HjhJN3LrqPmJl%2BPb%2BtRIDeSJJ8B3pwqUtovU9euu0zuyj4pUK7H7Exfn3xsb72VU1fgZGUiAqGNjlr4i1%2BstEIodrXyWaIerOwsliKRdHKdB04q2m8OnZXTH2Z4tsAXBZj47Mu0vEuTRiAH0Rp2vtFkuXiol%2Fc%2BBJD4qswYyk0D6GkqDc%2FryiGzrriKvMSxzl8ZjdP0xHKTJjDfE5MjfU2lez8Mc21eeVj4yG9Y5gNNb6MvOPOrwEDI%2FRkVukgyqFl7OJk6DNu3G%2FLNPaqxgHPoG%2Fb4MQRnyZVI9iJH8UXIBBVrkHxP0uq0KBIFqMINY881df17xzwxrP0wDfAjdIJWLC650cfnf3%2BZ8zInGGcv79tFePFr5UA0tMv7Ci9nlUUKOJuJ4P3asT%2F%2Fu6AA%2BWLog2uJ%2FY2YYqgP%2FV7P4M74%2FvZ8fgql9D8g8%2F%2F1HM9Q%2BhZwENf6sKaAU%2FkxX%2BEKCRjKf8O%2BTNUSfsuE8coUcku3YuzCaIBgM2P8Rb8sKLbSBDeyofU70uSSaPMHgCym1TRbOwe4kMI3sC%2BxNY2SNpWEXNL%2B8qnJRC3izkqTBVx8eUSmCMEROlIxUX3V3khzmrd4HsCxqs0QPfyV377s8BRI51ht8oyW%2FzMrKpsxMHx8GV2Wrz8SXH%2BJ4L7k2DAeId6CWMfLGEE76GmqZ7oItSHv5%2F5UO3DEKBLdNgJ6hCK8jDxka%2F19EfaquJ%2FSxkyRZqMldWabWMA8RFSkXBqexHhTLDzmgQVTrTtMzlNFPfPmCegfz2VJg5y%2Bh8C6ZuqGprbV9JxNvdZWfas1vK%2BlbxoIkTOxeVMYoTzx%2BRDEyo9MjCQlcI5K%2BXqy75cBiovhF%2FKcf00zq%2B4kHLbNgQWHsPxU03SG2PnNTTKvShsNtANjRoE31K8EhQCUxAy0RKUSZCsC9rC3NzCyiZQ8OMPyxuJe8aT3kw6b6Vr5W6ItDyb4p912T8y4Fmb%2BkWvTbYc3Gs6r0RfKxtBdJ7XZo8xSwXirQmVaFYJIN9SOYihXgvoe0tBEocfUYUUWT%2B21WjlsPFl3GqgqbnhOpQnwu4MuBFLJXP%2FGwt5epuyxkim5u3c1uLqpdlcKqTiJklaTM5EIWuxV%2BaxHXwh%2BX0x6JaS%2BJVI%2FViRLDjDvQxUjikuijAL%2BCIze%2BR0CONXQZwkQogOIBXtmmoU7CXBduaNzsLsrm0xPzTZjAvB1t1bEN8iIA9Fm3g2V6y48Pcv105jPZVUlHdmY23RZfCeQ1rEKEhCIlamft0AOmOuRl8SPDuLQOakmpNI7rITA2IEiJRPFla%2Ff0%2B1PlsafPwPxQqWsBHrD5uWQ%2Fwoa%2Fpe28cFJL%2F07Y6BBPX53jwNSD65onCdSMDSx3kB63QGP7K50NbGbzX9uIuQ855NzPYv1E0Uw833%2BkDFo2QW%2BWU3VZkdYbiZVpVgTEqqFlXC81ARJjUON0o9Wm8zRAp0MLp1baL9pw5vzIJrXBmjDejWXiS%2BCwTcxJpwr8weNXyFA1NPKAeSIffGsdJtCOxNKJi2t9Kf7PJPtZuWmZVFdd0%2FAS5nYgQcesCmqLvB4DnqTDEU5IuzRmOL4gsL8bLA8DYYTc21X8a8RDi%2BcNFdGhgLWSX8kZt9w12BDIgb1u6mYMFvUSbVOaztTQMFsyf8%2B8Af9X3z3r%2BDrm5gqRrLsOKAtJyvMOIRXXzzYXuRPy%2FrozOxwprHfc4YoA6PpO85WcWz9%2BoQs%2FBYk6ISB5L0M2kchEHrXe3IxhRW8NL47Ml1uAgTU%2Fix6vhOUq1aWdXGYIwmscvutr80PrenPiJyIak0Gi4UD%2BnkvXp%2FX9SLPkkvE2aGc4prcRlMvVaPCEWlX4cnEt8f91KIu%2BSx7hp8ZQZJ1%2B6DxO%2BG3echwFrVtkqvzlbrmH%2BhJliH6jj9f1eK1xUBXSzd6ICWCnJWqtETpAE%2BCyDF5PX%2BK1jXkJC0a%2FeByI7bRQ1I%3D");
     
 	public Cookie bentoitn = new Cookie("forcedBentoItn", "true");
 	public Cookie bento = new Cookie("isBento", "true");
@@ -96,7 +96,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	public void addwalletamount(int amount) throws Exception
 	{
 		Response resp;
-		String url="http://172.17.51.86:8071/payments/wallet/cashback?emailId=varalakshmivaru29@gmail.com&currency=INR&amount="+amount+"&tripRef=Q190729442390&expiryDate%20=31/12/22";
+		String url="http://172.17.51.86:8071/payments/wallet/cashback?emailId=@cleartrip.com&currency=INR&amount="+amount+"&tripRef=Q190729442390&expiryDate%20=31/12/22";
 		resp=RestAssured.get(url);
 		Reporter.log(resp.asString());
 	}
@@ -865,6 +865,12 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			Reporter.log("Deselected wallet");
 			Thread.sleep(2000);
 		}
+		if (PaymentType.equalsIgnoreCase("WALLET")) 
+		{
+			safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
+			Reporter.log("Deselected wallet");
+			Thread.sleep(2000);
+		}
 		switch (PaymentType) {
 		case "storedcard":
 			bento_pay_StoredCard(driver, PaymentType, CardNumber, domain, PayType, BankName);
@@ -1211,11 +1217,12 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	}
 	
 	public void bento_pay_Wallet(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
-		safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
+		//safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
+		System.out.println("hotellsss   --------------");
 		Thread.sleep(1000);
 		if (textPresent(driver, "Cleartrip wallet", 2)) {
 			elementVisible(driver, getObjectPayment("Bento_Payment_Paynow"), 2);
-			textPresent_Log(driver, "Your wallet balance is sufficient to pay for this booking", 2);
+			textPresent_Log(driver, "Your wallet balance is sufficient to pay for this booking. Please uncheck wallet to use other payment mode", 2);
 			smartClick(driver, getObjectPayment("Bento_Payment_Paynow"));
 			Reporter.log("Clicked on paynow");
 			if(textPresent(driver,"Cleartrip wallet",2))
@@ -1283,7 +1290,8 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		elementPresent_log(driver, getObjectPayment("Bento_Pay_UPIScan_Page_CleartripLogo"), "Cleartrip logo", 1);
 		safeClick(driver, getObjectPayment("Bento_Pay_UPIScan_Page_CancelPay_Link"));
 		Thread.sleep(2000);
-		textPresent_Log(driver, "Payment cancelled! If you have already paid, please wait for a few minutes before trying again", 10);
+		textPresent_Log(driver, "Oops! Your payment failed", 10);
+		textPresent_Log(driver, "If you were charged, any amount deducted will be reversed", 1);
 		
 	}
 			

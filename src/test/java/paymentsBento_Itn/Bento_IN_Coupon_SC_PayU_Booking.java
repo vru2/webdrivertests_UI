@@ -22,7 +22,7 @@ public class Bento_IN_Coupon_SC_PayU_Booking extends PaymentsBento_Itn_Common {
 		Reporter.log(searchurl("IN"));
 		Searchpagebook(driver, "","com","amex");
 		book_itnnew(driver,"Coupon");
-		paymentPage(driver,"Coupon","","","",""); 
+		paymentPage(driver,"Coupon","Air","","",""); 
 		compare_fares(driver);	
 	}
 

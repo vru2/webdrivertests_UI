@@ -49,6 +49,17 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		}
 		return SearchUrl;
 	}
+	
+	public String hotelDetailsUrl_3Days(String Domain, String HotelID)  throws Exception
+	{	
+		Hotel_URL= "/hotels/details/"+HotelID+"?c="+getDateTime(30, "ddMMyy")+"|"+getDateTime(33, "ddMMyy")+"&r=2,0";
+		String SearchUrl = "";
+		if(Domain=="IN") {
+			SearchUrl=inurl+Hotel_URL;
+		}
+		return SearchUrl;
+	}
+
 
 	public void hotelSearchPage(RemoteWebDriver driver, String HotelName, String Price) throws Exception {
 		elementVisible(driver, getObjectPayment("Hotel_SRP_Book_Btn"), 20);
@@ -127,8 +138,7 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		 elementPresent_log(driver, By.xpath("//div[2]/div/div/div[3]/div[2]"), "GV Success", 10);
 		 textPresent(driver, "has been redeemed for this booking", 5);
 		}
-		if(CouponGV.equalsIgnoreCase("FullGV")) {
-			  
+		else if(CouponGV.equalsIgnoreCase("FullGV")) {
 			 mouseHover(driver, By.xpath("//input"));
 			 safeClick(driver, By.xpath("//input"));
 			 safeType(driver, By.xpath("//input"),GV_number);
@@ -139,7 +149,19 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 			 safeClick(driver, By.xpath("//button"));
 			 elementPresent_log(driver, By.xpath("//div[2]/div/div/div[3]/div[2]"), "GV Success", 10);
 			 textPresent(driver, "has been redeemed for this booking", 5);
-		}		
+		}
+		
+		
+
+		else if(CouponGV.equalsIgnoreCase("COUPONCC")) {
+			 mouseHover(driver, By.xpath("//input"));
+			 safeClick(driver, By.xpath("//input"));
+			 safeType(driver, By.xpath("//input"),"HOTELTEST123");
+			 safeClick(driver, By.xpath("//button"));
+			 elementPresent_log(driver, By.xpath("//form/div[3]/div[2]"), "Coupon Success", 10);
+			 textPresent(driver, "Great! You just saved", 5);
+		}
+		
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,350)", "");
 		//driver.findElement(getObjectPayment("Hotel_ItnPage_Continue_Btn")).sendKeys(Keys.PAGE_DOWN);

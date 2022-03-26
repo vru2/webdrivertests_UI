@@ -1277,7 +1277,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			safeClick(driver, By.xpath("//button[2]")); // Clicking on Change paymentMode
 			Thread.sleep(2000);
 			textNotPresent_Log(driver, "Coupon not applicable", 5);
-			bento_Select_PaymentType(driver, "CC");			
+		//	bento_Select_PaymentType(driver, "CC");			
 			bento_Select_PaymentType(driver, "NB");
 			safeClick(driver, getObjectPayment("Bento_Payment_NB_ICIC"));
 			safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
@@ -1529,6 +1529,33 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	}
 	
 	public void bento_pay_Coupon(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
+		if(CardNumber.equalsIgnoreCase("Air")) {
+			textPresent_Log(driver, "Coupon code (WALLET3)", 2);
+			
+		}
+		if(CardNumber.equalsIgnoreCase("Hotel")) {
+			textPresent_Log(driver, "Coupon code (HOTELTEST123)", 2);
+			
+		}
+		elementVisible(driver, getObjectPayment("Bento_Payment_Paynow"), 2);
+		smartClick(driver, getObjectPayment("Bento_Payment_Select_Storedcard"));
+		Reporter.log("Clicked on SC");
+		payUI_Select_PaymentType(driver, "CC");
+		payUI_Enter_PaymentDetails(driver, "CC", "MASTER","");
+		safeClick(driver, getObjectPayment("Bento_paynow"));
+		//Save Card RBI popup
+		if(elementVisible(driver,getObjectPayment("Bento_Payment_Skip_Securecard"),2))
+		{
+		safeClick(driver,getObjectPayment("Bento_Payment_Skip_Securecard"));
+		}
+		elementVisible(driver, getObjectPayment("Bento_card_password"), 5);
+		  safeClick(driver, getObjectPayment("Bento_card_password"));
+		  Thread.sleep(1000); 
+		  safeType(driver, getObjectPayment("Bento_card_password"),"123456"); 
+		  safeClick(driver, getObjectPayment("Bento_submit"));
+	}
+	
+	public void bento_pay_Coupon_hotel(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
 
 		elementVisible(driver, getObjectPayment("Bento_Payment_Paynow"), 2);
 		textPresent_Log(driver, "Coupon code (WALLET3)", 2);

@@ -6,7 +6,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class IN_EMI_RazorPay extends PaymentsBento_Itn_Hotels_Common {
+public class IN_Coupon_Invalid_NB extends PaymentsBento_Itn_Hotels_Common {
 
 	@BeforeClass
 	public void startSelenium() throws Exception {
@@ -14,15 +14,13 @@ public class IN_EMI_RazorPay extends PaymentsBento_Itn_Hotels_Common {
 	}
 
 	@Test
-	public void Hotel_IN_EMI() throws Exception {
+	public void Hotel_IN_InValidCoupon() throws Exception {
 		driver.manage().deleteAllCookies();
-		driver.get(hotelDetailsUrl_3Days("IN","sri-balaji-paradise-2626774"));
+		driver.get(hotelDetailsUrl("IN","sri-balaji-paradise-2626774"));
 		hotelsDetailsPage(driver, "", "");
-		refreshPage(driver);
-		hotelsItnPage(driver, "", "", "", "");
-		bento_Validation_Text(driver, "EMI", "");
-		hotelsPaymentPage(driver,"EMI","RAZORPAY","","",""); 
-	} 
+		hotelsItnPage(driver, "COUPONCC", "", "", "");
+		hotelsPaymentPage(driver,"NB","","","Coupon","");// Invalid Coupon Validation
+		} 
 
  		@AfterClass
 		public void closeSelenium() throws Exception { 

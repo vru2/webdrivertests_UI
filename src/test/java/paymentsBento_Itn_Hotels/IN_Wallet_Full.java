@@ -24,9 +24,7 @@ public class IN_Wallet_Full extends PaymentsBento_Itn_Hotels_Common {
 		//addwalletamount(2000);
 		driver.manage().addCookie(fullwallet);
 		hotelsDetailsPage(driver, "", "");
-		refreshPage(driver);
 		hotelsItnPage(driver, "", "", "", "");
-		refreshPage(driver);
 		hotelsPaymentPage(driver, "wallet", "", "", "", "");
 	} 
 

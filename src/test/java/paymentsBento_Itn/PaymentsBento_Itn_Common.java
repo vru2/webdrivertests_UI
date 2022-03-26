@@ -1017,6 +1017,8 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		}
 	}
 	
+		
+	
 	public void bento_pay_StoredCard(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
 		
 		if(CardNumber == "4111")
@@ -1042,10 +1044,13 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			Reporter.log("Payment done successfully");
 		}
 		else if(CardNumber=="5241")
-		{
-			safeClick(driver, getObjectPayment("Bento_Payment_SC_Razropay"));
+		{		
+				//safeClickList(driver, by, Text);
+				//safeClickListContains(driver, By.xpath("//label[1]/div[5]/div/p"), "5241");
+				Thread.sleep(5000);/*
+				safeClick(driver, getObjectPayment("Bento_Payment_SC_Razropay"));
 				Reporter.log("Clicked on SC");
-				Thread.sleep(1000);
+				Thread.sleep(1000);*/
 				safeClick(driver, getObjectPayment("Bento_Payment_SC_Razropay_CVV"));
 				safeType(driver, getObjectPayment("Bento_Payment_SC_Razropay_CVV"), "123");
 				Reporter.log("Entered CVV");
@@ -1234,7 +1239,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		textPresent_Log(driver, "Enter credit card details", 5);
 		Enter_CC_Details(driver, platform.value("RazorPay_Number"), platform.value("RazorPay_Month_UI"), platform.value("RazorPay_Year"), platform.value("RazorPay_CVV"));
 		safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
-		if (textPresent(driver, "Your wallet balance is sufficient to pay for this booking. Please uncheck wallet to use other payment modes", 5)) 
+		if (textPresent(driver, "Your wallet balance is sufficient to pay for this booking. Please uncheck wallet to use other payment modes", 1)) 
 		{
 			safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
 			Reporter.log("Deselected wallet");
@@ -1242,12 +1247,12 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			driver.findElement(By.xpath("//div[7]/p")).click();
 		}
 		Reporter.log("Clicked on paynow");
-		if(elementVisible(driver,getObjectPayment("Bento_Payment_Skip_Securecard"),2))
+		if(elementVisible(driver,getObjectPayment("Bento_Payment_Skip_Securecard"),1))
 		{
 		safeClick(driver,getObjectPayment("Bento_Payment_Skip_Securecard"));
 		Thread.sleep(1000);
 		}
-		textPresent(driver, "One Time Password (OTP) successfully sent to the phone number linked to your card ending with 0000.", 5);
+		textPresent(driver, "One Time Password", 5);
 		safeClick(driver, getObjectPayment("Bento_Payment_Razropay_Pin"));
 		safeType(driver,getObjectPayment("Bento_Payment_Razropay_Pin"),"0000");
 		safeClick(driver,getObjectPayment("Bento_Payment_Razropay_Submit"));
@@ -1309,7 +1314,6 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	
 	public void bento_pay_Wallet(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
 		//safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
-		System.out.println("hotellsss   --------------");
 		Thread.sleep(1000);
 		if (textPresent(driver, "Cleartrip wallet", 2)) {
 			elementVisible(driver, getObjectPayment("Bento_Payment_Paynow"), 2);
@@ -1784,23 +1788,37 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	}
 	
 	public void bento_pay_SC(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
-
-		safeClick(driver,getObjectPayment("Bento_select_cardsec"));
+		
+		/*	safeClick(driver,getObjectPayment("Bento_select_cardsec"));
 		payUI_Enter_PaymentDetails(driver,PayType,BankName,"");
 		safeClick(driver, getObjectPayment("Bento_paynow"));
 		if(elementVisible(driver,getObjectPayment("Bento_Payment_Skip_Securecard"),2))
 		{
 		safeClick(driver,getObjectPayment("Bento_Payment_Skip_Securecard"));
-		}
+		}*/
 		if(CardNumber=="5123")
 		{
-			elementVisible(driver, getObjectPayment("Bento_card_password"), 5);
+			  elementVisible(driver, getObjectPayment("Bento_card_password"), 5);
 			  safeClick(driver, getObjectPayment("Bento_card_password"));
 			  Thread.sleep(1000); 
 			  safeType(driver, getObjectPayment("Bento_card_password"),"123456"); 
 			  safeClick(driver, getObjectPayment("Bento_submit"));
 			 
 		}
+		else if(CardNumber=="5241")
+		{     
+			if(elementVisible(driver,getObjectPayment("Bento_Payment_Skip_Securecard"),2))
+			{
+			safeClick(driver,getObjectPayment("Bento_Payment_Skip_Securecard"));
+			}
+			  elementVisible(driver, getObjectPayment("Bento_card_password"), 5);
+			  safeClick(driver, getObjectPayment("Bento_card_password"));
+			  Thread.sleep(1000); 
+			  safeType(driver, getObjectPayment("Bento_card_password"),"123456"); 
+			  safeClick(driver, getObjectPayment("Bento_submit"));
+			 
+		}
+		
 		textPresent_Log(driver, "Your booking is done", 10);
 		Reporter.log("Payment done successfully");
 		

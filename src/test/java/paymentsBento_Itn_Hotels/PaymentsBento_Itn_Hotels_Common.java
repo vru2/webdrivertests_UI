@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.Set;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
@@ -100,7 +101,7 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		driver.switchTo().window(parent);		
 		driver.get(Child_URLs);
 		driver.manage().addCookie(cookie_Bento_Hotels);
-		
+		refreshPage(driver);
 	}
 	
 	public void hotelsItnPage(RemoteWebDriver driver, String CouponGV, String PayType, String SignIN, String Contact) throws Exception {
@@ -111,9 +112,8 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		
 	
 	public void hotelsItnDetails(RemoteWebDriver driver, String CouponGV, String PayType) throws Exception {
-		elementPresent_log(driver, getObjectPayment("Hotel_ItnPage_Continue_Btn"), "Itinerary page button", 30);
+		elementPresent(driver, getObjectPayment("Hotel_ItnPage_Continue_Btn"), 20);
 		textPresent(driver, "Review your itinerary", 1);
-		
 		if(CouponGV.equalsIgnoreCase("PartialGV")) {
 		 String[] GV = getGV(10);
 		 mouseHover(driver, By.xpath("//input"));
@@ -140,11 +140,10 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 			 elementPresent_log(driver, By.xpath("//div[2]/div/div/div[3]/div[2]"), "GV Success", 10);
 			 textPresent(driver, "has been redeemed for this booking", 5);
 		}		
-		driver.findElement(getObjectPayment("Hotel_ItnPage_Continue_Btn")).sendKeys(Keys.PAGE_DOWN);
-		Thread.sleep(6000);
-		/* mouseHover(driver, getObjectPayment("Hotel_ItnPage_Continue_Btn")); */
-		
-		//Thread.sleep(5000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,350)", "");
+		//driver.findElement(getObjectPayment("Hotel_ItnPage_Continue_Btn")).sendKeys(Keys.PAGE_DOWN);
+		Thread.sleep(3000);
 		safeClick(driver, getObjectPayment("Hotel_ItnPage_Continue_Btn"));
 	}
 	

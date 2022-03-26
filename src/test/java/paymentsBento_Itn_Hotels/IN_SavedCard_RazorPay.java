@@ -19,9 +19,8 @@ public class IN_SavedCard_RazorPay extends PaymentsBento_Itn_Hotels_Common {
 		driver.get(hotelDetailsUrl("IN","sri-balaji-paradise-2626774"));
 		driver.manage().addCookie(ctauth_partial_wallet);
 		hotelsDetailsPage(driver, "", "");
-		refreshPage(driver);
 		hotelsItnPage(driver, "", "", "", "");
-		hotelsPaymentPage(driver,"CC","5241","","","");
+		hotelsPaymentPage(driver,"storedcard","5241","","","");
 	} 
 
  		@AfterClass
@@ -33,5 +32,4 @@ public class IN_SavedCard_RazorPay extends PaymentsBento_Itn_Hotels_Common {
 		public void afterMethod(ITestResult _result) throws Exception {
 			afterMethod(driver, _result);
 		}
-
 }

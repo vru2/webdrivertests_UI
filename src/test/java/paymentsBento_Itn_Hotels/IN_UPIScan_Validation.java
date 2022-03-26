@@ -15,12 +15,10 @@ public class IN_UPIScan_Validation extends PaymentsBento_Itn_Hotels_Common {
 
 	@Test
 	public void Hotel_IN_UPI() throws Exception {
-		driver.manage().deleteAllCookies();/*
+		driver.manage().deleteAllCookies();
 		driver.get(hotelDetailsUrl("IN","sri-balaji-paradise-2626774"));
 		hotelsDetailsPage(driver, "", "");
-		refreshPage(driver);
-		hotelsItnPage(driver, "", "", "", "");*/
-		driver.get("https://qa2.cleartrip.com/pay/hotel/UVVUcUJARBNDMDIyUQ==?lang=en");
+		hotelsItnPage(driver, "", "", "", "");
 		hotelsPaymentPage(driver,"UPIScan","","","","");
 	} 
 

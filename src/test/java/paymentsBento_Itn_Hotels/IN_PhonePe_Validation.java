@@ -18,7 +18,6 @@ public class IN_PhonePe_Validation extends PaymentsBento_Itn_Hotels_Common {
 		driver.manage().deleteAllCookies();
 		driver.get(hotelDetailsUrl("IN","sri-balaji-paradise-2626774"));
 		hotelsDetailsPage(driver, "", "");
-		refreshPage(driver);
 		hotelsItnPage(driver, "", "", "", "");
 		hotelsPaymentPage(driver,"Phonepe","","","","");
 	} 

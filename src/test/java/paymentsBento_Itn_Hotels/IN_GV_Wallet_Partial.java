@@ -19,7 +19,6 @@ public class IN_GV_Wallet_Partial extends PaymentsBento_Itn_Hotels_Common {
 		driver.get(hotelDetailsUrl("IN","sri-balaji-paradise-2626774"));
 		driver.manage().addCookie(hotelLogin);
 		hotelsDetailsPage(driver, "", "");
-		refreshPage(driver);
 		hotelsItnPage(driver, "PartialGV", "", "", "");
 		hotelsPaymentPage(driver,"CC","3456","","",""); 
 	} 

@@ -23,6 +23,7 @@ public class Bento_IN_Coupon_SC_PayU_Booking extends PaymentsBento_Itn_Common {
 		Searchpagebook(driver, "","com","amex");
 		book_itnnew(driver,"Coupon");
 		paymentPage(driver,"Coupon","","","",""); 
+		compare_fares(driver);	
 	}
 
 	@AfterClass

@@ -25,6 +25,7 @@ public class Bento_IN_EMI_Razorpay extends PaymentsBento_Itn_Common {
 		book_itnnew(driver,"");
 		bento_Validation_Text(driver, "EMI", "");
 		paymentPage(driver,"EMI","RAZORPAY","","",""); 
+		compare_fares(driver);	
 	}
 
 	@AfterClass

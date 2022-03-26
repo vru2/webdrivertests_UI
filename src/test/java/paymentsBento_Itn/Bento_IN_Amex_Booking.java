@@ -23,6 +23,7 @@ public class Bento_IN_Amex_Booking extends PaymentsBento_Itn_Common {
 		Searchpagebook(driver, "","com","");
 		book_itnnew(driver,"");
 		paymentPage(driver,"CC","3456","","",""); 
+		compare_fares(driver);	
 	}
 
 	@AfterClass

@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.Set;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
@@ -138,10 +139,12 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 			 safeClick(driver, By.xpath("//button"));
 			 elementPresent_log(driver, By.xpath("//div[2]/div/div/div[3]/div[2]"), "GV Success", 10);
 			 textPresent(driver, "has been redeemed for this booking", 5);
-		}
-		mouseHover(driver, getObjectPayment("Hotel_ItnPage_Continue_Btn"));
+		}		
+		driver.findElement(getObjectPayment("Hotel_ItnPage_Continue_Btn")).sendKeys(Keys.PAGE_DOWN);
+		Thread.sleep(6000);
+		/* mouseHover(driver, getObjectPayment("Hotel_ItnPage_Continue_Btn")); */
 		
-		Thread.sleep(5000);
+		//Thread.sleep(5000);
 		safeClick(driver, getObjectPayment("Hotel_ItnPage_Continue_Btn"));
 	}
 	
@@ -166,8 +169,8 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		safeType(driver, getObjectPayment("Hotel_ContactPage_LastName_TextBox"), "Kumar");
 		hotelPrice_Itinerary=  getText(driver, By.xpath("//div/div[2]/div/div/div/div[3]/p"));
 		hotelPrice_Itinerary = hotelPrice_Itinerary.replace("₹", "").replace(",", "");
-		mouseHover(driver, getObjectPayment("Hotel_ContactPage_Continue_Btn"));
-		Thread.sleep(2000);
+        driver.findElement(getObjectPayment("Hotel_ContactPage_Continue_Btn")).sendKeys(Keys.PAGE_DOWN);
+		Thread.sleep(3000);
 		safeClick(driver, getObjectPayment("Hotel_ContactPage_Continue_Btn"));
 	}
 	

@@ -92,7 +92,7 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 	public void hotelsDetailsPage(RemoteWebDriver driver, String HotelName, String Price) throws Exception {
 		refreshPage(driver);
 		elementPresent_log(driver, getObjectPayment("Hotel_Details_HotelName"), "Hotel name in details page", 30);
-		Thread.sleep(2000);
+	//	Thread.sleep(2000);
 		safeClick(driver, getObjectPayment("Hotel_Details_SelectRoom_Btn"));
 		elementVisible(driver, getObjectPayment("Hotel_Details_Book_Btn"), 5);
 		Thread.sleep(2000);
@@ -100,7 +100,7 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		String parent=driver.getWindowHandle();
 		Set<String>s=driver.getWindowHandles();
 		Iterator<String> I1= s.iterator();
-		String Child_URLs="";
+		String Child_URL="";
 		while(I1.hasNext())
 		{
 		String child_window=I1.next();
@@ -108,9 +108,10 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		{driver.switchTo().window(child_window);}
 		}
 		textPresent(driver, "Itinerary", 20);
-		Child_URLs = driver.getCurrentUrl();
+		Child_URL = driver.getCurrentUrl();
+		driver.close(); // Closing Child window
 		driver.switchTo().window(parent);		
-		driver.get(Child_URLs);
+		driver.get(Child_URL);
 		driver.manage().addCookie(cookie_Bento_Hotels);
 		refreshPage(driver);
 	}
@@ -150,9 +151,6 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 			 elementPresent_log(driver, By.xpath("//div[2]/div/div/div[3]/div[2]"), "GV Success", 10);
 			 textPresent(driver, "has been redeemed for this booking", 5);
 		}
-		
-		
-
 		else if(CouponGV.equalsIgnoreCase("COUPONCC")) {
 			 mouseHover(driver, By.xpath("//input"));
 			 safeClick(driver, By.xpath("//input"));
@@ -165,7 +163,7 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,350)", "");
 		//driver.findElement(getObjectPayment("Hotel_ItnPage_Continue_Btn")).sendKeys(Keys.PAGE_DOWN);
-		Thread.sleep(3000);
+		elementVisible(driver, getObjectPayment("Hotel_ItnPage_Continue_Btn"), 5);
 		safeClick(driver, getObjectPayment("Hotel_ItnPage_Continue_Btn"));
 	}
 	
@@ -175,8 +173,8 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		mouseHover(driver,getObjectPayment("Hotel_SignINPage_PhoneNo_TextBox"));
 		safeType(driver,getObjectPayment("Hotel_SignINPage_PhoneNo_TextBox"), "1211212121");
 		safeType(driver,getObjectPayment("Hotel_SignINPage_EmailID_TextBox"), "ct_wallet_patial@cleartrip.com");
-		mouseHover(driver, getObjectPayment("Hotel_SignINPage_Continue_Btn"));
-		Thread.sleep(2000);
+		elementVisible(driver, getObjectPayment("Hotel_SignINPage_Continue_Btn"), 5);
+		//mouseHover(driver, getObjectPayment("Hotel_SignINPage_Continue_Btn"));
 		safeClick(driver, getObjectPayment("Hotel_SignINPage_Continue_Btn"));
 	}
 	
@@ -191,7 +189,7 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		hotelPrice_Itinerary=  getText(driver, By.xpath("//div/div[2]/div/div/div/div[3]/p"));
 		hotelPrice_Itinerary = hotelPrice_Itinerary.replace("₹", "").replace(",", "");
         driver.findElement(getObjectPayment("Hotel_ContactPage_Continue_Btn")).sendKeys(Keys.PAGE_DOWN);
-		Thread.sleep(3000);
+		elementVisible(driver, getObjectPayment("Hotel_ContactPage_Continue_Btn"), 5);
 		safeClick(driver, getObjectPayment("Hotel_ContactPage_Continue_Btn"));
 	}
 	

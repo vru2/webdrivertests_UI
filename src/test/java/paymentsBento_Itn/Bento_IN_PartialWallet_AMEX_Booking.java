@@ -24,7 +24,7 @@ public class Bento_IN_PartialWallet_AMEX_Booking extends PaymentsBento_Itn_Commo
 		driver.manage().deleteAllCookies();
 		driver.navigate().to(searchurl("IN"));
 		  Reporter.log(searchurl("IN"));
-		  addwalletamount(10);
+		  addwalletamount(10, "varalakshmivaru29@gmail.com");
 		  Searchpagebook(driver,"Partial","com","");
 		  book_itnnew(driver,""); 
 		  paymentPage(driver,"partial_wallet","","","","");	

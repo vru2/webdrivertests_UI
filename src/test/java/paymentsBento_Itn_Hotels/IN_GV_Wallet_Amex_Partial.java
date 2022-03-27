@@ -6,7 +6,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class IN_GV_Wallet_Partial extends PaymentsBento_Itn_Hotels_Common {
+public class IN_GV_Wallet_Amex_Partial extends PaymentsBento_Itn_Hotels_Common {
 
 	@BeforeClass
 	public void startSelenium() throws Exception {
@@ -14,13 +14,14 @@ public class IN_GV_Wallet_Partial extends PaymentsBento_Itn_Hotels_Common {
 	}
 
 	@Test
-	public void Hotel_IN_WL_GV_CC() throws Exception {
+	public void Hotel_IN_WL_GV_CC_Amex() throws Exception {
 		driver.manage().deleteAllCookies();
 		driver.get(hotelDetailsUrl("IN","sri-balaji-paradise-2626774"));
 		driver.manage().addCookie(hotelLogin);
+		addwalletamount(10, "ct_wallet_partial@cleartrip.com");
 		hotelsDetailsPage(driver, "", "");
 		hotelsItnPage(driver, "PartialGV", "", "", "");
-		hotelsPaymentPage(driver,"CC","3456","","",""); 
+		hotelsPaymentPage(driver,"CC","3456","","WALLET",""); 
 	} 
 
  		@AfterClass

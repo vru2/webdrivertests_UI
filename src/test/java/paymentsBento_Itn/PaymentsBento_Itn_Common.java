@@ -98,10 +98,10 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	}
 	
 
-	public void addwalletamount(int amount) throws Exception
+	public void addwalletamount(int amount, String emailID) throws Exception
 	{
 		Response resp;
-		String url="http://172.17.51.86:8071/payments/wallet/cashback?emailId=@cleartrip.com&currency=INR&amount="+amount+"&tripRef=Q190729442390&expiryDate%20=31/12/22";
+		String url="http://172.17.51.86:8071/payments/wallet/cashback?emailId="+emailID+"&currency=INR&amount="+amount+"&tripRef=Q190729442390&expiryDate%20=31/12/22";
 		resp=RestAssured.get(url);
 		Reporter.log(resp.asString());
 	}
@@ -955,7 +955,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			Reporter.log("Deselected wallet");
 			Thread.sleep(2000);
 		}
-		if (PaymentType.equalsIgnoreCase("WALLET")) 
+		if (PaymentType.equalsIgnoreCase("WALLET")||PayType.equalsIgnoreCase("WALLET")) 
 		{
 			safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
 			Reporter.log("Deselected wallet");
@@ -1097,27 +1097,26 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		if(CardNumber=="4111") {	
 			payUI_Enter_PaymentDetails(driver, "CC", "RAZORPAYDC","");
 			Thread.sleep(1000);
-           	safeClick(driver, getObjectPayment("PayUI_Expressway_CheckBox_New"));
-           	Thread.sleep(1000);
-			safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
-			Reporter.log("Clicked on paynow");
-			Thread.sleep(2000);
-			if (textPresent(driver, "Cleartrip wallet", 5)) 
+			if (textPresent(driver, "Cleartrip wallet", 1)) 
 			{
 				safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
 				Reporter.log("Deselected wallet");
 				Thread.sleep(2000);
 			}
-			if(elementVisible(driver,getObjectPayment("Bento_Payment_Skip_Securecard"),5))
+           	smartClick(driver, getObjectPayment("PayUI_Expressway_CheckBox_New"));
+           	Thread.sleep(1000);
+			safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
+			Reporter.log("Clicked on paynow");
+			if(elementVisible(driver,getObjectPayment("Bento_Payment_Skip_Securecard"),1))
 			{
 			safeClick(driver,getObjectPayment("Bento_Payment_Skip_Securecard"));
 			}
 			textPresent(driver, "Welcome to Razorpay Software Private Ltd Bank", 2);
-			if(elementVisible(driver, getObjectPayment("Bento_Payment_DC_Payment_Success"), 10))
+			if(elementVisible(driver, getObjectPayment("Bento_Payment_DC_Payment_Success"), 5))
 			{
 			safeClick(driver, getObjectPayment("Bento_Payment_DC_Payment_Success"));
 			}
-			else
+			else if(elementVisible(driver, By.xpath("//input[@type='tel']"), 10))
 			{
 				driver.findElement(By.xpath("//input[@type='tel']")).click();
 				driver.findElement(By.xpath("//input[@type='tel']")).sendKeys("1111");

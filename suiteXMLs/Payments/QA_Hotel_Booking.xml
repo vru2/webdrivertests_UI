@@ -8,9 +8,9 @@
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
 
-<test name="CC Amex" preserve-order="true">
+<test name="CC PayU" preserve-order="true">
     <classes>
-	        <class name="paymentsBento_Itn_Hotels.IN_AMEX"/>
+	        <class name="paymentsBento_Itn_Hotels.IN_PayU"/>
     </classes>
 </test>
 
@@ -20,9 +20,9 @@
     </classes>
 </test>
 
-<test name="GV Partial" preserve-order="true">
+<test name="GV WL Amex Partial" preserve-order="true">
     <classes>
-	        <class name="paymentsBento_Itn_Hotels.IN_GV_Wallet_Partial"/>
+	        <class name="paymentsBento_Itn_Hotels.IN_GV_Wallet_Amex_Partial"/>
     </classes>
 </test>
 
@@ -88,11 +88,13 @@
 
 
 <!-- 
-<test name="CC PayU" preserve-order="true">
+
+<test name="CC Amex" preserve-order="true">
     <classes>
-	        <class name="paymentsBento_Itn_Hotels.IN_PayU"/>
+	        <class name="paymentsBento_Itn_Hotels.IN_AMEX"/>
     </classes>
 </test>
+
 
 <test name="NB ICICI" preserve-order="true">
     <classes>

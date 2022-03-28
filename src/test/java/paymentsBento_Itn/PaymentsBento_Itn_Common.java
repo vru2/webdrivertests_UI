@@ -153,9 +153,8 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 				 else
 				 {
 					 elementVisible(driver, getObjectPayment("Bento_Book_Button"), 5);
-				     Thread.sleep(2000);
-				     mouseHover(driver, getObjectPayment("Bento_Book_Button"));
 				     Thread.sleep(5000);
+				     driver.findElement(getObjectPayment("Bento_Book_Button")).sendKeys(Keys.ARROW_DOWN);
 				     safeClick(driver, getObjectPayment("Bento_Book_Button"));
 				 }
 			    

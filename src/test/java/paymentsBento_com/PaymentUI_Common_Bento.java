@@ -518,7 +518,11 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 			textPresent_Log(driver, "Pay to complete your booking", 20);
 			driver.manage().addCookie(cookie_Bento_Payment_EMI);
 			refreshPage(driver);
-			//smartClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
+			if(elementVisible(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"),5))
+			{
+			 safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
+			 Thread.sleep(5000);
+			}
 			bento_Select_PaymentType(driver, "EMI");
 			textPresent_Log(driver, "Pay to complete your booking", 1);
 			textPresent_Log(driver, "Choose an EMI option", 1);

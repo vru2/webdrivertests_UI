@@ -139,22 +139,25 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 					 Thread.sleep(5000);
 					 if(elementVisible(driver, getObjectPayment("Bento_Book_Button1"), 5))
 					 {
-				       Thread.sleep(5000);
+				       Thread.sleep(2000);
 				       driver.findElement(getObjectPayment("Bento_Book_Button1")).sendKeys(Keys.ARROW_DOWN);
+				       Thread.sleep(3000);
 				       safeClick(driver, getObjectPayment("Bento_Book_Button1"));
 					 }
 					 else
 					 {
-						 Thread.sleep(5000);
-					       driver.findElement(getObjectPayment("Bento_Book_Button2")).sendKeys(Keys.ARROW_DOWN);
-					       safeClick(driver, getObjectPayment("Bento_Book_Button2")); 
+						Thread.sleep(2000);
+					    driver.findElement(getObjectPayment("Bento_Book_Button2")).sendKeys(Keys.ARROW_DOWN);
+					    Thread.sleep(3000);
+					    safeClick(driver, getObjectPayment("Bento_Book_Button2")); 
 					 }
 				 }
 				 else
 				 {
 					 elementVisible(driver, getObjectPayment("Bento_Book_Button"), 5);
-				     Thread.sleep(5000);
+				     Thread.sleep(2000);
 				     driver.findElement(getObjectPayment("Bento_Book_Button")).sendKeys(Keys.ARROW_DOWN);
+				     Thread.sleep(3000);
 				     safeClick(driver, getObjectPayment("Bento_Book_Button"));
 				 }
 			    

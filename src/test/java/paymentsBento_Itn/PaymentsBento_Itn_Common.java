@@ -106,8 +106,59 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		Reporter.log(resp.asString());
 	}
 	
-	// Booking via search page
 	public void Searchpagebook(RemoteWebDriver driver,String wallettype, String domain, String cardtype) throws Exception 
+	{
+		driver.manage().addCookie(bentoitn);
+		if (wallettype == "Partial") 
+		{
+			driver.manage().addCookie(ctauth_partial_wallet);
+			
+		}
+		else
+		{
+			driver.manage().addCookie(ctauth);
+		}
+		driver.navigate().refresh();
+		textPresent(driver, "Departure time", 10);
+		for(int i=0;i<5;i++) {
+		if(elementVisible(driver, By.xpath("//div[4]/div[2]/button"), 5)) {
+			safeClick(driver, By.xpath("//div[4]/div[2]/button"));	
+			break;
+		} 
+		else if(elementVisible(driver, By.xpath("//div[4]/div[2]/button"), 1)) {
+			safeClick(driver, By.xpath("//div[4]/button"));
+			break;
+		}
+		}
+		String parent = driver.getWindowHandle();
+		Set<String> s1 = driver.getWindowHandles();
+		Iterator<String> I1 = s1.iterator();
+		while (I1.hasNext()) {
+			String child_window = I1.next();
+			if (!parent.equals(child_window)) 
+			{
+				driver.switchTo().window(child_window);
+				driver.navigate().to(driver.getCurrentUrl());
+				if(!elementVisible(driver,By.cssSelector("h2.fs-7.px-4.c-neutral-900.fw-600"), 10)) {
+					textPresent_Log(driver, "Review your itinerary", 10);					
+				}
+				System.out.println(driver.switchTo().window(child_window).getCurrentUrl());
+				Reporter.log(driver.switchTo().window(child_window).getCurrentUrl());
+		if(!textPresent(driver, "Review your itinerary", 1)) {
+	     if (textPresent(driver, "Sorry, our servers are stumped with your request", 1)|| textPresent(driver, "Flight not available", 1)) 
+	     {
+					System.out.println("Booking failed due to itn page issue");
+					Reporter.log("Booking failed due to itn page issue");
+					assertTrue(false);
+	     }
+		 }
+	     } 
+	}
+	}
+		
+	
+	// Booking via search page
+	public void Searchpagebook1(RemoteWebDriver driver,String wallettype, String domain, String cardtype) throws Exception 
 	{
 		driver.manage().addCookie(bentoitn);
 		if (wallettype == "Partial") 
@@ -1230,7 +1281,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	}
 	
 	public void bento_pay_EMI(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
-		elementVisible(driver, getObjectPayment("PaymentPage_EMI_ICICIBank_Radio_Btn"), 10);
+		elementVisible(driver, getObjectPayment("Bento_Payment_Paynow"), 10);
 		if (textPresent(driver, "Cleartrip wallet", 5)) 
 		{
 			safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));

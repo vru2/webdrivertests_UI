@@ -49,7 +49,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 
 
 	String searchurl2= "/flights/results?adults=1&childs=0&infants=0&depart_date=29/12/2022&return_date=&intl=n&from=BLR&to=MAA&airline=&carrier=&sd=1643253708293&page=&sellingCountry=IN&ssfi=&flexi_search=&ssfc=&origin=BLR - Bangalore, IN&destination=MAA - Chennai, IN&class=Economy";
-	String searchurl1 ="/flights/results?adults=1&childs=0&infants=0&depart_date=29/12/2022&return_date=&intl=n&from=BLR&to=DEL&airline=&carrier=&sd=1643253708293&page=&sellingCountry=IN&ssfi=&flexi_search=&ssfc=&origin=BLR - Bangalore, IN&destination=DEL - New Delhi, IN&class=Economy";
+	String searchurl1 ="/flights/results?adults=1&childs=0&infants=0&depart_date=29/12/2022&return_date=&intl=n&from=BLR&to=CCU&airline=&carrier=&sd=1643253708293&page=&sellingCountry=IN&ssfi=&flexi_search=&ssfc=&origin=BLR - Bangalore, IN&destination=DEL - New Delhi, IN&class=Economy";
 	//String searchurl = "/flights/results?adults=1&childs=0&infants=0&class=Economy&depart_date=20/06/2022&from=BLR&to=MAA&intl=n&origin=BLR%20-%20Bangalore,%20IN&destination=MAA%20-%20Chennai,%20IN&sd=1643265410611&rnd_one=O&sourceCountry=Bangalore&destinationCountry=Chennai";
 	//String searchurl1 ="/flights/results?adults=1&childs=0&infants=0&depart_date=29/12/2022&return_date=&intl=n&from=BLR&to=CCU&airline=&carrier=&sd=1642563217292&page=&sellingCountry=IN&ssfi=&flexi_search=&ssfc=&origin=BLR - Bangalore, IN&destination=CCU - Kolkata, IN&class=Economy";
 	String qa2url = "https://qa2.cleartrip.com";
@@ -948,8 +948,13 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		System.out.println(driver.getCurrentUrl());
 		Reporter.log(driver.getCurrentUrl());
 		Thread.sleep(1000);
-		if (textPresent(driver, "Cleartrip wallet", 1)) 
+		/*if (textPresent(driver, "Cleartrip wallet", 1)) 
 		{
+			safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
+			Reporter.log("Deselected wallet");
+			Thread.sleep(2000);
+		}*/
+		if(textPresent(driver, "Your wallet balance is sufficient", 2)) {
 			safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
 			Reporter.log("Deselected wallet");
 			Thread.sleep(2000);
@@ -960,6 +965,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			Reporter.log("Deselected wallet");
 			Thread.sleep(2000);
 		}
+		
 		pay_fares(driver);
 		switch (PaymentType) {
 		case "storedcard":
@@ -1220,8 +1226,12 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		if (textPresent(driver, "Cleartrip wallet", 5)) 
 		{
 			safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
+			if(textPresent(driver, "Your wallet balance is sufficient", 2)) {
+				safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
+			}
 			Reporter.log("Deselected wallet");
 			Thread.sleep(2000);
+			elementVisible(driver, By.xpath("//div[7]/p"), 10);
 			driver.findElement(By.xpath("//div[7]/p")).click();
 		}
 		safeClick(driver, getObjectPayment("PaymentPage_EMI_ICICIBank_Radio_Btn"));
@@ -1858,6 +1868,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	
 	public void pay_fares(RemoteWebDriver driver) throws Exception
 	{
+		Thread.sleep(5000);
 		WebElement pay_fare=driver.findElement(getObjectPayment("Bento_pay_totalprice"));
 		pay_totalprice=pay_fare.getText();
 		pay_totalprice=pay_totalprice.replaceAll(" ","");
@@ -1866,7 +1877,10 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	}
 	
 	public void compare_fares(RemoteWebDriver driver)
-	{   if(itn_totalprice.equals(pay_totalprice))
+	{   
+		System.out.println("itn_totalprice : "+itn_totalprice+" - pay_totalprice "+pay_totalprice);
+		Reporter.log("itn_totalprice : "+itn_totalprice+" - pay_totalprice "+pay_totalprice);
+		if(itn_totalprice.equals(pay_totalprice))
 	   {
 		Assert.assertEquals(itn_totalprice, pay_totalprice);
 		Reporter.log("Itn page fare match with pay fare");

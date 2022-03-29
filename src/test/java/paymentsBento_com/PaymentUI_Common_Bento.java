@@ -67,6 +67,10 @@ public class PaymentUI_Common_Bento extends PaymentUI_Common{
 		if(elementVisible(driver, getObjectPayment("Bento_Pay_Tabs"), 1)) {
 			break;
 		}
+		
+		}
+		if(textPresent(driver, "Your wallet balance is sufficient", 2)) {
+			safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
 		}
 		if(!elementVisible(driver, getObjectPayment("Bento_Pay_Tabs"), 5)) {
 			Reporter.log("PayUI Page is not displayed");

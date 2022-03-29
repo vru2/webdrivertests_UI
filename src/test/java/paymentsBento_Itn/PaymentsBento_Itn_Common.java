@@ -947,7 +947,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	}
 	
 	public void bento_paymentpage(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
-		textPresent_Log(driver, "Pay to complete your booking", 5);
+		textPresent_Log(driver, "Pay to complete your booking", 20);
 		System.out.println(driver.getCurrentUrl());
 		Reporter.log(driver.getCurrentUrl());
 		Thread.sleep(1000);
@@ -1105,8 +1105,13 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		if(CardNumber=="4111") {	
 			payUI_Enter_PaymentDetails(driver, "CC", "RAZORPAYDC","");
 			Thread.sleep(1000);
-			if (textPresent(driver, "Cleartrip wallet", 1)) 
+			/*if (textPresent(driver, "Cleartrip wallet", 1)) 
 			{
+				safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
+				Reporter.log("Deselected wallet");
+				Thread.sleep(2000);
+			}*/
+			if(textPresent(driver, "Your wallet balance is sufficient", 2)) {
 				safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
 				Reporter.log("Deselected wallet");
 				Thread.sleep(2000);
@@ -1274,6 +1279,11 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	
 	public void bento_pay_NB(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
 		textPresent(driver, "Pay to complete your booking", 5);
+		if(textPresent(driver, "Your wallet balance is sufficient", 2)) {
+			safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
+			Reporter.log("Deselected wallet");
+			Thread.sleep(2000);
+		}
 		payUI_Select_PaymentType(driver, "NB");		
 		Reporter.log("Clicked on NB");
 		Thread.sleep(1000);

@@ -1946,7 +1946,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		Reporter.log("itn_totalprice : "+itn_totalprice+" - pay_totalprice "+pay_totalprice);
 		if(itn_totalprice.equals(pay_totalprice))
 	   {
-		//Assert.assertEquals(itn_totalprice, pay_totalprice);
+		Assert.assertEquals(itn_totalprice, pay_totalprice);
 		Reporter.log("Itn page fare match with pay fare");
 		System.out.println("Itn page fare match with pay fare");
 	   }
@@ -1954,7 +1954,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	{
 		Reporter.log("Itn page fare doesn't match with pay fare");
 		System.out.println("Itn page fare doesn't match with pay fare");
-		//Assert.assertTrue(false);
+		Assert.assertTrue(false);
 	}
 	}
 	

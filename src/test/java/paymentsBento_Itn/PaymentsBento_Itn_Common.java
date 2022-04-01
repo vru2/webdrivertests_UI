@@ -1359,6 +1359,46 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			Reporter.log("Clicked on paynow");
 			
 		}
+		else if(PayType.contains("Retry")) {
+			safeClick(driver, getObjectPayment("Bento_Payment_NB_Payment_Failure"));
+			elementPresent_log(driver, getObjectPayment("Bento_Payment_Paynow"),"Pay button in retry page", 30); 
+			textPresent_Log(driver, "Oops! Your payment failed. If you were charged, any amount deducted will be reversed", 1);
+			payUI_Select_PaymentType(driver, "NB");		
+			Reporter.log("Clicked on NB");
+			Thread.sleep(1000);
+			safeClick(driver, getObjectPayment("Bento_Payment_NB_ICIC"));
+			Reporter.log("Selected ICICI Bank");
+			safeClick(driver, getObjectPayment("Bento_Payment_Paynow")); 
+			textPresent(driver, "Please wait...", 2);
+			textPresent_Log(driver, "Welcome to Razorpay Software Private Ltd Bank", 20);
+		}
+		textPresent(driver, "Please wait...", 2);
+		textPresent_Log(driver, "Welcome to Razorpay Software Private Ltd Bank", 20);
+		safeClick(driver, getObjectPayment("Bento_Payment_NB_Payment_Success"));
+		Reporter.log("Payment done successfully");
+	}
+	
+	public void bento_pay_NBRetry(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
+		textPresent(driver, "Pay to complete your booking", 5);
+		if(textPresent(driver, "Your wallet balance is sufficient", 2)) {
+			safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
+			Reporter.log("Deselected wallet");
+			Thread.sleep(2000);
+		}
+		payUI_Select_PaymentType(driver, "NB");		
+		Reporter.log("Clicked on NB");
+		Thread.sleep(1000);
+		safeClick(driver, getObjectPayment("Bento_Payment_NB_ICIC"));
+		Reporter.log("Selected ICIC Bank");
+		safeClick(driver, getObjectPayment("Bento_Payment_Paynow")); 
+		textPresent_Log(driver, "Please wait...", 2);
+		textPresent_Log(driver, "Welcome to Razorpay Software Private Ltd Bank", 20);
+		safeClick(driver, getObjectPayment("Bento_Payment_NB_Payment_Failure"));
+		elementPresent_log(driver, getObjectPayment("Bento_Payment_Paynow"),"Pay button in retry page", 30); 
+		textPresent_Log(driver, "Oops! Your payment failed. If you were charged, any amount deducted will be reversed", 1);
+		safeClick(driver, getObjectPayment("Bento_Payment_NB_ICIC"));
+		Reporter.log("Selected ICICI Bank");
+		safeClick(driver, getObjectPayment("Bento_Payment_Paynow")); 
 		textPresent_Log(driver, "Please wait...", 2);
 		textPresent_Log(driver, "Welcome to Razorpay Software Private Ltd Bank", 20);
 		safeClick(driver, getObjectPayment("Bento_Payment_NB_Payment_Success"));

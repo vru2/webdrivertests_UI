@@ -26,6 +26,12 @@
     </classes>
 </test>
 
+<test name="NB Retry" preserve-order="true">
+    <classes>
+	        <class name="paymentsBento_Itn.Bento_IN_NB_Retry"/>
+    </classes>
+</test>
+
 <test name="EMI" preserve-order="true">
     <classes>
 	        <class name="paymentsBento_Itn.Bento_IN_EMI_Razorpay"/>

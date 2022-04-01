@@ -6,7 +6,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class IN_NB_ICICI extends PaymentsBento_Itn_Hotels_Common {
+public class IN_NB_Retry extends PaymentsBento_Itn_Hotels_Common {
 
 	@BeforeClass
 	public void startSelenium() throws Exception {
@@ -19,7 +19,7 @@ public class IN_NB_ICICI extends PaymentsBento_Itn_Hotels_Common {
 		driver.get(hotelDetailsUrl("IN","sri-balaji-paradise-2626774"));
 		hotelsDetailsPage(driver, "", "");
 		hotelsItnPage(driver, "", "", "", "");
-		hotelsPaymentPage(driver, "NB", "", "", "", "");
+		hotelsPaymentPage(driver,"NB","","","Retry","");
 	} 
 
  		@AfterClass

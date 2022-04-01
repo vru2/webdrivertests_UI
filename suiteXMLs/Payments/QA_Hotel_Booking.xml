@@ -32,6 +32,12 @@
     </classes>
 </test>
 
+<test name="NB retry" preserve-order="true">
+    <classes>
+	        <class name="paymentsBento_Itn_Hotels.IN_NB_Retry"/>
+    </classes>
+</test>
+
 <test name="Saved Card" preserve-order="true">
     <classes>
 	        <class name="paymentsBento_Itn_Hotels.IN_SavedCard_RazorPay"/>

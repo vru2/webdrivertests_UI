@@ -926,7 +926,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		if(elementVisible(driver, getObjectPayment("Bento_Pay_PayToCompleteBooking_Txt"), 30))
 		{
 			bento_paymentpage(driver,PaymentType, CardNumber,domain,PayType,BankName);
-			if(!(CardNumber=="ADCB"||PaymentType=="Phonepe"||PaymentType=="UPIScan"))
+			if(!(CardNumber=="ADCB"||PaymentType=="Phonepe"||PaymentType=="UPIScan"||PayType=="Googlecaptcha"))
 		{
 			confirmation_page_air(driver, PaymentType, CardNumber);
 		}
@@ -947,7 +947,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		if(elementVisible(driver, getObjectPayment("Bento_Pay_PayToCompleteBooking_Txt"), 30))
 		{
 			bento_paymentpage(driver,PaymentType, CardNumber,domain,PayType,BankName);
-			if(!(CardNumber=="ADCB"||PaymentType=="Phonepe"||PaymentType=="UPIScan"))
+			if(!(CardNumber=="ADCB"||PaymentType=="Phonepe"||PaymentType=="UPIScan"||PayType=="Googlecaptcha"))
 		{
 			confirmation_page_hotel(driver, PaymentType, CardNumber);
 		}
@@ -1188,6 +1188,21 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			}
 			textPresent_Log(driver, "Your booking is done",10);
 			Reporter.log("Payment done successfully");
+		}
+		else if(CardNumber=="INVALID") {
+
+			payUI_Enter_PaymentDetails(driver, "CC", "INVALID","");
+           	smartClick(driver, getObjectPayment("PayUI_Expressway_CheckBox_New"));
+           	for (int i=0; i<=4; i++) {
+           	Thread.sleep(4000);
+			safeClick(driver, getObjectPayment("Bento_paynow"));
+			textPresent(driver, "Invalid card number. Please re-enter the correct card details", 5);
+           	}
+           	safeClick(driver, getObjectPayment("Bento_paynow"));
+           	safeClick(driver, By.cssSelector("div.br-100.flex.flex-center.flex-middle.c-pointer > svg"));
+           	safeClick(driver, getObjectPayment("Bento_paynow"));
+			textPresent_Log(driver, "Please validate captcha", 10);
+           	//elementPresent_log(driver, getObjectPayment("PaymentPage_GoogleCaptcha_Widget"), "Google Captcha", 5);
 		}
 		else if(CardNumber=="5123") {
 

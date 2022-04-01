@@ -259,6 +259,9 @@ public class PaymentUI_Common extends PaymentNodeJS{
 			case "RAZORPAY":
 			Enter_CC_Details(driver, platform.value("RazorPay_Number"), platform.value("RazorPay_Month_UI"), platform.value("RazorPay_Year"), platform.value("RazorPay_CVV"));
 			break;
+			case "INVALID":
+			Enter_CC_Details(driver, "1212121212121212", platform.value("MasterCard_Month"), platform.value("MasterCard_Year"), platform.value("MasterCard_CVV"));
+			break;
 			case "RAZORPAYDC":
 			Enter_CC_Details(driver, platform.value("RazorPay_Number_DC"), platform.value("RazorPay_Month_UI_DC"), platform.value("RazorPay_Year_DC"), platform.value("RazorPay_CVV_DC"));
 			break;

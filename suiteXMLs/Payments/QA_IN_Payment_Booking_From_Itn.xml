@@ -20,6 +20,12 @@
     </classes>
 </test>
 
+<test name="GoogleCaptcha Validation" preserve-order="true">
+    <classes>
+	        <class name="paymentsBento_Itn.Bento_IN_GoogleCaptcha_Widget"/>
+    </classes>
+</test>
+
 <test name="Amex CC" preserve-order="true">
     <classes>
 	        <class name="paymentsBento_Itn.Bento_IN_Amex_Booking"/>

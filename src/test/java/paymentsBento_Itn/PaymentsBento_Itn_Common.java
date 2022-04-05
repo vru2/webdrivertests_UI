@@ -139,7 +139,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			{
 				driver.switchTo().window(child_window);
 				driver.navigate().to(driver.getCurrentUrl());
-				if(!elementVisible(driver,By.cssSelector("h2.fs-7.px-4.c-neutral-900.fw-600"), 10)) {
+				if(!elementVisible(driver,By.cssSelector("h2.fs-7.px-4.c-neutral-900.fw-600"), 20)) {
 					textPresent_Log(driver, "Review your itinerary", 10);					
 				}
 				System.out.println(driver.switchTo().window(child_window).getCurrentUrl());

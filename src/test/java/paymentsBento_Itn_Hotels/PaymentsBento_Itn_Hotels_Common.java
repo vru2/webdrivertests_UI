@@ -90,8 +90,8 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		}
 	
 	public void hotelsDetailsPage(RemoteWebDriver driver, String HotelName, String Price) throws Exception {
-		refreshPage(driver);
-		elementPresent_log(driver, getObjectPayment("Hotel_Details_HotelName"), "View all hotels in Bangalore", 30);
+		//refreshPage(driver);
+		elementPresent_log(driver, getObjectPayment("Hotel_Details_Modify_Btn"), "Modify Button", 30);
 	//	Thread.sleep(2000);
 		mouseHover(driver, getObjectPayment("Hotel_Details_SelectRoom_Btn"));
 		safeClick(driver, getObjectPayment("Hotel_Details_SelectRoom_Btn"));
@@ -112,6 +112,7 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		Child_URL = driver.getCurrentUrl();
 		driver.close(); // Closing Child window
 		driver.switchTo().window(parent);		
+		Thread.sleep(2000);
 		driver.get(Child_URL);
 		driver.manage().addCookie(cookie_Bento_Hotels);
 		refreshPage(driver);

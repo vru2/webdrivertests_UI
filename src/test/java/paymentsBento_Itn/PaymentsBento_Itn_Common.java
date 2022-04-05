@@ -1008,7 +1008,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			Reporter.log("Deselected wallet");
 			Thread.sleep(2000);
 		}*/
-		if(textPresent(driver, "Your wallet balance is sufficient", 2)) {
+		if((textPresent(driver, "Your wallet balance is sufficient", 2)||textPresent(driver, "from your wallet", 2))) {
 			safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
 			Reporter.log("Deselected wallet");
 			Thread.sleep(2000);

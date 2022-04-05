@@ -938,7 +938,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		}
 		else 
 		{
-			Reporter.log("Booking failed due to itn page issue");
+			Reporter.log("Payment page hasn't loaded");
 			assertTrue(false);
 		}
 	}
@@ -1193,10 +1193,10 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 
 			payUI_Enter_PaymentDetails(driver, "CC", "INVALID","");
            	smartClick(driver, getObjectPayment("PayUI_Expressway_CheckBox_New"));
-           	for (int i=0; i<=4; i++) {
-           	Thread.sleep(4000);
+           	for (int i=0; i<=5; ++i) {
+           	Thread.sleep(2000);
 			safeClick(driver, getObjectPayment("Bento_paynow"));
-			textPresent(driver, "Invalid card number. Please re-enter the correct card details", 5);
+			textPresent(driver, "Invalid card number. Please re-enter the correct card details", 2);
            	}
            	safeClick(driver, getObjectPayment("Bento_paynow"));
            	safeClick(driver, By.cssSelector("div.br-100.flex.flex-center.flex-middle.c-pointer > svg"));

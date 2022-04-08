@@ -2275,7 +2275,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		}
 		else if(payType.equalsIgnoreCase("IR_Create_Refund")) {
 			
-			if(!(resp.body().asString().contains("Refund Initiated"))){
+			if(!(resp.body().asString().contains("Partial Refund Initiated"))){
 				Assert.assertTrue(false);
 			}
 		}
@@ -2327,7 +2327,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			String AS = jsonPathEvaluator.getString("eligibleForAlternativeSource");
 			Reporter.log("AS " +AS);
 			Reporter.log("OS " +OS);
-			if(!OS.equals("false")) {
+			if(!OS.equals("true")) {
 				Assert.assertTrue(false);
 			} 
 			if(!AS.equals("true")) {

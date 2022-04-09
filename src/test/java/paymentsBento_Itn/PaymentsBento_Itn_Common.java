@@ -121,15 +121,49 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		driver.navigate().refresh();
 		textPresent(driver, "Departure time", 10);
 		for(int i=0;i<5;i++) {
-		if(elementVisible(driver, By.xpath("//div[4]/div[2]/button"), 5)) {
+			if(elementVisible(driver, By.xpath("//div[4]/button"), 5)) {
+				safeClick(driver, By.xpath("//div[4]/button"));
+				break;
+			}
+			else if(elementVisible(driver, By.xpath("//div[4]/div[2]/button"), 1)) {
 			safeClick(driver, By.xpath("//div[4]/div[2]/button"));	
 			break;
 		} 
-		else if(elementVisible(driver, By.xpath("//div[4]/div[2]/button"), 1)) {
-			safeClick(driver, By.xpath("//div[4]/button"));
-			break;
 		}
+		
+		
+		String parent=driver.getWindowHandle();
+		Set<String>s=driver.getWindowHandles();
+		Iterator<String> I1= s.iterator();
+		String Child_URL="";
+		while(I1.hasNext())
+		{
+		String child_window=I1.next();
+		if(!parent.equals(child_window))
+		{driver.switchTo().window(child_window);}
 		}
+		if(!elementVisible(driver,By.cssSelector("h2.fs-7.px-4.c-neutral-900.fw-600"), 20)) {
+			textPresent_Log(driver, "Review your itinerary", 10);					
+		}
+		Child_URL = driver.getCurrentUrl();
+		driver.close(); // Closing Child window
+		driver.switchTo().window(parent);		
+		Thread.sleep(2000);
+		driver.get(Child_URL);
+		if(!elementVisible(driver,By.cssSelector("h2.fs-7.px-4.c-neutral-900.fw-600"), 20)) {
+			textPresent_Log(driver, "Review your itinerary", 10);					
+		}
+		System.out.println("Itinerary :"+Child_URL);
+		Reporter.log("Itinerary :"+Child_URL);
+		if(!textPresent(driver, "Review your itinerary", 1)) {
+	 if (textPresent(driver, "Sorry, our servers are stumped with your request", 1)|| textPresent(driver, "Flight not available", 1)) 
+	 {
+			System.out.println("Booking failed due to itn page issue");
+			Reporter.log("Booking failed due to itn page issue");
+			assertTrue(false);
+ }
+		/*
+		
 		String parent = driver.getWindowHandle();
 		Set<String> s1 = driver.getWindowHandles();
 		Iterator<String> I1 = s1.iterator();
@@ -152,7 +186,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 					assertTrue(false);
 	     }
 		 }
-	     } 
+	     } */
 	}
 	}
 		
@@ -978,9 +1012,9 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		textPresent_Log(driver, "You just booked", 2);
 		textPresent_Log(driver, "Travelers in this trip", 2);
 		textPresent_Log(driver, "Itinerary sent", 2);
-		textPresent_Log(driver, "PAYMENT RECEIPT", 2);
+/*		textPresent_Log(driver, "PAYMENT RECEIPT", 2);
 		textPresent_Log(driver, "TOTAL CHARGE", 2);
-		textPresent_Log(driver, "RATE BREAK UP", 2);
+		textPresent_Log(driver, "RATE BREAK UP", 2);*/
 		/* textPresent_Log(driver,"Convenience Fee",2); */
 		textPresent_Log(driver, "Total", 2);
 		textPresent_Log(driver, "Travel plans change often.", 2);
@@ -1543,7 +1577,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		textPresent_Log(driver, "Pay to complete your booking", 5);
 		textNotPresent_Log(driver, "Enter card details", 1);
 		
-		String GVText=getText(driver, By.xpath("//div[2]/div[2]/div[1]/div[10]/p[1]"));
+		String GVText=getText(driver, By.xpath("//div[10]/p"));
 		  if(!GVText.contains("Gift card")&&GVText.contains(GV_number)) {
 			Reporter.log("GV is not displayed"+GVText);
 			Assert.assertTrue(false);
@@ -1561,7 +1595,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		textPresent_Log(driver, "terms", 1);		
 		textPresent_Log(driver, "Convenience fee", 1);
 		Reporter.log("Includes a convenience fee of text is displayed");
-		String YouPay = getText(driver, By.xpath("//div[2]/div[2]/div[1]")); 
+		String YouPay = getText(driver, By.xpath("//p[2]/span")); 
 		if (!YouPay.contains("0")) {
 			Reporter.log("Youpay doesn't contain 0 rs");
 			Assert.assertTrue(false);

@@ -72,6 +72,9 @@ public class PaymentUI_Common extends PaymentNodeJS{
 		case "PayPal":
 			PayType = "PayPal";
 			break;
+		case "EMI":
+			PayType = "EMI";
+			break;
 		default:
 			PayType = "Credit Card";
 			break;

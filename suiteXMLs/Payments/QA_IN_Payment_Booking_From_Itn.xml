@@ -14,7 +14,7 @@
     </classes>
 </test>
 
-<test name="Razorpay CC" preserve-order="true">
+<test name="Razorpay CC StoredCard" preserve-order="true">
     <classes>
 	        <class name="paymentsBento_Itn.Bento_IN_Storedcard_Razorpaycard_Booking"/>
     </classes>

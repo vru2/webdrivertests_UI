@@ -792,7 +792,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			  WebElement ele4 =driver.findElement(getObjectPayment("Bento_Itn_GV_Number"));
 			  ele4.sendKeys(Keys.PAGE_DOWN); 
 			  Thread.sleep(1000); 
-			  ele4.sendKeys("WALLET3");
+			  ele4.sendKeys("DOMCC");
 			  Thread.sleep(1000); 
 			  Reporter.log("Entered Coupon details");
 			  smartClick(driver,getObjectPayment("Bento_Itn_Coupon_Apply"));
@@ -1709,7 +1709,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	
 	public void bento_pay_Coupon(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
 		if(CardNumber.equalsIgnoreCase("Air")) {
-			textPresent_Log(driver, "Coupon code (WALLET3)", 2);
+			textPresent_Log(driver, "Coupon code (DOMCC)", 2);
 			
 		}
 		if(CardNumber.equalsIgnoreCase("Hotel")) {

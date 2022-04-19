@@ -20,7 +20,7 @@ public class Bento_IN_AmazonPay extends PaymentsBento_Itn_Common {
 		driver.manage().deleteAllCookies();
 		driver.navigate().to(searchurl("IN"));
 		Reporter.log(searchurl("IN"));
-		Searchpagebook(driver, "","com","");
+		Searchpagebook1(driver, "","com","");
 		book_itnnew(driver,"");
 		paymentPage(driver,"TW","AmazonPay","","",""); 
 		compare_fares(driver);	

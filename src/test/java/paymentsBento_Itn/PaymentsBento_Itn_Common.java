@@ -1136,7 +1136,9 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		
 	
 	public void bento_pay_StoredCard(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
-		
+
+		payUI_Select_PaymentType(driver, "SC");
+		textPresent_Log(driver, "Select a saved card", 5);
 		if(CardNumber == "4111")
 		{
 			Thread.sleep(1000);
@@ -1167,8 +1169,15 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 				safeClick(driver, getObjectPayment("Bento_Payment_SC_Razropay"));
 				Reporter.log("Clicked on SC");
 				Thread.sleep(1000);*/
-				safeClick(driver, getObjectPayment("Bento_Payment_SC_Razropay_CVV"));
-				safeType(driver, getObjectPayment("Bento_Payment_SC_Razropay_CVV"), "123");
+				if(domain.equals("HOTELS")) {
+					safeClick(driver, getObjectPayment("Bento_Payment_SC_Razropay_CVV_HOTELS"));
+
+					safeType(driver, getObjectPayment("Bento_Payment_SC_Razropay_CVV_HOTELS"), "123");
+				}
+				else
+					{safeClick(driver, getObjectPayment("Bento_Payment_SC_Razropay_CVV"));
+					safeType(driver, getObjectPayment("Bento_Payment_SC_Razropay_CVV"), "123");
+					}
 				Reporter.log("Entered CVV");
 				safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
 				Reporter.log("Clicked on paynow");
@@ -1572,8 +1581,12 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		elementPresent_log(driver, getObjectPayment("Bento_Pay_UPIScan_Page_CleartripLogo"), "Cleartrip logo", 1);
 		safeClick(driver, getObjectPayment("Bento_Pay_UPIScan_Page_CancelPay_Link"));
 		Thread.sleep(2000);
-		textPresent_Log(driver, "Payment cancelled", 10);
-		textPresent_Log(driver, "If you have already paid, please wait for a few minutes before trying again", 1);
+		if(!elementVisible(driver, getObjectPayment("Bento_Pay_PayToCompleteBooking_Txt"), 30)) {
+			Reporter.log("Payment page is not displayed");
+			Assert.assertTrue(false);
+		}
+		//textPresent_Log(driver, "Payment cancelled", 10);
+		//textPresent_Log(driver, "If you have already paid, please wait for a few minutes before trying again", 1);
 		
 	}
 			

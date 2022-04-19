@@ -64,7 +64,7 @@ public class PaymentUI_Common extends PaymentNodeJS{
 			PayType = "ADCB touchPoints";
 			break;
 		case "SC":
-			PayType = "Stored Card";
+			PayType = "Saved cards";
 			break;
 		case "KNET":
 			PayType = "KNET";

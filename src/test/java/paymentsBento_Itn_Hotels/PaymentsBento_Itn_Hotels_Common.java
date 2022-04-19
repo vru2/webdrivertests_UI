@@ -42,7 +42,7 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 	
 	public String hotelDetailsUrl(String Domain, String HotelID)  throws Exception
 	{	
-		Hotel_URL= "/hotels/details/"+HotelID+"?c="+getDateTime(30, "ddMMyy")+"|"+getDateTime(31, "ddMMyy")+"&r=2,0";
+		Hotel_URL= "/hotels/details/"+HotelID+"?c="+getDateTime(30, "ddMMyy")+"|"+getDateTime(31, "ddMMyy")+"&r=2,0&ur=1";
 		String SearchUrl = "";
 		if(Domain=="IN") {
 			SearchUrl=inurl+Hotel_URL;
@@ -52,7 +52,7 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 	
 	public String hotelDetailsUrl_3Days(String Domain, String HotelID)  throws Exception
 	{	
-		Hotel_URL= "/hotels/details/"+HotelID+"?c="+getDateTime(30, "ddMMyy")+"|"+getDateTime(33, "ddMMyy")+"&r=2,0";
+		Hotel_URL= "/hotels/details/"+HotelID+"?c="+getDateTime(30, "ddMMyy")+"|"+getDateTime(33, "ddMMyy")+"&r=2,0&ur=1";
 		String SearchUrl = "";
 		if(Domain=="IN") {
 			SearchUrl=inurl+Hotel_URL;
@@ -90,7 +90,10 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		}
 	
 	public void hotelsDetailsPage(RemoteWebDriver driver, String HotelName, String Price) throws Exception {
-		//refreshPage(driver);
+		refreshPage(driver);
+		if(textPresent(driver, "Sorry our servers are stumped with your request", 1)) {
+			refreshPage(driver);
+		}
 		elementPresent_log(driver, getObjectPayment("Hotel_Details_Modify_Btn"), "Modify Button", 30);
 	//	Thread.sleep(2000);
 		mouseHover(driver, getObjectPayment("Hotel_Details_SelectRoom_Btn"));
@@ -98,7 +101,7 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		elementVisible(driver, getObjectPayment("Hotel_Details_Book_Btn"), 5);
 		Thread.sleep(2000);
 		safeClick(driver, getObjectPayment("Hotel_Details_Book_Btn"));
-		String parent=driver.getWindowHandle();
+		/*String parent=driver.getWindowHandle();
 		Set<String>s=driver.getWindowHandles();
 		Iterator<String> I1= s.iterator();
 		String Child_URL="";
@@ -111,9 +114,11 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		textPresent(driver, "Itinerary", 20);
 		Child_URL = driver.getCurrentUrl();
 		driver.close(); // Closing Child window
-		driver.switchTo().window(parent);		
-		Thread.sleep(2000);
-		driver.get(Child_URL);
+		Thread.sleep(5000);*/
+		//driver.switchTo().window(parent);		
+		//driver.get(Child_URL);
+
+		textPresent(driver, "Itinerary", 20);
 		driver.manage().addCookie(cookie_Bento_Hotels);
 		refreshPage(driver);
 	}
@@ -182,7 +187,7 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 	}
 	
 	public void hotelsItnContact(RemoteWebDriver driver, String Contact, String PayType) throws Exception {
-		elementPresent_log(driver, getObjectPayment("Hotel_ContactPage_Continue_Btn"), "Traveller Contine button", 2);
+		elementPresent_log(driver, getObjectPayment("Hotel_ContactPage_Continue_Btn"), "Traveller Contine button", 10);
 		textPresent(driver, "Add traveller details", 1);
 		mouseHover(driver, getObjectPayment("Hotel_ContactPage_Salutation_Dropdown"));
 		safeClick(driver, getObjectPayment("Hotel_ContactPage_Salutation_Dropdown"));

@@ -719,7 +719,14 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 				safeType(driver, getObjectPayment("Bento_Itn_User_lastname"), "Test");
 				Reporter.log("Entered last name");
 			}
-				safeClick(driver, getObjectPayment("Bento_Itn_Select_Gender")); 
+			
+			if(elementVisible(driver,getObjectPayment("Bento_Itn_select_gender"),1))
+		{
+			safeClick(driver,getObjectPayment("Bento_Itn_select_gender"));
+		}
+			else {
+				safeClick(driver, getObjectPayment("Bento_Itn_Select_Gender"));
+			}
 				safeClick(driver, getObjectPayment("Bento_Itn_Select_Female"));
 				Reporter.log("Selected gender");
 			if(textPresent(driver, "Nationality", 2)||elementVisible(driver, getObjectPayment("Bento_Itn_Nationality"), 1)) {

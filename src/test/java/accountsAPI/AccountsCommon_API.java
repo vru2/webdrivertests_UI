@@ -2714,28 +2714,28 @@ String params_IdentityService_Signin_Userauthentication_B2C_B2B="{\"username\":\
 			url = url_Promotional_Service_healthTestAPI;
 			headers = headersFormpromotioanlhealth();
 
-			Reporter.log(url_Acct_Service+url);
+			Reporter.log(url_Promotional_Service+url);
 		}
 		else if (Type.equals("Promotional_Service_ValidatereferralLink")){
 			RestAssured.baseURI=url_Promotional_Service_domain;
 			url = url_Promotional_Service_ValidatereferralLink;
 			headers = headersFormpromotionalvalidate();
 
-			Reporter.log(url_Acct_Service+url);
+			Reporter.log(url_Promotional_Service_domain+url);
 		}
 		else if (Type.equals("Promotional_Service_ValidateInvalidReferralLink")){
 			RestAssured.baseURI=url_Promotional_Service_domain;
 			url = url_Promotional_Service_ValidateInvalidReferralLink;
 			headers = headersFormpromotionalvalidate();
 
-			Reporter.log(url_Acct_Service+url);
+			Reporter.log(url_Promotional_Service_domain+url);
 		}
 		else if (Type.equals("Promotional_Service_GetReferradetailsHQ")){
 			RestAssured.baseURI=url_Promotional_Service_domain;
 			url = url_Promotional_Service_GetReferradetailsHQ;
 			headers = headersFormpromotionalvalidate();
 
-			Reporter.log(url_Acct_Service+url);
+			Reporter.log(url_Promotional_Service_domain+url);
 		}
 		else if (Type.equals("Promotional_Service_GetReferradetailsAPI")){
 			RestAssured.baseURI=url_Promotional_Service_domain;

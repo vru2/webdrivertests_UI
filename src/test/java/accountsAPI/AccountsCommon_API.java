@@ -50,7 +50,7 @@ public class AccountsCommon_API extends PlatformCommonUtil
 	String url_Acct_Service="http://accounts-service-api.cltp.com:9001";
 	
 	String url_Promotional_Service="http://172.17.64.185:8337";
-	String url_Promotional_Service_domain ="http://promotional-service-api.platform:8337";
+	String url_Promotional_Service_domain ="http://promotional-service-api.cltp.com:9001";
 	
 	String 	url_Acct_Service_gateway="https://platformqa2.cleartrip.com";
 

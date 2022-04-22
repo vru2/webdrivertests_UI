@@ -269,17 +269,43 @@
 	<test name="Accounts-Service-MobileLogin" parallel="true">
 		<classes>
 			<class name="accountsAPI.Account_Service_MobileLogin_sendOTP_SIGNIN" />
-			<class name="accountsAPI.Account_Service_MobileLogin_sendOTP_UPDATE_MOBILE" />
-			<class name="accountsAPI.Account_Service_MobileLogin_sendEmail_SIGNUP_MERGE" />
+			<class
+				name="accountsAPI.Account_Service_MobileLogin_sendOTP_UPDATE_MOBILE" />
+			<class
+				name="accountsAPI.Account_Service_MobileLogin_sendEmail_SIGNUP_MERGE" />
 			<class name="accountsAPI.Account_Service_MobileLogin_verifyOTP_SignIn" />
-			<class name="accountsAPI.Account_Service_MobileLogin_verifyOTP_SIGNUP_MERGE" />
-			<class name="accountsAPI.Account_Service_MobileLogin_verifyOTP_UPDATE_MOBILE" />
+			<class
+				name="accountsAPI.Account_Service_MobileLogin_verifyOTP_SIGNUP_MERGE" />
+			<class
+				name="accountsAPI.Account_Service_MobileLogin_verifyOTP_UPDATE_MOBILE" />
 			<class name="accountsAPI.Account_Service_MobileLogin_NudgePersonaldetails" />
 			<class name="accountsAPI.Account_Service_MobileLogin_NudgeUpdateMobile" />
-			<class name="accountsAPI.Account_Service_MobileLoginUpdatePersonaldetailsApi" />
-			<class name="accountsAPI.Account_Service_MobileLogin_UserexistenceByMobileNo" />
+			<class
+				name="accountsAPI.Account_Service_MobileLoginUpdatePersonaldetailsApi" />
+			<class
+				name="accountsAPI.Account_Service_MobileLogin_UserexistenceByMobileNo" />
 			<class name="accountsAPI.Account_Service_MobileLogin_FetchOldCTusersApi" />
-			
+			<class
+				name="accountsAPI.Account_Service_MobileLogin_sendOTP_SIGNIN_withAppAgent" />
+
+		</classes>
+	</test>
+	<test name="Promotional-Service-Hifive" parallel="true">
+		<classes>
+			<class name="accountsAPI.Promotional_Service_healthTestAPI" />
+			<class name="accountsAPI.Promotional_Service_ValidatereferralLink" />
+			<class name="accountsAPI.Promotional_Service_GetReferradetailsHQ" />
+			<class name="accountsAPI.Promotional_Service_GetReferradetailsAPI" />
+			<class name="accountsAPI.Promotional_Service_GenerateReferralLink" />
+			<class name="accountsAPI.Promotional_Service_SavenudgeAPI" />
+			<class
+				name="accountsAPI.Promotional_Service_GetReferradetailsAPIwithRoutes" />
+			<class
+				name="accountsAPI.Promotional_Service_GenerateReferralLink_InvalidAuth" />
+			<class name="accountsAPI.Promotional_Service_ValidateInvalidReferralLink" />
+			<class
+				name="accountsAPI.Promotional_Service_GenerateReferralLink_InvalidAuth" />
+
 		</classes>
 	</test>
 

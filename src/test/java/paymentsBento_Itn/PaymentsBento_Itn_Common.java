@@ -1418,25 +1418,80 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			Reporter.log("Deselected wallet");
 			Thread.sleep(2000);
 		}
-		payUI_Select_PaymentType(driver, "NB");		
-		Reporter.log("Clicked on NB");
-		Thread.sleep(1000);
-		safeClick(driver, getObjectPayment("Bento_Payment_NB_ICIC"));
-		Reporter.log("Selected ICIC Bank");
-		safeClick(driver, getObjectPayment("Bento_Payment_Paynow")); 
-		
 		if(PayType.contains("Coupon")) {
 			// Invalid Coupon Validation	
+			String Coupon_Value = "No Coupon";
+			for(int i=3; i<=14; i++) {
+				i = i+1;
+				String PriceBreakup_Xpath = "//div["+i+"]/p";
+				String CouponText = getText(driver, By.xpath(PriceBreakup_Xpath));
+				if(CouponText.contains("Coupon code")) {
+					String CouponPrice_Xpath = "//div["+i+"]/p[2]";
+					Coupon_Value = getText(driver, By.xpath(CouponPrice_Xpath));
+					break;
+				}
+				}
+			bento_Select_PaymentType(driver, "NB");
+			Reporter.log("Clicked on NB");
+			safeClick(driver, getObjectPayment("Bento_Payment_NB_ICIC"));
+			safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
+			
+			elementVisible(driver, By.xpath("//div[3]/div/p"), 10);
+			String InvalidCoupon_Msg = getText(driver, By.xpath("//div[3]/div/p"));   
+			String Total_Price = getText(driver, By.xpath("//p[2]/span"));   
+			String ButtonAnyway_Text = getText(driver, By.xpath("//form/button"));   
+			String Coupon_Value_Popup = "";  
+			 
+		
+			if (InvalidCoupon_Msg.length() > 4) 
+			{
+				Coupon_Value_Popup = InvalidCoupon_Msg.substring(InvalidCoupon_Msg.length() - 4);
+			} 
+			else
+			{
+				Coupon_Value_Popup = InvalidCoupon_Msg;
+			}
+			Coupon_Value_Popup= Coupon_Value_Popup.replace("₹", "").replace(".", "");
+
+			ButtonAnyway_Text= ButtonAnyway_Text.replace("Book anyway at ", "").replace(",", "").replace("₹", "");
+			InvalidCoupon_Msg= InvalidCoupon_Msg.replace(".", "");
+			Total_Price= Total_Price.replace("₹", "").replace(",", "");
+			Coupon_Value=Coupon_Value.replace("₹", "").replace("- ", "");
+			
+			int Coupon_Value_Breakup = Integer.parseInt(Coupon_Value);
+			int Price_Without_Coupon = Integer.parseInt(ButtonAnyway_Text);
+			int Coupon_Value_Popup_Int = Integer.parseInt(Coupon_Value_Popup);
+			int Total_Price_Int = Integer.parseInt(Total_Price);
+
+			Reporter.log( "Total_Price_Int "+Total_Price_Int);
+			Reporter.log( "Coupon_Value_Breakup "+Coupon_Value_Breakup);
+			Reporter.log( "Price_Without_Coupon "+Price_Without_Coupon);
+			Reporter.log("Coupon_Value_Popup "+Coupon_Value_Popup_Int);
+			
+			if(Coupon_Value_Breakup!=Coupon_Value_Popup_Int) {
+				Reporter.log("Coupon in Price Brekup "+Coupon_Value_Breakup+" & Coupon "+Coupon_Value_Popup_Int+" in Invalid Coupon Popup are not matching");
+				Assert.assertTrue(false);
+			}
+			
+			if(Price_Without_Coupon!=(Coupon_Value_Breakup+Total_Price_Int)) {
+				Reporter.log("Price Without Coupon  "+Price_Without_Coupon+"is not equal to Sum of Coupon Value in Breakup "+Coupon_Value_Breakup+" Total amount after coupon Discount "+Total_Price_Int);
+				Assert.assertTrue(false);
+			}
+			
 			textPresent_Log(driver, "Coupon not applicable", 5);
 			elementPresent_log(driver, getObjectPayment("Bento_Pay_Coupon_Popup_Close_Btn"), "invaid coupon Pop Up not displayed",	1);
 			safeClick(driver, By.xpath("//button[2]")); // Clicking on Change paymentMode
 			Thread.sleep(2000);
 			textNotPresent_Log(driver, "Coupon not applicable", 5);
 		//	bento_Select_PaymentType(driver, "CC");			
+			
 			bento_Select_PaymentType(driver, "NB");
+			Reporter.log("Clicked on NB");
 			safeClick(driver, getObjectPayment("Bento_Payment_NB_ICIC"));
 			safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
-			textPresent_Log(driver, "Coupon not applicable", 5);		
+				
+			
+			Thread.sleep(2000);
 			elementPresent_log(driver, getObjectPayment("Bento_Pay_Coupon_Popup_Close_Btn"), "",	1);
 			safeClick(driver, By.xpath("//form/button")); // Clicking on Continue without coupon paymentMode
 			Reporter.log("Clicked on paynow");

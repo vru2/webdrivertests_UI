@@ -15,10 +15,13 @@ public class IN_NB_Retry extends PaymentsBento_Itn_Hotels_Common {
 
 	@Test
 	public void Hotel_IN_NB() throws Exception {
-		driver.manage().deleteAllCookies();
+	/*	driver.manage().deleteAllCookies();
 		driver.get(hotelDetailsUrl("IN","sri-balaji-paradise-2626774"));
 		hotelsDetailsPage(driver, "", "");
-		hotelsItnPage(driver, "", "", "", "");
+		hotelsItnPage(driver, "", "", "", "");*/
+
+		driver.get("https://qa2.cleartrip.com/pay/hotel/UV1WdUVARBNEMDIyUQ==?lang=en");
+		
 		hotelsPaymentPage(driver,"NB","","","Retry","");
 	} 
 

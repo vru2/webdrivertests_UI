@@ -1437,6 +1437,8 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
 			
 			elementVisible(driver, By.xpath("//div[3]/div/p"), 10);
+
+			if(!domain.equalsIgnoreCase("Hotels")) {
 			String InvalidCoupon_Msg = getText(driver, By.xpath("//div[3]/div/p"));   
 			String Total_Price = getText(driver, By.xpath("//p[2]/span"));   
 			String ButtonAnyway_Text = getText(driver, By.xpath("//form/button"));   
@@ -1477,7 +1479,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 				Reporter.log("Price Without Coupon  "+Price_Without_Coupon+"is not equal to Sum of Coupon Value in Breakup "+Coupon_Value_Breakup+" Total amount after coupon Discount "+Total_Price_Int);
 				Assert.assertTrue(false);
 			}
-			
+			}
 			textPresent_Log(driver, "Coupon not applicable", 5);
 			elementPresent_log(driver, getObjectPayment("Bento_Pay_Coupon_Popup_Close_Btn"), "invaid coupon Pop Up not displayed",	1);
 			safeClick(driver, By.xpath("//button[2]")); // Clicking on Change paymentMode
@@ -1498,6 +1500,12 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			
 		}
 		else if(PayType.contains("Retry")) {
+
+			bento_Select_PaymentType(driver, "NB");
+			Reporter.log("Clicked on NB");
+			safeClick(driver, getObjectPayment("Bento_Payment_NB_ICIC"));
+			safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
+			
 			safeClick(driver, getObjectPayment("Bento_Payment_NB_Payment_Failure"));
 			elementPresent_log(driver, getObjectPayment("Bento_Payment_Paynow"),"Pay button in retry page", 30); 
 			textPresent_Log(driver, "Oops! Your payment failed. If you were charged, any amount deducted will be reversed", 1);

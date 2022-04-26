@@ -19,7 +19,7 @@ public class IN_Coupon_Invalid_NB extends PaymentsBento_Itn_Hotels_Common {
 		driver.get(hotelDetailsUrl("IN","sri-balaji-paradise-2626774"));
 		hotelsDetailsPage(driver, "", "");
 		hotelsItnPage(driver, "COUPONCC", "", "", "");
-		hotelsPaymentPage(driver,"NB","","","Coupon","");// Invalid Coupon Validation
+		hotelsPaymentPage(driver,"NB","","Hotels","Coupon","");// Invalid Coupon Validation
 		} 
 
  		@AfterClass

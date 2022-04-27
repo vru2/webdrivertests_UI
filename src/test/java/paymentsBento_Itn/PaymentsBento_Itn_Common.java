@@ -43,8 +43,8 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	
 
 
-	String GV_number = "3000331036453430";
-	String GV_pin = "152279";
+	String GV_number = "3000331036544999";
+	String GV_pin = "104573";
 
 	JavascriptExecutor jse = (JavascriptExecutor) driver;
 	String contactnumber = "12345678";
@@ -490,24 +490,24 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 				 WebElement ele=driver.findElement(getObjectPayment("Bento_Itn_Fare1_Continue"));
 					ele.sendKeys(Keys.END);
 					Thread.sleep(4000);
-					elementVisible(driver,getObjectPayment("Bento_Itn_Fare1_Continue"),5);
+					elementVisible(driver,getObjectPayment("Bento_Itn_Fare1_Continue"), 1);
 	                safeClick(driver,getObjectPayment("Bento_Itn_Fare1_Continue"));
 					Reporter.log("Clicked on continue"); 
 			 }
-			 else if(elementVisible(driver,getObjectPayment("Bento_Itn_Fare_Continue2"),5))
+			 else if(elementVisible(driver,getObjectPayment("Bento_Itn_Fare_Continue2"),1))
 			 {
 			  WebElement ele=driver.findElement(getObjectPayment("Bento_Itn_Fare_Continue2"));
 				ele.sendKeys(Keys.END);
 				Thread.sleep(4000);
-				elementVisible(driver,getObjectPayment("Bento_Itn_Fare_Continue2"),5);
+				elementVisible(driver,getObjectPayment("Bento_Itn_Fare_Continue2"),1);
                 safeClick(driver,getObjectPayment("Bento_Itn_Fare_Continue2"));
 				Reporter.log("Clicked on continue"); 
 			 }
 			 else  {
-				 WebElement ele=driver.findElement(getObjectPayment("Bento_Itn_Fare_Continue"));
+				 	WebElement ele=driver.findElement(getObjectPayment("Bento_Itn_Fare_Continue"));
 					ele.sendKeys(Keys.END);
 					Thread.sleep(4000);
-					elementVisible(driver,getObjectPayment("Bento_Itn_Fare_Continue"),5);
+					elementPresent_log(driver,getObjectPayment("Bento_Itn_Fare_Continue"),"Itinerary contiue btn",5);
 	                safeClick(driver,getObjectPayment("Bento_Itn_Fare_Continue"));
 					Reporter.log("Clicked on continue"); 
 			 }
@@ -1519,6 +1519,10 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			textPresent(driver, "Please wait...", 2);
 			textPresent_Log(driver, "Welcome to Razorpay Software Private Ltd Bank", 20);
 		}
+		bento_Select_PaymentType(driver, "NB");
+		Reporter.log("Clicked on NB");
+		safeClick(driver, getObjectPayment("Bento_Payment_NB_ICIC"));
+		safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
 		textPresent(driver, "Please wait...", 2);
 		textPresent_Log(driver, "Welcome to Razorpay Software Private Ltd Bank", 20);
 		safeClick(driver, getObjectPayment("Bento_Payment_NB_Payment_Success"));

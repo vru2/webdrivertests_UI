@@ -503,6 +503,18 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
                 safeClick(driver,getObjectPayment("Bento_Itn_Fare_Continue2"));
 				Reporter.log("Clicked on continue"); 
 			 }
+			 else if(elementVisible(driver,getObjectPayment("Bento_Itn_Fare_Continue3"),1))
+			 {
+			  WebElement ele=driver.findElement(getObjectPayment("Bento_Itn_Fare_Continue3"));
+				ele.sendKeys(Keys.END);
+				Thread.sleep(4000);
+				elementVisible(driver,getObjectPayment("Bento_Itn_Fare_Continue3"),1);
+                safeClick(driver,getObjectPayment("Bento_Itn_Fare_Continue3"));
+				Reporter.log("Clicked on continue"); 
+			 }
+			 
+			  
+			 
 			 else  {
 				 	WebElement ele=driver.findElement(getObjectPayment("Bento_Itn_Fare_Continue"));
 					ele.sendKeys(Keys.END);
@@ -1518,15 +1530,6 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			safeClick(driver, getObjectPayment("Bento_Payment_Paynow")); 
 			textPresent(driver, "Please wait...", 2);
 			textPresent_Log(driver, "Welcome to Razorpay Software Private Ltd Bank", 20);
-		}
-		
-		if(!BankName.equalsIgnoreCase("InvalidCoupon")) {
-		
-		bento_Select_PaymentType(driver, "NB");
-		Reporter.log("Clicked on NB");
-		safeClick(driver, getObjectPayment("Bento_Payment_NB_ICIC"));
-		safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
-		textPresent(driver, "Please wait...", 2);
 		}
 		textPresent_Log(driver, "Welcome to Razorpay Software Private Ltd Bank", 20);
 		safeClick(driver, getObjectPayment("Bento_Payment_NB_Payment_Success"));

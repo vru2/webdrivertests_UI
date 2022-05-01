@@ -1519,11 +1519,15 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			textPresent(driver, "Please wait...", 2);
 			textPresent_Log(driver, "Welcome to Razorpay Software Private Ltd Bank", 20);
 		}
+		
+		if(!BankName.equalsIgnoreCase("InvalidCoupon")) {
+		
 		bento_Select_PaymentType(driver, "NB");
 		Reporter.log("Clicked on NB");
 		safeClick(driver, getObjectPayment("Bento_Payment_NB_ICIC"));
 		safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
 		textPresent(driver, "Please wait...", 2);
+		}
 		textPresent_Log(driver, "Welcome to Razorpay Software Private Ltd Bank", 20);
 		safeClick(driver, getObjectPayment("Bento_Payment_NB_Payment_Success"));
 		Reporter.log("Payment done successfully");
@@ -1801,7 +1805,6 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		}
 		if(CardNumber.equalsIgnoreCase("Hotel")) {
 			textPresent_Log(driver, "Coupon code (HOTELTEST123)", 2);
-			
 		}
 		elementVisible(driver, getObjectPayment("Bento_Payment_Paynow"), 2);
 		smartClick(driver, getObjectPayment("Bento_Payment_Select_Storedcard"));

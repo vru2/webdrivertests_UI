@@ -25,8 +25,8 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 	String omurl = "https://qa2om.cleartrip.com";
 	String meurl = "https://qa2me.cleartrip.com";
 
-	String GV_number = "3000331036453430";
-	String GV_pin = "152279";
+	String GV_number = "3000331034254943";
+	String GV_pin = "158662";
 	String hotelPrice_Itinerary = null;
 	String hotelPrice_PaymentPage = null;
 	

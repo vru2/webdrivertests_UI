@@ -16,7 +16,7 @@ public class IN_GV_Wallet_Amex_Partial extends PaymentsBento_Itn_Hotels_Common {
 	@Test
 	public void Hotel_IN_WL_GV_CC_Amex() throws Exception {
 		driver.manage().deleteAllCookies();
-		driver.get(hotelDetailsUrl("IN","sri-balaji-paradise-2626774"));
+		driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
 		driver.manage().addCookie(hotelLogin);
 		addwalletamount(10, "ct_wallet_partial@cleartrip.com");
 		hotelsDetailsPage(driver, "", "");

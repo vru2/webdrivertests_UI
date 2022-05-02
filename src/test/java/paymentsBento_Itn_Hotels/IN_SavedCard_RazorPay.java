@@ -16,7 +16,7 @@ public class IN_SavedCard_RazorPay extends PaymentsBento_Itn_Hotels_Common {
 	@Test
 	public void Hotel_IN_SC_Razorpay() throws Exception {
 		driver.manage().deleteAllCookies();
-		driver.get(hotelDetailsUrl("IN","sri-balaji-paradise-2626774"));
+		driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
 		driver.manage().addCookie(ctauth_partial_wallet);
 		hotelsDetailsPage(driver, "", "");
 		hotelsItnPage(driver, "", "", "", "");

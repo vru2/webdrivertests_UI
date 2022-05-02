@@ -20,7 +20,7 @@ public class IN_Wallet_Full extends PaymentsBento_Itn_Hotels_Common {
 	@Test
 	public void Hotel_IN_Wallet_Full() throws Exception {
 		driver.manage().deleteAllCookies();
-		driver.get(hotelDetailsUrl("IN","sri-balaji-paradise-2626774"));
+		driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
 		addwalletamount(5000, "testcltp29@gmail.com");
 		driver.manage().addCookie(ctauth);
 		refreshPage(driver);

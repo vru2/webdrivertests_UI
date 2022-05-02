@@ -16,7 +16,7 @@ public class IN_Coupon_Valid extends PaymentsBento_Itn_Hotels_Common {
 	@Test
 	public void Hotel_IN_ValidCoupon() throws Exception {
 		driver.manage().deleteAllCookies();
-		driver.get(hotelDetailsUrl("IN","sri-balaji-paradise-2626774"));
+		driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
 		hotelsDetailsPage(driver, "", "");
 		hotelsItnPage(driver, "COUPONCC", "", "", "");
 		hotelsPaymentPage(driver,"Coupon","Hotel","","","");

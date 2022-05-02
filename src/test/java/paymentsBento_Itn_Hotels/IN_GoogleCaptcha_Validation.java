@@ -17,7 +17,7 @@ public class IN_GoogleCaptcha_Validation extends PaymentsBento_Itn_Hotels_Common
 	@Test
 	public void Hotel_IN_GoogleCaptcha() throws Exception {
 		driver.manage().deleteAllCookies();
-		driver.get(hotelDetailsUrl("IN","sri-balaji-paradise-2626774"));
+		driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
 		hotelsDetailsPage(driver, "", "");
 		hotelsItnPage(driver, "", "", "", "");
 		hotelsPaymentPage(driver,"CC","INVALID","","Googlecaptcha",""); 

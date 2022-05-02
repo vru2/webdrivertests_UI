@@ -30,6 +30,8 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 	String hotelPrice_Itinerary = null;
 	String hotelPrice_PaymentPage = null;
 	
+	String hotelName_DetailsPage = "holiday-inn-express-suites-bengaluru-racecourse-2052760";
+	
 	public String hotelSearchUrl(String Domain)  throws Exception
 	{	
 		Hotel_URL= "/hotels/results?city=Bangalore&state=Karnataka&country=IN&poi=&hotelId=&dest_code=32550&chk_in="+getDateTime(10, "dd/MM/yyyy")+"&chk_out="+getDateTime(11, "dd/MM/yyyy")+"&adults=2&childs=0&num_rooms=1&adults1=2&children1=0&";
@@ -78,9 +80,9 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 			if (!parent.equals(child_window)) 
 			{
 				driver.switchTo().window(child_window);
-				Thread.sleep(5000);
+				Thread.sleep(2000);
 				driver.navigate().to(driver.getCurrentUrl());
-				Thread.sleep(5000);
+				Thread.sleep(2000);
 				Reporter.log(driver.switchTo().window(child_window).getCurrentUrl());
 				}
 			Reporter.log(driver.switchTo().window(child_window).getCurrentUrl());

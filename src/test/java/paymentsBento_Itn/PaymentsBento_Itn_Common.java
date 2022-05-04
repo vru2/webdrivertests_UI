@@ -1234,12 +1234,6 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		if(CardNumber=="4111") {	
 			payUI_Enter_PaymentDetails(driver, "CC", "RAZORPAYDC","");
 			Thread.sleep(1000);
-			/*if (textPresent(driver, "Cleartrip wallet", 1)) 
-			{
-				safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
-				Reporter.log("Deselected wallet");
-				Thread.sleep(2000);
-			}*/
 			if(textPresent(driver, "Your wallet balance is sufficient", 2)) {
 				safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
 				Reporter.log("Deselected wallet");
@@ -1253,6 +1247,13 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			{
 			safeClick(driver,getObjectPayment("Bento_Payment_Skip_Securecard"));
 			}
+			if(textPresent(driver, "Bank Demo", 20)) {
+			if(elementVisible(driver, By.xpath("//button[@onclick='submitSuccess()']"), 5))
+			{
+			safeClick(driver, By.xpath("//button[@onclick='submitSuccess()']"));
+			}
+			}
+			else {
 			textPresent(driver, "Welcome to Razorpay Software Private Ltd Bank", 2);
 			if(elementVisible(driver, getObjectPayment("Bento_Payment_DC_Payment_Success"), 5))
 			{
@@ -1264,6 +1265,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 				driver.findElement(By.xpath("//input[@type='tel']")).sendKeys("1111");
 				driver.findElement(By.xpath("//button[@id='submit-action']/span")).click();
 			}
+			}		
 			textPresent_Log(driver, "Your booking is done",10);
 			Reporter.log("Payment done successfully");
 		}

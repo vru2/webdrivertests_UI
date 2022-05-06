@@ -1533,6 +1533,16 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			textPresent(driver, "Please wait...", 2);
 			textPresent_Log(driver, "Welcome to Razorpay Software Private Ltd Bank", 20);
 		}
+		
+		else {
+
+			payUI_Select_PaymentType(driver, "NB");		
+			Reporter.log("Clicked on NB");
+			Thread.sleep(1000);
+			safeClick(driver, getObjectPayment("Bento_Payment_NB_ICIC"));
+			Reporter.log("Selected ICICI Bank");
+			safeClick(driver, getObjectPayment("Bento_Payment_Paynow")); 
+		}
 		textPresent_Log(driver, "Welcome to Razorpay Software Private Ltd Bank", 20);
 		safeClick(driver, getObjectPayment("Bento_Payment_NB_Payment_Success"));
 		Reporter.log("Payment done successfully");

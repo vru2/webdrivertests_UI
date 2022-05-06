@@ -23,6 +23,7 @@ public class Bento_IN_Partial_GV_Booking extends PaymentsBento_Itn_Common{
 	    Searchpagebook(driver,"","com","");
 	    book_itnnew(driver,"GV_Partial");	    
 	    paymentPage(driver,"GV_Partial","","","",""); 	
+		compare_fares(driver);	
 	}
 	
 	@AfterClass

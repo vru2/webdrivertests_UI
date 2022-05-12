@@ -2311,18 +2311,23 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			}
 		}
 		else if(payType.equalsIgnoreCase("IR_Create_Refund")) {
-			
-			if(!(resp.body().asString().contains("Partial Refund Initiated"))){
-				Assert.assertTrue(false);
+		//	if(!(resp.body().asString().contains("Refund Partially Initiated"))){
+				
+			if(!(resp.body().asString().contains("Refund Initiated"))){
+					Assert.assertTrue(false);
 			}
 		}
 		else if(payType.equalsIgnoreCase("IR_Fetch_Cancel_Details_CancelTnx")) {
-			if(!(resp.body().asString().contains("65201137"))){
+			//if(!(resp.body().asString().contains("65201137"))){
+			if(!(resp.body().asString().contains("32XX467@@okhdfcbank"))){
 				Assert.assertTrue(false);
 			}
 		}
 		else if(payType.equalsIgnoreCase("IR_Fetch_Cancel_Details_UserID")) {
 			if(!(resp.body().asString().contains("65201137"))){
+				if(!(resp.body().asString().contains("65201137"))){
+						
+				Refund Initiated
 				Assert.assertTrue(false);
 			}
 		}
@@ -5930,8 +5935,9 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			if(status.equalsIgnoreCase("ACTIVE")){
 				List<HashMap<String,Object>> status_promo = jsonPathEvaluator.get("promotions");
 				for(HashMap<String,Object> m : status_promo){
-					if(m.get("status").equals("ACTIVE"))
-						isMatching = true;
+					//	if(m.get("status").equals("ACTIVE"))
+					if(m.get("status").equals("PROMOTION_ALREADY_PROCESSED"))
+								isMatching = true;
 					else
 						isMatching=false;
 				}

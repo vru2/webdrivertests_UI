@@ -16,6 +16,15 @@
 </test>
 
 
+
+<test name="Hi-5" preserve-order="true" parallel="true">
+    <classes>
+      <class name="paymentsAPI.API_Navison_CC"/>
+      <class name="paymentsAPI.API_Navison_Air"/>      
+    </classes>
+</test>
+
+
 <test name="Instant Refund" preserve-order="true" parallel="true">
     <classes>    
       <class name="paymentsAPI.API_IR_Get_Eligibility"/> 

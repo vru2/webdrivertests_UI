@@ -270,6 +270,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 	String urlpromoUsed = "/payments/wallet/promo/used?tripRef=Q190702311622";
 	String urlFetchTripStatus = "/paymentservice/service/status/xml/Q210302910382.ref";
 	String urlFetchGWFailure = "/paymentservice/bannerDetails";
+	String urlHi5_Fetch_Wallet = "/pay/wallet?userId=65218660&currency=INR";
+	String urlHi5_Fetch_WalletTnx = "/pay/wallet/5758972/transactions?offset=1&size=10";
 	
 	
 	String urlSuperCoins_MobileLinked= "/payments/rewards/supercoins/checkAccountLinked?mobileNumber=+919986696785";
@@ -824,7 +826,19 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		if(payType.equalsIgnoreCase("PromoActive")) {
 			url= urlpromoActivate;
 		}
-
+		else if(payType.equalsIgnoreCase("Hi_5_get_walletTnx")) {
+			RestAssured.baseURI =url_QA2;
+			Reporter.log(url_QA2);	
+			System.out.println(url_QA2);	
+			url= urlHi5_Fetch_WalletTnx;
+		}
+		
+		else if(payType.equalsIgnoreCase("Hi_5_get_wallet")) {
+			RestAssured.baseURI =url_QA2;
+			Reporter.log(url_QA2);	
+			url= urlHi5_Fetch_Wallet;
+		}
+		
 		else if(payType.equalsIgnoreCase("EMIBanks")) {
 			RestAssured.baseURI =urlPay;
 			Reporter.log(urlPay);	
@@ -2265,6 +2279,29 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 				Assert.assertTrue(false);
 			}
 		}
+		
+		else if(payType.equalsIgnoreCase("Hi_5_get_walletTnx")) {
+			/*String errorMessage = jsonPathEvaluator.getString("errorMessage");
+			Reporter.log("errorMessage " +errorMessage);
+			
+			if(!errorMessage.equals("duplicate request")) {
+				Assert.assertTrue(false);
+			}*/
+			Assert.assertTrue(false);
+		}
+	
+		
+		else if(payType.equalsIgnoreCase("Hi_5_get_wallet")) {
+			/*String errorMessage = jsonPathEvaluator.getString("errorMessage");
+			Reporter.log("errorMessage " +errorMessage);
+			
+			if(!errorMessage.equals("duplicate request")) {
+				Assert.assertTrue(false);
+			}*/
+			Assert.assertTrue(false);
+		}
+	
+		
 		else if(payType.equalsIgnoreCase("IR_Save_VPA")) {
 			String errorMessage = jsonPathEvaluator.getString("errorMessage");
 			Reporter.log("errorMessage " +errorMessage);

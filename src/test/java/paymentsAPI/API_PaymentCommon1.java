@@ -2325,11 +2325,10 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		}
 		else if(payType.equalsIgnoreCase("IR_Fetch_Cancel_Details_UserID")) {
 			if(!(resp.body().asString().contains("65201137"))){
-				if(!(resp.body().asString().contains("65201137"))){
-						
-				Refund Initiated
+				if(!(resp.body().asString().contains("Refund Initiated"))){
 				Assert.assertTrue(false);
 			}
+		}
 		}
 		else if(payType.equalsIgnoreCase("IR_Valid_VPA")) {
 			String accountHolderName = jsonPathEvaluator.getString("accountHolderName");
@@ -4046,6 +4045,7 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			Assert.assertTrue(false);
 		}
 	}
+		
 		return resp;	
 	}
 

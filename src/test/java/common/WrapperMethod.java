@@ -193,7 +193,7 @@ public class WrapperMethod extends CommonUtil {
 
 		else driver = new ChromeDriver(this.createHeadlessChromeMobile());
 
-		Dimension dimension = new Dimension(220, 1000);
+		Dimension dimension = new Dimension(360, 800);
 		driver.manage().window().setSize(dimension);
 		return driver;
 

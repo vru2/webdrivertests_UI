@@ -99,6 +99,13 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		return Domain_URL+Air_URL;
 	}
 	
+	
+	protected String searchurl_PWA(String Domain)  throws Exception
+	{
+		
+		String URL = "https://qa2.cleartrip.com/flights/results?adults=1&childs=0&class=Economy&depart_date=04%2F06%2F2022&from=BLR&from_header=Bangalore%2C+IN+-+Kempegowda+International+Airport&infants=0&to=BOM&to_header=Mumbai%2C+IN+-+Chatrapati+Shivaji+Airport";
+		return URL;
+	}
 
 	public void addwalletamount(int amount, String emailID) throws Exception
 	{
@@ -531,7 +538,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			 
 			 }
 			 
-			 else
+			 else if(elementVisible(driver,getObjectPayment("Bento_Itn_Fare_Continue4"),1))
 			 {
 				 	WebElement ele=driver.findElement(getObjectPayment("Bento_Itn_Fare_Continue4"));
 					ele.sendKeys(Keys.END);
@@ -1062,7 +1069,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	
 	public void confirmation_page_air(RemoteWebDriver driver, String PaymentType, String CardNumber) throws Exception {
 		elementPresent_log(driver, By.linkText("Get your ticket"), "Get your ticket", 30);
-		textPresent_Log(driver, "You just booked", 2);
+		textPresent_Log(driver, "Your booking is done", 2);
 		textPresent_Log(driver, "Travelers in this trip", 2);
 		textPresent_Log(driver, "Itinerary sent", 2);
 /*		textPresent_Log(driver, "PAYMENT RECEIPT", 2);
@@ -1070,7 +1077,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		textPresent_Log(driver, "RATE BREAK UP", 2);*/
 		/* textPresent_Log(driver,"Convenience Fee",2); */
 		textPresent_Log(driver, "Total", 2);
-		textPresent_Log(driver, "Travel plans change often.", 2);
+	//	textPresent_Log(driver, "Travel plans change often.", 2);
 		String tripid = driver.findElement(getObjectPayment("Bento_Confirmation_Page_Gettrip")).getText();
 		System.out.println(PaymentType+" "+CardNumber+" : "+tripid);
 		Reporter.log(PaymentType+" "+CardNumber+" : "+tripid);

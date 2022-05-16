@@ -27,7 +27,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	public RemoteWebDriver driver;
 	public Cookie cookie_Bento_Payment = new Cookie("isBentoPayment", "true");
     public Cookie ctauth_amex=new Cookie("ct-auth","2%2BtU1cPb8lJr0jvLEAtykB9OU0fk%2F%2BykRqo7fqGZ%2FgNdUi7dMNUxWo%2BLayLyBmIQH8YOfEGj8AeevvMX%2F4QnQkvAnTTp9N%2FfevCUsB0kyv34RHOgDXRfdndn%2FWd0KOXhimPy3b9gj7V56t4fbK1hHoIzQYBzwMa%2Fi72%2FqTSKtPUlKo9yE91%2BeAEj2Bi%2FZIx%2FcqFKCJETXpAxsR3%2FhUWMrg%3D%3D");
-    protected String username = "varalakshmi.venkateshaiah@cleartrip.com";
+    protected String username = "testcltp29@gmail.com";
 	//public Cookie ctauth_partial_wallet = new Cookie("ct-auth","FPFASUH3u8BIfPi6n5SA9LXbDIclCp0%2BkRN%2Fw9pKarLL3y3qdEGiZQIuqxIl9f3EH8YOfEGj8AeevvMX%2F4QnQu5pne5K5EHLAFvUZ60PN8K8qX%2FBnweQFNfqHv2MpXaBWdVRYJKk4obdFibGNlCsKQmjgQzzYO8qxSqmDKTEZk5nFNSZ6oZBVnN8BGz7Phhf");
 
     public Cookie ctauth_partial_wallet = new Cookie("ct-auth","Z%2FfqEo%2FlSIUo2k%2FTgXj6nYmv9%2BvNsT8%2BDAn%2Bh0HGI15md%2F6HiX4VtDrXHvXjARZLuQmW3NiUZma8q2lELnUuyC3uAF5DaTQONdJlLn%2FO2md2nbUa45ssUlijxS%2BlNzPHOwS99dGemy2IQP232BHiets8QNnEll1tMV0a%2BqYXYe4eGH%2Bx2Ia1v%2Be9QkHxMGhkMZUn5z1e1Bmsmw4OYW7cgw%3D%3D");

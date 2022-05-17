@@ -2313,13 +2313,13 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 		else if(payType.equalsIgnoreCase("IR_Create_Refund")) {
 		//	if(!(resp.body().asString().contains("Refund Partially Initiated"))){
 				
-			if(!(resp.body().asString().contains("Refund Initiated"))){
+			if(!(resp.body().asString().contains("Refund Partially Initiated"))){
 					Assert.assertTrue(false);
 			}
 		}
 		else if(payType.equalsIgnoreCase("IR_Fetch_Cancel_Details_CancelTnx")) {
 			//if(!(resp.body().asString().contains("65201137"))){
-			if(!(resp.body().asString().contains("32XX467@@okhdfcbank"))){
+			if(!(resp.body().asString().contains("3212467@okhdfcbank"))){
 				Assert.assertTrue(false);
 			}
 		}
@@ -2371,7 +2371,8 @@ public class API_PaymentCommon1 extends domains.PlatformCommonUtil
 			if(!OS.equals("true")) {
 				Assert.assertTrue(false);
 			} 
-			if(!AS.equals("true")) {
+			if(!AS.equals("false")) {
+
 				Assert.assertTrue(false);
 			}  
 			

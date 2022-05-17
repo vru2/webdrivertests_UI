@@ -70,14 +70,14 @@ public class API_PromoService extends API_PaymentCommon1 {
 		//validation_PromoService("CreatePromo", resp);
 	}
 	
-	
+/*	
 	@Test(priority=10,dependsOnMethods = { "createPromo" })
 	public void activatePromo() throws Exception{
 		Response resp = promoPost("ActivatePromo","");
 		validation_PromoService("ActivatePromo", resp);
 	}
 	
-	
+	*/
 	
 /*	@Test(priority=10)
 	public void createPromoGroup() throws Exception{

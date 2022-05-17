@@ -24,12 +24,12 @@ public class API_Reporting_TS_Archived_V3 extends API_PaymentCommon1
 		validation("ReportingTS_Archived_V3_True", resp);
 		}
 
-	@Test (alwaysRun=true)
+/*	@Test (alwaysRun=true)
 	public void Reporting_archivedAPI_New()  {
 		Response resp ;		
 		resp = Reporting("ReportingTS_Archived_V_New", "");
 		validation("ReportingTS_Archived_V_New", resp);
-		}
+		}*/
 	
 	
 	

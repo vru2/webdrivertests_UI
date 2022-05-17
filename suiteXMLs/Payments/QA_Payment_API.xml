@@ -194,13 +194,13 @@
 
 <test name="Wallets"  preserve-order="true" parallel="true" >
     <classes>
-		<class name="paymentsAPI.API_Wallet_RevertedPromo_info"/>		
-		<class name="paymentsAPI.API_Wallet_Promo_CashBackDetails"/>
+		<class name="paymentsAPI.API_Wallet_RevertedPromo_info"/>	
 		<class name="paymentsAPI.API_Wallet_Create"/>			
 		<class name="paymentsAPI.API_Wallet_Get_Wallet_Trnx"/>
 		<class name="paymentsAPI.API_Wallet_GetDeduction"/>
 		<class name="paymentsAPI.API_Wallet_PromoUsed"/>
-		<class name="paymentsAPI.API_Wallet_RevertPromo"/>
+		<class name="paymentsAPI.API_Wallet_RevertPromo"/>	
+		<!-- <class name="paymentsAPI.API_Wallet_Promo_CashBackDetails"/> -->
     </classes>
 </test>
 

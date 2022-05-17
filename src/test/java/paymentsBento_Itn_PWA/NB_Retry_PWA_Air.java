@@ -20,7 +20,6 @@ public class NB_Retry_PWA_Air extends PWA_Air_Common {
 	public void bento_ae_ADCB_Validate() throws Exception {
 		driver.manage().deleteAllCookies();
 		driver.navigate().to(searchurl_PWA("IN"));
-		System.out.println(searchurl("IN"));
 		Reporter.log(searchurl("IN"));
 		PWA_Searchpagebook(driver,"","","");
 		PWA_book_itnnew(driver, "");

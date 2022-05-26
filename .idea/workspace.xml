@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70a5371a-f10c-427d-88b9-06eabdde4fb0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exe/chromedriver_mac" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/accountsAPI/API_Config_Getcall_APIKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/accountsAPI/API_Config_Getcall_APIKey.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/accountsAPI/API_Config_Postcall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/accountsAPI/API_Config_Postcall.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/accountsAPI/Account_Service_AgencyLogo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/accountsAPI/Account_Service_AgencyLogo.java" afterDir="false" />
@@ -1012,8 +1013,13 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -1097,8 +1103,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG./Users/varalakshmi.v/Downloads/Automation/webdrivertests/suiteXMLs/Payments/QA_IN_Payment_Booking_From_Itn.xml" />
-        <item itemvalue="TestNG.TS_Amendment.Tripserviceairputcall" />
         <item itemvalue="TestNG./Users/varalakshmi.v/Downloads/Automation/webdrivertests/suiteXMLs/Services/QA_Tripservices_API.xml" />
+        <item itemvalue="TestNG.TS_Amendment.Tripserviceairputcall" />
         <item itemvalue="TestNG.Accounts_UI_Signin" />
         <item itemvalue="TestNG.Accounts_UI_Signin.getotp" />
       </list>
@@ -1114,5 +1120,16 @@
       <updated>1653285032929</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

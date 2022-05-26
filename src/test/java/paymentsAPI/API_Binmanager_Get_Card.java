@@ -1,7 +1,7 @@
 // Framework - Cleartrip Automation
 // Author - Varalakshmi
 
-package paymentsAPI;
+package test.java.paymentsAPI;
 
 import org.testng.annotations.Test;
 

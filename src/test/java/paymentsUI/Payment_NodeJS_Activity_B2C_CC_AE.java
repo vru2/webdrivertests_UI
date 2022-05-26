@@ -1,7 +1,7 @@
 // Framework - Cleartrip Automation
 // Author - Kiran Kumar
 
-package paymentsUI;
+package test.java.paymentsUI;
 
 import java.security.Timestamp;
 import java.util.Date;
@@ -13,7 +13,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import domains.PaymentNodeJS;
+import test.java.domains.PaymentNodeJS;
 
 	public class Payment_NodeJS_Activity_B2C_CC_AE extends PaymentNodeJS{
 	public RemoteWebDriver driver;

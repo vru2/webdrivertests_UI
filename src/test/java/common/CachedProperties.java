@@ -1,4 +1,4 @@
-package common;
+package test.java.common;
 
 import java.io.FileReader;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package paymentsAPI;
+package test.java.paymentsAPI;
 
 
 import java.io.IOException;

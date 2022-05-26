@@ -1,4 +1,4 @@
-package paymentsUI;
+package test.java.paymentsUI;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -9,7 +9,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
-import paymentsUI_Air.PaymentUI_Common;
+import test.java.paymentsUI_Air.PaymentUI_Common;
 
 
 public class PaymentUI_NB_Citi extends PaymentUI_Common{

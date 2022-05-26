@@ -1,4 +1,4 @@
-package common;
+package test.java.common;
 
 
 import org.testng.IRetryAnalyzer;

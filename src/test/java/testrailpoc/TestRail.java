@@ -1,11 +1,11 @@
-package testrailpoc;
+package test.java.testrailpoc;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
 
 import org.testng.annotations.Test;
 
-import testrail.APIException;
+import test.java.testrail.APIException;
 
 
 public class TestRail {

@@ -1,4 +1,4 @@
-package paymentsBento_Itn;
+package test.java.paymentsBento_Itn;
 
 import static org.testng.Assert.assertTrue;
 
@@ -16,10 +16,10 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Reporter;
 
-import common.CommonUtil;
+import test.java.common.CommonUtil;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import paymentsBento_com.PaymentUI_Common_Bento;
+import test.java.paymentsBento_com.PaymentUI_Common_Bento;
 
 public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	public Cookie ctauthOLD = new Cookie("ct-auth","kQqdrcVR8t4znRp8uzBQJgaacI%2B5mUEhQsXqP%2BGvCv9Sca3PAxik9%2FDoNKFAEq5S6nDr3dyz0gFHshmzL9GNaG4e8msn1sCvUt92FE1Hxz%2B449dUBXvxJapPKHtcbOExsOm%2BE43PNH%2FbzMr%2Bgv0v9PZIafGsbWEbtoycPG3UjA%2BzcqiD2kXHlH7Tnnt7Xdd%2B");

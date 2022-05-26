@@ -1,5 +1,5 @@
 
-package domainServices;
+package test.java.domainServices;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
@@ -47,7 +47,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.Reporter;
 
-import commonServices.WrapperMethod;
+import test.java.commonServices.WrapperMethod;
 
 public class Mobile extends IndiaHotels {
 	public String commonURL;

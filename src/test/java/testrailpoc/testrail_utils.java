@@ -1,10 +1,10 @@
-package testrailpoc;
+package test.java.testrailpoc;
 
-import static common.CachedProperties.cacheUrlInstance;
-import static common.CachedProperties.dataInstance;
-import static common.CachedProperties.dbInstance;
-import static common.CachedProperties.instance;
-import static common.CachedProperties.objectReportInstance;
+import static test.java.common.CachedProperties.cacheUrlInstance;
+import static test.java.common.CachedProperties.dataInstance;
+import static test.java.common.CachedProperties.dbInstance;
+import static test.java.common.CachedProperties.instance;
+import static test.java.common.CachedProperties.objectReportInstance;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -16,9 +16,9 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.testng.ITestResult;
 
-import common.CachedProperties;
-import testrail.APIClient;
-import testrail.APIException;
+import test.java.common.CachedProperties;
+import test.java.testrail.APIClient;
+import test.java.testrail.APIException;
 @SuppressWarnings({ "rawtypes", "unchecked" })
 public class testrail_utils {
 	DefaultHttpClient httpClient=new DefaultHttpClient();

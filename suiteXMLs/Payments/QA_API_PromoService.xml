@@ -3,16 +3,16 @@
 
 <listeners>
 <listener class-name="org.uncommons.reportng.HTMLReporter" />
-<listener class-name="common.RemoveDuplicateResults"/><!-- 
-<listener class-name="common.RetryListener"/> -->
+<listener class-name="test.java.common.RemoveDuplicateResults"/><!--
+<listener class-name="test.java.common.RetryListener"/> -->
 <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
 
 <test name="API Promo service" preserve-order="true" parallel="true">
     <classes>
-      <class name="paymentsAPI.API_PromoService"/> 
-      <class name="paymentsAPI.API_Promo_Activate"/>  
-      <class name="paymentsAPI.API_Promo_Used"/> 
+      <class name="test.java.paymentsAPI.API_PromoService"/>
+      <class name="test.java.paymentsAPI.API_Promo_Activate"/>
+      <class name="test.java.paymentsAPI.API_Promo_Used"/>
     </classes>
 </test>
 

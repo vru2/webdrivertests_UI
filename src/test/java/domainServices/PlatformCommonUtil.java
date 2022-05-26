@@ -1,4 +1,4 @@
-package domainServices;
+package test.java.domainServices;
 
 import static com.jayway.restassured.RestAssured.given;
 
@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.Random;
 import org.testng.Reporter;
 import com.jayway.restassured.response.Response;
-import commonServices.WrapperMethod;
+import test.java.commonServices.WrapperMethod;
 
 public class PlatformCommonUtil extends WrapperMethod {
 

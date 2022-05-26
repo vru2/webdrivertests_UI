@@ -1,4 +1,4 @@
-package paymentsBento_Itn;
+package test.java.paymentsBento_Itn;
 
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;

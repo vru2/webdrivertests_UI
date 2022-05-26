@@ -1,7 +1,7 @@
 // Framework - Cleartrip Automation
 // Author - Sphurti
 
-package accountsAPI;
+package test.java.accountsAPI;
 
 import java.io.IOException;
 

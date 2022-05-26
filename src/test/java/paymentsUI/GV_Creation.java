@@ -2,12 +2,12 @@
 // Framework - Cleartrip Automation
 // Author - Kiran Kumar
 
-package paymentsUI;
+package test.java.paymentsUI;
 
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Test;
 
-import domains.PaymentNodeJS;
+import test.java.domains.PaymentNodeJS;
 
 		public class GV_Creation extends PaymentNodeJS{
 		public RemoteWebDriver driver;

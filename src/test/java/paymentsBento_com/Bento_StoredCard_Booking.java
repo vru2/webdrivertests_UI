@@ -1,4 +1,4 @@
-package paymentsBento_com;
+package test.java.paymentsBento_com;
 
 
 import static org.testng.Assert.assertTrue;

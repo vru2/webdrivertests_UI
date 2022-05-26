@@ -1,4 +1,4 @@
-package paymentsUI;
+package test.java.paymentsUI;
 
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
@@ -7,7 +7,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import domains.PaymentNodeJS;
+import test.java.domains.PaymentNodeJS;
 
 public class Payment_NodeJS_CC_Default extends PaymentNodeJS {
 		public RemoteWebDriver driver;

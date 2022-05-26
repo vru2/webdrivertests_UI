@@ -1,7 +1,7 @@
 // Framework - Cleartrip Automation
 // Author - Kiran Kumar
 
-package paymentsAPI;
+package test.java.paymentsAPI;
 
 import org.testng.annotations.Test;
 import io.restassured.path.json.JsonPath;

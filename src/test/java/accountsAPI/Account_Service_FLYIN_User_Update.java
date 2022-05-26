@@ -1,4 +1,4 @@
-package accountsAPI;
+package test.java.accountsAPI;
 
 import java.io.IOException;
 import java.sql.SQLException;

@@ -1,8 +1,8 @@
-package accountsUI;
+package test.java.accountsUI;
 
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import common.WrapperMethod;
+import test.java.common.WrapperMethod;
 import redis.clients.jedis.Jedis;
 
 public class Accounts_UI_Common extends WrapperMethod

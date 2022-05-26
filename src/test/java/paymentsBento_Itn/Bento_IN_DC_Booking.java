@@ -1,4 +1,4 @@
-package paymentsBento_Itn;
+package test.java.paymentsBento_Itn;
 
 import org.testng.ITestResult;
 import org.testng.Reporter;

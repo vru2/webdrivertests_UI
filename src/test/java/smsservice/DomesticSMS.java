@@ -1,4 +1,4 @@
-package smsservice;
+package test.java.smsservice;
 
 import java.io.IOException;
 

@@ -2,12 +2,12 @@
 // Version -Web Driver 2.0
 // Creation Date - June, 2016
 // Author - Kiran Kumar
-// Copyright © 2016 cleartrip Travel. All rights reserved.
-package dataServices;
+// Copyright ï¿½ 2016 cleartrip Travel. All rights reserved.
+package test.java.dataServices;
 
 import org.testng.annotations.DataProvider;
 
-import commonServices.WrapperMethod;
+import test.java.commonServices.WrapperMethod;
 
 public class MobileDataProvider  extends WrapperMethod {
 	  @DataProvider

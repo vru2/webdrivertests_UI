@@ -3,8 +3,8 @@
 
 	<listeners>
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
-		<listener class-name="common.RemoveDuplicateResults" />
-		<listener class-name="common.RetryListener" />
+		<listener class-name="test.java.common.RemoveDuplicateResults" />
+		<listener class-name="test.java.common.RetryListener" />
 		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 	</listeners>
 
@@ -13,51 +13,51 @@
 
 	<test name="TripService Updatebooking">
 		<classes>
-			<class name="tripServices.TS_UpdateBooking_Air" />
+			<class name="test.java.tripServices.TS_UpdateBooking_Air" />
 		</classes>
 
 	</test>
 
 	<test name="Eventbus API" parallel="true">
 		<classes>
-			<class name="tripServices.Eventbus_API" />
+			<class name="test.java.tripServices.Eventbus_API" />
 		</classes>
 	</test>
 
 	<test name="App Notification" parallel="true">
 		<classes>
-			<class name="tripServices.AppNotification" />
+			<class name="test.java.tripServices.AppNotification" />
 		</classes>
 	</test>
 
 	<test name="Ct-config UI">
 		<classes>
-			<class name="ct_config.CT_Config" />
+			<class name="test.java.ct_config.CT_Config" />
 		</classes>
 	</test>
 
 	<test name="SMS">
 		<classes>
-			<class name="smsservice.DomesticSMS" />
+			<class name="test.java.smsservice.DomesticSMS" />
 		</classes>
 	</test>
 
 	<test name="Whatsapp" parallel="true">
 		<classes>
-			<class name="whatsappService.WhatsappUserMessage" />
+			<class name="test.java.whatsappService.WhatsappUserMessage" />
 		</classes>
 	</test>
 
 	<test name="Email" parallel="true">
 		<classes>
-			<class name="email.EmailPost" />
+			<class name="test.java.email.EmailPost" />
 		</classes>
 	</test>
 
 	<test name="Accounts-Service-PWA" parallel="true">
 		<classes>
 			
-			<class name="accountsAPI.Account_Service_PWA_SignIn_API" />
+			<class name="test.java.accountsAPI.Account_Service_PWA_SignIn_API" />
 		</classes>
 	</test>
 	
@@ -65,7 +65,7 @@
 	<test name="Accounts-Service-Userclassification" parallel="true">
 		<classes>
 			
-			<class name="accountsAPI.Userclassification_Health_Test_Url" />
+			<class name="test.java.accountsAPI.Userclassification_Health_Test_Url" />
 
 		</classes>
 	</test>
@@ -74,14 +74,14 @@
 		<classes>
 
 			
-			<class name="accountsAPI.IdentityService_AddClient" />
+			<class name="test.java.accountsAPI.IdentityService_AddClient" />
 
 		</classes>
 	</test>
 
 	<test name="Account-service-Controllers" parallel="true">
 		<classes>
-			<class name="accountsAPI.Account_Service_FlyinV2_Signin" />
+			<class name="test.java.accountsAPI.Account_Service_FlyinV2_Signin" />
 			
 
 		</classes>
@@ -90,14 +90,14 @@
 	<test name="Account-service-Caching-userprofile" parallel="true">
 		<classes>
 			
-			<class name="accountsAPI.Account_Service_Update_User" />
+			<class name="test.java.accountsAPI.Account_Service_Update_User" />
 		</classes>
 
 	</test>
 
 	<test name="Account-service-Apple-Signin" parallel="true">
 		<classes>
-			<class name="accountsAPI.Account_Service_AppleSignin" />
+			<class name="test.java.accountsAPI.Account_Service_AppleSignin" />
 			
 		</classes>
 

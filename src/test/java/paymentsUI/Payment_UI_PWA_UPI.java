@@ -1,4 +1,4 @@
-package paymentsUI;
+package test.java.paymentsUI;
 
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -8,7 +8,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import paymentsUI_Air.PaymentUI_Common;
+import test.java.paymentsUI_Air.PaymentUI_Common;
 
 	public class Payment_UI_PWA_UPI extends PaymentUI_Common{
 		

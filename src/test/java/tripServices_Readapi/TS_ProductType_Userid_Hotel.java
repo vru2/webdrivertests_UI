@@ -1,4 +1,4 @@
-package tripServices_Readapi;
+package test.java.tripServices_Readapi;
 
 import static org.testng.Assert.assertTrue;
 

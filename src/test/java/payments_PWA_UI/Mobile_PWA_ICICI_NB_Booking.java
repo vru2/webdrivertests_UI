@@ -1,7 +1,7 @@
-package payments_PWA_UI;
+package test.java.payments_PWA_UI;
 
-import static common.CachedProperties.instance;
-import static common.CachedProperties.cacheUrlInstance;
+import static test.java.common.CachedProperties.instance;
+import static test.java.common.CachedProperties.cacheUrlInstance;
 
 import java.io.File;
 import java.io.IOException;
@@ -29,7 +29,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import common.CachedProperties;
+import test.java.common.CachedProperties;
 
 @Test
 public class Mobile_PWA_ICICI_NB_Booking  extends Mobile_PWA_Common

@@ -1,7 +1,7 @@
 // Framework - Cleartrip Automation
 // Author - Kiran Kumar
 
-package paymentsUI_Flyin;
+package test.java.paymentsUI_Flyin;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
@@ -14,7 +14,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import junit.framework.Assert;
-import paymentsUI_Air.PaymentUI_Common;
+import test.java.paymentsUI_Air.PaymentUI_Common;
 
 public class Flyin_Wallet_Full extends PaymentUI_Common{
 	public RemoteWebDriver driver;

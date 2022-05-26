@@ -1,4 +1,4 @@
-package smsserviceprod;
+package test.java.smsserviceprod;
 
 import static org.testng.Assert.assertTrue;
 
@@ -7,7 +7,7 @@ import java.util.HashMap;
 import org.testng.Assert;
 import org.testng.Reporter;
 
-import domains.PlatformCommonUtil;
+import test.java.domains.PlatformCommonUtil;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;

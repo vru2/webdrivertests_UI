@@ -1,4 +1,4 @@
-package paymentsBento_Itn_Hotels;
+package test.java.paymentsBento_Itn_Hotels;
 
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;

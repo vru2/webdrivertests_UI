@@ -1,7 +1,7 @@
 // Framework - Cleartrip Automation
 // Author - Kiran Kumar
 
-package accountsAPI;
+package test.java.accountsAPI;
 
 import java.io.IOException;
 

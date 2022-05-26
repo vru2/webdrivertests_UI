@@ -1,4 +1,4 @@
-package tripServicesProd;
+package test.java.tripServicesProd;
 
 import java.io.IOException;
 

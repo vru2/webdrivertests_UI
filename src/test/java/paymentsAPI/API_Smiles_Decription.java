@@ -1,5 +1,5 @@
 
-package paymentsAPI;
+package test.java.paymentsAPI;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;

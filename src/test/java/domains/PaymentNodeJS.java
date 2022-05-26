@@ -1,7 +1,7 @@
 // Framework - Cleartrip Automation
 // Author - Kiran Kumar
 
-package domains;
+package test.java.domains;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
@@ -46,8 +46,8 @@ import org.w3c.dom.Document;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import junit.framework.Assert;
-import paymentsAPI.API_PaymentCommon1;
-import paymentsUI.PaymentUI_CommonUtilities;
+import test.java.paymentsAPI.API_PaymentCommon1;
+import test.java.paymentsUI.PaymentUI_CommonUtilities;
 
 public class PaymentNodeJS extends API_PaymentCommon1{
 

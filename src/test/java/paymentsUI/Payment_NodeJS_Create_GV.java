@@ -1,11 +1,11 @@
 // Framework - Cleartrip Automation
 // Author - Kiran Kumar
 
-package paymentsUI;
+package test.java.paymentsUI;
 
 import org.testng.annotations.Test;
 
-import paymentsAPI.API_PaymentCommon1;
+import test.java.paymentsAPI.API_PaymentCommon1;
 
 	public class Payment_NodeJS_Create_GV extends API_PaymentCommon1{
 	

@@ -1,4 +1,4 @@
-package paymentsBento_Itn_Hotels;
+package test.java.paymentsBento_Itn_Hotels;
 
 import static org.junit.Assert.assertTrue;
 
@@ -12,7 +12,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
 
-import paymentsBento_Itn.PaymentsBento_Itn_Common;
+import test.java.paymentsBento_Itn.PaymentsBento_Itn_Common;
 
 public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 	String Hotel_URL = "";

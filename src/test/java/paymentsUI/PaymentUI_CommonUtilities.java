@@ -1,4 +1,4 @@
-package paymentsUI;
+package test.java.paymentsUI;
 
 import java.util.Random;
 

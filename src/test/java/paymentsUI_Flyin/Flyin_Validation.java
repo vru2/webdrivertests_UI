@@ -1,7 +1,7 @@
 // Framework - Cleartrip Automation
 // Author - Kiran Kumar
 
-package paymentsUI_Flyin;
+package test.java.paymentsUI_Flyin;
 
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
@@ -10,7 +10,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import paymentsUI_Air.PaymentUI_Common;
+import test.java.paymentsUI_Air.PaymentUI_Common;
 
 public class Flyin_Validation extends PaymentUI_Common{
 	public RemoteWebDriver driver;

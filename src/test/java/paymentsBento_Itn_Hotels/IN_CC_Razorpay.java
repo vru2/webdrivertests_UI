@@ -1,4 +1,4 @@
-package paymentsBento_Itn_Hotels;
+package test.java.paymentsBento_Itn_Hotels;
 
 import static org.testng.Assert.assertTrue;
 

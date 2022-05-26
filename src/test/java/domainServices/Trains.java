@@ -3,7 +3,7 @@
 // Creation Date - MAR, 2015
 // Author - Karthick Krihsna
 // Copyright © 2016 cleartrip Travel. All right reserved.
-package domainServices;
+package test.java.domainServices;
 
 import static org.testng.AssertJUnit.assertTrue;
 
@@ -35,11 +35,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
-import commonServices.CommonUtil;
+import test.java.commonServices.CommonUtil;
 
 //import com.opera.core.systems.scope.protos.EcmascriptProtos.SetFormElementValueArgOrBuilder;
 
-import commonServices.WrapperMethod;
+import test.java.commonServices.WrapperMethod;
 
 public class Trains extends WrapperMethod {
 

@@ -4,26 +4,26 @@
 // Author - Mohamed Faisal
 // Copyright 2016 Cleartrip Travel. All rights reserved.
 
-package commonServices;
+package test.java.commonServices;
 
-import static commonServices.CachedPropertiesTemp.cacheUrlInstance;
-import static commonServices.CachedPropertiesTemp.campLocalInstance;
-import static commonServices.CachedPropertiesTemp.ctsuite;
-import static commonServices.CachedPropertiesTemp.dataInstance;
-import static commonServices.CachedPropertiesTemp.dbInstance;
-import static commonServices.CachedPropertiesTemp.getTrip;
-import static commonServices.CachedPropertiesTemp.getapiPayload;
-import static commonServices.CachedPropertiesTemp.instance;
-import static commonServices.CachedPropertiesTemp.objectReportInstance;
-import static commonServices.CachedPropertiesTemp.objectReportInstanceAir;
-import static commonServices.CachedPropertiesTemp.objectReportInstanceHotels;
-import static commonServices.CachedPropertiesTemp.objectReportInstanceHotelsPWA;
-import static commonServices.CachedPropertiesTemp.objectReportInstanceLocals;
-import static commonServices.CachedPropertiesTemp.objectReportInstancePayment;
-import static commonServices.CachedPropertiesTemp.objectReportInstanceTrains;
-import static commonServices.CachedPropertiesTemp.objectReposCtSuite;
-import static commonServices.CachedPropertiesTemp.platformInstance;
-import static commonServices.CachedPropertiesTemp.objectReportInstancePlatform;
+import static test.java.commonServices.CachedPropertiesTemp.cacheUrlInstance;
+import static test.java.commonServices.CachedPropertiesTemp.campLocalInstance;
+import static test.java.commonServices.CachedPropertiesTemp.ctsuite;
+import static test.java.commonServices.CachedPropertiesTemp.dataInstance;
+import static test.java.commonServices.CachedPropertiesTemp.dbInstance;
+import static test.java.commonServices.CachedPropertiesTemp.getTrip;
+import static test.java.commonServices.CachedPropertiesTemp.getapiPayload;
+import static test.java.commonServices.CachedPropertiesTemp.instance;
+import static test.java.commonServices.CachedPropertiesTemp.objectReportInstance;
+import static test.java.commonServices.CachedPropertiesTemp.objectReportInstanceAir;
+import static test.java.commonServices.CachedPropertiesTemp.objectReportInstanceHotels;
+import static test.java.commonServices.CachedPropertiesTemp.objectReportInstanceHotelsPWA;
+import static test.java.commonServices.CachedPropertiesTemp.objectReportInstanceLocals;
+import static test.java.commonServices.CachedPropertiesTemp.objectReportInstancePayment;
+import static test.java.commonServices.CachedPropertiesTemp.objectReportInstanceTrains;
+import static test.java.commonServices.CachedPropertiesTemp.objectReposCtSuite;
+import static test.java.commonServices.CachedPropertiesTemp.platformInstance;
+import static test.java.commonServices.CachedPropertiesTemp.objectReportInstancePlatform;
 import java.io.File;
 import java.io.IOException;
 import java.net.URI;
@@ -61,7 +61,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 
-import testrailpoc.testrail_utils;
+import test.java.testrailpoc.testrail_utils;
 
 public class CommonUtil extends oracle.jdbc.driver.OracleDriver{
 

@@ -1,7 +1,7 @@
 // Framework - Cleartrip Automation
 // Author - Kiran Kumar
 
-package paymentsBento_com;
+package test.java.paymentsBento_com;
 
 import java.util.Iterator;
 import java.util.Set;
@@ -16,7 +16,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Reporter;
 
 import io.restassured.response.Response;
-import paymentsUI_Air.PaymentUI_Common;
+import test.java.paymentsUI_Air.PaymentUI_Common;
 
 
 public class PaymentUI_Common_Bento extends PaymentUI_Common{

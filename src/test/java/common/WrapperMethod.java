@@ -1,7 +1,7 @@
 // Framework - Cleartrip Automation
 // Author - Kiran Kumar
 
-package common;
+package test.java.common;
 
 import static org.testng.AssertJUnit.assertTrue;
 

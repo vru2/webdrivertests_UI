@@ -3,7 +3,7 @@
 // Creation Date - MAR, 2015
 // Author - Mohamed Faisal
 // Copyright � 2012 cleartrip Travel. All right reserved.//
-package commonServices;
+package test.java.commonServices;
 
 import static org.testng.AssertJUnit.assertTrue;
 
@@ -54,7 +54,7 @@ import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.annotations.BeforeClass;
 
-import testrailpoc.testrail_utils;
+import test.java.testrailpoc.testrail_utils;
 
 public class WrapperMethod extends CommonUtil {
 	// WebElement we=null;

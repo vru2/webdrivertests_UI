@@ -3,7 +3,7 @@
  * Documentation: This Class is focussed on automating the APIs related to new Payments UI.
  */
 
-package paymentsUI;
+package test.java.paymentsUI;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -18,7 +18,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import domains.PaymentNodeJS;
+import test.java.domains.PaymentNodeJS;
 import io.restassured.response.Response;
 
 public class PaymentUI_Validation extends PaymentNodeJS{

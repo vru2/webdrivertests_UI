@@ -3,50 +3,50 @@
 
 <listeners>
 <listener class-name="org.uncommons.reportng.HTMLReporter" />
-<listener class-name="common.RemoveDuplicateResults"/>
-<listener class-name="common.RetryListener"/>
+<listener class-name="test.java.common.RemoveDuplicateResults"/>
+<listener class-name="test.java.common.RetryListener"/>
 <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
 
 
 <test name="API GET Pay URL" preserve-order="true" parallel="true">
     <classes>
-      <class name="paymentsUI_Air.Get_URL"/>
+      <class name="test.java.paymentsUI_Air.Get_URL"/>
     </classes>
 </test>
 
 <test name="API GW Failure Banner" preserve-order="true" parallel="true">
     <classes>
-      <class name="paymentsAPI.API_Fetch_GW_Failure"/>
+      <class name="test.java.paymentsAPI.API_Fetch_GW_Failure"/>
     </classes>
 </test>
 
 
 <test name="API Deposit Account DA" preserve-order="true" parallel="true">
     <classes>
-      <class name="paymentsAPI.API_DA_PayV3"/>
-      <class name="paymentsAPI.API_DA_ValidateV3"/><!-- 
-      <class name="paymentsAPI.API_DA_APP_Refund"/>
-      <class name="paymentsAPI.API_DA_APP_Balance"/>  -->
+      <class name="test.java.paymentsAPI.API_DA_PayV3"/>
+      <class name="test.java.paymentsAPI.API_DA_ValidateV3"/><!--
+      <class name="test.java.paymentsAPI.API_DA_APP_Refund"/>
+      <class name="test.java.paymentsAPI.API_DA_APP_Balance"/>  -->
     </classes>
 </test>
 
 <test name="API Credit Shell" preserve-order="true" parallel="true">
     <classes>
-      <class name="paymentsAPI.API_CS_Pay"/>
-      <class name="paymentsAPI.API_CS_Validate"/>     
+      <class name="test.java.paymentsAPI.API_CS_Pay"/>
+      <class name="test.java.paymentsAPI.API_CS_Validate"/>
     </classes>
 </test>
 
 <test name="API Pay Calls" preserve-order="true" parallel="true">
     <classes>
-      <class name="paymentsAPI.API_Validate"/>
-      <class name="paymentsAPI.API_CC_Visa_Type"/>
-      <class name="paymentsAPI.API_CC_GV_Wallet"/> 
-      <class name="paymentsAPI.API_CC"/>
-      <class name="paymentsAPI.API_GV"/> 
-      <class name="paymentsAPI.API_Wallet"/>
-      <class name="paymentsAPI.API_GV_WL"/> 
+      <class name="test.java.paymentsAPI.API_Validate"/>
+      <class name="test.java.paymentsAPI.API_CC_Visa_Type"/>
+      <class name="test.java.paymentsAPI.API_CC_GV_Wallet"/>
+      <class name="test.java.paymentsAPI.API_CC"/>
+      <class name="test.java.paymentsAPI.API_GV"/>
+      <class name="test.java.paymentsAPI.API_Wallet"/>
+      <class name="test.java.paymentsAPI.API_GV_WL"/>
     </classes>
 </test>
 
@@ -54,64 +54,64 @@
 
 <test name="API CTPay V2" preserve-order="true" parallel="true">
     <classes>
-      <class name="paymentsAPI.API_CTpay_GetUrl"/>
-      <class name="paymentsAPI.API_CTpay_Status"/>
-      <class name="paymentsAPI.API_CTpay_UpdateClient"/> 
-      <class name="paymentsAPI.API_CTpay_URLcreation"/>
+      <class name="test.java.paymentsAPI.API_CTpay_GetUrl"/>
+      <class name="test.java.paymentsAPI.API_CTpay_Status"/>
+      <class name="test.java.paymentsAPI.API_CTpay_UpdateClient"/>
+      <class name="test.java.paymentsAPI.API_CTpay_URLcreation"/>
     </classes>
 </test>
 
 
 <test name="API Flyin" preserve-order="true" >
     <classes>
-       <class name="paymentsAPI.API_FlyinPay"/> 
+       <class name="test.java.paymentsAPI.API_FlyinPay"/>
      </classes>
 </test>
 
 <test name="API Expressway" preserve-order="true" parallel="true">
     <classes>
-      <class name="paymentsAPI.API_EW_GetOutstanding"/> 
-      <class name="paymentsAPI.API_EW_UserDetails"/> 
-      <class name="paymentsAPI.API_EW_Validate"/>  
-      <class name="paymentsAPI.API_EW_OptIN"/>    
-<!--       <class name="paymentsAPI.API_EW_Pay_Multi"/>    
-      <class name="paymentsAPI.API_EW_Pay_Multi_V3"/>    
-      <class name="paymentsAPI.API_EW_Pay_V3"/>        -->
-      <class name="paymentsAPI.API_EW_Add_Amount"/>       <!-- 
-      <class name="paymentsAPI.API_EW_Pay_AutoDebit"/>     -->
-      <class name="paymentsAPI.API_EW_Summary"/>  
+      <class name="test.java.paymentsAPI.API_EW_GetOutstanding"/>
+      <class name="test.java.paymentsAPI.API_EW_UserDetails"/>
+      <class name="test.java.paymentsAPI.API_EW_Validate"/>
+      <class name="test.java.paymentsAPI.API_EW_OptIN"/>
+<!--       <class name="test.java.paymentsAPI.API_EW_Pay_Multi"/>
+      <class name="test.java.paymentsAPI.API_EW_Pay_Multi_V3"/>
+      <class name="test.java.paymentsAPI.API_EW_Pay_V3"/>        -->
+      <class name="test.java.paymentsAPI.API_EW_Add_Amount"/>       <!--
+      <class name="test.java.paymentsAPI.API_EW_Pay_AutoDebit"/>     -->
+      <class name="test.java.paymentsAPI.API_EW_Summary"/>
          
    </classes>
 </test>
 
 <test name="API Refunds New" preserve-order="true" parallel="true">
     <classes>
-      <class name="paymentsAPI.API_Refunds"/> 
+      <class name="test.java.paymentsAPI.API_Refunds"/>
      </classes>
 </test>
 
 <test name="API Stored Card" preserve-order="true" parallel="true">
     <classes>
-      <class name="paymentsAPI.API_storeCard"/> 
+      <class name="test.java.paymentsAPI.API_storeCard"/>
    </classes>
 </test>
 
 <test name="API Create Insert record" preserve-order="true" parallel="true">
     <classes>
-      <class name="paymentsAPI.API_CreateRecord"/>  
+      <class name="test.java.paymentsAPI.API_CreateRecord"/>
          </classes>
 </test>
 
 <test name="API ROR Writes" preserve-order="true" parallel="true">
     <classes>
-      <class name="paymentsAPI.API_ROR_Writes"/>  
+      <class name="test.java.paymentsAPI.API_ROR_Writes"/>
     </classes>
 </test>
 
 
 <test name="API FetchRefunds New"  preserve-order="true" parallel="true" >
     <classes>
-		<!-- <class name="paymentsAPI.API_Refunds_Fetch"/> -->
+		<!-- <class name="test.java.paymentsAPI.API_Refunds_Fetch"/> -->
 	 </classes>
 </test>
 

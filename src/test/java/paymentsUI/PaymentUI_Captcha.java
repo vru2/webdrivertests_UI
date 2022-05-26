@@ -1,4 +1,4 @@
-package paymentsUI;
+package test.java.paymentsUI;
 
 import java.util.concurrent.TimeUnit;
 
@@ -10,8 +10,9 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
+import test.java.domains.PaymentNodeJS;
 
-public class PaymentUI_Captcha extends domains.PaymentNodeJS{
+public class PaymentUI_Captcha extends PaymentNodeJS{
 	public RemoteWebDriver driver;
 	protected String Url;
 	protected String paymentUrl;

@@ -3,7 +3,7 @@
 // Creation Date - MAR, 2015
 // Author - Mohamed Faisal
 // Copyright � 2012 cleartrip Travel. All right reserved.
-package common;
+package test.java.common;
 
 import java.io.File;
 import java.io.FileOutputStream;

@@ -1,4 +1,4 @@
-package paymentsUI;
+package test.java.paymentsUI;
 
 import java.util.concurrent.TimeUnit;
 
@@ -10,7 +10,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import domains.PaymentNodeJS;
+import test.java.domains.PaymentNodeJS;
 import io.restassured.response.Response;
 
 public class PaymentsUI_NB extends PaymentNodeJS{

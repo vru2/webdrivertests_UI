@@ -9,7 +9,7 @@
  * Copyright Gurock Software GmbH. See license.md for details.
  */
 
-package testrail;
+package test.java.testrail;
  
 public class APIException extends Exception
 {

@@ -1,4 +1,4 @@
-package commonServices;
+package test.java.commonServices;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;

@@ -1,6 +1,7 @@
-package payments_PWA_UI;
-import domainServices.Mobile;
+package test.java.payments_PWA_UI;
 
+
+import test.java.domainServices.Mobile;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -8,10 +9,10 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import dataServices.MobileDataProvider;
-import domainServices.Mobile;
+import test.java.dataServices.MobileDataProvider;
 
-public class Mobile_Air_Dom_Expressway_GST_Signedin_Newcard_4 extends Mobile{
+
+public class Mobile_Air_Dom_Expressway_GST_Signedin_Newcard_4 extends Mobile {
 
 
 

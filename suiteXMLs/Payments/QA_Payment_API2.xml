@@ -3,19 +3,19 @@
 
 <listeners>
 <listener class-name="org.uncommons.reportng.HTMLReporter" />
-<listener class-name="common.RemoveDuplicateResults"/>
-<listener class-name="common.RetryListener"/>
+<listener class-name="test.java.common.RemoveDuplicateResults"/>
+<listener class-name="test.java.common.RetryListener"/>
 <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
 
 
 <test name="Instant Refund" preserve-order="true" parallel="true">
     <classes>    
-      <class name="paymentsAPI.API_IR_Get_Eligibility"/> 
-      <class name="paymentsAPI.API_IR_Validate_VPA"/>   
-      <class name="paymentsAPI.API_IR_Save_VPA_Details"/> 
-      <class name="paymentsAPI.API_IR_Get_Cancelation_Details"/>  
-      <class name="paymentsAPI.API_IR_Create_Refund"/>
+      <class name="test.java.paymentsAPI.API_IR_Get_Eligibility"/>
+      <class name="test.java.paymentsAPI.API_IR_Validate_VPA"/>
+      <class name="test.java.paymentsAPI.API_IR_Save_VPA_Details"/>
+      <class name="test.java.paymentsAPI.API_IR_Get_Cancelation_Details"/>
+      <class name="test.java.paymentsAPI.API_IR_Create_Refund"/>
     </classes>
 </test>
 

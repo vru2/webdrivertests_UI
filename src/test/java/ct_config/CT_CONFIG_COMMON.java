@@ -1,4 +1,4 @@
-package ct_config;
+package test.java.ct_config;
 
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import domains.HQ;
+import test.java.domains.HQ;
 
 public class CT_CONFIG_COMMON extends HQ{
 

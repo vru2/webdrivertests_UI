@@ -3,46 +3,46 @@
 
 <listeners>
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
-		<listener class-name="common.RemoveDuplicateResults"/>
-		<listener class-name="common.RetryListener"/>
+		<listener class-name="test.java.common.RemoveDuplicateResults"/>
+		<listener class-name="test.java.common.RetryListener"/>
 		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
 	
 	<parameter name="env" value="qa2"></parameter>
 	<test name="SMS"  >
 		<classes>
-		<class name="smsservice.DomesticSMS"/> 
+		<class name="test.java.smsservice.DomesticSMS"/>
 		</classes>
 	</test>	
 	
 	<test name="Whatsapp"  parallel="true">
 		<classes>		
-		      <class name="whatsappService.WhatsappCheckContacts"/>
-		      <class name="whatsappService.WhatsappDeliveryFeedback"/> 
-		      <class name="whatsappService.WhatsappUserMessage"/> 
-		      <class name="whatsappService.WhatsappOptinFlow"/>
-		       <class name="whatsappService.WhatsappMultilanguageSupport"/> 
-		      <class name="whatsappService.WhatsappOptinFlowStatus"/>
-		      <class name="whatsappService.WhatsappUserMessageWithAttachment"/>
-		      <class name="whatsappService.WhatsappWebhookMessage"/>
+		      <class name="test.java.whatsappService.WhatsappCheckContacts"/>
+		      <class name="test.java.whatsappService.WhatsappDeliveryFeedback"/>
+		      <class name="test.java.whatsappService.WhatsappUserMessage"/>
+		      <class name="test.java.whatsappService.WhatsappOptinFlow"/>
+		       <class name="test.java.whatsappService.WhatsappMultilanguageSupport"/>
+		      <class name="test.java.whatsappService.WhatsappOptinFlowStatus"/>
+		      <class name="test.java.whatsappService.WhatsappUserMessageWithAttachment"/>
+		      <class name="test.java.whatsappService.WhatsappWebhookMessage"/>
 		</classes>
 	</test>
 	
 	<test name="Email"  parallel="true">
 		<classes>
-		      <class name="email.Email_Template_true"/>
-		      <class name="email.EmailPost"/>
-		      <class name="email.EmailSpamScore"/>
-		     <class name="email.EmailwithAttachments"/>
-		       <class name="email.GeneratePDF"/>
-		        <class name="email.GeneratePKPass"/>
+		      <class name="test.java.email.Email_Template_true"/>
+		      <class name="test.java.email.EmailPost"/>
+		      <class name="test.java.email.EmailSpamScore"/>
+		     <class name="test.java.email.EmailwithAttachments"/>
+		       <class name="test.java.email.GeneratePDF"/>
+		        <class name="test.java.email.GeneratePKPass"/>
 		</classes>
 	</test>
 	
 	<!-- <test name="Chat"  parallel="true">
 		<classes>
-		      <class name="supportchatapi.SupportcreateChatAPI"/>
-		      <class name="supportchatapi.SupportGatewaycreateChatAPI"/>
+		      <class name="test.java.supportchatapi.SupportcreateChatAPI"/>
+		      <class name="test.java.supportchatapi.SupportGatewaycreateChatAPI"/>
 		</classes>
 	</test> -->
 

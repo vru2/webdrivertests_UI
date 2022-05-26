@@ -1,4 +1,4 @@
-package ct_admin;
+package test.java.ct_admin;
 
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;

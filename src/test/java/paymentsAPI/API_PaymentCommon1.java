@@ -1,7 +1,7 @@
 // Framework - Cleartrip Automation
 // Author - Kiran Kumar
 
-package paymentsAPI;
+package test.java.paymentsAPI;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -17,14 +17,15 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Reporter;
 
-import domains.PlatformCommonUtil;
+import test.java.domains.PlatformCommonUtil;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import junit.framework.Assert;
-import paymentsUI.PaymentUI_CommonUtilities;
+import test.java.paymentsUI.PaymentUI_CommonUtilities;
+import test.java.domains.PlatformCommonUtil;
 
-public class API_PaymentCommon1 extends domains.PlatformCommonUtil
+public class API_PaymentCommon1 extends PlatformCommonUtil
 
 {	
 	public RemoteWebDriver driver;

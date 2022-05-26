@@ -1,13 +1,13 @@
-package common;
+package test.java.common;
 
-import static common.CachedProperties.cacheUrlInstance;
-import static common.CachedProperties.dataInstance;
-import static common.CachedProperties.dbInstance;
-import static common.CachedProperties.instance;
-import static common.CachedProperties.objectReportInstance;
-import static common.CachedProperties.objectReportInstancePayment;
-import static common.CachedProperties.objectReportInstancePlatform;
-import static common.CachedProperties.platformInstance;
+import static test.java.common.CachedProperties.cacheUrlInstance;
+import static test.java.common.CachedProperties.dataInstance;
+import static test.java.common.CachedProperties.dbInstance;
+import static test.java.common.CachedProperties.instance;
+import static test.java.common.CachedProperties.objectReportInstance;
+import static test.java.common.CachedProperties.objectReportInstancePayment;
+import static test.java.common.CachedProperties.objectReportInstancePlatform;
+import static test.java.common.CachedProperties.platformInstance;
 
 import java.io.File;
 import java.text.SimpleDateFormat;

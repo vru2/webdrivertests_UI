@@ -1,11 +1,11 @@
 // Framework - Cleartrip Automation
 // Author - Kiran Kumar
 
-package paymentsAPI;
+package test.java.paymentsAPI;
 import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
-import paymentsUI_Air.PaymentUI_Common;
+import test.java.paymentsUI_Air.PaymentUI_Common;
 
 public class API_EMI_Fetch extends PaymentUI_Common
 {

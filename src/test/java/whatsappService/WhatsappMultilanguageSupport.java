@@ -1,4 +1,4 @@
-package whatsappService;
+package test.java.whatsappService;
 
 import java.io.IOException;
 

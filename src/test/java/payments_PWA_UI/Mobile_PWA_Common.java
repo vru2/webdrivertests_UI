@@ -1,4 +1,4 @@
-package payments_PWA_UI;
+package test.java.payments_PWA_UI;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
@@ -15,7 +15,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import paymentsUI.PaymentUI_CommonUtilities;
+import test.java.paymentsUI.PaymentUI_CommonUtilities;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -23,7 +23,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.apache.commons.io.IOUtils;
 import org.testng.Reporter;
 
-import common.WrapperMethod;
+import test.java.common.WrapperMethod;
 import junit.framework.Assert;
 
 public class Mobile_PWA_Common extends WrapperMethod

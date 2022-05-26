@@ -1,9 +1,9 @@
-package paymentsBento_Itn_PWA;
+package test.java.paymentsBento_Itn_PWA;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import paymentsBento_Itn.PaymentsBento_Itn_Common;
+import test.java.paymentsBento_Itn.PaymentsBento_Itn_Common;
 
 public class PWA_Air_Common extends PaymentsBento_Itn_Common {
 	

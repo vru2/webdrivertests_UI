@@ -3,38 +3,38 @@
 
 <listeners>
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
-		<listener class-name="common.RemoveDuplicateResults"/>
-		<listener class-name="common.RetryListener"/>
+		<listener class-name="test.java.common.RemoveDuplicateResults"/>
+		<listener class-name="test.java.common.RetryListener"/>
 	    <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
 
 	<test name="SMS"  >
 		<classes>
-		<class name="smsserviceprod.DomesticSMS"/> 
+		<class name="test.java.smsserviceprod.DomesticSMS"/>
 		</classes>
 	</test>	
 	
 	<test name="Whatsapp"  parallel="true">
 		<classes>		
-		      <class name="whatsappServiceProd.WhatsappCheckContacts"/>
-		      <class name="whatsappServiceProd.WhatsappDeliveryFeedback"/> 
-		      <class name="whatsappServiceProd.WhatsappUserMessage"/> 
-		      <class name="whatsappServiceProd.WhatsappOptinFlow"/>
-		      <class name="whatsappServiceProd.WhatsappOptinFlowStatus"/>
-		      <class name="whatsappServiceProd.WhatsappMultilanguageSupport"/>
-		      <class name="whatsappServiceProd.WhatsappUserMessageWithAttachment"/>
-		      <class name="whatsappServiceProd.WhatsappWebhookMessage"/>
+		      <class name="test.java.whatsappServiceProd.WhatsappCheckContacts"/>
+		      <class name="test.java.whatsappServiceProd.WhatsappDeliveryFeedback"/>
+		      <class name="test.java.whatsappServiceProd.WhatsappUserMessage"/>
+		      <class name="test.java.whatsappServiceProd.WhatsappOptinFlow"/>
+		      <class name="test.java.whatsappServiceProd.WhatsappOptinFlowStatus"/>
+		      <class name="test.java.whatsappServiceProd.WhatsappMultilanguageSupport"/>
+		      <class name="test.java.whatsappServiceProd.WhatsappUserMessageWithAttachment"/>
+		      <class name="test.java.whatsappServiceProd.WhatsappWebhookMessage"/>
 		</classes>
 	</test>
 	
 	<test name="emailprod"  parallel="true">
 		<classes>
-		      <class name="emailprod.Email_Template_true"/>
-		      <class name="emailprod.EmailPost"/>
-		      <class name="emailprod.EmailSpamScore"/>
-		      <class name="emailprod.EmailwithAttachments"/>
-		       <class name="emailprod.GeneratePDF"/>
-		        <class name="emailprod.GeneratePKPass"/>
+		      <class name="test.java.emailprod.Email_Template_true"/>
+		      <class name="test.java.emailprod.EmailPost"/>
+		      <class name="test.java.emailprod.EmailSpamScore"/>
+		      <class name="test.java.emailprod.EmailwithAttachments"/>
+		       <class name="test.java.emailprod.GeneratePDF"/>
+		        <class name="test.java.emailprod.GeneratePKPass"/>
 		</classes>
 	</test>
 </suite> 

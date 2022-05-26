@@ -1,7 +1,7 @@
 // Framework - Cleartrip Automation
 // Author - Kiran Kumar
 
-package paymentsUI_Air;
+package test.java.paymentsUI_Air;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -9,7 +9,7 @@ import org.openqa.selenium.Cookie;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Reporter;
 
-import domains.PaymentNodeJS;
+import test.java.domains.PaymentNodeJS;
 import io.restassured.response.Response;
 
 

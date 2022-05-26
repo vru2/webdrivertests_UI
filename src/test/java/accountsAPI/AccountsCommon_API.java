@@ -2,7 +2,7 @@
 // Author - Kiran Kumar
 
 
-package accountsAPI;
+package test.java.accountsAPI;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -17,7 +17,7 @@ import org.testng.Reporter;
 
 //import com.sun.javafx.collections.MappingChange.Map;
 
-import domains.PlatformCommonUtil;
+import test.java.domains.PlatformCommonUtil;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;

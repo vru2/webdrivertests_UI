@@ -1,4 +1,4 @@
-package commonServices;
+package test.java.commonServices;
 
 import java.io.FileReader;
 import java.io.IOException;

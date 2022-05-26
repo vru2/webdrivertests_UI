@@ -3,15 +3,15 @@
 
 <listeners>
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
-		<listener class-name="common.RemoveDuplicateResults"/>
-		<listener class-name="common.RetryListener"/>
+		<listener class-name="test.java.common.RemoveDuplicateResults"/>
+		<listener class-name="test.java.common.RetryListener"/>
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
 
 
 <test name="IN Coupon" preserve-order="true">
     <classes>
-	     	<class name="paymentsBento_Itn.Bento_IN_Coupon_SC_PayU_Booking"/> 
+	     	<class name="test.java.paymentsBento_Itn.Bento_IN_Coupon_SC_PayU_Booking"/>
     </classes>
 </test>
 

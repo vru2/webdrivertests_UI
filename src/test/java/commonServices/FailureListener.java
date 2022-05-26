@@ -2,8 +2,8 @@
 // Version -Web Driver 2.0
 // Creation Date - MAR, 2015
 // Author - Mohamed Faisal
-// Copyright © 2012 cleartrip Travel. All right reserved.
-package commonServices;
+// Copyright ï¿½ 2012 cleartrip Travel. All right reserved.
+package test.java.commonServices;
 
 import java.io.File;
 import java.io.FileOutputStream;

@@ -4,19 +4,18 @@
 
 	<listeners>
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
-		<listener class-name="common.RemoveDuplicateResults" />
-		<listener class-name="common.RetryListener" />
+		<listener class-name="test.java.common.RemoveDuplicateResults" />
+		<listener class-name="test.java.common.RetryListener" />
 		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 	</listeners>
 
 	<test name="Flyin-Regression Cases" parallel="true">
 		<classes>
 
-			<class name="accountsAPI.Flyin_Regression_Partner_user_search" />
-			<class name="accountsAPI.Flyin_Regression_Partner_Social_signup" />
-			<class name="accountsAPI.Account_Service_Flyin_ForgotPassword" />
-			<class
-				name="accountsAPI.Account_Service_Travellercontroller_UpdateTraveller_FlyRegression" />
+			<class name="test.java.accountsAPI.Flyin_Regression_Partner_user_search" />
+			<class name="test.java.accountsAPI.Flyin_Regression_Partner_Social_signup" />
+			<class name="test.java.accountsAPI.Account_Service_Flyin_ForgotPassword" />
+			<class name="test.java.accountsAPI.Account_Service_Travellercontroller_UpdateTraveller_FlyRegression" />
 
 		</classes>
 	</test>

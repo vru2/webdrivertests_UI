@@ -3,125 +3,125 @@
 
 <listeners>
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
-		<listener class-name="common.RemoveDuplicateResults"/>
-		<listener class-name="common.RetryListener"/>
+		<listener class-name="test.java.common.RemoveDuplicateResults"/>
+		<listener class-name="test.java.common.RetryListener"/>
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
 
    <parameter name="hostvalue" value="qa2"></parameter>
 	 <test name="TripService Logbooking">
 		<classes>
-			<class name="tripServices.TS_LogBooking_Air" />
-			<class name="tripServices.TS_LogBooking_Hotel" /> 
-			<class name="tripServices.TS_LogBooking_Local" />
-			<class name="tripServices.TS_LogBooking_Trains" />
+			<class name="test.java.tripServices.TS_LogBooking_Air" />
+			<class name="test.java.tripServices.TS_LogBooking_Hotel" />
+			<class name="test.java.tripServices.TS_LogBooking_Local" />
+			<class name="test.java.tripServices.TS_LogBooking_Trains" />
 		</classes>
 	</test>
 	
 	<test name="TripService Updatebooking">
 		<classes>
-			<class name="tripServices.TS_UpdateBooking_Air" />
-			<class name="tripServices.TS_UpdateBooking_Hotel" />
-			<class name="tripServices.TS_UpdateBooking_Local" />
-			<class name="tripServices.TS_UpdateBooking_Trains" />
-		    <class name="tripServices.TS_Update_Air_Module" />
-		    <class name="tripServices.TS_PUT_Trips" />
-		    <class name="tripServices.TS_POST_EmailByTxnId" />
-		    <class name="tripServices.TS_Invoice_Generation_Air" />
-		    <class name="tripServices.TS_Invoice_Generation_Hotel" />
-		    <class name="tripServices.TS_Invoice_Generation_Local" />
-		    <class name="tripServices.TS_UpdateBooking_Trains_Trainfare" />
-		    <class name="tripServices.TS_Amendment" />
-		     <class name="tripServices.TS_UpdateTripFields" />
+			<class name="test.java.tripServices.TS_UpdateBooking_Air" />
+			<class name="test.java.tripServices.TS_UpdateBooking_Hotel" />
+			<class name="test.java.tripServices.TS_UpdateBooking_Local" />
+			<class name="test.java.tripServices.TS_UpdateBooking_Trains" />
+		    <class name="test.java.tripServices.TS_Update_Air_Module" />
+		    <class name="test.java.tripServices.TS_PUT_Trips" />
+		    <class name="test.java.tripServices.TS_POST_EmailByTxnId" />
+		    <class name="test.java.tripServices.TS_Invoice_Generation_Air" />
+		    <class name="test.java.tripServices.TS_Invoice_Generation_Hotel" />
+		    <class name="test.java.tripServices.TS_Invoice_Generation_Local" />
+		    <class name="test.java.tripServices.TS_UpdateBooking_Trains_Trainfare" />
+		    <class name="test.java.tripServices.TS_Amendment" />
+		     <class name="test.java.tripServices.TS_UpdateTripFields" />
 		    
 		</classes>
 
 	</test>
 		<test name="TripService Get Calls" >
 		<classes>
-			<class name="tripServices.TS_GET_Trips" />
-			<class name="tripServices.TS_Get_TripDetails_CommValue" />
-			<class name="tripServices.TS_GET_Company_Bookstat" />
-			<class name="tripServices.TS_GET_Finance_AIR" />
-			<class name="tripServices.TS_GET_Finance_HOTEL" />
-			<class name="tripServices.TS_GET_Finance_LOCAL" />
-			<class name="tripServices.TS_GET_FinanceAllTrips_Air" />
-			<class name="tripServices.TS_GET_FinanceAllTrips_Hotel" />
-			<class name="tripServices.TS_GET_FinanceAllTrips_Local" />
-			<class name="tripServices.TS_GET_Tripscount_Personid" />
-			<class name="tripServices.TS_POST_GetAllTrips" />
-			<class name="tripServices.TS_Post_UpcomingTrips" />
-			<class name="tripServices.TS_GET_Trips_ItineraryId" />
-			<class name="tripServices.TS_Finance_Scrapers" />
-			<class name="tripServices.TS_GET_SUPPLIER" />
-			<class name="tripServices.TS_GET_TripcountbyPNR" />	
-			<class name="tripServices.TS_GET_CancelledInsurance" />	
-			<class name="tripServices.TS_GET_Cancelleddetails" />	
-			<class name="tripServices.TS_GET_Refundeddetails" />	
-			<class name="tripServices.TS_GraphQL"/>
-			<class name="tripServices.TS_TripQuery"/>
-			<class name="tripServices.TS_GET_Trips_API_Versioning"/>
-			<class name="tripServices.TS_GET_Trips_API_Versioning_Archived"/>
-			<class name="tripServices.TS_GET_Air_Refunded"/>
-			<class name="tripServices.TS_GET_CorpTripCount"/>
-			<class name="tripServices.TS_GET_CorpTripList"/>
-			<class name="tripServices.TS_Affiliated_TxnID"/>
-			<class name="tripServices.TS_Coupon_Validation"/>
-			<class name="tripServices.TS_ProductType_Userid_Air"/>
-			<class name="tripServices.TS_ProductType_Userid_Hotel"/>
-			<class name="tripServices.TS_ProductType_Userid_Local"/>
-			<class name="tripServices.TS_ProductType_Userid_Train"/>
-			<class name="tripServices.TS_GDSPNR"/>
-			<class name="tripServices.TS_GET_BookingStatus"/>
-			<class name="tripServices.TS_GET_PartnerTrips"/>
-			<class name="tripServices.TS_CheckPNR"/>
-			<class name="tripServices.TS_Get_TripCount"/>
-			<class name="tripServices.TS_FetchUserID_on_txnidandtripid"/>
-			<class name="tripServices.TS_Fetch_PeopleDetails"/>
-			<class name="tripServices.TS_Get_RefundInfo"/>
-			<class name="tripServices.TS_Save_InternationFareRules"/>
+			<class name="test.java.tripServices.TS_GET_Trips" />
+			<class name="test.java.tripServices.TS_Get_TripDetails_CommValue" />
+			<class name="test.java.tripServices.TS_GET_Company_Bookstat" />
+			<class name="test.java.tripServices.TS_GET_Finance_AIR" />
+			<class name="test.java.tripServices.TS_GET_Finance_HOTEL" />
+			<class name="test.java.tripServices.TS_GET_Finance_LOCAL" />
+			<class name="test.java.tripServices.TS_GET_FinanceAllTrips_Air" />
+			<class name="test.java.tripServices.TS_GET_FinanceAllTrips_Hotel" />
+			<class name="test.java.tripServices.TS_GET_FinanceAllTrips_Local" />
+			<class name="test.java.tripServices.TS_GET_Tripscount_Personid" />
+			<class name="test.java.tripServices.TS_POST_GetAllTrips" />
+			<class name="test.java.tripServices.TS_Post_UpcomingTrips" />
+			<class name="test.java.tripServices.TS_GET_Trips_ItineraryId" />
+			<class name="test.java.tripServices.TS_Finance_Scrapers" />
+			<class name="test.java.tripServices.TS_GET_SUPPLIER" />
+			<class name="test.java.tripServices.TS_GET_TripcountbyPNR" />
+			<class name="test.java.tripServices.TS_GET_CancelledInsurance" />
+			<class name="test.java.tripServices.TS_GET_Cancelleddetails" />
+			<class name="test.java.tripServices.TS_GET_Refundeddetails" />
+			<class name="test.java.tripServices.TS_GraphQL"/>
+			<class name="test.java.tripServices.TS_TripQuery"/>
+			<class name="test.java.tripServices.TS_GET_Trips_API_Versioning"/>
+			<class name="test.java.tripServices.TS_GET_Trips_API_Versioning_Archived"/>
+			<class name="test.java.tripServices.TS_GET_Air_Refunded"/>
+			<class name="test.java.tripServices.TS_GET_CorpTripCount"/>
+			<class name="test.java.tripServices.TS_GET_CorpTripList"/>
+			<class name="test.java.tripServices.TS_Affiliated_TxnID"/>
+			<class name="test.java.tripServices.TS_Coupon_Validation"/>
+			<class name="test.java.tripServices.TS_ProductType_Userid_Air"/>
+			<class name="test.java.tripServices.TS_ProductType_Userid_Hotel"/>
+			<class name="test.java.tripServices.TS_ProductType_Userid_Local"/>
+			<class name="test.java.tripServices.TS_ProductType_Userid_Train"/>
+			<class name="test.java.tripServices.TS_GDSPNR"/>
+			<class name="test.java.tripServices.TS_GET_BookingStatus"/>
+			<class name="test.java.tripServices.TS_GET_PartnerTrips"/>
+			<class name="test.java.tripServices.TS_CheckPNR"/>
+			<class name="test.java.tripServices.TS_Get_TripCount"/>
+			<class name="test.java.tripServices.TS_FetchUserID_on_txnidandtripid"/>
+			<class name="test.java.tripServices.TS_Fetch_PeopleDetails"/>
+			<class name="test.java.tripServices.TS_Get_RefundInfo"/>
+			<class name="test.java.tripServices.TS_Save_InternationFareRules"/>
 			
 		</classes>
 	</test>
 	
 	<test name="TripService Account APIs">
 		<classes>
-			<class name="tripServices.Accounts_CreateUpdate_Tagmaster" />
-			<class name="tripServices.Accounts_ExistingUser" />
-			<class name="tripServices.Accounts_FetchtripdetailsByBookedUserid" />
-			<class name="tripServices.Accounts_FetchtripdetailsByPersonid" />
-		    <class name="tripServices.Accounts_FetchtripdetailsByTripid" />
-		    <class name="tripServices.Accounts_FetchtripdetailsByTripref" />
-		    <class name="tripServices.Accounts_FetchtripdetailsByUserid" />
-		    <class name="tripServices.Accounts_Notes" />
-		    <class name="tripServices.Accounts_tagmaster" />
-		    <class name="tripServices.Accounts_Taskcategory" />
-		    <class name="tripServices.Accounts_Depositaccount" />
-		    <class name="tripServices.TS_Updatetag_SyncPut" />
+			<class name="test.java.tripServices.Accounts_CreateUpdate_Tagmaster" />
+			<class name="test.java.tripServices.Accounts_ExistingUser" />
+			<class name="test.java.tripServices.Accounts_FetchtripdetailsByBookedUserid" />
+			<class name="test.java.tripServices.Accounts_FetchtripdetailsByPersonid" />
+		    <class name="test.java.tripServices.Accounts_FetchtripdetailsByTripid" />
+		    <class name="test.java.tripServices.Accounts_FetchtripdetailsByTripref" />
+		    <class name="test.java.tripServices.Accounts_FetchtripdetailsByUserid" />
+		    <class name="test.java.tripServices.Accounts_Notes" />
+		    <class name="test.java.tripServices.Accounts_tagmaster" />
+		    <class name="test.java.tripServices.Accounts_Taskcategory" />
+		    <class name="test.java.tripServices.Accounts_Depositaccount" />
+		    <class name="test.java.tripServices.TS_Updatetag_SyncPut" />
 		</classes>
 	</test>
 	
 	<test name="Trip Lock Expiry">
 		<classes>
-			<class name="tripServices.TS_TripLockExpiry" />
+			<class name="test.java.tripServices.TS_TripLockExpiry" />
 		</classes>
 	</test>
 	
 	<!-- <test name="MobileFraud MFilter Call"  parallel="true">
 		<classes>
-			<class name="tripServices.TS_MF_MFilter" />
+			<class name="test.java.tripServices.TS_MF_MFilter" />
 		</classes>
 	</test> -->
 	
 	<test name="Eventbus API"  parallel="true">
 		<classes>
-			<class name="tripServices.Eventbus_API" />
+			<class name="test.java.tripServices.Eventbus_API" />
 		</classes>
 	</test>
 	
 	<test name="App Notification"  parallel="true">
 		<classes>
-			<class name="tripServices.AppNotification" />
+			<class name="test.java.tripServices.AppNotification" />
 		</classes>
 	</test>
 

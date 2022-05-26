@@ -1,4 +1,4 @@
-package accountsUI;
+package test.java.accountsUI;
 
 import org.testng.annotations.Test;
 

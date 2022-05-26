@@ -3,21 +3,21 @@
 
 <listeners>
 <listener class-name="org.uncommons.reportng.HTMLReporter" />
-<listener class-name="common.RemoveDuplicateResults"/>
-<listener class-name="common.RetryListener"/>
+<listener class-name="test.java.common.RemoveDuplicateResults"/>
+<listener class-name="test.java.common.RetryListener"/>
 <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
 
 <test name="API ADCB" preserve-order="true" parallel="true">
     <classes>
-      <class name="paymentsAPI.API_Reward_ADCB_CheckBalance"/> 
-      <class name="paymentsAPI.API_Reward_ADCB_Pay"/> 
+      <class name="test.java.paymentsAPI.API_Reward_ADCB_CheckBalance"/>
+      <class name="test.java.paymentsAPI.API_Reward_ADCB_Pay"/>
     </classes>
 </test>
 
 <test name="API PayBack" preserve-order="true" parallel="true">
     <classes>
-      <class name="paymentsAPI.API_RewardPayback"/> 
+      <class name="test.java.paymentsAPI.API_RewardPayback"/>
     </classes>
 </test>
 
@@ -25,9 +25,9 @@
 
 <test name="API Qitaf" preserve-order="true" parallel="true">
     <classes>
-      <class name="paymentsAPI.API_Qitaf_Redeem"/>
-      <class name="paymentsAPI.API_Qitaf_Reverse"/>    
-      <class name="paymentsAPI.API_Qitaf_SendOTP"/>      
+      <class name="test.java.paymentsAPI.API_Qitaf_Redeem"/>
+      <class name="test.java.paymentsAPI.API_Qitaf_Reverse"/>
+      <class name="test.java.paymentsAPI.API_Qitaf_SendOTP"/>
     </classes>
 </test>
 

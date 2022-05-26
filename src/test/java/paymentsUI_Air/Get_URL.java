@@ -1,7 +1,7 @@
 // Framework - Cleartrip Automation
 // Author - Kiran Kumar
 
-package paymentsUI_Air;
+package test.java.paymentsUI_Air;
 
 import org.testng.Reporter;
 import org.testng.annotations.Test;

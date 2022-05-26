@@ -1,4 +1,4 @@
-package emailprod;
+package test.java.emailprod;
 
 import java.io.IOException;
 

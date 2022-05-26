@@ -1,4 +1,4 @@
-package ct_admin;
+package test.java.ct_admin;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Assert;
@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Reporter;
 
-import common.WrapperMethod;
+import test.java.common.WrapperMethod;
 
 public class CT_Admin_Common extends WrapperMethod {
 

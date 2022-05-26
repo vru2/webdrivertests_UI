@@ -3,7 +3,7 @@
 // Creation Date - MAR, 2015
 // Author - Mohamed Faisal
 // Copyright � 2012 cleartrip Travel. All right reserved.
-package domains;
+package test.java.domains;
 
 import static org.testng.AssertJUnit.assertTrue;
 
@@ -58,7 +58,7 @@ import org.w3c.dom.Document;
 import com.google.common.collect.ArrayListMultimap;
 
 //import com.google.gson.JsonObject;
-import common.WrapperMethod;
+import test.java.common.WrapperMethod;
 
 public class HQ extends WrapperMethod {
 

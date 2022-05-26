@@ -1,4 +1,4 @@
-package tripServicesProd;
+package test.java.tripServicesProd;
 
 import static org.testng.Assert.assertTrue;
 
@@ -14,7 +14,7 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.testng.Assert;
 import org.testng.Reporter;
 
-import domains.PlatformCommonUtil;
+import test.java.domains.PlatformCommonUtil;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;

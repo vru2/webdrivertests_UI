@@ -1,7 +1,7 @@
 // Fra[mework - Cleartrip Automation
 // Author - Saloni Gothi
 
-package paymentsAPI;
+package test.java.paymentsAPI;
 
 import java.util.List;
 import java.util.Random;

@@ -1,7 +1,7 @@
 // Framework - Cleartrip Automation
 // Author - Kiran Kumar
 
-package domainServices;
+package test.java.domainServices;
 
 import static org.junit.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
@@ -55,7 +55,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.w3c.dom.Document;
-import commonServices.WrapperMethod;
+import test.java.commonServices.WrapperMethod;
 
 	@SuppressWarnings("deprecation")
 	public class IndiaHotels extends WrapperMethod {
@@ -1610,7 +1610,7 @@ OuterLoop: for(int i=1; i<=5; i++) {
 				}				
 		}
 		
-	//==============================================================Package Rates ============================================================//
+	//==============================================================package test.java.Rates ============================================================//
 		
 				if (Booking_Type.equalsIgnoreCase("PACKAGERATE")) {	
 					elementVisible(driver, getObjectHotels("HotelCom_SRP_Price_Filter"), 10);
@@ -1631,7 +1631,7 @@ OuterLoop: for(int i=1; i<=5; i++) {
 								break loop;								
 							} 
 						else if(i==8){
-							Reporter.log("Package rates are not available in the page");
+							Reporter.log("package test.java.rates are not available in the page");
 						}
 						}
 					}				
@@ -2515,12 +2515,12 @@ OuterLoop: for(int i=1; i<=5; i++) {
 				Reporter.log("Message displayed after applying first GV is '"+GV_Msg);			
 			}
 		
-				//===================================== Package Rate  =======================================//
+				//===================================== package test.java.Rate  =======================================//
 				
 				if (BookingType.equalsIgnoreCase("PACKAGE")) {
 							String PackageRoomType = getText(driver, getObjectHotels("HotelCom_BookStep1_RoomDetails"));
 							if(PackageRoomType.contains("Package")) {
-								Reporter.log("Package rate is not dispayed");
+								Reporter.log("package test.java.rate is not dispayed");
 								Assert.assertTrue(false);
 							}
 				}		
@@ -6310,7 +6310,7 @@ public void hotelCom_TravelerPage_Prod(RemoteWebDriver driver) throws Exception 
 			   
 			   if(BookingType.equalsIgnoreCase("PACKAGERATECORP")) {
 				   if(!elementVisible(driver, By.cssSelector("span.status"), 5)) {
-					   Reporter.log("Package Rate : is not displayed in details page");
+					   Reporter.log("package test.java.Rate : is not displayed in details page");
 					   Assert.assertTrue(false);
 				   }
 				   if(getText(driver, By.cssSelector("span.status")).contains("SPECIAL RATE")) {
@@ -6424,7 +6424,7 @@ public void hotelCom_TravelerPage_Prod(RemoteWebDriver driver) throws Exception 
 			   
 			   if(BookingType.equalsIgnoreCase("PACKAGERATECORP")) {
 				   if(!elementVisible(driver, By.cssSelector("span.status"), 5)) {
-					   Reporter.log("Package Rate : is not displayed in details page");
+					   Reporter.log("package test.java.Rate : is not displayed in details page");
 					   Assert.assertTrue(false);
 				   }
 				   if(getText(driver, By.cssSelector("span.status")).contains("SPECIAL RATE")) {

@@ -1,4 +1,4 @@
-package email;
+package test.java.email;
 
 
 
@@ -9,7 +9,7 @@ import java.util.HashMap;
 import org.testng.Assert;
 import org.testng.Reporter;
 
-import domains.PlatformCommonUtil;
+import test.java.domains.PlatformCommonUtil;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;

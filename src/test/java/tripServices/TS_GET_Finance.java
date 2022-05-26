@@ -1,4 +1,4 @@
-package tripServices;
+package test.java.tripServices;
 
 import static org.testng.Assert.assertTrue;
 

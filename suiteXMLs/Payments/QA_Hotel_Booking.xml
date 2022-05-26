@@ -3,98 +3,98 @@
 
 <listeners>
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
-		<listener class-name="common.RemoveDuplicateResults"/>
-		<listener class-name="common.RetryListener"/>
+		<listener class-name="test.java.common.RemoveDuplicateResults"/>
+		<listener class-name="test.java.common.RetryListener"/>
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
 
 <test name="CC PayU" preserve-order="true">
     <classes>
-	        <class name="paymentsBento_Itn_Hotels.IN_PayU"/>
+	        <class name="test.java.paymentsBento_Itn_Hotels.IN_PayU"/>
     </classes>
 </test>
 
 <test name="GoogleCaptcha Validation" preserve-order="true">
     <classes>
-	        <class name="paymentsBento_Itn_Hotels.IN_GoogleCaptcha_Validation"/>
+	        <class name="test.java.paymentsBento_Itn_Hotels.IN_GoogleCaptcha_Validation"/>
     </classes>
 </test>
 
 <test name="GV Full" preserve-order="true">
     <classes>
-	        <class name="paymentsBento_Itn_Hotels.IN_GV_Full"/>
+	        <class name="test.java.paymentsBento_Itn_Hotels.IN_GV_Full"/>
     </classes>
 </test>
 
 <test name="GV WL Amex Partial" preserve-order="true">
     <classes>
-	        <class name="paymentsBento_Itn_Hotels.IN_GV_Wallet_Amex_Partial"/>
+	        <class name="test.java.paymentsBento_Itn_Hotels.IN_GV_Wallet_Amex_Partial"/>
     </classes>
 </test>
 
 <test name="PhonePe validation" preserve-order="true">
     <classes>
-	        <class name="paymentsBento_Itn_Hotels.IN_PhonePe_Validation"/>
+	        <class name="test.java.paymentsBento_Itn_Hotels.IN_PhonePe_Validation"/>
     </classes>
 </test>
 
 <test name="NB retry" preserve-order="true">
     <classes>
-	        <class name="paymentsBento_Itn_Hotels.IN_NB_Retry"/>
+	        <class name="test.java.paymentsBento_Itn_Hotels.IN_NB_Retry"/>
     </classes>
 </test>
 
 <test name="Saved Card" preserve-order="true">
     <classes>
-	        <class name="paymentsBento_Itn_Hotels.IN_SavedCard_RazorPay"/>
+	        <class name="test.java.paymentsBento_Itn_Hotels.IN_SavedCard_RazorPay"/>
     </classes>
 </test>
 
 <test name="Wallet full" preserve-order="true">
     <classes>
-	        <class name="paymentsBento_Itn_Hotels.IN_Wallet_Full"/>
+	        <class name="test.java.paymentsBento_Itn_Hotels.IN_Wallet_Full"/>
     </classes>
 </test>
 
 <test name="EMI" preserve-order="true">
     <classes>
-	        <class name="paymentsBento_Itn_Hotels.IN_EMI_RazorPay"/>
+	        <class name="test.java.paymentsBento_Itn_Hotels.IN_EMI_RazorPay"/>
     </classes>
 </test>
 
 <test name="DC" preserve-order="true">
     <classes>
-	        <class name="paymentsBento_Itn_Hotels.IN_DC_Razorpay"/>
+	        <class name="test.java.paymentsBento_Itn_Hotels.IN_DC_Razorpay"/>
     </classes>
 </test>
 
 <test name="Coupon Valid PayU" preserve-order="true">
     <classes>
-	        <class name="paymentsBento_Itn_Hotels.IN_Coupon_Valid"/>
+	        <class name="test.java.paymentsBento_Itn_Hotels.IN_Coupon_Valid"/>
     </classes>
 </test>
 
 <test name="Coupon InValid NB" preserve-order="true">
     <classes>
-	        <class name="paymentsBento_Itn_Hotels.IN_Coupon_Invalid_NB"/>
+	        <class name="test.java.paymentsBento_Itn_Hotels.IN_Coupon_Invalid_NB"/>
     </classes>
 </test>
 
 <test name="UPI Scan" preserve-order="true">
     <classes>
-	        <class name="paymentsBento_Itn_Hotels.IN_UPIScan_Validation"/>
+	        <class name="test.java.paymentsBento_Itn_Hotels.IN_UPIScan_Validation"/>
     </classes>
 </test>
 
 <test name="AmazonPay" preserve-order="true">
     <classes>
-	        <class name="paymentsBento_Itn_Hotels.IN_AmazonPay"/>
+	        <class name="test.java.paymentsBento_Itn_Hotels.IN_AmazonPay"/>
     </classes>
 </test>
 
 <test name="UPI" preserve-order="true">
     <classes>
-	        <class name="paymentsBento_Itn_Hotels.IN_UPI"/>
+	        <class name="test.java.paymentsBento_Itn_Hotels.IN_UPI"/>
     </classes>
 </test>
 
@@ -103,14 +103,14 @@
 
 <test name="CC Amex" preserve-order="true">
     <classes>
-	        <class name="paymentsBento_Itn_Hotels.IN_AMEX"/>
+	        <class name="test.java.paymentsBento_Itn_Hotels.IN_AMEX"/>
     </classes>
 </test>
 
 
 <test name="NB ICICI" preserve-order="true">
     <classes>
-	        <class name="paymentsBento_Itn_Hotels.IN_NB_ICICI"/>
+	        <class name="test.java.paymentsBento_Itn_Hotels.IN_NB_ICICI"/>
     </classes>
 </test> -->
 

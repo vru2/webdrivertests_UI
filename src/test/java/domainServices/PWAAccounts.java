@@ -1,7 +1,7 @@
 // Framework - Cleartrip Automation
 // Author - Kiran Kumar
 
-package domainServices;
+package test.java.domainServices;
 
 import static org.testng.Assert.assertTrue;
 

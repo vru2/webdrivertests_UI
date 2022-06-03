@@ -1,7 +1,7 @@
 // Framework - Cleartrip Automation
 // Author - Kiran Kumar
 
-package test.java.paymentsUI_Flyin;
+package test.java.  paymentsUI_Flyin;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;

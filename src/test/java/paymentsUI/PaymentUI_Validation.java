@@ -3,7 +3,7 @@
  * Documentation: This Class is focussed on automating the APIs related to new Payments UI.
  */
 
-package test.java.paymentsUI;
+package test.java.  paymentsUI;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;

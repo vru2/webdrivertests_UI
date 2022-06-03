@@ -3,7 +3,7 @@
 // Creation Date - MAR, 2015
 // Author - Mohamed Faisal
 // Copyright � 2012 cleartrip Travel. All right reserved.
-package test.java.domains;
+package test.java.  domains;
 
 import static org.testng.AssertJUnit.assertTrue;
 

@@ -1,4 +1,4 @@
-package test.java.tripServices;
+package test.java.  tripServices;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.testng.Assert;

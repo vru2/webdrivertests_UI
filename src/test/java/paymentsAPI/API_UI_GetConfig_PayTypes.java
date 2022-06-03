@@ -1,7 +1,7 @@
 // Framework - Cleartrip Automation Pay-411
 // Author - Kiran Kumar
 
-package test.java.paymentsAPI;
+package test.java.  paymentsAPI;
 
 import org.testng.annotations.Test;
 

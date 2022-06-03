@@ -1,4 +1,4 @@
-package test.java.payments_PWA_UI;
+package test.java.  payments_PWA_UI;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;

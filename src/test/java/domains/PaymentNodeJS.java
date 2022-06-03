@@ -1,7 +1,7 @@
 // Framework - Cleartrip Automation
 // Author - Kiran Kumar
 
-package test.java.domains;
+package test.java.  domains;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;

@@ -1,4 +1,4 @@
-package test.java.paymentsBento_Itn;
+package test.java.  paymentsBento_Itn;
 
 import org.testng.ITestResult;
 import org.testng.Reporter;
@@ -20,7 +20,7 @@ public class Bento_IN_AmazonPay extends PaymentsBento_Itn_Common {
 		driver.manage().deleteAllCookies();
 		driver.navigate().to(searchurl("IN"));
 		Reporter.log(searchurl("IN"));
-		Searchpagebook1(driver, "","com","");
+		Searchpagebook(driver, "","com","");
 		book_itnnew(driver,"");
 		paymentPage(driver,"TW","AmazonPay","","",""); 
 		compare_fares(driver);	

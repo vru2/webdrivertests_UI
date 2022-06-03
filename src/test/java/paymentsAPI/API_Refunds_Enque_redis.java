@@ -1,7 +1,7 @@
 // Fra[mework - Cleartrip Automation
 // Author - Saloni Gothi
 
-package test.java.paymentsAPI;
+package test.java.  paymentsAPI;
 
 import org.testng.annotations.Test;
 

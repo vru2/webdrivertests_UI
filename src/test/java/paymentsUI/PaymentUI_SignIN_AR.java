@@ -1,4 +1,4 @@
-package test.java.paymentsUI;
+package test.java.  paymentsUI;
 
 import static org.testng.Assert.assertNotEquals;
 

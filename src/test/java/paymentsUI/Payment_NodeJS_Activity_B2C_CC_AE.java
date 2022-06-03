@@ -1,7 +1,7 @@
 // Framework - Cleartrip Automation
 // Author - Kiran Kumar
 
-package test.java.paymentsUI;
+package test.java.  paymentsUI;
 
 import java.security.Timestamp;
 import java.util.Date;

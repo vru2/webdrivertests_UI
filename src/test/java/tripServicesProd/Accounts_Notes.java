@@ -1,4 +1,4 @@
-package test.java.tripServicesProd;
+package test.java.  tripServicesProd;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;

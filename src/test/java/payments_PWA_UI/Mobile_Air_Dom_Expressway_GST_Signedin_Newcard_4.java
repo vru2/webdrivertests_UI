@@ -1,4 +1,4 @@
-package test.java.payments_PWA_UI;
+package test.java.  payments_PWA_UI;
 
 
 import test.java.domainServices.Mobile;
@@ -9,7 +9,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import test.java.dataServices.MobileDataProvider;
+import  test.java.dataServices.MobileDataProvider;
 
 
 public class Mobile_Air_Dom_Expressway_GST_Signedin_Newcard_4 extends Mobile {

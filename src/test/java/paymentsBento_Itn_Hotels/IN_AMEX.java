@@ -1,4 +1,4 @@
-package test.java.paymentsBento_Itn_Hotels;
+package test.java.  paymentsBento_Itn_Hotels;
 
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
@@ -22,7 +22,7 @@ public class IN_AMEX extends PaymentsBento_Itn_Hotels_Common {
 		hotelsPaymentPage(driver,"CC","3456","","",""); 
 	} 
 
- 		@AfterClass
+ 		@AfterClass(alwaysRun = true)
 		public void closeSelenium() throws Exception { 
 		 	browserClose(driver); 
 		}

@@ -4,7 +4,7 @@
 // Author - Mohamed Faisal
 // Copyright 2016 Cleartrip Travel. All rights reserved.
 
-package test.java.commonServices;
+package test.java.  commonServices;
 
 import static test.java.commonServices.CachedPropertiesTemp.cacheUrlInstance;
 import static test.java.commonServices.CachedPropertiesTemp.campLocalInstance;
@@ -61,7 +61,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 
-import test.java.testrailpoc.testrail_utils;
+import  test.java.testrailpoc.testrail_utils;
 
 public class CommonUtil extends oracle.jdbc.driver.OracleDriver{
 

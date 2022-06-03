@@ -1,7 +1,7 @@
 // Framework - Cleartrip Automation
 // Author - Kiran Kumar
 
-package test.java.domainServices;
+package test.java.  domainServices;
 
 import static org.junit.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
@@ -1610,9 +1610,9 @@ OuterLoop: for(int i=1; i<=5; i++) {
 				}				
 		}
 		
-	//==============================================================package test.java.Rates ============================================================//
+	//==============================================================package test.java.  Rates ============================================================//
 		
-				if (Booking_Type.equalsIgnoreCase("PACKAGERATE")) {	
+				if (Booking_Type.equalsIgnoreCase("package test.java.  RATE")) {
 					elementVisible(driver, getObjectHotels("HotelCom_SRP_Price_Filter"), 10);
 					safeClick(driver, getObjectHotels("HotelCom_SRP_Price_Filter")); 	
 			  loop: for(int i=1; i<=8; i++){
@@ -1622,16 +1622,16 @@ OuterLoop: for(int i=1; i<=5; i++) {
 						String Hotel_Select_Room_Xpath = "//li["+i+"]/section/div[5]/div/button[2]";
 						safeClick(driver, By.xpath(Hotel_Select_Room_Xpath));
 						for(int j=2; j<=3; j++){
-							String Hotel_Package_Rate_Xpath = "//li["+i+"]/div/div[2]/table/tbody/tr["+j+"]/td";
+							String Hotel_package_Rate_Xpath = "//li["+i+"]/div/div[2]/table/tbody/tr["+j+"]/td";
 							Thread.sleep(2000);
-							String PackageRate = getText(driver, By.xpath(Hotel_Package_Rate_Xpath));
-						if(PackageRate.contains("Package")){
-								String Package_Rate_Book_Button = "//li["+i+"]/div/div[2]/table/tbody/tr["+j+"]/td[6]/input";
-								safeClick(driver, By.xpath(Package_Rate_Book_Button));
+							String packageRate = getText(driver, By.xpath(Hotel_package_Rate_Xpath));
+						if(packageRate.contains("package test.java.  ")){
+								String package_Rate_Book_Button = "//li["+i+"]/div/div[2]/table/tbody/tr["+j+"]/td[6]/input";
+								safeClick(driver, By.xpath(package_Rate_Book_Button));
 								break loop;								
 							} 
 						else if(i==8){
-							Reporter.log("package test.java.rates are not available in the page");
+							Reporter.log("package test.java.  rates are not available in the page");
 						}
 						}
 					}				
@@ -2515,12 +2515,12 @@ OuterLoop: for(int i=1; i<=5; i++) {
 				Reporter.log("Message displayed after applying first GV is '"+GV_Msg);			
 			}
 		
-				//===================================== package test.java.Rate  =======================================//
+				//===================================== package test.java.  Rate  =======================================//
 				
-				if (BookingType.equalsIgnoreCase("PACKAGE")) {
-							String PackageRoomType = getText(driver, getObjectHotels("HotelCom_BookStep1_RoomDetails"));
-							if(PackageRoomType.contains("Package")) {
-								Reporter.log("package test.java.rate is not dispayed");
+				if (BookingType.equalsIgnoreCase("package test.java.  ")) {
+							String packageRoomType = getText(driver, getObjectHotels("HotelCom_BookStep1_RoomDetails"));
+							if(packageRoomType.contains("package test.java.  ")) {
+								Reporter.log("package test.java.  rate is not dispayed");
 								Assert.assertTrue(false);
 							}
 				}		
@@ -6308,9 +6308,9 @@ public void hotelCom_TravelerPage_Prod(RemoteWebDriver driver) throws Exception 
 					Assert.assertTrue(false);
 			   } 
 			   
-			   if(BookingType.equalsIgnoreCase("PACKAGERATECORP")) {
+			   if(BookingType.equalsIgnoreCase("package test.java.  RATECORP")) {
 				   if(!elementVisible(driver, By.cssSelector("span.status"), 5)) {
-					   Reporter.log("package test.java.Rate : is not displayed in details page");
+					   Reporter.log("package test.java.  Rate : is not displayed in details page");
 					   Assert.assertTrue(false);
 				   }
 				   if(getText(driver, By.cssSelector("span.status")).contains("SPECIAL RATE")) {
@@ -6422,9 +6422,9 @@ public void hotelCom_TravelerPage_Prod(RemoteWebDriver driver) throws Exception 
 					Assert.assertTrue(false);
 			   } 
 			   
-			   if(BookingType.equalsIgnoreCase("PACKAGERATECORP")) {
+			   if(BookingType.equalsIgnoreCase("package test.java.  RATECORP")) {
 				   if(!elementVisible(driver, By.cssSelector("span.status"), 5)) {
-					   Reporter.log("package test.java.Rate : is not displayed in details page");
+					   Reporter.log("package test.java.  Rate : is not displayed in details page");
 					   Assert.assertTrue(false);
 				   }
 				   if(getText(driver, By.cssSelector("span.status")).contains("SPECIAL RATE")) {

@@ -1,4 +1,4 @@
-package test.java.ct_config;
+package test.java.  ct_config;
 
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;

@@ -1,4 +1,4 @@
-package test.java.paymentsBento_Itn_Hotels;
+package test.java.  paymentsBento_Itn_Hotels;
 
 import static org.junit.Assert.assertTrue;
 
@@ -49,6 +49,7 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		if(Domain=="IN") {
 			SearchUrl=inurl+Hotel_URL;
 		}
+		System.out.println(SearchUrl);
 		return SearchUrl;
 	}
 	
@@ -115,9 +116,9 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		}
 		textPresent(driver, "Itinerary", 20);
 		Child_URL = driver.getCurrentUrl();
-		driver.close(); // Closing Child window
+		//driver.close(); // Closing Child window
 		Thread.sleep(5000);
-		driver.switchTo().window(parent);		
+		driver.switchTo().window(parent);
 		driver.get(Child_URL);
 
 		textPresent(driver, "Itinerary", 20);
@@ -134,7 +135,10 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 	
 	public void hotelsItnDetails(RemoteWebDriver driver, String CouponGV, String PayType) throws Exception {
 		elementPresent(driver, getObjectPayment("Hotel_ItnPage_Continue_Btn"), 20);
-		textPresent(driver, "Review your itinerary", 1);
+		textPresent(driver, "Review your itinerary", 10);
+		if(elementVisible(driver, By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Get OTP'])[1]/preceding::*[name()='svg'][2]"),5)) {
+			safeClick(driver, By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Get OTP'])[1]/preceding::*[name()='svg'][2]"));
+		}
 		if(CouponGV.equalsIgnoreCase("PartialGV")) {
 		 String[] GV = getGV(10);
 		 mouseHover(driver, By.xpath("//input"));

@@ -1,4 +1,4 @@
-package test.java.smsserviceprod;
+package test.java.  smsserviceprod;
 
 import static org.testng.Assert.assertTrue;
 

@@ -2,7 +2,7 @@
 // Author - Kiran Kumar
 
 
-package test.java.accountsAPI;
+package test.java.  accountsAPI;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

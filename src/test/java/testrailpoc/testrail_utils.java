@@ -1,4 +1,4 @@
-package test.java.testrailpoc;
+package test.java.  testrailpoc;
 
 import static test.java.common.CachedProperties.cacheUrlInstance;
 import static test.java.common.CachedProperties.dataInstance;
@@ -17,8 +17,8 @@ import org.json.simple.JSONObject;
 import org.testng.ITestResult;
 
 import test.java.common.CachedProperties;
-import test.java.testrail.APIClient;
-import test.java.testrail.APIException;
+import  test.java.testrail.APIClient;
+import  test.java.testrail.APIException;
 @SuppressWarnings({ "rawtypes", "unchecked" })
 public class testrail_utils {
 	DefaultHttpClient httpClient=new DefaultHttpClient();

@@ -1,4 +1,4 @@
-package test.java.paymentsUI;
+package test.java.  paymentsUI;
 
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.remote.RemoteWebDriver;

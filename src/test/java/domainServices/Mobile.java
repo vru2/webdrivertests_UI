@@ -1,5 +1,5 @@
 
-package test.java.domainServices;
+package test.java.  domainServices;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
@@ -3681,7 +3681,7 @@ public void mobileCom_Hotel_HomepageMultiPaxRoom(RemoteWebDriver driver, String 
 	safeClick(driver, getObject("MobileCom_Hotel_HomePage_Search_Button_MultiPax"));
 }
 
-public void mobileCom_Hotel_Package_Rates(RemoteWebDriver driver, String Hotel_Name) throws Exception {
+public void mobileCom_Hotel_package_Rates(RemoteWebDriver driver, String Hotel_Name) throws Exception {
 	elementNotVisible(driver, getObject("MobileCom_Hotel_SRP_HoldOn_Search_Message"), 60);
 	String srpText = getText(driver, getObject("MobileCom_Hotel_SRP_Text"));
 	Assert.assertEquals("Price", srpText);
@@ -3696,7 +3696,7 @@ public void mobileCom_Hotel_Package_Rates(RemoteWebDriver driver, String Hotel_N
 				String RoomType_Xpath = "//section/nav/ul[" + j + "]/li[1]";
 				if (elementPresent_Time(driver, By.xpath(RoomType_Xpath), 1)) {
 					String RoomType_Text = getText(driver, By.xpath(RoomType_Xpath));
-					if (RoomType_Text.contains("Package")) {
+					if (RoomType_Text.contains("package test.java.  ")) {
 						safeClick(driver, By.xpath(RoomType_Xpath));
 						i = 11;
 						break;

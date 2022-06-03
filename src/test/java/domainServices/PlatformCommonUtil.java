@@ -1,4 +1,4 @@
-package test.java.domainServices;
+package test.java.  domainServices;
 
 import static com.jayway.restassured.RestAssured.given;
 

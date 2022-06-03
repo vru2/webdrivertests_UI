@@ -1,7 +1,7 @@
 // Framework - Cleartrip Automation
 // Author - Kiran Kumar
 
-package test.java.paymentsBento_com;
+package test.java.  paymentsBento_com;
 
 import java.util.Iterator;
 import java.util.Set;

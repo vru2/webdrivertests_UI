@@ -3,7 +3,7 @@
 // Creation Date - MAR, 2015
 // Author - Karthick Krihsna
 // Copyright © 2016 cleartrip Travel. All right reserved.
-package test.java.domainServices;
+package test.java.  domainServices;
 
 import static org.testng.AssertJUnit.assertTrue;
 

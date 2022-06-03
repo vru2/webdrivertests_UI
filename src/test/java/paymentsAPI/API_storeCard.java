@@ -1,7 +1,7 @@
 // Framework - Cleartrip Automation
 // Author - Saloni
 
-package test.java.paymentsAPI;
+package test.java.  paymentsAPI;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package test.java.ct_admin;
+package test.java.  ct_admin;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Assert;

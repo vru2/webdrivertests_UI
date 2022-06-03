@@ -1,7 +1,7 @@
 // Framework - Cleartrip Automation
 // Author - Kiran Kumar
 
-package test.java.paymentsAPI;
+package test.java.  paymentsAPI;
 import java.io.IOException;
 
 import org.json.JSONException;

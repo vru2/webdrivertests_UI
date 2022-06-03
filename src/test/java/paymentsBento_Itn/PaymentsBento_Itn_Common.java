@@ -1,4 +1,4 @@
-package test.java.paymentsBento_Itn;
+package test.java.  paymentsBento_Itn;
 
 import static org.testng.Assert.assertTrue;
 
@@ -231,7 +231,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			 }
 			 if (elementVisible(driver, getObjectPayment("Bento_Indigo_Logo"), 5)) 
 			 {
-				 if(elementVisible(driver,By.xpath("//div[4]/div/button"),5))
+				 if(elementVisible(driver, getObjectPayment("Bento_Indigo_Logo"),5))
 				 {
 					 Thread.sleep(2000);
 					 safeClick(driver,By.xpath("//div[4]/div/button"));
@@ -1604,6 +1604,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		safeClick(driver, getObjectPayment("MakePayment_Amazon_Page_Signin_Login"));
 		textPresent_Log(driver, "Select payment method", 20);
 		safeClick(driver, getObjectPayment("MakePayment_Amazon_Page_SelectCard"));
+		elementVisible(driver, getObjectPayment("MakePayment_Amazon_Page_SelectCard_CVV"), 2);
 		safeType(driver, getObjectPayment("MakePayment_Amazon_Page_SelectCard_CVV"), "123");
 		safeClick(driver, getObjectPayment("MakePayment_Amazon_Page_Pay_Button"));
 		elementPresent_Time(driver, getObjectPayment("MakePayment_Amazon_Page_Mock_Continue_Button"), 10);

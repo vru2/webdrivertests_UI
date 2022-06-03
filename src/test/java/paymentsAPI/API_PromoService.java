@@ -4,7 +4,7 @@
  */
 
 
-package test.java.paymentsAPI;
+package test.java.  paymentsAPI;
 
 import org.testng.annotations.Test;
 

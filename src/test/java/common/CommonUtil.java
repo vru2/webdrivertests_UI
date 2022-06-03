@@ -1,4 +1,4 @@
-package test.java.common;
+package test.java.  common;
 
 import static test.java.common.CachedProperties.cacheUrlInstance;
 import static test.java.common.CachedProperties.dataInstance;
@@ -39,11 +39,11 @@ public class CommonUtil {
 	public CachedProperties objectReposPlatform = objectReportInstancePlatform();
 	public CachedProperties objectReposPayment = objectReportInstancePayment();
 	//public CachedProperties rubyAPITrips = getTrip();
-	
+
 	public String debug = common.value("debug");
 	public boolean debugger = Boolean.parseBoolean(debug);
 	StopWatch watch;
-	
+
 
 	public String getBit() {
 		String architecture = "os.arch";
@@ -53,14 +53,14 @@ public class CommonUtil {
 
 		return bit;
 	}
-	
+
 	public String getValue(String objectKey) throws Exception {
 		String[] curObject = objectRepos.value(objectKey).split(":");
 		String objectValue = curObject[0];
 		return objectValue;
 
 	}
-	
+
 	public By getObject(String objectKey) throws Exception {
 		String[] curObject = objectRepos.value(objectKey).split(":", 2);
 		String objectType = curObject[0];
@@ -97,7 +97,7 @@ public class CommonUtil {
 			throw new Exception("Wrong object type:" + objectKey);
 		}
 	}
-	
+
 	public By getObjectPlatform(String objectKey) throws Exception {
 		String[] curObject = objectReposPlatform.value(objectKey).split(":");
 		String objectType = curObject[0];
@@ -134,12 +134,12 @@ public class CommonUtil {
 			throw new Exception("Wrong object type:" + objectKey);
 		}
 	}
-	
+
 	public void afterMethod(RemoteWebDriver driver, ITestResult _result) throws Exception {
 		screenshot(_result, driver);
 		afterMethodProcess(_result);
 	}
-	
+
 	public String putLogDate() throws Exception {
 		Calendar c = new GregorianCalendar();
 		c.add(Calendar.DATE, +0);
@@ -147,7 +147,7 @@ public class CommonUtil {
 		String dateString = new SimpleDateFormat("_EEE_ddMMMyyyy_hhmmss").format(s);
 		return dateString;
 	}
-	
+
 	public String putSRPDate(int toDate) throws Exception {
 		Calendar c = new GregorianCalendar();
 		c.add(Calendar.DATE, +toDate);
@@ -155,22 +155,22 @@ public class CommonUtil {
 		String dateString = new SimpleDateFormat("dd/MM/yyyy").format(s);
 		return dateString;
 	}
-	
-	
+
+
 	public String getNewDate_TripID() throws Exception {
-		Random random = new Random();		
+		Random random = new Random();
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("hhmmSSS");
 		LocalDateTime now =  LocalDateTime.now();
 		String TripID = "Q2020"+random.nextInt(100)+dtf.format(now);
 		return TripID;
 	}
-	
+
 	public void afterMethodProcess(ITestResult _result) throws Exception {
 		if (watch != null) {
 			watch.stop();
 			addLog("Time taken by script : " + watch.toString());
 		}
-	
+
 	}
 	public void screenshot(ITestResult result, RemoteWebDriver driver) throws Exception {
 
@@ -208,7 +208,7 @@ public class CommonUtil {
 				System.out.println("linux path " + filepath);
 				WebDriver augmentedDriver = new Augmenter().augment(driver);
 				File screenshotFile = ((TakesScreenshot) augmentedDriver).getScreenshotAs(OutputType.FILE);
-			 //Files.copy(screenshotFile, new File(filepath));
+				//Files.copy(screenshotFile, new File(filepath));
 				//FileUtils(screenshotFile, new File(filepath));
 				addLog("<a href'" + filepath + "'>screenshot</a>");
 				addLog("Screenshot Name :" + filename);
@@ -218,7 +218,7 @@ public class CommonUtil {
 
 		}
 	}
-	
+
 
 	public By getObjectPayment(String objectKey) throws Exception {
 		String[] curObject = objectReposPayment.value(objectKey).split(":");
@@ -256,11 +256,11 @@ public class CommonUtil {
 			throw new Exception("Wrong object type:" + objectKey);
 		}
 	}
-	
+
 	public void addLog(String logMessage) {
 		Reporter.log("<p>"+logMessage+"</p>",false);
 	}
-	
+
 	public void addLog(String logMessage,boolean printOnConsole) {
 		if(printOnConsole) {
 			Reporter.log("<p>"+logMessage+"</p>",false);
@@ -269,5 +269,5 @@ public class CommonUtil {
 			Reporter.log("<p>"+logMessage+"</p>",false);
 		}
 	}
-	
+
 }

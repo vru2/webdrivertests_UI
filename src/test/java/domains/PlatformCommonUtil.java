@@ -1,4 +1,4 @@
-package test.java.domains;
+package test.java.  domains;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -13,7 +13,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import org.testng.Reporter;
 
-import test.java.common.WrapperMethod;
+import  test.java.common.WrapperMethod;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 

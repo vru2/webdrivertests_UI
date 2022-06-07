@@ -273,10 +273,12 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 	String urlFetchGWFailure = "/paymentservice/bannerDetails";
 	String urlHi5_Fetch_Wallet = "/pay/wallet?userId=65218660&currency=INR";
 	String urlHi5_Fetch_WalletTnx = "/pay/wallet/5758972/transactions?offset=1&size=10";
-	
-	
+
+
 	String urlSuperCoins_MobileLinked= "/payments/rewards/supercoins/checkAccountLinked?mobileNumber=+919986696785";
-	
+
+	String urlHi5_GetTrnx= "/pay/wallet/5758972/transactions?offset=1&size=10";
+
 	String urlSuperCoins_Info = "/api/supercoinsInfo/Q210917152782";
 	
 	String urlSuperCoins_SendOTP="/payments/rewards/sendOtp";
@@ -797,6 +799,13 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 		return headers;
 	}
 
+	public HashMap<String, Object> headerFormss_Hi5_GetTrnx(){
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("x-ct-api-key", "8eba7730aab83acbe07d7643d1c0d146");
+		headers.put("Cookie", "ct-auth=3xcxwwe9ygZiz9iN8PQijGtShnZ6wgaan3KzDIvhyX%2FgtvKRgKn%2FcWX1FJfzonaXt3THK21PZyGXoShVpB1iXMqmWm%2FDev2x5gdkBTtDCsr%2Bu0DSP3zgAJqBuEcpX5lNKg%2F%2FPf1RAYqRIMSQp1BvYlcH8%2FyUvKb1jb%2B9ynKvCSw%3D");
+		return headers;
+	}
+
 	public HashMap<String, Object> addCookies(){		
 		HashMap<String, Object> setCookies = new HashMap<>();
 		setCookies.put("userid", "prakhar.chatterjee%40cleartrip.com%7C%7C%7C%7C65176819");
@@ -955,6 +964,14 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 			url= urlROR_Fetch_PayByID;
 			Reporter.log(urlReporting+url);
 		}
+		else if(payType.equalsIgnoreCase("Hi5_GetTrnx")) {
+			RestAssured.baseURI =qaurl;
+			HashMap<String, Object> headers1 = new HashMap<>();
+			headers1=headerFormss_Hi5_GetTrnx();
+			url= urlHi5_GetTrnx;
+			Reporter.log(qaurl+url);
+			System.out.println(qaurl+url);
+		}
 		else if(payType.equalsIgnoreCase("SuperCoins_MobileLinked")) {
 			RestAssured.baseURI =urlrewards_URI;
 			url= urlSuperCoins_MobileLinked;
@@ -1061,7 +1078,25 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 		return request;			
 	}
 
-	public Response payPut(String payType, String payType1) {
+
+	public Response payGet2(String payType, String payType1) {
+
+		HashMap<String, Object> headers = new HashMap<>();
+		Response request;
+
+		RestAssured.baseURI =qaurl;
+		headers=headerFormss_Hi5_GetTrnx();
+		String url= urlHi5_GetTrnx;
+		Reporter.log(qaurl+url);
+		System.out.println(qaurl+url);
+
+		Reporter.log(url);
+		System.out.println(url);
+		request = RestAssured.get(url);
+		return request;
+	}
+
+		public Response payPut(String payType, String payType1) {
 		RestAssured.baseURI =urlReporting;
 		String url = null;
 		String params = null;
@@ -2268,6 +2303,16 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 				Assert.assertTrue(false);
 			}
 		}
+		if(payType.equalsIgnoreCase("Hi5_GetTrnx")) {
+			if(!(resp.body().asString().contains("Q220512511592"))){
+				Assert.assertTrue(false);
+			}
+			if(!(resp.body().asString().contains("Q2205125115w232392"))){
+				Assert.assertTrue(false);
+			}
+		}
+
+
 		if(payType.equalsIgnoreCase("VALIDATE")) {
 			String redirection = jsonPathEvaluator.getString("redirection_required");
 			String Response = jsonPathEvaluator.getString("response_message");

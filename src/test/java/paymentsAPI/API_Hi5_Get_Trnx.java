@@ -1,20 +1,17 @@
 // Framework - Cleartrip Automation
 // Author - Kiran Kumar
 
-package test.java.  paymentsAPI;
-import org.testng.annotations.Test;
+package test.java.paymentsAPI;
 
 import io.restassured.response.Response;
+import org.testng.annotations.Test;
 
-public class API_Wallet_Fetch extends API_PaymentCommon1
+public class API_Hi5_Get_Trnx extends API_PaymentCommon1
 {
 	@Test
-	public void Wallet_GETWALLET()  {
-		Response resp ;		
-		resp = rearchWallet("WALLET_Fetch","");	
-		validation("WALLET_Fetch_NotLogged", resp);
-		resp = rearchWallet("WALLET_Fetch_LoggedIN","");	
-		validation("WALLET_Fetch_LoggedIN", resp);
-		}
-	
+	public void Hi5_getTrnx() {
+		Response resp;
+		resp = payGet2("Hi5_GetTrnx", "");
+		validation("Hi5_GetTrnx", resp);
+	}
 }

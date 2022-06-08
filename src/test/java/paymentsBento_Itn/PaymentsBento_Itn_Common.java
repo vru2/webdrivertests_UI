@@ -162,7 +162,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		Child_URL = driver.getCurrentUrl();
 		driver.close(); // Closing Child window
 		driver.switchTo().window(parent);		
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		driver.get(Child_URL);
 		if(!elementVisible(driver,By.cssSelector("h2.fs-7.px-4.c-neutral-900.fw-600"), 20)) {
 			textPresent_Log(driver, "Review your itinerary", 10);					
@@ -219,7 +219,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			driver.manage().addCookie(ctauth);
 		}
 		driver.navigate().refresh();
-		elementPresent_log(driver, getObjectPayment("Bento_Book_Button"), "Book", 30);
+		elementPresent_log(driver, getObjectPayment("Bento_Book_Button"), "Book", 10);
 		 if(domain=="com")
 		 {
 			 elementVisible(driver, getObjectPayment("Bento_Indigo_Logo"), 1);
@@ -546,9 +546,12 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 					elementPresent_log(driver,getObjectPayment("Bento_Itn_Fare_Continue4"),"Itinerary contiue btn",5);
 	                safeClick(driver,getObjectPayment("Bento_Itn_Fare_Continue4"));
 					Reporter.log("Clicked on continue"); 
-			 
+			 System.out.println("Step 1");
 			 }
-			 
+
+			 else safeClick(driver,getObjectPayment("Bento_Itn_Fare_Continue4"));
+
+
 	}
 		
 	public void itinerary_Block1(RemoteWebDriver driver, String gv_coupon) throws Exception {

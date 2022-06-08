@@ -136,9 +136,10 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 	public void hotelsItnDetails(RemoteWebDriver driver, String CouponGV, String PayType) throws Exception {
 		elementPresent(driver, getObjectPayment("Hotel_ItnPage_Continue_Btn"), 20);
 		textPresent(driver, "Review your itinerary", 10);
-		if(elementVisible(driver, By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Get OTP'])[1]/preceding::*[name()='svg'][2]"),5)) {
-			safeClick(driver, By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Get OTP'])[1]/preceding::*[name()='svg'][2]"));
+		if(elementVisible(driver, By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Continue with Email'])[1]/preceding::*[name()='svg'][3]"),5)) {
+			safeClick(driver, By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Continue with Email'])[1]/preceding::*[name()='svg'][3]"));
 		}
+
 		if(CouponGV.equalsIgnoreCase("PartialGV")) {
 		 String[] GV = getGV(10);
 		 mouseHover(driver, By.xpath("//input"));

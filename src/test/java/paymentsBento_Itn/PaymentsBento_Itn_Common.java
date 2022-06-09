@@ -549,10 +549,20 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			 System.out.println("Step 1");
 			 }
 
-			 else safeClick(driver,getObjectPayment("Bento_Itn_Fare_Continue4"));
+			/* else if (elementVisible(driver,getObjectPayment("Bento_Itn_Fare_Continue4"),1){
+				 safeClick(driver,getObjectPayment("Bento_Itn_Fare_Continue4"));
+			 }*/
+		else {
 
-
+			System.out.println("Clicked on button");
+				 WebElement ele=driver.findElement(By.xpath("//div[22]/div/button"));
+				 ele.sendKeys(Keys.END);
+				 Thread.sleep(2000);
+				 elementPresent_log(driver,By.xpath("//div[22]/div/button"),"Itinerary contiue btn",5);
+				 safeClick(driver, By.xpath("//div[22]/div/button"));
+			 }
 	}
+
 		
 	public void itinerary_Block1(RemoteWebDriver driver, String gv_coupon) throws Exception {
 		if(!textPresent(driver, "Review your itinerary", 1))  {

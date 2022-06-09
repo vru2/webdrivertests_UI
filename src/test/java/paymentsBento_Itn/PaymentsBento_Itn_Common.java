@@ -545,21 +545,11 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 					Thread.sleep(2000);
 					elementPresent_log(driver,getObjectPayment("Bento_Itn_Fare_Continue4"),"Itinerary contiue btn",5);
 	                safeClick(driver,getObjectPayment("Bento_Itn_Fare_Continue4"));
-					Reporter.log("Clicked on continue"); 
-			 System.out.println("Step 1");
+					Reporter.log("Clicked on continue");
 			 }
-
-			/* else if (elementVisible(driver,getObjectPayment("Bento_Itn_Fare_Continue4"),1){
-				 safeClick(driver,getObjectPayment("Bento_Itn_Fare_Continue4"));
-			 }*/
 		else {
-
-			System.out.println("Clicked on button");
-				 WebElement ele=driver.findElement(By.xpath("//div[22]/div/button"));
-				 ele.sendKeys(Keys.END);
-				 Thread.sleep(2000);
-				 elementPresent_log(driver,By.xpath("//div[22]/div/button"),"Itinerary contiue btn",5);
-				 safeClick(driver, By.xpath("//div[22]/div/button"));
+				Thread.sleep(5000);
+				 safeClick(driver,getObjectPayment("Bento_Itn_Fare_Continue"));
 			 }
 	}
 
@@ -688,7 +678,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			   ele4.click();
 			   Reporter.log("Clicked on meal continue"); 
 			  }			  
-			}			
+			}
 	}
 	
 

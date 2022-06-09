@@ -9,10 +9,13 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.io.File;
+
 public class NB_Retry_PWA_Air extends PWA_Air_Common {
 
 	@BeforeClass
 	public void setUp() throws Exception {
+
 		driver=(RemoteWebDriver) getMobileDriver(driver);
 	}
 

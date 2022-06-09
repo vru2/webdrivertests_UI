@@ -103,7 +103,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	protected String searchurl_PWA(String Domain)  throws Exception
 	{
 		
-		String URL = "https://qa2.cleartrip.com/flights/results?adults=1&childs=0&class=Economy&depart_date=04%2F06%2F2022&from=BLR&from_header=Bangalore%2C+IN+-+Kempegowda+International+Airport&infants=0&to=BOM&to_header=Mumbai%2C+IN+-+Chatrapati+Shivaji+Airport";
+		String URL = "https://qa2.cleartrip.com/flights/results?adults=1&childs=0&class=Economy&depart_date=04%2F09%2F2022&from=BLR&from_header=Bangalore%2C+IN+-+Kempegowda+International+Airport&infants=0&to=BOM&to_header=Mumbai%2C+IN+-+Chatrapati+Shivaji+Airport";
 		return URL;
 	}
 
@@ -1608,6 +1608,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		textPresent_Log(driver, "Select payment method", 20);
 		safeClick(driver, getObjectPayment("MakePayment_Amazon_Page_SelectCard"));
 		elementVisible(driver, getObjectPayment("MakePayment_Amazon_Page_SelectCard_CVV"), 2);
+		Thread.sleep(5000);
 		safeType(driver, getObjectPayment("MakePayment_Amazon_Page_SelectCard_CVV"), "123");
 		safeClick(driver, getObjectPayment("MakePayment_Amazon_Page_Pay_Button"));
 		elementPresent_Time(driver, getObjectPayment("MakePayment_Amazon_Page_Mock_Continue_Button"), 10);

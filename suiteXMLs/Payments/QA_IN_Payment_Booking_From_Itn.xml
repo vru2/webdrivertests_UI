@@ -77,7 +77,7 @@
     </classes>
 </test>
 
-<test name="PhonePe Validataion" preserve-order="true" >
+<test name="PhonePe Validation" preserve-order="true" >
     <classes>
 	        <class name="test.java.paymentsBento_Itn.Bento_IN_Phonepe_Validation"/>
     </classes>

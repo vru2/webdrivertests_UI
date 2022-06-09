@@ -156,13 +156,7 @@ public class WrapperMethod extends CommonUtil {
 		// Added individual deviceMetrices & useragent
 		deviceMetrics.put("width", 360); 
 		deviceMetrics.put("height", 560);
-		deviceMetrics.put("pixelRatio", 4.0);/*
-		 Dimension dimension = new Dimension(800, 600);
-		 driver.manage().window().setSize(dimension);*/
-
-		//Map<String, String> mobileEmulation = new HashMap<>(); -- revert incase mobile agent doesn't work
-		//mobileEmulation.put("deviceName", "Nexus 5"); 
-
+		deviceMetrics.put("pixelRatio", 4.0);
 		// Added individual deviceMetrices & useragent
 		Map<String, Object> mobileEmulation = new HashMap<>();
 
@@ -177,10 +171,11 @@ public class WrapperMethod extends CommonUtil {
 			File file = new File(".");
 			String filepath = file.getCanonicalPath() + "//exe//chromedriver";
 			System.setProperty("webdriver.chrome.driver", filepath);
-		} else {
+		} else if(System.getProperty("os.name").contains("Mac"))
+		{
 			File file = new File(".");
 			String filepath = file.getCanonicalPath() + "//exe//chromedriver_mac";
-			//System.setProperty("webdriver.chrome.driver", filepath);
+			System.setProperty("webdriver.chrome.driver", filepath);
 		}
 
 

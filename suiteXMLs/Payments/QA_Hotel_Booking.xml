@@ -106,12 +106,6 @@
 	        <class name="test.java.paymentsBento_Itn_Hotels.IN_AMEX"/>
     </classes>
 </test>
-
-
-<test name="NB ICICI" preserve-order="true">
-    <classes>
-	        <class name="test.java.paymentsBento_Itn_Hotels.IN_NB_ICICI"/>
-    </classes>
-</test> -->
+->
 
 </suite>

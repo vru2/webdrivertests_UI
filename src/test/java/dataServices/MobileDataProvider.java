@@ -3,9 +3,9 @@
 // Creation Date - June, 2016
 // Author - Kiran Kumar
 // Copyright � 2016 cleartrip Travel. All rights reserved.
-package test.java.  dataServices;
+package test.java.dataServices;
 
-import org.testng.annotations.DataProvider;
+import  org.testng.annotations.DataProvider;
 
 import test.java.commonServices.WrapperMethod;
 

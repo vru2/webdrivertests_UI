@@ -98,14 +98,4 @@
     </classes>
 </test>
 
-
-<!-- 
-
-<test name="CC Amex" preserve-order="true">
-    <classes>
-	        <class name="test.java.paymentsBento_Itn_Hotels.IN_AMEX"/>
-    </classes>
-</test>
-->
-
 </suite>

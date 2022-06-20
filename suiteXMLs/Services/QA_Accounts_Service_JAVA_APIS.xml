@@ -34,19 +34,19 @@
 		<classes>
 			<class name="test.java.accountsAPI.Account_Service_CompanySearchAPI_withDomainname" />
 			<class
-				name="accountsAPI.Account_Service_CompanySearchAPI_internalDomainSearch" />
+				name="test.java.accountsAPI.Account_Service_CompanySearchAPI_internalDomainSearch" />
 			<class
-				name="accountsAPI.Account_Service_CompanySearchAPIwithAPIkey_Companyusersandtravelers" />
+				name="test.java.accountsAPI.Account_Service_CompanySearchAPIwithAPIkey_Companyusersandtravelers" />
 			<class name="test.java.accountsAPI.Account_Service_CompanySearchAPIwithAPIkey" />
 			<class name="test.java.accountsAPI.Account_Service_CompanySearchAPIwithTagID" />
 			<class
-				name="accountsAPI.Account_Service_CompanySearchAPIwithTagID_UsersandTravellers" />
+				name="test.java.accountsAPI.Account_Service_CompanySearchAPIwithTagID_UsersandTravellers" />
 			<class name="test.java.accountsAPI.Account_Service_CompanyConfig_GSTdetailswithID" />
 			<class
-				name="accountsAPI.Account_Service_CompanyConfig_GSTdetailswithDomainName" />
+				name="test.java.accountsAPI.Account_Service_CompanyConfig_GSTdetailswithDomainName" />
 			<class name="test.java.accountsAPI.Account_Service_CompanyConfig_GetCompanybyID" />
 			<class
-				name="accountsAPI.Account_Service_CompanyConfig_GetCompanyConfigsbyID" />
+				name="test.java.accountsAPI.Account_Service_CompanyConfig_GetCompanyConfigsbyID" />
 			<class name="test.java.accountsAPI.Account_Service_CompanyVendorMapping" />
 			<class name="test.java.accountsAPI.Account_Service_Fetchdomain_nameByID" />
 			<class name="test.java.accountsAPI.Account_Service_Company_DomainName_Autocomplete" />

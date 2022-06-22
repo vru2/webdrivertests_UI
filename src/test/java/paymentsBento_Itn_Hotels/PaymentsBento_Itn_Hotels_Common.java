@@ -8,6 +8,7 @@ import java.util.Set;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
@@ -114,14 +115,14 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		if(!parent.equals(child_window))
 		{driver.switchTo().window(child_window);}
 		}
-		textPresent(driver, "Itinerary", 20);
+		textPresent(driver, "itinerary", 20);
 		Child_URL = driver.getCurrentUrl();
 		//driver.close(); // Closing Child window
-		Thread.sleep(5000);
+		Thread.sleep(1000);
 		driver.switchTo().window(parent);
 		driver.get(Child_URL);
 
-		textPresent(driver, "Itinerary", 20);
+		textPresent(driver, "itinerary", 20);
 		driver.manage().addCookie(cookie_Bento_Hotels);
 		refreshPage(driver);
 	}
@@ -134,8 +135,8 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		
 	
 	public void hotelsItnDetails(RemoteWebDriver driver, String CouponGV, String PayType) throws Exception {
-		elementPresent(driver, getObjectPayment("Hotel_ItnPage_Continue_Btn"), 20);
-		textPresent(driver, "Review your itinerary", 10);
+		//elementPresent(driver, getObjectPayment("Hotel_ItnPage_Continue_Btn"), 20);
+		textPresent(driver, "Review your itinerary", 5);
 		if(elementVisible(driver, By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Continue with Email'])[1]/preceding::*[name()='svg'][3]"),5)) {
 			safeClick(driver, By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Continue with Email'])[1]/preceding::*[name()='svg'][3]"));
 		}
@@ -205,7 +206,14 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		hotelPrice_Itinerary = hotelPrice_Itinerary.replace("₹", "").replace(",", "");
         driver.findElement(getObjectPayment("Hotel_ContactPage_Continue_Btn")).sendKeys(Keys.PAGE_DOWN);
 		elementVisible(driver, getObjectPayment("Hotel_ContactPage_Continue_Btn"), 5);
-		safeClick(driver, getObjectPayment("Hotel_ContactPage_Continue_Btn"));
+		WebElement ele=driver.findElement(getObjectPayment("Hotel_ContactPage_Continue_Btn"));
+		ele.sendKeys(Keys.END);
+		Thread.sleep(4000);
+		elementVisible(driver,getObjectPayment("Hotel_ContactPage_Continue_Btn"),1);
+		safeClick(driver,getObjectPayment("Hotel_ContactPage_Continue_Btn"));
+		Reporter.log("Clicked on continue");
+
+		//safeClick(driver, getObjectPayment("Hotel_ContactPage_Continue_Btn"));
 	}
 	
 	public void hotelsPayment_Page_Validation(RemoteWebDriver driver, String PayType, String Domain) throws Exception {

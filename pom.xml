@@ -61,12 +61,12 @@
     </build>
 
     <dependencies>
-      <!--  <dependency>
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.9</version>
         </dependency>
--->
+
         <dependency>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-surefire-report-plugin</artifactId>
@@ -147,12 +147,12 @@
             <artifactId>commons-codec</artifactId>
             <version>1.9</version>
         </dependency>
-<!--
+
         <dependency>
             <groupId>org.mariadb.jdbc</groupId>
             <artifactId>mariadb-java-client</artifactId>
             <version>2.4.2</version>
-        </dependency>-->
+        </dependency>
 
         <dependency>
             <groupId>org.hamcrest</groupId>
@@ -310,14 +310,12 @@
             <artifactId>jaxb-api</artifactId>
             <version>2.2.12</version>
         </dependency>
-<!--
 
         <dependency>
             <groupId>org.glassfish</groupId>
             <artifactId>javax.json</artifactId>
             <version>1.0.2</version>
         </dependency>
--->
 
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
@@ -347,7 +345,6 @@
             <artifactId>guice</artifactId>
             <version>3.0</version>
         </dependency>
-<!--
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-json</artifactId>
@@ -358,7 +355,7 @@
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-xml</artifactId>
             <version>2.4.5</version>
-        </dependency>-->
+        </dependency>
 
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
@@ -389,7 +386,6 @@
             <artifactId>commons-math3</artifactId>
             <version>3.6.1</version>
         </dependency>
-<!--
 
 
         <dependency>
@@ -397,7 +393,6 @@
             <artifactId>commons-logging</artifactId>
             <version>1.2</version>
         </dependency>
--->
 
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -424,12 +419,6 @@
             <artifactId>activation</artifactId>
             <version>1.1.1</version>
         </dependency>
-<!--
-        <dependency>
-            <groupId>de.twentyeleven.skysail</groupId>
-            <artifactId>com.jayway.rest-assured-osgi</artifactId>
-            <version>1.6.2</version>
-        </dependency>-->
 
         <dependency>
             <groupId>org.apache.jdbm</groupId>

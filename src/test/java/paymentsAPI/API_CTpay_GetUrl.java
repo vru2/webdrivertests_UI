@@ -7,12 +7,15 @@ import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
 
+import static io.restassured.RestAssured.given;
+
 public class API_CTpay_GetUrl extends API_PaymentCommon1
 {
 	@Test
 	public void PaymentCtPayCreate() throws Exception {
-		Response resp ;		
-		resp = rearchCtPay("GETURL","");	
-		validation("GETURL", resp);	
+		Response resp ;
+		resp = rearchCtPay("GETURL","");
+		validation("GETURL", resp);
 		}
+
 }

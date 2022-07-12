@@ -160,6 +160,7 @@ public class Accounts_UI_Common extends WrapperMethod
 			  System.out.println("Connection Successful");
 			  System.out.println("The server is running" + jedis.ping());
 			  otp = jedis.get("ACCOUNTS_SERVICE_MOBILE_LOGIN_KEY_" + value + Type);
+			  System.out.println("OTP is "+otp);
 			  jedis.close();
 		  }
 

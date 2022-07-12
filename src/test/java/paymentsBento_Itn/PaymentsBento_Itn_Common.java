@@ -866,72 +866,72 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 					Assert.assertTrue(false);
 				}
 			}
-		else if(elementVisible(driver, getObjectPayment("Bento_Itn_GV_Number"), 5)){
-			System.out.println("Coupon Call 123");
-		if(gv_coupon=="GV") {
-			elementVisible(driver, getObjectPayment("Bento_Itn_GV_Number"), 5);
-			WebElement ele3 =driver.findElement(getObjectPayment("Bento_Itn_GV_Number"));
-			ele3.sendKeys(Keys.PAGE_DOWN);
-			Thread.sleep(2000);
-			ele3.sendKeys(GV_number);
-			Reporter.log("Entered GV number");
-			Thread.sleep(1000);
-			elementVisible(driver, getObjectPayment("Bento_Itn_GV_Pin"), 2);
-			safeType(driver,getObjectPayment("Bento_Itn_GV_Pin"),GV_pin);
-			Reporter.log("Entered GV pin");
-			safeClick(driver,getObjectPayment("Bento_Itn_GV_Apply"));
-			//textPresent_Log(driver,"has been redeemed for this booking",3);
-			Reporter.log("GV applied Successfully");
-		}
+			else if(elementVisible(driver, getObjectPayment("Bento_Itn_GV_Number"), 5)){
+				System.out.println("Coupon Call 123");
+				if(gv_coupon=="GV") {
+					elementVisible(driver, getObjectPayment("Bento_Itn_GV_Number"), 5);
+					WebElement ele3 =driver.findElement(getObjectPayment("Bento_Itn_GV_Number"));
+					ele3.sendKeys(Keys.PAGE_DOWN);
+					Thread.sleep(2000);
+					ele3.sendKeys(GV_number);
+					Reporter.log("Entered GV number");
+					Thread.sleep(1000);
+					elementVisible(driver, getObjectPayment("Bento_Itn_GV_Pin"), 2);
+					safeType(driver,getObjectPayment("Bento_Itn_GV_Pin"),GV_pin);
+					Reporter.log("Entered GV pin");
+					safeClick(driver,getObjectPayment("Bento_Itn_GV_Apply"));
+					//textPresent_Log(driver,"has been redeemed for this booking",3);
+					Reporter.log("GV applied Successfully");
+				}
 
-		else if(gv_coupon=="GV_Partial") {
-			String[] GV = getGV(10);
-			elementVisible(driver, getObjectPayment("Bento_Itn_GV_Number"), 2);
-			WebElement ele3 =driver.findElement(getObjectPayment("Bento_Itn_GV_Number"));
-			ele3.sendKeys(Keys.PAGE_DOWN);
-			Thread.sleep(2000);
-			ele3.sendKeys(GV[0]);
-			Reporter.log("Entered GV number");
-			Thread.sleep(1000);
-			elementVisible(driver, getObjectPayment("Bento_Itn_GV_Pin"), 2);
-			safeType(driver,getObjectPayment("Bento_Itn_GV_Pin"),GV[1]);
-			Reporter.log("Entered GV pin");
-			safeClick(driver,getObjectPayment("Bento_Itn_GV_Apply"));
-			//  textPresent_Log(driver,"has been redeemed for this booking",3);
-			Reporter.log("GV applied Successfully");
-			Thread.sleep(20000);
-		}
-		else if(gv_coupon=="Coupon") {
-			WebElement ele4 =driver.findElement(getObjectPayment("Bento_Itn_GV_Number"));
-			ele4.sendKeys(Keys.PAGE_DOWN);
-			Thread.sleep(1000);
-			ele4.sendKeys("DOMCC");
-			Thread.sleep(1000);
-			Reporter.log("Entered Coupon details");
-			smartClick(driver,getObjectPayment("Bento_Itn_Coupon_Apply"));
-			Thread.sleep(2000);
-			if(!textPresent_Log(driver,"Great! You just saved",3))
-			{
-				Reporter.log("Coupon not working");
-				Assert.assertTrue(false);
+				else if(gv_coupon=="GV_Partial") {
+					String[] GV = getGV(10);
+					elementVisible(driver, getObjectPayment("Bento_Itn_GV_Number"), 2);
+					WebElement ele3 =driver.findElement(getObjectPayment("Bento_Itn_GV_Number"));
+					ele3.sendKeys(Keys.PAGE_DOWN);
+					Thread.sleep(2000);
+					ele3.sendKeys(GV[0]);
+					Reporter.log("Entered GV number");
+					Thread.sleep(1000);
+					elementVisible(driver, getObjectPayment("Bento_Itn_GV_Pin"), 2);
+					safeType(driver,getObjectPayment("Bento_Itn_GV_Pin"),GV[1]);
+					Reporter.log("Entered GV pin");
+					safeClick(driver,getObjectPayment("Bento_Itn_GV_Apply"));
+					//  textPresent_Log(driver,"has been redeemed for this booking",3);
+					Reporter.log("GV applied Successfully");
+					Thread.sleep(20000);
+				}
+				else if(gv_coupon=="Coupon") {
+					WebElement ele4 =driver.findElement(getObjectPayment("Bento_Itn_GV_Number"));
+					ele4.sendKeys(Keys.PAGE_DOWN);
+					Thread.sleep(1000);
+					ele4.sendKeys("DOMCC");
+					Thread.sleep(1000);
+					Reporter.log("Entered Coupon details");
+					smartClick(driver,getObjectPayment("Bento_Itn_Coupon_Apply"));
+					Thread.sleep(2000);
+					if(!textPresent_Log(driver,"Great! You just saved",3))
+					{
+						Reporter.log("Coupon not working");
+						Assert.assertTrue(false);
+					}
+				}
+				else if(gv_coupon=="DOMCC") {
+					WebElement ele4 =driver.findElement(getObjectPayment("Bento_Itn_GV_Number"));
+					ele4.sendKeys(Keys.PAGE_DOWN);
+					Thread.sleep(1000);
+					ele4.sendKeys("DOMCC");
+					Thread.sleep(1000);
+					Reporter.log("Entered Coupon details");
+					smartClick(driver,getObjectPayment("Bento_Itn_Coupon_Apply"));
+					Thread.sleep(2000);
+					if(!textPresent_Log(driver,"Great! You just saved",3))
+					{
+						Reporter.log("Coupon not working");
+						Assert.assertTrue(false);
+					}
+				}
 			}
-		}
-		else if(gv_coupon=="DOMCC") {
-			WebElement ele4 =driver.findElement(getObjectPayment("Bento_Itn_GV_Number"));
-			ele4.sendKeys(Keys.PAGE_DOWN);
-			Thread.sleep(1000);
-			ele4.sendKeys("DOMCC");
-			Thread.sleep(1000);
-			Reporter.log("Entered Coupon details");
-			smartClick(driver,getObjectPayment("Bento_Itn_Coupon_Apply"));
-			Thread.sleep(2000);
-			if(!textPresent_Log(driver,"Great! You just saved",3))
-			{
-				Reporter.log("Coupon not working");
-				Assert.assertTrue(false);
-			}
-		}
-		}
 
 		}
 	}

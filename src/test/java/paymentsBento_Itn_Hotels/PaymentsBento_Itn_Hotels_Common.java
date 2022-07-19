@@ -99,10 +99,10 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 			refreshPage(driver);
 		}
 		elementPresent_log(driver, getObjectPayment("Hotel_Details_Modify_Btn"), "Modify Button", 30);
-	//	Thread.sleep(2000);
-		mouseHover(driver, getObjectPayment("Hotel_Details_SelectRoom_Btn"));
+		Thread.sleep(5000);
+		//mouseHover(driver, getObjectPayment("Hotel_Details_SelectRoom_Btn"));
 		safeClick(driver, getObjectPayment("Hotel_Details_SelectRoom_Btn"));
-		elementVisible(driver, getObjectPayment("Hotel_Details_Book_Btn"), 5);
+		elementVisible(driver, getObjectPayment("Hotel_Details_Book_Btn"), 10);
 		Thread.sleep(2000);
 		safeClick(driver, getObjectPayment("Hotel_Details_Book_Btn"));
 		String parent=driver.getWindowHandle();
@@ -118,13 +118,13 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		textPresent(driver, "itinerary", 20);
 		Child_URL = driver.getCurrentUrl();
 		//driver.close(); // Closing Child window
-		Thread.sleep(1000);
+		Thread.sleep(5000);
 		driver.switchTo().window(parent);
 		driver.get(Child_URL);
 
 		textPresent(driver, "itinerary", 20);
 		driver.manage().addCookie(cookie_Bento_Hotels);
-		refreshPage(driver);
+		//refreshPage(driver);
 	}
 	
 	public void hotelsItnPage(RemoteWebDriver driver, String CouponGV, String PayType, String SignIN, String Contact) throws Exception {

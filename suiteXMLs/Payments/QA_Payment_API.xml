@@ -32,7 +32,7 @@
       <class name="test.java.paymentsAPI.API_SuperCoins_CheckEarnPoints"/>
       <class name="test.java.paymentsAPI.API_SuperCoins_Info"/>
       <class name="test.java.paymentsAPI.API_SuperCoins_MobileLinked"/>
-      <class name="test.java.paymentsAPI.API_SuperCoins_OTP_Validation_Unhold"/>
+      <class name="test.java.paymentsAPI.API_SuperCoins_Hold_Unhold"/>
       <class name="test.java.paymentsAPI.API_SuperCoins_PromoActivate"/>
       <class name="test.java.paymentsAPI.API_SuperCoins_PromoCreate"/>
       <class name="test.java.paymentsAPI.API_SuperCoins_PromoUpdate"/>

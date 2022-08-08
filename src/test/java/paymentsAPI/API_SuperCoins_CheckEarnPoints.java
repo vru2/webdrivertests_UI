@@ -9,9 +9,16 @@ import io.restassured.response.Response;
 public class API_SuperCoins_CheckEarnPoints extends API_PaymentCommon1 {
 	
 	@Test
-	public void FK_SuperCoins_CheckEarnPoints() throws Exception{
+	public void FK_SuperCoins_CheckEarnPoints_Config() throws Exception{
 		Response resp ;		
-		resp = payPost("SuperCoins_CheckEarnPoints","");
+		resp = payGet1("SuperCoins_CheckEarnPoints","");
 		validation("SuperCoins_CheckEarnPoints", resp);
+	}
+
+	@Test
+	public void FK_SuperCoins_CheckEarnPoints() throws Exception{
+		Response resp ;
+		resp = payPost("SuperCoins_CheckEarnPoints","");
+		validation("SuperCoins_CheckEarnPoints1", resp);
 	}
 }

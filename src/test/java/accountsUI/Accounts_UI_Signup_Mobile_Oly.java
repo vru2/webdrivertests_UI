@@ -18,7 +18,7 @@ public class Accounts_UI_Signup_Mobile_Oly extends Accounts_UI_Common{
 	public void signup_mobile_oly() throws Exception {
 		//driver.manage().deleteAllCookies();
 		//driver.navigate().to(baseUrl);
-		RedisHandler(driver,"SIGNIN","+911712345671","","");
+		RedisHandler(driver,"SIGNIN","+910001231234","","");
 		//Signup("SIGNIN","Signup_mobile_only");
 	}
 	@AfterClass

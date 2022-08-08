@@ -7,6 +7,7 @@
 <listener class-name="test.java.common.RetryListener"/>
 <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
+<!--
 
 <test name="API Navison" preserve-order="true" parallel="true">
     <classes>
@@ -17,16 +18,16 @@
 
 
 <test name="API Refunds Count" preserve-order="true" parallel="true">
-    <classes><!-- 
+    <classes>&lt;!&ndash;
       <class name="test.java.paymentsAPI.API_Navison_CC"/>
-      <class name="test.java.paymentsAPI.API_Navison_Air"/>      -->
+      <class name="test.java.paymentsAPI.API_Navison_Air"/>      &ndash;&gt;
     </classes>
 </test>
 
 
 <test name="API Refunds ROR Counts" preserve-order="true" parallel="true">
     <classes>
-     <!--  <class name="test.java.paymentsAPI.API_ROR_RefundQ_Count"/> -->
+     &lt;!&ndash;  <class name="test.java.paymentsAPI.API_ROR_RefundQ_Count"/> &ndash;&gt;
     </classes>
 </test>
 
@@ -43,7 +44,7 @@
 
 <test name="API Refunds New" preserve-order="true" parallel="true">
     <classes>
-      <!-- <class name="test.java.paymentsAPI.API_Refunds"/>  -->
+      &lt;!&ndash; <class name="test.java.paymentsAPI.API_Refunds"/>  &ndash;&gt;
      </classes>
 </test>
 
@@ -91,9 +92,10 @@
 
 <test name="API FetchRefunds New"  preserve-order="true" parallel="true" >
     <classes>
-		<!-- <class name="test.java.paymentsAPI.API_Refunds_Fetch"/> -->
+		&lt;!&ndash; <class name="test.java.paymentsAPI.API_Refunds_Fetch"/> &ndash;&gt;
 	 </classes>
 </test>
+-->
 
 
 </suite> 

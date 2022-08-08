@@ -181,8 +181,12 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 	String ParamsSuperCoins_SendOTP = "{\"rewardsType\":\"SUPERCOINS\",\"rewardsRequestType\":\"OTP\",\"trackId\":\"CTS01021\",\"amount\":10,\"params\":{\"mobile\":\"+918884094547\",\"itineraryId\":\"681f6b756d-67de-4efc-b3-5a7ac1bd9fa1\"}}";
 	String ParamsSuperCoins_ValidateOTP = "{\"rewardsType\":\"SUPERCOINS\",\"rewardsRequestType\":\"VALIDATE_OTP\",\"trackId\":\"CTS01021\",\"otp\":\"";
 	String ParamsSuperCoins_ValidateOTP1 = "\",\"params\":{\"mobile\":\"+918884094547\",\"itineraryId\":\"681f6b756d-67de-4efc-b3-5a7ac1bd9fa1\"}}";
-	
-	String ParamsSuperCoins_Unhold = "{\"rewardsType\":\"SUPERCOINS\",\"rewardsRequestType\":\"UNHOLD\",\"trackId\":\"CTS01021\",\"params\":{\"mobile\":\"+918884094547\",\"itineraryId\":\"681f6b756d-67de-4efc-b3-5a7ac1bd9fa1\"}}";
+	String ParamsSuperCoins_Earn1= "{\"rewardsType\":\"SUPERCOINS\",\"rewardsRequestType\":\"EARN_CHECK\",\"trackId\":\"SAL1011122ghfjkf\",\"productType\":\"HOTEL\",\"amount\":1801,\"currency\":\"INR\"}";
+	String ParamsSuperCoins_CheckMobileLinked1="{\"rewardsType\":\"SUPERCOINS\",\"rewardsRequestType\":\"ACCOUNT_LINKED_AND_BALANCE\",\"productType\":\"HOTEL\",\"params\":{\"itineraryId\":\"756177b6c1-fab4-4643-ab7c-220704151433\",\"mobile\":\"+919986696785\"},\"amount\":1000.0,\"uid\":\"756177b6c1-fab4-4643-ab7c-220704151433\"}";
+
+
+	String ParamsSuperCoins_Hold = "{\"rewardsType\":\"SUPERCOINS\",\"rewardsRequestType\":\"HOLD\",\"trackId\":\"681f76-6de-4ec-b359adhks1s6\",\"productType\":\"AIR\",\"amount\":1.6,\"params\":{\"mobile\":\"+919986696785\",\"itineraryId\":\"681f76-6de-4ec-16559048910479\"}}";
+	String ParamsSuperCoins_Unhold = "{\"rewardsType\":\"SUPERCOINS\",\"rewardsRequestType\":\"UNHOLD\",\"trackId\":\"681f76-6de-4ec-b359adhks1s6\",\"params\":{\"mobile\":\"+919986696785\",\"itineraryId\":\"NI68ff2771a0-361c-4a65-bb92-220721200825\"}}";
 	String ParamsSuperCoins_CheckBalance = "{\"rewardsType\":\"SUPERCOINS\",\"rewardsRequestType\":\"BALANCE_CHECK\",\"trackId\":\"CLRP1000232\",\"currency\":\"INR\",\"params\":{\"mobile\":\"+918884094547\"}}";
 	
 	
@@ -285,10 +289,12 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 
 	String urlSuperCoins_ValidateOTP = "/payments/rewards/supercoins/validateOtp";
 	String urlSuperCoins_Unhold = "/payments/rewards/supercoins/unhold";
+	String urlSuperCoins_Hold = "/payments/rewards/supercoins/hold";
 	String urlSuperCoins_CheckBalance = "/payments/rewards/checkBalance";
-	
-	String urlSuperCoins_CheckEarnPoints = "/payments/rewards/checkEarnPoints";
-	
+
+	String urlSuperCoins_CheckEarnPoints = "/payments/rewards/supercoins/v1/earnConfig?productType=AIR";
+	String urlSuperCoins_CheckEarnPoints1 = "/payments/rewards/checkEarnPoints";
+	String urlSuperCoins_CheckMobileLinked1 = "/payments/rewards/supercoins/checkAccountLinkedAndBurnDetails";
 	String urlSuperCoins_CreatePromo = "/promoservice/v1/promogroups";
 
 	String urlSuperCoins_UpdatePromo = "/promoservice/v1/promogroups/Q2109156655/promotions/64905";
@@ -661,11 +667,20 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 		headers.put("Content-Type", "application/json");		
 		return headers;
 	}
-	
-	public HashMap<String, Object> headersForms_IR(){		
+
+	public HashMap<String, Object> headersForms_IR(){
 		HashMap<String, Object> headers = new HashMap<>();
-		headers.put("Content-Type", "application/json");	
-		headers.put("Cookie", "ct-auth=kHJ9m9EZ5FnYbC9M%2BUy3p2Op7Lwt%2F2TACwQ7J1Zh5vTvKMlBDLe8dGg0f5k%2FKxm5uQmW3NiUZma8q2lELnUuyC3uAF5DaTQONdJlLn%2FO2md2nbUa45ssUlijxS%2BlNzPHs1E8yeZEP1o8qe0ANvv609qkekjA1i1%2Boi%2Bn9cegRH96COXmEO6znXR7hdWPSF2Je64UQLp1AMFGUq5JNjib0Q%3D%3D");		
+		headers.put("Content-Type", "application/json");
+		headers.put("Cookie", "ct-auth=kHJ9m9EZ5FnYbC9M%2BUy3p2Op7Lwt%2F2TACwQ7J1Zh5vTvKMlBDLe8dGg0f5k%2FKxm5uQmW3NiUZma8q2lELnUuyC3uAF5DaTQONdJlLn%2FO2md2nbUa45ssUlijxS%2BlNzPHs1E8yeZEP1o8qe0ANvv609qkekjA1i1%2Boi%2Bn9cegRH96COXmEO6znXR7hdWPSF2Je64UQLp1AMFGUq5JNjib0Q%3D%3D");
+		return headers;
+	}
+
+	public HashMap<String, Object> headersForms_Supercoins(){
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("Content-Type", "application/json");/*
+		headers.put("Content-Length", "<calculated when request is sent>");
+		headers.put("Host", "<calculated when request is sent>");*/
+		headers.put("Cookie", "ct-auth=cvlYMINwAZRln63Yy%2FxTL568HM%2FlJBdzmm2h%2BU3Y05v2zwkQAPQe5Vd9D3VsgwyxL5w%2BfbtxsaW%2BbtdHrc%2BWsScG24OcK1SPJLWfpxAcYSUZ%2BDPJWIpT6PozXecbENnMvrpx3EcElSt8IxAixuU3Wx1urIG%2BJIXXp1dllo9UaxruwmmL4%2Fl%2BZmNgLOEFFQEHIBmo7ujFj4IR251LE1REPIl0hD%2BOGrq3TzykZUx%2BW0wEWrlcwiuBMyRp%2FjW2ZkBtsCH0dQMu8eNGLFfYURLEzxWteZk4kgVCTdhW8xwshOSRXS16FEAEuu%2F0%2BY4jXzpsD%2BBMWmzm2HjhJN3LrqPmJl%2BPb%2BtRIDeSJJ8B3pwqUtovU9euu0zuyj4pUK7H7Exfn3xsb72VU1fgZGUiAqGNjlr4i1%2BstEIodrXyWaIerOwsliKRdHKdB04q2m8OnZXTH2Z4tsAXBZj47Mu0vEuTRiAH0Rp2vtFkuXiol%2Fc%2BBJD4qswYyk0D6GkqDc%2FryiGzrriKvMSxzl8ZjdP0xHKTJjDfE5MjfU2lez8Mc21eeVj4yG9Y5gNNb6MvOPOrwEDI%2FRkVukgyqFl7OJk6DNu3G%2FLNPaqxgHPoG%2Fb4MQRnyZVI9iJH8UXIBBVrkHxP0uq0KBIFqMINY881df17xzwxrP0wDfAjdIJWLC650cfnf3%2BZ8zInGGcv79tFePFr5UA0tMv7Ci9nlUUKOJuJ4P3asT%2F%2Fu6AA%2BWLog2uJ%2FY2YYqgP%2FV7P4M74%2FvZ8fgql9D8g8%2F%2F1HM9Q%2BhZwENf6sKaAU%2FkxX%2BEKCRjKf8O%2BTNUSfsuE8coUcku3YuzCaIBgM2P8Rb8sKLbSBDeyofU70uSSaPMHgCym1TRbOwe4kMI3sC%2BxNY2SNpWEXNL%2B8qnJRC3izkqTBVx8eUSmCMEROlIxUX3V3khzmrd4HsCxqs0QPfyV377s8BRI51ht8oyW%2FzMrKpsxMHx8GV2Wrz8SXH%2BJ4L7k2DAeId6CWMfLGEE76GmqZ7oItSHv5%2F5UO3DEKBLdNgJ6hCK8jDxka%2F19EfaquJ%2FSxkyRZqMldWabWMA8RFSkXBqexHhTLDzmgQVTrTtMzlNFPfPmCegfz2VJg5y%2Bh8C6ZuqGprbV9JxNvdZWfas1vK%2BlbxoIkTOxeVMYoTzx%2BRDEyo9MjCQlcI5K%2BXqy75cBiovhF%2FKcf00zq%2B4kHLbNgQWHsPxU03SG2PnNTTKvShsNtANjRoE31K8EhQCUxAy0RKUSZCsC9rC3NzCyiZQ8OMPyxuJe8aT3kw6b6Vr5W6ItDyb4p912T8y4Fmb%2BkWvTbYc3Gs6r0RfKxtBdJ7XZo8xSwXirQmVaFYJIN9SOYihXgvoe0tBEocfUYUUWT%2B21WjlsPFl3GqgqbnhOpQnwu4MuBFLJXP%2FGwt5epuyxkim5u3c1uLqpdlcKqTiJklaTM5EIWuxV%2BaxHXwh%2BX0x6JaS%2BJVI%2FViRLDjDvQxUjikuijAL%2BCIze%2BR0CONXQZwkQogOIBXtmmoU7CXBduaNzsLsrm0xPzTZjAvB1t1bEN8iIA9Fm3g2V6y48Pcv105pi%2F0nOxsa88OJMSX3bnJI%2F3pgvKn2lnUXPLJ7y2Eu5XYFyvRuvn8a18e%2B8QW%2BDTpp4h6bdpj%2FZ9V%2FRA%2BDYvT8d%2B0SoNyAooj0VtvXSMlfWLLScXRLU%2BZaNO4FeNzu9omIl8wyeWqwu8rZig4caleCF1rb7B0cXdHlu22SFZBRDdm61ES55aWujhpwye7ll1z5%2BCvKfEGNj16XgE8nl%2BknQOMmlSXdgI%2BJFHEAfZDmnjfzC2WV5xvuKqSmWWXeio0nh2R21fe8daY7Ojjo6NrqXDwQ6jZAjW349e5ztY0ocyXbt3mUSAALPlSZH315et1tPeY6CAhN3g8jTi%2B5T067h1hS925YjG5GVWQEGPrqiotCIMZf53SSRFJifXJIaxURXAN73vVKQpNfYJD6mKYvS77BJ1HSahQWO8rzmGvOJz6lU2vmvg5v2yYWzQbPfgX5sziMP%2Fp6at%2Fg5EUSUNbxqsajCjtC4Sy4Z%2FcEq0OVtCOVMb5LGLl%2B%2FaRcmVwIivbXgF6WJgGUyqQ%2FXYwgA%2Fd9fga3Wk9c01HYm8wnioO4gmHaHVqQNmgGYeBrRXYvmI7n0EifouUynX87T2pv9AtznT%2BGRE6YbjHJMx5nzalaKkdHPfrRRUzMejSVax39JguN5OkUi2cnUbya%2FFSiCtp%2By8Ubg5ROodIVxVaYSNtFg8%2FGBOW6RnvXjvo2J6aYJW4Dwa4%2Bqo2J56VlK7p5gikInWq5kpbwMOT5ewyDoK4sB7QCaCOGKCAw9mQlGqrQU5MUNpJgjO%2Bvcj2nSPdpoA%2BndoEUb2M%2F1KyL5QnnmD2uv");
 		return headers;
 	}
 	
@@ -963,6 +978,12 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 			RestAssured.baseURI =urlReporting;
 			url= urlROR_Fetch_PayByID;
 			Reporter.log(urlReporting+url);
+		}else if(payType.equalsIgnoreCase("SuperCoins_CheckEarnPoints")) {
+
+			RestAssured.baseURI =urlRewards;
+			//params = ParamsSuperCoins_CheckEarnPoints;
+			url= urlSuperCoins_CheckEarnPoints;
+			Reporter.log(urlRewards+url);
 		}
 		else if(payType.equalsIgnoreCase("Hi5_GetTrnx")) {
 			RestAssured.baseURI =qaurl;
@@ -1185,10 +1206,38 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 			params = Params_ROR_Create_Profile_List;
 			url= urlROR_Create_ProfileList;
 		}
-		else if(payType.equalsIgnoreCase("IR_Valid_VPA")) {
-			params = Params_IR_Valid_VPA;
-			url= urlIR_Validate_VPA;
+
+		else if(payType.equalsIgnoreCase("SuperCoins_MobileLinked")) {
+			headers=headersForms_Supercoins();
+			headers=headersForms_Supercoins();
+			RestAssured.baseURI =urlRewards;
+			url= urlSuperCoins_CheckMobileLinked1;
+			params = ParamsSuperCoins_CheckMobileLinked1;
 		}
+
+
+		else if(payType.equalsIgnoreCase("SuperCoins_OTPLess_Hold")) {
+			headers=headersForms_Supercoins();
+			RestAssured.baseURI =urlRewards;
+			url= urlSuperCoins_Hold;
+			params = ParamsSuperCoins_Hold;
+		}
+
+		else if(payType.equalsIgnoreCase("SuperCoins_OTPLess_Unhold")) {
+			headers=headersForms_Supercoins();
+			RestAssured.baseURI =urlRewards;
+			url= urlSuperCoins_Unhold;
+			params = ParamsSuperCoins_Unhold;
+		}
+		else if(payType.equalsIgnoreCase("SuperCoins_CheckEarnPoints")) {
+
+			headers=headersForms_IR();
+			RestAssured.baseURI =urlRewards;
+			//params = ParamsSuperCoins_CheckEarnPoints;
+			url= urlSuperCoins_CheckEarnPoints1;
+			params = ParamsSuperCoins_Earn1;
+		}
+
 		else if(payType.equalsIgnoreCase("IR_Save_VPA")) {
 			headers=headersForms_IR();
 			params = Params_IR_Save_VPA_Details;
@@ -1296,13 +1345,7 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 			url= urlSuperCoins_CheckBalance;
 			Reporter.log(urlRewards+url);
 		}
-		else if(payType.equalsIgnoreCase("SuperCoins_CheckEarnPoints")) {
 
-			RestAssured.baseURI =urlRewards;
-			params = ParamsSuperCoins_CheckEarnPoints;	
-			url= urlSuperCoins_CheckEarnPoints;
-			Reporter.log(urlRewards+url);
-		}
 		
 		else if(payType.equalsIgnoreCase("SuperCoins_CreatePromo")) {
 
@@ -2311,9 +2354,31 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 				Assert.assertTrue(false);
 			}
 		}
+		if(payType.equalsIgnoreCase("SuperCoins_OTPLess_Hold")) {
+			String status = jsonPathEvaluator.getString("status");
+			String description = jsonPathEvaluator.getString("description");
+			Reporter.log("status " +status);
+			Reporter.log("description " +description);
+			if(!status.equals("S")) {
+				Assert.assertTrue(false);
+			}if(!description.equals("Coins held successfully")) {
+				Assert.assertTrue(false);
+			}
+		}
 
+		else if(payType.equalsIgnoreCase("SuperCoins_OTPLess_Unhold")) {
+			String status = jsonPathEvaluator.getString("status");
+			String description = jsonPathEvaluator.getString("description");
+			Reporter.log("status " +status);
+			Reporter.log("description " +description);
+			if(!status.equals("S")) {
+				Assert.assertTrue(false);
+			}if(!description.equals("Unhold successful")) {
+				Assert.assertTrue(false);
+			}
+		}
 
-		if(payType.equalsIgnoreCase("VALIDATE")) {
+		else if(payType.equalsIgnoreCase("VALIDATE")) {
 			String redirection = jsonPathEvaluator.getString("redirection_required");
 			String Response = jsonPathEvaluator.getString("response_message");
 			Reporter.log("redirection required " +redirection);
@@ -4045,7 +4110,7 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 		}
 		String Description= jsonPathEvaluator.getString("description");
 		Reporter.log("Description " +Description);
-		if(!Description.equals("Successfully fetched supercoin balance")) {
+		if(!Description.equals("Successfully fetched Supercoins balance")) {
 			Assert.assertTrue(false);
 		}		
 	}
@@ -4057,11 +4122,26 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 		}
 		String Description= jsonPathEvaluator.getString("description");
 		Reporter.log("Description " +Description);
-		if(!Description.equals("Successfully calculated earn points")) {
+		if(!Description.equals("Successfully fetched earn config")) {
 			Assert.assertTrue(false);
 		}		
 	
 	}
+		else if(payType.equals("SuperCoins_CheckEarnPoints1")) {
+			String Status= jsonPathEvaluator.getString("status");
+			Reporter.log("Status " +Status);
+			if(!Status.equals("S")) {
+				Assert.assertTrue(false);
+			}
+			String Description= jsonPathEvaluator.getString("description");
+			Reporter.log("Description " +Description);
+			if(!Description.equals("Successfully calculated earn points")) {
+				Assert.assertTrue(false);
+			}
+
+		}
+
+
 	else if(payType.equals("SuperCoins_CreatePromo")) {
 		if(!resp.body().asString().contains("SUPERCOINS")) {
 			Reporter.log("SUPERCOINS is not displayed");

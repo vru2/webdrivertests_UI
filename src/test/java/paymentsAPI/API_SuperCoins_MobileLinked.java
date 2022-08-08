@@ -12,10 +12,17 @@ import io.restassured.response.Response;
 
 public class API_SuperCoins_MobileLinked extends API_PaymentCommon1 {
 	
-	@Test
+	/*@Test
 	public void FK_SuperCoins_MobileLinked() throws IOException, JSONException{
 		Response resp ;		
 		resp = payGet1("SuperCoins_MobileLinked","");
+		validation("SuperCoins_MobileLinked", resp);
+	}*/
+
+	@Test
+	public void FK_SuperCoins_MobileLinked() throws Exception {
+		Response resp ;
+		resp = payPost("SuperCoins_MobileLinked","");
 		validation("SuperCoins_MobileLinked", resp);
 	}
 }

@@ -82,7 +82,7 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 	String paramsEMI1 = "{\"tripRef\":\"";
 	String paramsEMI2 = "\",\"amount\":30000}";
 	String paramsctPay_CreateURL = "{\"order_id\":\"T2021069300\",\"client_id\":1125,\"amount\":1234.52,\"currency\":\"INR\",\"country\":\"IN\",\"return_url\":\"http://qa2.cleartrip.com\",\"udf\":{\"udf1\":\"Air ()\",\"udf2\":\"Air - ()\",\"udf3\":\"Hotel ()\",\"udf4\":\"Local & ()\",\"udf5\":\"Trains ()\"},\"customer_detail\":{\"ip_address\":\"217.164.159.242\",\"address1\":\"Unit No 001, Ground Floor, DTC Bldg, Sitaram mills compound, N.M.joshi Marg, Lower parel (E)\",\"address2\":\"Cleartrip JP Nagar\",\"address3\":null,\"city_name\":\"Bangalore\",\"postal_code\":\"560085\",\"state_name\":\"Karnataka\",\"country_name\":\"India\",\"mobile\":\"1212121112\",\"landline\":\"121212121221\",\"other_phone\":null,\"email\":\"cltppayment@gmail.com\"}}";
-	String paramsFlyIN = "{\"amount\":10.10,\"currency\":\"SAR\",\"country\":\"SA\",\"txnid\":\"110119042057CTK3ZG2\",\"payment_type\":\"CC\",\"product_info\":\"Flight_Flyin\",\"source_type\":\"ACCOUNT\",\"host_name\":\"preproduction.flyin.com\",\"udf\":{\"udf1\":\"vkY25EH\",\"udf2\":\"F booking txn amount 10.10\"},\"company_id\":205,\"customer_detail\":{\"ip_address\":\"119.82.106.204\",\"mobile\":\"12121121212\",\"email\":\"123@flyin.com\"},\"card_detail\":{\"card_number\":\"4242424242424242\",\"card_type_id\":1,\"expiry_month\":\"05\",\"expiry_year\":\"2022\",\"cvv\":\"100\",\"name\":\"test test\"},\"return_url\":\"http://payments.fly.in/payment/finalresponse/ct?pid=vkY25EH\"}";
+	String paramsFlyIN = "{\"amount\":10.10,\"currency\":\"SAR\",\"country\":\"SA\",\"txnid\":\"110119042057CTK3ZG2\",\"payment_type\":\"CC\",\"product_info\":\"Flight_Flyin\",\"source_type\":\"ACCOUNT\",\"host_name\":\"preproduction.flyin.com\",\"udf\":{\"udf1\":\"vkY25EH\",\"udf2\":\"F booking txn amount 10.10\"},\"company_id\":205,\"customer_detail\":{\"ip_address\":\"119.82.106.204\",\"mobile\":\"12121121212\",\"email\":\"123@flyin.com\"},\"card_detail\":{\"card_number\":\"4242424242424242\",\"card_type_id\":1,\"expiry_month\":\"05\",\"expiry_year\":\"2025\",\"cvv\":\"100\",\"name\":\"test test\"},\"return_url\":\"http://payments.fly.in/payment/finalresponse/ct?pid=vkY25EH\"}";
 	String paramWalletCreate = "{\"currency\":\"AED\",\"createdBy\":\"13957750\",\"amount\":\"100\",\"paymentId\":\"43188350\",\"tripRef\":\"Q190822469836\",\"eventType\":\"CREATION\",\"expiryDate\":\"2020-12-21\"}";
 	String paramsGV_Create_10 = "{\"currency\":\"INR\",\"amount\":\"10\",\"userEmail\":\"kiran.kumar@cleartrip.com\",\"paymentId\":\"43222146\"}";
 	String paramsGV_Create_5000 = "{\"currency\":\"INR\",\"amount\":\"5000\",\"userEmail\":\"kiran.kumar@cleartrip.com\",\"paymentId\":\"43222232\"}";
@@ -302,6 +302,7 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 	
 	String urlPayFlyin = "/paymentservice/gw/v1/pay";
 
+	String urlEMI_NoCost_Offers = "/paymentservice/emi/offers";
 	String urlEMI_Banks = "/paymentservice/service/emibanks";
 	String urlEMI_Interest = "/paymentservice/service/emiinterests";
 	String urlpayReporting= "/paymentservice/service/air/mis/detail?tripRef=Q190530193406&paymentType=CC&reqFor=refund";
@@ -853,10 +854,15 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 		}
 		else if(payType.equalsIgnoreCase("Hi_5_get_walletTnx")) {
 			RestAssured.baseURI =url_QA2;
-			Reporter.log(url_QA2);	
-			System.out.println(url_QA2);	
+			Reporter.log(url_QA2);
 			url= urlHi5_Fetch_WalletTnx;
 		}
+		else if(payType.equalsIgnoreCase("NoCostEMI_Offers")) {
+			RestAssured.baseURI =urlPay;
+			Reporter.log(urlPay);
+			url= urlEMI_NoCost_Offers;
+		}
+
 		
 		else if(payType.equalsIgnoreCase("Hi_5_get_wallet")) {
 			RestAssured.baseURI =url_QA2;
@@ -1259,6 +1265,11 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 		
 		else if(payType.equalsIgnoreCase("IR_InValid_VPA")) {
 			params = Params_IR_InValid_VPA;
+			url= urlIR_Validate_VPA;
+		}
+
+		else if(payType.equalsIgnoreCase("IR_Valid_VPA")) {
+			params = Params_IR_Valid_VPA;
 			url= urlIR_Validate_VPA;
 		}
 		else if(payType.equalsIgnoreCase("RORUpdate_GW_Status")) {
@@ -2378,6 +2389,13 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 			}
 		}
 
+		else if(payType.equalsIgnoreCase("NoCostEMI_Offers")) {
+
+			if(!(resp.body().asString().contains("CT_NOCOST_EMI_PLAN_1_6_3.96"))){
+				Assert.assertTrue(false);
+			}
+		}
+
 		else if(payType.equalsIgnoreCase("VALIDATE")) {
 			String redirection = jsonPathEvaluator.getString("redirection_required");
 			String Response = jsonPathEvaluator.getString("response_message");
@@ -2482,13 +2500,13 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 			if(!OS.equals("true")) {
 				Assert.assertTrue(false);
 			} 
-			if(!AS.equals("false")) {
+			if(!AS.equals("true")) {
 
 				Assert.assertTrue(false);
 			}  
 			
 		}
-		
+
 		else if(payType.equalsIgnoreCase("IR_Eligibility_CC_Non")) {
 			String OS = jsonPathEvaluator.getString("eligibleForOriginalSource");
 			String AS = jsonPathEvaluator.getString("eligibleForAlternativeSource");
@@ -2496,15 +2514,28 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 			Reporter.log("OS " +OS);
 			if(!OS.equals("true")) {
 				Assert.assertTrue(false);
-			} 
+			}
+			if(!AS.equals("true")) {
+				Assert.assertTrue(false);
+			}
+
+		}
+		else if(payType.equalsIgnoreCase("IR_Eligibility_GV")) {
+			String OS = jsonPathEvaluator.getString("eligibleForOriginalSource");
+			String AS = jsonPathEvaluator.getString("eligibleForAlternativeSource");
+			Reporter.log("AS " +AS);
+			Reporter.log("OS " +OS);
+			if(!OS.equals("true")) {
+				Assert.assertTrue(false);
+			}
 			if(!AS.equals("false")) {
 				Assert.assertTrue(false);
-			}  
-			
+			}
+
 		}
-		
-		
-		
+
+
+
 		else if(payType.equalsIgnoreCase("ROR_CashUpdate")) {
 			String id = jsonPathEvaluator.getString("id");
 			String company_id = jsonPathEvaluator.getString("company_id");

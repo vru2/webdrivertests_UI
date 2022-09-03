@@ -59,7 +59,8 @@
       <class name="test.java.paymentsAPI.API_EMI_Fetch"/>
       <class name="test.java.paymentsAPI.API_EMI_NoonPlans"/>
       <class name="test.java.paymentsAPI.API_EMI_RazorpayPlans"/>
-      <class name="test.java.paymentsAPI.API_EMI_Resources"/>
+        <class name="test.java.paymentsAPI.API_EMI_Resources"/>
+        <class name="test.java.paymentsAPI.API_EMI_NoCost_Get_Offers"/>
     </classes>
 </test>
 

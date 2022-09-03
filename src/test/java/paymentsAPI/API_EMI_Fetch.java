@@ -13,8 +13,6 @@ public class API_EMI_Fetch extends PaymentUI_Common
 	public void EMFetch() throws Exception {
 		String tripRef = getNewDate_TripID();
 		resp = payUIget("Air", "", tripRef);
-		
-		System.out.println(tripRef);
 		Response resp ;		
 		resp = rearchPayment("EMIFetch",tripRef);	
 		validation("EMIFetch", resp);	

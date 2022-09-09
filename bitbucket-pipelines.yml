@@ -22,7 +22,7 @@ pipelines:
             - sed -i "s/APP_NAME/$APP_NAME/g" start_command.sh
             - sed -i "s/ENV/$ENVIRONMENT/g" start_command.sh
             - sed -i "s/SUBJECT/$SUBJECT/g" start_command.sh
-            - if [[ $ENVIRONMENT == "prod" || $ENVIRONMENT == "gcp" ]]; then sed -i "s/MAIL_ID/kiran.kumar@cleartrip.com,varalakshmi.venkateshaiah@cleartrip.com,saicharan.yadau@cleartrip.com,vrushabh.gurjar@cleartrip.com,ns.likhitha@cleartrip.com/g" start_command.sh ; elif [ $ENVIRONMENT == "qa" ]; then sed -i "s/MAIL_ID/kiran.kumar@cleartrip.com,varalakshmi.venkateshaiah@cleartrip.com,saicharan.yadau@cleartrip.com,vrushabh.gurjar@cleartrip.com,ns.likhitha@cleartrip.com/g" start_command.sh ; fi
+            - if [[ $ENVIRONMENT == "prod" || $ENVIRONMENT == "gcp" ]]; then sed -i "s/MAIL_ID/kiran.kumar@cleartrip.com,varalakshmi.venkateshaiah@cleartrip.com,saicharan.yadau@cleartrip.com,vrushabh.gurjar@cleartrip.com,ns.likhitha@cleartrip.com/g" start_command.sh ; elif [ $ENVIRONMENT == "qa" || $ENVIRONMENT == "qa-gcp" ]; then sed -i "s/MAIL_ID/kiran.kumar@cleartrip.com,varalakshmi.venkateshaiah@cleartrip.com,saicharan.yadau@cleartrip.com,vrushabh.gurjar@cleartrip.com,ns.likhitha@cleartrip.com/g" start_command.sh ; fi
             - git clone git@bitbucket.org:cleartrip/docker_dependency.git
             - mv docker_dependency/* .
             - docker login -u $DOCKERHUB_UN -p $DOCKERHUB_PW
@@ -30,5 +30,5 @@ pipelines:
             - chmod +x $QA2_LOGIN
             - ./$QA2_LOGIN $APP_NAME
             - chmod +x $QA2_DEPLOY
-            - if [[ $ENVIRONMENT == "qa" ]]; then ENVIRONMENT='DC' ./$QA2_DEPLOY $APP_NAME $Team; fi
-            - if [[ $ENVIRONMENT == "qa-gcp" ]]; then ENVIRONMENT='GCP' ./$QA2_DEPLOY $APP_NAME $Team; fi
+            - if [[ $ENVIRONMENT == "qa" ]]; then Environment='DC' ./$QA2_DEPLOY $APP_NAME $Team; fi
+            - if [[ $ENVIRONMENT == "qa-gcp" ]]; then Environment='GCP' ./$QA2_DEPLOY $APP_NAME $Team; fi

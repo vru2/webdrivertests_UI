@@ -14,7 +14,7 @@ pipelines:
           services:
             - docker
           script: # Modify the commands below to build your repository.
-            - APP_NAME=platform-test-automation
+            - APP_NAME=platform-test-automation-qa
             - Team=platform
             - sed -i "s+SUITE_NAME+$SUITE_NAME+g" start_command.sh
             - DIR=`date +%d-%m-%y `-$BITBUCKET_BUILD_NUMBER

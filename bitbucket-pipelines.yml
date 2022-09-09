@@ -7,7 +7,7 @@ pipelines:
           - name: SUITE_NAME
           - name: ENVIRONMENT
           - name: SUBJECT
-          - name: PROJECT
+          - name: Project
             default: NON-PCI
       - step:
           name: TAF

@@ -29,25 +29,25 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 
 {	
 	public RemoteWebDriver driver;
-	
+
+	String urlPay = "http://paymentservice.cltp.com:9001"; //http://172.17.51.86:8070"
+	String urlRefundNew1 = "http://paymentservice.cltp.com:9001";//"http://172.17.51.86:8070";
+	String urlrewards_payURI ="http://paymentservice.cltp.com:9001";//"http://172.17.51.86:8070";
+	String urladcb_validat = "http://paymentservice.cltp.com:9001";//"http://172.17.51.86:8070";
+	String urlFetchRefunds="http://paymentservice.cltp.com:9001";//"http://172.17.51.86:8070";
 	String urlFlyin = "http://172.17.51.86:8406"; // ORACLE
-	String urlPay = "http://172.17.51.86:8070";
-	String urlRefundNew1 = "http://172.17.51.86:8070";
-	String urlrewards_payURI ="http://172.17.51.86:8070";
-	String urladcb_validat = "http://172.17.51.86:8070";
-	String urlFetchRefunds="http://172.17.51.86:8070";
 	String urlDA = "http://172.17.28.21:8403";
-	String promoURL = "http://172.17.51.86:7999";
-	String urlRewards = "http://172.17.56.51:9080";
-	String urlWallet = "http://172.17.51.86:8071";
+	String promoURL = "http://promoservice.cltp.com:9001";//http://172.17.51.86:7999";
+	String urlRewards = "http://rewardsservice.cltp.com:9001";//http://172.17.56.51:9080";
+	String urlWallet = "http://wallet-service-qa.cltp.com:9001";//http://172.17.51.86:8071";
 	String urlCardInfo_Service="http://172.17.51.86:8331";
-	String urlrewards_validate = "http://172.17.51.86:8070";
-	String urlrewards_URI = "http://172.17.56.51:9080";
-	String urlPromo_Used = "http://172.17.51.86:8071";
+	String urlrewards_validate = "http://paymentservice.cltp.com:9001";//"http://172.17.51.86:8070";
+	String urlrewards_URI = "http://rewardsservice.cltp.com:9001";//http://172.17.56.51:9080";
+	String urlPromo_Used = "http://wallet-service-qa.cltp.com:9001";//http://172.17.51.86:8071";
 
 	String urlReporting_TS = "http://172.17.51.86:8282";
-	String urlReporting ="http://172.17.51.86:8272";
-	String urlReportingTS ="http://172.17.51.86:9031";		
+	String urlReporting = "http://paymentservicereporting.cltp.com:9001";
+	String urlReportingTS ="http://172.17.51.86:9031";
 	String url_Binmanager = "https://qa2.cleartrip.com/binmanager/v1/payment/cards?bin=534977";		
 	String url_QA2 = "https://qa2.cleartrip.com/";
 	public String url_TestApp = "";
@@ -301,6 +301,7 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 	String urlSuperCoins_ActivatePromo = "/promoservice/v1/promogroups/Q210921153722/promotions/65253";
 	
 	String urlPayFlyin = "/paymentservice/gw/v1/pay";
+	String urlSavedCards ="/paymentservice/saved/payments/get/65218452";
 
 	String urlEMI_NoCost_Offers = "/paymentservice/emi/offers";
 	String urlEMI_Banks = "/paymentservice/service/emibanks";
@@ -822,7 +823,14 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 		return headers;
 	}
 
-	public HashMap<String, Object> addCookies(){		
+	public HashMap<String, Object> SavedCards(){
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("Content-Type", "application/json");
+		headers.put("Cookie", "k0vtZH7lNYhNfIZZf7M2vZV9CFS5Hw0QJOqhawnolfdVHoN0hhMU%2Bp113JcLAuGLa%2FyldSbPbulFBcxN81fOC3YdPCCSEDhcTYA%2FnwxDkUTJ52BnHV5hJQTVvVEgXsfQ2X9NolvNT0ekBqN41JxrlUYWd%2B0WvczLP9yUZkhnFoV4o7814vUcceVwR0UqXhLg3Qid6rwwXGU3mGb2GL67Xg%3D%3D");
+		return headers;
+	}
+
+	public HashMap<String, Object> addCookies(){
 		HashMap<String, Object> setCookies = new HashMap<>();
 		setCookies.put("userid", "prakhar.chatterjee%40cleartrip.com%7C%7C%7C%7C65176819");
 		setCookies.put("usermisc", "SIGNED_IN%7C");
@@ -991,6 +999,16 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 			url= urlSuperCoins_CheckEarnPoints;
 			Reporter.log(urlRewards+url);
 		}
+		else if(payType.equalsIgnoreCase("SavedCards")) {
+
+			RestAssured.baseURI =urlPay;
+			HashMap<String, Object> headers1 = new HashMap<>();
+			headers1=SavedCards();
+			url= urlSavedCards;
+			Reporter.log(urlPay+url);
+			System.out.println(urlPay+url);
+		}
+
 		else if(payType.equalsIgnoreCase("Hi5_GetTrnx")) {
 			RestAssured.baseURI =qaurl;
 			HashMap<String, Object> headers1 = new HashMap<>();

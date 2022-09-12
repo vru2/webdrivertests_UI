@@ -101,6 +101,7 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		elementPresent_log(driver, getObjectPayment("Hotel_Details_Modify_Btn"), "Modify Button", 30);
 		safeClick(driver, getObjectPayment("Hotel_Details_SelectRoom_Btn"));
 		elementVisible(driver, getObjectPayment("Hotel_Details_Book_Btn"), 10);
+		mouseHover(driver, getObjectPayment("Hotel_Details_Book_Btn"));
 		safeClick(driver, getObjectPayment("Hotel_Details_Book_Btn"));
 		String parent=driver.getWindowHandle();
 		Set<String>s=driver.getWindowHandles();
@@ -114,14 +115,14 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		}
 		textPresent(driver, "itinerary", 20);
 
-		Thread.sleep(10000);
+		Thread.sleep(5000);
 		Child_URL = driver.getCurrentUrl();
 		//driver.close(); // Closing Child window
 		driver.switchTo().window(parent);
 		driver.get(Child_URL);
 
 		textPresent(driver, "itinerary", 20);
-		driver.manage().addCookie(cookie_Bento_Hotels);
+	//	driver.manage().addCookie(cookie_Bento_Hotels);
 		//refreshPage(driver);
 	}
 	

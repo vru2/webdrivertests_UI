@@ -48,7 +48,7 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 	String urlReporting_TS = "http://172.17.51.86:8282";
 	String urlReporting = "http://paymentservicereporting.cltp.com:9001";
 	String urlReportingTS ="http://172.17.51.86:9031";
-	String url_Binmanager = "https://qa2.cleartrip.com/binmanager/v1/payment/cards?bin=534977";		
+	String url_Binmanager = "https://qa2.cleartrip.com/binmanager/v1/payment/cards?bin=534977";
 	String url_QA2 = "https://qa2.cleartrip.com/";
 	public String url_TestApp = "";
 	

@@ -301,6 +301,7 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 	String urlSuperCoins_ActivatePromo = "/promoservice/v1/promogroups/Q210921153722/promotions/65253";
 	
 	String urlPayFlyin = "/paymentservice/gw/v1/pay";
+	String urlSavedCards ="/paymentservice/saved/payments/get/65218452";
 
 	String urlEMI_NoCost_Offers = "/paymentservice/emi/offers";
 	String urlEMI_Banks = "/paymentservice/service/emibanks";
@@ -822,7 +823,14 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 		return headers;
 	}
 
-	public HashMap<String, Object> addCookies(){		
+	public HashMap<String, Object> SavedCards(){
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("Content-Type", "application/json");
+		headers.put("Cookie", "k0vtZH7lNYhNfIZZf7M2vZV9CFS5Hw0QJOqhawnolfdVHoN0hhMU%2Bp113JcLAuGLa%2FyldSbPbulFBcxN81fOC3YdPCCSEDhcTYA%2FnwxDkUTJ52BnHV5hJQTVvVEgXsfQ2X9NolvNT0ekBqN41JxrlUYWd%2B0WvczLP9yUZkhnFoV4o7814vUcceVwR0UqXhLg3Qid6rwwXGU3mGb2GL67Xg%3D%3D");
+		return headers;
+	}
+
+	public HashMap<String, Object> addCookies(){
 		HashMap<String, Object> setCookies = new HashMap<>();
 		setCookies.put("userid", "prakhar.chatterjee%40cleartrip.com%7C%7C%7C%7C65176819");
 		setCookies.put("usermisc", "SIGNED_IN%7C");
@@ -991,6 +999,16 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 			url= urlSuperCoins_CheckEarnPoints;
 			Reporter.log(urlRewards+url);
 		}
+		else if(payType.equalsIgnoreCase("SavedCards")) {
+
+			RestAssured.baseURI =urlPay;
+			HashMap<String, Object> headers1 = new HashMap<>();
+			headers1=SavedCards();
+			url= urlSavedCards;
+			Reporter.log(urlPay+url);
+			System.out.println(urlPay+url);
+		}
+
 		else if(payType.equalsIgnoreCase("Hi5_GetTrnx")) {
 			RestAssured.baseURI =qaurl;
 			HashMap<String, Object> headers1 = new HashMap<>();

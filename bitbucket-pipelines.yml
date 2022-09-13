@@ -31,5 +31,6 @@ pipelines:
             - chmod +x $QA2_LOGIN
             - ./$QA2_LOGIN $APP_NAME
             - chmod +x $QA2_DEPLOY
+            - set -x
             - if [[ $ENVIRONMENT == "qa" ]]; then Environment='DC' ./$QA2_DEPLOY $APP_NAME $Team; fi
             - if [[ $ENVIRONMENT == "qa-gcp" ]]; then Environment='GCP' ./$QA2_DEPLOY $APP_NAME $Team; fi

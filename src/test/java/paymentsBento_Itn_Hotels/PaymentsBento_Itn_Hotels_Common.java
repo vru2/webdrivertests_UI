@@ -9,9 +9,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.MoveTargetOutOfBoundsException;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+
 
 import test.java.paymentsBento_Itn.PaymentsBento_Itn_Common;
 
@@ -30,11 +35,11 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 	String GV_pin = "158662";
 	String hotelPrice_Itinerary = null;
 	String hotelPrice_PaymentPage = null;
-	
+
 	String hotelName_DetailsPage = "holiday-inn-express-suites-bengaluru-racecourse-2052760";
-	
+
 	public String hotelSearchUrl(String Domain)  throws Exception
-	{	
+	{
 		Hotel_URL= "/hotels/results?city=Bangalore&state=Karnataka&country=IN&poi=&hotelId=&dest_code=32550&chk_in="+getDateTime(10, "dd/MM/yyyy")+"&chk_out="+getDateTime(11, "dd/MM/yyyy")+"&adults=2&childs=0&num_rooms=1&adults1=2&children1=0&";
 		String SearchUrl = "";
 		if(Domain=="IN") {
@@ -42,9 +47,9 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		}
 		return SearchUrl;
 	}
-	
+
 	public String hotelDetailsUrl(String Domain, String HotelID)  throws Exception
-	{	
+	{
 		Hotel_URL= "/hotels/details/"+HotelID+"?c="+getDateTime(30, "ddMMyy")+"|"+getDateTime(31, "ddMMyy")+"&r=2,0&ur=1";
 		String SearchUrl = "";
 		if(Domain=="IN") {
@@ -53,9 +58,9 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		System.out.println(SearchUrl);
 		return SearchUrl;
 	}
-	
+
 	public String hotelDetailsUrl_3Days(String Domain, String HotelID)  throws Exception
-	{	
+	{
 		Hotel_URL= "/hotels/details/"+HotelID+"?c="+getDateTime(30, "ddMMyy")+"|"+getDateTime(33, "ddMMyy")+"&r=2,0&ur=1";
 		String SearchUrl = "";
 		if(Domain=="IN") {
@@ -69,7 +74,7 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		elementVisible(driver, getObjectPayment("Hotel_SRP_Book_Btn"), 20);
 		textPresent_Log(driver, "Price per room, per night", 1);
 		if(!HotelName.equals("")) {
-		safeAutocomplete(driver, getObjectPayment("Hotel_SRP_HotelSearch_Text_Box"), getObjectPayment("Hotel_SRP_HotelSearch_Text_AJAX"), HotelName);
+			safeAutocomplete(driver, getObjectPayment("Hotel_SRP_HotelSearch_Text_Box"), getObjectPayment("Hotel_SRP_HotelSearch_Text_AJAX"), HotelName);
 		}
 		elementVisible(driver, getObjectPayment("Hotel_SRP_Book_Btn"), 5);
 		safeClick(driver, getObjectPayment("Hotel_SRP_Book_Btn"));
@@ -79,20 +84,20 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		Iterator<String> page = win.iterator();
 		while (page.hasNext()) {
 			String child_window = page.next();
-			if (!parent.equals(child_window)) 
+			if (!parent.equals(child_window))
 			{
 				driver.switchTo().window(child_window);
 				Thread.sleep(2000);
 				driver.navigate().to(driver.getCurrentUrl());
 				Thread.sleep(2000);
 				Reporter.log(driver.switchTo().window(child_window).getCurrentUrl());
-				}
-			Reporter.log(driver.switchTo().window(child_window).getCurrentUrl());
-				
 			}
-		textPresent_Log(driver, "View all hotels in Bangalore", 10);
+			Reporter.log(driver.switchTo().window(child_window).getCurrentUrl());
+
 		}
-	
+		textPresent_Log(driver, "View all hotels in Bangalore", 10);
+	}
+
 	public void hotelsDetailsPage(RemoteWebDriver driver, String HotelName, String Price) throws Exception {
 		refreshPage(driver);
 		if(textPresent(driver, "Sorry our servers are stumped with your request", 1)) {
@@ -100,91 +105,93 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		}
 		elementPresent_log(driver, getObjectPayment("Hotel_Details_Modify_Btn"), "Modify Button", 30);
 		safeClick(driver, getObjectPayment("Hotel_Details_SelectRoom_Btn"));
-		elementVisible(driver, getObjectPayment("Hotel_Details_Book_Btn"), 10);
+		Thread.sleep(5000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,500)");
+		elementVisible(driver, getObjectPayment("Hotel_Details_Book_Btn"), 5);
+		WebElement element = driver.findElement(getObjectPayment("Hotel_Details_Book_Btn"));
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+		Thread.sleep(2000);
 		mouseHover(driver, getObjectPayment("Hotel_Details_Book_Btn"));
-		safeClick(driver, getObjectPayment("Hotel_Details_Book_Btn"));
+		Thread.sleep(2000);
+		smartClick(driver, getObjectPayment("Hotel_Details_Book_Btn"));
 		String parent=driver.getWindowHandle();
 		Set<String>s=driver.getWindowHandles();
 		Iterator<String> I1= s.iterator();
 		String Child_URL="";
 		while(I1.hasNext())
 		{
-		String child_window=I1.next();
-		if(!parent.equals(child_window))
-		{driver.switchTo().window(child_window);}
+			String child_window=I1.next();
+			if(!parent.equals(child_window))
+			{
+				driver.switchTo().window(child_window);}
 		}
-		textPresent(driver, "itinerary", 20);
-
-		Thread.sleep(5000);
+		textPresent_Log(driver, "Review your itinerary", 20);
 		Child_URL = driver.getCurrentUrl();
 		//driver.close(); // Closing Child window
 		driver.switchTo().window(parent);
 		driver.get(Child_URL);
-
-		textPresent(driver, "itinerary", 20);
-	//	driver.manage().addCookie(cookie_Bento_Hotels);
-		//refreshPage(driver);
+		textPresent_Log(driver, "Review your itinerary", 20);
+		driver.manage().addCookie(cookie_Bento_Hotels);
 	}
-	
+
 	public void hotelsItnPage(RemoteWebDriver driver, String CouponGV, String PayType, String SignIN, String Contact) throws Exception {
 		hotelsItnDetails(driver, CouponGV, PayType);
 		hotelsItnSignIN(driver, SignIN, PayType);
 		hotelsItnContact(driver, Contact, PayType);
 	}
-		
-	
+
+
 	public void hotelsItnDetails(RemoteWebDriver driver, String CouponGV, String PayType) throws Exception {
-		//elementPresent(driver, getObjectPayment("Hotel_ItnPage_Continue_Btn"), 20);
-		textPresent(driver, "Review your itinerary", 5);
+		textPresent(driver, "Review your itinerary", 20);
 		if(elementVisible(driver, By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Continue with Email'])[1]/preceding::*[name()='svg'][3]"),5)) {
 			safeClick(driver, By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Continue with Email'])[1]/preceding::*[name()='svg'][3]"));
 		}
-
 		if(CouponGV.equalsIgnoreCase("PartialGV")) {
-		 String[] GV = getGV(10);
-		 mouseHover(driver, By.xpath("//input"));
-		 safeClick(driver, By.xpath("//input"));
-		 safeType(driver, By.xpath("//input"),GV[0]);
-		 elementVisible(driver, By.xpath("//div[2]/div/input"), 5, "GV pin not diplayed");
-		 mouseHover(driver, By.xpath("//div[2]/div/input"));
-		 safeClick(driver, By.xpath("//div[2]/div/input"));
-		 safeType(driver, By.xpath("//div[2]/div/input"),GV[1]);
-		 safeClick(driver, By.xpath("//button"));
-		 elementPresent_log(driver, By.xpath("//div[2]/div/div/div[3]/div[2]"), "GV Success", 10);
-		 textPresent(driver, "has been redeemed for this booking", 5);
+			String[] GV = getGV(10);
+			mouseHover(driver, By.xpath("//input"));
+			safeClick(driver, By.xpath("//input"));
+			safeType(driver, By.xpath("//input"),GV[0]);
+			elementVisible(driver, By.xpath("//div[2]/div/input"), 5, "GV pin not diplayed");
+			mouseHover(driver, By.xpath("//div[2]/div/input"));
+			safeClick(driver, By.xpath("//div[2]/div/input"));
+			safeType(driver, By.xpath("//div[2]/div/input"),GV[1]);
+			safeClick(driver, By.xpath("//button"));
+			elementPresent_log(driver, By.xpath("//div[2]/div/div/div[3]/div[2]"), "GV Success", 10);
+			textPresent(driver, "has been redeemed for this booking", 5);
 		}
 		else if(CouponGV.equalsIgnoreCase("FullGV")) {
-			 mouseHover(driver, By.xpath("//input"));
-			 safeClick(driver, By.xpath("//input"));
-			 safeType(driver, By.xpath("//input"),GV_number);
-			 elementVisible(driver, By.xpath("//div[2]/div/input"), 5, "GV pin not diplayed");
-			 mouseHover(driver, By.xpath("//div[2]/div/input"));
-			 safeClick(driver, By.xpath("//div[2]/div/input"));
-			 safeType(driver, By.xpath("//div[2]/div/input"),GV_pin);
-			 safeClick(driver, By.xpath("//button"));
-			 elementPresent_log(driver, By.xpath("//div[2]/div/div/div[3]/div[2]"), "GV Success", 10);
-			 textPresent(driver, "has been redeemed for this booking", 5);
+			mouseHover(driver, By.xpath("//input"));
+			safeClick(driver, By.xpath("//input"));
+			safeType(driver, By.xpath("//input"),GV_number);
+			elementVisible(driver, By.xpath("//div[2]/div/input"), 5, "GV pin not diplayed");
+			mouseHover(driver, By.xpath("//div[2]/div/input"));
+			safeClick(driver, By.xpath("//div[2]/div/input"));
+			safeType(driver, By.xpath("//div[2]/div/input"),GV_pin);
+			safeClick(driver, By.xpath("//button"));
+			elementPresent_log(driver, By.xpath("//div[2]/div/div/div[3]/div[2]"), "GV Success", 10);
+			textPresent(driver, "has been redeemed for this booking", 5);
 		}
 		else if(CouponGV.equalsIgnoreCase("COUPONCC")) {
-			 mouseHover(driver, By.xpath("//input"));
-			 safeClick(driver, By.xpath("//input"));
-			 safeType(driver, By.xpath("//input"),"HOTELTEST123");
-			 safeClick(driver, By.xpath("//button"));
-			 elementPresent_log(driver, By.xpath("//form/div[3]/div[2]"), "Coupon Success", 10);
-			 textPresent(driver, "Great! You just saved", 5);
+			mouseHover(driver, By.xpath("//input"));
+			safeClick(driver, By.xpath("//input"));
+			safeType(driver, By.xpath("//input"),"HOTELTEST123");
+			safeClick(driver, By.xpath("//button"));
+			elementPresent_log(driver, By.xpath("//form/div[3]/div[2]"), "Coupon Success", 10);
+			textPresent(driver, "Great! You just saved", 5);
 		}
-		
+
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,400)");
-		//driver.findElement(getObjectPayment("Hotel_ItnPage_Continue_Btn")).sendKeys(Keys.PAGE_DOWN);
+		js.executeScript("window.scrollBy(0,600)");
 		elementVisible(driver, getObjectPayment("Hotel_ItnPage_Continue_Btn"), 5);
-		WebElement ele2=driver.findElement(getObjectPayment("Hotel_ItnPage_Continue_Btn"));
-		driver.executeScript("return arguments[0].scrollIntoView();",ele2);
-		Thread.sleep(5000);
-		safeClick_JS(driver,getObjectPayment("Hotel_ItnPage_Continue_Btn"));
-		//safeClick(driver, getObjectPayment("Hotel_ItnPage_Continue_Btn"));
+		Thread.sleep(2000);
+		WebElement element = driver.findElement(getObjectPayment("Hotel_ItnPage_Continue_Btn"));
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+		mouseHover(driver, getObjectPayment("Hotel_ItnPage_Continue_Btn"));
+		Thread.sleep(2000);
+		smartClick(driver, getObjectPayment("Hotel_ItnPage_Continue_Btn"));
 	}
-	
+
 	public void hotelsItnSignIN(RemoteWebDriver driver, String SignIN, String PayType) throws Exception {
 		elementPresent_log(driver, getObjectPayment("Hotel_SignINPage_Continue_Btn"), "Signin Step button", 30);
 		textPresent(driver, "Add contact details", 1);
@@ -192,10 +199,10 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		safeType(driver,getObjectPayment("Hotel_SignINPage_PhoneNo_TextBox"), "1211212121");
 		safeType(driver,getObjectPayment("Hotel_SignINPage_EmailID_TextBox"), "ct_wallet_patial@cleartrip.com");
 		elementVisible(driver, getObjectPayment("Hotel_SignINPage_Continue_Btn"), 5);
-		//mouseHover(driver, getObjectPayment("Hotel_SignINPage_Continue_Btn"));
 		safeClick(driver, getObjectPayment("Hotel_SignINPage_Continue_Btn"));
+		Reporter.log("Clicked on continue - SignIN block");
 	}
-	
+
 	public void hotelsItnContact(RemoteWebDriver driver, String Contact, String PayType) throws Exception {
 		elementPresent_log(driver, getObjectPayment("Hotel_ContactPage_Continue_Btn"), "Traveller Contine button", 10);
 		textPresent(driver, "Add traveller details", 1);
@@ -206,18 +213,15 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		safeType(driver, getObjectPayment("Hotel_ContactPage_LastName_TextBox"), "Kumar");
 		hotelPrice_Itinerary=  getText(driver, By.xpath("//div/div[2]/div/div/div/div[3]/p"));
 		hotelPrice_Itinerary = hotelPrice_Itinerary.replace("₹", "").replace(",", "");
-        driver.findElement(getObjectPayment("Hotel_ContactPage_Continue_Btn")).sendKeys(Keys.PAGE_DOWN);
+		driver.findElement(getObjectPayment("Hotel_ContactPage_Continue_Btn")).sendKeys(Keys.PAGE_DOWN);
 		elementVisible(driver, getObjectPayment("Hotel_ContactPage_Continue_Btn"), 5);
 		WebElement ele=driver.findElement(getObjectPayment("Hotel_ContactPage_Continue_Btn"));
 		ele.sendKeys(Keys.END);
-		Thread.sleep(4000);
-		elementVisible(driver,getObjectPayment("Hotel_ContactPage_Continue_Btn"),1);
+		elementVisible(driver,getObjectPayment("Hotel_ContactPage_Continue_Btn"),5);
 		safeClick(driver,getObjectPayment("Hotel_ContactPage_Continue_Btn"));
-		Reporter.log("Clicked on continue");
-
-		//safeClick(driver, getObjectPayment("Hotel_ContactPage_Continue_Btn"));
+		Reporter.log("Clicked on continue - traveller block");
 	}
-	
+
 	public void hotelsPayment_Page_Validation(RemoteWebDriver driver, String PayType, String Domain) throws Exception {
 		if(textPresent(driver, "Oops, Something went wrong.", 1)) {
 			refreshPage(driver);
@@ -226,19 +230,19 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 			Assert.assertTrue(false);
 		}
 		if(!(PayType.contains("GV")||PayType.contains("WALLET"))) {
-		hotelPrice_PaymentPage=  getText(driver, By.xpath("//p[2]/span")).replace("₹ ", "").replace(",", "");
-		int payment_Price=Integer.parseInt(hotelPrice_PaymentPage);  
-		int itinerary_Price=Integer.parseInt(hotelPrice_Itinerary);  
-		int itinerary_Price_Plus_ConvFee=itinerary_Price+170; // added conv fee
-		System.out.println("Payment page price  :"+payment_Price+" itinerary_Price_Plus_ConvFee : "+itinerary_Price_Plus_ConvFee);
-		if(payment_Price!=itinerary_Price_Plus_ConvFee) {
-			Reporter.log("Payment page price  :"+payment_Price+" itinerary_Price_Plus_ConvFee : "+itinerary_Price_Plus_ConvFee);
+			hotelPrice_PaymentPage=  getText(driver, By.xpath("//p[2]/span")).replace("₹ ", "").replace(",", "");
+			int payment_Price=Integer.parseInt(hotelPrice_PaymentPage);
+			int itinerary_Price=Integer.parseInt(hotelPrice_Itinerary);
+			int itinerary_Price_Plus_ConvFee=itinerary_Price+170; // added conv fee
 			System.out.println("Payment page price  :"+payment_Price+" itinerary_Price_Plus_ConvFee : "+itinerary_Price_Plus_ConvFee);
-			//Assert.assertTrue(false);
-		}
+			if(payment_Price!=itinerary_Price_Plus_ConvFee) {
+				Reporter.log("Payment page price  :"+payment_Price+" itinerary_Price_Plus_ConvFee : "+itinerary_Price_Plus_ConvFee);
+				System.out.println("Payment page price  :"+payment_Price+" itinerary_Price_Plus_ConvFee : "+itinerary_Price_Plus_ConvFee);
+				//Assert.assertTrue(false);
+			}
 		}
 	}
-	
+
 	public void hotelsPaymentPage(RemoteWebDriver driver, String PaymentType, String CardNumber, String Domain, String PayType, String BankName) throws Exception {
 		//hotelsPayment_Page_Validation(driver, PayType, Domain);
 		paymentPageHotels(driver, PaymentType, CardNumber, Domain, PayType, BankName);

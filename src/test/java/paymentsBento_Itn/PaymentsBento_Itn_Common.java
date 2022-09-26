@@ -1157,9 +1157,9 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	}
 
 	public void confirmation_page_hotel(RemoteWebDriver driver, String PaymentType, String CardNumber) throws Exception {
-		elementPresent_log(driver, By.xpath("//strong"), "TripID", 30);
-		textPresent_Log(driver, "Your booking is done", 1);
-		String tripid = getText(driver, By.xpath("//strong"));
+		elementPresent_log(driver, By.xpath("//div[3]/p"), "TripID", 30);
+		textPresent_Log(driver, "Booking successful", 1);
+		String tripid = getText(driver, By.xpath("//div[3]/p"));
 		Reporter.log(PaymentType+" "+CardNumber+" : "+tripid);
 	}
 

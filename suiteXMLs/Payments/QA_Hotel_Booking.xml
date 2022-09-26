@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Hotel Booking" parallel="tests" thread-count="3">
+<suite name="Hotel Booking" parallel="tests" thread-count="5">
 
 <listeners>
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -13,6 +13,13 @@
 	        <class name="test.java.paymentsBento_Itn_Hotels.IN_PayU"/>
     </classes>
 </test>
+
+
+    <test name="PayTM" preserve-order="true">
+        <classes>
+            <class name="test.java.paymentsBento_Itn_Hotels.IN_DC_PayTM"/>
+        </classes>
+    </test>
 
 <test name="GoogleCaptcha Validation" preserve-order="true">
     <classes>

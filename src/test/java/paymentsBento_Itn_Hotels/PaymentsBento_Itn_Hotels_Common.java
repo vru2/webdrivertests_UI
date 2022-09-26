@@ -2,6 +2,7 @@ package test.java.  paymentsBento_Itn_Hotels;
 
 import static org.junit.Assert.assertTrue;
 
+import java.awt.*;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -19,6 +20,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 
 
 import test.java.paymentsBento_Itn.PaymentsBento_Itn_Common;
+import test.java.paymentsUI_Air.GV_NB;
 
 public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 	String Hotel_URL = "";
@@ -148,7 +150,8 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 			safeClick(driver, By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Continue with Email'])[1]/preceding::*[name()='svg'][3]"));
 		}
 		if(CouponGV.equalsIgnoreCase("PartialGV")) {
-			String[] GV = getGV(10);
+			textPresent(driver, "Apply coupon or gift card",5);
+			/*String[] GV = getGV(10);
 			mouseHover(driver, By.xpath("//input"));
 			safeClick(driver, By.xpath("//input"));
 			safeType(driver, By.xpath("//input"),GV[0]);
@@ -158,10 +161,23 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 			safeType(driver, By.xpath("//div[2]/div/input"),GV[1]);
 			safeClick(driver, By.xpath("//button"));
 			elementPresent_log(driver, By.xpath("//div[2]/div/div/div[3]/div[2]"), "GV Success", 10);
-			textPresent(driver, "has been redeemed for this booking", 5);
+			textPresent(driver, "has been redeemed for this booking", 5);*/
+			String[] GV = getGV(10);
+			mouseHover(driver, By.xpath("//div[3]/div/div[2]/div/input"));
+			safeClick(driver, By.xpath("//div[3]/div/div[2]/div/input"));
+			safeType(driver, By.xpath("//div[3]/div/div[2]/div/input"), GV[0]);
+			elementVisible(driver, By.xpath("//div[2]/input"), 5);
+			mouseHover(driver, By.xpath("//div[2]/input"));
+			safeClick(driver, By.xpath("//div[2]/input"));
+			safeType(driver, By.xpath("//div[2]/input"),GV[1]);
+			safeClick(driver, By.xpath("//div[2]/div[3]/button"));
+			textPresent(driver, "redeemed from your gift card", 5);
+
+
 		}
 		else if(CouponGV.equalsIgnoreCase("FullGV")) {
-			mouseHover(driver, By.xpath("//input"));
+			textPresent(driver, "Apply coupon or gift card",5);
+		/*	mouseHover(driver, By.xpath("//input"));
 			safeClick(driver, By.xpath("//input"));
 			safeType(driver, By.xpath("//input"),GV_number);
 			elementVisible(driver, By.xpath("//div[2]/div/input"), 5, "GV pin not diplayed");
@@ -170,15 +186,34 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 			safeType(driver, By.xpath("//div[2]/div/input"),GV_pin);
 			safeClick(driver, By.xpath("//button"));
 			elementPresent_log(driver, By.xpath("//div[2]/div/div/div[3]/div[2]"), "GV Success", 10);
-			textPresent(driver, "has been redeemed for this booking", 5);
+			textPresent(driver, "has been redeemed for this booking", 5);*/
+			//String[] GV = getGV(10);
+			mouseHover(driver, By.xpath("//div[3]/div/div[2]/div/input"));
+			safeClick(driver, By.xpath("//div[3]/div/div[2]/div/input"));
+			safeType(driver, By.xpath("//div[3]/div/div[2]/div/input"), GV_number);
+			elementVisible(driver, By.xpath("//div[2]/input"), 5);
+			mouseHover(driver, By.xpath("//div[2]/input"));
+			safeClick(driver, By.xpath("//div[2]/input"));
+			safeType(driver, By.xpath("//div[2]/input"),GV_pin);
+			safeClick(driver, By.xpath("//div[2]/div[3]/button"));
+			textPresent(driver, "redeemed from your gift card", 5);
 		}
 		else if(CouponGV.equalsIgnoreCase("COUPONCC")) {
-			mouseHover(driver, By.xpath("//input"));
+			/*mouseHover(driver, By.xpath("//input"));
 			safeClick(driver, By.xpath("//input"));
 			safeType(driver, By.xpath("//input"),"HOTELTEST123");
 			safeClick(driver, By.xpath("//button"));
 			elementPresent_log(driver, By.xpath("//form/div[3]/div[2]"), "Coupon Success", 10);
-			textPresent(driver, "Great! You just saved", 5);
+			textPresent(driver, "Great! You just saved", 5);*/
+			mouseHover(driver, By.xpath("//div[3]/div/div[2]/div/input"));
+			safeClick(driver, By.xpath("//div[3]/div/div[2]/div/input"));
+			safeType(driver, By.xpath("//div[3]/div/div[2]/div/input"), "HOTELCC");
+			WebElement element = driver.findElement(By.xpath("//div[2]/button"));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+			Thread.sleep(2000);
+			mouseHover(driver, By.xpath("//div[2]/div[3]/div/div/button"));
+			safeClick(driver, By.xpath("//div[2]/div[3]/div/div/button"));
+			textPresent_Log(driver,"Great! You just saved",5);
 		}
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -195,6 +230,8 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 	public void hotelsItnSignIN(RemoteWebDriver driver, String SignIN, String PayType) throws Exception {
 		elementPresent_log(driver, getObjectPayment("Hotel_SignINPage_Continue_Btn"), "Signin Step button", 30);
 		textPresent(driver, "Add contact details", 1);
+		//elementPresent_log(driver, getObjectPayment("Hotel_SignINPage_PhoneNo_TextBox"), "Signin Step button", 30);
+		elementVisible(driver, getObjectPayment("Hotel_SignINPage_PhoneNo_TextBox"), 5);
 		mouseHover(driver,getObjectPayment("Hotel_SignINPage_PhoneNo_TextBox"));
 		safeType(driver,getObjectPayment("Hotel_SignINPage_PhoneNo_TextBox"), "1211212121");
 		safeType(driver,getObjectPayment("Hotel_SignINPage_EmailID_TextBox"), "ct_wallet_patial@cleartrip.com");

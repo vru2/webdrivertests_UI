@@ -17,7 +17,7 @@ public class IN_GV_Full extends PaymentsBento_Itn_Hotels_Common {
 	public void Hotel_IN_GVFull() throws Exception {
 		driver.manage().deleteAllCookies();
 		driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
-		driver.manage().addCookie(hotelLogin);
+		//driver.manage().addCookie(hotelLogin);
 		hotelsDetailsPage(driver, "", "");
 		hotelsItnPage(driver, "FullGV", "", "", "");
 		hotelsPaymentPage(driver, "GV", "", "", "", "");

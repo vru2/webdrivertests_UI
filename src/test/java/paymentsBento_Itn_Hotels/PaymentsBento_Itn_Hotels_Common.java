@@ -115,7 +115,7 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		Thread.sleep(2000);
 		mouseHover(driver, getObjectPayment("Hotel_Details_Book_Btn"));
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		smartClick(driver, getObjectPayment("Hotel_Details_Book_Btn"));
 		String parent=driver.getWindowHandle();
 		Set<String>s=driver.getWindowHandles();

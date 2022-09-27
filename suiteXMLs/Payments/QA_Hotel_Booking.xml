@@ -8,12 +8,19 @@
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
 
-<test name="CC PayU" preserve-order="true">
-    <classes>
-	        <class name="test.java.paymentsBento_Itn_Hotels.IN_PayU"/>
-    </classes>
-</test>
+    <test name="CC PayU" preserve-order="true">
+        <classes>
+            <class name="test.java.paymentsBento_Itn_Hotels.IN_PayU"/>
+        </classes>
+    </test>
 
+
+    <test name="Saved UPI" preserve-order="true">
+        <classes>
+            <class name="test.java.paymentsBento_Itn_Hotels.IN_SavedCard_UPIMode"/>
+            <class name="test.java.paymentsBento_Itn_Hotels.IN_UPI_Saved"/>
+        </classes>
+    </test>
 
     <test name="PayTM" preserve-order="true">
         <classes>

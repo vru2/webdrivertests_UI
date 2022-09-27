@@ -1167,12 +1167,11 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		textPresent_Log(driver, "Pay to complete your booking", 20);
 		System.out.println(driver.getCurrentUrl());
 		Reporter.log(driver.getCurrentUrl());
-		Thread.sleep(1000);
-		if((textPresent(driver, "Your wallet balance is sufficient", 2)||textPresent(driver, "from your wallet", 2))) {
+		/*if((textPresent(driver, "Your wallet balance is sufficient", 2)||textPresent(driver, "from your wallet", 2))) {
 			//safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
 			Reporter.log("Deselected wallet");
 			Thread.sleep(2000);
-		}
+		}*/
 		if (PaymentType.equalsIgnoreCase("WALLET")||PayType.equalsIgnoreCase("WALLET"))
 		{
 			safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
@@ -1183,6 +1182,9 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		switch (PaymentType) {
 			case "storedcard":
 				bento_pay_StoredCard(driver, PaymentType, CardNumber, domain, PayType, BankName);
+				break;
+			case "storedcardUPI":
+				bento_pay_StoredCard_UPI(driver, PaymentType, CardNumber, domain, PayType, BankName);
 				break;
 			case "CC":
 				bento_pay_CC(driver, PaymentType, CardNumber, domain, PayType, BankName);
@@ -1239,7 +1241,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 
 	public void bento_pay_StoredCard(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
 		payUI_Select_PaymentType(driver, "SC");
-		textPresent_Log(driver, "Select a saved card", 5);
+		textPresent_Log(driver, "Select a saved payment mode", 5);
 		if(CardNumber == "4111")
 		{
 			Thread.sleep(1000);
@@ -1274,18 +1276,12 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			Reporter.log("Entered CVV");
 			safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
 			Reporter.log("Clicked on paynow");
-			if(elementVisible(driver,getObjectPayment("Bento_Payment_Skip_Securecard"),2))
+			if(elementVisible(driver,getObjectPayment("Bento_Payment_Skip_Securecard"),1))
 			{
 				safeClick(driver,getObjectPayment("Bento_Payment_Skip_Securecard"));
 				Thread.sleep(1000);
 			}
-			if(textPresent(driver, "Bank Demo", 20)) {
-				if(elementVisible(driver, By.xpath("//button[@onclick='submitSuccess()']"), 5))
-				{
-					safeClick(driver, By.xpath("//button[@onclick='submitSuccess()']"));
-				}
-			}
-			else if(textPresent(driver, "Enter OTP", 20)) {
+			if(textPresent(driver, "Enter OTP", 20)) {
 
 				textPresent_Log(driver, "Enter OTP", 10);
 				safeClick(driver, getObjectPayment("Bento_Payment_Razropay_Pin"));
@@ -1294,6 +1290,13 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 				textPresent_Log(driver, "Your booking is done", 5);
 				Reporter.log("Payment done successfully");
 			}
+			else if(textPresent(driver, "Bank Demo", 1)) {
+				if(elementVisible(driver, By.xpath("//button[@onclick='submitSuccess()']"), 5))
+				{
+					safeClick(driver, By.xpath("//button[@onclick='submitSuccess()']"));
+				}
+			}
+
 			else
 			{
 				safeClick(driver, getObjectPayment("Bento_Payment_Select_Storedcard"));
@@ -1318,7 +1321,16 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		}
 	}
 
-	public void bento_pay_CC(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
+
+	public void bento_pay_StoredCard_UPI(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
+		payUI_Select_PaymentType(driver, "SC");
+		textPresent_Log(driver, "Select a saved payment mode", 5);
+		textPresentInElementAssert(driver,By.xpath("//div[@class='hover:bg-neutral-0'][1]"), "multiRefund@okhdfcbank",5);
+		safeClick(driver,By.xpath("//div[@class='hover:bg-neutral-0'][1]"));
+		safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
+	}
+
+		public void bento_pay_CC(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
 		payUI_Select_PaymentType(driver, "CC");
 		if(CardNumber=="4111") {
 			payUI_Enter_PaymentDetails(driver, "CC", "RAZORPAYDC","");
@@ -1466,9 +1478,9 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 
 	public void bento_pay_EMI(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
 		elementVisible(driver, getObjectPayment("Bento_Payment_Paynow"), 10);
-		if (textPresent(driver, "Cleartrip wallet", 5))
+		/*if (textPresent(driver, "Cleartrip wallet", 5))
 		{
-			safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
+			//safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
 			if(textPresent(driver, "Your wallet balance is sufficient", 2)) {
 				safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
 			}
@@ -1476,14 +1488,15 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			Thread.sleep(2000);
 			elementVisible(driver, By.xpath("//div[7]/p"), 10);
 			driver.findElement(By.xpath("//div[7]/p")).click();
-		}
+		}*/
 		payUI_Select_PaymentType(driver, "EMI");
 		//safeClick(driver, getObjectPayment("PaymentPage_EMI_ICICIBank_Radio_Btn"));
 		elementVisible(driver, By.xpath("//div[10]/div/div[3]/label/div"), 5);
+		safeClick(driver, By.xpath("//div[10]/div/div[3]/label/div"));
 		safeClick(driver, By.xpath("//button"));
 		elementVisible(driver, getObjectPayment("PaymentPage_EMI_EnterCard_Details_btn"), 10);
 		scrollToElement(driver, getObjectPayment("PaymentPage_EMI_EnterCard_Details_btn"));
-		safeClick(driver, getObjectPayment("PaymentPage_EMI_EnterCard_Details_btn"));
+	//	safeClick(driver, getObjectPayment("PaymentPage_EMI_EnterCard_Details_btn"));
 		//textPresent_Log(driver, "Selected EMI option", 5);
 
 		textPresent_Log(driver, "Interest (Charged by Bank)", 5);
@@ -1491,14 +1504,17 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		elementVisible(driver, getObjectPayment("PaymentPage_EMI_Change_Plan_Button"), 5);
 		textPresent_Log(driver, "Enter credit card details", 5);
 		Enter_CC_Details(driver, platform.value("RazorPay_Number"), platform.value("RazorPay_Month_UI"), platform.value("RazorPay_Year"), platform.value("RazorPay_CVV"));
-		safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
-		if (textPresent(driver, "Your wallet balance is sufficient to pay for this booking. Please uncheck wallet to use other payment modes", 1))
+		//safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
+		safeClick(driver, By.xpath("//div/div/div/div[3]/button"));
+
+
+		/*if (textPresent(driver, "Your wallet balance is sufficient to pay for this booking. Please uncheck wallet to use other payment modes", 1))
 		{
 			safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
 			Reporter.log("Deselected wallet");
 			Thread.sleep(2000);
 			driver.findElement(By.xpath("//div[7]/p")).click();
-		}
+		}*/
 		Reporter.log("Clicked on paynow");
 		if(elementVisible(driver,getObjectPayment("Bento_Payment_Skip_Securecard"),1))
 		{
@@ -1772,13 +1788,29 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	}
 
 	public void bento_pay_UPI(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
-		payUI_Select_PaymentType(driver, "CC");
-		payUI_Select_PaymentType(driver, "UPI");
-		Reporter.log("Clicked on UPI");
-		Thread.sleep(2000);
-		safeClick(driver, getObjectPayment("Bento_Payment_UPI_ID"));
-		safeType(driver, getObjectPayment("Bento_Payment_UPI_ID"), "9986696785@ybl");
-		Reporter.log("Entered UPI Details");
+
+		if(PayType=="SavedUPI"){
+			textPresent_Log(driver,"Add new UPI",5);
+			textPresent_Log(driver,"Saved UPI ID",1);
+			safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
+			textPresent_Log(driver,"Enter UPI ID",5);
+			textPresent_Log(driver,"Payment request will be sent to the phone",1);
+			safeClick(driver, By.xpath("//div/div/div/div[3]/label/div/span"));
+
+		}
+		else if(PayType=="SavedCardTab"){
+
+		}
+
+		else {
+			payUI_Select_PaymentType(driver, "CC");
+			payUI_Select_PaymentType(driver, "UPI");
+			Reporter.log("Clicked on UPI");
+			Thread.sleep(2000);
+			safeClick(driver, getObjectPayment("Bento_Payment_UPI_ID"));
+			safeType(driver, getObjectPayment("Bento_Payment_UPI_ID"), "9986696785@ybl");
+			Reporter.log("Entered UPI Details");
+		}
 		safeClick(driver, getObjectPayment("Bento_Payment_Paynow_UPI"));
 		Reporter.log("Clicked on paynow");
 		textPresent(driver, "Please wait...", 2);

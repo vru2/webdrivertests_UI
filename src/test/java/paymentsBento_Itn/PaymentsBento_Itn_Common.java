@@ -1598,7 +1598,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 
 			Thread.sleep(2000);
 			elementPresent_log(driver, getObjectPayment("Bento_Pay_Coupon_Popup_Close_Btn"), "",	1);
-			safeClick(driver, By.xpath("//form/button")); // Clicking on Continue without coupon paymentMode
+			safeClick(driver, By.xpath("//div[4]/div/button")); // Clicking on Continue without coupon paymentMode
 			Reporter.log("Clicked on paynow");
 
 		}
@@ -1672,6 +1672,8 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			safeClick(driver, getObjectPayment("PayUI_Make_Payment_Btn"));
 			textPresent(driver, "Login with your Amazon account", 50);
 			safeType(driver, getObjectPayment("MakePayment_Amazon_Page_Signin_Email"), "kiran.kumar@cleartrip.com");
+			safeClick(driver, By.xpath("//span/input"));
+			elementVisible(driver, getObjectPayment("MakePayment_Amazon_Page_Signin_Password"),5);
 			safeType(driver, getObjectPayment("MakePayment_Amazon_Page_Signin_Password"), "Cleartrip@123");
 			safeClick(driver, getObjectPayment("MakePayment_Amazon_Page_Signin_Login"));
 			textPresent_Log(driver, "Select payment method", 20);
@@ -1691,7 +1693,9 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		if (textPresent(driver, "Cleartrip wallet", 2)) {
 			elementVisible(driver, getObjectPayment("Bento_Payment_Paynow"), 2);
 			textPresent_Log(driver, "Your wallet balance is sufficient to pay for this booking. Please uncheck wallet to use other payment mode", 2);
-			smartClick(driver, getObjectPayment("Bento_Payment_Paynow"));
+			mouseHover(driver, getObjectPayment("Bento_Payment_Paynow"));
+			safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
+			//safeClick(driver, By.xpath("//div/div/div/div[3]/button"));
 			Reporter.log("Clicked on paynow");
 			if(textPresent(driver,"Cleartrip wallet",2))
 			{

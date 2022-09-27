@@ -171,7 +171,7 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 			safeClick(driver, By.xpath("//div[2]/input"));
 			safeType(driver, By.xpath("//div[2]/input"),GV[1]);
 			safeClick(driver, By.xpath("//div[2]/div[3]/button"));
-			textPresent(driver, "redeemed from your gift card", 5);
+			textPresent_Log(driver, "redeemed from your gift card", 5);
 
 
 		}
@@ -196,7 +196,7 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 			safeClick(driver, By.xpath("//div[2]/input"));
 			safeType(driver, By.xpath("//div[2]/input"),GV_pin);
 			safeClick(driver, By.xpath("//div[2]/div[3]/button"));
-			textPresent(driver, "redeemed from your gift card", 5);
+			textPresent_Log(driver, "redeemed from your gift card", 5);
 		}
 		else if(CouponGV.equalsIgnoreCase("COUPONCC")) {
 			/*mouseHover(driver, By.xpath("//input"));

@@ -52,7 +52,7 @@ public class PaymentUI_Common extends PaymentNodeJS{
 			PayType = "Debit Card";
 			break;
 		case "NB":
-			PayType = "Net Banking";
+			PayType = "Net banking";
 			break;
 		case "TW":
 			PayType = "Wallets";

@@ -1006,8 +1006,7 @@ public class WrapperMethod extends CommonUtil {
 		List<WebElement> we = driver.findElements(by);
 		for (WebElement WebEle : we) {
 			String elementText = WebEle.getText();
-			//System.out.println(elementText);
-			if (elementText.equalsIgnoreCase(Text)) {
+			if (elementText.contains(Text)) {
 				if (!WebEle.isDisplayed()) {
 					Thread.sleep(1000);
 				}

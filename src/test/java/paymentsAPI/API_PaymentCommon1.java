@@ -39,7 +39,7 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 	String urlDA = "http://172.17.28.21:8403";
 	String promoURL = "http://promoservice.cltp.com:9001";//http://172.17.51.86:7999";
 	String urlRewards = "http://rewardsservice.cltp.com:9001";//http://172.17.56.51:9080";
-	String urlWallet = "http://wallet-service-qa.cltp.com:9001";//http://172.17.51.86:8071";
+	String urlWallet = "http://172.17.51.86:8071";//"http://wallet-service-qa.cltp.com:9001";http://172.17.51.86:8071";
 	String urlCardInfo_Service="http://172.17.51.86:8331";
 	String urlrewards_validate = "http://paymentservice.cltp.com:9001";//"http://172.17.51.86:8070";
 	String urlrewards_URI = "http://rewardsservice.cltp.com:9001";//http://172.17.56.51:9080";

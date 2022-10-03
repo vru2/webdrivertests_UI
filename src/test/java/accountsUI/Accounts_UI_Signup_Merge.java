@@ -14,7 +14,7 @@ public class Accounts_UI_Signup_Merge extends Accounts_UI_Common{
         baseUrl = getBaseUrl("com");
     }
     @Test
-    public void signup_mobile_oly() throws Exception {
+    public void signup_merge() throws Exception {
         driver.manage().deleteAllCookies();
         driver.navigate().to(baseUrl);
         Signup("SIGNUP_MERGE","Signup_merge");

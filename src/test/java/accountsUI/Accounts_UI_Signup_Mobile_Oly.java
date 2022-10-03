@@ -1,6 +1,5 @@
 package test.java.  accountsUI;
 
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -10,16 +9,15 @@ import org.testng.annotations.Test;
 public class Accounts_UI_Signup_Mobile_Oly extends Accounts_UI_Common{
 
 	@BeforeClass
-	public void startSelenium() throws Exception {/*
+	public void startSelenium() throws Exception {
 		this.driver = getDriver(driver);
-		baseUrl = getBaseUrl("com");*/
+		baseUrl = getBaseUrl("com");
 	}
 	@Test
 	public void signup_mobile_oly() throws Exception {
-		//driver.manage().deleteAllCookies();
-		//driver.navigate().to(baseUrl);
-		RedisHandler(driver,"SIGNIN","+910001231234","","");
-		//Signup("SIGNIN","Signup_mobile_only");
+		driver.manage().deleteAllCookies();
+		driver.navigate().to(baseUrl);
+		Signup("SIGNIN","Signup_mobile_only");
 	}
 	@AfterClass
 	public void closeSelenium() throws Exception {

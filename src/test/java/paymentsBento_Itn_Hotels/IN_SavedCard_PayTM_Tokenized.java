@@ -1,4 +1,4 @@
-package test.java.  paymentsBento_Itn_Hotels;
+package test.java.paymentsBento_Itn_Hotels;
 
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
@@ -6,7 +6,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class IN_SavedCard_RazorPay extends PaymentsBento_Itn_Hotels_Common {
+public class IN_SavedCard_PayTM_Tokenized extends PaymentsBento_Itn_Hotels_Common {
 
 	@BeforeClass
 	public void startSelenium() throws Exception {
@@ -14,13 +14,13 @@ public class IN_SavedCard_RazorPay extends PaymentsBento_Itn_Hotels_Common {
 	}
 
 	@Test
-	public void Hotel_IN_SC_Razorpay() throws Exception {
+	public void Hotel_IN_Tokenized_payTM() throws Exception {
 		driver.manage().deleteAllCookies();
 		driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
 		driver.manage().addCookie(ctauth_Saved_Cards);
 		hotelsDetailsPage(driver, "", "");
 		hotelsItnPage(driver, "", "", "", "");
-		hotelsPaymentPage(driver,"storedcard","5241","HOTELS","","");
+		hotelsPaymentPage(driver,"storedcard","7777","HOTELS","","");
 	} 
 
  		@AfterClass

@@ -6,6 +6,7 @@
 		<listener class-name="test.java.common.RemoveDuplicateResults"/>
 		<listener class-name="test.java.common.RetryListener"/>
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+
 </listeners>
 
     <test name="CC PayU" preserve-order="true">
@@ -14,6 +15,12 @@
         </classes>
     </test>
 
+
+    <test name="Tokenized Saved Card" preserve-order="true">
+        <classes>
+            <class name="test.java.paymentsBento_Itn_Hotels.IN_SavedCard_PayTM_Tokenized"/>
+        </classes>
+    </test>
 
     <test name="Saved UPI" preserve-order="true">
         <classes>
@@ -58,11 +65,11 @@
     </classes>
 </test>
 
-<test name="Saved Card" preserve-order="true">
+<!--<test name="Saved Card" preserve-order="true">
     <classes>
 	        <class name="test.java.paymentsBento_Itn_Hotels.IN_SavedCard_RazorPay"/>
     </classes>
-</test>
+</test>-->
 
 <test name="Wallet full" preserve-order="true">
     <classes>

@@ -101,13 +101,14 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 	}
 
 	public void hotelsDetailsPage(RemoteWebDriver driver, String HotelName, String Price) throws Exception {
-		refreshPage(driver);
+		//refreshPage(driver);
 		if(textPresent(driver, "Sorry our servers are stumped with your request", 1)) {
 			refreshPage(driver);
 		}
 		elementPresent_log(driver, getObjectPayment("Hotel_Details_Modify_Btn"), "Modify Button", 30);
 		safeClick(driver, getObjectPayment("Hotel_Details_SelectRoom_Btn"));
-		Thread.sleep(5000);
+		elementPresent_log(driver, getObjectPayment("Hotel_Details_Book_Btn"), "Book Button", 5);
+		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,500)");
 		elementVisible(driver, getObjectPayment("Hotel_Details_Book_Btn"), 5);
@@ -128,7 +129,7 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 			{
 				driver.switchTo().window(child_window);}
 		}
-		textPresent_Log(driver, "Review your itinerary", 20);
+		textPresent_Log(driver, "Review your itinerary", 30);
 		Child_URL = driver.getCurrentUrl();
 		//driver.close(); // Closing Child window
 		driver.switchTo().window(parent);

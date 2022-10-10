@@ -38,11 +38,13 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 	String hotelPrice_Itinerary = null;
 	String hotelPrice_PaymentPage = null;
 
-	String hotelName_DetailsPage = "holiday-inn-express-suites-bengaluru-racecourse-2052760";
+	String hotelName_DetailsPage = "royal-inn-2628930";
+
+	String hotelName_DetailsPage1 = "holiday-inn-express-suites-bengaluru-racecourse-2052760";
 
 	public String hotelSearchUrl(String Domain)  throws Exception
 	{
-		Hotel_URL= "/hotels/results?city=Bangalore&state=Karnataka&country=IN&poi=&hotelId=&dest_code=32550&chk_in="+getDateTime(10, "dd/MM/yyyy")+"&chk_out="+getDateTime(11, "dd/MM/yyyy")+"&adults=2&childs=0&num_rooms=1&adults1=2&children1=0&";
+		Hotel_URL= "/hotels/results?city=Bangalore&state=Karnataka&country=IN&poi=&hotelId=&dest_code=32550&chk_in="+getDateTime(20, "dd/MM/yyyy")+"&chk_out="+getDateTime(21, "dd/MM/yyyy")+"&adults=2&childs=0&num_rooms=1&adults1=2&children1=0&";
 		String SearchUrl = "";
 		if(Domain=="IN") {
 			SearchUrl=inurl+Hotel_URL;

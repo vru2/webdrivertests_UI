@@ -7,7 +7,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class PWA_AmazonPay extends PaymentsBento_Itn_Hotels_on_PWA {
+public class PWA_AmazonPay extends PaymentsBento_Itn_Hotels_Common_PWA {
 
 	@BeforeClass
 	public void startSelenium() throws Exception {

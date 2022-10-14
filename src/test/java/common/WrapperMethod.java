@@ -1020,6 +1020,7 @@ public class WrapperMethod extends CommonUtil {
 			}
 		}
 		if (!elementAvailable) {
+			System.out.println(Text + " : is not displayed in the List");
 			addLog(Text + " : is not displayed in the List");
 			Assert.assertTrue(false);
 		}

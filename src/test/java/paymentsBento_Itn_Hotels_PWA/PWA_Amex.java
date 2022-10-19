@@ -7,7 +7,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class PWA_UPI extends PaymentsBento_Itn_Hotels_Common_PWA {
+public class PWA_Amex extends PaymentsBento_Itn_Hotels_Common_PWA {
 
 	@BeforeClass
 	public void startSelenium() throws Exception {
@@ -17,13 +17,7 @@ public class PWA_UPI extends PaymentsBento_Itn_Hotels_Common_PWA {
 	@Test
 	public void Hotel_IN_AmazonPay() throws Exception {
 		driver.manage().deleteAllCookies();
-		driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
-		/*hotelsDetailsPage(driver, "", "");
-		hotelsItnPage(driver, "", "", "", "");
-		Thread.sleep(5000);
-		String URL = getURL(driver);*/
-		driver=(RemoteWebDriver) getMobileDriver(driver);
-		driver.get("https://qa2.cleartrip.com/pay/hotel/VVxSeEJCRhBAMTIyUQ==?lang=en");
+		driver.get("https://qa2.cleartrip.com/pay/hotel/W1pRd0JCQBBAMTIyUQ==?lang=en");
 		hotelsPaymentPage_PWA(driver,"UPI","","","","");
 		Thread.sleep(5000);
 	} 

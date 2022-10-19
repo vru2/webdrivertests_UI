@@ -11,15 +11,16 @@ public class PWA_AmazonPay extends PaymentsBento_Itn_Hotels_Common_PWA {
 
 	@BeforeClass
 	public void startSelenium() throws Exception {
-		driver=(RemoteWebDriver) getMobileDriver(driver);
+		this.driver = getDriver(driver);
 	}
 
 	@Test
 	public void Hotel_IN_AmazonPay() throws Exception {
 		driver.manage().deleteAllCookies();
-		driver.get("https://qa2.cleartrip.com/pay/hotel/W1pRd0JCQBBAMTIyUQ==?lang=en");
-		hotelsPaymentPage_PWA(driver,"UPI","","","","");
-		Thread.sleep(5000);
+		driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
+		hotelsDetailsPage(driver, "", "");
+		hotelsItnPage(driver, "", "", "", "");
+		hotelsPaymentPage_PWA(driver,"TW","AmazonPay","","","");
 	} 
 
  		@AfterClass

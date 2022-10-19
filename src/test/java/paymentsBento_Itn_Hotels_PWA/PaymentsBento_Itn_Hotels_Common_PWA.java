@@ -3,14 +3,10 @@ package test.java.paymentsBento_Itn_Hotels_PWA;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Reporter;
 import test.java.paymentsBento_Itn_Hotels.PaymentsBento_Itn_Hotels_Common;
 
-import java.util.Iterator;
-import java.util.Set;
 
 import static org.testng.Assert.assertTrue;
 
@@ -18,11 +14,22 @@ public class PaymentsBento_Itn_Hotels_Common_PWA extends PaymentsBento_Itn_Hotel
 
 	public void hotelsPaymentPage_PWA(RemoteWebDriver driver, String PaymentType, String CardNumber, String Domain, String PayType, String BankName) throws Exception {
 		//hotelsPayment_Page_Validation(driver, PayType, Domain);
+		paymentPageHotels_Destop_to_PWA(driver, "");
 		paymentPageHotels_PWA(driver, PaymentType, CardNumber, Domain, PayType, BankName);
 	}
 
+	public void paymentPageHotels_Destop_to_PWA(RemoteWebDriver driver, String PayType) throws Exception {
+		textPresent(driver,"Pay to complete your booking",30);
+		String URL = getURL(driver);
+		driver=(RemoteWebDriver) getMobileDriver(driver);
+		driver.get(URL);
+		Object webDriver = driver;
+		((JavascriptExecutor) webDriver).executeScript("window.focus();");
+	}
+
 	public void paymentPageHotels_PWA(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType,String BankName) throws Exception {
-		if(elementVisible(driver, getObjectPayment("PWA_PaymentPage_ConvFee_Txt"), 30))
+		//if(elementVisible(driver, getObjectPayment("PWA_PaymentPage_ConvFee_Txt"), 30))
+		if(textPresent(driver,"NET BANKING",30))
 		{
 			bento_paymentpage_PWA(driver,PaymentType, CardNumber,domain,PayType,BankName);
 			if(!(CardNumber=="ADCB"||PaymentType=="Phonepe"||PaymentType=="UPIScan"||PayType=="Googlecaptcha"))
@@ -43,17 +50,16 @@ public class PaymentsBento_Itn_Hotels_Common_PWA extends PaymentsBento_Itn_Hotel
 	}
 
 	public void bento_paymentpage_PWA(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
-		textPresent_Log(driver, "Includes a convenience fee of", 20);
+		textPresent_Log(driver, "NET BANKING", 20);
 		System.out.println(driver.getCurrentUrl());
 		Reporter.log(driver.getCurrentUrl());
-
-
 		if (PaymentType.equalsIgnoreCase("WALLET")||PayType.equalsIgnoreCase("WALLET"))
 		{
 			safeClick(driver, getObjectPayment("PWA_PaymentPage_Wallet_Toggle"));
 			Reporter.log("Selected wallet");
 			Thread.sleep(2000);
 		}
+		payUI_Select_PaymentType_PWA( driver, PaymentType);
 		switch (PaymentType) {
 			case "storedcard":
 				bento_pay_StoredCard_PWA(driver, PaymentType, CardNumber, domain, PayType, BankName);
@@ -208,12 +214,19 @@ public class PaymentsBento_Itn_Hotels_Common_PWA extends PaymentsBento_Itn_Hotel
 	}
 
 	public void bento_pay_NB_PWA(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
-		payUI_Select_PaymentType_PWA( driver, PaymentType);
-
+		textPresent(driver, "Pay to complete your booking", 5);
+		Reporter.log("Clicked on NB");
+		Thread.sleep(1000);
+		safeClick(driver, getObjectPayment("PWA_PaymentPage_NB_ICICI"));
+		Reporter.log("Selected ICICI Bank");
+		safeClick(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"));
+		textPresent_Log(driver, "Welcome to Razorpay Software Private Ltd Bank", 20);
+		safeClick(driver, getObjectPayment("Bento_Payment_NB_Payment_Success"));
+		Reporter.log("Payment done successfully");
 	}
 
 	public void bento_pay_TW_PWA(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
-		payUI_Select_PaymentType_PWA( driver, PaymentType);
+		payUI_Select_PaymentType_PWA(driver, PaymentType);
 	}
 
 	public void bento_pay_Wallet_PWA(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
@@ -250,23 +263,64 @@ public class PaymentsBento_Itn_Hotels_Common_PWA extends PaymentsBento_Itn_Hotel
 	}
 
 	public void bento_pay_CC_PWA(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
-		payUI_Select_PaymentType_PWA( driver, PaymentType);
-
+		if(CardNumber=="4111") {
+			payUI_Enter_PaymentDetails_PWA(driver, "CC", "RAZORPAYDC","");
+		}
 	}
 
 	public void bento_pay_Coupon_PWA(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
-		payUI_Select_PaymentType_PWA( driver, PaymentType);
 
 	}
 
 	public void bento_pay_SC_PWA(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
-		payUI_Select_PaymentType_PWA( driver, PaymentType);
 
 	}
 
 	public void bento_pay_Others_PWA(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
-		payUI_Select_PaymentType_PWA( driver, PaymentType);
 
+	}
+
+	public void payUI_Enter_PaymentDetails_PWA(RemoteWebDriver driver, String PayType, String BankName, String BookingType) throws Exception {
+		switch (PayType) {
+			case "CC":
+				payUI_Select_CC_PWA(driver, BankName, BookingType);
+				break;
+			case "DC":
+				payUI_Select_DC(driver, BankName, BookingType);
+				break;
+			case "NB":
+				payUI_Select_NB(driver, BankName, BookingType);
+				break;
+			case "TW":
+				break;
+			case "UPI":
+				payUI_Select_UPI(driver, BankName, BookingType);
+				break;
+		}
+	}
+
+	public void payUI_Select_CC_PWA(RemoteWebDriver driver, String BankName, String BookingType) throws Exception {
+		elementVisible(driver, getObjectPayment("PaymentPage_CreditCard_Number"), 5);
+		textPresent(driver, "Enter card details", 1);
+		switch (BankName) {
+			case "MASTER":
+				Enter_CC_Details_PWA(driver, platform.value("MasterCard_Number"), platform.value("MasterCard_Month"), platform.value("MasterCard_Year"), platform.value("MasterCard_CVV"));
+				break;
+		}
+	}
+
+	public void Enter_CC_Details_PWA(RemoteWebDriver driver, String CCNumber, String CCExpMonth, String CCExpYear, String CVV) throws Exception {
+		Thread.sleep(1000);
+		Reporter.log("Card Details +\n"+ CCNumber +"\n " + CCExpMonth  +" " + CCExpYear +" " + CVV);
+		safeType(driver, getObjectPayment("PaymentPage_CreditCard_Number"), CCNumber);
+		safeClick(driver, getObjectPayment("PaymentPage_CreditCard_Exp_Month"));
+		safeSelect(driver, getObjectPayment("PaymentPage_CreditCard_Exp_Month"), CCExpMonth);
+		safeClick(driver, getObjectPayment("PaymentPage_CreditCard_Exp_Year"));
+		Thread.sleep(1000);
+		safeSelect(driver, getObjectPayment("PaymentPage_CreditCard_Exp_Year"), CCExpYear);
+		safeType(driver, getObjectPayment("PaymentPage_CreditCard_Name"), "test");
+		safeType(driver, getObjectPayment("PaymentPage_CreditCard_CVV"), CVV);
+		Thread.sleep(1000);
 	}
 
 	public void payUI_Select_PaymentType_PWA(RemoteWebDriver driver, String PayType) throws Exception {
@@ -322,8 +376,8 @@ public class PaymentsBento_Itn_Hotels_Common_PWA extends PaymentsBento_Itn_Hotel
 				break;
 		}
 		safeClickList(driver, getObjectPayment("PayUI_Pay_Tabs_PWA"), PayType);
-	Thread.sleep(5000);
 	}
+
 
 
 	public void confirmation_page_hotel_PWA(RemoteWebDriver driver, String PaymentType, String CardNumber) throws Exception {

@@ -24,7 +24,7 @@ import test.java.paymentsUI_Air.GV_NB;
 
 public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 	String Hotel_URL = "";
-	String inurl = "https://qa2.cleartrip.com";
+	String inurl = "https://qa2new.cleartrip.com";
 	String aeurl = "https://qa2.cleartrip.ae";
 	String bhurl = "https://qa2bh.cleartrip.com";
 	String qaurl = "https://qa2qa.cleartrip.com";
@@ -33,8 +33,8 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 	String omurl = "https://qa2om.cleartrip.com";
 	String meurl = "https://qa2me.cleartrip.com";
 
-	String GV_number = "3000331034254943";
-	String GV_pin = "158662";
+	String GV_number = "3000331036676353";
+	String GV_pin = "237431";
 	String hotelPrice_Itinerary = null;
 	String hotelPrice_PaymentPage = null;
 
@@ -65,7 +65,7 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 
 	public String hotelDetailsUrl_3Days(String Domain, String HotelID)  throws Exception
 	{
-		Hotel_URL= "/hotels/details/"+HotelID+"?c="+getDateTime(30, "ddMMyy")+"|"+getDateTime(33, "ddMMyy")+"&r=2,0&ur=1";
+		Hotel_URL= "/hotels/details/"+HotelID+"?c="+getDateTime(30, "ddMMyy")+"|"+getDateTime(32, "ddMMyy")+"&r=2,0&ur=1";
 		String SearchUrl = "";
 		if(Domain=="IN") {
 			SearchUrl=inurl+Hotel_URL;
@@ -109,7 +109,7 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		}
 		elementPresent_log(driver, getObjectPayment("Hotel_Details_Modify_Btn"), "Modify Button", 30);
 		safeClick(driver, getObjectPayment("Hotel_Details_SelectRoom_Btn"));
-		elementPresent_log(driver, getObjectPayment("Hotel_Details_Book_Btn"), "Book Button", 5);
+		elementPresent_log(driver, getObjectPayment("Hotel_Details_Book_Btn"), "Book Button", 20);
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,500)");
@@ -200,7 +200,7 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 			safeClick(driver, By.xpath("//div[2]/input"));
 			safeType(driver, By.xpath("//div[2]/input"),GV_pin);
 			safeClick(driver, By.xpath("//div[2]/div[3]/button"));
-			textPresent_Log(driver, "redeemed from your gift card", 5);
+			textPresent_Log(driver, "redeemed from your gift card", 10);
 		}
 		else if(CouponGV.equalsIgnoreCase("COUPONCC")) {
 			/*mouseHover(driver, By.xpath("//input"));

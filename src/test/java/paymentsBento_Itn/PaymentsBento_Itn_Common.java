@@ -1162,6 +1162,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		textPresent_Log(driver, "Booking successful", 30);
 		String tripid = getText(driver, By.xpath("//div[3]/p"));
 		Reporter.log(PaymentType+" "+CardNumber+" : "+tripid);
+		System.out.println(PaymentType+" "+CardNumber+" : "+tripid);
 	}
 
 	public void bento_paymentpage(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
@@ -1491,17 +1492,6 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 
 	public void bento_pay_EMI(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
 		elementVisible(driver, getObjectPayment("Bento_Payment_Paynow"), 10);
-		/*if (textPresent(driver, "Cleartrip wallet", 5))
-		{
-			//safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
-			if(textPresent(driver, "Your wallet balance is sufficient", 2)) {
-				safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
-			}
-			Reporter.log("Deselected wallet");
-			Thread.sleep(2000);
-			elementVisible(driver, By.xpath("//div[7]/p"), 10);
-			driver.findElement(By.xpath("//div[7]/p")).click();
-		}*/
 		payUI_Select_PaymentType(driver, "EMI");
 		//safeClick(driver, getObjectPayment("PaymentPage_EMI_ICICIBank_Radio_Btn"));
 		elementVisible(driver, By.xpath("//div[10]/div/div[3]/label/div"), 5);

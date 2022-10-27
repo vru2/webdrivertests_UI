@@ -109,7 +109,7 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		}
 		elementPresent_log(driver, getObjectPayment("Hotel_Details_Modify_Btn"), "Modify Button", 30);
 		safeClick(driver, getObjectPayment("Hotel_Details_SelectRoom_Btn"));
-		elementPresent_log(driver, getObjectPayment("Hotel_Details_Book_Btn"), "Book Button", 20);
+		/*elementPresent_log(driver, getObjectPayment("Hotel_Details_Book_Btn"), "Book Button", 20);
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,500)");
@@ -119,7 +119,27 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		Thread.sleep(2000);
 		mouseHover(driver, getObjectPayment("Hotel_Details_Book_Btn"));
 		Thread.sleep(1000);
-		smartClick(driver, getObjectPayment("Hotel_Details_Book_Btn"));
+		smartClick(driver, getObjectPayment("Hotel_Details_Book_Btn"));*/
+
+		By selectRoomButton= By.xpath("");
+		if(elementVisible(driver, getObjectPayment("Hotel_Details_Book_Btn1"), 5)) {
+			selectRoomButton=getObjectPayment("Hotel_Details_Book_Btn1");
+		}
+		else selectRoomButton=getObjectPayment("Hotel_Details_Book_Btn");
+
+		System.out.println("selectRoomButton "+selectRoomButton);
+		if(elementVisible(driver, selectRoomButton, 2)) {
+
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("window.scrollBy(0,500)");
+			elementVisible(driver, selectRoomButton, 5);
+			WebElement element = driver.findElement(selectRoomButton);
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+			Thread.sleep(5000);
+			mouseHover(driver, selectRoomButton);
+			Thread.sleep(5000);
+			smartClick(driver, selectRoomButton);
+		}
 		String parent=driver.getWindowHandle();
 		Set<String>s=driver.getWindowHandles();
 		Iterator<String> I1= s.iterator();

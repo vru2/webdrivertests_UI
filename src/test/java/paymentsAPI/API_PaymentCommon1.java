@@ -30,7 +30,7 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 {	
 	public RemoteWebDriver driver;
 
-	String urlPay = "http://paymentservice.cltp.com:9001"; //http://172.17.51.86:8070"
+	String urlPay = "http://172.29.20.99:9001"; //"http://paymentservice.cltp.com:9001"; //http://172.17.51.86:8070"
 	String urlRefundNew1 = "http://paymentservice.cltp.com:9001";//"http://172.17.51.86:8070";
 	String urlrewards_payURI ="http://paymentservice.cltp.com:9001";//"http://172.17.51.86:8070";
 	String urladcb_validat = "http://paymentservice.cltp.com:9001";//"http://172.17.51.86:8070";
@@ -48,8 +48,8 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 	String urlReporting_TS = "http://172.17.51.86:8282";
 	String urlReporting = "http://paymentservicereporting.cltp.com:9001";
 	String urlReportingTS ="http://172.17.51.86:9031";
-	String url_Binmanager = "https://qa2.cleartrip.com/binmanager/v1/payment/cards?bin=534977";
-	String url_QA2 = "https://qa2.cleartrip.com/";
+	String url_Binmanager = "https://qa2new.cleartrip.com/binmanager/v1/payment/cards?bin=534977";
+	String url_QA2 = "https://qa2new.cleartrip.com/";
 	public String url_TestApp = "";
 	
 	String paramsCC ="[{\"payment\":{\"seq_no\":1,\"trip_id\":106562332,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":276,\"payment_category\":\"B\",\"fraud_system_invocation\":\"Y\",\"ui_version\":\"v2\",\"customer_detail\":{\"ip_address\":\"119.82.73.123\",\"mobile\":\"9986696785\",\"email\":\"cltppayment@gmail.com\",\"firstName\":\"test\"},\"app_ref1\":\"Q18110926800\",\"app_ref2\":\"167823462\",\"itinerary_id\":\"683a3a6bec-4e58-422a-a2c9-90707b1e5a12\",\"payment_type\":\"CC\",\"amount\":100.99,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"9W/362/DEL/BOM/201811XXXXXX00\",\"order_info2\":\"Kiran Kumar\",\"source_type\":\"ACCOUNT\",\"user_id\":85721640,\"company_id\":110340,\"app_return_info\":{\"url\":\"https://www.cleartrip.com/flights/itinerary/683a3a6bec-4e58-422a-a2c9-90707b1e5a12/book\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://book-flights.cltp.com:9001/r3/book/flights/itinerary/683a3a6bec-4e58-422a-a2c9-90707b1e5a12/book-internal?ll=INFO\"},\"host_name\":\"qa2.cleartrip.com\",\"card_detail\":{\"card_number\":\"340000000000009\",\"card_type_id\":1,\"expiry_month\":\"12\",\"expiry_year\":\"2021\",\"cvv\":\"123\",\"name\":\"CleartripCard\",\"billto_detail\":{\"firstname\":\"test\",\"lastname\":\"test\",\"address1\":\"Cleartrip JP Nagar\",\"city_name\":\"Bangalore\",\"state_name\":\"Karnataka\",\"country_name\":\"India\",\"postal_code\":\"560076\"}},\"user_agent\":\"Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko\"}}]";
@@ -262,7 +262,7 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 	
 	
 	
-	public String AirUrl ="https://qa2.cleartrip.com/flights/results?from=BLR&to=BOM&depart_date=24/12/2020&adults=1&childs=0&infants=0&class=Economy&airline=&carrier=&intl=n";
+	public String AirUrl ="https://qa2new.cleartrip.com/flights/results?from=BLR&to=BOM&depart_date=24/12/2020&adults=1&childs=0&infants=0&class=Economy&airline=&carrier=&intl=n";
 	
 	String urlInit = "/paymentservice/service/otp/init";
 	String urlProcess = "/paymentservice/service/otp/process";
@@ -415,7 +415,7 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 	String urlDA_FK_FetchBy_PaymentID = "/paymentservice/payments/fetchById?id=44948256";
 	
 	
-	String urlCTPay = "https://qa2.cleartrip.com";
+	String urlCTPay = "https://qa2new.cleartrip.com";
 	
 	
 	String urlCTPay_Get ="/paymentservice/ct/v2/getCtPaymentUrl";
@@ -468,6 +468,9 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 	String urlreward_payback_pay ="/paymentservice/service/pay/v3";
 	String urlreward_payback_earn ="/payments/rewards/earn";
 	String urlreward_payback_reverseearn ="/payments/rewards/reverseEarn";
+
+
+
 	String urladcb_sendOTP = "/payments/rewards/sendOtp";
 	String urladcb_validate = "/paymentservice/service/validate/v3";
 	String urladcb_pay = "/paymentservice/service/pay/v3";
@@ -648,7 +651,7 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 	public Response resp;
 
 
-	protected String qaurl = "https://qa2.cleartrip.com";
+	protected String qaurl = "https://qa2new.cleartrip.com";
 	protected String qaurlFlyin = "https://qa2.flyin.com";
 	protected String qaurlae = "https://qa2.cleartrip.ae";
 	protected String qaurlbh = "https://qa2bh.cleartrip.com";
@@ -1949,7 +1952,7 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 					body(params).
 					post(url);
 		}else if(payType.equalsIgnoreCase("WALLET_Fetch")) {
-			RestAssured.baseURI ="http://qa2.cleartrip.com";
+			RestAssured.baseURI ="http://qa2new.cleartrip.com";
 			url= urlEndPoint_Wallet_FetchQA;
 			request = RestAssured.given().
 					when().
@@ -1957,7 +1960,7 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 					headers(headers).
 					get(url);
 		}else if(payType.equalsIgnoreCase("WALLET_Fetch_LoggedIN")) {
-			RestAssured.baseURI ="http://qa2.cleartrip.com";
+			RestAssured.baseURI ="http://qa2new.cleartrip.com";
 			url= urlEndPoint_Wallet_FetchQA;
 			request = RestAssured.given().
 					when().

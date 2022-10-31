@@ -30,23 +30,23 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 {	
 	public RemoteWebDriver driver;
 
-	String urlPay = "http://172.29.20.99:9001"; //"http://paymentservice.cltp.com:9001"; //http://172.17.51.86:8070"
-	String urlRefundNew1 = "http://paymentservice.cltp.com:9001";//"http://172.17.51.86:8070";
+	String urlPay = "http://172.29.20.90:9001"; //"http://paymentservice.cltp.com:9001"; //http://172.17.51.86:8070"
+	String urlRefundNew1 = "http://172.29.20.90:9001";//"http://paymentservice.cltp.com:9001";"http://172.17.51.86:8070";
 	String urlrewards_payURI ="http://paymentservice.cltp.com:9001";//"http://172.17.51.86:8070";
-	String urladcb_validat = "http://paymentservice.cltp.com:9001";//"http://172.17.51.86:8070";
-	String urlFetchRefunds="http://paymentservice.cltp.com:9001";//"http://172.17.51.86:8070";
+	String urladcb_validat = "http://172.29.20.90:9001";//"http://paymentservice.cltp.com:9001";"http://172.17.51.86:8070";
+	String urlFetchRefunds="http://172.29.20.90:9001";//"http://paymentservice.cltp.com:9001";"http://172.17.51.86:8070";
 	String urlFlyin = "http://172.17.51.86:8406"; // ORACLE
 	String urlDA = "http://172.17.28.21:8403";
-	String promoURL = "http://promoservice.cltp.com:9001";//http://172.17.51.86:7999";
+	String promoURL = "http://172.29.20.75:9001";//http://promoservice.cltp.com:9001";http://172.17.51.86:7999";
 	String urlRewards = "http://rewardsservice.cltp.com:9001";//http://172.17.56.51:9080";
-	String urlWallet = "http://172.17.51.86:8071";//"http://wallet-service-qa.cltp.com:9001";http://172.17.51.86:8071";
-	String urlCardInfo_Service="http://172.17.51.86:8331";
-	String urlrewards_validate = "http://paymentservice.cltp.com:9001";//"http://172.17.51.86:8070";
+	String urlWallet = "http://172.29.20.92:9001";//"http://wallet-service-qa.cltp.com:9001";
+	String urlCardInfo_Service="http://172.29.8.152:8331";//http://172.17.51.86:8331";
+	String urlrewards_validate = "http://172.29.20.90:9001";//"http://paymentservice.cltp.com:9001";"http://172.17.51.86:8070";
 	String urlrewards_URI = "http://rewardsservice.cltp.com:9001";//http://172.17.56.51:9080";
-	String urlPromo_Used = "http://wallet-service-qa.cltp.com:9001";//http://172.17.51.86:8071";
+	String urlPromo_Used = "http://172.29.20.92:9001";//"http://wallet-service-qa.cltp.com:9001";//http://172.17.51.86:8071";
 
 	String urlReporting_TS = "http://172.17.51.86:8282";
-	String urlReporting = "http://paymentservicereporting.cltp.com:9001";
+	String urlReporting = "http://172.29.20.73:9001";//http://paymentservicereporting.cltp.com:9001";
 	String urlReportingTS ="http://172.17.51.86:9031";
 	String url_Binmanager = "https://qa2new.cleartrip.com/binmanager/v1/payment/cards?bin=534977";
 	String url_QA2 = "https://qa2new.cleartrip.com/";

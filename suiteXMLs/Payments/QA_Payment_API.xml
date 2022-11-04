@@ -30,7 +30,7 @@
     <classes>
       <class name="test.java.paymentsAPI.API_SuperCoins_CheckBalance"/>
       <class name="test.java.paymentsAPI.API_SuperCoins_CheckEarnPoints"/>
-      <class name="test.java.paymentsAPI.API_SuperCoins_Info"/>
+     <!-- <class name="test.java.paymentsAPI.API_SuperCoins_Info"/>-->
       <class name="test.java.paymentsAPI.API_SuperCoins_MobileLinked"/>
       <class name="test.java.paymentsAPI.API_SuperCoins_Hold_Unhold"/>
       <class name="test.java.paymentsAPI.API_SuperCoins_PromoActivate"/>
@@ -118,8 +118,8 @@
 <test name="CTPay V2" preserve-order="true" parallel="true">
     <classes>
       <class name="test.java.paymentsAPI.API_CTpay_GetUrl"/>
-      <class name="test.java.paymentsAPI.API_CTpay_Status"/>
-      <class name="test.java.paymentsAPI.API_CTpay_UpdateClient"/>
+      <!--<class name="test.java.paymentsAPI.API_CTpay_Status"/>-->
+<!--      <class name="test.java.paymentsAPI.API_CTpay_UpdateClient"/>-->
       <class name="test.java.paymentsAPI.API_CTpay_URLcreation"/>
     </classes>
 </test>
@@ -290,6 +290,4 @@
 		<!-- <class name="test.java.paymentsAPI.API_Refunds_Fetch"/> -->
 	 </classes>
 </test>
-
-
-</suite> 
+</suite>

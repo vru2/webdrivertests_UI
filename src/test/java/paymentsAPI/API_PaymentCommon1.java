@@ -37,10 +37,10 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 	String urlFetchRefunds="http://172.29.20.90:9001";//"http://paymentservice.cltp.com:9001";"http://172.17.51.86:8070";
 	String urlFlyin = "http://172.17.51.86:8406"; // ORACLE
 	String urlDA = "http://172.17.28.21:8403";
-	String promoURL = "http://172.29.20.75:9001";//http://promoservice.cltp.com:9001";http://172.17.51.86:7999";
-	String urlRewards = "http://rewardsservice.cltp.com:9001";//http://172.17.56.51:9080";
+	String promoURL = "http://172.29.20.76:9001";//http://promoservice.cltp.com:9001";http://172.17.51.86:7999";
+	String urlRewards = "http://rewardsservice.cltp.com:9080";//http://172.17.56.51:9080";
 	String urlWallet = "http://172.29.20.92:9001";//"http://wallet-service-qa.cltp.com:9001";
-	String urlCardInfo_Service="http://172.29.8.152:8331";//http://172.17.51.86:8331";
+	String urlCardInfo_Service="http://172.29.20.21:9001";// http://172.29.8.152:8331";//http://172.17.51.86:8331";
 	String urlrewards_validate = "http://172.29.20.90:9001";//"http://paymentservice.cltp.com:9001";"http://172.17.51.86:8070";
 	String urlrewards_URI = "http://rewardsservice.cltp.com:9001";//http://172.17.56.51:9080";
 	String urlPromo_Used = "http://172.29.20.92:9001";//"http://wallet-service-qa.cltp.com:9001";//http://172.17.51.86:8071";
@@ -283,7 +283,7 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 
 	String urlHi5_GetTrnx= "/pay/wallet/5758972/transactions?offset=1&size=10";
 
-	String urlSuperCoins_Info = "/api/supercoinsInfo/Q210917152782";
+	String urlSuperCoins_Info = "/api/supercoinsInfo/Q221028592282";
 	
 	String urlSuperCoins_SendOTP="/payments/rewards/sendOtp";
 
@@ -1026,7 +1026,9 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 			Reporter.log(urlrewards_URI+url);
 		}
 		else if(payType.equalsIgnoreCase("SuperCoins_Info")) {
-			RestAssured.baseURI ="http://172.17.51.86:8061";
+			//RestAssured.baseURI ="http://172.17.51.86:8061";
+			RestAssured.baseURI =urlRewards;
+
 			url= urlSuperCoins_Info;
 			Reporter.log("http://172.17.51.86:8061"+url);
 		}
@@ -2379,10 +2381,10 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 			}
 		}
 		if(payType.equalsIgnoreCase("Hi5_GetTrnx")) {
-			if(!(resp.body().asString().contains("Q220512511592"))){
+			if(!(resp.body().asString().contains("Q221028592282"))){
 				Assert.assertTrue(false);
 			}
-			if(!(resp.body().asString().contains("Q2205125115w232392"))){
+			if(!(resp.body().asString().contains("Q221028592282"))){
 				Assert.assertTrue(false);
 			}
 		}

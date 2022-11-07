@@ -36,7 +36,43 @@ public class API_IR_Get_Eligibility extends API_PaymentCommon1
 		resp = payGet("IR_Eligibility_GV","");	
 		validation("IR_Eligibility_GV", resp);
 	}
-	
+
+	@Test(alwaysRun = true)
+	public void InstantRefund_geteligibility_WALLET()  {
+		Response resp ;
+		resp = payGet("IR_Eligibility_WALLET","");
+		validation("IR_Eligibility_GV", resp);
+	}
+
+	@Test(alwaysRun = true)
+	public void InstantRefund_geteligibility_EMI()  {
+		Response resp ;
+		resp = payGet("IR_Eligibility_EMI","");
+		validation("IR_Eligibility_GV", resp);
+	}
+
+
+	@Test(alwaysRun = true)
+	public void InstantRefund_geteligibility_TW()  {
+		Response resp ;
+		resp = payGet("IR_Eligibility_TW","");
+		validation("IR_Eligibility_TW", resp);
+	}
+
+	@Test(alwaysRun = true)
+	public void InstantRefund_geteligibility_UPI()  {
+		Response resp ;
+		resp = payGet("IR_Eligibility_UPI","");
+		validation("IR_Eligibility_TW", resp);
+	}
+
+	@Test(alwaysRun = true)
+	public void InstantRefund_geteligibility_RP()  {
+		Response resp ;
+		resp = payGet("IR_Eligibility_RP","");
+		validation("IR_Eligibility_TW", resp);
+	}
+
 	@Test(alwaysRun = true)
 	public void InstantRefund_geteligibility_CC_Non()  {
 		Response resp ;		

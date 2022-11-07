@@ -340,7 +340,15 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 	String urlIR_Eligibility_DC = "/paymentservice/service/refund/eligibility?tripRef=Q220225385534";
 	String urlIR_Non_Eligibility_CC = "/paymentservice/service/refund/eligibility?tripRef=Q220228386398";
 	String urlIR_Non_Eligibility_GV = "/paymentservice/service/refund/eligibility?tripRef=Q220304387832";
-	
+	String urlIR_Non_Eligibility_WALLET = "/paymentservice/service/refund/eligibility?tripRef=Q221103593354";
+
+	String urlIR_Non_Eligibility_EMI = "/paymentservice/service/refund/eligibility?tripRef=Q221104594084";
+	String urlIR_Non_Eligibility_TW = "/paymentservice/service/refund/eligibility?tripRef=Q221103593350";
+	String urlIR_Non_Eligibility_UPI = "/paymentservice/service/refund/eligibility?tripRef=Q221104594080";
+	String urlIR_Non_Eligibility_RP = "/paymentservice/service/refund/eligibility?tripRef=Q221028592234";
+
+
+
 	String urlIR_Validate_VPA = "/paymentservice/ba/verify/Q211223200042";
 	String urlIR_Save_VPA = "/paymentservice/ba/save";
 	String urlIR_Get_VPA_Cancel_Details =	"/paymentservice/ba/details?cancellationTxnId=2022020947";
@@ -973,9 +981,45 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 		else if(payType.equalsIgnoreCase("IR_Eligibility_GV")) {
 
 			RestAssured.baseURI =urlPay;
-			Reporter.log(urlPay);			
+			Reporter.log(urlPay);
 			url = urlIR_Non_Eligibility_GV;
 		}
+		else if(payType.equalsIgnoreCase("IR_Eligibility_WALLET")) {
+
+			RestAssured.baseURI =urlPay;
+			Reporter.log(urlPay);
+			url = urlIR_Non_Eligibility_WALLET;
+		}
+
+		else if(payType.equalsIgnoreCase("IR_Eligibility_EMI")) {
+
+			RestAssured.baseURI =urlPay;
+			Reporter.log(urlPay);
+			url = urlIR_Non_Eligibility_EMI;
+		}
+		else if(payType.equalsIgnoreCase("IR_Eligibility_TW")) {
+
+			RestAssured.baseURI =urlPay;
+			Reporter.log(urlPay);
+			url = urlIR_Non_Eligibility_TW;
+		}
+		else if(payType.equalsIgnoreCase("IR_Eligibility_UPI")) {
+
+			RestAssured.baseURI =urlPay;
+			Reporter.log(urlPay);
+			url = urlIR_Non_Eligibility_UPI;
+		}
+		else if(payType.equalsIgnoreCase("IR_Eligibility_RP")) {
+
+			RestAssured.baseURI =urlPay;
+			Reporter.log(urlPay);
+			url = urlIR_Non_Eligibility_RP;
+		}
+
+
+
+
+
 		Reporter.log(url);	
 		request = RestAssured.given().
 				when().
@@ -1689,7 +1733,7 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 			params = paramsGVWL;
 		}
 		else if(payType.equalsIgnoreCase("FLYIN")) {
-			RestAssured.baseURI =urlFlyin;
+			RestAssured.baseURI =urlPay;
 			url = urlPayFlyin;
 			params = paramsFlyIN;
 			Reporter.log(urlFlyin+url);
@@ -2504,54 +2548,83 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 		
 		else if(payType.equalsIgnoreCase("IR_Eligibility_NB")) {
 			String OS = jsonPathEvaluator.getString("eligibleForOriginalSource");
-			String AS = jsonPathEvaluator.getString("eligibleForAlternativeSource");
+			String AS = jsonPathEvaluator.getString("eligibleAlternativeSourceType");
 			Reporter.log("AS " +AS);
 			Reporter.log("OS " +OS);
 			if(!OS.equals("true")) {
 				Assert.assertTrue(false);
 			} 
-			if(!AS.equals("true")) {
+			if(!AS.contains("VPA")) {
 				Assert.assertTrue(false);
 			}  
 			
 		}
 		else if(payType.equalsIgnoreCase("IR_Eligibility_CC")) {
 			String OS = jsonPathEvaluator.getString("eligibleForOriginalSource");
-			String AS = jsonPathEvaluator.getString("eligibleForAlternativeSource");
+			String AS = jsonPathEvaluator.getString("eligibleAlternativeSourceType");
+
+			System.out.println("AS " +AS);
+			System.out.println("OS " +OS);
 			Reporter.log("AS " +AS);
 			Reporter.log("OS " +OS);
 			if(!OS.equals("true")) {
 				Assert.assertTrue(false);
 			} 
-			if(!AS.equals("true")) {
+			if(!AS.contains("VPA")) {
 
 				Assert.assertTrue(false);
 			}  
 			
 		}
 
-		else if(payType.equalsIgnoreCase("IR_Eligibility_CC_Non")) {
+		else if(payType.equalsIgnoreCase("IR_Eligibility_TW")) {
 			String OS = jsonPathEvaluator.getString("eligibleForOriginalSource");
-			String AS = jsonPathEvaluator.getString("eligibleForAlternativeSource");
+			String AS = jsonPathEvaluator.getString("eligibleAlternativeSourceType");
+
+			System.out.println("AS " +AS);
+			System.out.println("OS " +OS);
 			Reporter.log("AS " +AS);
 			Reporter.log("OS " +OS);
 			if(!OS.equals("true")) {
 				Assert.assertTrue(false);
 			}
-			if(!AS.equals("true")) {
+			if(!AS.contains("WALLET")) {
+
+				Assert.assertTrue(false);
+			}
+			if(AS.contains("VPA")) {
+
+				Assert.assertTrue(false);
+			}
+			if(AS.contains("BA")) {
+
+				Assert.assertTrue(false);
+			}
+
+		}
+
+		else if(payType.equalsIgnoreCase("IR_Eligibility_CC_Non")) {
+			String OS = jsonPathEvaluator.getString("eligibleForOriginalSource");
+			String AS = jsonPathEvaluator.getString("eligibleAlternativeSourceType");
+			Reporter.log("AS " +AS);
+			Reporter.log("OS " +OS);
+			if(!OS.equals("true")) {
+				Assert.assertTrue(false);
+			}
+			if(!AS.contains("VPA")) {
 				Assert.assertTrue(false);
 			}
 
 		}
 		else if(payType.equalsIgnoreCase("IR_Eligibility_GV")) {
 			String OS = jsonPathEvaluator.getString("eligibleForOriginalSource");
-			String AS = jsonPathEvaluator.getString("eligibleForAlternativeSource");
+			String AS = jsonPathEvaluator.getString("eligibleAlternativeSourceType");
 			Reporter.log("AS " +AS);
 			Reporter.log("OS " +OS);
 			if(!OS.equals("true")) {
 				Assert.assertTrue(false);
 			}
-			if(!AS.equals("false")) {
+			if(!AS.equals("[]")) {
 				Assert.assertTrue(false);
 			}
 

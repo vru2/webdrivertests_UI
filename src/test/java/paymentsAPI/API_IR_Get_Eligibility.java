@@ -51,7 +51,6 @@ public class API_IR_Get_Eligibility extends API_PaymentCommon1
 		validation("IR_Eligibility_GV", resp);
 	}
 
-
 	@Test(alwaysRun = true)
 	public void InstantRefund_geteligibility_TW()  {
 		Response resp ;

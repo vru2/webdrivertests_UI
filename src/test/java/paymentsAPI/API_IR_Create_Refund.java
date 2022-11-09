@@ -11,7 +11,7 @@ public class API_IR_Create_Refund extends API_PaymentCommon1
 {
 	
 	@Test
-	public void API_IR_CreateRefund_Instant() throws Exception  {
+	public void API_IR_CreateRefund_Instant_VPA() throws Exception  {
 		Response resp ;		
 		resp = payPost("IR_Create_Refund","");	
 		validation("IR_Create_Refund", resp);
@@ -21,6 +21,13 @@ public class API_IR_Create_Refund extends API_PaymentCommon1
 		Response resp ;		
 		resp = payPost("IR_Create_Refund_Normal","");	
 		validation("IR_Create_Refund", resp);
+	}
+
+	@Test
+	public void API_IR_CreateRefund_WALLET() throws Exception  {
+		Response resp ;
+		resp = payPost("IR_Create_Refund_Wallet","");
+		validation("IR_Create_Refund_Wallet", resp);
 	}
 
 	

@@ -118,8 +118,8 @@
 <test name="CTPay V2" preserve-order="true" parallel="true">
     <classes>
       <class name="test.java.paymentsAPI.API_CTpay_GetUrl"/>
-      <!--<class name="test.java.paymentsAPI.API_CTpay_Status"/>-->
-<!--      <class name="test.java.paymentsAPI.API_CTpay_UpdateClient"/>-->
+     <!-- <class name="test.java.paymentsAPI.API_CTpay_Status"/>
+      <class name="test.java.paymentsAPI.API_CTpay_UpdateClient"/>-->
       <class name="test.java.paymentsAPI.API_CTpay_URLcreation"/>
     </classes>
 </test>

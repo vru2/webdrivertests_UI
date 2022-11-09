@@ -122,7 +122,7 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		smartClick(driver, getObjectPayment("Hotel_Details_Book_Btn"));*/
 
 		By selectRoomButton= By.xpath("");
-		if(elementVisible(driver, getObjectPayment("Hotel_Details_Book_Btn1"), 5)) {
+		if(elementVisible(driver, getObjectPayment("Hotel_Details_Book_Btn1"), 1)) {
 			selectRoomButton=getObjectPayment("Hotel_Details_Book_Btn1");
 		}
 		else selectRoomButton=getObjectPayment("Hotel_Details_Book_Btn");
@@ -130,16 +130,19 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		System.out.println("selectRoomButton "+selectRoomButton);
 		if(elementVisible(driver, selectRoomButton, 2)) {
 
-			JavascriptExecutor js = (JavascriptExecutor) driver;
-			js.executeScript("window.scrollBy(0,500)");
+			safeClick(driver, selectRoomButton);
+			/*JavascriptExecutor js = (JavascriptExecutor) driver;
+			//js.executeScript("window.scrollBy(0,500)");
 			elementVisible(driver, selectRoomButton, 5);
 			WebElement element = driver.findElement(selectRoomButton);
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+			//((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 			Thread.sleep(5000);
 			mouseHover(driver, selectRoomButton);
 			Thread.sleep(5000);
-			smartClick(driver, selectRoomButton);
+			safeClick(driver, selectRoomButton);
+			smartClick(driver, selectRoomButton);*/
 		}
+		Thread.sleep(5000);
 		String parent=driver.getWindowHandle();
 		Set<String>s=driver.getWindowHandles();
 		Iterator<String> I1= s.iterator();
@@ -169,10 +172,13 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 
 	public void hotelsItnDetails(RemoteWebDriver driver, String CouponGV, String PayType) throws Exception {
 		textPresent(driver, "Review your itinerary", 20);
-		if(elementVisible(driver, By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Continue with Email'])[1]/preceding::*[name()='svg'][3]"),5)) {
+		Thread.sleep(2000);
+		refreshPage(driver);
+		Thread.sleep(2000);
+		/*if(elementVisible(driver, By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Get OTP'])[1]/preceding::*[name()='svg'][2]"),5)) {
 			Thread.sleep(2000);
 			safeClick(driver, By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Continue with Email'])[1]/preceding::*[name()='svg'][3]"));
-		}
+		}*/
 		if(CouponGV.equalsIgnoreCase("PartialGV")) {
 			textPresent(driver, "Apply coupon or gift card",5);
 			/*String[] GV = getGV(10);

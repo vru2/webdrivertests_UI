@@ -162,10 +162,12 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 	String Params_IR_InValid_VPA= "{\"accountType\":\"VPA\",\"vpa\":\"kirankokhdfcbank\",\"bankAccountNumber\":\"51248779\",\"ifsc\":\"HDFC0000531\"}";
 	
 	String Params_IR_Save_VPA_Details= "{\"accountType\":\"VPA\",\"vpa\":\"3212467@okhdfcbank\",\"accountHolderName\":\"kiran Kumar\",\"cancellationTxnId\":\"2022020947\",\"isConsentAvailable\":true,\"savedDetailsId\":0,\"tripRef\":\"Q211223200042\",\"userDetails\":{\"userId\":\"65201137\"}}";
-	String Params_IR_Create_Refund1= "{\"isFullWalletRefund\":false,\"refundVersion\":\"INSTANT\",\"tripRef\":\"Q220223384658\",\"description\":\"Refund cron\",\"amount\":1.0,\"txnid\":";
+	String Params_IR_Create_Refund1= "{\"isFullWalletRefund\":false,\"accountType\":\"VPA\",\"refundVersion\":\"INSTANT\",\"tripRef\":\"Q221102593002\",\"description\":\"Refund cron\",\"amount\":1.0,\"txnid\":";
 	String Params_IR_Create_Refund2= "{\"isFullWalletRefund\":false,\"refundVersion\":\"NORMAL\",\"tripRef\":\"Q220223384658\",\"description\":\"Refund cron\",\"amount\":1.0,\"txnid\":";
 	String Params_IR_Create_Refund3= ",\"cancellationTxnId\":1234567,\"disableAutoRefundProcessing\":false}";
-	
+	String Params_IR_Create_Refund4= "{\"isFullWalletRefund\":false,\"accountType\":\"WALLET\",\"refundVersion\":\"INSTANT\",\"tripRef\":\"Q221102593002\",\"description\":\"Refund cron\",\"amount\":1.0,\"txnid\":";
+	String Params_IR_Create_Refund5= "{\"isFullWalletRefund\":false,\"refundVersion\":\"NORMAL\",\"tripRef\":\"Q220223384658\",\"description\":\"Refund cron\",\"amount\":1.0,\"txnid\":";
+
 	String Params_RORUpdate_GW_Status = "{\"currentStatus\":\"P\",\"status\":\"I\",\"gatewayId\":14}";
 	String Params_Enque_refunds = "[\"Q210203887410\",\"Q210225908308\"]";
 	String Params_RORCreate_Payment = "[{\"payment\":{\"id\":null,\"trip_id\":46198930,\"txn_id\":75300328,\"payment_type\":\"IV\",\"amount\":\"1000.0\",\"created_at\":\"2019-11-20T18:40:29+05:30\",\"updated_at\":\"2019-11-20T18:40:29+05:30\",\"seq_no\":3,\"status\":\"S\",\"description\":\"created by API\",\"currency\":\"INR\",\"order_info1\":123,\"order_info2\":345,\"app_ref1\":\"Q191109570525\",\"app_ref2\":75300328,\"neglist_id\":\"y\",\"poslist_id\":109,\"linkable_id\":null,\"linkable_type\":null,\"user_message\":null,\"pan_number\":null,\"payment_category\":\"B\",\"merchant_txn_ref\":\"12312\",\"payment_subtype\":\"ADCB\",\"express_checkout\":null,\"emi_count\":null,\"emi_fee\":null,\"ref_payment_id\":null,\"ivr_detail\":{\"id\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"seq_no\":null,\"payment_id\":null,\"transaction_ref_no\":\"Q234334\",\"card_number\":\"1234 2344 3434\",\"response_message\":\"testmsg\",\"gateway_txn_id\":12345,\"gateway\":\"ivr_gateway\",\"status\":null,\"credential_name\":\"test\"}}}]";
@@ -1320,6 +1322,13 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 
 			headers=headersForms_IR();
 			params = Params_IR_Create_Refund1+getRandomNumber()+Params_IR_Create_Refund3;
+			url= urlIR_Create_Refund;
+		}
+
+		else if(payType.equalsIgnoreCase("IR_Create_Refund_Wallet")) {
+
+			headers=headersForms_IR();
+			params = Params_IR_Create_Refund4+getRandomNumber()+Params_IR_Create_Refund3;
 			url= urlIR_Create_Refund;
 		}
 		else if(payType.equalsIgnoreCase("IR_Create_Refund_Normal")) {
@@ -2556,7 +2565,10 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 			} 
 			if(!AS.contains("VPA")) {
 				Assert.assertTrue(false);
-			}  
+			}
+			if(!AS.contains("WALLET")) {
+				Assert.assertTrue(false);
+			}
 			
 		}
 		else if(payType.equalsIgnoreCase("IR_Eligibility_CC")) {
@@ -2573,16 +2585,17 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 			if(!AS.contains("VPA")) {
 
 				Assert.assertTrue(false);
-			}  
-			
+			}
+			if(!AS.contains("WALLET")) {
+
+				Assert.assertTrue(false);
+			}
+
 		}
 
 		else if(payType.equalsIgnoreCase("IR_Eligibility_TW")) {
 			String OS = jsonPathEvaluator.getString("eligibleForOriginalSource");
 			String AS = jsonPathEvaluator.getString("eligibleAlternativeSourceType");
-
-			System.out.println("AS " +AS);
-			System.out.println("OS " +OS);
 			Reporter.log("AS " +AS);
 			Reporter.log("OS " +OS);
 			if(!OS.equals("true")) {
@@ -2722,7 +2735,7 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 			}
 		}
 		else if(payType.equalsIgnoreCase("FetchGWFailure")) {
-			if(!(resp.body().asString().contains("UPI payments are having high failure rate, try other payment modes"))){
+			if(!(resp.body().asString().contains("UPI payments are having high failure rate"))){
 				Assert.assertTrue(false);
 			}
 		}		
@@ -3720,6 +3733,23 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 
 		}
 		else if (payType.equalsIgnoreCase("wallet_GETWALLET_INR")) {
+
+			if(!resp.body().asString().contains("3000331040000001")) {
+				Reporter.log("3000331040000001 is not displayed ");
+				Assert.assertTrue(false);
+			}
+			if(!resp.body().asString().contains("7008000020000038")) {
+				Reporter.log("7008000020000038 is not displayed ");
+				Assert.assertTrue(false);
+			}
+			if(!resp.body().asString().contains("CREDIT")) {
+				Reporter.log("CREDIT is not displayed ");
+				Assert.assertTrue(false);
+			}if(!resp.body().asString().contains("REWARD")) {
+				Reporter.log("REWARD is not displayed ");
+				Assert.assertTrue(false);
+			}
+			/*
 			String walletNumber = jsonPathEvaluator.getString("walletNumber");
 			String id = jsonPathEvaluator.getString("id");
 			if(!walletNumber.equalsIgnoreCase("3000331040000001")) {
@@ -3729,7 +3759,7 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 			if(!id.equalsIgnoreCase("5153572")) {
 				Reporter.log("description is : "+id);
 				Assert.assertTrue(false);
-			}
+			}*/
 		}	
 		else if (payType.equalsIgnoreCase("wallet_GETWALLET_INR")) {
 			String walletNumber = jsonPathEvaluator.getString("walletNumber");

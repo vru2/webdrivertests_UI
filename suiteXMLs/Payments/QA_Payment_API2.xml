@@ -8,17 +8,10 @@
 <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 </listeners>
 
-
 <test name="Instant Refund" preserve-order="true" parallel="true">
-    <classes>    
-      <class name="test.java.paymentsAPI.API_IR_Get_Eligibility"/>
+    <classes>
       <class name="test.java.paymentsAPI.API_IR_Validate_VPA"/>
-      <class name="test.java.paymentsAPI.API_IR_Save_VPA_Details"/>
-      <class name="test.java.paymentsAPI.API_IR_Get_Cancelation_Details"/>
-      <class name="test.java.paymentsAPI.API_IR_Create_Refund"/>
     </classes>
 </test>
-
-
 
 </suite> 

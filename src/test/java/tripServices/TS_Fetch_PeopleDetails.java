@@ -12,8 +12,8 @@ import io.restassured.response.ResponseBody;
 public class TS_Fetch_PeopleDetails extends TripserviceCommon{
 	@Test(groups={"Regression"})
 	public void checkpnr() throws Exception{
-	Reporter.log("http://172.17.51.86:9031/trips/46812466/fetch-people-details");
-	Response resp=RestAssured.get("http://172.17.51.86:9031/trips/46812466/fetch-people-details");
+	Reporter.log("http://trip-service-api.cltp.com:9001/trips/46812466/fetch-people-details");
+	Response resp=RestAssured.get("http://trip-service-api.cltp.com:9001/trips/46812466/fetch-people-details");
 	System.out.println(resp.asString());
 	if(resp.statusCode()==200){
 		ResponseBody body= resp.getBody();

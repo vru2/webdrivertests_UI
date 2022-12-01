@@ -17,8 +17,8 @@ public class Accounts_Depositaccount extends TripserviceCommon {
 	public void Accounts_FetchByPersonid() throws Exception{
 		Response resp;
 		Response resp1;
-		String url_qa="http://172.17.51.86:9031/api/trips/deposit-account-details?id=46207180";
-		String url1_qa="http://172.17.51.86:9031/api/trips/deposit-account-details?id=46206142";	
+		String url_qa="http://trip-service-api.cltp.com:9001/api/trips/deposit-account-details?id=46207180";
+		String url1_qa="http://trip-service-api.cltp.com:9001/api/trips/deposit-account-details?id=46206142";	
 			Reporter.log(url_qa);
 	    resp=RestAssured.get(url_qa);
 	    if(resp.statusCode()==200){

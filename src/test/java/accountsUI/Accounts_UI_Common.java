@@ -17,7 +17,7 @@ public class Accounts_UI_Common extends WrapperMethod
 {
 	public String otp;
 	public RemoteWebDriver driver;
-	public String mobile1="4535353553";
+	public String mobile1="4535353876";
 	public String email="testcltp333@gmail.com";
 	public String Type;
 	public String value;
@@ -84,6 +84,7 @@ public class Accounts_UI_Common extends WrapperMethod
 			{
 				safeClick(driver,getObjectPlatform("Account_login_none"));
 			}
+			Thread.sleep(1000);
 			safeClick(driver,getObjectPlatform("Account_login_personaldetails_skip"));
 			elementPresent(driver, getObjectPlatform("Accounts_nav_bar"), 2);
 			safeClick(driver, getObjectPlatform("Accounts_nav_bar"));
@@ -236,13 +237,13 @@ public class Accounts_UI_Common extends WrapperMethod
 					header("accept","*/*").
 					header("auth_key","7GHT#@D65yhgder4R").
 					header("x-ct-caller-app","test").
-					delete("http://172.17.64.185:8334/user/v2/cache/65233114");
+					delete("http://172.29.23.248:9001/user/v2/cache/65233114");
 			System.out.println(resp.asString());
 		}
 
 	}
 	public void RedisHandler (RemoteWebDriver driver, String Type, String value, String email, String action){
-		Jedis jedis = new Jedis("http://172.17.64.102:6379");
+		Jedis jedis = new Jedis("http://172.29.23.218:6379");
 		System.out.println("Connection Successful");
 		System.out.println("The server is running" + jedis.ping());
 		otp = jedis.get("ACCOUNTS_SERVICE_MOBILE_LOGIN_KEY_" + value + email +Type + action);
@@ -290,7 +291,7 @@ public class Accounts_UI_Common extends WrapperMethod
 		ArrayList<String> data = new ArrayList<String>();
 		ArrayList<String> Name = new ArrayList<String>();
 		{
-			String MySQL_URL = "jdbc:mysql://172.17.64.165:3306/accounts";
+			String MySQL_URL = "jdbc:mysql://172.29.23.229:3306/accounts";
 			String MySQL_User = "cleartrip";
 			String MySQL_Password = "1nterl3av3";
 			String query = "select ID from people where mobile=" + number;
@@ -317,7 +318,7 @@ public class Accounts_UI_Common extends WrapperMethod
 		ArrayList<String> data = new ArrayList<String>();
 		ArrayList<String> Name = new ArrayList<String>();
 		{
-			String MySQL_URL = "jdbc:mysql://172.17.64.165:3306/accounts";
+			String MySQL_URL = "jdbc:mysql://172.29.23.229:3306/accounts";
 			String MySQL_User = "cleartrip";
 			String MySQL_Password = "1nterl3av3";
 			String query = "select MOBILE from people where USERNAME="+"'"+ email1+"'";
@@ -345,7 +346,7 @@ public class Accounts_UI_Common extends WrapperMethod
 		ArrayList<String> data = new ArrayList<String>();
 		ArrayList<String> Name = new ArrayList<String>();
 		{
-			String MySQL_URL = "jdbc:mysql://172.17.64.165:3306/accounts";
+			String MySQL_URL = "jdbc:mysql://172.29.23.229:3306/accounts";
 			String MySQL_User = "cleartrip";
 			String MySQL_Password = "1nterl3av3";
 			String query = "DELETE IGNORE from people where mobile=" + number;
@@ -374,7 +375,7 @@ public class Accounts_UI_Common extends WrapperMethod
 		ArrayList<String> data = new ArrayList<String>();
 		ArrayList<String> Name = new ArrayList<String>();
 		{
-			String MySQL_URL = "jdbc:mysql://172.17.64.165:3306/accounts";
+			String MySQL_URL = "jdbc:mysql://172.29.23.229:3306/accounts";
 			String MySQL_User = "cleartrip";
 			String MySQL_Password = "1nterl3av3";
 			String query = "UPDATE PEOPLE SET MOBILE=NULL,COUNTRY_CODE=NULL,MOBILE_VERIFIED=NULL,MOBILE_VERIFIED_TIMESTAMP=NULL WHERE USERNAME="+"'" + email1+"'";
@@ -404,7 +405,7 @@ public class Accounts_UI_Common extends WrapperMethod
 		ArrayList<String> data = new ArrayList<String>();
 		ArrayList<String> Name = new ArrayList<String>();
 		{
-			String MySQL_URL = "jdbc:mysql://172.17.64.165:3306/accounts";
+			String MySQL_URL = "jdbc:mysql://172.29.23.229:3306/accounts";
 			String MySQL_User = "cleartrip";
 			String MySQL_Password = "1nterl3av3";
 			String query = "DELETE FROM PEOPLE_NUDGE WHERE PEOPLE_ID=65233114";
@@ -434,7 +435,7 @@ public class Accounts_UI_Common extends WrapperMethod
 		ArrayList<String> data = new ArrayList<String>();
 		ArrayList<String> Name = new ArrayList<String>();
 		{
-			String MySQL_URL = "jdbc:mysql://172.17.32.150:3306/promotional_schema";
+			String MySQL_URL = "jdbc:mysql://172.29.23.230:3306/promotional_schema";
 			String MySQL_User = "promo_user";
 			String MySQL_Password = "Pr0mote426";
 			String query = "select ID from people where mobile=" + number;

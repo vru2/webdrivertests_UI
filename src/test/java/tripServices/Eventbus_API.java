@@ -11,7 +11,7 @@ import io.restassured.response.ResponseBody;
 
 public class Eventbus_API extends TripserviceCommon{
 	
-	String url="http://172.17.51.86:9070/event/publish";
+	String url="http://172.29.8.216:9001/event/publish";
 	Response resp;
 	String s=RandomStringUtils.randomNumeric(3);
 	String params="{\"eventContent\":\"test"+s+"\",\"eventName\": \"test\",\"eventReference\":\"test\"}";

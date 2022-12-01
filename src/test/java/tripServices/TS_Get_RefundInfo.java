@@ -12,8 +12,8 @@ import io.restassured.response.ResponseBody;
 public class TS_Get_RefundInfo extends TripserviceCommon{
 	@Test(groups={"Regression"})
 	public void checkpnr() throws Exception{
-	Reporter.log("http://172.17.51.86:9031/trips/Q21061572422/get_refund_info?txn_id=76012482&apiVersion=V1");
-	Response resp=RestAssured.get("http://172.17.51.86:9031/trips/Q21061572422/get_refund_info?txn_id=76012482&apiVersion=V1");
+	Reporter.log("http://trip-service-api.cltp.com:9001/trips/Q21061572422/get_refund_info?txn_id=76012482&apiVersion=V1");
+	Response resp=RestAssured.get("http://trip-service-api.cltp.com:9001/trips/Q21061572422/get_refund_info?txn_id=76012482&apiVersion=V1");
 	System.out.println(resp.asString());
 	if(resp.statusCode()==200){
 		ResponseBody body= resp.getBody();
@@ -32,8 +32,8 @@ public class TS_Get_RefundInfo extends TripserviceCommon{
 		Reporter.log("Status code : " + resp.statusCode());
 		assertTrue(false);
 	}
-	Reporter.log("http://172.17.51.86:9031/trips/Q21061572422/get_refund_info?txn_id=76012482&apiVersion=V3");
-	Response resp1=RestAssured.get("http://172.17.51.86:9031/trips/Q21061572422/get_refund_info?txn_id=76012482&apiVersion=V3");
+	Reporter.log("http://trip-service-api.cltp.com:9001/trips/Q21061572422/get_refund_info?txn_id=76012482&apiVersion=V3");
+	Response resp1=RestAssured.get("http://trip-service-api.cltp.com:9001/trips/Q21061572422/get_refund_info?txn_id=76012482&apiVersion=V3");
 	System.out.println(resp1.asString());
 	if(resp1.statusCode()==200){
 		ResponseBody body= resp1.getBody();

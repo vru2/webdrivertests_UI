@@ -11,7 +11,7 @@ public class WhatsappMultilanguageSupport extends WhatsappCommon {
 	@Test(groups={"Regression"})
 	public void message() throws IOException {
 		Response resp;
-		String url = "http://172.17.51.86:8227/whatsapp/message";
+		String url = "http://whatsappapi.cltp.com:9001/whatsapp/message";
        resp=paramsForwhatsappmultilanguage(headersForWhatsappUserMessage(),params6,url);
        validateMessage(resp);
  }

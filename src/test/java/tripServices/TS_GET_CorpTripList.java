@@ -18,8 +18,8 @@ public class TS_GET_CorpTripList extends TripserviceCommon {
 	public void getCorpTripCount() throws IOException, InterruptedException {
 		String Host = common.value("host");
 		if (Host.equalsIgnoreCase("qa2")) {
-			Reporter.log("http://172.17.51.86:9031/trips/corp?domain=demo.cleartripforbusiness.com");
-			Response resp = RestAssured.get("http://172.17.51.86:9031/trips/corp?domain=demo.cleartripforbusiness.com");
+			Reporter.log("http://trip-service-api.cltp.com:9001/trips/corp?domain=demo.cleartripforbusiness.com");
+			Response resp = RestAssured.get("http://trip-service-api.cltp.com:9001/trips/corp?domain=demo.cleartripforbusiness.com");
 			System.out.println(resp.asString());
 			if (resp.statusCode() == 200) {
 				ResponseBody body = resp.getBody();
@@ -58,8 +58,8 @@ public class TS_GET_CorpTripList extends TripserviceCommon {
 				Reporter.log("Status code : " + resp.statusCode());
 				assertTrue(false);
 			}
-			Reporter.log("http://172.17.51.86:9031/trips/corp?domain=demo.cleartripforbusiness.com&booking_status=P");
-			Response resp1 = RestAssured.get("http://172.17.51.86:9031/trips/corp?domain=demo.cleartripforbusiness.com&booking_status=P");
+			Reporter.log("http://trip-service-api.cltp.com:9001/trips/corp?domain=demo.cleartripforbusiness.com&booking_status=P");
+			Response resp1 = RestAssured.get("http://trip-service-api.cltp.com:9001/trips/corp?domain=demo.cleartripforbusiness.com&booking_status=P");
 			System.out.println(resp1.asString());
 			if (resp1.statusCode() == 200) {
 				ResponseBody body = resp1.getBody();
@@ -98,9 +98,9 @@ public class TS_GET_CorpTripList extends TripserviceCommon {
 				Reporter.log("Status code : " + resp1.statusCode());
 				assertTrue(false);
 			}
-			Reporter.log("http://172.17.51.86:9031/trips/corp?domain=demo.cleartripforbusiness.com&booker-id=1876970");
+			Reporter.log("http://trip-service-api.cltp.com:9001/trips/corp?domain=demo.cleartripforbusiness.com&booker-id=1876970");
 			Response resp2 = RestAssured
-					.get("http://172.17.51.86:9031/trips/corp?domain=demo.cleartripforbusiness.com&booker-id=1876970");
+					.get("http://trip-service-api.cltp.com:9001/trips/corp?domain=demo.cleartripforbusiness.com&booker-id=1876970");
 			System.out.println(resp2.asString());
 			if (resp2.statusCode() == 200) {
 				ResponseBody body = resp2.getBody();
@@ -139,9 +139,9 @@ public class TS_GET_CorpTripList extends TripserviceCommon {
 				assertTrue(false);
 			}
 			Reporter.log(
-					"http://172.17.51.86:9031/trips/corp?domain=demo.cleartripforbusiness.com&trip-ref=Q190822470014&booker-id=1876970&travel-start-date=2019-09-05&travel-end-date=2019-09-07&booking-date-from=2019-08-21&booking-date-to=2019-08-23&status-history=4096&booking-status=B&pax-id=1876970&initiator-id=1876970&txn-status=C&page-size=10");
+					"http://trip-service-api.cltp.com:9001/trips/corp?domain=demo.cleartripforbusiness.com&trip-ref=Q190822470014&booker-id=1876970&travel-start-date=2019-09-05&travel-end-date=2019-09-07&booking-date-from=2019-08-21&booking-date-to=2019-08-23&status-history=4096&booking-status=B&pax-id=1876970&initiator-id=1876970&txn-status=C&page-size=10");
 			Response resp3 = RestAssured.get(
-					"http://172.17.51.86:9031/trips/corp?domain=demo.cleartripforbusiness.com&trip-ref=Q190822470014&booker-id=1876970&travel-start-date=2019-09-05&travel-end-date=2019-09-07&booking-date-from=2019-08-21&booking-date-to=2019-08-23&status-history=4096&booking-status=B&pax-id=1876970&initiator-id=1876970&txn-status=C&page-size=10");
+					"http://trip-service-api.cltp.com:9001/trips/corp?domain=demo.cleartripforbusiness.com&trip-ref=Q190822470014&booker-id=1876970&travel-start-date=2019-09-05&travel-end-date=2019-09-07&booking-date-from=2019-08-21&booking-date-to=2019-08-23&status-history=4096&booking-status=B&pax-id=1876970&initiator-id=1876970&txn-status=C&page-size=10");
 			System.out.println(resp3.asString());
 			if (resp3.statusCode() == 200) {
 				ResponseBody body = resp3.getBody();
@@ -180,9 +180,9 @@ public class TS_GET_CorpTripList extends TripserviceCommon {
 				assertTrue(false);
 			}
 			Reporter.log(
-					"http://172.17.51.86:9031/trips/corp?domain=demo.cleartripforbusiness.com&booker-id=1876970&status-history=4096&booking-status=B&txn-status=C");
+					"http://trip-service-api.cltp.com:9001/trips/corp?domain=demo.cleartripforbusiness.com&booker-id=1876970&status-history=4096&booking-status=B&txn-status=C");
 			Response resp4 = RestAssured.get(
-					"http://172.17.51.86:9031/trips/corp?domain=demo.cleartripforbusiness.com&booker-id=1876970&status-history=4096&booking-status=B&txn-status=C");
+					"http://trip-service-api.cltp.com:9001/trips/corp?domain=demo.cleartripforbusiness.com&booker-id=1876970&status-history=4096&booking-status=B&txn-status=C");
 			System.out.println(resp4.asString());
 			if (resp4.statusCode() == 200) {
 				ResponseBody body = resp4.getBody();

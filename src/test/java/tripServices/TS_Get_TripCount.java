@@ -12,8 +12,8 @@ import io.restassured.response.ResponseBody;
 public class TS_Get_TripCount extends TripserviceCommon{
 	@Test(groups={"Regression"})
 	public void checkpnr() throws Exception{
-	Reporter.log("http://172.17.51.86:9031/trips/trip-count?product=train&railway-pnr-exists=true&booking-date-from=2021-03-01&user-id=65186377");
-	Response resp=RestAssured.get("http://172.17.51.86:9031/trips/trip-count?product=train&railway-pnr-exists=true&booking-date-from=2021-03-01&user-id=65186377");
+	Reporter.log("http://trip-service-api.cltp.com:9001/trips/trip-count?product=train&railway-pnr-exists=true&booking-date-from=2021-03-01&user-id=65186377");
+	Response resp=RestAssured.get("http://trip-service-api.cltp.com:9001/trips/trip-count?product=train&railway-pnr-exists=true&booking-date-from=2021-03-01&user-id=65186377");
 	System.out.println(resp.asString());
 	if(resp.statusCode()==200){
 		ResponseBody body= resp.getBody();
@@ -24,8 +24,8 @@ public class TS_Get_TripCount extends TripserviceCommon{
 		Reporter.log("Status code : " + resp.statusCode());
 		assertTrue(false);
 	}
-	Reporter.log("http://172.17.51.86:9031/trips/trip-count?product=train&railway-pnr-exists=false&booking-date-from=2021-03-01&user-id=65186377");
-	Response resp1=RestAssured.get("http://172.17.51.86:9031/trips/trip-count?product=train&railway-pnr-exists=false&booking-date-from=2021-03-01&user-id=65186377");
+	Reporter.log("http://trip-service-api.cltp.com:9001/trips/trip-count?product=train&railway-pnr-exists=false&booking-date-from=2021-03-01&user-id=65186377");
+	Response resp1=RestAssured.get("http://trip-service-api.cltp.com:9001/trips/trip-count?product=train&railway-pnr-exists=false&booking-date-from=2021-03-01&user-id=65186377");
 	System.out.println(resp1.asString());
 	if(resp1.statusCode()==200){
 		ResponseBody body= resp.getBody();

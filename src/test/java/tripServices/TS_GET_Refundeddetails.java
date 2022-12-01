@@ -17,12 +17,12 @@ public class TS_GET_Refundeddetails extends TripserviceCommon {
 	public void getCancelledDetails(){
 		String Host = common.value("host");
 		if(Host.equalsIgnoreCase("qa2")) {
-		Reporter.log("http://172.17.51.86:9031/trips/refundedDetails?date=07-20-2019&productType=air");
+		Reporter.log("http://trip-service-api.cltp.com:9001/trips/refundedDetails?date=04-20-2022&productType=air");
 		Response resp=RestAssured.given().
 				      when().
 				      log().all().
 				      headers(headersForTripservicepostcall()).
-				      get("http://172.17.51.86:9031/trips/refundedDetails?date=07-20-2019&productType=air");
+				      get("http://trip-service-api.cltp.com:9001/trips/refundedDetails?date=04-20-2022&productType=air");
 		    System.out.println(resp.asString());
 			if(resp.statusCode()==200){
 			Assert.assertNotNull("refund_record_id");
@@ -32,29 +32,6 @@ public class TS_GET_Refundeddetails extends TripserviceCommon {
 			Reporter.log("Status code : " + resp.statusCode());
 			assertTrue(false);
 		}
-		} /*
-			 * else if(Host.equalsIgnoreCase("www")) { Reporter.log(
-			 * "http://trip-service.cltp.com:9001/trips/cancelledInsurances?date=12-12-2019"
-			 * ); Response resp=RestAssured.get(
-			 * "http://trip-service.cltp.com:9001/trips/cancelledInsurances?date=12-12-2019"
-			 * ); System.out.println(resp.asString()); if(resp.statusCode()==200){
-			 * ResponseBody body= resp.getBody(); String bodyAsString = body.asString();
-			 * Assert.assertNotNull("refund_id"); Reporter.log(bodyAsString); }else{
-			 * Reporter.log("Status code : " + resp.statusCode()); assertTrue(false); } }
-			 */else if(Host.equalsIgnoreCase("dev")) {
-			Reporter.log("http://172.17.32.12:9031/trips/cancelledInsurances?date=08/07/2019");
-			Response resp=RestAssured.given().
-				      when().
-				      log().all().
-				      headers(headersForTripservicepostcall()).
-				      get("http://172.17.51.86:9031/trips/cancelledInsurances?date=09-26-2019");
-		    System.out.println(resp.asString());
-			if(resp.statusCode()==200){
-			Assert.assertNotNull("refund_id");
-			}else{
-				Reporter.log("Status code : " + resp.statusCode());
-				assertTrue(false);
-			}
 		}
 	}
 	

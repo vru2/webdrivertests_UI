@@ -15,8 +15,8 @@ public class Accounts_FetchtripdetailsByBookedUserid extends TripserviceCommon {
 	public void Accounts_FetchByBookedUserid() throws Exception{
 		Response resp;
 		Response resp1;
-		String url_qa="http://172.17.51.86:9031/api/trips/fetch-trip-details?bookedUserId=41656838&size=1";
-		String url1_qa="http://172.17.51.86:9031/api/trips/fetch-trip-details?bookedUserId=41697596&size=10";
+		String url_qa="http://trip-service-api.cltp.com:9001/api/trips/fetch-trip-details?bookedUserId=41656838&size=1";
+		String url1_qa="http://trip-service-api.cltp.com:9001/api/trips/fetch-trip-details?bookedUserId=41697596&size=10";
 			Reporter.log(url_qa);
 	    resp=RestAssured.get(url_qa);
 	    if(resp.statusCode()==200){

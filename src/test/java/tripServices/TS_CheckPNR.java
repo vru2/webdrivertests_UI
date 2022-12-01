@@ -12,8 +12,8 @@ import io.restassured.response.ResponseBody;
 public class TS_CheckPNR extends TripserviceCommon{
 	@Test(groups={"Regression"})
 	public void checkpnr() throws Exception{
-	Reporter.log("http://172.17.51.86:9031/trips/4640338393/pnr-check");
-	Response resp=RestAssured.get("http://172.17.51.86:9031/trips/4640338393/pnr-check");
+	Reporter.log("http://trip-service-api.cltp.com:9001/trips/4640338393/pnr-check");
+	Response resp=RestAssured.get("http://trip-service-api.cltp.com:9001/trips/4640338393/pnr-check");
 	System.out.println(resp.asString());
 	if(resp.statusCode()==200){
 		ResponseBody body= resp.getBody();

@@ -14,7 +14,7 @@ public class TS_ProductType_Userid_Local extends TripserviceCommon{
 	@Test
 	public void producttype_userid_local() {
 		Response resp;
-		String url="http://172.17.51.86:9031/api/trips/LOCAL/41683432?startDateTime=2020-03-01T00:00:00.000+0530&endDateTime=2020-04-08T12:00:00.000+0530";
+		String url="http://trip-service-api.cltp.com:9001/api/trips/LOCAL/41683432?startDateTime=2020-03-01T00:00:00.000+0530&endDateTime=2020-04-08T12:00:00.000+0530";
 		Reporter.log(url);
 		resp=RestAssured.get(url);
 		System.out.println(resp.asString());

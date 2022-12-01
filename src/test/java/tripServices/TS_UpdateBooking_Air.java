@@ -21,7 +21,7 @@ public class TS_UpdateBooking_Air extends TripserviceCommon {
 		Response resp1;
 		String Host = common.value("host");
 		if(Host.equalsIgnoreCase("qa2")) {
-		String url1 = ("http://172.17.51.86:9031/trips/"+tripref+"/air-bookings/update-booking");
+		String url1 = ("http://trip-service-api.cltp.com:9001/trips/"+tripref+"/air-bookings/update-booking");
 		Reporter.log(url1);
 		resp1=TripserviceHotelsPutcall(params3,headersForTripserviceputcall(),url1);
 		validationforput(resp1);	

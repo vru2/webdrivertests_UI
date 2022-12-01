@@ -14,7 +14,7 @@ public class Accounts_Notes extends TripserviceCommon {
 	public void Accounts_ExistingUsers() throws Exception{
 		Response resp;
 		Response resp1;
-		String url_qa="http://172.17.51.86:9031/api/trips/notes?id=57046380";
+		String url_qa="http://trip-service-api.cltp.com:9001/api/trips/notes?id=57046380";
 		Reporter.log(url_qa);
 	    resp=RestAssured.get(url_qa);
 	    if(resp.statusCode()==200){

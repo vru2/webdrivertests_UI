@@ -17,10 +17,10 @@ public class Accounts_tagmaster extends TripserviceCommon{
 		Response resp1;
 		Response resp2;
 		Response resp3;
-		String url="http://172.17.51.86:9031/api/trips/tag-master?tagMasterId=233256236";
-		String url1="http://172.17.51.86:9031/api/trips/tag-master?tagMasterId=233166322";
-		String url2="http://172.17.51.86:9031/api/trips/tag-master?tagMasterId=233226280";
-		String url3="http://172.17.51.86:9031/api/trips/tag-master?tagMasterId=233266298";
+		String url="http://trip-service-api.cltp.com:9001/api/trips/tag-master?tagMasterId=233256236";
+		String url1="http://trip-service-api.cltp.com:9001/api/trips/tag-master?tagMasterId=233166322";
+		String url2="http://trip-service-api.cltp.com:9001/api/trips/tag-master?tagMasterId=233226280";
+		String url3="http://trip-service-api.cltp.com:9001/api/trips/tag-master?tagMasterId=233266298";
 		Reporter.log(url);
 	    resp=RestAssured.get(url);
 	    if(resp.statusCode()==200){

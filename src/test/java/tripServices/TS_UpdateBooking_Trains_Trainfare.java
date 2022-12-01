@@ -56,7 +56,7 @@ public class TS_UpdateBooking_Trains_Trainfare  extends TripserviceCommon {
 		String updatetrainfare=param1+param2+param3+param4+param5+param6+param7+param8+param9+param10+param11;
         System.out.println(updatetrainfare);
 		if(Host.equalsIgnoreCase("qa2")) {
-		String url1 = ("http://172.17.51.86:9031/trips/"+tripref+"/train-bookings/update-booking");
+		String url1 = ("http://trip-service-api.cltp.com:9001/trips/"+tripref+"/train-bookings/update-booking");
 		Reporter.log(url1);
 		resp1=TripserviceHotelsPutcall(updatetrainfare,headersForTripserviceputcall(),url1);
 		validationforputtrains(resp1);	
@@ -77,7 +77,7 @@ public class TS_UpdateBooking_Trains_Trainfare  extends TripserviceCommon {
 		 DBValidation_TxnTrains(resp, "C");	
 		 Response resp2;
 		 if(Host.equalsIgnoreCase("qa2")) {
-			 String url2=("http://172.17.51.86:9031/trips?tripID="+tripref);
+			 String url2=("http://trip-service-api.cltp.com:9001/trips?tripID="+tripref);
 			 resp2=RestAssured.get(url2);
 			 System.out.println(resp2.asString());
 			 validationforgettrains(resp2);

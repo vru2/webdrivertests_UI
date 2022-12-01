@@ -30,6 +30,7 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
@@ -154,14 +155,14 @@ public class WrapperMethod extends CommonUtil {
 
 		Map<String, Object> deviceMetrics = new HashMap<>();
 		// Added individual deviceMetrices & useragent
-		deviceMetrics.put("width", 360); 
-		deviceMetrics.put("height", 560);
-		deviceMetrics.put("pixelRatio", 4.0);
-		// Added individual deviceMetrices & useragent
+		//deviceMetrics.put("width", 360);
+		//deviceMetrics.put("height", 560);
+		//deviceMetrics.put("pixelRatio", 4.0);
+		//// Added individual deviceMetrices & useragent
 		Map<String, Object> mobileEmulation = new HashMap<>();
 
-		mobileEmulation.put("deviceName", "Nexus 5");
-		// mobileEmulation.put("deviceMetrics", deviceMetrics);
+		mobileEmulation.put("deviceName", "Samsung Galaxy S20 Ultra");
+		//mobileEmulation.put("deviceMetrics","360*560");
 		//mobileEmulation.put("userAgent", "Mozilla/5.0 (Linux; Android 4.2.1; en-us; Nexus 5 Build/JOP40D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19");
 		if (System.getProperty("os.name").contains("Windows")) {
 			File file = new File(".");
@@ -177,8 +178,6 @@ public class WrapperMethod extends CommonUtil {
 			String filepath = file.getCanonicalPath() + "//exe//chromedriver_mac";
 			System.setProperty("webdriver.chrome.driver", filepath);
 		}
-
-
 		ChromeOptions chromeOptions = new ChromeOptions();
 		chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
 		chromeOptions.addArguments("--allowed-ips");

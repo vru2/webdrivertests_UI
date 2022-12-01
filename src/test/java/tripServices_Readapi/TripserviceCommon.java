@@ -25,8 +25,8 @@ public class TripserviceCommon extends PlatformCommonUtil {
 	Response resp;
 	Response resp1;
 	String tripref;
-	String tsendpoint="http://172.17.51.86:8281";
-	String tsendpointarchived="http://172.17.51.86:8282";
+	String tsendpoint="http://trip-service-api.cltp.com:9001";
+	String tsendpointarchived="http://trip-service-readapi.cltp.com:9001/";
 	
 	String createupdate_tagmaster_url="/api/trips/company-tag";
 	String depositaccount="/api/trips/deposit-account-details?id=46207180";

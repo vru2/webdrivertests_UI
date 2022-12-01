@@ -624,7 +624,7 @@ public class TripserviceCommon extends PlatformCommonUtil {
 		ArrayList<String> Name = new ArrayList<String>();
 		{
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			String url = "jdbc:oracle:thin:@172.17.4.101:1521/cleardb";
+			String url = "jdbc:oracle:thin:@qa2-ora-db.cltp.com:1521/cleardb";
 			String user = "tm";
 			String password = "tm123clear";
 			String query =  "SELECT  trip_ref FROM  tm.trips where trip_ref='" + TripID +"'";
@@ -654,7 +654,7 @@ public class TripserviceCommon extends PlatformCommonUtil {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			String user = "tm";
 			String password = "tm123clear";
-			String url = "jdbc:oracle:thin:@172.17.4.101:1521/cleardb";
+			String url = "jdbc:oracle:thin:@qa2-ora-db.cltp.com:1521/cleardb";
 			String query =  "select t.TRIP_REF, x.STATUS from trips t inner join TXNS x ON t.ID = x.TRIP_ID and t.TRIP_REF = '" + TripID +"'";
 			Connection myCon = DriverManager.getConnection(url,user,password);
 			if (myCon != null) {
@@ -683,7 +683,7 @@ public class TripserviceCommon extends PlatformCommonUtil {
 		ArrayList<String> Name = new ArrayList<String>();
 		{
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			String url = "jdbc:oracle:thin:@172.17.4.101:1521/cleardb";
+			String url = "jdbc:oracle:thin:@qa2-ora-db.cltp.com:1521/cleardb";
 			String user = "tm";
 			String password = "tm123clear";
 			String query =  "SELECT ab.ID from air_bookings ab INNER JOIN TRIPS T ON T.ID=ab.trip_id where T.trip_ref= '" + TripID +"'";
@@ -715,7 +715,7 @@ public class TripserviceCommon extends PlatformCommonUtil {
 		ArrayList<String> Name = new ArrayList<String>();
 		{
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			String url = "jdbc:oracle:thin:@172.17.4.101:1521/cleardb";
+			String url = "jdbc:oracle:thin:@qa2-ora-db.cltp.com:1521/cleardb";
 			String user = "tm";
 			String password = "tm123clear";
 			String query =  "SELECT HB.ID,HBI.ID,T.ID,T.USER_ID,HBI.ROOM_ID,HBI.ROOM_RATE_ID FROM HOTEL_BOOKING_INFO HBI INNER JOIN HOTEL_BOOKINGS HB ON HB.ID=HBI.HOTEL_BOOKING_ID INNER JOIN TRIPS T ON T.ID=HB.TRIP_ID WHERE T.TRIP_REF= '" + TripID +"'";
@@ -743,7 +743,7 @@ public class TripserviceCommon extends PlatformCommonUtil {
 		ArrayList<String> Name = new ArrayList<String>();
 		{
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			String url = "jdbc:oracle:thin:@172.17.4.101:1521/cleardb";
+			String url = "jdbc:oracle:thin:@qa2-ora-db.cltp.com:1521/cleardb";
 			String user = "tm";
 			String password = "tm123clear";
 			String query =  "SELECT HC.ID,TX.ID,HRR.ID FROM HOTEL_CANCELLATIONS HC INNER JOIN HOTEL_REFUND_RECORDS HRR ON HRR.ID=HC.HOTEL_REFUND_RECORD_ID INNER JOIN TXNS TX ON TX.ID=HRR.TXN_ID INNER JOIN TRIPS T ON T.ID=TX.TRIP_ID WHERE TX.TXN_TYPE=20 AND T.TRIP_REF='" + TripID +"'";
@@ -771,7 +771,7 @@ public class TripserviceCommon extends PlatformCommonUtil {
 		ArrayList<String> Name = new ArrayList<String>();
 		{
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			String url = "jdbc:oracle:thin:@172.17.4.101:1521/cleardb";
+			String url = "jdbc:oracle:thin:@qa2-ora-db.cltp.com:1521/cleardb";
 			String user = "tm";
 			String password = "tm123clear";
 			String query =  "SELECT P.ID FROM PAYMENTS P INNER JOIN TRIPS T ON T.ID=P.TRIP_ID WHERE T.TRIP_REF='" + TripID +"'";
@@ -799,7 +799,7 @@ public class TripserviceCommon extends PlatformCommonUtil {
 		ArrayList<String> Name = new ArrayList<String>();
 		{
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			String url = "jdbc:oracle:thin:@172.17.4.101:1521/cleardb";
+			String url = "jdbc:oracle:thin:@qa2-ora-db.cltp.com:1521/cleardb";
 			String user = "tm";
 			String password = "tm123clear";
 			String query =  "SELECT RC.ID,RC.LINKABLE_ID FROM REFUND_COMPONENTS RC INNER JOIN HOTEL_REFUND_RECORDS HR ON HR.ID=RC.LINKABLE_ID INNER JOIN TXNS TX ON TX.ID=HR.TXN_ID INNER JOIN TRIPS T ON T.ID=TX.TRIP_ID WHERE T.TRIP_REF='" + TripID +"'";
@@ -828,7 +828,7 @@ public class TripserviceCommon extends PlatformCommonUtil {
 		ArrayList<String> Name = new ArrayList<String>();
 		{
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			String url = "jdbc:oracle:thin:@172.17.4.101:1521/cleardb";
+			String url = "jdbc:oracle:thin:@qa2-ora-db.cltp.com:1521/cleardb";
 			String user = "tm";
 			String password = "tm123clear";
 			String query =  "SELECT  t.trip_ref,abd.api_tp_wallet_amt FROM AIR_BOOKING_DETAILS ABD INNER JOIN AIR_BOOKINGS AB ON AB.ID=abd.air_booking_id INNER JOIN TRIPS T ON T.ID=ab.trip_id WHERE T.trip_ref= '" + TripID +"' order by abd.API_TP_WALLET_AMT desc";
@@ -856,7 +856,7 @@ public class TripserviceCommon extends PlatformCommonUtil {
 		ArrayList<String> Name = new ArrayList<String>();
 		{
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			String url = "jdbc:oracle:thin:@172.17.4.101:1521/cleardb";
+			String url = "jdbc:oracle:thin:@qa2-ora-db.cltp.com:1521/cleardb";
 			String user = "tm";
 			String password = "tm123clear";
 			String query =  "SELECT TRIP_REF FROM PAH_COMM_QUEUE WHERE ACTIVE=1";
@@ -888,7 +888,7 @@ public class TripserviceCommon extends PlatformCommonUtil {
 		ArrayList<String> Name = new ArrayList<String>();
 		{
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			String url = "jdbc:oracle:thin:@172.17.4.101:1521/cleardb";
+			String url = "jdbc:oracle:thin:@qa2-ora-db.cltp.com:1521/cleardb";
 			String user = "tm";
 			String password = "tm123clear";
 			String query =  "SELECT tbi.train_fare_id,tbi.train_booking_id,tbi.id,tbi.pax_info_id,tbi.train_id,t.id FROM TRIPS T INNER JOIN TRAIN_BOOKINGS TB ON TB.TRIP_ID=T.ID INNER JOIN TRAIN_BOOKING_INFO TBI ON TBI.TRAIN_BOOKING_ID=TB.ID WHERE T.TRIP_REF='" + TripID +"'";
@@ -917,7 +917,7 @@ public class TripserviceCommon extends PlatformCommonUtil {
 		ArrayList<String> Name = new ArrayList<String>();
 		{
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			String url = "jdbc:oracle:thin:@172.17.4.101:1521/cleardb";
+			String url = "jdbc:oracle:thin:@qa2-ora-db.cltp.com:1521/cleardb";
 			String user = "tm";
 			String password = "tm123clear";
 			String query =  "SELECT S.FLIGHT_ID,S.ID,ABI.ID,PO.ID,T.ID,T.TRIP_REF,T.BOOKED_USER_ID FROM TRIPS T INNER JOIN AIR_BOOKINGS AB ON AB.TRIP_ID=T.ID INNER JOIN AIR_BOOKING_INFO ABI ON ABI.AIR_BOOKING_ID=AB.ID INNER JOIN SEGMENTS S ON S.ID=ABI.SEGMENT_ID INNER JOIN PRICING_OBJECTS PO ON PO.AIR_BOOKING_ID=AB.ID WHERE T.TRIP_REF= '" + TripID +"'";
@@ -945,7 +945,7 @@ public class TripserviceCommon extends PlatformCommonUtil {
 		ArrayList<String> Name = new ArrayList<String>();
 		{
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			String url = "jdbc:oracle:thin:@172.17.4.101:1521/cleardb";
+			String url = "jdbc:oracle:thin:@qa2-ora-db.cltp.com:1521/cleardb";
 			String user = "tm";
 			String password = "tm123clear";
 			String query =  "SELECT PE.ID,PE.LINKABLE_ID FROM TRIPS T INNER JOIN TRAIN_BOOKINGS TB ON TB.TRIP_ID=T.ID INNER JOIN TRAIN_BOOKING_INFO TBI ON TBI.TRAIN_BOOKING_ID=TB.ID INNER JOIN TRAIN_FARES TF ON TF.ID=TBI.TRAIN_FARE_ID INNER JOIN PRICING_ELEMENTS PE ON PE.LINKABLE_ID=TF.ID WHERE T.TRIP_REF='" + TripID +"'";
@@ -973,7 +973,7 @@ public class TripserviceCommon extends PlatformCommonUtil {
 		ArrayList<String> Name = new ArrayList<String>();
 		{
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			String url = "jdbc:oracle:thin:@172.17.4.101:1521/cleardb";
+			String url = "jdbc:oracle:thin:@qa2-ora-db.cltp.com:1521/cleardb";
 			String user = "tm";
 			String password = "tm123clear";
 			String query =  "SELECT T.TAXATION_MODEL, T.CT_GSTIN, T.HAS_REVENUE FROM TRIPS T WHERE T.TRIP_REF='" + TripID +"'";

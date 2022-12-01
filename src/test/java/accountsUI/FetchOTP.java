@@ -6,12 +6,13 @@ public class FetchOTP extends Accounts_UI_Common{
     @Test
     public void signup_mobile_oly() throws Exception {
         // SIGNIN OTP
-        RedisHandler(driver,"SIGNIN","+919380489646","","");
+      RedisHandler(driver,"SIGNIN","+913663636365","","");
         // SIGNUP_MERGE OTP
-        //RedisHandler(driver,"SIGNUP_MERGE","","@gmail.com","");
+       RedisHandler(driver,"SIGNUP_MERGE","","merge98@gmail.com","");
         //  DELETE_ACCOUNT OTP
-        //RedisHandler(driver,"MOBILE_EMAIL","+912345679877","","DELETE_ACCOUNT");
+     RedisHandler(driver,"","","merge100@gmail.com","UPDATE_EMAIL");
         // UPDATE_MOBILE
         // RedisHandler(driver,"UPDATE_MOBILE","+914356373737","","");
+        //5457676759
     }
 }

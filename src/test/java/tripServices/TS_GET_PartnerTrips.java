@@ -19,7 +19,7 @@ public class TS_GET_PartnerTrips extends TripserviceCommon {
 	public void Tripserviceairputcall() throws IOException, ClassNotFoundException, SQLException, InterruptedException
 	{
 		Response resp;
-		String url =  "http://172.17.51.86:9031/api/trips/partner?partnerUserId=563777277&bookedUserId=41683574";
+		String url =  "http://trip-service-api.cltp.com:9001/api/trips/partner?partnerUserId=563777277&bookedUserId=41683574";
 		Reporter.log(url);
 		resp=RestAssured.get(url);
 		if(resp.statusCode()==200)

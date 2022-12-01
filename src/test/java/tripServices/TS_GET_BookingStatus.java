@@ -25,7 +25,7 @@ public class TS_GET_BookingStatus extends TripserviceCommon {
 				validationforputcall(resp);	
 				Thread.sleep(2000);
 				Response resp2;
-				String url2="http://172.17.51.86:9031/trips/fetch-booking-status?tripRef="+tripref;
+				String url2="http://trip-service-api.cltp.com:9001/trips/fetch-booking-status?tripRef="+tripref;
 				Reporter.log(url2);
 				resp2=RestAssured.get(url2);
 				if(resp2.statusCode()==200)
@@ -43,7 +43,7 @@ public class TS_GET_BookingStatus extends TripserviceCommon {
 					assertTrue(false);
 				}
                 Response resp1;
-				String url1 = ("http://172.17.51.86:9031/trips/"+tripref+"/air-bookings/update-booking");
+				String url1 = ("http://trip-service-api.cltp.com:9001/trips/"+tripref+"/air-bookings/update-booking");
 				Reporter.log(url1);
 				resp1=TripserviceHotelsPutcall(params3,headersForTripserviceputcall(),url1);
 				validationforput(resp1);	

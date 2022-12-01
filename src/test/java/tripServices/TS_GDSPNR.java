@@ -12,7 +12,7 @@ import io.restassured.response.ResponseBody;
 
 public class TS_GDSPNR extends TripserviceCommon {
 	Response resp;
-	String url="http://172.17.51.86:9031/trips/gds-pnr/VJ5MZD";
+	String url="http://trip-service-api.cltp.com:9001/trips/gds-pnr/VJ5MZD";
 	
 	@Test
 	public void gdspnr()

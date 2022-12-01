@@ -15,7 +15,7 @@ public class TS_Updatetag_SyncPut extends TripserviceCommon{
 	public void Accounts_ExistingUsers() throws Exception{
 		Response resp;
 		Response resp1;
-		String url="http://172.17.51.86:9031/trips";
+		String url="http://trip-service-api.cltp.com:9001/trips";
 	    String param="{\"tag_masters\":[{\"id\":233266333,\"status\":\"D\"}]}";
 		String param1="{\"tag_masters\":[{\"id\":233266333,\"status\":\"A\"}]}";
 		String Host = common.value("host");

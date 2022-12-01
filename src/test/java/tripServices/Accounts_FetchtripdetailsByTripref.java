@@ -18,10 +18,10 @@ public class Accounts_FetchtripdetailsByTripref extends TripserviceCommon{
 		Response resp1;
 		Response resp2;
 		Response resp3;
-		String url_air="http://172.17.51.86:9031/api/trips/fetch-trip-details?tripRef=Q191112572612&size=1";
-		String url_hotel="http://172.17.51.86:9031/api/trips/fetch-trip-details?tripRef=Q191114574380&size=1";
-		String url_local="http://172.17.51.86:9031/api/trips/fetch-trip-details?tripRef=Q191003516082&size=1";
-		String url_train="http://172.17.51.86:9031/api/trips/fetch-trip-details?tripRef=Q190814464246&size=1";
+		String url_air="http://trip-service-api.cltp.com:9001/api/trips/fetch-trip-details?tripRef=Q191112572612&size=1";
+		String url_hotel="http://trip-service-api.cltp.com:9001/api/trips/fetch-trip-details?tripRef=Q191114574380&size=1";
+		String url_local="http://trip-service-api.cltp.com:9001/api/trips/fetch-trip-details?tripRef=Q191003516082&size=1";
+		String url_train="http://trip-service-api.cltp.com:9001/api/trips/fetch-trip-details?tripRef=Q190814464246&size=1";
 			Reporter.log(url_air);
 	    resp=RestAssured.get(url_air);
 	    if(resp.statusCode()==200){

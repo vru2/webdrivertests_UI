@@ -8,10 +8,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -24,6 +21,9 @@ import io.restassured.response.Response;
 import junit.framework.Assert;
 import test.java.paymentsUI.PaymentUI_CommonUtilities;
 import test.java.domains.PlatformCommonUtil;
+
+import static io.restassured.RestAssured.withArgs;
+import static org.hamcrest.CoreMatchers.equalTo;
 
 public class API_PaymentCommon1 extends PlatformCommonUtil
 
@@ -167,6 +167,9 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 	String Params_IR_Create_Refund3= ",\"cancellationTxnId\":1234567,\"disableAutoRefundProcessing\":false}";
 	String Params_IR_Create_Refund4= "{\"isFullWalletRefund\":false,\"accountType\":\"WALLET\",\"refundVersion\":\"INSTANT\",\"tripRef\":\"Q221102593002\",\"description\":\"Refund cron\",\"amount\":1.0,\"txnid\":";
 	String Params_IR_Create_Refund5= "{\"isFullWalletRefund\":false,\"refundVersion\":\"NORMAL\",\"tripRef\":\"Q220223384658\",\"description\":\"Refund cron\",\"amount\":1.0,\"txnid\":";
+	String Params_IR_Create_Refund6= "{\"isFullWalletRefund\":false,\"accountType\":\"WALLET\",\"refundVersion\":\"INSTANT\",\"tripRef\":\"Q221208608736\",\"description\":\"Refund cron\",\"amount\":1.0,\"txnid\":";
+
+
 
 	String Params_RORUpdate_GW_Status = "{\"currentStatus\":\"P\",\"status\":\"I\",\"gatewayId\":14}";
 	String Params_Enque_refunds = "[\"Q210203887410\",\"Q210225908308\"]";
@@ -280,6 +283,8 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 	String urlHi5_Fetch_Wallet = "/pay/wallet?userId=65218660&currency=INR";
 	String urlHi5_Fetch_WalletTnx = "/pay/wallet/5758972/transactions?offset=1&size=10";
 
+	String urlMIS_Report_PL = "/paymentservice/service/air/mis/detail?paymentType=PL&tripRef=Q221208608790";
+
 
 	String urlSuperCoins_MobileLinked= "/payments/rewards/supercoins/checkAccountLinked?mobileNumber=+919986696785";
 
@@ -348,7 +353,8 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 	String urlIR_Non_Eligibility_TW = "/paymentservice/service/refund/eligibility?tripRef=Q221103593350";
 	String urlIR_Non_Eligibility_UPI = "/paymentservice/service/refund/eligibility?tripRef=Q221104594080";
 	String urlIR_Non_Eligibility_RP = "/paymentservice/service/refund/eligibility?tripRef=Q221028592234";
-
+	String urlIR_Eligibility_Cardless_EMI = "/paymentservice/service/refund/eligibility?tripRef=Q221201604628";
+	String urlIR_Eligibility_PayLater = "/paymentservice/service/refund/eligibility?tripRef=Q221208608792";
 
 
 	String urlIR_Validate_VPA = "/paymentservice/ba/verify/Q211223200042";
@@ -407,9 +413,12 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 	String urlEndPoint_Wallet_RevertedPromo ="/payments/wallet/promo/reverted/amount/Q201124864780";
 	String urlEndPoint_Wallet_GetDeduction = "/payments/wallet/promo/deductions?tripRef=Q190702311622";
 	String urlEndPoint_Wallet_GetWallet_Trnx = "/payments/wallet/5153602/transactions?tripRef=Q1810310049&start=1&count=1000";
+	String urlEndPoint_Wallet_GetWallet_Details_UI = "/pay/wallet?userId=65236279&currency=INR";
+	String urlEndPoint_Wallet_GetWallet_Trnx_UI = "/pay/wallet/65236279/transactions?offset=1&size=10&currency=INR";
 	String urlEndPoint_Wallet_CASHBACK_DETAILS = "/payments/wallet/promo/13957750/promotions/5732312";
 	String urlEndPoint_Wallet_GETWALLET_ALL = "/payments/wallet/65179937/getWallet";
 	String urlEndPoint_Wallet_GETWALLET_INR = "/payments/wallet/fetch?userId=13957750&currency=INR";
+	String urlEndPoint_Wallet_GETWALLET_INR2 = "payments/wallet/65215483/transactions?currency=INR";
 	String urlEndPoint_Wallet_GETWALLET_V2_INR = "/payments/wallet/fetch/v2?userId=13957750&currency=INR";
 	String urlEndPoint_Wallet_CASHBACK_DETAILS14 = "";
 	String urlEndpoint_GVCreate= "/payments/gv/create";
@@ -711,6 +720,21 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 		headers.put("x-action", "UPDATE");	
 		return headers;
 	}
+
+	public HashMap<String, Object> headersForms_Wallet_UI(){
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("Accept", "application/json"); //5656565656
+		headers.put("Cookie", "ct-auth=xSks0WubTfx4Is3l7ZPZhLRSQTozodddiPox%2FFq2k6aZWjIgPqUI9%2F0yRaG%2Fi8JPt3THK21PZyGXoShVpB1iXE3BWBO3IJ5SrkI6kWTO3wg966y96jyt3h4QR0TgkBuxPUMU6b83btjajC8%2Bw%2F7HJBMl09sXucyTy3KK3mElhiY%3D");
+		return headers;
+	}
+
+	public HashMap<String, Object> headersForms_UI_Wallet_Cookie(){
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("Accept", "application/json");
+		headers.put("Cookie", "ct-auth=cvlYMINwAZRln63Yy%2FxTL568HM%2FlJBdzmm2h%2BU3Y05v2zwkQAPQe5Vd9D3VsgwyxL5w%2BfbtxsaW%2BbtdHrc%2BWsScG24OcK1SPJLWfpxAcYSUZ%2BDPJWIpT6PozXecbENnMvrpx3EcElSt8IxAixuU3Wx1urIG%2BJIXXp1dllo9UaxruwmmL4%2Fl%2BZmNgLOEFFQEHIBmo7ujFj4IR251LE1REPIl0hD%2BOGrq3TzykZUx%2BW0wEWrlcwiuBMyRp%2FjW2ZkBtsCH0dQMu8eNGLFfYURLEzxWteZk4kgVCTdhW8xwshOSRXS16FEAEuu%2F0%2BY4jXzpsD%2BBMWmzm2HjhJN3LrqPmJl%2BPb%2BtRIDeSJJ8B3pwqUtovU9euu0zuyj4pUK7H7Exfn3xsb72VU1fgZGUiAqGNjlr4i1%2BstEIodrXyWaIerOwsliKRdHKdB04q2m8OnZXTH2Z4tsAXBZj47Mu0vEuTRiAH0Rp2vtFkuXiol%2Fc%2BBJD4qswYyk0D6GkqDc%2FryiGzrriKvMSxzl8ZjdP0xHKTJjDfE5MjfU2lez8Mc21eeVj4yG9Y5gNNb6MvOPOrwEDI%2FRkVukgyqFl7OJk6DNu3G%2FLNPaqxgHPoG%2Fb4MQRnyZVI9iJH8UXIBBVrkHxP0uq0KBIFqMINY881df17xzwxrP0wDfAjdIJWLC650cfnf3%2BZ8zInGGcv79tFePFr5UA0tMv7Ci9nlUUKOJuJ4P3asT%2F%2Fu6AA%2BWLog2uJ%2FY2YYqgP%2FV7P4M74%2FvZ8fgql9D8g8%2F%2F1HM9Q%2BhZwENf6sKaAU%2FkxX%2BEKCRjKf8O%2BTNUSfsuE8coUcku3YuzCaIBgM2P8Rb8sKLbSBDeyofU70uSSaPMHgCym1TRbOwe4kMI3sC%2BxNY2SNpWEXNL%2B8qnJRC3izkqTBVx8eUSmCMEROlIxUX3V3khzmrd4HsCxqs0QPfyV377s8BRI51ht8oyW%2FzMrKpsxMHx8GV2Wrz8SXH%2BJ4L7k2DAeId6CWMfLGEE76GmqZ7oItSHv5%2F5UO3DEKBLdNgJ6hCK8jDxka%2F19EfaquJ%2FSxkyRZqMldWabWMA8RFSkXBqexHhTLDzmgQVTrTtMzlNFPfPmCegfz2VJg5y%2Bh8C6ZuqGprbV9JxNvdZWfas1vK%2BlbxoIkTOxeVMYoTzx%2BRDEyo9MjCQlcI5K%2BXqy75cBiovhF%2FKcf00zq%2B4kHLbNgQWHsPxU03SG2PnNTTKvShsNtANjRoE31K8EhQCUxAy0RKUSZCsC9rC3NzCyiZQ8OMPyxuJe8aT3kw6b6Vr5W6ItDyb4p912T8y4Fmb%2BkWvTbYc3Gs6r0RfKxtBdJ7XZo8xSwXirQmVaFYJIN9SOYihXgvoe0tBEocfUYUUWT%2B21WjlsPFl3GqgqbnhOpQnwu4MuBFLJXP%2FGwt5epuyxkim5u3c1uLqpdlcKqTiJklaTM5EIWuxV%2BaxHXwh%2BX0x6JaS%2BJVI%2FViRLDjDvQxUjikuijAL%2BCIze%2BR0CONXQZwkQogOIBXtmmoU7CXBduaNzsLsrm0xPzTZjAvB1t1bEN8iIA9Fm3g2V6y48Pcv105pi%2F0nOxsa88OJMSX3bnJI%2F3pgvKn2lnUXPLJ7y2Eu5XYFyvRuvn8a18e%2B8QW%2BDTpp4h6bdpj%2FZ9V%2FRA%2BDYvT8d%2B0SoNyAooj0VtvXSMlfWLLScXRLU%2BZaNO4FeNzu9omIl8wyeWqwu8rZig4caleCF1rb7B0cXdHlu22SFZBRDdm61ES55aWujhpwye7ll1z5%2BCvKfEGNj16XgE8nl%2BknQOMmlSXdgI%2BJFHEAfZDmnjfzC2WV5xvuKqSmWWXeio0nh2R21fe8daY7Ojjo6NrqXDwQ6jZAjW349e5ztY0ocyXbt3mUSAALPlSZH315et1tPeY6CAhN3g8jTi%2B5T067h1hS925YjG5GVWQEGPrqiotCIMZf53SSRFJifXJIaxURXAN73vVKQpNfYJD6mKYvS77BJ1HSahQWO8rzmGvOJz6lU2vmvg5v2yYWzQbPfgX5sziMP%2Fp6at%2Fg5EUSUNbxqsajCjtC4Sy4Z%2FcEq0OVtCOVMb5LGLl%2B%2FaRcmVwIivbXgF6WJgGUyqQ%2FXYwgA%2Fd9fga3Wk9c01HYm8wnioO4gmHaHVqQNmgGYeBrRXYvmI7n0EifouUynX87T2pv9AtznT%2BGRE6YbjHJMx5nzalaKkdHPfrRRUzMejSVax39JguN5OkUi2cnUbya%2FFSiCtp%2By8Ubg5ROodIVxVaYSNtFg8%2FGBOW6RnvXjvo2J6aYJW4Dwa4%2Bqo2J56VlK7p5gikInWq5kpbwMOT5ewyDoK4sB7QCaCOGKCAw9mQlGqrQU5MUNpJgjO%2Bvcj2nSPdpoA%2BndoEUb2M%2F1KyL5QnnmD2uv");
+
+		return headers;
+	}
 	
 	public HashMap<String, Object> headersForms_Promo_Activate(){		
 		HashMap<String, Object> headers = new HashMap<>();
@@ -878,6 +902,15 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 			Reporter.log(url_QA2);
 			url= urlHi5_Fetch_WalletTnx;
 		}
+		else if(payType.equalsIgnoreCase("MIS_Report")) {
+			RestAssured.baseURI =urlReporting;
+			Reporter.log(urlReporting);
+			if(payType1.equalsIgnoreCase("PL")) {
+				url = urlMIS_Report_PL;
+			}
+		}
+
+
 		else if(payType.equalsIgnoreCase("NoCostEMI_Offers")) {
 			RestAssured.baseURI =urlPay;
 			Reporter.log(urlPay);
@@ -965,9 +998,24 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 		else if(payType.equalsIgnoreCase("IR_Eligibility_CC")) {
 
 			RestAssured.baseURI =urlPay;
-			Reporter.log(urlPay);			
+			Reporter.log(urlPay);
 			url = urlIR_Eligibility_CC;
 		}
+		else if(payType.equalsIgnoreCase("IR_Eligibility_Cardless_EMI")) {
+
+			RestAssured.baseURI =urlPay;
+			Reporter.log(urlPay);
+			url = urlIR_Eligibility_Cardless_EMI;
+		}
+		else if(payType.equalsIgnoreCase("IR_Eligibility_PayLater")) {
+
+			RestAssured.baseURI =urlPay;
+			Reporter.log(urlPay);
+			url = urlIR_Eligibility_PayLater;
+		}
+
+
+
 		else if(payType.equalsIgnoreCase("IR_Eligibility_DC")) {
 
 			RestAssured.baseURI =urlPay;
@@ -1331,6 +1379,14 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 			params = Params_IR_Create_Refund4+getRandomNumber()+Params_IR_Create_Refund3;
 			url= urlIR_Create_Refund;
 		}
+
+		else if(payType.equalsIgnoreCase("IR_Create_Refund_Wallet_PL")) {
+
+			headers=headersForms_IR();
+			params = Params_IR_Create_Refund6+getRandomNumber()+Params_IR_Create_Refund3;
+			url= urlIR_Create_Refund;
+		}
+
 		else if(payType.equalsIgnoreCase("IR_Create_Refund_Normal")) {
 
 			headers=headersForms_IR();
@@ -1860,14 +1916,13 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 
 		HashMap<String, Object> headersFormsPromoUpdate = new HashMap<>();
 		headersFormsPromoUpdate= headersForms_Promo_Update();
-		
+
+		HashMap<String, Object> headersFormsWalletUI = new HashMap<>();
+		headersFormsWalletUI= headersForms_Wallet_UI();
+
 		HashMap<String, Object> headersFormsPromoActivate = new HashMap<>();
 		headersFormsPromoActivate= headersForms_Promo_Activate();
-		
-		
-		
-		
-		
+
 		Response request = null;	 
 		if(payType.equalsIgnoreCase("PROMOUSED")) {
 			url= urlEndPoint_Wallet_PromoUsed;
@@ -1955,6 +2010,26 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 					headers(headers).
 					get(url);
 		}
+
+		else if(payType.equalsIgnoreCase("GETWALLET_Details_UI")) {
+			RestAssured.baseURI =url_QA2;
+			url= urlEndPoint_Wallet_GetWallet_Details_UI;
+			request = RestAssured.given().
+					when().
+					log().all().
+					headers(headersFormsWalletUI).
+					get(url);
+		}
+
+		else if(payType.equalsIgnoreCase("GETWALLET_Trnx_UI")) {
+			RestAssured.baseURI =url_QA2;
+			url= urlEndPoint_Wallet_GetWallet_Trnx_UI;
+			request = RestAssured.given().
+					when().
+					log().all().
+					headers(headersFormsWalletUI).
+					get(url);
+		}
 		else if(payType.equalsIgnoreCase("CASHBACK_DETAILS")) {
 			url= urlEndPoint_Wallet_CASHBACK_DETAILS;
 			request = RestAssured.given().
@@ -1973,6 +2048,15 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 		}
 		else if(payType.equalsIgnoreCase("GETWALLET_INR")) {
 			url= urlEndPoint_Wallet_GETWALLET_INR;
+			Reporter.log(url);
+			request = RestAssured.given().
+					when().
+					log().all().
+					headers(headers).
+					get(url);
+		}
+		else if(payType.equalsIgnoreCase("GETWALLET_INR2")) {
+			url= urlEndPoint_Wallet_GETWALLET_INR2;
 			Reporter.log(url);
 			request = RestAssured.given().
 					when().
@@ -2030,6 +2114,7 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 
 		return request;
 	}
+
 
 	public Response prodAPIs(String payType, String payType1){
 		String url = null;
@@ -2433,6 +2518,21 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 				Assert.assertTrue(false);
 			}
 		}
+
+
+
+		if(payType.equalsIgnoreCase("MIS_Report_PL")) {
+			String credential_name = jsonPathEvaluator.getString("credential_name");
+			String txnID = jsonPathEvaluator.getString("gateway_transaction_id");
+			Reporter.log("credential_name " +credential_name);
+			Reporter.log("txnID " +txnID);
+			if(!credential_name.equals("RAZORPAY_PAYLATER_TEST")) {
+				Assert.assertTrue(false);
+			}if(!txnID.equals("pay_KpLl9BERBOynqh")) {
+				Assert.assertTrue(false);
+			}
+		}
+
 		if(payType.equalsIgnoreCase("Hi5_GetTrnx")) {
 			if(!(resp.body().asString().contains("Q221028592282"))){
 				Assert.assertTrue(false);
@@ -2451,6 +2551,28 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 			}if(!description.equals("Coins held successfully")) {
 				Assert.assertTrue(false);
 			}
+		}
+
+
+		if(payType.equalsIgnoreCase("GETWALLET_Details_UI")) {
+
+			JsonPath j = new JsonPath(resp.asString());
+			String C = j.getString("walletList.CREDIT.balance");
+			String R = j.getString("walletList.REWARD.balance");
+			String CW = j.getString("walletList.CREDIT.walletNumber");
+			String RW = j.getString("walletList.REWARD.walletNumber");
+			String B = j.getString("balance");
+			if(!CW.equals("7008000020000068")||!RW.equals("3000331040001015")||!C.equals("24274.0")||!R.equals("100.0")||!B.equals("24374.0")) {
+				Assert.assertTrue(false);
+			}
+		}
+
+		if(payType.equalsIgnoreCase("GETWALLET_Trnx_UI")) {
+			resp.then().assertThat().body("walletType[0]", equalTo("CREDIT"))
+			.assertThat().body("trip-details[0]", equalTo("Mumbai to New Delhi"))
+			.assertThat().body("id[0]", equalTo(7097526))
+			.assertThat().body("walletType[4]", equalTo("REWARD"))
+			.assertThat().body("date[4]", equalTo("13-DEC-2022"));
 		}
 
 		else if(payType.equalsIgnoreCase("SuperCoins_OTPLess_Unhold")) {
@@ -2519,7 +2641,19 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 		//	if(!(resp.body().asString().contains("Refund Partially Initiated"))){
 				
 			if(!(resp.body().asString().contains("Refund Partially Initiated"))){
-					Assert.assertTrue(false);
+					//Assert.assertTrue(false);
+			}
+			if(!(resp.body().asString().contains("Refund Partially Initiated"))){
+				Assert.assertTrue(false);
+			}
+		}
+
+
+		else if(payType.equalsIgnoreCase("IR_Create_Refund_Normal")) {
+			//	if(!(resp.body().asString().contains("Refund Partially Initiated"))){
+
+			if(!(resp.body().asString().contains("Refund Initiated"))){
+				Assert.assertTrue(false);
 			}
 		}
 		else if(payType.equalsIgnoreCase("IR_Fetch_Cancel_Details_CancelTnx")) {
@@ -3760,7 +3894,14 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 				Reporter.log("description is : "+id);
 				Assert.assertTrue(false);
 			}*/
-		}	
+		}
+		else if (payType.equalsIgnoreCase("wallet_GETWALLET_INR2")) {
+
+			if(!(resp.asString().contains("Q221109595168"))&&(resp.asString().contains("CREDIT"))) {
+				Reporter.log("Credit wallet");
+				Assert.assertTrue(false);
+			}
+		}
 		else if (payType.equalsIgnoreCase("wallet_GETWALLET_INR")) {
 			String walletNumber = jsonPathEvaluator.getString("walletNumber");
 			String id = jsonPathEvaluator.getString("id");

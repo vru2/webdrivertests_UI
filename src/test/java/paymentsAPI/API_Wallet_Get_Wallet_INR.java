@@ -15,5 +15,21 @@ public class API_Wallet_Get_Wallet_INR extends API_PaymentCommon1
 		resp = rearchWallet("GETWALLET_INR","");	
 		validation("wallet_GETWALLET_INR", resp);
 		}
-	
+
+
+	@Test
+	public void Wallet_GETWALLET_New()  {
+		Response resp ;
+		resp = rearchWallet("GETWALLET_INR2","");
+		validation("wallet_GETWALLET_INR2", resp);
+	}
+
+
+	@Test
+	public void Wallet_GETWALLET_New112()  {
+		Response resp ;
+		resp = rearchWallet("GETWALLET_INR2","");
+		validation("wallet_GETWALLET_INR2", resp);
+	}
+
 }

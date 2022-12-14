@@ -26,7 +26,26 @@
     </classes>
 </test>
 
-<test name="Supercoins" preserve-order="true" parallel="true">
+
+    <test name="MIS Report" preserve-order="true" parallel="true">
+        <classes>
+            <class name="test.java.paymentsAPI.API_MIS_Report"/>
+        </classes>
+    </test>
+
+    <test name="PayLater CardlessEMI" preserve-order="true" parallel="true">
+        <classes>
+            <class name="test.java.paymentsAPI.API_PayLater_CardLess_EMI"/>
+        </classes>
+    </test>
+
+    <test name="Wallet SCLP" preserve-order="true" parallel="true">
+        <classes>
+            <class name="test.java.paymentsAPI.API_Wallet_SCLP"/>
+        </classes>
+    </test>
+
+    <test name="Supercoins" preserve-order="true" parallel="true">
     <classes>
       <class name="test.java.paymentsAPI.API_SuperCoins_CheckBalance"/>
       <class name="test.java.paymentsAPI.API_SuperCoins_CheckEarnPoints"/>

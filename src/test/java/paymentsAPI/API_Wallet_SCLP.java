@@ -3,6 +3,7 @@
 
 package test.java.paymentsAPI;
 
+import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
@@ -26,4 +27,19 @@ public class API_Wallet_SCLP extends API_PaymentCommon1
 		resp = rearchWallet("GETWALLET_Trnx_UI","");
 		validation("GETWALLET_Trnx_UI", resp);
 	}
+
+	@Test
+	public void Wallet_GET_RateRule_SCLP_CLEMI()  {
+		Response resp ;
+		resp = payGet("GET_Raterule_CLEMI","");
+		validation("GET_Raterule_CLEMI", resp);
+	}
+
+	@Test
+	public void Wallet_GET_RateRule_SCLP_PL()  {
+		Response resp ;
+		resp = payGet("GET_Raterule_PL","");
+		validation("GET_Raterule_PL", resp);
+	}
+
 }

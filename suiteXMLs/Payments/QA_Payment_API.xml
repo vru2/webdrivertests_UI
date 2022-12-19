@@ -25,7 +25,7 @@
       <class name="test.java.paymentsAPI.API_IR_Create_Refund"/>
     </classes>
 </test>
-    
+
     <test name="MIS Report Paytypes" preserve-order="true" parallel="true">
         <classes>
             <class name="test.java.paymentsAPI.API_MIS_Report"/>

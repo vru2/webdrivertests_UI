@@ -9,10 +9,18 @@ import org.testng.annotations.Test;
 public class API_PayLater_CardLess_EMI extends API_PaymentCommon1
 {
 	@Test
-	public void PayLater_1()  {
-		Response resp ;		
-		resp = payGet("Hi_5_get_walletTnx","");	
-		validation("Hi_5_get_walletTnx", resp);
+	public void PayLater_Raterule_CLEMI()  {
+		Response resp ;
+		resp = payGet("GET_Raterule_CLEMI","");
+		validation("GET_Raterule_CLEMI", resp);
 	}
+	@Test
+	public void PayLater_Raterule_PL()  {
+		Response resp ;
+		resp = payGet("GET_Raterule_PL","");
+		validation("GET_Raterule_PL", resp);
+	}
+
+
 	
 }

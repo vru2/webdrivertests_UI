@@ -529,6 +529,7 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 
 	String url_Reportingendpoint ="/paymentservice/service/air/mis/detail?tripRef=Q200109687244&paymentType=CC&reqFor=refund";
 	String url_ReportingPaymentID ="/paymentservice/payments/43911126";
+	String url_Reporting_Refund_Pending_Download ="/paymentservice/script/refund/details/download?startDate=07/11/2022&endDate=09/11/2022";
 	String url_ReportingRefund_StatusReport ="/paymentservice/script/refund/details?status=D&startDate=05/01/2021&endDate=06/01/2021";
 	
 	String url_ReportingTS_V3 ="/trips?tripID=Q191014530470&refundRequired=true&historyRequired=true&paymentsRequired=true&apiVersion=V3";
@@ -2711,6 +2712,11 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 		JsonPath jsonPathEvaluator = resp.jsonPath();
 		if(!(payType.equals("WALLET_CREATE")||(payType.equals("IR_Save_VPA")))) {
 			if (statusCode != 200) {
+				Assert.assertTrue(false);
+			}
+		}
+		if(payType.equals("Reporting_Pending_Refunds")) {
+			if(!(resp.body().asString().contains("Q220705556500"))){
 				Assert.assertTrue(false);
 			}
 		}
@@ -5668,6 +5674,14 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 			response = RestAssured.given().
 					when().log().all().headers(headers).get(endPoint);
 		}
+		else if(payType.equalsIgnoreCase("Reporting_Pending_Refunds")) {
+			endPoint = url_Reporting_Refund_Pending_Download;
+
+			Reporter.log(endPoint);
+			response = RestAssured.given().
+					when().log().all().headers(headers).get(endPoint);
+		}
+
 
 		else if(payType.equalsIgnoreCase("Reporting_Disabled_Refunds")) {
 			RestAssured.baseURI =urlReporting;

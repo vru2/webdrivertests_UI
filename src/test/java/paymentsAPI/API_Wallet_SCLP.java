@@ -28,18 +28,4 @@ public class API_Wallet_SCLP extends API_PaymentCommon1
 		validation("GETWALLET_Trnx_UI", resp);
 	}
 
-	@Test
-	public void Wallet_GET_RateRule_SCLP_CLEMI()  {
-		Response resp ;
-		resp = payGet("GET_Raterule_CLEMI","");
-		validation("GET_Raterule_CLEMI", resp);
-	}
-
-	@Test
-	public void Wallet_GET_RateRule_SCLP_PL()  {
-		Response resp ;
-		resp = payGet("GET_Raterule_PL","");
-		validation("GET_Raterule_PL", resp);
-	}
-
 }

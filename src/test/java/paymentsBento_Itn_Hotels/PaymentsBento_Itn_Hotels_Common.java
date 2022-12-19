@@ -107,6 +107,7 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		if(textPresent(driver, "Sorry our servers are stumped with your request", 1)) {
 			refreshPage(driver);
 		}
+		Thread.sleep(5000);
 		elementPresent_log(driver, getObjectPayment("Hotel_Details_Modify_Btn"), "Modify Button", 30);
 		safeClick(driver, getObjectPayment("Hotel_Details_SelectRoom_Btn"));
 		/*elementPresent_log(driver, getObjectPayment("Hotel_Details_Book_Btn"), "Book Button", 20);

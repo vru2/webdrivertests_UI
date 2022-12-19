@@ -230,19 +230,22 @@
     </classes>
 </test>
 
+<!--
+
 <test name="PayBack" preserve-order="true" parallel="true">
     <classes>
-    <!--   <class name="test.java.paymentsAPI.API_RewardPayback"/>  -->
+       <class name="test.java.paymentsAPI.API_RewardPayback"/>
     </classes>
 </test>
-
+-->
+<!--
 <test name="Refunds redis enque" preserve-order="true" parallel="true">
     <classes>
     
-      <!-- <class name="test.java.paymentsAPI.API_Refunds_Enque_redis"/>  -->
-     <!--  <class name="test.java.paymentsAPI.API_Refunds"/>  -->
+       <class name="test.java.paymentsAPI.API_Refunds_Enque_redis"/>
+       <class name="test.java.paymentsAPI.API_Refunds"/>
      </classes>
-</test>
+</test>-->
 
 <test name="Stored Card" preserve-order="true" parallel="true">
     <classes>

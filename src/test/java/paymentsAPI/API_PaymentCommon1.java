@@ -47,7 +47,7 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 
 	String urlReporting_TS = "http://172.17.51.86:8282";
 	String urlReporting = "http://172.29.20.73:9001";//http://paymentservicereporting.cltp.com:9001";
-	String urlReportingTS ="http://172.17.51.86:9031";
+	String urlReportingTS ="http://172.29.8.215:9001";
 	String url_Binmanager = "https://qa2new.cleartrip.com/binmanager/v1/payment/cards?bin=534977";
 	String url_QA2 = "https://qa2new.cleartrip.com/";
 	public String url_TestApp = "";
@@ -198,7 +198,7 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 	String ParamsSuperCoins_CheckEarnPoints = "{\"rewardsType\":\"SUPERCOINS\",\"rewardsRequestType\":\"EARN_CHECK\",\"trackId\":\"SAL1011122ghfj1\",\"amount\":2449,\"currency\":\"INR\",\"params\":{\"source\":\"MOBILE\",\"isPwa\":true,\"tripRef\":\"Q191014530821\"}}";
 
 	String ParamsSuperCoins_CreatePromo = "{\"user_id\":41649009,\"trip_ref\":\"";
-	String ParamsSuperCoins_CreatePromo1 = "\",\"type\":\"AIR_BOOKING\",\"promotions\":[{\"amount\":10,\"currency\":\"INR\",\"expiry_date\":\"11-12-2022\",\"trigger_date\":\"14-01-2022\",\"wallet\":\"SUPERCOINS\",\"mobile\":\"+917483912960\",\"email\":\"test@test.com\"}]}";
+	String ParamsSuperCoins_CreatePromo1 = "\",\"type\":\"AIR_BOOKING\",\"promotions\":[{\"amount\":10,\"currency\":\"INR\",\"expiry_date\":\"11-12-2023\",\"trigger_date\":\"14-01-2022\",\"wallet\":\"SUPERCOINS\",\"mobile\":\"+917483912960\",\"email\":\"test@test.com\"}]}";
 
 	String ParamsSuperCoins_UpdatePromo = "{\"amount\":20,\"currency\":\"INR\",\"expiry_date\":\"24-12-2021\",\"trigger_date\":\"";
 	String ParamsSuperCoins_UpdatePromo1 = "\",\"status\":\"ACTIVE\"}";
@@ -433,7 +433,7 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 	
 	String urlEndPoint_Wallet_RevertedPromo ="/payments/wallet/promo/reverted/amount/Q201124864780";
 	String urlEndPoint_Wallet_GetDeduction = "/payments/wallet/promo/deductions?tripRef=Q190702311622";
-	String urlEndPoint_Wallet_GetWallet_Trnx = "/payments/wallet/5153602/transactions?tripRef=Q1810310049&start=1&count=1000";
+	String urlEndPoint_Wallet_GetWallet_Trnx = "/payments/wallet/65215483/transactions?currency=INR";
 	String urlEndPoint_Wallet_GetWallet_Details_UI = "/pay/wallet?userId=65236279&currency=INR";
 	String urlEndPoint_Wallet_GetWallet_Trnx_UI = "/pay/wallet/65236279/transactions?offset=1&size=10&currency=INR";
 	String urlEndPoint_Wallet_CASHBACK_DETAILS = "/payments/wallet/promo/13957750/promotions/5732312";
@@ -2800,7 +2800,7 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 
 		else if(payType.equalsIgnoreCase("NoCostEMI_Offers")) {
 
-			if(!(resp.body().asString().contains("CT_NOCOST_EMI_PLAN_1_6_3.96"))){
+			if(!(resp.body().asString().contains("CT_NOCOST_EMI_PLAN_1_3_2.45"))){
 				Assert.assertTrue(false);
 			}
 		}
@@ -4047,8 +4047,8 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 		}
 		else if (payType.equalsIgnoreCase("wallet_GETWALLET_Trnx")) {
 
-			if(!resp.body().asString().contains("Q1810310049")) {
-				Reporter.log("Q1810310049 is not displayed ");
+			if(!resp.body().asString().contains("Q221213613264")) {
+				Reporter.log("Q221213613264 is not displayed ");
 				Assert.assertTrue(false);
 			}
 		}

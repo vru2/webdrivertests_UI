@@ -10,7 +10,7 @@ import test.java.paymentsUI_Air.PaymentUI_Common;
 public class API_EMI_Fetch extends PaymentUI_Common
 {
 	@Test
-	public void EMFetch() throws Exception {
+	public void EMIFetch() throws Exception {
 		String tripRef = getNewDate_TripID();
 		resp = payUIget("Air", "", tripRef);
 		Response resp ;		

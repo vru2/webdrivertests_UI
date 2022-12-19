@@ -11,12 +11,12 @@ public class API_ROR_Reads extends API_PaymentCommon1
 {
 
 	
-	@Test(alwaysRun=true)
+	/*@Test(alwaysRun=true)
 	public void ROR_WalletFetch() throws Exception{
 		Response resp ;		
 		resp = payGet1("ROR_WalletGet_Reads","");	
 		validation("ROR_WalletGet_Reads", resp); 
-	}
+	}*/
 	
 	@Test(alwaysRun=true)
 	public void ROR_MultiSearch_Reads() throws Exception{
@@ -38,13 +38,13 @@ public class API_ROR_Reads extends API_PaymentCommon1
 		resp = payGet1("ROR_WalletTrnx_Reads","");	
 		validation("ROR_WalletTrnx_Reads", resp); 
 	}
-		
+		/*
 	@Test(alwaysRun=true)
 	public void ROR_WalletGet() throws Exception{
 		Response resp ;		
 		resp = payGet1("ROR_WalletGet_Reads","");	
 		validation("ROR_WalletGet_Reads", resp); 
-	}
+	}*/
 	
 	@Test(alwaysRun=true)
 	public void ROR_GV_Details() throws Exception{

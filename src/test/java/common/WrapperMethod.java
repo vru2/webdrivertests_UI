@@ -149,7 +149,7 @@ public class WrapperMethod extends CommonUtil {
 		cap.setCapability("goog:chromeOptions", options);
 		return cap;
 	}
-	
+
 
 	public WebDriver getMobileDriver(WebDriver driver) throws IOException {
 
@@ -357,7 +357,7 @@ public class WrapperMethod extends CommonUtil {
 	public RemoteWebDriver getMobileDriver1(RemoteWebDriver driver) throws IOException, InterruptedException {
 		if (driver == null) {
 			if (common.value("mobilebrowser").equalsIgnoreCase("Chrome")
-					&& common.value("mode").equalsIgnoreCase("local")&&common.value("headlessbrowser").equalsIgnoreCase("true")) { 
+					&& common.value("mode").equalsIgnoreCase("local")&&common.value("headlessbrowser").equalsIgnoreCase("true")) {
 				File file = new File(".");
 				String filepath = file.getCanonicalPath() + "//exe//chromedriver.exe";
 				System.setProperty("webdriver.chrome.driver", filepath);
@@ -367,21 +367,21 @@ public class WrapperMethod extends CommonUtil {
 						"--user-agent=Mozilla/5.0 (iPhone; U; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5");
 
 				driver = new ChromeDriver(options);
-				
+
 				driver.manage().deleteAllCookies();
 				// driver.navigate().refresh();
 				// driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 				// driver.navigate().refresh();
 			}
-			
+
 			else if (common.value("mobilebrowser").equalsIgnoreCase("CHROME")
 					&& common.value("mode").equalsIgnoreCase("local") || common.value("mode").equalsIgnoreCase("Grid")) {
-			//	System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
-				
+				//	System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
+
 				File file = new File(".");
 				String filepath = file.getCanonicalPath() + "//exe//chromedriver.exe";
-				System.setProperty("webdriver.chrome.driver", filepath);			
-				
+				System.setProperty("webdriver.chrome.driver", filepath);
+
 				ChromeOptions options = new ChromeOptions();
 				options.addArguments(
 						"--user-agent=Mozilla/5.0 (iPhone; U; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5");
@@ -399,9 +399,9 @@ public class WrapperMethod extends CommonUtil {
 			} else {
 				File file = new File(".");
 				String filepath = file.getCanonicalPath() + "//exe//chromedriver_mac";
-				
+
 			}
-			
+
 
 			if (common.value("mobilebrowser").equalsIgnoreCase("firefox")
 					&& common.value("mode").equalsIgnoreCase("local")) {
@@ -890,7 +890,7 @@ public class WrapperMethod extends CommonUtil {
 			return false;
 		}
 	}
-	
+
 	public void safeClick_JS(RemoteWebDriver driver, By by) throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		WebElement we=driver.findElement(by);
@@ -904,7 +904,7 @@ public class WrapperMethod extends CommonUtil {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", we);
 		System.out.println("First element JS");*/
 		Thread.sleep(2000);
-		
+
 		driver.executeScript("return arguments[0].scrollIntoView();", we);
 		Thread.sleep(2000);
 		we.click();
@@ -1523,7 +1523,7 @@ public class WrapperMethod extends CommonUtil {
 		}
 
 	}
-	
+
 	public String getValue(RemoteWebDriver driver, By by) throws Exception {
 		elementVisible(driver, by, 5);
 		elementPresent(driver, by);
@@ -1620,7 +1620,7 @@ public class WrapperMethod extends CommonUtil {
 			Actions action = new Actions(driver);
 			WebElement we = driver.findElement(By.xpath(SelCarrier));
 			action.moveToElement(we).moveToElement(driver.findElement(By.xpath("//a[contains(text(),'Only')]")))
-			.click();
+					.click();
 			Thread.sleep(3000);
 		} else {
 			addLog(Carrier + " not displayed in the SRP");
@@ -1750,12 +1750,12 @@ public class WrapperMethod extends CommonUtil {
 				WebEle.click();
 				elementAvailable = true;
 				break;
-			}else {   
+			}else {
 				JavascriptExecutor jse = (JavascriptExecutor) driver;
-				jse.executeScript("window.scrollBy(0, 50)", "");		
+				jse.executeScript("window.scrollBy(0, 50)", "");
 
 			}
-		}			    	
+		}
 
 		if(!elementAvailable){
 			addLog(activityName + " : is not displayed in the List");
@@ -1785,7 +1785,7 @@ public class WrapperMethod extends CommonUtil {
 		//  addLog("Adding money into ctwallet for user : "+email,true);
 		driver.get(urlToAddCTWallentMoney);
 		addLog("Switching back to main chrome window...",true);
-		driver.switchTo().window(tabs.get(0)); // switch back to main screen 
+		driver.switchTo().window(tabs.get(0)); // switch back to main screen
 		Thread.sleep(3000);
 	}
 
@@ -1800,12 +1800,12 @@ public class WrapperMethod extends CommonUtil {
 		driver.get(Modal_URL);
 		driver.switchTo().window(tabs.get(1)).close();
 		driver.switchTo().window(tabs.get(0));
-		String  newUrl =Modal_URL;		
+		String  newUrl =Modal_URL;
 		String Host = common.value("host");
 		if(Host.equalsIgnoreCase("qa2")) {
-			newUrl = Modal_URL.replace("https://www.", "https://qa2.");	
-		}		
-		driver.get(newUrl);					
+			newUrl = Modal_URL.replace("https://www.", "https://qa2.");
+		}
+		driver.get(newUrl);
 	}
 
 }

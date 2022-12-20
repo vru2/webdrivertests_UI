@@ -249,7 +249,7 @@
 
 <test name="Stored Card" preserve-order="true" parallel="true">
     <classes>
-        <class name="test.java.paymentsAPI.API_storeCard"/>
+        <class name="test.java.paymentsAPI.API_storeCard"/>x
         <class name="test.java.paymentsAPI.API_Saved_PaymentModes_UI"/>
 
    </classes>

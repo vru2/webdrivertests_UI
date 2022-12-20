@@ -456,8 +456,10 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 	
 	
 	String urlCTPay = "https://qa2new.cleartrip.com";
-	
-	
+
+	String urlSavedPaymentModes_UI= "payment/saved/payments/mode/get/65236280"; //5656565657
+
+
 	String urlCTPay_Get ="/paymentservice/ct/v2/getCtPaymentUrl";
 	String urlCTPay_ADD ="/paymentservice/ct/v2/addClient";
 	String urlCTPay_Status ="/paymentservice/ct/v2/T2021069300/status";
@@ -884,8 +886,10 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 
 	public HashMap<String, Object> SavedCards(){
 		HashMap<String, Object> headers = new HashMap<>();
-		headers.put("Content-Type", "application/json");
-		headers.put("Cookie", "k0vtZH7lNYhNfIZZf7M2vZV9CFS5Hw0QJOqhawnolfdVHoN0hhMU%2Bp113JcLAuGLa%2FyldSbPbulFBcxN81fOC3YdPCCSEDhcTYA%2FnwxDkUTJ52BnHV5hJQTVvVEgXsfQ2X9NolvNT0ekBqN41JxrlUYWd%2B0WvczLP9yUZkhnFoV4o7814vUcceVwR0UqXhLg3Qid6rwwXGU3mGb2GL67Xg%3D%3D");
+		//headers.put("Content-Type", "application/json");
+		//headers.put("ct-auth", "0dLJv9ljuebC7zmtbuIUMnoNEawA%2BTkywGgYinYAgAjN3R7SkF4o6%2FSUnv5DuNa7t3THK21PZyGXoShVpB1iXOhQR5gUiv5XCwmTDvwPqehabhTrwJ%2FMVeB9HRZETygtTMhGff980MrbPTJfxNwnsdfycQDMejsyL7IyXjf6h8k%3D");
+		//headers.put("Cookie: ct-auth=0dLJv9ljuebC7zmtbuIUMnoNEawA%2BTkywGgYinYAgAjN3R7SkF4o6%2FSUnv5DuNa7t3THK21PZyGXoShVpB1iXOhQR5gUiv5XCwmTDvwPqehabhTrwJ%2FMVeB9HRZETygtTMhGff980MrbPTJfxNwnsdfycQDMejsyL7IyXjf6h8k%3D");
+		//headers.put("ct-auth", "0dLJv9ljuebC7zmtbuIUMnoNEawA%2BTkywGgYinYAgAjN3R7SkF4o6%2FSUnv5DuNa7t3THK21PZyGXoShVpB1iXOhQR5gUiv5XCwmTDvwPqehabhTrwJ%2FMVeB9HRZETygtTMhGff980MrbPTJfxNwnsdfycQDMejsyL7IyXjf6h8k%3D");
 		return headers;
 	}
 
@@ -1174,11 +1178,21 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 			url= urlSuperCoins_CheckEarnPoints;
 			Reporter.log(urlRewards+url);
 		}
+		else if(payType.equalsIgnoreCase("Saved_PaymentModes")) {
+
+			RestAssured.baseURI =url_QA2;
+			url= urlSavedPaymentModes_UI;
+
+			headers=SavedCards();
+			System.out.println(url_QA2+url);
+					System.out.println(headers);
+			Reporter.log(url_QA2+url);
+		}
 		else if(payType.equalsIgnoreCase("SavedCards")) {
 
 			RestAssured.baseURI =urlPay;
 			HashMap<String, Object> headers1 = new HashMap<>();
-			headers1=SavedCards();
+			headers=SavedCards();
 			url= urlSavedCards;
 			Reporter.log(urlPay+url);
 			System.out.println(urlPay+url);
@@ -2196,6 +2210,22 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 					cookie("ct-auth", "EVefRmmOWPSC8c9sPGbZGwZMgfl%2FLjP6yfQQAwhPONaOOIjRmfrMO5ubb5%2FGLWzguQmW3NiUZma8q2lELnUuyC3uAF5DaTQONdJlLn%2FO2me%2FiLCzDjUE8Mm7nMigogz0z84lf%2Bili9Xzawt1KbN%2FMNpQDroZvb3Q7ub%2BLj1YfofQs%2BDG9mD5DXvLFNSWqYz93GfvGpnfyFmIRy226HjYgQ%3D%3D").
 					get(url);
 		}
+		else if(payType.equalsIgnoreCase("Saved_PaymentModes")) {
+
+
+			RestAssured.baseURI =url_QA2;
+			url= urlSavedPaymentModes_UI;
+
+			System.out.println(url_QA2+url);
+			System.out.println(headers);
+			Reporter.log(url_QA2+url);
+			request = RestAssured.given().
+					when().
+					log().all().
+					headers(headers).
+					cookie("ct-auth", "0dLJv9ljuebC7zmtbuIUMnoNEawA%2BTkywGgYinYAgAjN3R7SkF4o6%2FSUnv5DuNa7t3THK21PZyGXoShVpB1iXOhQR5gUiv5XCwmTDvwPqehabhTrwJ%2FMVeB9HRZETygtTMhGff980MrbPTJfxNwnsdfycQDMejsyL7IyXjf6h8k%3D").
+					get(url);
+		}
 
 		Reporter.log(urlWallet+url);
 		Reporter.log("Params : "+params);
@@ -2717,6 +2747,16 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 		}
 		if(payType.equals("Reporting_Pending_Refunds")) {
 			if(!(resp.body().asString().contains("Q220705556500"))){
+				Assert.assertTrue(false);
+			}
+		}
+		if(payType.equals("Saved_PaymentModes")) {
+			JsonPath j = new JsonPath(resp.asString());
+			String Cards = j.getString("stored_cards.number");
+			String VPA = j.getString("stored_vpa.vpa");
+			if (!Cards.contains("XXXXXXXXXXXX3216")  || !Cards.contains("XXXXXXXXXXXX7777") ) {
+				Assert.assertTrue(false);
+			}if (!VPA.contains("5656565657@ybl")  || !VPA.contains("5656565656@ybl") ) {
 				Assert.assertTrue(false);
 			}
 		}

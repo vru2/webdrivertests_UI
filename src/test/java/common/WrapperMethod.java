@@ -1646,7 +1646,7 @@ public class WrapperMethod extends CommonUtil {
 			}
 		} else {
 			// Browser version for Firefox and Chrome
-			browser_version = cap.getVersion();// .split(".")[0];
+			//browser_version = cap.getVersion();// .split(".")[0];
 		}
 		String browserversion = browser_version.substring(0, browser_version.indexOf("."));
 		return browsername + " " + browserversion;

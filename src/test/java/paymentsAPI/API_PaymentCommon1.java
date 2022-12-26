@@ -3286,11 +3286,14 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 		else if(payType.equalsIgnoreCase("GETWALLET_V2_INR")) {
 			String wallet_number = jsonPathEvaluator.getString("wallet_number");
 			String id = jsonPathEvaluator.getString("id");
-			if(!wallet_number.equalsIgnoreCase("3000331040000001")) {
+
+			//if(!wallet_number.equalsIgnoreCase("7008000020000038")) {
+			if(!resp.body().asString().contains("7008000020000038")){
+
 				Reporter.log("transactionType is : "+wallet_number);
 				Assert.assertTrue(false);
 			}
-			if(!id.equalsIgnoreCase("5153572")) {
+			if(!resp.body().asString().contains("5153572")) {
 				Reporter.log("description is : "+id);
 				Assert.assertTrue(false);
 			}
@@ -4148,7 +4151,7 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 		}
 		else if (payType.equalsIgnoreCase("wallet_GETWALLET_INR2")) {
 
-			if(!(resp.asString().contains("Q221109595168"))&&(resp.asString().contains("CREDIT"))) {
+			if(!(resp.asString().contains("Q221219617232"))&&(resp.asString().contains("CREDIT"))) {
 				Reporter.log("Credit wallet");
 				Assert.assertTrue(false);
 			}

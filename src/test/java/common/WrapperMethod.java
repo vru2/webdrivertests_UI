@@ -18,21 +18,12 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Capabilities;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.Platform;
-import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -94,10 +85,13 @@ public class WrapperMethod extends CommonUtil {
 		File file = new File(".");
 		String filepath =file.getCanonicalPath()+"\\exe\\chromedriver.exe";
 		prefs.put("profile.default_content_settings.popups", 0);
-		options.setExperimentalOption("prefs", prefs);
+		options.setExperimentalOption("prefs", prefs);/*
 		DesiredCapabilities cap = DesiredCapabilities.chrome();
-		cap.setCapability(ChromeOptions.CAPABILITY, options);
-		return cap;
+		cap.setCapability(ChromeOptions.CAPABILITY, options);*/
+		DesiredCapabilities capabilities = new DesiredCapabilities();
+		capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+
+		return capabilities;
 	}
 
 	public DesiredCapabilities createHeadlessChrome() throws IOException {
@@ -194,7 +188,7 @@ public class WrapperMethod extends CommonUtil {
 	}
 
 
-	public RemoteWebDriver getDriver(RemoteWebDriver driver) throws IOException, InterruptedException {
+	public RemoteWebDriver getDriver_OLD(RemoteWebDriver driver) throws IOException, InterruptedException {
 		if (driver == null) {
 			if (common.value("browser").equalsIgnoreCase("IE") && common.value("mode").equalsIgnoreCase("local")) {
 				File file;
@@ -215,7 +209,9 @@ public class WrapperMethod extends CommonUtil {
 					File file = new File(".");
 					String filepath = file.getCanonicalPath() + "//exe//geckodriver.exe";
 					System.setProperty("webdriver.gecko.driver", filepath);
-				} else {
+				}
+
+				else {
 					File file = new File(".");
 					String filepath = file.getCanonicalPath() + "//exe//geckodriver";
 					System.setProperty("webdriver.gecko.driver", filepath);
@@ -272,6 +268,8 @@ public class WrapperMethod extends CommonUtil {
 					File file = new File(".");
 					String filepath = file.getCanonicalPath() + "//exe//chromedriver_mac";
 					System.setProperty("webdriver.chrome.driver", filepath);
+					System.setProperty("webdriver.chrome.args", "--disable-logging");
+					System.setProperty("webdriver.chrome.silentOutput", "true");
 				}
 				driver = new ChromeDriver(this.createChromeConfig());
 				// driver = new ChromeDriver();
@@ -286,9 +284,13 @@ public class WrapperMethod extends CommonUtil {
 					} else {
 						file = new File("exe\\IEDriverServer32.exe");
 					}
-					DesiredCapabilities capability = DesiredCapabilities.internetExplorer();
+
+					ChromeOptions capability = new ChromeOptions();
+					capability.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR,
+						UnexpectedAlertBehaviour.IGNORE);
+					/*DesiredCapabilities capability = DesiredCapabilities.internetExplorer();
 					capability.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,
-							true);
+							true);*/
 					System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
 					driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
 					driver.manage().timeouts().setScriptTimeout(100, TimeUnit.SECONDS);
@@ -336,8 +338,20 @@ public class WrapperMethod extends CommonUtil {
 		return driver;
 	}
 
+	public RemoteWebDriver getDriver(RemoteWebDriver driver) throws IOException, InterruptedException {
 
-	public RemoteWebDriver Chrome_Config(RemoteWebDriver driver) throws Exception {
+		File file = new File(".");
+		System.setProperty("webdriver.gecko.driver",file.getCanonicalPath() + "//exe//geckodriver" );
+		FirefoxOptions options = new FirefoxOptions()
+			//	.addPreference("--headless", 1)
+				.addPreference("browser.startup.page", 1)
+				.addPreference("browser.startup.homepage", "http://qa2new.cleartrip.com");
+		driver = new FirefoxDriver(options);
+		return driver;
+	}
+
+
+		public RemoteWebDriver Chrome_Config(RemoteWebDriver driver) throws Exception {
 		if (this.common.value("mode").equalsIgnoreCase("local") && this.common.value("headlessbrowser").equalsIgnoreCase("false")) {
 			driver = new ChromeDriver(this.createChromeConfig());
 		} else if (this.common.value("mode").equalsIgnoreCase("local") && this.common.value("headlessbrowser").equalsIgnoreCase("true")) {

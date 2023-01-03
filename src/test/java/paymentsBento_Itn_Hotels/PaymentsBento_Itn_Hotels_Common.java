@@ -54,11 +54,12 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 
 	public String hotelDetailsUrl(String Domain, String HotelID)  throws Exception
 	{
-		Hotel_URL= "/hotels/details/"+HotelID+"?c="+getDateTime(27, "ddMMyy")+"|"+getDateTime(28, "ddMMyy")+"&r=2,0&ur=1";
+		Hotel_URL= "/hotels/details/"+HotelID+"?c="+getDateTime(60, "ddMMyy")+"|"+getDateTime(61, "ddMMyy")+"&r=2,0&ur=1";
 		String SearchUrl = "";
 		if(Domain=="IN") {
 			SearchUrl=inurl+Hotel_URL;
 		}
+		Reporter.log(SearchUrl);
 		System.out.println(SearchUrl);
 		return SearchUrl;
 	}
@@ -103,14 +104,16 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 	}
 
 	public void hotelsDetailsPage(RemoteWebDriver driver, String HotelName, String Price) throws Exception {
-		//refreshPage(driver);
+		refreshPage(driver);
+
+		Thread.sleep(1000);
 		if(textPresent(driver, "Sorry our servers are stumped with your request", 1)) {
 			refreshPage(driver);
 		}
-		Thread.sleep(5000);
-		elementPresent_log(driver, getObjectPayment("Hotel_Details_Modify_Btn"), "Modify Button", 30);
+		Thread.sleep(1000);
+		//elementPresent_log(driver, getObjectPayment("Hotel_Details_Modify_Btn"), "Modify Button", 5);
 		safeClick(driver, getObjectPayment("Hotel_Details_SelectRoom_Btn"));
-		Thread.sleep(10000);
+		Thread.sleep(2000);
 		/*elementPresent_log(driver, getObjectPayment("Hotel_Details_Book_Btn"), "Book Button", 20);
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -124,12 +127,10 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		smartClick(driver, getObjectPayment("Hotel_Details_Book_Btn"));*/
 
 		By selectRoomButton= By.xpath("");
-		if(elementVisible(driver, getObjectPayment("Hotel_Details_Book_Btn1"), 1)) {
-			selectRoomButton=getObjectPayment("Hotel_Details_Book_Btn1");
+		if(elementVisible(driver, getObjectPayment("Hotel_Details_Book_Btn"), 1)) {
+			selectRoomButton=getObjectPayment("Hotel_Details_Book_Btn");
 		}
-		else selectRoomButton=getObjectPayment("Hotel_Details_Book_Btn");
-
-		System.out.println("selectRoomButton "+selectRoomButton);
+		else selectRoomButton=getObjectPayment("Hotel_Details_Book_Btn1");
 		if(elementVisible(driver, selectRoomButton, 2)) {
 
 			safeClick(driver, selectRoomButton);
@@ -144,7 +145,7 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 			safeClick(driver, selectRoomButton);
 			smartClick(driver, selectRoomButton);*/
 		}
-		Thread.sleep(5000);
+		Thread.sleep(15000);
 		String parent=driver.getWindowHandle();
 		Set<String>s=driver.getWindowHandles();
 		Iterator<String> I1= s.iterator();
@@ -156,7 +157,7 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 			{
 				driver.switchTo().window(child_window);}
 		}
-		textPresent_Log(driver, "Review your itinerary", 30);
+		textPresent_Log(driver, "Review your itinerary", 10);
 		Child_URL = driver.getCurrentUrl();
 		//driver.close(); // Closing Child window
 		driver.switchTo().window(parent);

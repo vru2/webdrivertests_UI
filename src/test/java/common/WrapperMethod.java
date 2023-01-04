@@ -344,9 +344,8 @@ public class WrapperMethod extends CommonUtil {
 		System.setProperty("webdriver.gecko.driver",file.getCanonicalPath() + "//exe//geckodriver" );
 		FirefoxOptions options = new FirefoxOptions()
 			//	.addPreference("--headless", 1)
-				.addPreference("browser.startup.page", 1)
-				.addPreference("browser.startup.homepage", "http://qa2new.cleartrip.com");
-		driver = new FirefoxDriver(options);
+				.addPreference("browser.startup.page", 1);
+				driver = new FirefoxDriver(options);
 		return driver;
 	}
 

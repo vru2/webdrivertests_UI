@@ -11,18 +11,19 @@ import org.testng.annotations.Test;
 
 public class IN_CC_Razorpay extends PaymentsBento_Itn_Hotels_Common {
 
-	@BeforeClass
-	public void startSelenium() throws Exception {
-		this.driver = getDriver(driver);
-	}
+		@BeforeClass
+		public void startSelenium() throws Exception {
+			this.driver = getDriver(driver);
+		}
 
-	@Test
-	public void Hotel_IN_RazorPay() throws Exception {
-		driver.manage().deleteAllCookies();
-		driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
-		hotelsDetailsPage(driver, "", "");
-		hotelsItnPage(driver, "", "", "", "");
-	} 
+		@Test
+		public void Hotel_IN_RazorPay() throws Exception {
+			driver.manage().deleteAllCookies();
+			driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
+			hotelsDetailsPage(driver, "", "");
+			hotelsItnPage(driver, "", "", "", "");
+			hotelsPaymentPage(driver,"CC","3456","","","");
+		}
 
 		@AfterClass
 		public void closeSelenium() throws Exception { 
@@ -33,5 +34,4 @@ public class IN_CC_Razorpay extends PaymentsBento_Itn_Hotels_Common {
 		public void afterMethod(ITestResult _result) throws Exception {
 			afterMethod(driver, _result);
 		}
-
 }

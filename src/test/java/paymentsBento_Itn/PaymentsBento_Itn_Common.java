@@ -1630,7 +1630,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 
 			safeClick(driver, getObjectPayment("Bento_Payment_NB_Payment_Failure"));
 			elementPresent_log(driver, getObjectPayment("Bento_Payment_Paynow"),"Pay button in retry page", 30);
-			textPresent_Log(driver, "Oops! Your payment failed. If you were charged, any amount deducted will be reversed", 1);
+			textPresent_Log(driver, "Oops! Your payment failed. If you were charged, any amount deducted will be reversed", 30);
 
 			payUI_Select_PaymentType(driver, "NB");
 			Reporter.log("Clicked on NB");

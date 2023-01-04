@@ -15,6 +15,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
 
 public class IN_AmazonPay extends PaymentsBento_Itn_Hotels_Common {
 
@@ -25,11 +27,8 @@ public class IN_AmazonPay extends PaymentsBento_Itn_Hotels_Common {
 
 	@Test
 	public void Hotel_IN_AmazonPay() throws Exception {
-
-//		driver.manage().deleteAllCookies();
-		 driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
-		/*driver.get(hotelSearchUrl("IN"));
-		hotelSearchPage(driver, "", "");*/
+		driver.manage().deleteAllCookies();
+		driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
 		hotelsDetailsPage(driver, "", "");
 		System.out.println("launched browser page");
 		hotelsItnPage(driver, "", "", "", "");
@@ -45,5 +44,4 @@ public class IN_AmazonPay extends PaymentsBento_Itn_Hotels_Common {
 		public void afterMethod(ITestResult _result) throws Exception {
 			afterMethod(driver, _result);
 		}
-
 }

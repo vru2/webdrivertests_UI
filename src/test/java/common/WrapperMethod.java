@@ -73,7 +73,7 @@ public class WrapperMethod extends CommonUtil {
 
 	public void browserClose(RemoteWebDriver driver) {
 		driver.close();
-		driver.quit();
+		//driver.quit();
 	}
 
 
@@ -339,13 +339,27 @@ public class WrapperMethod extends CommonUtil {
 	}
 
 	public RemoteWebDriver getDriver(RemoteWebDriver driver) throws IOException, InterruptedException {
+		if ( this.common.value("headlessbrowser").equalsIgnoreCase("true")) {
 
-		File file = new File(".");
-		System.setProperty("webdriver.gecko.driver",file.getCanonicalPath() + "//exe//geckodriver" );
-		FirefoxOptions options = new FirefoxOptions()
-			//	.addPreference("--headless", 1)
-				.addPreference("browser.startup.page", 1);
-				driver = new FirefoxDriver(options);
+			File file = new File(".");
+			System.setProperty("webdriver.gecko.driver", file.getCanonicalPath() + "//exe//geckodriver");
+			FirefoxOptions options = new FirefoxOptions()
+					//	.addPreference("--headless", 1)
+					.addPreference("browser.startup.page", 1)
+					.setHeadless(true);
+			//.options.setHeadless(true);
+
+			driver = new FirefoxDriver(options);
+		}
+		else {
+
+			File file = new File(".");
+			System.setProperty("webdriver.gecko.driver", file.getCanonicalPath() + "//exe//geckodriver");
+			FirefoxOptions options = new FirefoxOptions()
+					//	.addPreference("--headless", 1)
+					.addPreference("browser.startup.page", 1);
+			driver = new FirefoxDriver(options);
+		}
 		return driver;
 	}
 

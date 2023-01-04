@@ -105,24 +105,11 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 
 	public void hotelsDetailsPage(RemoteWebDriver driver, String HotelName, String Price) throws Exception {
 		refreshPage(driver);
-		Thread.sleep(1000);
 		if(textPresent(driver, "Sorry our servers are stumped with your request", 1)) {
 			refreshPage(driver);
 		}
-		//elementPresent_log(driver, getObjectPayment("Hotel_Details_Modify_Btn"), "Modify Button", 5);
+		elementPresent_log(driver, getObjectPayment("Hotel_Details_Modify_Btn"), "Modify Button", 5);
 		safeClick(driver, getObjectPayment("Hotel_Details_SelectRoom_Btn"));
-
-		/*elementPresent_log(driver, getObjectPayment("Hotel_Details_Book_Btn"), "Book Button", 20);
-		Thread.sleep(2000);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,500)");
-		elementVisible(driver, getObjectPayment("Hotel_Details_Book_Btn"), 5);
-		WebElement element = driver.findElement(getObjectPayment("Hotel_Details_Book_Btn"));
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
-		Thread.sleep(2000);
-		mouseHover(driver, getObjectPayment("Hotel_Details_Book_Btn"));
-		Thread.sleep(1000);
-		smartClick(driver, getObjectPayment("Hotel_Details_Book_Btn"));*/
 
 		By selectRoomButton= By.xpath("");
 		if(elementVisible(driver, getObjectPayment("Hotel_Details_Book_Btn"), 1)) {
@@ -132,9 +119,7 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		}
 		else selectRoomButton=getObjectPayment("Hotel_Details_Book_Btn1");
 		if(elementVisible(driver, selectRoomButton, 2)) {
-			Thread.sleep(1000);
 			safeClick(driver, selectRoomButton);
-
 		}
 		Thread.sleep(7000);
 		String parent=driver.getWindowHandle();
@@ -150,7 +135,7 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		}
 		textPresent_Log(driver, "Review your itinerary", 10);
 		Child_URL = driver.getCurrentUrl();
-		//driver.close(); // Closing Child window
+		driver.close(); // Closing Child window
 		driver.switchTo().window(parent);
 		driver.get(Child_URL);
 		textPresent_Log(driver, "Review your itinerary", 20);
@@ -166,7 +151,6 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 
 	public void hotelsItnDetails(RemoteWebDriver driver, String CouponGV, String PayType) throws Exception {
 		textPresent(driver, "Review your itinerary", 20);
-		Thread.sleep(2000);
 		refreshPage(driver);
 		Thread.sleep(2000);
 		if(CouponGV.equalsIgnoreCase("PartialGV")) {
@@ -271,7 +255,7 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		JavascriptExecutor js1 = (JavascriptExecutor) driver;
 		js1.executeScript("window.scrollBy(0,600)");
 		elementVisible(driver, getObjectPayment("Hotel_ContactPage_Salutation_Dropdown"), 5);
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 
 
 		mouseHover(driver, getObjectPayment("Hotel_ContactPage_Salutation_Dropdown"));
@@ -289,7 +273,7 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,600)");
 		elementVisible(driver, getObjectPayment("Hotel_ContactPage_Continue_Btn"), 5);
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		safeClick(driver,getObjectPayment("Hotel_ContactPage_Continue_Btn"));
 		Reporter.log("Clicked on continue - traveller block");
 	}

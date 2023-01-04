@@ -20,8 +20,8 @@ public class IN_AMEX extends PaymentsBento_Itn_Hotels_Common {
 		hotelsDetailsPage(driver, "", "");
 		hotelsItnPage(driver, "", "", "", "");
 		hotelsPaymentPage(driver,"CC","3456","","",""); 
-	} 
-
+	}
+	
  		@AfterClass(alwaysRun = true)
 		public void closeSelenium() throws Exception { 
 		 	browserClose(driver); 

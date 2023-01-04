@@ -21,7 +21,7 @@ public class IN_GV_Full extends PaymentsBento_Itn_Hotels_Common {
 		hotelsDetailsPage(driver, "", "");
 		hotelsItnPage(driver, "FullGV", "", "", "");
 		hotelsPaymentPage(driver, "GV", "", "", "", "");
-	} 
+	}
 
  		@AfterClass
 		public void closeSelenium() throws Exception { 

@@ -350,6 +350,7 @@ public class WrapperMethod extends CommonUtil {
 			//.options.setHeadless(true);
 
 			driver = new FirefoxDriver(options);
+			driver.manage().window().maximize();
 		}
 		else {
 

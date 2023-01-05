@@ -142,10 +142,39 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		driver.manage().addCookie(cookie_Bento_Hotels);
 	}
 
-	public void hotelsItnPage(RemoteWebDriver driver, String CouponGV, String PayType, String SignIN, String Contact) throws Exception {
+	public void hotelsItnPageOLD(RemoteWebDriver driver, String CouponGV, String PayType, String SignIN, String Contact) throws Exception {
 		hotelsItnDetails(driver, CouponGV, PayType);
 		hotelsItnSignIN(driver, SignIN, PayType);
 		hotelsItnContact(driver, Contact, PayType);
+	}
+
+
+	public void hotelsItnPage(RemoteWebDriver driver, String CouponGV, String PayType, String SignIN, String Contact) throws Exception {
+		textPresent(driver, "Review your itinerary", 20);
+		refreshPage(driver);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,600)");
+		Thread.sleep(1000);
+		textPresent(driver, "Add contact details", 1);
+		safeType(driver, By.xpath("//input"), "1212121212");
+		js.executeScript("window.scrollBy(0,600)");
+		Thread.sleep(1000);
+		//moveToGivenElementLocatorByActionClassAndClickByJS(driver, By.xpath("//div[5]/div/div/input"));
+		safeType(driver, By.xpath("//div[5]/div/div/input"), "kiran.kumar@cleartrip.com");
+		elementVisible(driver,getObjectPayment("Hotel_ContactPage_Salutation_Dropdown"),5);
+		js.executeScript("window.scrollBy(0,600)");
+		elementVisible(driver, getObjectPayment("Hotel_ContactPage_Salutation_Dropdown"), 5);
+		Thread.sleep(1000);
+		mouseHover(driver, getObjectPayment("Hotel_ContactPage_Salutation_Dropdown"));
+		safeClick(driver, getObjectPayment("Hotel_ContactPage_Salutation_Dropdown"));
+		Thread.sleep(1000);
+		safeClick(driver, getObjectPayment("Hotel_ContactPage_Salutation_Mr"));
+		safeType(driver, getObjectPayment("Hotel_ContactPage_FirstName_TextBox"), "Kiran");
+		safeType(driver, getObjectPayment("Hotel_ContactPage_LastName_TextBox"), "Kumar");
+		js.executeScript("window.scrollBy(0,600)");
+		Thread.sleep(1000);
+		safeClick(driver, getObjectPayment("Hotel_ContactPage_Continue_Btn_New"));
+
 	}
 
 

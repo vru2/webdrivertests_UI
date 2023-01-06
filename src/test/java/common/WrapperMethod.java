@@ -145,41 +145,52 @@ public class WrapperMethod extends CommonUtil {
 	}
 
 
-	public WebDriver getMobileDriver(WebDriver driver) throws IOException {
+	public RemoteWebDriver getMobileDriver(RemoteWebDriver driver) throws IOException {
 
-		Map<String, Object> deviceMetrics = new HashMap<>();
-		// Added individual deviceMetrices & useragent
-		//deviceMetrics.put("width", 360);
-		//deviceMetrics.put("height", 560);
-		//deviceMetrics.put("pixelRatio", 4.0);
-		//// Added individual deviceMetrices & useragent
-		Map<String, Object> mobileEmulation = new HashMap<>();
+		if(common.value("mobilebrowser").equalsIgnoreCase("chrome")) {
+			Map<String, Object> deviceMetrics = new HashMap<>();
+			// Added individual deviceMetrices & useragent
+			//deviceMetrics.put("width", 360);
+			//deviceMetrics.put("height", 560);
+			//deviceMetrics.put("pixelRatio", 4.0);
+			//// Added individual deviceMetrices & useragent
+			Map<String, Object> mobileEmulation = new HashMap<>();
 
-		mobileEmulation.put("deviceName", "Samsung Galaxy S20 Ultra");
-		//mobileEmulation.put("deviceMetrics","360*560");
-		//mobileEmulation.put("userAgent", "Mozilla/5.0 (Linux; Android 4.2.1; en-us; Nexus 5 Build/JOP40D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19");
-		if (System.getProperty("os.name").contains("Windows")) {
-			File file = new File(".");
-			String filepath = file.getCanonicalPath() + "//exe//chromedriver.exe";
-			System.setProperty("webdriver.chrome.driver", filepath);
-		}else if(System.getProperty("os.name").contains("Linux")){
-			File file = new File(".");
-			String filepath = file.getCanonicalPath() + "//exe//chromedriver";
-			System.setProperty("webdriver.chrome.driver", filepath);
-		} else if(System.getProperty("os.name").contains("Mac"))
-		{
-			File file = new File(".");
-			String filepath = file.getCanonicalPath() + "//exe//chromedriver_mac";
-			System.setProperty("webdriver.chrome.driver", filepath);
+			mobileEmulation.put("deviceName", "Samsung Galaxy S20 Ultra");
+			//mobileEmulation.put("deviceMetrics","360*560");
+			//mobileEmulation.put("userAgent", "Mozilla/5.0 (Linux; Android 4.2.1; en-us; Nexus 5 Build/JOP40D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19");
+			if (System.getProperty("os.name").contains("Windows")) {
+				File file = new File(".");
+				String filepath = file.getCanonicalPath() + "//exe//chromedriver.exe";
+				System.setProperty("webdriver.chrome.driver", filepath);
+			} else if (System.getProperty("os.name").contains("Linux")) {
+				File file = new File(".");
+				String filepath = file.getCanonicalPath() + "//exe//chromedriver";
+				System.setProperty("webdriver.chrome.driver", filepath);
+			} else if (System.getProperty("os.name").contains("Mac")) {
+				File file = new File(".");
+				String filepath = file.getCanonicalPath() + "//exe//chromedriver_mac";
+				System.setProperty("webdriver.chrome.driver", filepath);
+			}
+			ChromeOptions chromeOptions = new ChromeOptions();
+			chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
+			chromeOptions.addArguments("--allowed-ips");
+			if (common.value("headlessbrowser").equalsIgnoreCase("false")) {
+				driver = new ChromeDriver(chromeOptions);
+			} else driver = new ChromeDriver(this.createHeadlessChromeMobile());
+		} else if (common.value("mobilebrowser").equalsIgnoreCase("FIREFOX")) {
+
+				File file = new File(".");
+				String filepath = file.getCanonicalPath() + "//exe//geckodriver";
+				System.setProperty("webdriver.gecko.driver", filepath);
+			Map<String, Object> mobileEmulation = new HashMap<>();
+			String user_agent="Mozilla/5.0 (iPhone; U; CPU iPhone OS 3_0 like Mac OS X; en-us) AppleWebKit/528.18 (KHTML, like Gecko) Version/4.0 Mobile/7A341 Safari/528.16";
+			FirefoxOptions options = new FirefoxOptions();
+			options.addPreference("general.useragent.override",user_agent );
+			driver= new FirefoxDriver(options);
+
 		}
-		ChromeOptions chromeOptions = new ChromeOptions();
-		chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
-		chromeOptions.addArguments("--allowed-ips");
-		if(common.value("headlessbrowser").equalsIgnoreCase("false") ){
-			driver = new ChromeDriver(chromeOptions);
-		}
 
-		else driver = new ChromeDriver(this.createHeadlessChromeMobile());
 
 		Dimension dimension = new Dimension(360, 800);
 		driver.manage().window().setSize(dimension);

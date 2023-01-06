@@ -34,6 +34,9 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	public Cookie ctauth_partial_wallet1 = new Cookie("ct-auth","Bk7N%2FtlW6UIM9%2Fv06RR0lzYwI2Wr5NoY6shicJ7wSEglXjP2rTXj7vKCCjzDFS1EH8YOfEGj8AeevvMX%2F4QnQkvAnTTp9N%2FfevCUsB0kyv34RHOgDXRfdndn%2FWd0KOXh%2F2AX0kdZPIqgx5R%2FHygKQrR425YROepvP0SdSctCUtkcciwXF7FvVYKJizsM6Az33Pdp0Z8op1wWr79u2xWoxw%3D%3D");
 	public Cookie hotelLogin = new Cookie("ct-auth","wXRMsuJtL9WgArSZlNMx0zMrAAXuo%2Fx75FAjg9yx7%2BaP3TmjQOZ3nIiLDZWVzahbuQmW3NiUZma8q2lELnUuyC3uAF5DaTQONdJlLn%2FO2mdq5YlcDpr1NhocHCzFUnhnFzQr4qtRb2xhSWwELLVrIm931R0DjQqCU3guA6McTHvxrx7uoG8MaIjFbgrbUFuLCIQVMwmZPuPWYE%2BZcIe2iQcBlNEUA6TPhFqzPj5kdtXzYYtxjGgBPls1FJB9t5ULG6UU2B4lpfRPn7nlPGDL%2Bh8wYo5RkzDxKQKqfs%2BRQNZv8wYRhTyYEQWZZEKWQzfg");
 	public Cookie ctauth_Saved_Cards = new Cookie("ct-auth", "xQF1scG2KAjUKjb0nhbj7W5gh1ze39fzSEc%2F18%2BoP6PkPulxqJhDFt6Li6igz%2BaLRgUWITcUCW%2FPw%2Bea%2FYC76r1klNYcgXrCEAwPKA%2BIUFocRr9A4ypxdh%2BPZCq2fC%2BI26hEYAocTQWJaHIALF%2BbQSemi1L2QY4GGJ7EXBuvSvGmVYWMhCcUDL%2Bi44N5mAea2u4J%2BEE0fGu5VNbg3TPA9Q%3D%3D");
+	public Cookie ctauth_PayLater = new Cookie("ct-auth", "J%2BdMd0LGgMI8a39GNJ8xHqzqXvFGWmTpxhpOSPgnVnR5rXIoRNAXiPWEaKB9yveSNxBOo2r5JZ%2FVmD3Z2PjPQXjBrq444%2F1uPr9TDoR7r0Fe4mCETJt4BFkyvt%2FwdjA%2F8xWIih%2BGLbZz3y8MqrXJA5iZUrITk7nqu1Igqg3F1qbgENsO1xgbhrKOyO1na3ElmWDw%2Feg43BsE%2Bojvv%2FgwqHnmaZS3pTnoqp6N0Ka3Y8A%3D");
+
+
 
 	public Cookie fullwallet = new Cookie("ct-auth","z7vg1sM48HEjFW9N692PP3%2BBAQImU3T7VEKmjKxHY0%2B%2BHyeB618%2FVR4PAm6LS4PjL5w%2BfbtxsaW%2BbtdHrc%2BWsScG24OcK1SPJLWfpxAcYSUZ%2BDPJWIpT6PozXecbENnMvrpx3EcElSt8IxAixuU3Wx1urIG%2BJIXXp1dllo9UaxruwmmL4%2Fl%2BZmNgLOEFFQEHIBmo7ujFj4IR251LE1REPIl0hD%2BOGrq3TzykZUx%2BW0wEWrlcwiuBMyRp%2FjW2ZkBtsCH0dQMu8eNGLFfYURLEzxWteZk4kgVCTdhW8xwshOSRXS16FEAEuu%2F0%2BY4jXzpsD%2BBMWmzm2HjhJN3LrqPmJl%2BPb%2BtRIDeSJJ8B3pwqUtovU9euu0zuyj4pUK7H7Exfn3xsb72VU1fgZGUiAqGNjlr4i1%2BstEIodrXyWaIerOwsliKRdHKdB04q2m8OnZXTH2Z4tsAXBZj47Mu0vEuTRiAH0Rp2vtFkuXiol%2Fc%2BBJD4qswYyk0D6GkqDc%2FryiGzrriKvMSxzl8ZjdP0xHKTJjDfE5MjfU2lez8Mc21eeVj4yG9Y5gNNb6MvOPOrwEDI%2FRkVukgyqFl7OJk6DNu3G%2FLNPaqxgHPoG%2Fb4MQRnyZVI9iJH8UXIBBVrkHxP0uq0KBIFqMINY881df17xzwxrP0wDfAjdIJWLC650cfnf3%2BZ8zInGGcv79tFePFr5UA0tMv7Ci9nlUUKOJuJ4P3asT%2F%2Fu6AA%2BWLog2uJ%2FY2YYqgP%2FV7P4M74%2FvZ8fgql9D8g8%2F%2F1HM9Q%2BhZwENf6sKaAU%2FkxX%2BEKCRjKf8O%2BTNUSfsuE8coUcku3YuzCaIBgM2P8Rb8sKLbSBDeyofU70uSSaPMHgCym1TRbOwe4kMI3sC%2BxNY2SNpWEXNL%2B8qnJRC3izkqTBVx8eUSmCMEROlIxUX3V3khzmrd4HsCxqs0QPfyV377s8BRI51ht8oyW%2FzMrKpsxMHx8GV2Wrz8SXH%2BJ4L7k2DAeId6CWMfLGEE76GmqZ7oItSHv5%2F5UO3DEKBLdNgJ6hCK8jDxka%2F19EfaquJ%2FSxkyRZqMldWabWMA8RFSkXBqexHhTLDzmgQVTrTtMzlNFPfPmCegfz2VJg5y%2Bh8C6ZuqGprbV9JxNvdZWfas1vK%2BlbxoIkTOxeVMYoTzx%2BRDEyo9MjCQlcI5K%2BXqy75cBiovhF%2FKcf00zq%2B4kHLbNgQWHsPxU03SG2PnNTTKvShsNtANjRoE31K8EhQCUxAy0RKUSZCsC9rC3NzCyiZQ8OMPyxuJe8aT3kw6b6Vr5W6ItDyb4p912T8y4Fmb%2BkWvTbYc3Gs6r0RfKxtBdJ7XZo8xSwXirQmVaFYJIN9SOYihXgvoe0tBEocfUYUUWT%2B21WjlsPFl3GqgqbnhOpQnwu4MuBFLJXP%2FGwt5epuyxkim5u3c1uLqpdlcKqTiJklaTM5EIWuxV%2BaxHXwh%2BX0x6JaS%2BJVI%2FViRLDjDvQxUjikuijAL%2BCIze%2BR0CONXQZwkQogOIBXtmmoU7CXBduaNzsLsrm0xPzTZjAvB1t1bEN8iIA9Fm3g2V6y48Pcv105jPZVUlHdmY23RZfCeQ1rEKEhCIlamft0AOmOuRl8SPDuLQOakmpNI7rITA2IEiJRPFla%2Ff0%2B1PlsafPwPxQqWsBHrD5uWQ%2Fwoa%2Fpe28cFJL%2F07Y6BBPX53jwNSD65onCdSMDSx3kB63QGP7K50NbGbzX9uIuQ855NzPYv1E0Uw833%2BkDFo2QW%2BWU3VZkdYbiZVpVgTEqqFlXC81ARJjUON0o9Wm8zRAp0MLp1baL9pw5vzIJrXBmjDejWXiS%2BCwTcxJpwr8weNXyFA1NPKAeSIffGsdJtCOxNKJi2t9Kf7PJPtZuWmZVFdd0%2FAS5nYgQcesCmqLvB4DnqTDEU5IuzRmOL4gsL8bLA8DYYTc21X8a8RDi%2BcNFdGhgLWSX8kZt9w12BDIgb1u6mYMFvUSbVOaztTQMFsyf8%2B8Af9X3z3r%2BDrm5gqRrLsOKAtJyvMOIRXXzzYXuRPy%2FrozOxwprHfc4YoA6PpO85WcWz9%2BoQs%2FBYk6ISB5L0M2kchEHrXe3IxhRW8NL47Ml1uAgTU%2Fix6vhOUq1aWdXGYIwmscvutr80PrenPiJyIak0Gi4UD%2BnkvXp%2FX9SLPkkvE2aGc4prcRlMvVaPCEWlX4cnEt8f91KIu%2BSx7hp8ZQZJ1%2B6DxO%2BG3echwFrVtkqvzlbrmH%2BhJliH6jj9f1eK1xUBXSzd6ICWCnJWqtETpAE%2BCyDF5PX%2BK1jXkJC0a%2FeByI7bRQ1I%3D");
 
@@ -1957,24 +1960,32 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 
 		}
 		if(CardNumber.equalsIgnoreCase("Hotel")) {
-			textPresent_Log(driver, "Coupon code (HOTELCC)", 2);
+			textPresent_Log(driver, "Coupon code (CCHOTEL)", 2);
 		}
 		elementVisible(driver, getObjectPayment("Bento_Payment_Paynow"), 2);
 		smartClick(driver, getObjectPayment("Bento_Payment_Select_Storedcard"));
 		Reporter.log("Clicked on SC");
 		payUI_Select_PaymentType(driver, "CC");
-		payUI_Enter_PaymentDetails(driver, "CC", "MASTER","");
+		payUI_Enter_PaymentDetails(driver, "CC", "RAZORPAY","");
 		safeClick(driver, getObjectPayment("Bento_paynow"));
 		//Save Card RBI popup
 		if(elementVisible(driver,getObjectPayment("Bento_Payment_Skip_Securecard"),2))
 		{
 			safeClick(driver,getObjectPayment("Bento_Payment_Skip_Securecard"));
 		}
-		elementVisible(driver, getObjectPayment("Bento_card_password"), 5);
+		/*elementVisible(driver, getObjectPayment("Bento_card_password"), 5);
 		safeClick(driver, getObjectPayment("Bento_card_password"));
 		Thread.sleep(1000);
 		safeType(driver, getObjectPayment("Bento_card_password"),"123456");
-		safeClick(driver, getObjectPayment("Bento_submit"));
+		safeClick(driver, getObjectPayment("Bento_submit"));*/
+		textPresent(driver, "Please wait...", 5);
+		textPresent(driver, "One Time Password (OTP) successfully sent to the phone number linked to your card ending with 0000.", 5);
+		safeClick(driver, getObjectPayment("Bento_Payment_Razropay_Pin"));
+		safeType(driver,getObjectPayment("Bento_Payment_Razropay_Pin"),"0000");
+		safeClick(driver,getObjectPayment("Bento_Payment_Razropay_Submit"));
+		textPresent_Log(driver, "Booking successful", 10);
+		Reporter.log("Payment done successfully");
+
 	}
 
 	public void bento_pay_Coupon_hotel(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {

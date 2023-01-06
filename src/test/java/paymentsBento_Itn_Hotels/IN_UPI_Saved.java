@@ -21,7 +21,8 @@ public class IN_UPI_Saved extends PaymentsBento_Itn_Hotels_Common {
 		hotelsDetailsPage(driver, "", "");
 		hotelsItnPage(driver, "", "", "", "");
 		hotelsPaymentPage(driver, "UPI", "", "", "SavedUPI", "");
-	} 
+	}
+
 
  		@AfterClass
 		public void closeSelenium() throws Exception { 

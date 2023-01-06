@@ -54,7 +54,7 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 
 	public String hotelDetailsUrl(String Domain, String HotelID)  throws Exception
 	{
-		Hotel_URL= "/hotels/details/"+HotelID+"?c="+getDateTime(60, "ddMMyy")+"|"+getDateTime(61, "ddMMyy")+"&r=2,0&ur=1";
+		Hotel_URL= "/hotels/details/"+HotelID+"?c="+getDateTime(50, "ddMMyy")+"|"+getDateTime(51, "ddMMyy")+"&r=2,0&ur=1";
 		String SearchUrl = "";
 		if(Domain=="IN") {
 			SearchUrl=inurl+Hotel_URL;
@@ -189,7 +189,7 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		else if(CouponGV.equalsIgnoreCase("COUPONCC")) {
 			mouseHover(driver, By.xpath("//div[3]/div/div[2]/div/input"));
 			safeClick(driver, By.xpath("//div[3]/div/div[2]/div/input"));
-			safeType(driver, By.xpath("//div[3]/div/div[2]/div/input"), "HOTELCC");
+			safeType(driver, By.xpath("//div[3]/div/div[2]/div/input"), "CCHOTEL");
 			WebElement element = driver.findElement(By.xpath("//div[2]/button"));
 			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 			Thread.sleep(2000);
@@ -197,8 +197,6 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 			safeClick(driver, By.xpath("//div[2]/div[3]/div/div/button"));
 			textPresent_Log(driver,"Great! You just saved",5);
 		}
-
-
 
 		elementVisible(driver,getObjectPayment("Hotel_ContactPage_Salutation_Dropdown"),5);
 		js.executeScript("window.scrollBy(0,600)");

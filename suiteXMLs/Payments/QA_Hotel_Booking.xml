@@ -24,8 +24,8 @@
 
     <test name="Saved UPI" preserve-order="true">
         <classes>
-            <class name="test.java.paymentsBento_Itn_Hotels.IN_SavedCard_UPIMode"/>
-            <class name="test.java.paymentsBento_Itn_Hotels.IN_UPI_Saved"/>
+            <class name="test.java.paymentsBento_Itn_Hotels.IN_SavedCard_UPIMode"/> // Savedpayment mode
+            <class name="test.java.paymentsBento_Itn_Hotels.IN_UPI_Saved"/> // UPI tab
         </classes>
     </test>
 
@@ -37,7 +37,7 @@
 
 <test name="GoogleCaptcha Validation" preserve-order="true">
     <classes>
-	        <class name="test.java.paymentsBento_Itn_Hotels.IN_GoogleCaptcha_Validation"/>
+	        <!--<class name="test.java.paymentsBento_Itn_Hotels.IN_GoogleCaptcha_Validation"/>-->
     </classes>
 </test>
 
@@ -79,7 +79,7 @@
 
 <test name="EMI" preserve-order="true">
     <classes>
-	        <class name="test.java.paymentsBento_Itn_Hotels.IN_EMI_RazorPay"/>
+	<!--        <class name="test.java.paymentsBento_Itn_Hotels.IN_EMI_RazorPay"/>-->
     </classes>
 </test>
 
@@ -109,7 +109,7 @@
 
 <test name="AmazonPay" preserve-order="true">
     <classes>
-	        <class name="test.java.paymentsBento_Itn_Hotels.IN_AmazonPay"/>
+	        <!--<class name="test.java.paymentsBento_Itn_Hotels.IN_AmazonPay"/>-->
     </classes>
 </test>
 

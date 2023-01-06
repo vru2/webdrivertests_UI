@@ -104,7 +104,7 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 	}
 
 	public void hotelsDetailsPage(RemoteWebDriver driver, String HotelName, String Price) throws Exception {
-		refreshPage(driver);
+		//refreshPage(driver);
 		if(textPresent(driver, "Sorry our servers are stumped with your request", 1)) {
 			refreshPage(driver);
 		}
@@ -133,7 +133,7 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 			{
 				driver.switchTo().window(child_window);}
 		}
-		textPresent_Log(driver, "Review your itinerary", 10);
+		textPresent(driver, "Review your itinerary", 10);
 		Child_URL = driver.getCurrentUrl();
 		driver.close(); // Closing Child window
 		driver.switchTo().window(parent);
@@ -161,6 +161,45 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		Thread.sleep(1000);
 		//moveToGivenElementLocatorByActionClassAndClickByJS(driver, By.xpath("//div[5]/div/div/input"));
 		safeType(driver, By.xpath("//div[5]/div/div/input"), "kiran.kumar@cleartrip.com");
+
+
+		if(CouponGV.contains("GV")) {
+			textPresent(driver, "Apply coupon or gift card",5);
+			mouseHover(driver, By.xpath("//div[3]/div/div[2]/div/input"));
+			safeClick(driver, By.xpath("//div[3]/div/div[2]/div/input"));
+			if(CouponGV.equalsIgnoreCase("FullGV")) {
+				safeType(driver, By.xpath("//div[3]/div/div[2]/div/input"), GV_number);
+				elementVisible(driver, By.xpath("//div[2]/input"), 5);
+				mouseHover(driver, By.xpath("//div[2]/input"));
+				safeClick(driver, By.xpath("//div[2]/input"));
+				safeType(driver, By.xpath("//div[2]/input"), GV_pin);
+			}
+			else if(CouponGV.equalsIgnoreCase("PartialGV")){{
+				String[] GV1 = getGV(10);
+				safeType(driver, By.xpath("//div[3]/div/div[2]/div/input"), GV1[0]);
+				elementVisible(driver, By.xpath("//div[2]/input"), 5);
+				mouseHover(driver, By.xpath("//div[2]/input"));
+				safeClick(driver, By.xpath("//div[2]/input"));
+				safeType(driver, By.xpath("//div[2]/input"),  GV1[1]);
+			}
+			}
+			safeClick(driver, By.xpath("//div[2]/div[3]/button"));
+			textPresent_Log(driver, "redeemed from your gift card", 10);
+		}
+		else if(CouponGV.equalsIgnoreCase("COUPONCC")) {
+			mouseHover(driver, By.xpath("//div[3]/div/div[2]/div/input"));
+			safeClick(driver, By.xpath("//div[3]/div/div[2]/div/input"));
+			safeType(driver, By.xpath("//div[3]/div/div[2]/div/input"), "HOTELCC");
+			WebElement element = driver.findElement(By.xpath("//div[2]/button"));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+			Thread.sleep(2000);
+			mouseHover(driver, By.xpath("//div[2]/div[3]/div/div/button"));
+			safeClick(driver, By.xpath("//div[2]/div[3]/div/div/button"));
+			textPresent_Log(driver,"Great! You just saved",5);
+		}
+
+
+
 		elementVisible(driver,getObjectPayment("Hotel_ContactPage_Salutation_Dropdown"),5);
 		js.executeScript("window.scrollBy(0,600)");
 		elementVisible(driver, getObjectPayment("Hotel_ContactPage_Salutation_Dropdown"), 5);

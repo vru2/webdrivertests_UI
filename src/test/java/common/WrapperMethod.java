@@ -364,6 +364,32 @@ public class WrapperMethod extends CommonUtil {
 		return driver;
 	}
 
+	public RemoteWebDriver getDriver_PWAAA(RemoteWebDriver driver) throws IOException, InterruptedException {
+		if ( this.common.value("headlessbrowser").equalsIgnoreCase("false")) {
+
+			File file = new File(".");
+			System.setProperty("webdriver.gecko.driver", file.getCanonicalPath() + "//exe//geckodriver");
+			FirefoxOptions options = new FirefoxOptions()
+					//	.addPreference("--headless", 1)
+					.addPreference("browser.startup.page", 1);
+			options.addArguments("general.useragent.override", "user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64)");
+			//options.setCapability("general.useragent.override", "user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64)");
+			//.options.setHeadless(true);
+
+			driver = new FirefoxDriver(options);
+			driver.manage().window().maximize();
+		}
+		else {
+
+			File file = new File(".");
+			System.setProperty("webdriver.gecko.driver", file.getCanonicalPath() + "//exe//geckodriver");
+			FirefoxOptions options = new FirefoxOptions()
+					//	.addPreference("--headless", 1)
+					.addPreference("browser.startup.page", 1);
+			driver = new FirefoxDriver(options);
+		}
+		return driver;
+	}
 
 		public RemoteWebDriver Chrome_Config(RemoteWebDriver driver) throws Exception {
 		if (this.common.value("mode").equalsIgnoreCase("local") && this.common.value("headlessbrowser").equalsIgnoreCase("false")) {
@@ -936,6 +962,11 @@ public class WrapperMethod extends CommonUtil {
 		driver.executeScript("return arguments[0].scrollIntoView();", we);
 		Thread.sleep(2000);
 		we.click();
+	}
+
+	public void pageScroll(RemoteWebDriver driver, int x, int y) throws Exception {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(x,y)");
 	}
 
 	public void safeClick(RemoteWebDriver driver, By by) throws Exception {

@@ -104,15 +104,17 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	protected String searchurl_PWA(String Domain)  throws Exception
 	{
 
-		String URL = "https://qa2.cleartrip.com/flights/results?adults=1&childs=0&class=Economy&depart_date=04%2F09%2F2022&from=BLR&from_header=Bangalore%2C+IN+-+Kempegowda+International+Airport&infants=0&to=BOM&to_header=Mumbai%2C+IN+-+Chatrapati+Shivaji+Airport";
+		String URL = "https://qa2new.cleartrip.com/flights/results?adults=1&childs=0&class=Economy&depart_date=04%2F09%2F2022&from=BLR&from_header=Bangalore%2C+IN+-+Kempegowda+International+Airport&infants=0&to=BOM&to_header=Mumbai%2C+IN+-+Chatrapati+Shivaji+Airport";
 		return URL;
 	}
 
 	public void addwalletamount(int amount, String emailID) throws Exception
 	{
 		Response resp;
-		String url="http://172.17.51.86:8071/payments/wallet/cashback?emailId="+emailID+"&currency=INR&amount="+amount+"&tripRef=Q190729442390&expiryDate%20=31/12/22";
+		String url="http://172.29.20.92:9001/payments/wallet/cashback?emailId="+emailID+"&currency=INR&"+amount+"=5000&expiryDate%20=30/04/24";
+		System.out.println("url : "+url);
 		resp=RestAssured.get(url);
+
 		Reporter.log(resp.asString());
 	}
 
@@ -1167,7 +1169,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 
 	public void bento_paymentpage(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
 		textPresent_Log(driver, "Pay to complete your booking", 20);
-		System.out.println(driver.getCurrentUrl());
+		//System.out.println(driver.getCurrentUrl());
 		Reporter.log(driver.getCurrentUrl());
 		/*if((textPresent(driver, "Your wallet balance is sufficient", 2)||textPresent(driver, "from your wallet", 2))) {
 			//safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
@@ -1443,11 +1445,15 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		{
 			payUI_Enter_PaymentDetails(driver, "CC", "AMEX","");
 			smartClick(driver, getObjectPayment("PayUI_Expressway_CheckBox_New"));
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+
+			js.executeScript("window.scrollBy(0,600)");
+			Thread.sleep(1000);
 			safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
 			Reporter.log("Clicked on paynow");
 			if (textPresent(driver, "Cleartrip wallet", 5))
 			{
-				smartClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
+				//smartClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
 				Reporter.log("Deselected wallet");
 				Thread.sleep(2000);
 			}
@@ -1496,7 +1502,9 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		//safeClick(driver, getObjectPayment("PaymentPage_EMI_ICICIBank_Radio_Btn"));
 		elementVisible(driver, By.xpath("//div[10]/div/div[3]/label/div"), 5);
 		safeClick(driver, By.xpath("//div[10]/div/div[3]/label/div"));
-		safeClick(driver, By.xpath("//button"));
+	//	pageScroll(driver, 0, 300);
+		//mouseHover(driver, By.xpath("//div[3]/button"));
+		safeClick(driver, By.xpath("//div[3]/button"));
 		elementVisible(driver, getObjectPayment("PaymentPage_EMI_EnterCard_Details_btn"), 10);
 		scrollToElement(driver, getObjectPayment("PaymentPage_EMI_EnterCard_Details_btn"));
 	//	safeClick(driver, getObjectPayment("PaymentPage_EMI_EnterCard_Details_btn"));

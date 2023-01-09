@@ -1505,8 +1505,11 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		//safeClick(driver, getObjectPayment("PaymentPage_EMI_ICICIBank_Radio_Btn"));
 		elementVisible(driver, By.xpath("//div[10]/div/div[3]/label/div"), 5);
 		safeClick(driver, By.xpath("//div[10]/div/div[3]/label/div"));
-	//	pageScroll(driver, 0, 300);
-		//mouseHover(driver, By.xpath("//div[3]/button"));
+		Thread.sleep(5000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,1000)");
+		Thread.sleep(1000);
+		mouseHover(driver, By.xpath("//div[3]/button"));
 		safeClick(driver, By.xpath("//div[3]/button"));
 		elementVisible(driver, getObjectPayment("PaymentPage_EMI_EnterCard_Details_btn"), 10);
 		scrollToElement(driver, getObjectPayment("PaymentPage_EMI_EnterCard_Details_btn"));
@@ -1519,26 +1522,26 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		textPresent_Log(driver, "Enter credit card details", 5);
 		Enter_CC_Details(driver, platform.value("RazorPay_Number"), platform.value("RazorPay_Month_UI"), platform.value("RazorPay_Year"), platform.value("RazorPay_CVV"));
 		//safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
+		js.executeScript("window.scrollBy(0,500)");
+
 		safeClick(driver, By.xpath("//div/div/div/div[3]/button"));
 
 
-		/*if (textPresent(driver, "Your wallet balance is sufficient to pay for this booking. Please uncheck wallet to use other payment modes", 1))
-		{
-			safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
-			Reporter.log("Deselected wallet");
-			Thread.sleep(2000);
-			driver.findElement(By.xpath("//div[7]/p")).click();
-		}*/
 		Reporter.log("Clicked on paynow");
 		if(elementVisible(driver,getObjectPayment("Bento_Payment_Skip_Securecard"),1))
 		{
 			safeClick(driver,getObjectPayment("Bento_Payment_Skip_Securecard"));
 			Thread.sleep(1000);
 		}
-		textPresent(driver, "One Time Password", 5);
+		/*textPresent(driver, "One Time Password", 5);
 		safeClick(driver, getObjectPayment("Bento_Payment_Razropay_Pin"));
 		safeType(driver,getObjectPayment("Bento_Payment_Razropay_Pin"),"0000");
-		safeClick(driver,getObjectPayment("Bento_Payment_Razropay_Submit"));
+		safeClick(driver,getObjectPayment("Bento_Payment_Razropay_Submit"));*/
+
+		textPresent_Log(driver, "Welcome to Razorpay Software Private Ltd Bank", 20);
+		safeClick(driver, getObjectPayment("Bento_Payment_NB_Payment_Success"));
+		Reporter.log("Payment done successfully");
+
 		textPresent_Log(driver, "Booking successful", 10);
 		Reporter.log("Payment done successfully");
 

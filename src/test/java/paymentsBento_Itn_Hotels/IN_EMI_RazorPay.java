@@ -16,11 +16,10 @@ public class IN_EMI_RazorPay extends PaymentsBento_Itn_Hotels_Common {
 	@Test
 	public void Hotel_IN_EMI() throws Exception {
 		driver.manage().deleteAllCookies();
-	/*	driver.get(hotelDetailsUrl_3Days("IN", hotelName_DetailsPage));
+		driver.get(hotelDetailsUrl_3Days("IN", hotelName_DetailsPage));
 		hotelsDetailsPage(driver, "", "");
 		hotelsItnPage(driver, "", "", "", "");
-		bento_Validation_Text(driver, "EMI", "");*/
-		driver.get("https://qa2new.cleartrip.com/pay/hotel/444b1a78c870b4f12b67908ee3f84b73?lang=en");
+		bento_Validation_Text(driver, "EMI", "");
 		hotelsPaymentPage(driver,"EMI","RAZORPAY","","",""); 
 	} 
 

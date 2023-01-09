@@ -76,11 +76,27 @@
     </classes>
 </test>
 
-<test name="EMI" preserve-order="true">
-    <classes>
-	<!--        <class name="test.java.paymentsBento_Itn_Hotels.IN_EMI_RazorPay"/>-->
-    </classes>
-</test>
+    <test name="EMI" preserve-order="true">
+        <classes>
+            <!--        <class name="test.java.paymentsBento_Itn_Hotels.IN_EMI_RazorPay"/>-->
+        </classes>
+    </test>
+
+
+
+    <test name="N0 Cost EMI" preserve-order="true">
+        <classes>
+                    <class name="test.java.paymentsBento_Itn_Hotels.IN_EMI_NoCostEMI"/>
+        </classes>
+    </test>
+
+
+
+    <test name="BFL EMI" preserve-order="true">
+        <classes>
+                    <class name="test.java.paymentsBento_Itn_Hotels.IN_EMI_BFL"/>
+        </classes>
+    </test>
 
 <test name="DC" preserve-order="true">
     <classes>

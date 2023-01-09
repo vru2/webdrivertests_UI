@@ -1,6 +1,5 @@
 package test.java.  paymentsBento_Itn_Hotels;
 
-import com.sun.source.tree.AssertTree;
 import org.junit.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;

@@ -1199,6 +1199,9 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			case "EMI":
 				bento_pay_EMI(driver, PaymentType, CardNumber, domain, PayType, BankName);
 				break;
+			case "BFL":
+				bento_pay_BFL(driver, PaymentType, CardNumber, domain, PayType, BankName);
+				break;
 			case "NB":
 				bento_pay_NB(driver, PaymentType, CardNumber, domain, PayType, BankName);
 				break;
@@ -1499,7 +1502,35 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		}
 	}
 
-	public void bento_pay_EMI(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
+
+	public void bento_pay_BFL(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
+		elementVisible(driver, getObjectPayment("Bento_Payment_Paynow"), 10);
+		payUI_Select_PaymentType(driver, "EMI");
+		safeClick(driver, By.xpath("//div[6]/div/p"));
+		Thread.sleep(2000);
+		safeClick(driver, By.xpath("//div[3]/div/div[4]/div"));
+		Thread.sleep(2000);
+		safeClick(driver, By.xpath("//div[5]/div/div[3]/label/div/span"));
+		Thread.sleep(2000);
+		safeClick(driver, By.xpath("//div[2]/button"));
+		Thread.sleep(2000);
+		textPresent_Log(driver, "Cleartrip does not levy any charges for availing EMI.", 5);
+		textPresent_Log(driver, "BAJAJ Finserv", 5);
+		textPresent_Log(driver, "Cleartrip does not levy any charges for availing EMI.", 5);
+		safeType(driver, By.id("cardNumber"),"2030400200341834");
+		safeType(driver, By.id("name"),"Kiran");
+		Thread.sleep(2000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,300)");
+		safeClick(driver, By.xpath("//div[3]/button"));
+
+		textPresent_Log(driver, "Welcome to Razorpay Software Private Ltd Bank", 20);
+		safeClick(driver, getObjectPayment("Bento_Payment_NB_Payment_Success"));
+		Reporter.log("Payment done successfully");
+	}
+
+
+		public void bento_pay_EMI(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
 		elementVisible(driver, getObjectPayment("Bento_Payment_Paynow"), 10);
 		payUI_Select_PaymentType(driver, "EMI");
 		//safeClick(driver, getObjectPayment("PaymentPage_EMI_ICICIBank_Radio_Btn"));
@@ -1982,21 +2013,18 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		safeType(driver, getObjectPayment("Bento_card_password"),"123456");
 		safeClick(driver, getObjectPayment("Bento_submit"));*/
 
-		/*textPresent(driver, "Please wait...", 5);
+		textPresent(driver, "Please wait...", 5);
 		textPresent(driver, "One Time Password (OTP) successfully sent to the phone number linked to your card ending with 0000.", 5);
 		safeClick(driver, getObjectPayment("Bento_Payment_Razropay_Pin"));
 		safeType(driver,getObjectPayment("Bento_Payment_Razropay_Pin"),"0000");
 		safeClick(driver,getObjectPayment("Bento_Payment_Razropay_Submit"));
 		textPresent_Log(driver, "Booking successful", 10);
-		Reporter.log("Payment done successfully");*/
-
-	// Razorpay NB
-		textPresent_Log(driver, "Welcome to Razorpay Software Private Ltd Bank", 20);
-		safeClick(driver, getObjectPayment("Bento_Payment_NB_Payment_Success"));
 		Reporter.log("Payment done successfully");
 
-
-
+	// Razorpay NB
+		/*textPresent_Log(driver, "Welcome to Razorpay Software Private Ltd Bank", 20);
+		safeClick(driver, getObjectPayment("Bento_Payment_NB_Payment_Success"));
+		Reporter.log("Payment done successfully");*/
 	}
 
 	public void bento_pay_Coupon_hotel(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {

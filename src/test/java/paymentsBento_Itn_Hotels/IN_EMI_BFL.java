@@ -6,7 +6,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class IN_SavedCard_PayTM_Tokenized extends PaymentsBento_Itn_Hotels_Common {
+public class IN_EMI_BFL extends PaymentsBento_Itn_Hotels_Common {
 
 	@BeforeClass
 	public void startSelenium() throws Exception {
@@ -14,16 +14,15 @@ public class IN_SavedCard_PayTM_Tokenized extends PaymentsBento_Itn_Hotels_Commo
 	}
 
 	@Test
-	public void Hotel_IN_Tokenized_payTM() throws Exception {
+	public void Hotel_IN_BFL() throws Exception {
 		driver.manage().deleteAllCookies();
 		driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
-		driver.manage().addCookie(ctauth_Saved_Cards);
 		hotelsDetailsPage(driver, "", "");
-		hotelsItnPage(driver, "", "", "", "");
-		hotelsPaymentPage(driver,"storedcard","7777","HOTELS","","");
+		bento_Validation_Text(driver, "BFL", "");
+		hotelsPaymentPage(driver,"BFL","RAZORPAY","","","");
 	}
-
- 		@AfterClass
+	
+ 		@AfterClass(alwaysRun = true)
 		public void closeSelenium() throws Exception { 
 		 	browserClose(driver); 
 		}
@@ -32,4 +31,5 @@ public class IN_SavedCard_PayTM_Tokenized extends PaymentsBento_Itn_Hotels_Commo
 		public void afterMethod(ITestResult _result) throws Exception {
 			afterMethod(driver, _result);
 		}
+
 }

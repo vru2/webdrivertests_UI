@@ -1,5 +1,7 @@
 package test.java.  paymentsBento_Itn_Hotels;
 
+import com.sun.source.tree.AssertTree;
+import org.junit.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -17,10 +19,11 @@ public class IN_EMI_RazorPay extends PaymentsBento_Itn_Hotels_Common {
 	public void Hotel_IN_EMI() throws Exception {
 		driver.manage().deleteAllCookies();
 		driver.get(hotelDetailsUrl_3Days("IN", hotelName_DetailsPage));
-		hotelsDetailsPage(driver, "", "");
+/*		hotelsDetailsPage(driver, "", "");
 		hotelsItnPage(driver, "", "", "", "");
 		bento_Validation_Text(driver, "EMI", "");
-		hotelsPaymentPage(driver,"EMI","RAZORPAY","","",""); 
+		hotelsPaymentPage(driver,"EMI","RAZORPAY","","",""); */
+		Assert.assertTrue(false);
 	} 
 
  		@AfterClass

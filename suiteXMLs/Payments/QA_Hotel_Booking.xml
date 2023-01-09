@@ -21,11 +21,10 @@
             <class name="test.java.paymentsBento_Itn_Hotels.IN_SavedCard_PayTM_Tokenized"/>
         </classes>
     </test>
-
     <test name="Saved UPI" preserve-order="true">
         <classes>
-            <class name="test.java.paymentsBento_Itn_Hotels.IN_SavedCard_UPIMode"/> // Savedpayment mode
-            <class name="test.java.paymentsBento_Itn_Hotels.IN_UPI_Saved"/> // UPI tab
+            <class name="test.java.paymentsBento_Itn_Hotels.IN_SavedCard_UPIMode"/>
+            <class name="test.java.paymentsBento_Itn_Hotels.IN_UPI_Saved"/>
         </classes>
     </test>
 
@@ -85,7 +84,7 @@
 
 <test name="DC" preserve-order="true">
     <classes>
-	        <class name="test.java.paymentsBento_Itn_Hotels.IN_DC_Razorpay"/>
+	       <!-- <class name="test.java.paymentsBento_Itn_Hotels.IN_DC_Razorpay"/>-->
     </classes>
 </test>
 

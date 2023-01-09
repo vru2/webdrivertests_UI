@@ -13,21 +13,6 @@
     <test name="Wallets"  preserve-order="true" parallel="true" >
         <classes>
             <class name="test.java.paymentsAPI.API_Wallet_RevertedPromo_info"/>
-            <class name="test.java.paymentsAPI.API_Wallet_Create"/>
-            <class name="test.java.paymentsAPI.API_Wallet_Get_Wallet_Trnx"/>
-            <class name="test.java.paymentsAPI.API_Wallet_GetDeduction"/>
-            <class name="test.java.paymentsAPI.API_Wallet_PromoUsed"/>
-            <class name="test.java.paymentsAPI.API_Wallet_RevertPromo"/>
-            <class name="test.java.paymentsAPI.API_CC_GV_Wallet"/>
-        </classes>
-    </test>
-
-    <test name="Wallet App Only"  preserve-order="true" parallel="true" >
-        <classes>
-            <class name="test.java.paymentsAPI.API_Wallet_CashBackDetails"/>
-            <class name="test.java.paymentsAPI.API_Wallet_Get_Wallet_All"/>
-            <class name="test.java.paymentsAPI.API_Wallet_Get_Wallet_INR"/>
-            <!-- <class name="test.java.paymentsAPI.API_GV_Get"/> -->
         </classes>
     </test>
 

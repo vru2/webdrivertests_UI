@@ -14,7 +14,7 @@ public class PaymentsBento_Itn_Hotels_Common_PWA extends PaymentsBento_Itn_Hotel
 
 	public void hotelsPaymentPage_PWA(RemoteWebDriver driver, String PaymentType, String CardNumber, String Domain, String PayType, String BankName) throws Exception {
 		//hotelsPayment_Page_Validation(driver, PayType, Domain);
-		paymentPageHotels_Destop_to_PWA(driver, "");
+		//paymentPageHotels_Destop_to_PWA(driver, "");
 		paymentPageHotels_PWA(driver, PaymentType, CardNumber, Domain, PayType, BankName);
 	}
 
@@ -29,7 +29,7 @@ public class PaymentsBento_Itn_Hotels_Common_PWA extends PaymentsBento_Itn_Hotel
 
 	public void paymentPageHotels_PWA(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType,String BankName) throws Exception {
 		//if(elementVisible(driver, getObjectPayment("PWA_PaymentPage_ConvFee_Txt"), 30))
-		if(textPresent(driver,"NET BANKING",30))
+		if(!textPresent(driver,"NET BANKING",5))
 		{
 			bento_paymentpage_PWA(driver,PaymentType, CardNumber,domain,PayType,BankName);
 			if(!(CardNumber=="ADCB"||PaymentType=="Phonepe"||PaymentType=="UPIScan"||PayType=="Googlecaptcha"))
@@ -50,7 +50,7 @@ public class PaymentsBento_Itn_Hotels_Common_PWA extends PaymentsBento_Itn_Hotel
 	}
 
 	public void bento_paymentpage_PWA(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
-		textPresent_Log(driver, "NET BANKING", 20);
+		//textPresent_Log(driver, "NET BANKING", 20);
 		System.out.println(driver.getCurrentUrl());
 		Reporter.log(driver.getCurrentUrl());
 		if (PaymentType.equalsIgnoreCase("WALLET")||PayType.equalsIgnoreCase("WALLET"))

@@ -1533,14 +1533,14 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			safeClick(driver,getObjectPayment("Bento_Payment_Skip_Securecard"));
 			Thread.sleep(1000);
 		}
-		/*textPresent(driver, "One Time Password", 5);
+		textPresent(driver, "One Time Password", 5);
 		safeClick(driver, getObjectPayment("Bento_Payment_Razropay_Pin"));
 		safeType(driver,getObjectPayment("Bento_Payment_Razropay_Pin"),"0000");
-		safeClick(driver,getObjectPayment("Bento_Payment_Razropay_Submit"));*/
+		safeClick(driver,getObjectPayment("Bento_Payment_Razropay_Submit"));
 
-		textPresent_Log(driver, "Welcome to Razorpay Software Private Ltd Bank", 20);
+/*		textPresent_Log(driver, "Welcome to Razorpay Software Private Ltd Bank", 20);
 		safeClick(driver, getObjectPayment("Bento_Payment_NB_Payment_Success"));
-		Reporter.log("Payment done successfully");
+		Reporter.log("Payment done successfully");*/
 
 		textPresent_Log(driver, "Booking successful", 10);
 		Reporter.log("Payment done successfully");

@@ -242,8 +242,6 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 			safeType(driver, By.xpath("//div[2]/input"),GV[1]);
 			safeClick(driver, By.xpath("//div[2]/div[3]/button"));
 			textPresent_Log(driver, "redeemed from your gift card", 5);
-
-
 		}
 		else if(CouponGV.equalsIgnoreCase("FullGV")) {
 			textPresent(driver, "Apply coupon or gift card",5);
@@ -285,7 +283,6 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 			safeClick(driver, By.xpath("//div[2]/div[3]/div/div/button"));
 			textPresent_Log(driver,"Great! You just saved",5);
 		}
-
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,600)");
 		elementVisible(driver, getObjectPayment("Hotel_ItnPage_Continue_Btn"), 5);
@@ -300,12 +297,10 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		//elementPresent_log(driver, getObjectPayment("Hotel_SignINPage_PhoneNo_TextBox"), "Signin Step button", 30);
 		elementVisible(driver, getObjectPayment("Hotel_SignINPage_PhoneNo_TextBox"), 5);
 		//mouseHover(driver,getObjectPayment("Hotel_SignINPage_PhoneNo_TextBox"));
-
 		WebElement element = driver.findElement(getObjectPayment("Hotel_SignINPage_PhoneNo_TextBox"));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		Thread.sleep(2000);
 		mouseHover(driver, getObjectPayment("Hotel_SignINPage_PhoneNo_TextBox"));
-
 		safeType(driver,getObjectPayment("Hotel_SignINPage_PhoneNo_TextBox"), "1211212121");
 		safeType(driver,getObjectPayment("Hotel_SignINPage_EmailID_TextBox"), "ct_wallet_patial@cleartrip.com");
 		elementVisible(driver, getObjectPayment("Hotel_SignINPage_Continue_Btn"), 5);
@@ -316,14 +311,11 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 	public void hotelsItnContact(RemoteWebDriver driver, String Contact, String PayType) throws Exception {
 		elementPresent_log(driver, getObjectPayment("Hotel_ContactPage_FirstName_TextBox"), "Traveller Contine button", 10);
 		textPresent(driver, "Add traveller details", 1);
-
 		elementVisible(driver,getObjectPayment("Hotel_ContactPage_Salutation_Dropdown"),5);
 		JavascriptExecutor js1 = (JavascriptExecutor) driver;
 		js1.executeScript("window.scrollBy(0,600)");
 		elementVisible(driver, getObjectPayment("Hotel_ContactPage_Salutation_Dropdown"), 5);
 		Thread.sleep(1000);
-
-
 		mouseHover(driver, getObjectPayment("Hotel_ContactPage_Salutation_Dropdown"));
 		safeClick(driver, getObjectPayment("Hotel_ContactPage_Salutation_Dropdown"));
 		safeClick(driver, getObjectPayment("Hotel_ContactPage_Salutation_Mr"));

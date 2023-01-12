@@ -20,7 +20,7 @@ public class IN_EMI_NoCostEMI extends PaymentsBento_Itn_Hotels_Common {
 		hotelsDetailsPage(driver, "", "");
 		hotelsItnPage(driver, "", "", "", "");
 		bento_Validation_Text(driver, "EMI", "");
-		hotelsPaymentPage(driver,"EMI","RAZORPAY","","","");
+		hotelsPaymentPage(driver,"EMI","RAZORPAY","","NoCostEMI","");
 
 	}
 	

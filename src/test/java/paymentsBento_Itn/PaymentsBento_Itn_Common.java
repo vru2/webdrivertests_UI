@@ -1173,7 +1173,6 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 
 	public void bento_paymentpage(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
 		textPresent_Log(driver, "Pay to complete your booking", 20);
-		//System.out.println(driver.getCurrentUrl());
 		Reporter.log(driver.getCurrentUrl());
 		/*if((textPresent(driver, "Your wallet balance is sufficient", 2)||textPresent(driver, "from your wallet", 2))) {
 			//safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
@@ -1597,24 +1596,36 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,300)");
 		safeClick(driver, By.xpath("//div[3]/button"));
-		bento_pay_GWPage(driver,"RAZORPAYNB","","");
-/*
-		textPresent_Log(driver, "Welcome to Razorpay Software Private Ltd Bank", 20);
-		safeClick(driver, getObjectPayment("Bento_Payment_NB_Payment_Success"));
-		Reporter.log("Payment done successfully");*/
+		bento_pay_GWPage(driver,"RAZORPAYNB","","Success");
 	}
-
 
 		public void bento_pay_EMI(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
 		elementVisible(driver, getObjectPayment("Bento_Payment_Paynow"), 10);
 		payUI_Select_PaymentType(driver, "EMI");
 		//safeClick(driver, getObjectPayment("PaymentPage_EMI_ICICIBank_Radio_Btn"));
 		elementVisible(driver, By.xpath("//div[10]/div/div[3]/label/div"), 5);
-		safeClick(driver, By.xpath("//div[10]/div/div[3]/label/div"));
-		Thread.sleep(5000);
+		if(PayType.equalsIgnoreCase("NoCostEMI")) {
+			String NoCostEMI_Text = getText(driver, By.xpath("//div[10]/div/div[3]/label/div"));
+			System.out.println("NoCostEMI_Text "+NoCostEMI_Text);
+			if (!NoCostEMI_Text.contains("No Cost")) {
+				Reporter.log("No Cost text not displayed");
+				//Assert.assertTrue(false);
+			}
+			safeClick(driver, By.xpath("//div[10]/div/div[3]/label/div"));
+		}
+		else if(PayType.equalsIgnoreCase("EMI")){
+			String NoCostEMI_Text = getText(driver, By.xpath("//div[7]/label/div/span"));
+			if (NoCostEMI_Text.contains("No Cost")) {
+				Reporter.log("No Cost text not displayed");
+				//Assert.assertTrue(false);
+			}
+			safeClick(driver, By.xpath("//div[7]/label/div/span"));
+		}
+		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,1000)");
 		Thread.sleep(1000);
+
 		mouseHover(driver, By.xpath("//div[3]/button"));
 		safeClick(driver, By.xpath("//div[3]/button"));
 		elementVisible(driver, getObjectPayment("PaymentPage_EMI_EnterCard_Details_btn"), 10);
@@ -1623,7 +1634,14 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		//textPresent_Log(driver, "Selected EMI option", 5);
 
 		textPresent_Log(driver, "Interest (Charged by Bank)", 5);
-
+		if(PayType.equalsIgnoreCase("NoCostEMI")) {
+			textPresent_Log(driver, "No Cost EMI discount", 1);
+			textPresent_Log(driver, "is given upfront as No Cost EMI discount", 1);
+		}
+		if(PayType.equalsIgnoreCase("EMI")) {
+			textPresent_Log(driver, "total cost includes interest of", 1);
+			textPresent_Log(driver, "Interest charged by bank is non-refundable", 1);
+		}
 		elementVisible(driver, getObjectPayment("PaymentPage_EMI_Change_Plan_Button"), 5);
 		textPresent_Log(driver, "Enter credit card details", 5);
 		Enter_CC_Details(driver, platform.value("RazorPay_Number"), platform.value("RazorPay_Month_UI"), platform.value("RazorPay_Year"), platform.value("RazorPay_CVV"));
@@ -1747,7 +1765,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			Reporter.log("Selected ICICI Bank");
 			safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
 		}
-
+		Thread.sleep(5000);
 		bento_pay_GWPage(driver, "RAZORPAYNB","","Success");
 /*		textPresent_Log(driver, "Welcome to Razorpay Software Private Ltd Bank", 20);
 		safeClick(driver, getObjectPayment("Bento_Payment_NB_Payment_Success"));

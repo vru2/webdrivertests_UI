@@ -18,8 +18,9 @@ public class IN_EMI_BFL extends PaymentsBento_Itn_Hotels_Common {
 		driver.manage().deleteAllCookies();
 		driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
 		hotelsDetailsPage(driver, "", "");
+		hotelsItnPage(driver, "", "", "", "");
 		bento_Validation_Text(driver, "BFL", "");
-		hotelsPaymentPage(driver,"BFL","RAZORPAY","","","");
+		hotelsPaymentPage(driver,"BFL","RAZORPAYNB","","","");
 	}
 	
  		@AfterClass(alwaysRun = true)

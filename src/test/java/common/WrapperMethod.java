@@ -464,7 +464,6 @@ public class WrapperMethod extends CommonUtil {
 			} else {
 				File file = new File(".");
 				String filepath = file.getCanonicalPath() + "//exe//chromedriver_mac";
-
 			}
 
 

@@ -20,7 +20,7 @@ public class IN_GoogleCaptcha_Validation extends PaymentsBento_Itn_Hotels_Common
 		driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
 		hotelsDetailsPage(driver, "", "");
 		hotelsItnPage(driver, "", "", "", "");
-		hotelsPaymentPage(driver,"CC","INVALID","","Googlecaptcha",""); 
+		hotelsPaymentPage(driver,"CC","INVALID","","Googlecaptcha","","");
 	} 
 
 		@AfterClass

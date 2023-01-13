@@ -22,7 +22,7 @@ public class IN_CC_Razorpay extends PaymentsBento_Itn_Hotels_Common {
 			driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
 			hotelsDetailsPage(driver, "", "");
 			hotelsItnPage(driver, "", "", "", "");
-			hotelsPaymentPage(driver,"CC","5241","","","");
+			hotelsPaymentPage(driver,"CC","5241","","","", "%24121 CC Razorpay : ");
 		}
 
 		@AfterClass

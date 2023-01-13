@@ -32,7 +32,7 @@ public class IN_AmazonPay extends PaymentsBento_Itn_Hotels_Common {
 		hotelsDetailsPage(driver, "", "");
 		System.out.println("launched browser page");
 		hotelsItnPage(driver, "", "", "", "");
-		hotelsPaymentPage(driver,"TW","AmazonPay","","",""); 
+		hotelsPaymentPage(driver,"TW","AmazonPay","","","","Amazonpay ");
 	} 
 
  		@AfterClass

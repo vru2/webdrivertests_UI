@@ -20,7 +20,7 @@ public class IN_SavedCard_RazorPay extends PaymentsBento_Itn_Hotels_Common {
 		driver.manage().addCookie(ctauth_Saved_Cards);
 		hotelsDetailsPage(driver, "", "");
 		hotelsItnPage(driver, "", "", "", "");
-		hotelsPaymentPage(driver,"storedcard","5241","HOTELS","","");
+		hotelsPaymentPage(driver,"storedcard","5241","HOTELS","","", "Saved Card Razorpay : ");
 	} 
 
  		@AfterClass

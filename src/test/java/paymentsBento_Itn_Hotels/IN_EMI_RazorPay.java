@@ -24,7 +24,7 @@ public class IN_EMI_RazorPay extends PaymentsBento_Itn_Hotels_Common {
 		hotelsDetailsPage(driver, "", "");
 		hotelsItnPage(driver, "", "", "", "");
 		bento_Validation_Text(driver, "EMI", "");
-		hotelsPaymentPage(driver,"EMI","RAZORPAY","","EMI","");
+		hotelsPaymentPage(driver,"EMI","RAZORPAY","","EMI","", "EMI Razorpay : " );
 	} 
 
  		@AfterClass

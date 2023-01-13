@@ -19,7 +19,7 @@ public class IN_Coupon_Invalid_NB extends PaymentsBento_Itn_Hotels_Common {
 		driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
 		hotelsDetailsPage(driver, "", "");
 		hotelsItnPage(driver, "COUPONCC", "", "", "");
-		hotelsPaymentPage(driver,"NB","","Hotels","Coupon","InvalidCoupon");// Invalid Coupon Validation
+		hotelsPaymentPage(driver,"NB","","Hotels","Coupon","InvalidCoupon", "Invalid Coupon NB : ");// Invalid Coupon Validation
 		} 
 
  		@AfterClass

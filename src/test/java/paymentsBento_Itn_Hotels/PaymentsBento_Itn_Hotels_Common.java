@@ -174,17 +174,29 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 				safeClick(driver, By.xpath("//div[2]/input"));
 				safeType(driver, By.xpath("//div[2]/input"), GV_pin);
 			}
-			else if(CouponGV.equalsIgnoreCase("PartialGV")){{
+			else if(CouponGV.equalsIgnoreCase("PartialGV")){
+				{
 				String[] GV1 = getGV(10);
 				safeType(driver, By.xpath("//div[3]/div/div[2]/div/input"), GV1[0]);
 				elementVisible(driver, By.xpath("//div[2]/input"), 5);
 				mouseHover(driver, By.xpath("//div[2]/input"));
 				safeClick(driver, By.xpath("//div[2]/input"));
 				safeType(driver, By.xpath("//div[2]/input"),  GV1[1]);
+				safeClick(driver, By.xpath("//div[2]/div[3]/button"));
+				textPresent_Log(driver, "redeemed from your gift card", 10);
+			}
+			{
+					String[] GV1 = getGV(10);
+					safeType(driver, By.xpath("//div[3]/div/div[2]/div/input"), GV1[0]);
+					elementVisible(driver, By.xpath("//div[2]/input"), 5);
+					mouseHover(driver, By.xpath("//div[2]/input"));
+					safeClick(driver, By.xpath("//div[2]/input"));
+					safeType(driver, By.xpath("//div[2]/input"),  GV1[1]);
 			}
 			}
 			safeClick(driver, By.xpath("//div[2]/div[3]/button"));
 			textPresent_Log(driver, "redeemed from your gift card", 10);
+
 		}
 		else if(CouponGV.equalsIgnoreCase("COUPONCC")) {
 			mouseHover(driver, By.xpath("//div[3]/div/div[2]/div/input"));
@@ -357,8 +369,8 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		}
 	}
 
-	public void hotelsPaymentPage(RemoteWebDriver driver, String PaymentType, String CardNumber, String Domain, String PayType, String BankName) throws Exception {
+	public void hotelsPaymentPage(RemoteWebDriver driver, String PaymentType, String CardNumber, String Domain, String PayType, String BankName, String TestDetails) throws Exception {
 		//hotelsPayment_Page_Validation(driver, PayType, Domain);
-		paymentPageHotels(driver, PaymentType, CardNumber, Domain, PayType, BankName);
+		paymentPageHotels(driver, PaymentType, CardNumber, Domain, PayType, BankName, TestDetails);
 	}
 }

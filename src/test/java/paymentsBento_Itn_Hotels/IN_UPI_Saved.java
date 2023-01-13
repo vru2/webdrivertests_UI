@@ -20,7 +20,7 @@ public class IN_UPI_Saved extends PaymentsBento_Itn_Hotels_Common {
 		driver.manage().addCookie(ctauth_partial_wallet);
 		hotelsDetailsPage(driver, "", "");
 		hotelsItnPage(driver, "", "", "", "");
-		hotelsPaymentPage(driver, "UPI", "", "", "SavedUPI", "");
+		hotelsPaymentPage(driver, "UPI", "", "", "SavedUPI", "", "Saved UPI : ");
 	}
 
 

@@ -19,7 +19,7 @@ public class IN_UPI extends PaymentsBento_Itn_Hotels_Common {
 		driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
 		hotelsDetailsPage(driver, "", "");
 		hotelsItnPage(driver, "", "", "", "");
-		hotelsPaymentPage(driver, "UPI", "", "", "", "");
+		hotelsPaymentPage(driver, "UPI", "", "", "", "", "UPI : ");
 	} 
 
  		@AfterClass

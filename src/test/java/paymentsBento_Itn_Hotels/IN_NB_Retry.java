@@ -19,7 +19,7 @@ public class IN_NB_Retry extends PaymentsBento_Itn_Hotels_Common {
 		driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
 		hotelsDetailsPage(driver, "", "");
 		hotelsItnPage(driver, "", "", "", "");		
-		hotelsPaymentPage(driver,"NB","","","Retry","");
+		hotelsPaymentPage(driver,"NB","","","Retry","", "NB Retry : ");
 	} 
 
  		@AfterClass

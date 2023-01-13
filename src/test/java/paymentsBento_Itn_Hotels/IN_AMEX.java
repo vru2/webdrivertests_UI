@@ -19,7 +19,7 @@ public class IN_AMEX extends PaymentsBento_Itn_Hotels_Common {
 		driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
 		hotelsDetailsPage(driver, "", "");
 		hotelsItnPage(driver, "", "", "", "");
-		hotelsPaymentPage(driver,"CC","3456","","",""); 
+		hotelsPaymentPage(driver,"CC","3456","","","", "3456 Amex Card : ");
 	}
 	
  		@AfterClass(alwaysRun = true)

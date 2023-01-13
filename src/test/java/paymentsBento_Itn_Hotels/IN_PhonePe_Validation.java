@@ -19,7 +19,7 @@ public class IN_PhonePe_Validation extends PaymentsBento_Itn_Hotels_Common {
 		driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
 		hotelsDetailsPage(driver, "", "");
 		hotelsItnPage(driver, "", "", "", "");
-		hotelsPaymentPage(driver,"Phonepe","","","","");
+		hotelsPaymentPage(driver,"Phonepe","","","","", "Phonepe validatipn only : ");
 	} 
 
  		@AfterClass

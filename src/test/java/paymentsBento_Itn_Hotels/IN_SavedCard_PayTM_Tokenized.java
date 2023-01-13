@@ -20,7 +20,7 @@ public class IN_SavedCard_PayTM_Tokenized extends PaymentsBento_Itn_Hotels_Commo
 		driver.manage().addCookie(ctauth_Saved_Cards);
 		hotelsDetailsPage(driver, "", "");
 		hotelsItnPage(driver, "", "", "", "");
-		hotelsPaymentPage(driver,"storedcard","7777","HOTELS","","");
+		hotelsPaymentPage(driver,"storedcard","7777","HOTELS","","","Tokenized Card 7777 : ");
 	}
 
  		@AfterClass

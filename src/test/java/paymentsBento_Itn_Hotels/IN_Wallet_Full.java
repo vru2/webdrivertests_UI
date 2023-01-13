@@ -26,7 +26,7 @@ public class IN_Wallet_Full extends PaymentsBento_Itn_Hotels_Common {
 		refreshPage(driver);
 		hotelsDetailsPage(driver, "", "");
 		hotelsItnPage(driver, "", "", "", "");
-		hotelsPaymentPage(driver, "wallet", "", "", "", "");
+		hotelsPaymentPage(driver, "wallet", "", "", "", "", "Full Wallet : ");
 	} 
 
  		@AfterClass

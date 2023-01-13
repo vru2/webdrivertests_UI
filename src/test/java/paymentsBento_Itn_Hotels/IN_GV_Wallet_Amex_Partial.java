@@ -21,8 +21,8 @@ public class IN_GV_Wallet_Amex_Partial extends PaymentsBento_Itn_Hotels_Common {
 		addwalletamount(10, "ct_wallet_partial@cleartrip.com");
 		hotelsDetailsPage(driver, "", "");
 		hotelsItnPage(driver, "PartialGV", "", "", "");
-		hotelsPaymentPage(driver,"CC","3456","","WALLET",""); 
-	} 
+		hotelsPaymentPage(driver,"CC","3456","","WALLET","", "MULTI GV + WL + AMEX : ");
+	}
 
  		@AfterClass
 		public void closeSelenium() throws Exception { 

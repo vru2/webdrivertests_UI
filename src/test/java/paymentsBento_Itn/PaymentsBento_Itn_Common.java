@@ -115,7 +115,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	public void addwalletamount(int amount, String emailID) throws Exception
 	{
 		Response resp;
-		String url="http://172.29.20.92:9001/payments/wallet/cashback?emailId="+emailID+"&currency=INR&"+amount+"=5000&expiryDate%20=30/04/24";
+		String url="http://172.29.20.92:9001/payments/wallet/cashback?emailId="+emailID+"&currency=INR&amount="+amount+"&expiryDate%20=30/04/24";
 		System.out.println("url : "+url);
 		resp=RestAssured.get(url);
 
@@ -1116,13 +1116,13 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		}
 	}
 
-	public void paymentPageHotels(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType,String BankName) throws Exception {
+	public void paymentPageHotels(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType,String BankName, String TestDetails) throws Exception {
 		if(elementVisible(driver, getObjectPayment("Bento_Pay_PayToCompleteBooking_Txt"), 30))
 		{
 			bento_paymentpage(driver,PaymentType, CardNumber,domain,PayType,BankName);
 			if(!(CardNumber=="ADCB"||PaymentType=="Phonepe"||PaymentType=="UPIScan"||PayType=="Googlecaptcha"))
 			{
-				confirmation_page_hotel(driver, PaymentType, CardNumber);
+				confirmation_page_hotel(driver, PaymentType, CardNumber, TestDetails);
 			}
 		}
 		else if(textPresent(driver,"Sorry, our servers are stumped with your request",1)||textPresent(driver,"Flight not available",1))
@@ -1137,12 +1137,12 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		}
 	}
 
-	public void confirmation_page(RemoteWebDriver driver, String PaymentType, String CardNumber) throws Exception {
+	public void confirmation_page(RemoteWebDriver driver, String PaymentType, String CardNumber, String TestDetails) throws Exception {
 		Thread.sleep(5000);
 		if(getURL(driver).contains("flights")) {
 			confirmation_page_air(driver, PaymentType, CardNumber);
 		} else if(getURL(driver).contains("hotels")) {
-			confirmation_page_hotel(driver, PaymentType, CardNumber);
+			confirmation_page_hotel(driver, PaymentType, CardNumber, TestDetails);
 		}
 	}
 
@@ -1163,12 +1163,13 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		Reporter.log("Confirmation Page "+logURL(driver));
 	}
 
-	public void confirmation_page_hotel(RemoteWebDriver driver, String PaymentType, String CardNumber) throws Exception {
+	public void confirmation_page_hotel(RemoteWebDriver driver, String PaymentType, String CardNumber, String TestDetails) throws Exception {
 		elementPresent_log(driver, By.xpath("//div[3]/p"), "TripID", 30);
 		textPresent_Log(driver, "Booking successful", 30);
 		String tripid = getText(driver, By.xpath("//div[3]/p"));
-		Reporter.log(PaymentType+" "+CardNumber+" : "+tripid);
-		System.out.println(PaymentType+" "+CardNumber+" : "+tripid);
+		logURL(driver);
+		Reporter.log(TestDetails+tripid);
+		System.out.println(TestDetails+tripid);
 	}
 
 	public void bento_paymentpage(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
@@ -1179,8 +1180,15 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			Reporter.log("Deselected wallet");
 			Thread.sleep(2000);
 		}*/
-		if (PaymentType.equalsIgnoreCase("WALLET")||PayType.equalsIgnoreCase("WALLET"))
+		if (PaymentType.equalsIgnoreCase("WALLET"))
 		{
+			safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
+			Reporter.log("Selected wallet");
+			Thread.sleep(2000);
+		}
+		if (PayType.equalsIgnoreCase("WALLET"))
+		{
+			textPresent_Log(driver, "Cleartrip wallet", 2);
 			safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
 			Reporter.log("Selected wallet");
 			Thread.sleep(2000);
@@ -1569,9 +1577,9 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			{
 				smartClick(driver,getObjectPayment("Bento_Payment_Skip_Securecard"));
 			}
-			textPresent(driver, "ACS Emulator", 2);
+			textPresent(driver, "ACS Emulator", 10);
 			smartClick(driver, getObjectPayment("Bento_Payment_AMC_SUBMIT"));
-			textPresent_Log(driver, "Booking successful", 10);
+			textPresent_Log(driver, "Booking successful", 30);
 			Reporter.log("Payment done successfully");
 		}
 	}

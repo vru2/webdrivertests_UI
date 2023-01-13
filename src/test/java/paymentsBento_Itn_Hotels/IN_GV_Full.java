@@ -20,7 +20,7 @@ public class IN_GV_Full extends PaymentsBento_Itn_Hotels_Common {
 		//driver.manage().addCookie(hotelLogin);
 		hotelsDetailsPage(driver, "", "");
 		hotelsItnPage(driver, "FullGV", "", "", "");
-		hotelsPaymentPage(driver, "GV", "", "", "", "");
+		hotelsPaymentPage(driver, "GV", "", "", "", "", "Full GV : ");
 	}
 
  		@AfterClass

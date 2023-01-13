@@ -19,7 +19,7 @@ public class IN_Coupon_Valid extends PaymentsBento_Itn_Hotels_Common {
 		driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
 		hotelsDetailsPage(driver, "", "");
 		hotelsItnPage(driver, "COUPONCC", "", "", "");
-		hotelsPaymentPage(driver,"Coupon","Hotel","","","");
+		hotelsPaymentPage(driver,"Coupon","Hotel","","","", "Valid Coupon Razorpay : ");
 		} 
 
  		@AfterClass

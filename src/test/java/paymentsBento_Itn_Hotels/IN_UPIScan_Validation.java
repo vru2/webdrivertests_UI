@@ -19,7 +19,7 @@ public class IN_UPIScan_Validation extends PaymentsBento_Itn_Hotels_Common {
 		driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
 		hotelsDetailsPage(driver, "", "");
 		hotelsItnPage(driver, "", "", "", "");
-		hotelsPaymentPage(driver,"UPIScan","","","","");
+		hotelsPaymentPage(driver,"UPIScan","","","","", "UPI Scan : ");
 	} 
 
  		@AfterClass

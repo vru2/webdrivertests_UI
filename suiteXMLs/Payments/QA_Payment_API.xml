@@ -48,7 +48,7 @@
         <classes>
             <class name="test.java.paymentsAPI.API_SuperCoins_CheckBalance"/>
             <class name="test.java.paymentsAPI.API_SuperCoins_CheckEarnPoints"/>
-            <!-- <class name="test.java.paymentsAPI.API_SuperCoins_Info"/>-->
+             <class name="test.java.paymentsAPI.API_SuperCoins_Info"/>
             <class name="test.java.paymentsAPI.API_SuperCoins_MobileLinked"/>
             <class name="test.java.paymentsAPI.API_SuperCoins_Hold_Unhold"/>
             <class name="test.java.paymentsAPI.API_SuperCoins_PromoActivate"/>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="GV Full"
+           tests="2"
+           failures="0"
+           errors="0"
+           skipped="1"
+           time="117.762">
+  <properties />
+  
+            <testcase name="Hotel_IN_GVFull" time="0.0" classname="test.java.paymentsBento_Itn_Hotels.IN_GV_Full">
+          <skipped />
+    </testcase>
+  
+            <testcase name="Hotel_IN_GVFull" time="48.876" classname="test.java.paymentsBento_Itn_Hotels.IN_GV_Full" />
+      
+</testsuite>

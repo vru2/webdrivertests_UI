@@ -188,6 +188,7 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 	String ParamsSuperCoins_ValidateOTP1 = "\",\"params\":{\"mobile\":\"+918884094547\",\"itineraryId\":\"681f6b756d-67de-4efc-b3-5a7ac1bd9fa1\"}}";
 	String ParamsSuperCoins_Earn1= "{\"rewardsType\":\"SUPERCOINS\",\"rewardsRequestType\":\"EARN_CHECK\",\"trackId\":\"SAL1011122ghfjkf\",\"productType\":\"HOTEL\",\"amount\":1801,\"currency\":\"INR\"}";
 	String ParamsSuperCoins_CheckMobileLinked1="{\"rewardsType\":\"SUPERCOINS\",\"rewardsRequestType\":\"ACCOUNT_LINKED_AND_BALANCE\",\"productType\":\"HOTEL\",\"params\":{\"itineraryId\":\"756177b6c1-fab4-4643-ab7c-220704151433\",\"mobile\":\"+919986696785\"},\"amount\":1000.0,\"uid\":\"756177b6c1-fab4-4643-ab7c-220704151433\"}";
+	String ParamsSuperCoins_TrnxInfo="{\"tripRef\":\"Q210922154594\",\"paymentId\":\"\",\"txnType\":[\"INIT_EARN\"]}";
 
 
 	String ParamsSuperCoins_Hold = "{\"rewardsType\":\"SUPERCOINS\",\"rewardsRequestType\":\"HOLD\",\"trackId\":\"681f76-6de-4ec-b359adhks1s6\",\"productType\":\"AIR\",\"amount\":1.6,\"params\":{\"mobile\":\"+919986696785\",\"itineraryId\":\"681f76-6de-4ec-16559048910479\"}}";
@@ -306,9 +307,12 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 
 	String urlSuperCoins_MobileLinked= "/payments/rewards/supercoins/checkAccountLinked?mobileNumber=+919986696785";
 
+	String urlSuperCoins_Info= "payments/rewards/supercoins/rewardTxnDetails";
+
 	String urlHi5_GetTrnx= "/pay/wallet/5758972/transactions?offset=1&size=10";
 
-	String urlSuperCoins_Info = "/api/supercoinsInfo/Q221028592282";
+	//String urlSuperCoins_Info = "/api/supercoinsInfo/Q221028592282";
+	//String urlSuperCoins_TrnxInfo = "/api/supercoinsInfo/Q221028592282";
 	
 	String urlSuperCoins_SendOTP="/payments/rewards/sendOtp";
 
@@ -1428,6 +1432,14 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 			RestAssured.baseURI =urlRewards;
 			url= urlSuperCoins_CheckMobileLinked1;
 			params = ParamsSuperCoins_CheckMobileLinked1;
+		}
+
+		else if(payType.equalsIgnoreCase("SuperCoins_Info")) {
+			headers=headersForms_Supercoins();
+			headers=headersForms_Supercoins();
+			RestAssured.baseURI =urlRewards;
+			url= urlSuperCoins_Info;
+			params = ParamsSuperCoins_TrnxInfo;
 		}
 
 
@@ -4643,7 +4655,12 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 		}
 	}	
 	else if(payType.equals("SuperCoins_Info")) {
-		String Status= jsonPathEvaluator.getString("status");
+			if(!(resp.body().asString().contains("amount") && resp.body().asString().contains(":4.0"))) {
+				Reporter.log("amount :4.0 not displayed");
+				Assert.assertTrue(false);
+			}
+
+	/*	String Status= jsonPathEvaluator.getString("status");
 		Reporter.log("Status " +Status);
 		if(!Status.equals("ACTIVE")) {
 			Assert.assertTrue(false);
@@ -4652,7 +4669,7 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 		Reporter.log("coins " +coins);
 		if(!coins.equals("5")) {
 			Assert.assertTrue(false);
-		}		
+		}*/
 	}
 	else if(payType.equals("SuperCoins_CheckBalance")) {
 		String Status= jsonPathEvaluator.getString("status");

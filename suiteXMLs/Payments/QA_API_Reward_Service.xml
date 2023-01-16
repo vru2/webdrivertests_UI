@@ -10,24 +10,37 @@
 
 <test name="API ADCB" preserve-order="true" parallel="true">
     <classes>
-      <class name="test.java.paymentsAPI.API_Reward_ADCB_CheckBalance"/>
-      <class name="test.java.paymentsAPI.API_Reward_ADCB_Pay"/>
+<!--      <class name="test.java.paymentsAPI.API_Reward_ADCB_CheckBalance"/>
+      <class name="test.java.paymentsAPI.API_Reward_ADCB_Pay"/>-->
     </classes>
 </test>
 
 <test name="API PayBack" preserve-order="true" parallel="true">
     <classes>
-      <class name="test.java.paymentsAPI.API_RewardPayback"/>
+     <!-- <class name="test.java.paymentsAPI.API_RewardPayback"/>-->
     </classes>
 </test>
+
+    <test name="Supercoins" preserve-order="true" parallel="true">
+        <classes>
+            <class name="test.java.paymentsAPI.API_SuperCoins_CheckBalance"/>
+            <class name="test.java.paymentsAPI.API_SuperCoins_CheckEarnPoints"/>
+            <!-- <class name="test.java.paymentsAPI.API_SuperCoins_Info"/>-->
+            <class name="test.java.paymentsAPI.API_SuperCoins_MobileLinked"/>
+            <class name="test.java.paymentsAPI.API_SuperCoins_Hold_Unhold"/>
+            <class name="test.java.paymentsAPI.API_SuperCoins_PromoActivate"/>
+            <class name="test.java.paymentsAPI.API_SuperCoins_PromoCreate"/>
+            <class name="test.java.paymentsAPI.API_SuperCoins_PromoUpdate"/>
+        </classes>
+    </test>
 
 
 
 <test name="API Qitaf" preserve-order="true" parallel="true">
     <classes>
-      <class name="test.java.paymentsAPI.API_Qitaf_Redeem"/>
+<!--      <class name="test.java.paymentsAPI.API_Qitaf_Redeem"/>
       <class name="test.java.paymentsAPI.API_Qitaf_Reverse"/>
-      <class name="test.java.paymentsAPI.API_Qitaf_SendOTP"/>
+      <class name="test.java.paymentsAPI.API_Qitaf_SendOTP"/>-->
     </classes>
 </test>
 

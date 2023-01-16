@@ -1175,6 +1175,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 	public void bento_paymentpage(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
 		textPresent_Log(driver, "Pay to complete your booking", 20);
 		Reporter.log(driver.getCurrentUrl());
+		System.out.println(driver.getCurrentUrl());
 		/*if((textPresent(driver, "Your wallet balance is sufficient", 2)||textPresent(driver, "from your wallet", 2))) {
 			//safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
 			Reporter.log("Deselected wallet");
@@ -1370,7 +1371,7 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 				Thread.sleep(2000);
 			}
 			smartClick(driver, getObjectPayment("PayUI_Expressway_CheckBox_New"));
-			Thread.sleep(1000);
+			//Thread.sleep(1000);
 			safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
 			Reporter.log("Clicked on paynow");
 			if(elementVisible(driver,getObjectPayment("Bento_Payment_Skip_Securecard"),1))
@@ -1539,7 +1540,12 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		else if(GWName.equalsIgnoreCase("RAZORPAYNB")){
 				if(SuccessFail.equalsIgnoreCase("Success")){
 					Thread.sleep(2000);
+					textPresent(driver, "Welcome to Razorpay Software Private Ltd Bank", 10);
+
+
 					elementPresent_log(driver, getObjectPayment("Bento_Payment_NB_Payment_Success"), "",	10);
+					textPresent(driver, "Welcome to Razorpay Software Private Ltd Bank", 10);
+					elementVisible(driver, getObjectPayment("Bento_Payment_NB_Payment_Success"), 10);
 					safeClick(driver, getObjectPayment("Bento_Payment_NB_Payment_Success"));
 					Reporter.log("Clicked on Success NB");
 				}
@@ -1613,21 +1619,25 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 		//safeClick(driver, getObjectPayment("PaymentPage_EMI_ICICIBank_Radio_Btn"));
 		elementVisible(driver, By.xpath("//div[10]/div/div[3]/label/div"), 5);
 		if(PayType.equalsIgnoreCase("NoCostEMI")) {
+			safeClick(driver, By.cssSelector("label.switch-label"));
 			String NoCostEMI_Text = getText(driver, By.xpath("//div[10]/div/div[3]/label/div"));
-			System.out.println("NoCostEMI_Text "+NoCostEMI_Text);
 			if (!NoCostEMI_Text.contains("No Cost")) {
 				Reporter.log("No Cost text not displayed");
 				//Assert.assertTrue(false);
 			}
+
 			safeClick(driver, By.xpath("//div[10]/div/div[3]/label/div"));
 		}
 		else if(PayType.equalsIgnoreCase("EMI")){
 			String NoCostEMI_Text = getText(driver, By.xpath("//div[7]/label/div/span"));
+			safeClick(driver, By.xpath("//div[7]/label/div/span"));
 			if (NoCostEMI_Text.contains("No Cost")) {
 				Reporter.log("No Cost text not displayed");
-				//Assert.assertTrue(false);
+				Assert.assertTrue(false);
 			}
-			safeClick(driver, By.xpath("//div[7]/label/div/span"));
+		}
+		if(PayType.equalsIgnoreCase("EMI")) {
+				textPresent_Log(driver, "Interest charged by bank is non-refundable", 1);
 		}
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -1646,9 +1656,8 @@ public class PaymentsBento_Itn_Common extends PaymentUI_Common_Bento {
 			textPresent_Log(driver, "No Cost EMI discount", 1);
 			textPresent_Log(driver, "is given upfront as No Cost EMI discount", 1);
 		}
-		if(PayType.equalsIgnoreCase("EMI")) {
+		else if(PayType.equalsIgnoreCase("NoCostEMI")) {
 			textPresent_Log(driver, "total cost includes interest of", 1);
-			textPresent_Log(driver, "Interest charged by bank is non-refundable", 1);
 		}
 		elementVisible(driver, getObjectPayment("PaymentPage_EMI_Change_Plan_Button"), 5);
 		textPresent_Log(driver, "Enter credit card details", 5);

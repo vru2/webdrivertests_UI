@@ -27,17 +27,18 @@ public class PaymentUI_Common extends PaymentNodeJS{
 	Cookie cookie_Add_SC=new Cookie("ct-auth","CcNCE1HeA9xi0zLBvdgyipMrHyjrTOVaxM0bGlOeHZozx7q0nRs8lpmI1Yj3mhsDmKAAIK983rJHezZppJTjL%2Buyt1YsWGAmZnjGtzjP9wxHHXyajC%2Bt%2B1aDMXmoRrDZhqYD5As3rJQDNFIGCYzSR0PRSgXTL404cS4HrO2fJkk%3D");
 
 	public void payUI_Select_PaymentType(RemoteWebDriver driver, String PayType) throws Exception {
-		for (int i = 0; i < 10; i++) {			
-			if(textPresent(driver, "System error", 1)) {
+		for (int i = 0; i < 10; i++) {
+			if(elementVisible(driver, getObjectPayment("PayUI_Pay_Tabs"), 1)) {
+				break;
+			}
+			else if(textPresent(driver, "System error", 1)) {
 			Reporter.log("There's something wrong with our system");			
 			Assert.assertTrue(false);
 		} else if(textPresent(driver, "Oops, Something went wrong", 1)) {
 			Reporter.log("Oops something wrong with our system");			
 			Assert.assertTrue(false);
 		}
-		if(elementVisible(driver, getObjectPayment("PayUI_Pay_Tabs"), 1)) {
-			break;
-		}
+
 		}
 		if(!elementVisible(driver, getObjectPayment("PayUI_Pay_Tabs"), 10)) {
 			Reporter.log("PayUI Page is not displayed");

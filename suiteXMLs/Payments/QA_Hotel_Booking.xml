@@ -78,7 +78,7 @@
 
     <test name="EMI" preserve-order="true">
         <classes>
-            <!--        <class name="test.java.paymentsBento_Itn_Hotels.IN_EMI_RazorPay"/>-->
+                    <class name="test.java.paymentsBento_Itn_Hotels.IN_EMI_RazorPay"/>
         </classes>
     </test>
 
@@ -97,12 +97,6 @@
                     <class name="test.java.paymentsBento_Itn_Hotels.IN_EMI_BFL"/>
         </classes>
     </test>
-
-<test name="DC" preserve-order="true">
-    <classes>
-	       <!-- <class name="test.java.paymentsBento_Itn_Hotels.IN_DC_Razorpay"/>-->
-    </classes>
-</test>
 
 <test name="Coupon Valid PayU" preserve-order="true">
     <classes>

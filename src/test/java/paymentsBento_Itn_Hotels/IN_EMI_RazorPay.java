@@ -20,7 +20,7 @@ public class IN_EMI_RazorPay extends PaymentsBento_Itn_Hotels_Common {
 		//System.setproperty("webdriver.chrome.driver", "chromedriver");
 		//Webdriver driver = new ChromeDriver();
 		driver.manage().deleteAllCookies();
-		driver.get(hotelDetailsUrl_3Days("IN", hotelName_DetailsPage));
+		driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
 		hotelsDetailsPage(driver, "", "");
 		hotelsItnPage(driver, "", "", "", "");
 		bento_Validation_Text(driver, "EMI", "");

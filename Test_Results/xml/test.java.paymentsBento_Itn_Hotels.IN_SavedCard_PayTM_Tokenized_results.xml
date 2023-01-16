@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Tokenized Saved Card"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="99.305">
+  <properties />
+  
+  
+            <testcase name="Hotel_IN_Tokenized_payTM" time="99.305" classname="test.java.paymentsBento_Itn_Hotels.IN_SavedCard_PayTM_Tokenized" />
+      
+</testsuite>

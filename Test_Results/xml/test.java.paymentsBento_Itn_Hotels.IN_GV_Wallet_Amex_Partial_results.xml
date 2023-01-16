@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="GV WL Amex Partial"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="85.262">
+  <properties />
+  
+  
+            <testcase name="Hotel_IN_WL_GV_CC_Amex" time="85.262" classname="test.java.paymentsBento_Itn_Hotels.IN_GV_Wallet_Amex_Partial" />
+      
+</testsuite>

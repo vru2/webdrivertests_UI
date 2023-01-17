@@ -353,7 +353,7 @@ public class WrapperMethod extends CommonUtil {
 		if ( this.common.value("headlessbrowser").equalsIgnoreCase("true")) {
 
 			File file = new File(".");
-			System.setProperty("webdriver.gecko.driver", file.getCanonicalPath() + "//exe//geckodriver_linux");
+			System.setProperty("webdriver.gecko.driver", file.getCanonicalPath() + "//exe//geckodriver");
 			FirefoxOptions options = new FirefoxOptions()
 					//	.addPreference("--headless", 1)
 					.addPreference("browser.startup.page", 1)
@@ -366,7 +366,7 @@ public class WrapperMethod extends CommonUtil {
 		else {
 
 			File file = new File(".");
-			System.setProperty("webdriver.gecko.driver", file.getCanonicalPath() + "//exe//geckodriver_linux");
+			System.setProperty("webdriver.gecko.driver", file.getCanonicalPath() + "//exe//geckodriver");
 			FirefoxOptions options = new FirefoxOptions()
 					//	.addPreference("--headless", 1)
 					.addPreference("browser.startup.page", 1);

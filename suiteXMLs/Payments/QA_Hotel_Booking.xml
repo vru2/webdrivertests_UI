@@ -9,6 +9,13 @@
 
 </listeners>
 
+
+    <test name="Multi GV WL Amex Partial" preserve-order="true">
+        <classes>
+            <class name="test.java.paymentsBento_Itn_Hotels.IN_GV_Wallet_Amex_Partial"/>
+        </classes>
+    </test>
+
     <test name="CC PayU" preserve-order="true">
         <classes>
             <class name="test.java.paymentsBento_Itn_Hotels.IN_PayU"/>
@@ -43,12 +50,6 @@
 <test name="GV Full" preserve-order="true">
     <classes>
 	        <class name="test.java.paymentsBento_Itn_Hotels.IN_GV_Full"/>
-    </classes>
-</test>
-
-<test name="GV WL Amex Partial" preserve-order="true">
-    <classes>
-	        <class name="test.java.paymentsBento_Itn_Hotels.IN_GV_Wallet_Amex_Partial"/>
     </classes>
 </test>
 

@@ -1,0 +1,144 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Hotels Booking" parallel="tests" thread-count="2">
+
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter" />
+        <listener class-name="test.java.common.RemoveDuplicateResults"/>
+        <listener class-name="test.java.common.RetryListener"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+
+    </listeners>
+
+    <test name="Coupon Valid Razorpay" preserve-order="true">
+        <classes>
+            <class name="test.java.paymentsBento_Itn_Hotels.IN_Coupon_Valid"/>
+        </classes>
+    </test>
+
+    <test name="Coupon InValid NB" preserve-order="true">
+        <classes>
+            <class name="test.java.paymentsBento_Itn_Hotels.IN_Coupon_Invalid_NB"/>
+        </classes>
+    </test>
+
+    <test name="CC PayU" preserve-order="true">
+        <classes>
+            <class name="test.java.paymentsBento_Itn_Hotels.IN_PayU"/>
+        </classes>
+    </test>
+
+    <test name="CC PayTM" preserve-order="true">
+        <classes>
+            <class name="test.java.paymentsBento_Itn_Hotels.IN_DC_PayTM"/>
+        </classes>
+    </test>
+
+    <test name="EMI" preserve-order="true">
+        <classes>
+            <class name="test.java.paymentsBento_Itn_Hotels.IN_EMI_RazorPay"/>
+        </classes>
+    </test>
+
+    <test name="EMI No Cost" preserve-order="true">
+        <classes>
+            <class name="test.java.paymentsBento_Itn_Hotels.IN_EMI_NoCostEMI"/>
+        </classes>
+    </test>
+
+    <test name="EMI BFL" preserve-order="true">
+        <classes>
+            <class name="test.java.paymentsBento_Itn_Hotels.IN_EMI_BFL"/>
+        </classes>
+    </test>
+
+    <test name="GV Full" preserve-order="true">
+        <classes>
+            <class name="test.java.paymentsBento_Itn_Hotels.IN_GV_Full"/>
+        </classes>
+    </test>
+
+    <test name="GV CLP Multi WL Amex Partial" preserve-order="true">
+        <classes>
+            <class name="test.java.paymentsBento_Itn_Hotels.IN_GV_CLP_Wallet_Amex_Partial"/>
+        </classes>
+    </test>
+
+    <test name="GV SCLP NB Partial" preserve-order="true">
+        <classes>
+            <class name="test.java.paymentsBento_Itn_Hotels.IN_GV_SCLP_GV_NB"/>
+        </classes>
+    </test>
+
+    <test name="GV CLP SCLP WL NB" preserve-order="true">
+        <classes>
+            <class name="test.java.paymentsBento_Itn_Hotels.IN_GV_SCLP_CLP_GV_NB"/>
+        </classes>
+    </test>
+
+    <test name="GV Price Change PopUP NB" preserve-order="true">
+        <classes>
+            <class name="test.java.paymentsBento_Itn_Hotels.IN_GV_Price_Change_PopUp"/>
+        </classes>
+    </test>
+
+    <test name="NB retry" preserve-order="true">
+        <classes>
+            <class name="test.java.paymentsBento_Itn_Hotels.IN_NB_Retry"/>
+        </classes>
+    </test>
+
+
+    <test name="Tokenized Saved Card" preserve-order="true">
+        <classes>
+            <class name="test.java.paymentsBento_Itn_Hotels.IN_SavedCard_Tokenized_Card"/>
+        </classes>
+    </test>
+
+    <test name="CC PayTM Inline Tnx" preserve-order="true">
+        <classes>
+            <class name="test.java.paymentsBento_Itn_Hotels.IN_CC_PayTM_Inline_TokenizeCard"/>
+        </classes>
+    </test>
+
+
+    <test name="UPI Inline Failure and Success" preserve-order="true">
+        <classes>
+            <class name="test.java.paymentsBento_Itn_Hotels.IN_UPI_Failure_Success"/>
+        </classes>
+    </test>
+
+
+    <test name="UPI Saved PaymentType" preserve-order="true">
+        <classes>
+            <class name="test.java.paymentsBento_Itn_Hotels.IN_SavedCard_UPIMode"/>
+        </classes>
+    </test>
+
+
+    <test name="UPI Saved UPI" preserve-order="true">
+        <classes>
+            <class name="test.java.paymentsBento_Itn_Hotels.IN_UPI_Saved"/>
+        </classes>
+    </test>
+
+
+    <test name="UPI Scan Retry Amex" preserve-order="true">
+        <classes>
+            <class name="test.java.paymentsBento_Itn_Hotels.IN_UPIScan_Validation_AMEXCC"/>
+        </classes>
+    </test>
+
+
+    <test name="Wallet Full" preserve-order="true">
+        <classes>
+            <class name="test.java.paymentsBento_Itn_Hotels.IN_Wallet_Full"/>
+        </classes>
+    </test>
+
+    <test name="PhonePe Validation" preserve-order="true">
+        <classes>
+            <class name="test.java.paymentsBento_Itn_Hotels.IN_PhonePe_Validation"/>
+        </classes>
+    </test>
+
+</suite>

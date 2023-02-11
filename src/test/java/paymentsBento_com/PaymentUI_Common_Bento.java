@@ -16,7 +16,6 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Reporter;
 
 import io.restassured.response.Response;
-import test.java.paymentsUI_Air.PaymentUI_Common;
 
 
 public class PaymentUI_Common_Bento extends PaymentUI_Common{

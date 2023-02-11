@@ -30,7 +30,6 @@ public class IN_AmazonPay extends PaymentsBento_Itn_Hotels_Common {
 		driver.manage().deleteAllCookies();
 		driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
 		hotelsDetailsPage(driver, "", "");
-		System.out.println("launched browser page");
 		hotelsItnPage(driver, "", "", "", "");
 		hotelsPaymentPage(driver,"TW","AmazonPay","","","","Amazonpay ");
 	} 

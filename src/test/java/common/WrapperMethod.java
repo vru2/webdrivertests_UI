@@ -1,7 +1,7 @@
 // Framework - Cleartrip Automation
 // Author - Kiran Kumar
 
-package test.java.  common;
+package test.java.common;
 
 import static org.testng.AssertJUnit.assertTrue;
 
@@ -14,8 +14,6 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
-
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.*;
@@ -38,6 +36,7 @@ import org.testng.Reporter;
 public class WrapperMethod extends CommonUtil {
 	// WebElement we=null;
 	private static WebDriver browserDriver;
+	public RemoteWebDriver driver;
 	//	/public static Logger logger = Logger.getLogger(WrapperMethod.class);
 
 	public static Logger logger = Logger.getLogger("");
@@ -94,410 +93,79 @@ public class WrapperMethod extends CommonUtil {
 		return capabilities;
 	}
 
-	public DesiredCapabilities createHeadlessChrome() throws IOException {
-		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--headless");
-		options.addArguments("--start-maximized", "--disable-cache");
-		options.addArguments("--no-sandbox");
-		options.addArguments("--disable-dev-shm-usage");
-		options.addArguments("--allowed-ips");
-		Map<String, Object> prefs = new HashMap();
-		File file = new File(".");
-		String filepath = file.getCanonicalPath() + "\\exe\\chromedriver.exe";
-		//this.printInfo(filepath);
-		prefs.put("profile.default_content_settings.popups", 0);
-		options.setExperimentalOption("prefs", prefs);
-		DesiredCapabilities cap = DesiredCapabilities.chrome();
-		cap.setCapability("goog:chromeOptions", options);
-		return cap;
-	}
-
-	public DesiredCapabilities createHeadlessChromeMobile() throws IOException {
-		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--headless");
-		options.addArguments("window-size=1200,1100");
-		options.addArguments("--no-sandbox");
-		options.addArguments("--disable-dev-shm-usage");
-		options.addArguments("--user-agent=Mozilla/5.0 (iPhone; U; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5");
-		options.addArguments("--allowed-ips");
-		Map<String, Object> prefs = new HashMap();
 
 
-		if (System.getProperty("os.name").contains("Windows")) {
-			File file = new File(".");
-			String filepath = file.getCanonicalPath() + "//exe//chromedriver.exe";
-			System.setProperty("webdriver.chrome.driver", filepath);
-		}else if(System.getProperty("os.name").contains("Linux")){
-			File file = new File(".");
-			String filepath = file.getCanonicalPath() + "//exe//chromedriver";
-			System.setProperty("webdriver.chrome.driver", filepath);
-		} else {
-			File file = new File(".");
-			String filepath = file.getCanonicalPath() + "//exe//chromedriver_mac";
-			System.setProperty("webdriver.chrome.driver", filepath);
-		}
 
-		prefs.put("profile.default_content_settings.popups", 0);
-		options.setExperimentalOption("prefs", prefs);
-		DesiredCapabilities cap = DesiredCapabilities.chrome();
-		cap.setCapability("goog:chromeOptions", options);
-		return cap;
-	}
-
-
-	public RemoteWebDriver getMobileDriver(RemoteWebDriver driver) throws IOException {
+	public RemoteWebDriver getDriver(RemoteWebDriver driver) throws IOException {
 
 		if(common.value("mobilebrowser").equalsIgnoreCase("chrome")) {
-			Map<String, Object> deviceMetrics = new HashMap<>();
-			// Added individual deviceMetrices & useragent
-			//deviceMetrics.put("width", 360);
-			//deviceMetrics.put("height", 560);
-			//deviceMetrics.put("pixelRatio", 4.0);
-			//// Added individual deviceMetrices & useragent
-			Map<String, Object> mobileEmulation = new HashMap<>();
-
-			mobileEmulation.put("deviceName", "Samsung Galaxy S20 Ultra");
-			//mobileEmulation.put("deviceMetrics","360*560");
-			//mobileEmulation.put("userAgent", "Mozilla/5.0 (Linux; Android 4.2.1; en-us; Nexus 5 Build/JOP40D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19");
-			if (System.getProperty("os.name").contains("Windows")) {
+			Map<String, String> mobileEmulation = new HashMap<>();
+			ChromeOptions chromeOptions = new ChromeOptions();
+			if (System.getProperty("os.name").contains("Linux")) {
 				File file = new File(".");
-				String filepath = file.getCanonicalPath() + "//exe//chromedriver.exe";
-				System.setProperty("webdriver.chrome.driver", filepath);
-			} else if (System.getProperty("os.name").contains("Linux")) {
-				File file = new File(".");
-				String filepath = file.getCanonicalPath() + "//exe//chromedriver";
+				String filepath = file.getCanonicalPath() + "//NA";
 				System.setProperty("webdriver.chrome.driver", filepath);
 			} else if (System.getProperty("os.name").contains("Mac")) {
 				File file = new File(".");
-				String filepath = file.getCanonicalPath() + "//exe//chromedriver_mac";
+				String filepath = file.getCanonicalPath() + "/exe/chromedriver_mac110";
 				System.setProperty("webdriver.chrome.driver", filepath);
 			}
-			ChromeOptions chromeOptions = new ChromeOptions();
-			chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
 			chromeOptions.addArguments("--allowed-ips");
 			if (common.value("headlessbrowser").equalsIgnoreCase("false")) {
 				driver = new ChromeDriver(chromeOptions);
-			} else driver = new ChromeDriver(this.createHeadlessChromeMobile());
+			}
 		} else if (common.value("mobilebrowser").equalsIgnoreCase("FIREFOX")) {
-
-				File file = new File(".");
-				String filepath = file.getCanonicalPath() + "//exe//geckodriver";
-				System.setProperty("webdriver.gecko.driver", filepath);
+			File file = new File(".");
+			String filepath = file.getCanonicalPath() + "//NA";
+			System.setProperty("webdriver.gecko.driver", filepath);
 			Map<String, Object> mobileEmulation = new HashMap<>();
 			String user_agent="Mozilla/5.0 (iPhone; U; CPU iPhone OS 3_0 like Mac OS X; en-us) AppleWebKit/528.18 (KHTML, like Gecko) Version/4.0 Mobile/7A341 Safari/528.16";
 			FirefoxOptions options = new FirefoxOptions();
 			options.addPreference("general.useragent.override",user_agent );
 			driver= new FirefoxDriver(options);
-
 		}
+		driver.manage().window().maximize();
+		return driver;
 
+	}
 
+		public RemoteWebDriver getMobileDriver(RemoteWebDriver driver) throws IOException {
+
+			if(common.value("mobilebrowser").equalsIgnoreCase("chrome")) {
+				Map<String, String> mobileEmulation = new HashMap<>();
+				mobileEmulation.put("deviceName", "Nexus 5");
+				ChromeOptions chromeOptions = new ChromeOptions();
+				if (System.getProperty("os.name").contains("Linux")) {
+					File file = new File(".");
+					String filepath = file.getCanonicalPath() + "//exe//chromedriver";
+					System.setProperty("webdriver.chrome.driver", filepath);
+				} else if (System.getProperty("os.name").contains("Mac")) {
+					File file = new File(".");
+					String filepath = file.getCanonicalPath() + "/exe/chromedriver_mac110";
+					System.setProperty("webdriver.chrome.driver", filepath);
+				}
+				chromeOptions.addArguments("--allowed-ips");
+				chromeOptions.addArguments("user-agent=Mozilla/5.0 (Windows Phone 10.0; Android 4.2.1; Microsoft; Lumia 640 XL LTE) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Mobile Safari/537.36 Edge/12.10166");
+				if (common.value("headlessbrowser").equalsIgnoreCase("false")) {
+					driver = new ChromeDriver(chromeOptions);
+				}
+			} else if (common.value("mobilebrowser").equalsIgnoreCase("FIREFOX")) {
+
+				File file = new File(".");
+				String filepath = file.getCanonicalPath() + "//NA";
+				System.setProperty("webdriver.gecko.driver", filepath);
+				Map<String, Object> mobileEmulation = new HashMap<>();
+				String user_agent="Mozilla/5.0 (iPhone; U; CPU iPhone OS 3_0 like Mac OS X; en-us) AppleWebKit/528.18 (KHTML, like Gecko) Version/4.0 Mobile/7A341 Safari/528.16";
+				FirefoxOptions options = new FirefoxOptions();
+				options.addPreference("general.useragent.override",user_agent );
+				driver= new FirefoxDriver(options);
+
+			}
 		Dimension dimension = new Dimension(360, 800);
 		driver.manage().window().setSize(dimension);
 		return driver;
-
 	}
 
-
-	public RemoteWebDriver getDriver_OLD(RemoteWebDriver driver) throws IOException, InterruptedException {
-		if (driver == null) {
-			if (common.value("browser").equalsIgnoreCase("IE") && common.value("mode").equalsIgnoreCase("local")) {
-				File file;
-				if (getBit().contains("84")) {
-					file = new File("exe\\IEDriverServer64.exe");
-				} else {
-					file = new File("exe\\IEDriverServer32.exe");
-				}
-				DesiredCapabilities capability = DesiredCapabilities.internetExplorer();
-				capability.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
-				System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
-				driver = new InternetExplorerDriver(capability);
-				capability.setPlatform(Platform.WINDOWS);
-				driver.manage().timeouts().setScriptTimeout(100, TimeUnit.SECONDS);
-
-			} else if (common.value("browser").equalsIgnoreCase("FIREFOX") && common.value("mode").equalsIgnoreCase("local")) {
-				if (System.getProperty("os.name").contains("Windows")) {
-					File file = new File(".");
-					String filepath = file.getCanonicalPath() + "//exe//geckodriver.exe";
-					System.setProperty("webdriver.gecko.driver", filepath);
-				}
-
-				else {
-					File file = new File(".");
-					String filepath = file.getCanonicalPath() + "//exe//geckodriver";
-					System.setProperty("webdriver.gecko.driver", filepath);
-				}
-				// driver = new FirefoxDriver();
-				FirefoxProfile ff = new FirefoxProfile();
-				DesiredCapabilities capability = DesiredCapabilities.firefox();
-				capability.setCapability(FirefoxDriver.PROFILE, ff);
-				capability.setBrowserName("firefox");
-				capability.setJavascriptEnabled(true);
-				capability.setPlatform(Platform.WINDOWS);
-				driver = new FirefoxDriver(capability);
-				// driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),
-				// capability);
-				driver.manage().timeouts().setScriptTimeout(50, TimeUnit.SECONDS);
-				driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
-			} else if (common.value("browser").equalsIgnoreCase("CHROME")
-					&& common.value("mode").equalsIgnoreCase("local")&&common.value("headlessbrowser").equalsIgnoreCase("true")) {
-				// System.out.println("-------------"+System.getProperty("os.name"));
-				if (System.getProperty("os.name").contains("Windows")) {
-					File file = new File(".");
-					String filepath = file.getCanonicalPath() + "//exe//chromedriver.exe";
-					System.setProperty("webdriver.chrome.driver", filepath);
-				}else if(System.getProperty("os.name").contains("Linux")){
-					File file = new File(".");
-					String filepath = file.getCanonicalPath() + "//exe//chromedriver";
-					System.setProperty("webdriver.chrome.driver", filepath);
-				} else {
-					File file = new File(".");
-					String filepath = file.getCanonicalPath() + "//exe//chromedriver_mac";
-					System.setProperty("webdriver.chrome.driver", filepath);
-				}
-				/*
-				 * File f = new File("exe\\chromedriver.exe"); String path =
-				 * f.getAbsolutePath(); System.setProperty("webdriver.chrome.driver", path);
-				 */
-				driver = new ChromeDriver(this.createHeadlessChrome());
-				((RemoteWebDriver)driver).manage().window().setSize(new Dimension(1200, 1100));
-				// driver = new ChromeDriver();
-				// TimeUnit.SECONDS.sleep(2);
-				// driver.manage().timeouts().setScriptTimeout(100, TimeUnit.SECONDS);
-			}else if (common.value("browser").equalsIgnoreCase("CHROME")
-					&& common.value("mode").equalsIgnoreCase("local")&&common.value("headlessbrowser").equalsIgnoreCase("false")) {
-				// System.out.println("-------------"+System.getProperty("os.name"));
-				if (System.getProperty("os.name").contains("Windows")) {
-					File file = new File(".");
-					String filepath = file.getCanonicalPath() + "//exe//chromedriver.exe";
-					System.setProperty("webdriver.chrome.driver", filepath);
-				}else if(System.getProperty("os.name").contains("Linux")){
-					File file = new File(".");
-					String filepath = file.getCanonicalPath() + "//exe//chromedriver";
-					System.setProperty("webdriver.chrome.driver", filepath);
-				} else {
-					File file = new File(".");
-					String filepath = file.getCanonicalPath() + "//exe//chromedriver_mac";
-					System.setProperty("webdriver.chrome.driver", filepath);
-					System.setProperty("webdriver.chrome.args", "--disable-logging");
-					System.setProperty("webdriver.chrome.silentOutput", "true");
-				}
-				driver = new ChromeDriver(this.createChromeConfig());
-				// driver = new ChromeDriver();
-				// TimeUnit.SECONDS.sleep(2);
-				// driver.manage().timeouts().setScriptTimeout(100, TimeUnit.SECONDS);
-			} else {
-				// Grid env
-				if (common.value("browser").equalsIgnoreCase("IE")) {
-					File file;
-					if (getBit().contains("86")) {
-						file = new File("exe\\IEDriverServer64.exe");
-					} else {
-						file = new File("exe\\IEDriverServer32.exe");
-					}
-
-					ChromeOptions capability = new ChromeOptions();
-					capability.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR,
-						UnexpectedAlertBehaviour.IGNORE);
-					/*DesiredCapabilities capability = DesiredCapabilities.internetExplorer();
-					capability.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,
-							true);*/
-					System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
-					driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
-					driver.manage().timeouts().setScriptTimeout(100, TimeUnit.SECONDS);
-				} else if (common.value("browser").equalsIgnoreCase("FIREFOX")) {
-					DesiredCapabilities capability = DesiredCapabilities.firefox();
-					capability.setJavascriptEnabled(true);
-					capability.setBrowserName("firefox");
-					driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
-					driver.manage().timeouts().setScriptTimeout(100, TimeUnit.SECONDS);
-				} else if (common.value("browser").equalsIgnoreCase("CHROME")&&common.value("headlessbrowser").equalsIgnoreCase("true")) {
-
-					File file = new File(".");
-					String filepath = file.getCanonicalPath() + "//exe//chromedriver.exe";
-					System.setProperty("webdriver.chrome.driver", filepath);
-
-
-					driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), createHeadlessChrome());
-
-					TimeUnit.SECONDS.sleep(1);
-
-					// driver.manage().window().maximize();
-					driver.manage().timeouts().setScriptTimeout(180, TimeUnit.SECONDS);
-					driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
-				}else if (common.value("browser").equalsIgnoreCase("CHROME")&&common.value("headlessbrowser").equalsIgnoreCase("false")) {
-
-					File file = new File(".");
-					String filepath = file.getCanonicalPath() + "//exe//chromedriver.exe";
-					System.setProperty("webdriver.chrome.driver", filepath);
-					driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), createChromeConfig());
-
-					TimeUnit.SECONDS.sleep(1);
-
-					// driver.manage().window().maximize();
-					driver.manage().timeouts().setScriptTimeout(180, TimeUnit.SECONDS);
-					driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
-				}
-				else {
-					addLog("Chk config Browser", true);
-				}
-			}
-		}
-		driver.manage().window().maximize();
-		driver.manage().deleteAllCookies();
-		// driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
-		return driver;
-	}
-
-	public RemoteWebDriver getDriver(RemoteWebDriver driver) throws IOException, InterruptedException {
-		if ( this.common.value("headlessbrowser").equalsIgnoreCase("true")) {
-
-			File file = new File(".");
-			System.setProperty("webdriver.gecko.driver", file.getCanonicalPath() + "//exe//geckodriver");
-			FirefoxOptions options = new FirefoxOptions()
-					//	.addPreference("--headless", 1)
-					.addPreference("browser.startup.page", 1)
-					.setHeadless(true);
-			//.options.setHeadless(true);
-
-			driver = new FirefoxDriver(options);
-			driver.manage().window().maximize();
-		}
-		else {
-
-			File file = new File(".");
-			System.setProperty("webdriver.gecko.driver", file.getCanonicalPath() + "//exe//geckodriver");
-			FirefoxOptions options = new FirefoxOptions()
-					//	.addPreference("--headless", 1)
-					.addPreference("browser.startup.page", 1);
-			driver = new FirefoxDriver(options);
-		}
-		return driver;
-	}
-
-	public RemoteWebDriver getDriver_PWAAA(RemoteWebDriver driver) throws IOException, InterruptedException {
-		if ( this.common.value("headlessbrowser").equalsIgnoreCase("false")) {
-
-			File file = new File(".");
-			System.setProperty("webdriver.gecko.driver", file.getCanonicalPath() + "//exe//geckodriver");
-			FirefoxOptions options = new FirefoxOptions()
-					//	.addPreference("--headless", 1)
-					.addPreference("browser.startup.page", 1);
-			options.addArguments("general.useragent.override", "user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64)");
-			//options.setCapability("general.useragent.override", "user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64)");
-			//.options.setHeadless(true);
-
-			driver = new FirefoxDriver(options);
-			driver.manage().window().maximize();
-		}
-		else {
-
-			File file = new File(".");
-			System.setProperty("webdriver.gecko.driver", file.getCanonicalPath() + "//exe//geckodriver");
-			FirefoxOptions options = new FirefoxOptions()
-					//	.addPreference("--headless", 1)
-					.addPreference("browser.startup.page", 1);
-			driver = new FirefoxDriver(options);
-		}
-		return driver;
-	}
-
-		public RemoteWebDriver Chrome_Config(RemoteWebDriver driver) throws Exception {
-		if (this.common.value("mode").equalsIgnoreCase("local") && this.common.value("headlessbrowser").equalsIgnoreCase("false")) {
-			driver = new ChromeDriver(this.createChromeConfig());
-		} else if (this.common.value("mode").equalsIgnoreCase("local") && this.common.value("headlessbrowser").equalsIgnoreCase("true")) {
-			driver = new ChromeDriver(this.createHeadlessChrome());
-			((RemoteWebDriver)driver).manage().window().setSize(new Dimension(1200, 1100));
-		} else {
-			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), this.createChromeConfig());
-		}
-		driver.manage().window().maximize();
-		driver.manage().deleteAllCookies();
-		// driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
-		// driver.manage().timeouts().setScriptTimeout(100, TimeUnit.SECONDS);
-		return driver;
-	}
-
-
-	public RemoteWebDriver getMobileDriver1(RemoteWebDriver driver) throws IOException, InterruptedException {
-		if (driver == null) {
-			if (common.value("mobilebrowser").equalsIgnoreCase("Chrome")
-					&& common.value("mode").equalsIgnoreCase("local")&&common.value("headlessbrowser").equalsIgnoreCase("true")) {
-				File file = new File(".");
-				String filepath = file.getCanonicalPath() + "//exe//chromedriver.exe";
-				System.setProperty("webdriver.chrome.driver", filepath);
-				//System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
-				ChromeOptions options = new ChromeOptions();
-				options.addArguments(
-						"--user-agent=Mozilla/5.0 (iPhone; U; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5");
-
-				driver = new ChromeDriver(options);
-
-				driver.manage().deleteAllCookies();
-				// driver.navigate().refresh();
-				// driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
-				// driver.navigate().refresh();
-			}
-
-			else if (common.value("mobilebrowser").equalsIgnoreCase("CHROME")
-					&& common.value("mode").equalsIgnoreCase("local") || common.value("mode").equalsIgnoreCase("Grid")) {
-				//	System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
-
-				File file = new File(".");
-				String filepath = file.getCanonicalPath() + "//exe//chromedriver.exe";
-				System.setProperty("webdriver.chrome.driver", filepath);
-
-				ChromeOptions options = new ChromeOptions();
-				options.addArguments(
-						"--user-agent=Mozilla/5.0 (iPhone; U; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5");
-				driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), createHeadlessChromeMobile());
-				driver.manage().deleteAllCookies();
-			}
-			if (System.getProperty("os.name").contains("Windows")) {
-				File file = new File(".");
-				String filepath = file.getCanonicalPath() + "//exe//chromedriver.exe";
-				System.setProperty("webdriver.chrome.driver", filepath);
-			}else if(System.getProperty("os.name").contains("Linux")){
-				File file = new File(".");
-				String filepath = file.getCanonicalPath() + "//exe//chromedriver";
-				System.setProperty("webdriver.chrome.driver", filepath);
-			} else {
-				File file = new File(".");
-				String filepath = file.getCanonicalPath() + "//exe//chromedriver_mac";
-			}
-
-
-			if (common.value("mobilebrowser").equalsIgnoreCase("firefox")
-					&& common.value("mode").equalsIgnoreCase("local")) {
-				String userAgent = "--user-agent=Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_3_2 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5";
-				FirefoxProfile profile = new FirefoxProfile();
-				profile.setPreference("general.useragent.override", userAgent);
-				DesiredCapabilities cap = DesiredCapabilities.firefox();
-				org.openqa.selenium.Proxy p = new org.openqa.selenium.Proxy();
-				cap.setCapability(CapabilityType.PROXY, p);
-				cap.setCapability(FirefoxDriver.PROFILE, profile);
-				driver = new FirefoxDriver(cap);
-				driver.navigate().refresh();
-				// driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-				driver.navigate().refresh();
-
-			} else if (common.value("mobilebrowser").equalsIgnoreCase("firefox")
-					&& common.value("mode").equalsIgnoreCase("grid")) {
-				String userAgent = "--user-agent=Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_3_2 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5";
-				FirefoxProfile profile = new FirefoxProfile();
-				profile.setPreference("general.useragent.override", userAgent);
-				DesiredCapabilities cap = DesiredCapabilities.firefox();
-				org.openqa.selenium.Proxy p = new org.openqa.selenium.Proxy();
-				cap.setCapability(CapabilityType.PROXY, p);
-				cap.setCapability(FirefoxDriver.PROFILE, profile);
-				driver = new FirefoxDriver(cap);
-				driver.navigate().refresh();
-				// driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-				driver.navigate().refresh();
-			}
-		}
-		return driver;
-	}
 
 	public RemoteWebDriver getPWA(RemoteWebDriver driver) throws IOException, InterruptedException {
 		if (driver == null) {
@@ -1650,31 +1318,6 @@ public class WrapperMethod extends CommonUtil {
 		return Url;
 	}
 
-	public void UnSelectCarrier(RemoteWebDriver driver, String Carrier) throws Exception {
-		// (String Carrier) throws Exception {
-		String Locators = "//input[contains(@id,'" + Carrier + "')]";
-		if (elementVisible(driver, By.xpath(Locators), 10)) {
-			driver.findElementByXPath(Locators).click();
-			// safeClick(driver, By.xpath(Locators));
-			Thread.sleep(1000);
-		} else {
-			addLog(Carrier + " not displayed in the SRP");
-		}
-
-	}
-
-	public void UnSelectCarrierMC(RemoteWebDriver driver, String Carrier, String leg) throws Exception {
-		String Locators = "id=1_1_" + Carrier + "_" + leg;
-		// System.out.println(Locators);
-		if (elementVisible(driver, By.xpath(Locators), 10)) {
-			driver.findElementByXPath(Locators).click();
-
-			Thread.sleep(2000);
-		} else {
-			addLog(Carrier + " not displayed in the SRP");
-		}
-
-	}
 
 	public void refreshPage(RemoteWebDriver driver) {
 		driver.navigate().refresh();

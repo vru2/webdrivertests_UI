@@ -31,6 +31,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.interactions.MoveTargetOutOfBoundsException;
 import org.testng.Reporter;
 
 public class WrapperMethod extends CommonUtil {
@@ -103,7 +104,7 @@ public class WrapperMethod extends CommonUtil {
 			ChromeOptions chromeOptions = new ChromeOptions();
 			if (System.getProperty("os.name").contains("Linux")) {
 				File file = new File(".");
-				String filepath = file.getCanonicalPath() + "//NA";
+				String filepath = file.getCanonicalPath() + "/exe/chromedriver_linux_110";
 				System.setProperty("webdriver.chrome.driver", filepath);
 			} else if (System.getProperty("os.name").contains("Mac")) {
 				File file = new File(".");
@@ -137,7 +138,7 @@ public class WrapperMethod extends CommonUtil {
 				ChromeOptions chromeOptions = new ChromeOptions();
 				if (System.getProperty("os.name").contains("Linux")) {
 					File file = new File(".");
-					String filepath = file.getCanonicalPath() + "//exe//chromedriver";
+					String filepath = file.getCanonicalPath() + "/exe/chromedriver_linux_110";
 					System.setProperty("webdriver.chrome.driver", filepath);
 				} else if (System.getProperty("os.name").contains("Mac")) {
 					File file = new File(".");

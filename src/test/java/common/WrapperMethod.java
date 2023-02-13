@@ -113,6 +113,11 @@ public class WrapperMethod extends CommonUtil {
 			}
 			chromeOptions.addArguments("--allowed-ips");
 			if (common.value("headlessbrowser").equalsIgnoreCase("false")) {
+				//chromeOptions.addArguments("--headless");
+				driver = new ChromeDriver(chromeOptions);
+			}
+			else if (common.value("headlessbrowser").equalsIgnoreCase("true")) {
+				chromeOptions.addArguments("--headless");
 				driver = new ChromeDriver(chromeOptions);
 			}
 		} else if (common.value("mobilebrowser").equalsIgnoreCase("FIREFOX")) {
@@ -150,6 +155,10 @@ public class WrapperMethod extends CommonUtil {
 				if (common.value("headlessbrowser").equalsIgnoreCase("false")) {
 					driver = new ChromeDriver(chromeOptions);
 				}
+				else if (common.value("headlessbrowser").equalsIgnoreCase("true")) {
+					chromeOptions.addArguments("--headless");
+					driver = new ChromeDriver(chromeOptions);
+				}
 			} else if (common.value("mobilebrowser").equalsIgnoreCase("FIREFOX")) {
 
 				File file = new File(".");
@@ -163,7 +172,7 @@ public class WrapperMethod extends CommonUtil {
 
 			}
 		Dimension dimension = new Dimension(360, 800);
-		driver.manage().window().setSize(dimension);
+//		driver.manage().window().setSize(dimension);
 		return driver;
 	}
 

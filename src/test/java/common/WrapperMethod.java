@@ -14,6 +14,8 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
+
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.*;
@@ -39,6 +41,8 @@ public class WrapperMethod extends CommonUtil {
 	private static WebDriver browserDriver;
 	public RemoteWebDriver driver;
 	//	/public static Logger logger = Logger.getLogger(WrapperMethod.class);
+
+
 
 	public static Logger logger = Logger.getLogger("");
 	protected String baseUrl;
@@ -137,6 +141,8 @@ public class WrapperMethod extends CommonUtil {
 			driver= new FirefoxDriver(options);
 		}
 		driver.manage().window().maximize();
+		driver.manage().timeouts().pageLoadTimeout(45, TimeUnit.SECONDS);
+		driver.manage().timeouts().setScriptTimeout(45, TimeUnit.SECONDS);
 		return driver;
 
 	}
@@ -184,25 +190,13 @@ public class WrapperMethod extends CommonUtil {
 
 			}
 		Dimension dimension = new Dimension(360, 800);
-//		driver.manage().window().setSize(dimension);
+		driver.manage().window().setSize(dimension);
+
+		driver.manage().timeouts().pageLoadTimeout(45, TimeUnit.SECONDS);
+		driver.manage().timeouts().setScriptTimeout(45, TimeUnit.SECONDS);
 		return driver;
 	}
 
-
-	public RemoteWebDriver getPWA(RemoteWebDriver driver) throws IOException, InterruptedException {
-		if (driver == null) {
-			if (common.value("mobilebrowser").equalsIgnoreCase("Chrome")) {
-				System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
-				ChromeOptions options = new ChromeOptions();
-				options.addArguments(
-						"--user-agent=Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_3_2 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5");
-				driver = new ChromeDriver(options);
-
-				driver.manage().deleteAllCookies();
-			}
-		}
-		return driver;
-	}
 
 	public String get_BrowserName(RemoteWebDriver driver) {
 		String BrowserName = null;

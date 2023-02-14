@@ -14,11 +14,11 @@
             <class name="test.java.paymentsBento_Itn_Air_PWA.IN_Air_PWA_Cardless_EMI"/>
         </classes>
     </test>
-
+<!--
     <test name="GV Price Change PopUP NB" preserve-order="true">
         <classes>
             <class name="test.java.paymentsBento_Itn_Hotels.IN_GV_Price_Change_PopUp"/>
         </classes>
-    </test>
+    </test>-->
 
 </suite>

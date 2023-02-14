@@ -402,8 +402,8 @@
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-devtools-v86 -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-devtools</artifactId>
-            <version>4.0.0-alpha-7</version>
+            <artifactId>selenium-devtools-v102</artifactId>
+            <version>4.2.1</version>
         </dependency>
 
      <!--   <dependency>

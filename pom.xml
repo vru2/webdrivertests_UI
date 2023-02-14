@@ -188,18 +188,19 @@
             <version>3.0.0</version>
         </dependency>
 
+<!--
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
             <version>3.15</version>
-        </dependency>
+        </dependency>-->
 
         <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
-        <dependency>
+      <!--  <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
             <version>3.15</version>
-        </dependency>
+        </dependency>-->
 
 
         <dependency>
@@ -250,11 +251,12 @@
             <version>1.6</version>
         </dependency>
 
+<!--
         <dependency>
             <groupId>velocity</groupId>
             <artifactId>velocity-dep</artifactId>
             <version>1.4</version>
-        </dependency>
+        </dependency>-->
 
         <dependency>
             <groupId>org.ccil.cowan.tagsoup</groupId>
@@ -311,12 +313,12 @@
             <artifactId>jaxb-api</artifactId>
             <version>2.2.12</version>
         </dependency>
-
+<!--
         <dependency>
             <groupId>org.glassfish</groupId>
             <artifactId>javax.json</artifactId>
             <version>1.0.2</version>
-        </dependency>
+        </dependency>-->
 
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
@@ -335,17 +337,21 @@
             <artifactId>httpclient</artifactId>
             <version>4.5.3</version>
         </dependency>
-        <dependency>
+
+       <!-- <dependency>
             <groupId>org.htmlparser</groupId>
             <artifactId>htmllexer</artifactId>
             <version>2.1</version>
         </dependency>
+        -->
+<!--
 
         <dependency>
             <groupId>com.google.inject</groupId>
             <artifactId>guice</artifactId>
             <version>3.0</version>
         </dependency>
+-->
 
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
@@ -371,11 +377,11 @@
             <version>2.4.5</version>
         </dependency>
 
-        <dependency>
+    <!--    <dependency>
             <groupId>org.htmlparser</groupId>
             <artifactId>filterbuilder</artifactId>
             <version>2.1</version>
-        </dependency>
+        </dependency>-->
 
         <!--<dependency>
             <groupId>dom4j</groupId>
@@ -397,7 +403,7 @@
             <version>4.0.0-alpha-7</version>
         </dependency>
 
-        <dependency>
+     <!--   <dependency>
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
             <version>1.2</version>
@@ -440,7 +446,7 @@
             <artifactId>annotations</artifactId>
             <version>RELEASE</version>
             <scope>compile</scope>
-        </dependency>
+        </dependency>-->
 
     </dependencies>
 </project>

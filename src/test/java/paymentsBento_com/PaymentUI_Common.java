@@ -9,10 +9,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Reporter;
-import test.java.paymentsAPI.API_PaymentCommon1;
+import test.java.common.Payment_apis;
 
 
-public class PaymentUI_Common extends API_PaymentCommon1 {
+public class PaymentUI_Common extends Payment_apis {
 	public RemoteWebDriver driver;
 	protected String Url;
 	protected String paymentUrl;

@@ -5,8 +5,9 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import test.java.commonUI.PaymentsUI_Common_PWA_Air;
 
-public class IN_Air_PWA_GV_Full_CLP extends PaymentsBento_Itn_Air_Common_PWA {
+public class IN_Air_PWA_GV_Full_CLP extends PaymentsUI_Common_PWA_Air {
 
     @BeforeClass
     public void startSelenium() throws Exception {

@@ -9,8 +9,9 @@ import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+import test.java.commonUI.PaymentsUI_Common_Desktop_Hotels;
 
-public class IN_Wallet_Full extends PaymentsBento_Itn_Hotels_Common {
+public class IN_Wallet_Full extends PaymentsUI_Common_Desktop_Hotels {
 
 	@BeforeClass
 	public void startSelenium() throws Exception {

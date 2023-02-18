@@ -6,7 +6,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Reporter;
 import test.java.paymentsBento_Itn_Hotels.PaymentsBento_Itn_Hotels_Common;
 
-public class PaymentsBento_Common_PWA extends PaymentsBento_Itn_Hotels_Common {
+public class PaymentsBento_Common_PWAold extends PaymentsBento_Itn_Hotels_Common {
 
 	public void bento_Paymentpage_PWA(RemoteWebDriver driver, String paymentType, String cardNumber, String domain, String payType, String bankName, String successFail) throws Exception {
 		elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"), 20);

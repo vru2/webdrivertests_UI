@@ -1,4 +1,4 @@
-package test.java.paymentsBento_Itn_Air_PWA;
+package test.java.commonUI;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -6,15 +6,15 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
-import test.java.commonUI.PaymentsBento_Common_PWAold;
 
-public class PaymentsBento_Itn_Air_Common_PWA extends PaymentsBento_Common_PWAold {
-    String inurl = "https://qa2new.cleartrip.com";
-    String origin = "BLR";
-    String destination = "MAA";
-    int date = 85;
-    String phoneNo="1212121212";
-    String emailID="kiran.kumar@cleartrip.com";
+public class PaymentsUI_Common_PWA_Air extends PaymentsUI_Common_PWA{
+
+    public String inurl = "https://qa2new.cleartrip.com";
+    public String origin = "BLR";
+    public String destination = "MAA";
+    public int date = 85;
+    public String phoneNo="1212121212";
+    public String emailID="kiran.kumar@cleartrip.com";
 
     public String air_SRPUrl(String Domain, String origin, String destination, int date) throws Exception {
         String Air_URL = "/flights/results?adults=1&childs=0&infants=0&class=Economy&depart_date=" + getDateTime(date, "dd/MM/yyyy") + "&from=" + origin + "&to=" + destination + "&intl=n";
@@ -94,7 +94,7 @@ public class PaymentsBento_Itn_Air_Common_PWA extends PaymentsBento_Common_PWAol
             }
         }
         if(!textPresent(driver, "Review Travellers", 2)) {
-          if (textPresent(driver, "Skip", 5)) {
+            if (textPresent(driver, "Skip", 5)) {
                 mouseHover(driver, By.xpath("//div[2]/div[1]/div[3]/p"));
                 safeClick(driver, By.xpath("//div[2]/div[1]/div[3]/p"));
                 elementVisible(driver, By.linkText("Exit without saving"), 5);
@@ -123,22 +123,22 @@ public class PaymentsBento_Itn_Air_Common_PWA extends PaymentsBento_Common_PWAol
                 mouseHover(driver, By.xpath("//div[2]/div/ul/li"));
                 safeClick(driver, By.xpath("//div[2]/div/ul/li"));
             }
-           else if(Nationality_DOB.contains("Date of birth")){
-               mouseHover(driver, By.name("dob"));
+            else if(Nationality_DOB.contains("Date of birth")){
+                mouseHover(driver, By.name("dob"));
                 Actions actions = new Actions(driver);
                 WebElement elementLocator = driver.findElement(By.name("dob"));
                 actions.doubleClick(elementLocator).perform();
-               mouseHover(driver, By.name("dob"));
-               safeClick(driver, By.name("dob"));
+                mouseHover(driver, By.name("dob"));
+                safeClick(driver, By.name("dob"));
                 actions.moveToElement(elementLocator);
                 actions.clickAndHold(elementLocator);
-               // Thread.sleep(1000);
+                // Thread.sleep(1000);
                 actions.sendKeys("04").perform();
                 //Thread.sleep(1000);
                 actions.sendKeys("12").perform();
                 //Thread.sleep(1000);
                 actions.sendKeys("2000").perform();
-              //  actions.sendKeys("00").perform();
+                //  actions.sendKeys("00").perform();
             }
         }
         safeType(driver, By.name("phone"),phoneNo);
@@ -148,5 +148,85 @@ public class PaymentsBento_Itn_Air_Common_PWA extends PaymentsBento_Common_PWAol
         mouseHover(driver, By.xpath("//button"));
         safeClick(driver, By.xpath("//button"));
     }
+
+    public void bento_Paymentpage_PWA(RemoteWebDriver driver, String paymentType, String cardNumber, String domain, String payType, String bankName, String successFail) throws Exception {
+        elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"), 20);
+        textPresent(driver, "Per traveller convenience fee of", 10);
+        System.out.println(driver.getCurrentUrl());
+        Reporter.log(driver.getCurrentUrl());
+        if (paymentType.equalsIgnoreCase("WALLET") || payType.equalsIgnoreCase("PartialWallet")) {
+            safeClick(driver, getObjectPayment("PWA_PaymentPage_Wallet_Toggle"));
+            Reporter.log("Selected wallet");
+            Thread.sleep(2000);
+        }
+        //payUI_Select_PaymentType_PWA( driver, paymentType);
+        switch (paymentType) {
+            case "CC":
+                bento_pay_CC_PWA(driver, paymentType, cardNumber, domain, payType, bankName, successFail);
+                break;
+            case "DC":
+                bento_pay_CC_PWA(driver, paymentType, cardNumber, domain, payType, bankName, successFail);
+                break;
+            case "NB":
+                bento_pay_NB_PWA(driver, paymentType, cardNumber, domain, payType, bankName, successFail);
+                break;
+            case "SAVEDPAYMENT":
+                bento_pay_SavedPayment_PWA(driver, paymentType, cardNumber, domain, payType, bankName);
+                break;
+            case "EMI":
+                bento_pay_EMI_PWA(driver, paymentType, cardNumber, domain, payType, bankName);
+                break;
+            case "TW":
+                bento_pay_TW_PWA(driver, paymentType, cardNumber, domain, payType, bankName);
+                break;
+            case "PAYLATER":
+                bento_pay_PAYLATER_PWA(driver, paymentType, cardNumber, domain, payType, bankName);
+                break;
+            case "CARDLESSEMI":
+                bento_pay_CARDLESSEMI_PWA(driver, paymentType, cardNumber, domain, payType, bankName);
+                break;
+            case "WALLET":
+                bento_pay_Wallet_PWA(driver, paymentType, cardNumber, domain, payType, bankName);
+                break;
+            case "Phonepe":
+                bento_pay_PhonePe_PWA(driver, paymentType, cardNumber, domain, payType, bankName);
+                break;
+            case "UPI":
+                bento_pay_UPI_PWA(driver, paymentType, cardNumber, domain, payType, bankName);
+                break;
+            case "GV":
+                bento_pay_GV_PWA(driver, paymentType, cardNumber, domain, payType, bankName);
+                break;
+            case "GV_Partial":
+                bento_pay_GV_Partial_PWA(driver, paymentType, cardNumber, domain, payType, bankName);
+                break;
+            case "partial_wallet":
+                bento_pay_PartialWallet_PWA(driver, paymentType, cardNumber, domain, payType, bankName);
+                break;
+            case "VALIDCOUPON":
+                bento_pay_Coupon_PWA(driver, paymentType, cardNumber, domain, payType, bankName, successFail);
+                break;
+            case "INVALIDCOUPON":
+                bento_pay_Coupon_PWA(driver, paymentType, cardNumber, domain, payType, bankName, successFail);
+                break;
+            case "OTH":
+                bento_pay_Others_PWA(driver, paymentType, cardNumber, domain, payType, bankName);
+                break;
+        }
+        bento_pay_GW_Page_PWA(driver, paymentType, cardNumber, domain, payType, bankName, successFail);
+    }
+
+    public void bento_Air_ConfirmationPage_PWA(RemoteWebDriver driver, String paymentType, String payType, String bookingType) throws Exception {
+        elementVisible(driver, getObjectPayment("PWA_Air_Confirmation_Page_TripID"), 30);
+        if (textPresent(driver, "Something went wrong", 1)) {
+            Reporter.log("Something went wrong text is present in confirmation page");
+            org.junit.Assert.assertTrue(false);
+        }
+        textPresent_Log(driver, "Booking confirmed", 5);
+        String tripID = getText(driver, getObjectPayment("PWA_Air_Confirmation_Page_TripID"));
+        Reporter.log(bookingType +": "+ tripID);
+        System.out.println(bookingType +": "+ tripID);
+    }
+
 
 }

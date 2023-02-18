@@ -5,10 +5,9 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import test.java.commonUI.PaymentsUI_Common_Desktop_Hotels;
 
-import static java.sql.DriverManager.getDriver;
-
-public class IN_CC_PayTM_Inline_TokenizeCard extends PaymentsBento_Itn_Hotels_Common {
+public class IN_CC_PayTM_Inline_TokenizeCard extends PaymentsUI_Common_Desktop_Hotels {
 
 	@BeforeClass
 	public void startSelenium() throws Exception {

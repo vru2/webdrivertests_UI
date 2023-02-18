@@ -1,5 +1,6 @@
 package test.java.paymentsBento_Itn_Air_PWA;
 
+import test.java.commonUI.PaymentsUI_Common_PWA_Air;
 import test.java.paymentsBento_Itn_Air_PWA.PaymentsBento_Itn_Air_Common_PWA;
 
 import org.openqa.selenium.By;
@@ -10,7 +11,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import test.java.paymentsBento_Itn_Air_PWA.PaymentsBento_Itn_Air_Common_PWA;
 
-public class IN_Air_PWA_NB extends PaymentsBento_Itn_Air_Common_PWA {
+public class IN_Air_PWA_NB extends PaymentsUI_Common_PWA_Air {
 
     @BeforeClass
     public void startSelenium() throws Exception {

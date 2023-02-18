@@ -21,7 +21,7 @@ import junit.framework.Assert;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 
-public class API_PaymentCommon1 extends PlatformCommonUtil
+public class API_PaymentCommon extends PlatformCommonUtil
 
 {	
 	public RemoteWebDriver driver;
@@ -1713,7 +1713,7 @@ public class API_PaymentCommon1 extends PlatformCommonUtil
 		String params = null;
 		HashMap<String, Object> headers = new HashMap<>();
 		Response resp = null;
-		trip_refPromo.add(API_PaymentCommon1.tripRefForPromo());
+		trip_refPromo.add(API_PaymentCommon.tripRefForPromo());
 		if(payType.equalsIgnoreCase("")) {
 			params = "";
 			url= "";

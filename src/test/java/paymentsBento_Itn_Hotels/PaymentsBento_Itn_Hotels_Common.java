@@ -2,7 +2,6 @@ package test.java.  paymentsBento_Itn_Hotels;
 
 import static org.junit.Assert.assertTrue;
 
-import java.awt.*;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -10,17 +9,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.interactions.MoveTargetOutOfBoundsException;
 //import org.openqa.selenium.support.ui.ExpectedCondition;
-import test.java.commonUI.PaymentsBento_Itn_Common;
+import test.java.commonUI.PaymentsBento_Itn_Commonold;
 
 
-public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
+public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Commonold {
 	String Hotel_URL = "";
 	String inurl = "https://qa2new.cleartrip.com";
 	String aeurl = "https://qa2.cleartrip.ae";
@@ -371,5 +367,14 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 	public void hotelsPaymentPage(RemoteWebDriver driver, String PaymentType, String CardNumber, String Domain, String PayType, String BankName, String TestDetails) throws Exception {
 		//hotelsPayment_Page_Validation(driver, PayType, Domain);
 		paymentPageHotels(driver, PaymentType, CardNumber, Domain, PayType, BankName, TestDetails);
+	}
+
+	public void paymentPageHotels_Destop_to_PWA(RemoteWebDriver driver, String PayType) throws Exception {
+		textPresent(driver,"Pay to complete your booking",30);
+		String URL = getURL(driver);
+		driver=(RemoteWebDriver) getMobileDriver(driver);
+		driver.get(URL);
+		Object webDriver = driver;
+		((JavascriptExecutor) webDriver).executeScript("window.focus();");
 	}
 }

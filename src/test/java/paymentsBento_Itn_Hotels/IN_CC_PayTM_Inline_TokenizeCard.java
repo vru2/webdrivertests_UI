@@ -6,6 +6,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import static java.sql.DriverManager.getDriver;
+
 public class IN_CC_PayTM_Inline_TokenizeCard extends PaymentsBento_Itn_Hotels_Common {
 
 	@BeforeClass

@@ -1,0 +1,50 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Platform Services API" parallel="tests" thread-count="2">
+
+<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="test.java.common.RemoveDuplicateResults"/>
+		<listener class-name="test.java.common.RetryListener"/>
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+</listeners>
+	
+	<parameter name="env" value="qa2"></parameter>
+	<test name="SMS"  >
+		<classes>
+		<class name="test.java.smsservice.DomesticSMS"/>
+		</classes>
+	</test>	
+	
+	<test name="Whatsapp"  parallel="true">
+		<classes>		
+		      <class name="test.java.whatsappService.WhatsappCheckContacts"/>
+		      <class name="test.java.whatsappService.WhatsappDeliveryFeedback"/>
+		      <class name="test.java.whatsappService.WhatsappUserMessage"/>
+		      <class name="test.java.whatsappService.WhatsappOptinFlow"/>
+		       <class name="test.java.whatsappService.WhatsappMultilanguageSupport"/>
+		      <class name="test.java.whatsappService.WhatsappOptinFlowStatus"/>
+		      <class name="test.java.whatsappService.WhatsappUserMessageWithAttachment"/>
+		      <class name="test.java.whatsappService.WhatsappWebhookMessage"/>
+		</classes>
+	</test>
+	
+	<test name="Email"  parallel="true">
+		<classes>
+		      <class name="test.java.email.Email_Template_true"/>
+		      <class name="test.java.email.EmailPost"/>
+		      <class name="test.java.email.EmailSpamScore"/>
+		     <class name="test.java.email.EmailwithAttachments"/>
+		       <class name="test.java.email.GeneratePDF"/>
+		        <class name="test.java.email.GeneratePKPass"/>
+		</classes>
+	</test>
+	
+	<!-- <test name="Chat"  parallel="true">
+		<classes>
+		      <class name="test.java.supportchatapi.SupportcreateChatAPI"/>
+		      <class name="test.java.supportchatapi.SupportGatewaycreateChatAPI"/>
+		</classes>
+	</test> -->
+
+</suite> 
+	

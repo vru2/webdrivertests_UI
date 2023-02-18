@@ -20,8 +20,8 @@ public class IN_Air_PWA_SavedPaymentmode_TokenizedCard extends PaymentsBento_Itn
         air_SRPPage(driver,"", "");
         air_ItnPage(driver, "", "","","");
         air_AddOnPage(driver, "", "");
-        air_TravellerPage(driver, "",phoneNo,emailID,"");
         driver.manage().addCookie(fullwallet);
+        air_TravellerPage(driver, "",phoneNo,emailID,"");
         bento_Paymentpage_PWA(driver,"SAVEDPAYMENT","","","SavedCard","Paytm", "");
         bento_Air_ConfirmationPage_PWA(driver,"", "", "Saved Tokenized card :");
     }

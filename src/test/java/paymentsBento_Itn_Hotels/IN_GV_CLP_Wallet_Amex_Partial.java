@@ -17,10 +17,10 @@ public class IN_GV_CLP_Wallet_Amex_Partial extends PaymentsBento_Itn_Hotels_Comm
 	public void Hotel_IN_WL_GV_CC_Amex() throws Exception {
 		driver.manage().deleteAllCookies();
 		driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
-		driver.manage().addCookie(ctauth_partial_wallet);//65243938
-		addwalletamount_UserID(10, "65243938");
 		hotelsDetailsPage(driver, "", "");
 		hotelsItnPage(driver, "PartialGV", "", "", "");
+		driver.manage().addCookie(ctauth_partial_wallet);//65243938
+		addwalletamount_UserID(10, "65243938");
 		hotelsPaymentPage(driver,"CC","3456","","WALLET","", "MULTI GV + WL + AMEX : ");
 	}
 

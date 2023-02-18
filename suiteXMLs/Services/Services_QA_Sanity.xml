@@ -1,0 +1,106 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Platform Services API" parallel="tests" thread-count="1">
+
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="test.java.common.RemoveDuplicateResults" />
+		<listener class-name="test.java.common.RetryListener" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+	</listeners>
+
+	<parameter name="hostvalue" value="qa2"></parameter>
+	
+
+	<test name="TripService Updatebooking">
+		<classes>
+			<class name="test.java.tripServices.TS_UpdateBooking_Air" />
+		</classes>
+
+	</test>
+
+	<test name="Eventbus API" parallel="true">
+		<classes>
+			<class name="test.java.tripServices.Eventbus_API" />
+		</classes>
+	</test>
+
+	<test name="App Notification" parallel="true">
+		<classes>
+			<class name="test.java.tripServices.AppNotification" />
+		</classes>
+	</test>
+
+	<test name="Ct-config UI">
+		<classes>
+			<class name="test.java.ct_config.CT_Config" />
+		</classes>
+	</test>
+
+	<test name="SMS">
+		<classes>
+			<class name="test.java.smsservice.DomesticSMS" />
+		</classes>
+	</test>
+
+	<test name="Whatsapp" parallel="true">
+		<classes>
+			<class name="test.java.whatsappService.WhatsappUserMessage" />
+		</classes>
+	</test>
+
+	<test name="Email" parallel="true">
+		<classes>
+			<class name="test.java.email.EmailPost" />
+		</classes>
+	</test>
+
+	<test name="Accounts-Service-PWA" parallel="true">
+		<classes>
+			
+			<class name="test.java.accountsAPI.Account_Service_PWA_SignIn_API" />
+		</classes>
+	</test>
+	
+
+	<test name="Accounts-Service-Userclassification" parallel="true">
+		<classes>
+			
+			<class name="test.java.accountsAPI.Userclassification_Health_Test_Url" />
+
+		</classes>
+	</test>
+
+	<test name="Identity-service" parallel="true">
+		<classes>
+
+			
+			<class name="test.java.accountsAPI.IdentityService_AddClient" />
+
+		</classes>
+	</test>
+
+	<test name="Account-service-Controllers" parallel="true">
+		<classes>
+			<class name="test.java.accountsAPI.Account_Service_FlyinV2_Signin" />
+			
+
+		</classes>
+	</test>
+
+	<test name="Account-service-Caching-userprofile" parallel="true">
+		<classes>
+			
+			<class name="test.java.accountsAPI.Account_Service_Update_User" />
+		</classes>
+
+	</test>
+
+	<test name="Account-service-Apple-Signin" parallel="true">
+		<classes>
+			<class name="test.java.accountsAPI.Account_Service_AppleSignin" />
+			
+		</classes>
+
+	</test>
+</suite> 
+	

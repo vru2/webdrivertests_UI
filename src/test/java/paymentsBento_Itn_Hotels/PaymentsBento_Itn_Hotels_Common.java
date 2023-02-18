@@ -16,8 +16,8 @@ import org.testng.Assert;
 import org.testng.Reporter;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.interactions.MoveTargetOutOfBoundsException;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import test.java.paymentsBento_com.PaymentsBento_Itn_Common;
+//import org.openqa.selenium.support.ui.ExpectedCondition;
+import test.java.commonUI.PaymentsBento_Itn_Common;
 
 
 public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
@@ -120,8 +120,6 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		if(elementVisible(driver, selectRoomButton, 2)) {
 			safeClick(driver, selectRoomButton);
 		}
-		//elementVisible(driver, getObjectPayment("Hotel_ContactPage_Continue_Btn_New"), 20);
-		//Thread.sleep(5000);
 		textPresent(driver, "Review your itinerary", 10);
 		String parent=driver.getWindowHandle();
 		Set<String>s=driver.getWindowHandles();
@@ -151,16 +149,16 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 
 	public void hotelsItnPage(RemoteWebDriver driver, String CouponGV, String PayType, String SignIN, String Contact) throws Exception {
 		textPresent(driver, "Review your itinerary", 5);
+		Thread.sleep(2000);
 		refreshPage(driver);
+		textPresent(driver, "Review your itinerary", 5);
+		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,600)");
-		Thread.sleep(1000);
 		textPresent(driver, "Add contact details", 1);
+		Thread.sleep(2000);
 		elementVisible(driver, By.xpath("//input"), 5);
 		safeType(driver, By.xpath("//input"), "1212121212");
-		js.executeScript("window.scrollBy(0,600)");
-		Thread.sleep(1000);
-		//moveToGivenElementLocatorByActionClassAndClickByJS(driver, By.xpath("//div[5]/div/div/input"));
 		safeType(driver, By.xpath("//div[5]/div/div/input"), "ctpayment@gmail.com");
 		if(CouponGV.contains("GV")) {
 			textPresent(driver, "Apply coupon or gift card",5);
@@ -204,12 +202,10 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 			textPresent_Log(driver,"Great! You just saved",5);
 		}
 		elementVisible(driver,getObjectPayment("Hotel_ContactPage_Salutation_Dropdown"),5);
-		js.executeScript("window.scrollBy(0,600)");
+		js.executeScript("window.scrollBy(0,100)");
 		Thread.sleep(1000);
-		elementVisible(driver, getObjectPayment("Hotel_ContactPage_Salutation_Dropdown"), 1);
-		Thread.sleep(1000);
+		elementVisible(driver, getObjectPayment("Hotel_ContactPage_Salutation_Dropdown"), 2);
 		mouseHover(driver, getObjectPayment("Hotel_ContactPage_Salutation_Dropdown"));
-		Thread.sleep(1000);
 		safeClick(driver, getObjectPayment("Hotel_ContactPage_Salutation_Dropdown"));
 		Thread.sleep(1000);
 		safeClick(driver, getObjectPayment("Hotel_ContactPage_Salutation_Mr"));
@@ -219,7 +215,6 @@ public class PaymentsBento_Itn_Hotels_Common extends PaymentsBento_Itn_Common {
 		Thread.sleep(1000);
 		safeClick(driver, getObjectPayment("Hotel_ContactPage_Continue_Btn_New"));
 	}
-
 
 	public void hotel_Apply_GV(RemoteWebDriver driver, String GV_Number, String GV_Pin) throws Exception {
 		safeType(driver, By.xpath("//div[3]/div/div[2]/div/input"), GV_Number);

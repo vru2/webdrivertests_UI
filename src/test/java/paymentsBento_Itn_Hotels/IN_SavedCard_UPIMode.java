@@ -17,9 +17,9 @@ public class IN_SavedCard_UPIMode extends PaymentsBento_Itn_Hotels_Common {
 	public void Hotel_IN_UPI_SavedPaymentTab() throws Exception {
 		driver.manage().deleteAllCookies();
 		driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
-		driver.manage().addCookie(fullwallet);
 		hotelsDetailsPage(driver, "", "");
 		hotelsItnPage(driver, "", "", "", "");
+		driver.manage().addCookie(fullwallet);
 		hotelsPaymentPage(driver,"storedcardUPI","","HOTELS","","", "Payment Mode UPI : ");
 	} 
 

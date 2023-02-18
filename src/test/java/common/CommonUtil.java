@@ -19,7 +19,7 @@ import java.util.GregorianCalendar;
 import java.util.Random;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.lang3.time.StopWatch;
+import org.apache.commons.lang.time.StopWatch;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;

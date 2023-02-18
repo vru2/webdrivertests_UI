@@ -9,50 +9,45 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Logger;
 
-import org.apache.log4j.Logger;
+//import org.apache.log4j.LogManager;
+//import org.apache.log4j.Logger;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.firefox.FirefoxProfile;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.remote.CapabilityType;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.openqa.selenium.interactions.MoveTargetOutOfBoundsException;
 import org.testng.Reporter;
+
+import org.openqa.selenium.interactions.MoveTargetOutOfBoundsException;
 
 public class WrapperMethod extends CommonUtil {
 	// WebElement we=null;
 	private static WebDriver browserDriver;
-	public RemoteWebDriver driver;
 	//	/public static Logger logger = Logger.getLogger(WrapperMethod.class);
-
-
-
 	public static Logger logger = Logger.getLogger("");
 	protected String baseUrl;
-
 
 	public Boolean MakePaymentTrue = common.value("makePayment").equals("true"),
 			NetBanking = common.value("makePayment").contains("true"), ProductionUrl =
 			common.value("host").contains("www"), BetaURL =
 			common.value("host").contains("beta"), MakePaymentOnlyInQA2 = MakePaymentTrue
-			&& !(ProductionUrl || BetaURL),MakePaymentOnlyInProd = MakePaymentTrue && ProductionUrl;
+			&& !(ProductionUrl || BetaURL), MakePaymentOnlyInProd = MakePaymentTrue && ProductionUrl;
 
 
 	public boolean GDS_Flight, B2B_GDS_Flight = false;
@@ -80,123 +75,92 @@ public class WrapperMethod extends CommonUtil {
 		//driver.quit();
 	}
 
+	/*public RemoteWebDriver getMobileDriver(RemoteWebDriver driver) throws IOException {
 
+		if (common.value("mobilebrowser").equalsIgnoreCase("chrome")) {
+			Map<String, Object> deviceMetrics = new HashMap<>();
+			Map<String, Object> mobileEmulation = new HashMap<>();
 
-
-	public DesiredCapabilities createChromeConfig() throws IOException, InterruptedException {
-		ChromeOptions options = new ChromeOptions();
-		Map<String, Object> prefs = new HashMap<String, Object>();
-		File file = new File(".");
-		String filepath =file.getCanonicalPath()+"\\exe\\chromedriver.exe";
-		prefs.put("profile.default_content_settings.popups", 0);
-		options.setExperimentalOption("prefs", prefs);/*
-		DesiredCapabilities cap = DesiredCapabilities.chrome();
-		cap.setCapability(ChromeOptions.CAPABILITY, options);*/
-		DesiredCapabilities capabilities = new DesiredCapabilities();
-		capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-
-		return capabilities;
-	}
-
-
-
-
-	public RemoteWebDriver getDriver(RemoteWebDriver driver) throws IOException {
-
-		if(common.value("mobilebrowser").equalsIgnoreCase("chrome")) {
-			Map<String, String> mobileEmulation = new HashMap<>();
-			ChromeOptions chromeOptions = new ChromeOptions();
+			mobileEmulation.put("deviceName", "Samsung Galaxy S20 Ultra");
 			if (System.getProperty("os.name").contains("Linux")) {
 				File file = new File(".");
 				String filepath = file.getCanonicalPath() + "/exe/chromedriver_linux_110";
 				System.setProperty("webdriver.chrome.driver", filepath);
 			} else if (System.getProperty("os.name").contains("Mac")) {
 				File file = new File(".");
-				String filepath = file.getCanonicalPath() + "/exe/chromedriver_mac110";
+				String filepath = file.getCanonicalPath() + "//exe//chromedriver1";
 				System.setProperty("webdriver.chrome.driver", filepath);
 			}
+			ChromeOptions chromeOptions = new ChromeOptions();
+			chromeOptions.addArguments("user-agent=Mozilla/5.0 (Windows Phone 10.0; Android 4.2.1; Microsoft; Lumia 640 XL LTE) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Mobile Safari/537.36 Edge/12.10166");
 			chromeOptions.addArguments("--allowed-ips");
+
 			if (common.value("headlessbrowser").equalsIgnoreCase("false")) {
-				//chromeOptions.addArguments("--headless");
 				driver = new ChromeDriver(chromeOptions);
-			}
-			else if (common.value("headlessbrowser").equalsIgnoreCase("true")) {
-				chromeOptions.addArguments("--headless");
-				chromeOptions.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-				chromeOptions.addArguments("start-maximized"); // open Browser in maximized mode
-				chromeOptions.addArguments("disable-infobars"); // disabling infobars
-				chromeOptions.addArguments("--disable-extensions"); // disabling extensions
-				chromeOptions.addArguments("--disable-gpu"); // applicable to windows os only
-				chromeOptions.addArguments("--no-sandbox"); // Bypass OS security model
-				driver = new ChromeDriver(chromeOptions);
-			}
+			} else driver = new ChromeDriver(this.createHeadlessChromeMobile());
 		} else if (common.value("mobilebrowser").equalsIgnoreCase("FIREFOX")) {
+
 			File file = new File(".");
-			String filepath = file.getCanonicalPath() + "//NA";
+			String filepath = file.getCanonicalPath() + "//exe//geckodriver_mac";
 			System.setProperty("webdriver.gecko.driver", filepath);
 			Map<String, Object> mobileEmulation = new HashMap<>();
-			String user_agent="Mozilla/5.0 (iPhone; U; CPU iPhone OS 3_0 like Mac OS X; en-us) AppleWebKit/528.18 (KHTML, like Gecko) Version/4.0 Mobile/7A341 Safari/528.16";
+			String user_agent = "Mozilla/5.0 (iPhone; U; CPU iPhone OS 3_0 like Mac OS X; en-us) AppleWebKit/528.18 (KHTML, like Gecko) Version/4.0 Mobile/7A341 Safari/528.16";
 			FirefoxOptions options = new FirefoxOptions();
-			options.addPreference("general.useragent.override",user_agent );
-			driver= new FirefoxDriver(options);
+			options.addPreference("general.useragent.override", user_agent);
+			driver = new FirefoxDriver(options);
+
 		}
-		driver.manage().window().maximize();
-		driver.manage().timeouts().pageLoadTimeout(45, TimeUnit.SECONDS);
-		driver.manage().timeouts().setScriptTimeout(45, TimeUnit.SECONDS);
+		Dimension dimension = new Dimension(300, 900);
+		driver.manage().window().setSize(dimension);
 		return driver;
 
-	}
+	}*/
 
-		public RemoteWebDriver getMobileDriver(RemoteWebDriver driver) throws IOException {
+	/*public RemoteWebDriver getDriver(RemoteWebDriver driver) throws IOException, InterruptedException {
 
-			if(common.value("mobilebrowser").equalsIgnoreCase("chrome")) {
-				Map<String, String> mobileEmulation = new HashMap<>();
-				mobileEmulation.put("deviceName", "Nexus 5");
-				ChromeOptions chromeOptions = new ChromeOptions();
-				if (System.getProperty("os.name").contains("Linux")) {
-					File file = new File(".");
-					String filepath = file.getCanonicalPath() + "/exe/chromedriver_linux_110";
-					System.setProperty("webdriver.chrome.driver", filepath);
-				} else if (System.getProperty("os.name").contains("Mac")) {
-					File file = new File(".");
-					String filepath = file.getCanonicalPath() + "/exe/chromedriver_mac110";
-					System.setProperty("webdriver.chrome.driver", filepath);
-				}
-				chromeOptions.addArguments("--allowed-ips");
-				chromeOptions.addArguments("user-agent=Mozilla/5.0 (Windows Phone 10.0; Android 4.2.1; Microsoft; Lumia 640 XL LTE) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Mobile Safari/537.36 Edge/12.10166");
-				if (common.value("headlessbrowser").equalsIgnoreCase("false")) {
-					driver = new ChromeDriver(chromeOptions);
-				}
-				else if (common.value("headlessbrowser").equalsIgnoreCase("true")) {
-					chromeOptions.addArguments("--headless");
-					chromeOptions.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-					chromeOptions.addArguments("start-maximized"); // open Browser in maximized mode
-					chromeOptions.addArguments("disable-infobars"); // disabling infobars
-					chromeOptions.addArguments("--disable-extensions"); // disabling extensions
-					chromeOptions.addArguments("--disable-gpu"); // applicable to windows os only
-					chromeOptions.addArguments("--no-sandbox"); // Bypass OS security model
-					driver = new ChromeDriver(chromeOptions);
-				}
-			} else if (common.value("mobilebrowser").equalsIgnoreCase("FIREFOX")) {
+		if(this.common.value("browser").equalsIgnoreCase("firefox")) {
+			if (this.common.value("headlessbrowser").equalsIgnoreCase("true") && this.common.value("OS").equalsIgnoreCase("linux")) {
 
 				File file = new File(".");
-				String filepath = file.getCanonicalPath() + "//NA";
-				System.setProperty("webdriver.gecko.driver", filepath);
-				Map<String, Object> mobileEmulation = new HashMap<>();
-				String user_agent="Mozilla/5.0 (iPhone; U; CPU iPhone OS 3_0 like Mac OS X; en-us) AppleWebKit/528.18 (KHTML, like Gecko) Version/4.0 Mobile/7A341 Safari/528.16";
-				FirefoxOptions options = new FirefoxOptions();
-				options.addPreference("general.useragent.override",user_agent );
-				driver= new FirefoxDriver(options);
+				System.setProperty("webdriver.gecko.driver", file.getCanonicalPath() + "//exe//geckodriver");
+				FirefoxOptions options = new FirefoxOptions()
+						//	.addPreference("--headless", 1)
+						.addPreference("browser.startup.page", 1)
+						.setHeadless(true);
+				//.options.setHeadless(true);
 
+				driver = new FirefoxDriver(options);
+				driver.manage().window().maximize();
+			} else {
+
+				File file = new File(".");
+				System.setProperty("webdriver.gecko.driver", file.getCanonicalPath() + "//exe//geckodriver_mac");
+				FirefoxOptions options = new FirefoxOptions()
+						//	.addPreference("--headless", 1)
+						.addPreference("browser.startup.page", 1);
+				driver = new FirefoxDriver(options);
 			}
-		Dimension dimension = new Dimension(360, 800);
-		driver.manage().window().setSize(dimension);
+		}
+		else if(this.common.value("browser").equalsIgnoreCase("chrome")){
+			if (this.common.value("headlessbrowser").equalsIgnoreCase("true") && this.common.value("OS").equalsIgnoreCase("linux")) {
 
-		driver.manage().timeouts().pageLoadTimeout(45, TimeUnit.SECONDS);
-		driver.manage().timeouts().setScriptTimeout(45, TimeUnit.SECONDS);
+				System.setProperty("webdriver.chrome.driver", "exe/chromedriver_linux_110");
+				Map<String, String> mobileEmulation = new HashMap<>();
+				ChromeOptions chromeOptions = new ChromeOptions();
+				chromeOptions.addArguments("--headless");
+				driver = new ChromeDriver(chromeOptions);
+			} else {
+
+				System.setProperty("webdriver.chrome.driver", "exe/chromedriver_mac_110");
+				Map<String, String> mobileEmulation = new HashMap<>();
+				ChromeOptions chromeOptions = new ChromeOptions();
+				// ChromeOptions options = new ChromeOptions();
+				driver = new ChromeDriver(chromeOptions);
+				driver.manage().window().maximize();
+			}
+		}
 		return driver;
 	}
-
 
 	public String get_BrowserName(RemoteWebDriver driver) {
 		String BrowserName = null;
@@ -211,6 +175,83 @@ public class WrapperMethod extends CommonUtil {
 			// System.out.println("Chrome DRIVER");
 		}
 		return BrowserName;
+	}*/
+
+
+	public RemoteWebDriver getDriver(RemoteWebDriver driver) throws IOException {
+
+		WebDriverManager.chromedriver().setup();
+		if (common.value("headlessbrowser").equalsIgnoreCase("false")) {
+			WebDriverManager.chromedriver().setup();
+			ChromeOptions chromeOptions = new ChromeOptions();
+			chromeOptions.addArguments("--no-sandbox");
+			chromeOptions.addArguments("disable-gpu");
+			chromeOptions.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+			chromeOptions.addArguments("start-maximized"); // open Browser in maximized mode
+			chromeOptions.addArguments("disable-infobars"); // disabling infobars
+			chromeOptions.addArguments("--disable-extensions"); // disabling extensions
+			driver = new ChromeDriver(chromeOptions);
+
+		}
+
+
+		else if (common.value("headlessbrowser").equalsIgnoreCase("true")) {
+			WebDriverManager.chromedriver().setup();
+			ChromeOptions chromeOptions = new ChromeOptions();
+			chromeOptions.addArguments("--no-sandbox");
+			chromeOptions.addArguments("--headless");
+			chromeOptions.addArguments("disable-gpu");
+			chromeOptions.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+			chromeOptions.addArguments("start-maximized"); // open Browser in maximized mode
+			chromeOptions.addArguments("disable-infobars"); // disabling infobars
+			chromeOptions.addArguments("--disable-extensions"); // disabling extensions
+			driver = new ChromeDriver(chromeOptions);
+		}
+		driver.manage().window().maximize();
+		driver.manage().timeouts().pageLoadTimeout(45, TimeUnit.SECONDS);
+		driver.manage().timeouts().setScriptTimeout(45, TimeUnit.SECONDS);
+		return driver;
+
+	}
+
+	public RemoteWebDriver getMobileDriver(RemoteWebDriver driver) throws IOException {
+
+
+		WebDriverManager.chromedriver().setup();
+		if (common.value("headlessbrowser").equalsIgnoreCase("false")) {
+			WebDriverManager.chromedriver().setup();
+			ChromeOptions chromeOptions = new ChromeOptions();
+			chromeOptions.addArguments("--no-sandbox");
+			chromeOptions.addArguments("disable-gpu");
+			chromeOptions.addArguments("user-agent=Mozilla/5.0 (Windows Phone 10.0; Android 4.2.1; Microsoft; Lumia 640 XL LTE) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Mobile Safari/537.36 Edge/12.10166");
+			chromeOptions.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+			chromeOptions.addArguments("start-maximized"); // open Browser in maximized mode
+			chromeOptions.addArguments("disable-infobars"); // disabling infobars
+			chromeOptions.addArguments("--disable-extensions"); // disabling extensions
+			driver = new ChromeDriver(chromeOptions);
+
+		}
+
+
+		else if (common.value("headlessbrowser").equalsIgnoreCase("true")) {
+			WebDriverManager.chromedriver().setup();
+			ChromeOptions chromeOptions = new ChromeOptions();
+			chromeOptions.addArguments("--no-sandbox");
+			chromeOptions.addArguments("--headless");
+			chromeOptions.addArguments("disable-gpu");
+			chromeOptions.addArguments("user-agent=Mozilla/5.0 (Windows Phone 10.0; Android 4.2.1; Microsoft; Lumia 640 XL LTE) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Mobile Safari/537.36 Edge/12.10166");
+			chromeOptions.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+			chromeOptions.addArguments("start-maximized"); // open Browser in maximized mode
+			chromeOptions.addArguments("disable-infobars"); // disabling infobars
+			chromeOptions.addArguments("--disable-extensions"); // disabling extensions
+			driver = new ChromeDriver(chromeOptions);
+		}
+		driver.manage().window().maximize();
+		driver.manage().timeouts().pageLoadTimeout(45, TimeUnit.SECONDS);
+		driver.manage().timeouts().setScriptTimeout(45, TimeUnit.SECONDS);
+		Dimension dimension = new Dimension(360, 800);
+		driver.manage().window().setSize(dimension);
+		return driver;
 	}
 
 	public static boolean isElementPresent(RemoteWebDriver driver, By by) throws Exception {
@@ -294,7 +335,7 @@ public class WrapperMethod extends CommonUtil {
 	}
 
 	public WebElement explicitWait(RemoteWebDriver driver, By by, int Time) throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver, Time);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(by));
 		return element;
 	}
@@ -640,7 +681,7 @@ public class WrapperMethod extends CommonUtil {
 	}
 
 	public void safeClick_JS(RemoteWebDriver driver, By by) throws Exception {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		WebElement we=driver.findElement(by);
 		Actions a = new Actions(driver);
 		a.moveToElement(we);
@@ -668,7 +709,7 @@ public class WrapperMethod extends CommonUtil {
 		elementVisible(driver, by, 20);
 		elementPresent(driver, by);
 		WebElement we = driver.findElement(by);
-		WebDriverWait wait = new WebDriverWait(driver, 50);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		we = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 		we = wait.until(ExpectedConditions.elementToBeClickable(by));
 		we = wait.until(ExpectedConditions.visibilityOf(we));
@@ -684,7 +725,7 @@ public class WrapperMethod extends CommonUtil {
 	public void safeClickLog(RemoteWebDriver driver, By by, String text, int time) throws Exception {
 		elementPresent_log(driver, by,  text, time);
 		WebElement we = driver.findElement(by);
-		WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		we = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 		we = wait.until(ExpectedConditions.elementToBeClickable(by));
 		we = wait.until(ExpectedConditions.visibilityOf(we));
@@ -719,7 +760,7 @@ public class WrapperMethod extends CommonUtil {
 		if (elementVisible(driver, by, 2)) {
 			elementPresent(driver, by);
 			WebElement we = driver.findElement(by);
-			WebDriverWait wait = new WebDriverWait(driver, 2);
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
 			we = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 			we = wait.until(ExpectedConditions.elementToBeClickable(by));
@@ -856,7 +897,7 @@ public class WrapperMethod extends CommonUtil {
 	public void safeClick_CheckBox(RemoteWebDriver driver, By by) throws Exception {
 		elementPresent(driver, by);
 		WebElement we = driver.findElement(by);
-		WebDriverWait wait = new WebDriverWait(driver, 1);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
 		we = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 		we = wait.until(ExpectedConditions.elementToBeClickable(by));
@@ -869,7 +910,7 @@ public class WrapperMethod extends CommonUtil {
 	public void safeUncheck(RemoteWebDriver driver, By by) throws Exception {
 		elementPresent(driver, by);
 		WebElement we = driver.findElement(by);
-		WebDriverWait wait = new WebDriverWait(driver, 1);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
 		we = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 		we = wait.until(ExpectedConditions.elementToBeClickable(by));
@@ -905,7 +946,7 @@ public class WrapperMethod extends CommonUtil {
 	public void UnChecking_Checkbox(RemoteWebDriver driver, By by) throws Exception {
 		elementPresent(driver, by);
 		WebElement we = driver.findElement(by);
-		WebDriverWait wait = new WebDriverWait(driver, 1);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
 		if (driver.findElement(by).getAttribute("checked") != null) {
 			we.click();
@@ -922,12 +963,12 @@ public class WrapperMethod extends CommonUtil {
 	}
 
 	public static void waitForElementToBeSelected(RemoteWebDriver driver, By by) {
-		WebDriverWait wait = new WebDriverWait(driver, 100);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.elementToBeSelected(by));
 	}
 
 	public void waitForElementToBeClickable(RemoteWebDriver driver, By by) {
-		WebDriverWait wait = new WebDriverWait(driver, 100);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.elementToBeClickable(by));
 	}
 
@@ -941,7 +982,7 @@ public class WrapperMethod extends CommonUtil {
 		elementPresent(driver, by);
 		boolean element = isElementPresent(driver, by);
 		WebElement we = driver.findElement(by);
-		WebDriverWait wait = new WebDriverWait(driver, 5);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		we.clear();
 		we = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 		if (element) {
@@ -962,7 +1003,7 @@ public class WrapperMethod extends CommonUtil {
 		elementPresent(driver, by);
 		boolean element = isElementPresent(driver, by);
 		WebElement we = driver.findElement(by);
-		WebDriverWait wait = new WebDriverWait(driver, 1);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		// we.clear();
 		we = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 		if (element) {
@@ -983,7 +1024,7 @@ public class WrapperMethod extends CommonUtil {
 		if (elementPresent_Time(driver, by, 1)) {
 			boolean element = isElementPresent(driver, by);
 			WebElement we = driver.findElement(by);
-			WebDriverWait wait = new WebDriverWait(driver, 1);
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 			we.clear();
 			we = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 			if (element) {
@@ -1005,7 +1046,7 @@ public class WrapperMethod extends CommonUtil {
 		elementPresent(driver, by);
 		boolean element = isElementPresent(driver, by);
 		WebElement we = driver.findElement(by);
-		WebDriverWait wait = new WebDriverWait(driver, 15);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
 		we = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 		if (element) {
@@ -1020,7 +1061,7 @@ public class WrapperMethod extends CommonUtil {
 		elementPresent(driver, by);
 		boolean element = isElementPresent(driver, by);
 		WebElement we = driver.findElement(by);
-		WebDriverWait wait = new WebDriverWait(driver, 15);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
 		we = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 		if (element) {
@@ -1035,7 +1076,7 @@ public class WrapperMethod extends CommonUtil {
 		elementPresent(driver, by);
 		boolean element = isElementPresent(driver, by);
 		WebElement we = driver.findElement(by);
-		WebDriverWait wait = new WebDriverWait(driver, 15);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
 		we = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 		if (element) {
@@ -1050,7 +1091,7 @@ public class WrapperMethod extends CommonUtil {
 		elementPresent(driver, by);
 		boolean element = isElementPresent(driver, by);
 		WebElement we = driver.findElement(by);
-		WebDriverWait wait = new WebDriverWait(driver, 15);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
 		we = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 		if (element) {
@@ -1065,7 +1106,7 @@ public class WrapperMethod extends CommonUtil {
 		elementPresent(driver, by);
 		boolean element = isElementPresent(driver, by);
 		WebElement we = driver.findElement(by);
-		WebDriverWait wait = new WebDriverWait(driver, 15);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
 		we = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 		if (element) {
@@ -1082,7 +1123,7 @@ public class WrapperMethod extends CommonUtil {
 		elementPresent(driver, by);
 		boolean element = isElementPresent(driver, by);
 		WebElement we = driver.findElement(by);
-		WebDriverWait wait = new WebDriverWait(driver, 15);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
 		we = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 		if (element) {
@@ -1099,7 +1140,7 @@ public class WrapperMethod extends CommonUtil {
 			boolean element = isElementPresent(driver, by);
 			WebElement we = driver.findElement(by);
 
-			WebDriverWait wait = new WebDriverWait(driver, 15);
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 			we = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 			if (element) {
 				if (isElementPresent(driver, by))
@@ -1211,8 +1252,8 @@ public class WrapperMethod extends CommonUtil {
 				Thread.sleep(3000);
 			}
 			if (isElementPresent(driver, ajax)) {
-				WebDriverWait wait2 = new WebDriverWait(driver, 10);
-				WebElement element2 = wait2.until(ExpectedConditions.elementToBeClickable(ajax));
+				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+				WebElement element2 = wait.until(ExpectedConditions.elementToBeClickable(ajax));
 				element2.click();
 				break;
 			}
@@ -1246,8 +1287,8 @@ public class WrapperMethod extends CommonUtil {
 				Thread.sleep(5000);
 			}
 			if (isElementVisible(driver, ajax)) {
-				WebDriverWait wait2 = new WebDriverWait(driver, 20);
-				WebElement element2 = wait2.until(ExpectedConditions.elementToBeClickable(ajax));
+				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+				WebElement element2 = wait.until(ExpectedConditions.elementToBeClickable(ajax));
 				element2.click();
 				break;
 			}
@@ -1264,7 +1305,7 @@ public class WrapperMethod extends CommonUtil {
 				driver.switchTo().alert().accept();
 			}
 			WebElement we = driver.findElement(by);
-			WebDriverWait wait = new WebDriverWait(driver, 10);
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
 			we = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 			String text = null;
@@ -1287,7 +1328,7 @@ public class WrapperMethod extends CommonUtil {
 				driver.switchTo().alert().accept();
 			}
 			WebElement we = driver.findElement(by);
-			WebDriverWait wait = new WebDriverWait(driver, 10);
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
 			we = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 			String text = null;
@@ -1309,7 +1350,7 @@ public class WrapperMethod extends CommonUtil {
 				driver.switchTo().alert().accept();
 			}
 			WebElement we = driver.findElement(by);
-			WebDriverWait wait = new WebDriverWait(driver, 10);
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
 			we = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 			String text = null;
@@ -1437,7 +1478,7 @@ public class WrapperMethod extends CommonUtil {
 
 	public static boolean waitForElementVisibility(RemoteWebDriver driver, By by, int Time) throws Exception {
 		try {
-			new WebDriverWait(driver, Time).until(ExpectedConditions.visibilityOfElementLocated(by));
+			new WebDriverWait(driver, Duration.ofSeconds(Time)).until(ExpectedConditions.visibilityOfElementLocated(by));
 			return true;
 		} catch (Exception e) {
 			Reporter.log("<p>Element not visible after waitng for" + Time + "seconds.</p>");

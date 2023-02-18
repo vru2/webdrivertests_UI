@@ -17,10 +17,10 @@ public class IN_GV_SCLP_GV_NB extends PaymentsBento_Itn_Hotels_Common {
 	public void Hotel_IN_WL_GV_CC_Amex() throws Exception {
 		driver.manage().deleteAllCookies();
 		driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
-		driver.manage().addCookie(hotelLogin);
 		addwalletamount(10, "ct_wallet_partial@cleartrip.com");
 		hotelsDetailsPage(driver, "", "");
 		hotelsItnPage(driver, "PartialGV_SCLP", "", "", "");
+		driver.manage().addCookie(hotelLogin);
 		hotelsPaymentPage(driver,"NB","","Hotels","","", "SCLP WL + NB : ");// Invalid Coupon Validation
 	}
 

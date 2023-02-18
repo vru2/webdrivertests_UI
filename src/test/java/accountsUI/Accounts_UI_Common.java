@@ -5,8 +5,8 @@ import io.restassured.response.Response;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import org.testng.Reporter;
-import test.java.common.WrapperMethod;
 import redis.clients.jedis.Jedis;
+import test.java.common.WrapperMethod;
 
 import java.sql.*;
 import java.util.ArrayList;

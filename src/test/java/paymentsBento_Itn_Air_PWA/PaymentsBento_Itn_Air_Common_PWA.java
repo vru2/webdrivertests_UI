@@ -6,7 +6,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
-import test.java.paymentsBento_com.PaymentsBento_Common_PWA;
+import test.java.commonUI.PaymentsBento_Common_PWA;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -100,7 +100,6 @@ public class PaymentsBento_Itn_Air_Common_PWA extends PaymentsBento_Common_PWA {
           if (textPresent(driver, "Skip", 5)) {
                 mouseHover(driver, By.xpath("//div[2]/div[1]/div[3]/p"));
                 safeClick(driver, By.xpath("//div[2]/div[1]/div[3]/p"));
-                Thread.sleep(2000);
                 elementVisible(driver, By.linkText("Exit without saving"), 5);
                 safeClick(driver, By.linkText("Exit without saving"));
             }

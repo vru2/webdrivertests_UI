@@ -20,7 +20,6 @@ public class IN_Air_PWA_Wallet_Full extends PaymentsBento_Itn_Air_Common_PWA {
     @Test
     public void Air_PWA_Walletfull() throws Exception {
         driver.manage().deleteAllCookies();
-
         Logger log = Logger.getLogger("devpinoyLogger");
         driver.get(air_SRPUrl("IN",origin,destination, date+10));
         air_SRPPage(driver,"", "");

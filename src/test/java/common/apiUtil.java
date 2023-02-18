@@ -77,7 +77,7 @@ public class apiUtil {
 			}
 			String response=totalOutput1.toString();
 			////System.out.println(response);
-			EntityUtils.consumeQuietly(searchResponse1.getEntity());
+			//EntityUtils.consumeQuietly(searchResponse1.getEntity());
 			post.releaseConnection();
 			return response;
 		

@@ -29,10 +29,8 @@
                     <!--  <skipTests>true</skipTests> -->
                     <!-- Suite testng xml file to consider for test execution -->
                     <suiteXmlFiles>
-                        <!--suppress UnresolvedMavenProperty -->
-                        <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+                        <suiteXmlFile>${project.basedir}/suiteXMLs</suiteXmlFile>
                     </suiteXmlFiles>
-
                 </configuration>
             </plugin>
             <plugin>

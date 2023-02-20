@@ -136,8 +136,10 @@ public class CommonUtil {
 	}
 
 	public void afterMethod(RemoteWebDriver driver, ITestResult _result) throws Exception {
-		screenshot(_result, driver);
-		afterMethodProcess(_result);
+		if (common.value("headlessbrowser").equalsIgnoreCase("false")) {
+			screenshot(_result, driver);
+			afterMethodProcess(_result);
+		}
 	}
 
 	public String putLogDate() throws Exception {

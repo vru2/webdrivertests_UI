@@ -469,6 +469,11 @@ public class PlatformCommonUtil extends WrapperMethod {
 		Random random = new Random();
 		return random.nextInt(900000);
 	}
+
+	public static int getRandomNumberInt(int intLength){
+		Random random = new Random();
+		return random.nextInt(intLength)+5;
+	}
 	
 	public String generateRandomWord(int wordLength) {
 		Random r= new Random();

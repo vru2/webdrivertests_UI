@@ -9,23 +9,6 @@ import org.testng.Reporter;
 
 public class PaymentsUI_Common_PWA_Air extends PaymentsUI_Common_PWA{
 
-    public String inurl = "https://qa2new.cleartrip.com";
-    public String origin = "BLR";
-    public String destination = "MAA";
-    public int date = 85;
-    public String phoneNo="1212121212";
-    public String emailID="kiran.kumar@cleartrip.com";
-
-    public String air_SRPUrl(String Domain, String origin, String destination, int date) throws Exception {
-        String Air_URL = "/flights/results?adults=1&childs=0&infants=0&class=Economy&depart_date=" + getDateTime(date, "dd/MM/yyyy") + "&from=" + origin + "&to=" + destination + "&intl=n";
-        String SearchUrl = "";
-        if (Domain == "IN") {
-            SearchUrl = inurl + Air_URL;
-        }
-        Reporter.log(SearchUrl);
-        System.out.println(SearchUrl);
-        return SearchUrl;
-    }
 
     public void air_SRPPage(RemoteWebDriver driver, String FlightName, String FlightNo) throws Exception {
         if (!elementVisible(driver, By.xpath("//ul/div/div/div/div[2]/div[2]"), 30)) {

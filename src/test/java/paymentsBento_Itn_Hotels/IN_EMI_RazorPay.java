@@ -18,8 +18,6 @@ public class IN_EMI_RazorPay extends PaymentsUI_Common_Desktop_Hotels {
 
 	@Test
 	public void Hotel_IN_EMI() throws Exception {
-		//System.setproperty("webdriver.chrome.driver", "chromedriver");
-		//Webdriver driver = new ChromeDriver();
 		driver.manage().deleteAllCookies();
 		driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
 		hotelsDetailsPage(driver, "", "");

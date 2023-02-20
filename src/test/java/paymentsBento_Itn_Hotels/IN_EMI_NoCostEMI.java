@@ -22,7 +22,6 @@ public class IN_EMI_NoCostEMI extends PaymentsUI_Common_Desktop_Hotels {
 		hotelsItnPage(driver, "", "", "", "");
 		bento_Validation_Text(driver, "EMI", "");
 		hotelsPaymentPage(driver,"EMI","RAZORPAY","","NoCostEMI","", "NoCost ENI Razorpay : ");
-
 	}
 	
  		@AfterClass(alwaysRun = true)

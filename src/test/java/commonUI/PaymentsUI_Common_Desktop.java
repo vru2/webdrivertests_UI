@@ -104,8 +104,8 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
             safeClick(driver, getObjectPayment("Bento_Payment_Razropay_Pin"));
             safeType(driver,getObjectPayment("Bento_Payment_Razropay_Pin"),"0000");
             safeClick(driver,getObjectPayment("Bento_Payment_Razropay_Submit"));
-            textPresent_Log(driver, "Booking successful", 10);
-            Reporter.log("Payment done successfully");
+            /*textPresent_Log(driver, "Booking successful", 10);
+            Reporter.log("Payment done successfully");*/
         }
         else if(GWName.equalsIgnoreCase("RAZORPAYNB")){
             if(SuccessFail.equalsIgnoreCase("Success")){
@@ -145,8 +145,8 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
                     driver.findElement(By.xpath("//button[@id='submit-action']/span")).click();
                 }
             }
-            textPresent_Log(driver, "Booking successful",10);
-            Reporter.log("Payment done successfully");
+        /*    textPresent_Log(driver, "Booking successful",10);
+            Reporter.log("Payment done successfully");*/
         }
         else if(GWName.equalsIgnoreCase("AMEX")){
             if(elementVisible(driver,getObjectPayment("Bento_Payment_Skip_Securecard"),2))
@@ -156,8 +156,8 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
             textPresent(driver, "ACS Emulator", 20);
             Thread.sleep(5000);
             smartClick(driver, getObjectPayment("Bento_Payment_AMC_SUBMIT"));
-            textPresent_Log(driver, "Booking successful", 30);
-            Reporter.log("Payment done successfully");
+          /*  textPresent_Log(driver, "Booking successful", 30);
+            Reporter.log("Payment done successfully");*/
         }
     }
 
@@ -840,7 +840,7 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
     }
 
     public void bento_pay_UPI(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
-
+        payUI_Select_PaymentType(driver, "UPI");
         if(PayType=="SavedUPI"){
             textPresent_Log(driver,"Add new UPI",5);
             textPresent_Log(driver,"Saved UPI ID",1);

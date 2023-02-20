@@ -8,6 +8,8 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Reporter;
 import test.java.commonAPI.API_PaymentCommon;
 
+import java.util.Random;
+
 public class PaymentsUI_Common extends API_PaymentCommon {
 
     public RemoteWebDriver driver;
@@ -53,6 +55,41 @@ public class PaymentsUI_Common extends API_PaymentCommon {
     Cookie cookie_Full_Wallet = new Cookie("ct-auth", "kPSO4DekYXjX1NAa%2BV6x%2BPAuD85oXXc2x6ocNR2SCho5FiJNPfE0mcjCvYIvtvEzD3habrO078UoXdzWM34lXZaLbE1jIpkEaANLn%2BHJadeW7kll2UfWWUfOoZLsVWTE5e4M7AJPpksQjN%2BnOAVReuzUb6b257o%2Bo1tkm1ssHdnsn63Uy2JyxP3spA3W9e%2Fw");
     Cookie cookie_Stored_CardNew = new Cookie("ct-auth", "EVefRmmOWPSC8c9sPGbZGwZMgfl%2FLjP6yfQQAwhPONaOOIjRmfrMO5ubb5%2FGLWzguQmW3NiUZma8q2lELnUuyC3uAF5DaTQONdJlLn%2FO2me%2FiLCzDjUE8Mm7nMigogz0z84lf%2Bili9Xzawt1KbN%2FMNpQDroZvb3Q7ub%2BLj1YfofQs%2BDG9mD5DXvLFNSWqYz93GfvGpnfyFmIRy226HjYgQ%3D%3D");
     Cookie cookie_Stored_Card = new Cookie("ct-auth", "3cZX3Pk7YZLQGkv5lH%2BqMisg41mHr4%2BV5LnkFlBYXSW7TbjXLYl7j8XVySMQUxQsuv18jxT4Krq%2BnZKZgt%2FgtsPPZuvu7kgJgSXq9dBmctulsdFnuefY%2Fk4K%2FkHUuDj%2BnitdvoouxVugJ172IcDxp41NeKUSgTMU9EpGlYfZJ60e5yZIWxI28YU6CxlbH7FH");
+
+
+    public String origin = "BLR";
+    public String destination = "MAA";
+    //public int date = 85;
+    public String phoneNo="1212121212";
+    public String emailID="kiran.kumar@cleartrip.com";
+    public int date = getRandomNumberInt(100);
+
+    public String origin(){
+        final String[] OriginValue = {"BLR", "MAA", "BOM"};
+        Random random = new Random();
+        int index = random.nextInt(OriginValue.length);
+        Reporter.log("Origin : "+OriginValue[index]);
+        return OriginValue[index];
+    }
+
+    public String destination(){
+        final String[] DestinationValue = {"DEL", "HYD", "GOI"};
+        Random random = new Random();
+        int index = random.nextInt(DestinationValue.length);
+        Reporter.log("Destination : "+DestinationValue[index]);
+        return DestinationValue[index];
+    }
+
+    public String air_SRPUrl(String Domain, String origin, String destination, int date) throws Exception {
+        String Air_URL = "/flights/results?adults=1&childs=0&infants=0&class=Economy&depart_date=" + getDateTime(date, "dd/MM/yyyy") + "&from=" + origin() + "&to=" + destination() + "&intl=n";
+        String SearchUrl = "";
+        if (Domain == "IN") {
+            SearchUrl = inurl + Air_URL;
+        }
+        Reporter.log(SearchUrl);
+        System.out.println(SearchUrl);
+        return SearchUrl;
+    }
 
     public void addwalletamount(int amount, String emailID) throws Exception {
         Response resp;

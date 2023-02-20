@@ -24,7 +24,6 @@ public class IN_UPI_Saved extends PaymentsUI_Common_Desktop_Hotels {
 		hotelsPaymentPage(driver, "UPI", "", "", "SavedUPI", "", "Saved UPI : ");
 	}
 
-
  		@AfterClass
 		public void closeSelenium() throws Exception { 
 		 	browserClose(driver); 

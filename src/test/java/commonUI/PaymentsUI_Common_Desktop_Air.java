@@ -24,8 +24,8 @@ public class PaymentsUI_Common_Desktop_Air extends PaymentsUI_Common_Desktop {
     }
 
     public void air_ItnPage_Desktop(RemoteWebDriver driver, String FlightName, String FlightNo, String CouponGV, String COUPONCODE) throws Exception {
-        elementVisible(driver, getObjectPayment("Desktop_Air_Itn_Step1_Btn"), 20);
-        textPresent(driver, "Review your itinerary", 5);
+        elementPresent(driver, getObjectPayment("Desktop_Air_Itn_Step1_Coupon_Txt_Box"), 20);
+        textPresent(driver, "Review your itinerary", 1);
         String parent = driver.getWindowHandle();
         Set<String> s = driver.getWindowHandles();
         Iterator<String> I1 = s.iterator();
@@ -65,8 +65,16 @@ public class PaymentsUI_Common_Desktop_Air extends PaymentsUI_Common_Desktop {
         }
         elementVisible(driver, getObjectPayment("Desktop_Air_Itn_Step1_Btn"), 5);
         textPresent_Log(driver, "Review your itinerary", 1);
+
+        if(elementVisible(driver, By.xpath("//div/h3"), 5)){
+            scrollToElement(driver, By.xpath("//div/h3"));
+            Thread.sleep(2000);
+            smartClick(driver, By.xpath("//div/h3"));
+
+        }
         scrollToElement(driver, getObjectPayment("Desktop_Air_Itn_Step1_Btn"));
         Thread.sleep(2000);
+
         safeClick(driver, getObjectPayment("Desktop_Air_Itn_Step1_Btn"));
     }
 
@@ -105,6 +113,7 @@ public class PaymentsUI_Common_Desktop_Air extends PaymentsUI_Common_Desktop {
         textPresent(driver,"Adult 1", 1);
         safeType(driver, getObjectPayment("Desktop_Air_TravellerPage_FirstName"),"Kiran");
         safeType(driver, getObjectPayment("Desktop_Air_TravellerPage_LastName"),"Kumar");
+        //safeSelectByIndex(driver, getObjectPayment("Desktop_Air_TravellerPage_Salutation"),1 );
         safeClick(driver, getObjectPayment("Desktop_Air_TravellerPage_Salutation"));
         safeClick(driver, getObjectPayment("Desktop_Air_TravellerPage_Salutation_Mr"));
         if(elementVisible(driver, getObjectPayment("Desktop_Air_TravellerPage_DOB_Date"),1)){
@@ -118,7 +127,7 @@ public class PaymentsUI_Common_Desktop_Air extends PaymentsUI_Common_Desktop {
             safeClick(driver, getObjectPayment("Desktop_Air_TravellerPage_Nationality_Country"));
         }
         scrollToElement(driver, getObjectPayment("Desktop_Air_TravellerPage_Btn"));
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         safeClick(driver, getObjectPayment("Desktop_Air_TravellerPage_Btn"));
     }
 

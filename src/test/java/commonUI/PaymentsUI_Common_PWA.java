@@ -8,7 +8,6 @@ import org.testng.Reporter;
 public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
 
 
-
         public void bento_Paymentpage_PWA(RemoteWebDriver driver, String paymentType, String cardNumber, String domain, String payType, String bankName, String successFail) throws Exception {
         elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"), 20);
         textPresent(driver, "Per traveller convenience fee of", 10);

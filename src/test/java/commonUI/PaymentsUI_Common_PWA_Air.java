@@ -15,7 +15,7 @@ public class PaymentsUI_Common_PWA_Air extends PaymentsUI_Common_PWA{
             Reporter.log("SRP page not loaded");
             Assert.assertTrue(false);
         }
-        textPresent(driver, "Sort", 5);
+        textPresent(driver, "Airlines", 5);
         safeClick(driver, By.xpath("//ul/div/div/div/div[2]/div[2]"));
     }
 

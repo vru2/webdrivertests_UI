@@ -423,6 +423,27 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
             }
             bento_pay_GWPage(driver,"PAYTM","","");
         }
+
+        else if(CardNumber=="7777SC")
+        {
+            payUI_Enter_PaymentDetails(driver, "CC", "PAYTM","");
+            textPresent_Log(driver, "Save my card as per the RBI guidelines", 1);
+            //safeClick(driver, By.xpath(""));
+
+            smartClick(driver, getObjectPayment("PayUI_Expressway_CheckBox_New"));
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("window.scrollBy(0,600)");
+            Thread.sleep(1000);
+            safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
+            Reporter.log("Clicked on paynow");
+            if (textPresent(driver, "Cleartrip wallet", 5))
+            {
+                //smartClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
+                Reporter.log("Deselected wallet");
+                Thread.sleep(2000);
+            }
+            bento_pay_GWPage(driver,"PAYTM","","");
+        }
         else
         {
             safeClick(driver, getObjectPayment("Bento_Payment_Select_Storedcard"));

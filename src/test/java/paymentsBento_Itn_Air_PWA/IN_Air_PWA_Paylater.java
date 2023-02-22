@@ -29,10 +29,10 @@ public class IN_Air_PWA_Paylater extends PaymentsUI_Common_PWA_Air {
     public void closeSelenium() throws Exception {
         browserClose(driver);
     }
-
+/*
     @AfterMethod(alwaysRun = true)
     public void afterMethod(ITestResult _result) throws Exception {
         afterMethod(driver, _result);
-    }
+    }*/
 
 }

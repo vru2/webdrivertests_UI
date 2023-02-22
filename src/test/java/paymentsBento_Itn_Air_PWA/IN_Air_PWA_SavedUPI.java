@@ -31,9 +31,9 @@ public class IN_Air_PWA_SavedUPI extends PaymentsUI_Common_PWA_Air {
         browserClose(driver);
     }
 
-    @AfterMethod(alwaysRun = true)
+ /*   @AfterMethod(alwaysRun = true)
     public void afterMethod(ITestResult _result) throws Exception {
         afterMethod(driver, _result);
-    }
+    }*/
 
 }

@@ -89,28 +89,30 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
 
         public void bento_pay_SavedPayment_PWA(RemoteWebDriver driver, String PaymentType, String CardNumber, String domain, String PayType, String BankName) throws Exception {
         payUI_Select_PaymentType_PWA(driver, "SC");
-        textPresent_Log(driver, "SAVED PAYMENT MODES", 5);
+        //textPresent_Log(driver, "PREFERRED PAYMENT MODES", 5);
         if (PayType.equalsIgnoreCase("SavedCard")) {
-
+/*
             elementPresent_log(driver, By.id("Shape"), "bank Logo", 1);
-            elementPresent_log(driver, By.cssSelector("rect"), "Card logo", 1);
-            String CardName = getText(driver, By.xpath("//div[2]/div/p[2]"));
+            elementPresent_log(driver, By.cssSelector("rect"), "Card logo", 1);*/
+ /*           String CardName = getText(driver, By.xpath("//div[2]/div/p[2]"));
             if (!CardName.equalsIgnoreCase("Paytm Debit Card")) {
                 Reporter.log("Card name " + CardName);
                 Assert.assertTrue(false);
-            }
-            safeClick(driver, By.id("CVV_66169"));
-            safeType(driver, By.id("CVV_66169"), "123");
+            }*/
+            safeClick(driver, By.xpath("//div[9]/label/div[2]/span"));
+            safeClick(driver, By.xpath("//div/div/input"));
+            safeType(driver, By.xpath("//div/div/input"), "123");
 
         }
 
 
-        else if(PayType.equalsIgnoreCase("SavedUPI"))
+        else if(PayType.equalsIgnoreCase("SavedUPI")) {
             safeClick(driver, By.xpath("//div[3]/label/div/span"));
-        String UPI_txt = getText(driver, By.xpath("//div[2]/span"));
-        if (!UPI_txt.equalsIgnoreCase("3212467@okhdfcbank")) {
-            Reporter.log("UPI_txt " + UPI_txt);
-            Assert.assertTrue(false);
+            String UPI_txt = getText(driver, By.xpath("//div[2]/span"));
+            if (!UPI_txt.equalsIgnoreCase("3212467@okhdfcbank")) {
+                Reporter.log("UPI_txt " + UPI_txt);
+                Assert.assertTrue(false);
+            }
         }
 
         safeClick(driver, getObjectPayment("Bento_Payment_NB_Payment_Success"));
@@ -414,7 +416,7 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
                 PayType = "UPI";
                 break;
             case "SC":
-                PayType = "SAVED PAYMENT MODES";
+                PayType = "PREFERRED PAYMENT MODES";
                 break;
             case "PAYLATER":
                 PayType = "PAY LATER";

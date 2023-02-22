@@ -56,6 +56,11 @@ public class PaymentsUI_Common_Desktop_Hotels extends PaymentsUI_Common_Desktop 
         refreshPage(driver);
         textPresent(driver, "Review your itinerary", 5);
         Thread.sleep(2000);
+        if(textPresent(driver, "We are seeing overwhelming traffic. Please try again in sometime",1)){
+            Reporter.log("We are seeing overwhelming traffic. Please try again in sometime. error in itinerary");
+            Assert.assertTrue(false);
+        }
+        elementPresent_log(driver, By.xpath("//div[3]/div/div[2]/div/input"),"", 10);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,600)");
         textPresent(driver, "Add contact details", 1);

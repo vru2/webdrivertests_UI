@@ -15,11 +15,11 @@ public class IN_Air_Desktop_Coupon_Invalid_NB extends PaymentsUI_Common_Desktop_
     }
 
     @Test
-    public void Air_Desktop_INvalidCoupon_NB() throws Exception {
+    public void Air_Desktop_InvalidCoupon_NB() throws Exception {
         driver.manage().deleteAllCookies();
         driver.get(air_SRPUrl("IN",origin,destination, date));
         air_SRPPage_Desktop(driver,"","");
-        air_ItnPage_Desktop(driver, "", "","INVALIDCOUPON","PAYCC");
+        air_ItnPage_Desktop(driver, "", "","Coupon","PAYCC");
         air_AddOnPage_Desktop(driver,"","","","");
         air_LoginPage_Desktop(driver, "", emailID, phoneNo);
         air_TravellerPage_Desktop(driver,"");

@@ -27,8 +27,8 @@ public class IN_Bus_PWA_NB extends PaymentsUI_Common_PWA_Bus {
         bus_SelectPickup(driver, "", "");
         bus_TravellerPage(driver, "", phoneNo, emailID);
         bus_ReviewPage(driver, "", "", "");
-       // bento_Paymentpage_PWA(driver,"NB","","","","RazorpayNB", "Success");
-      //  bus_ConfirmationPage(driver, "","", "");
+        bento_Paymentpage_PWA(driver,"NB","","","","RazorpayNB", "Success");
+        bus_ConfirmationPage(driver, "","", "");
     }
 
     @AfterClass(alwaysRun = true)

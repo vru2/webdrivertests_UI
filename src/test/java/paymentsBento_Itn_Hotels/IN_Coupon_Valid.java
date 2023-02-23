@@ -27,12 +27,10 @@ public class IN_Coupon_Valid extends PaymentsUI_Common_Desktop_Hotels {
 		public void closeSelenium() throws Exception { 
 		 	browserClose(driver); 
 		}
-/*
 
 		@AfterMethod(alwaysRun = true)
 		public void afterMethod(ITestResult _result) throws Exception {
 			afterMethod(driver, _result);
 		}
-*/
 
 }

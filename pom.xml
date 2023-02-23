@@ -79,7 +79,6 @@
             <version>6.14.3</version>
             <scope>test</scope>
         </dependency>
-
         <!-- https://mvnrepository.com/artifact/com.github.sdrss/reportng -->
         <dependency>
             <groupId>com.github.sdrss</groupId>
@@ -89,7 +88,7 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>7.7.1</version>
+            <version>6.14.3</version>
             <scope>compile</scope>
         </dependency>
 

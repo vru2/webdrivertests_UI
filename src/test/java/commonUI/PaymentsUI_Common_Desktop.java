@@ -526,7 +526,6 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
         safeClick(driver,getObjectPayment("Bento_Payment_Razropay_Submit"));
         textPresent_Log(driver, "Booking successful", 10);
         Reporter.log("Payment done successfully");
-
     }
 
     public void bento_pay_GV_Partial(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
@@ -653,7 +652,7 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
             safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
             Reporter.log("Deselected wallet");
             Thread.sleep(2000);
-        }/*
+        }
         if(PayType.contains("Coupon")) {
             // Invalid Coupon Validation
             String Coupon_Value = "No Coupon";
@@ -674,7 +673,7 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
 
             elementVisible(driver, By.xpath("//div[3]/div/p"), 10);
 
-            if(!domain.equalsIgnoreCase("Hotels")) *//*{
+            if(!domain.equalsIgnoreCase("Hotels")) {
                 String InvalidCoupon_Msg = getText(driver, By.xpath("//div[3]/div/p"));
                 String Total_Price = getText(driver, By.xpath("//p[2]/span"));
                 String ButtonAnyway_Text = getText(driver, By.xpath("//form/button"));
@@ -713,7 +712,7 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
                     Reporter.log("Price Without Coupon  "+Price_Without_Coupon+"is not equal to Sum of Coupon Value in Breakup "+Coupon_Value_Breakup+" Total amount after coupon Discount "+Total_Price_Int);
                     Assert.assertTrue(false);
                 }
-            }*//*
+            }
             textPresent_Log(driver, "Coupon not applicable", 5);
             elementPresent_log(driver, getObjectPayment("Bento_Pay_Coupon_Popup_Close_Btn"), "invaid coupon Pop Up not displayed",	1);
             safeClick(driver, By.xpath("//button[2]")); // Clicking on Change paymentMode
@@ -725,7 +724,7 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
             elementPresent_log(driver, getObjectPayment("Bento_Pay_Coupon_Popup_Close_Btn"), "",	1);
             safeClick(driver, By.xpath("//div[4]/div/button")); // Clicking on Continue without coupon paymentMode
             Reporter.log("Clicked on paynow in Coupon Popup");
-        }*/
+        }
         else if(PayType.contains("Retry")) {
             bento_Select_PaymentType(driver, "NB");
             Reporter.log("Clicked on NB");

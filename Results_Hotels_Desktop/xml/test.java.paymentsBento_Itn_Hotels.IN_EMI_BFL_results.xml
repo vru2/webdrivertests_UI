@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="EMI BFL"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="70.487">
+  <properties />
+  
+  
+            <testcase name="Hotel_IN_BFL" time="70.487" classname="test.java.paymentsBento_Itn_Hotels.IN_EMI_BFL" />
+      
+</testsuite>

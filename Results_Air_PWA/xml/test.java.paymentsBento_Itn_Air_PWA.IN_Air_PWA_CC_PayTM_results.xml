@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="CC payTM"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="69.995">
+  <properties />
+  
+  
+            <testcase name="Air_PWA_CC_Paytm" time="69.995" classname="test.java.paymentsBento_Itn_Air_PWA.IN_Air_PWA_CC_PayTM" />
+      
+</testsuite>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript" src="js/canvasjs.min.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/reportng.css" />
+	<script>
+		window.onload = function () {
+			var chart = new CanvasJS.Chart("chartContainer", {
+animationEnabled: true,height: 600,indexLabelFontSize: 16,theme: "light2",title:{text: ""},axisX:{},axisY: {title: "Class"},toolTip:{shared:true},legend:{cursor:"pointer",verticalAlign: "top",horizontalAlign: "left",dockInsidePlotArea: false, fontSize: 16},data: [
+{type: "stackedBar",showInLegend: true,name: "Pass",color: "green",dataPoints: [
+{ label: "GV Multi CLP CC", y: 0 },
+{ label: "GV Full CLP", y: 0 },
+{ label: "GV WL Partial CC", y: 0 },
+{ label: "Cardless EMI AXIO", y: 1 },
+{ label: "CC payTM", y: 1 },
+{ label: "Paylater ICICI", y: 1 },
+{ label: "Saved Card Tokenized", y: 1 },
+{ label: "Saved Paymentmode UPI", y: 0 },
+{ label: "Saved UPI", y: 1 },
+{ label: "UPI Inline", y: 1 },
+{ label: "Wallet Full", y: 1 },
+{ label: "Coupon Invalid", y: 1 },
+{ label: "NB ICICI", y: 1 },
+{ label: "Coupon Valid", y: 1 },
+]},
+{type: "stackedBar",showInLegend: true,name: "Fixed",color: "blue",dataPoints: [
+{ label: "GV Multi CLP CC", y: 0 },
+{ label: "GV Full CLP", y: 0 },
+{ label: "GV WL Partial CC", y: 0 },
+{ label: "Cardless EMI AXIO", y: 0 },
+{ label: "CC payTM", y: 0 },
+{ label: "Paylater ICICI", y: 0 },
+{ label: "Saved Card Tokenized", y: 0 },
+{ label: "Saved Paymentmode UPI", y: 0 },
+{ label: "Saved UPI", y: 0 },
+{ label: "UPI Inline", y: 0 },
+{ label: "Wallet Full", y: 0 },
+{ label: "Coupon Invalid", y: 0 },
+{ label: "NB ICICI", y: 0 },
+{ label: "Coupon Valid", y: 0 },
+]},
+{type: "stackedBar",showInLegend: true,name: "Known Defects",color: "orange",dataPoints: [
+{ label: "GV Multi CLP CC", y: 0 },
+{ label: "GV Full CLP", y: 0 },
+{ label: "GV WL Partial CC", y: 0 },
+{ label: "Cardless EMI AXIO", y: 0 },
+{ label: "CC payTM", y: 0 },
+{ label: "Paylater ICICI", y: 0 },
+{ label: "Saved Card Tokenized", y: 0 },
+{ label: "Saved Paymentmode UPI", y: 0 },
+{ label: "Saved UPI", y: 0 },
+{ label: "UPI Inline", y: 0 },
+{ label: "Wallet Full", y: 0 },
+{ label: "Coupon Invalid", y: 0 },
+{ label: "NB ICICI", y: 0 },
+{ label: "Coupon Valid", y: 0 },
+]},
+{type: "stackedBar",showInLegend: true,name: "Fail",color: "red",dataPoints: [
+{ label: "GV Multi CLP CC", y: 1 },
+{ label: "GV Full CLP", y: 1 },
+{ label: "GV WL Partial CC", y: 1 },
+{ label: "Cardless EMI AXIO", y: 0 },
+{ label: "CC payTM", y: 0 },
+{ label: "Paylater ICICI", y: 0 },
+{ label: "Saved Card Tokenized", y: 0 },
+{ label: "Saved Paymentmode UPI", y: 1 },
+{ label: "Saved UPI", y: 0 },
+{ label: "UPI Inline", y: 0 },
+{ label: "Wallet Full", y: 0 },
+{ label: "Coupon Invalid", y: 0 },
+{ label: "NB ICICI", y: 0 },
+{ label: "Coupon Valid", y: 0 },
+]},
+{type: "stackedBar",showInLegend: true,name: "Skip",color: "yellow",dataPoints: [
+{ label: "GV Multi CLP CC", y: 0 },
+{ label: "GV Full CLP", y: 0 },
+{ label: "GV WL Partial CC", y: 0 },
+{ label: "Cardless EMI AXIO", y: 0 },
+{ label: "CC payTM", y: 0 },
+{ label: "Paylater ICICI", y: 0 },
+{ label: "Saved Card Tokenized", y: 0 },
+{ label: "Saved Paymentmode UPI", y: 0 },
+{ label: "Saved UPI", y: 0 },
+{ label: "UPI Inline", y: 0 },
+{ label: "Wallet Full", y: 0 },
+{ label: "Coupon Invalid", y: 0 },
+{ label: "NB ICICI", y: 0 },
+{ label: "Coupon Valid", y: 0 },
+]}
+]});
+
+			chart.render();
+		}
+	</script>
+</head>
+<body>
+<div id="graphPerTime">
+	<h3 class="normal">Results Per Class</h3>
+	<div id="chartContainer" style="height: 100%; max-width: 100%; margin: 0px auto;"></div>
+</div>			
+</body>
+</html>

@@ -223,6 +223,8 @@ public class WrapperMethod extends CommonUtil {
 			ChromeOptions chromeOptions = new ChromeOptions();
 			chromeOptions.addArguments("--no-sandbox");
 			chromeOptions.addArguments("disable-gpu");
+			chromeOptions.addArguments("--allowed-ips");
+
 			chromeOptions.addArguments("user-agent=Mozilla/5.0 (Windows Phone 10.0; Android 4.2.1; Microsoft; Lumia 640 XL LTE) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Mobile Safari/537.36 Edge/12.10166");
 			chromeOptions.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
 			chromeOptions.addArguments("start-maximized"); // open Browser in maximized mode

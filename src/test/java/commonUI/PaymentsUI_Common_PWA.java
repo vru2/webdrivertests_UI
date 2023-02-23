@@ -311,6 +311,7 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
         safeClick(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"));
     }
 
+
         public void bento_pay_GW_Page_PWA(RemoteWebDriver driver, String paymentType,String cardNumber,String domain,String payType, String bankName, String SuccessFail) throws Exception {
         if(bankName.equalsIgnoreCase("Paytm")){
             elementVisible(driver, getObjectPayment("PWA_Payments_GW_PayTM_Success"), 20);

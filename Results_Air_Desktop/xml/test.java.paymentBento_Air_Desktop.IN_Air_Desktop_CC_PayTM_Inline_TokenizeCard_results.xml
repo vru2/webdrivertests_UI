@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Inline PayTM Tokenized Card"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="74.726">
+  <properties />
+  
+  
+            <testcase name="Air_Desktop_PayTM_Inline_Tokenizecard" time="74.726" classname="test.java.paymentBento_Air_Desktop.IN_Air_Desktop_CC_PayTM_Inline_TokenizeCard" />
+      
+</testsuite>

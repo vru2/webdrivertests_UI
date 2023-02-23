@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="EMI"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="80.089">
+  <properties />
+  
+  
+            <testcase name="Hotel_IN_EMI" time="80.089" classname="test.java.paymentsBento_Itn_Hotels.IN_EMI_RazorPay" />
+      
+</testsuite>

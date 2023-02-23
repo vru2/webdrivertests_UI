@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="CC PayTM"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="69.366">
+  <properties />
+  
+  
+            <testcase name="Hotel_IN_DC" time="69.366" classname="test.java.paymentsBento_Itn_Hotels.IN_DC_PayTM" />
+      
+</testsuite>

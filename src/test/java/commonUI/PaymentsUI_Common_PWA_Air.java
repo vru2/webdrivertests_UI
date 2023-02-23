@@ -131,7 +131,7 @@ public class PaymentsUI_Common_PWA_Air extends PaymentsUI_Common_PWA{
         mouseHover(driver, By.xpath("//button"));
         safeClick(driver, By.xpath("//button"));
     }
-
+/*
     public void bento_Paymentpage_PWA(RemoteWebDriver driver, String paymentType, String cardNumber, String domain, String payType, String bankName, String successFail) throws Exception {
         elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"), 20);
         textPresent(driver, "Per traveller convenience fee of", 10);
@@ -197,7 +197,7 @@ public class PaymentsUI_Common_PWA_Air extends PaymentsUI_Common_PWA{
                 break;
         }
         bento_pay_GW_Page_PWA(driver, paymentType, cardNumber, domain, payType, bankName, successFail);
-    }
+    }*/
 
     public void bento_Air_ConfirmationPage_PWA(RemoteWebDriver driver, String paymentType, String payType, String bookingType) throws Exception {
         elementVisible(driver, getObjectPayment("PWA_Air_Confirmation_Page_TripID"), 30);

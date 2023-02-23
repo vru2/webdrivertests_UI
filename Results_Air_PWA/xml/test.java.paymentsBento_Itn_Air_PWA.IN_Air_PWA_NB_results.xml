@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="NB ICICI"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="49.159">
+  <properties />
+  
+  
+            <testcase name="Air_PWA_NB" time="49.159" classname="test.java.paymentsBento_Itn_Air_PWA.IN_Air_PWA_NB" />
+      
+</testsuite>

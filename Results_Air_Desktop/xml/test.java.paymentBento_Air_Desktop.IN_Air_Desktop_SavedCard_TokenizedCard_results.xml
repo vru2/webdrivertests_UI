@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="SavedCard Tokeinzed"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="68.326">
+  <properties />
+  
+  
+            <testcase name="Air_Desktop_Saved_TokenizedCard" time="68.326" classname="test.java.paymentBento_Air_Desktop.IN_Air_Desktop_SavedCard_TokenizedCard" />
+      
+</testsuite>

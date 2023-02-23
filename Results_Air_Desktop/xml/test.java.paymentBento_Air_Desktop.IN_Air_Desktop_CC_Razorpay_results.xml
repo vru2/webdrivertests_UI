@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="CC Razorpay"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="97.497">
+  <properties />
+  
+  
+            <testcase name="Air_Desktop_CC_Razorpay" time="97.497" classname="test.java.paymentBento_Air_Desktop.IN_Air_Desktop_CC_Razorpay" />
+      
+</testsuite>

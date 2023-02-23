@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/reportng.css" />
+	<script type="text/javascript">  
+    	$(document).ready(function () {  
+	            $('tr.parent')  
+	                .css("cursor", "pointer")  
+	                .attr("title", "Click to expand/collapse")  
+	                .click(function () {  
+	                    $(this).siblings('.child-' + this.id).toggle();  
+	                });
+	                $('tr.parent')  
+	                .css("cursor", "pointer")  
+	                .attr("title", "Click to expand/collapse")  
+	                .click();
+	    });
+	    function changeIcon(elementId) {
+			if ($('#'+elementId).hasClass('glyphicon glyphicon-minus')){
+				$('#'+elementId).removeClass('glyphicon glyphicon-minus').toggleClass('glyphicon glyphicon-plus');
+			}else{
+				$('#'+elementId).removeClass('glyphicon glyphicon-plus').toggleClass('glyphicon glyphicon-minus');
+			}
+		}
+		function showReport(element,report){$(element).children(".tipFrame").attr('src', report).show();}
+		function hideReport(element){$(element).children(".tipFrame").hide();}
+    </script>
+</head>
+<body>
+<h3 class="failTitle">New</h3>
+<div>
+	<div class="well well-large">
+	<h4>Regression Issues</h4>
+		<table class="table table-bordered" width="100%;" id="features">
+			<thead>
+				<tr>
+					<th scope="col" width="30px">#</th>
+					<th scope="col">Issue</th>
+					<th scope="col" colspan="2">Total Affected Tests</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="parent" id="row0" title="Click to expand/collapse" style="cursor: pointer;" onclick="changeIcon('span-c00ab861-532f-4d9c-ac20-8a3ddc262ee1'); ">
+<td><span id="span-c00ab861-532f-4d9c-ac20-8a3ddc262ee1" class="glyphicon glyphicon-minus" style="color:blue"></span></td>
+<td class="break-word">Failure! Element not Visible!</td><td>2</td><td></td></tr><tr class="child-row0" style="display: table-row;"><td></td><td><i>Suite Name</i></td><td><i>Test Name</i></td><td><i>Class Name</i></td></tr><tr class="child-row0" style="display: table-row;"><td></td><td><a href="suites_overview.html#Air PWA Booking">Air PWA Booking</a></td><td><a href="suite1_test8_results.html">EMI NoCost</a></td><td class="break-word">test.java.paymentBento_Air_Desktop.IN_Air_Desktop_EMI_NoCostEMI</td></tr>
+<tr class="child-row0" style="display: table-row;"><td></td><td><a href="suites_overview.html#Air PWA Booking">Air PWA Booking</a></td><td><a href="suite1_test10_results.html">EMI Razorpay</a></td><td class="break-word">test.java.paymentBento_Air_Desktop.IN_Air_Desktop_EMI_Razorpay</td></tr>
+<tr class="parent" id="row1" title="Click to expand/collapse" style="cursor: pointer;" onclick="changeIcon('span-4cd4bdef-d539-468a-baf5-c83563a8403d'); ">
+<td><span id="span-4cd4bdef-d539-468a-baf5-c83563a8403d" class="glyphicon glyphicon-minus" style="color:blue"></span></td>
+<td class="break-word">invalid session id
+Build info: version: &apos;4.8.0&apos;, revision: &apos;267030adea&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.6.3&apos;, java.version: &apos;18&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [74744ec408dcce2642f6d980f055be43, switchToWindow {handle=CDwindow-B314BA71FEA77E4ACAB41F4C23C42108}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 110.0.5481.177, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: /var/folders/m9/x2g4shfx3rg...}, goog:chromeOptions: {debuggerAddress: localhost:63576}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:63576/devtoo..., se:cdpVersion: 110.0.5481.177, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 74744ec408dcce2642f6d980f055be43</td><td>1</td><td></td></tr><tr class="child-row1" style="display: table-row;"><td></td><td><i>Suite Name</i></td><td><i>Test Name</i></td><td><i>Class Name</i></td></tr><tr class="child-row1" style="display: table-row;"><td></td><td><a href="suites_overview.html#Air PWA Booking">Air PWA Booking</a></td><td><a href="suite1_test13_results.html">UPI Saved</a></td><td class="break-word">test.java.paymentBento_Air_Desktop.IN_Air_Desktop_UPI_Saved</td></tr>
+<tr class="parent" id="row2" title="Click to expand/collapse" style="cursor: pointer;" onclick="changeIcon('span-5d95be45-2060-4da6-b04c-691e3ed390a4'); ">
+<td><span id="span-5d95be45-2060-4da6-b04c-691e3ed390a4" class="glyphicon glyphicon-minus" style="color:blue"></span></td>
+<td class="break-word">move target out of bounds
+  (Session info: chrome=110.0.5481.177)
+Build info: version: &apos;4.8.0&apos;, revision: &apos;267030adea&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;12.6.3&apos;, java.version: &apos;18&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [50b3bbba4dc188345f989c99e79c2650, actions {actions=[org.openqa.selenium.interactions.Sequence@7e3c9dcc]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 110.0.5481.177, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: /var/folders/m9/x2g4shfx3rg...}, goog:chromeOptions: {debuggerAddress: localhost:62654}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:62654/devtoo..., se:cdpVersion: 110.0.5481.177, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 50b3bbba4dc188345f989c99e79c2650</td><td>1</td><td></td></tr><tr class="child-row2" style="display: table-row;"><td></td><td><i>Suite Name</i></td><td><i>Test Name</i></td><td><i>Class Name</i></td></tr><tr class="child-row2" style="display: table-row;"><td></td><td><a href="suites_overview.html#Air PWA Booking">Air PWA Booking</a></td><td><a href="suite1_test9_results.html">NB Retry</a></td><td class="break-word">test.java.paymentBento_Air_Desktop.IN_Air_Desktop_NB_Retry</td></tr>
+<tr class="parent" id="row3" title="Click to expand/collapse" style="cursor: pointer;" onclick="changeIcon('span-78cb7d76-8c17-4e79-9f09-9225426fec5c'); ">
+<td><span id="span-78cb7d76-8c17-4e79-9f09-9225426fec5c" class="glyphicon glyphicon-minus" style="color:blue"></span></td>
+<td class="break-word">null</td><td>2</td><td></td></tr><tr class="child-row3" style="display: table-row;"><td></td><td><i>Suite Name</i></td><td><i>Test Name</i></td><td><i>Class Name</i></td></tr><tr class="child-row3" style="display: table-row;"><td></td><td><a href="suites_overview.html#Air PWA Booking">Air PWA Booking</a></td><td><a href="suite1_test6_results.html">Coupon Valid</a></td><td class="break-word">test.java.paymentBento_Air_Desktop.IN_Air_Desktop_Coupon_Valid</td></tr>
+<tr class="child-row3" style="display: table-row;"><td></td><td><a href="suites_overview.html#Air PWA Booking">Air PWA Booking</a></td><td><a href="suite1_test7_results.html">EMI BFL</a></td><td class="break-word">test.java.paymentBento_Air_Desktop.IN_Air_Desktop_EMI_BFL</td></tr>
+
+			</tbody>
+		</table>
+	</div>
+	
+	<div class="well well-large">
+	<h4>New Features Issues</h4>
+		<table class="table table-bordered" width="100%;" id="features">
+			<thead>
+				<tr>
+					<th scope="col" width="30px">#</th>
+					<th scope="col">Issue</th>
+					<th scope="col" colspan="2">Total Affected Tests</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr style="display: table-row;"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+			</tbody>
+		</table>
+	</div>
+	
+</div>	
+</body>
+</html>

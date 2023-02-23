@@ -30,10 +30,9 @@ public class IN_Air_Desktop_CC_PayTM_Inline_TokenizeCard extends PaymentsUI_Comm
     public void closeSelenium() throws Exception {
         browserClose(driver);
     }
-/*
     @AfterMethod(alwaysRun = true)
     public void afterMethod(ITestResult _result) throws Exception {
         afterMethod(driver, _result);
-    }*/
+    }
 
 }

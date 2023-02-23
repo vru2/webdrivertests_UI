@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="UPI Saved PaymentType"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="63.830">
+  <properties />
+  
+  
+            <testcase name="Hotel_IN_UPI_SavedPaymentTab" time="63.830" classname="test.java.paymentsBento_Itn_Hotels.IN_SavedCard_UPIMode" />
+      
+</testsuite>

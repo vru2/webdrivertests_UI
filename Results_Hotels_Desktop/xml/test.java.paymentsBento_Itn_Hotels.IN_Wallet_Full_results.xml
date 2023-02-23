@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Wallet Full"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="65.024">
+  <properties />
+  
+  
+            <testcase name="Hotel_IN_Wallet_Full" time="65.024" classname="test.java.paymentsBento_Itn_Hotels.IN_Wallet_Full" />
+      
+</testsuite>

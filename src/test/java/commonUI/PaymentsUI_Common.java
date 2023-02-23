@@ -20,8 +20,10 @@ public class PaymentsUI_Common extends API_PaymentCommon {
     String Hotel_URL = "";
     public String  hotelName_DetailsPage = "2052760";
     String inurl = "https://qa2new.cleartrip.com";
-
-
+    public String hotelsUrl= "http://qa2new.cleartrip.com/hotels";
+    public int CheckIN = 25;
+    public int CheckOut = 26;
+    public String HotelName = "Holiday inn bengaluru";
     String GV_number = "3000331034062731";
     String GV_pin = "169139";
     public String hotelPrice_Itinerary = null;
@@ -146,13 +148,25 @@ public class PaymentsUI_Common extends API_PaymentCommon {
     public String hotelDetailsUrl(String Domain, String HotelID)  throws Exception {
 
         Hotel_URL= "/hotels/details/"+HotelID+"?c="+getDateTime(70, "ddMMyy")+"|"+getDateTime(71, "ddMMyy")+"&r=2,0&ur=1";
-        String SearchUrl = "";
+        String DetailsUrl = "";
         if(Domain=="IN") {
-            SearchUrl=inurl+Hotel_URL;
+            DetailsUrl=inurl+Hotel_URL;
         }
-        Reporter.log(SearchUrl);
-        System.out.println(SearchUrl);
-        return SearchUrl;
+        Reporter.log(DetailsUrl);
+        System.out.println(DetailsUrl);
+        return DetailsUrl;
+    }
+
+    public String hotelDetailsPWAUrl(String Domain, String HotelID)  throws Exception {
+
+        Hotel_URL= "/hotels/details/hotel-rr-grand-2626712?c=04032023%7C05032023&city=Bangalore&country=IN&destCode=32550&r=2%2C0&state=Karnataka";
+        String DetailsUrl = "";
+        if(Domain=="IN") {
+            DetailsUrl=inurl+Hotel_URL;
+        }
+        Reporter.log(DetailsUrl);
+        System.out.println(DetailsUrl);
+        return DetailsUrl;
     }
 
 }

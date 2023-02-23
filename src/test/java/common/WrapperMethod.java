@@ -253,6 +253,7 @@ public class WrapperMethod extends CommonUtil {
 		driver.manage().timeouts().setScriptTimeout(45, TimeUnit.SECONDS);
 		Dimension dimension = new Dimension(360, 800);
 		driver.manage().window().setSize(dimension);
+		driver.manage().deleteAllCookies();
 		return driver;
 	}
 

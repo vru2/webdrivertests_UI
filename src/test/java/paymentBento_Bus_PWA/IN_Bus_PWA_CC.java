@@ -1,8 +1,5 @@
 package test.java.paymentBento_Bus_PWA;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -11,7 +8,7 @@ import org.testng.annotations.Test;
 import test.java.commonUI.PaymentsUI_Common_PWA_Bus;
 
 
-public class IN_Bus_PWA_NB extends PaymentsUI_Common_PWA_Bus {
+public class IN_Bus_PWA_CC extends PaymentsUI_Common_PWA_Bus {
 
     @BeforeClass
     public void startSelenium() throws Exception {
@@ -19,15 +16,15 @@ public class IN_Bus_PWA_NB extends PaymentsUI_Common_PWA_Bus {
     }
 
     @Test
-    public void Bus_PWA_NB() throws Exception {
-        driver.get(bus_SRPUrl("IN", "", "", 8));
+    public void Bus_PWA_CC() throws Exception {
+        driver.get(bus_SRPUrl("IN", "", "", 6));
         bus_SRP(driver, "", "");
         bus_SeatSelection(driver, "", "");
         bus_SelectPickup(driver, "", "");
         bus_TravellerPage(driver, "", phoneNo, emailID);
         bus_ReviewPage(driver, "", "", "");
-        bento_Paymentpage_PWA(driver,"NB","","","","RazorpayNB", "Success");
-        bus_ConfirmationPage(driver, "","", "Bus NB");
+        bento_Paymentpage_PWA(driver,"CC","","","","Paytm","");
+        bus_ConfirmationPage(driver, "","", "Bus CC ");
     }
 
     @AfterClass(alwaysRun = true)

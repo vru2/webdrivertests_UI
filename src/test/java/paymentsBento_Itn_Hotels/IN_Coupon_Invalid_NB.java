@@ -21,7 +21,7 @@ public class IN_Coupon_Invalid_NB extends PaymentsUI_Common_Desktop_Hotels {
 		hotelsDetailsPage(driver, "", "");
 		hotelsItnPage(driver, "COUPONCC", "", "", "");
 		hotelsPaymentPage(driver,"NB","","Hotels","Coupon","InvalidCoupon", "Invalid Coupon NB : ");// Invalid Coupon Validation
-		} 
+		}
 
  		@AfterClass
 		public void closeSelenium() throws Exception { 

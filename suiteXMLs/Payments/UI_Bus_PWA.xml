@@ -1,0 +1,24 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Bus PWA" parallel="tests" thread-count="1">
+
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter" />
+        <listener class-name="test.java.common.RemoveDuplicateResults"/>
+        <listener class-name="test.java.common.RetryListener"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+    </listeners>
+
+    <test name="Bus NB" preserve-order="true">
+        <classes>
+            <class name="test.java.paymentBento_Bus_PWA.IN_Bus_PWA_NB"/>
+        </classes>
+    </test>
+
+    <test name="Bus CC" preserve-order="true">
+        <classes>
+            <class name="test.java.paymentBento_Bus_PWA.IN_Bus_PWA_CC"/>
+        </classes>
+    </test>
+
+
+</suite>

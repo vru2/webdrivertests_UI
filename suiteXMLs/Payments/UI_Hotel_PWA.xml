@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Hotels PWA" parallel="tests" thread-count="2">
+
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter" />
+        <listener class-name="test.java.common.RemoveDuplicateResults"/>
+        <listener class-name="test.java.common.RetryListener"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+    </listeners>
+
+    <test name="PWA NB" preserve-order="true">
+        <classes>
+            <class name="test.java.paymentBento_Hotels_PWA.IN_Hotels_PWA_NB"/>
+        </classes>
+    </test>
+
+</suite>

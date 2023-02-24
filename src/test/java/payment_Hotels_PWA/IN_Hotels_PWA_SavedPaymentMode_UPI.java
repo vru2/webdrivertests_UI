@@ -1,10 +1,13 @@
 package test.java.payment_Hotels_PWA;
 
 import org.testng.ITestResult;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 import test.java.commonUI.PaymentsUI_Common_PWA_Hotels;
 
-public class IN_Hotels_PWA_NB extends PaymentsUI_Common_PWA_Hotels {
+public class IN_Hotels_PWA_SavedPaymentMode_UPI extends PaymentsUI_Common_PWA_Hotels {
 
     @BeforeClass
     public void startSelenium() throws Exception {
@@ -12,14 +15,15 @@ public class IN_Hotels_PWA_NB extends PaymentsUI_Common_PWA_Hotels {
     }
 
     @Test
-    public void Hotel_PWA_NB() throws Exception {
+    public void Hotel_PWA_UPI_Saved() throws Exception {
         driver.get(hotelsUrl);
         hotels_HomePage(driver, HotelName, CheckIN, CheckOut);
         hotels_SRP(driver, "", "");
         hotels_DetailsPage(driver, "", "");
+        driver.manage().addCookie(fullwallet);
         hotels_ItineraryPage(driver, "", "", "");
-        bento_Paymentpage_PWA(driver,"NB","","","","RazorpayNB", "Success");
-        hotels_ConfirmationPage(driver, "","", "Hotel NB");
+        bento_Paymentpage_PWA(driver,"UPI","","","SavedUPI","", "");
+        hotels_ConfirmationPage(driver, "","", "Hotel PWA UPI saved");
     }
 
     @AfterClass(alwaysRun = true)

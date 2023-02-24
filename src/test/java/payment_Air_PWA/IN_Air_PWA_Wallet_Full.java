@@ -16,8 +16,6 @@ public class IN_Air_PWA_Wallet_Full extends PaymentsUI_Common_PWA_Air {
         this.driver = getMobileDriver(driver);
     }
 
-
-
     @Test
     public void Air_PWA_Walletfull() throws Exception {
         driver.manage().deleteAllCookies();
@@ -31,6 +29,7 @@ public class IN_Air_PWA_Wallet_Full extends PaymentsUI_Common_PWA_Air {
         bento_Paymentpage_PWA(driver,"WALLET","","","","", "");
         bento_Air_ConfirmationPage_PWA(driver,"", "", "Wallet Full :");
     }
+
     @AfterClass(alwaysRun = true)
     public void closeSelenium() throws Exception {
         browserClose(driver);

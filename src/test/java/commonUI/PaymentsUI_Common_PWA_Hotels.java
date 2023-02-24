@@ -36,19 +36,37 @@ public class PaymentsUI_Common_PWA_Hotels extends PaymentsUI_Common_PWA{
     }
 
     public void hotels_ItineraryPage(RemoteWebDriver driver, String Coupon, String CouponCode, String Login) throws Exception {
+        elementVisible(driver, getObjectPayment("PWA_Hotels_ItineraryPage_PhoneNo"), 10);
+        safeType(driver, getObjectPayment("PWA_Hotels_ItineraryPage_PhoneNo"), "1212121212");
+        safeType(driver, getObjectPayment("PWA_Hotels_ItineraryPage_EmailID"), "kiran.kumar@cleartrip.com");
+        //safeSelectByValue(driver, getObjectPayment("PWA_Hotels_ItineraryPage_Title"), "Mr.");
+        safeClick(driver, getObjectPayment("PWA_Hotels_ItineraryPage_Title"));
+        safeSelectByIndex(driver, getObjectPayment("PWA_Hotels_ItineraryPage_Title"), 1);
+        safeType(driver, getObjectPayment("PWA_Hotels_ItineraryPage_FirstName"), "Kiran");
+        safeType(driver, getObjectPayment("PWA_Hotels_ItineraryPage_LastName"), "Kumar");
+        if(Coupon.equalsIgnoreCase("Coupon")){
+           // mouseHover(driver, getObjectPayment("PWA_Hotels_ItineraryPage_Coupon_TextBox"));
+            scrollToElement(driver, getObjectPayment("PWA_Hotels_ItineraryPage_Coupon_TextBox"));
+            safeClick(driver, getObjectPayment("PWA_Hotels_ItineraryPage_Coupon_TextBox"));
+            safeType(driver, getObjectPayment("PWA_Hotels_ItineraryPage_Coupon_TextBox"), CouponCode);
+            safeClick(driver, getObjectPayment("PWA_Hotels_ItineraryPage_Coupon_Apply_Btn"));
+            textPresent_Log(driver, "Great! You just saved", 5);
+        }
+
+        safeClick(driver, getObjectPayment("PWA_Hotels_ItineraryPage_Continue_Btn"));
 
     }
 
     public void hotels_ConfirmationPage(RemoteWebDriver driver, String paymentType, String payType, String bookingType) throws Exception {
-        elementVisible(driver, By.xpath("//div[3]"), 30);
+        elementVisible(driver, getObjectPayment("PWA_Hotels_ConfirmationPage_TripID"), 30);
         if (textPresent(driver, "Something went wrong", 1)) {
             Reporter.log("Something went wrong text is present in confirmation page");
             Assert.assertTrue(false);
         }
         textPresent_Log(driver, "Booking confirmed", 5);
-        String tripID = getText(driver, By.xpath("//div[3]"));
-        Reporter.log(bookingType +": "+ tripID);
-        System.out.println(bookingType +": "+ tripID);
+        String tripID = getText(driver, getObjectPayment("PWA_Hotels_ConfirmationPage_TripID"));
+        Reporter.log(bookingType +" : "+ tripID);
+        System.out.println(bookingType +" : "+ tripID);
     }
 
     }

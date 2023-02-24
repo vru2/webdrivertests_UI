@@ -8,9 +8,71 @@
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
     </listeners>
 
-    <test name="PWA NB" preserve-order="true">
+    <test name="NB" preserve-order="true">
         <classes>
             <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_NB"/>
+        </classes>
+    </test>
+
+    <test name="CC" preserve-order="true">
+        <classes>
+            <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_CC"/>
+        </classes>
+    </test>
+
+
+    <test name="Coupon Valid" preserve-order="true">
+        <classes>
+            <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_Coupon_Valid"/>
+        </classes>
+    </test>
+
+
+    <test name="Coupon Invalid" preserve-order="true">
+        <classes>
+            <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_Coupon_Invalid"/>
+        </classes>
+    </test>
+
+
+    <test name="Tokenized Saved Card" preserve-order="true">
+        <classes>
+            <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_SavedPaymentMode_TokenizedCard"/>
+        </classes>
+    </test>
+
+
+    <test name="Saved PaymentMode UPI" preserve-order="true">
+        <classes>
+            <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_SavedPaymentMode_UPI"/>
+        </classes>
+    </test>
+
+
+    <test name="Saved UPI" preserve-order="true">
+        <classes>
+            <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_SavedUPI"/>
+        </classes>
+    </test>
+
+
+    <test name="UPI Inline" preserve-order="true">
+        <classes>
+            <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_UPI_Inline"/>
+        </classes>
+    </test>
+
+
+    <test name="Wallet Full" preserve-order="true">
+        <classes>
+            <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_Wallet_Full"/>
+        </classes>
+    </test>
+
+
+    <test name="Wallet CC PayTM" preserve-order="true">
+        <classes>
+            <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_Wallet_Full"/>
         </classes>
     </test>
 

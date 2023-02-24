@@ -10,7 +10,7 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
 
         public void bento_Paymentpage_PWA(RemoteWebDriver driver, String paymentType, String cardNumber, String domain, String payType, String bankName, String successFail) throws Exception {
         elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"), 20);
-        textPresent(driver, "Per traveller convenience fee of", 10);
+        textPresent(driver, "Per traveller convenience fee of", 1);
         System.out.println(driver.getCurrentUrl());
         Reporter.log(driver.getCurrentUrl());
         if (paymentType.equalsIgnoreCase("WALLET") || payType.equalsIgnoreCase("PartialWallet")) {
@@ -111,6 +111,7 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
             String UPI_txt = getText(driver, getObjectPayment("PWA_PaymentPage_SavedPayment_UPI_Txt"));
             if (!UPI_txt.equalsIgnoreCase("3212467@okhdfcbank")) {
                 Reporter.log("UPI_txt " + UPI_txt);
+                System.out.println("UPI_txt " + UPI_txt);
                 Assert.assertTrue(false);
             }
         }
@@ -161,7 +162,10 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
         //bento_pay_CC_PWA(driver, "NB", "", domain, "", "", SuccessFail);
         if(PaymentType.equalsIgnoreCase("VALIDCOUPON")){
             textPresent_Log(driver, "Coupon not applicable", 5);
-            textPresent_Log(driver, "Coupon code PAYCC is not applicable on the selected payment mode. Please select another payment mode to get an instant discount of", 5);
+            if(domain.equalsIgnoreCase("Hotel")){
+                textPresent_Log(driver, "Coupon code CCHOTEL is not applicable on the selected payment mode. Please select another payment mode to get an instant discount of", 5);
+            }
+            else  textPresent_Log(driver, "Coupon code PAYCC is not applicable on the selected payment mode. Please select another payment mode to get an instant discount of", 5);
             safeClick(driver, By.xpath("//div/div[3]/button")); // Change Payment mode
 
             bento_pay_validate_Price_Popup(driver, "Coupon code", "");
@@ -179,7 +183,10 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
         }
         else if(PaymentType.equalsIgnoreCase("INVALIDCOUPON")){
             textPresent_Log(driver, "Coupon not applicable", 5);
-            textPresent_Log(driver, "Coupon code PAYCC is not applicable on the selected payment mode. Please select another payment mode to get an instant discount of", 5);
+            if(domain.equalsIgnoreCase("Hotel")){
+                textPresent_Log(driver, "Coupon code CCHOTEL is not applicable on the selected payment mode. Please select another payment mode to get an instant discount of", 5);
+            }
+            else textPresent_Log(driver, "Coupon code PAYCC is not applicable on the selected payment mode. Please select another payment mode to get an instant discount of", 5);
             safeClick(driver, getObjectPayment("PWA_paymentPage_Continue_WithOutCoupon_Btn")); // Continue without coupon mode
             Thread.sleep(1000);
         }
@@ -287,12 +294,21 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
 
         public void bento_pay_GV_Partial_PWA(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
         payUI_Select_PaymentType_PWA( driver, PaymentType);
-        if(PayType.equalsIgnoreCase("PartialWallet")){
+        String WalletOn = driver.findElement(By.id("radio-toggle-wallet")).getAttribute("Value");
+        System.out.println("Wallet on : "+WalletOn);
+        if(WalletOn.equalsIgnoreCase("False")){
+            safeClick(driver, getObjectPayment("PWA_PaymentPage_Wallet_Toggle"));
+        }
+            if(PayType.equalsIgnoreCase("PartialWallet")){
             bento_pay_validate_Price_Popup(driver, "Cleartrip Wallet", "Gift card");
+        }
+        else if(PayType.equalsIgnoreCase("PartialWalletONLY")){
+            bento_pay_validate_Price_Popup(driver, "Cleartrip Wallet", "");
         }
         else bento_pay_validate_Price_Popup(driver, "", "Gift card");
         bento_pay_CC_PWA(driver, "CC", CardNumber, domain, PayType, BankName,"");
     }
+
 
         public void bento_pay_PartialWallet_PWA(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
         payUI_Select_PaymentType_PWA( driver, PaymentType);
@@ -303,8 +319,8 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
 
         payUI_Select_PaymentType_PWA( driver, paymentType);
         if(bankName=="Paytm") {
-          //  Enter_CC_Details_PWA(driver, "6080322940807777", "1224", "123");
-            Enter_CC_Details_PWA(driver, platform.value("PayTMCard_Number"), platform.value("PayTMCard_MWeb_Exp_Date"), platform.value("PayTMCard_CVV"));
+            Enter_CC_Details_PWA(driver, "6080322940807777", "1224", "123");
+            //Enter_CC_Details_PWA(driver, platform.value("PayTMCard_Number"), platform.value("PayTMCard_MWeb_Exp_Date"), platform.value("PayTMCard_CVV"));
 
 
         }

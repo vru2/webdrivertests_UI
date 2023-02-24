@@ -230,6 +230,9 @@ public class WrapperMethod extends CommonUtil {
 			chromeOptions.addArguments("start-maximized"); // open Browser in maximized mode
 			chromeOptions.addArguments("disable-infobars"); // disabling infobars
 			chromeOptions.addArguments("--disable-extensions"); // disabling extensions
+			chromeOptions.addArguments("--disable-web-security");
+			//chromeOptions.addArguments("--user-data-dir=/tmp/chrome_dev_test");
+			chromeOptions.addArguments("--allow-cross-origin-auth-prompt");
 			driver = new ChromeDriver(chromeOptions);
 
 		}
@@ -251,7 +254,8 @@ public class WrapperMethod extends CommonUtil {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().pageLoadTimeout(45, TimeUnit.SECONDS);
 		driver.manage().timeouts().setScriptTimeout(45, TimeUnit.SECONDS);
-		Dimension dimension = new Dimension(360, 800);
+		//Dimension dimension = new Dimension(360, 800);
+		Dimension dimension = new Dimension(330, 950);
 		driver.manage().window().setSize(dimension);
 		driver.manage().deleteAllCookies();
 		return driver;

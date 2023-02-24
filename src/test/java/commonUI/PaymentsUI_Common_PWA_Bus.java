@@ -9,7 +9,6 @@ import org.testng.Reporter;
 
 public class PaymentsUI_Common_PWA_Bus extends PaymentsUI_Common_PWA{
 
-
     public void bus_SRP(RemoteWebDriver driver, String BusName, String BusType) throws Exception {
         elementVisible(driver, getObjectPayment("PWA_Bus_SRP_BusSelect"), 10);
         safeClick(driver, getObjectPayment("PWA_Bus_SRP_BusSelect"));
@@ -19,11 +18,11 @@ public class PaymentsUI_Common_PWA_Bus extends PaymentsUI_Common_PWA{
         elementVisible(driver, getObjectPayment("PWA_Bus_SeatSelection"), 10);
         WebElement we = driver.findElement(getObjectPayment("PWA_Bus_SeatSelection1"));
         Actions builder = new Actions(driver);
-        // safeClick(driver, By.id("lgnd"));
         Boolean selectedSeat = elementVisible(driver, getObjectPayment("PWA_Bus_SeatSelection"), 1);
-        int[] Bus_X = new int[] { 60, 60, 60,  60, 60, 60, 180 , 180, 180, 180, 180, 220, 220};
-        int[] Bus_Y = new int[] { 10, 70 , 140,  -140, -150, -170, 10, 170, 80, -140, 10, 70, -140};
+        int[] Bus_X = new int[] { 60, 60, 60,  60, 60, 60, 180 , 180, 180, 180, 180, 220, 220, 280, 280, 280, 280,       320, 320, 320,  320, 320 , -70, -70, -70,  -70,};
+        int[] Bus_Y = new int[] { 10, 70 , 140,  -140, -150, -170, 10, 170, 80, -140, 10,  70, -140, 10, 70 , 140, -140,  10, 70 , 140,  -140, -200, 10, 70 , 140,  -140 };
         for (int i=0; i<= Bus_X.length-1; i++){
+            System.out.println(Bus_X[i]+" : "+Bus_Y[i]);
             builder.moveToElement(we, Bus_X[i], Bus_Y[i]).click().build().perform();
             Thread.sleep(1000);
             if(elementVisible(driver, getObjectPayment("PWA_Bus_SeatSelection_PickupPoint_Btn"), 2)){
@@ -32,7 +31,6 @@ public class PaymentsUI_Common_PWA_Bus extends PaymentsUI_Common_PWA{
             }
         }
     }
-
 
     public void bus_SelectPickup(RemoteWebDriver driver, String PickUp, String DropOff) throws Exception {
         textPresent(driver, "Choose pick-up point", 10);

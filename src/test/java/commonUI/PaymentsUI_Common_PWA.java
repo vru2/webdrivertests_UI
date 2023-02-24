@@ -99,16 +99,16 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
                 Reporter.log("Card name " + CardName);
                 Assert.assertTrue(false);
             }*/
-            safeClick(driver, By.xpath("//div[9]/label/div[2]/span"));
-            safeClick(driver, By.xpath("//div/div/input"));
-            safeType(driver, By.xpath("//div/div/input"), "123");
+            safeClick(driver, getObjectPayment("PWA_PaymentPage_PrefferedMode_CC"));
+            safeClick(driver, getObjectPayment("PWA_PaymentPage_PrefferedMode_CVV"));
+            safeType(driver, getObjectPayment("PWA_PaymentPage_PrefferedMode_CVV"), "123");
 
         }
 
 
         else if(PayType.equalsIgnoreCase("SavedUPI")) {
-            safeClick(driver, By.xpath("//div[3]/label/div/span"));
-            String UPI_txt = getText(driver, By.xpath("//div[2]/span"));
+            safeClick(driver, getObjectPayment("PWA_PaymentPage_SavedPayment_UPI_Radio_Btn"));
+            String UPI_txt = getText(driver, getObjectPayment("PWA_PaymentPage_SavedPayment_UPI_Txt"));
             if (!UPI_txt.equalsIgnoreCase("3212467@okhdfcbank")) {
                 Reporter.log("UPI_txt " + UPI_txt);
                 Assert.assertTrue(false);
@@ -180,7 +180,7 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
         else if(PaymentType.equalsIgnoreCase("INVALIDCOUPON")){
             textPresent_Log(driver, "Coupon not applicable", 5);
             textPresent_Log(driver, "Coupon code PAYCC is not applicable on the selected payment mode. Please select another payment mode to get an instant discount of", 5);
-            safeClick(driver, By.xpath("//button[2]")); // Continue witout coupon mode
+            safeClick(driver, getObjectPayment("PWA_paymentPage_Continue_WithOutCoupon_Btn")); // Continue without coupon mode
             Thread.sleep(1000);
         }
         else if(PaymentType.equalsIgnoreCase("COUPON")){
@@ -209,14 +209,15 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
 
         public void bento_pay_PAYLATER_PWA(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
         payUI_Select_PaymentType_PWA(driver, PaymentType);
-        elementVisible(driver, By.xpath("//div[2]/div/input"), 5);
-        String ICICIBank_text = getText(driver, By.xpath("//div/div[2]/div/div[2]"));
+        elementVisible(driver, getObjectPayment("PWA_paymentPage_Paylater_ICICIBank"), 5);
+        String ICICIBank_text = getText(driver, getObjectPayment("PWA_paymentPage_Paylater_ICICIBank_Txt"));
         if(!ICICIBank_text.equalsIgnoreCase("ICICI Bank PayLater")){
             Reporter.log(" Icici bank text "+ICICIBank_text);
             Assert.assertTrue(false);
         }
-        safeClick(driver, By.xpath("//div[2]/div/input"));
+        safeClick(driver, getObjectPayment("PWA_paymentPage_Paylater_ICICIBank"));
         safeClick(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"));
+
         elementVisible(driver, By.id("submit-action"), 20);
         safeType(driver, By.xpath("//input"), "123456");
         safeClick(driver, By.id("submit-action"));
@@ -224,13 +225,13 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
 
         public void bento_pay_CARDLESSEMI_PWA(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
         payUI_Select_PaymentType_PWA(driver, PaymentType);
-        elementVisible(driver, By.xpath("//div/div[2]/div[2]/div"), 10);
-        String Axio_text = getText(driver, By.xpath("//div/div[2]/div[2]/div"));
+        elementVisible(driver, getObjectPayment("PWA_paymentPage_CardLessEMI_AXIO"), 10);
+        String Axio_text = getText(driver, getObjectPayment("PWA_paymentPage_CardLessEMI_AXIO_Txt"));
         if(!Axio_text.equalsIgnoreCase("AXIO")){
             Reporter.log(" Axio text "+Axio_text);
             Assert.assertTrue(false);
         }
-        safeClick(driver, By.xpath("//div[2]/div/input"));
+        safeClick(driver, getObjectPayment("PWA_paymentPage_CardLessEMI_AXIO"));
 
         safeClick(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"));
         elementVisible(driver, By.cssSelector("button.success"), 20);
@@ -261,14 +262,16 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
         else if(PaymentType.equalsIgnoreCase("SavedUPI")) {
             textPresent_Log(driver, "Add New UPI", 10);
             elementPresent_log(driver, By.cssSelector("rect"), "UPI bank image", 5);
-            String savedUPI_Txt = getText(driver, By.xpath("//div[2]/span"));
+            String savedUPI_Txt = getText(driver, getObjectPayment("PWA_PaymentPage_SavedPayment_UPI_Txt"));
             if(!savedUPI_Txt.equalsIgnoreCase("3212467@okhdfcbank")){
                 Reporter.log("Saved UPI 3212467@okhdfcbank: "+savedUPI_Txt);
                 Assert.assertTrue(false);
             }
         }
 
-        smartType(driver, getObjectPayment("PWA_PaymentPage_UPI_TextBox"),"kiran@ybl");
+        else if(!PaymentType.equalsIgnoreCase("SavedUPI")) {
+            smartType(driver, getObjectPayment("PWA_PaymentPage_UPI_TextBox"),"kiran@ybl");
+        }
         Thread.sleep(5000);
         safeClick(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"));
     }
@@ -300,7 +303,10 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
 
         payUI_Select_PaymentType_PWA( driver, paymentType);
         if(bankName=="Paytm") {
-            Enter_CC_Details_PWA(driver, "6080322940807777", "1224", "123");
+          //  Enter_CC_Details_PWA(driver, "6080322940807777", "1224", "123");
+            Enter_CC_Details_PWA(driver, platform.value("PayTMCard_Number"), platform.value("PayTMCard_MWeb_Exp_Date"), platform.value("PayTMCard_CVV"));
+
+
         }
         if(bankName=="MASTER") {
             Enter_CC_Details_PWA(driver, platform.value("MasterCard_Number"), platform.value("MasterCard_EXP_PWA"), platform.value("MasterCard_CVV"));

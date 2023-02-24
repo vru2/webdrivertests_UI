@@ -9,6 +9,7 @@ public class PaymentsUI_Common_PWA_Hotels extends PaymentsUI_Common_PWA{
         elementVisible(driver, getObjectPayment("PWA_Hotels_Homepage_City_TextBox"), 10);
         safeClick(driver, getObjectPayment("PWA_Hotels_Homepage_City_TextBox"));
         elementVisible(driver, getObjectPayment("PWA_Hotels_Homepage_City_Search_Popup"), 10);
+        Thread.sleep(1000);
         safeAutocomplete(driver, getObjectPayment("PWA_Hotels_Homepage_City_Search_Popup"), getObjectPayment("PWA_Hotels_Homepage_City_Search_Ajax"), HotelName);
         elementVisible(driver, getObjectPayment("PWA_Hotels_Homepage_Calendar"), 10);
         safeClick(driver, getObjectPayment("PWA_Hotels_Homepage_Calendar"));

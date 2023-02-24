@@ -17,7 +17,7 @@ public class Accounts_UI_Signup_Mobile_Oly extends Accounts_UI_Common{
 	public void signup_mobile_oly() throws Exception {
 		driver.manage().deleteAllCookies();
 		driver.navigate().to(baseUrl);
-		Signup("SIGNIN","Signup_mobile_only");
+		Signup("SIGNIN","Signup_mobile_only", mobile1, mobile2);
 	}
 	@AfterClass
 	public void closeSelenium() throws Exception {

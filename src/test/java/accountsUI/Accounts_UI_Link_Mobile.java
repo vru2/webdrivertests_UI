@@ -16,7 +16,7 @@ public class Accounts_UI_Link_Mobile extends Accounts_UI_Common{
     public void link_mobile() throws Exception {
         driver.manage().deleteAllCookies();
         driver.navigate().to(baseUrl);
-        Signup("UPDATE_MOBILE","Link_Phone");
+        Signup("UPDATE_MOBILE","Link_Phone", mobile1, mobile2);
     }
     @AfterClass
     public void closeSelenium() throws Exception {

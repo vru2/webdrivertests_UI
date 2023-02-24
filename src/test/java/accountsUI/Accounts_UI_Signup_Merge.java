@@ -17,7 +17,7 @@ public class Accounts_UI_Signup_Merge extends Accounts_UI_Common{
     public void signup_merge() throws Exception {
         driver.manage().deleteAllCookies();
         driver.navigate().to(baseUrl);
-        Signup("SIGNUP_MERGE","Signup_merge");
+        Signup("SIGNUP_MERGE","Signup_merge", mobile1, mobile2);
     }
     @AfterClass
     public void closeSelenium() throws Exception {

@@ -28,7 +28,7 @@ public class Accounts_UI_Common extends WrapperMethod
 	public String mobile2="4424244225";
 
 
-	public void Signup(String Type, String Signuptype) throws Exception {
+	public void Signup(String Type, String Signuptype, String Mobile1, String Mobile2) throws Exception {
 
 		if (Signuptype == "Signup_mobile_only") {
 			if(elementVisible(driver,getObjectPlatform("Accounts_close_popup"),2)) {
@@ -74,7 +74,7 @@ public class Accounts_UI_Common extends WrapperMethod
 
 			//Signup
 			safeClick(driver, getObjectPlatform("Accounts_login_mobilenumber"));
-			safeType(driver, getObjectPlatform("Accounts_login_mobilenumber"), mobile1);
+			safeType(driver, getObjectPlatform("Accounts_login_mobilenumber"), Mobile1);
 			safeClick(driver, getObjectPlatform("Accounts_login_getotp"));
 			textPresent(driver,"Enter OTP sent to the number",2);
 			Thread.sleep(2000);
@@ -93,7 +93,7 @@ public class Accounts_UI_Common extends WrapperMethod
 			ArrayList<String> id=db_accounts_people_MySQL(mobile1);
 			String people_id= id.get(0);
 			System.out.println(people_id);
-			ArrayList<String> delete_id= db_accounts_deletepeopleid_MySQL(mobile1);
+			ArrayList<String> delete_id= db_accounts_deletepeopleid_MySQL(Mobile2);
 			if(delete_id.isEmpty())
 			{
 				System.out.println("peoplerecord deleted successfully");
@@ -257,20 +257,16 @@ public class Accounts_UI_Common extends WrapperMethod
 		System.out.println(otp);
 	}
 
-	public void enterotp(String Type,String value, String email, String action) throws Exception {
-		getotp(Type,value,email,action);
+	public void enterotp(String Type,String mobile, String email, String action) throws Exception {
+		getotp(Type,mobile,email,action);
 		String otp1= String.valueOf(otp.charAt(0));
-		System.out.println(otp1);
 		String otp2= String.valueOf(otp.charAt(1));
-		System.out.println(otp2);
 		String otp3= String.valueOf(otp.charAt(2));
-		System.out.println(otp3);
 		String otp4= String.valueOf(otp.charAt(3));
-		System.out.println(otp4);
-		String otp5= String.valueOf(otp.charAt(4));
+		/*	String otp5= String.valueOf(otp.charAt(4));
 		System.out.println(otp5);
 		String otp6= String.valueOf(otp.charAt(5));
-		System.out.println(otp6);
+		System.out.println(otp6);*/
 		Thread.sleep(1000);
 		safeClick(driver,getObjectPlatform("Accounts_login_otp1"));
 		safeType(driver,getObjectPlatform("Accounts_login_otp1"), otp1);
@@ -280,10 +276,10 @@ public class Accounts_UI_Common extends WrapperMethod
 		safeType(driver,getObjectPlatform("Accounts_login_otp3"), otp3);
 		safeClick(driver,getObjectPlatform("Accounts_login_otp4"));
 		safeType(driver,getObjectPlatform("Accounts_login_otp4"), otp4);
-		safeClick(driver,getObjectPlatform("Accounts_login_otp5"));
+/*		safeClick(driver,getObjectPlatform("Accounts_login_otp5"));
 		safeType(driver,getObjectPlatform("Accounts_login_otp5"), otp5);
 		safeClick(driver,getObjectPlatform("Accounts_login_otp6"));
-		safeType(driver,getObjectPlatform("Accounts_login_otp6"), otp6);
+		safeType(driver,getObjectPlatform("Accounts_login_otp6"), otp6);*/
 	}
 
 	public ArrayList<String> db_accounts_people_MySQL (String number) throws

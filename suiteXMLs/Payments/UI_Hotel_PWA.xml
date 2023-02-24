@@ -10,7 +10,7 @@
 
     <test name="PWA NB" preserve-order="true">
         <classes>
-            <class name="test.java.paymentBento_Hotels_PWA.IN_Hotels_PWA_NB"/>
+            <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_NB"/>
         </classes>
     </test>
 

@@ -10,91 +10,91 @@
 
     <test name="Cardless EMI AXIO" preserve-order="true">
         <classes>
-            <class name="test.java.paymentsBento_Itn_Air_PWA.IN_Air_PWA_Cardless_EMI"/>
+            <class name="test.java.payment_Air_PWA.IN_Air_PWA_Cardless_EMI"/>
         </classes>
     </test>
 
     <test name="CC payTM" preserve-order="true">
         <classes>
-            <class name="test.java.paymentsBento_Itn_Air_PWA.IN_Air_PWA_CC_PayTM"/>
+            <class name="test.java.payment_Air_PWA.IN_Air_PWA_CC_PayTM"/>
         </classes>
     </test>
 
     <test name="GV Multi CLP CC" preserve-order="true">
         <classes>
-            <class name="test.java.paymentsBento_Itn_Air_PWA.IN_Air_PWA_GV_Multi_CLP_CC"/>
+            <class name="test.java.payment_Air_PWA.IN_Air_PWA_GV_Multi_CLP_CC"/>
         </classes>
     </test>
 
     <test name="GV Full CLP" preserve-order="true">
         <classes>
-            <class name="test.java.paymentsBento_Itn_Air_PWA.IN_Air_PWA_GV_Full_CLP"/>
+            <class name="test.java.payment_Air_PWA.IN_Air_PWA_GV_Full_CLP"/>
         </classes>
     </test>
 
     <test name="GV WL Partial CC" preserve-order="true">
         <classes>
-            <class name="test.java.paymentsBento_Itn_Air_PWA.IN_Air_PWA_GV_Partial_CLP_CC_WL"/>
+            <class name="test.java.payment_Air_PWA.IN_Air_PWA_GV_Partial_CLP_CC_WL"/>
         </classes>
     </test>
 
     <test name="Paylater ICICI" preserve-order="true">
         <classes>
-            <class name="test.java.paymentsBento_Itn_Air_PWA.IN_Air_PWA_Paylater"/>
+            <class name="test.java.payment_Air_PWA.IN_Air_PWA_Paylater"/>
         </classes>
     </test>
 
 
     <test name="Saved Card Tokenized" preserve-order="true">
         <classes>
-            <class name="test.java.paymentsBento_Itn_Air_PWA.IN_Air_PWA_SavedPaymentmode_TokenizedCard"/>
+            <class name="test.java.payment_Air_PWA.IN_Air_PWA_SavedPaymentmode_TokenizedCard"/>
         </classes>
     </test>
 
 
     <test name="Saved Paymentmode UPI" preserve-order="true">
         <classes>
-            <class name="test.java.paymentsBento_Itn_Air_PWA.IN_Air_PWA_SavedPaymentmode_UPI"/>
+            <class name="test.java.payment_Air_PWA.IN_Air_PWA_SavedPaymentmode_UPI"/>
         </classes>
     </test>
 
 
     <test name="Saved UPI" preserve-order="true">
         <classes>
-            <class name="test.java.paymentsBento_Itn_Air_PWA.IN_Air_PWA_SavedUPI"/>
+            <class name="test.java.payment_Air_PWA.IN_Air_PWA_SavedUPI"/>
         </classes>
     </test>
 
 
     <test name="UPI Inline" preserve-order="true">
         <classes>
-            <class name="test.java.paymentsBento_Itn_Air_PWA.IN_Air_PWA_UPI_Inline"/>
+            <class name="test.java.payment_Air_PWA.IN_Air_PWA_UPI_Inline"/>
         </classes>
     </test>
 
 
     <test name="Wallet Full" preserve-order="true">
         <classes>
-            <class name="test.java.paymentsBento_Itn_Air_PWA.IN_Air_PWA_Wallet_Full"/>
+            <class name="test.java.payment_Air_PWA.IN_Air_PWA_Wallet_Full"/>
         </classes>
     </test>
 
 
     <test name="Coupon Invalid" preserve-order="true">
         <classes>
-            <class name="test.java.paymentsBento_Itn_Air_PWA.IN_Air_PWA_Coupon_Invalid"/>
+            <class name="test.java.payment_Air_PWA.IN_Air_PWA_Coupon_Invalid"/>
         </classes>
     </test>
 
     <test name="Coupon Valid" preserve-order="true">
         <classes>
-            <class name="test.java.paymentsBento_Itn_Air_PWA.IN_Air_PWA_Coupon_Valid"/>
+            <class name="test.java.payment_Air_PWA.IN_Air_PWA_Coupon_Valid"/>
         </classes>
     </test>
 
     <test name="NB ICICI" preserve-order="true">
         <classes>
-            <class name="test.java.paymentsBento_Itn_Air_PWA.IN_Air_PWA_NB"/>
+            <class name="test.java.payment_Air_PWA.IN_Air_PWA_NB"/>
         </classes>
     </test>
 

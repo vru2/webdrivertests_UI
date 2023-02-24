@@ -2,6 +2,8 @@ package test.java.commonUI;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.Assert;
+import org.testng.Reporter;
 
 public class PaymentsUI_Common_PWA_Hotels extends PaymentsUI_Common_PWA{
 
@@ -33,5 +35,20 @@ public class PaymentsUI_Common_PWA_Hotels extends PaymentsUI_Common_PWA{
         safeClick(driver, getObjectPayment("PWA_Hotels_DetailsPage_Book_Button"));
     }
 
+    public void hotels_ItineraryPage(RemoteWebDriver driver, String Coupon, String CouponCode, String Login) throws Exception {
+
+    }
+
+    public void hotels_ConfirmationPage(RemoteWebDriver driver, String paymentType, String payType, String bookingType) throws Exception {
+        elementVisible(driver, By.xpath("//div[3]"), 30);
+        if (textPresent(driver, "Something went wrong", 1)) {
+            Reporter.log("Something went wrong text is present in confirmation page");
+            Assert.assertTrue(false);
+        }
+        textPresent_Log(driver, "Booking confirmed", 5);
+        String tripID = getText(driver, By.xpath("//div[3]"));
+        Reporter.log(bookingType +": "+ tripID);
+        System.out.println(bookingType +": "+ tripID);
+    }
 
     }

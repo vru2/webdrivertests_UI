@@ -23,7 +23,6 @@ public class PaymentsUI_Common_PWA_Hotels extends PaymentsUI_Common_PWA{
         safeClick(driver, getObjectPayment("PWA_Hotels_Homepage_Search_Button"));
     }
 
-
     public void hotels_SRP(RemoteWebDriver driver, String HotelName, String HotelName1) throws Exception {
         elementVisible(driver, getObjectPayment("PWA_Hotels_SRP_Select_Hotel"), 10);
         safeClick(driver, getObjectPayment("PWA_Hotels_SRP_Select_Hotel"));
@@ -37,8 +36,8 @@ public class PaymentsUI_Common_PWA_Hotels extends PaymentsUI_Common_PWA{
 
     public void hotels_ItineraryPage(RemoteWebDriver driver, String Coupon, String CouponCode, String Login) throws Exception {
         elementVisible(driver, getObjectPayment("PWA_Hotels_ItineraryPage_PhoneNo"), 10);
-        safeType(driver, getObjectPayment("PWA_Hotels_ItineraryPage_PhoneNo"), "1212121212");
-        safeType(driver, getObjectPayment("PWA_Hotels_ItineraryPage_EmailID"), "kiran.kumar@cleartrip.com");
+        safeType(driver, getObjectPayment("PWA_Hotels_ItineraryPage_PhoneNo"), phoneNo);
+        safeType(driver, getObjectPayment("PWA_Hotels_ItineraryPage_EmailID"), emailID);
         //safeSelectByValue(driver, getObjectPayment("PWA_Hotels_ItineraryPage_Title"), "Mr.");
         safeClick(driver, getObjectPayment("PWA_Hotels_ItineraryPage_Title"));
         safeSelectByIndex(driver, getObjectPayment("PWA_Hotels_ItineraryPage_Title"), 1);
@@ -52,9 +51,8 @@ public class PaymentsUI_Common_PWA_Hotels extends PaymentsUI_Common_PWA{
             safeClick(driver, getObjectPayment("PWA_Hotels_ItineraryPage_Coupon_Apply_Btn"));
             textPresent_Log(driver, "Great! You just saved", 5);
         }
-
+        // Hotels GV not implemented by Hotels team
         safeClick(driver, getObjectPayment("PWA_Hotels_ItineraryPage_Continue_Btn"));
-
     }
 
     public void hotels_ConfirmationPage(RemoteWebDriver driver, String paymentType, String payType, String bookingType) throws Exception {

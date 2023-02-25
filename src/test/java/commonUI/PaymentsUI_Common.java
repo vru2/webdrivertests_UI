@@ -21,8 +21,8 @@ public class PaymentsUI_Common extends API_PaymentCommon {
     public String  hotelName_DetailsPage = "2052760";
     String inurl = "https://qa2new.cleartrip.com";
     public String hotelsUrl= "http://qa2new.cleartrip.com/hotels";
-    public int CheckIN = 25;
-    public int CheckOut = 26;
+    public int CheckIN = checkIN();
+    public int CheckOut = CheckIN+1;
     public String HotelName = "Holiday inn bengaluru";
     String GV_number = "3000331034062731";
     String GV_pin = "169139";
@@ -74,6 +74,14 @@ public class PaymentsUI_Common extends API_PaymentCommon {
         int index = random.nextInt(DestinationValue.length);
         Reporter.log("Destination : "+DestinationValue[index]);
         return DestinationValue[index];
+    }
+
+
+    public int checkIN(){final int[] OriginValue = {11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28};
+        Random random = new Random();
+        int index = random.nextInt(OriginValue.length);
+        Reporter.log("Origin : "+OriginValue[index]);
+        return OriginValue[index];
     }
 
     public String air_SRPUrl(String Domain, String origin, String destination, int date) throws Exception {
@@ -138,7 +146,7 @@ public class PaymentsUI_Common extends API_PaymentCommon {
     }
 
     public String hotelDetailsUrl(String Domain, String HotelID)  throws Exception {
-        Hotel_URL= "/hotels/details/"+HotelID+"?c="+getDateTime(70, "ddMMyy")+"|"+getDateTime(71, "ddMMyy")+"&r=2,0&ur=1";
+        Hotel_URL= "/hotels/details/"+HotelID+"?c="+getDateTime(CheckIN, "ddMMyy")+"|"+getDateTime(CheckOut, "ddMMyy")+"&r=2,0&ur=1";
         String DetailsUrl = "";
         if(Domain=="IN") {
             DetailsUrl=inurl+Hotel_URL;

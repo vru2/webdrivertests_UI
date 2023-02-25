@@ -46,11 +46,10 @@ public class PaymentsUI_Common_Desktop_Air extends PaymentsUI_Common_Desktop {
          //   Assert.assertTrue(false);
         }
         elementVisible(driver, getObjectPayment("Desktop_Air_Itn_Step1_Btn"), 20);
-        textPresent_Log(driver, "Review your itinerary", 5);
-        refreshPage(driver);
-
+        textPresent_Log(driver, "Review your itinerary", 1);
+        smartClick(driver, By.xpath("//div[2]/div"));
+        //  refreshPage(driver);
         elementVisible(driver, getObjectPayment("Desktop_Air_Itn_Step1_Btn"), 20);
-
         if(CouponGV.equalsIgnoreCase("Coupon")){
             applyCoupon(driver, COUPONCODE);
         } else if(CouponGV.equalsIgnoreCase("FullGV")){

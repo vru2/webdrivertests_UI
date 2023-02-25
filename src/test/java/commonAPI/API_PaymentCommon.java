@@ -23,7 +23,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 
 public class API_PaymentCommon extends PlatformCommonUtil
 
-{	
+{
 	public RemoteWebDriver driver;
 
 	String urlPay = "http://172.29.20.90:9001"; //"http://paymentservice.cltp.com:9001"; //http://172.17.51.86:8070"
@@ -48,7 +48,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 	String url_Binmanager = "https://qa2new.cleartrip.com/binmanager/v1/payment/cards?bin=534977";
 	String url_QA2 = "https://qa2new.cleartrip.com/";
 	public String url_TestApp = "";
-	
+
 	String paramsCC ="[{\"payment\":{\"seq_no\":1,\"trip_id\":106562332,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":276,\"payment_category\":\"B\",\"fraud_system_invocation\":\"Y\",\"ui_version\":\"v2\",\"customer_detail\":{\"ip_address\":\"119.82.73.123\",\"mobile\":\"9986696785\",\"email\":\"cltppayment@gmail.com\",\"firstName\":\"test\"},\"app_ref1\":\"Q18110926800\",\"app_ref2\":\"167823462\",\"itinerary_id\":\"683a3a6bec-4e58-422a-a2c9-90707b1e5a12\",\"payment_type\":\"CC\",\"amount\":100.99,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"9W/362/DEL/BOM/201811XXXXXX00\",\"order_info2\":\"Kiran Kumar\",\"source_type\":\"ACCOUNT\",\"user_id\":85721640,\"company_id\":110340,\"app_return_info\":{\"url\":\"https://www.cleartrip.com/flights/itinerary/683a3a6bec-4e58-422a-a2c9-90707b1e5a12/book\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://book-flights.cltp.com:9001/r3/book/flights/itinerary/683a3a6bec-4e58-422a-a2c9-90707b1e5a12/book-internal?ll=INFO\"},\"host_name\":\"qa2.cleartrip.com\",\"card_detail\":{\"card_number\":\"340000000000009\",\"card_type_id\":1,\"expiry_month\":\"12\",\"expiry_year\":\"2021\",\"cvv\":\"123\",\"name\":\"CleartripCard\",\"billto_detail\":{\"firstname\":\"test\",\"lastname\":\"test\",\"address1\":\"Cleartrip JP Nagar\",\"city_name\":\"Bangalore\",\"state_name\":\"Karnataka\",\"country_name\":\"India\",\"postal_code\":\"560076\"}},\"user_agent\":\"Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko\"}}]";
 	String paramsCCVISA ="[{\"payment\":{\"seq_no\":1,\"trip_id\":106562332,\"app_userid\":10001,\"product_type\":\"VISA\",\"high_risk\":false,\"d_plus_x_in_hours\":276,\"payment_category\":\"B\",\"fraud_system_invocation\":\"Y\",\"ui_version\":\"v2\",\"customer_detail\":{\"ip_address\":\"119.82.73.123\",\"mobile\":\"9986696785\",\"email\":\"cltppayment@gmail.com\",\"firstName\":\"test\"},\"app_ref1\":\"Q18110926800\",\"app_ref2\":\"167823462\",\"itinerary_id\":\"683a3a6bec-4e58-422a-a2c9-90707b1e5a12\",\"payment_type\":\"CC\",\"amount\":100.99,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"9W/362/DEL/BOM/201811XXXXXX00\",\"order_info2\":\"Kiran Kumar\",\"source_type\":\"ACCOUNT\",\"user_id\":85721640,\"company_id\":110340,\"app_return_info\":{\"url\":\"https://www.cleartrip.com/flights/itinerary/683a3a6bec-4e58-422a-a2c9-90707b1e5a12/book\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://book-flights.cltp.com:9001/r3/book/flights/itinerary/683a3a6bec-4e58-422a-a2c9-90707b1e5a12/book-internal?ll=INFO\"},\"host_name\":\"qa2.cleartrip.com\",\"card_detail\":{\"card_number\":\"5123456789012346\",\"card_type_id\":1,\"expiry_month\":\"05\",\"expiry_year\":\"2025\",\"cvv\":\"123\",\"name\":\"CleartripCard\",\"billto_detail\":{\"firstname\":\"test\",\"lastname\":\"test\",\"address1\":\"Cleartrip JP Nagar\",\"city_name\":\"Bangalore\",\"state_name\":\"Karnataka\",\"country_name\":\"India\",\"postal_code\":\"560076\"}},\"user_agent\":\"Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko\"}}]";
 
@@ -60,7 +60,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 	String paramsDAValidateV3 = "[{\"payment\":{\"seq_no\":1,\"high_risk\":false,\"d_plus_x_in_hours\":633,\"payment_category\":\"B\",\"fraud_system_invocation\":\"N\",\"ui_version\":\"v1\",\"customer_detail\":{\"address1\":\"test\",\"city_name\":\"test\",\"postal_code\":\"121212\",\"state_name\":\"test\",\"country_name\":\"india\",\"mobile\":\"121221211\",\"landline\":\"\",\"email\":\"testcthotel@gmail.com\"},\"payment_type\":\"DA\",\"amount\":10.0,\"currency\":\"INR\",\"order_info1\":\"SG/8161/DEL/BOM/20200426155000\",\"order_info2\":\"test booking\",\"source_type\":\"CORP\",\"user_id\":13939735,\"company_id\":101,\"app_return_info\":{\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://corporate.cltp.com:9001/r3/corp/air-book-internal?itineraryId\\u003d689a209bce-a21e-49ac-a0f9-200330145310\\u0026corpPageId\\u003d\"},\"deposit_account_detail\":{\"id\":46207144,\"transaction_password\":\"test123\"}}}]";
 	String paramsDAPayV3 = "[{\"payment\":{\"seq_no\":1,\"trip_id\":43453224,\"high_risk\":false,\"d_plus_x_in_hours\":633,\"payment_category\":\"B\",\"fraud_system_invocation\":\"N\",\"ui_version\":\"v1\",\"customer_detail\":{\"address1\":\"test\",\"city_name\":\"test\",\"postal_code\":\"121212\",\"state_name\":\"test\",\"country_name\":\"india\",\"mobile\":\"121221211\",\"landline\":\"\",\"email\":\"testcthotel@gmail.com\"},\"app_ref1\":\"Q200330788702\",\"app_ref2\":\"75629492\",\"payment_type\":\"DA\",\"amount\":1.0,\"currency\":\"INR\",\"order_info1\":\"SG/8161/DEL/BOM/20200426155000\",\"order_info2\":\"test booking\",\"source_type\":\"CORP\",\"user_id\":790982,\"company_id\":101,\"app_return_info\":{\"url\":\"https://demo.cleartripforbusiness.com/airConfirmNetBanking?itineraryId\\u003d689a209bce-a21e-49ac-a0f9-200330145310\\u0026corpPageId\\u003db8d196f8-af63-45cd-9516-d4c91f7821f2\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://corporate.cltp.com:9001/r3/corp/air-book-internal?itineraryId\\u003d689a209bce-a21e-49ac-a0f9-200330145310\\u0026corpPageId\\u003db8d196f8-af63-45cd-9516-d4c91f7821f2\"},\"deposit_account_detail\":{\"id\":46207144,\"transaction_password\":\"test123\"}}}]";
 	String paramsDAPayV3Async = "[{\"payment\":{\"seq_no\":1,\"trip_id\":43453224,\"high_risk\":false,\"d_plus_x_in_hours\":633,\"payment_category\":\"B\",\"fraud_system_invocation\":\"N\",\"ui_version\":\"v1\",\"customer_detail\":{\"address1\":\"test\",\"city_name\":\"test\",\"postal_code\":\"121212\",\"state_name\":\"test\",\"country_name\":\"india\",\"mobile\":\"121221211\",\"landline\":\"\",\"email\":\"testcthotel@gmail.com\"},\"app_ref1\":\"Q200330788702\",\"app_ref2\":\"75629492\",\"payment_type\":\"DA\",\"amount\":1.0,\"currency\":\"INR\",\"order_info1\":\"SG/8161/DEL/BOM/20200426155000\",\"order_info2\":\"test booking\",\"source_type\":\"CORP\",\"user_id\":1876970,\"company_id\":101,\"app_return_info\":{\"url\":\"https://demo.cleartripforbusiness.com/airConfirmNetBanking?itineraryId\\u003d689a209bce-a21e-49ac-a0f9-200330145310\\u0026corpPageId\\u003db8d196f8-af63-45cd-9516-d4c91f7821f2\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://corporate.cltp.com:9001/r3/corp/air-book-internal?itineraryId\\u003d689a209bce-a21e-49ac-a0f9-200330145310\\u0026corpPageId\\u003db8d196f8-af63-45cd-9516-d4c91f7821f2\"},\"deposit_account_detail\":{\"id\":46207144,\"transaction_password\":\"test123\"}}}]";
-	
+
 	String paramsDAPayV3FK = "[{\"payment\":{\"seq_no\":1,\"trip_id\":43453224,\"high_risk\":false,\"d_plus_x_in_hours\":633,\"payment_category\":\"B\",\"fraud_system_invocation\":\"N\",\"ui_version\":\"v1\",\"customer_detail\":{\"address1\":\"test\",\"city_name\":\"test\",\"postal_code\":\"121212\",\"state_name\":\"test\",\"country_name\":\"india\",\"mobile\":\"121221211\",\"landline\":\"\",\"email\":\"test987@gmail.com\"},\"app_ref1\":\"Q211112349\",\"app_ref2\":\"75629492\",\"payment_type\":\"DA\",\"amount\":0.9,\"currency\":\"INR\",\"order_info1\":\"SG/8161/DEL/BOM/20200426155000\",\"order_info2\":\"test booking\",\"source_type\":\"API\",\"user_id\":1876970,\"company_id\":101,\"app_return_info\":{\"url\":\"\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"\"},\"deposit_account_detail\":{\"id\":44980178,\"transaction_password\":\"test\"},\"partner_reference_data\":{\"reference_id\":\"Q211112345\",\"reference_data\":{\"adjustments\":[{\"adjustments\":[{\"type\":\"SUPER_COINS\",\"adjustment_id\":\"Q211112349\",\"amount\":12821.0,\"units\":12821}],\"payment_instrument_breakup\":[{\"payment_instrument_name\":\"Net Banking\",\"amount\":592.0,\"bank_name\":\"HDFC\"}],\"amount\":13413.0,\"final_pg_amount\":592.0}]}}}}]";
 	String paramsDAPayV3FK6000 = "[{\"payment\":{\"tripId\":4580505011,\"seqNo\":8,\"appRef1\":\"Q21091012345\",\"appRef2\":\"7629376500\",\"paymentType\":\"DA\",\"amount\":1.0,\"currency\":\"INR\",\"sourceType\":\"API\",\"userId\":1876970,\"companyId\":110340,\"paymentCategory\":\"B\",\"newBento\":false,\"deposit_account_detail\":{\"id\":44980178,\"transaction_password\":\"test\"},\"partner_reference_data\":{\"reference_id\":\"212223445\",\"reference_data\":{\"adjustments\":[{\"type\":\"SUPER_COINS\",\"adjustment_id\":\"34563278132\",\"amount\":2.34,\"units\":1}],\"payment_instrument_breakup\":[{\"payment_instrument_name\":\"CC / DC. String\",\"amount\":234.56,\"bank_name\":\"hdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_namepayment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"},{\"payment_instrument_name\":\"CC / DC. String stri\",\"amount\":234000000000.56,\"bank_name\":\"hdfc/sbi. Free flowing stringhdfc/sbi. Free flowing string\"}]}},\"isPWA\":false}}]";
 	String paramsDAPayV3Amend = "[{\"payment\":{\"seq_no\":1,\"trip_id\":43453224,\"high_risk\":false,\"d_plus_x_in_hours\":633,\"payment_category\":\"A\",\"fraud_system_invocation\":\"N\",\"ui_version\":\"v1\",\"customer_detail\":{\"address1\":\"test\",\"city_name\":\"test\",\"postal_code\":\"121212\",\"state_name\":\"test\",\"country_name\":\"india\",\"mobile\":\"121221211\",\"landline\":\"\",\"email\":\"test987@gmail.com\"},\"app_ref1\":\"Q2111009812\",\"app_ref2\":\"75629492\",\"payment_type\":\"DA\",\"amount\":1.0,\"currency\":\"INR\",\"order_info1\":\"SG/8161/DEL/BOM/20200426155000\",\"order_info2\":\"test booking\",\"source_type\":\"API\",\"user_id\":1876970,\"company_id\":101,\"app_return_info\":{\"url\":\"\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"\"},\"deposit_account_detail\":{\"id\":44980178,\"transaction_password\":\"test\"},\"partner_reference_data\":{\"reference_id\":\"123\",\"reference_data\":{\"adjustments\":[{\"adjustmentId\":\"Id for the adjustment\",\"amount\":\"discount amount\",\"offerId\":\"will be couponId for instant discount\",\"type\":\"INSTANT / BANK / FK_COIN\",\"units\":\"no. of coin units. For other cases, it will be null\"}]}}}}]";
@@ -119,8 +119,8 @@ public class API_PaymentCommon extends PlatformCommonUtil
 	String paramsEW_PayMultiV3 = "[{\"payment\":{\"seq_no\":4,\"trip_id\":116912714,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":217,\"payment_category\":\"B\",\"fraud_system_invocation\":\"Y\",\"customer_detail\":{\"address1\":\"Cleartrip JP Nagar Bangalore\",\"city_name\":\"Bangalore\",\"postal_code\":\"560076\",\"state_name\":\"Karnataka\",\"country_name\":\"India\",\"mobile\":\"91 1212121212\",\"email\":\"anas.ansari@cleartrip.com\"},\"app_ref1\":\"Q1903221094\",\"app_ref2\":\"185110142\",\"itinerary_id\":\"68b08214fd-e940-42d5-9f0d-190322223806\",\"payment_type\":\"EP\",\"amount\":5,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"6E/676/BLR/CCU/201904XXXXXX00\",\"order_info2\":\"Mitali Biswas\",\"source_type\":\"ACCOUNT\",\"user_id\":41649008,\"company_id\":41649008,\"app_return_info\":{\"url\":\"https://qa2.cleartrip.com/flights/itinerary/68b08214fd-e940-42d5-9f0d-190322223806/book\",\"method\":\"POST\"},\"host_name\":\"qa2.cleartrip.com\",\"user_agent\":\"Apache-HttpClient/4.4 (Java 1.5 minimum; Java/1.8.0_51)\"}},{\"payment\":{\"seq_no\":1,\"trip_id\":116912714,\"appUserid\":10001,\"productType\":\"DOMESTIC-AIR\",\"highRisk\":false,\"d_plus_x_in_hours\":1618,\"fraudSystemInvocation\":\"N\",\"uiVersion\":\"v2\",\"customerDetail\":{\"ip_address\":\"119.82.106.202\",\"mobile\":\"12121221212\",\"email\":\"anas.ansari@cleartrip.com\"},\"appRef1\":\"Q6876405349\",\"appRef2\":\"74049672\",\"itineraryId\":\"681f6b756d-67de-4efc-b663-5a7ac1bd9fa1\",\"paymentType\":\"GV\",\"amount\":1.0,\"currency\":\"INR\",\"country\":\"IN\",\"orderInfo1\":\"6E/233/BLR/MAA/20181125062500\",\"orderInfo2\":\"Test Booking\",\"sourceType\":\"ACCOUNT\",\"userId\":13957750,\"companyId\":110340,\"appReturnInfo\":{\"url\":\"http://172.17.15.176:9080/return\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://172.17.15.176:9080/bookInternalURL\"},\"giftVoucherDetail\":{\"card_number\":\"3000331035614653\",\"card_pin\":\"105525\"},\"userAgent\":\"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36\",\"paymentCategory\":\"B\",\"isPWA\":false,\"dplusXInHours\":1618,\"pwa\":false}},{\"payment\":{\"seq_no\":2,\"trip_id\":116912714,\"appUserid\":10001,\"productType\":\"DOMESTIC-AIR\",\"highRisk\":false,\"d_plus_x_in_hours\":1618,\"fraudSystemInvocation\":\"N\",\"uiVersion\":\"v2\",\"customerDetail\":{\"ip_address\":\"119.82.106.202\",\"mobile\":\"12121221212\",\"email\":\"anas.ansari@cleartrip.com\"},\"appRef1\":\"Q6876405349\",\"appRef2\":\"74049672\",\"itineraryId\":\"681f6b756d-67de-4efc-b663-5a7ac1bd9fa1\",\"paymentType\":\"GV\",\"amount\":1.0,\"currency\":\"INR\",\"country\":\"IN\",\"orderInfo1\":\"6E/233/BLR/MAA/20181125062500\",\"orderInfo2\":\"Test Booking\",\"sourceType\":\"ACCOUNT\",\"userId\":13957750,\"companyId\":110340,\"appReturnInfo\":{\"url\":\"http://172.17.15.176:9080/return\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://172.17.15.176:9080/bookInternalURL\"},\"giftVoucherDetail\":{\"card_number\":\"3000331031424400\",\"card_pin\":\"198024\"},\"userAgent\":\"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36\",\"paymentCategory\":\"B\",\"isPWA\":false,\"dplusXInHours\":1618,\"pwa\":false}},{\"payment\":{\"seq_no\":1,\"trip_id\":116912714,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":217,\"payment_category\":\"B\",\"customer_detail\":{\"address1\":\"Flat 403 Tower 1, Mallika Malancha HIG Complex Action area 2B, Newtown\",\"city_name\":\"kolkata\",\"postal_code\":\"560066\",\"state_name\":\"West Bengal\",\"country_name\":\"India\",\"mobile\":\"91 1212121212\",\"email\":\"anas.ansari@cleartrip.com\"},\"app_ref1\":\"Q1904190001\",\"app_ref2\":\"185110142\",\"itinerary_id\":\"68b08214fd-e940-42d5-9f0d-190322223806\",\"payment_type\":\"WT\",\"amount\":50,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"6E/676/BLR/CCU/201904XXXXXX00\",\"order_info2\":\"Test test\",\"source_type\":\"ACCOUNT\",\"user_id\":41654864,\"company_id\":41649008,\"app_return_info\":{\"url\":\"https://qa2.cleartrip.com/flights/itinerary/68b08214fd-e940-42d5-9f0d-190322223806/book\",\"method\":\"POST\"},\"host_name\":\"qa2.cleartrip.com\",\"user_agent\":\"Apache-HttpClient/4.4 (Java 1.5 minimum; Java/1.8.0_51)\"}}]";
 	String paramsEW_PayMulti= "{\"payment\":[{\"seq_no\":4,\"trip_id\":116912714,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":217,\"payment_category\":\"B\",\"fraud_system_invocation\":\"Y\",\"customer_detail\":{\"address1\":\"Cleartrip JP Nagar Bangalore\",\"city_name\":\"Bangalore\",\"postal_code\":\"560076\",\"state_name\":\"Karnataka\",\"country_name\":\"India\",\"mobile\":\"91 1212121212\",\"email\":\"anas.ansari@cleartrip.com\"},\"app_ref1\":\"Q1904190001\",\"app_ref2\":\"185110142\",\"itinerary_id\":\"68b08214fd-e940-42d5-9f0d-190322223806\",\"payment_type\":\"EP\",\"amount\":100.5,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"6E/676/BLR/CCU/201904XXXXXX00\",\"order_info2\":\"test test\",\"source_type\":\"ACCOUNT\",\"user_id\":41649008,\"company_id\":41649008,\"app_return_info\":{\"url\":\"https://qa2.cleartrip.com/flights/itinerary/68b08214fd-e940-42d5-9f0d-190322223806/book\",\"method\":\"POST\"},\"host_name\":\"qa2.cleartrip.com\",\"user_agent\":\"Apache-HttpClient/4.4 (Java 1.5 minimum; Java/1.8.0_51)\"},{\"seq_no\":1,\"trip_id\":116912714,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":217,\"payment_category\":\"B\",\"customer_detail\":{\"address1\":\"Cleartrip JP Nagar Bangalore\",\"city_name\":\"Bangalore\",\"postal_code\":\"560076\",\"state_name\":\"Karnataka\",\"country_name\":\"India\",\"mobile\":\"91 1212121212\",\"email\":\"anas.ansari@cleartrip.com\"},\"app_ref1\":\"Q1904190001\",\"app_ref2\":\"185110142\",\"itinerary_id\":\"68b08214fd-e940-42d5-9f0d-190322223806\",\"payment_type\":\"WT\",\"amount\":1.0,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"6E/676/BLR/CCU/201904XXXXXX00\",\"order_info2\":\"Test test\",\"source_type\":\"ACCOUNT\",\"user_id\":41649008,\"company_id\":41649008,\"app_return_info\":{\"url\":\"https://qa2.cleartrip.com/flights/itinerary/68b08214fd-e940-42d5-9f0d-190322223806/book\",\"method\":\"POST\"},\"host_name\":\"qa2.cleartrip.com\",\"user_agent\":\"Apache-HttpClient/4.4 (Java 1.5 minimum; Java/1.8.0_51)\"},{\"seq_no\":2,\"trip_id\":116912714,\"appUserid\":10001,\"productType\":\"DOMESTIC-AIR\",\"highRisk\":false,\"d_plus_x_in_hours\":1618,\"fraudSystemInvocation\":\"N\",\"uiVersion\":\"v2\",\"customerDetail\":{\"ip_address\":\"119.82.106.202\",\"mobile\":\"12121221212\",\"email\":\"anas.ansari@cleartrip.com\"},\"appRef1\":\"Q6876405349\",\"appRef2\":\"74049672\",\"itineraryId\":\"681f6b756d-67de-4efc-b663-5a7ac1bd9fa1\",\"paymentType\":\"GV\",\"amount\":1.0,\"currency\":\"INR\",\"country\":\"IN\",\"orderInfo1\":\"6E/233/BLR/MAA/20181125062500\",\"orderInfo2\":\"Test Booking\",\"sourceType\":\"ACCOUNT\",\"userId\":13957750,\"companyId\":110340,\"appReturnInfo\":{\"url\":\"http://172.17.15.176:9080/return\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://172.17.15.176:9080/bookInternalURL\"},\"giftVoucherDetail\":{\"card_number\":\"3000331031424400\",\"card_pin\":\"198024\"},\"userAgent\":\"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36\",\"paymentCategory\":\"B\",\"dplusXInHours\":1618,\"pwa\":false},{\"seq_no\":3,\"trip_id\":116912714,\"appUserid\":10001,\"productType\":\"DOMESTIC-AIR\",\"highRisk\":false,\"d_plus_x_in_hours\":1618,\"fraudSystemInvocation\":\"N\",\"uiVersion\":\"v2\",\"customerDetail\":{\"ip_address\":\"119.82.106.202\",\"mobile\":\"12121221212\",\"email\":\"anas.ansari@cleartrip.com\"},\"appRef1\":\"Q6876405349\",\"appRef2\":\"74049672\",\"itineraryId\":\"681f6b756d-67de-4efc-b663-5a7ac1bd9fa1\",\"paymentType\":\"GV\",\"amount\":1.0,\"currency\":\"INR\",\"country\":\"IN\",\"orderInfo1\":\"6E/233/BLR/MAA/20181125062500\",\"orderInfo2\":\"Test Booking\",\"sourceType\":\"ACCOUNT\",\"userId\":13957750,\"companyId\":110340,\"appReturnInfo\":{\"url\":\"http://172.17.15.176:9080/return\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://172.17.15.176:9080/bookInternalURL\"},\"giftVoucherDetail\":{\"card_number\":\"3000331031424400\",\"card_pin\":\"198024\"},\"userAgent\":\"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36\",\"paymentCategory\":\"B\",\"isPWA\":false,\"dplusXInHours\":1618,\"pwa\":false}]}";
 	String paramsGVWL = "[{\"payment\":{\"seq_no\":2,\"trip_id\":54808092,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":1618,\"payment_category\":\"B\",\"fraud_system_invocation\":\"N\",\"ui_version\":\"v2\",\"customer_detail\":{\"ip_address\":\"119.82.106.202\",\"mobile\":\"12121221212\",\"email\":\"kiran.kumar@cleartrip.com\"},\"app_ref1\":\"T8162456096\",\"app_ref2\":\"74049672\",\"itinerary_id\":\"681f6b756d-67de-4efc-b663-5a7ac1bd9fa1\",\"payment_type\":\"WT\",\"amount\":1,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"6E\\/233\\/BLR\\/MAA\\/20181125062500\",\"order_info2\":\"Test Booking\",\"source_type\":\"ACCOUNT\",\"user_id\":41654864,\"company_id\":110340,\"app_return_info\":{\"url\":\"https://qa2.cleartrip.com/flights/itinerary/681f6b756d-67de-4efc-b663-5a7ac1bd9fa1/book\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://book-flights.cltp.com:9001/r3/book/flights/itinerary/681f6b756d-67de-4efc-b663-5a7ac1bd9fa1/book-internal?ll=INFO\"},\"user_agent\":\"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrom/69.0.3497.100 Safari/537.36\"}},{\"payment\":{\"seq_no\":2,\"trip_id\":106562332,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":1618,\"payment_category\":\"B\",\"fraud_system_invocation\":\"N\",\"ui_version\":\"v2\",\"customer_detail\":{\"ip_address\":\"119.82.106.202\",\"mobile\":\"12121221212\",\"email\":\"cltppayment@gmail.com\"},\"app_ref1\":\"T8162456096\",\"app_ref2\":\"167823462\",\"itinerary_id\":\"684fe048c7-cde3-4c20-9b73-a70e3c43bc9d\",\"payment_type\":\"GV\",\"amount\":10.0,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"SG/8481/PAT/DEL/201812XXXXXX00\",\"order_info2\":\"Cleartrip tester\",\"source_type\":\"WL\",\"user_id\":51351954,\"company_id\":5291262,\"app_return_info\":{\"url\":\"dummy\",\"method\":\"POST\"},\"gift_voucher_detail\":{\"card_number\":\"3000331036850568\",\"card_pin\":\"257659\",\"amount\":10,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"SG/8481/PAT/DEL/201812XXXXXX00\",\"order_info2\":\"Cleartrip Tester\",\"source_type\":\"WL\",\"user_id\":51351954,\"company_id\":5291262,\"app_return_info\":{\"url\":\"dummy\",\"method\":\"POST\"},\"gift_voucher_detail\":{\"card_number\":\"3000331036850568\",\"card_pin\":\"257659\",\"card_category\":\"\"}}}}]";
-	
-	
+
+
 	String paramsEW_Validate = "{\"payment\":[{\"seq_no\":1,\"trip_id\":116912714,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":217,\"payment_category\":\"B\",\"fraud_system_invocation\":\"Y\",\"customer_detail\":{\"address1\":\"Cleartrip JP Nagar Bangalore\",\"city_name\":\"Bangalore\",\"postal_code\":\"560076\",\"state_name\":\"Karnataka\",\"country_name\":\"India\",\"mobile\":\"91 1212121212\",\"email\":\"cltppayment@gmail.com\"},\"app_ref1\":\"Q1903221094\",\"app_ref2\":\"185110142\",\"itinerary_id\":\"68b08214fd-e940-42d5-9f0d-190322223806\",\"payment_type\":\"EP\",\"amount\":5,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"6E/676/BLR/CCU/201904XXXXXX00\",\"order_info2\":\"Mitali Biswas\",\"source_type\":\"ACCOUNT\",\"user_id\":41654864,\"company_id\":41654864,\"app_return_info\":{\"url\":\"https://qa2.cleartrip.com/flights/itinerary/68b08214fd-e940-42d5-9f0d-190322223806/book\",\"method\":\"POST\"},\"host_name\":\"qa2.cleartrip.com\",\"user_agent\":\"Apache-HttpClient/4.4 (Java 1.5 minimum; Java/1.8.0_51)\"}]}";
 	String paramsEW_AddAmt = "";
 	String paramsDA_Refund = "{\"txn_id\":75413816,\"payment_id\":43422440,\"refund_txn_id\":75413816,\"amount\":1352.0}";
@@ -131,19 +131,19 @@ public class API_PaymentCommon extends PlatformCommonUtil
 	String ParamsOLAPromoGroup1 = "{\"user_id\":41651522,\"trip_ref\":\"Q";
 	String ParamsOLAPromoGroup2 = "\",\"type\":\"HOTEL_BOOKING\",\"promotions\":[{\"amount\":500.55,\"currency\":\"INR\",\"expiry_date\":\"11-11-2021\",\"trigger_date\":\"12-11-2019\",\"wallet\":\"OLA\",\"mobile\":\"9986696785\",\"email\":\"test@test.com\"}]}";
 
-	String paramsOLAPay="\",\"amount\":50.55,\"tripId\":\"Q898989879\",\"recipientId\":\"9986696785\",\"currency\":\"INR\",\"comments\":\"test\",\"returnUrl\":\"NA\",\"notificationUrl\":\"NA\",\"balanceType\":\"cash\",\"balanceName\":\"cash\",\"agentId\":\"NA\"}"; 
+	String paramsOLAPay="\",\"amount\":50.55,\"tripId\":\"Q898989879\",\"recipientId\":\"9986696785\",\"currency\":\"INR\",\"comments\":\"test\",\"returnUrl\":\"NA\",\"notificationUrl\":\"NA\",\"balanceType\":\"cash\",\"balanceName\":\"cash\",\"agentId\":\"NA\"}";
 
 	String Paramsadcb_checkbalance1 = "{  \"rewardsType\": \"ADCB\",  \"rewardsRequestType\": \"BALANCE_CHECK\",  \"trackId\": \"";
 	String Paramsadcb_checkbalance2 = "\",  \"cardNumber\": \"5264083966400083\",  \"amount\": 0.01,  \"currency\": \"AED\",   \"params\": {     \"customerName\": \"test\",     \"expiryDate\": \"2506\"  }}";
 	String Paramsadcb_sendOTP1 = "{  \"rewardsType\": \"ADCB\",  \"rewardsRequestType\": \"OTP\",  \"trackId\": \"";
 	String Paramsadcb_sendOTP2 = "\",  \"cardNumber\": \"5264083966400083\",  \"amount\": 0.01,  \"currency\": \"AED\",  \"params\": {  \t \"customerName\": \"test\",     \"expiryDate\": \"2506\"  }}";
-	
+
 	String Paramsadcb_validate1="[   {      \"payment\":{         \"seq_no\":1,         \"payment_subtype\":\"ADCB\",         \"trip_id\":45025226,         \"app_userid\":10001,         \"product_type\":\"INTL-AIR\",         \"high_risk\":false,         \"d_plus_x_in_hours\":0,         \"payment_category\":\"B\",         \"fraud_system_invocation\":\"Y\",         \"ui_version\":\"v2\",         \"customer_detail\":{            \"ip_address\":\"192.168.50.230\",            \"mobile\":\"9999999999\",            \"email\":\"123@cleartrip.com\"         },         \"itinerary_id\":\"68730b1763-f9d8-4059-88ff-62ce5f4a1ef8\",         \"payment_type\":\"RP\",         \"amount\":10,         \"currency\":\"AED\",         \"country\":\"AE\",         \"order_info1\":\"SG/812/BLR/CCU/20181113055500\",         \"order_info2\":\"Test\",         \"source_type\":\"ACCOUNT\",         \"user_id\":41644016,         \"company_id\":110340,         \"app_return_info\":{            \"method\":\"POST\",            \"book_internal\":true,            \"book_internal_url\":\"http://book-flights.cltp.com:9001/r3/book/flights/itinerary/68730b1763-f9d8-4059-88ff-62ce5f4a1ef8/book-internal?ll=INFO\"         },         \"host_name\":\"qa2.cleartrip.com\",         \"reward_points_detail\":{            \"trackId\":\"";
-	
+
 	String Paramsadcb_validate2=  "\",            \"otp\":\"11111111\",            \"bankName\": \"ADCB\",            \"card_detail\":{               \"card_number\":\"5264083966400083\",               \"card_type_id\":2,               \"expiry_month\":\"06\",               \"expiry_year\":\"2025\",               \"cvv\":\"123\",               \"name\":\"Test\",               \"billto_detail\":{                  \"firstname\":\"Test\",                  \"address1\":\" \",                  \"city_name\":\"\",                  \"state_name\":\"\",                  \"country_name\":\"\",                  \"postal_code\":\"\"               }            }         }      }   }]";
 	String Paramsadcb_pay1 = "[ {\n  \"payment\" : { \"seq_no\" : 1, \"payment_subtype\":\"ADCB\", \"trip_id\" : 45025226, \"app_userid\" : 10001, \"product_type\" : \"INTL-AIR\", \"high_risk\" : false, \"d_plus_x_in_hours\" : 0, \"payment_category\" : \"B\", \"fraud_system_invocation\" : \"Y\", \"ui_version\" : \"v2\", \"customer_detail\" : {   \"ip_address\" : \"192.168.50.230\",   \"mobile\" : \"9999999999\",   \"email\" : \"123@cleartrip.com\" }, \"app_ref1\" : \"Q1810120439\", \"app_ref2\" : \"74093112\", \"itinerary_id\" : \"7325a60909-c8c7-4383-a584-4dc94dd8b5f5\", \"payment_type\" : \"RP\", \"amount\" : 0.01, \"currency\" : \"AED\", \"country\" : \"AE\", \"order_info1\" : \"6E/21/DEL/DXB/201810XXXXXX00\", \"order_info2\" : \"test testing\", \"source_type\" : \"ACCOUNT\", \"user_id\" : 41629512, \"company_id\" : 110340, \"app_return_info\" : {   \"url\" : \"https://qa2.cleartrip.ae/flights/itinerary/7325a60909-c8c7-4383-a584-4dc94dd8b5f5/book\",   \"method\" : \"POST\",   \"book_internal\" : true,   \"book_internal_url\" : \"http://book-flights.cltp.com:9001/r3/book/flights/itinerary/7325a60909-c8c7-4383-a584-4dc94dd8b5f5/book-internal?ll=INFO\" }, \"host_name\" : \"qa2.cleartrip.ae\", \"reward_points_detail\":{         \"trackId\":\"";
 	String Paramsadcb_pay2 = "\",         \"otp\":\"11111111\",          \"bankName\": \"ADCB\",         \"card_detail\":{            \"card_number\":\"5264083966400083\",            \"card_type_id\":2,            \"expiry_month\":\"06\",            \"expiry_year\":\"2025\",            \"cvv\":\"123\",            \"name\":\"Test\",            \"billto_detail\":{               \"firstname\":\"Test\",               \"address1\":\" \",               \"city_name\":\"\",               \"state_name\":\"\",               \"country_name\":\"\",               \"postal_code\":\"\"            }         } }, \"user_agent\" : \"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36\"\n  }\n} ]\n";
-	
+
 	String ParamsPayBackCheckBalance = "{\"rewardsType\":\"PAYBACK\",\"rewardsRequestType\":\"BALANCE_CHECK\",\"trackId\":\"SAL1011122\",\"currency\":\"INR\",\"params\":{\"customerName\":\"cleartrip\",\"mobile\":\"9632699584\",\"pin\":\"3642\"}}";
 	String ParamsPayBackCheckBalance_card = "{\"rewardsType\":\"PAYBACK\",\"rewardsRequestType\":\"BALANCE_CHECK\",\"trackId\":\"CLRP1000018\",\"cardNumber\":\"9401120000319303\",\"params\":{\"customerName\":\"test\",\"pin\":\"3642\"}}";
 	String ParamsPayBack_Vaidate1 = "[{\"payment\":{\"seq_no\":1,\"payment_subtype\":\"PAYBACK\",\"trip_id\":45025226,\"app_userid\":10001,\"product_type\":\"INTL-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":0,\"payment_category\":\"B\",\"fraud_system_invocation\":\"Y\",\"ui_version\":\"v2\",\"customer_detail\":{\"ip_address\":\"192.168.50.230\",\"mobile\":\"9620351338\",\"email\":\"123@cleartrip.com\"},\"itinerary_id\":\"68730b1763-f9d8-4059-88ff-62ce5f4a1ef8\",\"payment_type\":\"RP\",\"amount\":1,\"currency\":\"INR\",\"country\":\"IN\",\"order_info1\":\"SG/812/BLR/CCU/20181113055500\",\"order_info2\":\"Test\",\"source_type\":\"ACCOUNT\",\"user_id\":41644016,\"company_id\":110340,\"app_return_info\":{\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://book-flights.cltp.com:9001/r3/book/flights/itinerary/68730b1763-f9d8-4059-88ff-62ce5f4a1ef8/book-internal?ll=INFO\"},\"host_name\":\"qa2.cleartrip.com\",\"reward_points_detail\":{\"trackId\":\"CLRP1000014\",\"params\":{\"mobile\":\"9620351338\",\"pin\":\"6486\"}}}}]";
@@ -185,7 +185,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 
 	String Params_IR_Valid_VPA= "{\"accountType\":\"VPA\",\"vpa\":\"kirank@okhdfcbank\",\"bankAccountNumber\":\"51248779\",\"ifsc\":\"HDFC0000531\"}";
 	String Params_IR_InValid_VPA= "{\"accountType\":\"VPA\",\"vpa\":\"kirankokhdfcbank\",\"bankAccountNumber\":\"51248779\",\"ifsc\":\"HDFC0000531\"}";
-	
+
 	String Params_IR_Save_VPA_Details= "{\"accountType\":\"VPA\",\"vpa\":\"3212467@okhdfcbank\",\"accountHolderName\":\"kiran Kumar\",\"cancellationTxnId\":\"2022020947\",\"isConsentAvailable\":true,\"savedDetailsId\":0,\"tripRef\":\"Q211223200042\",\"userDetails\":{\"userId\":\"65237343\"}}";
 	String Params_IR_Create_Refund1= "{\"isFullWalletRefund\":false,\"accountType\":\"VPA\",\"refundVersion\":\"INSTANT\",\"tripRef\":\"Q221102593002\",\"description\":\"Refund cron\",\"amount\":1.0,\"txnid\":";
 	String Params_IR_Create_Refund2= "{\"isFullWalletRefund\":false,\"refundVersion\":\"NORMAL\",\"tripRef\":\"Q220223384658\",\"description\":\"Refund cron\",\"amount\":1.0,\"txnid\":";
@@ -219,8 +219,8 @@ public class API_PaymentCommon extends PlatformCommonUtil
 	String ParamsSuperCoins_Hold = "{\"rewardsType\":\"SUPERCOINS\",\"rewardsRequestType\":\"HOLD\",\"trackId\":\"681f76-6de-4ec-b359adhks1s6\",\"productType\":\"AIR\",\"amount\":1.6,\"params\":{\"mobile\":\"+919986696785\",\"itineraryId\":\"681f76-6de-4ec-16559048910479\"}}";
 	String ParamsSuperCoins_Unhold = "{\"rewardsType\":\"SUPERCOINS\",\"rewardsRequestType\":\"UNHOLD\",\"trackId\":\"681f76-6de-4ec-b359adhks1s6\",\"params\":{\"mobile\":\"+919986696785\",\"itineraryId\":\"NI68ff2771a0-361c-4a65-bb92-220721200825\"}}";
 	String ParamsSuperCoins_CheckBalance = "{\"rewardsType\":\"SUPERCOINS\",\"rewardsRequestType\":\"BALANCE_CHECK\",\"trackId\":\"CLRP1000232\",\"currency\":\"INR\",\"params\":{\"mobile\":\"+918884094547\"}}";
-	
-	
+
+
 	String ParamsSuperCoins_CheckEarnPoints = "{\"rewardsType\":\"SUPERCOINS\",\"rewardsRequestType\":\"EARN_CHECK\",\"trackId\":\"SAL1011122ghfj1\",\"amount\":2449,\"currency\":\"INR\",\"params\":{\"source\":\"MOBILE\",\"isPwa\":true,\"tripRef\":\"Q191014530821\"}}";
 
 	String ParamsSuperCoins_CreatePromo = "{\"user_id\":41649009,\"trip_ref\":\"";
@@ -228,12 +228,12 @@ public class API_PaymentCommon extends PlatformCommonUtil
 
 	String ParamsSuperCoins_UpdatePromo = "{\"amount\":20,\"currency\":\"INR\",\"expiry_date\":\"24-12-2021\",\"trigger_date\":\"";
 	String ParamsSuperCoins_UpdatePromo1 = "\",\"status\":\"ACTIVE\"}";
-	
+
 	String ParamsFetchRefund="{\"refundIds\":[9387165,9387150,9387149,9387190,9387357"
 			+ ",9387405],\"txnIds\": null,"+"\"status\": [\"D\",\"P\",\"S\",\"T\",\"F\"]}";
-	
+
 	String ParamsFetchRefundByTripRef="{\"tripRef\":[\"Q200422824400\",\"Q200421824282\",\"Q200421824270\",\"Q200414822686\",\"Q200414822642\", \"Q200413822486\",\"Q200413822480\"],\"status\": \"D\"}";
-	
+
 	String s=RandomStringUtils.randomAlphabetic(5);
 	String r=RandomStringUtils.randomNumeric(2);
 	String t=RandomStringUtils.randomNumeric(6);
@@ -254,47 +254,47 @@ public class API_PaymentCommon extends PlatformCommonUtil
 	String Params_Reporting_UpdloadQ_FetchBy_RefundID="{\"refundIds\":[9387291,9387289],\"txnIds\":null,\"status\":null}";
 	String Params_Reporting_UpdloadQ_FetchBy_TripID="{\"tripRef\":[\"Q190722430506\",\"Q200417823668\"],\"status\":\"D\"}";
 
-	
-	
-	
+
+
+
 	String Params_Reporting_Refund_Status_Post="{\"refundStatus\":\"D\",\"paymentType\":[\"GV\",\"CC\"],\"tripRef\":[\"Q190722430506\",\"Q200417823774\"]}";
-	
-	String paramsCSPayvalidate="[{\"payment\":{\"seq_no\":1,\"trip_id\":106562332,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":276,\r\n" + 
-			"\"payment_category\":\"B\",\"fraud_system_invocation\":\"Y\",\"ui_version\":\"v2\",\"customer_detail\":{\"ip_address\":\"119.82.73.123\",\r\n" + 
-			"\"mobile\":\"9986696785\",\"email\":\"cltppayment@gmail.com\",\"firstName\" : \"test\"},\"app_ref1\":\"Q18110926806\",\"creditshell_account_detail\":{\"id\":1},\r\n" + 
-			"\"app_ref2\":\"167823462\",\"itinerary_id\":\"683a3a6bec-4e58-422a-a2c9-90707b1e5a12\",\"payment_type\":\"CS\",\"amount\":1,\"currency\":\"USD\",\"country\":\"IN\",\r\n" + 
-			"\"order_info1\":\"9W/362/DEL/BOM/201811XXXXXX00\",\"order_info2\":\"Kiran Kumar\",\"source_type\":\"ACCOUNT\",\"user_id\":85721640,\"company_id\":110340,\r\n" + 
-			"\"app_return_info\":{\"url\":\"https://www.cleartrip.com/flights/itinerary/683a3a6bec-4e58-422a-a2c9-90707b1e5a12/book\",\"method\":\"POST\",\"book_internal\":true,\r\n" + 
-			"\"book_internal_url\":\"http://book-flights.cltp.com:9001/r3/book/flights/itinerary/683a3a6bec-4e58-422a-a2c9-90707b1e5a12/book-internal?ll=INFO\"\r\n" + 
+
+	String paramsCSPayvalidate="[{\"payment\":{\"seq_no\":1,\"trip_id\":106562332,\"app_userid\":10001,\"product_type\":\"DOMESTIC-AIR\",\"high_risk\":false,\"d_plus_x_in_hours\":276,\r\n" +
+			"\"payment_category\":\"B\",\"fraud_system_invocation\":\"Y\",\"ui_version\":\"v2\",\"customer_detail\":{\"ip_address\":\"119.82.73.123\",\r\n" +
+			"\"mobile\":\"9986696785\",\"email\":\"cltppayment@gmail.com\",\"firstName\" : \"test\"},\"app_ref1\":\"Q18110926806\",\"creditshell_account_detail\":{\"id\":1},\r\n" +
+			"\"app_ref2\":\"167823462\",\"itinerary_id\":\"683a3a6bec-4e58-422a-a2c9-90707b1e5a12\",\"payment_type\":\"CS\",\"amount\":1,\"currency\":\"USD\",\"country\":\"IN\",\r\n" +
+			"\"order_info1\":\"9W/362/DEL/BOM/201811XXXXXX00\",\"order_info2\":\"Kiran Kumar\",\"source_type\":\"ACCOUNT\",\"user_id\":85721640,\"company_id\":110340,\r\n" +
+			"\"app_return_info\":{\"url\":\"https://www.cleartrip.com/flights/itinerary/683a3a6bec-4e58-422a-a2c9-90707b1e5a12/book\",\"method\":\"POST\",\"book_internal\":true,\r\n" +
+			"\"book_internal_url\":\"http://book-flights.cltp.com:9001/r3/book/flights/itinerary/683a3a6bec-4e58-422a-a2c9-90707b1e5a12/book-internal?ll=INFO\"\r\n" +
 			"},\"host_name\":\"qa2.cleartrip.com\",\"user_agent\":\"Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko\"}}]";
-	
-	
+
+
 	String params_FK_Refund1="{\"amount\":0.1,\"description\":\"1 Segment\",\"isFullWalletRefund\":false,\"disableAutoRefundProcessing\":true,\"source\":\"FK_Refund_Automation\",\"tripRef\":\"Q211130188952\",\"txnid\":";
 
 	String params_FK_Refund_Update_PartnerInfo ="[{\"refund_id\":\"10042072\",\"trip_ref\":\"Q210323926516\",\"partner_reference_data\":{\"reference_id\":\"123456\",\"reference_data\":{\"adjustments\":[{\"adjustmentId\":\"Id for the adjustmentssssfff\",\"amount\":\"discount amountssss\",\"offerId\":\"will be couponId for instant discountttt\",\"type\":\"INSTANT / BANK / FK_COINNN\",\"units\":\"no. of coin units. For other cases, it will be null\"}]}},\"override_partner_ref_data\":true},{\"refund_id\":\"9876543\",\"trip_ref\":\"208765432\",\"partner_reference_data\":{\"reference_id\":\"123456\",\"reference_data\":{\"adjustments\":[{\"adjustmentId\":\"Id for the adjustmentssssdd\",\"amount\":\"discount amountssss\",\"offerId\":\"will be couponId for instant discountttt\",\"type\":\"INSTANT / BANK / FK_COINNN\",\"units\":\"no. of coin units. For other cases, it will be nulllllll\"}]}},\"override_partner_ref_data\":true}]";
-			
-	
+
+
 	String params_FK_Refund_Status_Update = "{\"refundIds\":[10148042],\"toStatus\":\"F\"}";
-	
+
 	String paramsCSPay="";
-	
+
 	String paramsWalletrevertPromo = "{\"tripRef\":\"Q201124864780\",\"amount\":100.1}";
 
 
 	String ParamsGetPayURL_Air = "{\"itinerary_id\":\"6899c725d1-a698-4978-8fa7-2001081509423\",\"ttl\":0,\"trip_id\":46314335,\"trip_ref\":\"Q10041538791\",\"txn_id\":\"75509223\",\"currency\":\"INR\",\"product_type\":\"DOMESTIC-AIR\",\"source_type\":\"ACCOUNT\",\"high_risk\":false,\"country\":\"IN\",\"user_id\":\"1876970\",\"company_id\":110340,\"payment_category\":\"A\",\"ui_language\":\"EN\",\"trip_title\":\"AMD -> BLR\",\"back_button_url\":\"/accounts\",\"customer_detail\":{\"user_id\":1876970,\"mobile\":\"911212121212\",\"email\":\"cltppayment@gmail.com\",\"first_name\":\"Cltp\",\"last_name\":\"Payment\"},\"app_return_info\":{\"url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI6826d4897a-b5af-47a5-a72e-200511165846/book/internal\",\"method\":\"POST\",\"params\":null,\"book_internal\":true,\"book_internal_url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI6826d4897a-b5af-47a5-a72e-200511165846/book/internal\"},\"air_booking\":{\"traveller_details\":[{\"seq_no\":1,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"John\",\"last_name\":\"Miller\"},{\"seq_no\":2,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"Ashish\",\"last_name\":\"Jain\"},{\"seq_no\":2,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"Rohit\",\"last_name\":\"Kumar\"},{\"seq_no\":2,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"Mohit\",\"last_name\":\"Verma\"},{\"seq_no\":2,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"Sachin\",\"last_name\":\"Reddy\"}],\"itinerary_details\":[{\"segment_details\":[{\"serial_number\":0,\"airline_name\":\"SG\",\"airline_code\":\"SG\",\"flight_number\":8169,\"departure_date\":\"2020-02-15T19:45:00\",\"arrival_date\":\"2020-02-15T22:05:00\",\"departure_time\":\"07:45\",\"arrival_time\":\"10:05\",\"duration\":\"8400\",\"stops\":1,\"departure_code\":\"DEL\",\"arrival_code\":\"BOM\",\"departure_airport_name\":\"Indira Gandhi Airport\",\"arrival_airport_name\":\"Chatrapati Shivaji Airport\",\"departure_name\":\"New Delhi\",\"arrival_name\":\"Mumbai\",\"date\":\"2020-02-15T19:45:00\"},{\"serial_number\":0,\"airline_name\":\"SG\",\"airline_code\":\"SG\",\"flight_number\":8169,\"departure_date\":\"2020-02-15T19:45:00\",\"arrival_date\":\"2020-02-16T22:05:00\",\"departure_time\":\"07:45\",\"arrival_time\":\"10:05\",\"duration\":\"8400\",\"stops\":1,\"departure_code\":\"BOM\",\"arrival_code\":\"AMD\",\"departure_airport_name\":\"Indira Gandhi Airport\",\"arrival_airport_name\":\"Chatrapati Shivaji Airport\",\"departure_name\":\"New Delhi\",\"arrival_name\":\"Mumbai\",\"date\":\"2020-02-15T19:45:00\"}]},{\"segment_details\":[{\"serial_number\":0,\"airline_name\":\"AI\",\"airline_code\":\"AI\",\"flight_number\":8169,\"departure_date\":\"2020-02-20T19:45:00\",\"arrival_date\":\"2020-02-20T22:05:00\",\"departure_time\":\"07:45\",\"arrival_time\":\"10:05\",\"duration\":\"8400\",\"stops\":0,\"departure_code\":\"AMD\",\"arrival_code\":\"DEL\",\"departure_airport_name\":\"Indira Gandhi Airport\",\"arrival_airport_name\":\"Chatrapati Shivaji Airport\",\"departure_name\":\"New Delhi\",\"arrival_name\":\"Mumbai\",\"date\":\"2020-02-15T19:45:00\"}]}],\"flights_pricing_details\":{\"pax_pay_info\":[{\"base_fare\":3000.1,\"pax_count\":1,\"pax_type\":\"ADULT\"},{\"base_fare\":3000.02,\"pax_count\":1,\"pax_type\":\"ADULT\"}],\"discount\":100,\"psgr_service_fee\":91,\"air_dev_fee\":0,\"airline_misc\":177,\"cute_fee\":65,\"airline_gst\":20.5,\"paid_before\":\"100.0\",\"amend_charges\":200.5,\"ct_charges\":10,\"currency\":\"INR\",\"other_charges\":1016,\"service_fee\":1012,\"total\":500},\"transaction_fee_details\":{\"cc\":{\"DEFAULT\":10},\"dc\":{\"DEFAULT\":0},\"nb\":{\"DEFAULT\":0},\"kc\":{\"DEFAULT\":0},\"da\":{\"DEFAULT\":0},\"tw\":{\"DEFAULT\":0},\"up\":{\"DEFAULT\":0},\"wt\":{\"DEFAULT\":0}},\"convenience_fee_details\":{\"cc\":200,\"dc\":500,\"nb\":50,\"tw\":25,\"up\":10}}}";
 
 	String ParamsGetPayURL_Air_Coupon= "";
-	
+
 
 	String ParamsGetPayURL_Air_GV= "";
 
 	String ParamsGetPayURL_Air_RP= "";
 
-	
-	
-	
+
+
+
 	public String AirUrl ="https://qa2new.cleartrip.com/flights/results?from=BLR&to=BOM&depart_date=24/12/2020&adults=1&childs=0&infants=0&class=Economy&airline=&carrier=&intl=n";
-	
+
 	String urlInit = "/paymentservice/service/otp/init";
 	String urlProcess = "/paymentservice/service/otp/process";
 	String urlResend = "/paymentservice/service/otp/resend";
@@ -338,7 +338,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 
 	//String urlSuperCoins_Info = "/api/supercoinsInfo/Q221028592282";
 	//String urlSuperCoins_TrnxInfo = "/api/supercoinsInfo/Q221028592282";
-	
+
 	String urlSuperCoins_SendOTP="/payments/rewards/sendOtp";
 
 	String urlSuperCoins_ValidateOTP = "/payments/rewards/supercoins/validateOtp";
@@ -353,7 +353,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 
 	String urlSuperCoins_UpdatePromo = "/promoservice/v1/promogroups/Q2109156655/promotions/64905";
 	String urlSuperCoins_ActivatePromo = "/promoservice/v1/promogroups/Q210921153722/promotions/65253";
-	
+
 	String urlPayFlyin = "/paymentservice/gw/v1/pay";
 	String urlSavedCards ="/paymentservice/saved/payments/get/65218452";
 
@@ -362,7 +362,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 	String urlEMI_Interest = "/paymentservice/service/emiinterests";
 	String urlpayReporting= "/paymentservice/service/air/mis/detail?tripRef=Q190530193406&paymentType=CC&reqFor=refund";
 
-	String urlEndPoint_Wallet_PromoUsed="/payments/wallet/promo/used?tripRef=Q19050680568"; 	
+	String urlEndPoint_Wallet_PromoUsed="/payments/wallet/promo/used?tripRef=Q19050680568";
 
 	String urlROR_Cash_Update="/paymentservice/payments/cashdetail/update";
 
@@ -407,7 +407,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 	String endPointPromoGroupsForAUpdatedDate= "/promoservice/v1/promogroups?updatedDate=15-11-2019";
 	String endPointPromoGroupsForACreatedAndUpdatedDate= "/promoservice/v1/promogroups?createdDate=15-11-2019&updatedDate=15-11-2019";
 	String urlFlyin_Wallet = "/paymentservice/api/wallet?product=DOMESTIC-AIR&currency=SAR&tripRef=Q210219897402";
-	
+
 	String urlIR_Eligibility_NB = "/paymentservice/service/refund/eligibility?tripRef=Q220222384004";
 	String urlIR_Eligibility_CC = "/paymentservice/service/refund/eligibility?tripRef=Q211227200550";
 	String urlIR_Eligibility_DC = "/paymentservice/service/refund/eligibility?tripRef=Q220131331240";
@@ -428,7 +428,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 	String urlIR_Get_VPA_Cancel_Details =	"/paymentservice/ba/details?cancellationTxnId=2022020947";
 	String urlIR_Get_VPA_Cancel_Details_UserID = "/paymentservice/ba/details?userId=65237343";
 	String urlIR_Create_Refund = "/paymentservice/service/refund";
-	
+
 	String url_NavisonCC = "/paymentservice/service/mis/detail?tripRef=Q200117692102&paymentType=CC";
 	String url_NavisonAir = "/paymentservice/service/air/mis/detail?tripRef=Q191226667766&paymentType=UP";
 
@@ -446,24 +446,24 @@ public class API_PaymentCommon extends PlatformCommonUtil
 	String urlRORCreate_Profile_List ="/paymentservice/service/profileList";
 	String urlRORSearch_Profile_List ="/paymentservice/service/profileList/search";
 	String urlRORCreate_Refunds="/paymentservice/service/refund";
-	
+
 
 	String urlQitaf_Reverse = "/payments/rewards/reverse";
 	String urlQitaf_Redeem = "/payments/rewards/redeem";
 	String urlQitaf_SendOTP = "/payments/rewards/sendOtp";
-	
-	
+
+
 	String urlRORRecon="/paymentservice/service/refund/recon";
 
 	String urlROR_WalletFetch_Reads="/payments/wallet/fetch/v2?userId=13957750&currency=AED";
 	String urlROR_MultiSearch_Reads ="/paymentservice/search/payments/v1?query=id:43622220,paymentType:WT";
 	String urlROR_MultiSearch_TripRef_Reads= "/paymentservice/search/payments/v1?query=appRef1:Q190809461122";
-	
+
 	String urlROR_Wallet_Trnx_Reads = "/paymentservice/search/walletTransactions/v1?query=walletDetailId:5154746";
-	
+
 	String urlROR_Wallet_GetWallet_Reads = "/payments/wallet/5789285/v2/getWallet";
 	String urlROR_GV_Details_Reads = "/paymentservice/search/gvDetails/v1?query=refundId:9367489";
-	
+
 	String urlROR_Refund_Reads = "/paymentservice/search/refunds/v1?query=paymentId:43410410,status:D";
 	String url_UI_Get_ConvFee = "/paymentservice/ui/fetch/convFeePriority";
 	String url_UI_Get_PayTypes = "/paymentservice/ui/fetch/paymentTypes";
@@ -477,8 +477,8 @@ public class API_PaymentCommon extends PlatformCommonUtil
 	String urlEndPoint_Wallet_RevertPromo ="/payments/wallet/promo/revert?tripRef=Q19050680568";
 	String urlEndPoint_Wallet_Refund_Stop_Trnx ="/paymentservice/walletStoppedTxns?fromDate=20-04-2021&toDate=21-04-2021";
 	String urlEndPoint_Wallet_RevertPromoNew ="/payments/wallet/promo/revert/amount";
-	
-	
+
+
 	String urlEndPoint_Wallet_RevertedPromo ="/payments/wallet/promo/reverted/amount/Q201124864780";
 	String urlEndPoint_Wallet_GetDeduction = "/payments/wallet/promo/deductions?tripRef=Q190702311622";
 	String urlEndPoint_Wallet_GetWallet_Trnx = "/payments/wallet/65237343/transactions?currency=INR";
@@ -498,11 +498,11 @@ public class API_PaymentCommon extends PlatformCommonUtil
 	String urlDA_Balance = "/account/61/balance";
 	String urlDA_Refund= "/account/46207144/trips/Q191210603834/refund";
 	String urlDA_Status = "/account/387212870";
-	
+
 	String urlDA_FK_FetchBy_TripID = "/paymentservice/payments/44951548";
 	String urlDA_FK_FetchBy_PaymentID = "/paymentservice/payments/fetchById?id=44948256";
-	
-	
+
+
 	String urlCTPay = "https://qa2new.cleartrip.com";
 
 	String urlSavedPaymentModes_UI= "payment/saved/payments/mode/get/65237343"; //5656565657 //65236280
@@ -515,8 +515,8 @@ public class API_PaymentCommon extends PlatformCommonUtil
 	String urlCTPay_CreateURL= "paymentservice/ct/v2/getCtPaymentUrl";
 
 
-	String urlEW_UserDetails= "/paymentservice/expresswayplus/details/41649008/INR";	
-	String urlEW_OptIn= "/paymentservice/expresswayplus/user/opt/in/41697596/INR";	
+	String urlEW_UserDetails= "/paymentservice/expresswayplus/details/41649008/INR";
+	String urlEW_OptIn= "/paymentservice/expresswayplus/user/opt/in/41697596/INR";
 	String urlEW_GetOutstandingAmt= "/paymentservice/expresswayplus/outstandingbalance?userId=41697596&currency=INR";
 	String urlEW_Validate= "/paymentservice/service/validate";
 	String urlEW_Pay= "/paymentservice/service/pay";
@@ -581,7 +581,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 	String url_ReportingPaymentID ="/paymentservice/payments/43911126";
 	String url_Reporting_Refund_Pending_Download ="/paymentservice/script/refund/details/download?startDate=07/11/2022&endDate=09/11/2022";
 	String url_ReportingRefund_StatusReport ="/paymentservice/script/refund/details?status=D&startDate=05/01/2021&endDate=06/01/2021";
-	
+
 	String url_ReportingTS_V3 ="/trips?tripID=Q191014530470&refundRequired=true&historyRequired=true&paymentsRequired=true&apiVersion=V3";
 	String url_ReportingTS_Archived_V3_False ="/paymentservice/payments/42752096?isArchived=false";
 	String url_ReportingTS_Archived_V3_True ="/paymentservice/payments/42752096?isArchived=true";
@@ -589,10 +589,10 @@ public class API_PaymentCommon extends PlatformCommonUtil
 
 	String urlRefundsTrip="/paymentservice/refund/data/fetch";
 	String urlRefundsTripRef="/paymentservice/refund/data/fetchByTripRef";
-	
+
 	String url_ReportingPaginate = "/paymentservice/paginate/refunds?pageNo=1385&status=P&sort=desc";
 	String url_ReportingPaginate_PayType = "/paymentservice/paginate/refunds?pageNo=1&status=D&sort=desc&paymentType=NB";
-	
+
 	String url_ReportingRefundQ_Count_D = "/paymentservice/service/refund/count/refunds?refundStatus=D";
 	String url_ReportingRefundQ_Count_D_DA = "/paymentservice/service/refund/count/refunds?refundStatus=D&daStatus=S";
 	String url_ReportingRefundQ_Count_S_Txns = "/paymentservice/service/refund/count/refunds?refundStatus=S&txnType=CAPT,QURY";
@@ -600,17 +600,17 @@ public class API_PaymentCommon extends PlatformCommonUtil
 	String url_ReportingRefundQ_Count_S_PayType = "/paymentservice/service/refund/count/refunds?refundStatus=s&paymentType=CC,DC";
 	String url_ReportingRefundQ_Count_S_PayType_GW = "/paymentservice/service/refund/count/refunds?refundStatus=D&paymentType=CC,DC&gatewayId=10";
 	String url_ReportingRefundQ_Count_D_CashCard = "/paymentservice/service/refund/count/refunds?refundStatus=d&cashCardStatus=s&cashCardId=1&paymentType=KC";
-	String url_ReportingRefundQ_Count_P_PayType = "/paymentservice/service/refund/count/refunds?refundStatus=p&paymentType=NB,DC,CC&paymentStatus=s";	
-	String url_ReportingRefundUploadQ_fetch_RefundID = "/paymentservice/refund/data/fetch";	
-	String url_ReportingRefundUploadQ_fetch_TripID = "/paymentservice/refund/data/fetchByTripRef";	
-	String url_ReportingRefund_Count_ID = "/paymentservice/service/refund/count/refunds";	
-	
-	
+	String url_ReportingRefundQ_Count_P_PayType = "/paymentservice/service/refund/count/refunds?refundStatus=p&paymentType=NB,DC,CC&paymentStatus=s";
+	String url_ReportingRefundUploadQ_fetch_RefundID = "/paymentservice/refund/data/fetch";
+	String url_ReportingRefundUploadQ_fetch_TripID = "/paymentservice/refund/data/fetchByTripRef";
+	String url_ReportingRefund_Count_ID = "/paymentservice/service/refund/count/refunds";
+
+
 
 	String url_Singlebincard="/v1/payment/card";
-	
-	String url_EMI_Cache_Refresh ="/paymentservice/ui/refresh/emiCache?domain=IN"; 
-	String url_EMI_Cache_ResourcesRefresh ="/paymentservice/ui/refresh/cachedEmiResources"; 
+
+	String url_EMI_Cache_Refresh ="/paymentservice/ui/refresh/emiCache?domain=IN";
+	String url_EMI_Cache_ResourcesRefresh ="/paymentservice/ui/refresh/cachedEmiResources";
 	String url_EMI_GW_Razorpay = "/paymentservice/ui/fetch/emiCache?domain=IN&gateway=RAZORPAYV2";
 	String url_EMI_GW_Noon = "/paymentservice/ui/fetch/emiCache?domain=AE&gateway=NOON";
 	String url_EMI_Fetch = "/paymentservice/api/fetchEmi";
@@ -621,14 +621,14 @@ public class API_PaymentCommon extends PlatformCommonUtil
 	String Prod_Url_Rewards="http://172.21.3.122:9080";
 	String Prod_Url_Wallet="http://172.21.65.21:8071";
 	String Prod_Url_Promo="http://172.21.48.21:7999";*/
-	
+
 	String Prod_Url_PaymentService="http://paymentservice.cltp.com:9001";
 	//String Prod_Url_Rewards1="http://rewardsservice.cltp.com:9001";
 	//String Prod_Url_Rewards="http://10.163.15.235:9001";
 	String Prod_Url_Rewards="http://rewardsservice.cltp.com:9001";
 	String Prod_Url_Wallet="http://wallet-service.cltp.com:9001";
 	String Prod_Url_Promo="http://promoservice.cltp.com:9001";
-	
+
 
 	String Prod_Url_EndPoint_Get_TP_Wallets="/paymentservice/service/thirdpartywallets";
 
@@ -654,11 +654,11 @@ public class API_PaymentCommon extends PlatformCommonUtil
 	String urlFKRefundCreate= "/paymentservice/service/refund";
 	String urlFKRefundUpdatePartnerInfo= "/paymentservice/service/refund/updatePartnerInfo";
 	String urlFKRefundStatusUpdate= "/paymentservice/service/refund/updateStatus";
-	
+
 	String MySQL_URL = "jdbc:mysql://172.17.4.15:3306/payment";
 	String MySQL_User = "payment";
 	String MySQL_Password = "P@yment@123";
-	
+
 	//-------------------------------------------------------------------PayUI payload-------------------------------------------------------------------------//
 
 	String PaymentUI_Trains = "{\"train_booking\":{\"traveller_details\":[{\"seq_no\":1,\"type\":\"ADT\",\"title\":\"Ms\",\"first_name\":\"Test\",\"last_name\":\"Test\"}],\"itinerary_details\":[{\"from_station_code\":\"SBC\",\"to_station_code\":\"MYS\",\"from_station_name\":\"KSR BENGALURU\",\"to_station_name\":\"MYSURU JN\",\"train_name\":\"BSB MYS EXP\",\"train_number\":\"16230\",\"departure_time\":\"2019-11-12T00:15:00\",\"arrival_time\":\"2019-11-12T02:45:00\",\"booking_class\":\"AC 2 Tier(2A)\",\"updated_availability\":\"AVAILABLE-0119\",\"quota\":\"General\",\"seatStatus\":true}],\"pricing_details\":[{\"other_railway_charges\":119.4,\"agent_service_charge\":40,\"total\":7775.4,\"insuranceCharge\":0,\"currency\":\"INR\",\"pax_pay_info\":[{\"base_fare\":6616.0,\"pax_count\":1,\"pax_type\":\"ADULT\"}]}],\"transaction_fee_details\":{\"CC\":{\"DEFAULT\":1.8},\"DC\":{\"DEFAULT\":1.0},\"NB\":{\"DEFAULT\":1.35,\"1\":1.1,\"2\":1.2,\"23\":1.1,\"3\":1.1},\"KC\":{\"DEFAULT\":0.0},\"DA\":{\"DEFAULT\":0.0},\"TW\":{\"DEFAULT\":1.0},\"UP\":{\"DEFAULT\":1.0}}},\"itinerary_id\":\"f25db800de1e0137664316217d236675\",\"ttl\":3600,\"trip_id\":45134538,\"app_ref1\":\"";
@@ -682,7 +682,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 	String params_PayUI_Air_AE="\",\"txn_id\":\"75719878\",\"currency\":\"AED\",\"product_type\":\"DOMESTIC-AIR\",\"source_type\":\"ACCOUNT\",\"high_risk\":false,\"country\":\"AE\",\"user_id\":\"13957750\",\"company_id\":101,\"payment_category\":\"B\",\"currency_conversion_details\":{\"displayCurrency\":\"AED\",\"conversionFactor\":379.04947607124905},\"customer_detail\":{\"user_id\":13957750,\"mobile\":\"121221212\",\"landline\":\"02240554000\",\"email\":\"cltppayment@gmail.com\",\"first_name\":\"Cleartrip\",\"last_name\":\"Booker\",\"title\":\"Mr\"},\"app_return_info\":{\"url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI681fdd54f8-2d6c-44d1-9dd6-200903182914/book/internal\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI681fdd54f8-2d6c-44d1-9dd6-200903182914/book/internal\"},\"air_booking\":{\"traveller_details\":[{\"seq_no\":1,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"test\",\"last_name\":\"test\"}],\"itinerary_details\":[{\"segment_details\":[{\"serial_number\":1,\"airline_name\":\"IndiGo\",\"airline_code\":\"6E\",\"flight_number\":5354,\"departure_date\":\"2020-10-24T13:50:00\",\"arrival_date\":\"2020-10-24T15:35:00\",\"departure_time\":\"13:50\",\"arrival_time\":\"15:35\",\"duration\":\"6300\",\"stops\":0,\"departure_code\":\"BLR\",\"arrival_code\":\"BOM\",\"departure_airport_name\":\"Bengaluru International Airport\",\"arrival_airport_name\":\"Chatrapati Shivaji Airport\",\"total_time\":\"6300\",\"departure_terminal\":\"1\",\"arrival_terminal\":\"2\",\"departure_name\":\"Bangalore\",\"arrival_name\":\"Mumbai\"}]}],\"flights_pricing_details\":{\"air_dev_fee\":0.0,\"airline_misc\":0.0,\"cute_fee\":0.0,\"airline_gst\":37.150001525878906,\"amend_charges\":0.0,\"ct_charges\":0.0,\"other_charges\":0.0,\"service_fee\":0.0,\"vas_details\":[],\"pax_pay_info\":[{\"base_fare\":159.23,\"pax_count\":1,\"pax_type\":\"ADULT\"}],\"discount\":0.0,\"psgr_service_fee\":0.0,\"currency\":\"AED\",\"total\":500.0},\"convenience_fee_details\":{\"cc\":10.0,\"dc\":10.0,\"nb\":6.37,\"kc\":0.0,\"up\":0.0,\"da\":0.0,\"tw\":0.0,\"rp\":10.0,\"ap\":0.0,\"wt\":10.0,\"gv\":0.0,\"flat_fee\":true}},\"domain\":\"AE\",\"initial_total\":0.0,\"retry_num\":0}";
 	String params_PayUI_Air_AE_AR="\",\"txn_id\":\"75719878\",\"currency\":\"AED\",\"product_type\":\"DOMESTIC-AIR\",\"source_type\":\"ACCOUNT\",\"high_risk\":false,\"country\":\"AE\",\"user_id\":\"13957750\",\"company_id\":101,\"payment_category\":\"B\",\"ui_language\":\"AR\",\"currency_conversion_details\":{\"displayCurrency\":\"AED\",\"conversionFactor\":379.04947607124905},\"customer_detail\":{\"user_id\":13957750,\"mobile\":\"121221212\",\"landline\":\"02240554000\",\"email\":\"cltppayment@gmail.com\",\"first_name\":\"Cleartrip\",\"last_name\":\"Booker\",\"title\":\"Mr\"},\"app_return_info\":{\"url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI681fdd54f8-2d6c-44d1-9dd6-200903182914/book/internal\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI681fdd54f8-2d6c-44d1-9dd6-200903182914/book/internal\"},\"air_booking\":{\"traveller_details\":[{\"seq_no\":1,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"test\",\"last_name\":\"test\"}],\"itinerary_details\":[{\"segment_details\":[{\"serial_number\":1,\"airline_name\":\"IndiGo\",\"airline_code\":\"6E\",\"flight_number\":5354,\"departure_date\":\"2020-10-24T13:50:00\",\"arrival_date\":\"2020-10-24T15:35:00\",\"departure_time\":\"13:50\",\"arrival_time\":\"15:35\",\"duration\":\"6300\",\"stops\":0,\"departure_code\":\"BLR\",\"arrival_code\":\"BOM\",\"departure_airport_name\":\"Bengaluru International Airport\",\"arrival_airport_name\":\"Chatrapati Shivaji Airport\",\"total_time\":\"6300\",\"departure_terminal\":\"1\",\"arrival_terminal\":\"2\",\"departure_name\":\"Bangalore\",\"arrival_name\":\"Mumbai\"}]}],\"flights_pricing_details\":{\"air_dev_fee\":0.0,\"airline_misc\":0.0,\"cute_fee\":0.0,\"airline_gst\":37.150001525878906,\"amend_charges\":0.0,\"ct_charges\":0.0,\"other_charges\":0.0,\"service_fee\":0.0,\"vas_details\":[],\"pax_pay_info\":[{\"base_fare\":159.23,\"pax_count\":1,\"pax_type\":\"ADULT\"}],\"discount\":0.0,\"psgr_service_fee\":0.0,\"currency\":\"AED\",\"total\":500.0},\"convenience_fee_details\":{\"cc\":10.0,\"dc\":10.0,\"nb\":6.37,\"kc\":0.0,\"up\":0.0,\"da\":0.0,\"tw\":0.0,\"rp\":10.0,\"ap\":0.0,\"wt\":10.0,\"gv\":0.0,\"flat_fee\":true}},\"domain\":\"AE\",\"initial_total\":0.0,\"retry_num\":0}";
 	String params_PayUI_Air_SA_AR="\",\"txn_id\":\"75719878\",\"currency\":\"SAR\",\"product_type\":\"DOMESTIC-AIR\",\"source_type\":\"ACCOUNT\",\"high_risk\":false,\"country\":\"SA\",\"user_id\":\"13957750\",\"company_id\":101,\"payment_category\":\"B\",\"ui_language\":\"AR\",\"currency_conversion_details\":{\"displayCurrency\":\"SAR\",\"conversionFactor\":20.04947607124905},\"customer_detail\":{\"user_id\":13957750,\"mobile\":\"121221212\",\"landline\":\"02240554000\",\"email\":\"cltppayment@gmail.com\",\"first_name\":\"Cleartrip\",\"last_name\":\"Booker\",\"title\":\"Mr\"},\"app_return_info\":{\"url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI681fdd54f8-2d6c-44d1-9dd6-200903182914/book/internal\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI681fdd54f8-2d6c-44d1-9dd6-200903182914/book/internal\"},\"air_booking\":{\"traveller_details\":[{\"seq_no\":1,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"test\",\"last_name\":\"test\"}],\"itinerary_details\":[{\"segment_details\":[{\"serial_number\":1,\"airline_name\":\"IndiGo\",\"airline_code\":\"6E\",\"flight_number\":5354,\"departure_date\":\"2020-10-24T13:50:00\",\"arrival_date\":\"2020-10-24T15:35:00\",\"departure_time\":\"13:50\",\"arrival_time\":\"15:35\",\"duration\":\"6300\",\"stops\":0,\"departure_code\":\"BLR\",\"arrival_code\":\"BOM\",\"departure_airport_name\":\"Bengaluru International Airport\",\"arrival_airport_name\":\"Chatrapati Shivaji Airport\",\"total_time\":\"6300\",\"departure_terminal\":\"1\",\"arrival_terminal\":\"2\",\"departure_name\":\"Bangalore\",\"arrival_name\":\"Mumbai\"}]}],\"flights_pricing_details\":{\"air_dev_fee\":0.0,\"airline_misc\":0.0,\"cute_fee\":0.0,\"airline_gst\":37.150001525878906,\"amend_charges\":0.0,\"ct_charges\":0.0,\"other_charges\":0.0,\"service_fee\":0.0,\"vas_details\":[],\"pax_pay_info\":[{\"base_fare\":159.23,\"pax_count\":1,\"pax_type\":\"ADULT\"}],\"discount\":0.0,\"psgr_service_fee\":0.0,\"currency\":\"SAR\",\"total\":500.0},\"convenience_fee_details\":{\"cc\":10.0,\"dc\":10.0,\"nb\":6.37,\"kc\":0.0,\"up\":0.0,\"da\":0.0,\"tw\":0.0,\"rp\":10.0,\"ap\":0.0,\"wt\":10.0,\"gv\":0.0,\"flat_fee\":true}},\"domain\":\"SA\",\"initial_total\":0.0,\"retry_num\":0}";
-	
+
 	String params_PayUI_Air_BH="\",\"txn_id\":\"75719878\",\"currency\":\"BHD\",\"product_type\":\"DOMESTIC-AIR\",\"source_type\":\"ACCOUNT\",\"high_risk\":false,\"country\":\"BH\",\"user_id\":\"13957750\",\"company_id\":101,\"payment_category\":\"B\",\"currency_conversion_details\":{\"displayCurrency\":\"BHD\",\"conversionFactor\":500.04947607124905},\"customer_detail\":{\"user_id\":13957750,\"mobile\":\"121221212\",\"landline\":\"02240554000\",\"email\":\"cltppayment@gmail.com\",\"first_name\":\"Cleartrip\",\"last_name\":\"Booker\",\"title\":\"Mr\"},\"app_return_info\":{\"url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI681fdd54f8-2d6c-44d1-9dd6-200903182914/book/internal\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI681fdd54f8-2d6c-44d1-9dd6-200903182914/book/internal\"},\"air_booking\":{\"traveller_details\":[{\"seq_no\":1,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"test\",\"last_name\":\"test\"}],\"itinerary_details\":[{\"segment_details\":[{\"serial_number\":1,\"airline_name\":\"IndiGo\",\"airline_code\":\"6E\",\"flight_number\":5354,\"departure_date\":\"2020-10-24T13:50:00\",\"arrival_date\":\"2020-10-24T15:35:00\",\"departure_time\":\"13:50\",\"arrival_time\":\"15:35\",\"duration\":\"6300\",\"stops\":0,\"departure_code\":\"BLR\",\"arrival_code\":\"BOM\",\"departure_airport_name\":\"Bengaluru International Airport\",\"arrival_airport_name\":\"Chatrapati Shivaji Airport\",\"total_time\":\"6300\",\"departure_terminal\":\"1\",\"arrival_terminal\":\"2\",\"departure_name\":\"Bangalore\",\"arrival_name\":\"Mumbai\"}]}],\"flights_pricing_details\":{\"air_dev_fee\":0.0,\"airline_misc\":0.0,\"cute_fee\":0.0,\"airline_gst\":37.150001525878906,\"amend_charges\":0.0,\"ct_charges\":0.0,\"other_charges\":0.0,\"service_fee\":0.0,\"vas_details\":[],\"pax_pay_info\":[{\"base_fare\":159.23,\"pax_count\":1,\"pax_type\":\"ADULT\"}],\"discount\":0.0,\"psgr_service_fee\":0.0,\"currency\":\"BHD\",\"total\":500.0},\"convenience_fee_details\":{\"cc\":10.0,\"dc\":10.0,\"nb\":6.37,\"kc\":0.0,\"up\":0.0,\"da\":0.0,\"tw\":0.0,\"rp\":10.0,\"ap\":0.0,\"wt\":10.0,\"gv\":0.0,\"flat_fee\":true}},\"domain\":\"BH\",\"initial_total\":0.0,\"retry_num\":0}";
 	String params_PayUI_Air_KW="\",\"txn_id\":\"75719878\",\"currency\":\"KWD\",\"product_type\":\"DOMESTIC-AIR\",\"source_type\":\"ACCOUNT\",\"high_risk\":false,\"country\":\"KW\",\"user_id\":\"13957750\",\"company_id\":101,\"payment_category\":\"B\",\"currency_conversion_details\":{\"displayCurrency\":\"KWD\",\"conversionFactor\":500.04947607124905},\"customer_detail\":{\"user_id\":13957750,\"mobile\":\"121221212\",\"landline\":\"02240554000\",\"email\":\"cltppayment@gmail.com\",\"first_name\":\"Cleartrip\",\"last_name\":\"Booker\",\"title\":\"Mr\"},\"app_return_info\":{\"url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI681fdd54f8-2d6c-44d1-9dd6-200903182914/book/internal\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI681fdd54f8-2d6c-44d1-9dd6-200903182914/book/internal\"},\"air_booking\":{\"traveller_details\":[{\"seq_no\":1,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"test\",\"last_name\":\"test\"}],\"itinerary_details\":[{\"segment_details\":[{\"serial_number\":1,\"airline_name\":\"IndiGo\",\"airline_code\":\"6E\",\"flight_number\":5354,\"departure_date\":\"2020-10-24T13:50:00\",\"arrival_date\":\"2020-10-24T15:35:00\",\"departure_time\":\"13:50\",\"arrival_time\":\"15:35\",\"duration\":\"6300\",\"stops\":0,\"departure_code\":\"BLR\",\"arrival_code\":\"BOM\",\"departure_airport_name\":\"Bengaluru International Airport\",\"arrival_airport_name\":\"Chatrapati Shivaji Airport\",\"total_time\":\"6300\",\"departure_terminal\":\"1\",\"arrival_terminal\":\"2\",\"departure_name\":\"Bangalore\",\"arrival_name\":\"Mumbai\"}]}],\"flights_pricing_details\":{\"air_dev_fee\":0.0,\"airline_misc\":0.0,\"cute_fee\":0.0,\"airline_gst\":37.150001525878906,\"amend_charges\":0.0,\"ct_charges\":0.0,\"other_charges\":0.0,\"service_fee\":0.0,\"vas_details\":[],\"pax_pay_info\":[{\"base_fare\":159.23,\"pax_count\":1,\"pax_type\":\"ADULT\"}],\"discount\":0.0,\"psgr_service_fee\":0.0,\"currency\":\"KWD\",\"total\":500.0},\"convenience_fee_details\":{\"cc\":10.0,\"dc\":10.0,\"nb\":6.37,\"kc\":0.0,\"up\":0.0,\"da\":0.0,\"tw\":0.0,\"rp\":10.0,\"ap\":0.0,\"wt\":10.0,\"gv\":0.0,\"flat_fee\":true}},\"domain\":\"KW\",\"initial_total\":0.0,\"retry_num\":0}";
 	String params_PayUI_Air_OM="\",\"txn_id\":\"75719878\",\"currency\":\"OMR\",\"product_type\":\"DOMESTIC-AIR\",\"source_type\":\"ACCOUNT\",\"high_risk\":false,\"country\":\"OM\",\"user_id\":\"13957750\",\"company_id\":101,\"payment_category\":\"B\",\"currency_conversion_details\":{\"displayCurrency\":\"OMR\",\"conversionFactor\":5.04},\"customer_detail\":{\"user_id\":13957750,\"mobile\":\"121221212\",\"landline\":\"02240554000\",\"email\":\"cltppayment@gmail.com\",\"first_name\":\"Cleartrip\",\"last_name\":\"Booker\",\"title\":\"Mr\"},\"app_return_info\":{\"url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI681fdd54f8-2d6c-44d1-9dd6-200903182914/book/internal\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI681fdd54f8-2d6c-44d1-9dd6-200903182914/book/internal\"},\"air_booking\":{\"traveller_details\":[{\"seq_no\":1,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"test\",\"last_name\":\"test\"}],\"itinerary_details\":[{\"segment_details\":[{\"serial_number\":1,\"airline_name\":\"IndiGo\",\"airline_code\":\"6E\",\"flight_number\":5354,\"departure_date\":\"2020-10-24T13:50:00\",\"arrival_date\":\"2020-10-24T15:35:00\",\"departure_time\":\"13:50\",\"arrival_time\":\"15:35\",\"duration\":\"6300\",\"stops\":0,\"departure_code\":\"BLR\",\"arrival_code\":\"BOM\",\"departure_airport_name\":\"Bengaluru International Airport\",\"arrival_airport_name\":\"Chatrapati Shivaji Airport\",\"total_time\":\"6300\",\"departure_terminal\":\"1\",\"arrival_terminal\":\"2\",\"departure_name\":\"Bangalore\",\"arrival_name\":\"Mumbai\"}]}],\"flights_pricing_details\":{\"air_dev_fee\":0.0,\"airline_misc\":0.0,\"cute_fee\":0.0,\"airline_gst\":37.150001525878906,\"amend_charges\":0.0,\"ct_charges\":0.0,\"other_charges\":0.0,\"service_fee\":0.0,\"vas_details\":[],\"pax_pay_info\":[{\"base_fare\":159.23,\"pax_count\":1,\"pax_type\":\"ADULT\"}],\"discount\":0.0,\"psgr_service_fee\":0.0,\"currency\":\"OMR\",\"total\":500.0},\"convenience_fee_details\":{\"cc\":10.0,\"dc\":10.0,\"nb\":6.37,\"kc\":0.0,\"up\":0.0,\"da\":0.0,\"tw\":0.0,\"rp\":10.0,\"ap\":0.0,\"wt\":10.0,\"gv\":0.0,\"flat_fee\":true}},\"domain\":\"OM\",\"initial_total\":0.0,\"retry_num\":0}";
@@ -693,7 +693,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 
 	String params_PayUI_AirRT="\",\"txn_id\":\"75740574\",\"currency\":\"INR\",\"product_type\":\"DOMESTIC-AIR\",\"source_type\":\"ACCOUNT\",\"high_risk\":false,\"country\":\"IN\",\"user_id\":\"13957750\",\"company_id\":110340,\"payment_category\":\"B\",\"currency_conversion_details\":{\"displayCurrency\":\"Rs.\",\"conversionFactor\":1.0},\"customer_detail\":{\"user_id\":13957750,\"mobile\":\"1111111111\",\"landline\":\"1111111111\",\"email\":\"kiran.kumar@cleartrip.com\",\"first_name\":\"test\",\"last_name\":\"test\",\"title\":\"Mr\"},\"app_return_info\":{\"url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI68a7ab14ed-8a4c-4450-b602-200924142642/book/internal\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI68a7ab14ed-8a4c-4450-b602-200924142642/book/internal\"},\"air_booking\":{\"traveller_details\":[{\"seq_no\":1,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"test\",\"last_name\":\"test\"}],\"itinerary_details\":[{\"segment_details\":[{\"serial_number\":1,\"airline_name\":\"SpiceJet\",\"airline_code\":\"SG\",\"flight_number\":3302,\"departure_date\":\"2020-11-15T07:40:00\",\"arrival_date\":\"2020-11-15T08:40:00\",\"departure_time\":\"07:40\",\"arrival_time\":\"08:40\",\"duration\":\"3600\",\"stops\":0,\"departure_code\":\"BLR\",\"arrival_code\":\"MAA\",\"departure_airport_name\":\"Bengaluru International Airport\",\"arrival_airport_name\":\"Chennai Airport\",\"total_time\":\"3600\",\"departure_terminal\":\"1\",\"arrival_terminal\":\"1\",\"departure_name\":\"Bangalore\",\"arrival_name\":\"Chennai\"}]},{\"segment_details\":[{\"serial_number\":2,\"airline_name\":\"SpiceJet\",\"airline_code\":\"SG\",\"flight_number\":3309,\"departure_date\":\"2020-11-16T17:00:00\",\"arrival_date\":\"2020-11-16T17:55:00\",\"departure_time\":\"17:00\",\"arrival_time\":\"17:55\",\"duration\":\"3300\",\"stops\":0,\"departure_code\":\"MAA\",\"arrival_code\":\"BLR\",\"departure_airport_name\":\"Chennai Airport\",\"arrival_airport_name\":\"Bengaluru International Airport\",\"total_time\":\"3300\",\"departure_terminal\":\"1\",\"arrival_terminal\":\"1\",\"departure_name\":\"Chennai\",\"arrival_name\":\"Bangalore\"}]}],\"flights_pricing_details\":{\"air_dev_fee\":0.0,\"airline_misc\":0.0,\"cute_fee\":0.0,\"airline_gst\":1831.0,\"amend_charges\":0.0,\"ct_charges\":0.0,\"other_charges\":0.0,\"service_fee\":0.0,\"vas_details\":[],\"pax_pay_info\":[{\"base_fare\":1766.0,\"pax_count\":1,\"pax_type\":\"ADULT\"}],\"discount\":0.0,\"psgr_service_fee\":0.0,\"currency\":\"INR\",\"total\":500.0},\"convenience_fee_details\":{\"cc\":250.0,\"dc\":250.0,\"nb\":250.0,\"kc\":0.0,\"up\":250.0,\"da\":0.0,\"tw\":250.0,\"rp\":0.0,\"ap\":0.0,\"wt\":250.0,\"gv\":250.0,\"flat_fee\":true}},\"domain\":\"IN\",\"initial_total\":0.0,\"retry_num\":0}";
 	String params_PayUI_AirMC="";
-	
+
 	/*
 	String params_PayUI_Air_BH1="\",\"txn_id\":\"75509223\",\"currency\":\"BHD\",\"product_type\":\"DOMESTIC-AIR\",\"source_type\":\"ACCOUNT\",\"high_risk\":false,\"country\":\"BH\",\"user_id\":\"1876970\",\"company_id\":110340,\"payment_category\":\"B\",\"currency_conversion_details\":{\"displayCurrency\":\"BHD.\",\"conversionFactor\":1.0},\"ui_language\":\"EN\",\"trip_title\":\"AMD -> BLR\",\"back_button_url\":\"/accounts\",\"customer_detail\":{\"user_id\":1876970,\"mobile\":\"911212121212\",\"email\":\"cltppayment@gmail.com\",\"first_name\":\"Cltp\",\"last_name\":\"Payment\"},\"app_return_info\":{\"url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI6826d4897a-b5af-47a5-a72e-200511165846/book/internal\",\"method\":\"POST\",\"params\":null,\"book_internal\":true,\"book_internal_url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI6826d4897a-b5af-47a5-a72e-200511165846/book/internal\"},\"air_booking\":{\"traveller_details\":[{\"seq_no\":1,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"John\",\"last_name\":\"Miller\"},{\"seq_no\":2,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"Ashish\",\"last_name\":\"Jain\"},{\"seq_no\":2,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"Rohit\",\"last_name\":\"Kumar\"},{\"seq_no\":2,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"Mohit\",\"last_name\":\"Verma\"},{\"seq_no\":2,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"Sachin\",\"last_name\":\"Reddy\"}],\"itinerary_details\":[{\"segment_details\":[{\"serial_number\":0,\"airline_name\":\"SG\",\"airline_code\":\"SG\",\"flight_number\":8169,\"departure_date\":\"2020-02-15T19:45:00\",\"arrival_date\":\"2020-02-15T22:05:00\",\"departure_time\":\"07:45\",\"arrival_time\":\"10:05\",\"duration\":\"8400\",\"stops\":1,\"departure_code\":\"DEL\",\"arrival_code\":\"BOM\",\"departure_airport_name\":\"Indira Gandhi Airport\",\"arrival_airport_name\":\"Chatrapati Shivaji Airport\",\"departure_name\":\"New Delhi\",\"arrival_name\":\"Mumbai\",\"date\":\"2020-02-15T19:45:00\"},{\"serial_number\":0,\"airline_name\":\"SG\",\"airline_code\":\"SG\",\"flight_number\":8169,\"departure_date\":\"2020-02-15T19:45:00\",\"arrival_date\":\"2020-02-16T22:05:00\",\"departure_time\":\"07:45\",\"arrival_time\":\"10:05\",\"duration\":\"8400\",\"stops\":1,\"departure_code\":\"BOM\",\"arrival_code\":\"AMD\",\"departure_airport_name\":\"Indira Gandhi Airport\",\"arrival_airport_name\":\"Chatrapati Shivaji Airport\",\"departure_name\":\"New Delhi\",\"arrival_name\":\"Mumbai\",\"date\":\"2020-02-15T19:45:00\"}]},{\"segment_details\":[{\"serial_number\":0,\"airline_name\":\"AI\",\"airline_code\":\"AI\",\"flight_number\":8169,\"departure_date\":\"2020-02-20T19:45:00\",\"arrival_date\":\"2020-02-20T22:05:00\",\"departure_time\":\"07:45\",\"arrival_time\":\"10:05\",\"duration\":\"8400\",\"stops\":0,\"departure_code\":\"AMD\",\"arrival_code\":\"DEL\",\"departure_airport_name\":\"Indira Gandhi Airport\",\"arrival_airport_name\":\"Chatrapati Shivaji Airport\",\"departure_name\":\"New Delhi\",\"arrival_name\":\"Mumbai\",\"date\":\"2020-02-15T19:45:00\"}]}],\"flights_pricing_details\":{\"pax_pay_info\":[{\"base_fare\":3000.1,\"pax_count\":1,\"pax_type\":\"ADULT\"},{\"base_fare\":3000.02,\"pax_count\":1,\"pax_type\":\"ADULT\"}],\"discount\":100,\"psgr_service_fee\":91,\"air_dev_fee\":0,\"airline_misc\":177,\"cute_fee\":65,\"airline_gst\":20.5,\"paid_before\":\"100.0\",\"amend_charges\":200.5,\"ct_charges\":10,\"currency\":\"BHD\",\"other_charges\":1016,\"service_fee\":1012,\"total\":500},\"transaction_fee_details\":{\"cc\":{\"DEFAULT\":10},\"dc\":{\"DEFAULT\":0},\"nb\":{\"DEFAULT\":0},\"kc\":{\"DEFAULT\":0},\"da\":{\"DEFAULT\":0},\"tw\":{\"DEFAULT\":0},\"up\":{\"DEFAULT\":0},\"wt\":{\"DEFAULT\":0}},\"convenience_fee_details\":{\"cc\":200,\"dc\":500,\"nb\":50,\"tw\":25,\"up\":10,\"wt\":100}}}";
 	String params_PayUI_Air_KW1="\",\"txn_id\":\"75509223\",\"currency\":\"KWD\",\"product_type\":\"DOMESTIC-AIR\",\"source_type\":\"ACCOUNT\",\"high_risk\":false,\"country\":\"KW\",\"user_id\":\"1876970\",\"company_id\":110340,\"payment_category\":\"B\",\"currency_conversion_details\":{\"displayCurrency\":\"KWD.\",\"conversionFactor\":1.0},\"ui_language\":\"EN\",\"trip_title\":\"AMD -> BLR\",\"back_button_url\":\"/accounts\",\"customer_detail\":{\"user_id\":1876970,\"mobile\":\"911212121212\",\"email\":\"cltppayment@gmail.com\",\"first_name\":\"Cltp\",\"last_name\":\"Payment\"},\"app_return_info\":{\"url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI6826d4897a-b5af-47a5-a72e-200511165846/book/internal\",\"method\":\"POST\",\"params\":null,\"book_internal\":true,\"book_internal_url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI6826d4897a-b5af-47a5-a72e-200511165846/book/internal\"},\"air_booking\":{\"traveller_details\":[{\"seq_no\":1,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"John\",\"last_name\":\"Miller\"},{\"seq_no\":2,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"Ashish\",\"last_name\":\"Jain\"},{\"seq_no\":2,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"Rohit\",\"last_name\":\"Kumar\"},{\"seq_no\":2,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"Mohit\",\"last_name\":\"Verma\"},{\"seq_no\":2,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"Sachin\",\"last_name\":\"Reddy\"}],\"itinerary_details\":[{\"segment_details\":[{\"serial_number\":0,\"airline_name\":\"SG\",\"airline_code\":\"SG\",\"flight_number\":8169,\"departure_date\":\"2020-02-15T19:45:00\",\"arrival_date\":\"2020-02-15T22:05:00\",\"departure_time\":\"07:45\",\"arrival_time\":\"10:05\",\"duration\":\"8400\",\"stops\":1,\"departure_code\":\"DEL\",\"arrival_code\":\"BOM\",\"departure_airport_name\":\"Indira Gandhi Airport\",\"arrival_airport_name\":\"Chatrapati Shivaji Airport\",\"departure_name\":\"New Delhi\",\"arrival_name\":\"Mumbai\",\"date\":\"2020-02-15T19:45:00\"},{\"serial_number\":0,\"airline_name\":\"SG\",\"airline_code\":\"SG\",\"flight_number\":8169,\"departure_date\":\"2020-02-15T19:45:00\",\"arrival_date\":\"2020-02-16T22:05:00\",\"departure_time\":\"07:45\",\"arrival_time\":\"10:05\",\"duration\":\"8400\",\"stops\":1,\"departure_code\":\"BOM\",\"arrival_code\":\"AMD\",\"departure_airport_name\":\"Indira Gandhi Airport\",\"arrival_airport_name\":\"Chatrapati Shivaji Airport\",\"departure_name\":\"New Delhi\",\"arrival_name\":\"Mumbai\",\"date\":\"2020-02-15T19:45:00\"}]},{\"segment_details\":[{\"serial_number\":0,\"airline_name\":\"AI\",\"airline_code\":\"AI\",\"flight_number\":8169,\"departure_date\":\"2020-02-20T19:45:00\",\"arrival_date\":\"2020-02-20T22:05:00\",\"departure_time\":\"07:45\",\"arrival_time\":\"10:05\",\"duration\":\"8400\",\"stops\":0,\"departure_code\":\"AMD\",\"arrival_code\":\"DEL\",\"departure_airport_name\":\"Indira Gandhi Airport\",\"arrival_airport_name\":\"Chatrapati Shivaji Airport\",\"departure_name\":\"New Delhi\",\"arrival_name\":\"Mumbai\",\"date\":\"2020-02-15T19:45:00\"}]}],\"flights_pricing_details\":{\"pax_pay_info\":[{\"base_fare\":3000.1,\"pax_count\":1,\"pax_type\":\"ADULT\"},{\"base_fare\":3000.02,\"pax_count\":1,\"pax_type\":\"ADULT\"}],\"discount\":100,\"psgr_service_fee\":91,\"air_dev_fee\":0,\"airline_misc\":177,\"cute_fee\":65,\"airline_gst\":20.5,\"paid_before\":\"100.0\",\"amend_charges\":200.5,\"ct_charges\":10,\"currency\":\"KWD\",\"other_charges\":1016,\"service_fee\":1012,\"total\":500},\"transaction_fee_details\":{\"cc\":{\"DEFAULT\":10},\"dc\":{\"DEFAULT\":0},\"nb\":{\"DEFAULT\":0},\"kc\":{\"DEFAULT\":0},\"da\":{\"DEFAULT\":0},\"tw\":{\"DEFAULT\":0},\"up\":{\"DEFAULT\":0},\"wt\":{\"DEFAULT\":0}},\"convenience_fee_details\":{\"cc\":200,\"dc\":500,\"nb\":50,\"tw\":25,\"up\":10,\"wt\":100}}}";
@@ -719,20 +719,20 @@ public class API_PaymentCommon extends PlatformCommonUtil
 
 	String params_PayUI_Air_RP6= "\",\"txn_id\":\"75797398\",\"currency\":\"INR\",\"product_type\":\"DOMESTIC-AIR\",\"source_type\":\"ACCOUNT\",\"high_risk\":false,\"country\":\"IN\",\"user_id\":\"65211597\",\"company_id\":110340,\"payment_category\":\"B\",\"reward_point_details\":[{\"reward_points_detail\":{\"uid\":\"CLRL0S20AJ4E6REGOGL6\",\"card_detail\":{\"card_number\":\"9401120000263501\"},\"params\":{\"pin\":\"1787\",\"mobile\":\"9986696785\"}},\"rewards_type\":\"PAYBACK\",\"amount\":1.0,\"total_balance\":953521.25,\"earned_amount\":19.0}],\"gift_voucher_details\":[],\"currency_conversion_details\":{\"displayCurrency\":\"INR\",\"conversionFactor\":1.0},\"customer_detail\":{\"user_id\":65211597,\"mobile\":\"1111111111\",\"landline\":\"1111111111\",\"email\":\"ct_storedcard@cleartrip.com\",\"first_name\":\"Stored\",\"last_name\":\"card\",\"title\":\"Mr\"},\"app_return_info\":{\"url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI6838c425b6-cf5e-43a9-a5ad-210205113311/book/internal\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI6838c425b6-cf5e-43a9-a5ad-210205113311/book/internal\"},\"air_booking\":{\"traveller_details\":[{\"seq_no\":1,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"Stored\",\"last_name\":\"card\"}],\"itinerary_details\":[{\"segment_details\":[{\"serial_number\":1,\"airline_name\":\"IndiGo\",\"airline_code\":\"6E\",\"flight_number\":266,\"departure_date\":\"2021-03-05T06:10:00\",\"arrival_date\":\"2021-03-05T07:20:00\",\"departure_time\":\"06:10\",\"arrival_time\":\"07:20\",\"duration\":\"4200\",\"stops\":0,\"departure_code\":\"BLR\",\"arrival_code\":\"HYD\",\"departure_airport_name\":\"Bengaluru International Airport\",\"arrival_airport_name\":\"Rajiv Gandhi International\",\"total_time\":\"4200\",\"departure_terminal\":\"1\",\"arrival_terminal\":\"\",\"departure_name\":\"Bangalore\",\"arrival_name\":\"Hyderabad\"}]}],\"flights_pricing_details\":{\"air_dev_fee\":0.0,\"airline_misc\":0.0,\"cute_fee\":0.0,\"airline_gst\":627.0,\"amend_charges\":0.0,\"ct_charges\":0.0,\"other_charges\":0.0,\"service_fee\":0.0,\"total_vat\":0.0,\"vat_percentage\":0.0,\"vas_details\":[],\"pax_pay_info\":[{\"base_fare\":1000.0,\"pax_count\":1,\"pax_type\":\"ADULT\"}],\"discount\":0.0,\"psgr_service_fee\":0.0,\"currency\":\"INR\",\"total\":0.0},\"convenience_fee_details\":{\"cc\":150.0,\"dc\":150.0,\"nb\":150.0,\"kc\":0.0,\"up\":150.0,\"da\":0.0,\"tw\":150.0,\"rp\":150.0,\"ap\":0.0,\"wt\":150.0,\"gv\":150.0,\"flat_fee\":true}},\"domain\":\"IN\",\"initial_total\":500.0,\"retry_num\":0,\"cfw_amount\":0.0,\"new_bento\":false}";
 
-	
+
 	//String params_PayUI_Air_RP5 = "\",\"txn_id\":\"75795858\",\"currency\":\"INR\",\"product_type\":\"DOMESTIC-AIR\",\"source_type\":\"ACCOUNT\",\"high_risk\":false,\"country\":\"IN\",\"user_id\":\"65201137\",\"company_id\":110340,\"payment_category\":\"B\",\"reward_point_details\":[{\"reward_points_detail\":{\"uid\":\"CLRYHEPACDY3FKPHDQOU\",\"card_detail\":{\"card_number\":\"9401120000263501\"},\"params\":{\"pin\":\"1787\",\"mobile\":\"9986696785\"}},\"rewards_type\":\"PAYBACK\",\"amount\":1.0,\"total_balance\":953517.0,\"earned_amount\":18.0}],\"coupon_details\":{\"coupon_code\":\"DOMOW\",\"amount\":150.0,\"callback_required\":false,\"message\":\"Great! You just saved \\u003camount\\u003e on your booking.\"},\"gift_voucher_details\":[],\"currency_conversion_details\":{\"displayCurrency\":\"INR\",\"conversionFactor\":1.0},\"customer_detail\":{\"user_id\":65201137,\"mobile\":\"1212121212\",\"landline\":\"1212121212\",\"email\":\"ct_wallet_partial@cleartrip.com\",\"first_name\":\"Wallets\",\"last_name\":\"Partial\",\"title\":\"Mr\"},\"app_return_info\":{\"url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI68cb76010f-de09-48b9-9be6-210201190914/book/internal\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI68cb76010f-de09-48b9-9be6-210201190914/book/internal\"},\"air_booking\":{\"traveller_details\":[{\"seq_no\":1,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"Wallets\",\"last_name\":\"Partial\"}],\"itinerary_details\":[{\"segment_details\":[{\"serial_number\":1,\"airline_name\":\"IndiGo\",\"airline_code\":\"6E\",\"flight_number\":266,\"departure_date\":\"2021-03-05T06:10:00\",\"arrival_date\":\"2021-03-05T07:20:00\",\"departure_time\":\"06:10\",\"arrival_time\":\"07:20\",\"duration\":\"4200\",\"stops\":0,\"departure_code\":\"BLR\",\"arrival_code\":\"HYD\",\"departure_airport_name\":\"Bengaluru International Airport\",\"arrival_airport_name\":\"Rajiv Gandhi International\",\"total_time\":\"4200\",\"departure_terminal\":\"1\",\"arrival_terminal\":\"\",\"departure_name\":\"Bangalore\",\"arrival_name\":\"Hyderabad\"}]}],\"flights_pricing_details\":{\"air_dev_fee\":0.0,\"airline_misc\":0.0,\"cute_fee\":0.0,\"airline_gst\":627.0,\"amend_charges\":0.0,\"ct_charges\":0.0,\"other_charges\":0.0,\"service_fee\":0.0,\"total_vat\":0.0,\"vat_percentage\":0.0,\"vas_details\":[],\"pax_pay_info\":[{\"base_fare\":1338.0,\"pax_count\":1,\"pax_type\":\"ADULT\"}],\"discount\":0.0,\"psgr_service_fee\":0.0,\"currency\":\"INR\",\"total\":1814.0},\"convenience_fee_details\":{\"cc\":150.0,\"dc\":150.0,\"nb\":150.0,\"kc\":0.0,\"up\":150.0,\"da\":0.0,\"tw\":150.0,\"rp\":150.0,\"ap\":0.0,\"wt\":150.0,\"gv\":150.0,\"flat_fee\":true}},\"domain\":\"IN\",\"initial_total\":0.0,\"retry_num\":0,\"cfw_amount\":0.0,\"supplier_currency\":\"INR\",\"new_bento\":true}";
 	// //Dont use// String param_Air_Amendment_API  = "http://bqapi.cleartripcorp.com/bqAPI/file?name=PAYMENT_STATUS-Amend-10.56.54.69-1592076267056-36-req.gz&iId=680e1794b8-87a7-40b9-a8d6-200614005232&date=2020-06-14&tripId=Q200531806440";
-	
+
 	String param_Air_Amendment_API1  = "{\"itinerary_id\":\"NI685a33347e-464c-4a27-86c9-200710101330\",\"ttl\":0,\"trip_id\":140471948,\"ui_language\":\"EN\",\"client\":\"Cleartrip\",\"trip_ref\":\"";
 	String param_Air_Amendment_API2 = "\",\"txn_id\":\"227577296\",\"currency\":\"INR\",\"product_type\":\"DOMESTIC-AIR\",\"source_type\":\"MOBILE\",\"high_risk\":false,\"country\":\"IN\",\"user_id\":\"77925412\",\"company_id\":110340,\"back_button_url\":\"/amendments/itinerary\",\"trip_title\":\"Bangalore ? New Delhi\",\"payment_category\":\"A\",\"currency_conversion_details\":{\"displayCurrency\":\"Rs.\",\"conversionFactor\":1.0},\"customer_detail\":{\"user_id\":7792512,\"mobile\":\"9986696785\",\"email\":\"cltppayment@gmail.com\",\"first_name\":\"CLTP\",\"last_name\":\"Payment\"},\"app_return_info\":{\"url\":\"http://amendtool.gcp-cltp.com/amend/book/68edc4657c-90e5-44bc-8eaf-200612123123\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://amendtool.gcp-cltp.com/amend/book/68edc4657c-90e5-44bc-8eaf-200612123123\"},\"air_booking\":{\"traveller_details\":[{\"seq_no\":1,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"Cltp\",\"last_name\":\"Payment\"}],\"itinerary_details\":[{\"segment_details\":[{\"serial_number\":0,\"airline_name\":\"UK\",\"airline_code\":\"UK\",\"flight_number\":816,\"departure_date\":\"2020-06-22T12:15:00\",\"arrival_date\":\"2020-06-22T15:05:00\",\"departure_time\":\"12:15\",\"arrival_time\":\"15:05\",\"duration\":\"10200\",\"stops\":0,\"departure_code\":\"BLR\",\"arrival_code\":\"DEL\",\"departure_airport_name\":\"Kempegowda International Airport\",\"arrival_airport_name\":\"Indira Gandhi Airport\",\"departure_name\":\"Bangalore\",\"arrival_name\":\"New Delhi\",\"date\":\"2020-06-22T12:15:00\"}]}],\"flights_pricing_details\":{\"pax_pay_info\":[{\"base_fare\":4970.0,\"pax_count\":1,\"pax_type\":\"ADULT\"}],\"discount\":0.0,\"psgr_service_fee\":0.0,\"air_dev_fee\":0.0,\"airline_misc\":177.0,\"cute_fee\":0.0,\"airline_gst\":255.0,\"paid_before\":\"5223.0\",\"amend_charges\":1350.0,\"ct_charges\":0.0,\"currency\":\"INR\",\"other_charges\":348.0,\"service_fee\":0.0,\"total\":500},\"transaction_fee_details\":{\"cc\":{\"DEFAULT\":0.0},\"dc\":{\"DEFAULT\":0.0},\"nb\":{\"DEFAULT\":0.0},\"kc\":{\"DEFAULT\":0.0},\"da\":{\"DEFAULT\":0.0},\"tw\":{\"DEFAULT\":0.0},\"up\":{\"DEFAULT\":0.0}}}}";
 	String param_Air_Amendment_API212="\",\"txn_id\":\"75719816\",\"currency\":\"INR\",\"product_type\":\"DOMESTIC-AIR\",\"source_type\":\"ACCOUNT\",\"high_risk\":false,\"country\":\"IN\",\"user_id\":\"13957750\",\"company_id\":101,\"payment_category\":\"B\",\"currency_conversion_details\":{\"displayCurrency\":\"Rs.\",\"conversionFactor\":1.0},\"customer_detail\":{\"user_id\":13957750,\"mobile\":\"1211212122\",\"landline\":\"02240554000\",\"email\":\"cltppayment@gmail.com\",\"first_name\":\"Cleartrip\",\"last_name\":\"Booker\",\"title\":\"Mr\"},\"app_return_info\":{\"url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI68d317ae5b-ef5e-49e5-a2cc-200903170504/book/internal\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://onetin.cltp.com:9001/itin/internal/itinerary/NI68d317ae5b-ef5e-49e5-a2cc-200903170504/book/internal\"},\"air_booking\":{\"traveller_details\":[{\"seq_no\":1,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"test\",\"last_name\":\"test\"}],\"itinerary_details\":[{\"segment_details\":[{\"serial_number\":1,\"airline_name\":\"IndiGo\",\"airline_code\":\"6E\",\"flight_number\":734,\"departure_date\":\"2020-10-24T09:20:00\",\"arrival_date\":\"2020-10-24T11:05:00\",\"departure_time\":\"09:20\",\"arrival_time\":\"11:05\",\"duration\":\"6300\",\"stops\":0,\"departure_code\":\"BLR\",\"arrival_code\":\"BOM\",\"departure_airport_name\":\"Bengaluru International Airport\",\"arrival_airport_name\":\"Chatrapati Shivaji Airport\",\"total_time\":\"6300\",\"departure_terminal\":\"1\",\"arrival_terminal\":\"1\",\"departure_name\":\"Bangalore\",\"arrival_name\":\"Mumbai\"}]}],\"flights_pricing_details\":{\"air_dev_fee\":0.0,\"airline_misc\":0.0,\"cute_fee\":0.0,\"airline_gst\":723.0,\"amend_charges\":0.0,\"ct_charges\":0.0,\"other_charges\":0.0,\"service_fee\":0.0,\"vas_details\":[{\"amount\":229.0,\"provider\":\"DIGIT\",\"title\":\"Flexifly\",\"vas_type\":\"AMEND_INSURANCE\"},{\"amount\":279.0,\"provider\":\"DIGIT\",\"title\":\"TRAVEL_INSURANCE\",\"vas_type\":\"TRAVEL_INSURANCE\"}],\"pax_pay_info\":[{\"base_fare\":3100.0,\"pax_count\":1,\"pax_type\":\"ADULT\"}],\"discount\":0.0,\"psgr_service_fee\":0.0,\"currency\":\"INR\",\"total\":500.0},\"domain\":\"IN\",\"initial_total\":0.0,\"retry_num\":0}";
-	
-	
+
+
 	//"140471948,\"ui_language\":\"EN\",\"client\":\"Cleartrip\",\"trip_ref\":\"200531806440\",\"txn_id\":\"227577296\",\"currency\":\"INR\",\"product_type\":\"DOMESTIC-AIR\",\"source_type\":\"MOBILE\",\"high_risk\":false,\"country\":\"IN\",\"user_id\":\"77925412\",\"company_id\":110340,\"back_button_url\":\"/amendments/itinerary\",\"trip_title\":\"Bangalore ? New Delhi\",\"payment_category\":\"A\",\"customer_detail\":{\"user_id\":77925412,\"mobile\":\"9971867476\",\"email\":\"shubham.bansal@cleartrip.com\",\"first_name\":\"Shubham\",\"last_name\":\"Bansal\"},\"app_return_info\":{\"url\":\"http://amendtool.gcp-cltp.com/amend/book/680e1794b8-87a7-40b9-a8d6-200614005232\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://amendtool.gcp-cltp.com/amend/book/680e1794b8-87a7-40b9-a8d6-200614005232\"},\"air_booking\":{\"traveller_details\":[{\"seq_no\":1,\"type\":\"ADT\",\"title\":\"Mr\",\"first_name\":\"Shubham\",\"last_name\":\"Bansal\"}],\"itinerary_details\":[{\"segment_details\":[{\"serial_number\":0,\"airline_name\":\"UK\",\"airline_code\":\"UK\",\"flight_number\":816,\"departure_date\":\"2020-06-22T12:15:00\",\"arrival_date\":\"2020-06-22T15:05:00\",\"departure_time\":\"12:15\",\"arrival_time\":\"15:05\",\"duration\":\"10200\",\"stops\":0,\"departure_code\":\"BLR\",\"arrival_code\":\"DEL\",\"departure_airport_name\":\"Kempegowda International Airport\",\"arrival_airport_name\":\"Indira Gandhi Airport\",\"departure_name\":\"Bangalore\",\"arrival_name\":\"New Delhi\",\"date\":\"2020-06-22T12:15:00\"}]}],\"flights_pricing_details\":{\"pax_pay_info\":[{\"base_fare\":4970.0,\"pax_count\":1,\"pax_type\":\"ADULT\"}],\"discount\":0.0,\"psgr_service_fee\":0.0,\"air_dev_fee\":0.0,\"airline_misc\":177.0,\"cute_fee\":0.0,\"airline_gst\":255.0,\"paid_before\":\"5223.0\",\"amend_charges\":1350.0,\"ct_charges\":0.0,\"currency\":\"INR\",\"other_charges\":348.0,\"service_fee\":0.0,\"total\":1877},\"transaction_fee_details\":{\"cc\":{\"DEFAULT\":0.0},\"dc\":{\"DEFAULT\":0.0},\"nb\":{\"DEFAULT\":0.0},\"kc\":{\"DEFAULT\":0.0},\"da\":{\"DEFAULT\":0.0},\"tw\":{\"DEFAULT\":0.0},\"up\":{\"DEFAULT\":0.0}}}}"
-	
-	
+
+
 	String param_EMI_Fetch = "{\"tripRef\":\"Q2020990339303\",\"amount\":1000}";
-	
+
 
 	public String tripRef = null;
 
@@ -753,14 +753,14 @@ public class API_PaymentCommon extends PlatformCommonUtil
 	protected String qaurlqa = "https://qa2qa.cleartrip.com";
 	protected String URL_Android = "&isMobileApp=true&deviceType=android";
 	protected String URL_iOS = "&isMobileApp=true&deviceType=ios";
-	
+
 	List<Integer> payment_id = new ArrayList<Integer>();
 	List<String> trk_id = new ArrayList<String>();
 	List<String> trip_refPromo = new ArrayList<String>();
 
-	public HashMap<String, Object> headersForms(){		
+	public HashMap<String, Object> headersForms(){
 		HashMap<String, Object> headers = new HashMap<>();
-		headers.put("Content-Type", "application/json");		
+		headers.put("Content-Type", "application/json");
 		return headers;
 	}
 
@@ -791,17 +791,17 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		headers.put("Cookie", "ct-auth=cvlYMINwAZRln63Yy%2FxTL568HM%2FlJBdzmm2h%2BU3Y05v2zwkQAPQe5Vd9D3VsgwyxL5w%2BfbtxsaW%2BbtdHrc%2BWsScG24OcK1SPJLWfpxAcYSUZ%2BDPJWIpT6PozXecbENnMvrpx3EcElSt8IxAixuU3Wx1urIG%2BJIXXp1dllo9UaxruwmmL4%2Fl%2BZmNgLOEFFQEHIBmo7ujFj4IR251LE1REPIl0hD%2BOGrq3TzykZUx%2BW0wEWrlcwiuBMyRp%2FjW2ZkBtsCH0dQMu8eNGLFfYURLEzxWteZk4kgVCTdhW8xwshOSRXS16FEAEuu%2F0%2BY4jXzpsD%2BBMWmzm2HjhJN3LrqPmJl%2BPb%2BtRIDeSJJ8B3pwqUtovU9euu0zuyj4pUK7H7Exfn3xsb72VU1fgZGUiAqGNjlr4i1%2BstEIodrXyWaIerOwsliKRdHKdB04q2m8OnZXTH2Z4tsAXBZj47Mu0vEuTRiAH0Rp2vtFkuXiol%2Fc%2BBJD4qswYyk0D6GkqDc%2FryiGzrriKvMSxzl8ZjdP0xHKTJjDfE5MjfU2lez8Mc21eeVj4yG9Y5gNNb6MvOPOrwEDI%2FRkVukgyqFl7OJk6DNu3G%2FLNPaqxgHPoG%2Fb4MQRnyZVI9iJH8UXIBBVrkHxP0uq0KBIFqMINY881df17xzwxrP0wDfAjdIJWLC650cfnf3%2BZ8zInGGcv79tFePFr5UA0tMv7Ci9nlUUKOJuJ4P3asT%2F%2Fu6AA%2BWLog2uJ%2FY2YYqgP%2FV7P4M74%2FvZ8fgql9D8g8%2F%2F1HM9Q%2BhZwENf6sKaAU%2FkxX%2BEKCRjKf8O%2BTNUSfsuE8coUcku3YuzCaIBgM2P8Rb8sKLbSBDeyofU70uSSaPMHgCym1TRbOwe4kMI3sC%2BxNY2SNpWEXNL%2B8qnJRC3izkqTBVx8eUSmCMEROlIxUX3V3khzmrd4HsCxqs0QPfyV377s8BRI51ht8oyW%2FzMrKpsxMHx8GV2Wrz8SXH%2BJ4L7k2DAeId6CWMfLGEE76GmqZ7oItSHv5%2F5UO3DEKBLdNgJ6hCK8jDxka%2F19EfaquJ%2FSxkyRZqMldWabWMA8RFSkXBqexHhTLDzmgQVTrTtMzlNFPfPmCegfz2VJg5y%2Bh8C6ZuqGprbV9JxNvdZWfas1vK%2BlbxoIkTOxeVMYoTzx%2BRDEyo9MjCQlcI5K%2BXqy75cBiovhF%2FKcf00zq%2B4kHLbNgQWHsPxU03SG2PnNTTKvShsNtANjRoE31K8EhQCUxAy0RKUSZCsC9rC3NzCyiZQ8OMPyxuJe8aT3kw6b6Vr5W6ItDyb4p912T8y4Fmb%2BkWvTbYc3Gs6r0RfKxtBdJ7XZo8xSwXirQmVaFYJIN9SOYihXgvoe0tBEocfUYUUWT%2B21WjlsPFl3GqgqbnhOpQnwu4MuBFLJXP%2FGwt5epuyxkim5u3c1uLqpdlcKqTiJklaTM5EIWuxV%2BaxHXwh%2BX0x6JaS%2BJVI%2FViRLDjDvQxUjikuijAL%2BCIze%2BR0CONXQZwkQogOIBXtmmoU7CXBduaNzsLsrm0xPzTZjAvB1t1bEN8iIA9Fm3g2V6y48Pcv105pi%2F0nOxsa88OJMSX3bnJI%2F3pgvKn2lnUXPLJ7y2Eu5XYFyvRuvn8a18e%2B8QW%2BDTpp4h6bdpj%2FZ9V%2FRA%2BDYvT8d%2B0SoNyAooj0VtvXSMlfWLLScXRLU%2BZaNO4FeNzu9omIl8wyeWqwu8rZig4caleCF1rb7B0cXdHlu22SFZBRDdm61ES55aWujhpwye7ll1z5%2BCvKfEGNj16XgE8nl%2BknQOMmlSXdgI%2BJFHEAfZDmnjfzC2WV5xvuKqSmWWXeio0nh2R21fe8daY7Ojjo6NrqXDwQ6jZAjW349e5ztY0ocyXbt3mUSAALPlSZH315et1tPeY6CAhN3g8jTi%2B5T067h1hS925YjG5GVWQEGPrqiotCIMZf53SSRFJifXJIaxURXAN73vVKQpNfYJD6mKYvS77BJ1HSahQWO8rzmGvOJz6lU2vmvg5v2yYWzQbPfgX5sziMP%2Fp6at%2Fg5EUSUNbxqsajCjtC4Sy4Z%2FcEq0OVtCOVMb5LGLl%2B%2FaRcmVwIivbXgF6WJgGUyqQ%2FXYwgA%2Fd9fga3Wk9c01HYm8wnioO4gmHaHVqQNmgGYeBrRXYvmI7n0EifouUynX87T2pv9AtznT%2BGRE6YbjHJMx5nzalaKkdHPfrRRUzMejSVax39JguN5OkUi2cnUbya%2FFSiCtp%2By8Ubg5ROodIVxVaYSNtFg8%2FGBOW6RnvXjvo2J6aYJW4Dwa4%2Bqo2J56VlK7p5gikInWq5kpbwMOT5ewyDoK4sB7QCaCOGKCAw9mQlGqrQU5MUNpJgjO%2Bvcj2nSPdpoA%2BndoEUb2M%2F1KyL5QnnmD2uv");
 		return headers;
 	}
-	
-	public HashMap<String, Object> headersForms_Json(){		
-		HashMap<String, Object> headers = new HashMap<>();
-		headers.put("Accept", "application/json");		
-		return headers;
-	}	
 
-	public HashMap<String, Object> headersForms_Promo_Update(){		
+	public HashMap<String, Object> headersForms_Json(){
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("Accept", "application/json");
-		headers.put("x-action", "UPDATE");	
+		return headers;
+	}
+
+	public HashMap<String, Object> headersForms_Promo_Update(){
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("Accept", "application/json");
+		headers.put("x-action", "UPDATE");
 		return headers;
 	}
 
@@ -819,67 +819,67 @@ public class API_PaymentCommon extends PlatformCommonUtil
 
 		return headers;
 	}
-	
-	public HashMap<String, Object> headersForms_Promo_Activate(){		
+
+	public HashMap<String, Object> headersForms_Promo_Activate(){
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("Accept", "application/json");
-		headers.put("x-action", "ACTIVATE");	
+		headers.put("x-action", "ACTIVATE");
 		return headers;
 	}
-	
-	public HashMap<String, Object> headersFormsWallet(){		
+
+	public HashMap<String, Object> headersFormsWallet(){
 		HashMap<String, Object> headers = new HashMap<>();
-		headers.put("Content-Type", "application/json");		
+		headers.put("Content-Type", "application/json");
 		headers.put("ct-auth", "5zoM9zvEgPvd1fO%2BsJylFp4hvaybBzUzp2ilDBfOdXvOg%2BIVENg%2BHdsz3cA98%2B5BD3habrO078UoXdzWM34lXZaLbE1jIpkEaANLn%2BHJadeW7kll2UfWWUfOoZLsVWTER2KXP0MBz2Ucg2wdtjfomKwrrYOshnOlUWyYWat6SeV2Tt6lvwTzivgXCSht22Dws");
 		return headers;
 	}
-	
-	public HashMap<String, Object> headersFormsNew(){		
+
+	public HashMap<String, Object> headersFormsNew(){
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("Content-Type", "application/json;charset=UTF-8");
 		return headers;
 	}
-	
-	public HashMap<String, Object> headersFormsNew1(){		
-		HashMap<String, Object> headers = new HashMap<>();
-		headers.put("Content-Type", "application/json");		
-		return headers;
-	}
-	
-	public HashMap<String, Object> headersFormspay() throws Exception{		
+
+	public HashMap<String, Object> headersFormsNew1(){
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("Content-Type", "application/json");
-		
+		return headers;
+	}
+
+	public HashMap<String, Object> headersFormspay() throws Exception{
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("Content-Type", "application/json");
+
 		headers.put("pay-auth", paygetAuth());
 		return headers;
 	}
 
-	public HashMap<String, Object> headersFormspay_FullGV() throws Exception{		
+	public HashMap<String, Object> headersFormspay_FullGV() throws Exception{
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("Content-Type", "application/json");
-		
+
 		headers.put("pay-auth", paygetAuth_FullGV());
 		return headers;
 	}
-	
-	public HashMap<String, Object> headersFormspay_Supercoins() throws Exception{		
+
+	public HashMap<String, Object> headersFormspay_Supercoins() throws Exception{
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("Content-Type", "application/json");
-		
+
 		headers.put("pay-auth", paygetAuth_SuperCoins());
 		return headers;
 	}
-	
-	public HashMap<String, Object> headersFormspay_EMI() throws Exception{		
+
+	public HashMap<String, Object> headersFormspay_EMI() throws Exception{
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("Content-Type", "application/json");
-		
+
 		headers.put("pay-auth", paygetAuth_EMI());
 		return headers;
 	}
 
 
-	public HashMap<String, Object> headersPayAuth(){		
+	public HashMap<String, Object> headersPayAuth(){
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("Content-Type", "application/json");
 		return headers;
@@ -890,7 +890,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		headers.put("x-action", "ACTIVATE");
 		return headers;
 	}
-	
+
 	public HashMap<String,Object> headerFormsPromoService_Supercoins_Update(){
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("Content-Type", "application/json");
@@ -898,7 +898,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		return headers;
 	}
 
-	public HashMap<String, Object> headersFormsSmiles(){		
+	public HashMap<String, Object> headersFormsSmiles(){
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("Authorization", "Basic OGI3YTJmN2NkNDQwOTg5NTk0Yzk1Y2JkZjczOThiZWM6MDNjYzJjNzYwNTg5OTM5NDkwN2FkMWUyODJmMmFhNzU=");
 
@@ -917,21 +917,21 @@ public class API_PaymentCommon extends PlatformCommonUtil
 	}
 
 
-	public HashMap<String, Object> headersForms_GVCreate_10(){		
+	public HashMap<String, Object> headersForms_GVCreate_10(){
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("Content-Type", "application/json");
 		headers.put("checksum", "5251ffd74806413354865c7b718d3d5cfed9b2d41ef3035ae0da51f052f4d1b2");
 		return headers;
 	}
 
-	public HashMap<String, Object> headersForms_GVCreate_5000(){		
+	public HashMap<String, Object> headersForms_GVCreate_5000(){
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("Content-Type", "application/json");
 		headers.put("checksum", "68b14cc68ab1b618f219c13c63618f685fa50f31cc8072dc294bdc02acf94c36");
 		return headers;
 	}
 
-	public HashMap<String, Object> headersForms_GVCreate_100000(){		
+	public HashMap<String, Object> headersForms_GVCreate_100000(){
 		HashMap<String, Object> headers = new HashMap<>();
 		headers.put("Content-Type", "application/json");
 		headers.put("checksum", "53a8a87f3707c1da57f5c1bf9d5e3ceb25ae5f5866fea66703173e530fcb9bce");
@@ -977,7 +977,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		setCookies.put("usermisc", "SIGNED_IN%7C");
 		return setCookies;
 	}
-	
+
 	public String returnParamForBin_CC(){
 		String t=RandomStringUtils.randomNumeric(6);
 		String Param1="{\"bank\":\" "+s;
@@ -991,13 +991,13 @@ public class API_PaymentCommon extends PlatformCommonUtil
 
 		return Params_Singlebincard_Credit;
 	}
-	
+
 	public Response payGet(String payType, String payType1) {
 		RestAssured.baseURI =promoURL;
 		String url = null;
 		HashMap<String, Object> headers = new HashMap<>();
 		headers = headersForms();
-		Response request;	
+		Response request;
 		if(payType.equalsIgnoreCase("PromoActive")) {
 			url= urlpromoActivate;
 		}
@@ -1077,82 +1077,82 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			url= urlEMI_NoCost_Offers;
 		}
 
-		
+
 		else if(payType.equalsIgnoreCase("Hi_5_get_wallet")) {
 			RestAssured.baseURI =url_QA2;
-			Reporter.log(url_QA2);	
+			Reporter.log(url_QA2);
 			url= urlHi5_Fetch_Wallet;
 		}
-		
+
 		else if(payType.equalsIgnoreCase("EMIBanks")) {
 			RestAssured.baseURI =urlPay;
-			Reporter.log(urlPay);	
+			Reporter.log(urlPay);
 			url= urlpromoUsed;
 		}
-		
+
 		else if(payType.equalsIgnoreCase("IR_Fetch_Cancel_Details_CancelTnx")) {
 			RestAssured.baseURI =urlPay;
-			Reporter.log(urlPay);	
+			Reporter.log(urlPay);
 			url= urlIR_Get_VPA_Cancel_Details;
 		}
-		
+
 		else if(payType.equalsIgnoreCase("IR_Fetch_Cancel_Details_UserID")) {
 
 			headers = headersForms_IR();
 			RestAssured.baseURI =urlPay;
-			Reporter.log(urlPay);	
+			Reporter.log(urlPay);
 			url= urlIR_Get_VPA_Cancel_Details_UserID;
 		}
-		
-		
+
+
 		else if(payType.equalsIgnoreCase("FetchTripStatus")) {
-			RestAssured.baseURI =urlPay;			
-			Reporter.log(urlPay);	
+			RestAssured.baseURI =urlPay;
+			Reporter.log(urlPay);
 			url= urlFetchTripStatus;
 		}
 		else if(payType.equalsIgnoreCase("FetchGWFailure")) {
-			RestAssured.baseURI =urlPay;			
-			Reporter.log(urlPay);	
+			RestAssured.baseURI =urlPay;
+			Reporter.log(urlPay);
 			url= urlFetchGWFailure;
 		}
 
 		else if(payType.equalsIgnoreCase("EMIRazorpay")) {
-			RestAssured.baseURI =urlPay;			
-			Reporter.log(urlPay);	
+			RestAssured.baseURI =urlPay;
+			Reporter.log(urlPay);
 			url= url_EMI_GW_Razorpay;
 		}
 		else if(payType.equalsIgnoreCase("EMINoon")) {
-			RestAssured.baseURI =urlPay;			
-			Reporter.log(urlPay);	
+			RestAssured.baseURI =urlPay;
+			Reporter.log(urlPay);
 			url= url_EMI_GW_Noon;
 		}
-		
-		
+
+
 		else if(payType.equalsIgnoreCase("PromoUsed")) {
-			Reporter.log(urlReportingTS);	
+			Reporter.log(urlReportingTS);
 			RestAssured.baseURI =urlPromo_Used;
 			url= urlpromoUsed;
 		}
 		else if(payType.equalsIgnoreCase("FetchPayDetails")) {
 			RestAssured.baseURI =urlReportingTS;
 			url= url1_FetchPayDetails;
-			Reporter.log(urlReportingTS+url);		
+			Reporter.log(urlReportingTS+url);
 		}
 		else if(payType.equalsIgnoreCase("CreateRecord")) {
 			RestAssured.baseURI =urlPay;
-			Reporter.log(urlPay);			
+			Reporter.log(urlPay);
 			url = urlPay_CreateRecord;
 		}
 		else if(payType.equalsIgnoreCase("FlyinWallet")) {
 			RestAssured.baseURI =url_QA2;
-			Reporter.log(url_QA2);			
+			Reporter.log(url_QA2);
 			url = urlFlyin_Wallet;
 		}
 
 		else if(payType.equalsIgnoreCase("IR_Eligibility_NB")) {
 
 			RestAssured.baseURI =urlPay;
-			Reporter.log(urlPay);			
+			Reporter.log(urlPay);
 			url = urlIR_Eligibility_NB;
 		}
 		else if(payType.equalsIgnoreCase("IR_Eligibility_CC")) {
@@ -1179,13 +1179,13 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		else if(payType.equalsIgnoreCase("IR_Eligibility_DC")) {
 
 			RestAssured.baseURI =urlPay;
-			Reporter.log(urlPay);			
+			Reporter.log(urlPay);
 			url = urlIR_Eligibility_DC;
 		}
 		else if(payType.equalsIgnoreCase("IR_Eligibility_CC_Non")) {
 
 			RestAssured.baseURI =urlPay;
-			Reporter.log(urlPay);			
+			Reporter.log(urlPay);
 			url = urlIR_Non_Eligibility_CC;
 		}
 		else if(payType.equalsIgnoreCase("IR_Eligibility_GV")) {
@@ -1230,13 +1230,13 @@ public class API_PaymentCommon extends PlatformCommonUtil
 
 
 
-		Reporter.log(url);	
+		Reporter.log(url);
 		request = RestAssured.given().
 				when().
 				log().all().
 				headers(headers).
 				get(url);
-		return request;			
+		return request;
 	}
 
 	public Response payGet1(String payType, String payType1) {
@@ -1244,7 +1244,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		String url = null;
 		HashMap<String, Object> headers = new HashMap<>();
 		headers = headersForms();
-		Response request;	
+		Response request;
 		if(payType.equalsIgnoreCase("RORFetch_Pay_BY_ID")) {
 			RestAssured.baseURI =urlReporting;
 			url= urlROR_Fetch_PayByID;
@@ -1369,31 +1369,31 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		else if(payType.equalsIgnoreCase("ROR_GV_Details")) {
 			RestAssured.baseURI =urlReporting;
 			url= urlROR_GV_Details_Reads;
-			Reporter.log(urlPay+url);	
+			Reporter.log(urlPay+url);
 		}
 		else if(payType.equalsIgnoreCase("ROR_Refund_Details")) {
-			RestAssured.baseURI =urlReporting;			
+			RestAssured.baseURI =urlReporting;
 			url= urlROR_Refund_Reads;
 			Reporter.log(urlPay=url);
 		}
 		else if(payType.equalsIgnoreCase("GETUI_CONVFEE")) {
-			RestAssured.baseURI =urlPay;			
+			RestAssured.baseURI =urlPay;
 			url= url_UI_Get_ConvFee;
 			//Reporter.log(urlPay=url);
 		}
 		else if(payType.equalsIgnoreCase("GETUI_PAYTYPES")) {
-			RestAssured.baseURI =urlPay;			
+			RestAssured.baseURI =urlPay;
 			url= url_UI_Get_PayTypes;
 			//Reporter.log(urlPay=url);
-		}	
+		}
 		else if(payType.equalsIgnoreCase("ROR_Mis_expreports")) {
-			RestAssured.baseURI =urlReporting;			
+			RestAssured.baseURI =urlReporting;
 			url= urlROR_Mis_ExpReports;
 			//Reporter.log(urlPay=url);
-		}		
+		}
 		Reporter.log(url);
 		request = RestAssured.get(url);
-		return request;			
+		return request;
 	}
 
 
@@ -1414,15 +1414,15 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		return request;
 	}
 
-		public Response payPut(String payType, String payType1) {
+	public Response payPut(String payType, String payType1) {
 		RestAssured.baseURI =urlReporting;
 		String url = null;
 		String params = null;
 		HashMap<String, Object> headers = new HashMap<>();
 		headers = headersForms();
-		Response request;	
+		Response request;
 		if(payType.equalsIgnoreCase("RORUpdate_Profile_List")) {
-			Random rand = new Random(); 
+			Random rand = new Random();
 			int rand_int = rand.nextInt(999999999)+1000000000;
 
 			url= urlROR_Update_ProfileList;
@@ -1436,49 +1436,49 @@ public class API_PaymentCommon extends PlatformCommonUtil
 
 			url= url_EMI_Cache_Refresh;
 			params= "";
-		} 
-		
+		}
+
 
 		else if(payType.equalsIgnoreCase("EMIResources")) {
 			RestAssured.baseURI =urlPay;
 
 			url= url_EMI_Cache_ResourcesRefresh;
 			params= "";
-		} 
-		
-		
-		
+		}
+
+
+
 		else if(payType.equalsIgnoreCase("RORUpdate_Refund_List")) {
 			RestAssured.baseURI =urlReporting;
-			Random rand = new Random(); 
+			Random rand = new Random();
 			int rand_int = rand.nextInt(99999);
 
 			url= urlROR_Update_RefundList;
 			params= Params_ROR_UpdateRefund_List+rand_int+Params_ROR_UpdateRefund_List1;
 
-		} 
+		}
 		else if(payType.equalsIgnoreCase("ROR_CashUpdate")) {
 			RestAssured.baseURI =urlReporting;
 			url= urlROR_Cash_Update;
 			params= Params_ROR_Cash_Update;
-		} 
+		}
 
 		else if(payType.equalsIgnoreCase("RORFetch_Profile_List")) {
 			RestAssured.baseURI =urlReporting;
-			Random rand = new Random(); 
+			Random rand = new Random();
 			int rand_int = rand.nextInt(99999);
 
 			url= urlROR_Update_RefundList;
 			params= Params_ROR_UpdateRefund_List+rand_int+Params_ROR_UpdateRefund_List1;
 
-		} 	
+		}
 
 		else if(payType.equalsIgnoreCase("RORUpdate_Payment")) {
 
 			RestAssured.baseURI =urlReporting;
 			url= urlROR_Update_Payment;
 			params= Params_ROR_Update_Payments;
-		} 		
+		}
 
 		Reporter.log(urlReporting);
 		Reporter.log("Params :" +params);
@@ -1489,7 +1489,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 				headers(headers).
 				body(params).
 				put(url);
-		return request;			
+		return request;
 	}
 
 	public Response payPost(String payType, String payType1) throws Exception {
@@ -1575,8 +1575,8 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			params = Params_IR_Create_Refund2+getRandomNumber()+Params_IR_Create_Refund3;
 			url= urlIR_Create_Refund;
 		}
-		
-		
+
+
 		else if(payType.equalsIgnoreCase("IR_InValid_VPA")) {
 			params = Params_IR_InValid_VPA;
 			url= urlIR_Validate_VPA;
@@ -1633,17 +1633,17 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			params = Params_RORCreate_Refund+"5"+ranno+"}";
 			url= urlRORCreate_Refunds;
 		}
-	
+
 		else if(payType.equalsIgnoreCase("ROR_Recon")) {
 			String ranno = getDateTime(1, "mmddss");
-			params = ParamsROR_Recon+"6"+ranno+"}";	
+			params = ParamsROR_Recon+"6"+ranno+"}";
 			url= urlRORRecon;
 		}
-		
+
 		else if(payType.equalsIgnoreCase("SuperCoins_SendOTP")) {
 
 			RestAssured.baseURI =urlRewards;
-			params = ParamsSuperCoins_SendOTP;	
+			params = ParamsSuperCoins_SendOTP;
 			url= urlSuperCoins_SendOTP;
 			Reporter.log(urlRewards+url);
 		}
@@ -1651,51 +1651,51 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		else if(payType.equalsIgnoreCase("SuperCoins_ValidateOTP")) {
 
 			RestAssured.baseURI =urlRewards;
-			params = ParamsSuperCoins_ValidateOTP+payType1+ParamsSuperCoins_ValidateOTP1;	
+			params = ParamsSuperCoins_ValidateOTP+payType1+ParamsSuperCoins_ValidateOTP1;
 			url= urlSuperCoins_ValidateOTP;
 			Reporter.log(urlRewards+url);
 		}
-		
+
 		else if(payType.equalsIgnoreCase("SuperCoins_Unhold")) {
 
 			RestAssured.baseURI =urlRewards;
-			params = ParamsSuperCoins_Unhold;	
+			params = ParamsSuperCoins_Unhold;
 			url= urlSuperCoins_Unhold;
 			Reporter.log(urlRewards+url);
 		}
 		else if(payType.equalsIgnoreCase("SuperCoins_CheckBalance")) {
 
 			RestAssured.baseURI =urlRewards;
-			params = ParamsSuperCoins_CheckBalance;	
+			params = ParamsSuperCoins_CheckBalance;
 			url= urlSuperCoins_CheckBalance;
 			Reporter.log(urlRewards+url);
 		}
 
-		
+
 		else if(payType.equalsIgnoreCase("SuperCoins_CreatePromo")) {
 
 			RestAssured.baseURI =promoURL;
-			params = ParamsSuperCoins_CreatePromo+payType1+ParamsSuperCoins_CreatePromo1;	
+			params = ParamsSuperCoins_CreatePromo+payType1+ParamsSuperCoins_CreatePromo1;
 			url= urlSuperCoins_CreatePromo;
 			Reporter.log(promoURL+url);
 		}
 		else if(payType.equalsIgnoreCase("SuperCoins_UpdatePromo")) {
 
 			RestAssured.baseURI =promoURL;
-			params = ParamsSuperCoins_UpdatePromo+payType1+ParamsSuperCoins_UpdatePromo1;	
+			params = ParamsSuperCoins_UpdatePromo+payType1+ParamsSuperCoins_UpdatePromo1;
 			url= urlSuperCoins_UpdatePromo;
 			Reporter.log(promoURL+url);
 		}
-		
+
 		else if(payType.equalsIgnoreCase("SuperCoins_ActivatePromo")) {
 
 			RestAssured.baseURI =promoURL;
-			params = "";	
+			params = "";
 			url= urlSuperCoins_ActivatePromo;
 			Reporter.log(promoURL+url);
 			//headersForms_Promo_Activate
 		}
-		
+
 		Reporter.log(urlPay+url);
 		Reporter.log("Params :" +params);
 		request = RestAssured.given().
@@ -1704,7 +1704,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 				body(params).
 				headers(headers).
 				post(url);
-		return request;			
+		return request;
 	}
 
 	public Response promoPost(String payType, String payType1) {
@@ -1739,7 +1739,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 
 		else if(payType.equalsIgnoreCase("ActivatePromo")){
 			String trip_ref = trip_refPromo.get(0);
-			
+
 			//String endPointActivatePromo = "/promoservice/v1/promogroups/" + trip_ref;
 			String endPointActivatePromo = "/promoservice/v1/promogroups/Q201215869448";
 			url = promoURL + endPointActivatePromo;
@@ -1748,7 +1748,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		}
 
 		else if(payType.equalsIgnoreCase("UpdatePromo")){
-			int listSize = trip_refPromo.size(); 
+			int listSize = trip_refPromo.size();
 			String trip_ref = trip_refPromo.get(listSize-1);
 			url = promoURL + endPointUpdatePromo;
 			headers = headersForms();
@@ -1760,7 +1760,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 
 		Reporter.log(promoURL+url);
 		Reporter.log("Params :" +params);
-		return resp;			
+		return resp;
 	}
 
 	public Response DAGet(String Type, String Type1){
@@ -1782,8 +1782,8 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			RestAssured.baseURI = urlPay;
 			url = urlDA_FK_FetchBy_PaymentID;
 		}
-		
-		
+
+
 		request = RestAssured.given().
 				when().
 				log().all().
@@ -1792,9 +1792,9 @@ public class API_PaymentCommon extends PlatformCommonUtil
 
 		Reporter.log(urlDA+url);
 		return request;
-	
+
 	}
-	
+
 	public Response fetchrefunds(String refundType, String payType1) {
 		RestAssured.baseURI = urlFetchRefunds;
 		String url = null;
@@ -1810,7 +1810,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			url = urlRefundsTripRef;
 			params=ParamsFetchRefundByTripRef;
 		}
-		
+
 		Reporter.log(url);
 		Reporter.log("Params :" +params);
 		request = RestAssured.given().
@@ -1820,7 +1820,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 				post(url);
 		return request;
 	}
-		
+
 	public Response promoGet(String payType, String payType1){
 		RestAssured.baseURI = promoURL;
 		String url = null;
@@ -1828,7 +1828,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		headers = headersForms();
 		Response request;
 		if(payType.equalsIgnoreCase("")){
-				url = "";
+			url = "";
 		}
 
 		else if(payType.equalsIgnoreCase("PromoTripRefAndId")){
@@ -1838,7 +1838,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		else if(payType.equalsIgnoreCase("PromoGroupFromPromoRef")){
 			url = promoURL + endPointPromoGroupPromoRef;
 		}
-		
+
 		else if(payType.equalsIgnoreCase("Promo_Active_Cron")){
 			url = promoURL + endPointPromo_Cron;
 		}
@@ -1879,7 +1879,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		String params = null;
 		HashMap<String, Object> headers = new HashMap<>();
 		headers = headersForms();
-		Response request;	 
+		Response request;
 		if(payType.equalsIgnoreCase("VALIDATE")) {
 			params = paramsCC;
 			url= urlPayValidateV3;
@@ -1936,17 +1936,17 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			url = urlFKRefundStatusUpdate;
 			params = params_FK_Refund_Status_Update;
 		}
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
 		else if(payType.equalsIgnoreCase("EMIFetch")) {
 			url = url_EMI_Fetch;
 			params = paramsEMI1+payType1+paramsEMI2;
 		}
-		
+
 
 		else if(payType.equalsIgnoreCase("DAVAlidate")) {
 			url = urlPayValidateV3;
@@ -1958,7 +1958,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			url = urlDA_Refund;
 			params = paramsDA_Refund;
 		}
-		
+
 		else if(payType.equalsIgnoreCase("CSPay")) {
 			//RestAssured.baseURI =urlCS;
 			url = urlCS_Pay;
@@ -2014,7 +2014,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			headers = new HashMap<>();
 			headers = headersForms_GVCreate_10000();
 		}
-		Response request = null;	 
+		Response request = null;
 
 		String url= urlEndpoint_GVCreate;
 		Reporter.log(urlWallet+url);
@@ -2024,7 +2024,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 				log().all().
 				body(params).
 				headers(headers).
-				post(url);	
+				post(url);
 		return request;
 
 	}
@@ -2035,11 +2035,11 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		HashMap<String, Object> headers = new HashMap<>();
 		String params = paramsGV_Create_10_SCLP;
 		if(Amount==10) {
-			 params = paramsGV_Create_10_SCLP;
+			params = paramsGV_Create_10_SCLP;
 			headers = headersForms_GVCreate_1000();
 		}
 		else if (Amount==10000){
-			 params = paramsGV_Create_10000_SCLP;
+			params = paramsGV_Create_10000_SCLP;
 			headers = headersForms_GVCreate_10000();
 		}
 		else if (Amount==1000){
@@ -2071,7 +2071,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		HashMap<String, Object> headers = new HashMap<>();
 		headers = headersFormsSmiles();
 
-		Response request = null;	 
+		Response request = null;
 
 		request = RestAssured.given().
 				when().
@@ -2091,7 +2091,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		String params = null;
 		HashMap<String, Object> headers = new HashMap<>();
 		headers = headersForms();
-		Response request = null;	 
+		Response request = null;
 		if(payType.equalsIgnoreCase("GenrateAuth")) {
 			params = paramsCC;
 			url= urlPayValidateV3;
@@ -2169,7 +2169,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		HashMap<String, Object> headersFormsPromoActivate = new HashMap<>();
 		headersFormsPromoActivate= headersForms_Promo_Activate();
 
-		Response request = null;	 
+		Response request = null;
 		if(payType.equalsIgnoreCase("PROMOUSED")) {
 			url= urlEndPoint_Wallet_PromoUsed;
 			request = RestAssured.given().
@@ -2178,7 +2178,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 					headers(headers).
 					get(url);
 		}
-		
+
 
 		else if(payType.equalsIgnoreCase("GETWALLET_Refund_Stop_Tnx")) {
 			RestAssured.baseURI =urlReporting;
@@ -2192,7 +2192,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		}
 		else if(payType.equalsIgnoreCase("SuperCoins_UpdatePromo")) {
 			RestAssured.baseURI =promoURL;
-			params = ParamsSuperCoins_UpdatePromo+payType1+ParamsSuperCoins_UpdatePromo1;	
+			params = ParamsSuperCoins_UpdatePromo+payType1+ParamsSuperCoins_UpdatePromo1;
 			url= urlSuperCoins_UpdatePromo;
 			Reporter.log(promoURL+url);
 			request = RestAssured.given().
@@ -2203,7 +2203,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		}
 		else if(payType.equalsIgnoreCase("SuperCoins_ActivatePromo")) {
 			RestAssured.baseURI =promoURL;
-			params = "";	
+			params = "";
 			url= urlSuperCoins_ActivatePromo;
 			Reporter.log(promoURL+url);
 			request = RestAssured.given().
@@ -2212,8 +2212,8 @@ public class API_PaymentCommon extends PlatformCommonUtil
 					headers(headersFormsPromoActivate).
 					get(url);
 		}
-	
-		
+
+
 		else if(payType.equalsIgnoreCase("REVERTPROMO")) {
 			url= urlEndPoint_Wallet_RevertPromo;
 			request = RestAssured.given().
@@ -2239,7 +2239,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 					headers(headers).
 					get(url);
 		}
-		
+
 		else if(payType.equalsIgnoreCase("GETDEDUCTION")) {
 			url= urlEndPoint_Wallet_GetDeduction;
 			request = RestAssured.given().
@@ -2327,7 +2327,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 					log().all().
 					headers(headers).
 					post(url);
-		}	
+		}
 		else if(payType.equalsIgnoreCase("CASHBACK_DETAILS_WALLET")) {
 			url= urlEndPoint_Wallet_CASHBACK_Wallet;
 			Reporter.log(url);
@@ -2336,7 +2336,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 					log().all().
 					headers(headers).
 					get(url);
-		}	
+		}
 		else if(payType.equalsIgnoreCase("WALLET_CREATE")) {
 			url= urlEndPoint_Wallet_Create;
 			params =paramWalletCreate;
@@ -2389,7 +2389,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		String params = null;
 		HashMap<String, Object> headers = new HashMap<>();
 		headers = headersForms();
-		Response request = null;	  
+		Response request = null;
 
 		if(payType.equalsIgnoreCase("Rwd_PayBack_Mobile")) {
 			endpointurl = Prod_Url_Rewards;
@@ -2468,7 +2468,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		else if(payType.equalsIgnoreCase("GetPaymentStatus")) {
 			endpointurl = Prod_Url_PaymentService;
 			RestAssured.baseURI =endpointurl;
-			
+
 			url = Prod_Url_PaymentStatus;
 			request = RestAssured.given().
 					when().
@@ -2480,9 +2480,9 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		else if(payType.equalsIgnoreCase("ActiveCardTypes")) {
 			endpointurl = Prod_Url_PaymentService;
 			RestAssured.baseURI =endpointurl;
-			
-            url = Prod_Url_ActiveCardType;
-            request = RestAssured.given().
+
+			url = Prod_Url_ActiveCardType;
+			request = RestAssured.given().
 					when().
 					log().all().
 					headers(headers).
@@ -2491,7 +2491,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 
 		Reporter.log(endpointurl+url);
 		Reporter.log("Params : "+params);
-        return request;
+		return request;
 	}
 
 	public Response rearchGV(String payType, String payType1) throws ClassNotFoundException, SQLException{
@@ -2503,7 +2503,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		String params = null;
 		HashMap<String, Object> headers = new HashMap<>();
 		headers = headersForms();
-		Response request = null;	 
+		Response request = null;
 		if(payType.equalsIgnoreCase("GET")) {
 			url= urlEndPoint_GV_Get;
 			request = RestAssured.given().
@@ -2601,7 +2601,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		String params = null;
 		HashMap<String, Object> headers = new HashMap<>();
 		headers = headersForms();
-		Response request = null;	 
+		Response request = null;
 		if(payType.equalsIgnoreCase("GET")) {
 			url= urlEndPoint_GV_Get;
 			request = RestAssured.given().
@@ -2835,7 +2835,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 					headers(headers).
 					get(Url);
 		}
-		else if(payType.equalsIgnoreCase("PromoStatus")) {				
+		else if(payType.equalsIgnoreCase("PromoStatus")) {
 			Url = promoURL+urlOLA_PromoGroup;
 			//String trip = getRandomNo(99999999);
 			Random rand = new Random();
@@ -2845,7 +2845,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			params = ParamsOLAPromoGroup1+trip+ParamsOLAPromoGroup2;
 			Reporter.log(Url);
 			Reporter.log(params);
-		}			
+		}
 		if(!payType.equalsIgnoreCase("Stat")){
 			response = RestAssured.given().
 					when().
@@ -2870,13 +2870,13 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		String params1 = null;
 		HashMap<String, Object> headers = new HashMap<>();
 		headers = headersForms();
-		Response request = null;	 
-		if(url.equalsIgnoreCase("ADD_MC_Credit")&&params.equalsIgnoreCase(Params_Singlebincard_Credit)) { 
+		Response request = null;
+		if(url.equalsIgnoreCase("ADD_MC_Credit")&&params.equalsIgnoreCase(Params_Singlebincard_Credit)) {
 			url1= baseurl+url_Singlebincard;
 			params1=returnParamForBin_CC();
 			request = RestAssured.given().
 					when().
-					log().all(). 
+					log().all().
 					headers(headers).
 					body(params1).
 					post(url1);
@@ -2927,13 +2927,13 @@ public class API_PaymentCommon extends PlatformCommonUtil
 	public Response validationforbindetail(String url,Response resp){
 		Reporter.log(resp.asString());
 		//System.out.println(resp.asString());
-		int statusCode = resp.getStatusCode();	
+		int statusCode = resp.getStatusCode();
 		Reporter.log("statusCode: " + statusCode);
 		if(statusCode!=200) {
 			Reporter.log("statusCode =" +statusCode);
 			Assert.assertFalse(true);
 		}
-		String bodyAsString=resp.asString(); 
+		String bodyAsString=resp.asString();
 		JsonPath jsonPath = new JsonPath(bodyAsString);
 		if(url.equalsIgnoreCase("ADD_Card"))
 		{
@@ -2966,13 +2966,13 @@ public class API_PaymentCommon extends PlatformCommonUtil
 				Reporter.log("country =" +country);
 				Assert.assertFalse(true);
 			}
-		} 
+		}
 
 		else if(url.equalsIgnoreCase("Get_Card_Multi")){
 			if(!bodyAsString.isEmpty())
 				Assert.assertTrue(true);
 		}
-		return resp; 
+		return resp;
 
 	}
 
@@ -2991,99 +2991,99 @@ public class API_PaymentCommon extends PlatformCommonUtil
 
 		Reporter.log("credential_name " +credential_name);
 		Reporter.log("txnID " +txnID);
-			if (statusCode != 200) {
+		if (statusCode != 200) {
+			Assert.assertTrue(false);
+		}
+		if(payType.equalsIgnoreCase("CC")) {
+			if(!credential_name.equals("[RAZORPAY_V2_TEST]")) {
+				Assert.assertTrue(false);
+			}if(!txnID.equals("[order_KrM5PYVcQJSZa1]")) {
 				Assert.assertTrue(false);
 			}
-			if(payType.equalsIgnoreCase("CC")) {
-				if(!credential_name.equals("[RAZORPAY_V2_TEST]")) {
-					Assert.assertTrue(false);
-				}if(!txnID.equals("[order_KrM5PYVcQJSZa1]")) {
-					Assert.assertTrue(false);
-				}
+		}
+		else if(payType.equalsIgnoreCase("DC")) {
+			if(!credential_name.equals("[TEST]")) {
+				Assert.assertTrue(false);
+			}if(!txnID.equals("[20221208111212800110168173404295906]")) {
+				Assert.assertTrue(false);
 			}
-			else if(payType.equalsIgnoreCase("DC")) {
-				if(!credential_name.equals("[TEST]")) {
-					Assert.assertTrue(false);
-				}if(!txnID.equals("[20221208111212800110168173404295906]")) {
-					Assert.assertTrue(false);
-				}
-			}else if(payType.equalsIgnoreCase("NB")) {
-				if(!credential_name.equals("[IN_CCAVENUEV2_hdfc]")) {
-					Assert.assertTrue(false);
-				}if(!txnID.equals("[order_KrOsfQsyeeduGO]")) {
-					Assert.assertTrue(false);
-				}
-			}else if(payType.equalsIgnoreCase("RP_SC")) {
-				if (!payment_id.equals("[45240370]")) {
-					Assert.assertTrue(false);
-				}
-			}else if(payType.contains("RP_ADCB")) {
-				if(!payment_id.equals("[45125908]")) {
-					Assert.assertTrue(false);
-				}
-			}else if(payType.equalsIgnoreCase("WT_Rewards")) {
-				if(!wallet_number.equals("[3000331040001266]")) {
-					Assert.assertTrue(false);
-				}if(!payment_id.equals("[45240612]")) {
-					Assert.assertTrue(false);
-				}
-			}else if(payType.equalsIgnoreCase("WT_Credit")) {
-				if(!wallet_number.equals("[7008000020000067, 3000331040001187]")) {
-					Assert.assertTrue(false);
-				}if(!payment_id.equals("[45240094, 45240092]")) {
-					Assert.assertTrue(false);
-				}
-			}else if(payType.equalsIgnoreCase("GV")) {
-				String payment_ids= jsonPathEvaluator.getString("payment_ids");
+		}else if(payType.equalsIgnoreCase("NB")) {
+			if(!credential_name.equals("[IN_CCAVENUEV2_hdfc]")) {
+				Assert.assertTrue(false);
+			}if(!txnID.equals("[order_KrOsfQsyeeduGO]")) {
+				Assert.assertTrue(false);
+			}
+		}else if(payType.equalsIgnoreCase("RP_SC")) {
+			if (!payment_id.equals("[45240370]")) {
+				Assert.assertTrue(false);
+			}
+		}else if(payType.contains("RP_ADCB")) {
+			if(!payment_id.equals("[45125908]")) {
+				Assert.assertTrue(false);
+			}
+		}else if(payType.equalsIgnoreCase("WT_Rewards")) {
+			if(!wallet_number.equals("[3000331040001266]")) {
+				Assert.assertTrue(false);
+			}if(!payment_id.equals("[45240612]")) {
+				Assert.assertTrue(false);
+			}
+		}else if(payType.equalsIgnoreCase("WT_Credit")) {
+			if(!wallet_number.equals("[7008000020000067, 3000331040001187]")) {
+				Assert.assertTrue(false);
+			}if(!payment_id.equals("[45240094, 45240092]")) {
+				Assert.assertTrue(false);
+			}
+		}else if(payType.equalsIgnoreCase("GV")) {
+			String payment_ids= jsonPathEvaluator.getString("payment_ids");
 
-				if(!card_numbers.equals("[3000331038009135]")) {
-					Assert.assertTrue(false);
-				}if(!payment_ids.equals("[45239560]")) {
-					Assert.assertTrue(false);
-				}
-			}else if(payType.equalsIgnoreCase("PL")) {
-				if(!credential_name.equals("[RAZORPAY_PAYLATER_TEST]")) {
-					Assert.assertTrue(false);
-				}if(!txnID.equals("[pay_KpLl9BERBOynqh]")) {
-					Assert.assertTrue(false);
-				}
-			}else if(payType.equalsIgnoreCase("CL_EMI")) {
-				if(!credential_name.equals("[RAZORPAY_CARDLESS_EMI_TEST]")) {
-					Assert.assertTrue(false);
-				}if(!txnID.equals("[pay_KqyejBvDFaWUcp]")) {
-					Assert.assertTrue(false);
-				}
-			}else if(payType.equalsIgnoreCase("EMI")) {
-				if(!credential_name.equals("[RAZORPAY_V2_TEST]")) {
-					Assert.assertTrue(false);
-				}if(!txnID.equals("[order_Kpix1Y9hwymS3w]")) {
-					Assert.assertTrue(false);
-				}
-			}else if(payType.equalsIgnoreCase("UP")) {
-				if(!credential_name.equals("[RAZORPAY]")) {
-					Assert.assertTrue(false);
-				}if(!txnID.equals("[pay_KrPQvercdz90PV]")) {
-					Assert.assertTrue(false);
-				}
-			}else if(payType.equalsIgnoreCase("TW")) {
-				if(!credential_name.equals("[AMAZON_WALLET]")) {
-					Assert.assertTrue(false);
-				}if(!txnID.equals("[S04-6613239-9867572]")) {
-					Assert.assertTrue(false);
-				}
-			}else if(payType.equalsIgnoreCase("DA")) {
-				if (!payment_id.equals("[45240820]")) {
-					Assert.assertTrue(false);
-				}
-			}else if(payType.equalsIgnoreCase("PL_Refund")) {
-				if(!credential_name.equals("[null, RAZORPAY_PAYLATER_TEST]")) {
-					System.out.println(credential_name);
-					Assert.assertTrue(false);
-				}if(!txnID.equals("[rfnd_Kh5a011yNfcyRa, rfnd_Kh5mIwZpPhr9n8]")) {
-					System.out.println(txnID);
-					Assert.assertTrue(false);
-				}
+			if(!card_numbers.equals("[3000331038009135]")) {
+				Assert.assertTrue(false);
+			}if(!payment_ids.equals("[45239560]")) {
+				Assert.assertTrue(false);
 			}
+		}else if(payType.equalsIgnoreCase("PL")) {
+			if(!credential_name.equals("[RAZORPAY_PAYLATER_TEST]")) {
+				Assert.assertTrue(false);
+			}if(!txnID.equals("[pay_KpLl9BERBOynqh]")) {
+				Assert.assertTrue(false);
+			}
+		}else if(payType.equalsIgnoreCase("CL_EMI")) {
+			if(!credential_name.equals("[RAZORPAY_CARDLESS_EMI_TEST]")) {
+				Assert.assertTrue(false);
+			}if(!txnID.equals("[pay_KqyejBvDFaWUcp]")) {
+				Assert.assertTrue(false);
+			}
+		}else if(payType.equalsIgnoreCase("EMI")) {
+			if(!credential_name.equals("[RAZORPAY_V2_TEST]")) {
+				Assert.assertTrue(false);
+			}if(!txnID.equals("[order_Kpix1Y9hwymS3w]")) {
+				Assert.assertTrue(false);
+			}
+		}else if(payType.equalsIgnoreCase("UP")) {
+			if(!credential_name.equals("[RAZORPAY]")) {
+				Assert.assertTrue(false);
+			}if(!txnID.equals("[pay_KrPQvercdz90PV]")) {
+				Assert.assertTrue(false);
+			}
+		}else if(payType.equalsIgnoreCase("TW")) {
+			if(!credential_name.equals("[AMAZON_WALLET]")) {
+				Assert.assertTrue(false);
+			}if(!txnID.equals("[S04-6613239-9867572]")) {
+				Assert.assertTrue(false);
+			}
+		}else if(payType.equalsIgnoreCase("DA")) {
+			if (!payment_id.equals("[45240820]")) {
+				Assert.assertTrue(false);
+			}
+		}else if(payType.equalsIgnoreCase("PL_Refund")) {
+			if(!credential_name.equals("[null, RAZORPAY_PAYLATER_TEST]")) {
+				System.out.println(credential_name);
+				Assert.assertTrue(false);
+			}if(!txnID.equals("[rfnd_Kh5a011yNfcyRa, rfnd_Kh5mIwZpPhr9n8]")) {
+				System.out.println(txnID);
+				Assert.assertTrue(false);
+			}
+		}
 		return resp;
 	}
 
@@ -3173,10 +3173,10 @@ public class API_PaymentCommon extends PlatformCommonUtil
 
 		if(payType.equalsIgnoreCase("GETWALLET_Trnx_UI")) {
 			resp.then().assertThat().body("walletType[0]", equalTo("CREDIT"))
-			.assertThat().body("trip-details[0]", equalTo("Bangalore to New Delhi"))
-			.assertThat().body("id[0]", equalTo(7100636))
-			.assertThat().body("walletType[4]", equalTo("REWARD"))
-			.assertThat().body("date[4]", equalTo("30-Jan-2023"));
+					.assertThat().body("trip-details[0]", equalTo("Bangalore to New Delhi"))
+					.assertThat().body("id[0]", equalTo(7100636))
+					.assertThat().body("walletType[4]", equalTo("REWARD"))
+					.assertThat().body("date[4]", equalTo("30-Jan-2023"));
 		}
 
 		else if(payType.equalsIgnoreCase("SuperCoins_OTPLess_Unhold")) {
@@ -3205,47 +3205,47 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			Reporter.log("Response " +Response);
 			if(!redirection.equals("[Y]")) {
 				Assert.assertTrue(false);
-			}  
+			}
 			if(!Response.equals("[Payment can be processed-Redirection required]")) {
 				Assert.assertTrue(false);
 			}
 		}
-		
+
 		else if(payType.equalsIgnoreCase("Hi_5_get_walletTnx")) {
 			/*String errorMessage = jsonPathEvaluator.getString("errorMessage");
 			Reporter.log("errorMessage " +errorMessage);
-			
+
 			if(!errorMessage.equals("duplicate request")) {
 				Assert.assertTrue(false);
 			}*/
 			Assert.assertTrue(false);
 		}
-	
-		
+
+
 		else if(payType.equalsIgnoreCase("Hi_5_get_wallet")) {
 			/*String errorMessage = jsonPathEvaluator.getString("errorMessage");
 			Reporter.log("errorMessage " +errorMessage);
-			
+
 			if(!errorMessage.equals("duplicate request")) {
 				Assert.assertTrue(false);
 			}*/
 			Assert.assertTrue(false);
 		}
-	
-		
+
+
 		else if(payType.equalsIgnoreCase("IR_Save_VPA")) {
 			String errorMessage = jsonPathEvaluator.getString("errorMessage");
 			Reporter.log("errorMessage " +errorMessage);
-			
+
 			if(!errorMessage.equals("duplicate request")) {
 				Assert.assertTrue(false);
 			}
 		}
 		else if(payType.equalsIgnoreCase("IR_Create_Refund")) {
-		//	if(!(resp.body().asString().contains("Refund Partially Initiated"))){
-				
+			//	if(!(resp.body().asString().contains("Refund Partially Initiated"))){
+
 			if(!(resp.body().asString().contains("Refund Partially Initiated"))){
-					//Assert.assertTrue(false);
+				//Assert.assertTrue(false);
 			}
 			if(!(resp.body().asString().contains("Refund Partially Initiated"))){
 				Assert.assertTrue(false);
@@ -3269,16 +3269,16 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		else if(payType.equalsIgnoreCase("IR_Fetch_Cancel_Details_UserID")) {
 			if(!(resp.body().asString().contains("65237343"))){
 				if(!(resp.body().asString().contains("Refund Initiated"))){
-				Assert.assertTrue(false);
+					Assert.assertTrue(false);
+				}
 			}
-		}
 		}
 		else if(payType.equalsIgnoreCase("IR_Valid_VPA")) {
 			String accountHolderName = jsonPathEvaluator.getString("accountHolderName");
 			String valid = jsonPathEvaluator.getString("valid");
 			Reporter.log("valid " +valid);
 			Reporter.log("accountHolderName " +accountHolderName);
-			
+
 			if(!valid.equals("true")) {
 				Assert.assertTrue(false);
 			}
@@ -3292,7 +3292,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 				Assert.assertTrue(false);
 			}
 		}
-		
+
 		else if(payType.equalsIgnoreCase("IR_Eligibility_NB")) {
 			String OS = jsonPathEvaluator.getString("eligibleForOriginalSource");
 			String AS = jsonPathEvaluator.getString("eligibleAlternativeSourceType");
@@ -3300,14 +3300,14 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			Reporter.log("OS " +OS);
 			if(!OS.equals("true")) {
 				Assert.assertTrue(false);
-			} 
+			}
 			if(!AS.contains("VPA")) {
 				Assert.assertTrue(false);
 			}
 			if(!AS.contains("WALLET")) {
 				Assert.assertTrue(false);
 			}
-			
+
 		}
 		else if(payType.equalsIgnoreCase("IR_Eligibility_CC")) {
 			String OS = jsonPathEvaluator.getString("eligibleForOriginalSource");
@@ -3319,7 +3319,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			Reporter.log("OS " +OS);
 			if(!OS.equals("true")) {
 				Assert.assertTrue(false);
-			} 
+			}
 			if(!AS.contains("VPA")) {
 
 				Assert.assertTrue(false);
@@ -3388,7 +3388,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			String company_id = jsonPathEvaluator.getString("company_id");
 			if(!id.equals("5116412")) {
 				Assert.assertTrue(false);
-			}  
+			}
 			if(!company_id.equals("198348")) {
 				Assert.assertTrue(false);
 			}
@@ -3410,36 +3410,36 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		}
 		else if(payType.equalsIgnoreCase("DAFKRefundCreate")) {
 			String Status = jsonPathEvaluator.getString("status");
-		if(!Status.equals("S")) {
-			Assert.assertTrue(false);
-		}
+			if(!Status.equals("S")) {
+				Assert.assertTrue(false);
+			}
 		}
 		else if(payType.equalsIgnoreCase("DAFKRefundUpdatePartnerinfo")) {
-		String Status = jsonPathEvaluator.getString("10042072");
-		if(!Status.equals("S")) {
-			Assert.assertTrue(false);
-		}
+			String Status = jsonPathEvaluator.getString("10042072");
+			if(!Status.equals("S")) {
+				Assert.assertTrue(false);
+			}
 		}
 		else if(payType.equalsIgnoreCase("DAFKRefundStatusUpdate")) {
 			if(!(resp.body().asString().contains("1 rows updated"))){
 				Assert.assertTrue(false);
 			}
-		}		
-		
+		}
+
 		else if(payType.equalsIgnoreCase("Reporting_Disabled_Refunds")) {
 			if(!(resp.body().asString().contains("Q210502977324"))){
 				Assert.assertTrue(false);
 			}if(!(resp.body().asString().contains("kiran.kumar@cleartrip.com"))){
 				Assert.assertTrue(false);
 			}
-		}		
-		
+		}
+
 		else if(payType.equalsIgnoreCase("Qitaf_Reverse")) {
 			String status = jsonPathEvaluator.getString("status");
 			String description = jsonPathEvaluator.getString("description");
 			if(!description.equals("success")) {
 				Assert.assertTrue(false);
-			}  
+			}
 			if(!status.equals("S")) {
 				Assert.assertTrue(false);
 			}
@@ -3449,35 +3449,35 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			String description = jsonPathEvaluator.getString("description");
 			if(!description.equals("QitafNot Found Or Available")) {
 				Assert.assertTrue(false);
-			}  
+			}
 			if(!status.equals("F")) {
 				Assert.assertTrue(false);
 			}
 		}
-		
+
 		else if(payType.equalsIgnoreCase("Qitaf_Redeem")) {
 			String status = jsonPathEvaluator.getString("status");
 			String description = jsonPathEvaluator.getString("description");
 			if(!description.equals("Invalid Pin")) {
 				Assert.assertTrue(false);
-			}  
+			}
 			if(!status.equals("F")) {
 				Assert.assertTrue(false);
 			}
 		}
-		
+
 		else if(payType.equalsIgnoreCase("refund_Enque")) {
 			if(!(resp.body().asString().contains("SUCCESS"))){
 				Assert.assertTrue(false);
-			
+
 			}
 		}
 		else if(payType.equalsIgnoreCase("FetchGWFailure")) {
 			if(!(resp.body().asString().contains("Experiencing high failure rate on HDFC Debit Cards"))){
 				Assert.assertTrue(false);
 			}
-		}		
-		
+		}
+
 		else if(payType.equalsIgnoreCase("ROR_Mis_expreports")) {
 			if(!(resp.body().asString().contains("Q1903221094")&&resp.body().asString().contains("settlement_date"))){
 				//Assert.assertTrue(false);
@@ -3500,28 +3500,28 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		}
 
 		else if(payType.equalsIgnoreCase("FetchTripStatus")) {
-		if(!resp.body().asString().contains("Payment Successful")){
+			if(!resp.body().asString().contains("Payment Successful")){
 				Assert.assertTrue(false);
 			}
 			if(!resp.body().asString().contains("44653436")){
 				Assert.assertTrue(false);
 			}
 		}
-		
+
 		else if(payType.equalsIgnoreCase("ROR_TripStatus")) {
 			if(!resp.body().asString().contains("kiran.kumar@cleartrip.com")){
-					Assert.assertTrue(false);
-				}
-				if(!resp.body().asString().contains("Approved")){
-					Assert.assertTrue(false);
-				}
+				Assert.assertTrue(false);
 			}
-		
+			if(!resp.body().asString().contains("Approved")){
+				Assert.assertTrue(false);
+			}
+		}
+
 		else if(payType.equalsIgnoreCase("DA")) {
 			if(!resp.body().asString().contains("Payment successful")){
 				Assert.assertTrue(false);
 			}
-		}	
+		}
 		else if(payType.equalsIgnoreCase("DAPay")) {
 			if(!resp.body().asString().contains("Payment successful")){
 				Assert.assertTrue(false);
@@ -3532,8 +3532,8 @@ public class API_PaymentCommon extends PlatformCommonUtil
 				Assert.assertTrue(false);
 			}
 		}
-		
-		
+
+
 		else if(payType.equalsIgnoreCase("DABalance")) {
 			String Balance = jsonPathEvaluator.getString("balance");
 			String CreditLimit = jsonPathEvaluator.getString("credit_limit");
@@ -3542,9 +3542,9 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			Reporter.log("CreditLimit " +CreditLimit);
 			if(!balance_type.equals("DR")) {
 				Assert.assertTrue(false);
-			}  
+			}
 		}
-		
+
 		else if(payType.equalsIgnoreCase("DAStatus")) {
 			String Balance = jsonPathEvaluator.getString("balance");
 			String CreditLimit = jsonPathEvaluator.getString("credit_limit");
@@ -3553,34 +3553,34 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			Reporter.log("CreditLimit " +CreditLimit);
 			if(!balance_type.equals("DR")) {
 				Assert.assertTrue(false);
-		
-			}  
-			
+
+			}
+
 		}
 		else if(payType.equalsIgnoreCase("DARefund")) {
 			if(!resp.body().asString().contains("Payment successful")){
 				Assert.assertTrue(false);
-			
+
 			}
-			
+
 		}
-		
-		
-		
+
+
+
 		else if(payType.equalsIgnoreCase("DAValidate")) {
 			if(!resp.body().asString().contains("Payment can be processed")){
 				Assert.assertTrue(false);
-			
+
 			}
-			
-		}		
-		
+
+		}
+
 		else if(payType.equalsIgnoreCase("CSValidate")) {
 			String paymenttype = jsonPathEvaluator.getString("payment_type");
 			String responsemsg = jsonPathEvaluator.getString("response_message");
 			Reporter.log("paymentType is " +paymenttype);
 			Reporter.log("Response Message " +responsemsg);
-		
+
 			/*if(!paymenttype.equals("[CS]"))
 			{
 				Assert.assertTrue(false);
@@ -3601,33 +3601,33 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			}
 			if(!status.equals("[S]")) {
 				Assert.assertTrue(false);
-			}	
+			}
 			if(!description.equals("[Pay Success]")) {
 				Assert.assertTrue(false);
 			}
 		}
-		
+
 		else if(payType.equalsIgnoreCase("GV")) {
 			String paymentID = jsonPathEvaluator.getString("id");
-			String statusCC = jsonPathEvaluator.getString("status");					
+			String statusCC = jsonPathEvaluator.getString("status");
 			String description = jsonPathEvaluator.getString("description");
 			Reporter.log("Status is failing " +statusCC);
 			Reporter.log("Description GV " +description);
-			Reporter.log(" Payment ID: " + paymentID);			
+			Reporter.log(" Payment ID: " + paymentID);
 			if(!statusCC.equals("[S]")) {
 				if(!description.equals("[Gift voucher redemption success]")) {
 					Assert.assertTrue(false);
 				}
 				Assert.assertTrue(false);
-			}		
-			
+			}
+
 		}else if(payType.equalsIgnoreCase("WALLET")) {
 			String paymentID = jsonPathEvaluator.getString("id");
-			String statusCC = jsonPathEvaluator.getString("status");				
+			String statusCC = jsonPathEvaluator.getString("status");
 			String description = jsonPathEvaluator.getString("description");
 			Reporter.log("Status is failing " +statusCC);
 			Reporter.log("Description Wallet " +description);
-			Reporter.log(" Payment ID: " + paymentID);		
+			Reporter.log(" Payment ID: " + paymentID);
 			if(!statusCC.equals("[S]")) {
 				if(!description.equals("[Wallet payment success]")) {
 					Assert.assertTrue(false);
@@ -3635,7 +3635,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 				Assert.assertTrue(false);
 			}
 		}
-		
+
 		else if(payType.equalsIgnoreCase("GETWALLET_V2_INR")) {
 			String wallet_number = jsonPathEvaluator.getString("wallet_number");
 			String id = jsonPathEvaluator.getString("id");
@@ -3651,17 +3651,17 @@ public class API_PaymentCommon extends PlatformCommonUtil
 				Assert.assertTrue(false);
 			}
 		}
-		
-		
-		
+
+
+
 		else if(payType.equalsIgnoreCase("GVWL")) {
 			if(!resp.body().asString().contains("Wallet payment success")){
 				Assert.assertTrue(false);
-			
+
 			}
 			if(!resp.body().asString().contains("Gift voucher redemption success")){
 				Assert.assertTrue(false);
-			
+
 			}
 		}else if(payType.equalsIgnoreCase("CCGVWL")) {
 			String paymentID = jsonPathEvaluator.getString("id");
@@ -3669,13 +3669,13 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			Reporter.log("ID : "+paymentID);
 			Reporter.log("status : "+status);
 			if(!status.equals("[I, P, P]")) {
-				Reporter.log("Init Status is failing " +status);	 
+				Reporter.log("Init Status is failing " +status);
 				Assert.assertTrue(false);
-			}				
+			}
 		}else if(payType.equalsIgnoreCase("INIT")) {
 			String paymentID = jsonPathEvaluator.getString("id");
 			String statusInit = jsonPathEvaluator.getString("status");
-			String collectOtp = jsonPathEvaluator.getString("collect_otp");				
+			String collectOtp = jsonPathEvaluator.getString("collect_otp");
 			String redirection_required = jsonPathEvaluator.getString("redirection_required");
 			Reporter.log("Init Status is Passed " +statusInit);
 			Reporter.log("redirection_required " +redirection_required);
@@ -3703,7 +3703,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 					Assert.assertTrue(false);
 				}
 				Assert.assertTrue(false);
-			}	
+			}
 		}else if(payType.equalsIgnoreCase("RESEND")) {
 			String status = jsonPathEvaluator.getString("status");
 			String descriptionOTP = jsonPathEvaluator.getString("description");
@@ -3722,19 +3722,19 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			if(!status.equals("SUCCESS")) {
 				Assert.assertTrue(false);
 			}
-		}	
+		}
 		else if(payType.equals("RefundsTrip")) {
 			if(statusCode!=200) {
 				Assert.assertTrue(false);
 			}
 		}
-		
+
 		else if(payType.equals("RefundsTripRef")) {
 			String status = jsonPathEvaluator.getString("status");
 			if(statusCode!=200) {
 				Assert.assertTrue(false);
 			}
-		
+
 		}
 		else if(payType.equalsIgnoreCase("GETURL")) {
 			String CTPay_URL = jsonPathEvaluator.getString("redirection_url");
@@ -3742,7 +3742,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			if(!CTPay_URL.contains("initiatePayment")) {
 				Assert.assertTrue(false);
 			}
-		}		
+		}
 		else if(payType.equalsIgnoreCase("STATUS")) {
 			String Order_Status = jsonPathEvaluator.getString("order_status");
 			String Description = jsonPathEvaluator.getString("description");
@@ -3799,7 +3799,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			if (!userId.equals("41697596")) {
 				Reporter.log("userId : "+userId);
 				Assert.assertTrue(false);
-			}			
+			}
 		}
 		else if (payType.equalsIgnoreCase("EW_OPTIN")) {
 			String description = jsonPathEvaluator.getString("description");
@@ -3811,8 +3811,8 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			if (!status.equals("false")) {
 				Reporter.log("status : "+status);
 				Assert.assertTrue(false);
-			}	
-		}	
+			}
+		}
 
 
 		else if (payType.equalsIgnoreCase("EW_OPTIN123")) {
@@ -3823,7 +3823,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			}
 
 		}
-		else if (payType.equalsIgnoreCase("EW_PAY")) {				
+		else if (payType.equalsIgnoreCase("EW_PAY")) {
 			if(!resp.body().asString().contains("EP")) {
 				Reporter.log("paymentType is not EP 	");
 				Assert.assertTrue(false);
@@ -3835,9 +3835,9 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			if(resp.body().asString().contains("Not attempted")) {
 				Reporter.log("Not attempted ");
 				Assert.assertTrue(false);
-			}				
+			}
 
-		}else if (payType.equalsIgnoreCase("EW_Autodebit")) {	
+		}else if (payType.equalsIgnoreCase("EW_Autodebit")) {
 			if(!resp.body().asString().contains("CAPTURED")) {
 				Reporter.log("status text is not displayed");
 				Assert.assertTrue(false);
@@ -3849,7 +3849,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 
 
 		}
-		else if (payType.equalsIgnoreCase("ReportingRefundStatus")) {	
+		else if (payType.equalsIgnoreCase("ReportingRefundStatus")) {
 			if(!resp.body().asString().contains("Q191203587976")) {
 				Reporter.log("TripID is not displayed");
 				Assert.assertTrue(false);
@@ -3861,7 +3861,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 
 
 		}
-		else if (payType.equalsIgnoreCase("EW_PAY_Multi")) {				
+		else if (payType.equalsIgnoreCase("EW_PAY_Multi")) {
 			if(!resp.body().asString().contains("EP")) {
 				Reporter.log("paymentType is not EP 	");
 				Assert.assertTrue(false);
@@ -3893,9 +3893,9 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			if(resp.body().asString().contains("Not attempted")) {
 				Reporter.log("Not attempted ");
 				Assert.assertTrue(false);
-			}	
+			}
 		}
-		
+
 		else if (payType.equalsIgnoreCase("EW_Summary")) {
 			if(!resp.body().asString().contains("amount")) {
 				Reporter.log("amount is not displayed : ");
@@ -3930,7 +3930,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		}
 		else if (payType.equalsIgnoreCase("OLAVALIDATE")) {
 			String status = jsonPathEvaluator.getString("status");
-			String id = jsonPathEvaluator.getString("id"); 
+			String id = jsonPathEvaluator.getString("id");
 			if(id.isEmpty()) {
 				Reporter.log("ID is empty: "+id);
 				Assert.assertTrue(false);
@@ -3942,8 +3942,8 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		}
 		else if (payType.equalsIgnoreCase("OLAPAY")) {
 			String status = jsonPathEvaluator.getString("status");
-			String id = jsonPathEvaluator.getString("id"); 
-			String transactionId = jsonPathEvaluator.getString("transactionId"); 
+			String id = jsonPathEvaluator.getString("id");
+			String transactionId = jsonPathEvaluator.getString("transactionId");
 			if(id.isEmpty()) {
 				Reporter.log("ID is empty: "+id); //transactionId
 				Assert.assertTrue(false);
@@ -3959,7 +3959,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		}
 		else if (payType.equalsIgnoreCase("OLAStat")) {
 			String status = jsonPathEvaluator.getString("status");
-			String uniqueBillId = jsonPathEvaluator.getString("uniqueBillId"); 
+			String uniqueBillId = jsonPathEvaluator.getString("uniqueBillId");
 			if(!status.contains("completed")) {
 				Reporter.log("status is : "+status);
 				Assert.assertTrue(false);
@@ -3971,26 +3971,26 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		}
 		else if (payType.equalsIgnoreCase("OLAPromoStatus")) {
 			String status = jsonPathEvaluator.getString("status");
-			String uniqueBillId = jsonPathEvaluator.getString("uniqueBillId"); 
+			String uniqueBillId = jsonPathEvaluator.getString("uniqueBillId");
 			if(!resp.body().asString().contains("DEACTIVE")) {{
 				Reporter.log("DEACTIVE not displayed");
 				Assert.assertTrue(false);
 			}
-			if(!status.contains("completed")) {
-				Reporter.log("status is : "+status);
-				Assert.assertTrue(false);
-			}
-			else if(uniqueBillId.isEmpty()) {
-				Reporter.log("uniqueBillId is : "+uniqueBillId);
-				Assert.assertTrue(false);
-			}
+				if(!status.contains("completed")) {
+					Reporter.log("status is : "+status);
+					Assert.assertTrue(false);
+				}
+				else if(uniqueBillId.isEmpty()) {
+					Reporter.log("uniqueBillId is : "+uniqueBillId);
+					Assert.assertTrue(false);
+				}
 			}
 
 		}
 		else if (payType.equalsIgnoreCase("FLYIN")) {
 			String status = jsonPathEvaluator.getString("status");
-			String reference_id = jsonPathEvaluator.getString("reference_id"); 
-			String processing_gateway = jsonPathEvaluator.getString("processing_gateway"); 
+			String reference_id = jsonPathEvaluator.getString("reference_id");
+			String processing_gateway = jsonPathEvaluator.getString("processing_gateway");
 
 			if(!status.contains("INITIALIZING")) {
 				Reporter.log("status is : "+status);
@@ -4007,7 +4007,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			}
 		}
 
-		else if (payType.equalsIgnoreCase("adcb_checkBalance")) {				
+		else if (payType.equalsIgnoreCase("adcb_checkBalance")) {
 			if(!resp.body().asString().contains("Successfully")) {
 				Reporter.log("checkBalance Failed");
 				Assert.assertTrue(false);
@@ -4019,12 +4019,12 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			if(resp.body().asString().contains("Not attempted")) {
 				Reporter.log("Not attempted ");
 				Assert.assertTrue(false);
-			}	
+			}
 
 			Reporter.log("Successfully fetched pay by points amount - message is displayed ");
 
 		}
-		else if (payType.equalsIgnoreCase("adcb_sendOTP")) {				
+		else if (payType.equalsIgnoreCase("adcb_sendOTP")) {
 			if(!resp.body().asString().contains("successfully")) {
 				Reporter.log("OTP Failed");
 				Assert.assertTrue(false);
@@ -4036,12 +4036,12 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			if(resp.body().asString().contains("Not attempted")) {
 				Reporter.log("Not attempted ");
 				Assert.assertTrue(false);
-			}	
+			}
 
 			Reporter.log("OTP sent successfully - message is displayed ");
 
 		}
-		else if (payType.equalsIgnoreCase("adcb_validate")) {				
+		else if (payType.equalsIgnoreCase("adcb_validate")) {
 			if(!resp.body().asString().contains("Reward Points")) {
 				Reporter.log("Validation Failed");
 				Assert.assertTrue(false);
@@ -4053,15 +4053,15 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			if(resp.body().asString().contains("Not attempted")) {
 				Reporter.log("Not attempted ");
 				Assert.assertTrue(false);
-			}	
+			}
 
 			Reporter.log("Reward Points validation successful - message is displayed ");
 
 		}
-		else if (payType.equalsIgnoreCase("adcb_pay")) {				
+		else if (payType.equalsIgnoreCase("adcb_pay")) {
 
 			String status = jsonPathEvaluator.getString("status");
-			String description = jsonPathEvaluator.getString("description"); 
+			String description = jsonPathEvaluator.getString("description");
 
 			Reporter.log("Status is : "+status);
 			Reporter.log("---------------------------- Message is -----------"+description);
@@ -4080,10 +4080,10 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			Reporter.log("Successfully redeemed points - message is displayed ");
 
 		}
-		else if (payType.equalsIgnoreCase("adcb_pay2")) {				
+		else if (payType.equalsIgnoreCase("adcb_pay2")) {
 
 			String status = jsonPathEvaluator.getString("status");
-			String description = jsonPathEvaluator.getString("description"); 
+			String description = jsonPathEvaluator.getString("description");
 
 			Reporter.log("Status is : "+status);
 			Reporter.log("Message is : "+description);
@@ -4107,10 +4107,10 @@ public class API_PaymentCommon extends PlatformCommonUtil
 
 		}
 
-		else if (payType.equalsIgnoreCase("Binmanager")) {				
+		else if (payType.equalsIgnoreCase("Binmanager")) {
 
 			String cardType = jsonPathEvaluator.getString("cardType");
-			String isOtpEligible = jsonPathEvaluator.getString("isOtpEligible"); 
+			String isOtpEligible = jsonPathEvaluator.getString("isOtpEligible");
 
 			Reporter.log("CardType is : "+cardType);
 
@@ -4125,15 +4125,15 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			}
 
 		}
-		else if (payType.equalsIgnoreCase("PAYBACK_CheckBalance")) {				
+		else if (payType.equalsIgnoreCase("PAYBACK_CheckBalance")) {
 
 			String status = jsonPathEvaluator.getString("status");
-			String description = jsonPathEvaluator.getString("description"); 
+			String description = jsonPathEvaluator.getString("description");
 
 			if(!status.equalsIgnoreCase("S")) {
 				Reporter.log("status is : "+status);
 				Assert.assertTrue(false);
-			}		
+			}
 			if(!description.equalsIgnoreCase("Successfully fetched payback points amount")) {
 				Reporter.log("description is : "+description);
 				Assert.assertTrue(false);
@@ -4142,14 +4142,14 @@ public class API_PaymentCommon extends PlatformCommonUtil
 
 		}
 
-		else if (payType.equalsIgnoreCase("PAYBACK_Validate")) {				
+		else if (payType.equalsIgnoreCase("PAYBACK_Validate")) {
 
 			String response_message = jsonPathEvaluator.getString("response_message");
-			String payment_type = jsonPathEvaluator.getString("payment_type"); 
+			String payment_type = jsonPathEvaluator.getString("payment_type");
 			if(!response_message.equalsIgnoreCase("[Reward Points validation successful]")) {
 				Reporter.log("response_message is : "+response_message);
 				Assert.assertTrue(false);
-			}		
+			}
 			if(!payment_type.equalsIgnoreCase("[RP]")) {
 				Reporter.log("payment_type is : "+payment_type);
 				Assert.assertTrue(false);
@@ -4157,14 +4157,14 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			Reporter.log("Successfully fetched pay by points amount - message is displayed ");
 
 		}
-		else if (payType.equalsIgnoreCase("PAYBACK_Pay")) {				
+		else if (payType.equalsIgnoreCase("PAYBACK_Pay")) {
 
 			String status = jsonPathEvaluator.getString("status");
-			String description = jsonPathEvaluator.getString("description"); 
+			String description = jsonPathEvaluator.getString("description");
 			if(!status.equalsIgnoreCase("[S]")) {
 				Reporter.log("response_message is : "+status);
 				Assert.assertTrue(false);
-			}		
+			}
 			if(!description.equalsIgnoreCase("[Successfully redeemed points]")) {
 				Reporter.log("Message is : "+description);
 				Assert.assertTrue(false);
@@ -4172,7 +4172,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			Reporter.log("Successfully redeemed points - message is displayed ");
 
 		}
-		else if (payType.equalsIgnoreCase("PAYBACK_Pay_WT_MultiGV_CC")) {				
+		else if (payType.equalsIgnoreCase("PAYBACK_Pay_WT_MultiGV_CC")) {
 
 			if(!resp.body().asString().contains("redirection_info")) {
 				Reporter.log("redirection_info is not displayed for CC ");
@@ -4185,7 +4185,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			Reporter.log("Not attempted - message is displayed ");
 
 		}
-		else if (payType.equalsIgnoreCase("PAYBACK_Pay_WT_MultiGV")) {				
+		else if (payType.equalsIgnoreCase("PAYBACK_Pay_WT_MultiGV")) {
 
 			System.out.println(resp.body().asString());
 			if(!resp.body().asString().contains("Wallet payment success")) {
@@ -4203,14 +4203,14 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			Reporter.log("Successfully executed PAYBACK_Pay_WT_MultiGV ");
 
 		}
-		else if (payType.equalsIgnoreCase("PAYBACK_Earn")) {				
+		else if (payType.equalsIgnoreCase("PAYBACK_Earn")) {
 
 			String status = jsonPathEvaluator.getString("status");
-			String description = jsonPathEvaluator.getString("description"); 
+			String description = jsonPathEvaluator.getString("description");
 			if(!status.equalsIgnoreCase("S")) {
 				Reporter.log("response_message is : "+status);
 				Assert.assertTrue(false);
-			}		
+			}
 			if(!description.equalsIgnoreCase("Successful Payback earn transaction")) {
 				Reporter.log("Message is : "+description);
 				Assert.assertTrue(false);
@@ -4218,14 +4218,14 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			Reporter.log("Successfully fetched pay by points amount - message is displayed ");
 
 		}
-		else if (payType.equalsIgnoreCase("PAYBACK_Reverseearn")) {				
+		else if (payType.equalsIgnoreCase("PAYBACK_Reverseearn")) {
 
 			String status = jsonPathEvaluator.getString("status");
-			String description = jsonPathEvaluator.getString("description"); 
+			String description = jsonPathEvaluator.getString("description");
 			if(!status.equalsIgnoreCase("S")) {
 				Reporter.log("response_message is : "+status);
 				Assert.assertTrue(false);
-			}		
+			}
 			if(!description.equalsIgnoreCase("Successfully reversed Payback Earn transaction")) {
 				Reporter.log("Message is : "+description);
 				Assert.assertTrue(false);
@@ -4233,7 +4233,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			Reporter.log("Successfully fetched pay by points amount - message is displayed ");
 
 		}
-		else if (payType.equalsIgnoreCase("PromoActive")) {		
+		else if (payType.equalsIgnoreCase("PromoActive")) {
 
 			if(!resp.body().asString().contains("trip_ref")) {
 				Reporter.log("trip_ref is not displayed ");
@@ -4250,14 +4250,14 @@ public class API_PaymentCommon extends PlatformCommonUtil
 
 
 
-		else if (payType.equalsIgnoreCase("PAYBACK_CheckEarnPoints")) {				
+		else if (payType.equalsIgnoreCase("PAYBACK_CheckEarnPoints")) {
 
 			String description = jsonPathEvaluator.getString("description");
-			String status = jsonPathEvaluator.getString("status"); 
+			String status = jsonPathEvaluator.getString("status");
 			if(!description.equalsIgnoreCase("Successfully calculated earn points")) {
 				Reporter.log("Description is : "+description);
 				Assert.assertTrue(false);
-			}		
+			}
 			if(!status.equalsIgnoreCase("S")) {
 				Reporter.log("status is : "+status);
 				Assert.assertTrue(false);
@@ -4265,14 +4265,14 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			Reporter.log("Successfully checked Earn points ");
 		}
 
-		else if (payType.equalsIgnoreCase("PAYBACK_CheckMobileLinked")) {				
+		else if (payType.equalsIgnoreCase("PAYBACK_CheckMobileLinked")) {
 
 			String isAccountLinked = jsonPathEvaluator.getString("isAccountLinked");
-			String status = jsonPathEvaluator.getString("status"); 
+			String status = jsonPathEvaluator.getString("status");
 			if(!isAccountLinked.equalsIgnoreCase("true")) {
 				Reporter.log("isAccountLinked is : "+isAccountLinked);
 				Assert.assertTrue(false);
-			}		
+			}
 			if(!status.equalsIgnoreCase("S")) {
 				Reporter.log("status is : "+status);
 				Assert.assertTrue(false);
@@ -4280,28 +4280,28 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			Reporter.log("Successfully checked if Mobile is linked ");
 		}
 
-		else if (payType.equalsIgnoreCase("PAYBACK_CheckCardLinked")) {	
+		else if (payType.equalsIgnoreCase("PAYBACK_CheckCardLinked")) {
 
 			String isAccountLinked = jsonPathEvaluator.getString("isAccountLinked");
-			String status = jsonPathEvaluator.getString("status"); 
+			String status = jsonPathEvaluator.getString("status");
 			if(!isAccountLinked.equalsIgnoreCase("true")) {
 				Reporter.log("isAccountLinked is : "+isAccountLinked);
 				Assert.assertTrue(false);
-			}		
+			}
 			if(!status.equalsIgnoreCase("S")) {
 				Reporter.log("status is : "+status);
 				Assert.assertTrue(false);
 			}
 			Reporter.log("Successfully checked if Card is linked ");
 		}
-		else if (payType.equalsIgnoreCase("PAYBACK_Forgotpassword")) {				
+		else if (payType.equalsIgnoreCase("PAYBACK_Forgotpassword")) {
 
 			String description = jsonPathEvaluator.getString("isAccountLinked");
-			String status = jsonPathEvaluator.getString("status"); 
+			String status = jsonPathEvaluator.getString("status");
 			if(!description.equalsIgnoreCase("false")) {
 				Reporter.log("isAccountLinked is : "+description);
 				Assert.assertTrue(false);
-			}		
+			}
 			if(!status.equalsIgnoreCase("F")) {
 				Reporter.log("status is : "+status);
 				Assert.assertTrue(false);
@@ -4309,7 +4309,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			Reporter.log("Successfully fetched PIN for Mobile Number ");
 		}
 
-		else if (payType.equalsIgnoreCase("PromoUsed")) {				
+		else if (payType.equalsIgnoreCase("PromoUsed")) {
 			String usedPromo = jsonPathEvaluator.getString("usedPromo");
 			if(!usedPromo.equalsIgnoreCase("10.0")) {
 				Reporter.log("usedPromo is : "+usedPromo);
@@ -4350,11 +4350,11 @@ public class API_PaymentCommon extends PlatformCommonUtil
 
 		else if (payType.equalsIgnoreCase("createrefund")) {
 			String message = jsonPathEvaluator.getString("message");
-			String status = jsonPathEvaluator.getString("status"); 
+			String status = jsonPathEvaluator.getString("status");
 			if(!message.equalsIgnoreCase("Refund entry successful with status S")) {
 				Reporter.log("isAccountLinked is : "+message);
 				Assert.assertTrue(false);
-			}		
+			}
 			if(!status.equalsIgnoreCase("S")) {
 				Reporter.log("status is : "+status);
 				Assert.assertTrue(false);
@@ -4362,11 +4362,11 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		}
 		else if (payType.equalsIgnoreCase("updatestatus")) {
 			String message = jsonPathEvaluator.getString("message");
-			String status = jsonPathEvaluator.getString("status"); 
+			String status = jsonPathEvaluator.getString("status");
 			if(!message.equalsIgnoreCase("Update Successful")) {
 				Reporter.log("Message is : "+message);
 				Assert.assertTrue(false);
-			}		
+			}
 			if(!status.equalsIgnoreCase("S")) {
 				Reporter.log("status is : "+status);
 				Assert.assertTrue(false);
@@ -4374,11 +4374,11 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		}
 		else if (payType.equalsIgnoreCase("updatepgtxnid")) {
 			String message = jsonPathEvaluator.getString("message");
-			String status = jsonPathEvaluator.getString("status"); 
+			String status = jsonPathEvaluator.getString("status");
 			if(!message.equalsIgnoreCase("Update Successful")) {
 				Reporter.log("Message is : "+message);
 				Assert.assertTrue(false);
-			}		
+			}
 			if(!status.equalsIgnoreCase("S")) {
 				Reporter.log("status is : "+status);
 				Assert.assertTrue(false);
@@ -4386,11 +4386,11 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		}
 		else if (payType.equalsIgnoreCase("getrecord")) {
 			String message = jsonPathEvaluator.getString("message");
-			String status = jsonPathEvaluator.getString("status"); 
+			String status = jsonPathEvaluator.getString("status");
 			if(!message.equalsIgnoreCase("Query successful")) {
 				Reporter.log("Message is : "+message);
 				Assert.assertTrue(false);
-			}		
+			}
 			if(!status.equalsIgnoreCase("S")) {
 				Reporter.log("status is : "+status);
 				Assert.assertTrue(false);
@@ -4398,20 +4398,20 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		}
 		else if (payType.equalsIgnoreCase("wallet_getcards")) {
 			if(!resp.body().asString().contains("340000")) {
-					Reporter.log("card number is not displayed ");
-					//Assert.assertTrue(false);
-				}
-				if(resp.body().asString().contains("Card already exist")) {
-					Reporter.log("Card already exist is not displayed ");
-					//Assert.assertTrue(false);					
-				}
-				else if(!resp.body().asString().contains("exp_month")) {
-					Reporter.log("exp_month is not displayed ");
-					Assert.assertTrue(false);
-				}else if(!resp.body().asString().contains("number")) {
-					Reporter.log("Card Number is not displayed");
-					Assert.assertTrue(false);
-				}
+				Reporter.log("card number is not displayed ");
+				//Assert.assertTrue(false);
+			}
+			if(resp.body().asString().contains("Card already exist")) {
+				Reporter.log("Card already exist is not displayed ");
+				//Assert.assertTrue(false);
+			}
+			else if(!resp.body().asString().contains("exp_month")) {
+				Reporter.log("exp_month is not displayed ");
+				Assert.assertTrue(false);
+			}else if(!resp.body().asString().contains("number")) {
+				Reporter.log("Card Number is not displayed");
+				Assert.assertTrue(false);
+			}
 		}
 		else if (payType.equalsIgnoreCase("wallet_deleteCards")) {
 			if(!resp.body().asString().contains("[")) {
@@ -4520,7 +4520,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 				Reporter.log("description is : "+id);
 				Assert.assertTrue(false);
 			}
-		}	
+		}
 		else if (payType.equalsIgnoreCase("wallet_CASHBACK_DETAILS_WALLETS")) {
 			String status = jsonPathEvaluator.getString("status");
 			String description = jsonPathEvaluator.getString("description");
@@ -4532,7 +4532,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 				Reporter.log("description is : "+description);
 				Assert.assertTrue(false);
 			}
-		}	
+		}
 		else if (payType.equalsIgnoreCase("WALLET_CREATE")) {
 			String error = jsonPathEvaluator.getString("error");
 			String message = jsonPathEvaluator.getString("message");
@@ -4664,7 +4664,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 
 		}
 
-		else if (payType.equalsIgnoreCase("CTPAYADD")) {			
+		else if (payType.equalsIgnoreCase("CTPAYADD")) {
 			String s2s_url = jsonPathEvaluator.getString("s2s_url");
 			String status = jsonPathEvaluator.getString("status");
 			if(!status.equalsIgnoreCase("SUCCESS")) {
@@ -4746,7 +4746,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			if(!message.contains("Refund Initiated")) {
 				Reporter.log("message is : "+message);
 				Assert.assertTrue(false);
-			}			
+			}
 		}
 
 		else if(payType.equalsIgnoreCase("ROR_Recon")){
@@ -4757,7 +4757,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			if(!resp.body().asString().contains("status")) {
 				Reporter.log("status D");
 				Assert.assertTrue(false);
-			}			
+			}
 		}
 		else if(payType.equalsIgnoreCase("NavisonCC")){
 			String trip_ref = jsonPathEvaluator.getString("trip_ref");
@@ -4769,7 +4769,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			if(!trip_ref.contains("Q200117692102")) {
 				Reporter.log("trip_ref is : "+trip_ref);
 				Assert.assertTrue(false);
-			}	
+			}
 		}
 		else if(payType.equalsIgnoreCase("NavisonAir")){
 			String trip_ref = jsonPathEvaluator.getString("trip_ref");
@@ -4781,28 +4781,28 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			if(!trip_ref.contains("Q191226667766")) {
 				Reporter.log("trip_ref is : "+trip_ref);
 				Assert.assertTrue(false);
-			}	
+			}
 		}
 		else if(payType.equalsIgnoreCase("ROR_MultiSearch")){
 
 			if(!resp.body().asString().contains("Q200123741386")) {
 				Reporter.log("TripID");
 				Assert.assertTrue(false);
-			}	
+			}
 		}
 		else if(payType.equalsIgnoreCase("ROR_WalletFetch")){
 
 			if(!resp.body().asString().contains("5153574")) {
 				Reporter.log("5153574 is not displayed");
 				Assert.assertTrue(false);
-			}	
+			}
 		}
 		else if(payType.equalsIgnoreCase("ROR_MultiSearch_Reads")){
 
 			if(!resp.body().asString().contains("43622220")) {
 				Reporter.log("43622220 is not displayed");
 				Assert.assertTrue(false);
-			}	
+			}
 		}
 
 		else if(payType.equalsIgnoreCase("ROR_MultiSearch_TripRef_Reads")){
@@ -4810,7 +4810,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			if(!resp.body().asString().contains("43179370")) {
 				Reporter.log("43179370 is not displayed");
 				Assert.assertTrue(false);
-			}	
+			}
 		}
 
 		else if(payType.equalsIgnoreCase("ROR_WalletTrnx_Reads")){
@@ -4818,7 +4818,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			if(!resp.body().asString().contains("5154746")) {
 				Reporter.log("5154746 is not displayed");
 				Assert.assertTrue(false);
-			}	
+			}
 		}
 
 		else if(payType.equalsIgnoreCase("ROR_WalletGet_Reads")){
@@ -4826,7 +4826,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			if(!resp.body().asString().contains("5789285")) {
 				Reporter.log("5789285 is not displayed");
 				Assert.assertTrue(false);
-			}	
+			}
 		}
 
 		else if(payType.equalsIgnoreCase("ROR_GV_Details")){
@@ -4834,21 +4834,21 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			if(!resp.body().asString().contains("3000331039771395")) {
 				Reporter.log("3000331039771395 is not displayed");
 				Assert.assertTrue(false);
-			}	
+			}
 		}
-		
+
 		else if(payType.equalsIgnoreCase("ROR_Refund_Details")){
 
 			if(!resp.body().asString().contains("Recon Req")) {
 				Reporter.log("Recon Re is not displayed");
 				Assert.assertTrue(false);
-			}	
+			}
 		}
 		else if(payType.equalsIgnoreCase("ReportingTS_Archived_V3_False")){
-					if(!resp.body().asString().contains("40294932")) {
-						Reporter.log("40294932 is not displayed");
-						Assert.assertTrue(false);
-					}
+			if(!resp.body().asString().contains("40294932")) {
+				Reporter.log("40294932 is not displayed");
+				Assert.assertTrue(false);
+			}
 		}
 		else if(payType.equalsIgnoreCase("ReportingTS_Archived_V3_True")){
 			/*if(!resp.body().asString().contains("40294932")) {
@@ -4862,140 +4862,140 @@ public class API_PaymentCommon extends PlatformCommonUtil
 				Assert.assertTrue(false);
 			}
 		}
-		
-		
+
+
 		else if(payType.equals("GETUI_CONVFEE")) {
 			String CC = jsonPathEvaluator.getString("cc");
 			Reporter.log("cc " +CC);
 			if(!CC.equals("1")) {
-				
-					Assert.assertTrue(false);
+
+				Assert.assertTrue(false);
 			}
-			
+
 		}
 		else if(payType.equals("GETUI_PAYTYPES")) {
-			
+
 			if(!resp.body().asString().contains("UPI")) {
 				Reporter.log("UPI is not displayed");
 				Assert.assertTrue(false);
-			}		
+			}
 		}
-	else if(payType.equals("WALLET_Fetch_NotLogged")) {
-			
+		else if(payType.equals("WALLET_Fetch_NotLogged")) {
+
 			if(!resp.body().asString().contains("User not logged in")) {
 				Reporter.log("User not logged in is not displayed");
 				Assert.assertTrue(false);
-			}		
+			}
 		}
-	else if(payType.equals("EMICache")) {
-		if(!resp.body().asString().contains("success")) {
-			Reporter.log("success is not displayed");
-			Assert.assertTrue(false);
+		else if(payType.equals("EMICache")) {
+			if(!resp.body().asString().contains("success")) {
+				Reporter.log("success is not displayed");
+				Assert.assertTrue(false);
+			}
 		}
-	}
-	else if(payType.equals("EMICache")) {
-		if(!resp.body().asString().contains("success")) {
-			Reporter.log("success is not displayed");
-			Assert.assertTrue(false);
+		else if(payType.equals("EMICache")) {
+			if(!resp.body().asString().contains("success")) {
+				Reporter.log("success is not displayed");
+				Assert.assertTrue(false);
+			}
 		}
-	}
-	else if(payType.equals("EMIResources")) {
-		if(!resp.body().asString().contains("success")) {
-			Reporter.log("success is not displayed");
-			Assert.assertTrue(false);
+		else if(payType.equals("EMIResources")) {
+			if(!resp.body().asString().contains("success")) {
+				Reporter.log("success is not displayed");
+				Assert.assertTrue(false);
+			}
 		}
-	}		
-		
-	else if(payType.equals("EMIRazorpay")) {
-		if(!resp.body().asString().contains("CT_EMI_PLAN_25_9_12_14.0_10")) {
-			Reporter.log("CT_EMI_PLAN_25_9_12_14.0_10");
-			Assert.assertTrue(false);
+
+		else if(payType.equals("EMIRazorpay")) {
+			if(!resp.body().asString().contains("CT_EMI_PLAN_25_9_12_14.0_10")) {
+				Reporter.log("CT_EMI_PLAN_25_9_12_14.0_10");
+				Assert.assertTrue(false);
+			}
 		}
-	}
-		
-	else if(payType.equals("EMINoon")) {
+
+		else if(payType.equals("EMINoon")) {
 		/*if(!resp.body().asString().contains("CT_EMI_PLAN_24_107_3_0")) {
 			Reporter.log("Plan is not displayed");
 			Assert.assertTrue(false);
 		}*/
-	}
-	else if(payType.equals("EMIFetch")) {
-		if(!resp.body().asString().contains("Invalid trip")) {
-			Reporter.log("Invalid trip is not displayed");
-			Assert.assertTrue(false);
 		}
-	}
-	else if(payType.equals("SuperCoins_MobileLinked")) {
-		String Status= jsonPathEvaluator.getString("status");
-		Reporter.log("Status " +Status);
-		if(!Status.equals("S")) {
+		else if(payType.equals("EMIFetch")) {
+			if(!resp.body().asString().contains("Invalid trip")) {
+				Reporter.log("Invalid trip is not displayed");
 				Assert.assertTrue(false);
+			}
 		}
-		boolean isAccountLinked= jsonPathEvaluator.getBoolean("isAccountLinked");
-		Reporter.log("isAccountLinked " +isAccountLinked);
-		if(!isAccountLinked) {
+		else if(payType.equals("SuperCoins_MobileLinked")) {
+			String Status= jsonPathEvaluator.getString("status");
+			Reporter.log("Status " +Status);
+			if(!Status.equals("S")) {
 				Assert.assertTrue(false);
-		}
-		
-	}
-	
-	else if(payType.equals("SuperCoins_SendOTP")) {
-		String Status= jsonPathEvaluator.getString("status");
-		Reporter.log("Status " +Status);
-		if(!Status.equals("S")) {
+			}
+			boolean isAccountLinked= jsonPathEvaluator.getBoolean("isAccountLinked");
+			Reporter.log("isAccountLinked " +isAccountLinked);
+			if(!isAccountLinked) {
 				Assert.assertTrue(false);
+			}
+
 		}
-		String Description= jsonPathEvaluator.getString("description");
-		Reporter.log("description " +Description);
-		if(!Description.equals("OTP sent successfully")) {
+
+		else if(payType.equals("SuperCoins_SendOTP")) {
+			String Status= jsonPathEvaluator.getString("status");
+			Reporter.log("Status " +Status);
+			if(!Status.equals("S")) {
 				Assert.assertTrue(false);
-		}
-	}
-		
-	else if(payType.equals("SuperCoins_ValidateOTP")) {
-		String Status= jsonPathEvaluator.getString("status");
-		Reporter.log("Status " +Status);
-		if(!Status.equals("S")) {
+			}
+			String Description= jsonPathEvaluator.getString("description");
+			Reporter.log("description " +Description);
+			if(!Description.equals("OTP sent successfully")) {
 				Assert.assertTrue(false);
+			}
 		}
-		String Description= jsonPathEvaluator.getString("description");
-		Reporter.log("description " +Description);
-		if(!Description.equals("Otp validated successfully")) {
+
+		else if(payType.equals("SuperCoins_ValidateOTP")) {
+			String Status= jsonPathEvaluator.getString("status");
+			Reporter.log("Status " +Status);
+			if(!Status.equals("S")) {
 				Assert.assertTrue(false);
-		}
-	}
-	else if(payType.equals("SuperCoins_Unhold")) {
-		String Status= jsonPathEvaluator.getString("status");
-		Reporter.log("Status " +Status);
-		if(!Status.equals("S")) {
+			}
+			String Description= jsonPathEvaluator.getString("description");
+			Reporter.log("description " +Description);
+			if(!Description.equals("Otp validated successfully")) {
 				Assert.assertTrue(false);
+			}
 		}
-		String Description= jsonPathEvaluator.getString("description");
-		Reporter.log("description " +Description);
-		if(!Description.equals("Unhold successful")) {
+		else if(payType.equals("SuperCoins_Unhold")) {
+			String Status= jsonPathEvaluator.getString("status");
+			Reporter.log("Status " +Status);
+			if(!Status.equals("S")) {
 				Assert.assertTrue(false);
+			}
+			String Description= jsonPathEvaluator.getString("description");
+			Reporter.log("description " +Description);
+			if(!Description.equals("Unhold successful")) {
+				Assert.assertTrue(false);
+			}
+
 		}
-		
-	}
-		
-	else if(payType.equals("SuperCoins_ValidateOTP_Invalid")) {
-		String Status= jsonPathEvaluator.getString("status");
-		Reporter.log("Status " +Status);
-		if(!Status.equals("F")) {
-			Assert.assertTrue(false);
+
+		else if(payType.equals("SuperCoins_ValidateOTP_Invalid")) {
+			String Status= jsonPathEvaluator.getString("status");
+			Reporter.log("Status " +Status);
+			if(!Status.equals("F")) {
+				Assert.assertTrue(false);
+			}
+			String Description= jsonPathEvaluator.getString("description");
+			Reporter.log("description " +Description);
+			if(!Description.equals("OTP verification failed")) {
+				Assert.assertTrue(false);
+			}
+			String Error= jsonPathEvaluator.getString("errorCode");
+			Reporter.log("Error " +Error);
+			if(!Error.equals("OTP_VERIFICATION_FAILED")) {
+				Assert.assertTrue(false);
+			}
 		}
-		String Description= jsonPathEvaluator.getString("description");
-		Reporter.log("description " +Description);
-		if(!Description.equals("OTP verification failed")) {
-			Assert.assertTrue(false);
-		}
-		String Error= jsonPathEvaluator.getString("errorCode");
-		Reporter.log("Error " +Error);
-		if(!Error.equals("OTP_VERIFICATION_FAILED")) {
-			Assert.assertTrue(false);
-		}
-	}	
-	else if(payType.equals("SuperCoins_Info")) {
+		else if(payType.equals("SuperCoins_Info")) {
 			if(!(resp.body().asString().contains("amount") && resp.body().asString().contains(":4.0"))) {
 				Reporter.log("amount :4.0 not displayed");
 				Assert.assertTrue(false);
@@ -5011,32 +5011,32 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		if(!coins.equals("5")) {
 			Assert.assertTrue(false);
 		}*/
-	}
-	else if(payType.equals("SuperCoins_CheckBalance")) {
-		String Status= jsonPathEvaluator.getString("status");
-		Reporter.log("Status " +Status);
-		if(!Status.equals("S")) {
-			Assert.assertTrue(false);
 		}
-		String Description= jsonPathEvaluator.getString("description");
-		Reporter.log("Description " +Description);
-		if(!Description.equals("Successfully fetched Supercoins balance")) {
-			Assert.assertTrue(false);
-		}		
-	}
-	else if(payType.equals("SuperCoins_CheckEarnPoints")) {
-		String Status= jsonPathEvaluator.getString("status");
-		Reporter.log("Status " +Status);
-		if(!Status.equals("S")) {
-			Assert.assertTrue(false);
+		else if(payType.equals("SuperCoins_CheckBalance")) {
+			String Status= jsonPathEvaluator.getString("status");
+			Reporter.log("Status " +Status);
+			if(!Status.equals("S")) {
+				Assert.assertTrue(false);
+			}
+			String Description= jsonPathEvaluator.getString("description");
+			Reporter.log("Description " +Description);
+			if(!Description.equals("Successfully fetched Supercoins balance")) {
+				Assert.assertTrue(false);
+			}
 		}
-		String Description= jsonPathEvaluator.getString("description");
-		Reporter.log("Description " +Description);
-		if(!Description.equals("Successfully fetched earn config")) {
-			Assert.assertTrue(false);
-		}		
-	
-	}
+		else if(payType.equals("SuperCoins_CheckEarnPoints")) {
+			String Status= jsonPathEvaluator.getString("status");
+			Reporter.log("Status " +Status);
+			if(!Status.equals("S")) {
+				Assert.assertTrue(false);
+			}
+			String Description= jsonPathEvaluator.getString("description");
+			Reporter.log("Description " +Description);
+			if(!Description.equals("Successfully fetched earn config")) {
+				Assert.assertTrue(false);
+			}
+
+		}
 		else if(payType.equals("SuperCoins_CheckEarnPoints1")) {
 			String Status= jsonPathEvaluator.getString("status");
 			Reporter.log("Status " +Status);
@@ -5052,38 +5052,38 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		}
 
 
-	else if(payType.equals("SuperCoins_CreatePromo")) {
-		if(!resp.body().asString().contains("SUPERCOINS")) {
-			Reporter.log("SUPERCOINS is not displayed");
-			Assert.assertTrue(false);
-		}	
-		if(!resp.body().asString().contains("DEACTIVE")) {
-			Reporter.log("DEACTIVE is not displayed");
-			Assert.assertTrue(false);
+		else if(payType.equals("SuperCoins_CreatePromo")) {
+			if(!resp.body().asString().contains("SUPERCOINS")) {
+				Reporter.log("SUPERCOINS is not displayed");
+				Assert.assertTrue(false);
+			}
+			if(!resp.body().asString().contains("DEACTIVE")) {
+				Reporter.log("DEACTIVE is not displayed");
+				Assert.assertTrue(false);
+			}
+			if(!resp.body().asString().contains("41649009")) {
+				Reporter.log("41649009 is not displayed");
+				Assert.assertTrue(false);
+			}
 		}
-		if(!resp.body().asString().contains("41649009")) {
-			Reporter.log("41649009 is not displayed");
-			Assert.assertTrue(false);
-		}
-	}
-	
-	else if(payType.equals("SuperCoins_UpdatePromo")) {			
-		String Status= jsonPathEvaluator.getString("status");
-		Reporter.log("Status " +Status);
-		if(!Status.equals("ACTIVE")) {
-			Assert.assertTrue(false);
-		}
-	}
 
-	else if(payType.equals("SuperCoins_ActivatePromo")) {			
-		String Status= jsonPathEvaluator.getString("status");
-		Reporter.log("Status " +Status);
-		if(!Status.equals("ACTIVE")) {
-			Assert.assertTrue(false);
+		else if(payType.equals("SuperCoins_UpdatePromo")) {
+			String Status= jsonPathEvaluator.getString("status");
+			Reporter.log("Status " +Status);
+			if(!Status.equals("ACTIVE")) {
+				Assert.assertTrue(false);
+			}
 		}
-	}
-		
-		return resp;	
+
+		else if(payType.equals("SuperCoins_ActivatePromo")) {
+			String Status= jsonPathEvaluator.getString("status");
+			Reporter.log("Status " +Status);
+			if(!Status.equals("ACTIVE")) {
+				Assert.assertTrue(false);
+			}
+		}
+
+		return resp;
 	}
 
 	public Response validation_SCLP_GV(String payType, Response resp) {
@@ -5192,10 +5192,10 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		return resp;
 	}
 
-		public Response validation_Prod(String payType, Response resp) {
+	public Response validation_Prod(String payType, Response resp) {
 		Reporter.log("Response body "+payType +" : "+ resp.body().asString());
 		//System.out.println("Response body "+payType +" : "+ resp.body().asString());
-		int statusCode = resp.getStatusCode();	
+		int statusCode = resp.getStatusCode();
 		Reporter.log("statusCode: " + statusCode);
 		JsonPath jsonPathEvaluator = resp.jsonPath();
 
@@ -5214,7 +5214,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			Reporter.log("isAccountLinked " +isAccountLinked);
 			if(!status.equals("S")) {
 				Assert.assertTrue(false);
-			}  
+			}
 			if(!isAccountLinked.equals("true")) {
 				Assert.assertTrue(false);
 			}
@@ -5226,7 +5226,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			Reporter.log("description " +description);
 			if(!status.equals("F")) {
 				Assert.assertTrue(false);
-			}  
+			}
 			if(!description.contains("You have provided incorrect card details")) {
 				Assert.assertTrue(false);
 			}
@@ -5271,23 +5271,23 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			String str_resp = resp.body().asString();
 			if(!str_resp.contains("INR")) {
 				Assert.assertTrue(false);
-			}  
+			}
 			if(!str_resp.contains("1001370018436908")) {
 				Assert.assertTrue(false);
-			} 
+			}
 		}
 		else if(payType.equalsIgnoreCase("Pay_Get_TW_Wallets")) {
 			String str_resp = resp.body().asString();
 			if(!str_resp.contains("AmazonPay")) {
 				Assert.assertTrue(false);
-			}  	
+			}
 
 		}
 		else if(payType.equalsIgnoreCase("Promo_Get_Group")) {
 			String str_resp = resp.body().asString();
 			if(!str_resp.contains("AIR_BOOKING")) {
 				Assert.assertTrue(false);
-			}			 
+			}
 		}
 		else if(payType.equalsIgnoreCase("Bin_Get_CardInfo")) {
 			String cardType = jsonPathEvaluator.getString("cardType");
@@ -5296,20 +5296,20 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			Reporter.log("cardType " +cardType);
 			if(!cardType.equals("CREDIT")) {
 				Assert.assertTrue(false);
-			}  
+			}
 			if(!bank.equals("HDFC BANK, LTD.")) {
 				Assert.assertTrue(false);
 			}
 		}
-		
+
 		else if(payType.equalsIgnoreCase("EMICache")) {
 			String str_resp = resp.body().asString();
 			if(!str_resp.contains("success")) {
 				Assert.assertTrue(false);
-			}	
+			}
 			if(!str_resp.contains("success1")) {
 				Assert.assertTrue(false);
-			}	
+			}
 		}
 		return resp;
 	}
@@ -5321,15 +5321,15 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		tripRef= "Q201" + randNumber;
 		return tripRef;
 	}
-	
-	public String getPayUI(String PayType, String Domain) throws Exception {			
+
+	public String getPayUI(String PayType, String Domain) throws Exception {
 		tripRef = getNewDate_TripID();
 		resp = payUIget(PayType, Domain, tripRef);
 		if(Domain.equalsIgnoreCase("AE")) {
 			qaurl=qaurlae;
 		}else if(Domain.equalsIgnoreCase("BH")) {
 			qaurl=qaurlbh;
-		}else if(Domain.equalsIgnoreCase("KW")) { 
+		}else if(Domain.equalsIgnoreCase("KW")) {
 			qaurl=qaurlkw;
 		}else if(Domain.equalsIgnoreCase("OM")) {
 			qaurl=qaurlom;
@@ -5343,16 +5343,16 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		Url = qaurl+ fetchPaymentURL(resp);
 		System.out.println(fetchPaymentURL(resp));
 		if(Domain.contains("FLYIN")) {
-			Url = qaurlFlyin+ fetchPaymentURL(resp);			
-		}		
+			Url = qaurlFlyin+ fetchPaymentURL(resp);
+		}
 		Reporter.log("Payment URL : " +Url);
 		//System.out.println("Payment URL : " +Url);
 		String TripID = fetchPaymentTripID(resp);
-		Reporter.log("TripID : "+TripID);	
+		Reporter.log("TripID : "+TripID);
 		if(!Url.contains("pay")) {
 			Reporter.log("Pay URL is not created - Failing the script");
 			//System.out.println("Pay URL is not created - Failing the script"+Url);
-			Assert.assertTrue(false);			
+			Assert.assertTrue(false);
 		}
 		if(textPresent(driver, "Oops, Something went wrong", 5)) {
 			Reporter.log("Oops, Something went wrong");
@@ -5362,7 +5362,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		//System.out.println("URL : "+Url);
 		return Url;
 	}
-	
+
 
 	public String fetchPaymentURL(Response resp){
 		String payurl="";
@@ -5371,11 +5371,11 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		System.out.println(resp);
 		if(payurl.equals(null)) {
 			Reporter.log("Pay URL is not created - Failing the script");
-			Assert.assertTrue(false);			
+			Assert.assertTrue(false);
 		}
 		return payurl;
 	}
-	
+
 	public String fetchPaymentTripID(Response resp){
 		String tripID="";
 		JsonPath jsonPathEvaluator = resp.jsonPath();
@@ -5385,42 +5385,42 @@ public class API_PaymentCommon extends PlatformCommonUtil
 
 	public Response validation_ROR(String payType, Response resp){
 		Reporter.log("Response body "+payType +" : "+ resp.body().asString());
-	//	System.out.println("Response body "+payType +" : "+ resp.body().asString());
-		int statusCode = resp.getStatusCode();	
+		//	System.out.println("Response body "+payType +" : "+ resp.body().asString());
+		int statusCode = resp.getStatusCode();
 		Reporter.log("statusCode: " + statusCode);
-		JsonPath jsonPathEvaluator = resp.jsonPath();		
+		JsonPath jsonPathEvaluator = resp.jsonPath();
 		if(statusCode!=200) {
-				Assert.assertTrue(false);
+			Assert.assertTrue(false);
 		}
-		
-		
+
+
 		if(payType.equalsIgnoreCase("ReportingPaginate")) {
-			String str_resp = resp.body().asString();			
+			String str_resp = resp.body().asString();
 			if(!str_resp.contains("page_size")) {
 				Assert.assertTrue(false);
-			}			
+			}
 		}
-		
+
 		else if(payType.equalsIgnoreCase("BasicValidaton")) {
 			String status = jsonPathEvaluator.getString("status");
 			String description = jsonPathEvaluator.getString("description");
 			if(!status.equals("S")) {
 				Assert.assertTrue(false);
-			}  
+			}
 			if(!description.equals("Successfully fetched")) {
 				Assert.assertTrue(false);
 			}
 		}
-		
-		
-		
+
+
+
 		else if(payType.equalsIgnoreCase("ReportingRefundUploadFetch")) {
-			String str_resp = resp.body().asString();			
+			String str_resp = resp.body().asString();
 			if(!str_resp.contains("refund_amount")) {
 				Assert.assertTrue(false);
-			}		
+			}
 		}
-			
+
 		else if(payType.equalsIgnoreCase("ReportingPaginate")) {
 			String redirection = jsonPathEvaluator.getString("redirection_required");
 			String Response = jsonPathEvaluator.getString("response_message");
@@ -5428,14 +5428,14 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			Reporter.log("Response " +Response);
 			if(!redirection.equals("[Y]")) {
 				Assert.assertTrue(false);
-			}  
+			}
 			if(!Response.equals("")) {
 				Assert.assertTrue(false);
 			}
 		}
 		return resp;
 	}
-	
+
 	public String paygetAuth() throws Exception {
 		/*int randomNumber= PaymentUI_CommonUtilities.generateFiveDigitRandomNumber();
 		String randNumber= Integer.toString(randomNumber);
@@ -5443,13 +5443,13 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		*/
 		String URL = "/paymentservice/test/getHash?tripRef="+tripRef+"&itineraryId=NI685a33347e-464c-4a27-86c9-200710101330&amount=500&productType=DOMESTIC_AIR";
 		RestAssured.baseURI = urlPay;
-		String endPoint = URL;		
+		String endPoint = URL;
 		Response response = null;
 		response = RestAssured.given().when().log().all().get(endPoint);
 		String payAuth = response.asString();
 		return payAuth;
 	}
-	
+
 	public String paygetAuth_FullGV() throws Exception {
 		/*int randomNumber= PaymentUI_CommonUtilities.generateFiveDigitRandomNumber();
 		String randNumber= Integer.toString(randomNumber);
@@ -5457,13 +5457,13 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		*/
 		String URL = "/paymentservice/test/getHash?tripRef="+tripRef+"&itineraryId=NI685a33347e-464c-4a27-86c9-200710101330&amount=0&productType=DOMESTIC_AIR";
 		RestAssured.baseURI = urlPay;
-		String endPoint = URL;		
+		String endPoint = URL;
 		Response response = null;
 		response = RestAssured.given().when().log().all().get(endPoint);
 		String payAuth = response.asString();
 		return payAuth;
 	}
-	
+
 	public String paygetAuth_SuperCoins() throws Exception {
 		/*int randomNumber= PaymentUI_CommonUtilities.generateFiveDigitRandomNumber();
 		String randNumber= Integer.toString(randomNumber);
@@ -5471,13 +5471,13 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		*/
 		String URL = "/paymentservice/test/getHash?tripRef="+tripRef+"&itineraryId=NI685a33347e-464c-4a27-86c9-200710101330&amount=110&productType=DOMESTIC_AIR";
 		RestAssured.baseURI = urlPay;
-		String endPoint = URL;		
+		String endPoint = URL;
 		Response response = null;
 		response = RestAssured.given().when().log().all().get(endPoint);
 		String payAuth = response.asString();
 		return payAuth;
 	}
-		
+
 	public String paygetAuth_EMI() throws Exception {
 		/*int randomNumber= PaymentUI_CommonUtilities.generateFiveDigitRandomNumber();
 		String randNumber= Integer.toString(randomNumber);
@@ -5485,173 +5485,173 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		*/
 		String URL = "/paymentservice/test/getHash?tripRef="+tripRef+"&itineraryId=NI685a33347e-464c-4a27-86c9-200710101330&amount=5000&productType=DOMESTIC_AIR";
 		RestAssured.baseURI = urlPay;
-		String endPoint = URL;		
+		String endPoint = URL;
 		Response response = null;
 		response = RestAssured.given().when().log().all().get(endPoint);
 		String payAuth = response.asString();
 		return payAuth;
 	}
-	
+
 	public Response payUIget(String payType, String PayType1, String tripRef) throws Exception {
 		String endPoint = null;
-		String params = null; 
+		String params = null;
 		HashMap<String, Object> headers	= new HashMap<>();
 		HashMap<String, Object> cookies	= new HashMap<>();
 		if(common.value("payAuth").contains("false")||payType.contains("AirAmend")) {
 			headers = headersForms();
 			Reporter.log("Pay Auth header not added");
-		} else headers = headersFormspay();			
+		} else headers = headersFormspay();
 		cookies = addCookies();
 		Response response = null;
 		if(payType.equalsIgnoreCase("BookApp/GetPay")){
 			RestAssured.baseURI = urlPay;
-			endPoint = endPointgetPay;	
+			endPoint = endPointgetPay;
 			int randomNumber= 1;
 			String randNumber= Integer.toString(randomNumber);
-			params = "{\"train_booking\":{\"traveller_details\":[{\"seq_no\":1,\"type\":\"ADT\",\"title\":\"Ms\",\"first_name\":\"Test\",\"last_name\":\"Test\"}],\"itinerary_details\":[{\"from_station_code\":\"SBC\",\"to_station_code\":\"MYS\",\"from_station_name\":\"KSR BENGALURU\",\"to_station_name\":\"MYSURU JN\",\"train_name\":\"BSB MYS EXP\",\"train_number\":\"16230\",\"departure_time\":\"2019-11-12T00:15:00\",\"arrival_time\":\"2019-11-12T02:45:00\",\"booking_class\":\"AC 2 Tier(2A)\",\"updated_availability\":\"AVAILABLE-0119\",\"quota\":\"General\",\"seatStatus\":true}],\"pricing_details\":[{\"other_railway_charges\":119.4,\"agent_service_charge\":40,\"total\":775.4,\"insuranceCharge\":0,\"currency\":\"INR\",\"pax_pay_info\":[{\"base_fare\":616,\"pax_count\":1,\"pax_type\":\"ADULT\"}]}],\"transaction_fee_details\":{\"CC\":{\"DEFAULT\":1.8},\"DC\":{\"DEFAULT\":1},\"NB\":{\"1\":1.1,\"2\":1.2,\"3\":1.1,\"23\":1.1,\"DEFAULT\":1.35},\"KC\":{\"DEFAULT\":0},\"DA\":{\"DEFAULT\":0},\"TW\":{\"DEFAULT\":1},\"UP\":{\"DEFAULT\":1}}},\"itinerary_id\":\"f25db800de1e0137664316217d236675\",\"ttl\":3600,\"trip_id\":45134538,\"app_ref1\":\"" + tripRef +"\",\"app_ref2\":74282510,\"customer_detail\":{\"ip_address\":\"119.82.106.202\",\"mobile\":1212121212,\"landline\":1212121212,\"email\":\"cltppayment@gmail.com\",\"first_name\":\"Cltp\",\"last_name\":\"payment\",\"username\":\"cltppayment@gmail.com\"},\"product_type\":\"TRAIN\",\"currency\":\"INR\",\"order_info1\":\"16230/SBC/MYS/2019111200:15:00\",\"order_info2\":\"Test Test\",\"source_type\":\"ACCOUNT\",\"high_risk\":false,\"country\":\"IN\",\"user_id\":\"64891349\",\"email_id\":\"cltppayment@gmail.com\",\"d_plus_x_in_hours\":273,\"app_return_info\":{\"url\":\"https://qa2.cleartrip.com/trains/itinerary/f25db800de1e0137664316217d236675/process_payment\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://trains-book-nget.cltp.com:9001/r3/trains/itinerary/f25db800de1e0137664316217d236675/book_internal\",\"params\":null},\"payment_category\":\"B\"}";;		
+			params = "{\"train_booking\":{\"traveller_details\":[{\"seq_no\":1,\"type\":\"ADT\",\"title\":\"Ms\",\"first_name\":\"Test\",\"last_name\":\"Test\"}],\"itinerary_details\":[{\"from_station_code\":\"SBC\",\"to_station_code\":\"MYS\",\"from_station_name\":\"KSR BENGALURU\",\"to_station_name\":\"MYSURU JN\",\"train_name\":\"BSB MYS EXP\",\"train_number\":\"16230\",\"departure_time\":\"2019-11-12T00:15:00\",\"arrival_time\":\"2019-11-12T02:45:00\",\"booking_class\":\"AC 2 Tier(2A)\",\"updated_availability\":\"AVAILABLE-0119\",\"quota\":\"General\",\"seatStatus\":true}],\"pricing_details\":[{\"other_railway_charges\":119.4,\"agent_service_charge\":40,\"total\":775.4,\"insuranceCharge\":0,\"currency\":\"INR\",\"pax_pay_info\":[{\"base_fare\":616,\"pax_count\":1,\"pax_type\":\"ADULT\"}]}],\"transaction_fee_details\":{\"CC\":{\"DEFAULT\":1.8},\"DC\":{\"DEFAULT\":1},\"NB\":{\"1\":1.1,\"2\":1.2,\"3\":1.1,\"23\":1.1,\"DEFAULT\":1.35},\"KC\":{\"DEFAULT\":0},\"DA\":{\"DEFAULT\":0},\"TW\":{\"DEFAULT\":1},\"UP\":{\"DEFAULT\":1}}},\"itinerary_id\":\"f25db800de1e0137664316217d236675\",\"ttl\":3600,\"trip_id\":45134538,\"app_ref1\":\"" + tripRef +"\",\"app_ref2\":74282510,\"customer_detail\":{\"ip_address\":\"119.82.106.202\",\"mobile\":1212121212,\"landline\":1212121212,\"email\":\"cltppayment@gmail.com\",\"first_name\":\"Cltp\",\"last_name\":\"payment\",\"username\":\"cltppayment@gmail.com\"},\"product_type\":\"TRAIN\",\"currency\":\"INR\",\"order_info1\":\"16230/SBC/MYS/2019111200:15:00\",\"order_info2\":\"Test Test\",\"source_type\":\"ACCOUNT\",\"high_risk\":false,\"country\":\"IN\",\"user_id\":\"64891349\",\"email_id\":\"cltppayment@gmail.com\",\"d_plus_x_in_hours\":273,\"app_return_info\":{\"url\":\"https://qa2.cleartrip.com/trains/itinerary/f25db800de1e0137664316217d236675/process_payment\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://trains-book-nget.cltp.com:9001/r3/trains/itinerary/f25db800de1e0137664316217d236675/book_internal\",\"params\":null},\"payment_category\":\"B\"}";;
 		}
 		else if(payType.equalsIgnoreCase("BookApp/GetPayWithCookie")){
 			RestAssured.baseURI = urlPay;
-			endPoint = endPointgetPay;	
+			endPoint = endPointgetPay;
 			params = "{\"train_booking\":{\"traveller_details\":[{\"seq_no\":1,\"type\":\"ADT\",\"title\":\"Ms\",\"first_name\":\"Test\",\"last_name\":\"Test\"}],\"itinerary_details\":[{\"from_station_code\":\"SBC\",\"to_station_code\":\"MYS\",\"from_station_name\":\"KSR BENGALURU\",\"to_station_name\":\"MYSURU JN\",\"train_name\":\"BSB MYS EXP\",\"train_number\":\"16230\",\"departure_time\":\"2019-11-12T00:15:00\",\"arrival_time\":\"2019-11-12T02:45:00\",\"booking_class\":\"AC 2 Tier(2A)\",\"updated_availability\":\"AVAILABLE-0119\",\"quota\":\"General\",\"seatStatus\":true}],\"pricing_details\":[{\"other_railway_charges\":119.4,\"agent_service_charge\":40,\"total\":775.4,\"insuranceCharge\":0,\"currency\":\"INR\",\"pax_pay_info\":[{\"base_fare\":616,\"pax_count\":1,\"pax_type\":\"ADULT\"}]}],\"transaction_fee_details\":{\"CC\":{\"DEFAULT\":1.8},\"DC\":{\"DEFAULT\":1},\"NB\":{\"1\":1.1,\"2\":1.2,\"3\":1.1,\"23\":1.1,\"DEFAULT\":1.35},\"KC\":{\"DEFAULT\":0},\"DA\":{\"DEFAULT\":0},\"TW\":{\"DEFAULT\":1},\"UP\":{\"DEFAULT\":1}}},\"itinerary_id\":\"f25db800de1e0137664316217d236675\",\"ttl\":3600,\"trip_id\":45134538,\"app_ref1\":\"Q19020128945\",\"app_ref2\":74282510,\"customer_detail\":{\"ip_address\":\"119.82.106.202\",\"mobile\":1212121212,\"landline\":1212121212,\"email\":\"cltppayment@gmail.com\",\"first_name\":\"Cltp\",\"last_name\":\"payment\",\"username\":\"cltppayment@gmail.com\"},\"product_type\":\"TRAIN\",\"currency\":\"INR\",\"order_info1\":\"16230/SBC/MYS/2019111200:15:00\",\"order_info2\":\"Test Test\",\"source_type\":\"ACCOUNT\",\"high_risk\":false,\"country\":\"IN\",\"user_id\":\"64891349\",\"email_id\":\"cltppayment@gmail.com\",\"d_plus_x_in_hours\":273,\"app_return_info\":{\"url\":\"https://qa2.cleartrip.com/trains/itinerary/f25db800de1e0137664316217d236675/process_payment\",\"method\":\"POST\",\"book_internal\":true,\"book_internal_url\":\"http://trains-book-nget.cltp.com:9001/r3/trains/itinerary/f25db800de1e0137664316217d236675/book_internal\",\"params\":null},\"payment_category\":\"B\"}";;
-			
+
 		}
-		
+
 		else if(payType.equalsIgnoreCase("Air")){
 			RestAssured.baseURI = urlPay;
-			endPoint = endPointgetPay;	
+			endPoint = endPointgetPay;
 			params = params_PayUI_Air1+tripRef+params_PayUI_Air2;
 		}
 		else if(payType.equalsIgnoreCase("AirNew")){
 			RestAssured.baseURI = urlPay;
-			endPoint = endPointgetPay;	
+			endPoint = endPointgetPay;
 			params = params_PayUI_Air1_new+tripRef+params_PayUI_Air2_New;
 		}
 		else if(payType.equalsIgnoreCase("AirEMI")){
 			headers = headersFormspay_EMI();
 			RestAssured.baseURI = urlPay;
-			endPoint = endPointgetPay;	
+			endPoint = endPointgetPay;
 			params = params_PayUI_Air1_new+tripRef+params_PayUI_Air2_EMI;
 		}
 		else if(payType.equalsIgnoreCase("AirSUPERCOINS")){
 			headers = headersFormspay_Supercoins();
 			RestAssured.baseURI = urlPay;
-			endPoint = endPointgetPay;	
+			endPoint = endPointgetPay;
 			params = params_PayUI_SUPERCOINS1+tripRef+params_PayUI_SUPERCOINS;
 		}
 		else if(payType.equalsIgnoreCase("AirRT")){
 			RestAssured.baseURI = urlPay;
-			endPoint = endPointgetPay;	
+			endPoint = endPointgetPay;
 			params = params_PayUI_Air1+tripRef+params_PayUI_AirRT;
 		}
 		else if(payType.equalsIgnoreCase("AirMC")){
 			RestAssured.baseURI = urlPay;
-			endPoint = endPointgetPay;	
+			endPoint = endPointgetPay;
 			params = params_PayUI_Air1+tripRef+params_PayUI_AirMC;
 		}
 		else if(payType.equalsIgnoreCase("AirCoupon")){
 			RestAssured.baseURI = urlPay;
-			endPoint = endPointgetPay;	
+			endPoint = endPointgetPay;
 			params = params_PayUI_Air_Coupon1+tripRef+params_PayUI_Air_Coupon2;
 		}
 		else if(payType.equalsIgnoreCase("AirCouponCash")){
 			RestAssured.baseURI = urlPay;
-			endPoint = endPointgetPay;	
+			endPoint = endPointgetPay;
 			params = params_PayUI_Air_Coupon1+tripRef+params_PayUI_Air_CouponCashback;
 		}
-		
-		
+
+
 		else if(payType.equalsIgnoreCase("AirCouponWT")){
 			RestAssured.baseURI = urlPay;
-			endPoint = endPointgetPay;	
+			endPoint = endPointgetPay;
 			params = params_PayUI_Air_Coupon1+tripRef+params_PayUI_Air_CouponWT;
 		}
 		else if(payType.equalsIgnoreCase("AirGV")){
 			RestAssured.baseURI = urlPay;
-			endPoint = endPointgetPay;	
+			endPoint = endPointgetPay;
 			params = params_PayUI_Air_GV1+tripRef+params_PayUI_Air_GV2;
 		}
 		else if(payType.equalsIgnoreCase("AirGVFull")){
 			headers = headersFormspay_FullGV();
 			RestAssured.baseURI = urlPay;
-			endPoint = endPointgetPay;	
+			endPoint = endPointgetPay;
 			params = params_PayUI_Air_GV1+tripRef+params_PayUI_Air_GV2_Full;
 		}
 		else if(payType.equalsIgnoreCase("AirRP")){
 			headers = headersFormspay_FullGV();
 			RestAssured.baseURI = urlPay;
-			endPoint = endPointgetPay;	
+			endPoint = endPointgetPay;
 			params = params_PayUI_Air_RP1+tripRef+params_PayUI_Air_RP6;
 		}
 		else if(payType.equalsIgnoreCase("AirRPFull")){
 			headers = headersFormspay_FullGV();
-			endPoint = endPointgetPay;	
+			endPoint = endPointgetPay;
 			params = params_PayUI_Air_RP1+tripRef+params_PayUI_Air_RP4;
 		}
 		else if(payType.equalsIgnoreCase("AirAmend")){
 			RestAssured.baseURI = urlPay;
-			endPoint = endPointgetPay;	
+			endPoint = endPointgetPay;
 			params = param_Air_Amendment_API1+tripRef+param_Air_Amendment_API2;
 		}
 		else if(payType.equalsIgnoreCase("AirAE")){
 			RestAssured.baseURI = urlPay;
-			endPoint = endPointgetPay;	
+			endPoint = endPointgetPay;
 			params = params_PayUI_Air1+tripRef+params_PayUI_Air_AE;
 		}else if(payType.equalsIgnoreCase("AirAEAR")){ // Arabic
 			RestAssured.baseURI = urlPay;
-			endPoint = endPointgetPay;	
+			endPoint = endPointgetPay;
 			params = params_PayUI_Air1+tripRef+params_PayUI_Air_AE_AR;
 		}else if(payType.equalsIgnoreCase("AirBH")){
 			RestAssured.baseURI = urlPay;
-			endPoint = endPointgetPay;	
+			endPoint = endPointgetPay;
 			params = params_PayUI_Air1+tripRef+params_PayUI_Air_BH;
 		}else if(payType.equalsIgnoreCase("AirKW")){
 			RestAssured.baseURI = urlPay;
-			endPoint = endPointgetPay;	
+			endPoint = endPointgetPay;
 			params = params_PayUI_Air1+tripRef+params_PayUI_Air_KW;
 		}else if(payType.equalsIgnoreCase("AirSA")){
 			RestAssured.baseURI = urlPay;
-			endPoint = endPointgetPay;	
+			endPoint = endPointgetPay;
 			params = params_PayUI_Air1+tripRef+params_PayUI_Air_SA;
 		}else if(payType.equalsIgnoreCase("AirFlyin")){
 			RestAssured.baseURI = urlPay;
-			endPoint = endPointgetPay;	
+			endPoint = endPointgetPay;
 			params = params_PayUI_Air1_new+tripRef+params_PayUI_Air_Flyin;
 		}
 		else if(payType.equalsIgnoreCase("AirFlyinAR")){
 			RestAssured.baseURI = urlPay;
-			endPoint = endPointgetPay;	
+			endPoint = endPointgetPay;
 			params = params_PayUI_Air1_new_ar+tripRef+params_PayUI_Air_Flyin;
 		}
 		else if(payType.equalsIgnoreCase("AirSAAR")){ // Arabic
 			RestAssured.baseURI = urlPay;
-			endPoint = endPointgetPay;	
+			endPoint = endPointgetPay;
 			params = params_PayUI_Air1+tripRef+params_PayUI_Air_SA_AR;
 		}
-		
+
 		else if(payType.equalsIgnoreCase("AirOM")){
 			RestAssured.baseURI = urlPay;
-			endPoint = endPointgetPay;	
+			endPoint = endPointgetPay;
 			params = params_PayUI_Air1+tripRef+params_PayUI_Air_OM;
 		}else if(payType.equalsIgnoreCase("AirQA")){
 			RestAssured.baseURI = urlPay;
-			endPoint = endPointgetPay;	
+			endPoint = endPointgetPay;
 			params = params_PayUI_Air1+tripRef+params_PayUI_Air_QA;
 		}else if(payType.equalsIgnoreCase("AirUS")){
 			RestAssured.baseURI = urlPay;
-			endPoint = endPointgetPay;	
+			endPoint = endPointgetPay;
 			params = params_PayUI_Air1+tripRef+params_PayUI_Air_US;
 		}
-			response = RestAssured.given().
+		response = RestAssured.given().
 				when().log().all().body(params).headers(headers).post(endPoint);
-			System.out.println("URL : "+urlPay+endPoint);
-			//Reporter.log("Params : "+params);
-			return response;
+		System.out.println("URL : "+urlPay+endPoint);
+		//Reporter.log("Params : "+params);
+		return response;
 	}
-	
+
 	public Response rearchCtPay(String payType, String payType1) throws Exception{
 		RestAssured.baseURI =urlCTPay;
-		Response request = null;		
+		Response request = null;
 		String params = null;
 		String url=null;
 		HashMap<String, Object> headers = new HashMap<>();
@@ -5659,7 +5659,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 
 		if(payType.equals("UPDATE")) {
 			url = urlCTPay_UpdateClient;
-			params = paramsctPay_UpdateClient;		
+			params = paramsctPay_UpdateClient;
 			request = RestAssured.given().
 					when().
 					log().all().
@@ -5668,12 +5668,12 @@ public class API_PaymentCommon extends PlatformCommonUtil
 					post(url);
 		}
 		else if(payType.equals("ADD")) {
-			url =urlCTPay_ADD ; 
+			url =urlCTPay_ADD ;
 			String ranno = getRandomNos(4);
 
 			String Date = getDateTime(1, "ssmm");
 
-			params = paramsctPay_ADD+Date+paramsctPay_ADD1;		
+			params = paramsctPay_ADD+Date+paramsctPay_ADD1;
 			request = RestAssured.given().
 					when().
 					log().all().
@@ -5682,8 +5682,8 @@ public class API_PaymentCommon extends PlatformCommonUtil
 					post(url);
 		}
 		else if(payType.equals("GETURL")) {
-			url =urlCTPay_Get ; 
-			params = paramsctPay_GetURL;		
+			url =urlCTPay_Get ;
+			params = paramsctPay_GetURL;
 			request = RestAssured.given().
 					when().
 					log().all().
@@ -5700,8 +5700,8 @@ public class API_PaymentCommon extends PlatformCommonUtil
 					get(url);
 		}
 		else if(payType.equals("CreateURL")) {
-			url =urlCTPay_CreateURL ; 
-			params = paramsctPay_CreateURL;		
+			url =urlCTPay_CreateURL ;
+			params = paramsctPay_CreateURL;
 			request = RestAssured.given().
 					when().
 					log().all().
@@ -5713,7 +5713,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		Reporter.log("Params : "+params);
 		Reporter.log(url);
 		return request;
-	}	
+	}
 
 	public Response refund(String payType, String RefundID) {
 		RestAssured.baseURI = urlPay;
@@ -5777,70 +5777,70 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		headers = headersForms();
 		Response response = null;
 		if(payType.equalsIgnoreCase("userDetails")) {
-			endPoint = urlEW_UserDetails;	
+			endPoint = urlEW_UserDetails;
 			response = RestAssured.given().
 					when().log().all().headers(headers).get(endPoint);
 		}
 		else if(payType.equalsIgnoreCase("getOutstanding")) {
-			endPoint = urlEW_GetOutstandingAmt;	
+			endPoint = urlEW_GetOutstandingAmt;
 			response = RestAssured.given().
 					when().log().all().headers(headers).get(endPoint);
-		}			
+		}
 		else if(payType.equalsIgnoreCase("otpIN")) {
-			endPoint = urlEW_OptIn;	
+			endPoint = urlEW_OptIn;
 			response = RestAssured.given().
 					when().log().all().headers(headers).put(endPoint);
 		}
 		else if(payType.equalsIgnoreCase("payV3")) {
-			endPoint = urlEW_PayV3;	
+			endPoint = urlEW_PayV3;
 			params = paramsEW_PayV3;
 			response = RestAssured.given().
 					when().log().all().body(params).headers(headers).post(endPoint);
 		}
 		else if(payType.equalsIgnoreCase("payMultiV3")) {
-			endPoint = urlEW_PayV3;	
+			endPoint = urlEW_PayV3;
 			params = paramsEW_PayMultiV3;
 			response = RestAssured.given().
 					when().log().all().body(params).headers(headers).post(endPoint);
 		}
 		else if(payType.equalsIgnoreCase("pay")) {
-			endPoint = urlEW_Pay;	
+			endPoint = urlEW_Pay;
 			params = paramsEW_Pay;
 			response = RestAssured.given().
 					when().log().all().body(params).headers(headers).post(endPoint);
 		}
 		else if(payType.equalsIgnoreCase("Autodebit")) {
-			endPoint = urlEW_AutoDebit;	
+			endPoint = urlEW_AutoDebit;
 			response = RestAssured.given().
 					when().log().all().headers(headers).get(endPoint);
 		}
 		else if(payType.equalsIgnoreCase("payMulti")) {
-			endPoint = urlEW_Pay;	
+			endPoint = urlEW_Pay;
 			params = paramsEW_PayMulti;
 			response = RestAssured.given().
 					when().log().all().body(params).headers(headers).post(endPoint);
 		}
 
 		else if(payType.equalsIgnoreCase("validate")) {
-			endPoint = urlEW_Validate;	
+			endPoint = urlEW_Validate;
 			params = paramsEW_Validate;
 			response = RestAssured.given().
 					when().log().all().body(params).headers(headers).post(endPoint);
-		}	
+		}
 
 		else if(payType.equalsIgnoreCase("EW_AddAmt")) {
-			endPoint = urlEW_AddAmt;	
+			endPoint = urlEW_AddAmt;
 			params = paramsEW_AddAmt;
 			response = RestAssured.given().
 					when().log().all().body(params).headers(headers).put(endPoint);
 		}
 		else if(payType.equalsIgnoreCase("refund")) {
-			endPoint = urlEW_Refund;	
+			endPoint = urlEW_Refund;
 			response = RestAssured.given().
 					when().log().all().headers(headers).get(endPoint);
 		}
 		else if(payType.equalsIgnoreCase("EW_Summary")) {
-			endPoint = urlEW_Summary;	
+			endPoint = urlEW_Summary;
 			response = RestAssured.given().
 					when().log().all().headers(headers).get(endPoint);
 		}
@@ -5855,7 +5855,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 	public Response adcb (String payType, String PayType1) throws Exception {
 		//RestAssured.baseURI = urladcb_validat;
 		String endPoint = null;
-		String params = null; 
+		String params = null;
 		HashMap<String, Object> headers	= new HashMap<>();
 		headers = headersForms();
 		Response response = null;
@@ -5864,28 +5864,28 @@ public class API_PaymentCommon extends PlatformCommonUtil
 
 		if(payType.equalsIgnoreCase("checkBalance")) {
 			RestAssured.baseURI = urlRewards;
-			endPoint = urladcb_checkbalance;	
+			endPoint = urladcb_checkbalance;
 			params = Paramsadcb_checkbalance1+trackid+Paramsadcb_checkbalance2;
-			response = RestAssured.given(). 
+			response = RestAssured.given().
 					when().log().all().body(params).headers(headers).post(endPoint);
 		}
 		else if(payType.equalsIgnoreCase("sendOTP")) {
 			RestAssured.baseURI = urlRewards;
-			endPoint = urladcb_sendOTP;	
+			endPoint = urladcb_sendOTP;
 			params = Paramsadcb_sendOTP1+trackid+Paramsadcb_sendOTP2;
 			response = RestAssured.given().
 					when().log().all().body(params).headers(headers).post(endPoint);
-		}			
+		}
 		else if(payType.equalsIgnoreCase("validate")) {
 			RestAssured.baseURI = urlrewards_validate;
-			endPoint = urladcb_validate;	
+			endPoint = urladcb_validate;
 			params = Paramsadcb_validate1+trackid+Paramsadcb_validate2;
 			response = RestAssured.given().
 					when().log().all().body(params).headers(headers).post(endPoint);
 		}
 		else if(payType.equalsIgnoreCase("pay")) {
 			RestAssured.baseURI = urlrewards_validate;
-			endPoint = urladcb_pay;	
+			endPoint = urladcb_pay;
 			params = Paramsadcb_pay1+trackid+Paramsadcb_pay2;
 			response = RestAssured.given().
 					when().log().all().body(params).headers(headers).post(endPoint);
@@ -5899,7 +5899,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 
 	public Response reward(String payType, String PayType1) throws Exception {
 		String endPoint = null;
-		String params = null; 
+		String params = null;
 		HashMap<String, Object> headers	= new HashMap<>();
 		headers = headersForms();
 		Response response = null;
@@ -5908,28 +5908,28 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		trk_id.add("pay12341608"+PlatformCommonUtil.generateTrackID());
 		if(payType.equalsIgnoreCase("ADCB_CheckBalance")) {
 			RestAssured.baseURI = urlRewards;
-			endPoint = urladcb_checkbalance;	
+			endPoint = urladcb_checkbalance;
 			params = Paramsadcb_checkbalance1+trackid+Paramsadcb_checkbalance2;
 			response = RestAssured.given().
 					when().log().all().body(params).headers(headers).post(endPoint);
 		}
 		else if(payType.equalsIgnoreCase("ADCB_sendOTP")) {
 			RestAssured.baseURI = urlRewards;
-			endPoint = urladcb_sendOTP;	
+			endPoint = urladcb_sendOTP;
 			params = Paramsadcb_sendOTP1+trackid+Paramsadcb_sendOTP2;
 			response = RestAssured.given().
 					when().log().all().body(params).headers(headers).post(endPoint);
-		}			
+		}
 		else if(payType.equalsIgnoreCase("ADCB_validate")) {
 			RestAssured.baseURI = urlrewards_validate;
-			endPoint = urladcb_validate;	
+			endPoint = urladcb_validate;
 			params = Paramsadcb_validate1+trackid+Paramsadcb_validate2;
 			response = RestAssured.given().
 					when().log().all().body(params).headers(headers).post(endPoint);
 		}
 		else if(payType.equalsIgnoreCase("ADCB_pay")) {
 			RestAssured.baseURI = urlrewards_validate;
-			endPoint = urladcb_pay;	
+			endPoint = urladcb_pay;
 			params = Paramsadcb_pay1+trackid+Paramsadcb_pay2;
 			response = RestAssured.given().
 					when().log().all().body(params).headers(headers).post(endPoint);
@@ -5960,7 +5960,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 
 		else if(payType.equalsIgnoreCase("PAYBACK_CheckEarnPoints")) {
 			RestAssured.baseURI = urlRewards;
-			endPoint = urlreward_PayCheckEarnPoints; 
+			endPoint = urlreward_PayCheckEarnPoints;
 			params = ParamsPayBack_CheckEarnPoints;
 			response = RestAssured.given().
 					when().log().all().body(params).headers(headers).post(endPoint);
@@ -5993,15 +5993,15 @@ public class API_PaymentCommon extends PlatformCommonUtil
 						int n = rand.nextInt(9999999);
 						String trackid1 = Integer.toString(n);
 						String track = "CLRTRP"+ trackid1;
-						
+
 						RestAssured.baseURI = urlrewards_payURI;
 						endPoint = urlreward_payback_pay;
 						params = ParamsPayBack_Pay+track+ParamsPayBack_PayWT;
 						response = RestAssured.given().
 								when().log().all().body(params).headers(headers).post(endPoint);
 					}*/
-		
-		
+
+
 		else if(payType.equalsIgnoreCase("PAYBACK_Pay_WT_MultiGV")) {
 			Random rand = new Random();
 			int n = rand.nextInt(9999999);
@@ -6035,7 +6035,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			params = ParamsPayBack_Earn+track_id+ParamsPayBack_Earn1;
 			response = RestAssured.given().
 					when().log().all().body(params).headers(headers).post(endPoint);
-		}	
+		}
 
 		else if(payType.equalsIgnoreCase("PAYBACK_RedeemPoints")){
 			RestAssured.baseURI = urlRewards;
@@ -6088,13 +6088,13 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		Reporter.log(urlRewards);
 		Reporter.log("Params : "+params);
 		Reporter.log(endPoint);
-		return response;			
+		return response;
 	}
 
 	public Response refunds (String payType, String PayType1, String tripid, String amount, Boolean isFullWalletRefund, String status) {
 		RestAssured.baseURI = urlPay;
 		String endPoint = null;
-		String params = null; 
+		String params = null;
 		HashMap<String, Object> headers	= new HashMap<>();
 		headers = headersForms();
 		Response response = null;
@@ -6102,7 +6102,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		if(payType.equalsIgnoreCase("refunds_createrefund")) {
 			String txnid = PayType1;
 			endPoint = url_createrefundentry;
-			params = String.format(Params_Createrefund,isFullWalletRefund,tripid,amount,txnid);			
+			params = String.format(Params_Createrefund,isFullWalletRefund,tripid,amount,txnid);
 			Reporter.log(endPoint);
 			response = RestAssured.given().
 					when().log().all().body(params).headers(headers).post(endPoint);
@@ -6135,8 +6135,8 @@ public class API_PaymentCommon extends PlatformCommonUtil
 					when().log().all().headers(headers).get(endPoint);
 		}
 
-		Reporter.log(urlPay);						
-		Reporter.log(endPoint);			
+		Reporter.log(urlPay);
+		Reporter.log(endPoint);
 		return response;
 	}
 
@@ -6153,15 +6153,15 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			response = RestAssured.given().
 					when().log().all().headers(headers).get(endPoint);
 		}
-		Reporter.log(url_Binmanager);						
-		Reporter.log(endPoint);		
+		Reporter.log(url_Binmanager);
+		Reporter.log(endPoint);
 		return response;
 	}
 
 	public Response Reporting (String payType, String PayType1) {
 		RestAssured.baseURI = urlReporting;
 
-		//Reporter.log(urlReporting);	 
+		//Reporter.log(urlReporting);
 		String endPoint = null;
 		HashMap<String, Object> headers	= new HashMap<>();
 		HashMap<String, Object> headers1	= new HashMap<>();
@@ -6198,7 +6198,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			response = RestAssured.given().
 					when().log().all().headers(headers).get(endPoint);
 		}
-		
+
 		else if(payType.equalsIgnoreCase("Reporting_Disabled_Refunds_Json")) {
 			RestAssured.baseURI =urlReporting;
 			endPoint= urlReporting_Disabled_Refunds;
@@ -6224,167 +6224,167 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		else if(payType.equalsIgnoreCase("ReportingTS_V3")) {
 			RestAssured.baseURI =urlReportingTS;
 
-			Reporter.log(urlReportingTS);	
+			Reporter.log(urlReportingTS);
 			endPoint = url_ReportingTS_V3;
 			response = RestAssured.given().
 					when().log().all().headers(headers).get(endPoint);
-		}	
+		}
 
 		else if(payType.equalsIgnoreCase("ReportingTS_Archived_V3_False")) {
 			RestAssured.baseURI =urlReporting;
 
-			Reporter.log(urlReportingTS);	
+			Reporter.log(urlReportingTS);
 			endPoint = url_ReportingTS_Archived_V3_False;
 			response = RestAssured.given().
 					when().log().all().headers(headers).get(endPoint);
-		}	
+		}
 		else if(payType.equalsIgnoreCase("ReportingTS_Archived_V3_True")) {
 			RestAssured.baseURI =urlReporting;
 
-			Reporter.log(urlReportingTS);	
+			Reporter.log(urlReportingTS);
 			endPoint = url_ReportingTS_Archived_V3_True;
 			response = RestAssured.given().
 					when().log().all().headers(headers).get(endPoint);
-		}	
-			
+		}
+
 		else if(payType.equalsIgnoreCase("ReportingTS_Archived_V_New")) {
 			RestAssured.baseURI =urlReporting_TS; //==============================//
 
-			Reporter.log(urlReportingTS);	
+			Reporter.log(urlReportingTS);
 			endPoint = url_ReportingTS_Archived_V_New;
 			response = RestAssured.given().
 					when().log().all().headers(headers).get(endPoint);
-		}	
-		
-		
-		
+		}
+
+
+
 		else if(payType.equalsIgnoreCase("ReportingPaginate")) {
 			RestAssured.baseURI =urlReporting;
 
-			Reporter.log(urlReporting);	
+			Reporter.log(urlReporting);
 			endPoint = url_ReportingPaginate;
 			response = RestAssured.given().
 					when().log().all().headers(headers).get(endPoint);
-		}	
-		
+		}
+
 		else if(payType.equalsIgnoreCase("ReportingPaginatePayType")) {
 			RestAssured.baseURI =urlReporting;
 
-			Reporter.log(urlReporting);	
-	
+			Reporter.log(urlReporting);
+
 			endPoint = url_ReportingPaginate_PayType;
 			response = RestAssured.given().
 					when().log().all().headers(headers).get(endPoint);
-		}	
-		
+		}
+
 		else if(payType.equalsIgnoreCase("ReportingRefundQCountD")) {
 			RestAssured.baseURI =urlReporting;
 
-			Reporter.log(urlReporting);	
+			Reporter.log(urlReporting);
 			endPoint = url_ReportingRefundQ_Count_D;
 			response = RestAssured.given().
 					when().log().all().headers(headers).get(endPoint);
-		}	
-		
-		
+		}
+
+
 		else if(payType.equalsIgnoreCase("ReportingRefundQCountDDA")) {
 			RestAssured.baseURI =urlReporting;
 
-			Reporter.log(urlReporting);	
+			Reporter.log(urlReporting);
 			endPoint = url_ReportingRefundQ_Count_D_DA;
 			response = RestAssured.given().
 					when().log().all().headers(headers).get(endPoint);
-		}	
-		
-		
+		}
+
+
 		else if(payType.equalsIgnoreCase("ReportingRefundQCountSTnx")) {
 			RestAssured.baseURI =urlReporting;
 
-			Reporter.log(urlReporting);	
+			Reporter.log(urlReporting);
 			endPoint = url_ReportingRefundQ_Count_S_Txns;
 			response = RestAssured.given().
 					when().log().all().headers(headers).get(endPoint);
-		}	
-		
-		
+		}
+
+
 		else if(payType.equalsIgnoreCase("ReportingRefundQCountSTnxGw")) {
 			RestAssured.baseURI =urlReporting;
 
-			Reporter.log(urlReporting);	
+			Reporter.log(urlReporting);
 			endPoint = url_ReportingRefundQ_Count_S_Txns_Gw;
 			response = RestAssured.given().
 					when().log().all().headers(headers).get(endPoint);
-		}	
-		
-		
+		}
+
+
 		else if(payType.equalsIgnoreCase("ReportingRefundQCountSPayType")) {
 			RestAssured.baseURI =urlReporting;
 
-			Reporter.log(urlReporting);	
+			Reporter.log(urlReporting);
 			endPoint = url_ReportingRefundQ_Count_S_PayType;
 			response = RestAssured.given().
 					when().log().all().headers(headers).get(endPoint);
-		}	
-		
+		}
+
 		else if(payType.equalsIgnoreCase("ReportingRefundQCountSPayTypeGw")) {
 			RestAssured.baseURI =urlReporting;
 
-			Reporter.log(urlReporting);	
+			Reporter.log(urlReporting);
 			endPoint = url_ReportingRefundQ_Count_S_PayType_GW;
 			response = RestAssured.given().
 					when().log().all().headers(headers).get(endPoint);
-		}	
-		
+		}
+
 		else if(payType.equalsIgnoreCase("ReportingRefundQCountDCashCard")) {
 			RestAssured.baseURI =urlReporting;
 
-			Reporter.log(urlReporting);	
+			Reporter.log(urlReporting);
 			endPoint = url_ReportingRefundQ_Count_D_CashCard;
 			response = RestAssured.given().
 					when().log().all().headers(headers).get(endPoint);
-		}	
-		
+		}
+
 		else if(payType.equalsIgnoreCase("ReportingRefundQCountPpayType")) {
 			RestAssured.baseURI =urlReporting;
 
-			Reporter.log(urlReporting);	
+			Reporter.log(urlReporting);
 			endPoint = url_ReportingRefundQ_Count_P_PayType;
 			response = RestAssured.given().
 					when().log().all().headers(headers).get(endPoint);
-		}	
-		
-		
-		
+		}
+
+
+
 		else if(payType.equalsIgnoreCase("ReportingRefundUploadFetchRefundID")) {
 			RestAssured.baseURI =urlReporting;
 			String Param = Params_Reporting_UpdloadQ_FetchBy_RefundID;
-			Reporter.log(urlReporting);	
+			Reporter.log(urlReporting);
 			endPoint = url_ReportingRefundUploadQ_fetch_RefundID;
 			response = RestAssured.given().
 					when().log().all().headers(headers).body(Param).post(endPoint);
-		}	
-		
+		}
+
 		else if(payType.equalsIgnoreCase("ReportingRefundUploadFetchTripID")) {
 			RestAssured.baseURI =urlReporting;
 
 			String Param = Params_Reporting_UpdloadQ_FetchBy_TripID;
-			Reporter.log(urlReporting);	
+			Reporter.log(urlReporting);
 			endPoint = url_ReportingRefundUploadQ_fetch_TripID;
 			response = RestAssured.given().
 					when().log().all().headers(headers).body(Param).post(endPoint);
-		}	
-		
+		}
+
 		else if(payType.equalsIgnoreCase("ReportingStatusPost")) {
 			RestAssured.baseURI =urlReporting;
 
 			String Param = Params_Reporting_Refund_Status_Post;
-			Reporter.log(urlReporting);	
+			Reporter.log(urlReporting);
 			endPoint = url_ReportingRefund_Count_ID;
 			response = RestAssured.given().
 					when().log().all().headers(headers).body(Param).post(endPoint);
-		}	
-			
-		Reporter.log(urlReporting+endPoint);		
+		}
+
+		Reporter.log(urlReporting+endPoint);
 		return response;
 	}
 
@@ -6414,7 +6414,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		}
 		return data;
 	}
-		
+
 	public ArrayList<String> db_Refund_Common_MySQL(String RefundType) throws SQLException, ClassNotFoundException {
 		ArrayList<String> data = new ArrayList<String>();
 		ArrayList<String> Name = new ArrayList<String>();
@@ -6491,7 +6491,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 						Name.add(colName);
 						data.add(colValue);
 					}
-				} 
+				}
 				myCon.close();
 			} else
 				Reporter.log("Connection not established");
@@ -6517,7 +6517,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		}
 		return data;
 	}
-	
+
 	public ArrayList<String> db_Refund_Delete_MySQL(String TripID) throws SQLException, ClassNotFoundException {
 		ArrayList<String> data = new ArrayList<String>();
 		{
@@ -6526,42 +6526,42 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			String MySQL_User = "cleartrip";
 			String MySQL_Password = "1nterl3av3";
 			String query =  "Delete from payments.refunds where ID = "+TripID;
-			
 
-		    try (Connection myCon = DriverManager.getConnection(MySQL_URL, MySQL_User, MySQL_Password);
-		        java.sql.PreparedStatement stmt = myCon.prepareStatement(query)) {
-		      
-		      stmt.setInt(1, 2);
-		      stmt.executeUpdate();
-		      
-		      System.out.println("Record deleted successfully");
-			
-			
-			//Connection myCon = DriverManager.getConnection(MySQL_URL, MySQL_User, MySQL_Password);
+
+			try (Connection myCon = DriverManager.getConnection(MySQL_URL, MySQL_User, MySQL_Password);
+				 java.sql.PreparedStatement stmt = myCon.prepareStatement(query)) {
+
+				stmt.setInt(1, 2);
+				stmt.executeUpdate();
+
+				System.out.println("Record deleted successfully");
+
+
+				//Connection myCon = DriverManager.getConnection(MySQL_URL, MySQL_User, MySQL_Password);
 		/*	if (myCon != null) {
 				ResultSet myRes = myCon.createStatement().execute
 
 				myCon.close();
 			} else
 				Reporter.log("Connection not established");*/
-		}catch (SQLException e) {
-		      e.printStackTrace();
-		}
+			}catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 		return data;
 	}
-	
+
 	public ArrayList<String> db_Refund_Delete_ID(String TripID) throws SQLException, ClassNotFoundException {
 		ArrayList<String> data = new ArrayList<String>();
 		if (common.value("PaymentDB").equalsIgnoreCase("ORACLE")) {
 			data = db_Refund_Delete(TripID);
-			
+
 		} else {
 			data = db_Refund_Delete_MySQL(TripID);
-			}
-			
+		}
+
 		return data;
-		
+
 	}
 
 	public ArrayList<String> db_Refund_Amazon(String RefundType) throws SQLException, ClassNotFoundException {
@@ -6617,7 +6617,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		}
 		return data;
 	}
-	
+
 	public ArrayList<String> db_Refund_StatusCC_MySQL(String RefundID) throws SQLException, ClassNotFoundException {
 		ArrayList<String> data = new ArrayList<String>();
 		ArrayList<String> Name = new ArrayList<String>();
@@ -6644,46 +6644,46 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		}
 		return data;
 	}
-	
+
 	public ArrayList<String> db_Refund_Status(String RefundID) throws SQLException, ClassNotFoundException {
 		ArrayList<String> data = new ArrayList<String>();
 		if (common.value("PaymentDB").equalsIgnoreCase("ORACLE")) {
 			data = db_Refund_StatusCC(RefundID);
-			
+
 		} else {
 			data = db_Refund_StatusCC_MySQL(RefundID);
-			}
-			
+		}
+
 		return data;
-		
+
 	}
-	
+
 	public ArrayList<String> db_GV() throws SQLException, ClassNotFoundException {
 		ArrayList<String> data = new ArrayList<String>();
 		if (common.value("PaymentDB").equalsIgnoreCase("ORACLE")) {
 			data = db_GV_Oracle();
-			
+
 		} else {
 			data = db_GV_MySQL();
-			}
-			
+		}
+
 		return data;
-		
+
 	}
-		
+
 	public ArrayList<String> db_CC() throws SQLException, ClassNotFoundException {
 		ArrayList<String> data = new ArrayList<String>();
 		if (common.value("PaymentDB").equalsIgnoreCase("ORACLE")) {
 			data = db_Refund_Common("CC");
-			
+
 		} else {
 			data = db_Refund_Common_MySQL("CC");
-			}
-			
+		}
+
 		return data;
-		
+
 	}
-	
+
 	public ArrayList<String> db_GV_Oracle() throws SQLException, ClassNotFoundException {
 		ArrayList<String> data = new ArrayList<String>();
 		ArrayList<String> Name = new ArrayList<String>();
@@ -6710,7 +6710,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		}
 		return data;
 	}
-	
+
 	public ArrayList<String> db_GV_MySQL() throws SQLException, ClassNotFoundException {
 		ArrayList<String> data = new ArrayList<String>();
 		ArrayList<String> Name = new ArrayList<String>();
@@ -6739,27 +6739,27 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		}
 		return data;
 	}
-	
-	
+
+
 	public Response validation_RewardPayback(String payType, Response resp) throws Exception{
 		boolean isMatching = false;
 		String status="";
 		String description="";
 		Reporter.log("Response body "+payType +" : "+ resp.body().asString());
 		System.out.println("Response body "+payType +" : "+ resp.body().asString());
-		int statusCode = resp.getStatusCode();	
+		int statusCode = resp.getStatusCode();
 		Reporter.log("statusCode: " + statusCode);
 		JsonPath jsonPathEvaluator = resp.jsonPath();
 
-		if (payType.equalsIgnoreCase("PAYBACK_CheckBalance")) {				
+		if (payType.equalsIgnoreCase("PAYBACK_CheckBalance")) {
 
 			status = jsonPathEvaluator.getString("status");
-			description = jsonPathEvaluator.getString("description"); 
+			description = jsonPathEvaluator.getString("description");
 
 			if(status.equalsIgnoreCase("S") && description.equalsIgnoreCase("Successfully fetched payback points amount")) {
 				Reporter.log("status is : "+status);
 				Reporter.log("Successfully fetched payback points amount - message is displayed ");
-				isMatching = true;		
+				isMatching = true;
 			}
 
 			else{
@@ -6771,7 +6771,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 
 		if(payType.equalsIgnoreCase("PAYBACK_CheckBalance_card")){
 			status = jsonPathEvaluator.getString("status");
-			description = jsonPathEvaluator.getString("description"); 
+			description = jsonPathEvaluator.getString("description");
 
 			if(status.equalsIgnoreCase("S") && description.equalsIgnoreCase("Successfully fetched payback points amount")) {
 				Reporter.log("status is : "+status);
@@ -6825,7 +6825,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			}
 
 			else{
-				isMatching = false;	
+				isMatching = false;
 			}
 		}
 
@@ -6909,10 +6909,10 @@ public class API_PaymentCommon extends PlatformCommonUtil
 			String responseMessage = jsonPathEvaluator.getString("response_message");
 			redirectionRequired= redirectionRequired.replace("[", "");
 			redirectionRequired= redirectionRequired.replace("]", "");
-			
+
 			responseMessage= responseMessage.replace("[", "");
 			responseMessage= responseMessage.replace("]", "");
-			
+
 			if(redirectionRequired.equalsIgnoreCase("N") && responseMessage.equalsIgnoreCase("Reward Points validation successful")){
 				Reporter.log("There is no redirection required as the card details are valid");
 				Reporter.log("Reward Points validation successful");
@@ -7051,7 +7051,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 
 					}
 				}
-			}	
+			}
 		}
 
 		if(payType.equals("CreatePromo")){
@@ -7088,7 +7088,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 				for(HashMap<String,Object> m : status_promo){
 					//	if(m.get("status").equals("ACTIVE"))
 					if(m.get("status").equals("PROMOTION_ALREADY_PROCESSED"))
-								isMatching = true;
+						isMatching = true;
 					else
 						isMatching=false;
 				}
@@ -7107,7 +7107,7 @@ public class API_PaymentCommon extends PlatformCommonUtil
 				}
 			}
 		}
-		
+
 		if(payType.equalsIgnoreCase("Promo_Active_Cron")){
 			if(!(resp.body().asString().contains("09986696785"))){
 				Assert.assertTrue(false);
@@ -7134,19 +7134,16 @@ public class API_PaymentCommon extends PlatformCommonUtil
 		String url = "/payments/wallet/cashback?emailId="+EmailID+"&currency="+Currency+"&amount="+Amount+"&tripRef=Q190812462288";
 		HashMap<String, Object> headers = new HashMap<>();
 		headers = headersForms();
-		Response request;	
+		Response request;
 
 		System.out.println(url);
-		request = 		
-		RestAssured.given().
-		when().
-		log().all().
-		headers(headers).
-		get(url);
+		request =
+				RestAssured.given().
+						when().
+						log().all().
+						headers(headers).
+						get(url);
 		System.out.println(request);
 		return request;
 	}
 }
-
-
-

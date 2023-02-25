@@ -29,7 +29,8 @@ public class PaymentsUI_Common_Desktop_Hotels extends PaymentsUI_Common_Desktop 
         if(elementVisible(driver, selectRoomButton, 2)) {
             safeClick(driver, selectRoomButton);
         }
-        textPresent(driver, "Review your itinerary", 10);
+        elementVisible(driver, By.xpath("//div[5]/div/div/input"), 10);
+        textPresent(driver, "Review your itinerary", 1);
         String parent=driver.getWindowHandle();
         Set<String> s=driver.getWindowHandles();
         Iterator<String> I1= s.iterator();
@@ -41,35 +42,37 @@ public class PaymentsUI_Common_Desktop_Hotels extends PaymentsUI_Common_Desktop 
             {
                 driver.switchTo().window(child_window);}
         }
-        //textPresent(driver, "Review your itinerary", 10);
         Child_URL = driver.getCurrentUrl();
         driver.close(); // Closing Child window
         driver.switchTo().window(parent);
         driver.get(Child_URL);
-        textPresent(driver, "Review your itinerary", 5);
-        elementVisible(driver, getObjectPayment("Hotel_ContactPage_Continue_Btn_New"), 1);
+        elementVisible(driver, getObjectPayment("Hotel_ContactPage_Continue_Btn_New"), 10);
+        textPresent(driver, "Review your itinerary", 1);
     }
 
     public void hotelsItnPage(RemoteWebDriver driver, String CouponGV, String PayType, String SignIN, String Contact) throws Exception {
-        textPresent(driver, "Review your itinerary", 5);
+        elementVisible(driver, By.xpath("//div[5]/div/div/input"), 20);
+        textPresent(driver, "Review your itinerary", 1);
         Thread.sleep(2000);
         refreshPage(driver);
-        textPresent(driver, "Review your itinerary", 5);
-        Thread.sleep(2000);
+        elementVisible(driver, By.xpath("//div[3]/div/div[2]/div/input"), 20);
+        textPresent(driver, "Review your itinerary", 1);
+        Thread.sleep(1000);
         if(textPresent(driver, "We are seeing overwhelming traffic. Please try again in sometime",1)){
             Reporter.log("We are seeing overwhelming traffic. Please try again in sometime. error in itinerary");
             Assert.assertTrue(false);
         }
-        elementPresent_log(driver, By.xpath("//div[3]/div/div[2]/div/input"),"", 10);
+        elementPresent_log(driver, By.xpath("//div[5]/div/div/input"),"", 10);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,600)");
         textPresent(driver, "Add contact details", 1);
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         elementVisible(driver, By.xpath("//input"), 5);
         safeType(driver, By.xpath("//input"), "1212121212");
         safeType(driver, By.xpath("//div[5]/div/div/input"), "ctpayment@gmail.com");
         if(CouponGV.contains("GV")) {
-            textPresent(driver, "Apply coupon or gift card",5);
+            elementVisible(driver, By.xpath("//div[3]/div/div[2]/div/input"), 5);
+            textPresent(driver, "Apply coupon or gift card",1);
             mouseHover(driver, By.xpath("//div[3]/div/div[2]/div/input"));
             safeClick(driver, By.xpath("//div[3]/div/div[2]/div/input"));
             if(CouponGV.equalsIgnoreCase("FullGV")) {
@@ -111,16 +114,17 @@ public class PaymentsUI_Common_Desktop_Hotels extends PaymentsUI_Common_Desktop 
         }
         elementVisible(driver,getObjectPayment("Hotel_ContactPage_Salutation_Dropdown"),5);
         js.executeScript("window.scrollBy(0,100)");
-        Thread.sleep(1000);
+        Thread.sleep(500);
         elementVisible(driver, getObjectPayment("Hotel_ContactPage_Salutation_Dropdown"), 2);
         mouseHover(driver, getObjectPayment("Hotel_ContactPage_Salutation_Dropdown"));
         safeClick(driver, getObjectPayment("Hotel_ContactPage_Salutation_Dropdown"));
-        Thread.sleep(1000);
+        Thread.sleep(500);
         safeClick(driver, getObjectPayment("Hotel_ContactPage_Salutation_Mr"));
+      //  safeSelectByIndex(driver, getObjectPayment("Hotel_ContactPage_Salutation_Dropdown"), 1);
         safeType(driver, getObjectPayment("Hotel_ContactPage_FirstName_TextBox"), "Kiran");
         safeType(driver, getObjectPayment("Hotel_ContactPage_LastName_TextBox"), "Kumar");
         js.executeScript("window.scrollBy(0,600)");
-        Thread.sleep(1000);
+        Thread.sleep(500);
         safeClick(driver, getObjectPayment("Hotel_ContactPage_Continue_Btn_New"));
     }
 
@@ -485,8 +489,9 @@ public class PaymentsUI_Common_Desktop_Hotels extends PaymentsUI_Common_Desktop 
     }
 
     public void confirmation_page_hotel(RemoteWebDriver driver, String PaymentType, String CardNumber, String TestDetails) throws Exception {
+        textPresent_Log(driver, "Oops, your booking didn’t go through", 2);
         elementPresent_log(driver, By.xpath("//div[3]/p"), "TripID", 30);
-        textPresent_Log(driver, "Booking successful", 30);
+        textPresent_Log(driver, "Booking successful", 1);
         String tripid = getText(driver, By.xpath("//div[3]/p"));
         logURL(driver);
         Reporter.log(TestDetails + tripid);

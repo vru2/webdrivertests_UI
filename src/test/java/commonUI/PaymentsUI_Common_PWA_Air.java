@@ -11,11 +11,12 @@ public class PaymentsUI_Common_PWA_Air extends PaymentsUI_Common_PWA{
 
 
     public void air_SRPPage(RemoteWebDriver driver, String FlightName, String FlightNo) throws Exception {
-        if (!elementVisible(driver, By.xpath("//ul/div/div/div/div[2]/div[2]"), 30)) {
+        if (!elementVisible(driver, By.xpath("//ul/div/div/div/div[2]/div[2]"), 10)) {
             Reporter.log("SRP page not loaded");
             Assert.assertTrue(false);
         }
-        textPresent(driver, "Airlines", 5);
+        textPresent(driver, "Sort", 5);
+        smartClick(driver, By.xpath("//button/p"));
         safeClick(driver, By.xpath("//ul/div/div/div/div[2]/div[2]"));
     }
 
@@ -97,8 +98,7 @@ public class PaymentsUI_Common_PWA_Air extends PaymentsUI_Common_PWA{
         safeType(driver, By.name("lastName"),"Kumar");
         if(elementVisible(driver, By.xpath("//div[5]/li"),1)){
             String Nationality_DOB = getText(driver, By.xpath("//div[5]/li"));
-            if(Nationality_DOB.contains("Natinality")){
-
+            if(Nationality_DOB.contains("Nationality")){
                 safeClick(driver, By.xpath("//div[5]/li"));
                 textPresent(driver, "Select Country", 5);
                 safeType(driver, By.xpath("//div[2]/div[2]/div[2]/input"), "India");

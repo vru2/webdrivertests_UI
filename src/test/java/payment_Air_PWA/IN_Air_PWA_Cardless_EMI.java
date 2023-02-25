@@ -17,7 +17,8 @@ public class IN_Air_PWA_Cardless_EMI extends PaymentsUI_Common_PWA_Air {
     @Test
     public void Air_PWA_CardlessEMI() throws Exception {
         driver.manage().deleteAllCookies();
-        driver.get(air_SRPUrl("IN",origin,destination, date));
+       /* driver.get(air_SRPUrl("IN",origin,destination, date));*/
+        driver.get("https://qa2new.cleartrip.com/flights/results?adults=1&childs=0&infants=0&class=Economy&depart_date=20/03/2023&from=MAA&to=DEL&intl=n");
         air_SRPPage(driver,"", "");
         air_ItnPage(driver, "", "","","");
         air_AddOnPage(driver, "", "");

@@ -7,7 +7,10 @@ import org.testng.Reporter;
 
 public class PaymentsUI_Common_PWA_Hotels extends PaymentsUI_Common_PWA{
 
+
+
     public void hotels_HomePage(RemoteWebDriver driver, String HotelName, int CheckIN, int CheckOut) throws Exception {
+        System.out.println(CheckIN+" "+CheckOut);
         elementVisible(driver, getObjectPayment("PWA_Hotels_Homepage_City_TextBox"), 10);
         safeClick(driver, getObjectPayment("PWA_Hotels_Homepage_City_TextBox"));
         elementVisible(driver, getObjectPayment("PWA_Hotels_Homepage_City_Search_Popup"), 10);
@@ -56,12 +59,12 @@ public class PaymentsUI_Common_PWA_Hotels extends PaymentsUI_Common_PWA{
     }
 
     public void hotels_ConfirmationPage(RemoteWebDriver driver, String paymentType, String payType, String bookingType) throws Exception {
-        elementVisible(driver, getObjectPayment("PWA_Hotels_ConfirmationPage_TripID"), 30);
-        if (textPresent(driver, "Something went wrong", 1)) {
+        if (textPresent(driver, "Something went wrong", 1)||textPresent(driver, "Oops, your booking didn’t go through", 1)) {
             Reporter.log("Something went wrong text is present in confirmation page");
             Assert.assertTrue(false);
         }
-        textPresent_Log(driver, "Booking confirmed", 5);
+        elementVisible(driver, getObjectPayment("PWA_Hotels_ConfirmationPage_TripID"), 30);
+        textPresent_Log(driver, "Booking confirmed", 1);
         String tripID = getText(driver, getObjectPayment("PWA_Hotels_ConfirmationPage_TripID"));
         Reporter.log(bookingType +" : "+ tripID);
         System.out.println(bookingType +" : "+ tripID);

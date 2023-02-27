@@ -24,7 +24,7 @@ public class PaymentsUI_Common_Desktop_Air extends PaymentsUI_Common_Desktop {
     }
 
     public void air_ItnPage_Desktop(RemoteWebDriver driver, String FlightName, String FlightNo, String CouponGV, String COUPONCODE) throws Exception {
-        elementPresent(driver, getObjectPayment("Desktop_Air_Itn_Step1_Coupon_Txt_Box"), 20);
+        elementVisible(driver, getObjectPayment("Desktop_Air_Itn_Step1_Coupon_Txt_Box"), 20);
         textPresent(driver, "Review your itinerary", 1);
         String parent = driver.getWindowHandle();
         Set<String> s = driver.getWindowHandles();
@@ -40,15 +40,10 @@ public class PaymentsUI_Common_Desktop_Air extends PaymentsUI_Common_Desktop {
         driver.close(); // Closing Child window
         driver.switchTo().window(parent);
         driver.get(Child_URL);
-
-        if (!elementVisible(driver, getObjectPayment("Desktop_Air_Itn_Step1_Btn"), 10)) {
-            Reporter.log("Itn page not loaded");
-         //   Assert.assertTrue(false);
-        }
         elementVisible(driver, getObjectPayment("Desktop_Air_Itn_Step1_Btn"), 20);
         textPresent_Log(driver, "Review your itinerary", 1);
-        smartClick(driver, By.xpath("//div[2]/div"));
-        //  refreshPage(driver);
+        //smartClick(driver, By.xpath("//div[2]/div"));
+        refreshPage(driver);
         elementVisible(driver, getObjectPayment("Desktop_Air_Itn_Step1_Btn"), 20);
         if(CouponGV.equalsIgnoreCase("Coupon")){
             applyCoupon(driver, COUPONCODE);

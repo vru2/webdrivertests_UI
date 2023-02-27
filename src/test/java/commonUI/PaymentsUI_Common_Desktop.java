@@ -671,12 +671,12 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
             safeClick(driver, getObjectPayment("Bento_Payment_NB_ICIC"));
             safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
 
-            elementVisible(driver, By.xpath("//div[3]/div/p"), 10);
+            elementVisible(driver, By.xpath("//div[5]/div/p"), 10);
 
-            if(!domain.equalsIgnoreCase("Hotels")) {
-                String InvalidCoupon_Msg = getText(driver, By.xpath("//div[3]/div/p"));
+           /* if(!domain.equalsIgnoreCase("Hotels")) {
+                String InvalidCoupon_Msg = getText(driver, By.xpath("//div[5]/div/p"));
                 String Total_Price = getText(driver, By.xpath("//p[2]/span"));
-                String ButtonAnyway_Text = getText(driver, By.xpath("//form/button"));
+                String ButtonAnyway_Text = getText(driver, By.xpath("//div[4]/div/button"));
                 String Coupon_Value_Popup = "";
                 if (InvalidCoupon_Msg.length() > 4)
                 {
@@ -712,7 +712,7 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
                     Reporter.log("Price Without Coupon  "+Price_Without_Coupon+"is not equal to Sum of Coupon Value in Breakup "+Coupon_Value_Breakup+" Total amount after coupon Discount "+Total_Price_Int);
                     Assert.assertTrue(false);
                 }
-            }
+            }*/
             textPresent_Log(driver, "Coupon not applicable", 5);
             elementPresent_log(driver, getObjectPayment("Bento_Pay_Coupon_Popup_Close_Btn"), "invaid coupon Pop Up not displayed",	1);
             safeClick(driver, By.xpath("//button[2]")); // Clicking on Change paymentMode

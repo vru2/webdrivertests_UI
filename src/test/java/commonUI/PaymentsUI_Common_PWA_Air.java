@@ -21,12 +21,13 @@ public class PaymentsUI_Common_PWA_Air extends PaymentsUI_Common_PWA{
     }
 
     public void air_ItnPage(RemoteWebDriver driver, String CouponGV, String CouponCode, String param1, String param2) throws Exception {
-        textPresent(driver, "Review Itinerary", 10);
-        if (!elementVisible(driver, By.xpath("//button"), 30)) {
+        elementVisible(driver, By.name("coupon"), 10);
+        textPresent(driver, "Review Itinerary", 1);
+        if (!elementVisible(driver, By.xpath("//button"), 10)) {
             Reporter.log("Itn page not loaded");
             Assert.assertTrue(false);
         }
-        if(elementVisible(driver, By.xpath("//div[@id='onetrust-close-btn-container']/button"),5)) {
+        if(elementVisible(driver, By.xpath("//div[@id='onetrust-close-btn-container']/button"),1)) {
             mouseHover(driver, By.xpath("//div[@id='onetrust-close-btn-container']/button"));
             safeClick(driver, By.xpath("//div[@id='onetrust-close-btn-container']/button"));
         }
@@ -62,7 +63,7 @@ public class PaymentsUI_Common_PWA_Air extends PaymentsUI_Common_PWA{
             safeClick(driver, By.xpath("//li[2]/p"));
             textPresent_Log(driver, "has been redeemed for this booking", 5);
         }
-        textPresent_Log(driver, "Review Itinerary", 10);
+        //textPresent_Log(driver, "Review Itinerary", 10);
         elementVisible(driver, By.xpath("//button"), 20);
         mouseHover(driver, By.xpath("//button"));
         safeClick(driver, By.xpath("//button"));

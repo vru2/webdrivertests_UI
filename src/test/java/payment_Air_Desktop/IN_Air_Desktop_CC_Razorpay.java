@@ -17,7 +17,7 @@ public class IN_Air_Desktop_CC_Razorpay extends PaymentsUI_Common_Desktop_Air {
     @Test
     public void Air_Desktop_CC_Razorpay() throws Exception {
         driver.manage().deleteAllCookies();
-       driver.get(air_SRPUrl("IN",origin,destination, date));
+        driver.get(air_SRPUrl("IN",origin,destination, date));
         air_SRPPage_Desktop(driver,"","");
         air_ItnPage_Desktop(driver, "", "","","");
         air_AddOnPage_Desktop(driver,"","","","");

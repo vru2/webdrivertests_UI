@@ -21,6 +21,8 @@ public class IN_Air_PWA_GV_Multi_CLP_CC extends PaymentsUI_Common_PWA_Air {
         air_SRPPage(driver,"", "");
         air_ItnPage(driver, "GVMulti", "","","");
         air_AddOnPage(driver, "", "");
+        driver.manage().addCookie(ctauth_partial_wallet);//65243938
+        addwalletamount_UserID(10, "65243938");
         air_TravellerPage(driver, "",phoneNo,emailID,"");
         bento_Paymentpage_PWA(driver,"GV_Partial","","","","Paytm","");
         bento_Air_ConfirmationPage_PWA(driver,"", "", "GV Multi CC :");

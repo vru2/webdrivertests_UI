@@ -489,9 +489,13 @@ public class PaymentsUI_Common_Desktop_Hotels extends PaymentsUI_Common_Desktop 
     }
 
     public void confirmation_page_hotel(RemoteWebDriver driver, String PaymentType, String CardNumber, String TestDetails) throws Exception {
-        textPresent_Log(driver, "Oops, your booking didn’t go through", 2);
+        if(textPresent(driver, "Oops, your booking didn’t go through", 2)){
+            Reporter.log("Oops, your booking didn’t go through ");
+            Assert.assertTrue(false);
+        }
         elementPresent_log(driver, By.xpath("//div[3]/p"), "TripID", 30);
         textPresent_Log(driver, "Booking successful", 1);
+        elementVisible(driver, By.xpath("//div[3]/p"), 10);
         String tripid = getText(driver, By.xpath("//div[3]/p"));
         logURL(driver);
         Reporter.log(TestDetails + tripid);

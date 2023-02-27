@@ -17,10 +17,8 @@ public class IN_Air_PWA_Coupon_Valid extends PaymentsUI_Common_PWA_Air {
     @Test
     public void Air_PWA_ValidCoupon() throws Exception {
         driver.manage().deleteAllCookies();
-      /*  driver.get(air_SRPUrl("IN",origin,destination, date+3));
+        driver.get(air_SRPUrl("IN",origin,destination, date+3));
         air_SRPPage(driver,"", "");
-*/
-        driver.get("https://qa2new.cleartrip.com/flights/itinerary/NI68444f9cfa-f0f8-4138-bc0f-230227090533/info?ancillaryEnabled=true");
         air_ItnPage(driver, "COUPON", "PAYCC","","");
         air_AddOnPage(driver, "", "");
         air_TravellerPage(driver, "",phoneNo, emailID,"");

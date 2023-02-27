@@ -24,18 +24,18 @@ public class PaymentsUI_Common_Desktop_Air extends PaymentsUI_Common_Desktop {
     }
 
     public void air_ItnPage_Desktop(RemoteWebDriver driver, String FlightName, String FlightNo, String CouponGV, String COUPONCODE) throws Exception {
-        elementVisible(driver, getObjectPayment("Desktop_Air_Itn_Step1_Coupon_Txt_Box"), 20);
-        textPresent(driver, "Review your itinerary", 1);
         String parent = driver.getWindowHandle();
         Set<String> s = driver.getWindowHandles();
         Iterator<String> I1 = s.iterator();
         String Child_URL = "";
-        while (I1.hasNext()) {
+       while (I1.hasNext()) {
             String child_window = I1.next();
             if (!parent.equals(child_window)) {
                 driver.switchTo().window(child_window);
             }
         }
+        elementVisible(driver, By.xpath("//div[2]/div/input"), 20);
+        textPresent(driver, "Review your itinerary", 1);
         Child_URL = driver.getCurrentUrl();
         driver.close(); // Closing Child window
         driver.switchTo().window(parent);

@@ -64,9 +64,13 @@ public class PaymentsUI_Common_PWA_Air extends PaymentsUI_Common_PWA{
             textPresent_Log(driver, "has been redeemed for this booking", 5);
         }
         //textPresent_Log(driver, "Review Itinerary", 10);
+
         elementVisible(driver, By.xpath("//button"), 20);
         mouseHover(driver, By.xpath("//button"));
         safeClick(driver, By.xpath("//button"));
+        if(elementVisible(driver, By.cssSelector("div.Overlay"), 1)){
+            smartClick(driver, By.linkText("Continue"));
+        }
     }
 
     public void air_AddOnPage(RemoteWebDriver driver, String param1, String param2) throws Exception {

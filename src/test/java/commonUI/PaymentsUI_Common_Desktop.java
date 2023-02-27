@@ -99,7 +99,7 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
             safeClick(driver, getObjectPayment("Bento_submit"));
         }
         else if(GWName.equalsIgnoreCase("RAZORPAYCC")){
-            elementVisible(driver, getObjectPayment("Bento_Payment_Razropay_Pin"),20);
+            elementVisible(driver, getObjectPayment("Bento_Payment_Razropay_Submit"),20);
             textPresent(driver, "One Time Password (OTP) successfully sent to the phone number linked to your card ending with 0000.", 1);
             safeClick(driver, getObjectPayment("Bento_Payment_Razropay_Pin"));
             safeType(driver,getObjectPayment("Bento_Payment_Razropay_Pin"),"0000");
@@ -713,7 +713,7 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
                     Assert.assertTrue(false);
                 }
             }*/
-            textPresent_Log(driver, "Coupon not applicable", 5);
+            textPresent_Log(driver, "Coupon not applicable", 10);
             elementPresent_log(driver, getObjectPayment("Bento_Pay_Coupon_Popup_Close_Btn"), "invaid coupon Pop Up not displayed",	1);
             safeClick(driver, By.xpath("//button[2]")); // Clicking on Change paymentMode
             Thread.sleep(2000);

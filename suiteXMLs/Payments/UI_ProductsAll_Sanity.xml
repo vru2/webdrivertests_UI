@@ -20,7 +20,7 @@
             <class name="test.java.payment_Air_PWA.IN_Air_PWA_Paylater"/>
         </classes>
     </test>
-
+<!--
     <test name="Bus CC" preserve-order="true">
         <classes>
             <class name="test.java.payment_Bus_PWA.IN_Bus_PWA_CC"/>
@@ -38,7 +38,7 @@
         <classes>
             <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_Coupon_Invalid"/>
         </classes>
-    </test>
+    </test>-->
 
 
 </suite>

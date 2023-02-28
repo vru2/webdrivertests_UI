@@ -29,8 +29,6 @@ public class PaymentsUI_Common_Desktop_Hotels extends PaymentsUI_Common_Desktop 
         if(elementVisible(driver, selectRoomButton, 2)) {
             safeClick(driver, selectRoomButton);
         }
-        elementVisible(driver, By.xpath("//div[5]/div/div/input"), 10);
-        textPresent(driver, "Review your itinerary", 1);
         String parent=driver.getWindowHandle();
         Set<String> s=driver.getWindowHandles();
         Iterator<String> I1= s.iterator();
@@ -42,17 +40,18 @@ public class PaymentsUI_Common_Desktop_Hotels extends PaymentsUI_Common_Desktop 
             {
                 driver.switchTo().window(child_window);}
         }
+        elementVisible(driver, By.xpath("//div[2]/div/div[2]/div/div/div[2]/div/input"), 10);
+        textPresent(driver, "Review your itinerary", 1);
         Child_URL = driver.getCurrentUrl();
         driver.close(); // Closing Child window
         driver.switchTo().window(parent);
         driver.get(Child_URL);
-        elementVisible(driver, getObjectPayment("Hotel_ContactPage_Continue_Btn_New"), 10);
+        //elementVisible(driver, getObjectPayment("Hotel_ContactPage_Continue_Btn_New"), 10);
+        elementVisible(driver, By.xpath("//div[2]/div/div[2]/div/div/div[2]/div/input"), 10);
         textPresent(driver, "Review your itinerary", 1);
     }
 
     public void hotelsItnPage(RemoteWebDriver driver, String CouponGV, String PayType, String SignIN, String Contact) throws Exception {
-        elementVisible(driver, By.xpath("//div[5]/div/div/input"), 20);
-        textPresent(driver, "Review your itinerary", 1);
         Thread.sleep(2000);
         refreshPage(driver);
         elementVisible(driver, By.xpath("//div[3]/div/div[2]/div/input"), 20);
@@ -494,7 +493,7 @@ public class PaymentsUI_Common_Desktop_Hotels extends PaymentsUI_Common_Desktop 
             Assert.assertTrue(false);
         }
         elementPresent_log(driver, By.xpath("//div[3]/p"), "TripID", 30);
-        textPresent_Log(driver, "Booking successful", 1);
+        textPresent_Log(driver, "Booking successful", 10);
         elementVisible(driver, By.xpath("//div[3]/p"), 10);
         String tripid = getText(driver, By.xpath("//div[3]/p"));
         logURL(driver);

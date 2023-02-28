@@ -34,17 +34,20 @@ public class PaymentsUI_Common_Desktop_Air extends PaymentsUI_Common_Desktop {
                 driver.switchTo().window(child_window);
             }
         }
-        elementVisible(driver, By.xpath("//div[2]/div/input"), 20);
+        elementVisible(driver, By.xpath("//div[2]/div/input"), 10);
         textPresent(driver, "Review your itinerary", 1);
         Child_URL = driver.getCurrentUrl();
         driver.close(); // Closing Child window
         driver.switchTo().window(parent);
         driver.get(Child_URL);
-        elementVisible(driver, getObjectPayment("Desktop_Air_Itn_Step1_Btn"), 20);
+       // elementVisible(driver, getObjectPayment("Desktop_Air_Itn_Step1_Btn"), 20);
+        elementVisible(driver, By.xpath("//div[2]/div/input"), 10);
         textPresent_Log(driver, "Review your itinerary", 1);
-        //smartClick(driver, By.xpath("//div[2]/div"));
-        refreshPage(driver);
-        elementVisible(driver, getObjectPayment("Desktop_Air_Itn_Step1_Btn"), 20);
+        smartClick(driver, By.xpath("//div[2]/div"));
+      //  refreshPage(driver);
+        //elementVisible(driver, getObjectPayment("Desktop_Air_Itn_Step1_Btn"), 20);
+        elementVisible(driver, By.xpath("//div[2]/div/input"), 10);
+
         if(CouponGV.equalsIgnoreCase("Coupon")){
             applyCoupon(driver, COUPONCODE);
         } else if(CouponGV.equalsIgnoreCase("FullGV")){
@@ -79,15 +82,14 @@ public class PaymentsUI_Common_Desktop_Air extends PaymentsUI_Common_Desktop {
 
 
         public void air_AddOnPage_Desktop(RemoteWebDriver driver, String FlightName, String FlightNo, String new1, String new2) throws Exception {
-        textPresent_Log(driver, "Choose add-ons", 10);
-        elementVisible(driver, getObjectPayment("Desktop_Air_Itn_Addon_Btn"),5);
-        Thread.sleep(2000);
-      //  pageScroll(driver, 0, 500);
-        scrollToElement(driver, getObjectPayment("Desktop_Air_Itn_Addon_Btn"));
-       /* JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,600)");*/
-        Thread.sleep(2000);
-        safeClick(driver, getObjectPayment("Desktop_Air_Itn_Addon_Btn"));
+        textPresent(driver, "Choose add-ons", 10);
+        if(elementVisible(driver, getObjectPayment("Desktop_Air_Itn_Addon_Btn"),5)) {
+            Thread.sleep(1000);
+            //  pageScroll(driver, 0, 500);
+            scrollToElement(driver, getObjectPayment("Desktop_Air_Itn_Addon_Btn"));
+            Thread.sleep(1000);
+            safeClick(driver, getObjectPayment("Desktop_Air_Itn_Addon_Btn"));
+        }
     }
 
     public void air_LoginPage_Desktop(RemoteWebDriver driver, String LoginPage, String EmailID, String PhoneNo) throws Exception {

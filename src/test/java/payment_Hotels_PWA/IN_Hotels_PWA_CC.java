@@ -22,7 +22,7 @@ public class IN_Hotels_PWA_CC extends PaymentsUI_Common_PWA_Hotels {
         hotels_DetailsPage(driver, "", "");
         hotels_ItineraryPage(driver, "", "", "");
         bento_Paymentpage_PWA(driver,"CC","","","","Paytm","");
-        hotels_ConfirmationPage(driver, "","", "Hotel NB");
+        hotels_ConfirmationPage(driver, "","", "PayTM CC");
     }
 
     @AfterClass(alwaysRun = true)

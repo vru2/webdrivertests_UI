@@ -15,7 +15,7 @@ public class IN_Hotels_PWA_Wallet_Full extends PaymentsUI_Common_PWA_Hotels {
     }
 
     @Test
-    public void Hotel_PWA_UPI_Inline() throws Exception {
+    public void Hotel_PWA_WalletFull() throws Exception {
         driver.get(hotelsUrl);
         hotels_HomePage(driver, HotelName, CheckIN, CheckOut);
         hotels_SRP(driver, "", "");
@@ -23,7 +23,7 @@ public class IN_Hotels_PWA_Wallet_Full extends PaymentsUI_Common_PWA_Hotels {
         driver.manage().addCookie(fullwallet);
         hotels_ItineraryPage(driver, "", "", "");
         bento_Paymentpage_PWA(driver,"WALLET","","","","", "");
-        hotels_ConfirmationPage(driver, "","", "Hotel PWA UPI Inline");
+        hotels_ConfirmationPage(driver, "","", "Hotel PWA Wallet Full");
     }
 
     @AfterClass(alwaysRun = true)

@@ -20,7 +20,7 @@ public class IN_CC_Razorpay extends PaymentsUI_Common_Desktop_Hotels {
 			driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
 			hotelsDetailsPage(driver, "", "");
 			hotelsItnPage(driver, "", "", "", "");
-			hotelsPaymentPage(driver,"CC","5241","","","", "%24121 CC Razorpay : ");
+			hotelsPaymentPage(driver,"CC","5241","","","", "524121 CC Razorpay : ");
 		}
 
 		@AfterClass

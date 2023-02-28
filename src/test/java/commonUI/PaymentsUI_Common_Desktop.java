@@ -92,7 +92,7 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
 
     public void bento_pay_GWPage(RemoteWebDriver driver, String GWName, String PaymentType, String SuccessFail ) throws Exception {
         if(GWName.equalsIgnoreCase("PAYU")){
-            elementVisible(driver, getObjectPayment("Bento_card_password"), 20);
+            elementVisible(driver, getObjectPayment("Bento_submit"), 20);
             safeClick(driver, getObjectPayment("Bento_card_password"));
             Thread.sleep(1000);
             safeType(driver, getObjectPayment("Bento_card_password"),"123456");
@@ -126,14 +126,11 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
             }
         }
         else if(GWName.equalsIgnoreCase("PAYTM")){
-            if(textPresent(driver, "Bank Demo", 20)) {
-                if(elementVisible(driver, By.xpath("//button[@onclick='submitSuccess()']"), 5))
-                {
+            if(elementVisible(driver, By.xpath("//button[@onclick='submitSuccess()']"), 20)) {
                     safeClick(driver, By.xpath("//button[@onclick='submitSuccess()']"));
-                }
             }
             else {
-                textPresent(driver, "Welcome to Razorpay Software Private Ltd Bank", 2);
+                textPresent(driver, "Welcome to Razorpay Software Private Ltd Bank", 1);
                 if(elementVisible(driver, getObjectPayment("Bento_Payment_DC_Payment_Success"), 5))
                 {
                     safeClick(driver, getObjectPayment("Bento_Payment_DC_Payment_Success"));

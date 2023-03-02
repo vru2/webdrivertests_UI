@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import test.java.commonUI.PaymentsUI_Common_PWA_Air;
 
-public class IN_Air_PWA_SavedPaymentmode_TokenizedCard extends PaymentsUI_Common_PWA_Air {
+public class IN_Air_PWA_SavedPay_UPI extends PaymentsUI_Common_PWA_Air {
 
     @BeforeClass
     public void startSelenium() throws Exception {
@@ -15,16 +15,16 @@ public class IN_Air_PWA_SavedPaymentmode_TokenizedCard extends PaymentsUI_Common
     }
 
     @Test
-    public void Air_PWA_SavedTokenizedcard() throws Exception {
+    public void Air_PWA_SavedUPI_Paymentmode() throws Exception {
         driver.manage().deleteAllCookies();
-        driver.get(air_SRPUrl("IN",origin,destination, date+6));
+        driver.get(air_SRPUrl("IN",origin,destination, date+7));
         air_SRPPage(driver,"", "");
         air_ItnPage(driver, "", "","","");
         air_AddOnPage(driver, "", "");
         driver.manage().addCookie(fullwallet);
         air_TravellerPage(driver, "",phoneNo,emailID,"");
-        bento_Paymentpage_PWA(driver,"SAVEDPAYMENT","","","SavedCard","Paytm", "");
-        bento_Air_ConfirmationPage_PWA(driver,"", "", "Saved Tokenized card :");
+        bento_Paymentpage_PWA(driver,"SAVEDPAYMENT","","","SavedUPI","", "");
+        bento_Air_ConfirmationPage_PWA(driver,"", "", "Saved Paymentmode UPI");
     }
     @AfterClass(alwaysRun = true)
     public void closeSelenium() throws Exception {

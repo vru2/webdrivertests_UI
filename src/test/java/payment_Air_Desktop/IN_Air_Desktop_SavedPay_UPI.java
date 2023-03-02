@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import test.java.commonUI.PaymentsUI_Common_Desktop_Air;
 
-public class IN_Air_Desktop_SavedCard_TokenizedCard extends PaymentsUI_Common_Desktop_Air {
+public class IN_Air_Desktop_SavedPay_UPI extends PaymentsUI_Common_Desktop_Air {
 
     @BeforeClass
     public void startSelenium() throws Exception {
@@ -15,7 +15,7 @@ public class IN_Air_Desktop_SavedCard_TokenizedCard extends PaymentsUI_Common_De
     }
 
     @Test
-    public void Air_Desktop_Saved_TokenizedCard() throws Exception {
+    public void Air_Desktop_Saved_UPIMode() throws Exception {
         driver.manage().deleteAllCookies();
         driver.get(air_SRPUrl("IN",origin,destination, date));
         air_SRPPage_Desktop(driver,"","");
@@ -24,7 +24,7 @@ public class IN_Air_Desktop_SavedCard_TokenizedCard extends PaymentsUI_Common_De
         air_LoginPage_Desktop(driver, "", emailID, phoneNo);
         air_TravellerPage_Desktop(driver,"");
         driver.manage().addCookie(fullwallet);
-        air_PaymentPage_Desktop(driver,"storedcard","7777","HOTELS","","", "Saved Card Razorpay : ");
+        air_PaymentPage_Desktop(driver,"storedcardUPI","","HOTELS","","", "Payment Mode UPI : ");
     }
 
     @AfterClass(alwaysRun = true)

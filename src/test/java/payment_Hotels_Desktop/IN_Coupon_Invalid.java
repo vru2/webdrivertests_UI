@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import test.java.commonUI.PaymentsUI_Common_Desktop_Hotels;
 
-public class IN_GV_CLP_Wallet_Amex_Partial extends PaymentsUI_Common_Desktop_Hotels {
+public class IN_Coupon_Invalid extends PaymentsUI_Common_Desktop_Hotels {
 
 	@BeforeClass
 	public void startSelenium() throws Exception {
@@ -15,15 +15,13 @@ public class IN_GV_CLP_Wallet_Amex_Partial extends PaymentsUI_Common_Desktop_Hot
 	}
 
 	@Test
-	public void Hotel_IN_WL_GV_CC_Amex() throws Exception {
+	public void Hotel_IN_InValidCoupon() throws Exception {
 		driver.manage().deleteAllCookies();
 		driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
 		hotelsDetailsPage(driver, "", "");
-		hotelsItnPage(driver, "PartialGV", "", "", "");
-		driver.manage().addCookie(ctauth_partial_wallet);//65243938
-		addwalletamount_UserID(10, "65243938");
-		hotelsPaymentPage(driver,"CC","3456","","WALLET","", "MULTI GV + WL + AMEX : ");
-	}
+		hotelsItnPage(driver, "COUPONCC", "", "", "");
+		hotelsPaymentPage(driver,"NB","","Hotels","Coupon","InvalidCoupon", "Invalid Coupon NB : ");// Invalid Coupon Validation
+		}
 
  		@AfterClass
 		public void closeSelenium() throws Exception { 

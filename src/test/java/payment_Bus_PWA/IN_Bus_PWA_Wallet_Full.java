@@ -17,7 +17,7 @@ public class IN_Bus_PWA_Wallet_Full extends PaymentsUI_Common_PWA_Bus {
 
     @Test
     public void Bus_PWA_WalletFull() throws Exception {
-        driver.get(bus_SRPUrl("IN", "", "", 8));
+        driver.get(bus_SRPUrl("IN", "", "", 10));
         bus_SRP(driver, "", "");
         bus_SeatSelection(driver, "", "");
         bus_SelectPickup(driver, "", "");

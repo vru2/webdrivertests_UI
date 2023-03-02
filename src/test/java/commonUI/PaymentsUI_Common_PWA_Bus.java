@@ -59,11 +59,11 @@ public class PaymentsUI_Common_PWA_Bus extends PaymentsUI_Common_PWA{
     }
 
     public void bus_ConfirmationPage(RemoteWebDriver driver, String paymentType, String payType, String bookingType) throws Exception {
-        elementVisible(driver, By.xpath("//div[3]"), 30);
         if (textPresent(driver, "Something went wrong", 1)) {
             Reporter.log("Something went wrong text is present in confirmation page");
             Assert.assertTrue(false);
         }
+        elementVisible(driver, By.xpath("//div[3]"), 30);
         textPresent_Log(driver, "Booking confirmed", 5);
         String tripID = getText(driver, By.xpath("//div[3]"));
         Reporter.log(bookingType +": "+ tripID);

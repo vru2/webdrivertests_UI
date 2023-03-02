@@ -37,14 +37,14 @@
 
     <test name="Tokenized Saved Card" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_SavedPaymentMode_TokenizedCard"/>
+            <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_SavedPay_Tokenized"/>
         </classes>
     </test>
 
 
     <test name="Saved PaymentMode UPI" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_SavedPaymentMode_UPI"/>
+            <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_SavedPay_UPI"/>
         </classes>
     </test>
 

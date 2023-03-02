@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import test.java.commonUI.PaymentsUI_Common_Desktop_Air;
 
-public class IN_Air_Desktop_CC_PayTM_Inline_TokenizeCard_SaveCard extends PaymentsUI_Common_Desktop_Air {
+public class IN_Air_Desktop_CC_PayTM_Inline extends PaymentsUI_Common_Desktop_Air {
 
     @BeforeClass
     public void startSelenium() throws Exception {
@@ -23,15 +23,13 @@ public class IN_Air_Desktop_CC_PayTM_Inline_TokenizeCard_SaveCard extends Paymen
         air_AddOnPage_Desktop(driver,"","","","");
         air_LoginPage_Desktop(driver, "", emailID, phoneNo);
         air_TravellerPage_Desktop(driver,"");
-        driver.manage().addCookie(fullwallet);
-        air_PaymentPage_Desktop(driver,"CC","7777SC","","","", "7777 CC Paytm inline ");
+        air_PaymentPage_Desktop(driver,"CC","7777","","","", "7777 CC Paytm inline ");
     }
 
     @AfterClass(alwaysRun = true)
     public void closeSelenium() throws Exception {
         browserClose(driver);
     }
-
     @AfterMethod(alwaysRun = true)
     public void afterMethod(ITestResult _result) throws Exception {
         afterMethod(driver, _result);

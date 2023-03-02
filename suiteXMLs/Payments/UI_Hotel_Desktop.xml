@@ -16,13 +16,13 @@
 
     <test name="Coupon InValid NB" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_Desktop.IN_Coupon_Invalid_NB"/>
+            <class name="test.java.payment_Hotels_Desktop.IN_Coupon_Invalid"/>
         </classes>
     </test>
 
     <test name="CC PayU" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_Desktop.IN_PayU"/>
+            <class name="test.java.payment_Hotels_Desktop.IN_CC_PayU"/>
         </classes>
     </test>
 
@@ -58,7 +58,7 @@
 
     <test name="GV CLP Multi WL Amex Partial" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_Desktop.IN_GV_CLP_Wallet_Amex_Partial"/>
+            <class name="test.java.payment_Hotels_Desktop.IN_GV_CLP_Wallet_Amex"/>
         </classes>
     </test>
 
@@ -89,7 +89,7 @@
 
     <test name="Tokenized Saved Card" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_Desktop.IN_SavedCard_Tokenized_Card"/>
+            <class name="test.java.payment_Hotels_Desktop.IN_SavedPay_Tokenized"/>
         </classes>
     </test>
 
@@ -109,7 +109,7 @@
 
     <test name="UPI Saved PaymentType" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_Desktop.IN_SavedCard_UPIMode"/>
+            <class name="test.java.payment_Hotels_Desktop.IN_SavedPay_UPI"/>
         </classes>
     </test>
 

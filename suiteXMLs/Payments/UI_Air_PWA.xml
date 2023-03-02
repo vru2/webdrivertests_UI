@@ -10,9 +10,23 @@
 
     <test name="Cardless EMI AXIO" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_PWA.IN_Air_PWA_Cardless_EMI"/>
+            <class name="test.java.payment_Air_PWA.IN_Air_PWA_EMI_Cardless"/>
         </classes>
     </test>
+
+    <test name="NB Retry" preserve-order="true">
+        <classes>
+            <class name="test.java.payment_Air_PWA.IN_Air_PWA_NB_Retry"/>
+        </classes>
+    </test>
+
+    <test name="UPI Failure Success" preserve-order="true">
+        <classes>
+            <class name="test.java.payment_Air_PWA.IN_Air_PWA_UPI_Failure_Success"/>
+        </classes>
+    </test>
+
+
 
     <test name="CC payTM" preserve-order="true">
         <classes>
@@ -47,14 +61,14 @@
 
     <test name="Saved Card Tokenized" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_PWA.IN_Air_PWA_SavedPaymentmode_TokenizedCard"/>
+            <class name="test.java.payment_Air_PWA.IN_Air_PWA_SavedPay_Tokenized"/>
         </classes>
     </test>
 
 
     <test name="Saved Paymentmode UPI" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_PWA.IN_Air_PWA_SavedPaymentmode_UPI"/>
+            <class name="test.java.payment_Air_PWA.IN_Air_PWA_SavedPay_UPI"/>
         </classes>
     </test>
 

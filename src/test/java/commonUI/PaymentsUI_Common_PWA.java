@@ -137,9 +137,19 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
         safeClick(driver, getObjectPayment("PWA_PaymentPage_NB_ICICI"));
         Reporter.log("Selected ICICI Bank");
         safeClick(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"));
-		/*textPresent_Log(driver, "Welcome to Razorpay Software Private Ltd Bank", 20);
-		safeClick(driver, getObjectPayment("Bento_Payment_NB_Payment_Success"));
-		Reporter.log("Payment done successfully");*/
+        if(PayType.equalsIgnoreCase("Retry")){
+            bento_pay_GW_Page_PWA(driver, "","","","",BankName,"Failure");
+            elementVisible(driver, By.xpath("//div[4]/div/p"), 10);
+            textPresent_Log(driver, "Your payment failed", 2);
+            /*String retry = getText(driver, By.xpath("//div[4]/div/p"));
+            System.out.println("retry"+ retry);*/
+        }
+        payUI_Select_PaymentType_PWA( driver, PaymentType);
+        Reporter.log("Clicked on NB");
+        Thread.sleep(1000);
+        safeClick(driver, getObjectPayment("PWA_PaymentPage_NB_ICICI"));
+        Reporter.log("Selected ICICI Bank");
+        safeClick(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"));
         bento_pay_GW_Page_PWA(driver, "","","","","",SuccessFail);
     }
 
@@ -254,25 +264,28 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
 
     public void bento_pay_UPI_PWA(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
         scrollSmooth(driver, 200);
-        payUI_Select_PaymentType_PWA( driver, PaymentType);
-        if(PaymentType.equalsIgnoreCase("Inline")){
+        payUI_Select_PaymentType_PWA(driver, PaymentType);
+        if (PaymentType.equalsIgnoreCase("Inline")) {
             textPresent_Log(driver, "Add new UPI address", 10);
-            safeType(driver, getObjectPayment("PWA_PaymentPage_UPI_TextBox"),"kiran@ybl");
-        }
-        else if(PaymentType.equalsIgnoreCase("SavedUPI")) {
+            safeType(driver, getObjectPayment("PWA_PaymentPage_UPI_TextBox"), "kiran@ybl");
+        } else if (PaymentType.equalsIgnoreCase("SavedUPI")) {
             textPresent_Log(driver, "Add New UPI", 10);
             elementPresent_log(driver, By.cssSelector("rect"), "UPI bank image", 5);
             String savedUPI_Txt = getText(driver, getObjectPayment("PWA_PaymentPage_SavedPayment_UPI_Txt"));
-            if(!savedUPI_Txt.equalsIgnoreCase("3212467@okhdfcbank")){
-                Reporter.log("Saved UPI 3212467@okhdfcbank: "+savedUPI_Txt);
+            if (!savedUPI_Txt.equalsIgnoreCase("3212467@okhdfcbank")) {
+                Reporter.log("Saved UPI 3212467@okhdfcbank: " + savedUPI_Txt);
                 Assert.assertTrue(false);
             }
-        }
-        else if(!PaymentType.equalsIgnoreCase("SavedUPI")) {
-            smartType(driver, getObjectPayment("PWA_PaymentPage_UPI_TextBox"),"kiran@ybl");
+        } else if (!PaymentType.equalsIgnoreCase("SavedUPI") && !BankName.equalsIgnoreCase("Failure")) {
+            smartType(driver, getObjectPayment("PWA_PaymentPage_UPI_TextBox"), "kiran@ybl");
+        } else if (!PaymentType.equalsIgnoreCase("SavedUPI") && BankName.equalsIgnoreCase("Failure")) {
+            smartType(driver, getObjectPayment("PWA_PaymentPage_UPI_TextBox"), "failure@ybl");
         }
         Thread.sleep(5000);
         safeClick(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"));
+        if (!PaymentType.equalsIgnoreCase("SavedUPI") && BankName.equalsIgnoreCase("Failure")) {
+            textPresent_Log(driver, "Failure", 20);
+        }
     }
 
     public void bento_pay_GV_PWA(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
@@ -330,7 +343,8 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
         }
         else if(bankName.equalsIgnoreCase("RazorpayNB")){
             if(SuccessFail.equalsIgnoreCase("Failure")){
-
+                textPresent_Log(driver, "Welcome to Razorpay Software Private Ltd Bank", 20);
+                safeClick(driver, getObjectPayment("Bento_Payment_NB_Payment_Failure"));
             }
             else if(SuccessFail.equalsIgnoreCase("Success")){
                 textPresent_Log(driver, "Welcome to Razorpay Software Private Ltd Bank", 20);

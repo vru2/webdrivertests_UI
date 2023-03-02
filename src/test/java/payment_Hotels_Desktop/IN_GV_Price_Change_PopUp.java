@@ -22,7 +22,7 @@ public class IN_GV_Price_Change_PopUp extends PaymentsUI_Common_Desktop_Hotels {
 		driver.manage().addCookie(hotelLogin);
 		hotelsDetailsPage(driver, "", "");
 		hotelsItnPage(driver, "PartialGV_SCLP_PopUp", GV[0], GV[1], "");
-		hotelsPaymentPage(driver,"GVPriceChange","","Hotels",GV[0], GV[1], "GV Price Change Validation + NB : ");
+		hotelsPaymentPage(driver,"GVPriceChange","","Hotels",GV[0], GV[1], "GV SCLP Price Change Validation + NB : ");
 	}
 
  		@AfterClass

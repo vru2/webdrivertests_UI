@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import test.java.commonUI.PaymentsUI_Common_PWA_Hotels;
 
-public class IN_Hotels_PWA_SavedPaymentMode_TokenizedCard extends PaymentsUI_Common_PWA_Hotels {
+public class IN_Hotels_PWA_SavedPay_Tokenized extends PaymentsUI_Common_PWA_Hotels {
 
     @BeforeClass
     public void startSelenium() throws Exception {

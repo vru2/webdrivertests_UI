@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import test.java.commonUI.PaymentsUI_Common_Desktop_Hotels;
 
-public class IN_Coupon_Invalid_NB extends PaymentsUI_Common_Desktop_Hotels {
+public class IN_CC_PayU extends PaymentsUI_Common_Desktop_Hotels {
 
 	@BeforeClass
 	public void startSelenium() throws Exception {
@@ -15,13 +15,13 @@ public class IN_Coupon_Invalid_NB extends PaymentsUI_Common_Desktop_Hotels {
 	}
 
 	@Test
-	public void Hotel_IN_InValidCoupon() throws Exception {
+	public void Hotel_IN_PayU() throws Exception {
 		driver.manage().deleteAllCookies();
 		driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
 		hotelsDetailsPage(driver, "", "");
-		hotelsItnPage(driver, "COUPONCC", "", "", "");
-		hotelsPaymentPage(driver,"NB","","Hotels","Coupon","InvalidCoupon", "Invalid Coupon NB : ");// Invalid Coupon Validation
-		}
+		hotelsItnPage(driver, "", "", "", "");
+		hotelsPaymentPage(driver,"CC","5123","","","", "51234 PayU : ");
+		} 
 
  		@AfterClass
 		public void closeSelenium() throws Exception { 

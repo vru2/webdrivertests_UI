@@ -82,7 +82,7 @@ public class PaymentsUI_Common_Desktop_Hotels extends PaymentsUI_Common_Desktop 
             else if(CouponGV.equalsIgnoreCase("PartialGV")){
                 String[] GV = getGV(10);
                 hotel_Apply_GV(driver, GV[0],GV[1]);
-                GV = getGV(10);
+                GV = getGVSCLP(10);
                 hotel_Apply_GV(driver, GV[0],GV[1]);
             }
             else if(CouponGV.equalsIgnoreCase("PartialGV_SCLP")) {
@@ -490,6 +490,10 @@ public class PaymentsUI_Common_Desktop_Hotels extends PaymentsUI_Common_Desktop 
     public void confirmation_page_hotel(RemoteWebDriver driver, String PaymentType, String CardNumber, String TestDetails) throws Exception {
         if(textPresent(driver, "Oops, your booking didn’t go through", 2)){
             Reporter.log("Oops, your booking didn’t go through ");
+            Assert.assertTrue(false);
+        }
+        if(textPresent(driver, "Oops! Your payment failed. If you were charged, any amount deducted will be reversed", 1)){
+            Reporter.log("Oops! Your payment failed. If you were charged, any amount deducted will be reversed ");
             Assert.assertTrue(false);
         }
         elementPresent_log(driver, By.xpath("//div[3]/p"), "TripID", 30);

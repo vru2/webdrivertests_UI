@@ -10,7 +10,7 @@
 
     <test name="Inline PayTM Tokenized Card" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_CC_PayTM_Inline_TokenizeCard"/>
+            <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_CC_PayTM_Inline"/>
         </classes>
     </test>
 
@@ -62,6 +62,18 @@
         </classes>
     </test>
 
+    <test name="GV Full" preserve-order="true">
+        <classes>
+            <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_GV_Full"/>
+        </classes>
+    </test>
+
+    <test name="GV CC WL" preserve-order="true">
+        <classes>
+            <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_GV_WL_CC_Amex"/>
+        </classes>
+    </test>
+
     <test name="NB Retry" preserve-order="true">
         <classes>
             <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_NB_Retry"/>
@@ -70,13 +82,13 @@
 
     <test name="SavedCard Tokeinzed" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_SavedCard_TokenizedCard"/>
+            <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_SavedPay_Tokenized"/>
         </classes>
     </test>
 
     <test name="Saved UPI PaymentMode" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_SavedCard_UPIMode"/>
+            <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_SavedPay_UPI"/>
         </classes>
     </test>
 
@@ -88,7 +100,7 @@
 
     <test name="UPI Saved" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_UPI_Saved"/>
+            <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_Saved_UPI"/>
         </classes>
     </test>
 

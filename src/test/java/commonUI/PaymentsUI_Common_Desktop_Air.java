@@ -42,20 +42,21 @@ public class PaymentsUI_Common_Desktop_Air extends PaymentsUI_Common_Desktop {
         driver.get(Child_URL);
        // elementVisible(driver, getObjectPayment("Desktop_Air_Itn_Step1_Btn"), 20);
         elementVisible(driver, By.xpath("//div[2]/div/input"), 10);
-        textPresent_Log(driver, "Review your itinerary", 1);
+        textPresent(driver, "Review your itinerary", 2);
         smartClick(driver, By.xpath("//div[2]/div"));
-      //  refreshPage(driver);
-        //elementVisible(driver, getObjectPayment("Desktop_Air_Itn_Step1_Btn"), 20);
-        elementVisible(driver, By.xpath("//div[2]/div/input"), 10);
-
         if(CouponGV.equalsIgnoreCase("Coupon")){
             applyCoupon(driver, COUPONCODE);
-        } else if(CouponGV.equalsIgnoreCase("FullGV")){
-
+        } else if(CouponGV.equalsIgnoreCase("GVFull")){
+            String[] GV = getGVSCLP(10000);
+            applyGV(driver, GV[0],GV[1]);
         } else if(CouponGV.equalsIgnoreCase("MultiGV")){
-
-        } else if(CouponGV.equalsIgnoreCase("CLPGV")){
-
+            String[] GV = getGVSCLP(10);
+            applyGV(driver, GV[0],GV[1]);
+            GV = getGV(10);
+            applyGV(driver, GV[0],GV[1]);
+        } else if(CouponGV.equalsIgnoreCase("GVPartial")){
+            String[] GV = getGVSCLP(10);
+            applyGV(driver, GV[0],GV[1]);
         } else if(CouponGV.equalsIgnoreCase("SCLPGV")){
 
         }
@@ -74,18 +75,23 @@ public class PaymentsUI_Common_Desktop_Air extends PaymentsUI_Common_Desktop {
         safeClick(driver, getObjectPayment("Desktop_Air_Itn_Step1_Btn"));
     }
 
+    public void applyGV(RemoteWebDriver driver, String GVNumber, String GVPin) throws Exception {
+        safeType(driver, getObjectPayment("Desktop_Air_Itn_Step1_GVNumber_Txt_Box"), GVNumber);
+        safeType(driver, getObjectPayment("Desktop_Air_Itn_Step1_GVPin_Txt_Box"), GVPin);
+        safeClick(driver, getObjectPayment("Desktop_Air_Itn_Step1_GV_Apply_Btn"));
+        textPresent_Log(driver, "has been redeemed for this booking", 2);
+    }
+
     public void applyCoupon(RemoteWebDriver driver, String CouponCode) throws Exception {
         safeType(driver, getObjectPayment("Desktop_Air_Itn_Step1_Coupon_Txt_Box"), CouponCode);
         safeClick(driver, getObjectPayment("Desktop_Air_Itn_Step1_Coupon_Apply_Btn"));
         textPresent_Log(driver, "Great! You just saved", 5);
     }
 
-
-        public void air_AddOnPage_Desktop(RemoteWebDriver driver, String FlightName, String FlightNo, String new1, String new2) throws Exception {
-        textPresent(driver, "Choose add-ons", 10);
+    public void air_AddOnPage_Desktop(RemoteWebDriver driver, String FlightName, String FlightNo, String new1, String new2) throws Exception {
+        textPresent(driver, "Choose add-ons", 1);
         if(elementVisible(driver, getObjectPayment("Desktop_Air_Itn_Addon_Btn"),5)) {
-            Thread.sleep(1000);
-            //  pageScroll(driver, 0, 500);
+            Thread.sleep(500);
             scrollToElement(driver, getObjectPayment("Desktop_Air_Itn_Addon_Btn"));
             Thread.sleep(1000);
             safeClick(driver, getObjectPayment("Desktop_Air_Itn_Addon_Btn"));
@@ -145,7 +151,7 @@ public class PaymentsUI_Common_Desktop_Air extends PaymentsUI_Common_Desktop {
 
     public void confirmation_Page_Air(RemoteWebDriver driver, String PaymentType, String CardNumber, String TestDetails) throws Exception {
         elementPresent_log(driver, getObjectPayment("Desktop_Air_ConfirmationPage_TripID"), "TripID", 30);
-        textPresent_Log(driver, "Your booking is done", 30);
+        textPresent_Log(driver, "Your booking is done", 5);
         String tripId = getText(driver, getObjectPayment("Desktop_Air_ConfirmationPage_TripID"));
         logURL(driver);
         Reporter.log(TestDetails + tripId);

@@ -11,7 +11,7 @@ public class PaymentsUI_Common_PWA_Air extends PaymentsUI_Common_PWA{
 
 
     public void air_SRPPage(RemoteWebDriver driver, String FlightName, String FlightNo) throws Exception {
-        if (!elementVisible(driver, By.xpath("//ul/div/div/div/div[2]/div[2]"), 10)) {
+        if (!elementVisible(driver, By.xpath("//ul/div/div/div/div[2]/div[2]"), 20)) {
             Reporter.log("SRP page not loaded");
             Assert.assertTrue(false);
         }
@@ -75,7 +75,6 @@ public class PaymentsUI_Common_PWA_Air extends PaymentsUI_Common_PWA{
 
     public void air_AddOnPage(RemoteWebDriver driver, String param1, String param2) throws Exception {
         elementVisible(driver, By.xpath("//div[2]/div[1]/div[3]/p"), 5);
-
         if(!textPresent(driver, "Add ons", 5)) {
             if (textPresent(driver, "Review Itinerary", 2)) {
                 mouseHover(driver, By.xpath("//button"));
@@ -135,6 +134,9 @@ public class PaymentsUI_Common_PWA_Air extends PaymentsUI_Common_PWA{
         elementVisible(driver, By.xpath("//button"),2);
         mouseHover(driver, By.xpath("//button"));
         safeClick(driver, By.xpath("//button"));
+        if(elementVisible(driver, By.xpath("//div[3]/a"), 1)){
+            smartClick(driver, By.xpath("//div[3]/a"));
+        }
     }
 /*
     public void bento_Paymentpage_PWA(RemoteWebDriver driver, String paymentType, String cardNumber, String domain, String payType, String bankName, String successFail) throws Exception {

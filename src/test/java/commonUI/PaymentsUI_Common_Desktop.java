@@ -527,16 +527,9 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
 
     public void bento_pay_GV_Partial(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
         textPresent_Log(driver, "Pay to complete your booking", 10);
-        //textPresent_Log(driver, "Gift card", 1);
-		/*bento_Select_PaymentType(driver, "NB");
-		Reporter.log("Clicked on NB");
-		Thread.sleep(1000);
-		safeClick(driver, getObjectPayment("Bento_Payment_NB_ICIC"));
-		Reporter.log("Selected ICIC Bank");
-		safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
-		textPresent_Log(driver, "Welcome to Razorpay Software Private Ltd Bank", 5);
-		safeClick(driver, getObjectPayment("Bento_Payment_NB_Payment_Success"));*/
-        bento_pay_NB(driver, PaymentType, CardNumber, domain, PayType, BankName);
+        textPresent_Log(driver, "Gift card", 1);
+        textPresent_Log(driver, "Cleartrip wallet", 1);
+        bento_pay_CC(driver, PaymentType, CardNumber, domain, PayType, BankName);
     }
 
     public void bento_pay_SC(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
@@ -901,8 +894,6 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
 
         elementVisible(driver, getObjectPayment("Bento_Payment_Paynow"), 2);
         textPresent_Log(driver, "Gift card", 2);
-
-
         textPresent_Log(driver, "Pay to complete your booking", 5);
         textNotPresent_Log(driver, "Enter card details", 1);
 
@@ -912,7 +903,6 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
             Assert.assertTrue(false);
         }
         textPresent_Log(driver, "Pay to complete your booking", 1);
-
         if(elementVisible(driver, getObjectPayment("Bento_Pay_Tabs"), 1)) {
             Reporter.log("CC tab is displayed");
             Assert.assertTrue(false);
@@ -931,12 +921,6 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
         }
 
         Reporter.log("Youpay  contain 0 rs");
-        //String ConvFee = getText(driver, By.xpath("//div[2]/div/div[1]/div[8]/p"));
-        /*
-         * if (!ConvFee.contains("100")) {
-         * Reporter.log("ConvFee doesn't contain 100 rs"); Assert.assertTrue(false); }
-         * else Reporter.log("ConvFee contain 150 rs");
-         */
         String Total = getText(driver, By.xpath("//div/div/span"));
         System.out.println("total "+Total);
         if (!Total.contains("0")) {
@@ -947,11 +931,6 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
         Assert.assertEquals("Complete booking", getText(driver, getObjectPayment("Bento_Pay_Button")));
         safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
         Reporter.log("Clicked on paynow");
-        if(!PaymentType.contains("GV")) {
-            textPresent_Log(driver, "Please wait...", 2);
-        }
-        Reporter.log("Payment done successfully");
-
     }
 
 

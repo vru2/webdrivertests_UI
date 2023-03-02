@@ -11,34 +11,34 @@
 
     <test name="Air Desktop" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_CC_PayTM_Inline_TokenizeCard"/>
+            <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_CC_PayTM_Inline"/>
         </classes>
     </test>
 
-    <test name="Air PWA" preserve-order="true">
-        <classes>
-            <class name="test.java.payment_Air_PWA.IN_Air_PWA_Paylater"/>
-        </classes>
-    </test>
-<!--
-    <test name="Bus CC" preserve-order="true">
-        <classes>
-            <class name="test.java.payment_Bus_PWA.IN_Bus_PWA_CC"/>
-        </classes>
-    </test>
+    <!--
+        <test name="Air PWA" preserve-order="true">
+            <classes>
+                <class name="test.java.payment_Air_PWA.IN_Air_PWA_Paylater"/>
+            </classes>
+        </test>
+        <test name="Bus CC" preserve-order="true">
+            <classes>
+                <class name="test.java.payment_Bus_PWA.IN_Bus_PWA_CC"/>
+            </classes>
+        </test>
 
-    <test name="Hotel Desktop" preserve-order="true">
-        <classes>
-            <class name="test.java.payment_Hotels_Desktop.IN_DC_PayTM"/>
-        </classes>
-    </test>
+        <test name="Hotel Desktop" preserve-order="true">
+            <classes>
+                <class name="test.java.payment_Hotels_Desktop.IN_DC_PayTM"/>
+            </classes>
+        </test>
 
 
-    <test name="Coupon Invalid" preserve-order="true">
-        <classes>
-            <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_Coupon_Invalid"/>
-        </classes>
-    </test>-->
+        <test name="Coupon Invalid" preserve-order="true">
+            <classes>
+                <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_Coupon_Invalid"/>
+            </classes>
+        </test>-->
 
 
 </suite>

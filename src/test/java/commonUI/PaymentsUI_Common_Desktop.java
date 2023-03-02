@@ -87,7 +87,6 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
             Thread.sleep(1000);
         }
         bento_pay_GWPage(driver, "RAZORPAYNB", "", "Success");
-
     }
 
     public void bento_pay_GWPage(RemoteWebDriver driver, String GWName, String PaymentType, String SuccessFail ) throws Exception {
@@ -111,8 +110,6 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
             if(SuccessFail.equalsIgnoreCase("Success")){
                 Thread.sleep(2000);
                 textPresent(driver, "Welcome to Razorpay Software Private Ltd Bank", 5);
-
-
                 elementPresent_log(driver, getObjectPayment("Bento_Payment_NB_Payment_Success"), "",	10);
                 textPresent(driver, "Welcome to Razorpay Software Private Ltd Bank", 10);
                 elementVisible(driver, getObjectPayment("Bento_Payment_NB_Payment_Success"), 10);
@@ -142,8 +139,6 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
                     driver.findElement(By.xpath("//button[@id='submit-action']/span")).click();
                 }
             }
-        /*    textPresent_Log(driver, "Booking successful",10);
-            Reporter.log("Payment done successfully");*/
         }
         else if(GWName.equalsIgnoreCase("AMEX")){
             if(elementVisible(driver,getObjectPayment("Bento_Payment_Skip_Securecard"),2))
@@ -153,8 +148,6 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
             textPresent(driver, "ACS Emulator", 20);
             Thread.sleep(5000);
             smartClick(driver, getObjectPayment("Bento_Payment_AMC_SUBMIT"));
-          /*  textPresent_Log(driver, "Booking successful", 30);
-            Reporter.log("Payment done successfully");*/
         }
     }
 
@@ -500,7 +493,6 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
     public void bento_pay_Coupon(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
         if(CardNumber.equalsIgnoreCase("Air")) {
             textPresent_Log(driver, "Coupon code (DOMCC)", 2);
-
         }
         if(CardNumber.equalsIgnoreCase("Hotel")) {
             textPresent_Log(driver, "Coupon code (CCHOTEL)", 2);
@@ -662,47 +654,6 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
             safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
 
             elementVisible(driver, By.xpath("//div[5]/div/p"), 10);
-
-           /* if(!domain.equalsIgnoreCase("Hotels")) {
-                String InvalidCoupon_Msg = getText(driver, By.xpath("//div[5]/div/p"));
-                String Total_Price = getText(driver, By.xpath("//p[2]/span"));
-                String ButtonAnyway_Text = getText(driver, By.xpath("//div[4]/div/button"));
-                String Coupon_Value_Popup = "";
-                if (InvalidCoupon_Msg.length() > 4)
-                {
-                    Coupon_Value_Popup = InvalidCoupon_Msg.substring(InvalidCoupon_Msg.length() - 4);
-                }
-                else
-                {
-                    Coupon_Value_Popup = InvalidCoupon_Msg;
-                }
-                Coupon_Value_Popup= Coupon_Value_Popup.replace("₹", "").replace(".", "");
-
-                ButtonAnyway_Text= ButtonAnyway_Text.replace("Book anyway at ", "").replace(",", "").replace("₹", "");
-                InvalidCoupon_Msg= InvalidCoupon_Msg.replace(".", "");
-                Total_Price= Total_Price.replace("₹", "").replace(",", "");
-                Coupon_Value=Coupon_Value.replace("₹", "").replace("- ", "");
-
-                int Coupon_Value_Breakup = Integer.parseInt(Coupon_Value);
-                int Price_Without_Coupon = Integer.parseInt(ButtonAnyway_Text);
-                int Coupon_Value_Popup_Int = Integer.parseInt(Coupon_Value_Popup);
-                int Total_Price_Int = Integer.parseInt(Total_Price);
-
-                Reporter.log( "Total_Price_Int "+Total_Price_Int);
-                Reporter.log( "Coupon_Value_Breakup "+Coupon_Value_Breakup);
-                Reporter.log( "Price_Without_Coupon "+Price_Without_Coupon);
-                Reporter.log("Coupon_Value_Popup "+Coupon_Value_Popup_Int);
-
-                if(Coupon_Value_Breakup!=Coupon_Value_Popup_Int) {
-                    Reporter.log("Coupon in Price Brekup "+Coupon_Value_Breakup+" & Coupon "+Coupon_Value_Popup_Int+" in Invalid Coupon Popup are not matching");
-                    Assert.assertTrue(false);
-                }
-
-                if(Price_Without_Coupon!=(Coupon_Value_Breakup+Total_Price_Int)) {
-                    Reporter.log("Price Without Coupon  "+Price_Without_Coupon+"is not equal to Sum of Coupon Value in Breakup "+Coupon_Value_Breakup+" Total amount after coupon Discount "+Total_Price_Int);
-                    Assert.assertTrue(false);
-                }
-            }*/
             textPresent_Log(driver, "Coupon not applicable", 10);
             elementPresent_log(driver, getObjectPayment("Bento_Pay_Coupon_Popup_Close_Btn"), "invaid coupon Pop Up not displayed",	1);
             safeClick(driver, By.xpath("//button[2]")); // Clicking on Change paymentMode

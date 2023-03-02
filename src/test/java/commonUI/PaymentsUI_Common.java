@@ -56,7 +56,7 @@ public class PaymentsUI_Common extends API_PaymentCommon {
     public String origin = "BLR";
     public String destination = "MAA";
     public String phoneNo="1212121212";
-    public String emailID="kiran.kumar@cleartrip.com";
+    public String emailID="cltppayment@gmail.com";
     public int date = getRandomNumberInt(100);
     public int dateBus = 5;
 
@@ -116,7 +116,6 @@ public class PaymentsUI_Common extends API_PaymentCommon {
         System.out.println(SearchUrl);
         return SearchUrl;
     }
-
 
     public String bus_SRPUrl(String Domain, String origin, String destination, int date) throws Exception {
         String Bus_URL = "/bus/results?fromCity=4292&toCity=4562&journeyDate=" + getDateTime(date, "yyyy-MM-dd") + "&fromCityName=Bengaluru&toCityName=Chennai";

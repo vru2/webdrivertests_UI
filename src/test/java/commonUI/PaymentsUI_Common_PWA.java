@@ -61,7 +61,7 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
             case "partial_wallet":
                 bento_pay_PartialWallet_PWA(driver, paymentType, cardNumber, domain, payType, bankName);
                 break;
-            case "VALIDCOUPON":
+            case "Coupon":
                 bento_pay_Coupon_PWA(driver, paymentType, cardNumber, domain, payType, bankName, successFail);
                 break;
             case "INVALIDCOUPON":
@@ -144,12 +144,22 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
             /*String retry = getText(driver, By.xpath("//div[4]/div/p"));
             System.out.println("retry"+ retry);*/
         }
-        payUI_Select_PaymentType_PWA( driver, PaymentType);
+       /* payUI_Select_PaymentType_PWA( driver, PaymentType);
         Reporter.log("Clicked on NB");
         Thread.sleep(1000);
         safeClick(driver, getObjectPayment("PWA_PaymentPage_NB_ICICI"));
         Reporter.log("Selected ICICI Bank");
-        safeClick(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"));
+        safeClick(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"));*/
+
+        if(PayType.equalsIgnoreCase("Coupon")){
+            textPresent_Log(driver, "Coupon not applicable", 5);
+            if(domain.equalsIgnoreCase("Hotel")){
+                textPresent_Log(driver, "Coupon code CCHOTEL is not applicable on the selected payment mode. Please select another payment mode to get an instant discount of", 5);
+            }
+            else textPresent_Log(driver, "Coupon code PAYCC is not applicable on the selected payment mode. Please select another payment mode to get an instant discount of", 5);
+            safeClick(driver, getObjectPayment("PWA_paymentPage_Continue_WithOutCoupon_Btn")); // Continue without coupon mode
+            Thread.sleep(1000);
+        }
         bento_pay_GW_Page_PWA(driver, "","","","","",SuccessFail);
     }
 
@@ -157,14 +167,11 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
         payUI_Select_PaymentType_PWA( driver, "NB");
         Reporter.log("Clicked on NB");
         bento_pay_validate_Price_Popup(driver, "Coupon code", "");
-		/*Thread.sleep(1000);
-		safeClick(driver, By.cssSelector("svg.mx-2"));
-		textPresent_Log(driver, "Coupon code", 5);
-		Thread.sleep(1000);
-		mouseHover(driver, By.cssSelector("svg.c-pointer"));
-		safeClick(driver, By.cssSelector("svg.c-pointer"));
-		Thread.sleep(1000);*/
-        bento_pay_NB_PWA(driver, "NB", "", domain, "", "", SuccessFail);
+        Thread.sleep(5000);
+        bento_pay_CC_PWA(driver, "CC", "", domain, "",BankName, SuccessFail);
+
+
+        /*
         //bento_pay_CC_PWA(driver, "NB", "", domain, "", "", SuccessFail);
         if(PaymentType.equalsIgnoreCase("VALIDCOUPON")){
             textPresent_Log(driver, "Coupon not applicable", 5);
@@ -175,16 +182,6 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
             safeClick(driver, By.xpath("//div/div[3]/button")); // Change Payment mode
 
             bento_pay_validate_Price_Popup(driver, "Coupon code", "");
-			/*Thread.sleep(1000);
-			mouseHover(driver, By.cssSelector("svg.mx-2"));
-			safeClick(driver, By.cssSelector("svg.mx-2"));
-			Thread.sleep(1000);
-			smartClick(driver, By.cssSelector("svg.mx-2"));
-			Thread.sleep(1000);
-			textPresent_Log(driver, "Coupon code", 5);
-			Thread.sleep(1000);
-			mouseHover(driver, By.cssSelector("svg.c-pointer"));
-			safeClick(driver, By.cssSelector("svg.c-pointer"));*/
             bento_pay_CC_PWA(driver, "CC", "", domain, "", BankName, "");
         }
         else if(PaymentType.equalsIgnoreCase("INVALIDCOUPON")){
@@ -198,7 +195,7 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
         }
         else if(PaymentType.equalsIgnoreCase("COUPON")){
 
-        }
+        }*/
     }
 
     public void bento_pay_validate_Price_Popup(RemoteWebDriver driver, String PriceType, String PriceType2) throws Exception {
@@ -326,6 +323,9 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
             Enter_CC_Details_PWA(driver, "6080322940807777", "1224", "123");
             //Enter_CC_Details_PWA(driver, platform.value("PayTMCard_Number"), platform.value("PayTMCard_MWeb_Exp_Date"), platform.value("PayTMCard_CVV"));
         }
+        if(bankName=="Amex") {
+            Enter_CC_Details_PWA(driver, platform.value("AmexCard_Number"), platform.value("AmexCard_Year"), platform.value("AmexCard_CVV"));
+           }
         if(bankName=="MASTER") {
             Enter_CC_Details_PWA(driver, platform.value("MasterCard_Number"), platform.value("MasterCard_EXP_PWA"), platform.value("MasterCard_CVV"));
         }
@@ -341,17 +341,26 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
             textPresent(driver, "Bank Demo", 10);
             safeClick(driver, getObjectPayment("PWA_Payments_GW_PayTM_Success"));
         }
-        else if(bankName.equalsIgnoreCase("RazorpayNB")){
-            if(SuccessFail.equalsIgnoreCase("Failure")){
+        else if(bankName.equalsIgnoreCase("RazorpayNB")) {
+            if (SuccessFail.equalsIgnoreCase("Failure")) {
                 textPresent_Log(driver, "Welcome to Razorpay Software Private Ltd Bank", 20);
                 safeClick(driver, getObjectPayment("Bento_Payment_NB_Payment_Failure"));
-            }
-            else if(SuccessFail.equalsIgnoreCase("Success")){
+            } else if (SuccessFail.equalsIgnoreCase("Success")) {
                 textPresent_Log(driver, "Welcome to Razorpay Software Private Ltd Bank", 20);
                 safeClick(driver, getObjectPayment("Bento_Payment_NB_Payment_Success"));
                 Reporter.log("Payment done successfully");
             }
-        }
+        }else if (bankName.equalsIgnoreCase("Amex")) {
+
+                    if (elementVisible(driver, getObjectPayment("Bento_Payment_Skip_Securecard"), 2)) {
+                        smartClick(driver, getObjectPayment("Bento_Payment_Skip_Securecard"));
+                    }
+                    textPresent(driver, "ACS Emulator", 20);
+                    Thread.sleep(5000);
+                    smartClick(driver, getObjectPayment("Bento_Payment_AMC_SUBMIT"));
+                }
+
+
     }
 
     public void bento_pay_SC_PWA(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {

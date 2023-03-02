@@ -21,7 +21,7 @@ public class IN_Hotels_PWA_Coupon_Invalid extends PaymentsUI_Common_PWA_Hotels {
         hotels_SRP(driver, "", "");
         hotels_DetailsPage(driver, "", "");
         hotels_ItineraryPage(driver, "Coupon", "CCHOTEL", "");
-        bento_Paymentpage_PWA(driver,"INVALIDCOUPON","","Hotel","RazorpayNB","RazorpayNB", "Success");
+        bento_Paymentpage_PWA(driver,"NB","","","Coupon","RazorpayNB", "Success");
         hotels_ConfirmationPage(driver, "","", "Hotel Invaild coupon NB");
     }
 

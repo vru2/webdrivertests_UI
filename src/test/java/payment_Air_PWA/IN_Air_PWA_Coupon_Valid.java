@@ -22,7 +22,7 @@ public class IN_Air_PWA_Coupon_Valid extends PaymentsUI_Common_PWA_Air {
         air_ItnPage(driver, "COUPON", "PAYCC","","");
         air_AddOnPage(driver, "", "");
         air_TravellerPage(driver, "",phoneNo, emailID,"");
-        bento_Paymentpage_PWA(driver,"VALIDCOUPON","","","Paytm","Paytm", "");
+        bento_Paymentpage_PWA(driver,"Coupon","","","Amex","Amex", "");
         bento_Air_ConfirmationPage_PWA(driver,"", "", "Coupon valid Paytm :");
     }
     @AfterClass(alwaysRun = true)

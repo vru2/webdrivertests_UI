@@ -21,8 +21,8 @@ public class IN_Hotels_PWA_Coupon_Valid extends PaymentsUI_Common_PWA_Hotels {
         hotels_SRP(driver, "", "");
         hotels_DetailsPage(driver, "", "");
         hotels_ItineraryPage(driver, "COUPON", "CCHOTEL", "");
-        bento_Paymentpage_PWA(driver,"VALIDCOUPON","","Hotel","Paytm","Paytm", "");
-        hotels_ConfirmationPage(driver, "","", "Hotel Valid coupon paytm CC");
+        bento_Paymentpage_PWA(driver,"Coupon","","","Amex","Amex", "");
+        hotels_ConfirmationPage(driver, "","", "Hotel Valid coupon CC");
     }
 
     @AfterClass(alwaysRun = true)

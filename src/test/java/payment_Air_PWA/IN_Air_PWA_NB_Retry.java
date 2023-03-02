@@ -5,7 +5,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import test.java.commonUI.PaymentsUI_Common_PWA_Air;
+import test.java.onUI.PaymentsUI_Common_PWA_Air;
 
 public class IN_Air_PWA_NB_Retry extends PaymentsUI_Common_PWA_Air {
 

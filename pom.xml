@@ -27,9 +27,9 @@
                     <forkCount>0</forkCount>
                     <!--  <skipTests>true</skipTests> -->
                     <!-- Suite testng xml file to consider for test execution -->
-                    <suiteXmlFiles>
+                   <!-- <suiteXmlFiles>
                         <suiteXmlFile>${project.basedir}/suiteXMLs</suiteXmlFile>
-                    </suiteXmlFiles>
+                    </suiteXmlFiles>-->
                 </configuration>
             </plugin>
             <plugin>

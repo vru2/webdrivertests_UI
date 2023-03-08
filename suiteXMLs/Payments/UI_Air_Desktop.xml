@@ -70,7 +70,7 @@
 
     <test name="GV CC WL" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_GV_WL_CC_Amex"/>
+            <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_GV_SCLP_WL_CC_Amex"/>
         </classes>
     </test>
 
@@ -106,7 +106,7 @@
 
     <test name="UPI Scan Amex" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_UPIScan_validation_AMEXCC"/>
+            <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_UPIScan_Validation_AMEXCC"/>
         </classes>
     </test>
 

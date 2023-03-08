@@ -172,12 +172,11 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
     public void bento_pay_BFL_PWA(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
         payUI_Select_PaymentType_PWA( driver, "EMI");
         elementVisible(driver, getObjectPayment("PWA_EMI_SelectAllBanks_Link"), 5);
+        Thread.sleep(2000);
         safeClick(driver, getObjectPayment("PWA_EMI_SelectAllBanks_Link"));
-
         for(int i=1; i<=8; i++){
             String Xpath_BFL = "//div[3]/ul/div["+i+"]/div[2]/div/span";
             String BFL = getText(driver, By.xpath(Xpath_BFL));
-
                 if (BFL.contains("BAJAJ")) {
                     safeClick(driver, By.xpath(Xpath_BFL));
                     break;

@@ -16,7 +16,7 @@
 
     <test name="Coupon InValid NB" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_Desktop.IN_Coupon_Invalid"/>
+            <class name="test.java.payment_Hotels_Desktop.IN_Coupon_Invalid_NB"/>
         </classes>
     </test>
 
@@ -116,7 +116,7 @@
 
     <test name="UPI Saved UPI" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_Desktop.IN_UPI_Saved"/>
+            <class name="test.java.payment_Hotels_Desktop.IN_Saved_UPI"/>
         </classes>
     </test>
 

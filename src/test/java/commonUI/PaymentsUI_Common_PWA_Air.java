@@ -102,6 +102,7 @@ public class PaymentsUI_Common_PWA_Air extends PaymentsUI_Common_PWA{
         safeType(driver, By.name("lastName"),"Kumar");
         if(elementVisible(driver, By.xpath("//div[5]/li"),1)){
             String Nationality_DOB = getText(driver, By.xpath("//div[5]/li"));
+            System.out.println("Nationality_DOB "+Nationality_DOB);
             if(Nationality_DOB.contains("Nationality")){
                 safeClick(driver, By.xpath("//div[5]/li"));
                 textPresent(driver, "Select Country", 5);
@@ -134,7 +135,7 @@ public class PaymentsUI_Common_PWA_Air extends PaymentsUI_Common_PWA{
         elementVisible(driver, By.xpath("//button"),2);
         mouseHover(driver, By.xpath("//button"));
         safeClick(driver, By.xpath("//button"));
-        if(elementVisible(driver, By.xpath("//div[3]/a"), 1)){
+        if(elementVisible(driver, By.xpath("//div[3]/a"), 5)){
             smartClick(driver, By.xpath("//div[3]/a"));
         }
     }

@@ -27,6 +27,17 @@
     </test>
 
 
+    <test name="EMI" preserve-order="true">
+        <classes>
+            <class name="test.java.payment_Air_PWA.IN_Air_PWA_EMI"/>
+        </classes>
+    </test>
+
+    <test name="BFL" preserve-order="true">
+        <classes>
+            <class name="test.java.payment_Air_PWA.IN_Air_PWA_EMI_BFL"/>
+        </classes>
+    </test>
 
     <test name="CC payTM" preserve-order="true">
         <classes>
@@ -105,11 +116,5 @@
             <class name="test.java.payment_Air_PWA.IN_Air_PWA_Coupon_Valid"/>
         </classes>
     </test>
-<!--
-    <test name="NB ICICI" preserve-order="true">
-        <classes>
-            <class name="test.java.payment_Air_PWA.IN_Air_PWA_NB"/>
-        </classes>
-    </test>-->
 
 </suite>

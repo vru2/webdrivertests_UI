@@ -14,13 +14,11 @@
         </classes>
     </test>
 
-
     <test name="EMI" preserve-order="true">
         <classes>
             <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_EMI"/>
         </classes>
     </test>
-
 
     <test name="EMI NCE" preserve-order="true">
         <classes>
@@ -36,10 +34,9 @@
 
     <test name="CC" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_CC"/>
+            <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_CC_PayTM"/>
         </classes>
     </test>
-
 
     <test name="Coupon Valid" preserve-order="true">
         <classes>
@@ -47,20 +44,17 @@
         </classes>
     </test>
 
-
     <test name="Coupon Invalid" preserve-order="true">
         <classes>
             <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_Coupon_Invalid"/>
         </classes>
     </test>
 
-
     <test name="Tokenized Saved Card" preserve-order="true">
         <classes>
             <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_SavedPay_Tokenized"/>
         </classes>
     </test>
-
 
     <test name="Saved PaymentMode UPI" preserve-order="true">
         <classes>
@@ -75,20 +69,17 @@
         </classes>
     </test>
 
-
     <test name="UPI Inline" preserve-order="true">
         <classes>
             <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_UPI_Inline"/>
         </classes>
     </test>
 
-
     <test name="Wallet Full" preserve-order="true">
         <classes>
             <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_Wallet_Full"/>
         </classes>
     </test>
-
 
     <test name="Wallet CC PayTM" preserve-order="true">
         <classes>

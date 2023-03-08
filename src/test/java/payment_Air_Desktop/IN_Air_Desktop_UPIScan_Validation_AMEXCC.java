@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import test.java.commonUI.PaymentsUI_Common_Desktop_Air;
 
-public class IN_Air_Desktop_UPIScan_validation_AMEXCC extends PaymentsUI_Common_Desktop_Air {
+public class IN_Air_Desktop_UPIScan_Validation_AMEXCC extends PaymentsUI_Common_Desktop_Air {
 
     @BeforeClass
     public void startSelenium() throws Exception {

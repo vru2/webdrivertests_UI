@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import test.java.commonUI.PaymentsUI_Common_Desktop_Hotels;
 
-public class IN_CC_PayTM_Inline_TokenizeCard extends PaymentsUI_Common_Desktop_Hotels {
+public class IN_CC_PayTM_Inline extends PaymentsUI_Common_Desktop_Hotels {
 
 	@BeforeClass
 	public void startSelenium() throws Exception {
@@ -15,7 +15,7 @@ public class IN_CC_PayTM_Inline_TokenizeCard extends PaymentsUI_Common_Desktop_H
 	}
 
 	@Test
-	public void Hotel_IN_DC() throws Exception {
+	public void Hotel_IN_PayTM_inline() throws Exception {
 		driver.manage().deleteAllCookies();
 		driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
 		hotelsDetailsPage(driver, "", "");

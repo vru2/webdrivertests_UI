@@ -14,6 +14,26 @@
         </classes>
     </test>
 
+
+    <test name="EMI" preserve-order="true">
+        <classes>
+            <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_EMI"/>
+        </classes>
+    </test>
+
+
+    <test name="EMI NCE" preserve-order="true">
+        <classes>
+            <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_EMI_NCE"/>
+        </classes>
+    </test>
+
+    <test name="BFL" preserve-order="true">
+        <classes>
+            <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_EMI_BFL"/>
+        </classes>
+    </test>
+
     <test name="CC" preserve-order="true">
         <classes>
             <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_CC"/>

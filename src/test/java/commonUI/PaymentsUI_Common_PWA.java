@@ -34,6 +34,9 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
             case "EMI":
                 bento_pay_EMI_PWA(driver, paymentType, cardNumber, domain, payType, bankName);
                 break;
+            case "BFL":
+                bento_pay_BFL_PWA(driver, paymentType, cardNumber, domain, payType, bankName);
+                break;
             case "TW":
                 bento_pay_TW_PWA(driver, paymentType, cardNumber, domain, payType, bankName);
                 break;
@@ -122,15 +125,80 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
 
     public void bento_pay_EMI_PWA(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
         payUI_Select_PaymentType_PWA( driver, PaymentType);
-        if(PaymentType.equalsIgnoreCase("EMI")){
-            safeClick(driver, By.xpath("//div[2]/input"));
-            safeClick(driver, By.xpath("//button"));
-            elementVisible(driver, By.xpath("//div/header/div/p"), 5);
-            elementVisible(driver, By.xpath("//button"), 5);
+        if(PayType.contains("EMI")){
+            safeClickList(driver, getObjectPayment("PWA_EMI_BankList"), "HDFC Bank");
+            safeClick(driver,getObjectPayment("PWA_EMI_SelectBank_Button"));
+            textPresent_Log(driver, "HDFC Bank Credit Card", 5);
+            for(int i=3; i<=13; i=i+2){
+                String Xpath_Tenure = "//div["+i+"]/div/div/div/div[4]";
+                String InterestRate = getText(driver, By.xpath(Xpath_Tenure));
+                if(PayType.contains("NCE")) {
+                    if (InterestRate.contains("No Cost")) {
+                        safeClick(driver, By.xpath(Xpath_Tenure));
+                        break;
+                    }
+                }
+                else if (!PayType.contains("NCE")){
+                    if (!InterestRate.contains("No Cost")) {
+                        safeClick(driver, By.xpath(Xpath_Tenure));
+                        break;
+                    }
+                }
+                if(i==13){
+                    Reporter.log("No Cost EMI not available");
+                    Assert.assertTrue(false);
+                }
+
+            }
+            safeClick(driver, getObjectPayment("PWA_EMI_Pay_Button"));
+            textPresent_Log(driver, "ADD HDFC BANK CREDIT CARD", 5);
+            if(PayType.contains("NCE")){
+                textPresent_Log(driver, "will be used from your card right now. It will be converted into EMI in 5 to 7 days", 1);
+                textPresent_Log(driver, "Total amount to be paid to the bank in", 1);
+                textPresent_Log(driver, "HDFC Bank Credit Card", 1);
+                bento_pay_validate_Price_Popup(driver,"No Cost EMI discount","Interest (Charged by Bank)");
+            }
+            else if(!PayType.contains("NCE")) {
+                textPresent_Log(driver, "total cost includes interest", 1);
+                bento_pay_validate_Price_Popup(driver,"","Interest (Charged by Bank)");
+            }
+            Enter_CC_Details_PWA(driver, "5241810000000000", "1225", "123");
+            safeClick(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"));
         }
     }
 
-    public void bento_pay_NB_PWA(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName, String SuccessFail) throws Exception {
+
+
+    public void bento_pay_BFL_PWA(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
+        payUI_Select_PaymentType_PWA( driver, "EMI");
+        elementVisible(driver, getObjectPayment("PWA_EMI_SelectAllBanks_Link"), 5);
+        safeClick(driver, getObjectPayment("PWA_EMI_SelectAllBanks_Link"));
+
+        for(int i=1; i<=8; i++){
+            String Xpath_BFL = "//div[3]/ul/div["+i+"]/div[2]/div/span";
+            String BFL = getText(driver, By.xpath(Xpath_BFL));
+
+                if (BFL.contains("BAJAJ")) {
+                    safeClick(driver, By.xpath(Xpath_BFL));
+                    break;
+                }
+        }
+
+        textPresent_Log(driver, "BAJAJ Finserv", 5);
+        textPresent_Log(driver, "Interest charged by bank is non-refundable", 5);
+        safeClick(driver, getObjectPayment("PWA_EMI_Pay_Button"));
+
+        textPresent_Log(driver, "total cost includes interest of", 5);
+        textPresent_Log(driver, "YOUR EMI INFORMATION", 1);
+        textPresent_Log(driver, "ADD BAJAJ FINSERV CARD", 1);
+
+        safeType(driver, getObjectPayment("PWA_Payments_CC_Number"), "2030400200341834");
+        safeType(driver, getObjectPayment("PWA_Payments_CC_Name"), "Kiran");
+        safeClick(driver, getObjectPayment("PWA_EMI_Pay_Button"));
+    }
+
+
+        public void bento_pay_NB_PWA(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName, String SuccessFail) throws Exception {
         payUI_Select_PaymentType_PWA( driver, PaymentType);
         Reporter.log("Clicked on NB");
         Thread.sleep(1000);
@@ -359,6 +427,15 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
                     Thread.sleep(5000);
                     smartClick(driver, getObjectPayment("Bento_Payment_AMC_SUBMIT"));
                 }
+
+        else if (bankName.equalsIgnoreCase("RazorpayCC")) {
+
+            elementVisible(driver, getObjectPayment("Bento_Payment_Razropay_Submit"),20);
+            textPresent(driver, "One Time Password (OTP) successfully sent to the phone number linked to your card ending with 0000.", 1);
+            safeClick(driver, getObjectPayment("Bento_Payment_Razropay_Pin"));
+            safeType(driver,getObjectPayment("Bento_Payment_Razropay_Pin"),"0000");
+            safeClick(driver,getObjectPayment("Bento_Payment_Razropay_Submit"));
+        }
 
 
     }

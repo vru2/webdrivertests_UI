@@ -15,7 +15,7 @@ public class IN_SavedPay_Tokenized extends PaymentsUI_Common_Desktop_Hotels {
 	}
 
 	@Test
-	public void Hotel_IN_SC_Tokenized_PayTM() throws Exception {
+	public void Hotel_IN_Tokenized_PayTM() throws Exception {
 		driver.manage().deleteAllCookies();
 		driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
 		hotelsDetailsPage(driver, "", "");

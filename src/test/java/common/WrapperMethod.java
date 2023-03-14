@@ -186,6 +186,7 @@ public class WrapperMethod extends CommonUtil {
 			ChromeOptions chromeOptions = new ChromeOptions();
 			chromeOptions.addArguments("--no-sandbox");
 			chromeOptions.addArguments("disable-gpu");
+			chromeOptions.addArguments("--remote-allow-origins=*");
 			chromeOptions.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
 			chromeOptions.addArguments("start-maximized"); // open Browser in maximized mode
 			chromeOptions.addArguments("disable-infobars"); // disabling infobars
@@ -201,6 +202,7 @@ public class WrapperMethod extends CommonUtil {
 			chromeOptions.addArguments("--no-sandbox");
 			chromeOptions.addArguments("--headless");
 			chromeOptions.addArguments("disable-gpu");
+			chromeOptions.addArguments("--remote-allow-origins=*");
 			chromeOptions.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
 			chromeOptions.addArguments("start-maximized"); // open Browser in maximized mode
 			chromeOptions.addArguments("disable-infobars"); // disabling infobars
@@ -224,7 +226,7 @@ public class WrapperMethod extends CommonUtil {
 			chromeOptions.addArguments("--no-sandbox");
 			chromeOptions.addArguments("disable-gpu");
 			chromeOptions.addArguments("--allowed-ips");
-
+			chromeOptions.addArguments("--remote-allow-origins=*");
 			chromeOptions.addArguments("user-agent=Mozilla/5.0 (Windows Phone 10.0; Android 4.2.1; Microsoft; Lumia 640 XL LTE) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Mobile Safari/537.36 Edge/12.10166");
 			chromeOptions.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
 			chromeOptions.addArguments("start-maximized"); // open Browser in maximized mode
@@ -243,6 +245,7 @@ public class WrapperMethod extends CommonUtil {
 			ChromeOptions chromeOptions = new ChromeOptions();
 			chromeOptions.addArguments("--no-sandbox");
 			chromeOptions.addArguments("--headless");
+			chromeOptions.addArguments("--allowed-ips");
 			chromeOptions.addArguments("disable-gpu");
 			chromeOptions.addArguments("user-agent=Mozilla/5.0 (Windows Phone 10.0; Android 4.2.1; Microsoft; Lumia 640 XL LTE) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Mobile Safari/537.36 Edge/12.10166");
 			chromeOptions.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
@@ -806,7 +809,6 @@ public class WrapperMethod extends CommonUtil {
 		List<WebElement> we = driver.findElements(by);
 		for (WebElement WebEle : we) {
 			String elementText = WebEle.getText();
-			System.out.println(elementText);
 			if (elementText.contains(Text)) {
 				if (!WebEle.isDisplayed()) {
 					Thread.sleep(1000);

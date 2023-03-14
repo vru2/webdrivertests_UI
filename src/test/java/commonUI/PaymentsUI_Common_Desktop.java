@@ -123,7 +123,7 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
             }
         }
         else if(GWName.equalsIgnoreCase("PAYTM")){
-            if(elementVisible(driver, By.xpath("//button[@onclick='submitSuccess()']"), 20)) {
+            if(elementVisible(driver, By.xpath("//button[@onclick='submitSuccess()']"), 5)) {
                     safeClick(driver, By.xpath("//button[@onclick='submitSuccess()']"));
             }
             else {
@@ -991,7 +991,7 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
                 Enter_CC_Details(driver, platform.value("AmexCard_Number"), platform.value("AmexCard_Month_New"), platform.value("AmexCard_Year"), platform.value("AmexCard_CVV"));
                 break;
             case "PAYTM":
-                Enter_CC_Details(driver, "6080322940807777","Jan (01)","2025","123");
+                Enter_CC_Details(driver, "4761360073426701","Jan (01)","2025","123");
                 break;
             case "AMEXTRAIN":
                 Enter_CC_Details(driver, platform.value("AmexCard_Number"), platform.value("AmexCard_Month_New"), platform.value("AmexCard_Year"), platform.value("AmexCard_CVV"));

@@ -107,13 +107,13 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
 
         }
         else if(PayType.equalsIgnoreCase("SavedUPI")) {
-            safeClick(driver, getObjectPayment("PWA_PaymentPage_SavedPayment_UPI_Radio_Btn"));
-            String UPI_txt = getText(driver, getObjectPayment("PWA_PaymentPage_SavedPayment_UPI_Txt"));
+           // safeClick(driver, getObjectPayment("PWA_PaymentPage_SavedPayment_UPI_Radio_Btn"));
+            safeClickList(driver,getObjectPayment("PWA_PaymentPage_SavedPayment_UPI_Radio_Btn"), "3212467@okhdfcbank" );
+           /* String UPI_txt = getText(driver, getObjectPayment("PWA_PaymentPage_SavedPayment_UPI_Radio_Btn"));
             if (!UPI_txt.equalsIgnoreCase("3212467@okhdfcbank")) {
                 Reporter.log("UPI_txt " + UPI_txt);
-                System.out.println("UPI_txt " + UPI_txt);
                 Assert.assertTrue(false);
-            }
+            }*/
         }
         safeClick(driver, getObjectPayment("Bento_Payment_NB_Payment_Success"));
     }
@@ -391,7 +391,7 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
             //Enter_CC_Details_PWA(driver, platform.value("PayTMCard_Number"), platform.value("PayTMCard_MWeb_Exp_Date"), platform.value("PayTMCard_CVV"));
         }
         if(bankName=="Amex") {
-            Enter_CC_Details_PWA(driver, platform.value("AmexCard_Number"), platform.value("AmexCard_Year"), platform.value("AmexCard_CVV"));
+            Enter_CC_Details_PWA(driver, platform.value("AmexCard_Number"), "0139", platform.value("AmexCard_CVV"));
            }
         if(bankName=="MASTER") {
             Enter_CC_Details_PWA(driver, platform.value("MasterCard_Number"), platform.value("MasterCard_EXP_PWA"), platform.value("MasterCard_CVV"));

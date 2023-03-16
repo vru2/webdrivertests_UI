@@ -106,9 +106,11 @@ public class PaymentsUI_Common_PWA_Air extends PaymentsUI_Common_PWA{
             if(Nationality_DOB.contains("Nationality")){
                 safeClick(driver, By.xpath("//div[5]/li"));
                 textPresent(driver, "Select Country", 5);
+                Thread.sleep(1000);
                 safeType(driver, By.xpath("//div[2]/div[2]/div[2]/input"), "India");
-                Thread.sleep(2000);
+                Thread.sleep(1000);
                 mouseHover(driver, By.xpath("//div[2]/div/ul/li"));
+                Thread.sleep(1000);
                 safeClick(driver, By.xpath("//div[2]/div/ul/li"));
             }
             else if(Nationality_DOB.contains("Date of birth")){

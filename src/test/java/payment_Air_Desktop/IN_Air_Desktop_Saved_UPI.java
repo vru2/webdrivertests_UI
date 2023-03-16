@@ -22,6 +22,7 @@ public class IN_Air_Desktop_Saved_UPI extends PaymentsUI_Common_Desktop_Air {
         air_ItnPage_Desktop(driver, "", "","","");
         air_AddOnPage_Desktop(driver,"","","","");
         air_LoginPage_Desktop(driver, "", emailID, phoneNo);
+        driver.manage().addCookie(fullwallet);
         air_TravellerPage_Desktop(driver,"");
         air_PaymentPage_Desktop(driver, "UPI", "", "", "SavedUPI", "", "Saved UPI : ");
     }

@@ -16,7 +16,7 @@
 
     <test name="EMI" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_EMI"/>
+            <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_EMI_Only"/>
         </classes>
     </test>
 
@@ -34,7 +34,7 @@
 
     <test name="CC" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_CC_PayTM"/>
+            <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_CC_PayTM_Inline"/>
         </classes>
     </test>
 
@@ -65,7 +65,7 @@
 
     <test name="Saved UPI" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_SavedUPI"/>
+            <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_Saved_UPI"/>
         </classes>
     </test>
 

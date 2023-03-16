@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import test.java.commonUI.PaymentsUI_Common_PWA_Air;
 
-public class IN_Air_PWA_GV_Partial_CLP_CC_WL extends PaymentsUI_Common_PWA_Air {
+public class IN_Air_PWA_GV_CLP_CC_WL extends PaymentsUI_Common_PWA_Air {
 
     @BeforeClass
     public void startSelenium() throws Exception {
@@ -24,7 +24,7 @@ public class IN_Air_PWA_GV_Partial_CLP_CC_WL extends PaymentsUI_Common_PWA_Air {
         air_ItnPage(driver, "GV", "","","");
         air_AddOnPage(driver, "", "");
         air_TravellerPage(driver, "",phoneNo,emailID,"");
-        bento_Paymentpage_PWA(driver,"GV_Partial","","","PartialWallet","Paytm","");
+        bento_Paymentpage_PWA(driver,"GV_Partial","","","PartialWallet","Amex","");
         bento_Air_ConfirmationPage_PWA(driver,"", "", "GV wallet CC :");
     }
     @AfterClass(alwaysRun = true)

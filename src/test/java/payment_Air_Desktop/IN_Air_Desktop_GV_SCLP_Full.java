@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import test.java.commonUI.PaymentsUI_Common_Desktop_Air;
 
-public class IN_Air_Desktop_Coupon_Invalid_NB extends PaymentsUI_Common_Desktop_Air {
+public class IN_Air_Desktop_GV_SCLP_Full extends PaymentsUI_Common_Desktop_Air {
 
     @BeforeClass
     public void startSelenium() throws Exception {
@@ -15,16 +15,16 @@ public class IN_Air_Desktop_Coupon_Invalid_NB extends PaymentsUI_Common_Desktop_
     }
 
     @Test
-    public void Air_Desktop_InvalidCoupon_NB() throws Exception {
+    public void Air_Desktop_GVFull() throws Exception {
         driver.manage().deleteAllCookies();
         driver.get(air_SRPUrl("IN",origin,destination, date));
         air_SRPPage_Desktop(driver,"","");
-        air_ItnPage_Desktop(driver, "", "","Coupon","PAYCC");
+        air_ItnPage_Desktop(driver, "", "","GVFull","");
         air_AddOnPage_Desktop(driver,"","","","");
         air_LoginPage_Desktop(driver, "", emailID, phoneNo);
         air_TravellerPage_Desktop(driver,"");
-        air_PaymentPage_Desktop(driver,"NB","","","Coupon","InvalidCoupon", "Invalid Coupon NB : ");// Invalid Coupon Validation
-    }
+        air_PaymentPage_Desktop(driver, "GV", "", "", "", "", "Full GV : ");
+  }
 
     @AfterClass(alwaysRun = true)
     public void closeSelenium() throws Exception {

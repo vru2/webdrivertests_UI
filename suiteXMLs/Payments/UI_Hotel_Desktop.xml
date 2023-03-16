@@ -16,7 +16,7 @@
 
     <test name="Coupon InValid NB" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_Desktop.IN_Coupon_Invalid_NB"/>
+            <class name="test.java.payment_Hotels_Desktop.IN_Coupon_Invalid"/>
         </classes>
     </test>
 
@@ -34,13 +34,13 @@
 
     <test name="EMI" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_Desktop.IN_EMI_RazorPay"/>
+            <class name="test.java.payment_Hotels_Desktop.IN_EMI_Only"/>
         </classes>
     </test>
 
     <test name="EMI No Cost" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_Desktop.IN_EMI_NoCostEMI"/>
+            <class name="test.java.payment_Hotels_Desktop.IN_EMI_NCE"/>
         </classes>
     </test>
 
@@ -52,7 +52,7 @@
 
     <test name="GV Full" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_Desktop.IN_GV_Full"/>
+            <class name="test.java.payment_Hotels_Desktop.IN_GV_SCLP_Full"/>
         </classes>
     </test>
 
@@ -70,13 +70,13 @@
 
     <test name="GV CLP SCLP WL NB" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_Desktop.IN_GV_SCLP_CLP_GV_NB"/>
+            <class name="test.java.payment_Hotels_Desktop.IN_GV_SCLP_CLP_NB"/>
         </classes>
     </test>
 
     <test name="GV Price Change PopUP NB" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_Desktop.IN_GV_Price_Change_PopUp"/>
+            <class name="test.java.payment_Hotels_Desktop.IN_GV_SCLP_PriceChange_PopUp"/>
         </classes>
     </test>
 

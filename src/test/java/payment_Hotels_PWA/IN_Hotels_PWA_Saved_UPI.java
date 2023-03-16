@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import test.java.commonUI.PaymentsUI_Common_PWA_Hotels;
 
-public class IN_Hotels_PWA_CC_PayTM extends PaymentsUI_Common_PWA_Hotels {
+public class IN_Hotels_PWA_Saved_UPI extends PaymentsUI_Common_PWA_Hotels {
 
     @BeforeClass
     public void startSelenium() throws Exception {
@@ -15,14 +15,16 @@ public class IN_Hotels_PWA_CC_PayTM extends PaymentsUI_Common_PWA_Hotels {
     }
 
     @Test
-    public void Hotel_PWA_CC() throws Exception {
+    public void Hotel_PWA_UPI_savedpayment() throws Exception {
         driver.get(hotelsUrl);
         hotels_HomePage(driver, HotelName, CheckIN, CheckOut);
         hotels_SRP(driver, "", "");
         hotels_DetailsPage(driver, "", "");
+        driver.manage().addCookie(fullwallet);
         hotels_ItineraryPage(driver, "", "", "");
-        bento_Paymentpage_PWA(driver,"CC","","","","Paytm","");
-        hotels_ConfirmationPage(driver, "","", "PayTM CC");
+        driver.manage().addCookie(fullwallet);
+        bento_Paymentpage_PWA(driver,"SAVEDPAYMENT","","","SavedUPI","", "");
+        hotels_ConfirmationPage(driver, "","", "Hotel PWA UPI savedpayment mode");
     }
 
     @AfterClass(alwaysRun = true)

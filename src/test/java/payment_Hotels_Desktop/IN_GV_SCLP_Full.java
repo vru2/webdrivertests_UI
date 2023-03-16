@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import test.java.commonUI.PaymentsUI_Common_Desktop_Hotels;
 
-public class IN_EMI_RazorPay extends PaymentsUI_Common_Desktop_Hotels {
+public class IN_GV_SCLP_Full extends PaymentsUI_Common_Desktop_Hotels {
 
 	@BeforeClass
 	public void startSelenium() throws Exception {
@@ -15,14 +15,14 @@ public class IN_EMI_RazorPay extends PaymentsUI_Common_Desktop_Hotels {
 	}
 
 	@Test
-	public void Hotel_IN_EMI() throws Exception {
+	public void Hotel_IN_GVFull() throws Exception {
 		driver.manage().deleteAllCookies();
 		driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
+		//driver.manage().addCookie(hotelLogin);
 		hotelsDetailsPage(driver, "", "");
-		hotelsItnPage(driver, "", "", "", "");
-		bento_Validation_Text(driver, "EMI", "");
-		hotelsPaymentPage(driver,"EMI","RAZORPAY","","EMI","", "EMI Razorpay : " );
-	} 
+		hotelsItnPage(driver, "FullGV", "", "", "");
+		hotelsPaymentPage(driver, "GV", "", "", "", "", "Full GV : ");
+	}
 
  		@AfterClass
 		public void closeSelenium() throws Exception { 

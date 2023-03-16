@@ -60,6 +60,11 @@ public class PaymentsUI_Common_Desktop_Air extends PaymentsUI_Common_Desktop {
         } else if(CouponGV.equalsIgnoreCase("SCLPGV")){
 
         }
+        else if(CouponGV.equalsIgnoreCase("PartialGV_SCLP_PopUp")){
+            String[] GV = getGVSCLP(10);
+            applyGV(driver, FlightName,FlightNo); //passing GVnumber, Pin
+        }
+
         elementVisible(driver, getObjectPayment("Desktop_Air_Itn_Step1_Btn"), 5);
         textPresent_Log(driver, "Review your itinerary", 1);
 

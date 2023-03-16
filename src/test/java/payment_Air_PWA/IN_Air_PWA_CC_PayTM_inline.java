@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import test.java.commonUI.PaymentsUI_Common_PWA_Air;
 
-public class IN_Air_PWA_GV_Full_CLP extends PaymentsUI_Common_PWA_Air {
+public class IN_Air_PWA_CC_PayTM_inline extends PaymentsUI_Common_PWA_Air {
 
     @BeforeClass
     public void startSelenium() throws Exception {
@@ -15,15 +15,15 @@ public class IN_Air_PWA_GV_Full_CLP extends PaymentsUI_Common_PWA_Air {
     }
 
     @Test
-    public void Air_PWA_GV_WL_CC() throws Exception {
+    public void Air_PWA_CC_Paytm() throws Exception {
         driver.manage().deleteAllCookies();
-        driver.get(air_SRPUrl("IN",origin,destination, date+9));
+        driver.get(air_SRPUrl("IN",origin,destination, date+1));
         air_SRPPage(driver,"", "");
-        air_ItnPage(driver, "GVFULL", "","","");
+        air_ItnPage(driver, "", "","","");
         air_AddOnPage(driver, "", "");
         air_TravellerPage(driver, "",phoneNo,emailID,"");
-        bento_Paymentpage_PWA(driver,"GV","","","","","");
-        bento_Air_ConfirmationPage_PWA(driver,"", "", "GV Full :");
+        bento_Paymentpage_PWA(driver,"CC","","","","Paytm","");
+        bento_Air_ConfirmationPage_PWA(driver,"", "", "CC PayTM :");
     }
     @AfterClass(alwaysRun = true)
     public void closeSelenium() throws Exception {

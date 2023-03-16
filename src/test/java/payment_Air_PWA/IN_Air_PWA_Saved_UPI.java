@@ -5,7 +5,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import test.java.commonUI.PaymentsUI_Common_PWA_Air;
 
-public class IN_Air_PWA_SavedUPI extends PaymentsUI_Common_PWA_Air {
+public class IN_Air_PWA_Saved_UPI extends PaymentsUI_Common_PWA_Air {
 
     @BeforeClass
     public void startSelenium() throws Exception {

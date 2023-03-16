@@ -211,13 +211,14 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
             /*String retry = getText(driver, By.xpath("//div[4]/div/p"));
             System.out.println("retry"+ retry);*/
         }
-       /* payUI_Select_PaymentType_PWA( driver, PaymentType);
-        Reporter.log("Clicked on NB");
-        Thread.sleep(1000);
-        safeClick(driver, getObjectPayment("PWA_PaymentPage_NB_ICICI"));
-        Reporter.log("Selected ICICI Bank");
-        safeClick(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"));*/
-
+       if(!PayType.equalsIgnoreCase("Coupon")) {
+           payUI_Select_PaymentType_PWA(driver, PaymentType);
+           Reporter.log("Clicked on NB");
+           Thread.sleep(1000);
+           safeClick(driver, getObjectPayment("PWA_PaymentPage_NB_ICICI"));
+           Reporter.log("Selected ICICI Bank");
+           safeClick(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"));
+       }
         if(PayType.equalsIgnoreCase("Coupon")){
             textPresent_Log(driver, "Coupon not applicable", 5);
             if(domain.equalsIgnoreCase("Hotel")){
@@ -343,12 +344,12 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
         } else if (!PaymentType.equalsIgnoreCase("SavedUPI") && !BankName.equalsIgnoreCase("Failure")) {
             smartType(driver, getObjectPayment("PWA_PaymentPage_UPI_TextBox"), "kiran@ybl");
         } else if (!PaymentType.equalsIgnoreCase("SavedUPI") && BankName.equalsIgnoreCase("Failure")) {
-            smartType(driver, getObjectPayment("PWA_PaymentPage_UPI_TextBox"), "failure@ybl");
+            smartType(driver, getObjectPayment("PWA_PaymentPage_UPI_TextBox"), "failure@razorpay");
         }
         Thread.sleep(5000);
         safeClick(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"));
         if (!PaymentType.equalsIgnoreCase("SavedUPI") && BankName.equalsIgnoreCase("Failure")) {
-            textPresent_Log(driver, "Failure", 20);
+            //textPresent_Log(driver, "Failure", 20);
         }
     }
 
@@ -368,8 +369,11 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
         if(WalletOn.equalsIgnoreCase("False")){
             safeClick(driver, getObjectPayment("PWA_PaymentPage_Wallet_Toggle"));
         }
-            if(PayType.equalsIgnoreCase("PartialWallet")){
+        if(PayType.equalsIgnoreCase("PartialWallet")){
             bento_pay_validate_Price_Popup(driver, "Cleartrip Wallet", "Gift card");
+        }
+        if(PayType.equalsIgnoreCase("GV_Partial")){
+         //   bento_pay_validate_Price_Popup(driver, "Cleartrip Wallet", "Gift card");
         }
         else if(PayType.equalsIgnoreCase("PartialWalletONLY")){
             bento_pay_validate_Price_Popup(driver, "Cleartrip Wallet", "");

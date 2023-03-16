@@ -41,25 +41,25 @@
 
     <test name="CC payTM" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_PWA.IN_Air_PWA_CC_PayTM"/>
+            <class name="test.java.payment_Air_PWA.IN_Air_PWA_CC_PayTM_inline"/>
         </classes>
     </test>
 
     <test name="GV Multi CLP CC" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_PWA.IN_Air_PWA_GV_Multi_CLP_CC"/>
+            <class name="test.java.payment_Air_PWA.IN_Air_PWA_GV_CLP_CC"/>
         </classes>
     </test>
 
     <test name="GV Full CLP" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_PWA.IN_Air_PWA_GV_Full_CLP"/>
+            <class name="test.java.payment_Air_PWA.IN_Air_PWA_GV_CLP_Full"/>
         </classes>
     </test>
 
     <test name="GV WL Partial CC" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_PWA.IN_Air_PWA_GV_Partial_CLP_CC_WL"/>
+            <class name="test.java.payment_Air_PWA.IN_Air_PWA_GV_CLP_CC_WL"/>
         </classes>
     </test>
 
@@ -86,7 +86,7 @@
 
     <test name="Saved UPI" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_PWA.IN_Air_PWA_SavedUPI"/>
+            <class name="test.java.payment_Air_PWA.IN_Air_PWA_Saved_UPI"/>
         </classes>
     </test>
 

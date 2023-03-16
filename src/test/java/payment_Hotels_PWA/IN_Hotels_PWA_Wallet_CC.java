@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import test.java.commonUI.PaymentsUI_Common_PWA_Hotels;
 
-public class IN_Hotels_PWA_EMI extends PaymentsUI_Common_PWA_Hotels {
+public class IN_Hotels_PWA_Wallet_CC extends PaymentsUI_Common_PWA_Hotels {
 
     @BeforeClass
     public void startSelenium() throws Exception {
@@ -15,14 +15,16 @@ public class IN_Hotels_PWA_EMI extends PaymentsUI_Common_PWA_Hotels {
     }
 
     @Test
-    public void Hotel_PWA_EMI() throws Exception {
+    public void Hotel_PWA_WL_CC() throws Exception {
         driver.get(hotelsUrl);
         hotels_HomePage(driver, HotelName, CheckIN, CheckOut);
         hotels_SRP(driver, "", "");
         hotels_DetailsPage(driver, "", "");
+        driver.manage().addCookie(ctauth_partial_wallet);//65243938
+        addwalletamount_UserID(10, "65243938");
         hotels_ItineraryPage(driver, "", "", "");
-        bento_Paymentpage_PWA(driver,"EMI","","","EMI","RazorpayCC","");
-        hotels_ConfirmationPage(driver, "","", "Hotel PWA EMI ");
+        bento_Paymentpage_PWA(driver,"GV_Partial","","","PartialWalletONLY","Paytm","");
+        hotels_ConfirmationPage(driver, "","", "Hotel PWA WL CC PayTM");
     }
 
     @AfterClass(alwaysRun = true)

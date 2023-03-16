@@ -18,6 +18,7 @@ public class IN_Air_PWA_Coupon_Invalid extends PaymentsUI_Common_PWA_Air {
     public void Air_PWA_InvalidCoupon() throws Exception {
         driver.manage().deleteAllCookies();
         driver.get(air_SRPUrl("IN",origin,destination, date+2));
+        driver.manage().addCookie(fullwallet);
         air_SRPPage(driver,"", "");
         air_ItnPage(driver, "COUPON", "PAYCC","","");
         air_AddOnPage(driver, "", "");

@@ -2,6 +2,8 @@ package test.java.commonUI;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Reporter;
 
@@ -236,9 +238,12 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
         Reporter.log("Clicked on NB");
         bento_pay_validate_Price_Popup(driver, "Coupon code", "");
         Thread.sleep(5000);
+
+        WebElement we = driver.findElement(getObjectPayment("PayUI_Pay_Tabs_PWA"));
+        Actions builder = new Actions(driver);
+        Boolean selectedSeat = elementVisible(driver, getObjectPayment("PWA_Bus_SeatSelection"), 1);
+        builder.moveToElement(we, -10,-50).click().build().perform();
         bento_pay_CC_PWA(driver, "CC", "", domain, "",BankName, SuccessFail);
-
-
         /*
         //bento_pay_CC_PWA(driver, "NB", "", domain, "", "", SuccessFail);
         if(PaymentType.equalsIgnoreCase("VALIDCOUPON")){
@@ -512,7 +517,7 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
         }
         switch (PayType) {
             case "CC":
-                PayType = "DEBIT/CREDIT CARDS";
+                PayType = "DEBIT/CREDIT CARD";
                 break;
             case "DC":
                 PayType = "ADD NEW CARD";

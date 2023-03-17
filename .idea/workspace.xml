@@ -5,34 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="398be537-263a-46ea-8d2f-e66bf2ffc10f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webdrivertests.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webdrivertests.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/common.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/common.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_Desktop_Air.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_Desktop_Air.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_Desktop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_Desktop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_PWA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_PWA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_Desktop/IN_Air_Desktop_Coupon_Invalid_NB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_Desktop/IN_Air_Desktop_Coupon_Invalid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_Desktop/IN_Air_Desktop_GV_Full.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_Desktop/IN_Air_Desktop_GV_SCLP_Full.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/IN_Air_PWA_CC_PayTM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/IN_Air_PWA_CC_PayTM_inline.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/IN_Air_PWA_Coupon_Invalid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/IN_Air_PWA_Coupon_Invalid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_Desktop/IN_Air_Desktop_Coupon_Valid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_Desktop/IN_Air_Desktop_Coupon_Valid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/IN_Air_PWA_Coupon_Valid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/IN_Air_PWA_Coupon_Valid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/IN_Air_PWA_GV_Full_CLP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/IN_Air_PWA_GV_CLP_Full.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/IN_Air_PWA_GV_Multi_CLP_CC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/IN_Air_PWA_GV_CLP_CC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/IN_Air_PWA_GV_Partial_CLP_CC_WL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/IN_Air_PWA_GV_CLP_CC_WL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/IN_Air_PWA_SavedUPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/IN_Air_PWA_Saved_UPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_Coupon_Invalid_NB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_Coupon_Invalid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_EMI_NoCostEMI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_EMI_NCE.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_EMI_RazorPay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_EMI_Only.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_GV_Full.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_GV_SCLP_Full.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_GV_Price_Change_PopUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_GV_SCLP_PriceChange_PopUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_GV_SCLP_CLP_GV_NB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_GV_SCLP_CLP_NB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_PWA/IN_Hotels_PWA_CC_PayTM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_PWA/IN_Hotels_PWA_CC_PayTM_Inline.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_PWA/IN_Hotels_PWA_EMI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_PWA/IN_Hotels_PWA_EMI_Only.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_PWA/IN_Hotels_PWA_SavedUPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_PWA/IN_Hotels_PWA_Saved_UPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_PWA/IN_Hotels_PWA_WL_CC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_PWA/IN_Hotels_PWA_Wallet_CC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/suiteXMLs/Payments/UI_Air_Desktop.xml" beforeDir="false" afterPath="$PROJECT_DIR$/suiteXMLs/Payments/UI_Air_Desktop.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/suiteXMLs/Payments/UI_Air_PWA.xml" beforeDir="false" afterPath="$PROJECT_DIR$/suiteXMLs/Payments/UI_Air_PWA.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/suiteXMLs/Payments/UI_Hotel_Desktop.xml" beforeDir="false" afterPath="$PROJECT_DIR$/suiteXMLs/Payments/UI_Hotel_Desktop.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/suiteXMLs/Payments/UI_Hotel_PWA.xml" beforeDir="false" afterPath="$PROJECT_DIR$/suiteXMLs/Payments/UI_Hotel_PWA.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,8 +62,84 @@
       <recent name="test.java.payment_Air_Desktop" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.IN_Air_PWA_Coupon_Valid.Air_PWA_ValidCoupon">
-    <configuration name="IN_Air_PWA_Coupon_Invalid" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.IN_Air_PWA_Paylater">
+    <configuration name="AirDesktop" type="TestNG">
+      <module name="webdrivertests" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/suiteXMLs/Payments/UI_Air_Desktop.xml" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/Results/AirDesktop" />
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AirPWA" type="TestNG">
+      <module name="webdrivertests" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/suiteXMLs/Payments/UI_Air_PWA.xml" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/Results/AirPWA" />
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Hotel PWA" type="TestNG">
+      <module name="webdrivertests" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/suiteXMLs/Payments/UI_Hotel_PWA.xml" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/Results/HotelPWA" />
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HotelDesktop" type="TestNG">
+      <module name="webdrivertests" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/suiteXMLs/Payments/UI_Hotel_Desktop.xml" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/Results/HotelDesktop" />
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IN_Air_PWA_EMI_Cardless" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="webdrivertests" />
       <extension name="coverage">
         <pattern>
@@ -90,7 +148,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="test.java.payment_Air_PWA" />
-      <option name="MAIN_CLASS_NAME" value="test.java.payment_Air_PWA.IN_Air_PWA_Coupon_Invalid" />
+      <option name="MAIN_CLASS_NAME" value="test.java.payment_Air_PWA.IN_Air_PWA_EMI_Cardless" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -98,7 +156,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IN_Air_PWA_Coupon_Valid.Air_PWA_ValidCoupon" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="IN_Air_PWA_Paylater" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="webdrivertests" />
       <extension name="coverage">
         <pattern>
@@ -107,25 +165,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="test.java.payment_Air_PWA" />
-      <option name="MAIN_CLASS_NAME" value="test.java.payment_Air_PWA.IN_Air_PWA_Coupon_Valid" />
-      <option name="METHOD_NAME" value="Air_PWA_ValidCoupon" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="IN_Air_PWA_GV_CLP_CC_WL" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="webdrivertests" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.java.payment_Air_PWA.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test.java.payment_Air_PWA" />
-      <option name="MAIN_CLASS_NAME" value="test.java.payment_Air_PWA.IN_Air_PWA_GV_CLP_CC_WL" />
+      <option name="MAIN_CLASS_NAME" value="test.java.payment_Air_PWA.IN_Air_PWA_Paylater" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -133,34 +173,50 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IN_Air_PWA_GV_CLP_Full.Air_PWA_GV_Full" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="IN_EMI_BFL" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="webdrivertests" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.java.payment_Air_PWA.*" />
+          <option name="PATTERN" value="test.java.payment_Hotels_Desktop.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="test.java.payment_Air_PWA" />
-      <option name="MAIN_CLASS_NAME" value="test.java.payment_Air_PWA.IN_Air_PWA_GV_CLP_Full" />
-      <option name="METHOD_NAME" value="Air_PWA_GV_Full" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="PACKAGE_NAME" value="test.java.payment_Hotels_Desktop" />
+      <option name="MAIN_CLASS_NAME" value="test.java.payment_Hotels_Desktop.IN_EMI_BFL" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IN_Air_PWA_Saved_UPI" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="IN_EMI_NCE" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="webdrivertests" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.java.payment_Air_PWA.*" />
+          <option name="PATTERN" value="test.java.payment_Hotels_Desktop.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="test.java.payment_Air_PWA" />
-      <option name="MAIN_CLASS_NAME" value="test.java.payment_Air_PWA.IN_Air_PWA_Saved_UPI" />
+      <option name="PACKAGE_NAME" value="test.java.payment_Hotels_Desktop" />
+      <option name="MAIN_CLASS_NAME" value="test.java.payment_Hotels_Desktop.IN_EMI_NCE" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IN_Hotels_PWA_Coupon_Valid" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="webdrivertests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.java.payment_Hotels_PWA.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.java.payment_Hotels_PWA" />
+      <option name="MAIN_CLASS_NAME" value="test.java.payment_Hotels_PWA.IN_Hotels_PWA_Coupon_Valid" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -170,11 +226,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.IN_Air_PWA_Coupon_Valid.Air_PWA_ValidCoupon" />
-        <item itemvalue="TestNG.IN_Air_PWA_Coupon_Invalid" />
-        <item itemvalue="TestNG.IN_Air_PWA_Saved_UPI" />
-        <item itemvalue="TestNG.IN_Air_PWA_GV_CLP_Full.Air_PWA_GV_Full" />
-        <item itemvalue="TestNG.IN_Air_PWA_GV_CLP_CC_WL" />
+        <item itemvalue="TestNG.IN_Air_PWA_Paylater" />
+        <item itemvalue="TestNG.IN_Air_PWA_EMI_Cardless" />
+        <item itemvalue="TestNG.IN_Hotels_PWA_Coupon_Valid" />
+        <item itemvalue="TestNG.IN_EMI_BFL" />
+        <item itemvalue="TestNG.IN_EMI_NCE" />
       </list>
     </recent_temporary>
   </component>
@@ -205,12 +261,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_PWA.java</url>
-          <line>55</line>
+          <line>57</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_PWA.java</url>
-          <line>331</line>
+          <line>336</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

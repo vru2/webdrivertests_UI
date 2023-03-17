@@ -23,7 +23,7 @@ public class IN_Air_Desktop_Coupon_Valid extends PaymentsUI_Common_Desktop_Air {
         air_AddOnPage_Desktop(driver,"","","","");
         air_LoginPage_Desktop(driver, "", emailID, phoneNo);
         air_TravellerPage_Desktop(driver,"");
-        air_PaymentPage_Desktop(driver,"Coupon","","","","", "Valid Coupon Razorpay : ");
+        air_PaymentPage_Desktop(driver,"Coupon","Air","","","", "Valid Coupon Razorpay : ");
     }
 
     @AfterClass(alwaysRun = true)

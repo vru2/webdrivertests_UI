@@ -66,6 +66,7 @@ public class PaymentsUI_Common_Desktop_Hotels extends PaymentsUI_Common_Desktop 
         js.executeScript("window.scrollBy(0,600)");
         textPresent(driver, "Add contact details", 1);
         Thread.sleep(1000);
+       // smartClick(driver, By.xpath("//div[2]/button"));
         elementVisible(driver, By.xpath("//input"), 5);
         safeType(driver, By.xpath("//input"), "1212121212");
         safeType(driver, By.xpath("//div[5]/div/div/input"), "ctpayment@gmail.com");

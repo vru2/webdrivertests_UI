@@ -213,7 +213,7 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
             /*String retry = getText(driver, By.xpath("//div[4]/div/p"));
             System.out.println("retry"+ retry);*/
         }
-       if(!PayType.equalsIgnoreCase("Coupon")) {
+       if(!PayType.equalsIgnoreCase("Coupon")&&PayType.equalsIgnoreCase("Retry")) {
            payUI_Select_PaymentType_PWA(driver, PaymentType);
            Reporter.log("Clicked on NB");
            Thread.sleep(1000);
@@ -226,7 +226,9 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
             if(domain.equalsIgnoreCase("Hotel")){
                 textPresent_Log(driver, "Coupon code CCHOTEL is not applicable on the selected payment mode. Please select another payment mode to get an instant discount of", 5);
             }
-            else textPresent_Log(driver, "Coupon code PAYCC is not applicable on the selected payment mode. Please select another payment mode to get an instant discount of", 5);
+            else {
+                textPresent_Log(driver, "Coupon code PAYCC is not applicable on the selected payment mode. Please select another payment mode to get an instant discount of", 5);
+            }
             safeClick(driver, getObjectPayment("PWA_paymentPage_Continue_WithOutCoupon_Btn")); // Continue without coupon mode
             Thread.sleep(1000);
         }

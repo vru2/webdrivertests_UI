@@ -34,16 +34,16 @@ public class PaymentsUI_Common_Desktop_Air extends PaymentsUI_Common_Desktop {
                 driver.switchTo().window(child_window);
             }
         }
-        elementVisible(driver, By.xpath("//div[2]/div/input"), 10);
+        elementVisible(driver, getObjectPayment("Desktop_Air_Itn_Step1_Review_Text"), 10);
         textPresent(driver, "Review your itinerary", 1);
         Child_URL = driver.getCurrentUrl();
         driver.close(); // Closing Child window
         driver.switchTo().window(parent);
         driver.get(Child_URL);
        // elementVisible(driver, getObjectPayment("Desktop_Air_Itn_Step1_Btn"), 20);
-        elementVisible(driver, By.xpath("//div[2]/div/input"), 10);
+        elementVisible(driver, getObjectPayment("Desktop_Air_Itn_Step1_Review_Text"), 10);
         textPresent(driver, "Review your itinerary", 2);
-        smartClick(driver, By.xpath("//div[2]/div"));
+        smartClick(driver, getObjectPayment("Desktop_Air_Itn_Step1_Review_VAS"));
         if(CouponGV.equalsIgnoreCase("Coupon")){
             applyCoupon(driver, COUPONCODE);
         } else if(CouponGV.equalsIgnoreCase("GVFull")){
@@ -68,15 +68,14 @@ public class PaymentsUI_Common_Desktop_Air extends PaymentsUI_Common_Desktop {
         elementVisible(driver, getObjectPayment("Desktop_Air_Itn_Step1_Btn"), 5);
         textPresent_Log(driver, "Review your itinerary", 1);
 
-        if(elementVisible(driver, By.xpath("//div/h3"), 5)){
-            scrollToElement(driver, By.xpath("//div/h3"));
-            Thread.sleep(2000);
-            smartClick(driver, By.xpath("//div/h3"));
+        if(elementVisible(driver, getObjectPayment("Desktop_Air_Itn_Step1_Review_VAS1"), 5)){
+            scrollToElement(driver, getObjectPayment("Desktop_Air_Itn_Step1_Review_VAS1"));
+            Thread.sleep(1000);
+            smartClick(driver, getObjectPayment("Desktop_Air_Itn_Step1_Review_VAS1"));
 
         }
         scrollToElement(driver, getObjectPayment("Desktop_Air_Itn_Step1_Btn"));
-        Thread.sleep(2000);
-
+        Thread.sleep(500);
         safeClick(driver, getObjectPayment("Desktop_Air_Itn_Step1_Btn"));
     }
 

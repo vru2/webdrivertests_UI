@@ -40,41 +40,41 @@ public class PaymentsUI_Common_Desktop_Hotels extends PaymentsUI_Common_Desktop 
             {
                 driver.switchTo().window(child_window);}
         }
-        elementVisible(driver, By.xpath("//div[2]/div/div[2]/div/div/div[2]/div/input"), 10);
+        elementVisible(driver, getObjectPayment("Hotel_Details_Review_Txt"), 10);
         textPresent(driver, "Review your itinerary", 1);
         Child_URL = driver.getCurrentUrl();
         driver.close(); // Closing Child window
         driver.switchTo().window(parent);
         driver.get(Child_URL);
         //elementVisible(driver, getObjectPayment("Hotel_ContactPage_Continue_Btn_New"), 10);
-        elementVisible(driver, By.xpath("//div[2]/div/div[2]/div/div/div[2]/div/input"), 10);
+        elementVisible(driver, getObjectPayment("Hotel_Details_Review_Txt"), 10);
         textPresent(driver, "Review your itinerary", 1);
     }
 
     public void hotelsItnPage(RemoteWebDriver driver, String CouponGV, String PayType, String SignIN, String Contact) throws Exception {
         Thread.sleep(2000);
         refreshPage(driver);
-        elementVisible(driver, By.xpath("//div[3]/div/div[2]/div/input"), 20);
+        elementVisible(driver, getObjectPayment("Hotel_Details_Review_Txt1"), 20);
         textPresent(driver, "Review your itinerary", 1);
         Thread.sleep(1000);
         if(textPresent(driver, "We are seeing overwhelming traffic. Please try again in sometime",1)){
             Reporter.log("We are seeing overwhelming traffic. Please try again in sometime. error in itinerary");
             Assert.assertTrue(false);
         }
-        elementPresent_log(driver, By.xpath("//div[5]/div/div/input"),"", 10);
+        elementPresent_log(driver, getObjectPayment("Hotel_Details_Review_Continue_Btn"),"", 10);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,600)");
         textPresent(driver, "Add contact details", 1);
         Thread.sleep(1000);
-        smartClick(driver, By.xpath("//div[3]/div/div[2]/button"));
-        elementVisible(driver, By.xpath("//input"), 5);
-        safeType(driver, By.xpath("//input"), "1212121212");
-        safeType(driver, By.xpath("//div[5]/div/div/input"), "ctpayment@gmail.com");
+        smartClick(driver, getObjectPayment("Hotel_Details_Review_Continue_Btn1"));
+        elementVisible(driver, getObjectPayment("Hotel_Details_TravellerPage_Phone_Txt"), 5);
+        safeType(driver, getObjectPayment("Hotel_Details_TravellerPage_Phone_Txt"), "1212121212");
+        safeType(driver, getObjectPayment("Hotel_Details_TravellerPage_Email_Txt"), "ctpayment@gmail.com");
         if(CouponGV.contains("GV")) {
-            elementVisible(driver, By.xpath("//div[3]/div/div[2]/div/input"), 5);
+            elementVisible(driver, getObjectPayment("Hotel_Details_TravellerPage_GV"), 5);
             textPresent(driver, "Apply coupon or gift card",1);
-            mouseHover(driver, By.xpath("//div[3]/div/div[2]/div/input"));
-            safeClick(driver, By.xpath("//div[3]/div/div[2]/div/input"));
+            mouseHover(driver,getObjectPayment("Hotel_Details_TravellerPage_GV"));
+            safeClick(driver, getObjectPayment("Hotel_Details_TravellerPage_GV"));
             if(CouponGV.equalsIgnoreCase("FullGV")) {
                 String[] GV = getGVSCLP(10000);
                 hotel_Apply_GV(driver, GV[0],GV[1]);
@@ -103,13 +103,13 @@ public class PaymentsUI_Common_Desktop_Hotels extends PaymentsUI_Common_Desktop 
 
         }
         else if(CouponGV.equalsIgnoreCase("COUPONCC")) {
-            mouseHover(driver, By.xpath("//div[3]/div/div[2]/div/input"));
-            safeClick(driver, By.xpath("//div[3]/div/div[2]/div/input"));
-            safeType(driver, By.xpath("//div[3]/div/div[2]/div/input"), "CCHOTEL");
-            WebElement element = driver.findElement(By.xpath("//div[2]/button"));
+            mouseHover(driver, getObjectPayment("Hotel_Details_TravellerPage_GV"));
+            safeClick(driver, getObjectPayment("Hotel_Details_TravellerPage_GV"));
+            safeType(driver, getObjectPayment("Hotel_Details_TravellerPage_GV"), "CCHOTEL");
+            WebElement element = driver.findElement(getObjectPayment("Hotel_Details_TravellerPage_Coupon_Apply"));
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
-            mouseHover(driver, By.xpath("//div[2]/div[3]/div/div/button"));
-            safeClick(driver, By.xpath("//div[2]/div[3]/div/div/button"));
+            mouseHover(driver, getObjectPayment("Hotel_Details_TravellerPage_Coupon_Apply1"));
+            safeClick(driver, getObjectPayment("Hotel_Details_TravellerPage_Coupon_Apply1"));
             textPresent_Log(driver,"Great! You just saved",5);
         }
         elementVisible(driver,getObjectPayment("Hotel_ContactPage_Salutation_Dropdown"),5);
@@ -129,12 +129,12 @@ public class PaymentsUI_Common_Desktop_Hotels extends PaymentsUI_Common_Desktop 
     }
 
     public void hotel_Apply_GV(RemoteWebDriver driver, String GV_Number, String GV_Pin) throws Exception {
-        safeType(driver, By.xpath("//div[3]/div/div[2]/div/input"), GV_Number);
-        elementVisible(driver, By.xpath("//div[2]/input"), 5);
-        mouseHover(driver, By.xpath("//div[2]/input"));
-        safeClick(driver, By.xpath("//div[2]/input"));
-        safeType(driver, By.xpath("//div[2]/input"), GV_Pin);
-        safeClick(driver, By.xpath("//div[2]/div[3]/button"));
+        safeType(driver, getObjectPayment("Hotel_Details_TravellerPage_GV"), GV_Number);
+        elementVisible(driver, getObjectPayment("Hotel_Details_TravellerPage_GV_Pin"), 5);
+        mouseHover(driver, getObjectPayment("Hotel_Details_TravellerPage_GV_Pin"));
+        safeClick(driver, getObjectPayment("Hotel_Details_TravellerPage_GV_Pin"));
+        safeType(driver, getObjectPayment("Hotel_Details_TravellerPage_GV_Pin"), GV_Pin);
+        safeClick(driver, getObjectPayment("Hotel_Details_TravellerPage_GV_Btn"));
         textPresent_Log(driver, "redeemed from your gift card", 10);
     }
 

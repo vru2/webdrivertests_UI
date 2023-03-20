@@ -11,17 +11,17 @@ public class PaymentsUI_Common_PWA_Air extends PaymentsUI_Common_PWA{
 
 
     public void air_SRPPage(RemoteWebDriver driver, String FlightName, String FlightNo) throws Exception {
-        if (!elementVisible(driver, By.xpath("//ul/div/div/div/div[2]/div[2]"), 20)) {
+        if (!elementVisible(driver, getObjectPayment("PWA_Air_SRP_Book_btn"), 20)) {
             Reporter.log("SRP page not loaded");
             Assert.assertTrue(false);
         }
         textPresent(driver, "Sort", 5);
-        smartClick(driver, By.xpath("//button/p"));
-        safeClick(driver, By.xpath("//ul/div/div/div/div[2]/div[2]"));
+        smartClick(driver, getObjectPayment("PWA_Air_SRP_Multi_Flights"));
+        safeClick(driver, getObjectPayment("PWA_Air_SRP_Book_btn"));
     }
 
     public void air_ItnPage(RemoteWebDriver driver, String CouponGV, String CouponCode, String param1, String param2) throws Exception {
-        elementVisible(driver, By.name("coupon"), 10);
+        elementVisible(driver, getObjectPayment("PWA_Air_Itn_Coupon_Txt"), 10);
         textPresent(driver, "Review Itinerary", 1);
         if (!elementVisible(driver, By.xpath("//button"), 10)) {
             Reporter.log("Itn page not loaded");
@@ -32,94 +32,94 @@ public class PaymentsUI_Common_PWA_Air extends PaymentsUI_Common_PWA{
             safeClick(driver, By.xpath("//div[@id='onetrust-close-btn-container']/button"));
         }
         if(CouponGV.equalsIgnoreCase("COUPON")){
-            safeType(driver, By.name("coupon"),CouponCode);
-            safeClick(driver, By.xpath("//div[2]/ul/div/li/p"));
+            safeType(driver, getObjectPayment("PWA_Air_Itn_Coupon_Txt"),CouponCode);
+            safeClick(driver, getObjectPayment("PWA_Air_Itn_Coupon_Apply_Btn"));
             textPresent_Log(driver, "Great! You just saved", 5);
         }
         else if(CouponGV.equalsIgnoreCase("GV")){
             String[] GV = getGV(10);
-            safeType(driver, By.xpath("//input"),GV[0]);
-            safeType(driver, By.xpath("//li[2]/input"),GV[1]);
-            safeClick(driver, By.xpath("//li[2]/p"));
+            safeType(driver, getObjectPayment("PWA_Air_Itn_GV_Number_Txt"),GV[0]);
+            safeType(driver, getObjectPayment("PWA_Air_Itn_GV_Pin_Txt"),GV[1]);
+            safeClick(driver, getObjectPayment("PWA_Air_Itn_GV_Apply_Btn"));
             textPresent_Log(driver, "has been redeemed for this booking", 5);
         }
         else if(CouponGV.equalsIgnoreCase("GVFULL")){
             String[] GV = getGV(10000);
-            safeType(driver, By.xpath("//input"),GV[0]);
-            safeType(driver, By.xpath("//li[2]/input"),GV[1]);
-            safeClick(driver, By.xpath("//li[2]/p"));
+            safeType(driver, getObjectPayment("PWA_Air_Itn_GV_Number_Txt"),GV[0]);
+            safeType(driver, getObjectPayment("PWA_Air_Itn_GV_Pin_Txt"),GV[1]);
+            safeClick(driver, getObjectPayment("PWA_Air_Itn_GV_Apply_Btn"));
             textPresent_Log(driver, "has been redeemed for this booking", 5);
         }
         else if(CouponGV.equalsIgnoreCase("GVMulti")){
             String[] GV = getGV(10);
-            safeType(driver, By.xpath("//input"),GV[0]);
-            safeType(driver, By.xpath("//li[2]/input"),GV[1]);
-            safeClick(driver, By.xpath("//li[2]/p"));
+            safeType(driver, getObjectPayment("PWA_Air_Itn_GV_Number_Txt"),GV[0]);
+            safeType(driver, getObjectPayment("PWA_Air_Itn_GV_Pin_Txt"),GV[1]);
+            safeClick(driver, getObjectPayment("PWA_Air_Itn_GV_Apply_Btn"));
             textPresent_Log(driver, "has been redeemed for this booking", 5);
             GV = getGV(10);
-            safeClick(driver, By.xpath("//div[2]/p"));
-            safeType(driver, By.xpath("//div[2]/li/input"),GV[0]);
-            safeType(driver, By.xpath("//li[2]/input"),GV[1]);
-            safeClick(driver, By.xpath("//li[2]/p"));
+            safeClick(driver, getObjectPayment("PWA_Air_Itn_GV_Add_New_Btn"));
+
+            safeType(driver, getObjectPayment("PWA_Air_Itn_GV_Number_Txt2"),GV[0]);
+            safeType(driver, getObjectPayment("PWA_Air_Itn_GV_Pin_Txt2"),GV[1]);
+            safeClick(driver, getObjectPayment("PWA_Air_Itn_GV_Apply_Btn2"));
             textPresent_Log(driver, "has been redeemed for this booking", 5);
         }
         //textPresent_Log(driver, "Review Itinerary", 10);
 
-        elementVisible(driver, By.xpath("//button"), 20);
-        mouseHover(driver, By.xpath("//button"));
-        safeClick(driver, By.xpath("//button"));
+        elementVisible(driver, getObjectPayment("PWA_Air_Itn_Button2"), 20);
+        mouseHover(driver, getObjectPayment("PWA_Air_Itn_Button2"));
+        safeClick(driver, getObjectPayment("PWA_Air_Itn_Button2"));
         if(elementVisible(driver, By.cssSelector("div.Overlay"), 1)){
             smartClick(driver, By.linkText("Continue"));
         }
     }
 
     public void air_AddOnPage(RemoteWebDriver driver, String param1, String param2) throws Exception {
-        elementVisible(driver, By.xpath("//div[2]/div[1]/div[3]/p"), 5);
+        elementVisible(driver, getObjectPayment("PWA_Air_Addons_Txt"), 5);
         if(!textPresent(driver, "Add ons", 5)) {
             if (textPresent(driver, "Review Itinerary", 2)) {
-                mouseHover(driver, By.xpath("//button"));
-                safeClick(driver, By.xpath("//button"));
+                mouseHover(driver, getObjectPayment("PWA_Air_Itn_Button2"));
+                safeClick(driver, getObjectPayment("PWA_Air_Itn_Button2"));
             }
         }
         if(!textPresent(driver, "Review Travellers", 2)) {
             if (textPresent(driver, "Skip", 5)) {
-                mouseHover(driver, By.xpath("//div[2]/div[1]/div[3]/p"));
-                safeClick(driver, By.xpath("//div[2]/div[1]/div[3]/p"));
-                elementVisible(driver, By.linkText("Exit without saving"), 5);
-                safeClick(driver, By.linkText("Exit without saving"));
+                mouseHover(driver, getObjectPayment("PWA_Air_Addons_SkipPage_Skip_Txt"));
+                safeClick(driver, getObjectPayment("PWA_Air_Addons_SkipPage_Skip_Txt"));
+                elementVisible(driver, getObjectPayment("PWA_Air_Addons_SkipPage_Popup_Txt"), 5);
+                safeClick(driver, getObjectPayment("PWA_Air_Addons_SkipPage_Popup_Txt"));
             }
         }
-        if(textPresent(driver, "Review Itinerary", 2)){
-            mouseHover(driver, By.xpath("//button"));
-            safeClick(driver, By.xpath("//button"));
+        if(textPresent(driver, "Review Itinerary", 2)) {
+            mouseHover(driver, getObjectPayment("PWA_Air_Itn_Button2"));
+            safeClick(driver, getObjectPayment("PWA_Air_Itn_Button2"));
         }
     }
 
     public void air_TravellerPage(RemoteWebDriver driver, String Login, String phoneNo, String emailID, String Param) throws Exception {
         textPresent_Log(driver, "Review Travellers", 20);
-        safeSelect(driver, By.name("title"),"Mr");
-        safeType(driver, By.name("firstName"),"Kiran");
-        safeType(driver, By.name("lastName"),"Kumar");
-        if(elementVisible(driver, By.xpath("//div[5]/li"),1)){
-            String Nationality_DOB = getText(driver, By.xpath("//div[5]/li"));
-            System.out.println("Nationality_DOB "+Nationality_DOB);
+        safeSelect(driver, getObjectPayment("PWA_Air_TravellerPage_Title"),"Mr");
+        safeType(driver, getObjectPayment("PWA_Air_TravellerPage_FName"),"Kiran");
+        safeType(driver, getObjectPayment("PWA_Air_TravellerPage_LName"),"Kumar");
+        if(elementVisible(driver, getObjectPayment("PWA_Air_TravellerPage_Nationality"),1)){
+            String Nationality_DOB = getText(driver, getObjectPayment("PWA_Air_TravellerPage_Nationality"));
             if(Nationality_DOB.contains("Nationality")){
-                safeClick(driver, By.xpath("//div[5]/li"));
+                safeClick(driver, getObjectPayment("PWA_Air_TravellerPage_Nationality"));
                 textPresent(driver, "Select Country", 5);
                 Thread.sleep(1000);
-                safeType(driver, By.xpath("//div[2]/div[2]/div[2]/input"), "India");
+                safeType(driver, getObjectPayment("PWA_Air_TravellerPage_Nationality_Popup_Txt"), "India");
                 Thread.sleep(1000);
-                mouseHover(driver, By.xpath("//div[2]/div/ul/li"));
+                mouseHover(driver, getObjectPayment("PWA_Air_TravellerPage_Nationality_Popup_DropDown"));
                 Thread.sleep(1000);
-                safeClick(driver, By.xpath("//div[2]/div/ul/li"));
+                safeClick(driver, getObjectPayment("PWA_Air_TravellerPage_Nationality_Popup_DropDown"));
             }
             else if(Nationality_DOB.contains("Date of birth")){
-                mouseHover(driver, By.name("dob"));
+                mouseHover(driver, getObjectPayment("PWA_Air_TravellerPage_DOB_Txt"));
                 Actions actions = new Actions(driver);
-                WebElement elementLocator = driver.findElement(By.name("dob"));
+                WebElement elementLocator = driver.findElement(getObjectPayment("PWA_Air_TravellerPage_DOB_Txt"));
                 actions.doubleClick(elementLocator).perform();
-                mouseHover(driver, By.name("dob"));
-                safeClick(driver, By.name("dob"));
+                mouseHover(driver, getObjectPayment("PWA_Air_TravellerPage_DOB_Txt"));
+                safeClick(driver, getObjectPayment("PWA_Air_TravellerPage_DOB_Txt"));
                 actions.moveToElement(elementLocator);
                 actions.clickAndHold(elementLocator);
                 // Thread.sleep(1000);
@@ -131,12 +131,12 @@ public class PaymentsUI_Common_PWA_Air extends PaymentsUI_Common_PWA{
                 //  actions.sendKeys("00").perform();
             }
         }
-        safeType(driver, By.name("phone"),phoneNo);
-        safeType(driver, By.name("email"),emailID);
+        safeType(driver, getObjectPayment("PWA_Air_TravellerPage_Phone"),phoneNo);
+        safeType(driver, getObjectPayment("PWA_Air_TravellerPage_Email"),emailID);
         scrollSmooth(driver, 200);
-        elementVisible(driver, By.xpath("//button"),2);
-        mouseHover(driver, By.xpath("//button"));
-        safeClick(driver, By.xpath("//button"));
+        elementVisible(driver,getObjectPayment("PWA_Air_Itn_Button2"),2);
+        mouseHover(driver, getObjectPayment("PWA_Air_Itn_Button2"));
+        safeClick(driver, getObjectPayment("PWA_Air_Itn_Button2"));
         if(elementVisible(driver, By.xpath("//div[3]/a"), 5)){
             smartClick(driver, By.xpath("//div[3]/a"));
         }

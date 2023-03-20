@@ -108,10 +108,9 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
         }
         else if(GWName.equalsIgnoreCase("RAZORPAYNB")){
             if(SuccessFail.equalsIgnoreCase("Success")){
-                Thread.sleep(2000);
-                textPresent(driver, "Welcome to Razorpay Software Private Ltd Bank", 5);
-                elementPresent_log(driver, getObjectPayment("Bento_Payment_NB_Payment_Success"), "",	10);
-                textPresent(driver, "Welcome to Razorpay Software Private Ltd Bank", 10);
+                textPresent(driver, "Welcome to Razorpay Software Private Ltd Bank", 1);
+                elementPresent_log(driver, getObjectPayment("Bento_Payment_NB_Payment_Success"), "",	20);
+                textPresent(driver, "Welcome to Razorpay Software Private Ltd Bank", 1);
                 elementVisible(driver, getObjectPayment("Bento_Payment_NB_Payment_Success"), 10);
                 safeClick(driver, getObjectPayment("Bento_Payment_NB_Payment_Success"));
                 Reporter.log("Clicked on Success NB");
@@ -123,8 +122,8 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
             }
         }
         else if(GWName.equalsIgnoreCase("PAYTM")){
-            if(elementVisible(driver, By.xpath("//button[@onclick='submitSuccess()']"), 5)) {
-                    safeClick(driver, By.xpath("//button[@onclick='submitSuccess()']"));
+            if(elementVisible(driver, getObjectPayment("Bento_Pay_GW_PayTM_Success"), 5)) {
+                    safeClick(driver, getObjectPayment("Bento_Pay_GW_PayTM_Success"));
             }
             else {
                 textPresent(driver, "Welcome to Razorpay Software Private Ltd Bank", 1);
@@ -132,11 +131,11 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
                 {
                     safeClick(driver, getObjectPayment("Bento_Payment_DC_Payment_Success"));
                 }
-                else if(elementVisible(driver, By.xpath("//input[@type='tel']"), 10))
+                else if(elementVisible(driver, getObjectPayment("Bento_Pay_GW_PayTM_New_OTP"), 10))
                 {
-                    driver.findElement(By.xpath("//input[@type='tel']")).click();
-                    driver.findElement(By.xpath("//input[@type='tel']")).sendKeys("1111");
-                    driver.findElement(By.xpath("//button[@id='submit-action']/span")).click();
+                    driver.findElement(getObjectPayment("Bento_Pay_GW_PayTM_New_OTP")).click();
+                    driver.findElement(getObjectPayment("Bento_Pay_GW_PayTM_New_OTP")).sendKeys("1111");
+                    driver.findElement(getObjectPayment("Bento_Pay_GW_PayTM_New_Btn")).click();
                 }
             }
         }
@@ -327,7 +326,7 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
             {
                 safeClick(driver,getObjectPayment("Bento_Payment_Skip_Securecard"));
             }
-            bento_pay_GWPage(driver,"PAYTM","","");
+            bento_pay_GWPage(driver,"PAYU","","");
         }
         else if(CardNumber=="INVALID") {
 
@@ -550,9 +549,9 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
             }
 
             if(textPresent(driver, "Bank Demo", 20)) {
-                if(elementVisible(driver, By.xpath("//button[@onclick='submitSuccess()']"), 5))
+                if(elementVisible(driver, getObjectPayment("Bento_Pay_GW_PayTM_Success"), 5))
                 {
-                    safeClick(driver, By.xpath("//button[@onclick='submitSuccess()']"));
+                    safeClick(driver, getObjectPayment("Bento_Pay_GW_PayTM_Success"));
                 }
             }
             else {
@@ -653,17 +652,17 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
             safeClick(driver, getObjectPayment("Bento_Payment_NB_ICIC"));
             safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
 
-            elementVisible(driver, By.xpath("//div[5]/div/p"), 10);
+            elementVisible(driver, getObjectPayment("Bento_Payment_Coupon_NotApplicable"), 10);
             textPresent_Log(driver, "Coupon not applicable", 10);
             elementPresent_log(driver, getObjectPayment("Bento_Pay_Coupon_Popup_Close_Btn"), "invaid coupon Pop Up not displayed",	1);
-            safeClick(driver, By.xpath("//button[2]")); // Clicking on Change paymentMode
+            safeClick(driver, getObjectPayment("Bento_Payment_Coupon_Change_PaymentMode")); // Clicking on Change paymentMode
             Thread.sleep(2000);
             textNotPresent_Log(driver, "Coupon not applicable", 1);
             safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
 
             Thread.sleep(2000);
             elementPresent_log(driver, getObjectPayment("Bento_Pay_Coupon_Popup_Close_Btn"), "",	1);
-            safeClick(driver, By.xpath("//div[4]/div/button")); // Clicking on Continue without coupon paymentMode
+            safeClick(driver, getObjectPayment("Bento_Payment_Coupon_Continue_Without_Coupon")); // Clicking on Continue without coupon paymentMode
             Reporter.log("Clicked on paynow in Coupon Popup");
         }
         else if(PayType.contains("Retry")) {
@@ -727,7 +726,6 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
             textPresent_Log(driver, "Your wallet balance is sufficient to pay for this booking. Please uncheck wallet to use other payment mode", 2);
             mouseHover(driver, getObjectPayment("Bento_Payment_Paynow"));
             safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
-            //safeClick(driver, By.xpath("//div/div/div/div[3]/button"));
             Reporter.log("Clicked on paynow");
             if(textPresent(driver,"Cleartrip wallet",2))
             {
@@ -902,8 +900,8 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
     public void bento_pay_GVPriceChange(RemoteWebDriver driver, String PaymentType, String CardNumber, String domain, String PayType, String BankName) throws Exception {
         GVPriceChange_Validation(driver, PayType, BankName);
         String parentWindowHandler = switchToPopup(driver);
-        mouseHover(driver,By.xpath("//button[2]") );
-        safeClick(driver, By.xpath("//button[2]"));  //change payment mode
+        mouseHover(driver, getObjectPayment("Bento_Payment_Coupon_Change_PaymentMode") );
+        safeClick(driver, getObjectPayment("Bento_Payment_Coupon_Change_PaymentMode"));  //change payment mode
         driver.switchTo().window(parentWindowHandler);
 
         GVPriceChange_Validation(driver, PayType, BankName);
@@ -914,8 +912,8 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
 
         GVPriceChange_Validation(driver, PayType, BankName);
         parentWindowHandler = switchToPopup(driver);
-        mouseHover(driver, By.xpath("//div[4]/div/button"));
-        safeClick(driver, By.xpath("//div[4]/div/button")); //Book anyway
+        mouseHover(driver, getObjectPayment("Bento_Payment_GV_BookAnyWay_Btn"));
+        safeClick(driver, getObjectPayment("Bento_Payment_GV_BookAnyWay_Btn")); //Book anyway
         driver.switchTo().window(parentWindowHandler);
 
         Thread.sleep(5000);

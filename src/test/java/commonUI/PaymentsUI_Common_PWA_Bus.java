@@ -63,7 +63,6 @@ public class PaymentsUI_Common_PWA_Bus extends PaymentsUI_Common_PWA{
             safeClick(driver, getObjectPayment("PWA_Bus_ReviewPage_Coupon_Success_Awesome_Lnk"));
         }
         safeClick(driver, getObjectPayment("PWA_Bus_ReviewPage_Continue_Btn"));
-
     }
 
     public void bus_ConfirmationPage(RemoteWebDriver driver, String paymentType, String payType, String bookingType) throws Exception {
@@ -72,13 +71,11 @@ public class PaymentsUI_Common_PWA_Bus extends PaymentsUI_Common_PWA{
             Assert.assertTrue(false);
         }
         textPresent_Log(driver, "Booking confirmed", 20);
-        elementVisible(driver, By.xpath("//div[3]"), 1);
+        elementVisible(driver, getObjectPayment("PWA_Bus_ConfirmationPage_TripID"), 1);
         textPresent_Log(driver, "Booking confirmed", 5);
-        String tripID = getText(driver, By.xpath("//div[3]"));
+        String tripID = getText(driver, getObjectPayment("PWA_Bus_ConfirmationPage_TripID"));
         Reporter.log(bookingType +": "+ tripID);
         System.out.println(bookingType +": "+ tripID);
     }
-
-
 
     }

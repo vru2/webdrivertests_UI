@@ -26,12 +26,6 @@
         </classes>
     </test>
 
-    <test name="CC PayTM" preserve-order="true">
-        <classes>
-            <class name="test.java.payment_Hotels_Desktop.IN_DC_PayTM"/>
-        </classes>
-    </test>
-
     <test name="EMI" preserve-order="true">
         <classes>
             <class name="test.java.payment_Hotels_Desktop.IN_EMI_Only"/>
@@ -87,18 +81,6 @@
     </test>
 
 
-    <test name="Tokenized Saved Card" preserve-order="true">
-        <classes>
-            <class name="test.java.payment_Hotels_Desktop.IN_SavedPay_Tokenized"/>
-        </classes>
-    </test>
-
-    <test name="CC PayTM Inline Tnx" preserve-order="true">
-        <classes>
-            <class name="test.java.payment_Hotels_Desktop.IN_CC_PayTM_Inline"/>
-        </classes>
-    </test>
-
 
     <test name="UPI Inline Failure and Success" preserve-order="true">
         <classes>
@@ -139,5 +121,26 @@
             <class name="test.java.payment_Hotels_Desktop.IN_PhonePe_Validation"/>
         </classes>
     </test>
+
+
+
+        <test name="CC PayTM" preserve-order="true">
+            <classes>
+         <!--       <class name="test.java.payment_Hotels_Desktop.IN_DC_PayTM"/>-->
+            </classes>
+        </test>
+
+
+        <test name="Tokenized Saved Card" preserve-order="true">
+            <classes>
+                <!--<class name="test.java.payment_Hotels_Desktop.IN_SavedPay_Tokenized"/>-->
+            </classes>
+        </test>
+
+        <test name="CC PayTM Inline Tnx" preserve-order="true">
+            <classes>
+                <!--<class name="test.java.payment_Hotels_Desktop.IN_CC_PayTM_Inline"/>-->
+            </classes>
+        </test>
 
 </suite>

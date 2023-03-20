@@ -24,7 +24,6 @@ public class IN_Air_Desktop_GV_SCLP_PriceChange_PopUp extends PaymentsUI_Common_
         air_AddOnPage_Desktop(driver,"","","","");
         air_LoginPage_Desktop(driver, "", emailID, phoneNo);
         air_TravellerPage_Desktop(driver,"");
-        //air_PaymentPage_Desktop(driver, "GV", "", "", "", "", "Full GV : ");
         air_PaymentPage_Desktop(driver,"GVPriceChange","","Hotels",GV[0], GV[1], "GV SCLP Price Change Validation + NB : ");
 
     }

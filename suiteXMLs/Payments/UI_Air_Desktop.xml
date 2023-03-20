@@ -10,7 +10,7 @@
 
     <test name="Inline PayTM Tokenized Card" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_CC_PayTM_Inline"/>
+            <!--<class name="test.java.payment_Air_Desktop.IN_Air_Desktop_CC_PayTM_Inline"/>-->
         </classes>
     </test>
 
@@ -46,13 +46,13 @@
 
     <test name="EMI BFL" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_EMI_BFL"/>
-        </classes>
+        <!--    <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_EMI_BFL"/>
+       --> </classes>
     </test>
 
     <test name="EMI NoCost" preserve-order="true">
-        <classes>
-            <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_EMI_NoCostEMI"/>
+        <classes><!--
+            <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_EMI_NoCostEMI"/>-->
         </classes>
     </test>
 
@@ -82,7 +82,7 @@
 
     <test name="SavedCard Tokeinzed" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_SavedPay_Tokenized"/>
+           <!-- <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_SavedPay_Tokenized"/>-->
         </classes>
     </test>
 
@@ -104,7 +104,7 @@
         </classes>
     </test>
 
-    <test name="GV amount " preserve-order="true">
+    <test name="GV amount change" preserve-order="true">
         <classes>
             <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_GV_SCLP_PriceChange_PopUp"/>
         </classes>

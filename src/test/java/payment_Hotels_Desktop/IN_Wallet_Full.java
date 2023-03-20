@@ -20,8 +20,8 @@ public class IN_Wallet_Full extends PaymentsUI_Common_Desktop_Hotels {
 		driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
 		//addwalletamount(5000, "testcltp29@gmail.com");
 		hotelsDetailsPage(driver, "", "");
-		hotelsItnPage(driver, "", "", "", "");
 		driver.manage().addCookie(fullwallet);
+		hotelsItnPage(driver, "", "", "", "");
 		hotelsPaymentPage(driver, "wallet", "", "", "", "", "Full Wallet : ");
 	} 
 

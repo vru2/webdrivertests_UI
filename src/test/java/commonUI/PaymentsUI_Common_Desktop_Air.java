@@ -139,8 +139,8 @@ public class PaymentsUI_Common_Desktop_Air extends PaymentsUI_Common_Desktop {
 
     public void air_PaymentPage_Desktop(RemoteWebDriver driver, String PaymentType, String CardNumber, String domain, String PayType, String BankName, String TestDetails) throws Exception {
         elementVisible(driver, getObjectPayment("Bento_Pay_PayToCompleteBooking_Txt"), 30);
-        refreshPage(driver);
-        if (elementVisible(driver, getObjectPayment("Bento_Pay_PayToCompleteBooking_Txt"), 30)) {
+       // refreshPage(driver);
+        if (elementVisible(driver, getObjectPayment("Bento_Pay_PayToCompleteBooking_Txt"), 1)) {
             bento_paymentpage(driver, PaymentType, CardNumber, domain, PayType, BankName);
             if (!(CardNumber == "ADCB" || PaymentType == "Phonepe" || PaymentType == "UPIScan" || PayType == "Googlecaptcha"|| PayType == "Failure")) {
                 confirmation_Page_Air(driver, PaymentType, CardNumber, TestDetails);

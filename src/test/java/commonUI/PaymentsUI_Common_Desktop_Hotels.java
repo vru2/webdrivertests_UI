@@ -66,7 +66,7 @@ public class PaymentsUI_Common_Desktop_Hotels extends PaymentsUI_Common_Desktop 
         js.executeScript("window.scrollBy(0,600)");
         textPresent(driver, "Add contact details", 1);
         Thread.sleep(1000);
-       // smartClick(driver, By.xpath("//div[2]/button"));
+        smartClick(driver, By.xpath("//div[3]/div/div[2]/button"));
         elementVisible(driver, By.xpath("//input"), 5);
         safeType(driver, By.xpath("//input"), "1212121212");
         safeType(driver, By.xpath("//div[5]/div/div/input"), "ctpayment@gmail.com");
@@ -472,8 +472,8 @@ public class PaymentsUI_Common_Desktop_Hotels extends PaymentsUI_Common_Desktop 
     }
 
     public void paymentPageHotels(RemoteWebDriver driver, String PaymentType, String CardNumber, String domain, String PayType, String BankName, String TestDetails) throws Exception {
-        elementVisible(driver, getObjectPayment("Bento_Pay_PayToCompleteBooking_Txt"), 30);
-        refreshPage(driver);
+        //elementVisible(driver, getObjectPayment("Bento_Pay_PayToCompleteBooking_Txt"), 30);
+        //refreshPage(driver);
         if (elementVisible(driver, getObjectPayment("Bento_Pay_PayToCompleteBooking_Txt"), 30)) {
             bento_paymentpage(driver, PaymentType, CardNumber, domain, PayType, BankName);
             if (!(CardNumber == "ADCB" || PaymentType == "Phonepe" || PaymentType == "UPIScan" || PayType == "Googlecaptcha"|| PayType == "Failure")) {

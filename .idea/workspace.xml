@@ -5,14 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="398be537-263a-46ea-8d2f-e66bf2ffc10f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Webdrivertests.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/objectRepositoryPayment.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/objectRepositoryPayment.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_Desktop_Air.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_Desktop_Air.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_Desktop_Hotels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_Desktop_Hotels.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_PWA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_PWA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_Desktop/IN_Air_Desktop_GV_SCLP_PriceChange_PopUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_Desktop/IN_Air_Desktop_GV_SCLP_PriceChange_PopUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_GV_SCLP_GV_NB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_GV_SCLP_GV_NB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_SavedPay_Tokenized.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_SavedPay_Tokenized.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_Saved_UPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_Saved_UPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_Wallet_Full.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_Wallet_Full.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/suiteXMLs/Payments/UI_Air_Desktop.xml" beforeDir="false" afterPath="$PROJECT_DIR$/suiteXMLs/Payments/UI_Air_Desktop.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/suiteXMLs/Payments/UI_Air_PWA.xml" beforeDir="false" afterPath="$PROJECT_DIR$/suiteXMLs/Payments/UI_Air_PWA.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/suiteXMLs/Payments/UI_Hotel_Desktop.xml" beforeDir="false" afterPath="$PROJECT_DIR$/suiteXMLs/Payments/UI_Hotel_Desktop.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/suiteXMLs/Payments/UI_Hotel_PWA.xml" beforeDir="false" afterPath="$PROJECT_DIR$/suiteXMLs/Payments/UI_Hotel_PWA.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,20 +65,7 @@
       <recent name="test.java.payment_Air_Desktop" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.IN_Bus_PWA_NB">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="Webdrivertests" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="Webdrivertests" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="TestNG.IN_GV_SCLP_GV_NB">
     <configuration name="AirDesktop" type="TestNG">
       <module name="Webdrivertests" />
       <shortenClasspath name="NONE" />
@@ -190,7 +180,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IN_Air_Desktop_CC_Razorpay" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="IN_Air_Desktop_GV_SCLP_Full (1)" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Webdrivertests" />
       <extension name="coverage">
         <pattern>
@@ -199,7 +189,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="test.java.payment_Air_Desktop" />
-      <option name="MAIN_CLASS_NAME" value="test.java.payment_Air_Desktop.IN_Air_Desktop_CC_Razorpay" />
+      <option name="MAIN_CLASS_NAME" value="test.java.payment_Air_Desktop.IN_Air_Desktop_GV_SCLP_Full" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -207,69 +197,69 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IN_Air_Desktop_Coupon_Invalid.Air_Desktop_InvalidCoupon_NB" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="IN_CC_Razorpay (1)" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Webdrivertests" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.java.payment_Air_Desktop.*" />
+          <option name="PATTERN" value="test.java.payment_Hotels_Desktop.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="test.java.payment_Air_Desktop" />
-      <option name="MAIN_CLASS_NAME" value="test.java.payment_Air_Desktop.IN_Air_Desktop_Coupon_Invalid" />
-      <option name="METHOD_NAME" value="Air_Desktop_InvalidCoupon_NB" />
+      <option name="PACKAGE_NAME" value="test.java.payment_Hotels_Desktop" />
+      <option name="MAIN_CLASS_NAME" value="test.java.payment_Hotels_Desktop.IN_CC_Razorpay" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IN_CC_Razorpay" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Webdrivertests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.java.payment_Hotels_Desktop.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.java.payment_Hotels_Desktop" />
+      <option name="MAIN_CLASS_NAME" value="test.java.payment_Hotels_Desktop.IN_CC_Razorpay" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IN_GV_SCLP_GV_NB" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Webdrivertests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.java.payment_Hotels_Desktop.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.java.payment_Hotels_Desktop" />
+      <option name="MAIN_CLASS_NAME" value="test.java.payment_Hotels_Desktop.IN_GV_SCLP_GV_NB" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IN_GV_SCLP_GV_NB.Hotel_IN_WL_GV_CC_Amex" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Webdrivertests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.java.payment_Hotels_Desktop.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.java.payment_Hotels_Desktop" />
+      <option name="MAIN_CLASS_NAME" value="test.java.payment_Hotels_Desktop.IN_GV_SCLP_GV_NB" />
+      <option name="METHOD_NAME" value="Hotel_IN_WL_GV_CC_Amex" />
       <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="IN_Air_Desktop_Coupon_Valid" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Webdrivertests" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.java.payment_Air_Desktop.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test.java.payment_Air_Desktop" />
-      <option name="MAIN_CLASS_NAME" value="test.java.payment_Air_Desktop.IN_Air_Desktop_Coupon_Valid" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="IN_Air_Desktop_UPI_Failure_Success" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Webdrivertests" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.java.payment_Air_Desktop.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test.java.payment_Air_Desktop" />
-      <option name="MAIN_CLASS_NAME" value="test.java.payment_Air_Desktop.IN_Air_Desktop_UPI_Failure_Success" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="IN_Bus_PWA_NB" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Webdrivertests" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.java.payment_Bus_PWA.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test.java.payment_Bus_PWA" />
-      <option name="MAIN_CLASS_NAME" value="test.java.payment_Bus_PWA.IN_Bus_PWA_NB" />
-      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
@@ -297,11 +287,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.IN_Bus_PWA_NB" />
-        <item itemvalue="TestNG.IN_Air_Desktop_Coupon_Valid" />
-        <item itemvalue="TestNG.IN_Air_Desktop_UPI_Failure_Success" />
-        <item itemvalue="TestNG.IN_Air_Desktop_CC_Razorpay" />
-        <item itemvalue="TestNG.IN_Air_Desktop_Coupon_Invalid.Air_Desktop_InvalidCoupon_NB" />
+        <item itemvalue="TestNG.IN_GV_SCLP_GV_NB" />
+        <item itemvalue="TestNG.IN_GV_SCLP_GV_NB.Hotel_IN_WL_GV_CC_Amex" />
+        <item itemvalue="TestNG.IN_CC_Razorpay (1)" />
+        <item itemvalue="TestNG.IN_CC_Razorpay" />
+        <item itemvalue="TestNG.IN_Air_Desktop_GV_SCLP_Full (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -347,7 +337,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_Desktop_Hotels.java</url>
-          <line>68</line>
+          <line>67</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -394,6 +384,91 @@
           <url>file://$PROJECT_DIR$/src/test/java/payment_Air_PWA/IN_Air_PWA_Paylater.java</url>
           <line>24</line>
           <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_Desktop.java</url>
+          <line>902</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/payment_Air_Desktop/IN_Air_Desktop_GV_SCLP_PriceChange_PopUp.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_Desktop_Air.java</url>
+          <line>143</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_Desktop.java</url>
+          <line>156</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_Desktop.java</url>
+          <line>931</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_Desktop.java</url>
+          <line>937</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_Desktop.java</url>
+          <line>941</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_Desktop.java</url>
+          <line>934</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_Desktop.java</url>
+          <line>932</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_Desktop.java</url>
+          <line>933</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_Desktop.java</url>
+          <line>935</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_Desktop.java</url>
+          <line>936</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_Desktop.java</url>
+          <line>938</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_Desktop.java</url>
+          <line>940</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_Desktop.java</url>
+          <line>939</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/payment_Air_Desktop/IN_Air_Desktop_GV_SCLP_Full.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_Desktop_Hotels.java</url>
+          <line>68</line>
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -10,115 +10,115 @@
 
     <test name="Inline PayTM Tokenized Card" preserve-order="true">
         <classes>
-            <!--<class name="test.java.payment_Air_Desktop.IN_Air_Desktop_CC_PayTM_Inline"/>-->
+            <!--<class name="test.java.payment_Air_Web.Air_Web_CC_PayTM_Inline"/>-->
         </classes>
     </test>
 
     <test name="CC PayU" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_CC_PayU"/>
+            <class name="test.java.payment_Air_Web.Air_Web_CC_PayU"/>
         </classes>
     </test>
 
     <test name="CC Razorpay" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_CC_Razorpay"/>
+            <class name="test.java.payment_Air_Web.Air_Web_CC_Razorpay"/>
         </classes>
     </test>
 
     <test name="Coupon Invalid NB" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_Coupon_Invalid"/>
+            <class name="test.java.payment_Air_Web.Air_Web_Coupon_Invalid"/>
         </classes>
     </test>
 
     <test name="Coupon Valid" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_Coupon_Valid"/>
+            <class name="test.java.payment_Air_Web.Air_Web_Coupon_Valid"/>
         </classes>
     </test>
 
     <test name="DC PayTM" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_DC_PayTM"/>
+            <class name="test.java.payment_Air_Web.Air_Web_DC_PayTM"/>
         </classes>
     </test>
 
     <test name="EMI BFL" preserve-order="true">
         <classes>
-        <!--    <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_EMI_BFL"/>
+        <!--    <class name="test.java.payment_Air_Web.IN_Air_Desktop_EMI_BFL"/>
        --> </classes>
     </test>
 
     <test name="EMI NoCost" preserve-order="true">
         <classes><!--
-            <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_EMI_NoCostEMI"/>-->
+            <class name="test.java.payment_Air_Web.IN_Air_Desktop_EMI_NoCostEMI"/>-->
         </classes>
     </test>
 
     <test name="EMI Razorpay" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_EMI_Razorpay"/>
+            <class name="test.java.payment_Air_Web.IN_Air_Desktop_EMI_Razorpay"/>
         </classes>
     </test>
 
     <test name="GV Full" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_GV_SCLP_Full"/>
+            <class name="test.java.payment_Air_Web.Air_Web_GV_SCLP_Full"/>
         </classes>
     </test>
 
     <test name="GV CC WL" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_GV_SCLP_WL_CC_Amex"/>
+            <class name="test.java.payment_Air_Web.IN_Air_Desktop_GV_SCLP_WL_CC_Amex"/>
         </classes>
     </test>
 
     <test name="NB Retry" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_NB_Retry"/>
+            <class name="test.java.payment_Air_Web.IN_Air_Desktop_NB_Retry"/>
         </classes>
     </test>
 
     <test name="SavedCard Tokeinzed" preserve-order="true">
         <classes>
-           <!-- <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_SavedPay_Tokenized"/>-->
+           <!-- <class name="test.java.payment_Air_Web.IN_Air_Desktop_SavedPay_Tokenized"/>-->
         </classes>
     </test>
 
     <test name="Saved UPI PaymentMode" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_SavedPay_UPI"/>
+            <class name="test.java.payment_Air_Web.IN_Air_Desktop_SavedPay_UPI"/>
         </classes>
     </test>
 
     <test name="UPI Failure Success" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_UPI_Failure_Success"/>
+            <class name="test.java.payment_Air_Web.IN_Air_Desktop_UPI_Failure_Success"/>
         </classes>
     </test>
 
     <test name="UPI Saved" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_Saved_UPI"/>
+            <class name="test.java.payment_Air_Web.IN_Air_Desktop_Saved_UPI"/>
         </classes>
     </test>
 
     <test name="GV amount change" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_GV_SCLP_PriceChange_PopUp"/>
+            <class name="test.java.payment_Air_Web.IN_Air_Desktop_GV_SCLP_PriceChange_PopUp"/>
         </classes>
     </test>
 
     <test name="UPI Scan Amex" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_UPIScan_Validation_AMEXCC"/>
+            <class name="test.java.payment_Air_Web.IN_Air_Desktop_UPIScan_Validation_AMEXCC"/>
         </classes>
     </test>
 
     <test name="Wallet Full" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_Wallet_Full"/>
+            <class name="test.java.payment_Air_Web.IN_Air_Desktop_Wallet_Full"/>
         </classes>
     </test>
 

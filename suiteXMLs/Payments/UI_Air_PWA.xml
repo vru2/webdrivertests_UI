@@ -10,62 +10,62 @@
 
     <test name="Cardless EMI AXIO" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_PWA.IN_Air_PWA_EMI_Cardless"/>
+            <class name="test.java.payment_Air_PWA.Air_PWA_EMI_Cardless"/>
         </classes>
     </test>
 
     <test name="NB Retry" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_PWA.IN_Air_PWA_NB_Retry"/>
+            <class name="test.java.payment_Air_PWA.Air_PWA_NB_Retry"/>
         </classes>
     </test>
 
     <test name="UPI Failure Success" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_PWA.IN_Air_PWA_UPI_Failure_Success"/>
+            <class name="test.java.payment_Air_PWA.Air_PWA_UPI_Failure_Success"/>
         </classes>
     </test>
 
     <test name="EMI" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_PWA.IN_Air_PWA_EMI"/>
+            <class name="test.java.payment_Air_PWA.Air_PWA_EMI"/>
         </classes>
     </test>
 
     <test name="CC payTM" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_PWA.IN_Air_PWA_CC_PayTM_inline"/>
+            <class name="test.java.payment_Air_PWA.Air_PWA_CC_PayTM_inline"/>
         </classes>
     </test>
 
     <test name="GV Multi CLP CC" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_PWA.IN_Air_PWA_GV_CLP_CC"/>
+            <class name="test.java.payment_Air_PWA.Air_PWA_GV_CLP_CC"/>
         </classes>
     </test>
 
     <test name="GV Full CLP" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_PWA.IN_Air_PWA_GV_CLP_Full"/>
+            <class name="test.java.payment_Air_PWA.Air_PWA_GV_CLP_Full"/>
         </classes>
     </test>
 
     <test name="GV WL Partial CC" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_PWA.IN_Air_PWA_GV_CLP_CC_WL"/>
+            <class name="test.java.payment_Air_PWA.Air_PWA_GV_CLP_CC_WL_Razorpay"/>
         </classes>
     </test>
 
     <test name="Paylater ICICI" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_PWA.IN_Air_PWA_Paylater"/>
+            <class name="test.java.payment_Air_PWA.Air_PWA_Paylater"/>
         </classes>
     </test>
 
 
     <test name="Saved Paymentmode UPI" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_PWA.IN_Air_PWA_SavedPay_UPI"/>
+            <class name="test.java.payment_Air_PWA.Air_PWA_SavedPay_UPI"/>
         </classes>
     </test>
 
@@ -77,43 +77,43 @@
     </test>
 
 
-    <test name="UPI Inline" preserve-order="true">
-        <classes>
-            <class name="test.java.payment_Air_PWA.IN_Air_PWA_UPI_Inline"/>
-        </classes>
-    </test>
-
-
     <test name="Wallet Full" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_PWA.IN_Air_PWA_Wallet_Full"/>
+            <class name="test.java.payment_Air_PWA.Air_PWA_Wallet_Full"/>
         </classes>
     </test>
 
 
     <test name="Coupon Invalid" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_PWA.IN_Air_PWA_Coupon_Invalid"/>
+            <class name="test.java.payment_Air_PWA.Air_PWA_Coupon_Invalid"/>
         </classes>
     </test>
 
     <test name="Coupon Valid" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_PWA.IN_Air_PWA_Coupon_Valid"/>
+            <class name="test.java.payment_Air_PWA.Air_PWA_Coupon_Valid"/>
         </classes>
     </test>
 
     <test name="Saved Card Tokenized" preserve-order="true">
         <classes>
-           <!-- <class name="test.java.payment_Air_PWA.IN_Air_PWA_SavedPay_Tokenized"/>-->
+           <!-- <class name="test.java.payment_Air_PWA.Air_PWA_SavedPay_Tokenized"/>-->
         </classes>
     </test>
-
 
     <test name="BFL" preserve-order="true">
         <classes>
-            <!--  <class name="test.java.payment_Air_PWA.IN_Air_PWA_EMI_BFL"/>-->
+            <!--  <class name="test.java.payment_Air_PWA.Air_PWA_EMI_BFL"/>-->
         </classes>
     </test>
+
+    <!--
+        <test name="UPI Inline" preserve-order="true">
+            <classes>
+                <class name="test.java.payment_Air_PWA.Air_PWA_UPI_Inline"/>
+            </classes>
+        </test>-->
+
 
 </suite>

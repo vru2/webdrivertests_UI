@@ -6,13 +6,91 @@
   <component name="ChangeListManager">
     <list default="true" id="398be537-263a-46ea-8d2f-e66bf2ffc10f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/objectRepositoryPayment.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/objectRepositoryPayment.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_Desktop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_Desktop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_Desktop_Air.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_Desktop_Air.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_Desktop_Hotels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_Desktop_Hotels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_PWA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_PWA.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_PWA_Air.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_PWA_Air.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_PWA_Bus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_PWA_Bus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_Wallet_Full.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_Wallet_Full.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_Desktop/IN_Air_Desktop_CC_PayTM_Inline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_Web/Air_Web_CC_PayTM_Inline.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_Desktop/IN_Air_Desktop_CC_PayU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_Web/Air_Web_CC_PayU.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_Desktop/IN_Air_Desktop_CC_Razorpay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_Web/Air_Web_CC_Razorpay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_Desktop/IN_Air_Desktop_Coupon_Invalid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_Web/Air_Web_Coupon_Invalid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_Desktop/IN_Air_Desktop_Coupon_Valid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_Web/Air_Web_Coupon_Valid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_Desktop/IN_Air_Desktop_DC_PayTM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_Web/Air_Web_DC_PayTM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_Desktop/IN_Air_Desktop_EMI_BFL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_Web/Air_Web_EMI_BFL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_Desktop/IN_Air_Desktop_EMI_NoCostEMI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_Web/Air_Web_EMI_NoCostEMI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_Desktop/IN_Air_Desktop_EMI_Razorpay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_Web/Air_Web_EMI_Razorpay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_Desktop/IN_Air_Desktop_GV_SCLP_Full.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_Web/Air_Web_GV_SCLP_Full.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_Desktop/IN_Air_Desktop_GV_SCLP_PriceChange_PopUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_Web/Air_Web_GV_SCLP_PriceChange_PopUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_Desktop/IN_Air_Desktop_GV_SCLP_WL_CC_Amex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_Web/Air_Web_GV_SCLP_WL_CC_Amex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_Desktop/IN_Air_Desktop_NB_Retry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_Web/Air_Web_NB_Retry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_Desktop/IN_Air_Desktop_SavedPay_Tokenized.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_Web/Air_Web_SavedPay_Tokenized.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_Desktop/IN_Air_Desktop_SavedPay_UPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_Web/Air_Web_SavedPay_UPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_Desktop/IN_Air_Desktop_Saved_UPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_Web/Air_Web_Saved_UPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_Desktop/IN_Air_Desktop_UPIScan_Validation_AMEXCC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_Web/Air_Web_UPIScan_Validation_AMEXCC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_Desktop/IN_Air_Desktop_UPI_Failure_Success.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_Web/Air_Web_UPI_Failure_Success.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_Desktop/IN_Air_Desktop_Wallet_Full.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_Web/Air_Web_Wallet_Full.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/IN_Air_PWA_CC_PayTM_inline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_CC_PayTM_inline.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/IN_Air_PWA_Coupon_Invalid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_Coupon_Invalid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/IN_Air_PWA_Coupon_Valid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_Coupon_Valid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/IN_Air_PWA_EMI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_EMI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/IN_Air_PWA_EMI_BFL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_EMI_BFL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/IN_Air_PWA_EMI_Cardless.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_EMI_Cardless.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/IN_Air_PWA_GV_CLP_CC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_GV_CLP_CC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/IN_Air_PWA_GV_CLP_CC_WL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_GV_CLP_CC_WL_Razorpay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/IN_Air_PWA_GV_CLP_Full.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_GV_CLP_Full.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/IN_Air_PWA_NB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_NB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/IN_Air_PWA_NB_Retry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_NB_Retry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/IN_Air_PWA_Paylater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_Paylater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/IN_Air_PWA_SavedPay_Tokenized.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_SavedPay_Tokenized.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/IN_Air_PWA_SavedPay_UPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_SavedPay_UPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/IN_Air_PWA_Saved_UPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_Saved_UPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/IN_Air_PWA_UPI_Failure_Success.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_UPI_Failure_Success.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/IN_Air_PWA_UPI_Inline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_UPI_Inline.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/IN_Air_PWA_Wallet_Full.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_Wallet_Full.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Bus_PWA/IN_Bus_PWA_CC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Bus_PWA/Bus_PWA_CC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Bus_PWA/IN_Bus_PWA_Coupon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Bus_PWA/Bus_PWA_Coupon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Bus_PWA/IN_Bus_PWA_NB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Bus_PWA/Bus_PWA_NB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Bus_PWA/IN_Bus_PWA_Wallet_Full.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Bus_PWA/Bus_PWA_Wallet_Full.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_AmazonPay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_Web/Hotels_Web_AmazonPay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_CC_PayTM_Inline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_Web/Hotels_Web_CC_PayTM_Inline.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_CC_PayU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_Web/Hotels_Web_CC_PayU.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_CC_Razorpay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_Web/Hotels_Web_CC_Razorpay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_Coupon_Invalid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_Web/Hotels_Web_Coupon_Invalid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_Coupon_Valid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_Web/Hotels_Web_Coupon_Valid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_DC_PayTM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_Web/Hotels_Web_DC_PayTM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_EMI_BFL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_Web/Hotels_Web_EMI_BFL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_EMI_NCE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_Web/Hotels_Web_EMI_NCE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_EMI_Only.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_Web/Hotels_Web_EMI_Only.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_GV_CLP_Wallet_Amex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_Web/Hotels_Web_GV_CLP_Wallet_Amex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_GV_SCLP_CLP_NB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_Web/Hotels_Web_GV_SCLP_CLP_NB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_GV_SCLP_Full.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_Web/Hotels_Web_GV_SCLP_Full.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_GV_SCLP_GV_NB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_Web/Hotels_Web_GV_SCLP_GV_NB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_GV_SCLP_PriceChange_PopUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_Web/Hotels_Web_GV_SCLP_PriceChange_PopUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_GoogleCaptcha_Validation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_Web/Hotels_Web_GoogleCaptcha_Validation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_NB_Retry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_Web/Hotels_Web_NB_Retry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_PhonePe_Validation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_Web/Hotels_Web_PhonePe_Validation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_SavedPay_Tokenized.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_Web/Hotels_Web_SavedPay_Tokenized.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_SavedPay_UPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_Web/Hotels_Web_SavedPay_UPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_Saved_UPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_Web/Hotels_Web_Saved_UPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_UPIScan_Validation_AMEXCC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_Web/Hotels_Web_UPIScan_Validation_AMEXCC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_UPI_Failure_Success.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_Web/Hotels_Web_UPI_Failure_Success.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_Desktop/IN_Wallet_Full.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_Web/Hotels_Web_Wallet_Full.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_PWA/IN_Hotels_PWA_CC_PayTM_Inline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_PWA/Hotels_PWA_CC_PayTM_Inline.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_PWA/IN_Hotels_PWA_Coupon_Invalid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_PWA/Hotels_PWA_Coupon_Invalid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_PWA/IN_Hotels_PWA_Coupon_Valid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_PWA/Hotels_PWA_Coupon_Valid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_PWA/IN_Hotels_PWA_EMI_BFL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_PWA/Hotels_PWA_EMI_BFL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_PWA/IN_Hotels_PWA_EMI_NCE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_PWA/Hotels_PWA_EMI_NCE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_PWA/IN_Hotels_PWA_EMI_Only.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_PWA/Hotels_PWA_EMI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_PWA/IN_Hotels_PWA_NB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_PWA/Hotels_PWA_NB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_PWA/IN_Hotels_PWA_SavedPay_Tokenized.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_PWA/Hotels_PWA_SavedPay_Tokenized.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_PWA/IN_Hotels_PWA_SavedPay_UPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_PWA/Hotels_PWA_SavedPay_UPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_PWA/IN_Hotels_PWA_Saved_UPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_PWA/Hotels_PWA_Saved_UPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_PWA/IN_Hotels_PWA_UPI_Inline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_PWA/Hotels_PWA_UPI_Inline.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_PWA/IN_Hotels_PWA_Wallet_CC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_PWA/Hotels_PWA_Wallet_CC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_PWA/IN_Hotels_PWA_Wallet_Full.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_PWA/Hotels_PWA_Wallet_Full.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/suiteXMLs/Payments/UI_Air_Desktop.xml" beforeDir="false" afterPath="$PROJECT_DIR$/suiteXMLs/Payments/UI_Air_Desktop.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/suiteXMLs/Payments/UI_Air_PWA.xml" beforeDir="false" afterPath="$PROJECT_DIR$/suiteXMLs/Payments/UI_Air_PWA.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/suiteXMLs/Payments/UI_Hotel_Desktop.xml" beforeDir="false" afterPath="$PROJECT_DIR$/suiteXMLs/Payments/UI_Hotel_Desktop.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/suiteXMLs/Payments/UI_ProductsAll_Sanity.xml" beforeDir="false" afterPath="$PROJECT_DIR$/suiteXMLs/Payments/UI_ProductsAll_Sanity.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +140,7 @@
       <recent name="test.java.payment_Air_Desktop" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.IN_Air_Desktop_GV_SCLP_PriceChange_PopUp">
+  <component name="RunManager" selected="TestNG.IN_Air_PWA_EMI">
     <configuration name="AirDesktop" type="TestNG">
       <module name="Webdrivertests" />
       <shortenClasspath name="NONE" />
@@ -95,6 +173,91 @@
       <option name="PARAMETERS" value="" />
       <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/Results/AirPWA" />
       <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Air_PWA_EMI" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Webdrivertests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.java.payment_Air_PWA.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.java.payment_Air_PWA" />
+      <option name="MAIN_CLASS_NAME" value="test.java.payment_Air_PWA.Air_PWA_EMI" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Air_PWA_EMI" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Webdrivertests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.java.payment_Air_PWA.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.java.payment_Air_PWA" />
+      <option name="MAIN_CLASS_NAME" value="test.java.payment_Air_PWA.Air_PWA_EMI" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Air_PWA_GV_CLP_CC_WL_Razorpay" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Webdrivertests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.java.payment_Air_PWA.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.java.payment_Air_PWA" />
+      <option name="MAIN_CLASS_NAME" value="test.java.payment_Air_PWA.Air_PWA_GV_CLP_CC_WL_Razorpay" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Air_PWA_NB_Retry" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Webdrivertests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.java.payment_Air_PWA.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.java.payment_Air_PWA" />
+      <option name="MAIN_CLASS_NAME" value="test.java.payment_Air_PWA.Air_PWA_NB_Retry" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Air_PWA_NB_Retry" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Webdrivertests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.java.payment_Air_PWA.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.java.payment_Air_PWA" />
+      <option name="MAIN_CLASS_NAME" value="test.java.payment_Air_PWA.Air_PWA_NB_Retry" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
@@ -177,34 +340,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IN_Air_Desktop_DC_PayTM.Air_Desktop_DC_PayTm" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="IN_Air_PWA_EMI" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Webdrivertests" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.java.payment_Air_Desktop.*" />
+          <option name="PATTERN" value="test.java.payment_Air_PWA.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="test.java.payment_Air_Desktop" />
-      <option name="MAIN_CLASS_NAME" value="test.java.payment_Air_Desktop.IN_Air_Desktop_DC_PayTM" />
-      <option name="METHOD_NAME" value="Air_Desktop_DC_PayTm" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="IN_Air_Desktop_GV_SCLP_Full" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Webdrivertests" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.java.payment_Air_Desktop.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test.java.payment_Air_Desktop" />
-      <option name="MAIN_CLASS_NAME" value="test.java.payment_Air_Desktop.IN_Air_Desktop_GV_SCLP_Full" />
+      <option name="PACKAGE_NAME" value="test.java.payment_Air_PWA" />
+      <option name="MAIN_CLASS_NAME" value="test.java.payment_Air_PWA.IN_Air_PWA_EMI" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -212,50 +357,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IN_Air_Desktop_GV_SCLP_PriceChange_PopUp" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="IN_Air_PWA_NB_Retry" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Webdrivertests" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.java.payment_Air_Desktop.*" />
+          <option name="PATTERN" value="test.java.payment_Air_PWA.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="test.java.payment_Air_Desktop" />
-      <option name="MAIN_CLASS_NAME" value="test.java.payment_Air_Desktop.IN_Air_Desktop_GV_SCLP_PriceChange_PopUp" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="IN_Air_Desktop_UPI_Failure_Success (1)" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Webdrivertests" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.java.payment_Air_Desktop.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test.java.payment_Air_Desktop" />
-      <option name="MAIN_CLASS_NAME" value="test.java.payment_Air_Desktop.IN_Air_Desktop_UPI_Failure_Success" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="IN_Air_Desktop_UPI_Failure_Success" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Webdrivertests" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.java.payment_Air_Desktop.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test.java.payment_Air_Desktop" />
-      <option name="MAIN_CLASS_NAME" value="test.java.payment_Air_Desktop.IN_Air_Desktop_UPI_Failure_Success" />
+      <option name="PACKAGE_NAME" value="test.java.payment_Air_PWA" />
+      <option name="MAIN_CLASS_NAME" value="test.java.payment_Air_PWA.IN_Air_PWA_NB_Retry" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -284,11 +395,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.IN_Air_Desktop_GV_SCLP_PriceChange_PopUp" />
-        <item itemvalue="TestNG.IN_Air_Desktop_UPI_Failure_Success (1)" />
-        <item itemvalue="TestNG.IN_Air_Desktop_UPI_Failure_Success" />
-        <item itemvalue="TestNG.IN_Air_Desktop_DC_PayTM.Air_Desktop_DC_PayTm" />
-        <item itemvalue="TestNG.IN_Air_Desktop_GV_SCLP_Full" />
+        <item itemvalue="TestNG.IN_Air_PWA_EMI" />
+        <item itemvalue="TestNG.IN_Air_PWA_GV_CLP_CC_WL_Razorpay" />
+        <item itemvalue="TestNG.IN_Air_PWA_EMI (1)" />
+        <item itemvalue="TestNG.IN_Air_PWA_NB_Retry (1)" />
+        <item itemvalue="TestNG.IN_Air_PWA_NB_Retry" />
       </list>
     </recent_temporary>
   </component>
@@ -328,7 +439,7 @@
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/payment_Air_PWA/IN_Air_PWA_UPI_Failure_Success.java</url>
+          <url>file://$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_UPI_Failure_Success.java</url>
           <line>25</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
@@ -378,7 +489,7 @@
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/payment_Air_PWA/IN_Air_PWA_Paylater.java</url>
+          <url>file://$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_Paylater.java</url>
           <line>24</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
@@ -388,7 +499,7 @@
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/payment_Air_Desktop/IN_Air_Desktop_GV_SCLP_PriceChange_PopUp.java</url>
+          <url>file://$PROJECT_DIR$/src/test/java/payment_Air_Web/Air_Web_GV_SCLP_PriceChange_PopUp.java</url>
           <line>26</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
@@ -458,7 +569,7 @@
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/payment_Bus_PWA/IN_Bus_PWA_Coupon.java</url>
+          <url>file://$PROJECT_DIR$/src/test/java/payment_Bus_PWA/Bus_PWA_Coupon.java</url>
           <line>24</line>
           <option name="timeStamp" value="37" />
         </line-breakpoint>

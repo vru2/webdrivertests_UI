@@ -75,7 +75,8 @@ public class PaymentsUI_Common_PWA_Air extends PaymentsUI_Common_PWA{
     }
 
     public void air_AddOnPage(RemoteWebDriver driver, String param1, String param2) throws Exception {
-        elementVisible(driver, getObjectPayment("PWA_Air_Addons_Txt"), 5);
+        if( !elementVisible(driver, getObjectPayment("PWA_Air_TravellerPage_Title"), 2)){
+        elementVisible(driver, getObjectPayment("PWA_Air_Addons_Txt"), 1);
         if(!textPresent(driver, "Add ons", 5)) {
             if (textPresent(driver, "Review Itinerary", 2)) {
                 mouseHover(driver, getObjectPayment("PWA_Air_Itn_Button2"));
@@ -93,6 +94,7 @@ public class PaymentsUI_Common_PWA_Air extends PaymentsUI_Common_PWA{
         if(textPresent(driver, "Review Itinerary", 2)) {
             mouseHover(driver, getObjectPayment("PWA_Air_Itn_Button2"));
             safeClick(driver, getObjectPayment("PWA_Air_Itn_Button2"));
+        }
         }
     }
 

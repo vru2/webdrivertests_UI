@@ -54,7 +54,7 @@ public class PaymentsUI_Common extends API_PaymentCommon {
     Cookie cookie_Stored_Card = new Cookie("ct-auth", "3cZX3Pk7YZLQGkv5lH%2BqMisg41mHr4%2BV5LnkFlBYXSW7TbjXLYl7j8XVySMQUxQsuv18jxT4Krq%2BnZKZgt%2FgtsPPZuvu7kgJgSXq9dBmctulsdFnuefY%2Fk4K%2FkHUuDj%2BnitdvoouxVugJ172IcDxp41NeKUSgTMU9EpGlYfZJ60e5yZIWxI28YU6CxlbH7FH");
 
     public String origin = "BLR";
-    public String destination = "MAA";
+    public String destination = "DEL";
     public String phoneNo="1212121212";
     public String emailID="cltppayment@gmail.com";
     public int date = getRandomNumberInt(100);
@@ -86,6 +86,18 @@ public class PaymentsUI_Common extends API_PaymentCommon {
 
     public String air_SRPUrl(String Domain, String origin, String destination, int date) throws Exception {
         String Air_URL = "/flights/results?adults=1&childs=0&infants=0&class=Economy&depart_date=" + getDateTime(date, "dd/MM/yyyy") + "&from=" + origin() + "&to=" + destination() + "&intl=n";
+        String SearchUrl = "";
+        if (Domain == "IN") {
+            SearchUrl = inurl + Air_URL;
+        }
+        Reporter.log(SearchUrl);
+        System.out.println(SearchUrl);
+        return SearchUrl;
+    }
+
+
+    public String air_SRPUrl_2(String Domain, String origin, String destination, int date) throws Exception {
+        String Air_URL = "/flights/results?adults=1&childs=0&infants=0&class=Economy&depart_date=" + getDateTime(date, "dd/MM/yyyy") + "&from=" + origin + "&to=" + destination+ "&intl=n";
         String SearchUrl = "";
         if (Domain == "IN") {
             SearchUrl = inurl + Air_URL;

@@ -11,14 +11,14 @@
 
     <test name="Air Desktop" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_Desktop.IN_Air_Desktop_CC_PayTM_Inline"/>
+            <class name="test.java.payment_Air_Web.Air_Web_CC_PayTM_Inline"/>
         </classes>
     </test>
 
     <!--
         <test name="Air PWA" preserve-order="true">
             <classes>
-                <class name="test.java.payment_Air_PWA.IN_Air_PWA_Paylater"/>
+                <class name="test.java.payment_Air_PWA.Air_PWA_Paylater"/>
             </classes>
         </test>
         <test name="Bus CC" preserve-order="true">
@@ -29,7 +29,7 @@
 
         <test name="Hotel Desktop" preserve-order="true">
             <classes>
-                <class name="test.java.payment_Hotels_Desktop.IN_DC_PayTM"/>
+                <class name="test.java.payment_Hotels_Web.IN_DC_PayTM"/>
             </classes>
         </test>
 

@@ -400,6 +400,10 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
             Enter_CC_Details_PWA(driver, "6080322940807777", "1224", "123");
             //Enter_CC_Details_PWA(driver, platform.value("PayTMCard_Number"), platform.value("PayTMCard_MWeb_Exp_Date"), platform.value("PayTMCard_CVV"));
         }
+        if(bankName=="RazorpayCC") {
+            Enter_CC_Details_PWA(driver, "5241810000000000", "1224", "123");
+            //Enter_CC_Details_PWA(driver, platform.value("PayTMCard_Number"), platform.value("PayTMCard_MWeb_Exp_Date"), platform.value("PayTMCard_CVV"));
+        }
         if(bankName=="Amex") {
             Enter_CC_Details_PWA(driver, platform.value("AmexCard_Number"), "0139", platform.value("AmexCard_CVV"));
            }

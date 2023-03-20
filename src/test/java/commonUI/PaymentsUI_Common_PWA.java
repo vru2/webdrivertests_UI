@@ -236,15 +236,14 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
     }
 
     public void bento_pay_Coupon_PWA(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName, String SuccessFail) throws Exception {
-        payUI_Select_PaymentType_PWA( driver, "NB");
+        payUI_Select_PaymentType_PWA( driver, "CC");
         Reporter.log("Clicked on NB");
+        elementPresent_log(driver, getObjectPayment("PayUI_Pay_Coupon_Callout"), "Coupon Call out", 5);
+        textPresent_Log(driver, "You're saving", 1);
         bento_pay_validate_Price_Popup(driver, "Coupon code", "");
-        Thread.sleep(5000);
-
         WebElement we = driver.findElement(getObjectPayment("PayUI_Pay_Tabs_PWA"));
         Actions builder = new Actions(driver);
-        Boolean selectedSeat = elementVisible(driver, getObjectPayment("PWA_Bus_SeatSelection"), 1);
-        builder.moveToElement(we, -10,-50).click().build().perform();
+        //builder.moveToElement(we, -10,-50).click().build().perform();
         bento_pay_CC_PWA(driver, "CC", "", domain, "",BankName, SuccessFail);
         /*
         //bento_pay_CC_PWA(driver, "NB", "", domain, "", "", SuccessFail);

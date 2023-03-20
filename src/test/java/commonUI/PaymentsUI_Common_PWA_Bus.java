@@ -54,6 +54,14 @@ public class PaymentsUI_Common_PWA_Bus extends PaymentsUI_Common_PWA{
 
     public void bus_ReviewPage(RemoteWebDriver driver, String Coupon, String CouponCode, String CouponType) throws Exception {
         textPresent(driver, "Review booking", 10);
+        if(Coupon.equalsIgnoreCase("Coupon")){
+            safeClick(driver, getObjectPayment("PWA_Bus_ReviewPage_Coupon_Link"));
+            elementVisible(driver, getObjectPayment("PWA_Bus_ReviewPage_Coupon_Text"), 10);
+            safeType(driver, getObjectPayment("PWA_Bus_ReviewPage_Coupon_Text"), CouponCode);
+            safeClick(driver, getObjectPayment("PWA_Bus_ReviewPage_Coupon_Apply"));
+            elementVisible(driver, getObjectPayment("PWA_Bus_ReviewPage_Coupon_Success_Awesome_Lnk"), 10);
+            safeClick(driver, getObjectPayment("PWA_Bus_ReviewPage_Coupon_Success_Awesome_Lnk"));
+        }
         safeClick(driver, getObjectPayment("PWA_Bus_ReviewPage_Continue_Btn"));
 
     }

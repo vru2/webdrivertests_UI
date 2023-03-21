@@ -10,25 +10,25 @@
 
     <test name="Bus NB" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Bus_PWA.IN_Bus_PWA_NB"/>
+            <class name="test.java.payment_Bus_PWA.Bus_PWA_NB"/>
         </classes>
     </test>
 
     <test name="Bus Wallet" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Bus_PWA.IN_Bus_PWA_Wallet_Full"/>
+            <class name="test.java.payment_Bus_PWA.Bus_PWA_Wallet_Full"/>
         </classes>
     </test>
 
     <test name="Bus CC" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Bus_PWA.IN_Bus_PWA_CC"/>
+            <class name="test.java.payment_Bus_PWA.Bus_PWA_CC"/>
         </classes>
     </test>
 
     <test name="Bus Coupon" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Bus_PWA.IN_Bus_PWA_Coupon"/>
+            <class name="test.java.payment_Bus_PWA.Bus_PWA_Coupon"/>
         </classes>
     </test>
 

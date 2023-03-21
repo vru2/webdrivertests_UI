@@ -2,6 +2,7 @@ package test.java.commonUI;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -290,7 +291,12 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
     }
 
     public void bento_pay_PAYLATER_PWA(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("window.scrollBy(0, 450)", "");
         payUI_Select_PaymentType_PWA(driver, PaymentType);
+        if(PayType.equalsIgnoreCase("PartialWallet")){
+            bento_pay_validate_Price_Popup(driver, "Cleartrip Wallet", "");
+        }
         elementVisible(driver, getObjectPayment("PWA_paymentPage_Paylater_ICICIBank"), 5);
         String ICICIBank_text = getText(driver, getObjectPayment("PWA_paymentPage_Paylater_ICICIBank_Txt"));
         if(!ICICIBank_text.equalsIgnoreCase("ICICI Bank PayLater")){
@@ -371,7 +377,6 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
     public void bento_pay_GV_Partial_PWA(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
         payUI_Select_PaymentType_PWA( driver, PaymentType);
         String WalletOn = driver.findElement(By.id("radio-toggle-wallet")).getAttribute("Value");
-        System.out.println("Wallet on : "+WalletOn);
         if(WalletOn.equalsIgnoreCase("False")){
             safeClick(driver, getObjectPayment("PWA_PaymentPage_Wallet_Toggle"));
         }

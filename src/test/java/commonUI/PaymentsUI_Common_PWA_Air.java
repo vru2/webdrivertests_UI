@@ -142,6 +142,10 @@ public class PaymentsUI_Common_PWA_Air extends PaymentsUI_Common_PWA{
         if(elementVisible(driver, By.xpath("//div[3]/a"), 5)){
             smartClick(driver, By.xpath("//div[3]/a"));
         }
+        if(elementVisible(driver, getObjectPayment("PWA_Air_TravellerPage_PricePopUP"), 1)){
+            Reporter.log("Price popup");
+            smartClick(driver, getObjectPayment("PWA_Air_TravellerPage_PricePopUP"));
+        }
     }
 /*
     public void bento_Paymentpage_PWA(RemoteWebDriver driver, String paymentType, String cardNumber, String domain, String payType, String bankName, String successFail) throws Exception {

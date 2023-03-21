@@ -10,80 +10,80 @@
 
     <test name="NB" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_NB"/>
+            <class name="test.java.payment_Hotels_PWA.Hotels_PWA_NB"/>
         </classes>
     </test>
 
     <test name="EMI" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_EMI_Only"/>
+            <class name="test.java.payment_Hotels_PWA.Hotels_PWA_EMI"/>
         </classes>
     </test>
 
     <test name="EMI NCE" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_EMI_NCE"/>
+            <class name="test.java.payment_Hotels_PWA.Hotels_PWA_EMI_NCE"/>
         </classes>
     </test>
 
     <test name="BFL" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_EMI_BFL"/>
+            <class name="test.java.payment_Hotels_PWA.Hotels_PWA_EMI_BFL"/>
         </classes>
     </test>
 
     <test name="CC" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_CC_PayTM_Inline"/>
+            <class name="test.java.payment_Hotels_PWA.Hotels_PWA_CC_PayTM_Inline"/>
         </classes>
     </test>
 
     <test name="Coupon Valid" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_Coupon_Valid"/>
+            <class name="test.java.payment_Hotels_PWA.Hotels_PWA_Coupon_Valid"/>
         </classes>
     </test>
 
     <test name="Coupon Invalid" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_Coupon_Invalid"/>
+            <class name="test.java.payment_Hotels_PWA.Hotels_PWA_Coupon_Invalid"/>
         </classes>
     </test>
 
     <test name="Saved PaymentMode UPI" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_SavedPay_UPI"/>
+            <class name="test.java.payment_Hotels_PWA.Hotels_PWA_SavedPay_UPI"/>
         </classes>
     </test>
 
 
     <test name="Saved UPI" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_Saved_UPI"/>
+            <class name="test.java.payment_Hotels_PWA.Hotels_PWA_Saved_UPI"/>
         </classes>
     </test>
 
     <test name="UPI Inline" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_UPI_Inline"/>
+            <class name="test.java.payment_Hotels_PWA.Hotels_PWA_UPI_Inline"/>
         </classes>
     </test>
 
     <test name="Wallet Full" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_Wallet_Full"/>
+            <class name="test.java.payment_Hotels_PWA.Hotels_PWA_Wallet_Full"/>
         </classes>
     </test>
 
     <test name="Wallet CC PayTM" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_Wallet_CC"/>
+            <class name="test.java.payment_Hotels_PWA.Hotels_PWA_Wallet_CC"/>
         </classes>
     </test>
 
     <test name="Tokenized Saved Card" preserve-order="true">
         <classes>
-            <!--<class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_SavedPay_Tokenized"/>-->
+            <!--<class name="test.java.payment_Hotels_PWA.Hotels_PWA_SavedPay_Tokenized"/>-->
         </classes>
     </test>
 

@@ -40,7 +40,7 @@ public class PaymentsUI_Common_Desktop_Air extends PaymentsUI_Common_Desktop {
         driver.close(); // Closing Child window
         driver.switchTo().window(parent);
         driver.get(Child_URL);
-       // elementVisible(driver, getObjectPayment("Desktop_Air_Itn_Step1_Btn"), 20);
+
         elementVisible(driver, getObjectPayment("Desktop_Air_Itn_Step1_Review_Text"), 10);
         textPresent(driver, "Review your itinerary", 2);
         smartClick(driver, getObjectPayment("Desktop_Air_Itn_Step1_Review_VAS"));
@@ -75,7 +75,7 @@ public class PaymentsUI_Common_Desktop_Air extends PaymentsUI_Common_Desktop {
 
         }
         scrollToElement(driver, getObjectPayment("Desktop_Air_Itn_Step1_Btn"));
-        Thread.sleep(500);
+        Thread.sleep(2000);
         safeClick(driver, getObjectPayment("Desktop_Air_Itn_Step1_Btn"));
     }
 
@@ -94,12 +94,15 @@ public class PaymentsUI_Common_Desktop_Air extends PaymentsUI_Common_Desktop {
 
     public void air_AddOnPage_Desktop(RemoteWebDriver driver, String FlightName, String FlightNo, String new1, String new2) throws Exception {
         textPresent(driver, "Choose add-ons", 1);
-        if(elementVisible(driver, getObjectPayment("Desktop_Air_Itn_Addon_Btn"),5)) {
-            Thread.sleep(500);
-            scrollToElement(driver, getObjectPayment("Desktop_Air_Itn_Addon_Btn"));
-            Thread.sleep(1000);
-            safeClick(driver, getObjectPayment("Desktop_Air_Itn_Addon_Btn"));
+        if(textPresent(driver, "Choose add-ons", 1)) {
+            if (elementVisible(driver, getObjectPayment("Desktop_Air_Itn_Addon_Btn"), 1)) {
+                Thread.sleep(500);
+                scrollToElement(driver, getObjectPayment("Desktop_Air_Itn_Addon_Btn"));
+                Thread.sleep(1000);
+                safeClick(driver, getObjectPayment("Desktop_Air_Itn_Addon_Btn"));
+            }
         }
+
     }
 
     public void air_LoginPage_Desktop(RemoteWebDriver driver, String LoginPage, String EmailID, String PhoneNo) throws Exception {
@@ -137,9 +140,9 @@ public class PaymentsUI_Common_Desktop_Air extends PaymentsUI_Common_Desktop {
     }
 
     public void air_PaymentPage_Desktop(RemoteWebDriver driver, String PaymentType, String CardNumber, String domain, String PayType, String BankName, String TestDetails) throws Exception {
-        elementVisible(driver, getObjectPayment("Bento_Pay_PayToCompleteBooking_Txt"), 30);
+       // elementVisible(driver, getObjectPayment("Bento_Pay_PayToCompleteBooking_Txt"), 1);
        // refreshPage(driver);
-        if (elementVisible(driver, getObjectPayment("Bento_Pay_PayToCompleteBooking_Txt"), 1)) {
+        if (elementVisible(driver, getObjectPayment("Bento_Pay_PayToCompleteBooking_Txt"), 30)) {
             bento_paymentpage(driver, PaymentType, CardNumber, domain, PayType, BankName);
             if (!(CardNumber == "ADCB" || PaymentType == "Phonepe" || PaymentType == "UPIScan" || PayType == "Googlecaptcha"|| PayType == "Failure")) {
                 confirmation_Page_Air(driver, PaymentType, CardNumber, TestDetails);

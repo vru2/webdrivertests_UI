@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Hotels Booking" parallel="tests" thread-count="2">
+<suite name="Hotels Booking" parallel="tests" thread-count="3">
 
     <listeners>
         <listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -10,73 +10,73 @@
 
     <test name="Coupon Valid Razorpay" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_Web.IN_Coupon_Valid"/>
+            <class name="test.java.payment_Hotels_Web.Hotels_Web_Coupon_Valid"/>
         </classes>
     </test>
 
     <test name="Coupon InValid NB" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_Web.IN_Coupon_Invalid"/>
+            <class name="test.java.payment_Hotels_Web.Hotels_Web_Coupon_Invalid"/>
         </classes>
     </test>
 
     <test name="CC PayU" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_Web.IN_CC_PayU"/>
+            <class name="test.java.payment_Hotels_Web.Hotels_Web_CC_PayU"/>
         </classes>
     </test>
 
     <test name="EMI" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_Web.IN_EMI_Only"/>
+            <class name="test.java.payment_Hotels_Web.Hotels_Web_EMI_Only"/>
         </classes>
     </test>
 
     <test name="EMI No Cost" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_Web.IN_EMI_NCE"/>
+            <class name="test.java.payment_Hotels_Web.Hotels_Web_EMI_NCE"/>
         </classes>
     </test>
 
     <test name="EMI BFL" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_Web.IN_EMI_BFL"/>
+            <class name="test.java.payment_Hotels_Web.Hotels_Web_EMI_BFL"/>
         </classes>
     </test>
 
     <test name="GV Full" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_Web.IN_GV_SCLP_Full"/>
+            <class name="test.java.payment_Hotels_Web.Hotels_Web_GV_SCLP_Full"/>
         </classes>
     </test>
 
     <test name="GV CLP Multi WL Amex Partial" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_Web.IN_GV_CLP_Wallet_Amex"/>
+            <class name="test.java.payment_Hotels_Web.Hotels_Web_GV_CLP_Wallet_Amex"/>
         </classes>
     </test>
 
     <test name="GV SCLP NB Partial" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_Web.IN_GV_SCLP_GV_NB"/>
+            <class name="test.java.payment_Hotels_Web.Hotels_Web_GV_SCLP_GV_NB"/>
         </classes>
     </test>
 
     <test name="GV CLP SCLP WL NB" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_Web.IN_GV_SCLP_CLP_NB"/>
+            <class name="test.java.payment_Hotels_Web.Hotels_Web_GV_SCLP_CLP_NB"/>
         </classes>
     </test>
 
     <test name="GV Price Change PopUP NB" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_Web.IN_GV_SCLP_PriceChange_PopUp"/>
+            <class name="test.java.payment_Hotels_Web.Hotels_Web_GV_SCLP_PriceChange_PopUp"/>
         </classes>
     </test>
 
     <test name="NB retry" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_Web.IN_NB_Retry"/>
+            <class name="test.java.payment_Hotels_Web.Hotels_Web_NB_Retry"/>
         </classes>
     </test>
 
@@ -84,41 +84,41 @@
 
     <test name="UPI Inline Failure and Success" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_Web.IN_UPI_Failure_Success"/>
+            <class name="test.java.payment_Hotels_Web.Hotels_Web_UPI_Failure_Success"/>
         </classes>
     </test>
 
 
     <test name="UPI Saved PaymentType" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_Web.IN_SavedPay_UPI"/>
+            <class name="test.java.payment_Hotels_Web.Hotels_Web_SavedPay_UPI"/>
         </classes>
     </test>
 
 
     <test name="UPI Saved UPI" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_Web.IN_Saved_UPI"/>
+            <class name="test.java.payment_Hotels_Web.Hotels_Web_Saved_UPI"/>
         </classes>
     </test>
 
 
     <test name="UPI Scan Retry Amex" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_Web.IN_UPIScan_Validation_AMEXCC"/>
+            <class name="test.java.payment_Hotels_Web.Hotels_Web_UPIScan_AMEXCC"/>
         </classes>
     </test>
 
 
     <test name="Wallet Full" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_Web.IN_Wallet_Full"/>
+            <class name="test.java.payment_Hotels_Web.Hotels_Web_Wallet_Full"/>
         </classes>
     </test>
 
     <test name="PhonePe Validation" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Hotels_Web.IN_PhonePe_Validation"/>
+            <class name="test.java.payment_Hotels_Web.Hotels_Web_PhonePe_Validation"/>
         </classes>
     </test>
 
@@ -126,20 +126,20 @@
 
         <test name="CC PayTM" preserve-order="true">
             <classes>
-         <!--       <class name="test.java.payment_Hotels_Web.IN_DC_PayTM"/>-->
+         <!--       <class name="test.java.payment_Hotels_Web.Hotels_Web_DC_PayTM"/>-->
             </classes>
         </test>
 
 
         <test name="Tokenized Saved Card" preserve-order="true">
             <classes>
-                <!--<class name="test.java.payment_Hotels_Web.IN_SavedPay_Tokenized"/>-->
+                <!--<class name="test.java.payment_Hotels_Web.Hotels_Web_SavedPay_Tokenized"/>-->
             </classes>
         </test>
 
         <test name="CC PayTM Inline Tnx" preserve-order="true">
             <classes>
-                <!--<class name="test.java.payment_Hotels_Web.IN_CC_PayTM_Inline"/>-->
+                <!--<class name="test.java.payment_Hotels_Web.Hotels_Web_CC_PayTM_Inline"/>-->
             </classes>
         </test>
 

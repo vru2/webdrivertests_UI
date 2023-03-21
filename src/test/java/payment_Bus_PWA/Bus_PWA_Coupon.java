@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import test.java.commonUI.PaymentsUI_Common_PWA_Bus;
 
 
-public class IN_Bus_PWA_Coupon extends PaymentsUI_Common_PWA_Bus {
+public class Bus_PWA_Coupon extends PaymentsUI_Common_PWA_Bus {
 
     @BeforeClass
     public void startSelenium() throws Exception {
@@ -23,7 +23,7 @@ public class IN_Bus_PWA_Coupon extends PaymentsUI_Common_PWA_Bus {
         bus_SelectPickup(driver, "", "");
         bus_TravellerPage(driver, "", phoneNo, emailID);
         bus_ReviewPage(driver, "Coupon", "CTBUS", "");
-        bento_Paymentpage_PWA(driver,"Coupon","","","Amex","Amex", "");
+        bento_Paymentpage_PWA(driver,"UPI","","","Inline","","");
         bus_ConfirmationPage(driver, "","", "Bus COUPON AMEX");
     }
 

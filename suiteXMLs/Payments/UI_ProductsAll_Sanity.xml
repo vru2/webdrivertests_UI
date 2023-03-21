@@ -23,20 +23,20 @@
         </test>
         <test name="Bus CC" preserve-order="true">
             <classes>
-                <class name="test.java.payment_Bus_PWA.IN_Bus_PWA_CC"/>
+                <class name="test.java.payment_Bus_PWA.Bus_PWA_CC"/>
             </classes>
         </test>
 
         <test name="Hotel Desktop" preserve-order="true">
             <classes>
-                <class name="test.java.payment_Hotels_Web.IN_DC_PayTM"/>
+                <class name="test.java.payment_Hotels_Web.Hotels_Web_DC_PayTM"/>
             </classes>
         </test>
 
 
         <test name="Coupon Invalid" preserve-order="true">
             <classes>
-                <class name="test.java.payment_Hotels_PWA.IN_Hotels_PWA_Coupon_Invalid"/>
+                <class name="test.java.payment_Hotels_PWA.Hotels_PWA_Coupon_Invalid"/>
             </classes>
         </test>-->
 

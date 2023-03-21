@@ -151,20 +151,20 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
     }
 
     public void bento_paymentpage(RemoteWebDriver driver, String PaymentType, String CardNumber, String domain, String PayType, String BankName) throws Exception {
-        textPresent_Log(driver, "Pay to complete your booking", 20);
+        textPresent_Log(driver, "Pay to complete your booking", 1);
         Reporter.log(driver.getCurrentUrl());
         System.out.println(driver.getCurrentUrl());
-        if (PaymentType.equalsIgnoreCase("WALLET")) {
+        if (PaymentType.equalsIgnoreCase("WALLET")||PayType.equalsIgnoreCase("WALLET")) {
             safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
             Reporter.log("Selected wallet");
             Thread.sleep(2000);
         }
-        if (PayType.equalsIgnoreCase("WALLET")) {
+        /*if (PayType.equalsIgnoreCase("WALLET")) {
             textPresent_Log(driver, "Cleartrip wallet", 2);
             safeClick(driver, getObjectPayment("Bento_Payment_Deselect_Wallet"));
             Reporter.log("Selected wallet");
             Thread.sleep(2000);
-        }
+        }*/
       //  pay_fares(driver);
         switch (PaymentType) {
             case "storedcard":

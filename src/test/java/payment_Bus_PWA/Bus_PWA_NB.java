@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import test.java.commonUI.PaymentsUI_Common_PWA_Bus;
 
 
-public class IN_Bus_PWA_NB extends PaymentsUI_Common_PWA_Bus {
+public class Bus_PWA_NB extends PaymentsUI_Common_PWA_Bus {
 
     @BeforeClass
     public void startSelenium() throws Exception {

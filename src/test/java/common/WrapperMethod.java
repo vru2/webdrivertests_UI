@@ -72,7 +72,7 @@ public class WrapperMethod extends CommonUtil {
 
 	public void browserClose(RemoteWebDriver driver) {
 		driver.close();
-		//driver.quit();
+		driver.quit();
 	}
 
 	/*public RemoteWebDriver getMobileDriver(RemoteWebDriver driver) throws IOException {

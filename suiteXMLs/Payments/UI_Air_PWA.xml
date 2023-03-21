@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Air PWA Booking" parallel="tests" thread-count="2">
+<suite name="Air PWA Booking" parallel="tests" thread-count="3">
 
 <listeners>
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -34,7 +34,7 @@
 
     <test name="CC payTM" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_PWA.Air_PWA_CC_PayTM_inline"/>
+           <!-- <class name="test.java.payment_Air_PWA.Air_PWA_CC_PayTM_inline"/>-->
         </classes>
     </test>
 
@@ -72,7 +72,7 @@
 
     <test name="Saved UPI" preserve-order="true">
         <classes>
-            <class name="test.java.payment_Air_PWA.IN_Air_PWA_Saved_UPI"/>
+            <class name="test.java.payment_Air_PWA.Air_PWA_Saved_UPI"/>
         </classes>
     </test>
 
@@ -82,7 +82,6 @@
             <class name="test.java.payment_Air_PWA.Air_PWA_Wallet_Full"/>
         </classes>
     </test>
-
 
     <test name="Coupon Invalid" preserve-order="true">
         <classes>

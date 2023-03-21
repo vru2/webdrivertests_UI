@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import test.java.commonUI.PaymentsUI_Common_PWA_Hotels;
 
-public class IN_Hotels_PWA_Coupon_Valid extends PaymentsUI_Common_PWA_Hotels {
+public class Hotels_PWA_Coupon_Valid extends PaymentsUI_Common_PWA_Hotels {
 
     @BeforeClass
     public void startSelenium() throws Exception {

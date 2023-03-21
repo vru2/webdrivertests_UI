@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import test.java.commonUI.PaymentsUI_Common_PWA_Air;
 
-public class Air_PWA_Coupon_Invalid extends PaymentsUI_Common_PWA_Air {
+public class Air_PWA_Paylater_WL extends PaymentsUI_Common_PWA_Air {
 
     @BeforeClass
     public void startSelenium() throws Exception {
@@ -15,22 +15,22 @@ public class Air_PWA_Coupon_Invalid extends PaymentsUI_Common_PWA_Air {
     }
 
     @Test
-    public void Air_PWA_InvalidCoupon() throws Exception {
+    public void Air_PWA_Paylater() throws Exception {
         driver.manage().deleteAllCookies();
-        driver.get(air_SRPUrl("IN",origin,destination, date+2));
-        //driver.manage().addCookie(fullwallet);
+        driver.get(air_SRPUrl("IN",origin,destination, date+5));
         air_SRPPage(driver,"", "");
-        air_ItnPage(driver, "COUPON", "PAYCC","","");
+        air_ItnPage(driver, "", "","","");
         air_AddOnPage(driver, "", "");
-        air_TravellerPage(driver, "",phoneNo,emailID,"");
-        bento_Paymentpage_PWA(driver,"NB","","","Coupon","RazorpayNB", "Success");
-        bento_Air_ConfirmationPage_PWA(driver,"", "", "Invalid coupon - NB :");
+        driver.manage().addCookie(ctauth_paylatert);//65237112
+        addwalletamount_UserID(10, "65237112");
+        air_TravellerPage(driver, "","8220276214",emailID,"");
+        bento_Paymentpage_PWA(driver,"PAYLATER","","","PartialWallet","", "");
+        bento_Air_ConfirmationPage_PWA(driver,"", "", "Paylater ICICI :");
     }
     @AfterClass(alwaysRun = true)
     public void closeSelenium() throws Exception {
         browserClose(driver);
     }
-
     @AfterMethod(alwaysRun = true)
     public void afterMethod(ITestResult _result) throws Exception {
         afterMethod(driver, _result);

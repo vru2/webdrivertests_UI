@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import test.java.commonUI.PaymentsUI_Common_Desktop_Air;
 
-public class Air_Web_GV_SCLP_WL_CC_Amex extends PaymentsUI_Common_Desktop_Air {
+public class Air_Web_PhonePe_WT extends PaymentsUI_Common_Desktop_Air {
 
     @BeforeClass
     public void startSelenium() throws Exception {
@@ -15,17 +15,17 @@ public class Air_Web_GV_SCLP_WL_CC_Amex extends PaymentsUI_Common_Desktop_Air {
     }
 
     @Test
-    public void Air_Desktop_GVPartial_WL_CC() throws Exception {
+    public void Air_Desktop_PhonePe_WT() throws Exception {
         driver.manage().deleteAllCookies();
         driver.get(air_SRPUrl("IN",origin,destination, date));
         air_SRPPage_Desktop(driver,"","");
-        air_ItnPage_Desktop(driver, "", "","GVPartial","");
+        air_ItnPage_Desktop(driver, "", "","","");
         air_AddOnPage_Desktop(driver,"","","","");
         air_LoginPage_Desktop(driver, "", emailID, phoneNo);
         air_TravellerPage_Desktop(driver,"");
         driver.manage().addCookie(ctauth_partial_wallet);//65243938
         addwalletamount_UserID(10, "65243938");
-        air_PaymentPage_Desktop(driver,"GV_Partial","3456","","WALLET","", "SCLP GV + WL + AMEX : ");
+        air_PaymentPage_Desktop(driver,"Phonepe","","","WALLET","", "Phonepe validatipn only : ");
     }
 
     @AfterClass(alwaysRun = true)

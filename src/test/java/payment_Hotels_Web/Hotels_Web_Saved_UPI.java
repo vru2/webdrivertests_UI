@@ -19,8 +19,8 @@ public class Hotels_Web_Saved_UPI extends PaymentsUI_Common_Desktop_Hotels {
 		driver.manage().deleteAllCookies();
 		driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
 		hotelsDetailsPage(driver, "", "");
-		driver.manage().addCookie(fullwallet);
 		hotelsItnPage(driver, "", "", "", "");
+		driver.manage().addCookie(fullwallet);
 		hotelsPaymentPage(driver, "UPI", "", "", "SavedUPI", "", "Saved UPI : ");
 	}
 

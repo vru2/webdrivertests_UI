@@ -19,9 +19,9 @@ public class Hotels_Web_GV_SCLP_PriceChange_PopUp extends PaymentsUI_Common_Desk
 		driver.manage().deleteAllCookies();
 		driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
 		String[] GV = getGVSCLP(10);
-		driver.manage().addCookie(hotelLogin);
 		hotelsDetailsPage(driver, "", "");
 		hotelsItnPage(driver, "PartialGV_SCLP_PopUp", GV[0], GV[1], "");
+		driver.manage().addCookie(hotelLogin);
 		hotelsPaymentPage(driver,"GVPriceChange","","Hotels",GV[0], GV[1], "GV SCLP Price Change Validation + NB : ");
 	}
 

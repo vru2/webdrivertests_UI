@@ -1,6 +1,7 @@
 package test.java.commonUI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -472,9 +473,9 @@ public class PaymentsUI_Common_Desktop_Hotels extends PaymentsUI_Common_Desktop 
     }
 
     public void paymentPageHotels(RemoteWebDriver driver, String PaymentType, String CardNumber, String domain, String PayType, String BankName, String TestDetails) throws Exception {
-        //elementVisible(driver, getObjectPayment("Bento_Pay_PayToCompleteBooking_Txt"), 30);
-        //refreshPage(driver);
-        if (elementVisible(driver, getObjectPayment("Bento_Pay_PayToCompleteBooking_Txt"), 30)) {
+        elementVisible(driver, getObjectPayment("Bento_Pay_PayToCompleteBooking_Txt"), 30);
+        refreshPage(driver);
+        if (elementVisible(driver, getObjectPayment("Bento_Pay_PayToCompleteBooking_Txt"), 20)) {
             bento_paymentpage(driver, PaymentType, CardNumber, domain, PayType, BankName);
             if (!(CardNumber == "ADCB" || PaymentType == "Phonepe" || PaymentType == "UPIScan" || PayType == "Googlecaptcha"|| PayType == "Failure")) {
                 confirmation_page_hotel(driver, PaymentType, CardNumber, TestDetails);

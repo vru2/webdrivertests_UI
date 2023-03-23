@@ -288,6 +288,15 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
 
     public void bento_pay_TW_PWA(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
         payUI_Select_PaymentType_PWA(driver, PaymentType);
+        if(PayType.equalsIgnoreCase("PhonePE")){
+            safeClick(driver, By.xpath("//div[2]/ul/li[7]"));
+            safeClick(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"));
+            Reporter.log("Clicked on paynow");
+            textPresent(driver, "Please wait...", 5);
+            textPresent_Log(driver, "PhonePe", 5);
+            textPresent(driver, "SHOW QR CODE", 2);
+            Reporter.log("PhonePe Page Validated");
+        }
     }
 
     public void bento_pay_PAYLATER_PWA(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {

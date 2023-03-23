@@ -108,17 +108,6 @@ public class PaymentsUI_Common extends API_PaymentCommon {
         return SearchUrl;
     }
 
-    public String Bus_SRPUrl(String Domain, String origin, String destination, int date) throws Exception {
-        String Air_URL = "/bus/results?fromCity=4292&toCity=4562&journeyDate=" + getDateTime(date, "yyyy/mm/dd") + "&fromCityName=Bengaluru&toCityName=Chennai";
-        String SearchUrl = "";
-        if (Domain == "IN") {
-            SearchUrl = inurl + Air_URL;
-        }
-        Reporter.log(SearchUrl);
-        System.out.println(SearchUrl);
-        return SearchUrl;
-    }
-
     public String air_SRPUrl1(String Domain, String origin, String destination, int date) throws Exception {
         String Air_URL = "/flights/results?adults=1&childs=0&infants=0&class=Economy&depart_date=" + getDateTime(date, "dd/MM/yyyy") + "&from=BLR&to=CCU&intl=n";
         String SearchUrl = "";

@@ -19,8 +19,8 @@ public class Hotels_Web_SavedPay_Tokenized extends PaymentsUI_Common_Desktop_Hot
 		driver.manage().deleteAllCookies();
 		driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
 		hotelsDetailsPage(driver, "", "");
-		driver.manage().addCookie(fullwallet);
 		hotelsItnPage(driver, "", "", "", "");
+		driver.manage().addCookie(fullwallet);
 		hotelsPaymentPage(driver,"storedcard","7777","HOTELS","","", "Saved Card Razorpay : ");
 	} 
 

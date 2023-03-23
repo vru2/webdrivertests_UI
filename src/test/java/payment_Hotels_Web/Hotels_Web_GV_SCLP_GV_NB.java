@@ -20,9 +20,9 @@ public class Hotels_Web_GV_SCLP_GV_NB extends PaymentsUI_Common_Desktop_Hotels {
 		driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
 		addwalletamount(10, "ct_wallet_partial@cleartrip.com");
 		hotelsDetailsPage(driver, "", "");
+		hotelsItnPage(driver, "PartialGV_SCLP", "", "", "");
 		driver.manage().addCookie(ctauth_partial_wallet);//65243938
 		addwalletamount_UserID(10, "65243938");
-		hotelsItnPage(driver, "PartialGV_SCLP", "", "", "");
 		hotelsPaymentPage(driver,"NB","","Hotels","WALLET","", "SCLP WL + NB : ");// Invalid Coupon Validation
 	}
 

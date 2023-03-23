@@ -18,7 +18,6 @@ public class Hotels_Web_Wallet_Full extends PaymentsUI_Common_Desktop_Hotels {
 	public void Hotel_IN_Wallet_Full() throws Exception {
 		driver.manage().deleteAllCookies();
 		driver.get(hotelDetailsUrl("IN", hotelName_DetailsPage));
-		//addwalletamount(5000, "testcltp29@gmail.com");
 		hotelsDetailsPage(driver, "", "");
 		hotelsItnPage(driver, "", "", "", "");
 		driver.manage().addCookie(fullwallet);
@@ -26,8 +25,8 @@ public class Hotels_Web_Wallet_Full extends PaymentsUI_Common_Desktop_Hotels {
 	} 
 
  		@AfterClass
-		public void closeSelenium() throws Exception { 
-		 	browserClose(driver); 
+		public void closeSelenium() throws Exception {
+		 	browserClose(driver);
 		}
 
 		@AfterMethod(alwaysRun = true)

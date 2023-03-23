@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import test.java.commonUI.PaymentsUI_Common_PWA_Air;
 
-public class Air_PWA_Paylater_WL extends PaymentsUI_Common_PWA_Air {
+public class Air_PWA_PhonePe extends PaymentsUI_Common_PWA_Air {
 
     @BeforeClass
     public void startSelenium() throws Exception {
@@ -15,22 +15,23 @@ public class Air_PWA_Paylater_WL extends PaymentsUI_Common_PWA_Air {
     }
 
     @Test
-    public void Air_PWA_Paylater() throws Exception {
+    public void Air_PWA_PhonePe() throws Exception {
         driver.manage().deleteAllCookies();
-        driver.get(air_SRPUrl("IN",origin,destination, date+5));
+        /*driver.get(air_SRPUrl("IN",origin,destination, date));
         air_SRPPage(driver,"", "");
         air_ItnPage(driver, "", "","","");
         air_AddOnPage(driver, "", "");
-        driver.manage().addCookie(ctauth_paylatert);//65237112
-        addwalletamount_UserID(10, "65237112");
-        air_TravellerPage(driver, "","8220276214",emailID,"");
-        bento_Paymentpage_PWA(driver,"PAYLATER","","","PartialWallet","", "");
-        bento_Air_ConfirmationPage_PWA(driver,"", "", "Paylater ICICI :");
+        air_TravellerPage(driver, "",phoneNo, emailID,"");
+        */
+        driver.get("https://qa2new.cleartrip.com/pay/air/1f87d70c138a1872b519a41ed3393e06?lang=en");
+        bento_Paymentpage_PWA(driver,"TW","","","PhonePE","", "");
+       // bento_Air_ConfirmationPage_PWA(driver,"", "", "PhonePe");
     }
     @AfterClass(alwaysRun = true)
     public void closeSelenium() throws Exception {
         browserClose(driver);
     }
+
     @AfterMethod(alwaysRun = true)
     public void afterMethod(ITestResult _result) throws Exception {
         afterMethod(driver, _result);

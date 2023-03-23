@@ -27,6 +27,8 @@ public class PaymentsUI_Common_PWA_Air extends PaymentsUI_Common_PWA{
             Reporter.log("Itn page not loaded");
             Assert.assertTrue(false);
         }
+        smartClick(driver, By.xpath("//div[3]/div/div/div"));
+
         if(elementVisible(driver, By.xpath("//div[@id='onetrust-close-btn-container']/button"),1)) {
             mouseHover(driver, By.xpath("//div[@id='onetrust-close-btn-container']/button"));
             safeClick(driver, By.xpath("//div[@id='onetrust-close-btn-container']/button"));
@@ -75,9 +77,15 @@ public class PaymentsUI_Common_PWA_Air extends PaymentsUI_Common_PWA{
     }
 
     public void air_AddOnPage(RemoteWebDriver driver, String param1, String param2) throws Exception {
-        if( !elementVisible(driver, getObjectPayment("PWA_Air_TravellerPage_Title"), 2)){
+        if (textPresent(driver, "Skip", 1)) {
+            mouseHover(driver, getObjectPayment("PWA_Air_Addons_SkipPage_Skip_Txt"));
+            safeClick(driver, getObjectPayment("PWA_Air_Addons_SkipPage_Skip_Txt"));
+            elementVisible(driver, getObjectPayment("PWA_Air_Addons_SkipPage_Popup_Txt"), 5);
+            safeClick(driver, getObjectPayment("PWA_Air_Addons_SkipPage_Popup_Txt"));
+        }
+        if( !elementVisible(driver, getObjectPayment("PWA_Air_TravellerPage_Title"), 1)){
         elementVisible(driver, getObjectPayment("PWA_Air_Addons_Txt"), 1);
-        if(!textPresent(driver, "Add ons", 5)) {
+        if(!textPresent(driver, "Add ons", 1)) {
             if (textPresent(driver, "Review Itinerary", 2)) {
                 mouseHover(driver, getObjectPayment("PWA_Air_Itn_Button2"));
                 safeClick(driver, getObjectPayment("PWA_Air_Itn_Button2"));

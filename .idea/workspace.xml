@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="398be537-263a-46ea-8d2f-e66bf2ffc10f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_Desktop_Hotels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_Desktop_Hotels.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_PWA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_PWA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_PWA_Air.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_PWA_Air.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_Paylater_WL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_Paylater_WT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_Web/Air_Web_GV_SCLP_WL_CC_Amex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_Web/Air_Web_GV_SCLP_CLP_WL_CC_Amex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Bus_PWA/Bus_PWA_SavedPay_UPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Bus_PWA/Bus_PWA_SavedPay_UPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_Web/Hotels_Web_GV_SCLP_GV_NB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_Web/Hotels_Web_GV_SCLP_GV_NB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_Web/Hotels_Web_GV_SCLP_PriceChange_PopUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_Web/Hotels_Web_GV_SCLP_PriceChange_PopUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_Web/Hotels_Web_SavedPay_Tokenized.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_Web/Hotels_Web_SavedPay_Tokenized.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_Web/Hotels_Web_Saved_UPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_Web/Hotels_Web_Saved_UPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_Web/Hotels_Web_Wallet_Full.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_Web/Hotels_Web_Wallet_Full.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/suiteXMLs/Payments/UI_Air_Web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/suiteXMLs/Payments/UI_Air_Web.xml" afterDir="false" />
-    </list>
+    <list default="true" id="398be537-263a-46ea-8d2f-e66bf2ffc10f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

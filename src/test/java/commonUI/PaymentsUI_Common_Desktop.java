@@ -63,6 +63,12 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
             case "EMI":
                 PayType = "EMI";
                 break;
+            case "CARDLESSEMI":
+                PayType = "Cardless EMI";
+                break;
+            case "PAYLATER":
+                PayType = "Pay Later";
+                break;
             default:
                 PayType = "Credit Card";
                 break;
@@ -214,6 +220,12 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
                 break;
             case "Coupon":
                 bento_pay_Coupon(driver, PaymentType, CardNumber, domain, PayType, BankName);
+                break;
+            case "CARDLESSEMI":
+                bento_pay_Cardless_EMI(driver, PaymentType, CardNumber, domain, PayType, BankName);
+                break;
+            case "PAYLATER":
+                bento_pay_PayLater(driver, PaymentType, CardNumber, domain, PayType, BankName);
                 break;
             case "sc":
                 bento_pay_SC(driver, PaymentType, CardNumber, domain, PayType, BankName);
@@ -489,7 +501,17 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
 
     }
 
-    public void bento_pay_Coupon(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
+    public void bento_pay_Cardless_EMI(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
+        payUI_Select_PaymentType(driver, PaymentType);
+
+    }
+
+    public void bento_pay_PayLater(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
+        payUI_Select_PaymentType(driver, PaymentType);
+
+    }
+
+        public void bento_pay_Coupon(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
         if(CardNumber.equalsIgnoreCase("Air")) {
             textPresent_Log(driver, "Coupon code (PAYCC)", 2);
         }

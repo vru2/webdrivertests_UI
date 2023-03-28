@@ -52,7 +52,7 @@
 
     <test name="EMI NoCost" preserve-order="true">
         <classes><!--
-            <class name="test.java.payment_Air_Web.Air_Web_EMI_NoCostEMI"/>-->
+            <class name="test.java.payment_Air_Web.Air_Web_EMI_NCE"/>-->
         </classes>
     </test>
 

@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import test.java.commonUI.PaymentsUI_Common_Desktop_Air;
 
-public class Air_Web_EMI_NoCostEMI extends PaymentsUI_Common_Desktop_Air {
+public class Air_Web_EMI_Cardless extends PaymentsUI_Common_Desktop_Air {
 
     @BeforeClass
     public void startSelenium() throws Exception {
@@ -15,15 +15,15 @@ public class Air_Web_EMI_NoCostEMI extends PaymentsUI_Common_Desktop_Air {
     }
 
     @Test
-    public void Air_Desktop_EMI_NoCostEMI() throws Exception {
+    public void Air_Desktop_EMI_Cardless() throws Exception {
         driver.manage().deleteAllCookies();
        driver.get(air_SRPUrl1("IN",origin,destination, date));
         air_SRPPage_Desktop(driver,"","");
         air_ItnPage_Desktop(driver, "", "","","");
         air_AddOnPage_Desktop(driver,"","","","");
-        air_LoginPage_Desktop(driver, "", emailID, phoneNo);
+        air_LoginPage_Desktop(driver, "", emailID, "8220276214");
         air_TravellerPage_Desktop(driver,"");
-        air_PaymentPage_Desktop(driver,"EMI","RAZORPAY","","NoCostEMI","", "NoCost ENI Razorpay : ");
+        air_PaymentPage_Desktop(driver,"CARDLESSEMI","","","","", "Cardless EMI Razorpay : ");
     }
 
     @AfterClass(alwaysRun = true)

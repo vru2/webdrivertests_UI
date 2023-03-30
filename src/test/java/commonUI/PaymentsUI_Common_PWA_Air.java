@@ -6,6 +6,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
+import redis.clients.jedis.Jedis;
 
 public class PaymentsUI_Common_PWA_Air extends PaymentsUI_Common_PWA{
 
@@ -142,12 +143,24 @@ public class PaymentsUI_Common_PWA_Air extends PaymentsUI_Common_PWA{
             }
         }
         safeType(driver, getObjectPayment("PWA_Air_TravellerPage_Phone"),phoneNo);
+
+        if(Login.equalsIgnoreCase("true")){
+            safeClick(driver, By.xpath("//a/div"));
+            Thread.sleep(2000);
+            Jedis jedis = new Jedis("http://172.29.23.218:6379");
+            String otp = jedis.get("ACCOUNTS_SERVICE_MOBILE_LOGIN_KEY_+91"+phoneNo+"SIGNIN");
+            Thread.sleep(2000);
+            System.out.println("Otp : "+otp);
+            safeClick(driver, By.name("OTP"));
+            safeType(driver, By.name("OTP"), otp );
+            Thread.sleep(5000);
+        }
         safeType(driver, getObjectPayment("PWA_Air_TravellerPage_Email"),emailID);
         scrollSmooth(driver, 200);
         elementVisible(driver,getObjectPayment("PWA_Air_Itn_Button2"),2);
         mouseHover(driver, getObjectPayment("PWA_Air_Itn_Button2"));
         safeClick(driver, getObjectPayment("PWA_Air_Itn_Button2"));
-        if(elementVisible(driver, By.xpath("//div[3]/a"), 5)){
+        if(elementVisible(driver, By.xpath("//div[3]/a"), 1)){
             smartClick(driver, By.xpath("//div[3]/a"));
         }
         if(elementVisible(driver, getObjectPayment("PWA_Air_TravellerPage_PricePopUP"), 1)){

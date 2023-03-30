@@ -122,7 +122,7 @@
     <orderEntry type="library" name="Maven: org.webjars.npm:brace-expansion:1.1.11" level="project" />
     <orderEntry type="library" name="Maven: org.webjars.npm:balanced-match:1.0.2" level="project" />
     <orderEntry type="library" name="Maven: org.webjars.npm:concat-map:0.0.1" level="project" />
-    <orderEntry type="library" name="Maven: org.webjars.npm:ws:8.12.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.npm:ws:8.13.0" level="project" />
     <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-java:4.8.0" level="project" />
     <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-chrome-driver:4.8.0" level="project" />
     <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-chromium-driver:4.8.0" level="project" />

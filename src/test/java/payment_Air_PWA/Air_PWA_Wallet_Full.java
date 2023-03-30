@@ -25,7 +25,7 @@ public class Air_PWA_Wallet_Full extends PaymentsUI_Common_PWA_Air {
         air_ItnPage(driver, "", "","","");
         air_AddOnPage(driver, "", "");
         driver.manage().addCookie(fullwallet);
-        air_TravellerPage(driver, "",phoneNo,emailID,"");
+        air_TravellerPage(driver, "true","1234123456",emailID,"");
         bento_Paymentpage_PWA(driver,"WALLET","","","","", "");
         bento_Air_ConfirmationPage_PWA(driver,"", "", "Wallet Full :");
     }

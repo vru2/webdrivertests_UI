@@ -1,5 +1,6 @@
 package test.java.commonUI;
 
+import org.apache.commons.collections.bag.SynchronizedSortedBag;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -11,6 +12,81 @@ import org.testng.Reporter;
 public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
 
     public void bento_Paymentpage_PWA(RemoteWebDriver driver, String paymentType, String cardNumber, String domain, String payType, String bankName, String successFail) throws Exception {
+       if(common.value("PWAUINEW").equalsIgnoreCase("false")){
+           bento_Paymentpage_PWA_OLD(driver, paymentType, cardNumber, domain, payType, bankName, successFail);
+        }
+        else {
+            bento_Paymentpage_PWA_New(driver, paymentType, cardNumber, domain, payType, bankName, successFail);
+       }
+    }
+
+    public void bento_Paymentpage_PWA_New(RemoteWebDriver driver, String paymentType, String cardNumber, String domain, String payType, String bankName, String successFail) throws Exception {
+        //elementVisible(driver, By.xpath("//div[2]/div/img"), 10);
+        textPresent(driver, "convenience fee added", 1);
+        System.out.println(driver.getCurrentUrl());
+        Reporter.log(driver.getCurrentUrl());
+        if (paymentType.equalsIgnoreCase("WALLET") || payType.equalsIgnoreCase("PartialWallet")) {
+            safeClick(driver, By.xpath("//section/div/div[3]/div"));
+            Reporter.log("Selected wallet");
+            Thread.sleep(2000);
+        }
+        switch (paymentType) {
+            case "CC":
+                bento_pay_CC_PWA_New(driver, paymentType, cardNumber, domain, payType, bankName, successFail);
+                break;
+            case "DC":
+                bento_pay_CC_PWA_New(driver, paymentType, cardNumber, domain, payType, bankName, successFail);
+                break;
+            case "NB":
+                bento_pay_NB_PWA_New(driver, paymentType, cardNumber, domain, payType, bankName, successFail);
+                break;
+            case "SAVEDPAYMENT":
+                bento_pay_SavedPayment_PWA_New(driver, paymentType, cardNumber, domain, payType, bankName);
+                break;
+            case "EMI":
+                bento_pay_EMI_PWA_New(driver, paymentType, cardNumber, domain, payType, bankName);
+                break;
+            case "BFL":
+                bento_pay_BFL_PWA_New(driver, paymentType, cardNumber, domain, payType, bankName);
+                break;
+            case "TW":
+                bento_pay_TW_PWA_New(driver, paymentType, cardNumber, domain, payType, bankName);
+                break;
+            case "PAYLATER":
+                bento_pay_PAYLATER_PWA_New(driver, paymentType, cardNumber, domain, payType, bankName);
+                break;
+            case "CARDLESSEMI":
+                bento_pay_CARDLESSEMI_PWA_New(driver, paymentType, cardNumber, domain, payType, bankName);
+                break;
+            case "WALLET":
+                bento_pay_Wallet_PWA_New(driver, paymentType, cardNumber, domain, payType, bankName);
+                break;
+            case "Phonepe":
+                bento_pay_PhonePe_PWA_New(driver, paymentType, cardNumber, domain, payType, bankName);
+                break;
+            case "UPI":
+                bento_pay_UPI_PWA_New(driver, paymentType, cardNumber, domain, payType, bankName);
+                break;
+            case "GV":
+                bento_pay_GV_PWA_New(driver, paymentType, cardNumber, domain, payType, bankName);
+                break;
+            case "GV_Partial":
+                bento_pay_GV_Partial_PWA_New(driver, paymentType, cardNumber, domain, payType, bankName);
+                break;
+            case "partial_wallet":
+                bento_pay_PartialWallet_PWA_New(driver, paymentType, cardNumber, domain, payType, bankName);
+                break;
+            case "Coupon":
+                bento_pay_Coupon_PWA_New(driver, paymentType, cardNumber, domain, payType, bankName, successFail);
+                break;
+            case "INVALIDCOUPON":
+                bento_pay_Coupon_PWA_New(driver, paymentType, cardNumber, domain, payType, bankName, successFail);
+                break;
+        }
+        bento_pay_GW_Page_PWA(driver, paymentType, cardNumber, domain, payType, bankName, successFail);
+    }
+
+    public void bento_Paymentpage_PWA_OLD(RemoteWebDriver driver, String paymentType, String cardNumber, String domain, String payType, String bankName, String successFail) throws Exception {
         elementVisible(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"), 20);
         textPresent(driver, "Per traveller convenience fee of", 1);
         System.out.println(driver.getCurrentUrl());
@@ -123,7 +199,6 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
 
     public void bento_pay_StoredCard_UPI_PWA(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
         payUI_Select_PaymentType_PWA( driver, PaymentType);
-
     }
 
     public void bento_pay_EMI_PWA(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
@@ -170,8 +245,6 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
         }
     }
 
-
-
     public void bento_pay_BFL_PWA(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
         payUI_Select_PaymentType_PWA( driver, "EMI");
         elementVisible(driver, getObjectPayment("PWA_EMI_SelectAllBanks_Link"), 5);
@@ -200,7 +273,45 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
     }
 
 
-        public void bento_pay_NB_PWA(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName, String SuccessFail) throws Exception {
+    public void bento_pay_NB_PWA_New(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName, String SuccessFail) throws Exception{
+        payUI_Select_PaymentType_PWA_New( driver, PaymentType);
+     //  safeClick(driver, getObjectPayment("PWA_Payment_New_NB_Tab_Icon"));
+        textPresent_Log(driver, "Select a bank", 5);
+        safeType(driver, getObjectPayment("PWA_Payment_New_NB_Bank_Search"), "ICICI");
+        elementVisible(driver, getObjectPayment("PWA_Payment_New_NB_Bank_Select"), 2);
+        Thread.sleep(1000);
+        safeClick(driver, getObjectPayment("PWA_Payment_New_NB_Bank_Select"));
+        safeClick(driver, getObjectPayment("PWA_Payment_New_Pay_Btn"));
+        if(PayType.equalsIgnoreCase("Retry")){
+            bento_pay_GW_Page_PWA(driver, "","","","",BankName,"Failure");
+            elementVisible(driver, By.xpath("//div[2]/div/img"), 10);
+            textPresent(driver, "convenience fee added", 1);
+        }
+        if(!PayType.equalsIgnoreCase("Coupon")&&PayType.equalsIgnoreCase("Retry")) {
+            payUI_Select_PaymentType_PWA_New( driver, PaymentType);
+            // safeClick(driver, getObjectPayment("PWA_Payment_New_NB_Tab_Icon"));
+            textPresent_Log(driver, "Select a bank", 5);
+            safeType(driver, getObjectPayment("PWA_Payment_New_NB_Bank_Search"), "ICICI");
+            elementVisible(driver, getObjectPayment("PWA_Payment_New_NB_Bank_Select"), 2);
+            Thread.sleep(1000);
+            safeClick(driver, getObjectPayment("PWA_Payment_New_NB_Bank_Select"));
+            safeClick(driver, getObjectPayment("PWA_Payment_New_Pay_Btn"));
+        }
+        if(PayType.equalsIgnoreCase("Coupon")){
+            textPresent_Log(driver, "Coupon not applicable", 5);
+            if(domain.equalsIgnoreCase("Hotel")){
+                textPresent_Log(driver, "Coupon code CCHOTEL is not applicable on the selected payment mode. Please select another payment mode to get an instant discount of", 5);
+            }
+            else {
+                textPresent_Log(driver, "you wish to continue with the current payment method, effective price will change from", 5);
+            }
+            safeClick(driver, getObjectPayment("PWA_Payment_New_Continue_WithOutCoupon_Btn")); // Continue without coupon mode
+        }
+        bento_pay_GW_Page_PWA(driver, "","","","","",SuccessFail);
+    }
+
+
+    public void bento_pay_NB_PWA(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName, String SuccessFail) throws Exception {
         payUI_Select_PaymentType_PWA( driver, PaymentType);
         Reporter.log("Clicked on NB");
         Thread.sleep(1000);
@@ -234,6 +345,14 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
             Thread.sleep(1000);
         }
         bento_pay_GW_Page_PWA(driver, "","","","","",SuccessFail);
+    }
+
+    public void bento_pay_Coupon_PWA_New(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName, String SuccessFail) throws Exception {
+       // payUI_Select_PaymentType_PWA_New( driver, "CC");
+        //elementPresent_log(driver, getObjectPayment("PayUI_Pay_Coupon_Callout"), "Coupon Call out", 5);
+        //textPresent_Log(driver, "You're saving", 1);
+        bento_pay_validate_Price_Popup_New(driver, "Coupon code", "");
+        bento_pay_CC_PWA_New(driver, "CC", "", domain, "",BankName, SuccessFail);
     }
 
     public void bento_pay_Coupon_PWA(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName, String SuccessFail) throws Exception {
@@ -284,6 +403,142 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
         Thread.sleep(1000);
         mouseHover(driver, By.cssSelector("svg.c-pointer"));
         safeClick(driver, By.cssSelector("svg.c-pointer"));
+    }
+
+
+    public void bento_pay_TW_PWA_New(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
+    }
+
+    public void bento_pay_validate_Price_Popup_New(RemoteWebDriver driver, String PriceType, String PriceType2) throws Exception {
+        Thread.sleep(1000);
+        safeClick(driver, By.xpath("//button[2]/div"));
+        Thread.sleep(1000);
+        textPresent_Log(driver, PriceType, 5);
+        textPresent_Log(driver, PriceType2, 1);
+        Thread.sleep(1000);
+        safeClick(driver, By.cssSelector("div.py-20px.px-20px > svg"));
+    }
+
+    public void bento_pay_GV_PWA_New(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
+        String GV_Full_Txt= getText(driver, getObjectPayment("PWA_Payment_New_Full_GV_Txt"));
+        if(!GV_Full_Txt.equalsIgnoreCase("No extra payment needed!")){
+            Reporter.log("No extra payment needed price not displayed "+GV_Full_Txt);
+            Assert.assertTrue(false);
+        }
+
+        String Total_Price = getText(driver, getObjectPayment("PWA_Payment_New_Full_GV_Price"));
+        if(!Total_Price.equalsIgnoreCase("₹0")){
+            Reporter.log("Total Price :"+Total_Price);
+            Assert.assertTrue(false);
+        }
+
+        elementPresent_log(driver, getObjectPayment("PWA_Payment_New_Full_GV_GoBack_Btn"), "Go back", 1);
+        safeClick(driver, getObjectPayment("PWA_Payment_New_Full_GV_Book"));
+
+
+    }
+
+    public void bento_pay_GV_Partial_PWA_New(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
+    }
+
+    public void bento_pay_CC_PWA_New(RemoteWebDriver driver, String paymentType,String cardNumber,String domain,String payType, String bankName, String successFail) throws Exception {
+        payUI_Select_PaymentType_PWA_New( driver, paymentType);
+        if(bankName=="Paytm") {
+            Enter_CC_Details_PWA_New(driver, "6080322940807777", "1224", "123");
+        }
+        if(bankName=="RazorpayCC") {
+            Enter_CC_Details_PWA_New(driver, "5241810000000000", "1224", "123");
+        }
+        if(bankName=="Amex") {
+            Enter_CC_Details_PWA_New(driver, platform.value("AmexCard_Number"), "0139", platform.value("AmexCard_CVV"));
+        }
+        if(bankName=="MASTER") {
+            Enter_CC_Details_PWA_New(driver, platform.value("MasterCard_Number"), platform.value("MasterCard_EXP_PWA"), platform.value("MasterCard_CVV"));
+        }
+        if(payType=="GV") {
+            bento_pay_validate_Price_Popup_New(driver, "Gift card", "");
+        }
+        safeClick(driver, getObjectPayment("PWA_Payment_New_Pay_Btn"));
+        smartClick(driver, getObjectPayment("PWA_Payment_New_Skip_RBI"));
+    }
+
+    public void bento_pay_PartialWallet_PWA_New(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
+    }
+
+    public void bento_pay_SavedPayment_PWA_New(RemoteWebDriver driver, String PaymentType, String CardNumber, String domain, String PayType, String BankName) throws Exception {
+
+        if (PayType.equalsIgnoreCase("SavedCard")) {
+            safeClick(driver, getObjectPayment("PWA_PaymentPage_PrefferedMode_CC"));
+            safeClick(driver, getObjectPayment("PWA_PaymentPage_PrefferedMode_CVV"));
+            safeType(driver, getObjectPayment("PWA_PaymentPage_PrefferedMode_CVV"), "123");
+
+        }
+        else if(PayType.equalsIgnoreCase("SavedUPI")) {
+            String UPI_Text = getText(driver, By.xpath("//label"));
+            if(!UPI_Text.equalsIgnoreCase("3212467@okhdfcbank")){
+                Assert.assertTrue(false);
+            }
+            safeClick(driver,By.xpath("//label") );
+        }
+        safeClick(driver, getObjectPayment("PWA_Payment_New_Pay_Btn"));
+    }
+
+    public void bento_pay_EMI_PWA_New(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
+    }
+
+
+    public void bento_pay_BFL_PWA_New(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
+
+    }
+
+    public void bento_pay_Wallet_PWA_New(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
+        textPresent_Log(driver, "Cleartrip wallet", 5);
+       // textPresent_Log(driver, "Cleartrip wallet", 1);
+        Thread.sleep(2000);
+        bento_pay_validate_Price_Popup_New(driver, "Cleartrip wallet", "");
+        safeClick(driver, By.xpath("//div[2]/button"));
+    }
+
+    public void bento_pay_PhonePe_PWA_New(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
+
+    }
+
+
+    public void bento_pay_UPI_PWA_New(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
+        payUI_Select_PaymentType_PWA_New(driver, PaymentType);
+        if (PayType.equalsIgnoreCase("Inline")) {
+            textPresent_Log(driver, "Add new UPI ID", 2);
+            textPresent_Log(driver, "Payment request will be sent to the phone no. linked to your UPI ID", 1);
+            safeType(driver, getObjectPayment("PWA_Payment_New_VPA_Txt"), "kiran@ybl");
+        } else if (PayType.equalsIgnoreCase("SavedUPI")) {
+            textPresent_Log(driver, "Add new UPI ID", 2);
+            String savedUPI_Txt = getText(driver, By.xpath("//label"));
+            safeClick(driver, By.xpath("//label"));
+            if (!savedUPI_Txt.equalsIgnoreCase("3212467@okhdfcbank")) {
+                Reporter.log("Saved UPI 3212467@okhdfcbank: " + savedUPI_Txt);
+                System.out.println("Saved UPI 3212467@okhdfcbank: " + savedUPI_Txt);
+                Assert.assertTrue(false);
+            }
+        } else if (!PaymentType.equalsIgnoreCase("SavedUPI") && !BankName.equalsIgnoreCase("Failure")) {
+            smartType(driver, getObjectPayment("PWA_Payment_New_VPA_Txt"), "kiran@ybl");
+        }
+        if (!PaymentType.equalsIgnoreCase("SavedUPI") && BankName.equalsIgnoreCase("Failure")) {
+            driver.findElement(getObjectPayment("PWA_Payment_New_VPA_Txt")).clear();
+            smartType(driver, getObjectPayment("PWA_Payment_New_VPA_Txt"), "failure@razorpay");
+        }
+        Thread.sleep(2000);
+        safeClick(driver, getObjectPayment("PWA_Payment_New_Pay_Btn"));
+        if (!PaymentType.equalsIgnoreCase("SavedUPI") && BankName.equalsIgnoreCase("Failure")) {
+            //textPresent_Log(driver, "Failure", 20);
+        }
+    }
+
+
+    public void bento_pay_CARDLESSEMI_PWA_New(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
+    }
+
+    public void bento_pay_PAYLATER_PWA_New(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
+
     }
 
     public void bento_pay_TW_PWA(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
@@ -383,6 +638,7 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
         safeClick(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"));
     }
 
+
     public void bento_pay_GV_Partial_PWA(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
         payUI_Select_PaymentType_PWA( driver, PaymentType);
         String WalletOn = driver.findElement(By.id("radio-toggle-wallet")).getAttribute("Value");
@@ -402,11 +658,20 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
         bento_pay_CC_PWA(driver, "CC", CardNumber, domain, PayType, BankName,"");
     }
 
-
     public void bento_pay_PartialWallet_PWA(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
         payUI_Select_PaymentType_PWA( driver, PaymentType);
 
     }
+
+
+
+
+    public void bento_pay_Others_PWA(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
+
+    }
+
+
+
 
     public void bento_pay_CC_PWA(RemoteWebDriver driver, String paymentType,String cardNumber,String domain,String payType, String bankName, String successFail) throws Exception {
         payUI_Select_PaymentType_PWA( driver, paymentType);
@@ -471,9 +736,7 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
 
     }
 
-    public void bento_pay_Others_PWA(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
 
-    }
 
     public void payUI_Enter_PaymentDetails_PWA(RemoteWebDriver driver, String PayType, String BookingType, String BankName) throws Exception {
         switch (PayType) {
@@ -515,6 +778,16 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
         safeClick(driver, getObjectPayment("PWA_Payments_CC_Exp"));
         safeType(driver, getObjectPayment("PWA_Payments_CC_Exp"), CCExp);
         safeType(driver, getObjectPayment("PWA_Payments_CC_CVV"), CVV);
+    }
+
+    public void Enter_CC_Details_PWA_New(RemoteWebDriver driver, String CCNumber, String CCExp, String CVV) throws Exception {
+        Reporter.log("Card Details +\n"+ CCNumber +"\n " + CCExp +" " + CVV);
+        elementVisible(driver, By.name("cardnumber"), 5);
+        safeType(driver, By.name("cardnumber"), CCNumber);
+        safeType(driver, By.name("userName"), "test");
+       // safeClick(driver, By.xpath(""));
+        safeType(driver, By.name("expiryDate"), CCExp);
+        safeType(driver, By.name("cvv"), CVV);
     }
 
     public void payUI_Select_PaymentType_PWA(RemoteWebDriver driver, String PayType) throws Exception {
@@ -572,6 +845,81 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
         safeClickList(driver, getObjectPayment("PayUI_Pay_Tabs_PWA"), PayType);
     }
 
+    public void payUI_Select_PaymentType_PWA_New(RemoteWebDriver driver, String PayType) throws Exception {
+        for (int i = 0; i < 1; i++) {
+            if (textPresent(driver, "System error", 1)) {
+                Reporter.log("There's something wrong with our system");
+                Assert.assertTrue(false);
+            } else if (textPresent(driver, "Oops, Something went wrong", 1)) {
+                Reporter.log("Oops something wrong with our system");
+                Assert.assertTrue(false);
+            }
+            switch (PayType) {
+                case "CC":
+                    safeClick(driver, getObjectPayment("PWA_Payment_New_CC_Tab_Icon"));
+                    break;
+                case "DC":
+                    PayType = "ADD NEW CARD";
+                    break;
+                case "NB":
+                    PayType = "NET BANKING";
+                    break;
+                case "EMI":
+                    PayType = "EMI";
+                    break;
+                case "TW":
+                    PayType = "WALLETS";
+                    break;
+                case "UPI":
+                    PayType = "UPI";
+                    // safeClick(driver, getObjectPayment("PWA_Payment_New_UPI_Tab_Icon"));
+                    break;
+                case "SC":
+                    PayType = "PREFERRED PAYMENT MODES";
+                    break;
+                case "PAYLATER":
+                    PayType = "PAY LATER";
+                    break;
+                case "CARDLESSEMI":
+                    PayType = "CARDLESS EMI";
+                    break;
+            }
+        if(!PayType.equalsIgnoreCase("CC")) {
+            payUI_Select_PaymentType_PWA_New1(driver, PayType);
+        }
+        }
+    }
+
+
+    public void payUI_Select_PaymentType_PWA_New1(RemoteWebDriver driver, String PayType) throws Exception {
+       JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("window.scrollBy(0, 450)", "");
+        if (textPresent(driver, "Preferred", 1)) {
+            for( int j=1; j<= 15; j++) {
+                String xpath = "//div[2]/div[" + j + "]/div[2]/div";
+                if (elementVisible(driver, By.xpath(xpath), 1)) {
+                   if (getText(driver, By.xpath(xpath)).equalsIgnoreCase(PayType)) {
+                        smartClick(driver, By.xpath(xpath));
+                        break;
+                    }
+                }
+            }
+            //div[2]/div[7]/div[2]/div
+            // safeClickList(driver, getObjectPayment("PWA_Payment_New_Pay_Tabs_SignIN"), PayType);
+        } else {
+            for( int j=1; j<= 15; j++) {
+                String xpath = "//div[2]/div[" + j + "]/div[2]/div";
+                if (elementVisible(driver, By.xpath(xpath), 1)) {
+                    System.out.println(getText(driver, By.xpath(xpath)));
+                    if (getText(driver, By.xpath(xpath)).equalsIgnoreCase(PayType)) {
+                        smartClick(driver, By.xpath(xpath));
+                        break;
+                    }
+                }
+            }
+        }
+        //safeClickList(driver, getObjectPayment("PWA_Payment_New_Pay_Tabs_Unsigned"), PayType);
+    }
     public void payUI_Select_DC(RemoteWebDriver driver, String BankName, String BookingType) throws Exception {
         elementVisible(driver, getObjectPayment("PaymentPage_CreditCard_Number"), 5);
         textPresent_Log(driver, "Enter your debit card details.", 1);

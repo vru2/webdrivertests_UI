@@ -1,6 +1,8 @@
 package test.java.payment_Air_PWA;
 
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import test.java.commonUI.PaymentsUI_Common_PWA_Air;
@@ -29,9 +31,9 @@ public class Air_PWA_Saved_UPI extends PaymentsUI_Common_PWA_Air {
         browserClose(driver);
     }
 
- /*   @AfterMethod(alwaysRun = true)
+    @AfterMethod(alwaysRun = true)
     public void afterMethod(ITestResult _result) throws Exception {
         afterMethod(driver, _result);
-    }*/
+    }
 
 }

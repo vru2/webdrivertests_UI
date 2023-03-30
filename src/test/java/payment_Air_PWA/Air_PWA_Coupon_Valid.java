@@ -19,12 +19,11 @@ public class Air_PWA_Coupon_Valid extends PaymentsUI_Common_PWA_Air {
         driver.manage().deleteAllCookies();
         driver.get(air_SRPUrl("IN",origin,destination, date+3));
         air_SRPPage(driver,"", "");
-       // driver.manage().addCookie(fullwallet);
         air_ItnPage(driver, "COUPON", "PAYCC","","");
         air_AddOnPage(driver, "", "");
         air_TravellerPage(driver, "",phoneNo, emailID,"");
         bento_Paymentpage_PWA(driver,"Coupon","","","Amex","Amex", "");
-        bento_Air_ConfirmationPage_PWA(driver,"", "", "Coupon valid Paytm :");
+        bento_Air_ConfirmationPage_PWA(driver,"", "", "Coupon valid Amex :");
     }
     @AfterClass(alwaysRun = true)
     public void closeSelenium() throws Exception {

@@ -439,6 +439,23 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
     }
 
     public void bento_pay_GV_Partial_PWA_New(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
+        payUI_Select_PaymentType_PWA_New( driver, PaymentType);
+        safeClick(driver, By.xpath("//section/div/div[3]/div"));
+       /* String WalletOn = driver.findElement(By.id("radio-toggle-wallet")).getAttribute("Value");
+        if(WalletOn.equalsIgnoreCase("False")){
+            safeClick(driver, getObjectPayment("PWA_PaymentPage_Wallet_Toggle"));
+        }*/
+        if(PayType.equalsIgnoreCase("PartialWallet")){
+            bento_pay_validate_Price_Popup_New(driver, "Cleartrip Wallet", "Gift card");
+        }
+        if(PayType.equalsIgnoreCase("GV_Partial")){
+            //   bento_pay_validate_Price_Popup(driver, "Cleartrip Wallet", "Gift card");
+        }
+        else if(PayType.equalsIgnoreCase("PartialWalletONLY")){
+            bento_pay_validate_Price_Popup_New(driver, "Cleartrip Wallet", "");
+        }
+        else bento_pay_validate_Price_Popup_New(driver, "", "Gift card");
+        bento_pay_CC_PWA_New(driver, "CC", CardNumber, domain, PayType, BankName,"");
     }
 
     public void bento_pay_CC_PWA_New(RemoteWebDriver driver, String paymentType,String cardNumber,String domain,String payType, String bankName, String successFail) throws Exception {
@@ -484,7 +501,45 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
     }
 
     public void bento_pay_EMI_PWA_New(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
+        payUI_Select_PaymentType_PWA_New(driver, PaymentType);
+        textPresent_Log(driver, "Select a bank", 2);
+        if (PayType.contains("EMI")) {
+            safeType(driver, By.xpath("//input"), "HDFC Bank");
+            safeClick(driver, By.xpath("//div[3]/div/div"));
+            textPresent_Log(driver, "Select a tenure", 2);
+            safeClick(driver, By.xpath("//input"));
+            textPresent_Log(driver, "Interest charged by bank", 1);
+            textPresent_Log(driver, "Amount to be paid", 1);
+            safeClick(driver, getObjectPayment("PWA_Payment_New_Pay_Btn"));
+        }
+        if (PayType.contains("NCE EMI")){
+
+            textPresent_Log(driver, "Show banks with No Cost EMI", 2);
+            safeClick(driver, By.xpath("//div[2]/div[2]/div"));
+
+            safeClick(driver, By.xpath("//div[3]/div/div"));
+            textPresent_Log(driver, "Select a tenure", 2);
+            safeClick(driver, By.xpath("//input"));
+            textPresent_Log(driver, "Interest charged by bank", 1);
+            textPresent_Log(driver, "Amount to be paid", 1);
+            textPresent_Log(driver, "No cost EMI discount", 1);
+            String NCE_Percentage = getText(driver, By.xpath("//td[3]/label/div"));
+            System.out.println("NCE Percentage : "+NCE_Percentage);
+            if(!NCE_Percentage.equalsIgnoreCase("0%")){
+                Reporter.log("NCE Percentage : "+NCE_Percentage);
+                Assert.assertTrue(false);
+            }
+            safeClick(driver, getObjectPayment("PWA_Payment_New_Pay_Btn"));
+            textPresent_Log(driver, "is given upfront as No Cost EMI discount", 1);
+        }
+
+        textPresent_Log(driver, "Add a credit card", 2);
+        textPresent_Log(driver, "Your EMI information", 1);
+        Enter_CC_Details_PWA_New(driver, "5241810000000000", "1225", "123");
+        safeClick(driver, getObjectPayment("PWA_Payment_New_Pay_Btn"));
+        smartClick(driver, getObjectPayment("PWA_Payment_New_Skip_RBI"));
     }
+
 
 
     public void bento_pay_BFL_PWA_New(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
@@ -535,9 +590,40 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
 
 
     public void bento_pay_CARDLESSEMI_PWA_New(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
+        payUI_Select_PaymentType_PWA_New(driver, PaymentType);
+        textPresent(driver, "Cardless EMI",1);
+        elementVisible(driver, getObjectPayment("PWA_paymentPage_CardLessEMI_AXIO"), 10);
+        String Axio_text = getText(driver, getObjectPayment("PWA_paymentPage_CardLessEMI_AXIO_Txt"));
+        if(!Axio_text.equalsIgnoreCase("AXIO")){
+            Reporter.log(" Axio text "+Axio_text);
+            Assert.assertTrue(false);
+        }
+        safeClick(driver, getObjectPayment("PWA_paymentPage_CardLessEMI_AXIO"));
+
+        safeClick(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"));
+        elementVisible(driver, By.cssSelector("button.success"), 20);
+        safeClick(driver, By.cssSelector("button.success"));
     }
 
     public void bento_pay_PAYLATER_PWA_New(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
+
+        payUI_Select_PaymentType_PWA_New(driver, PaymentType);
+        textPresent(driver, "Paylater",1);
+        if(PayType.equalsIgnoreCase("PartialWallet")){
+            bento_pay_validate_Price_Popup_New(driver, "Cleartrip Wallet", "");
+        }
+        elementVisible(driver, getObjectPayment("PWA_paymentPage_Paylater_ICICIBank"), 5);
+        String ICICIBank_text = getText(driver, getObjectPayment("PWA_paymentPage_Paylater_ICICIBank_Txt"));
+        if(!ICICIBank_text.equalsIgnoreCase("ICICI Bank PayLater")){
+            Reporter.log(" Icici bank text "+ICICIBank_text);
+            Assert.assertTrue(false);
+        }
+        safeClick(driver, getObjectPayment("PWA_paymentPage_Paylater_ICICIBank"));
+        safeClick(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"));
+
+        elementVisible(driver, By.id("submit-action"), 20);
+        safeType(driver, By.xpath("//input"), "123456");
+        safeClick(driver, By.id("submit-action"));
 
     }
 
@@ -865,7 +951,7 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
                     PayType = "NET BANKING";
                     break;
                 case "EMI":
-                    PayType = "EMI";
+                    PayType = "Credit Card EMI";
                     break;
                 case "TW":
                     PayType = "WALLETS";

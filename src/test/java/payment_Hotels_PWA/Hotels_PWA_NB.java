@@ -17,7 +17,7 @@ public class Hotels_PWA_NB extends PaymentsUI_Common_PWA_Hotels {
         hotels_HomePage(driver, HotelName, CheckIN, CheckOut);
         hotels_SRP(driver, "", "");
         hotels_DetailsPage(driver, "", "");
-        hotels_ItineraryPage(driver, "", "", "");
+        hotels_ItineraryPage(driver, "", "", "", "");
         bento_Paymentpage_PWA(driver,"NB","","","","RazorpayNB", "Success");
         hotels_ConfirmationPage(driver, "","", "Hotel NB");
     }

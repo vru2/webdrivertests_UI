@@ -21,10 +21,10 @@ public class Hotels_PWA_Saved_UPI extends PaymentsUI_Common_PWA_Hotels {
         hotels_SRP(driver, "", "");
         hotels_DetailsPage(driver, "", "");
         driver.manage().addCookie(fullwallet);
-        hotels_ItineraryPage(driver, "", "", "");
+        hotels_ItineraryPage(driver, "", "", "", "");
         driver.manage().addCookie(fullwallet);
         bento_Paymentpage_PWA(driver,"SAVEDPAYMENT","","","SavedUPI","", "");
-        hotels_ConfirmationPage(driver, "","", "Hotel PWA UPI savedpayment mode");
+        hotels_ConfirmationPage(driver, "","", "Hotel PWA UPI Preffered mode");
     }
 
     @AfterClass(alwaysRun = true)

@@ -21,7 +21,7 @@ public class Hotels_PWA_SavedPay_UPI extends PaymentsUI_Common_PWA_Hotels {
         hotels_SRP(driver, "", "");
         hotels_DetailsPage(driver, "", "");
         driver.manage().addCookie(fullwallet);
-        hotels_ItineraryPage(driver, "", "", "");
+        hotels_ItineraryPage(driver, "", "", "", "");
         bento_Paymentpage_PWA(driver,"UPI","","","SavedUPI","", "");
         hotels_ConfirmationPage(driver, "","", "Hotel PWA UPI saved");
     }

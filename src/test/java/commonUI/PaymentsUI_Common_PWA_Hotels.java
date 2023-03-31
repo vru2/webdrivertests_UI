@@ -4,13 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
+import redis.clients.jedis.Jedis;
 
 public class PaymentsUI_Common_PWA_Hotels extends PaymentsUI_Common_PWA{
 
-
-
     public void hotels_HomePage(RemoteWebDriver driver, String HotelName, int CheckIN, int CheckOut) throws Exception {
-        System.out.println(CheckIN+" "+CheckOut);
         elementVisible(driver, getObjectPayment("PWA_Hotels_Homepage_City_TextBox"), 10);
         safeClick(driver, getObjectPayment("PWA_Hotels_Homepage_City_TextBox"));
         elementVisible(driver, getObjectPayment("PWA_Hotels_Homepage_City_Search_Popup"), 10);
@@ -37,10 +35,42 @@ public class PaymentsUI_Common_PWA_Hotels extends PaymentsUI_Common_PWA{
         safeClick(driver, getObjectPayment("PWA_Hotels_DetailsPage_Book_Button"));
     }
 
-    public void hotels_ItineraryPage(RemoteWebDriver driver, String Coupon, String CouponCode, String Login) throws Exception {
+    public void hotels_ItineraryPage(RemoteWebDriver driver, String Coupon, String CouponCode, String Login, String PhoneNo) throws Exception {
         elementVisible(driver, getObjectPayment("PWA_Hotels_ItineraryPage_PhoneNo"), 10);
         safeType(driver, getObjectPayment("PWA_Hotels_ItineraryPage_PhoneNo"), phoneNo);
         safeType(driver, getObjectPayment("PWA_Hotels_ItineraryPage_EmailID"), emailID);
+
+        if(Login.equalsIgnoreCase("true")){
+            scrollToElement(driver, By.xpath("//div[3]/div[3]/p[2]"));
+            scrollSmooth(driver, -100);
+            Thread.sleep(2000);
+            mouseHover(driver, By.xpath("//div[3]/div[3]/p[2]"));
+            Thread.sleep(2000);
+            safeClick(driver, By.xpath("//div[3]/div[3]/p[2]"));
+
+            Thread.sleep(2000);
+            safeType(driver, By.xpath("//input"), PhoneNo);
+            Thread.sleep(2000);
+            Jedis jedis = new Jedis("http://172.29.23.218:6379");
+            String otp = jedis.get("ACCOUNTS_SERVICE_MOBILE_LOGIN_KEY_+91"+PhoneNo+"SIGNIN");
+
+            String otp1= String.valueOf(otp.charAt(0));
+            String otp2= String.valueOf(otp.charAt(1));
+            String otp3= String.valueOf(otp.charAt(2));
+            String otp4= String.valueOf(otp.charAt(3));
+            Thread.sleep(2000);
+            safeClick(driver, By.name("otp-0"));
+            safeType(driver, By.name("otp-0"), otp1);
+            safeClick(driver, By.name("otp-1"));
+            safeType(driver, By.name("otp-1"), otp2);
+            safeClick(driver, By.name("otp-2"));
+            safeType(driver, By.name("otp-2"), otp3);
+            safeClick(driver, By.name("otp-3"));
+            safeType(driver, By.name("otp-3"), otp4);
+            safeType(driver, getObjectPayment("PWA_Hotels_ItineraryPage_PhoneNo"), PhoneNo);
+            safeType(driver, getObjectPayment("PWA_Hotels_ItineraryPage_EmailID"), emailID);
+
+        }
         //safeSelectByValue(driver, getObjectPayment("PWA_Hotels_ItineraryPage_Title"), "Mr.");
         safeClick(driver, getObjectPayment("PWA_Hotels_ItineraryPage_Title"));
         safeSelectByIndex(driver, getObjectPayment("PWA_Hotels_ItineraryPage_Title"), 1);

@@ -22,7 +22,7 @@ public class Air_PWA_EMI_BFL extends PaymentsUI_Common_PWA_Air {
         air_ItnPage(driver, "", "","","");
         air_AddOnPage(driver, "", "");
         air_TravellerPage(driver, "",phoneNo, emailID,"");
-        bento_Paymentpage_PWA(driver,"BFL","","","BFL","RazorpayNB","Success");
+        bento_Paymentpage_PWA(driver,"EMI","","","BFL","RazorpayNB","Success");
         bento_Air_ConfirmationPage_PWA(driver,"", "", "BFL PWA Air ");
     }
     @AfterClass(alwaysRun = true)

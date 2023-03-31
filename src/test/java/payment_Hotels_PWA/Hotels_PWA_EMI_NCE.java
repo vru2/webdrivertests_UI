@@ -20,7 +20,7 @@ public class Hotels_PWA_EMI_NCE extends PaymentsUI_Common_PWA_Hotels {
         hotels_HomePage(driver, HotelName, CheckIN, CheckOut);
         hotels_SRP(driver, "", "");
         hotels_DetailsPage(driver, "", "");
-        hotels_ItineraryPage(driver, "", "", "");
+        hotels_ItineraryPage(driver, "", "", "", "");
         bento_Paymentpage_PWA(driver,"EMI","","","NCE EMI","RazorpayCC","");
         hotels_ConfirmationPage(driver, "","", "Hotel PWA NCE EMI ");
     }

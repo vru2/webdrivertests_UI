@@ -23,10 +23,11 @@ public class Air_PWA_GV_CLP_CC_WL_Razorpay extends PaymentsUI_Common_PWA_Air {
         addwalletamount_UserID(10, "65243938");
         air_ItnPage(driver, "GV", "","","");
         air_AddOnPage(driver, "", "");
-        air_TravellerPage(driver, "",phoneNo,emailID,"");
+        air_TravellerPage(driver, "true","5252525252",emailID,"");
         bento_Paymentpage_PWA(driver,"GV_Partial","","","PartialWallet","RazorpayCC","");
         bento_Air_ConfirmationPage_PWA(driver,"", "", "GV wallet CC :");
     }
+
     @AfterClass(alwaysRun = true)
     public void closeSelenium() throws Exception {
         browserClose(driver);

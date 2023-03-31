@@ -22,7 +22,7 @@ public class Hotels_PWA_Wallet_CC extends PaymentsUI_Common_PWA_Hotels {
         hotels_DetailsPage(driver, "", "");
         driver.manage().addCookie(ctauth_partial_wallet);//65243938
         addwalletamount_UserID(10, "65243938");
-        hotels_ItineraryPage(driver, "", "", "");
+        hotels_ItineraryPage(driver, "", "", "true", "5252525252");
         bento_Paymentpage_PWA(driver,"GV_Partial","","","PartialWalletONLY","Paytm","");
         hotels_ConfirmationPage(driver, "","", "Hotel PWA WL CC PayTM");
     }

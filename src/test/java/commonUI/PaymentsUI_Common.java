@@ -24,6 +24,7 @@ public class PaymentsUI_Common extends API_PaymentCommon {
     public int CheckIN = checkIN();
     public int CheckOut = CheckIN+1;
     public String HotelName = "Holiday inn bengaluru";
+    public String HotelName1 = "Aloft Bengaluru";
     String GV_number = "3000331034062731";
     String GV_pin = "169139";
     public String hotelPrice_Itinerary = null;

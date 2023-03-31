@@ -20,7 +20,7 @@ public class Hotels_PWA_Coupon_Valid extends PaymentsUI_Common_PWA_Hotels {
         hotels_HomePage(driver, HotelName, CheckIN, CheckOut);
         hotels_SRP(driver, "", "");
         hotels_DetailsPage(driver, "", "");
-        hotels_ItineraryPage(driver, "COUPON", "CCHOTEL", "");
+        hotels_ItineraryPage(driver, "COUPON", "CCHOTEL", "", "");
         bento_Paymentpage_PWA(driver,"Coupon","","","Amex","Amex", "");
         hotels_ConfirmationPage(driver, "","", "Hotel Valid coupon CC");
     }

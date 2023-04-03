@@ -16,12 +16,11 @@ public class Hotels_PWA_EMI_BFL extends PaymentsUI_Common_PWA_Hotels {
 
     @Test
     public void Hotel_PWA_BFL() throws Exception {
-        driver.get("https://qa2new.cleartrip.com/pay/hotel/62945ae26310d129f481e529c93a7066?lang=en");
-        /*driver.get(hotelsUrl);
+        driver.get(hotelsUrl);
         hotels_HomePage(driver, HotelName, CheckIN, CheckOut);
         hotels_SRP(driver, "", "");
         hotels_DetailsPage(driver, "", "");
-        hotels_ItineraryPage(driver, "", "", "", "");*/
+        hotels_ItineraryPage(driver, "", "", "", "");
         bento_Paymentpage_PWA(driver,"EMI","","","BFL","RazorpayNB","Success");
         hotels_ConfirmationPage(driver, "","", "Hotel PWA BFL ");
     }

@@ -1,6 +1,7 @@
 package test.java.commonUI;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
@@ -42,10 +43,11 @@ public class PaymentsUI_Common_PWA_Hotels extends PaymentsUI_Common_PWA{
 
         if(Login.equalsIgnoreCase("true")){
             scrollToElement(driver, By.xpath("//div[3]/div[3]/p[2]"));
-            scrollSmooth(driver, -100);
+            ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,-100)", "");
+
             Thread.sleep(2000);
             mouseHover(driver, By.xpath("//div[3]/div[3]/p[2]"));
-            Thread.sleep(2000);
+            Thread.sleep(1000);
             safeClick(driver, By.xpath("//div[3]/div[3]/p[2]"));
 
             Thread.sleep(2000);
@@ -61,11 +63,8 @@ public class PaymentsUI_Common_PWA_Hotels extends PaymentsUI_Common_PWA{
             Thread.sleep(2000);
             safeClick(driver, By.name("otp-0"));
             safeType(driver, By.name("otp-0"), otp1);
-            safeClick(driver, By.name("otp-1"));
             safeType(driver, By.name("otp-1"), otp2);
-            safeClick(driver, By.name("otp-2"));
             safeType(driver, By.name("otp-2"), otp3);
-            safeClick(driver, By.name("otp-3"));
             safeType(driver, By.name("otp-3"), otp4);
             safeType(driver, getObjectPayment("PWA_Hotels_ItineraryPage_PhoneNo"), PhoneNo);
             safeType(driver, getObjectPayment("PWA_Hotels_ItineraryPage_EmailID"), emailID);

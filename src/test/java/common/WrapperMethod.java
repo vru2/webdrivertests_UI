@@ -1516,7 +1516,7 @@ public class WrapperMethod extends CommonUtil {
 
 	public void pwascrollSmooth(RemoteWebDriver driver,final int y) {
 		for (int i = 0; i < y; i++) {
-			((JavascriptExecutor) driver).executeScript("window.scrollBy(0,700)", "");
+			((JavascriptExecutor) driver).executeScript("window.scrollBy(0,4)", "");
 		}
 	}
 

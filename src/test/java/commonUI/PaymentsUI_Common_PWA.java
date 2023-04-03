@@ -21,7 +21,6 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
     }
 
     public void bento_Paymentpage_PWA_New(RemoteWebDriver driver, String paymentType, String cardNumber, String domain, String payType, String bankName, String successFail) throws Exception {
-        //elementVisible(driver, By.xpath("//div[2]/div/img"), 10);
         textPresent(driver, "convenience fee added", 10);
         System.out.println(driver.getCurrentUrl());
         Reporter.log(driver.getCurrentUrl());
@@ -464,7 +463,7 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
     public void bento_pay_CC_PWA_New(RemoteWebDriver driver, String paymentType,String cardNumber,String domain,String payType, String bankName, String successFail) throws Exception {
         payUI_Select_PaymentType_PWA_New( driver, paymentType);
         if(bankName=="Paytm") {
-            Enter_CC_Details_PWA_New(driver, "6080322940807777", "1224", "123");
+            Enter_CC_Details_PWA_New(driver, "4761360073426701", "1224", "123");
         }
         if(bankName=="RazorpayCC") {
             Enter_CC_Details_PWA_New(driver, "5241810000000000", "1224", "123");
@@ -567,10 +566,10 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
     }
 
     public void bento_pay_Wallet_PWA_New(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
-        textPresent_Log(driver, "Cleartrip wallet", 5);
+        textPresent_Log(driver, "Cleartrip Wallet", 5);
        // textPresent_Log(driver, "Cleartrip wallet", 1);
         Thread.sleep(2000);
-        bento_pay_validate_Price_Popup_New(driver, "Cleartrip wallet", "");
+        bento_pay_validate_Price_Popup_New(driver, "Cleartrip Wallet", "");
         safeClick(driver, By.xpath("//div[2]/button"));
     }
 
@@ -890,10 +889,10 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
         Reporter.log("Card Details +\n"+ CCNumber +"\n " + CCExp +" " + CVV);
         elementVisible(driver, By.name("cardnumber"), 5);
         safeType(driver, By.name("cardnumber"), CCNumber);
-        safeType(driver, By.name("userName"), "test");
        // safeClick(driver, By.xpath(""));
         safeType(driver, By.name("expiryDate"), CCExp);
         safeType(driver, By.name("cvv"), CVV);
+        safeType(driver, By.name("name"), "Kiran");
     }
 
     public void payUI_Select_PaymentType_PWA(RemoteWebDriver driver, String PayType) throws Exception {
@@ -960,6 +959,7 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
                 Reporter.log("Oops something wrong with our system");
                 Assert.assertTrue(false);
             }
+        }
             switch (PayType) {
                 case "CC":
                     safeClick(driver, getObjectPayment("PWA_Payment_New_CC_Tab_Icon"));
@@ -993,7 +993,6 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
         if(!PayType.equalsIgnoreCase("CC")) {
             payUI_Select_PaymentType_PWA_New1(driver, PayType);
         }
-        }
     }
 
 
@@ -1010,8 +1009,6 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
                     }
                 }
             }
-            //div[2]/div[7]/div[2]/div
-            // safeClickList(driver, getObjectPayment("PWA_Payment_New_Pay_Tabs_SignIN"), PayType);
         } else {
             for( int j=1; j<= 15; j++) {
                 String xpath = "//div[2]/div[" + j + "]/div[2]/div";
@@ -1024,8 +1021,8 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
                 }
             }
         }
-        //safeClickList(driver, getObjectPayment("PWA_Payment_New_Pay_Tabs_Unsigned"), PayType);
     }
+
     public void payUI_Select_DC(RemoteWebDriver driver, String BankName, String BookingType) throws Exception {
         elementVisible(driver, getObjectPayment("PaymentPage_CreditCard_Number"), 5);
         textPresent_Log(driver, "Enter your debit card details.", 1);
@@ -1091,9 +1088,7 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
             elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"), "Citi Bank  ", 1);
             Reporter.log("CitiBank Auth page is displayed");
             safeClick(driver, getObjectPayment("MakePayment_NB_Bank_Citibank_Submit_Btn"));
-        }
-
-        else if(BankName.equalsIgnoreCase("Hdfc Bank")) {
+        }else if(BankName.equalsIgnoreCase("Hdfc Bank")) {
             elementVisible(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_UserName"), 20);
             elementPresent_log(driver, getObjectPayment("MakePayment_NB_Bank_TechProcess_UserName"), "Tech Process Bank ", 1);
             Reporter.log("HDFCBank Auth page is displayed");

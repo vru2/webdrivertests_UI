@@ -57,6 +57,10 @@ public class PaymentsUI_Common extends API_PaymentCommon {
 
     public String origin = "BLR";
     public String destination = "DEL";
+
+
+    public String origin1 = "COK";
+    public String destination1 = "DEL";
     public String phoneNo="1212121212";
     public String emailID="cltppayment@gmail.com";
     public int date = getRandomNumberInt(100);
@@ -110,7 +114,18 @@ public class PaymentsUI_Common extends API_PaymentCommon {
     }
 
     public String air_SRPUrl1(String Domain, String origin, String destination, int date) throws Exception {
-        String Air_URL = "/flights/results?adults=1&childs=0&infants=0&class=Economy&depart_date=" + getDateTime(date, "dd/MM/yyyy") + "&from=BLR&to=CCU&intl=n";
+        String Air_URL = "/flights/results?adults=1&childs=0&infants=0&class=Economy&depart_date=" + getDateTime(date, "dd/MM/yyyy") + "&from=blr&to=ccu&intl=n";
+        String SearchUrl = "";
+        if (Domain == "IN") {
+            SearchUrl = inurl + Air_URL;
+        }
+        Reporter.log(SearchUrl);
+        System.out.println(SearchUrl);
+        return SearchUrl;
+    }
+
+    public String air_SRPUrl2(String Domain, String origin, String destination, int date) throws Exception {
+        String Air_URL = "/flights/results?adults=1&childs=0&infants=0&class=Economy&depart_date=" + getDateTime(date, "dd/MM/yyyy") + "&from=COK&to=DEL&intl=n";
         String SearchUrl = "";
         if (Domain == "IN") {
             SearchUrl = inurl + Air_URL;

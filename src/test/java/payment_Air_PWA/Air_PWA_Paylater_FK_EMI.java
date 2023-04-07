@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import test.java.commonUI.PaymentsUI_Common_PWA_Air;
 
-public class Air_PWA_Paylater_FK extends PaymentsUI_Common_PWA_Air {
+public class Air_PWA_Paylater_FK_EMI extends PaymentsUI_Common_PWA_Air {
 
     @BeforeClass
     public void startSelenium() throws Exception {
@@ -15,15 +15,16 @@ public class Air_PWA_Paylater_FK extends PaymentsUI_Common_PWA_Air {
     }
 
     @Test
-    public void Air_PWA_Paylater() throws Exception {
+    public void Air_PWA_PaylaterFK() throws Exception {
         driver.manage().deleteAllCookies();
-        driver.get(air_SRPUrl("IN",origin,destination, date+5));
+     /*   driver.get(air_SRPUrl_2("IN",origin1,destination1, date+5));
         air_SRPPage(driver,"", "");
         air_ItnPage(driver, "", "","","");
         air_AddOnPage(driver, "", "");
-        air_TravellerPage(driver, "","9986696785",emailID,"");
-        bento_Paymentpage_PWA(driver,"PAYLATERFK","","","Paylater","", "");
-        bento_Air_ConfirmationPage_PWA(driver,"", "", "Paylater FK :");
+        air_TravellerPage(driver, "","9986696785",emailID,"");*/
+        driver.get("https://qa2new.cleartrip.com/pay/air/8fa9e9928bfd6d1bcb07bc86ed2ee39a?lang=en");
+        bento_Paymentpage_PWA(driver,"PAYLATERFK","","","PaylaterEMI","", "");
+        bento_Air_ConfirmationPage_PWA(driver,"", "", "PaylaterEMI FK :");
     }
     @AfterClass(alwaysRun = true)
     public void closeSelenium() throws Exception {

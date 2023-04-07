@@ -55,6 +55,9 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
             case "PAYLATER":
                 bento_pay_PAYLATER_PWA_New(driver, paymentType, cardNumber, domain, payType, bankName);
                 break;
+            case "PAYLATERFK":
+                bento_pay_PAYLATERFK_PWA_New(driver, paymentType, cardNumber, domain, payType, bankName);
+                break;
             case "CARDLESSEMI":
                 bento_pay_CARDLESSEMI_PWA_New(driver, paymentType, cardNumber, domain, payType, bankName);
                 break;
@@ -624,7 +627,37 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
         safeClick(driver, By.cssSelector("button.success"));
     }
 
-    public void bento_pay_PAYLATER_PWA_New(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
+    public void bento_pay_PAYLATERFK_PWA_New(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
+        payUI_Select_PaymentType_PWA_New(driver, PaymentType);
+        textPresent_Log(driver,"Use Flipkart Pay Later", 5);
+        if(PayType.equalsIgnoreCase("Paylater")){
+            safeClick(driver, By.xpath("//div[3]/label/div[2]/input"));
+        }
+        else if(PayType.equalsIgnoreCase("PaylaterEMI")){
+            safeClick(driver, By.xpath("//input"));
+            safeClick(driver, getObjectPayment("PWA_Payment_New_Pay_Btn"));
+            textPresent_Log(driver,"Select a tenure", 5);
+            safeClick(driver, By.xpath("//input"));
+            textPresent_Log(driver,"A one time processing fee of ₹150 will be charged on your next month’s bill", 5);
+            //textPresent_Log(driver,"Processing fee for EMI orders is 1.5% (Min. ₹100) + GST for charges and other important information related to your EMI refer key fact statement", 5);
+        }
+        safeClick(driver, getObjectPayment("PWA_Payment_New_Pay_Btn"));
+        bento_pay_PAYLATERFK_PWA_OTP(driver, "234567");
+    }
+
+    public void bento_pay_PAYLATERFK_PWA_OTP(RemoteWebDriver driver, String OTP) throws Exception {
+        textPresent_Log(driver, "Verifying OTP", 10);
+        textPresent_Log(driver, "Flipkart has sent you an OTP on your registered number +91 ******9999", 1);
+        safeType(driver, By.xpath("//input[@value='']"), String.valueOf(OTP.charAt(0)));
+        safeType(driver, By.xpath("//input[@value='']"), String.valueOf(OTP.charAt(1)));
+        safeType(driver, By.xpath("//input[@value='']"), String.valueOf(OTP.charAt(2)));
+        safeType(driver, By.xpath("//input[@value='']"), String.valueOf(OTP.charAt(3)));
+        safeType(driver, By.xpath("//input[@value='']"), String.valueOf(OTP.charAt(4)));
+        safeType(driver, By.xpath("//input[@value='']"), String.valueOf(OTP.charAt(5)));
+    }
+
+
+        public void bento_pay_PAYLATER_PWA_New(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
 
         payUI_Select_PaymentType_PWA_New(driver, PaymentType);
         textPresent(driver, "Paylater",1);
@@ -781,7 +814,7 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
     public void bento_pay_CC_PWA(RemoteWebDriver driver, String paymentType,String cardNumber,String domain,String payType, String bankName, String successFail) throws Exception {
         payUI_Select_PaymentType_PWA( driver, paymentType);
         if(bankName=="Paytm") {
-            Enter_CC_Details_PWA(driver, "6080322940807777", "1224", "123");
+            Enter_CC_Details_PWA(driver, "4761360075863216", "1224", "123");
             //Enter_CC_Details_PWA(driver, platform.value("PayTMCard_Number"), platform.value("PayTMCard_MWeb_Exp_Date"), platform.value("PayTMCard_CVV"));
         }
         if(bankName=="RazorpayCC") {
@@ -985,6 +1018,9 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
                     break;
                 case "PAYLATER":
                     PayType = "PAY LATER";
+                    break;
+                case "PAYLATERFK":
+                    PayType = "Flipkart pay later";
                     break;
                 case "CARDLESSEMI":
                     PayType = "CARDLESS EMI";

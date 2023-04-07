@@ -109,9 +109,20 @@ public class PaymentsUI_Common_Desktop_Air extends PaymentsUI_Common_Desktop {
         elementVisible(driver, getObjectPayment("Desktop_Air_LoginPage_PhoneNo"),10);
         textPresent_Log(driver, "Add contact details", 1);
         safeType(driver, getObjectPayment("Desktop_Air_LoginPage_PhoneNo"), PhoneNo);
-        safeClick(driver, getObjectPayment("Desktop_Air_LoginPage_EmailID"));
-        safeType(driver, getObjectPayment("Desktop_Air_LoginPage_EmailID"), EmailID);
-        safeClick(driver, getObjectPayment("Desktop_Air_LoginPage_Btn"));
+            smartClick(driver, getObjectPayment("Desktop_Air_LoginPage_EmailID"));
+            smartType(driver, getObjectPayment("Desktop_Air_LoginPage_EmailID"), EmailID);
+
+
+/*
+
+            smartClick(driver, getObjectPayment("Desktop_Air_LoginPage_EmailID1"));
+            smartType(driver, getObjectPayment("Desktop_Air_LoginPage_EmailID1"), EmailID);
+*/
+
+        if(elementVisible(driver, getObjectPayment("Desktop_Air_LoginPage_Btn"),1)) {
+            safeClick(driver, getObjectPayment("Desktop_Air_LoginPage_Btn"));
+        }
+         else safeClick(driver, getObjectPayment("Desktop_Air_LoginPage_Btn1"));
     }
 
 

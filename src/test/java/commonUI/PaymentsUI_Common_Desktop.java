@@ -69,6 +69,9 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
             case "PAYLATER":
                 PayType = "Pay Later";
                 break;
+            case "PAYLATERFK":
+                PayType = "Flipkart Pay Later";
+                break;
             default:
                 PayType = "Credit Card";
                 break;
@@ -226,6 +229,9 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
                 break;
             case "PAYLATER":
                 bento_pay_PayLater(driver, PaymentType, CardNumber, domain, PayType, BankName);
+                break;
+            case "PAYLATERFK":
+                bento_pay_PayLaterFK(driver, PaymentType, CardNumber, domain, PayType, BankName);
                 break;
             case "sc":
                 bento_pay_SC(driver, PaymentType, CardNumber, domain, PayType, BankName);
@@ -511,7 +517,60 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
 
     }
 
-        public void bento_pay_Coupon(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
+    public void bento_pay_PayLaterFK(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
+        payUI_Select_PaymentType(driver, PaymentType);
+        textPresent_Log(driver, "Choose Flipkart Pay Later option", 20);
+        if(PayType.equalsIgnoreCase("PaylaterEMI")) {
+           // safeClick(driver, By.xpath("//input[@value='EMI']"));
+            safeClick(driver, By.xpath("//span"));
+            safeClick(driver, By.xpath("//div[2]/div[2]/label"));
+            textPresent_Log(driver, "A one time processing fee of", 1);
+            textPresent_Log(driver, "will be charged on your next month’s bill", 1);
+            textPresent_Log(driver, "Processing fee for EMI orders is 1.5% (Min. ₹100) + GST for charges and other important information related to your EMI refer Key Fact Statement", 1);
+            safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
+        }
+        if(PayType.equalsIgnoreCase("Paylater")) {
+
+            mouseHover(driver, By.xpath("//div[3]/div/div/div[1]/div/label"));
+            smartClick(driver, By.xpath("//div[3]/div/div/div[1]/div/label"));
+/*
+            mouseHover(driver, By.xpath("//input[@value='PL' and @name='flipkartPL']"));
+            smartClick(driver, By.xpath("//input[@value='PL' and @name='flipkartPL']"));
+            mouseHover(driver, By.cssSelector("span.grey.xh-highlight"));
+            smartClick(driver, By.cssSelector("span.grey.xh-highlight"));
+            mouseHover(driver, By.xpath("//div/label/div[2]/span"));
+            smartClick(driver, By.xpath("//div/label/div[2]/span"));
+            mouseHover(driver, By.xpath("//div/label/div/span"));
+            smartClick(driver, By.xpath("//div/label/div/span"));
+           */
+            String PayEMI_Txt= getText(driver, By.xpath("//div/label/div[2]/span[2]"));
+            System.out.println(PayEMI_Txt);
+            if(!PayEMI_Txt.contains("Remaining balance:")){
+                Reporter.log("PayEMI_Txt "+PayEMI_Txt);
+                Assert.assertTrue(false);
+            }
+            safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
+        }
+        bento_pay_PayLaterFK_OTP(driver, "234567");
+    }
+
+    public void bento_pay_PayLaterFK_OTP(RemoteWebDriver driver, String OTP) throws Exception {
+        textPresent_Log(driver, "Verifying OTP", 10);
+        textPresent_Log(driver, "Flipkart has sent you an OTP on your registered number +91 ******9999", 1);
+        safeType(driver, By.xpath("//div[5]/div/input"), String.valueOf(OTP.charAt(0)));
+        safeType(driver, By.xpath("//input[@value='']"), String.valueOf(OTP.charAt(1)));
+        safeType(driver, By.xpath("//input[@value='']"), String.valueOf(OTP.charAt(2)));
+        safeType(driver, By.xpath("//input[@value='']"), String.valueOf(OTP.charAt(3)));
+        safeType(driver, By.xpath("//input[@value='']"), String.valueOf(OTP.charAt(4)));
+        safeType(driver, By.xpath("//input[@value='']"), String.valueOf(OTP.charAt(5)));
+        textPresent_Log(driver, "Resend OTP in" , 1);
+        safeClick(driver, By.cssSelector("button.flex-middle.flex-center.white.submit-block.fw-600"));
+        textPresent_Log(driver, "paid successfully!" , 5);
+        elementVisible(driver, By.xpath("//h4[2]"), 10);
+        elementNotVisible(driver, By.xpath("//h4[2]"), 5);
+    }
+
+    public void bento_pay_Coupon(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
         if(CardNumber.equalsIgnoreCase("Air")) {
             textPresent_Log(driver, "Coupon code (PAYCC)", 2);
         }

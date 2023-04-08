@@ -15,16 +15,15 @@ public class Air_PWA_Paylater_FK_EMI extends PaymentsUI_Common_PWA_Air {
     }
 
     @Test
-    public void Air_PWA_PaylaterFK() throws Exception {
+    public void Air_PWA_PaylaterFK_EMI() throws Exception {
         driver.manage().deleteAllCookies();
-     /*   driver.get(air_SRPUrl_2("IN",origin1,destination1, date+5));
+        driver.get(air_SRPUrl2("IN",origin1,destination1, date));
         air_SRPPage(driver,"", "");
         air_ItnPage(driver, "", "","","");
         air_AddOnPage(driver, "", "");
-        air_TravellerPage(driver, "","9986696785",emailID,"");*/
-        driver.get("https://qa2new.cleartrip.com/pay/air/8fa9e9928bfd6d1bcb07bc86ed2ee39a?lang=en");
+        air_TravellerPage(driver, "","9986696785",emailID,"");
         bento_Paymentpage_PWA(driver,"PAYLATERFK","","","PaylaterEMI","", "");
-        bento_Air_ConfirmationPage_PWA(driver,"", "", "PaylaterEMI FK :");
+        bento_Air_ConfirmationPage_PWA(driver,"", "", "Paylater EMI FK ");
     }
     @AfterClass(alwaysRun = true)
     public void closeSelenium() throws Exception {

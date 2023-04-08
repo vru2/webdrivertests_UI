@@ -17,13 +17,13 @@ public class Air_PWA_Paylater_FK extends PaymentsUI_Common_PWA_Air {
     @Test
     public void Air_PWA_Paylater() throws Exception {
         driver.manage().deleteAllCookies();
-        driver.get(air_SRPUrl("IN",origin,destination, date+5));
+        driver.get(air_SRPUrl2("IN",origin,destination, date));
         air_SRPPage(driver,"", "");
         air_ItnPage(driver, "", "","","");
         air_AddOnPage(driver, "", "");
         air_TravellerPage(driver, "","9986696785",emailID,"");
         bento_Paymentpage_PWA(driver,"PAYLATERFK","","","Paylater","", "");
-        bento_Air_ConfirmationPage_PWA(driver,"", "", "Paylater FK :");
+        bento_Air_ConfirmationPage_PWA(driver,"", "", "Paylater FK");
     }
     @AfterClass(alwaysRun = true)
     public void closeSelenium() throws Exception {

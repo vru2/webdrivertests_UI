@@ -10,6 +10,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Webdrivertests.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Webdrivertests.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/common.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/common.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_Paylater_FK.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_Paylater_FK.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_Paylater_FK_EMI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_Paylater_FK_EMI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,17 +46,12 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/Users/varalakshmi.v/webdrivertests",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/java/payment_Air_Web" />
@@ -63,7 +61,7 @@
       <recent name="test.java.payment_Air_PWA_New" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.Air_PWA_CC_PayTM_inline">
+  <component name="RunManager" selected="TestNG.Air_Web_Paylater_FK_EMI">
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -75,7 +73,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Air_PWA_CC_PayTM_inline" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Air_PWA_Paylater_FK" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Webdrivertests" />
       <extension name="coverage">
         <pattern>
@@ -84,7 +82,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="test.java.payment_Air_PWA" />
-      <option name="MAIN_CLASS_NAME" value="test.java.payment_Air_PWA.Air_PWA_CC_PayTM_inline" />
+      <option name="MAIN_CLASS_NAME" value="test.java.payment_Air_PWA.Air_PWA_Paylater_FK" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -92,17 +90,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Hotels_PWA_SavedPay_UPI.Hotel_PWA_UPI_Saved" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Air_PWA_Paylater_FK_EMI" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Webdrivertests" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.java.payment_Hotels_PWA.*" />
+          <option name="PATTERN" value="test.java.payment_Air_PWA.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="test.java.payment_Hotels_PWA" />
-      <option name="MAIN_CLASS_NAME" value="test.java.payment_Hotels_PWA.Hotels_PWA_SavedPay_UPI" />
-      <option name="METHOD_NAME" value="Hotel_PWA_UPI_Saved" />
+      <option name="PACKAGE_NAME" value="test.java.payment_Air_PWA" />
+      <option name="MAIN_CLASS_NAME" value="test.java.payment_Air_PWA.Air_PWA_Paylater_FK_EMI" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Air_PWA_Paylater_FK_EMI.Air_PWA_PaylaterFK_EMI" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Webdrivertests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.java.payment_Air_PWA.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.java.payment_Air_PWA" />
+      <option name="MAIN_CLASS_NAME" value="test.java.payment_Air_PWA.Air_PWA_Paylater_FK_EMI" />
+      <option name="METHOD_NAME" value="Air_PWA_PaylaterFK_EMI" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -110,52 +125,35 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Hotels_PWA_UPI_Inline" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Air_Web_Paylater_FK.Air_Desktop_FKPL" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Webdrivertests" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.java.payment_Hotels_PWA.*" />
+          <option name="PATTERN" value="test.java.payment_Air_Web.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="test.java.payment_Hotels_PWA" />
-      <option name="MAIN_CLASS_NAME" value="test.java.payment_Hotels_PWA.Hotels_PWA_UPI_Inline" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Hotels_PWA_Wallet_CC" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Webdrivertests" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.java.payment_Hotels_PWA.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test.java.payment_Hotels_PWA" />
-      <option name="MAIN_CLASS_NAME" value="test.java.payment_Hotels_PWA.Hotels_PWA_Wallet_CC" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Hotels_PWA_Wallet_CC.Hotel_PWA_WL_CC" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Webdrivertests" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.java.payment_Hotels_PWA.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test.java.payment_Hotels_PWA" />
-      <option name="MAIN_CLASS_NAME" value="test.java.payment_Hotels_PWA.Hotels_PWA_Wallet_CC" />
-      <option name="METHOD_NAME" value="Hotel_PWA_WL_CC" />
+      <option name="PACKAGE_NAME" value="test.java.payment_Air_Web" />
+      <option name="MAIN_CLASS_NAME" value="test.java.payment_Air_Web.Air_Web_Paylater_FK" />
+      <option name="METHOD_NAME" value="Air_Desktop_FKPL" />
       <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Air_Web_Paylater_FK_EMI" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Webdrivertests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.java.payment_Air_Web.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.java.payment_Air_Web" />
+      <option name="MAIN_CLASS_NAME" value="test.java.payment_Air_Web.Air_Web_Paylater_FK_EMI" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
@@ -183,11 +181,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.Air_PWA_CC_PayTM_inline" />
-        <item itemvalue="TestNG.Hotels_PWA_SavedPay_UPI.Hotel_PWA_UPI_Saved" />
-        <item itemvalue="TestNG.Hotels_PWA_UPI_Inline" />
-        <item itemvalue="TestNG.Hotels_PWA_Wallet_CC.Hotel_PWA_WL_CC" />
-        <item itemvalue="TestNG.Hotels_PWA_Wallet_CC" />
+        <item itemvalue="TestNG.Air_Web_Paylater_FK_EMI" />
+        <item itemvalue="TestNG.Air_Web_Paylater_FK.Air_Desktop_FKPL" />
+        <item itemvalue="TestNG.Air_PWA_Paylater_FK_EMI.Air_PWA_PaylaterFK_EMI" />
+        <item itemvalue="TestNG.Air_PWA_Paylater_FK_EMI" />
+        <item itemvalue="TestNG.Air_PWA_Paylater_FK" />
       </list>
     </recent_temporary>
   </component>

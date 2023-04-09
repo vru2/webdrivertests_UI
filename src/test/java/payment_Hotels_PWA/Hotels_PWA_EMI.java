@@ -16,13 +16,11 @@ public class Hotels_PWA_EMI extends PaymentsUI_Common_PWA_Hotels {
 
     @Test
     public void Hotel_PWA_EMI() throws Exception {
-        driver.get("https://qa2new.cleartrip.com/pay/air/96f9689d8ae9f019cea46fa3716c8c16/?");
-        /*
         driver.get(hotelsUrl);
         hotels_HomePage(driver, HotelName, CheckIN, CheckOut);
         hotels_SRP(driver, "", "");
         hotels_DetailsPage(driver, "", "");
-        hotels_ItineraryPage(driver, "", "", "", "");*/
+        hotels_ItineraryPage(driver, "", "", "", "");
         bento_Paymentpage_PWA(driver,"EMI","","","EMI","RazorpayCC","");
         hotels_ConfirmationPage(driver, "","", "Hotel PWA EMI ");
     }

@@ -451,10 +451,10 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
             safeClick(driver, getObjectPayment("PWA_PaymentPage_Wallet_Toggle"));
         }*/
         if(PayType.equalsIgnoreCase("PartialWallet")){
-            bento_pay_validate_Price_Popup_New(driver, "Cleartrip wallet", "Gift card");
+            bento_pay_validate_Price_Popup_New(driver, "Cleartrip Wallet", "Gift card");
         }
         if(PayType.equalsIgnoreCase("GV_Partial")){
-            bento_pay_validate_Price_Popup(driver, "Cleartrip wallet", "Gift card");
+            bento_pay_validate_Price_Popup(driver, "Cleartrip Wallet", "Gift card");
         }
         else if(PayType.equalsIgnoreCase("PartialWalletONLY")){
             bento_pay_validate_Price_Popup_New(driver, "Cleartrip Wallet", "");
@@ -556,9 +556,9 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
             Enter_CC_Details_PWA_New(driver, "5241810000000000", "1225", "123");
         }
         else if(PayType.contains("BFL")){
-            textPresent_Log(driver, "BAJAJ Finserv Credit card", 1);
+            textPresent_Log(driver, "BAJAJ Finserv card", 1);
             safeType(driver, By.name("cardnumber"), "2030400200341834");
-            safeType(driver, By.name("userName"), "test");
+            safeType(driver, By.name("name"), "test");
         }
         safeClick(driver, getObjectPayment("PWA_Payment_New_Pay_Btn"));
         smartClick(driver, getObjectPayment("PWA_Payment_New_Skip_RBI"));
@@ -1001,7 +1001,7 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
                     PayType = "ADD NEW CARD";
                     break;
                 case "NB":
-                    PayType = "NET BANKING";
+                    PayType = "Net Banking";
                     break;
                 case "EMI":
                     PayType = "Credit Card EMI";
@@ -1033,11 +1033,20 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
 
 
     public void payUI_Select_PaymentType_PWA_New1(RemoteWebDriver driver, String PayType) throws Exception {
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("window.scrollBy(0, 450)", "");
+        String xpath = "//div/*[text() = '"+PayType+"']";
+        System.out.println("xpath "+xpath);
+        smartClick(driver, By.xpath(xpath));
+    }
+
+        public void payUI_Select_PaymentType_PWA_New2(RemoteWebDriver driver, String PayType) throws Exception {
        JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("window.scrollBy(0, 450)", "");
         if (textPresent(driver, "Preferred", 1)) {
             for( int j=1; j<= 15; j++) {
-                String xpath = "//div[2]/div[" + j + "]/div[2]/div";
+                String xpath = "//div[3]/div[2]/div[" + j + "]/div[2]/div";
+                System.out.println(getText(driver, By.xpath(xpath)));
                 if (elementVisible(driver, By.xpath(xpath), 1)) {
                    if (getText(driver, By.xpath(xpath)).equalsIgnoreCase(PayType)) {
                         smartClick(driver, By.xpath(xpath));
@@ -1047,7 +1056,7 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
             }
         } else {
             for( int j=1; j<= 15; j++) {
-                String xpath = "//div[2]/div[" + j + "]/div[2]/div";
+                String xpath = "//div[3]/div[2]/div[" + j + "]/div[2]/div";
                 if (elementVisible(driver, By.xpath(xpath), 1)) {
                     System.out.println(getText(driver, By.xpath(xpath)));
                     if (getText(driver, By.xpath(xpath)).equalsIgnoreCase(PayType)) {

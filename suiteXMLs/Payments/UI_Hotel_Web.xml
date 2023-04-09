@@ -95,13 +95,11 @@
         </classes>
     </test>
 
-
     <test name="UPI Saved UPI" preserve-order="true">
         <classes>
             <class name="test.java.payment_Hotels_Web.Hotels_Web_Saved_UPI"/>
         </classes>
     </test>
-
 
     <test name="UPI Scan Retry Amex" preserve-order="true">
         <classes>

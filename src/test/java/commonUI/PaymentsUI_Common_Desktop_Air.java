@@ -107,10 +107,11 @@ public class PaymentsUI_Common_Desktop_Air extends PaymentsUI_Common_Desktop {
 
     public void air_LoginPage_Desktop(RemoteWebDriver driver, String LoginPage, String EmailID, String PhoneNo) throws Exception {
         elementVisible(driver, getObjectPayment("Desktop_Air_LoginPage_PhoneNo"),10);
-        textPresent_Log(driver, "Add contact details", 1);
+        textPresent_Log(driver, "Add contact details", 2);
         safeType(driver, getObjectPayment("Desktop_Air_LoginPage_PhoneNo"), PhoneNo);
-            smartClick(driver, getObjectPayment("Desktop_Air_LoginPage_EmailID"));
-            smartType(driver, getObjectPayment("Desktop_Air_LoginPage_EmailID"), EmailID);
+        smartClick(driver, getObjectPayment("Desktop_Air_LoginPage_EmailID"));
+        smartType(driver, getObjectPayment("Desktop_Air_LoginPage_EmailID"), EmailID);
+        smartType(driver, getObjectPayment("Desktop_Air_LoginPage_EmailID1"), EmailID);
 
 
 /*
@@ -130,7 +131,8 @@ public class PaymentsUI_Common_Desktop_Air extends PaymentsUI_Common_Desktop {
         elementVisible(driver, getObjectPayment("Desktop_Air_TravellerPage_FirstName"),10);
         textPresent_Log(driver,"Add traveller details", 1);
         textPresent(driver,"Adult 1", 1);
-        safeType(driver, getObjectPayment("Desktop_Air_TravellerPage_FirstName"),"Kiran");
+       // smartType(driver, getObjectPayment("Desktop_Air_TravellerPage_FirstName"),"Kiran");
+        smartType(driver, getObjectPayment("Desktop_Air_TravellerPage_FirstName1"),"Kiran");
         safeType(driver, getObjectPayment("Desktop_Air_TravellerPage_LastName"),"Kumar");
         //safeSelectByIndex(driver, getObjectPayment("Desktop_Air_TravellerPage_Salutation"),1 );
         safeClick(driver, getObjectPayment("Desktop_Air_TravellerPage_Salutation"));

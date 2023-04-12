@@ -19,10 +19,10 @@ public class Air_PWA_Paylater_FK_EMI extends PaymentsUI_Common_PWA_Air {
         driver.manage().deleteAllCookies();
         driver.get(air_SRPUrl2("IN",origin1,destination1, date));
         air_SRPPage(driver,"", "");
-        air_ItnPage(driver, "", "","","");
+        air_ItnPage(driver, "COUPON", "PAYFKEMI","","");
         air_AddOnPage(driver, "", "");
-        air_TravellerPage(driver, "","9986696785",emailID,"");
-        bento_Paymentpage_PWA(driver,"PAYLATERFK","","","PaylaterEMI","", "");
+        air_TravellerPage(driver, "","7780597594",emailID,"");
+        bento_Paymentpage_PWA(driver,"PAYLATERFK","","","PaylaterEMI","COUPON", "");
         bento_Air_ConfirmationPage_PWA(driver,"", "", "Paylater EMI FK ");
     }
     @AfterClass(alwaysRun = true)

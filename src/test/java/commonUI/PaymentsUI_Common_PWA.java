@@ -629,7 +629,10 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
 
     public void bento_pay_PAYLATERFK_PWA_New(RemoteWebDriver driver, String PaymentType,String CardNumber,String domain,String PayType, String BankName) throws Exception {
         payUI_Select_PaymentType_PWA_New(driver, PaymentType);
-        textPresent_Log(driver,"Use Flipkart Pay Later", 5);
+        textPresent_Log(driver,"Use Flipkart Pay Later", 10);
+        if(BankName.equalsIgnoreCase("COUPON")){
+            bento_pay_validate_Price_Popup_New(driver, "Coupon code", "");
+        }
         if(PayType.equalsIgnoreCase("Paylater")){
             safeClick(driver, By.xpath("//div[3]/label/div[2]/input"));
         }
@@ -637,8 +640,11 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
             safeClick(driver, By.xpath("//input"));
             safeClick(driver, getObjectPayment("PWA_Payment_New_Pay_Btn"));
             textPresent_Log(driver,"Select a tenure", 5);
-            //safeClick(driver, By.xpath("//input"));
-            textPresent_Log(driver,"A one time processing fee of ₹150 will be charged on your next month’s bill", 5);
+        if(BankName.equalsIgnoreCase("COUPON")){
+                bento_pay_validate_Price_Popup_New(driver, "Coupon code", "");
+            }
+            safeClick(driver, By.xpath("//input"));
+            textPresent_Log(driver,"One time processing fee of ₹150 will be charged on next month’s bill", 5);
             //textPresent_Log(driver,"Processing fee for EMI orders is 1.5% (Min. ₹100) + GST for charges and other important information related to your EMI refer key fact statement", 5);
         }
         safeClick(driver, getObjectPayment("PWA_Payment_New_Pay_Btn"));
@@ -1020,7 +1026,7 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
                     PayType = "PAY LATER";
                     break;
                 case "PAYLATERFK":
-                    PayType = "Flipkart pay later";
+                    PayType = "Flipkart Pay Later";
                     break;
                 case "CARDLESSEMI":
                     PayType = "CARDLESS EMI";

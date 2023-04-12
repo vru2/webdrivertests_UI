@@ -521,30 +521,25 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
         payUI_Select_PaymentType(driver, PaymentType);
         textPresent_Log(driver, "Choose Flipkart Pay Later option", 20);
         if(PayType.equalsIgnoreCase("PaylaterEMI")) {
+            if(BankName.equalsIgnoreCase("COUPON")) {
+                textPresent_Log(driver, "Coupon code (PAYFKEMI)", 2);
+            }
            // safeClick(driver, By.xpath("//input[@value='EMI']"));
             safeClick(driver, By.xpath("//span"));
             //safeClick(driver, By.xpath("//div[2]/div[2]/label"));
             textPresent_Log(driver, "One time processing fee of", 1);
             textPresent_Log(driver, "will be charged on next month’s bill", 1);
-            textPresent_Log(driver, "Processing fee for EMI orders is 1.5% (Min. ₹100) + GST for charges and other important information related to your EMI refer Key Fact Statement", 1);
+            //textPresent_Log(driver, "Processing fee for EMI orders is 1.5% (Min. ₹100) + GST for charges and other important information related to your EMI refer Key Fact Statement", 1);
             safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
         }
         if(PayType.equalsIgnoreCase("Paylater")) {
+            if(BankName.equalsIgnoreCase("COUPON")) {
+                textPresent_Log(driver, "Coupon code (PAYFKPL)", 2);
+            }
 
             mouseHover(driver, By.xpath("//div[3]/div/div/div[1]/div/label"));
             smartClick(driver, By.xpath("//div[3]/div/div/div[1]/div/label"));
-/*
-            mouseHover(driver, By.xpath("//input[@value='PL' and @name='flipkartPL']"));
-            smartClick(driver, By.xpath("//input[@value='PL' and @name='flipkartPL']"));
-            mouseHover(driver, By.cssSelector("span.grey.xh-highlight"));
-            smartClick(driver, By.cssSelector("span.grey.xh-highlight"));
-            mouseHover(driver, By.xpath("//div/label/div[2]/span"));
-            smartClick(driver, By.xpath("//div/label/div[2]/span"));
-            mouseHover(driver, By.xpath("//div/label/div/span"));
-            smartClick(driver, By.xpath("//div/label/div/span"));
-           */
             String PayEMI_Txt= getText(driver, By.xpath("//div/label/div[2]/span[2]"));
-            System.out.println(PayEMI_Txt);
             if(!PayEMI_Txt.contains("Remaining balance:")){
                 Reporter.log("PayEMI_Txt "+PayEMI_Txt);
                 Assert.assertTrue(false);

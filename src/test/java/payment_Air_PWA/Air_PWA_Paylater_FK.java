@@ -19,10 +19,10 @@ public class Air_PWA_Paylater_FK extends PaymentsUI_Common_PWA_Air {
         driver.manage().deleteAllCookies();
         driver.get(air_SRPUrl2("IN",origin,destination, date));
         air_SRPPage(driver,"", "");
-        air_ItnPage(driver, "", "","","");
+        air_ItnPage(driver, "COUPON", "PAYFKPL","","");
         air_AddOnPage(driver, "", "");
         air_TravellerPage(driver, "","9986696785",emailID,"");
-        bento_Paymentpage_PWA(driver,"PAYLATERFK","","","Paylater","", "");
+        bento_Paymentpage_PWA(driver,"PAYLATERFK","","","Paylater","COUPON", "");
         bento_Air_ConfirmationPage_PWA(driver,"", "", "Paylater FK");
     }
     @AfterClass(alwaysRun = true)

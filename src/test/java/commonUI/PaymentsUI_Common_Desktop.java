@@ -117,8 +117,8 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
         }
         else if(GWName.equalsIgnoreCase("RAZORPAYNB")){
             if(SuccessFail.equalsIgnoreCase("Success")){
-                textPresent(driver, "Welcome to Razorpay Software Private Ltd Bank", 1);
                 elementPresent_log(driver, getObjectPayment("Bento_Payment_NB_Payment_Success"), "",	20);
+                textPresent(driver, "Welcome to Razorpay Software Private Ltd Bank", 5);
                 textPresent(driver, "Welcome to Razorpay Software Private Ltd Bank", 1);
                 elementVisible(driver, getObjectPayment("Bento_Payment_NB_Payment_Success"), 10);
                 safeClick(driver, getObjectPayment("Bento_Payment_NB_Payment_Success"));
@@ -523,9 +523,9 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
         if(PayType.equalsIgnoreCase("PaylaterEMI")) {
            // safeClick(driver, By.xpath("//input[@value='EMI']"));
             safeClick(driver, By.xpath("//span"));
-            safeClick(driver, By.xpath("//div[2]/div[2]/label"));
-            textPresent_Log(driver, "A one time processing fee of", 1);
-            textPresent_Log(driver, "will be charged on your next month’s bill", 1);
+            //safeClick(driver, By.xpath("//div[2]/div[2]/label"));
+            textPresent_Log(driver, "One time processing fee of", 1);
+            textPresent_Log(driver, "will be charged on next month’s bill", 1);
             textPresent_Log(driver, "Processing fee for EMI orders is 1.5% (Min. ₹100) + GST for charges and other important information related to your EMI refer Key Fact Statement", 1);
             safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
         }

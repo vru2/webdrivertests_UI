@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Air Desktop Booking" parallel="tests" thread-count="1">
+<suite name="Air Desktop Booking" parallel="tests" thread-count="2">
 
 <listeners>
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
@@ -17,6 +17,20 @@
     <test name="CC PayU" preserve-order="true">
         <classes>
             <class name="test.java.payment_Air_Web.Air_Web_CC_PayU"/>
+        </classes>
+    </test>
+
+
+    <test name="FK PayLater" preserve-order="true">
+        <classes>
+            <class name="test.java.payment_Air_Web.Air_Web_Paylater_FK"/>
+        </classes>
+    </test>
+
+
+    <test name="FK PayLater EMI" preserve-order="true">
+        <classes>
+            <class name="test.java.payment_Air_Web.Air_Web_Paylater_FK_EMI"/>
         </classes>
     </test>
 
@@ -46,13 +60,13 @@
 
     <test name="EMI BFL" preserve-order="true">
         <classes>
-        <!--    <class name="test.java.payment_Air_Web.Air_Web_EMI_BFL"/>
-       --> </classes>
+            <class name="test.java.payment_Air_Web.Air_Web_EMI_BFL"/>
+        </classes>
     </test>
 
     <test name="EMI NoCost" preserve-order="true">
-        <classes><!--
-            <class name="test.java.payment_Air_Web.Air_Web_EMI_NCE"/>-->
+        <classes>
+            <class name="test.java.payment_Air_Web.Air_Web_EMI_NCE"/>
         </classes>
     </test>
 

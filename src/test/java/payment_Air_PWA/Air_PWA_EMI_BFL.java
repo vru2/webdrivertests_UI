@@ -17,7 +17,7 @@ public class Air_PWA_EMI_BFL extends PaymentsUI_Common_PWA_Air {
     @Test
     public void Air_PWA_BFL() throws Exception {
         driver.manage().deleteAllCookies();
-        driver.get(air_SRPUrl("IN",origin,destination, date));
+        driver.get(air_SRPUrl2("IN",origin,destination, date));
         air_SRPPage(driver,"", "");
         air_ItnPage(driver, "", "","","");
         air_AddOnPage(driver, "", "");

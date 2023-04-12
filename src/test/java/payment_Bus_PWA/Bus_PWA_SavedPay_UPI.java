@@ -17,14 +17,14 @@ public class Bus_PWA_SavedPay_UPI extends PaymentsUI_Common_PWA_Bus {
 
     @Test
     public void Bus_PWA_UPI() throws Exception {
-        driver.get(bus_SRPUrl("IN", "", "", 6));
+        driver.get(bus_SRPUrl("IN", "", "", 10));
         bus_SRP(driver, "", "");
         bus_SeatSelection(driver, "", "");
         bus_SelectPickup(driver, "", "");
         bus_TravellerPage(driver, "", phoneNo, emailID);
         bus_ReviewPage(driver, "", "", "");
         driver.manage().addCookie(fullwallet);
-        bento_Paymentpage_PWA(driver,"storedcardUPI","","HOTELS","","", "Payment Mode UPI : ");
+        bento_Paymentpage_PWA(driver,"SAVEDPAYMENT","","HOTELS","SavedUPI","", "Payment Mode UPI : ");
         bus_ConfirmationPage(driver, "","", "Bus CC ");
     }
 

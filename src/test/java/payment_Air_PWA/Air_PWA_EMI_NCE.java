@@ -17,7 +17,7 @@ public class Air_PWA_EMI_NCE extends PaymentsUI_Common_PWA_Air {
     @Test
     public void Air_PWA_EMI_NCE() throws Exception {
         driver.manage().deleteAllCookies();
-        driver.get(air_SRPUrl_2("IN","MAA","CCU", date));
+        driver.get(air_SRPUrl_2("IN","BLR","CCU", date));
         air_SRPPage(driver,"", "");
         air_ItnPage(driver, "", "","","");
         air_AddOnPage(driver, "", "");

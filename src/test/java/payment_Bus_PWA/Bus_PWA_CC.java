@@ -23,7 +23,7 @@ public class Bus_PWA_CC extends PaymentsUI_Common_PWA_Bus {
         bus_SelectPickup(driver, "", "");
         bus_TravellerPage(driver, "", phoneNo, emailID);
         bus_ReviewPage(driver, "", "", "");
-        bento_Paymentpage_PWA(driver,"CC","","","","Paytm","");
+        bento_Paymentpage_PWA(driver,"CC","","","","Amex","");
         bus_ConfirmationPage(driver, "","", "Bus CC ");
     }
 

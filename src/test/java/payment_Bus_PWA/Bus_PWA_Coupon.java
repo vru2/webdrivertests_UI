@@ -22,9 +22,9 @@ public class Bus_PWA_Coupon extends PaymentsUI_Common_PWA_Bus {
         bus_SeatSelection(driver, "", "");
         bus_SelectPickup(driver, "", "");
         bus_TravellerPage(driver, "", phoneNo, emailID);
-        bus_ReviewPage(driver, "Coupon", "CTBUS", "");
+        bus_ReviewPage(driver, "Coupon", "CTTEST", "");
         bento_Paymentpage_PWA(driver,"UPI","","","Inline","","");
-        bus_ConfirmationPage(driver, "","", "Bus COUPON AMEX");
+        bus_ConfirmationPage(driver, "","", "Bus COUPON UPI ");
     }
 
     @AfterClass(alwaysRun = true)

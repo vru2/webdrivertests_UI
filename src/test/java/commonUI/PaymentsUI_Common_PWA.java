@@ -638,15 +638,19 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
         }
         else if(PayType.equalsIgnoreCase("PaylaterEMI")){
             safeClick(driver, By.xpath("//input"));
+
             safeClick(driver, getObjectPayment("PWA_Payment_New_Pay_Btn"));
             textPresent_Log(driver,"Select a tenure", 5);
+
         if(BankName.equalsIgnoreCase("COUPON")){
                 bento_pay_validate_Price_Popup_New(driver, "Coupon code", "");
             }
             safeClick(driver, By.xpath("//input"));
+            safeClick(driver, By.xpath("//td/div/div/div"));
+            textPresent_Log(driver,"A penalty of 5% of the outstanding due, levied on a monthly basis.", 5);
+            safeClick(driver, By.cssSelector("svg"));
             textPresent_Log(driver,"One time processing fee of ₹150 will be charged on next month’s bill", 5);
-            //textPresent_Log(driver,"Processing fee for EMI orders is 1.5% (Min. ₹100) + GST for charges and other important information related to your EMI refer key fact statement", 5);
-        }
+           }
         safeClick(driver, getObjectPayment("PWA_Payment_New_Pay_Btn"));
         bento_pay_PAYLATERFK_PWA_OTP(driver, "234567");
     }

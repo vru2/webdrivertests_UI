@@ -525,11 +525,22 @@ public class PaymentsUI_Common_Desktop extends PaymentsUI_Common{
                 textPresent_Log(driver, "Coupon code (PAYFKEMI)", 2);
             }
            // safeClick(driver, By.xpath("//input[@value='EMI']"));
-            safeClick(driver, By.xpath("//span"));
+         //   safeClick(driver, By.xpath("//span"));
             //safeClick(driver, By.xpath("//div[2]/div[2]/label"));
             textPresent_Log(driver, "One time processing fee of", 1);
             textPresent_Log(driver, "will be charged on next month’s bill", 1);
             //textPresent_Log(driver, "Processing fee for EMI orders is 1.5% (Min. ₹100) + GST for charges and other important information related to your EMI refer Key Fact Statement", 1);
+
+            safeClick(driver, By.xpath("//div[3]/span[2]"));
+            textPresent_Log(driver, "Key Fact Statement",5);
+            String Latepayment = getText(driver, By.xpath("//tr[6]/td[2]"));
+            if(!Latepayment.contains("A penalty of 5% of the outstanding due, levied on a monthly basis")){
+                Reporter.log("A penalty of 5% of the outstanding due, levied on a monthly basis text not displayed");
+                Assert.assertTrue(false);
+            }
+            safeClick(driver, By.cssSelector("svg.c-neutral-900.c-pointer > path"));
+
+
             safeClick(driver, getObjectPayment("Bento_Payment_Paynow"));
         }
         if(PayType.equalsIgnoreCase("Paylater")) {

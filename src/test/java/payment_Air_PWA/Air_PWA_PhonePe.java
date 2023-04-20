@@ -17,15 +17,13 @@ public class Air_PWA_PhonePe extends PaymentsUI_Common_PWA_Air {
     @Test
     public void Air_PWA_PhonePe() throws Exception {
         driver.manage().deleteAllCookies();
-        /*driver.get(air_SRPUrl("IN",origin,destination, date));
+        driver.get(air_SRPUrl("IN",origin,destination, date));
         air_SRPPage(driver,"", "");
         air_ItnPage(driver, "", "","","");
         air_AddOnPage(driver, "", "");
-        air_TravellerPage(driver, "",phoneNo, emailID,"");
-        */
-        driver.get("https://qa2new.cleartrip.com/pay/air/1f87d70c138a1872b519a41ed3393e06?lang=en");
+        air_TravellerPage(driver, "","1212121216", emailID,"");
         bento_Paymentpage_PWA(driver,"TW","","","PhonePE","", "");
-       // bento_Air_ConfirmationPage_PWA(driver,"", "", "PhonePe");
+        bento_Air_ConfirmationPage_PWA(driver,"", "", "PhonePe");
     }
     @AfterClass(alwaysRun = true)
     public void closeSelenium() throws Exception {

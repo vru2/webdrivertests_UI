@@ -22,7 +22,7 @@ public class Air_PWA_SavedPay_Tokenized extends PaymentsUI_Common_PWA_Air {
         air_ItnPage(driver, "", "","","");
         air_AddOnPage(driver, "", "");
         driver.manage().addCookie(fullwallet);
-        air_TravellerPage(driver, "",phoneNo,emailID,"");
+        air_TravellerPage(driver, "","1212121218",emailID,"");
         bento_Paymentpage_PWA(driver,"SAVEDPAYMENT","","","SavedCard","Paytm", "");
         bento_Air_ConfirmationPage_PWA(driver,"", "", "Saved Tokenized card :");
     }

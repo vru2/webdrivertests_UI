@@ -21,7 +21,7 @@ public class Air_PWA_UPI_Failure_Success extends PaymentsUI_Common_PWA_Air {
         air_SRPPage(driver,"", "");
         air_ItnPage(driver, "", "","","");
         air_AddOnPage(driver, "", "");
-        air_TravellerPage(driver, "",phoneNo,emailID,"");
+        air_TravellerPage(driver, "","1212121211",emailID,"");
         bento_Paymentpage_PWA(driver,"UPI","","","","Failure","");
         bento_Paymentpage_PWA(driver,"UPI","","","Inline","","");
         bento_Air_ConfirmationPage_PWA(driver,"", "", "UPI Failure & Success");

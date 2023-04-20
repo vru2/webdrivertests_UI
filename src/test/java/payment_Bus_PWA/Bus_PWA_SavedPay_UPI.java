@@ -25,7 +25,7 @@ public class Bus_PWA_SavedPay_UPI extends PaymentsUI_Common_PWA_Bus {
         bus_ReviewPage(driver, "", "", "");
         driver.manage().addCookie(fullwallet);
         bento_Paymentpage_PWA(driver,"SAVEDPAYMENT","","HOTELS","SavedUPI","", "Payment Mode UPI : ");
-        bus_ConfirmationPage(driver, "","", "Bus CC ");
+        bus_ConfirmationPage(driver, "","", "Bus Saved UPI ");
     }
 
     @AfterClass(alwaysRun = true)

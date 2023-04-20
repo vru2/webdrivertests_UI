@@ -21,7 +21,7 @@ public class Air_PWA_Coupon_Valid extends PaymentsUI_Common_PWA_Air {
         air_SRPPage(driver,"", "");
         air_ItnPage(driver, "COUPON", "PAYCC","","");
         air_AddOnPage(driver, "", "");
-        air_TravellerPage(driver, "",phoneNo, emailID,"");
+        air_TravellerPage(driver, "","1212121215", emailID,"");
         bento_Paymentpage_PWA(driver,"Coupon","","","Amex","Amex", "");
         bento_Air_ConfirmationPage_PWA(driver,"", "", "Coupon valid Amex :");
     }

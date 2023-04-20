@@ -21,7 +21,7 @@ public class Air_PWA_GV_CLP_Full extends PaymentsUI_Common_PWA_Air {
         air_SRPPage(driver,"", "");
         air_ItnPage(driver, "GVFULL", "","","");
         air_AddOnPage(driver, "", "");
-        air_TravellerPage(driver, "",phoneNo,emailID,"");
+        air_TravellerPage(driver, "","1212121219",emailID,"");
         bento_Paymentpage_PWA(driver,"GV","","","","","");
         bento_Air_ConfirmationPage_PWA(driver,"", "", "GV Full :");
     }

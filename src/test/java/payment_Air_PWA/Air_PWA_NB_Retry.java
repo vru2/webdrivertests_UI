@@ -21,7 +21,7 @@ public class Air_PWA_NB_Retry extends PaymentsUI_Common_PWA_Air {
         air_SRPPage(driver,"", "");
         air_ItnPage(driver, "", "","","");
         air_AddOnPage(driver, "", "");
-        air_TravellerPage(driver, "",phoneNo, emailID,"");
+        air_TravellerPage(driver, "","1212121215", emailID,"");
         bento_Paymentpage_PWA(driver,"NB","","","Retry","RazorpayNB", "Success");
         bento_Air_ConfirmationPage_PWA(driver,"", "", "NB Razorpay");
     }

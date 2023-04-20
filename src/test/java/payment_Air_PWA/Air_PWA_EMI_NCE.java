@@ -21,7 +21,7 @@ public class Air_PWA_EMI_NCE extends PaymentsUI_Common_PWA_Air {
         air_SRPPage(driver,"", "");
         air_ItnPage(driver, "", "","","");
         air_AddOnPage(driver, "", "");
-        air_TravellerPage(driver, "",phoneNo, emailID,"");
+        air_TravellerPage(driver, "","1212121218", emailID,"");
         bento_Paymentpage_PWA(driver,"EMI","","","NCE EMI","RazorpayCC","");
         bento_Air_ConfirmationPage_PWA(driver,"", "", "EMI Air ");
     }

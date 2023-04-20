@@ -21,9 +21,9 @@ public class Air_PWA_EMI extends PaymentsUI_Common_PWA_Air {
         air_SRPPage(driver,"", "");
         air_ItnPage(driver, "", "","","");
         air_AddOnPage(driver, "", "");
-        air_TravellerPage(driver, "",phoneNo, emailID,"");
+        air_TravellerPage(driver, "","1212121216", emailID,"");
         bento_Paymentpage_PWA(driver,"EMI","","","EMI","RazorpayCC","");
-        bento_Air_ConfirmationPage_PWA(driver,"", "", "EMI Air ");
+        bento_Air_ConfirmationPage_PWA(driver,"", "", "EMI PWA Air ");
     }
     @AfterClass(alwaysRun = true)
     public void closeSelenium() throws Exception {

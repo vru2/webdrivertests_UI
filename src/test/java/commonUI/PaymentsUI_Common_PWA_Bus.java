@@ -11,7 +11,20 @@ public class PaymentsUI_Common_PWA_Bus extends PaymentsUI_Common_PWA{
 
     public void bus_SRP(RemoteWebDriver driver, String BusName, String BusType) throws Exception {
         elementVisible(driver, getObjectPayment("PWA_Bus_SRP_BusSelect"), 10);
-        safeClick(driver, getObjectPayment("PWA_Bus_SRP_BusSelect"));
+        //safeClick(driver, getObjectPayment("PWA_Bus_SRP_BusSelect"));
+
+        String Bus_Xpath1 = "//div[6]/div[";
+        String Bus_Xpath2 ="]/div/div/div";
+        for(int i=1; i<=5 ; i++){
+            String Bus_Xpath = Bus_Xpath1+i+Bus_Xpath2;
+            String BusNameSRP = getText(driver, By.xpath(Bus_Xpath));
+            if(BusNameSRP.contains("GDS Demo Testnaveen")){
+                safeClick(driver, By.xpath(Bus_Xpath));
+                break;
+            }
+
+        }
+
     }
 
     public void bus_SeatSelection(RemoteWebDriver driver, String Seat, String SeatNo) throws Exception {

@@ -22,7 +22,7 @@ public class Bus_PWA_Coupon extends PaymentsUI_Common_PWA_Bus {
         bus_SeatSelection(driver, "", "");
         bus_SelectPickup(driver, "", "");
         bus_TravellerPage(driver, "", phoneNo, emailID);
-        bus_ReviewPage(driver, "Coupon", "CTTEST", "");
+        bus_ReviewPage(driver, "Coupon", "GOBUS", "");
         bento_Paymentpage_PWA(driver,"UPI","","","Inline","","");
         bus_ConfirmationPage(driver, "","", "Bus COUPON UPI ");
     }

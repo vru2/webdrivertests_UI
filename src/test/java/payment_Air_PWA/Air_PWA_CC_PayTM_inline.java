@@ -21,7 +21,7 @@ public class Air_PWA_CC_PayTM_inline extends PaymentsUI_Common_PWA_Air {
         air_SRPPage(driver,"", "");
         air_ItnPage(driver, "", "","","");
         air_AddOnPage(driver, "", "");
-        air_TravellerPage(driver, "",phoneNo,emailID,"");
+        air_TravellerPage(driver, "","1212121213",emailID,"");
         bento_Paymentpage_PWA(driver,"CC","","","","Paytm","");
         bento_Air_ConfirmationPage_PWA(driver,"", "", "CC PayTM :");
     }

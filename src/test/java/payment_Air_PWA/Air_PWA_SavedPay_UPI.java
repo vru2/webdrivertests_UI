@@ -22,7 +22,7 @@ public class Air_PWA_SavedPay_UPI extends PaymentsUI_Common_PWA_Air {
         air_ItnPage(driver, "", "","","");
         air_AddOnPage(driver, "", "");
         driver.manage().addCookie(fullwallet);
-        air_TravellerPage(driver, "",phoneNo,emailID,"");
+        air_TravellerPage(driver, "", "1212121219",emailID,"");
         bento_Paymentpage_PWA(driver,"SAVEDPAYMENT","","","SavedUPI","", "");
         bento_Air_ConfirmationPage_PWA(driver,"", "", "Saved Paymentmode UPI");
     }

@@ -23,7 +23,7 @@ public class Air_Web_Paylater_FK extends PaymentsUI_Common_Desktop_Air {
         air_AddOnPage_Desktop(driver,"","","","");
         air_LoginPage_Desktop(driver, "", emailID, "7780597594"); //7780597594
         air_TravellerPage_Desktop(driver,"");
-        air_PaymentPage_Desktop(driver,"PAYLATERFK","","","Paylater","", "PayLater FK : ");
+        air_PaymentPage_Desktop(driver,"PAYLATERFK","CloseOTP","InvalidOTP","Paylater","", "PayLater FK : ");
     }
 
     @AfterClass(alwaysRun = true)

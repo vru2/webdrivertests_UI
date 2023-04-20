@@ -622,7 +622,7 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
         }
         safeClick(driver, getObjectPayment("PWA_paymentPage_CardLessEMI_AXIO"));
 
-        safeClick(driver, getObjectPayment("PWA_PaymentPage_Pay_Button"));
+        safeClick(driver, getObjectPayment("PWA_Payment_New_Pay_Btn"));
         elementVisible(driver, By.cssSelector("button.success"), 20);
         safeClick(driver, By.cssSelector("button.success"));
     }
@@ -657,7 +657,7 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
 
     public void bento_pay_PAYLATERFK_PWA_OTP(RemoteWebDriver driver, String OTP) throws Exception {
         textPresent_Log(driver, "Verifying OTP", 10);
-        textPresent_Log(driver, "Flipkart has sent you an OTP on your registered number +91 ******9999", 1);
+        textPresent_Log(driver, "Flipkart has sent you an OTP on your registered number +91******9999", 1);
         safeType(driver, By.xpath("//input[@value='']"), String.valueOf(OTP.charAt(0)));
         safeType(driver, By.xpath("//input[@value='']"), String.valueOf(OTP.charAt(1)));
         safeType(driver, By.xpath("//input[@value='']"), String.valueOf(OTP.charAt(2)));
@@ -1027,13 +1027,13 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
                     PayType = "PREFERRED PAYMENT MODES";
                     break;
                 case "PAYLATER":
-                    PayType = "PAY LATER";
+                    PayType = "Pay Later";
                     break;
                 case "PAYLATERFK":
                     PayType = "Flipkart Pay Later";
                     break;
                 case "CARDLESSEMI":
-                    PayType = "CARDLESS EMI";
+                    PayType = "Cardless EMI";
                     break;
             }
         if(!PayType.equalsIgnoreCase("CC")) {
@@ -1046,7 +1046,7 @@ public class PaymentsUI_Common_PWA extends PaymentsUI_Common {
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("window.scrollBy(0, 450)", "");
         String xpath = "//div/*[text() = '"+PayType+"']";
-     //   System.out.println("xpath "+xpath);
+        //System.out.println("xpath "+xpath);
         smartClick(driver, By.xpath(xpath));
     }
 

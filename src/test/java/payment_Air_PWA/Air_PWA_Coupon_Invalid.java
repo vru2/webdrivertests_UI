@@ -22,9 +22,9 @@ public class Air_PWA_Coupon_Invalid extends PaymentsUI_Common_PWA_Air {
         air_SRPPage(driver,"", "");
         air_ItnPage(driver, "COUPON", "PAYCC","","");
         air_AddOnPage(driver, "", "");
-        air_TravellerPage(driver, "",phoneNo,emailID,"");
+        air_TravellerPage(driver, "","1212121214",emailID,"");
         bento_Paymentpage_PWA(driver,"NB","","","Coupon","RazorpayNB", "Success");
-        bento_Air_ConfirmationPage_PWA(driver,"", "", "Invalid coupon - NB :");
+        bento_Air_ConfirmationPage_PWA(driver,"", "", "PWA Invalid coupon air - NB ");
     }
     @AfterClass(alwaysRun = true)
     public void closeSelenium() throws Exception {

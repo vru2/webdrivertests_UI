@@ -638,6 +638,7 @@ public class AccountsPWA_Login extends WrapperMethod {
             safeClick(driver, getObjectPlatform("AccountsPWA_SupportPageChangeNumber_btn"));
         } else {
             safeClick(driver, getObjectPlatform("AccountsPWA_ChangeNumber_btn"));
+            //test
         }
         if (elementVisible(driver, getObjectPlatform("AccountsPWA_mobileNumber_textbox"), 3)) {
             System.out.println("Change number button is clicked");

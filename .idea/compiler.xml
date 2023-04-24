@@ -19,7 +19,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
-      <module name="Webdrivertests" target="18" />
+      <module name="Webdrivertests" target="19" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

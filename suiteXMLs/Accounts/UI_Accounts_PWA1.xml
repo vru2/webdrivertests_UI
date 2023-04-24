@@ -1,0 +1,133 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Accounts PWA" parallel="tests" thread-count="2">
+
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter" />
+        <listener class-name="test.java.common.RemoveDuplicateResults"/>
+        <listener class-name="test.java.common.RetryListener"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+    </listeners>
+
+    <test name="LoginWithMobileNumber" preserve-order="true">
+        <classes>
+            <class name="test.java.accountsPWAUI.LoginWithMobileNumber"/>
+        </classes>
+    </test>
+
+    <test name="LoginAfterEditingNumber" preserve-order="true">
+        <classes>
+            <class name="test.java.accountsPWAUI.LoginAfterEditingNumber"/>
+        </classes>
+    </test>
+
+    <test name="LoginAfterInvalidOTP" preserve-order="true">
+        <classes>
+            <class name="test.java.accountsPWAUI.LoginAfterInvalidOTP"/>
+        </classes>
+    </test>
+
+    <test name="TripsPageLoginAfterInvalidOTP" preserve-order="true">
+        <classes>
+            <class name="test.java.accountsPWAUI.TripsPageLoginAfterInvalidOTP"/>
+        </classes>
+    </test>
+
+    <test name="TripsPageLoginAfterEditingNumber" preserve-order="true">
+        <classes>
+            <class name="test.java.accountsPWAUI.TripsPageLoginAfterEditingNumber"/>
+        </classes>
+    </test>
+
+    <test name="SupportPageLoginAfterInvalidOTP" preserve-order="true">
+        <classes>
+            <class name="test.java.accountsPWAUI.SupportPageLoginAfterInvalidOTP"/>
+        </classes>
+    </test>
+
+    <test name="AccountsPageOTPValidations" preserve-order="true">
+        <classes>
+            <class name="test.java.accountsPWAUI.AccountsPageOTPValidations"/>
+        </classes>
+    </test>
+
+    <test name="TripsPageOTPValidations" preserve-order="true">
+        <classes>
+            <class name="test.java.accountsPWAUI.TripsPageOTPValidations"/>
+        </classes>
+    </test>
+
+    <test name="HomePageOTPValidations" preserve-order="true">
+        <classes>
+            <class name="test.java.accountsPWAUI.HomePageOTPValidations"/>
+        </classes>
+    </test>
+
+    <test name="SupportPageOTPValidations" preserve-order="true">
+        <classes>
+            <class name="test.java.accountsPWAUI.SupportPageOTPValidations"/>
+        </classes>
+    </test>
+
+    <test name="AccountsPageMobileFieldErrorValidation" preserve-order="true">
+        <classes>
+            <class name="test.java.accountsPWAUI.AccountsPageMobileFieldErrorValidation"/>
+        </classes>
+    </test>
+
+
+    <test name="TripsPageMobileFieldErrorValidation" preserve-order="true">
+        <classes>
+            <class name="test.java.accountsPWAUI.TripsPageMobileFieldErrorValidation"/>
+        </classes>
+    </test>
+
+    <test name="SupportPageMobileFieldErrorValidation" preserve-order="true">
+        <classes>
+            <class name="test.java.accountsPWAUI.SupportPageMobileFieldErrorValidation"/>
+        </classes>
+    </test>
+
+    <test name="SignupMobileOnly" preserve-order="true">
+        <classes>
+            <class name="test.java.accountsPWAUI.SignupMobileOnly"/>
+        </classes>
+    </test>
+
+    <test name="tripsPageLoginOnly" preserve-order="true">
+        <classes>
+            <class name="test.java.accountsPWAUI.tripsPageLoginOnly"/>
+        </classes>
+    </test>
+
+    <test name="SupportPageLoginOnly" preserve-order="true">
+        <classes>
+            <class name="test.java.accountsPWAUI.SupportPageLoginOnly"/>
+        </classes>
+    </test>
+
+    <test name="signupmergeErrorValidations" preserve-order="true">
+        <classes>
+            <class name="test.java.accountsPWAUI.signupMerge"/>
+        </classes>
+    </test>
+
+    <test name="ProfilePageUPDATEEMAIL" preserve-order="true">
+        <classes>
+            <class name="test.java.accountsPWAUI.ProfilePageUPDATEEMAIL"/>
+        </classes>
+    </test>
+
+    <test name="myTipsPageUpdateEmail" preserve-order="true">
+        <classes>
+            <class name="test.java.accountsPWAUI.myTipsPageUpdateEmail"/>
+        </classes>
+    </test>
+
+    <test name="LoginFromHomepage" preserve-order="true">
+        <classes>
+            <class name="test.java.accountsPWAUI.LoginFromHomepage"/>
+        </classes>
+    </test>
+
+
+</suite>

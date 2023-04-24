@@ -5,33 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="277764f8-c725-445e-847b-ec3052160da8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_19_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_mysql_mysql_connector_j_8_0_31.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/accountsPWAUI/AccountsPWA_Login.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/accountsPWAUI/AccountsPageMobileFieldErrorValidation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/accountsPWAUI/AccountsPageOTPValidations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/accountsPWAUI/HomePageOTPValidations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/accountsPWAUI/LoginAfterEditingNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/accountsPWAUI/LoginAfterInvalidOTP.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/accountsPWAUI/LoginFromHomepage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/accountsPWAUI/LoginWithMobileNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/accountsPWAUI/ProfilePageUPDATEEMAIL.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/accountsPWAUI/SignupMobileOnly.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/accountsPWAUI/SupportPageLoginAfterInvalidOTP.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/accountsPWAUI/SupportPageLoginOnly.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/accountsPWAUI/SupportPageMobileFieldErrorValidation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/accountsPWAUI/SupportPageOTPValidations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/accountsPWAUI/TripsPageLoginAfterEditingNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/accountsPWAUI/TripsPageLoginAfterInvalidOTP.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/accountsPWAUI/TripsPageMobileFieldErrorValidation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/accountsPWAUI/TripsPageOTPValidations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/accountsPWAUI/myTipsPageUpdateEmail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/accountsPWAUI/signupMerge.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/accountsPWAUI/tripsPageLoginOnly.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/suiteXMLs/Accounts/UI_Accounts_PWA1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/objectRepositoryPayment.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/objectRepositoryPayment.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_Desktop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_Desktop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_PWA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_PWA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_PWA_Bus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/commonUI/PaymentsUI_Common_PWA_Bus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_CC_PayTM_inline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_CC_PayTM_inline.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_Coupon_Invalid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_Coupon_Invalid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_Coupon_Valid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_Coupon_Valid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_EMI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_EMI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_EMI_BFL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_EMI_BFL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_EMI_NCE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_EMI_NCE.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_GV_CLP_Full.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_GV_CLP_Full.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_NB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_NB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_NB_Retry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_NB_Retry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_PhonePe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_PhonePe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_SavedPay_Tokenized.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_SavedPay_Tokenized.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_SavedPay_UPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_SavedPay_UPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_Saved_UPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_Saved_UPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_UPI_Failure_Success.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_UPI_Failure_Success.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_UPI_Inline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_PWA/Air_PWA_UPI_Inline.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Air_Web/Air_Web_Paylater_FK.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Air_Web/Air_Web_Paylater_FK.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Bus_PWA/Bus_PWA_Coupon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Bus_PWA/Bus_PWA_Coupon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Bus_PWA/Bus_PWA_SavedPay_UPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Bus_PWA/Bus_PWA_SavedPay_UPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/payment_Hotels_PWA/Hotels_PWA_Wallet_CC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/payment_Hotels_PWA/Hotels_PWA_Wallet_CC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/suiteXMLs/Payments/UI_Air_PWA.xml" beforeDir="false" afterPath="$PROJECT_DIR$/suiteXMLs/Payments/UI_Air_PWA.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/suiteXMLs/Payments/UI_Hotel_PWA.xml" beforeDir="false" afterPath="$PROJECT_DIR$/suiteXMLs/Payments/UI_Hotel_PWA.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/suiteXMLs/Payments/UI_Hotel_Web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/suiteXMLs/Payments/UI_Hotel_Web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Webdrivertests.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Webdrivertests.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/objectRepositoryPlatform.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/objectRepositoryPlatform.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,17 +70,20 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "/Users/saicharan.yadau/Documents/Code/webdrivertests/suiteXMLs",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/suiteXMLs" />
+      <recent name="$PROJECT_DIR$/src/test/java" />
       <recent name="$PROJECT_DIR$/src/test/java/payment_Air_Web" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -87,7 +92,7 @@
       <recent name="test.java.payment_Air_PWA_New" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG./Users/kiran.kumar4/Web/webdrivertests/suiteXMLs/Payments/UI_Air_Web.xml">
+  <component name="RunManager" selected="TestNG.Air_Web_Paylater_FK.Air_Desktop_FKPL">
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -99,34 +104,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Air_PWA_Paylater_FK" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Accounts_UI_Signup_Merge.signup_merge" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Webdrivertests" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.java.payment_Air_PWA.*" />
+          <option name="PATTERN" value="test.java.accountsUI.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="test.java.payment_Air_PWA" />
-      <option name="MAIN_CLASS_NAME" value="test.java.payment_Air_PWA.Air_PWA_Paylater_FK" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Air_PWA_Paylater_FK.Air_PWA_Paylater" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Webdrivertests" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.java.payment_Air_PWA.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test.java.payment_Air_PWA" />
-      <option name="MAIN_CLASS_NAME" value="test.java.payment_Air_PWA.Air_PWA_Paylater_FK" />
-      <option name="METHOD_NAME" value="Air_PWA_Paylater" />
+      <option name="PACKAGE_NAME" value="test.java.accountsUI" />
+      <option name="MAIN_CLASS_NAME" value="test.java.accountsUI.Accounts_UI_Signup_Merge" />
+      <option name="METHOD_NAME" value="signup_merge" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -134,7 +122,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Air_Web_Paylater_FK" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Air_Web_Paylater_FK.Air_Desktop_FKPL" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Webdrivertests" />
       <extension name="coverage">
         <pattern>
@@ -144,24 +132,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="test.java.payment_Air_Web" />
       <option name="MAIN_CLASS_NAME" value="test.java.payment_Air_Web.Air_Web_Paylater_FK" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Air_Web_Paylater_FK_EMI_Coupon.Air_Desktop_FKPL_EMI_Coupon" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Webdrivertests" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.java.payment_Air_Web.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test.java.payment_Air_Web" />
-      <option name="MAIN_CLASS_NAME" value="test.java.payment_Air_Web.Air_Web_Paylater_FK_EMI_Coupon" />
-      <option name="METHOD_NAME" value="Air_Desktop_FKPL_EMI_Coupon" />
+      <option name="METHOD_NAME" value="Air_Desktop_FKPL" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -169,9 +140,45 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="/Users/kiran.kumar4/Web/webdrivertests/suiteXMLs/Payments/UI_Air_Web.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="LoginAfterEditingNumber.AccountPageLoginAfterEditingNumber" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Webdrivertests" />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/suiteXMLs/Payments/UI_Air_Web.xml" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.java.accountsPWAUI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.java.accountsPWAUI" />
+      <option name="MAIN_CLASS_NAME" value="test.java.accountsPWAUI.LoginAfterEditingNumber" />
+      <option name="METHOD_NAME" value="AccountPageLoginAfterEditingNumber" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginFromHomepage.LoginFromHomepage" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Webdrivertests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.java.accountsPWAUI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.java.accountsPWAUI" />
+      <option name="MAIN_CLASS_NAME" value="test.java.accountsPWAUI.LoginFromHomepage" />
+      <option name="METHOD_NAME" value="LoginFromHomepage" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="/Users/saicharan.yadau/Documents/Code/webdrivertests/suiteXMLs/Accounts/UI_Accounts_PWA1.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Webdrivertests" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/suiteXMLs/Accounts/UI_Accounts_PWA1.xml" />
       <option name="TEST_OBJECT" value="SUITE" />
       <properties />
       <listeners />
@@ -200,11 +207,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG./Users/kiran.kumar4/Web/webdrivertests/suiteXMLs/Payments/UI_Air_Web.xml" />
-        <item itemvalue="TestNG.Air_PWA_Paylater_FK" />
-        <item itemvalue="TestNG.Air_PWA_Paylater_FK.Air_PWA_Paylater" />
-        <item itemvalue="TestNG.Air_Web_Paylater_FK_EMI_Coupon.Air_Desktop_FKPL_EMI_Coupon" />
-        <item itemvalue="TestNG.Air_Web_Paylater_FK" />
+        <item itemvalue="TestNG.Air_Web_Paylater_FK.Air_Desktop_FKPL" />
+        <item itemvalue="TestNG./Users/saicharan.yadau/Documents/Code/webdrivertests/suiteXMLs/Accounts/UI_Accounts_PWA1.xml" />
+        <item itemvalue="TestNG.LoginAfterEditingNumber.AccountPageLoginAfterEditingNumber" />
+        <item itemvalue="TestNG.LoginFromHomepage.LoginFromHomepage" />
+        <item itemvalue="TestNG.Accounts_UI_Signup_Merge.signup_merge" />
       </list>
     </recent_temporary>
   </component>
